@@ -1,0 +1,50 @@
+.class public Lcom/android/settings/b/a;
+.super Lcom/android/settings/b/b;
+.source "InsetBoundsDrawable.java"
+
+
+# instance fields
+.field private final mF:I
+
+
+# direct methods
+.method public constructor <init>(Landroid/graphics/drawable/Drawable;I)V
+    .locals 0
+    .parameter
+    .parameter
+
+    .prologue
+    .line 29
+    invoke-direct {p0, p1}, Lcom/android/settings/b/b;-><init>(Landroid/graphics/drawable/Drawable;)V
+
+    .line 30
+    iput p2, p0, Lcom/android/settings/b/a;->mF:I
+
+    .line 31
+    return-void
+.end method
+
+
+# virtual methods
+.method public setBounds(IIII)V
+    .locals 2
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 35
+    iget v0, p0, Lcom/android/settings/b/a;->mF:I
+
+    add-int/2addr v0, p1
+
+    iget v1, p0, Lcom/android/settings/b/a;->mF:I
+
+    sub-int v1, p3, v1
+
+    invoke-super {p0, v0, p2, v1, p4}, Lcom/android/settings/b/b;->setBounds(IIII)V
+
+    .line 36
+    return-void
+.end method
