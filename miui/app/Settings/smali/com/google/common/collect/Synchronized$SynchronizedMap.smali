@@ -34,14 +34,16 @@
 
 
 # virtual methods
-.method bridge synthetic a()Ljava/lang/Object;
+.method A()Ljava/util/Map;
     .locals 1
 
     .prologue
-    .line 917
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    .line 929
+    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedObject;->e()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Ljava/util/Map;
 
     return-object v0
 .end method
@@ -57,7 +59,7 @@
 
     .line 935
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -92,7 +94,7 @@
 
     .line 942
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -127,7 +129,7 @@
 
     .line 949
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -150,6 +152,18 @@
     throw v0
 .end method
 
+.method bridge synthetic e()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 917
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public entrySet()Ljava/util/Set;
     .locals 3
 
@@ -166,7 +180,7 @@
     if-nez v0, :cond_0
 
     .line 957
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -224,7 +238,7 @@
 
     .line 1030
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -259,7 +273,7 @@
 
     .line 966
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -293,7 +307,7 @@
 
     .line 1036
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -327,7 +341,7 @@
 
     .line 973
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -366,7 +380,7 @@
     if-nez v0, :cond_0
 
     .line 981
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -414,7 +428,7 @@
 
     .line 990
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -449,7 +463,7 @@
 
     .line 997
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -484,7 +498,7 @@
 
     .line 1004
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -518,7 +532,7 @@
 
     .line 1011
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -557,7 +571,7 @@
     if-nez v0, :cond_0
 
     .line 1019
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -590,18 +604,4 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-.end method
-
-.method w()Ljava/util/Map;
-    .locals 1
-
-    .prologue
-    .line 929
-    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedObject;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    return-object v0
 .end method

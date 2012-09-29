@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private Bi:Lcom/android/settings/fuelgauge/BatterySipper;
+.field private Bm:Lcom/android/settings/fuelgauge/BatterySipper;
 
-.field private Bj:Ljava/lang/CharSequence;
+.field private Bn:Ljava/lang/CharSequence;
 
 .field private mProgress:I
 
@@ -31,7 +31,7 @@
     invoke-virtual {p0, p2}, Lcom/android/settings/fuelgauge/PowerGaugePreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
     .line 41
-    iput-object p3, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bi:Lcom/android/settings/fuelgauge/BatterySipper;
+    iput-object p3, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bm:Lcom/android/settings/fuelgauge/BatterySipper;
 
     .line 42
     return-void
@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bj:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bn:Ljava/lang/CharSequence;
 
     .line 48
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/PowerGaugePreference;->notifyChanged()V
@@ -96,12 +96,12 @@
     return-void
 .end method
 
-.method hS()Lcom/android/settings/fuelgauge/BatterySipper;
+.method hW()Lcom/android/settings/fuelgauge/BatterySipper;
     .locals 1
 
     .prologue
     .line 52
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bi:Lcom/android/settings/fuelgauge/BatterySipper;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bm:Lcom/android/settings/fuelgauge/BatterySipper;
 
     return-object v0
 .end method
@@ -138,7 +138,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 63
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bj:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerGaugePreference;->Bn:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

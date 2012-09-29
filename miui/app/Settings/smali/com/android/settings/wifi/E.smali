@@ -1,130 +1,111 @@
-.class Lcom/android/settings/wifi/E;
-.super Landroid/content/BroadcastReceiver;
-.source "WifiApEnabler.java"
+.class synthetic Lcom/android/settings/wifi/E;
+.super Ljava/lang/Object;
+.source "AccessPoint.java"
 
 
-# instance fields
-.field final synthetic yB:Lcom/android/settings/wifi/k;
+# static fields
+.field static final synthetic yx:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/wifi/k;)V
-    .locals 0
-    .parameter
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 55
-    iput-object p1, p0, Lcom/android/settings/wifi/E;->yB:Lcom/android/settings/wifi/k;
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter
-    .parameter
-
-    .prologue
-    .line 58
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    .line 127
+    invoke-static {}, Lcom/android/settings/wifi/AccessPoint$PskType;->values()[Lcom/android/settings/wifi/AccessPoint$PskType;
 
     move-result-object v0
 
-    .line 59
-    const-string v1, "android.net.wifi.WIFI_AP_STATE_CHANGED"
+    array-length v0, v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-array v0, v0, [I
 
-    move-result v1
+    sput-object v0, Lcom/android/settings/wifi/E;->yx:[I
 
-    if-eqz v1, :cond_1
+    :try_start_0
+    sget-object v0, Lcom/android/settings/wifi/E;->yx:[I
 
-    .line 60
-    iget-object v0, p0, Lcom/android/settings/wifi/E;->yB:Lcom/android/settings/wifi/k;
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IW:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    const-string v1, "wifi_state"
-
-    const/16 v2, 0xe
-
-    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v1}, Lcom/android/settings/wifi/AccessPoint$PskType;->ordinal()I
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/settings/wifi/k;->a(Lcom/android/settings/wifi/k;I)V
+    const/4 v2, 0x1
 
-    .line 74
-    :cond_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
+
     :goto_0
-    return-void
+    :try_start_1
+    sget-object v0, Lcom/android/settings/wifi/E;->yx:[I
 
-    .line 62
-    :cond_1
-    const-string v1, "android.net.conn.TETHER_STATE_CHANGED"
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IX:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lcom/android/settings/wifi/AccessPoint$PskType;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    const/4 v2, 0x2
 
-    .line 63
-    const-string v0, "availableArray"
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
 
-    invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+    :goto_1
+    :try_start_2
+    sget-object v0, Lcom/android/settings/wifi/E;->yx:[I
 
-    move-result-object v0
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IY:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    .line 65
-    const-string v1, "activeArray"
+    invoke-virtual {v1}, Lcom/android/settings/wifi/AccessPoint$PskType;->ordinal()I
 
-    invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+    move-result v1
 
-    move-result-object v1
+    const/4 v2, 0x3
 
-    .line 67
-    const-string v2, "erroredArray"
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
 
-    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+    :goto_2
+    :try_start_3
+    sget-object v0, Lcom/android/settings/wifi/E;->yx:[I
 
-    move-result-object v2
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    .line 69
-    iget-object v3, p0, Lcom/android/settings/wifi/E;->yB:Lcom/android/settings/wifi/k;
+    invoke-virtual {v1}, Lcom/android/settings/wifi/AccessPoint$PskType;->ordinal()I
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    const/4 v2, 0x4
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
 
-    move-result-object v1
+    :goto_3
+    return-void
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+    :catch_0
+    move-exception v0
 
-    move-result-object v2
+    goto :goto_3
 
-    invoke-static {v3, v0, v1, v2}, Lcom/android/settings/wifi/k;->a(Lcom/android/settings/wifi/k;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+    :catch_1
+    move-exception v0
 
-    goto :goto_0
+    goto :goto_2
 
-    .line 70
-    :cond_2
-    const-string v1, "android.intent.action.AIRPLANE_MODE"
+    :catch_2
+    move-exception v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    goto :goto_1
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 71
-    iget-object v0, p0, Lcom/android/settings/wifi/E;->yB:Lcom/android/settings/wifi/k;
-
-    invoke-static {v0}, Lcom/android/settings/wifi/k;->a(Lcom/android/settings/wifi/k;)V
+    :catch_3
+    move-exception v0
 
     goto :goto_0
 .end method

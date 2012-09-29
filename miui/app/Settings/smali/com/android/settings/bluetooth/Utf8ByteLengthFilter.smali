@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final ux:I
+.field private final uB:I
 
 
 # direct methods
@@ -20,7 +20,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
-    iput p1, p0, Lcom/android/settings/bluetooth/Utf8ByteLengthFilter;->ux:I
+    iput p1, p0, Lcom/android/settings/bluetooth/Utf8ByteLengthFilter;->uB:I
 
     .line 45
     return-void
@@ -153,7 +153,7 @@
 
     .line 64
     :cond_6
-    iget v0, p0, Lcom/android/settings/bluetooth/Utf8ByteLengthFilter;->ux:I
+    iget v0, p0, Lcom/android/settings/bluetooth/Utf8ByteLengthFilter;->uB:I
 
     sub-int/2addr v0, v1
 

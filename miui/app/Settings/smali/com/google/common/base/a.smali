@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final kF:Ljava/lang/ThreadLocal;
+.field private static final kI:Ljava/lang/ThreadLocal;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/google/common/base/e;-><init>()V
 
-    sput-object v0, Lcom/google/common/base/a;->kF:Ljava/lang/ThreadLocal;
+    sput-object v0, Lcom/google/common/base/a;->kI:Ljava/lang/ThreadLocal;
 
     return-void
 .end method
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method static cj()J
+.method static cn()J
     .locals 2
 
     .prologue

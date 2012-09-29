@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic oK:Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;
+.field final synthetic oN:Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;
 
-.field final synthetic oL:Lcom/android/settings/inputmethod/SpellCheckersSettings;
+.field final synthetic oO:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 131
-    iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oL:Lcom/android/settings/inputmethod/SpellCheckersSettings;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oO:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
-    iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oK:Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;
+    iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oN:Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,9 +38,9 @@
 
     .prologue
     .line 134
-    iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oL:Lcom/android/settings/inputmethod/SpellCheckersSettings;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oO:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
-    iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oK:Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->oN:Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;
 
     invoke-static {v0, v1}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->a(Lcom/android/settings/inputmethod/SpellCheckersSettings;Lcom/android/settings/inputmethod/SingleSpellCheckerPreference;)V
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Gi:Lcom/android/settings/wifi/a/f;
+.field final synthetic Gm:Lcom/android/settings/wifi/a/f;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 179
-    iput-object p1, p0, Lcom/android/settings/wifi/a/i;->Gi:Lcom/android/settings/wifi/a/f;
+    iput-object p1, p0, Lcom/android/settings/wifi/a/i;->Gm:Lcom/android/settings/wifi/a/f;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,9 +32,9 @@
 
     .prologue
     .line 184
-    iget-object v0, p0, Lcom/android/settings/wifi/a/i;->Gi:Lcom/android/settings/wifi/a/f;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/i;->Gm:Lcom/android/settings/wifi/a/f;
 
-    iget-object v0, v0, Lcom/android/settings/wifi/a/f;->Bo:Lcom/android/settings/wifi/a/b;
+    iget-object v0, v0, Lcom/android/settings/wifi/a/f;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/a/b;->getActivity()Landroid/app/Activity;
 

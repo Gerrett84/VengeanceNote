@@ -16,19 +16,19 @@
 
 
 # virtual methods
-.method dL()Lcom/google/common/collect/ImmutableMap;
+.method dP()Lcom/google/common/collect/ImmutableMap;
     .locals 1
 
     .prologue
     .line 289
-    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->ls()Lcom/google/common/collect/ImmutableMap;
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->lw()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public dM()Lcom/google/common/collect/ImmutableBiMap;
+.method public dQ()Lcom/google/common/collect/ImmutableBiMap;
     .locals 0
 
     .prologue
@@ -36,24 +36,24 @@
     return-object p0
 .end method
 
-.method public bridge synthetic dN()Lcom/google/common/collect/ImmutableCollection;
+.method public bridge synthetic dR()Lcom/google/common/collect/ImmutableCollection;
     .locals 1
 
     .prologue
     .line 286
-    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eA()Lcom/google/common/collect/ImmutableSet;
+    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eE()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic dl()Ljava/util/Set;
+.method public bridge synthetic dp()Ljava/util/Set;
     .locals 1
 
     .prologue
     .line 286
-    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eA()Lcom/google/common/collect/ImmutableSet;
+    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eE()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -65,7 +65,7 @@
 
     .prologue
     .line 286
-    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -77,7 +77,7 @@
 
     .prologue
     .line 286
-    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->ey()Lcom/google/common/collect/ImmutableSet;
+    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eC()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -89,7 +89,7 @@
 
     .prologue
     .line 298
-    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->eB()Lcom/google/common/collect/ImmutableBiMap;
+    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->eF()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 
@@ -101,7 +101,7 @@
 
     .prologue
     .line 286
-    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eA()Lcom/google/common/collect/ImmutableSet;
+    invoke-super {p0}, Lcom/google/common/collect/ImmutableBiMap;->eE()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 

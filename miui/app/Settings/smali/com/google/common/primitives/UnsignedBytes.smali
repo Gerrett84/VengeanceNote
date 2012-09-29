@@ -45,12 +45,12 @@
     return v0
 .end method
 
-.method static lf()Ljava/util/Comparator;
+.method static lj()Ljava/util/Comparator;
     .locals 1
 
     .prologue
     .line 201
-    sget-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$PureJavaComparator;->an:Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$PureJavaComparator;
+    sget-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$PureJavaComparator;->aq:Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$PureJavaComparator;
 
     return-object v0
 .end method

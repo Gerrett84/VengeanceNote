@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic yu:Lcom/android/settings/AccessControlSetApp;
+.field final synthetic yy:Lcom/android/settings/AccessControlSetApp;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 114
-    iput-object p1, p0, Lcom/android/settings/bM;->yu:Lcom/android/settings/AccessControlSetApp;
+    iput-object p1, p0, Lcom/android/settings/bM;->yy:Lcom/android/settings/AccessControlSetApp;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 117
-    iget-object v0, p0, Lcom/android/settings/bM;->yu:Lcom/android/settings/AccessControlSetApp;
+    iget-object v0, p0, Lcom/android/settings/bM;->yy:Lcom/android/settings/AccessControlSetApp;
 
     invoke-static {v0}, Lcom/android/settings/AccessControlSetApp;->b(Lcom/android/settings/AccessControlSetApp;)V
 

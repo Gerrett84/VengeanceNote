@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic dO:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
+.field final synthetic dR:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 36
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;->dO:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;->dR:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -30,9 +30,9 @@
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;->dO:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;->dR:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;->dO:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;->dR:Lcom/android/settings/deviceinfo/MiuiUsbSettings;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->a(Lcom/android/settings/deviceinfo/MiuiUsbSettings;)Landroid/hardware/usb/UsbManager;
 

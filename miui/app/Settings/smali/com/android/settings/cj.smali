@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+.field final synthetic Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 229
-    iput-object p1, p0, Lcom/android/settings/cj;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iput-object p1, p0, Lcom/android/settings/cj;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 231
-    iget-object v0, p0, Lcom/android/settings/cj;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iget-object v0, p0, Lcom/android/settings/cj;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-static {v0}, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->a(Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;)Lmiui/widget/LockPatternView;
 

@@ -78,7 +78,7 @@
 
 
 # virtual methods
-.method a()Ljava/lang/Object;
+.method e()Ljava/lang/Object;
     .locals 1
 
     .prologue

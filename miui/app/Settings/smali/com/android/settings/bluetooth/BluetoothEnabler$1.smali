@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Ku:Lcom/android/settings/bluetooth/BluetoothEnabler;
+.field final synthetic Kx:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 44
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$1;->Ku:Lcom/android/settings/bluetooth/BluetoothEnabler;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$1;->Kx:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -39,7 +39,7 @@
     move-result v0
 
     .line 48
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$1;->Ku:Lcom/android/settings/bluetooth/BluetoothEnabler;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler$1;->Kx:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/bluetooth/BluetoothEnabler;->f(I)V
 

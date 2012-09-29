@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final aQ:Ljava/lang/String;
+.field final aT:Ljava/lang/String;
 
-.field final aR:J
+.field final aU:J
 
 .field final mSize:J
 
@@ -26,13 +26,13 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 532
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aQ:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aT:Ljava/lang/String;
 
     .line 533
     iput-wide p2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->mSize:J
 
     .line 534
-    iput-wide p4, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aR:J
+    iput-wide p4, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aU:J
 
     .line 535
     return-void
@@ -106,7 +106,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aQ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aT:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -130,7 +130,7 @@
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aR:J
+    iget-wide v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aU:J
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

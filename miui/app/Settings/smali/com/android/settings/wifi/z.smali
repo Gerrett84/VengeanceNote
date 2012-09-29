@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic cx:Lcom/android/settings/wifi/WifiSettings;
+.field final synthetic cA:Lcom/android/settings/wifi/WifiSettings;
 
 
 # direct methods
@@ -16,8 +16,8 @@
     .parameter
 
     .prologue
-    .line 266
-    iput-object p1, p0, Lcom/android/settings/wifi/z;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 276
+    iput-object p1, p0, Lcom/android/settings/wifi/z;->cA:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,14 +31,14 @@
     .parameter
 
     .prologue
-    .line 270
-    iget-object v0, p0, Lcom/android/settings/wifi/z;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 280
+    iget-object v0, p0, Lcom/android/settings/wifi/z;->cA:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    const v1, 0x7f0b020c
+    const v1, 0x7f0b0210
 
     const/4 v2, 0x0
 
@@ -48,7 +48,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 273
+    .line 283
     return-void
 .end method
 
@@ -56,6 +56,6 @@
     .locals 0
 
     .prologue
-    .line 268
+    .line 278
     return-void
 .end method

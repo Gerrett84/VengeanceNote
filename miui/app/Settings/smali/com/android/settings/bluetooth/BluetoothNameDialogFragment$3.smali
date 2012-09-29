@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+.field final synthetic DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 148
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;->DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;->DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,7 +39,7 @@
     if-ne p2, v0, :cond_0
 
     .line 152
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;->DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;->DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -52,7 +52,7 @@
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->a(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;Ljava/lang/String;)V
 
     .line 153
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;->DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$3;->DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->a(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;)Landroid/app/AlertDialog;
 

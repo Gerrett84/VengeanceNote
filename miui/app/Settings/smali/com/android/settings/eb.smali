@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final synthetic Kc:Lcom/android/settings/TrustedCredentialsSettings;
+.field final synthetic Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-.field final synthetic Px:Lcom/android/settings/as;
+.field final synthetic PA:Lcom/android/settings/as;
 
-.field final synthetic Py:Landroid/app/Dialog;
+.field final synthetic PB:Landroid/app/Dialog;
 
 
 # direct methods
@@ -23,11 +23,11 @@
 
     .prologue
     .line 361
-    iput-object p1, p0, Lcom/android/settings/eb;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iput-object p1, p0, Lcom/android/settings/eb;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-    iput-object p2, p0, Lcom/android/settings/eb;->Px:Lcom/android/settings/as;
+    iput-object p2, p0, Lcom/android/settings/eb;->PA:Lcom/android/settings/as;
 
-    iput-object p3, p0, Lcom/android/settings/eb;->Py:Landroid/app/Dialog;
+    iput-object p3, p0, Lcom/android/settings/eb;->PB:Landroid/app/Dialog;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,7 +44,7 @@
     .line 363
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    iget-object v1, p0, Lcom/android/settings/eb;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iget-object v1, p0, Lcom/android/settings/eb;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/TrustedCredentialsSettings;->getActivity()Landroid/app/Activity;
 
@@ -53,13 +53,13 @@
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 364
-    iget-object v1, p0, Lcom/android/settings/eb;->Px:Lcom/android/settings/as;
+    iget-object v1, p0, Lcom/android/settings/eb;->PA:Lcom/android/settings/as;
 
     invoke-static {v1}, Lcom/android/settings/as;->f(Lcom/android/settings/as;)Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/eb;->Px:Lcom/android/settings/as;
+    iget-object v2, p0, Lcom/android/settings/eb;->PA:Lcom/android/settings/as;
 
     invoke-static {v1, v2}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->b(Lcom/android/settings/TrustedCredentialsSettings$Tab;Lcom/android/settings/as;)I
 

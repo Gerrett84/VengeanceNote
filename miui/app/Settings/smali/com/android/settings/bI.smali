@@ -9,7 +9,7 @@
 # instance fields
 .field private final sCollator:Ljava/text/Collator;
 
-.field final synthetic yu:Lcom/android/settings/AccessControlSetApp;
+.field final synthetic yy:Lcom/android/settings/AccessControlSetApp;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     .prologue
     .line 39
-    iput-object p1, p0, Lcom/android/settings/bI;->yu:Lcom/android/settings/AccessControlSetApp;
+    iput-object p1, p0, Lcom/android/settings/bI;->yy:Lcom/android/settings/AccessControlSetApp;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -67,7 +67,7 @@
     :cond_0
     iget-object v0, p1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v1, p0, Lcom/android/settings/bI;->yu:Lcom/android/settings/AccessControlSetApp;
+    iget-object v1, p0, Lcom/android/settings/bI;->yy:Lcom/android/settings/AccessControlSetApp;
 
     invoke-static {v1}, Lcom/android/settings/AccessControlSetApp;->a(Lcom/android/settings/AccessControlSetApp;)Landroid/content/pm/PackageManager;
 
@@ -82,7 +82,7 @@
     :cond_1
     iget-object v1, p2, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v3, p0, Lcom/android/settings/bI;->yu:Lcom/android/settings/AccessControlSetApp;
+    iget-object v3, p0, Lcom/android/settings/bI;->yy:Lcom/android/settings/AccessControlSetApp;
 
     invoke-static {v3}, Lcom/android/settings/AccessControlSetApp;->a(Lcom/android/settings/AccessControlSetApp;)Landroid/content/pm/PackageManager;
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+.field final synthetic fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 187
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -71,7 +71,7 @@
     move-result-object v3
 
     .line 195
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v1}, Lcom/android/settings/bluetooth/BluetoothEventManager;->d(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
@@ -85,19 +85,19 @@
     if-nez v1, :cond_0
 
     .line 197
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v1}, Lcom/android/settings/bluetooth/BluetoothEventManager;->d(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
     move-result-object v1
 
-    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v4}, Lcom/android/settings/bluetooth/BluetoothEventManager;->b(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v5, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v5}, Lcom/android/settings/bluetooth/BluetoothEventManager;->e(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
@@ -131,7 +131,7 @@
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 201
-    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DeviceFoundHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v4, v1}, Lcom/android/settings/bluetooth/BluetoothEventManager;->a(Lcom/android/settings/bluetooth/BluetoothEventManager;Lcom/android/settings/bluetooth/CachedBluetoothDevice;)V
 

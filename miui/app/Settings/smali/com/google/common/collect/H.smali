@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final vd:Ljava/util/concurrent/atomic/AtomicInteger;
+.field final vh:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field final synthetic ve:Lcom/google/common/collect/b;
+.field final synthetic vi:Lcom/google/common/collect/b;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     .prologue
     .line 212
-    iput-object p1, p0, Lcom/google/common/collect/H;->ve:Lcom/google/common/collect/b;
+    iput-object p1, p0, Lcom/google/common/collect/H;->vi:Lcom/google/common/collect/b;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,7 +30,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    iput-object v0, p0, Lcom/google/common/collect/H;->vd:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object v0, p0, Lcom/google/common/collect/H;->vh:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
@@ -43,7 +43,7 @@
 
     .prologue
     .line 216
-    iget-object v0, p0, Lcom/google/common/collect/H;->vd:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v0, p0, Lcom/google/common/collect/H;->vh:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic bz:Lcom/android/settings/display/BrightnessActivity;
+.field final synthetic bC:Lcom/android/settings/display/BrightnessActivity;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 48
-    iput-object p1, p0, Lcom/android/settings/display/b;->bz:Lcom/android/settings/display/BrightnessActivity;
+    iput-object p1, p0, Lcom/android/settings/display/b;->bC:Lcom/android/settings/display/BrightnessActivity;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
@@ -30,14 +30,14 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/android/settings/display/b;->bz:Lcom/android/settings/display/BrightnessActivity;
+    iget-object v0, p0, Lcom/android/settings/display/b;->bC:Lcom/android/settings/display/BrightnessActivity;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/android/settings/display/BrightnessActivity;->a(Lcom/android/settings/display/BrightnessActivity;I)I
 
     .line 52
-    iget-object v0, p0, Lcom/android/settings/display/b;->bz:Lcom/android/settings/display/BrightnessActivity;
+    iget-object v0, p0, Lcom/android/settings/display/b;->bC:Lcom/android/settings/display/BrightnessActivity;
 
     invoke-static {v0}, Lcom/android/settings/display/BrightnessActivity;->a(Lcom/android/settings/display/BrightnessActivity;)V
 

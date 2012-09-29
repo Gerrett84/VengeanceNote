@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ed:Lcom/google/common/collect/MapMakerInternalMap;
+.field final synthetic eg:Lcom/google/common/collect/MapMakerInternalMap;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 3753
-    iput-object p1, p0, Lcom/google/common/collect/aj;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iput-object p1, p0, Lcom/google/common/collect/aj;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/ac;-><init>(Lcom/google/common/collect/MapMakerInternalMap;)V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 3757
-    invoke-virtual {p0}, Lcom/google/common/collect/aj;->jc()Lcom/google/common/collect/j;
+    invoke-virtual {p0}, Lcom/google/common/collect/aj;->jg()Lcom/google/common/collect/j;
 
     move-result-object v0
 

@@ -16,7 +16,7 @@
 .method public abstract a(JJ)Z
 .end method
 
-.method public abstract aa()[F
+.method public abstract ae()[F
 .end method
 
 .method public abstract b(J)I

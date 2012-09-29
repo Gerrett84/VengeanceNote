@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     .line 442
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingSerializationProxy;->b(Ljava/io/ObjectInputStream;)V
@@ -88,7 +88,7 @@
 
     .prologue
     .line 446
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     return-object v0
 .end method

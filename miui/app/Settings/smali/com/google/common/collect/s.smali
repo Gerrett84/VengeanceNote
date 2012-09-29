@@ -11,9 +11,9 @@
 
 .field final key:Ljava/lang/Object;
 
-.field final nx:Lcom/google/common/collect/ag;
+.field final nA:Lcom/google/common/collect/ag;
 
-.field volatile ny:Lcom/google/common/collect/az;
+.field volatile nB:Lcom/google/common/collect/az;
 
 
 # direct methods
@@ -28,11 +28,11 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1038
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eU()Lcom/google/common/collect/az;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eY()Lcom/google/common/collect/az;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/s;->ny:Lcom/google/common/collect/az;
+    iput-object v0, p0, Lcom/google/common/collect/s;->nB:Lcom/google/common/collect/az;
 
     .line 970
     iput-object p1, p0, Lcom/google/common/collect/s;->key:Ljava/lang/Object;
@@ -41,7 +41,7 @@
     iput p2, p0, Lcom/google/common/collect/s;->hash:I
 
     .line 972
-    iput-object p3, p0, Lcom/google/common/collect/s;->nx:Lcom/google/common/collect/ag;
+    iput-object p3, p0, Lcom/google/common/collect/s;->nA:Lcom/google/common/collect/ag;
 
     .line 973
     return-void
@@ -62,7 +62,7 @@
     throw v0
 .end method
 
-.method public ab()Lcom/google/common/collect/ag;
+.method public af()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
@@ -74,7 +74,7 @@
     throw v0
 .end method
 
-.method public ac()Lcom/google/common/collect/ag;
+.method public ag()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
@@ -105,10 +105,10 @@
 
     .prologue
     .line 1047
-    iget-object v0, p0, Lcom/google/common/collect/s;->ny:Lcom/google/common/collect/az;
+    iget-object v0, p0, Lcom/google/common/collect/s;->nB:Lcom/google/common/collect/az;
 
     .line 1048
-    iput-object p1, p0, Lcom/google/common/collect/s;->ny:Lcom/google/common/collect/az;
+    iput-object p1, p0, Lcom/google/common/collect/s;->nB:Lcom/google/common/collect/az;
 
     .line 1049
     invoke-interface {v0, p1}, Lcom/google/common/collect/az;->a(Lcom/google/common/collect/az;)V
@@ -143,7 +143,7 @@
     throw v0
 .end method
 
-.method public dm()J
+.method public dq()J
     .locals 1
 
     .prologue
@@ -155,7 +155,7 @@
     throw v0
 .end method
 
-.method public dn()Lcom/google/common/collect/ag;
+.method public dr()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
@@ -167,7 +167,7 @@
     throw v0
 .end method
 
-.method public do()Lcom/google/common/collect/ag;
+.method public ds()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
@@ -179,17 +179,17 @@
     throw v0
 .end method
 
-.method public dp()Lcom/google/common/collect/az;
+.method public dt()Lcom/google/common/collect/az;
     .locals 1
 
     .prologue
     .line 1042
-    iget-object v0, p0, Lcom/google/common/collect/s;->ny:Lcom/google/common/collect/az;
+    iget-object v0, p0, Lcom/google/common/collect/s;->nB:Lcom/google/common/collect/az;
 
     return-object v0
 .end method
 
-.method public dq()I
+.method public du()I
     .locals 1
 
     .prologue
@@ -199,12 +199,12 @@
     return v0
 .end method
 
-.method public dr()Lcom/google/common/collect/ag;
+.method public dv()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
     .line 1059
-    iget-object v0, p0, Lcom/google/common/collect/s;->nx:Lcom/google/common/collect/ag;
+    iget-object v0, p0, Lcom/google/common/collect/s;->nA:Lcom/google/common/collect/ag;
 
     return-object v0
 .end method

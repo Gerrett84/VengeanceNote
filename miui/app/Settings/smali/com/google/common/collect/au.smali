@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final MS:Lcom/google/common/collect/ag;
+.field final MV:Lcom/google/common/collect/ag;
 
 
 # direct methods
@@ -22,7 +22,7 @@
     invoke-direct {p0, p2, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
     .line 1783
-    iput-object p3, p0, Lcom/google/common/collect/au;->MS:Lcom/google/common/collect/ag;
+    iput-object p3, p0, Lcom/google/common/collect/au;->MV:Lcom/google/common/collect/ag;
 
     .line 1784
     return-void
@@ -60,17 +60,17 @@
     return-void
 .end method
 
-.method public cY()Lcom/google/common/collect/ag;
+.method public dc()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
     .line 1788
-    iget-object v0, p0, Lcom/google/common/collect/au;->MS:Lcom/google/common/collect/ag;
+    iget-object v0, p0, Lcom/google/common/collect/au;->MV:Lcom/google/common/collect/ag;
 
     return-object v0
 .end method
 
-.method public cZ()Z
+.method public dd()Z
     .locals 1
 
     .prologue
@@ -80,7 +80,7 @@
     return v0
 .end method
 
-.method public da()Ljava/lang/Object;
+.method public de()Ljava/lang/Object;
     .locals 1
 
     .prologue

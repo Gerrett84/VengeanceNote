@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private cr:Ljava/util/ArrayList;
+.field private cu:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/H;->cr:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/H;->cu:Ljava/util/ArrayList;
 
     .line 105
     return-void
@@ -114,7 +114,7 @@
     invoke-direct {v0, p0, v2}, Lcom/android/settings/cv;-><init>(Lcom/android/settings/H;Landroid/os/Parcel;)V
 
     .line 96
-    iget-object v0, v0, Lcom/android/settings/cv;->Fw:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/cv;->FA:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -151,7 +151,7 @@
     move-result-object v0
 
     .line 99
-    iget-object v5, p0, Lcom/android/settings/H;->cr:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/android/settings/H;->cu:Ljava/util/ArrayList;
 
     new-instance v6, Lcom/android/settings/aU;
 
@@ -186,12 +186,12 @@
 
 
 # virtual methods
-.method public B()Ljava/util/ArrayList;
+.method public F()Ljava/util/ArrayList;
     .locals 5
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/H;->cr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/H;->cu:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -263,7 +263,7 @@
 
     .line 50
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/H;->cr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/H;->cu:Ljava/util/ArrayList;
 
     return-object v0
 

@@ -4,23 +4,23 @@
 
 
 # instance fields
-.field private ee:Landroid/hardware/usb/UsbManager;
+.field private eh:Landroid/hardware/usb/UsbManager;
 
-.field private ef:Landroid/preference/CheckBoxPreference;
+.field private ei:Landroid/preference/CheckBoxPreference;
 
-.field private eg:Landroid/preference/CheckBoxPreference;
+.field private ej:Landroid/preference/CheckBoxPreference;
 
-.field private eh:Landroid/preference/CheckBoxPreference;
+.field private ek:Landroid/preference/CheckBoxPreference;
 
-.field private ei:Z
+.field private el:Z
 
-.field private ej:Ljava/lang/String;
+.field private em:Ljava/lang/String;
 
-.field private ek:Ljava/lang/String;
+.field private en:Ljava/lang/String;
 
-.field private el:Ljava/lang/String;
+.field private eo:Ljava/lang/String;
 
-.field private final em:Landroid/content/BroadcastReceiver;
+.field private final ep:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
@@ -36,7 +36,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings$1;-><init>(Lcom/android/settings/deviceinfo/MiuiUsbSettings;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ep:Landroid/content/BroadcastReceiver;
 
     return-void
 .end method
@@ -47,7 +47,7 @@
 
     .prologue
     .line 18
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
     return-object v0
 .end method
@@ -59,12 +59,12 @@
 
     .prologue
     .line 18
-    invoke-direct {p0, p1}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->k(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private af()Landroid/preference/PreferenceScreen;
+.method private aj()Landroid/preference/PreferenceScreen;
     .locals 3
 
     .prologue
@@ -99,7 +99,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     .line 51
     const-string v0, "usb_ptp"
@@ -110,7 +110,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     .line 52
     const-string v0, "usb_msd"
@@ -121,7 +121,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     .line 54
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->getResources()Landroid/content/res/Resources;
@@ -134,7 +134,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Ljava/lang/String;
 
     .line 55
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->getResources()Landroid/content/res/Resources;
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->en:Ljava/lang/String;
 
     .line 56
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->getResources()Landroid/content/res/Resources;
@@ -160,7 +160,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eo:Ljava/lang/String;
 
     .line 58
     sget-boolean v0, Lmiui/os/Build;->IS_MITWO:Z
@@ -168,14 +168,14 @@
     if-eqz v0, :cond_1
 
     .line 59
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     const v2, 0x7f0b073d
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setTitle(I)V
 
     .line 60
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     const v2, 0x7f0b073e
 
@@ -203,26 +203,26 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Z
+    iput-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Z
 
     .line 64
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_3
 
-    iget-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Z
+    iget-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Z
 
     if-nez v0, :cond_3
 
     .line 65
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 66
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     .line 69
     :cond_3
@@ -235,15 +235,15 @@
     goto :goto_0
 .end method
 
-.method private j(Ljava/lang/String;)V
+.method private k(Ljava/lang/String;)V
     .locals 2
     .parameter
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -252,9 +252,9 @@
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 99
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->en:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -263,14 +263,14 @@
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 100
-    iget-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Z
+    iget-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Z
 
     if-eqz v0, :cond_0
 
     .line 101
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eo:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -302,7 +302,7 @@
 
     check-cast v0, Landroid/hardware/usb/UsbManager;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
     .line 76
     return-void
@@ -320,7 +320,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ep:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
@@ -337,7 +337,7 @@
     const/4 v1, 0x1
 
     .line 110
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v0
 
@@ -372,21 +372,21 @@
 
     .line 121
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_3
 
     .line 122
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/hardware/usb/UsbManager;->setCurrentFunction(Ljava/lang/String;Z)V
 
     .line 123
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->k(Ljava/lang/String;)V
 
     .line 131
     :cond_2
@@ -399,45 +399,45 @@
 
     .line 124
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_4
 
     .line 125
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->en:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/hardware/usb/UsbManager;->setCurrentFunction(Ljava/lang/String;Z)V
 
     .line 126
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->en:Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->k(Ljava/lang/String;)V
 
     goto :goto_1
 
     .line 127
     :cond_4
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ek:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_2
 
-    iget-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ei:Z
+    iget-boolean v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Z
 
     if-eqz v0, :cond_2
 
     .line 128
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eo:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/hardware/usb/UsbManager;->setCurrentFunction(Ljava/lang/String;Z)V
 
     .line 129
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->el:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->eo:Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->k(Ljava/lang/String;)V
 
     goto :goto_1
 .end method
@@ -450,14 +450,14 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 90
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->af()Landroid/preference/PreferenceScreen;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->aj()Landroid/preference/PreferenceScreen;
 
     .line 93
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->em:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiUsbSettings;->ep:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Landroid/content/IntentFilter;
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private Ci:Ljava/lang/ref/WeakReference;
+.field private Cm:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
@@ -21,7 +21,7 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/Status$MyHandler;->Ci:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/Status$MyHandler;->Cm:Ljava/lang/ref/WeakReference;
 
     .line 136
     return-void
@@ -35,7 +35,7 @@
 
     .prologue
     .line 140
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/Status$MyHandler;->Ci:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/Status$MyHandler;->Cm:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -60,7 +60,7 @@
 
     .line 147
     :sswitch_0
-    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/Status;->cq()V
+    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/Status;->cu()V
 
     goto :goto_0
 
@@ -81,7 +81,7 @@
 
     .line 156
     :sswitch_2
-    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/Status;->fv()V
+    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/Status;->fz()V
 
     .line 157
     const/16 v0, 0x1f4

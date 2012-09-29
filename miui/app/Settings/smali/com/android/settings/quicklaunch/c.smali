@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final synthetic IA:Ljava/util/ArrayList;
+.field final synthetic IC:Ljava/util/ArrayList;
 
-.field final synthetic IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+.field final synthetic ID:Ljava/util/ArrayList;
 
-.field final synthetic Iz:Ljava/util/ArrayList;
+.field final synthetic IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
 
 # direct methods
@@ -23,11 +23,11 @@
 
     .prologue
     .line 179
-    iput-object p1, p0, Lcom/android/settings/quicklaunch/c;->IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+    iput-object p1, p0, Lcom/android/settings/quicklaunch/c;->IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
-    iput-object p2, p0, Lcom/android/settings/quicklaunch/c;->Iz:Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/android/settings/quicklaunch/c;->IC:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lcom/android/settings/quicklaunch/c;->IA:Ljava/util/ArrayList;
+    iput-object p3, p0, Lcom/android/settings/quicklaunch/c;->ID:Ljava/util/ArrayList;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,11 +41,11 @@
 
     .prologue
     .line 185
-    iget-object v0, p0, Lcom/android/settings/quicklaunch/c;->IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+    iget-object v0, p0, Lcom/android/settings/quicklaunch/c;->IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/c;->IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/c;->IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
-    iget-object v2, p0, Lcom/android/settings/quicklaunch/c;->Iz:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/settings/quicklaunch/c;->IC:Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Lcom/android/settings/quicklaunch/BookmarkPicker;->b(Lcom/android/settings/quicklaunch/BookmarkPicker;Ljava/util/List;)Landroid/widget/SimpleAdapter;
 
@@ -54,16 +54,16 @@
     invoke-static {v0, v1}, Lcom/android/settings/quicklaunch/BookmarkPicker;->a(Lcom/android/settings/quicklaunch/BookmarkPicker;Landroid/widget/SimpleAdapter;)Landroid/widget/SimpleAdapter;
 
     .line 186
-    iget-object v0, p0, Lcom/android/settings/quicklaunch/c;->IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+    iget-object v0, p0, Lcom/android/settings/quicklaunch/c;->IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/c;->IA:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/c;->ID:Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Lcom/android/settings/quicklaunch/BookmarkPicker;->c(Lcom/android/settings/quicklaunch/BookmarkPicker;Ljava/util/List;)Ljava/util/List;
 
     .line 187
-    iget-object v0, p0, Lcom/android/settings/quicklaunch/c;->IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+    iget-object v0, p0, Lcom/android/settings/quicklaunch/c;->IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/c;->IB:Lcom/android/settings/quicklaunch/BookmarkPicker;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/c;->IE:Lcom/android/settings/quicklaunch/BookmarkPicker;
 
     invoke-static {v1}, Lcom/android/settings/quicklaunch/BookmarkPicker;->a(Lcom/android/settings/quicklaunch/BookmarkPicker;)Landroid/widget/SimpleAdapter;
 

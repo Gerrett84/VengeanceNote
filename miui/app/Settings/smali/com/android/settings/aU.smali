@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field dC:Ljava/lang/String;
+.field dF:Ljava/lang/String;
 
-.field nA:Ljava/lang/Long;
+.field nC:Ljava/lang/String;
 
-.field nz:Ljava/lang/String;
+.field nD:Ljava/lang/Long;
 
-.field final synthetic qc:Lcom/android/settings/H;
+.field final synthetic qf:Lcom/android/settings/H;
 
 
 # direct methods
@@ -23,18 +23,18 @@
 
     .prologue
     .line 25
-    iput-object p1, p0, Lcom/android/settings/aU;->qc:Lcom/android/settings/H;
+    iput-object p1, p0, Lcom/android/settings/aU;->qf:Lcom/android/settings/H;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
-    iput-object p2, p0, Lcom/android/settings/aU;->dC:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/settings/aU;->dF:Ljava/lang/String;
 
     .line 27
-    iput-object p3, p0, Lcom/android/settings/aU;->nz:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/settings/aU;->nC:Ljava/lang/String;
 
     .line 28
-    iput-object p4, p0, Lcom/android/settings/aU;->nA:Ljava/lang/Long;
+    iput-object p4, p0, Lcom/android/settings/aU;->nD:Ljava/lang/Long;
 
     .line 29
     return-void

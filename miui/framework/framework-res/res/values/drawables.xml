@@ -31,5 +31,5 @@
     <item type="drawable" name="screen_background_holo_dark">#ff000000</item>
     <drawable name="notification_template_icon_bg">@drawable/notify_panel_notification_icon_bg_tile</drawable>
     <drawable name="notification_template_icon_low_bg">@drawable/notify_panel_notification_icon_bg_tile</drawable>
-    <item type="drawable" name="APKTOOL_DUMMY_057f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0580">false</item>
 </resources>

@@ -7,7 +7,7 @@
 
 
 # static fields
-.field static final Ox:Lcom/google/common/base/Equivalences$Identity; = null
+.field static final OA:Lcom/google/common/base/Equivalences$Identity; = null
 
 .field private static final serialVersionUID:J = 0x1L
 
@@ -22,7 +22,7 @@
 
     invoke-direct {v0}, Lcom/google/common/base/Equivalences$Identity;-><init>()V
 
-    sput-object v0, Lcom/google/common/base/Equivalences$Identity;->Ox:Lcom/google/common/base/Equivalences$Identity;
+    sput-object v0, Lcom/google/common/base/Equivalences$Identity;->OA:Lcom/google/common/base/Equivalences$Identity;
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 
     .prologue
     .line 93
-    sget-object v0, Lcom/google/common/base/Equivalences$Identity;->Ox:Lcom/google/common/base/Equivalences$Identity;
+    sget-object v0, Lcom/google/common/base/Equivalences$Identity;->OA:Lcom/google/common/base/Equivalences$Identity;
 
     return-object v0
 .end method

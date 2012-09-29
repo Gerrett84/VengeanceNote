@@ -41,7 +41,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeperConfirm$Blank;->setContentView(I)V
 
     .line 46
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v0
 

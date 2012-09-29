@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aL:Lcom/android/settings/VirusScanAppActivity;
+.field final synthetic aO:Lcom/android/settings/VirusScanAppActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 150
-    iput-object p1, p0, Lcom/android/settings/o;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iput-object p1, p0, Lcom/android/settings/o;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,11 +32,11 @@
 
     .prologue
     .line 153
-    iget-object v0, p0, Lcom/android/settings/o;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/o;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OG:Lcom/android/settings/dC;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OJ:Lcom/android/settings/dC;
 
-    invoke-virtual {v0}, Lcom/android/settings/dC;->fn()V
+    invoke-virtual {v0}, Lcom/android/settings/dC;->fr()V
 
     .line 154
     return-void

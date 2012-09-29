@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final JH:Ljava/util/List;
+.field private final JK:Ljava/util/List;
 
 .field private final mInflater:Landroid/view/LayoutInflater;
 
@@ -31,7 +31,7 @@
     iput-object v0, p0, Lcom/android/settings/du;->mInflater:Landroid/view/LayoutInflater;
 
     .line 275
-    iput-object p2, p0, Lcom/android/settings/du;->JH:Ljava/util/List;
+    iput-object p2, p0, Lcom/android/settings/du;->JK:Ljava/util/List;
 
     .line 276
     return-void
@@ -44,7 +44,7 @@
 
     .prologue
     .line 282
-    iget-object v0, p0, Lcom/android/settings/du;->JH:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/du;->JK:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -59,7 +59,7 @@
 
     .prologue
     .line 289
-    iget-object v0, p0, Lcom/android/settings/du;->JH:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/du;->JK:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

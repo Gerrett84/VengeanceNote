@@ -7,17 +7,27 @@
 
 
 # instance fields
-.field final synthetic cx:Lcom/android/settings/wifi/WifiSettings;
+.field final synthetic cA:Lcom/android/settings/wifi/WifiSettings;
+
+.field final synthetic va:Landroid/view/LayoutInflater;
+
+.field final synthetic vb:Landroid/widget/ImageButton;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/wifi/WifiSettings;)V
+.method constructor <init>(Lcom/android/settings/wifi/WifiSettings;Landroid/view/LayoutInflater;Landroid/widget/ImageButton;)V
     .locals 0
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 218
-    iput-object p1, p0, Lcom/android/settings/wifi/B;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 228
+    iput-object p1, p0, Lcom/android/settings/wifi/B;->cA:Lcom/android/settings/wifi/WifiSettings;
+
+    iput-object p2, p0, Lcom/android/settings/wifi/B;->va:Landroid/view/LayoutInflater;
+
+    iput-object p3, p0, Lcom/android/settings/wifi/B;->vb:Landroid/widget/ImageButton;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,14 +37,14 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 3
     .parameter
 
     .prologue
-    .line 221
-    iget-object v0, p0, Lcom/android/settings/wifi/B;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 231
+    iget-object v0, p0, Lcom/android/settings/wifi/B;->cA:Lcom/android/settings/wifi/WifiSettings;
 
-    iget-object v0, v0, Lcom/android/settings/wifi/WifiSettings;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, v0, Lcom/android/settings/wifi/WifiSettings;->b:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
 
@@ -42,12 +52,35 @@
 
     if-eqz v0, :cond_0
 
-    .line 222
-    iget-object v0, p0, Lcom/android/settings/wifi/B;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 232
+    new-instance v0, Landroid/widget/PopupMenu;
 
-    invoke-virtual {v0}, Lcom/android/settings/wifi/WifiSettings;->lp()V
+    iget-object v1, p0, Lcom/android/settings/wifi/B;->va:Landroid/view/LayoutInflater;
 
-    .line 224
+    invoke-virtual {v1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/settings/wifi/B;->vb:Landroid/widget/ImageButton;
+
+    invoke-direct {v0, v1, v2}, Landroid/widget/PopupMenu;-><init>(Landroid/content/Context;Landroid/view/View;)V
+
+    .line 233
+    const v1, 0x7f100004
+
+    invoke-virtual {v0, v1}, Landroid/widget/PopupMenu;->inflate(I)V
+
+    .line 234
+    new-instance v1, Lcom/android/settings/wifi/r;
+
+    invoke-direct {v1, p0}, Lcom/android/settings/wifi/r;-><init>(Lcom/android/settings/wifi/B;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/PopupMenu;->setOnMenuItemClickListener(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V
+
+    .line 244
+    invoke-virtual {v0}, Landroid/widget/PopupMenu;->show()V
+
+    .line 246
     :cond_0
     return-void
 .end method

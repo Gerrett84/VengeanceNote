@@ -7,15 +7,15 @@
 
 
 # static fields
-.field private static final uv:I
+.field private static final uz:I
 
 
 # instance fields
-.field private aZ:Landroid/widget/CheckBox;
+.field private bc:Landroid/widget/CheckBox;
 
-.field private ut:Landroid/widget/TextView;
+.field private ux:Landroid/widget/TextView;
 
-.field private uu:Landroid/widget/TextView;
+.field private uy:Landroid/widget/TextView;
 
 
 # direct methods
@@ -38,7 +38,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    sput v0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uv:I
+    sput v0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uz:I
 
     return-void
 .end method
@@ -88,13 +88,13 @@
 
 
 # virtual methods
-.method public H(Ljava/lang/String;)V
+.method public I(Ljava/lang/String;)V
     .locals 1
     .parameter
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uu:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uy:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -102,12 +102,12 @@
     return-void
 .end method
 
-.method public fE()Landroid/widget/CheckBox;
+.method public fI()Landroid/widget/CheckBox;
     .locals 1
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->aZ:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->bc:Landroid/widget/CheckBox;
 
     return-object v0
 .end method
@@ -117,7 +117,7 @@
 
     .prologue
     .line 63
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->aZ:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->bc:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 
@@ -142,7 +142,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->ut:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->ux:Landroid/widget/TextView;
 
     .line 49
     const v0, 0x7f080138
@@ -153,7 +153,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uu:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uy:Landroid/widget/TextView;
 
     .line 50
     const v0, 0x7f080136
@@ -164,7 +164,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->aZ:Landroid/widget/CheckBox;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->bc:Landroid/widget/CheckBox;
 
     .line 51
     return-void
@@ -176,7 +176,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->aZ:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->bc:Landroid/widget/CheckBox;
 
     invoke-virtual {v0, p1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
@@ -190,9 +190,9 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->ut:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->ux:Landroid/widget/TextView;
 
-    sget v1, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uv:I
+    sget v1, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->uz:I
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -209,7 +209,7 @@
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->aZ:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/FileItemInfoLayout;->bc:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 

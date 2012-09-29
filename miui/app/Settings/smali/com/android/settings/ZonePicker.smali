@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field private cA:Landroid/widget/SimpleAdapter;
+.field private cB:Z
 
-.field private cB:Lcom/android/settings/ad;
+.field private cC:Landroid/widget/SimpleAdapter;
 
-.field private cy:Z
+.field private cD:Landroid/widget/SimpleAdapter;
 
-.field private cz:Landroid/widget/SimpleAdapter;
+.field private cE:Lcom/android/settings/ad;
 
 
 # direct methods
@@ -510,14 +510,14 @@
     .line 199
     if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/ZonePicker;->cz:Landroid/widget/SimpleAdapter;
+    iget-object v0, p0, Lcom/android/settings/ZonePicker;->cC:Landroid/widget/SimpleAdapter;
 
     .line 201
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/settings/ZonePicker;->setListAdapter(Landroid/widget/ListAdapter;)V
 
     .line 202
-    iput-boolean p1, p0, Lcom/android/settings/ZonePicker;->cy:Z
+    iput-boolean p1, p0, Lcom/android/settings/ZonePicker;->cB:Z
 
     .line 203
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
@@ -540,7 +540,7 @@
 
     .line 199
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/ZonePicker;->cA:Landroid/widget/SimpleAdapter;
+    iget-object v0, p0, Lcom/android/settings/ZonePicker;->cD:Landroid/widget/SimpleAdapter;
 
     goto :goto_0
 .end method
@@ -569,14 +569,14 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/ZonePicker;->cz:Landroid/widget/SimpleAdapter;
+    iput-object v1, p0, Lcom/android/settings/ZonePicker;->cC:Landroid/widget/SimpleAdapter;
 
     .line 150
     invoke-static {v0, v2}, Lcom/android/settings/ZonePicker;->b(Landroid/content/Context;Z)Landroid/widget/SimpleAdapter;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ZonePicker;->cA:Landroid/widget/SimpleAdapter;
+    iput-object v0, p0, Lcom/android/settings/ZonePicker;->cD:Landroid/widget/SimpleAdapter;
 
     .line 153
     invoke-direct {p0, v2}, Lcom/android/settings/ZonePicker;->d(Z)V
@@ -676,12 +676,12 @@
     move-result-object v0
 
     .line 288
-    iget-object v1, p0, Lcom/android/settings/ZonePicker;->cB:Lcom/android/settings/ad;
+    iget-object v1, p0, Lcom/android/settings/ZonePicker;->cE:Lcom/android/settings/ad;
 
     if-eqz v1, :cond_0
 
     .line 289
-    iget-object v1, p0, Lcom/android/settings/ZonePicker;->cB:Lcom/android/settings/ad;
+    iget-object v1, p0, Lcom/android/settings/ZonePicker;->cE:Lcom/android/settings/ad;
 
     invoke-interface {v1, v0}, Lcom/android/settings/ad;->a(Ljava/util/TimeZone;)V
 
@@ -756,7 +756,7 @@
     const/4 v1, 0x1
 
     .line 168
-    iget-boolean v0, p0, Lcom/android/settings/ZonePicker;->cy:Z
+    iget-boolean v0, p0, Lcom/android/settings/ZonePicker;->cB:Z
 
     if-eqz v0, :cond_0
 

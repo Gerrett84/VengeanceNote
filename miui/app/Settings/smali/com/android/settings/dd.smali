@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic eG:Lcom/android/settings/VirusScanActivity;
+.field final synthetic eJ:Lcom/android/settings/VirusScanActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 158
-    iput-object p1, p0, Lcom/android/settings/dd;->eG:Lcom/android/settings/VirusScanActivity;
+    iput-object p1, p0, Lcom/android/settings/dd;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -71,12 +71,12 @@
     .line 179
     new-instance v1, Lcom/android/settings/cg;
 
-    iget-object v0, p0, Lcom/android/settings/dd;->eG:Lcom/android/settings/VirusScanActivity;
+    iget-object v0, p0, Lcom/android/settings/dd;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-direct {v1, v0, v3}, Lcom/android/settings/cg;-><init>(Lcom/android/settings/VirusScanActivity;Lcom/android/settings/de;)V
 
     .line 180
-    iget-object v0, p0, Lcom/android/settings/dd;->eG:Lcom/android/settings/VirusScanActivity;
+    iget-object v0, p0, Lcom/android/settings/dd;->eJ:Lcom/android/settings/VirusScanActivity;
 
     const-string v2, "layout_inflater"
 
@@ -102,7 +102,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, v1, Lcom/android/settings/cg;->BQ:Landroid/widget/ImageView;
+    iput-object v0, v1, Lcom/android/settings/cg;->BU:Landroid/widget/ImageView;
 
     .line 183
     const v0, 0x7f080174
@@ -113,7 +113,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v1, Lcom/android/settings/cg;->BR:Landroid/widget/TextView;
+    iput-object v0, v1, Lcom/android/settings/cg;->BV:Landroid/widget/TextView;
 
     .line 184
     const v0, 0x7f080175
@@ -124,7 +124,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, v1, Lcom/android/settings/cg;->BS:Landroid/widget/CheckBox;
+    iput-object v0, v1, Lcom/android/settings/cg;->BW:Landroid/widget/CheckBox;
 
     .line 185
     invoke-virtual {p2, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V

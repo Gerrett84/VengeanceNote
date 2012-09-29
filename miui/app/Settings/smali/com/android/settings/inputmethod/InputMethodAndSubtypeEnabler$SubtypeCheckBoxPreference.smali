@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final cb:Z
+.field private final ce:Z
 
-.field private final cc:Z
+.field private final cf:Z
 
 
 # direct methods
@@ -30,10 +30,10 @@
     if-eqz v1, :cond_0
 
     .line 381
-    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cb:Z
+    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->ce:Z
 
     .line 382
-    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cc:Z
+    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cf:Z
 
     .line 388
     :goto_0
@@ -45,10 +45,10 @@
 
     move-result v1
 
-    iput-boolean v1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cb:Z
+    iput-boolean v1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->ce:Z
 
     .line 385
-    iget-boolean v1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cb:Z
+    iget-boolean v1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->ce:Z
 
     if-nez v1, :cond_1
 
@@ -68,7 +68,7 @@
     const/4 v0, 0x1
 
     :cond_2
-    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cc:Z
+    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cf:Z
 
     goto :goto_0
 .end method
@@ -119,12 +119,12 @@
 
     .line 399
     :cond_1
-    iget-boolean v4, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cb:Z
+    iget-boolean v4, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->ce:Z
 
     if-nez v4, :cond_0
 
     .line 402
-    iget-boolean v4, p1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cb:Z
+    iget-boolean v4, p1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->ce:Z
 
     if-eqz v4, :cond_2
 
@@ -135,12 +135,12 @@
 
     .line 405
     :cond_2
-    iget-boolean v4, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cc:Z
+    iget-boolean v4, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cf:Z
 
     if-nez v4, :cond_0
 
     .line 408
-    iget-boolean v4, p1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cc:Z
+    iget-boolean v4, p1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$SubtypeCheckBoxPreference;->cf:Z
 
     if-eqz v4, :cond_3
 

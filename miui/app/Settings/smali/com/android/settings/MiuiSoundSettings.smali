@@ -6,21 +6,21 @@
 # instance fields
 .field private mAudioManager:Landroid/media/AudioManager;
 
-.field private rn:Lcom/android/settings/SmsRingtonePreference;
+.field private rq:Lcom/android/settings/SmsRingtonePreference;
 
-.field private ro:Lcom/android/settings/SmsRingtonePreference;
+.field private rr:Lcom/android/settings/SmsRingtonePreference;
 
-.field private rp:Landroid/preference/CheckBoxPreference;
+.field private rs:Landroid/preference/CheckBoxPreference;
 
-.field private rq:Landroid/preference/CheckBoxPreference;
+.field private rt:Landroid/preference/CheckBoxPreference;
 
-.field private rr:Landroid/preference/CheckBoxPreference;
+.field private ru:Landroid/preference/CheckBoxPreference;
 
-.field private final rs:Landroid/content/BroadcastReceiver;
+.field private final rv:Landroid/content/BroadcastReceiver;
 
-.field private final rt:Landroid/os/Handler;
+.field private final rw:Landroid/os/Handler;
 
-.field private final ru:Landroid/database/ContentObserver;
+.field private final rx:Landroid/database/ContentObserver;
 
 
 # direct methods
@@ -36,23 +36,23 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/cQ;-><init>(Lcom/android/settings/MiuiSoundSettings;)V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rs:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rv:Landroid/content/BroadcastReceiver;
 
     .line 180
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rw:Landroid/os/Handler;
 
     .line 181
     new-instance v0, Lcom/android/settings/cP;
 
-    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rw:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/cP;-><init>(Lcom/android/settings/MiuiSoundSettings;Landroid/os/Handler;)V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/database/ContentObserver;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rx:Landroid/database/ContentObserver;
 
     return-void
 .end method
@@ -72,14 +72,14 @@
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 131
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
     .line 132
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
-    iget-object v1, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 
@@ -91,7 +91,7 @@
     return-void
 .end method
 
-.method private eL()I
+.method private eP()I
     .locals 3
 
     .prologue
@@ -142,7 +142,7 @@
 
     .line 59
     :pswitch_0
-    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rn:Lcom/android/settings/SmsRingtonePreference;
+    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Lcom/android/settings/SmsRingtonePreference;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -154,7 +154,7 @@
 
     .line 62
     :pswitch_1
-    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->ro:Lcom/android/settings/SmsRingtonePreference;
+    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Lcom/android/settings/SmsRingtonePreference;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -172,12 +172,12 @@
     .end packed-switch
 .end method
 
-.method protected an()V
+.method protected ar()V
     .locals 2
 
     .prologue
     .line 116
-    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rn:Lcom/android/settings/SmsRingtonePreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Lcom/android/settings/SmsRingtonePreference;
 
     if-eqz v0, :cond_0
 
@@ -198,7 +198,7 @@
 
     .line 121
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->ro:Lcom/android/settings/SmsRingtonePreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Lcom/android/settings/SmsRingtonePreference;
 
     if-eqz v0, :cond_1
 
@@ -222,7 +222,7 @@
     return-void
 .end method
 
-.method eM()V
+.method eQ()V
     .locals 7
 
     .prologue
@@ -240,7 +240,7 @@
     move-result v3
 
     .line 193
-    iget-object v4, p0, Lcom/android/settings/MiuiSoundSettings;->rp:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/MiuiSoundSettings;->rs:Landroid/preference/CheckBoxPreference;
 
     if-eq v3, v6, :cond_0
 
@@ -253,7 +253,7 @@
     if-ne v3, v6, :cond_2
 
     .line 196
-    iget-object v4, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/MiuiSoundSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -277,7 +277,7 @@
     if-eq v3, v6, :cond_5
 
     .line 206
-    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/MiuiSoundSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -312,7 +312,7 @@
 
     .line 202
     :cond_2
-    iget-object v4, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/preference/CheckBoxPreference;
 
     if-ne v3, v1, :cond_3
 
@@ -336,7 +336,7 @@
 
     .line 212
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/MiuiSoundSettings;->getActivity()Landroid/app/Activity;
 
@@ -360,28 +360,28 @@
     invoke-super {p0, p1}, Lcom/android/settings/SoundSettings;->onCreate(Landroid/os/Bundle;)V
 
     .line 71
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
     if-eqz v0, :cond_0
 
     .line 72
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     .line 73
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
-    invoke-direct {p0}, Lcom/android/settings/MiuiSoundSettings;->eL()I
+    invoke-direct {p0}, Lcom/android/settings/MiuiSoundSettings;->eP()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
     .line 74
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
-    iget-object v1, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 
@@ -399,7 +399,7 @@
 
     check-cast v0, Lcom/android/settings/SmsRingtonePreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rn:Lcom/android/settings/SmsRingtonePreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Lcom/android/settings/SmsRingtonePreference;
 
     .line 78
     const-string v0, "sms_delivered_sound"
@@ -410,7 +410,7 @@
 
     check-cast v0, Lcom/android/settings/SmsRingtonePreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->ro:Lcom/android/settings/SmsRingtonePreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Lcom/android/settings/SmsRingtonePreference;
 
     .line 80
     const-string v0, "audio"
@@ -432,7 +432,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rp:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rs:Landroid/preference/CheckBoxPreference;
 
     .line 82
     const-string v0, "miui_vibrate_in_silent_key"
@@ -443,7 +443,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/preference/CheckBoxPreference;
 
     .line 83
     const-string v0, "miui_vibrate_in_normal_key"
@@ -454,7 +454,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/preference/CheckBoxPreference;
 
     .line 84
     sget-boolean v0, Lmiui/os/Build;->IS_MITWO:Z
@@ -492,7 +492,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/database/ContentObserver;
+    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rx:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
@@ -501,7 +501,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rs:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Lcom/android/settings/MiuiSoundSettings;->rv:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
@@ -522,7 +522,7 @@
     invoke-super {p0, p1, p2}, Lcom/android/settings/SoundSettings;->onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
 
     .line 147
-    iget-object v0, p0, Lcom/android/settings/SoundSettings;->fq:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/SoundSettings;->ft:Landroid/preference/ListPreference;
 
     if-ne p1, v0, :cond_0
 
@@ -553,7 +553,7 @@
     const/4 v1, 0x0
 
     .line 155
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rp:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rs:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v2, :cond_1
 
@@ -575,12 +575,12 @@
 
     .line 157
     :cond_1
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v2, :cond_3
 
     .line 158
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rr:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -621,12 +621,12 @@
 
     .line 161
     :cond_3
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v2, :cond_0
 
     .line 162
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rq:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rt:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -687,7 +687,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rs:Landroid/content/BroadcastReceiver;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rv:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -703,7 +703,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/database/ContentObserver;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rx:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
@@ -714,12 +714,12 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->ru:Landroid/database/ContentObserver;
+    iget-object v2, p0, Lcom/android/settings/MiuiSoundSettings;->rx:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     .line 104
-    invoke-virtual {p0}, Lcom/android/settings/MiuiSoundSettings;->eM()V
+    invoke-virtual {p0}, Lcom/android/settings/MiuiSoundSettings;->eQ()V
 
     .line 105
     return-void

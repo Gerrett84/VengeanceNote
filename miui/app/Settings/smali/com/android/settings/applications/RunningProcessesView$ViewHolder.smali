@@ -6,15 +6,15 @@
 # instance fields
 .field public icon:Landroid/widget/ImageView;
 
-.field public oi:Landroid/view/View;
-
-.field public oj:Landroid/widget/TextView;
-
-.field public ok:Landroid/widget/TextView;
-
-.field public ol:Landroid/widget/TextView;
+.field public ol:Landroid/view/View;
 
 .field public om:Landroid/widget/TextView;
+
+.field public on:Landroid/widget/TextView;
+
+.field public oo:Landroid/widget/TextView;
+
+.field public op:Landroid/widget/TextView;
 
 
 # direct methods
@@ -27,7 +27,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 156
-    iput-object p1, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oi:Landroid/view/View;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/view/View;
 
     .line 157
     const v0, 0x7f080019
@@ -49,7 +49,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oj:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->om:Landroid/widget/TextView;
 
     .line 159
     const v0, 0x7f08006d
@@ -60,7 +60,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ok:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->on:Landroid/widget/TextView;
 
     .line 160
     const v0, 0x7f080126
@@ -71,7 +71,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oo:Landroid/widget/TextView;
 
     .line 161
     const v0, 0x7f080011
@@ -82,7 +82,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->om:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->op:Landroid/widget/TextView;
 
     .line 162
     invoke-virtual {p1, p0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
@@ -107,7 +107,7 @@
 
     .line 168
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oi:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -118,7 +118,7 @@
     move-result-object v3
 
     .line 169
-    iget-object v1, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iget-object v1, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     if-nez v1, :cond_0
 
@@ -133,7 +133,7 @@
 
     move-object v1, v0
 
-    iget-object v1, v1, Lcom/android/settings/applications/RunningState$MergedItem;->PG:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iget-object v1, v1, Lcom/android/settings/applications/RunningState$MergedItem;->PJ:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     invoke-virtual {v1, v3}, Lcom/android/settings/applications/RunningState$ProcessItem;->a(Landroid/content/pm/PackageManager;)V
 
@@ -144,11 +144,11 @@
 
     move-object v1, v0
 
-    iget-object v1, v1, Lcom/android/settings/applications/RunningState$MergedItem;->PG:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iget-object v1, v1, Lcom/android/settings/applications/RunningState$MergedItem;->PJ:Lcom/android/settings/applications/RunningState$ProcessItem;
 
-    iget-object v1, v1, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
-    iput-object v1, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v1, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     .line 174
     move-object v0, p2
@@ -157,17 +157,17 @@
 
     move-object v1, v0
 
-    iget-object v1, v1, Lcom/android/settings/applications/RunningState$MergedItem;->PG:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iget-object v1, v1, Lcom/android/settings/applications/RunningState$MergedItem;->PJ:Lcom/android/settings/applications/RunningState$ProcessItem;
 
-    iget-object v1, v1, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v1, v1, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
-    iput-object v1, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v1, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 176
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oj:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->om:Landroid/widget/TextView;
 
-    iget-object v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -177,30 +177,30 @@
     invoke-direct {v1}, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;-><init>()V
 
     .line 178
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oi:Landroid/view/View;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/view/View;
 
     iput-object v4, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->mRootView:Landroid/view/View;
 
     .line 179
-    iput-object p2, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iput-object p2, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
     .line 180
-    iput-object p0, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gv:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
+    iput-object p0, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gy:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
 
     .line 181
-    iget-wide v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->cN:J
+    iget-wide v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->cQ:J
 
-    iput-wide v4, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gw:J
+    iput-wide v4, v1, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gz:J
 
     .line 182
-    iget-boolean v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Ix:Z
+    iget-boolean v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->IA:Z
 
     if-eqz v4, :cond_2
 
     .line 183
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ok:Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->on:Landroid/widget/TextView;
 
-    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oi:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -218,17 +218,17 @@
     :goto_0
     const/4 v4, 0x0
 
-    iput-object v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/String;
+    iput-object v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iy:Ljava/lang/String;
 
     .line 188
-    iget-object v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iget-object v4, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     if-eqz v4, :cond_1
 
     .line 189
     iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->icon:Landroid/widget/ImageView;
 
-    iget-object v5, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iget-object v5, p2, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     invoke-virtual {v5, v3}, Landroid/content/pm/PackageItemInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -245,7 +245,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 192
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oi:Landroid/view/View;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -260,9 +260,9 @@
 
     .line 185
     :cond_2
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ok:Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->on:Landroid/widget/TextView;
 
-    iget-object v5, p2, Lcom/android/settings/applications/RunningState$BaseItem;->BU:Ljava/lang/String;
+    iget-object v5, p2, Lcom/android/settings/applications/RunningState$BaseItem;->BY:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field Og:Lmiui/widget/SlidingButton;
+.field Oj:Lmiui/widget/SlidingButton;
 
 .field icon:Landroid/widget/ImageView;
 

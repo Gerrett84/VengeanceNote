@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Ks:Lcom/android/settings/users/UserDetailsSettings;
+.field final synthetic Kv:Lcom/android/settings/users/UserDetailsSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 274
-    iput-object p1, p0, Lcom/android/settings/users/UserDetailsSettings$1;->Ks:Lcom/android/settings/users/UserDetailsSettings;
+    iput-object p1, p0, Lcom/android/settings/users/UserDetailsSettings$1;->Kv:Lcom/android/settings/users/UserDetailsSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 276
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings$1;->Ks:Lcom/android/settings/users/UserDetailsSettings;
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings$1;->Kv:Lcom/android/settings/users/UserDetailsSettings;
 
     invoke-static {v0}, Lcom/android/settings/users/UserDetailsSettings;->a(Lcom/android/settings/users/UserDetailsSettings;)V
 

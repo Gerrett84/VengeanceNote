@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+.field final synthetic fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 353
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DockEventHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DockEventHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -70,7 +70,7 @@
     if-ne v0, v1, :cond_0
 
     .line 360
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DockEventHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$DockEventHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothEventManager;->d(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 

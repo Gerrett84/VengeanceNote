@@ -7,15 +7,15 @@
 
 
 # static fields
-.field private static final fB:I
+.field private static final fE:I
 
 
 # instance fields
-.field private fC:J
+.field private fF:J
 
-.field private fD:J
+.field private fG:J
 
-.field private fE:F
+.field private fH:F
 
 
 # direct methods
@@ -34,7 +34,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    sput v0, Lcom/android/settings/widget/c;->fB:I
+    sput v0, Lcom/android/settings/widget/c;->fE:I
 
     return-void
 .end method
@@ -70,9 +70,9 @@
 
     .prologue
     .line 496
-    iget v0, p0, Lcom/android/settings/widget/c;->fE:F
+    iget v0, p0, Lcom/android/settings/widget/c;->fH:F
 
-    iget-wide v1, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v1, p0, Lcom/android/settings/widget/c;->fF:J
 
     sub-long v1, p1, v1
 
@@ -80,9 +80,9 @@
 
     mul-float/2addr v0, v1
 
-    iget-wide v1, p0, Lcom/android/settings/widget/c;->fD:J
+    iget-wide v1, p0, Lcom/android/settings/widget/c;->fG:J
 
-    iget-wide v3, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v3, p0, Lcom/android/settings/widget/c;->fF:J
 
     sub-long/2addr v1, v3
 
@@ -123,14 +123,14 @@
 
     .prologue
     .line 486
-    iget v0, p0, Lcom/android/settings/widget/c;->fE:F
+    iget v0, p0, Lcom/android/settings/widget/c;->fH:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
     .line 487
-    iput p1, p0, Lcom/android/settings/widget/c;->fE:F
+    iput p1, p0, Lcom/android/settings/widget/c;->fH:F
 
     .line 488
     const/4 v0, 0x1
@@ -152,13 +152,13 @@
 
     .prologue
     .line 475
-    iget-wide v0, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v0, p0, Lcom/android/settings/widget/c;->fF:J
 
     cmp-long v0, v0, p1
 
     if-nez v0, :cond_0
 
-    iget-wide v0, p0, Lcom/android/settings/widget/c;->fD:J
+    iget-wide v0, p0, Lcom/android/settings/widget/c;->fG:J
 
     cmp-long v0, v0, p3
 
@@ -166,10 +166,10 @@
 
     .line 476
     :cond_0
-    iput-wide p1, p0, Lcom/android/settings/widget/c;->fC:J
+    iput-wide p1, p0, Lcom/android/settings/widget/c;->fF:J
 
     .line 477
-    iput-wide p3, p0, Lcom/android/settings/widget/c;->fD:J
+    iput-wide p3, p0, Lcom/android/settings/widget/c;->fG:J
 
     .line 478
     const/4 v0, 0x1
@@ -184,7 +184,7 @@
     goto :goto_0
 .end method
 
-.method public aa()[F
+.method public ae()[F
     .locals 9
 
     .prologue
@@ -203,7 +203,7 @@
     invoke-direct {v5}, Landroid/text/format/Time;-><init>()V
 
     .line 518
-    iget-wide v0, p0, Lcom/android/settings/widget/c;->fD:J
+    iget-wide v0, p0, Lcom/android/settings/widget/c;->fG:J
 
     invoke-virtual {v5, v0, v1}, Landroid/text/format/Time;->set(J)V
 
@@ -212,7 +212,7 @@
 
     iget v1, v5, Landroid/text/format/Time;->weekDay:I
 
-    sget v3, Lcom/android/settings/widget/c;->fB:I
+    sget v3, Lcom/android/settings/widget/c;->fE:I
 
     sub-int/2addr v1, v3
 
@@ -237,14 +237,14 @@
 
     .line 524
     :goto_0
-    iget-wide v6, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v6, p0, Lcom/android/settings/widget/c;->fF:J
 
     cmp-long v3, v0, v6
 
     if-lez v3, :cond_1
 
     .line 525
-    iget-wide v6, p0, Lcom/android/settings/widget/c;->fD:J
+    iget-wide v6, p0, Lcom/android/settings/widget/c;->fG:J
 
     cmp-long v3, v0, v6
 
@@ -305,13 +305,13 @@
 
     .prologue
     .line 501
-    iget-wide v0, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v0, p0, Lcom/android/settings/widget/c;->fF:J
 
     long-to-float v0, v0
 
-    iget-wide v1, p0, Lcom/android/settings/widget/c;->fD:J
+    iget-wide v1, p0, Lcom/android/settings/widget/c;->fG:J
 
-    iget-wide v3, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v3, p0, Lcom/android/settings/widget/c;->fF:J
 
     sub-long/2addr v1, v3
 
@@ -319,7 +319,7 @@
 
     mul-float/2addr v1, p1
 
-    iget v2, p0, Lcom/android/settings/widget/c;->fE:F
+    iget v2, p0, Lcom/android/settings/widget/c;->fH:F
 
     div-float/2addr v1, v2
 
@@ -341,7 +341,7 @@
 
     const/4 v1, 0x0
 
-    iget-wide v2, p0, Lcom/android/settings/widget/c;->fC:J
+    iget-wide v2, p0, Lcom/android/settings/widget/c;->fF:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -351,7 +351,7 @@
 
     const/4 v1, 0x1
 
-    iget-wide v2, p0, Lcom/android/settings/widget/c;->fD:J
+    iget-wide v2, p0, Lcom/android/settings/widget/c;->fG:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -361,7 +361,7 @@
 
     const/4 v1, 0x2
 
-    iget v2, p0, Lcom/android/settings/widget/c;->fE:F
+    iget v2, p0, Lcom/android/settings/widget/c;->fH:F
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 

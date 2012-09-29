@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private ea:J
+.field private ed:J
 
-.field private final eb:Ljava/util/List;
+.field private final ee:Ljava/util/List;
 
-.field final synthetic ec:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
+.field final synthetic ef:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
 
 
 # direct methods
@@ -18,21 +18,21 @@
 
     .prologue
     .line 318
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ec:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ef:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageStatsObserver$Stub;-><init>()V
 
     .line 319
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     .line 320
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     return-void
 .end method
@@ -55,27 +55,27 @@
 
     .prologue
     .line 318
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public ae()[Ljava/lang/String;
+.method public ai()[Ljava/lang/String;
     .locals 3
 
     .prologue
     .line 359
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     monitor-enter v1
 
     .line 360
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -104,19 +104,19 @@
     throw v0
 .end method
 
-.method public i(Ljava/lang/String;)V
+.method public j(Ljava/lang/String;)V
     .locals 2
     .parameter
 
     .prologue
     .line 353
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     monitor-enter v1
 
     .line 354
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -144,7 +144,7 @@
 
     .prologue
     .line 323
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ec:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ef:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->a(Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;)Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
@@ -165,9 +165,9 @@
     if-eqz p2, :cond_1
 
     .line 329
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ec:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ef:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
 
-    iget-object v0, v0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, v0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->b(Lcom/android/settings/deviceinfo/StorageMeasurement;)Z
 
@@ -176,7 +176,7 @@
     if-eqz v0, :cond_2
 
     .line 330
-    iget-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iget-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     iget-wide v2, p1, Landroid/content/pm/PackageStats;->codeSize:J
 
@@ -186,25 +186,25 @@
 
     add-long/2addr v0, v2
 
-    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     .line 343
     :cond_1
     :goto_1
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     monitor-enter v1
 
     .line 344
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     iget-object v2, p1, Landroid/content/pm/PackageStats;->packageName:Ljava/lang/String;
 
     invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     .line 345
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->eb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ee:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -240,7 +240,7 @@
 
     .line 332
     :cond_3
-    iget-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iget-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     iget-wide v2, p1, Landroid/content/pm/PackageStats;->externalObbSize:J
 
@@ -262,13 +262,13 @@
 
     add-long/2addr v0, v2
 
-    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     goto :goto_1
 
     .line 336
     :cond_4
-    iget-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iget-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     iget-wide v2, p1, Landroid/content/pm/PackageStats;->codeSize:J
 
@@ -298,7 +298,7 @@
 
     add-long/2addr v0, v2
 
-    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iput-wide v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     goto :goto_1
 
@@ -310,16 +310,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 348
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ec:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ef:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
 
-    iget-object v0, v0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, v0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
-    iget-wide v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ea:J
+    iget-wide v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ed:J
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/deviceinfo/StorageMeasurement;->a(Lcom/android/settings/deviceinfo/StorageMeasurement;J)J
 
     .line 349
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ec:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ef:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->b(Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;)V
 

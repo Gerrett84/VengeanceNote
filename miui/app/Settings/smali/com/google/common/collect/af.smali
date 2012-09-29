@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method protected abstract a()Ljava/lang/Object;
+.method protected abstract e()Ljava/lang/Object;
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -24,7 +24,7 @@
 
     .prologue
     .line 72
-    invoke-virtual {p0}, Lcom/google/common/collect/af;->a()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/common/collect/af;->e()Ljava/lang/Object;
 
     move-result-object v0
 

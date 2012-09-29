@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field st:Lcom/android/settings/f;
+.field sw:Lcom/android/settings/f;
 
-.field su:Lcom/android/settings/LineView;
+.field sx:Lcom/android/settings/LineView;
 
-.field final synthetic sv:Lcom/android/settings/az;
+.field final synthetic sy:Lcom/android/settings/az;
 
 
 # direct methods
@@ -20,15 +20,15 @@
 
     .prologue
     .line 209
-    iput-object p1, p0, Lcom/android/settings/bd;->sv:Lcom/android/settings/az;
+    iput-object p1, p0, Lcom/android/settings/bd;->sy:Lcom/android/settings/az;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 210
-    iput-object p2, p0, Lcom/android/settings/bd;->st:Lcom/android/settings/f;
+    iput-object p2, p0, Lcom/android/settings/bd;->sw:Lcom/android/settings/f;
 
     .line 211
-    iput-object p3, p0, Lcom/android/settings/bd;->su:Lcom/android/settings/LineView;
+    iput-object p3, p0, Lcom/android/settings/bd;->sx:Lcom/android/settings/LineView;
 
     .line 212
     return-void

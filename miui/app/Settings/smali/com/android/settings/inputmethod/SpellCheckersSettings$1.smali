@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic oL:Lcom/android/settings/inputmethod/SpellCheckersSettings;
+.field final synthetic oO:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 138
-    iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->oL:Lcom/android/settings/inputmethod/SpellCheckersSettings;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->oO:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

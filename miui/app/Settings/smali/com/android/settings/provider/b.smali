@@ -6,9 +6,9 @@
 # static fields
 .field public static final CONTENT_URI:Landroid/net/Uri;
 
-.field public static Fl:Z
+.field public static Fp:Z
 
-.field private static Fm:Ljava/util/HashMap;
+.field private static Fq:Ljava/util/HashMap;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lcom/android/settings/provider/b;->Fm:Ljava/util/HashMap;
+    sput-object v0, Lcom/android/settings/provider/b;->Fq:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -67,7 +67,7 @@
 
     .prologue
     .line 129
-    sget-object v0, Lcom/android/settings/provider/b;->Fm:Ljava/util/HashMap;
+    sget-object v0, Lcom/android/settings/provider/b;->Fq:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
@@ -86,7 +86,7 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 133
-    sget-object v1, Lcom/android/settings/provider/b;->Fm:Ljava/util/HashMap;
+    sget-object v1, Lcom/android/settings/provider/b;->Fq:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -95,14 +95,14 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     .line 134
-    sget-object v1, Lcom/android/settings/provider/b;->Fm:Ljava/util/HashMap;
+    sget-object v1, Lcom/android/settings/provider/b;->Fq:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
     .line 135
     const/4 v1, 0x1
 
-    sput-boolean v1, Lcom/android/settings/provider/b;->Fl:Z
+    sput-boolean v1, Lcom/android/settings/provider/b;->Fp:Z
 
     .line 137
     new-instance v1, Lcom/android/settings/provider/a;
@@ -264,7 +264,7 @@
 
     .prologue
     .line 148
-    sget-object v0, Lcom/android/settings/provider/b;->Fm:Ljava/util/HashMap;
+    sget-object v0, Lcom/android/settings/provider/b;->Fq:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -284,7 +284,7 @@
     iput-object p0, v0, Lcom/android/settings/provider/c;->key:Ljava/lang/String;
 
     .line 152
-    iput-object p1, v0, Lcom/android/settings/provider/c;->Il:Ljava/lang/String;
+    iput-object p1, v0, Lcom/android/settings/provider/c;->Io:Ljava/lang/String;
 
     .line 153
     iput p2, v0, Lcom/android/settings/provider/c;->index:I
@@ -303,7 +303,7 @@
     iput v1, v0, Lcom/android/settings/provider/c;->count:I
 
     .line 157
-    sget-object v1, Lcom/android/settings/provider/b;->Fm:Ljava/util/HashMap;
+    sget-object v1, Lcom/android/settings/provider/b;->Fq:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

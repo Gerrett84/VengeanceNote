@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic yK:Lcom/android/settings/CryptKeeperConfirm$Blank;
+.field final synthetic yO:Lcom/android/settings/CryptKeeperConfirm$Blank;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/settings/bN;->yK:Lcom/android/settings/CryptKeeperConfirm$Blank;
+    iput-object p1, p0, Lcom/android/settings/bN;->yO:Lcom/android/settings/CryptKeeperConfirm$Blank;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,7 +48,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 67
-    iget-object v0, p0, Lcom/android/settings/bN;->yK:Lcom/android/settings/CryptKeeperConfirm$Blank;
+    iget-object v0, p0, Lcom/android/settings/bN;->yO:Lcom/android/settings/CryptKeeperConfirm$Blank;
 
     invoke-virtual {v0}, Lcom/android/settings/CryptKeeperConfirm$Blank;->finish()V
 
@@ -64,7 +64,7 @@
 
     .line 73
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/bN;->yK:Lcom/android/settings/CryptKeeperConfirm$Blank;
+    iget-object v1, p0, Lcom/android/settings/bN;->yO:Lcom/android/settings/CryptKeeperConfirm$Blank;
 
     invoke-virtual {v1}, Lcom/android/settings/CryptKeeperConfirm$Blank;->getIntent()Landroid/content/Intent;
 

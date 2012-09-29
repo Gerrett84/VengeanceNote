@@ -9,7 +9,7 @@
 # instance fields
 .field private final mContext:Landroid/content/Context;
 
-.field private ms:Landroid/widget/Switch;
+.field private mv:Landroid/widget/Switch;
 
 
 # direct methods
@@ -40,7 +40,7 @@
 
     .prologue
     .line 113
-    iget-object v0, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v0, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     if-ne v0, p1, :cond_0
 
@@ -50,11 +50,11 @@
 
     .line 114
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v0, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v0, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     const/4 v1, 0x0
 
@@ -62,10 +62,10 @@
 
     .line 115
     :cond_1
-    iput-object p1, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iput-object p1, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     .line 116
-    iget-object v0, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v0, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     invoke-virtual {v0, p0}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -77,7 +77,7 @@
     move-result v0
 
     .line 119
-    iget-object v1, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v1, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     invoke-virtual {v1, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
@@ -104,7 +104,7 @@
 
     .prologue
     .line 122
-    iget-object v0, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v0, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     const/4 v1, 0x0
 
@@ -119,7 +119,7 @@
 
     .prologue
     .line 125
-    iget-object v0, p0, Lcom/android/settings/dO;->ms:Landroid/widget/Switch;
+    iget-object v0, p0, Lcom/android/settings/dO;->mv:Landroid/widget/Switch;
 
     invoke-virtual {v0, p0}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 

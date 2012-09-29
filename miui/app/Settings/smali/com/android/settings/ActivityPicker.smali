@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field private uy:Lcom/android/settings/du;
+.field private uC:Lcom/android/settings/du;
 
-.field private uz:Landroid/content/Intent;
+.field private uD:Landroid/content/Intent;
 
 
 # direct methods
@@ -95,7 +95,7 @@
 
     .prologue
     .line 129
-    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uy:Lcom/android/settings/du;
+    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uC:Lcom/android/settings/du;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/du;->getItem(I)Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
     check-cast v0, Lcom/android/settings/eh;
 
     .line 130
-    iget-object v1, p0, Lcom/android/settings/ActivityPicker;->uz:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/settings/ActivityPicker;->uD:Landroid/content/Intent;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/eh;->j(Landroid/content/Intent;)Landroid/content/Intent;
 
@@ -113,7 +113,7 @@
     return-object v0
 .end method
 
-.method protected eN()Ljava/util/List;
+.method protected eR()Ljava/util/List;
     .locals 11
 
     .prologue
@@ -239,12 +239,12 @@
 
     .line 172
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uz:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uD:Landroid/content/Intent;
 
     if-eqz v0, :cond_1
 
     .line 173
-    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uz:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uD:Landroid/content/Intent;
 
     invoke-virtual {p0, v0, v5}, Lcom/android/settings/ActivityPicker;->a(Landroid/content/Intent;Ljava/util/List;)V
 
@@ -321,7 +321,7 @@
     .line 80
     check-cast v0, Landroid/content/Intent;
 
-    iput-object v0, p0, Lcom/android/settings/ActivityPicker;->uz:Landroid/content/Intent;
+    iput-object v0, p0, Lcom/android/settings/ActivityPicker;->uD:Landroid/content/Intent;
 
     .line 87
     :goto_0
@@ -353,7 +353,7 @@
 
     .line 99
     :goto_1
-    invoke-virtual {p0}, Lcom/android/settings/ActivityPicker;->eN()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/android/settings/ActivityPicker;->eR()Ljava/util/List;
 
     move-result-object v1
 
@@ -362,10 +362,10 @@
 
     invoke-direct {v2, p0, v1}, Lcom/android/settings/du;-><init>(Landroid/content/Context;Ljava/util/List;)V
 
-    iput-object v2, p0, Lcom/android/settings/ActivityPicker;->uy:Lcom/android/settings/du;
+    iput-object v2, p0, Lcom/android/settings/ActivityPicker;->uC:Lcom/android/settings/du;
 
     .line 101
-    iget-object v1, p0, Lcom/android/settings/ActivityPicker;->uy:Lcom/android/settings/du;
+    iget-object v1, p0, Lcom/android/settings/ActivityPicker;->uC:Lcom/android/settings/du;
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mAdapter:Landroid/widget/ListAdapter;
 
@@ -385,10 +385,10 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    iput-object v0, p0, Lcom/android/settings/ActivityPicker;->uz:Landroid/content/Intent;
+    iput-object v0, p0, Lcom/android/settings/ActivityPicker;->uD:Landroid/content/Intent;
 
     .line 83
-    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uz:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/android/settings/ActivityPicker;->uD:Landroid/content/Intent;
 
     const-string v2, "android.intent.category.DEFAULT"
 

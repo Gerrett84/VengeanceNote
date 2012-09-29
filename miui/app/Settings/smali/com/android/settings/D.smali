@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field final synthetic aW:Landroid/os/Handler;
+.field final synthetic aZ:Landroid/os/Handler;
 
-.field final synthetic aX:Ljava/lang/Runnable;
+.field final synthetic ba:Ljava/lang/Runnable;
 
-.field final synthetic aY:Lcom/android/settings/RadioInfo;
+.field final synthetic bb:Lcom/android/settings/RadioInfo;
 
 
 # direct methods
@@ -20,11 +20,11 @@
 
     .prologue
     .line 736
-    iput-object p1, p0, Lcom/android/settings/D;->aY:Lcom/android/settings/RadioInfo;
+    iput-object p1, p0, Lcom/android/settings/D;->bb:Lcom/android/settings/RadioInfo;
 
-    iput-object p2, p0, Lcom/android/settings/D;->aW:Landroid/os/Handler;
+    iput-object p2, p0, Lcom/android/settings/D;->aZ:Landroid/os/Handler;
 
-    iput-object p3, p0, Lcom/android/settings/D;->aX:Ljava/lang/Runnable;
+    iput-object p3, p0, Lcom/android/settings/D;->ba:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
@@ -38,14 +38,14 @@
 
     .prologue
     .line 739
-    iget-object v0, p0, Lcom/android/settings/D;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/D;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->w(Lcom/android/settings/RadioInfo;)V
 
     .line 740
-    iget-object v0, p0, Lcom/android/settings/D;->aW:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/D;->aZ:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/android/settings/D;->aX:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/android/settings/D;->ba:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

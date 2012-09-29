@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final synthetic dp:[I
+.field static final synthetic ds:[I
 
 
 # direct methods
@@ -21,12 +21,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->dp:[I
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->ds:[I
 
     :try_start_0
-    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->dp:[I
+    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->ds:[I
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yI:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yM:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     invoke-virtual {v1}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->ordinal()I
 
@@ -40,9 +40,9 @@
 
     :goto_0
     :try_start_1
-    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->dp:[I
+    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->ds:[I
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yL:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     invoke-virtual {v1}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->ordinal()I
 
@@ -56,9 +56,9 @@
 
     :goto_1
     :try_start_2
-    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->dp:[I
+    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->ds:[I
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yF:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yJ:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     invoke-virtual {v1}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->ordinal()I
 
@@ -72,9 +72,9 @@
 
     :goto_2
     :try_start_3
-    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->dp:[I
+    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->ds:[I
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yG:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yK:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     invoke-virtual {v1}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->ordinal()I
 
@@ -88,9 +88,9 @@
 
     :goto_3
     :try_start_4
-    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->dp:[I
+    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$2;->ds:[I
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yD:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     invoke-virtual {v1}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->ordinal()I
 

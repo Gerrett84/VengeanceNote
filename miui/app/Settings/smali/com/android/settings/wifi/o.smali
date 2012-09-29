@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private cP:Lcom/android/settings/wifi/S;
+.field private cS:Lcom/android/settings/wifi/T;
 
-.field private cQ:Z
+.field private cT:Z
 
-.field private eZ:I
+.field private fc:I
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     .prologue
     .line 24
-    iget v0, p0, Lcom/android/settings/wifi/o;->eZ:I
+    iget v0, p0, Lcom/android/settings/wifi/o;->fc:I
 
     return v0
 .end method
@@ -44,21 +44,21 @@
 
     .prologue
     .line 96
-    iput-boolean p1, p0, Lcom/android/settings/wifi/o;->cQ:Z
+    iput-boolean p1, p0, Lcom/android/settings/wifi/o;->cT:Z
 
     .line 97
-    iget-boolean v0, p0, Lcom/android/settings/wifi/o;->cQ:Z
+    iget-boolean v0, p0, Lcom/android/settings/wifi/o;->cT:Z
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/wifi/o;->cP:Lcom/android/settings/wifi/S;
+    iget-object v0, p0, Lcom/android/settings/wifi/o;->cS:Lcom/android/settings/wifi/T;
 
     if-eqz v0, :cond_1
 
     .line 98
-    iget-object v0, p0, Lcom/android/settings/wifi/o;->cP:Lcom/android/settings/wifi/S;
+    iget-object v0, p0, Lcom/android/settings/wifi/o;->cS:Lcom/android/settings/wifi/T;
 
-    invoke-virtual {v0}, Lcom/android/settings/wifi/S;->ds()Landroid/net/wifi/WifiConfiguration;
+    invoke-virtual {v0}, Lcom/android/settings/wifi/T;->dw()Landroid/net/wifi/WifiConfiguration;
 
     move-result-object v0
 
@@ -73,9 +73,9 @@
     .line 101
     const-string v1, "config"
 
-    iget-object v2, p0, Lcom/android/settings/wifi/o;->cP:Lcom/android/settings/wifi/S;
+    iget-object v2, p0, Lcom/android/settings/wifi/o;->cS:Lcom/android/settings/wifi/T;
 
-    invoke-virtual {v2}, Lcom/android/settings/wifi/S;->ds()Landroid/net/wifi/WifiConfiguration;
+    invoke-virtual {v2}, Lcom/android/settings/wifi/T;->dw()Landroid/net/wifi/WifiConfiguration;
 
     move-result-object v2
 
@@ -143,7 +143,7 @@
     .line 48
     const/4 v3, -0x1
 
-    iput v3, p0, Lcom/android/settings/wifi/o;->eZ:I
+    iput v3, p0, Lcom/android/settings/wifi/o;->fc:I
 
     .line 49
     new-instance v3, Lcom/android/settings/wifi/AccessPoint;
@@ -153,7 +153,7 @@
     .line 50
     iget v1, v3, Lcom/android/settings/wifi/AccessPoint;->networkId:I
 
-    iput v1, p0, Lcom/android/settings/wifi/o;->eZ:I
+    iput v1, p0, Lcom/android/settings/wifi/o;->fc:I
 
     .line 51
     const v1, 0x7f0b06e0
@@ -162,7 +162,7 @@
 
     const/4 v6, 0x0
 
-    iget-object v7, v3, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iget-object v7, v3, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
     aput-object v7, v5, v6
 
@@ -176,7 +176,7 @@
     invoke-virtual {v0, v1, v5}, Landroid/preference/PreferenceActivity;->showBreadCrumbs(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     .line 53
-    new-instance v0, Lcom/android/settings/wifi/S;
+    new-instance v0, Lcom/android/settings/wifi/T;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/o;->getActivity()Landroid/app/Activity;
 
@@ -184,9 +184,9 @@
 
     move-object v5, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/settings/wifi/S;-><init>(Landroid/app/Activity;Landroid/view/View;Lcom/android/settings/wifi/AccessPoint;ZLcom/android/settings/wifi/t;)V
+    invoke-direct/range {v0 .. v5}, Lcom/android/settings/wifi/T;-><init>(Landroid/app/Activity;Landroid/view/View;Lcom/android/settings/wifi/AccessPoint;ZLcom/android/settings/wifi/t;)V
 
-    iput-object v0, p0, Lcom/android/settings/wifi/o;->cP:Lcom/android/settings/wifi/S;
+    iput-object v0, p0, Lcom/android/settings/wifi/o;->cS:Lcom/android/settings/wifi/T;
 
     .line 54
     return-void
@@ -203,7 +203,7 @@
     const/4 v2, 0x0
 
     .line 58
-    iget v0, p0, Lcom/android/settings/wifi/o;->eZ:I
+    iget v0, p0, Lcom/android/settings/wifi/o;->fc:I
 
     const/4 v1, -0x1
 
@@ -298,9 +298,9 @@
 
     const v1, 0x104000a
 
-    new-instance v2, Lcom/android/settings/wifi/V;
+    new-instance v2, Lcom/android/settings/wifi/W;
 
-    invoke-direct {v2, p0}, Lcom/android/settings/wifi/V;-><init>(Lcom/android/settings/wifi/o;)V
+    invoke-direct {v2, p0}, Lcom/android/settings/wifi/W;-><init>(Lcom/android/settings/wifi/o;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -320,9 +320,9 @@
     move-result-object v0
 
     .line 83
-    new-instance v1, Lcom/android/settings/wifi/T;
+    new-instance v1, Lcom/android/settings/wifi/U;
 
-    invoke-direct {v1, p0}, Lcom/android/settings/wifi/T;-><init>(Lcom/android/settings/wifi/o;)V
+    invoke-direct {v1, p0}, Lcom/android/settings/wifi/U;-><init>(Lcom/android/settings/wifi/o;)V
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 

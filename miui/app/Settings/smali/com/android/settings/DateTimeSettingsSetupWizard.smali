@@ -14,23 +14,23 @@
 
 
 # instance fields
-.field private FV:Z
+.field private FZ:Z
 
-.field private FW:Landroid/widget/CompoundButton;
+.field private Ga:Landroid/widget/CompoundButton;
 
-.field private FX:Landroid/widget/Button;
+.field private Gb:Landroid/widget/Button;
 
-.field private FY:Landroid/widget/ListPopupWindow;
+.field private Gc:Landroid/widget/ListPopupWindow;
 
-.field private FZ:Landroid/widget/SimpleAdapter;
+.field private Gd:Landroid/widget/SimpleAdapter;
 
-.field private Ga:Ljava/util/TimeZone;
+.field private Ge:Ljava/util/TimeZone;
 
-.field private Gb:Landroid/widget/TimePicker;
+.field private Gf:Landroid/widget/TimePicker;
 
-.field private Gc:Landroid/widget/DatePicker;
+.field private Gg:Landroid/widget/DatePicker;
 
-.field private Gd:Landroid/view/inputmethod/InputMethodManager;
+.field private Gh:Landroid/view/inputmethod/InputMethodManager;
 
 .field private mIntentReceiver:Landroid/content/BroadcastReceiver;
 
@@ -75,7 +75,7 @@
 
     .prologue
     .line 54
-    invoke-direct {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->jF()V
+    invoke-direct {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->jJ()V
 
     return-void
 .end method
@@ -128,10 +128,10 @@
 
     invoke-direct {v1, p0, v2}, Landroid/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iput-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     .line 289
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
@@ -140,38 +140,38 @@
     invoke-virtual {v1, v2}, Landroid/widget/ListPopupWindow;->setWidth(I)V
 
     .line 290
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v1, v0}, Landroid/widget/ListPopupWindow;->setAnchorView(Landroid/view/View;)V
 
     .line 291
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Landroid/widget/SimpleAdapter;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gd:Landroid/widget/SimpleAdapter;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setAdapter(Landroid/widget/ListAdapter;)V
 
     .line 292
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0, p0}, Landroid/widget/ListPopupWindow;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     .line 293
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/ListPopupWindow;->setModal(Z)V
 
     .line 294
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->show()V
 
     goto :goto_0
 .end method
 
-.method private jE()Z
+.method private jI()Z
     .locals 3
 
     .prologue
@@ -210,12 +210,12 @@
     goto :goto_0
 .end method
 
-.method private jF()V
+.method private jJ()V
     .locals 5
 
     .prologue
     .line 316
-    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FV:Z
+    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Z
 
     if-nez v0, :cond_0
 
@@ -230,7 +230,7 @@
     move-result-object v0
 
     .line 320
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FX:Landroid/widget/Button;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/Button;
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeZone()Ljava/util/TimeZone;
 
@@ -243,7 +243,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
     .line 321
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     const/4 v2, 0x1
 
@@ -266,7 +266,7 @@
     invoke-virtual {v1, v2, v3, v4}, Landroid/widget/DatePicker;->updateDate(III)V
 
     .line 323
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     const/16 v2, 0xb
 
@@ -281,7 +281,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TimePicker;->setCurrentHour(Ljava/lang/Integer;)V
 
     .line 324
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     const/16 v2, 0xc
 
@@ -300,7 +300,7 @@
 
 
 # virtual methods
-.method public jD()V
+.method public jH()V
     .locals 5
 
     .prologue
@@ -314,7 +314,7 @@
     move-result-object v1
 
     .line 121
-    iput-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Ljava/util/TimeZone;
+    iput-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ge:Ljava/util/TimeZone;
 
     .line 122
     const v0, 0x7f08005a
@@ -325,10 +325,10 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FX:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/Button;
 
     .line 123
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FX:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/Button;
 
     invoke-virtual {v1}, Ljava/util/TimeZone;->getDisplayName()Ljava/lang/String;
 
@@ -337,7 +337,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
     .line 125
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FX:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -374,15 +374,15 @@
 
     check-cast v0, Landroid/widget/CompoundButton;
 
-    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     .line 136
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
     .line 137
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -395,10 +395,10 @@
 
     check-cast v0, Landroid/widget/TimePicker;
 
-    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     .line 140
-    iget-object v4, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v4, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     if-nez v1, :cond_2
 
@@ -416,10 +416,10 @@
 
     check-cast v0, Landroid/widget/DatePicker;
 
-    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     .line 142
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     if-nez v1, :cond_3
 
@@ -427,7 +427,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/DatePicker;->setEnabled(Z)V
 
     .line 143
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     invoke-virtual {v0, v3}, Landroid/widget/DatePicker;->setCalendarViewShown(Z)V
 
@@ -440,7 +440,7 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gd:Landroid/view/inputmethod/InputMethodManager;
+    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gh:Landroid/view/inputmethod/InputMethodManager;
 
     .line 147
     const v0, 0x7f080020
@@ -474,7 +474,7 @@
 
     .line 132
     :cond_1
-    invoke-direct {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->jE()Z
+    invoke-direct {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->jI()Z
 
     move-result v0
 
@@ -507,7 +507,7 @@
 
     .line 208
     .line 222
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     if-ne p1, v0, :cond_0
 
@@ -526,7 +526,7 @@
     invoke-static {v3, v4, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 226
-    iget-object v3, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v3, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     if-nez p2, :cond_3
 
@@ -536,7 +536,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/TimePicker;->setEnabled(Z)V
 
     .line 227
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     if-nez p2, :cond_4
 
@@ -556,7 +556,7 @@
     if-eqz v0, :cond_1
 
     .line 232
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gd:Landroid/view/inputmethod/InputMethodManager;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gh:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
@@ -616,7 +616,7 @@
 
     .line 178
     :sswitch_1
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Ljava/util/TimeZone;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ge:Ljava/util/TimeZone;
 
     if-eqz v0, :cond_0
 
@@ -626,7 +626,7 @@
     move-result-object v0
 
     .line 180
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Ljava/util/TimeZone;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ge:Ljava/util/TimeZone;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -651,7 +651,7 @@
     check-cast v0, Landroid/app/AlarmManager;
 
     .line 184
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Ljava/util/TimeZone;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ge:Ljava/util/TimeZone;
 
     invoke-virtual {v1}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
@@ -661,7 +661,7 @@
 
     .line 187
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     if-eqz v0, :cond_1
 
@@ -672,7 +672,7 @@
 
     const-string v2, "auto_time"
 
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -686,7 +686,7 @@
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 190
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FW:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -695,19 +695,19 @@
     if-nez v0, :cond_1
 
     .line 191
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     invoke-virtual {v0}, Landroid/widget/DatePicker;->getYear()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     invoke-virtual {v1}, Landroid/widget/DatePicker;->getMonth()I
 
     move-result v1
 
-    iget-object v2, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v2, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     invoke-virtual {v2}, Landroid/widget/DatePicker;->getDayOfMonth()I
 
@@ -716,7 +716,7 @@
     invoke-static {v0, v1, v2}, Lcom/android/settings/DateTimeSettings;->b(III)V
 
     .line 193
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     invoke-virtual {v0}, Landroid/widget/TimePicker;->getCurrentHour()Ljava/lang/Integer;
 
@@ -726,7 +726,7 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     invoke-virtual {v1}, Landroid/widget/TimePicker;->getCurrentMinute()Ljava/lang/Integer;
 
@@ -795,15 +795,15 @@
     if-eqz v2, :cond_1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FV:Z
+    iput-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Z
 
     .line 90
-    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FV:Z
+    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Z
 
     if-eqz v0, :cond_2
 
     .line 91
-    invoke-virtual {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->jD()V
+    invoke-virtual {p0}, Lcom/android/settings/DateTimeSettingsSetupWizard;->jH()V
 
     .line 95
     :goto_1
@@ -813,10 +813,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Landroid/widget/SimpleAdapter;
+    iput-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gd:Landroid/widget/SimpleAdapter;
 
     .line 103
-    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FV:Z
+    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Z
 
     if-nez v0, :cond_0
 
@@ -873,12 +873,12 @@
     move-result-object v1
 
     .line 241
-    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FV:Z
+    iget-boolean v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FZ:Z
 
     if-eqz v0, :cond_1
 
     .line 242
-    iput-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ga:Ljava/util/TimeZone;
+    iput-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Ge:Ljava/util/TimeZone;
 
     .line 243
     invoke-static {v1}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
@@ -886,12 +886,12 @@
     move-result-object v0
 
     .line 244
-    iget-object v2, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FX:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/Button;
 
     if-eqz v2, :cond_0
 
     .line 245
-    iget-object v2, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FX:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/Button;
 
     invoke-virtual {v1}, Ljava/util/TimeZone;->getDisplayName()Ljava/lang/String;
 
@@ -901,7 +901,7 @@
 
     .line 248
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/DatePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gg:Landroid/widget/DatePicker;
 
     const/4 v2, 0x1
 
@@ -924,7 +924,7 @@
     invoke-virtual {v1, v2, v3, v4}, Landroid/widget/DatePicker;->updateDate(III)V
 
     .line 250
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     const/16 v2, 0xb
 
@@ -939,7 +939,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TimePicker;->setCurrentHour(Ljava/lang/Integer;)V
 
     .line 251
-    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gb:Landroid/widget/TimePicker;
+    iget-object v1, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gf:Landroid/widget/TimePicker;
 
     const/16 v2, 0xc
 
@@ -955,7 +955,7 @@
 
     .line 261
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->FY:Landroid/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/android/settings/DateTimeSettingsSetupWizard;->Gc:Landroid/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/ListPopupWindow;->dismiss()V
 

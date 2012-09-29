@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field final synthetic mr:Lcom/android/settings/wifi/A;
+.field final synthetic mu:Lcom/android/settings/wifi/B;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/wifi/A;)V
+.method constructor <init>(Lcom/android/settings/wifi/B;)V
     .locals 0
     .parameter
 
     .prologue
     .line 234
-    iput-object p1, p0, Lcom/android/settings/wifi/r;->mr:Lcom/android/settings/wifi/A;
+    iput-object p1, p0, Lcom/android/settings/wifi/r;->mu:Lcom/android/settings/wifi/B;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,9 +41,9 @@
     if-ne v0, v1, :cond_0
 
     .line 238
-    iget-object v0, p0, Lcom/android/settings/wifi/r;->mr:Lcom/android/settings/wifi/A;
+    iget-object v0, p0, Lcom/android/settings/wifi/r;->mu:Lcom/android/settings/wifi/B;
 
-    iget-object v0, v0, Lcom/android/settings/wifi/A;->cx:Lcom/android/settings/wifi/WifiSettings;
+    iget-object v0, v0, Lcom/android/settings/wifi/B;->cA:Lcom/android/settings/wifi/WifiSettings;
 
     const/4 v1, 0x2
 

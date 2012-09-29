@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Gg:Lcom/android/settings/SettingsLicenseActivity;
+.field final synthetic Gk:Lcom/android/settings/SettingsLicenseActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 147
-    iput-object p1, p0, Lcom/android/settings/cT;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iput-object p1, p0, Lcom/android/settings/cT;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -42,7 +42,7 @@
     check-cast v0, Ljava/lang/String;
 
     .line 155
-    iget-object v1, p0, Lcom/android/settings/cT;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iget-object v1, p0, Lcom/android/settings/cT;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-static {v1, v0}, Lcom/android/settings/SettingsLicenseActivity;->a(Lcom/android/settings/SettingsLicenseActivity;Ljava/lang/String;)V
 
@@ -52,7 +52,7 @@
 
     .line 157
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/cT;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iget-object v0, p0, Lcom/android/settings/cT;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-static {v0}, Lcom/android/settings/SettingsLicenseActivity;->a(Lcom/android/settings/SettingsLicenseActivity;)V
 

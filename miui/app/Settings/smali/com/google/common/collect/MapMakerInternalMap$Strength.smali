@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final enum dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+.field public static final enum do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-.field public static final enum dm:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+.field public static final enum dp:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-.field public static final enum dn:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+.field public static final enum dq:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-.field private static final synthetic do:[Lcom/google/common/collect/MapMakerInternalMap$Strength;
+.field private static final synthetic dr:[Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$Strength$1;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 309
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$Strength$2;
@@ -40,7 +40,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/google/common/collect/MapMakerInternalMap$Strength$2;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dm:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dp:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 322
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$Strength$3;
@@ -49,26 +49,26 @@
 
     invoke-direct {v0, v1, v4}, Lcom/google/common/collect/MapMakerInternalMap$Strength$3;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dn:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dq:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 290
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dm:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dp:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dn:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dq:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:[Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dr:[Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     return-void
 .end method
@@ -120,7 +120,7 @@
 
     .prologue
     .line 290
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:[Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dr:[Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/MapMakerInternalMap$Strength;->clone()Ljava/lang/Object;
 
@@ -133,7 +133,7 @@
 
 
 # virtual methods
-.method abstract S()Lcom/google/common/base/Equivalence;
+.method abstract W()Lcom/google/common/base/Equivalence;
 .end method
 
 .method abstract a(Lcom/google/common/collect/MapMakerInternalMap$Segment;Lcom/google/common/collect/ag;Ljava/lang/Object;)Lcom/google/common/collect/az;

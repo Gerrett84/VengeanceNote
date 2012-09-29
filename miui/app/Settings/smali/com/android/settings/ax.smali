@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic kE:Lcom/android/settings/dS;
+.field final synthetic kH:Lcom/android/settings/dS;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 247
-    iput-object p1, p0, Lcom/android/settings/ax;->kE:Lcom/android/settings/dS;
+    iput-object p1, p0, Lcom/android/settings/ax;->kH:Lcom/android/settings/dS;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

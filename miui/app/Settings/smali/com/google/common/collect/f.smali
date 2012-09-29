@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic ed:Lcom/google/common/collect/MapMakerInternalMap;
+.field final synthetic eg:Lcom/google/common/collect/MapMakerInternalMap;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 3857
-    iput-object p1, p0, Lcom/google/common/collect/f;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iput-object p1, p0, Lcom/google/common/collect/f;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
@@ -28,7 +28,7 @@
 
     .prologue
     .line 3881
-    iget-object v0, p0, Lcom/google/common/collect/f;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iget-object v0, p0, Lcom/google/common/collect/f;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/MapMakerInternalMap;->clear()V
 
@@ -42,7 +42,7 @@
 
     .prologue
     .line 3876
-    iget-object v0, p0, Lcom/google/common/collect/f;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iget-object v0, p0, Lcom/google/common/collect/f;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/MapMakerInternalMap;->containsValue(Ljava/lang/Object;)Z
 
@@ -56,7 +56,7 @@
 
     .prologue
     .line 3871
-    iget-object v0, p0, Lcom/google/common/collect/f;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iget-object v0, p0, Lcom/google/common/collect/f;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/MapMakerInternalMap;->isEmpty()Z
 
@@ -72,7 +72,7 @@
     .line 3861
     new-instance v0, Lcom/google/common/collect/G;
 
-    iget-object v1, p0, Lcom/google/common/collect/f;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iget-object v1, p0, Lcom/google/common/collect/f;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/G;-><init>(Lcom/google/common/collect/MapMakerInternalMap;)V
 
@@ -84,7 +84,7 @@
 
     .prologue
     .line 3866
-    iget-object v0, p0, Lcom/google/common/collect/f;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iget-object v0, p0, Lcom/google/common/collect/f;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/MapMakerInternalMap;->size()I
 

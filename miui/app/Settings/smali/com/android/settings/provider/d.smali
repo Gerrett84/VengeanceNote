@@ -33,7 +33,7 @@
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
     .line 33
-    invoke-static {}, Lcom/android/settings/bP;->hv()Ljava/util/ArrayList;
+    invoke-static {}, Lcom/android/settings/bP;->hz()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -73,7 +73,7 @@
 
     const/4 v4, 0x2
 
-    invoke-static {v0}, Lcom/android/settings/bP;->O(Ljava/lang/String;)I
+    invoke-static {v0}, Lcom/android/settings/bP;->P(Ljava/lang/String;)I
 
     move-result v0
 

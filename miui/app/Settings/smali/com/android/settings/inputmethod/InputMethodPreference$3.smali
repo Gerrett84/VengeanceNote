@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+.field final synthetic IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 127
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,13 +35,13 @@
 
     .line 131
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->c(Lcom/android/settings/inputmethod/InputMethodPreference;)Lcom/android/settings/SettingsPreferenceFragment;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-static {v1}, Lcom/android/settings/inputmethod/InputMethodPreference;->d(Lcom/android/settings/inputmethod/InputMethodPreference;)Landroid/content/Intent;
 
@@ -85,7 +85,7 @@
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 134
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->c(Lcom/android/settings/inputmethod/InputMethodPreference;)Lcom/android/settings/SettingsPreferenceFragment;
 
@@ -97,13 +97,13 @@
 
     const/4 v3, 0x0
 
-    iget-object v4, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v4, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-static {v4}, Lcom/android/settings/inputmethod/InputMethodPreference;->b(Lcom/android/settings/inputmethod/InputMethodPreference;)Landroid/view/inputmethod/InputMethodInfo;
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v5, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-static {v5}, Lcom/android/settings/inputmethod/InputMethodPreference;->c(Lcom/android/settings/inputmethod/InputMethodPreference;)Lcom/android/settings/SettingsPreferenceFragment;
 
@@ -128,7 +128,7 @@
     move-result-object v0
 
     .line 138
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$3;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-static {v1}, Lcom/android/settings/inputmethod/InputMethodPreference;->c(Lcom/android/settings/inputmethod/InputMethodPreference;)Lcom/android/settings/SettingsPreferenceFragment;
 

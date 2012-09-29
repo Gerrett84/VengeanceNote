@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final nN:[Ljava/lang/String;
+.field private static final nQ:[Ljava/lang/String;
 
 
 # instance fields
 .field private mCursor:Landroid/database/Cursor;
 
-.field protected nO:Ljava/lang/String;
+.field protected nR:Ljava/lang/String;
 
 
 # direct methods
@@ -41,7 +41,7 @@
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/android/settings/UserDictionarySettings;->nN:[Ljava/lang/String;
+    sput-object v0, Lcom/android/settings/UserDictionarySettings;->nQ:[Ljava/lang/String;
 
     return-void
 .end method
@@ -55,6 +55,88 @@
 
     .line 243
     return-void
+.end method
+
+.method private A(Ljava/lang/String;)Landroid/database/Cursor;
+    .locals 6
+    .parameter
+
+    .prologue
+    .line 143
+    const-string v0, ""
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 145
+    invoke-virtual {p0}, Lcom/android/settings/UserDictionarySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/provider/UserDictionary$Words;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v2, Lcom/android/settings/UserDictionarySettings;->nQ:[Ljava/lang/String;
+
+    const-string v3, "locale is null"
+
+    const/4 v4, 0x0
+
+    const-string v5, "UPPER(word)"
+
+    invoke-virtual/range {v0 .. v5}, Landroid/app/Activity;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    .line 150
+    :goto_0
+    return-object v0
+
+    .line 149
+    :cond_0
+    if-eqz p1, :cond_1
+
+    .line 150
+    :goto_1
+    invoke-virtual {p0}, Lcom/android/settings/UserDictionarySettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/provider/UserDictionary$Words;->CONTENT_URI:Landroid/net/Uri;
+
+    sget-object v2, Lcom/android/settings/UserDictionarySettings;->nQ:[Ljava/lang/String;
+
+    const-string v3, "locale=?"
+
+    const/4 v4, 0x1
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    const/4 v5, 0x0
+
+    aput-object p1, v4, v5
+
+    const-string v5, "UPPER(word)"
+
+    invoke-virtual/range {v0 .. v5}, Landroid/app/Activity;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 149
+    :cond_1
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Locale;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
 .end method
 
 .method private I(I)Ljava/lang/String;
@@ -247,7 +329,7 @@
     .line 202
     const-string v0, "locale"
 
-    iget-object v1, p0, Lcom/android/settings/UserDictionarySettings;->nO:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/UserDictionarySettings;->nR:Ljava/lang/String;
 
     invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -281,7 +363,7 @@
     goto :goto_0
 .end method
 
-.method private dw()Landroid/widget/ListAdapter;
+.method private dA()Landroid/widget/ListAdapter;
     .locals 8
 
     .prologue
@@ -327,88 +409,6 @@
         0x14t 0x0t 0x2t 0x1t
         0x15t 0x0t 0x2t 0x1t
     .end array-data
-.end method
-
-.method private z(Ljava/lang/String;)Landroid/database/Cursor;
-    .locals 6
-    .parameter
-
-    .prologue
-    .line 143
-    const-string v0, ""
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 145
-    invoke-virtual {p0}, Lcom/android/settings/UserDictionarySettings;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    sget-object v1, Landroid/provider/UserDictionary$Words;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lcom/android/settings/UserDictionarySettings;->nN:[Ljava/lang/String;
-
-    const-string v3, "locale is null"
-
-    const/4 v4, 0x0
-
-    const-string v5, "UPPER(word)"
-
-    invoke-virtual/range {v0 .. v5}, Landroid/app/Activity;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    .line 150
-    :goto_0
-    return-object v0
-
-    .line 149
-    :cond_0
-    if-eqz p1, :cond_1
-
-    .line 150
-    :goto_1
-    invoke-virtual {p0}, Lcom/android/settings/UserDictionarySettings;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    sget-object v1, Landroid/provider/UserDictionary$Words;->CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lcom/android/settings/UserDictionarySettings;->nN:[Ljava/lang/String;
-
-    const-string v3, "locale=?"
-
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/String;
-
-    const/4 v5, 0x0
-
-    aput-object p1, v4, v5
-
-    const-string v5, "UPPER(word)"
-
-    invoke-virtual/range {v0 .. v5}, Landroid/app/Activity;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    .line 149
-    :cond_1
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/Locale;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_1
 .end method
 
 
@@ -459,10 +459,10 @@
     .line 118
     :cond_0
     :goto_2
-    iput-object v0, p0, Lcom/android/settings/UserDictionarySettings;->nO:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/UserDictionarySettings;->nR:Ljava/lang/String;
 
     .line 119
-    invoke-direct {p0, v0}, Lcom/android/settings/UserDictionarySettings;->z(Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-direct {p0, v0}, Lcom/android/settings/UserDictionarySettings;->A(Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
@@ -492,7 +492,7 @@
     move-result-object v1
 
     .line 124
-    invoke-direct {p0}, Lcom/android/settings/UserDictionarySettings;->dw()Landroid/widget/ListAdapter;
+    invoke-direct {p0}, Lcom/android/settings/UserDictionarySettings;->dA()Landroid/widget/ListAdapter;
 
     move-result-object v2
 

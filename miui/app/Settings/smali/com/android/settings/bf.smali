@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 423
-    iput-object p1, p0, Lcom/android/settings/bf;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/bf;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -50,7 +50,7 @@
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
 
     .line 429
-    iget-object v0, p0, Lcom/android/settings/bf;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bf;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->a(Lcom/android/settings/DataUsageSummary;)Landroid/net/INetworkStatsService;
 
@@ -99,7 +99,7 @@
 
     .prologue
     .line 438
-    iget-object v0, p0, Lcom/android/settings/bf;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bf;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
 
@@ -108,7 +108,7 @@
     if-eqz v0, :cond_0
 
     .line 439
-    iget-object v0, p0, Lcom/android/settings/bf;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bf;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->b(Lcom/android/settings/DataUsageSummary;)V
 

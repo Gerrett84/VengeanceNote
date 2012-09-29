@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1078
-    iput-object p1, p0, Lcom/android/settings/bc;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/bc;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,7 +45,7 @@
     check-cast v0, Lcom/android/settings/P;
 
     .line 1085
-    iget-object v1, p0, Lcom/android/settings/bc;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/bc;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->i(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/a/h;
 
@@ -62,13 +62,13 @@
 
     .line 1087
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/bc;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/bc;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->i(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/a/h;
 
     move-result-object v1
 
-    iget v2, v0, Lcom/android/settings/P;->dv:I
+    iget v2, v0, Lcom/android/settings/P;->dy:I
 
     const/4 v3, 0x1
 
@@ -77,7 +77,7 @@
     move-result-object v1
 
     .line 1088
-    iget-object v2, p0, Lcom/android/settings/bc;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v2, p0, Lcom/android/settings/bc;->fz:Lcom/android/settings/DataUsageSummary;
 
     iget-object v1, v1, Lcom/android/settings/a/c;->label:Ljava/lang/CharSequence;
 

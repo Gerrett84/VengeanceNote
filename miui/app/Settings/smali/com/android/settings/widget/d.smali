@@ -4,17 +4,17 @@
 
 
 # virtual methods
-.method public abstract as()V
-.end method
-
-.method public abstract at()V
-.end method
-
-.method public abstract au()V
-.end method
-
-.method public abstract av()V
+.method public abstract aA()V
 .end method
 
 .method public abstract aw()V
+.end method
+
+.method public abstract ax()V
+.end method
+
+.method public abstract ay()V
+.end method
+
+.method public abstract az()V
 .end method

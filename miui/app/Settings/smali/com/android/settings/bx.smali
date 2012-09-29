@@ -10,7 +10,7 @@
 
 .field title:Landroid/widget/TextView;
 
-.field uZ:Landroid/widget/Switch;
+.field vd:Landroid/widget/Switch;
 
 
 # direct methods

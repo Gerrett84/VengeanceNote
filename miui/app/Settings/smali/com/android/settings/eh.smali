@@ -4,7 +4,7 @@
 
 
 # static fields
-.field protected static PF:Lcom/android/settings/dN;
+.field protected static PI:Lcom/android/settings/dN;
 
 
 # instance fields
@@ -125,7 +125,7 @@
 
     .prologue
     .line 208
-    sget-object v0, Lcom/android/settings/eh;->PF:Lcom/android/settings/dN;
+    sget-object v0, Lcom/android/settings/eh;->PI:Lcom/android/settings/dN;
 
     if-nez v0, :cond_0
 
@@ -152,11 +152,11 @@
 
     invoke-direct {v2, v1, v1, v0}, Lcom/android/settings/dN;-><init>(IILandroid/util/DisplayMetrics;)V
 
-    sput-object v2, Lcom/android/settings/eh;->PF:Lcom/android/settings/dN;
+    sput-object v2, Lcom/android/settings/eh;->PI:Lcom/android/settings/dN;
 
     .line 213
     :cond_0
-    sget-object v0, Lcom/android/settings/eh;->PF:Lcom/android/settings/dN;
+    sget-object v0, Lcom/android/settings/eh;->PI:Lcom/android/settings/dN;
 
     return-object v0
 .end method

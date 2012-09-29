@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field final be:Landroid/content/pm/PackageManager;
+.field final bh:Landroid/content/pm/PackageManager;
 
 .field final mState:I
 
-.field final ri:Ljava/lang/ref/WeakReference;
+.field final rl:Ljava/lang/ref/WeakReference;
 
-.field final rj:Landroid/content/pm/ApplicationInfo;
+.field final rm:Landroid/content/pm/ApplicationInfo;
 
 
 # direct methods
@@ -29,17 +29,17 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->be:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->bh:Landroid/content/pm/PackageManager;
 
     .line 1007
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->ri:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->rl:Ljava/lang/ref/WeakReference;
 
     .line 1008
-    iput-object p2, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->rj:Landroid/content/pm/ApplicationInfo;
+    iput-object p2, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->rm:Landroid/content/pm/ApplicationInfo;
 
     .line 1009
     iput p3, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->mState:I
@@ -56,9 +56,9 @@
 
     .prologue
     .line 1014
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->bh:Landroid/content/pm/PackageManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->rj:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;->rm:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 

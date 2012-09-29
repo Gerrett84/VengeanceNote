@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private jh:Ljava/lang/String;
+.field private jk:Ljava/lang/String;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 299
-    iput-object p1, p0, Lcom/android/settings/av;->jh:Ljava/lang/String;
+    iput-object p1, p0, Lcom/android/settings/av;->jk:Ljava/lang/String;
 
     .line 300
     return-void
@@ -58,14 +58,14 @@
 
     .prologue
     .line 307
-    iget-object v0, p0, Lcom/android/settings/av;->jh:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/av;->jk:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 308
-    iget-object v1, p0, Lcom/android/settings/av;->jh:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/av;->jk:Ljava/lang/String;
 
     invoke-virtual {p2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1275
-    iput-object p1, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,12 +26,25 @@
 
 
 # virtual methods
-.method public as()V
+.method public aA()V
+    .locals 1
+
+    .prologue
+    .line 1299
+    iget-object v0, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
+
+    invoke-static {v0}, Lcom/android/settings/DataUsageSummary$LimitEditorFragment;->w(Lcom/android/settings/DataUsageSummary;)V
+
+    .line 1300
+    return-void
+.end method
+
+.method public aw()V
     .locals 1
 
     .prologue
     .line 1279
-    iget-object v0, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->l(Lcom/android/settings/DataUsageSummary;)V
 
@@ -39,20 +52,20 @@
     return-void
 .end method
 
-.method public at()V
+.method public ax()V
     .locals 3
 
     .prologue
     .line 1284
-    iget-object v0, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
-    iget-object v1, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->k(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/widget/ChartDataUsageView;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/settings/widget/ChartDataUsageView;->gt()J
+    invoke-virtual {v1}, Lcom/android/settings/widget/ChartDataUsageView;->gx()J
 
     move-result-wide v1
 
@@ -62,20 +75,20 @@
     return-void
 .end method
 
-.method public au()V
+.method public ay()V
     .locals 3
 
     .prologue
     .line 1289
-    iget-object v0, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
-    iget-object v1, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->k(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/widget/ChartDataUsageView;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/settings/widget/ChartDataUsageView;->gu()J
+    invoke-virtual {v1}, Lcom/android/settings/widget/ChartDataUsageView;->gy()J
 
     move-result-wide v1
 
@@ -85,28 +98,15 @@
     return-void
 .end method
 
-.method public av()V
+.method public az()V
     .locals 1
 
     .prologue
     .line 1294
-    iget-object v0, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ah;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary$WarningEditorFragment;->w(Lcom/android/settings/DataUsageSummary;)V
 
     .line 1295
-    return-void
-.end method
-
-.method public aw()V
-    .locals 1
-
-    .prologue
-    .line 1299
-    iget-object v0, p0, Lcom/android/settings/ah;->fw:Lcom/android/settings/DataUsageSummary;
-
-    invoke-static {v0}, Lcom/android/settings/DataUsageSummary$LimitEditorFragment;->w(Lcom/android/settings/DataUsageSummary;)V
-
-    .line 1300
     return-void
 .end method

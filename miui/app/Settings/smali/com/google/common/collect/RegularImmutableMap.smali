@@ -10,17 +10,17 @@
 # instance fields
 .field private final transient mask:I
 
-.field private final transient qi:[Lcom/google/common/collect/av;
+.field private final transient ql:[Lcom/google/common/collect/av;
 
-.field private final transient qj:[Lcom/google/common/collect/av;
+.field private final transient qm:[Lcom/google/common/collect/av;
 
-.field private final transient qk:I
+.field private final transient qn:I
 
-.field private transient ql:Lcom/google/common/collect/ImmutableSet;
+.field private transient qo:Lcom/google/common/collect/ImmutableSet;
 
-.field private transient qm:Lcom/google/common/collect/ImmutableSet;
+.field private transient qp:Lcom/google/common/collect/ImmutableSet;
 
-.field private transient qn:Lcom/google/common/collect/ImmutableCollection;
+.field private transient qq:Lcom/google/common/collect/ImmutableCollection;
 
 
 # direct methods
@@ -44,7 +44,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qi:[Lcom/google/common/collect/av;
+    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:[Lcom/google/common/collect/av;
 
     .line 52
     invoke-static {v6}, Lcom/google/common/collect/RegularImmutableMap;->R(I)I
@@ -56,7 +56,7 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/google/common/collect/RegularImmutableMap;->qj:[Lcom/google/common/collect/av;
+    iput-object v3, p0, Lcom/google/common/collect/RegularImmutableMap;->qm:[Lcom/google/common/collect/av;
 
     .line 54
     add-int/lit8 v0, v0, -0x1
@@ -97,7 +97,7 @@
     and-int/2addr v8, v0
 
     .line 65
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qj:[Lcom/google/common/collect/av;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qm:[Lcom/google/common/collect/av;
 
     aget-object v0, v0, v8
 
@@ -111,12 +111,12 @@
     move-result-object v3
 
     .line 69
-    iget-object v9, p0, Lcom/google/common/collect/RegularImmutableMap;->qj:[Lcom/google/common/collect/av;
+    iget-object v9, p0, Lcom/google/common/collect/RegularImmutableMap;->qm:[Lcom/google/common/collect/av;
 
     aput-object v3, v9, v8
 
     .line 70
-    iget-object v8, p0, Lcom/google/common/collect/RegularImmutableMap;->qi:[Lcom/google/common/collect/av;
+    iget-object v8, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:[Lcom/google/common/collect/av;
 
     aput-object v3, v8, v4
 
@@ -149,7 +149,7 @@
     invoke-static {v0, v8, v9}, Lcom/google/common/base/c;->a(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     .line 73
-    invoke-interface {v3}, Lcom/google/common/collect/av;->eE()Lcom/google/common/collect/av;
+    invoke-interface {v3}, Lcom/google/common/collect/av;->eI()Lcom/google/common/collect/av;
 
     move-result-object v0
 
@@ -175,7 +175,7 @@
 
     .line 76
     :cond_2
-    iput v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qk:I
+    iput v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qn:I
 
     .line 77
     return-void
@@ -267,7 +267,7 @@
 
     .prologue
     .line 36
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qi:[Lcom/google/common/collect/av;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:[Lcom/google/common/collect/av;
 
     return-object v0
 .end method
@@ -278,7 +278,7 @@
 
     .prologue
     .line 36
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qk:I
+    iget v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qn:I
 
     return v0
 .end method
@@ -302,7 +302,7 @@
 
     .line 178
     :cond_1
-    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableMap;->qi:[Lcom/google/common/collect/av;
+    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:[Lcom/google/common/collect/av;
 
     array-length v3, v2
 
@@ -336,12 +336,12 @@
     goto :goto_1
 .end method
 
-.method public dN()Lcom/google/common/collect/ImmutableCollection;
+.method public dR()Lcom/google/common/collect/ImmutableCollection;
     .locals 1
 
     .prologue
     .line 249
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qn:Lcom/google/common/collect/ImmutableCollection;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qq:Lcom/google/common/collect/ImmutableCollection;
 
     .line 250
     if-nez v0, :cond_0
@@ -350,7 +350,47 @@
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/RegularImmutableMap$Values;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
 
-    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qn:Lcom/google/common/collect/ImmutableCollection;
+    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qq:Lcom/google/common/collect/ImmutableCollection;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public eB()Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+
+    .prologue
+    .line 193
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qo:Lcom/google/common/collect/ImmutableSet;
+
+    .line 194
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
+
+    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qo:Lcom/google/common/collect/ImmutableSet;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public eC()Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+
+    .prologue
+    .line 219
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qp:Lcom/google/common/collect/ImmutableSet;
+
+    .line 220
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/google/common/collect/RegularImmutableMap$KeySet;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/RegularImmutableMap$KeySet;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
+
+    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qp:Lcom/google/common/collect/ImmutableSet;
 
     :cond_0
     return-object v0
@@ -361,50 +401,10 @@
 
     .prologue
     .line 35
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public ex()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-
-    .prologue
-    .line 193
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:Lcom/google/common/collect/ImmutableSet;
-
-    .line 194
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:Lcom/google/common/collect/ImmutableSet;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public ey()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-
-    .prologue
-    .line 219
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qm:Lcom/google/common/collect/ImmutableSet;
-
-    .line 220
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/common/collect/RegularImmutableMap$KeySet;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/RegularImmutableMap$KeySet;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qm:Lcom/google/common/collect/ImmutableSet;
-
-    :cond_0
     return-object v0
 .end method
 
@@ -438,7 +438,7 @@
     and-int/2addr v1, v2
 
     .line 147
-    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableMap;->qj:[Lcom/google/common/collect/av;
+    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableMap;->qm:[Lcom/google/common/collect/av;
 
     aget-object v1, v2, v1
 
@@ -467,7 +467,7 @@
 
     .line 149
     :cond_2
-    invoke-interface {v1}, Lcom/google/common/collect/av;->eE()Lcom/google/common/collect/av;
+    invoke-interface {v1}, Lcom/google/common/collect/av;->eI()Lcom/google/common/collect/av;
 
     move-result-object v1
 
@@ -489,7 +489,7 @@
 
     .prologue
     .line 35
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap;->ey()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap;->eC()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -501,7 +501,7 @@
 
     .prologue
     .line 167
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->qi:[Lcom/google/common/collect/av;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:[Lcom/google/common/collect/av;
 
     array-length v0, v0
 
@@ -528,9 +528,9 @@
     move-result-object v0
 
     .line 286
-    sget-object v1, Lcom/google/common/collect/a;->cC:Lcom/google/common/base/m;
+    sget-object v1, Lcom/google/common/collect/a;->cF:Lcom/google/common/base/m;
 
-    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableMap;->qi:[Lcom/google/common/collect/av;
+    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableMap;->ql:[Lcom/google/common/collect/av;
 
     invoke-virtual {v1, v0, v2}, Lcom/google/common/base/m;->a(Ljava/lang/StringBuilder;[Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -553,7 +553,7 @@
 
     .prologue
     .line 35
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap;->dN()Lcom/google/common/collect/ImmutableCollection;
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap;->dR()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 

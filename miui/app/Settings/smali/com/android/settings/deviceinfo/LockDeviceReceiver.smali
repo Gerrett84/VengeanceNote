@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private eH:Lcom/android/internal/widget/ILockSettings;
+.field private eK:Lcom/android/internal/widget/ILockSettings;
 
 
 # direct methods
@@ -55,7 +55,7 @@
     move-result-wide v0
 
     .line 131
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v2
 
@@ -78,12 +78,12 @@
     goto :goto_0
 .end method
 
-.method private al()Lcom/android/internal/widget/ILockSettings;
+.method private ap()Lcom/android/internal/widget/ILockSettings;
     .locals 1
 
     .prologue
     .line 137
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->eH:Lcom/android/internal/widget/ILockSettings;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->eK:Lcom/android/internal/widget/ILockSettings;
 
     if-nez v0, :cond_0
 
@@ -98,11 +98,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->eH:Lcom/android/internal/widget/ILockSettings;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->eK:Lcom/android/internal/widget/ILockSettings;
 
     .line 141
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->eH:Lcom/android/internal/widget/ILockSettings;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->eK:Lcom/android/internal/widget/ILockSettings;
 
     return-object v0
 .end method
@@ -211,7 +211,7 @@
     invoke-direct {p0, p1, v1}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 58
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v1
 
@@ -224,7 +224,7 @@
     invoke-interface {v1, v0, v2}, Lcom/android/internal/widget/ILockSettings;->setLockPassword([BI)V
 
     .line 59
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v0
 
@@ -237,7 +237,7 @@
     invoke-interface {v0, v1, v2, v3, v4}, Lcom/android/internal/widget/ILockSettings;->setLong(Ljava/lang/String;JI)V
 
     .line 60
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v0
 
@@ -367,7 +367,7 @@
 
     .line 86
     :try_start_1
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v0
 
@@ -380,7 +380,7 @@
     invoke-interface {v0, v3, v4, v5}, Lcom/android/internal/widget/ILockSettings;->setBoolean(Ljava/lang/String;ZI)V
 
     .line 87
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v0
 
@@ -438,7 +438,7 @@
 
     .line 95
     :try_start_2
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v0
 
@@ -451,7 +451,7 @@
     invoke-interface {v0, v3, v4, v5}, Lcom/android/internal/widget/ILockSettings;->setBoolean(Ljava/lang/String;ZI)V
 
     .line 96
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->al()Lcom/android/internal/widget/ILockSettings;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/LockDeviceReceiver;->ap()Lcom/android/internal/widget/ILockSettings;
 
     move-result-object v0
 

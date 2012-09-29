@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic OL:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+.field final synthetic OO:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 84
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$2;->OL:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$2;->OO:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$2;->OL:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$2;->OO:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->b(Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;)V
 

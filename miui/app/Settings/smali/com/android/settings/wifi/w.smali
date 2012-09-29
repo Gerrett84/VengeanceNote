@@ -1,78 +1,72 @@
 .class Lcom/android/settings/wifi/w;
-.super Ljava/lang/Object;
-.source "MiuiWifiSettings.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.super Landroid/content/BroadcastReceiver;
+.source "WifiRestoreService.java"
 
 
 # instance fields
-.field private sf:Lcom/android/settings/wifi/AccessPoint;
-
-.field final synthetic uA:Lcom/android/settings/wifi/MiuiWifiSettings;
+.field final synthetic sL:Lcom/android/settings/wifi/WifiRestoreService;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/settings/wifi/MiuiWifiSettings;Lcom/android/settings/wifi/AccessPoint;)V
+.method constructor <init>(Lcom/android/settings/wifi/WifiRestoreService;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 238
-    iput-object p1, p0, Lcom/android/settings/wifi/w;->uA:Lcom/android/settings/wifi/MiuiWifiSettings;
+    .line 246
+    iput-object p1, p0, Lcom/android/settings/wifi/w;->sL:Lcom/android/settings/wifi/WifiRestoreService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 239
-    iput-object p2, p0, Lcom/android/settings/wifi/w;->sf:Lcom/android/settings/wifi/AccessPoint;
-
-    .line 240
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 7
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 2
+    .parameter
     .parameter
 
     .prologue
-    .line 244
-    new-instance v2, Landroid/os/Bundle;
-
-    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
-
-    .line 245
-    iget-object v0, p0, Lcom/android/settings/wifi/w;->sf:Lcom/android/settings/wifi/AccessPoint;
-
-    invoke-virtual {v0, v2}, Lcom/android/settings/wifi/AccessPoint;->c(Landroid/os/Bundle;)V
-
-    .line 246
-    iget-object v0, p0, Lcom/android/settings/wifi/w;->uA:Lcom/android/settings/wifi/MiuiWifiSettings;
-
-    invoke-virtual {v0}, Lcom/android/settings/wifi/MiuiWifiSettings;->getActivity()Landroid/app/Activity;
+    .line 249
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Landroid/preference/PreferenceActivity;
+    .line 250
+    const-string v1, "android.net.wifi.CONFIGURED_NETWORKS_CHANGE"
 
-    const-class v1, Lcom/android/settings/wifi/o;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    move-result v1
 
-    move-result-object v1
+    if-eqz v1, :cond_1
 
-    const/4 v3, 0x0
+    .line 251
+    iget-object v0, p0, Lcom/android/settings/wifi/w;->sL:Lcom/android/settings/wifi/WifiRestoreService;
 
-    const/4 v4, 0x0
+    invoke-static {v0}, Lcom/android/settings/wifi/WifiRestoreService;->a(Lcom/android/settings/wifi/WifiRestoreService;)V
 
-    iget-object v5, p0, Lcom/android/settings/wifi/w;->uA:Lcom/android/settings/wifi/MiuiWifiSettings;
+    .line 255
+    :cond_0
+    :goto_0
+    return-void
 
-    const/16 v6, 0xc8
+    .line 252
+    :cond_1
+    const-string v1, "android.intent.action.ACTION_SHUTDOWN"
 
-    invoke-virtual/range {v0 .. v6}, Landroid/preference/PreferenceActivity;->startPreferencePanel(Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/CharSequence;Landroid/app/Fragment;I)V
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     .line 253
-    return-void
+    iget-object v0, p0, Lcom/android/settings/wifi/w;->sL:Lcom/android/settings/wifi/WifiRestoreService;
+
+    invoke-static {v0}, Lcom/android/settings/wifi/WifiRestoreService;->b(Lcom/android/settings/wifi/WifiRestoreService;)V
+
+    goto :goto_0
 .end method

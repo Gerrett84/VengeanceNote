@@ -10,21 +10,21 @@
 
 
 # instance fields
-.field private final kJ:Landroid/net/IConnectivityManager;
+.field private final kM:Landroid/net/IConnectivityManager;
 
-.field private final kK:Landroid/security/KeyStore;
+.field private final kN:Landroid/security/KeyStore;
 
-.field private kL:Z
+.field private kO:Z
 
-.field private kM:Ljava/util/HashMap;
+.field private kP:Ljava/util/HashMap;
 
-.field private kN:Lcom/android/settings/vpn2/b;
+.field private kQ:Lcom/android/settings/vpn2/b;
 
-.field private kO:Landroid/os/Handler;
+.field private kR:Landroid/os/Handler;
 
-.field private kP:Lcom/android/internal/net/LegacyVpnInfo;
+.field private kS:Lcom/android/internal/net/LegacyVpnInfo;
 
-.field private kQ:Ljava/lang/String;
+.field private kT:Ljava/lang/String;
 
 
 # direct methods
@@ -46,19 +46,19 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kJ:Landroid/net/IConnectivityManager;
+    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Landroid/net/IConnectivityManager;
 
     .line 60
     invoke-static {}, Landroid/security/KeyStore;->getInstance()Landroid/security/KeyStore;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     .line 61
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kL:Z
+    iput-boolean v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Z
 
     .line 472
     return-void
@@ -80,7 +80,7 @@
     const/4 v8, 0x1
 
     .line 353
-    invoke-direct {p0}, Lcom/android/settings/vpn2/VpnSettings;->ck()[Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/vpn2/VpnSettings;->co()[Ljava/lang/String;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
     const-string v3, ""
 
     .line 362
-    iget-object v4, p1, Lcom/android/settings/vpn2/c;->BG:Ljava/lang/String;
+    iget-object v4, p1, Lcom/android/settings/vpn2/c;->BK:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
 
@@ -122,7 +122,7 @@
 
     move-result-object v0
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BG:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BK:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -133,7 +133,7 @@
     move-result-object v1
 
     .line 368
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -145,7 +145,7 @@
 
     move-result-object v4
 
-    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BG:Ljava/lang/String;
+    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BK:Ljava/lang/String;
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -167,7 +167,7 @@
     .line 371
     :cond_0
     :goto_0
-    iget-object v4, p1, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
+    iget-object v4, p1, Lcom/android/settings/vpn2/c;->BL:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
 
@@ -176,7 +176,7 @@
     if-nez v4, :cond_1
 
     .line 372
-    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -188,7 +188,7 @@
 
     move-result-object v4
 
-    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
+    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BL:Ljava/lang/String;
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -210,7 +210,7 @@
     .line 375
     :cond_1
     :goto_1
-    iget-object v4, p1, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
+    iget-object v4, p1, Lcom/android/settings/vpn2/c;->BM:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
 
@@ -219,7 +219,7 @@
     if-nez v4, :cond_a
 
     .line 376
-    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -231,7 +231,7 @@
 
     move-result-object v4
 
-    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
+    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BM:Ljava/lang/String;
 
     invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -361,7 +361,7 @@
     iput-object v3, v2, Lcom/android/internal/net/VpnConfig;->routes:Ljava/lang/String;
 
     .line 447
-    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BA:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
 
     invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
@@ -370,7 +370,7 @@
     if-nez v3, :cond_7
 
     .line 448
-    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BA:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
 
     const-string v4, " +"
 
@@ -386,7 +386,7 @@
 
     .line 450
     :cond_7
-    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BB:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
 
     invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
@@ -395,7 +395,7 @@
     if-nez v3, :cond_8
 
     .line 451
-    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BB:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
 
     const-string v4, " +"
 
@@ -411,7 +411,7 @@
 
     .line 454
     :cond_8
-    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kJ:Landroid/net/IConnectivityManager;
+    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Landroid/net/IConnectivityManager;
 
     invoke-interface {v3, v2, v0, v1}, Landroid/net/IConnectivityManager;->startLegacyVpn(Lcom/android/internal/net/VpnConfig;[Ljava/lang/String;[Ljava/lang/String;)V
 
@@ -426,7 +426,7 @@
 
     aput-object v5, v0, v9
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v1, v0, v8
 
@@ -434,11 +434,11 @@
 
     aput-object v1, v0, v10
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
 
     aput-object v1, v0, v11
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BJ:Ljava/lang/String;
 
     aput-object v1, v0, v12
 
@@ -458,7 +458,7 @@
 
     aput-object v5, v3, v9
 
-    iget-object v6, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v6, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v6, v3, v8
 
@@ -497,7 +497,7 @@
 
     aput-object v5, v0, v9
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v1, v0, v8
 
@@ -505,17 +505,17 @@
 
     aput-object v1, v0, v10
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
 
     aput-object v1, v0, v11
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BJ:Ljava/lang/String;
 
     aput-object v1, v0, v12
 
     const/4 v1, 0x5
 
-    iget-object v2, p1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v2, p1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     aput-object v2, v0, v1
 
@@ -545,7 +545,7 @@
 
     aput-object v5, v3, v9
 
-    iget-object v7, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v7, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v7, v3, v8
 
@@ -567,7 +567,7 @@
 
     const/4 v0, 0x7
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     aput-object v1, v3, v0
 
@@ -600,7 +600,7 @@
 
     aput-object v5, v0, v9
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v1, v0, v8
 
@@ -614,7 +614,7 @@
 
     const/4 v1, 0x5
 
-    iget-object v2, p1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v2, p1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     aput-object v2, v0, v1
 
@@ -648,7 +648,7 @@
 
     aput-object v1, v2, v8
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v1, v2, v10
 
@@ -662,7 +662,7 @@
 
     const/4 v1, 0x5
 
-    iget-object v3, p1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     aput-object v3, v2, v1
 
@@ -746,7 +746,7 @@
 
     const/16 v3, 0x13
 
-    iget-boolean v1, p1, Lcom/android/settings/vpn2/c;->BC:Z
+    iget-boolean v1, p1, Lcom/android/settings/vpn2/c;->BG:Z
 
     if-eqz v1, :cond_9
 
@@ -778,7 +778,7 @@
 
     aput-object v2, v1, v8
 
-    iget-object v2, p1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v2, p1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     aput-object v2, v1, v10
 
@@ -786,7 +786,7 @@
 
     aput-object v2, v1, v11
 
-    iget-object v2, p1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
+    iget-object v2, p1, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
 
     aput-object v2, v1, v12
 
@@ -798,7 +798,7 @@
 
     const/4 v2, 0x6
 
-    iget-object v3, p1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v3, p1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     aput-object v3, v1, v2
 
@@ -908,7 +908,7 @@
     .end packed-switch
 .end method
 
-.method private ck()[Ljava/lang/String;
+.method private co()[Ljava/lang/String;
     .locals 7
 
     .prologue
@@ -917,7 +917,7 @@
     const/4 v5, 0x1
 
     .line 326
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kJ:Landroid/net/IConnectivityManager;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Landroid/net/IConnectivityManager;
 
     invoke-interface {v0}, Landroid/net/IConnectivityManager;->getActiveLinkProperties()Landroid/net/LinkProperties;
 
@@ -1069,17 +1069,17 @@
     goto :goto_0
 .end method
 
-.method private u(Ljava/lang/String;)V
+.method private v(Ljava/lang/String;)V
     .locals 3
     .parameter
 
     .prologue
     .line 458
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     iget-object v0, v0, Lcom/android/internal/net/LegacyVpnInfo;->key:Ljava/lang/String;
 
@@ -1091,7 +1091,7 @@
 
     .line 460
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kJ:Landroid/net/IConnectivityManager;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Landroid/net/IConnectivityManager;
 
     const-string v1, "[Legacy VPN]"
 
@@ -1115,7 +1115,7 @@
 
 
 # virtual methods
-.method protected A()I
+.method protected E()I
     .locals 1
 
     .prologue
@@ -1133,7 +1133,7 @@
     const/4 v3, 0x0
 
     .line 298
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kR:Landroid/os/Handler;
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
@@ -1146,21 +1146,21 @@
 
     .line 302
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kJ:Landroid/net/IConnectivityManager;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Landroid/net/IConnectivityManager;
 
     invoke-interface {v0}, Landroid/net/IConnectivityManager;->getLegacyVpnInfo()Lcom/android/internal/net/LegacyVpnInfo;
 
     move-result-object v1
 
     .line 303
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     if-eqz v0, :cond_1
 
     .line 304
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     iget-object v2, v2, Lcom/android/internal/net/LegacyVpnInfo;->key:Ljava/lang/String;
 
@@ -1182,14 +1182,14 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     .line 310
     :cond_1
     if-eqz v1, :cond_2
 
     .line 311
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     iget-object v2, v1, Lcom/android/internal/net/LegacyVpnInfo;->key:Ljava/lang/String;
 
@@ -1208,14 +1208,14 @@
     invoke-virtual {v0, v2}, Lcom/android/settings/vpn2/a;->update(I)V
 
     .line 314
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 320
     :cond_2
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kR:Landroid/os/Handler;
 
     const-wide/16 v1, 0x3e8
 
@@ -1246,14 +1246,14 @@
     if-ne p2, v0, :cond_0
 
     .line 189
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
-    invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->ad()Lcom/android/settings/vpn2/c;
+    invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->ah()Lcom/android/settings/vpn2/c;
 
     move-result-object v1
 
     .line 190
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1275,14 +1275,14 @@
 
     move-result-object v2
 
-    invoke-virtual {v1}, Lcom/android/settings/vpn2/c;->hX()[B
+    invoke-virtual {v1}, Lcom/android/settings/vpn2/c;->ib()[B
 
     move-result-object v3
 
     invoke-virtual {v0, v2, v3}, Landroid/security/KeyStore;->put(Ljava/lang/String;[B)Z
 
     .line 193
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     iget-object v2, v1, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
@@ -1298,16 +1298,16 @@
     .line 195
     iget-object v2, v1, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
-    invoke-direct {p0, v2}, Lcom/android/settings/vpn2/VpnSettings;->u(Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/android/settings/vpn2/VpnSettings;->v(Ljava/lang/String;)V
 
     .line 196
     invoke-virtual {v0, v1}, Lcom/android/settings/vpn2/a;->a(Lcom/android/settings/vpn2/c;)V
 
     .line 204
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
-    invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->fw()Z
+    invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->fA()Z
 
     move-result v0
 
@@ -1335,7 +1335,7 @@
     invoke-direct {v0, p0, v2, v1}, Lcom/android/settings/vpn2/a;-><init>(Lcom/android/settings/vpn2/VpnSettings;Landroid/content/Context;Lcom/android/settings/vpn2/c;)V
 
     .line 199
-    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     iget-object v3, v1, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
@@ -1374,7 +1374,7 @@
     const/4 v1, 0x0
 
     .line 236
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     if-eqz v0, :cond_0
 
@@ -1393,9 +1393,9 @@
 
     .line 241
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
-    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kT:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1439,21 +1439,21 @@
 
     move-result-object v3
 
-    invoke-virtual {v0}, Lcom/android/settings/vpn2/a;->ad()Lcom/android/settings/vpn2/c;
+    invoke-virtual {v0}, Lcom/android/settings/vpn2/a;->ah()Lcom/android/settings/vpn2/c;
 
     move-result-object v0
 
     invoke-direct {v1, v3, p0, v0, v2}, Lcom/android/settings/vpn2/b;-><init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/vpn2/c;Z)V
 
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     .line 250
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/vpn2/b;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 251
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->show()V
 
@@ -1464,9 +1464,9 @@
 
     .line 254
     :pswitch_1
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kT:Ljava/lang/String;
 
-    invoke-direct {p0, v1}, Lcom/android/settings/vpn2/VpnSettings;->u(Ljava/lang/String;)V
+    invoke-direct {p0, v1}, Lcom/android/settings/vpn2/VpnSettings;->v(Ljava/lang/String;)V
 
     .line 255
     invoke-virtual {p0}, Lcom/android/settings/vpn2/VpnSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1476,14 +1476,14 @@
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 256
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kT:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 257
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1495,7 +1495,7 @@
 
     move-result-object v1
 
-    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/settings/vpn2/VpnSettings;->kT:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1582,7 +1582,7 @@
 
     invoke-direct {v1, v2, p0, v0, v3}, Lcom/android/settings/vpn2/b;-><init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/vpn2/c;Z)V
 
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     .line 86
     :cond_0
@@ -1603,7 +1603,7 @@
     const/4 v2, 0x0
 
     .line 216
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     if-eqz v0, :cond_1
 
@@ -1648,14 +1648,14 @@
     .line 225
     check-cast v0, Lcom/android/settings/vpn2/a;
 
-    invoke-virtual {v0}, Lcom/android/settings/vpn2/a;->ad()Lcom/android/settings/vpn2/c;
+    invoke-virtual {v0}, Lcom/android/settings/vpn2/a;->ah()Lcom/android/settings/vpn2/c;
 
     move-result-object v0
 
     .line 226
     iget-object v1, v0, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kT:Ljava/lang/String;
 
     .line 227
     iget-object v0, v0, Lcom/android/settings/vpn2/c;->name:Ljava/lang/String;
@@ -1679,7 +1679,7 @@
     .line 182
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iput-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     .line 183
     return-void
@@ -1693,19 +1693,19 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
     .line 168
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     if-eqz v0, :cond_0
 
     .line 169
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/vpn2/b;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 170
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->dismiss()V
 
@@ -1737,7 +1737,7 @@
     const/4 v5, 0x1
 
     .line 265
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     if-eqz v0, :cond_0
 
@@ -1761,18 +1761,18 @@
     .line 271
     check-cast p1, Lcom/android/settings/vpn2/a;
 
-    invoke-virtual {p1}, Lcom/android/settings/vpn2/a;->ad()Lcom/android/settings/vpn2/c;
+    invoke-virtual {p1}, Lcom/android/settings/vpn2/a;->ah()Lcom/android/settings/vpn2/c;
 
     move-result-object v0
 
     .line 272
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     if-eqz v1, :cond_1
 
     iget-object v1, v0, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     iget-object v2, v2, Lcom/android/internal/net/LegacyVpnInfo;->key:Ljava/lang/String;
 
@@ -1782,7 +1782,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     iget v1, v1, Lcom/android/internal/net/LegacyVpnInfo;->state:I
 
@@ -1792,7 +1792,7 @@
 
     .line 275
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Lcom/android/internal/net/LegacyVpnInfo;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kS:Lcom/android/internal/net/LegacyVpnInfo;
 
     iget-object v1, v1, Lcom/android/internal/net/LegacyVpnInfo;->intent:Landroid/app/PendingIntent;
 
@@ -1818,16 +1818,16 @@
 
     invoke-direct {v1, v2, p0, v0, v3}, Lcom/android/settings/vpn2/b;-><init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/vpn2/c;Z)V
 
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     .line 291
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/vpn2/b;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 292
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->show()V
 
@@ -1841,7 +1841,7 @@
 
     .line 285
     :goto_2
-    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
 
@@ -1878,7 +1878,7 @@
 
     invoke-direct {v2, v3, p0, v4, v5}, Lcom/android/settings/vpn2/b;-><init>(Landroid/content/Context;Landroid/content/DialogInterface$OnClickListener;Lcom/android/settings/vpn2/c;Z)V
 
-    iput-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iput-object v2, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     goto :goto_1
 .end method
@@ -1893,7 +1893,7 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 105
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     invoke-virtual {v1}, Landroid/security/KeyStore;->state()Landroid/security/KeyStore$State;
 
@@ -1904,7 +1904,7 @@
     if-eq v1, v2, :cond_2
 
     .line 106
-    iget-boolean v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kL:Z
+    iget-boolean v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Z
 
     if-nez v1, :cond_1
 
@@ -1921,14 +1921,14 @@
 
     .line 113
     :goto_0
-    iget-boolean v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kL:Z
+    iget-boolean v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Z
 
     if-nez v1, :cond_0
 
     const/4 v0, 0x1
 
     :cond_0
-    iput-boolean v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kL:Z
+    iput-boolean v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Z
 
     .line 161
     :goto_1
@@ -1936,16 +1936,16 @@
 
     .line 111
     :cond_1
-    invoke-virtual {p0}, Lcom/android/settings/vpn2/VpnSettings;->lZ()V
+    invoke-virtual {p0}, Lcom/android/settings/vpn2/VpnSettings;->md()V
 
     goto :goto_0
 
     .line 118
     :cond_2
-    iput-boolean v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kL:Z
+    iput-boolean v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Z
 
     .line 123
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     if-nez v1, :cond_5
 
@@ -1954,7 +1954,7 @@
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     .line 125
     invoke-virtual {p0}, Lcom/android/settings/vpn2/VpnSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1962,7 +1962,7 @@
     move-result-object v2
 
     .line 127
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     const-string v3, "VPN_"
 
@@ -1993,7 +1993,7 @@
     aget-object v6, v3, v1
 
     .line 132
-    iget-object v7, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v7, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -2048,7 +2048,7 @@
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 136
-    iget-object v7, p0, Lcom/android/settings/vpn2/VpnSettings;->kK:Landroid/security/KeyStore;
+    iget-object v7, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Landroid/security/KeyStore;
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -2083,7 +2083,7 @@
     invoke-direct {v8, p0, v4, v7}, Lcom/android/settings/vpn2/a;-><init>(Lcom/android/settings/vpn2/VpnSettings;Landroid/content/Context;Lcom/android/settings/vpn2/c;)V
 
     .line 139
-    iget-object v7, p0, Lcom/android/settings/vpn2/VpnSettings;->kM:Ljava/util/HashMap;
+    iget-object v7, p0, Lcom/android/settings/vpn2/VpnSettings;->kP:Ljava/util/HashMap;
 
     invoke-virtual {v7, v6, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2104,23 +2104,23 @@
 
     .line 148
     :cond_5
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     if-eqz v1, :cond_6
 
     .line 149
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v1, p0}, Lcom/android/settings/vpn2/b;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 150
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     invoke-virtual {v1}, Lcom/android/settings/vpn2/b;->show()V
 
     .line 154
     :cond_6
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kR:Landroid/os/Handler;
 
     if-nez v1, :cond_7
 
@@ -2129,11 +2129,11 @@
 
     invoke-direct {v1, p0}, Landroid/os/Handler;-><init>(Landroid/os/Handler$Callback;)V
 
-    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kR:Landroid/os/Handler;
 
     .line 157
     :cond_7
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kO:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kR:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
@@ -2153,14 +2153,14 @@
 
     .prologue
     .line 91
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
     if-eqz v0, :cond_0
 
     .line 92
-    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
-    invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->ad()Lcom/android/settings/vpn2/c;
+    invoke-virtual {v0}, Lcom/android/settings/vpn2/b;->ah()Lcom/android/settings/vpn2/c;
 
     move-result-object v0
 
@@ -2174,7 +2174,7 @@
     .line 94
     const-string v1, "VpnProfile"
 
-    invoke-virtual {v0}, Lcom/android/settings/vpn2/c;->hX()[B
+    invoke-virtual {v0}, Lcom/android/settings/vpn2/c;->ib()[B
 
     move-result-object v0
 
@@ -2183,9 +2183,9 @@
     .line 95
     const-string v0, "VpnEditing"
 
-    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kN:Lcom/android/settings/vpn2/b;
+    iget-object v1, p0, Lcom/android/settings/vpn2/VpnSettings;->kQ:Lcom/android/settings/vpn2/b;
 
-    invoke-virtual {v1}, Lcom/android/settings/vpn2/b;->fw()Z
+    invoke-virtual {v1}, Lcom/android/settings/vpn2/b;->fA()Z
 
     move-result v1
 

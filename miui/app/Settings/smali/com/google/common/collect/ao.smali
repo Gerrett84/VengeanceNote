@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final Ky:Lcom/google/common/base/l;
+.field private static final KB:Lcom/google/common/base/l;
 
 
 # instance fields
-.field private final Kx:Lcom/google/common/collect/ImmutableSet;
+.field private final KA:Lcom/google/common/collect/ImmutableSet;
 
 
 # direct methods
@@ -21,31 +21,31 @@
 
     invoke-direct {v0}, Lcom/google/common/collect/V;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/ao;->Ky:Lcom/google/common/base/l;
+    sput-object v0, Lcom/google/common/collect/ao;->KB:Lcom/google/common/base/l;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic dK()Ljava/util/Set;
+.method public bridge synthetic dO()Ljava/util/Set;
     .locals 1
 
     .prologue
     .line 41
-    invoke-virtual {p0}, Lcom/google/common/collect/ao;->kk()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ao;->ko()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final kk()Lcom/google/common/collect/ImmutableSet;
+.method public final ko()Lcom/google/common/collect/ImmutableSet;
     .locals 1
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/google/common/collect/ao;->Kx:Lcom/google/common/collect/ImmutableSet;
+    iget-object v0, p0, Lcom/google/common/collect/ao;->KA:Lcom/google/common/collect/ImmutableSet;
 
     return-object v0
 .end method

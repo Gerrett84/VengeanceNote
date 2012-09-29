@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic gq:Lcom/android/settings/ProxySelector;
+.field final synthetic gt:Lcom/android/settings/ProxySelector;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 279
-    iput-object p1, p0, Lcom/android/settings/ap;->gq:Lcom/android/settings/ProxySelector;
+    iput-object p1, p0, Lcom/android/settings/ap;->gt:Lcom/android/settings/ProxySelector;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,27 +32,27 @@
 
     .prologue
     .line 281
-    iget-object v0, p0, Lcom/android/settings/ap;->gq:Lcom/android/settings/ProxySelector;
+    iget-object v0, p0, Lcom/android/settings/ap;->gt:Lcom/android/settings/ProxySelector;
 
-    iget-object v0, v0, Lcom/android/settings/ProxySelector;->lZ:Landroid/widget/EditText;
+    iget-object v0, v0, Lcom/android/settings/ProxySelector;->mc:Landroid/widget/EditText;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 282
-    iget-object v0, p0, Lcom/android/settings/ap;->gq:Lcom/android/settings/ProxySelector;
+    iget-object v0, p0, Lcom/android/settings/ap;->gt:Lcom/android/settings/ProxySelector;
 
-    iget-object v0, v0, Lcom/android/settings/ProxySelector;->ma:Landroid/widget/EditText;
+    iget-object v0, v0, Lcom/android/settings/ProxySelector;->md:Landroid/widget/EditText;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 283
-    iget-object v0, p0, Lcom/android/settings/ap;->gq:Lcom/android/settings/ProxySelector;
+    iget-object v0, p0, Lcom/android/settings/ap;->gt:Lcom/android/settings/ProxySelector;
 
-    iget-object v0, v0, Lcom/android/settings/ProxySelector;->mb:Landroid/widget/EditText;
+    iget-object v0, v0, Lcom/android/settings/ProxySelector;->me:Landroid/widget/EditText;
 
     const-string v1, ""
 

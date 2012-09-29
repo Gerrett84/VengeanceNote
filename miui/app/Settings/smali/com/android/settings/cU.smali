@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Gg:Lcom/android/settings/SettingsLicenseActivity;
+.field final synthetic Gk:Lcom/android/settings/SettingsLicenseActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 193
-    iput-object p1, p0, Lcom/android/settings/cU;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iput-object p1, p0, Lcom/android/settings/cU;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 196
-    iget-object v0, p0, Lcom/android/settings/cU;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iget-object v0, p0, Lcom/android/settings/cU;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/SettingsLicenseActivity;->finish()V
 

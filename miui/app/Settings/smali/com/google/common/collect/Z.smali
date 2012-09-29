@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Dz:Ljava/lang/Object;
+.field final synthetic DD:Ljava/lang/Object;
 
 .field done:Z
 
@@ -16,7 +16,7 @@
 
     .prologue
     .line 1087
-    iput-object p1, p0, Lcom/google/common/collect/Z;->Dz:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/common/collect/Z;->DD:Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/google/common/collect/ap;-><init>()V
 
@@ -68,7 +68,7 @@
     iput-boolean v0, p0, Lcom/google/common/collect/Z;->done:Z
 
     .line 1099
-    iget-object v0, p0, Lcom/google/common/collect/Z;->Dz:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/common/collect/Z;->DD:Ljava/lang/Object;
 
     return-object v0
 .end method

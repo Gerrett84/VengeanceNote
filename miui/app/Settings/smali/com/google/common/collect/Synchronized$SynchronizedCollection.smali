@@ -39,18 +39,6 @@
 
 
 # virtual methods
-.method bridge synthetic a()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 100
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public add(Ljava/lang/Object;)Z
     .locals 2
     .parameter
@@ -63,7 +51,7 @@
 
     .line 115
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -98,7 +86,7 @@
 
     .line 122
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -121,12 +109,12 @@
     throw v0
 .end method
 
-.method cN()Ljava/util/Collection;
+.method cR()Ljava/util/Collection;
     .locals 1
 
     .prologue
     .line 109
-    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedObject;->a()Ljava/lang/Object;
+    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedObject;->e()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -146,7 +134,7 @@
 
     .line 129
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -181,7 +169,7 @@
 
     .line 136
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -216,7 +204,7 @@
 
     .line 143
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -239,6 +227,18 @@
     throw v0
 .end method
 
+.method bridge synthetic e()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 100
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public isEmpty()Z
     .locals 2
 
@@ -250,7 +250,7 @@
 
     .line 150
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -278,7 +278,7 @@
 
     .prologue
     .line 156
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -301,7 +301,7 @@
 
     .line 162
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -336,7 +336,7 @@
 
     .line 169
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -371,7 +371,7 @@
 
     .line 176
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -405,7 +405,7 @@
 
     .line 183
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -439,7 +439,7 @@
 
     .line 190
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -474,7 +474,7 @@
 
     .line 197
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 

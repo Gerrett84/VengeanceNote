@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final vf:Landroid/app/FragmentManager;
+.field private final vj:Landroid/app/FragmentManager;
 
-.field private vg:Landroid/app/FragmentTransaction;
+.field private vk:Landroid/app/FragmentTransaction;
 
-.field final synthetic vh:Lcom/android/settings/MiuiSettings;
+.field final synthetic vl:Lcom/android/settings/MiuiSettings;
 
 
 # direct methods
@@ -18,21 +18,21 @@
 
     .prologue
     .line 225
-    iput-object p1, p0, Lcom/android/settings/by;->vh:Lcom/android/settings/MiuiSettings;
+    iput-object p1, p0, Lcom/android/settings/by;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
     .line 223
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iput-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     .line 226
     invoke-virtual {p1}, Lcom/android/settings/MiuiSettings;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/by;->vf:Landroid/app/FragmentManager;
+    iput-object v0, p0, Lcom/android/settings/by;->vj:Landroid/app/FragmentManager;
 
     .line 227
     return-void
@@ -48,22 +48,22 @@
 
     .prologue
     .line 252
-    iget-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iget-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     if-nez v0, :cond_0
 
     .line 253
-    iget-object v0, p0, Lcom/android/settings/by;->vf:Landroid/app/FragmentManager;
+    iget-object v0, p0, Lcom/android/settings/by;->vj:Landroid/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iput-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     .line 255
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iget-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     check-cast p3, Landroid/app/Fragment;
 
@@ -79,22 +79,22 @@
 
     .prologue
     .line 260
-    iget-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iget-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     if-eqz v0, :cond_0
 
     .line 261
-    iget-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iget-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commitAllowingStateLoss()I
 
     .line 262
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iput-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     .line 263
-    iget-object v0, p0, Lcom/android/settings/by;->vf:Landroid/app/FragmentManager;
+    iget-object v0, p0, Lcom/android/settings/by;->vj:Landroid/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/app/FragmentManager;->executePendingTransactions()Z
 
@@ -123,7 +123,7 @@
 
     .prologue
     .line 237
-    iget-object v0, p0, Lcom/android/settings/by;->vh:Lcom/android/settings/MiuiSettings;
+    iget-object v0, p0, Lcom/android/settings/by;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiSettings;->a(Lcom/android/settings/MiuiSettings;)Lcom/android/settings/FrequentlyFragment;
 
@@ -132,7 +132,7 @@
     if-ne p1, v0, :cond_0
 
     .line 238
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -144,7 +144,7 @@
 
     .line 240
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/by;->vh:Lcom/android/settings/MiuiSettings;
+    iget-object v0, p0, Lcom/android/settings/by;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiSettings;->b(Lcom/android/settings/MiuiSettings;)Lcom/android/settings/SettingsFragment;
 
@@ -153,7 +153,7 @@
     if-ne p1, v0, :cond_1
 
     .line 241
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -175,29 +175,29 @@
 
     .prologue
     .line 283
-    iget-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iget-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     if-nez v0, :cond_0
 
     .line 284
-    iget-object v0, p0, Lcom/android/settings/by;->vf:Landroid/app/FragmentManager;
+    iget-object v0, p0, Lcom/android/settings/by;->vj:Landroid/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iput-object v0, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     .line 286
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/by;->vh:Lcom/android/settings/MiuiSettings;
+    iget-object v0, p0, Lcom/android/settings/by;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-static {v0, p2}, Lcom/android/settings/MiuiSettings;->a(Lcom/android/settings/MiuiSettings;I)Landroid/app/Fragment;
 
     move-result-object v0
 
     .line 287
-    iget-object v1, p0, Lcom/android/settings/by;->vg:Landroid/app/FragmentTransaction;
+    iget-object v1, p0, Lcom/android/settings/by;->vk:Landroid/app/FragmentTransaction;
 
     invoke-virtual {v1, v0}, Landroid/app/FragmentTransaction;->show(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
 

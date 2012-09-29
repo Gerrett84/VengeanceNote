@@ -4,19 +4,19 @@
 
 
 # instance fields
-.field private pr:Landroid/widget/EditText;
-
-.field private ps:Landroid/widget/EditText;
-
-.field private pt:Landroid/widget/EditText;
+.field private pA:Landroid/view/View$OnClickListener;
 
 .field private pu:Landroid/widget/EditText;
 
-.field private pv:Landroid/widget/Button;
+.field private pv:Landroid/widget/EditText;
 
-.field private pw:Landroid/widget/Button;
+.field private pw:Landroid/widget/EditText;
 
-.field private px:Landroid/view/View$OnClickListener;
+.field private px:Landroid/widget/EditText;
+
+.field private py:Landroid/widget/Button;
+
+.field private pz:Landroid/widget/Button;
 
 
 # direct methods
@@ -32,7 +32,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/d;-><init>(Lcom/android/settings/DebugIntentSender;)V
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->px:Landroid/view/View$OnClickListener;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pA:Landroid/view/View$OnClickListener;
 
     return-void
 .end method
@@ -43,7 +43,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pv:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->py:Landroid/widget/Button;
 
     return-object v0
 .end method
@@ -54,7 +54,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pw:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pz:Landroid/widget/Button;
 
     return-object v0
 .end method
@@ -65,7 +65,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pr:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pu:Landroid/widget/EditText;
 
     return-object v0
 .end method
@@ -76,7 +76,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->ps:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pv:Landroid/widget/EditText;
 
     return-object v0
 .end method
@@ -87,7 +87,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pt:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pw:Landroid/widget/EditText;
 
     return-object v0
 .end method
@@ -98,7 +98,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pu:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->px:Landroid/widget/EditText;
 
     return-object v0
 .end method
@@ -127,17 +127,17 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pr:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pu:Landroid/widget/EditText;
 
     .line 73
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pr:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pu:Landroid/widget/EditText;
 
     const-string v1, "android.intent.action.SYNC"
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 74
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pr:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pu:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -154,10 +154,10 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->ps:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pv:Landroid/widget/EditText;
 
     .line 77
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->ps:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pv:Landroid/widget/EditText;
 
     const v1, 0x1080018
 
@@ -172,7 +172,7 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pt:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pw:Landroid/widget/EditText;
 
     .line 80
     const v0, 0x7f0800a1
@@ -183,7 +183,7 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pu:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->px:Landroid/widget/EditText;
 
     .line 82
     const v0, 0x7f0800a2
@@ -194,12 +194,12 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pv:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->py:Landroid/widget/Button;
 
     .line 83
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pv:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->py:Landroid/widget/Button;
 
-    iget-object v1, p0, Lcom/android/settings/DebugIntentSender;->px:Landroid/view/View$OnClickListener;
+    iget-object v1, p0, Lcom/android/settings/DebugIntentSender;->pA:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -212,12 +212,12 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pw:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/DebugIntentSender;->pz:Landroid/widget/Button;
 
     .line 86
-    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pw:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/DebugIntentSender;->pz:Landroid/widget/Button;
 
-    iget-object v1, p0, Lcom/android/settings/DebugIntentSender;->px:Landroid/view/View$OnClickListener;
+    iget-object v1, p0, Lcom/android/settings/DebugIntentSender;->pA:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 

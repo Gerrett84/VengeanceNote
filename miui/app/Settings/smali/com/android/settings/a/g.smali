@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public Ep:Landroid/net/NetworkStatsHistory;
+.field public Et:Landroid/net/NetworkStatsHistory;
 
-.field public Eq:Landroid/net/NetworkStatsHistory;
+.field public Eu:Landroid/net/NetworkStatsHistory;
 
-.field public Er:Landroid/net/NetworkStatsHistory;
+.field public Ev:Landroid/net/NetworkStatsHistory;
 
-.field public Es:Landroid/net/NetworkStatsHistory;
+.field public Ew:Landroid/net/NetworkStatsHistory;
 
 
 # direct methods

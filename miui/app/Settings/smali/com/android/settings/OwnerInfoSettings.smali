@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private aZ:Landroid/widget/CheckBox;
+.field private bc:Landroid/widget/CheckBox;
 
-.field private ba:Landroid/widget/EditText;
+.field private bd:Landroid/widget/EditText;
 
 .field private mView:Landroid/view/View;
 
@@ -28,7 +28,7 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->ba:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->bd:Landroid/widget/EditText;
 
     return-object v0
 .end method
@@ -76,7 +76,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->aZ:Landroid/widget/CheckBox;
+    iput-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->bc:Landroid/widget/CheckBox;
 
     .line 50
     iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->mView:Landroid/view/View;
@@ -89,15 +89,15 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->ba:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->bd:Landroid/widget/EditText;
 
     .line 51
-    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->ba:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->bd:Landroid/widget/EditText;
 
     invoke-virtual {v0, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 52
-    iget-object v4, p0, Lcom/android/settings/OwnerInfoSettings;->ba:Landroid/widget/EditText;
+    iget-object v4, p0, Lcom/android/settings/OwnerInfoSettings;->bd:Landroid/widget/EditText;
 
     if-eqz v5, :cond_0
 
@@ -107,7 +107,7 @@
     invoke-virtual {v4, v0}, Landroid/widget/EditText;->setEnabled(Z)V
 
     .line 53
-    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->aZ:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->bc:Landroid/widget/CheckBox;
 
     if-eqz v5, :cond_1
 
@@ -115,7 +115,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 54
-    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->aZ:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/OwnerInfoSettings;->bc:Landroid/widget/CheckBox;
 
     new-instance v1, Lcom/android/settings/t;
 
@@ -141,39 +141,6 @@
 
 
 # virtual methods
-.method l()V
-    .locals 3
-
-    .prologue
-    .line 70
-    invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    .line 71
-    iget-object v1, p0, Lcom/android/settings/OwnerInfoSettings;->ba:Landroid/widget/EditText;
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 72
-    const-string v2, "lock_screen_owner_info"
-
-    invoke-static {v0, v2, v1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
-
-    .line 73
-    return-void
-.end method
-
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
     .parameter
@@ -211,8 +178,41 @@
     invoke-super {p0}, Landroid/app/Fragment;->onPause()V
 
     .line 66
-    invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->l()V
+    invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->p()V
 
     .line 67
+    return-void
+.end method
+
+.method p()V
+    .locals 3
+
+    .prologue
+    .line 70
+    invoke-virtual {p0}, Lcom/android/settings/OwnerInfoSettings;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 71
+    iget-object v1, p0, Lcom/android/settings/OwnerInfoSettings;->bd:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 72
+    const-string v2, "lock_screen_owner_info"
+
+    invoke-static {v0, v2, v1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 73
     return-void
 .end method

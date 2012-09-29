@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic dU:Lcom/android/settings/tts/g;
+.field final synthetic dX:Lcom/android/settings/tts/g;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/settings/tts/b;->dU:Lcom/android/settings/tts/g;
+    iput-object p1, p0, Lcom/android/settings/tts/b;->dX:Lcom/android/settings/tts/g;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,9 +31,9 @@
 
     .prologue
     .line 65
-    iget-object v0, p0, Lcom/android/settings/tts/b;->dU:Lcom/android/settings/tts/g;
+    iget-object v0, p0, Lcom/android/settings/tts/b;->dX:Lcom/android/settings/tts/g;
 
-    iget-object v0, v0, Lcom/android/settings/tts/g;->Cj:Lcom/android/settings/tts/a;
+    iget-object v0, v0, Lcom/android/settings/tts/g;->Cn:Lcom/android/settings/tts/a;
 
     invoke-static {v0}, Lcom/android/settings/tts/a;->a(Lcom/android/settings/tts/a;)Landroid/preference/ListPreference;
 
@@ -44,9 +44,9 @@
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setEnabled(Z)V
 
     .line 66
-    iget-object v0, p0, Lcom/android/settings/tts/b;->dU:Lcom/android/settings/tts/g;
+    iget-object v0, p0, Lcom/android/settings/tts/b;->dX:Lcom/android/settings/tts/g;
 
-    iget-object v0, v0, Lcom/android/settings/tts/g;->Cj:Lcom/android/settings/tts/a;
+    iget-object v0, v0, Lcom/android/settings/tts/g;->Cn:Lcom/android/settings/tts/a;
 
     invoke-static {v0}, Lcom/android/settings/tts/a;->b(Lcom/android/settings/tts/a;)V
 

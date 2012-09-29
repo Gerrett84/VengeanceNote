@@ -14,12 +14,12 @@
     return-void
 .end method
 
-.method private ag()Z
+.method private ak()Z
     .locals 3
 
     .prologue
     .line 43
-    invoke-virtual {p0}, Lcom/android/settings/MiuiApnEditor;->e()Z
+    invoke-virtual {p0}, Lcom/android/settings/MiuiApnEditor;->i()Z
 
     move-result v0
 
@@ -115,7 +115,7 @@
     .line 23
     :cond_0
     :goto_0
-    iget-boolean v0, p0, Lcom/android/settings/ApnEditor;->I:Z
+    iget-boolean v0, p0, Lcom/android/settings/ApnEditor;->L:Z
 
     if-nez v0, :cond_1
 
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ApnEditor;->H:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/ApnEditor;->K:Ljava/lang/String;
 
     .line 25
     iget-object v0, p0, Lcom/android/settings/ApnEditor;->mCursor:Landroid/database/Cursor;
@@ -139,7 +139,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ApnEditor;->G:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/ApnEditor;->J:Ljava/lang/String;
 
     .line 27
     :cond_1
@@ -182,7 +182,7 @@
 
     .line 33
     :pswitch_0
-    invoke-direct {p0}, Lcom/android/settings/MiuiApnEditor;->ag()Z
+    invoke-direct {p0}, Lcom/android/settings/MiuiApnEditor;->ak()Z
 
     move-result v0
 
@@ -228,7 +228,7 @@
 
     .line 71
     :pswitch_0
-    invoke-direct {p0}, Lcom/android/settings/MiuiApnEditor;->ag()Z
+    invoke-direct {p0}, Lcom/android/settings/MiuiApnEditor;->ak()Z
 
     move-result v0
 

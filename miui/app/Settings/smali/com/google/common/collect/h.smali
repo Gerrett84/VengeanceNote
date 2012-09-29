@@ -19,16 +19,7 @@
 
 
 # virtual methods
-.method protected bridge synthetic a()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 58
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
+.method protected abstract A()Ljava/util/Map;
 .end method
 
 .method public clear()V
@@ -36,7 +27,7 @@
 
     .prologue
     .line 85
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -52,7 +43,7 @@
 
     .prologue
     .line 90
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -69,7 +60,7 @@
 
     .prologue
     .line 95
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -80,12 +71,24 @@
     return v0
 .end method
 
+.method protected bridge synthetic e()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 58
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public entrySet()Ljava/util/Set;
     .locals 1
 
     .prologue
     .line 125
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -104,7 +107,7 @@
     .line 129
     if-eq p1, p0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -132,7 +135,7 @@
 
     .prologue
     .line 100
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -148,7 +151,7 @@
 
     .prologue
     .line 133
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -164,7 +167,7 @@
 
     .prologue
     .line 75
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -180,7 +183,7 @@
 
     .prologue
     .line 115
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -198,7 +201,7 @@
 
     .prologue
     .line 105
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -215,7 +218,7 @@
 
     .prologue
     .line 110
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -231,7 +234,7 @@
 
     .prologue
     .line 80
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -247,7 +250,7 @@
 
     .prologue
     .line 70
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -263,7 +266,7 @@
 
     .prologue
     .line 120
-    invoke-virtual {p0}, Lcom/google/common/collect/h;->w()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/common/collect/h;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -272,7 +275,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method protected abstract w()Ljava/util/Map;
 .end method

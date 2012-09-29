@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field private NS:Lcom/android/internal/app/IMediaContainerService;
+.field private NV:Lcom/android/internal/app/IMediaContainerService;
 
-.field private volatile NT:Z
+.field private volatile NW:Z
 
-.field private NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+.field private NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
-.field private final NV:Ljava/lang/ref/WeakReference;
+.field private final NY:Ljava/lang/ref/WeakReference;
 
-.field private final NW:Landroid/content/ServiceConnection;
+.field private final NZ:Landroid/content/ServiceConnection;
 
-.field final synthetic NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+.field final synthetic Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
 .field private volatile mBound:Z
 
@@ -32,7 +32,7 @@
     const/4 v1, 0x0
 
     .line 242
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     .line 243
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -48,21 +48,21 @@
     iput-boolean v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->mBound:Z
 
     .line 221
-    iput-boolean v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NT:Z
+    iput-boolean v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Z
 
     .line 227
     new-instance v0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$1;-><init>(Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Landroid/content/ServiceConnection;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NZ:Landroid/content/ServiceConnection;
 
     .line 244
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     .line 245
     return-void
@@ -75,7 +75,7 @@
 
     .prologue
     .line 204
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NS:Lcom/android/internal/app/IMediaContainerService;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Lcom/android/internal/app/IMediaContainerService;
 
     return-object p1
 .end method
@@ -86,7 +86,7 @@
 
     .prologue
     .line 204
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
     return-object v0
 .end method
@@ -109,7 +109,7 @@
 
     .prologue
     .line 204
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->lK()V
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->lO()V
 
     return-void
 .end method
@@ -120,7 +120,7 @@
 
     .prologue
     .line 370
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->c(Lcom/android/settings/deviceinfo/StorageMeasurement;)Landroid/os/storage/StorageVolume;
 
@@ -128,7 +128,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->c(Lcom/android/settings/deviceinfo/StorageMeasurement;)Landroid/os/storage/StorageVolume;
 
@@ -146,7 +146,7 @@
     move-result-object v0
 
     .line 374
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     const/4 v2, 0x0
 
@@ -155,7 +155,7 @@
     invoke-static {v1, v2, v3}, Lcom/android/settings/deviceinfo/StorageMeasurement;->b(Lcom/android/settings/deviceinfo/StorageMeasurement;J)J
 
     .line 375
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     const/4 v2, 0x1
 
@@ -167,7 +167,7 @@
 
     .line 380
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->d(Lcom/android/settings/deviceinfo/StorageMeasurement;)V
 
@@ -206,11 +206,11 @@
 
     .prologue
     .line 384
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -242,14 +242,14 @@
     const/4 v0, 0x0
 
     :goto_2
-    sget-object v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->pH:[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$MediaCategory;
+    sget-object v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->pK:[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$MediaCategory;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_5
 
     .line 391
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/StorageMeasurement;->e(Lcom/android/settings/deviceinfo/StorageMeasurement;)Z
 
@@ -258,17 +258,17 @@
     if-eqz v1, :cond_3
 
     .line 392
-    sget-object v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->pH:[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$MediaCategory;
+    sget-object v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->pK:[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$MediaCategory;
 
     aget-object v1, v1, v0
 
-    iget-object v3, v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$MediaCategory;->zM:[Ljava/lang/String;
+    iget-object v3, v1, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$MediaCategory;->zQ:[Ljava/lang/String;
 
     .line 393
     array-length v4, v3
 
     .line 394
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/StorageMeasurement;->f(Lcom/android/settings/deviceinfo/StorageMeasurement;)[J
 
@@ -288,7 +288,7 @@
     aget-object v5, v3, v1
 
     .line 397
-    iget-object v6, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v6, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v6}, Lcom/android/settings/deviceinfo/StorageMeasurement;->f(Lcom/android/settings/deviceinfo/StorageMeasurement;)[J
 
@@ -296,7 +296,7 @@
 
     aget-wide v7, v6, v0
 
-    iget-object v9, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v9, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v9, p1, v5}, Lcom/android/settings/deviceinfo/StorageMeasurement;->a(Lcom/android/settings/deviceinfo/StorageMeasurement;Lcom/android/internal/app/IMediaContainerService;Ljava/lang/String;)J
 
@@ -313,7 +313,7 @@
 
     .line 401
     :cond_3
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/StorageMeasurement;->f(Lcom/android/settings/deviceinfo/StorageMeasurement;)[J
 
@@ -331,7 +331,7 @@
 
     .line 436
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->e(Lcom/android/settings/deviceinfo/StorageMeasurement;)Z
 
@@ -351,9 +351,9 @@
     move-result-object v0
 
     .line 439
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
-    iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v3, p1, v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->a(Lcom/android/settings/deviceinfo/StorageMeasurement;Lcom/android/internal/app/IMediaContainerService;Ljava/lang/String;)J
 
@@ -363,14 +363,14 @@
 
     .line 445
     :goto_4
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     const-wide/16 v3, 0x0
 
     invoke-static {v0, v3, v4}, Lcom/android/settings/deviceinfo/StorageMeasurement;->e(Lcom/android/settings/deviceinfo/StorageMeasurement;J)J
 
     .line 446
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->e(Lcom/android/settings/deviceinfo/StorageMeasurement;)Z
 
@@ -379,7 +379,7 @@
     if-eqz v0, :cond_6
 
     .line 447
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0, p1}, Lcom/android/settings/deviceinfo/StorageMeasurement;->a(Lcom/android/settings/deviceinfo/StorageMeasurement;Lcom/android/internal/app/IMediaContainerService;)V
 
@@ -393,7 +393,7 @@
     if-eqz v3, :cond_0
 
     .line 457
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->e(Lcom/android/settings/deviceinfo/StorageMeasurement;)Z
 
@@ -401,7 +401,7 @@
 
     if-nez v0, :cond_7
 
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->b(Lcom/android/settings/deviceinfo/StorageMeasurement;)Z
 
@@ -436,10 +436,10 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;-><init>(Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;Lcom/android/settings/deviceinfo/StorageMeasurement$1;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
     .line 468
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->a(Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;)Ljava/util/List;
 
@@ -468,11 +468,11 @@
     check-cast v0, Landroid/content/pm/ApplicationInfo;
 
     .line 471
-    iget-object v5, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+    iget-object v5, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
     iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {v5, v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->i(Ljava/lang/String;)V
+    invoke-virtual {v5, v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->j(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -485,7 +485,7 @@
 
     .line 441
     :cond_8
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     const-wide/16 v3, 0x0
 
@@ -528,12 +528,12 @@
 
     .line 479
     :cond_b
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->lK()V
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->lO()V
 
     goto/16 :goto_1
 .end method
 
-.method private lK()V
+.method private lO()V
     .locals 1
 
     .prologue
@@ -554,9 +554,9 @@
 
     .prologue
     .line 311
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
-    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ae()[Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;->ai()[Ljava/lang/String;
 
     move-result-object v1
 
@@ -572,7 +572,7 @@
     .line 314
     aget-object v3, v1, v0
 
-    iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NU:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
+    iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler$StatsObserver;
 
     invoke-virtual {p1, v3, v4}, Landroid/content/pm/PackageManager;->getPackageSizeInfo(Ljava/lang/String;Landroid/content/pm/IPackageStatsObserver;)V
 
@@ -609,12 +609,12 @@
 
     .line 251
     :pswitch_0
-    iget-boolean v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NT:Z
+    iget-boolean v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Z
 
     if-eqz v1, :cond_1
 
     .line 252
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->a(Lcom/android/settings/deviceinfo/StorageMeasurement;)V
 
@@ -622,11 +622,11 @@
 
     .line 256
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     if-eqz v1, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -657,7 +657,7 @@
     .line 264
     const/4 v0, 0x2
 
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NS:Lcom/android/internal/app/IMediaContainerService;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Lcom/android/internal/app/IMediaContainerService;
 
     invoke-virtual {p0, v0, v2}, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -687,14 +687,14 @@
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    sget-object v3, Lcom/android/settings/deviceinfo/StorageMeasurement;->bM:Landroid/content/ComponentName;
+    sget-object v3, Lcom/android/settings/deviceinfo/StorageMeasurement;->bP:Landroid/content/ComponentName;
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v2
 
     .line 267
-    iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Landroid/content/ServiceConnection;
+    iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NZ:Landroid/content/ServiceConnection;
 
     const/4 v4, 0x1
 
@@ -731,11 +731,11 @@
     if-eqz v2, :cond_6
 
     .line 282
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     if-eqz v2, :cond_4
 
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NV:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NY:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -770,7 +770,7 @@
     iput-boolean v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->mBound:Z
 
     .line 288
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Landroid/content/ServiceConnection;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NZ:Landroid/content/ServiceConnection;
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
@@ -784,10 +784,10 @@
 
     .line 294
     :pswitch_3
-    iput-boolean v3, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NT:Z
+    iput-boolean v3, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Z
 
     .line 295
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NX:Lcom/android/settings/deviceinfo/StorageMeasurement;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->Oa:Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->a(Lcom/android/settings/deviceinfo/StorageMeasurement;)V
 
@@ -795,7 +795,7 @@
 
     .line 299
     :pswitch_4
-    iput-boolean v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NT:Z
+    iput-boolean v2, p0, Lcom/android/settings/deviceinfo/StorageMeasurement$MeasurementHandler;->NW:Z
 
     goto :goto_0
 

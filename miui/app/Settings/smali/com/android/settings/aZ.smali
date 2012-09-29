@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic sj:Lcom/android/settings/MasterClearConfirm;
+.field final synthetic sm:Lcom/android/settings/MasterClearConfirm;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 54
-    iput-object p1, p0, Lcom/android/settings/aZ;->sj:Lcom/android/settings/MasterClearConfirm;
+    iput-object p1, p0, Lcom/android/settings/aZ;->sm:Lcom/android/settings/MasterClearConfirm;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 57
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v0
 
@@ -44,7 +44,7 @@
 
     .line 61
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/aZ;->sj:Lcom/android/settings/MasterClearConfirm;
+    iget-object v0, p0, Lcom/android/settings/aZ;->sm:Lcom/android/settings/MasterClearConfirm;
 
     invoke-static {v0}, Lcom/android/settings/MasterClearConfirm;->a(Lcom/android/settings/MasterClearConfirm;)Z
 
@@ -65,7 +65,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     .line 64
-    iget-object v1, p0, Lcom/android/settings/aZ;->sj:Lcom/android/settings/MasterClearConfirm;
+    iget-object v1, p0, Lcom/android/settings/aZ;->sm:Lcom/android/settings/MasterClearConfirm;
 
     invoke-virtual {v1}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
 
@@ -77,7 +77,7 @@
 
     .line 66
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/aZ;->sj:Lcom/android/settings/MasterClearConfirm;
+    iget-object v0, p0, Lcom/android/settings/aZ;->sm:Lcom/android/settings/MasterClearConfirm;
 
     invoke-virtual {v0}, Lcom/android/settings/MasterClearConfirm;->getActivity()Landroid/app/Activity;
 

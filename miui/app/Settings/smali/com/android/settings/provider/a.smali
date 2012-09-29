@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic qA:Ljava/util/ArrayList;
+.field final synthetic qD:Ljava/util/ArrayList;
 
 .field final synthetic val$context:Landroid/content/Context;
 
@@ -17,7 +17,7 @@
 
     .prologue
     .line 137
-    iput-object p1, p0, Lcom/android/settings/provider/a;->qA:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/android/settings/provider/a;->qD:Ljava/util/ArrayList;
 
     iput-object p2, p0, Lcom/android/settings/provider/a;->val$context:Landroid/content/Context;
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 140
-    iget-object v0, p0, Lcom/android/settings/provider/a;->qA:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/provider/a;->qD:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -57,7 +57,7 @@
 
     iget-object v3, v0, Lcom/android/settings/provider/c;->key:Ljava/lang/String;
 
-    iget-object v4, v0, Lcom/android/settings/provider/c;->Il:Ljava/lang/String;
+    iget-object v4, v0, Lcom/android/settings/provider/c;->Io:Ljava/lang/String;
 
     iget v5, v0, Lcom/android/settings/provider/c;->index:I
 

@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field private mR:Landroid/preference/CheckBoxPreference;
+.field private mU:Landroid/preference/CheckBoxPreference;
 
-.field private mS:Landroid/preference/CheckBoxPreference;
+.field private mV:Landroid/preference/CheckBoxPreference;
 
-.field private mT:Ljava/util/HashSet;
+.field private mW:Ljava/util/HashSet;
 
-.field private mU:Z
+.field private mX:Z
 
-.field private mV:Landroid/app/Dialog;
+.field private mY:Landroid/app/Dialog;
 
-.field private mW:Landroid/widget/TextView;
+.field private mZ:Landroid/widget/TextView;
 
 
 # direct methods
@@ -77,7 +77,7 @@
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     return-object v0
 .end method
@@ -88,7 +88,7 @@
 
     .prologue
     .line 67
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dd()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dh()V
 
     return-void
 .end method
@@ -99,7 +99,7 @@
 
     .prologue
     .line 67
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->de()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->di()V
 
     return-void
 .end method
@@ -110,12 +110,12 @@
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mT:Ljava/util/HashSet;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mW:Ljava/util/HashSet;
 
     return-object v0
 .end method
 
-.method private db()V
+.method private df()V
     .locals 7
 
     .prologue
@@ -126,7 +126,7 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mT:Ljava/util/HashSet;
+    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mW:Ljava/util/HashSet;
 
     .line 141
     invoke-virtual {p0}, Lcom/android/settings/MiuiMasterClear;->getActivity()Landroid/app/Activity;
@@ -194,7 +194,7 @@
     if-nez v6, :cond_0
 
     .line 154
-    iget-object v6, p0, Lcom/android/settings/MiuiMasterClear;->mT:Ljava/util/HashSet;
+    iget-object v6, p0, Lcom/android/settings/MiuiMasterClear;->mW:Ljava/util/HashSet;
 
     iget-object v5, v5, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -211,16 +211,16 @@
     return-void
 .end method
 
-.method private dc()V
+.method private dg()V
     .locals 3
 
     .prologue
     .line 210
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -228,12 +228,12 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_1
 
     .line 211
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -300,11 +300,11 @@
 
     .line 214
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -322,7 +322,7 @@
     goto :goto_0
 .end method
 
-.method private dd()V
+.method private dh()V
     .locals 4
 
     .prologue
@@ -339,7 +339,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     .line 244
     invoke-virtual {p0}, Lcom/android/settings/MiuiMasterClear;->getActivity()Landroid/app/Activity;
@@ -368,10 +368,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mW:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mZ:Landroid/widget/TextView;
 
     .line 247
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mW:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mZ:Landroid/widget/TextView;
 
     const v2, 0x7f0b0735
 
@@ -387,17 +387,17 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 250
-    iget-object v2, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v2, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     invoke-virtual {v2, v1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
     .line 251
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     invoke-virtual {v1, v3}, Landroid/app/Dialog;->setCancelable(Z)V
 
     .line 252
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -408,7 +408,7 @@
     invoke-virtual {v1, v2}, Landroid/view/Window;->setType(I)V
 
     .line 253
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -419,7 +419,7 @@
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
     .line 254
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -430,7 +430,7 @@
     invoke-virtual {v1, v2}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
     .line 255
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
@@ -457,16 +457,16 @@
     return-void
 .end method
 
-.method private de()V
+.method private di()V
     .locals 3
 
     .prologue
     .line 263
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -475,7 +475,7 @@
     if-nez v0, :cond_1
 
     :cond_0
-    iget-boolean v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Z
+    iget-boolean v0, p0, Lcom/android/settings/MiuiMasterClear;->mX:Z
 
     if-eqz v0, :cond_2
 
@@ -520,7 +520,7 @@
     goto :goto_0
 .end method
 
-.method private df()Z
+.method private dj()Z
     .locals 2
 
     .prologue
@@ -557,7 +557,7 @@
 
     .prologue
     .line 67
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mY:Landroid/app/Dialog;
 
     return-object v0
 .end method
@@ -591,7 +591,7 @@
     if-ne p2, v0, :cond_0
 
     .line 204
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dc()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dg()V
 
     goto :goto_0
 .end method
@@ -625,7 +625,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     .line 107
     const-string v0, "erase_external_storage"
@@ -636,7 +636,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     .line 109
     const-string v0, "erase_optional"
@@ -665,12 +665,12 @@
     if-nez v1, :cond_4
 
     .line 111
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
     .line 112
-    iput-object v3, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iput-object v3, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     .line 117
     :goto_0
@@ -692,7 +692,7 @@
 
     if-nez v2, :cond_5
 
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->df()Z
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dj()Z
 
     move-result v2
 
@@ -700,12 +700,12 @@
 
     .line 122
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
     .line 123
-    iput-object v3, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iput-object v3, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     .line 129
     :cond_2
@@ -726,20 +726,20 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Z
+    iput-boolean v0, p0, Lcom/android/settings/MiuiMasterClear;->mX:Z
 
     .line 130
-    iget-boolean v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Z
+    iget-boolean v0, p0, Lcom/android/settings/MiuiMasterClear;->mX:Z
 
     if-eqz v0, :cond_3
 
     .line 131
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mR:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mU:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_6
 
     .line 132
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dd()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dh()V
 
     .line 137
     :cond_3
@@ -748,7 +748,7 @@
 
     .line 114
     :cond_4
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->db()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->df()V
 
     goto :goto_0
 
@@ -757,14 +757,14 @@
     if-eqz v1, :cond_2
 
     .line 125
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     const v1, 0x7f0b0736
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setTitle(I)V
 
     .line 126
-    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiMasterClear;->mV:Landroid/preference/CheckBoxPreference;
 
     const v1, 0x7f0b0737
 
@@ -774,7 +774,7 @@
 
     .line 134
     :cond_6
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->de()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->di()V
 
     goto :goto_2
 .end method
@@ -830,7 +830,7 @@
     if-nez v1, :cond_0
 
     .line 185
-    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dc()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiMasterClear;->dg()V
 
     .line 189
     :cond_0

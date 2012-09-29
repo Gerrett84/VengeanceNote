@@ -115,7 +115,7 @@
 
     .line 67
     :cond_1
-    invoke-virtual {v2}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->et()Z
+    invoke-virtual {v2}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ex()Z
 
     move-result v3
 
@@ -158,7 +158,7 @@
 
     .line 83
     :cond_3
-    invoke-virtual {v2}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->er()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-virtual {v2}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ev()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v2
 

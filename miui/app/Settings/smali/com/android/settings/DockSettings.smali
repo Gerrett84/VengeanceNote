@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private PL:Landroid/preference/Preference;
+.field private PO:Landroid/preference/Preference;
 
-.field private PM:Landroid/preference/CheckBoxPreference;
+.field private PP:Landroid/preference/CheckBoxPreference;
 
-.field private PN:Landroid/content/Intent;
+.field private PQ:Landroid/content/Intent;
 
 .field private mReceiver:Landroid/content/BroadcastReceiver;
 
@@ -55,7 +55,7 @@
     const/4 v3, 0x0
 
     .line 93
-    iget-object v1, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     if-eqz v1, :cond_0
 
@@ -82,12 +82,12 @@
     if-nez v1, :cond_2
 
     .line 100
-    iget-object v1, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     invoke-virtual {v1, v3}, Landroid/preference/Preference;->setEnabled(Z)V
 
     .line 101
-    iget-object v1, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -116,19 +116,19 @@
 
     .line 103
     :cond_2
-    iget-object v1, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setEnabled(Z)V
 
     .line 105
-    iput-object p1, p0, Lcom/android/settings/DockSettings;->PN:Landroid/content/Intent;
+    iput-object p1, p0, Lcom/android/settings/DockSettings;->PQ:Landroid/content/Intent;
 
     .line 107
     packed-switch v4, :pswitch_data_0
 
     .line 119
     :goto_3
-    iget-object v1, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     invoke-virtual {v1, v0}, Landroid/preference/Preference;->setSummary(I)V
 
@@ -173,7 +173,7 @@
     .end packed-switch
 .end method
 
-.method private mh()V
+.method private ml()V
     .locals 4
 
     .prologue
@@ -191,15 +191,15 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     .line 82
-    iget-object v0, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     if-eqz v0, :cond_0
 
     .line 83
-    iget-object v0, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     const v3, 0x7f0b027c
 
@@ -215,15 +215,15 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DockSettings;->PM:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DockSettings;->PP:Landroid/preference/CheckBoxPreference;
 
     .line 87
-    iget-object v0, p0, Lcom/android/settings/DockSettings;->PM:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DockSettings;->PP:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setPersistent(Z)V
 
     .line 88
-    iget-object v3, p0, Lcom/android/settings/DockSettings;->PM:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DockSettings;->PP:Landroid/preference/CheckBoxPreference;
 
     const-string v0, "dock_sounds_enabled"
 
@@ -248,7 +248,7 @@
     goto :goto_0
 .end method
 
-.method private mi()Landroid/app/Dialog;
+.method private mm()Landroid/app/Dialog;
     .locals 3
 
     .prologue
@@ -302,7 +302,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/DockSettings;->addPreferencesFromResource(I)V
 
     .line 60
-    invoke-direct {p0}, Lcom/android/settings/DockSettings;->mh()V
+    invoke-direct {p0}, Lcom/android/settings/DockSettings;->ml()V
 
     .line 61
     return-void
@@ -319,7 +319,7 @@
     if-ne p1, v0, :cond_0
 
     .line 159
-    invoke-direct {p0}, Lcom/android/settings/DockSettings;->mi()Landroid/app/Dialog;
+    invoke-direct {p0}, Lcom/android/settings/DockSettings;->mm()Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -364,16 +364,16 @@
     const/4 v1, 0x0
 
     .line 136
-    iget-object v2, p0, Lcom/android/settings/DockSettings;->PL:Landroid/preference/Preference;
+    iget-object v2, p0, Lcom/android/settings/DockSettings;->PO:Landroid/preference/Preference;
 
     if-ne p2, v2, :cond_3
 
     .line 137
-    iget-object v2, p0, Lcom/android/settings/DockSettings;->PN:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/android/settings/DockSettings;->PQ:Landroid/content/Intent;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/android/settings/DockSettings;->PN:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/android/settings/DockSettings;->PQ:Landroid/content/Intent;
 
     const-string v3, "android.intent.extra.DOCK_STATE"
 
@@ -401,7 +401,7 @@
     :cond_2
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/settings/DockSettings;->PN:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/settings/DockSettings;->PQ:Landroid/content/Intent;
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
@@ -430,7 +430,7 @@
 
     .line 148
     :cond_3
-    iget-object v2, p0, Lcom/android/settings/DockSettings;->PM:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DockSettings;->PP:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v2, :cond_1
 
@@ -441,7 +441,7 @@
 
     const-string v3, "dock_sounds_enabled"
 
-    iget-object v4, p0, Lcom/android/settings/DockSettings;->PM:Landroid/preference/CheckBoxPreference;
+    iget-object v4, p0, Lcom/android/settings/DockSettings;->PP:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v4}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 

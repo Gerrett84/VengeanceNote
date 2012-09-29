@@ -8,29 +8,29 @@
 
 
 # instance fields
-.field private qB:Ljava/lang/String;
+.field private qE:Ljava/lang/String;
 
-.field private qC:I
+.field private qF:I
 
-.field private qD:Landroid/preference/PreferenceActivity$Header;
+.field private qG:Landroid/preference/PreferenceActivity$Header;
 
-.field private qE:Landroid/preference/PreferenceActivity$Header;
+.field private qH:Landroid/preference/PreferenceActivity$Header;
 
-.field private qF:Landroid/preference/PreferenceActivity$Header;
+.field private qI:Landroid/preference/PreferenceActivity$Header;
 
-.field private qG:Z
+.field private qJ:Z
 
-.field private qH:[I
+.field private qK:[I
 
-.field private qI:Z
+.field private qL:Z
 
-.field protected qJ:Ljava/util/HashMap;
+.field protected qM:Ljava/util/HashMap;
 
-.field private qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+.field private qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-.field private qL:Landroid/preference/PreferenceActivity$Header;
+.field private qO:Landroid/preference/PreferenceActivity$Header;
 
-.field private qM:Z
+.field private qP:Z
 
 
 # direct methods
@@ -48,19 +48,19 @@
 
     fill-array-data v0, :array_0
 
-    iput-object v0, p0, Lcom/android/settings/Settings;->qH:[I
+    iput-object v0, p0, Lcom/android/settings/Settings;->qK:[I
 
     .line 113
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/Settings;->qI:Z
+    iput-boolean v0, p0, Lcom/android/settings/Settings;->qL:Z
 
     .line 117
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/Settings;->qJ:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/Settings;->qM:Ljava/util/HashMap;
 
     .line 813
     return-void
@@ -78,7 +78,7 @@
     .end array-data
 .end method
 
-.method private D(Ljava/lang/String;)V
+.method private E(Ljava/lang/String;)V
     .locals 4
     .parameter
 
@@ -134,13 +134,13 @@
     iput-object v1, v3, Landroid/preference/PreferenceActivity$Header;->title:Ljava/lang/CharSequence;
 
     .line 277
-    iput-object v3, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iput-object v3, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     .line 279
     invoke-direct {p0, v3}, Lcom/android/settings/Settings;->a(Landroid/preference/PreferenceActivity$Header;)V
 
     .line 280
-    iget v1, p0, Lcom/android/settings/Settings;->qC:I
+    iget v1, p0, Lcom/android/settings/Settings;->qF:I
 
     invoke-direct {p0, v1}, Lcom/android/settings/Settings;->T(I)V
 
@@ -149,10 +149,10 @@
 
     invoke-direct {v1}, Landroid/preference/PreferenceActivity$Header;-><init>()V
 
-    iput-object v1, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iput-object v1, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     .line 283
-    iget-object v1, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v1, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     iget-object v2, v0, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
@@ -165,7 +165,7 @@
     iput-object v2, v1, Landroid/preference/PreferenceActivity$Header;->fragment:Ljava/lang/String;
 
     .line 285
-    iget-object v1, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v1, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
 
@@ -223,7 +223,7 @@
     if-eqz p1, :cond_0
 
     .line 305
-    iget-object v0, p0, Lcom/android/settings/Settings;->qJ:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qM:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -280,9 +280,9 @@
     const/4 v2, 0x0
 
     .line 460
-    iget-object v0, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-    invoke-virtual {v0}, Lcom/android/settings/accounts/AuthenticatorHelper;->gz()[Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/settings/accounts/AuthenticatorHelper;->gD()[Ljava/lang/String;
 
     move-result-object v4
 
@@ -304,7 +304,7 @@
     aget-object v7, v4, v3
 
     .line 463
-    iget-object v0, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v0, p0, v7}, Lcom/android/settings/accounts/AuthenticatorHelper;->h(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/CharSequence;
 
@@ -336,9 +336,9 @@
 
     if-ne v0, v1, :cond_3
 
-    iget-object v0, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-    invoke-virtual {v0, v7}, Lcom/android/settings/accounts/AuthenticatorHelper;->M(Ljava/lang/String;)Z
+    invoke-virtual {v0, v7}, Lcom/android/settings/accounts/AuthenticatorHelper;->N(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -525,7 +525,7 @@
 
     .line 513
     :cond_6
-    iget-boolean v0, p0, Lcom/android/settings/Settings;->qM:Z
+    iget-boolean v0, p0, Lcom/android/settings/Settings;->qP:Z
 
     if-nez v0, :cond_7
 
@@ -539,7 +539,7 @@
     invoke-virtual {v0, p0, v2, v1}, Landroid/accounts/AccountManager;->addOnAccountsUpdatedListener(Landroid/accounts/OnAccountsUpdateListener;Landroid/os/Handler;Z)V
 
     .line 515
-    iput-boolean v1, p0, Lcom/android/settings/Settings;->qM:Z
+    iput-boolean v1, p0, Lcom/android/settings/Settings;->qP:Z
 
     .line 517
     :cond_7
@@ -552,7 +552,7 @@
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     return-object v0
 .end method
@@ -565,7 +565,7 @@
     .line 234
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/Settings;->qG:Z
+    iput-boolean v0, p0, Lcom/android/settings/Settings;->qJ:Z
 
     .line 235
     invoke-virtual {p0, p1}, Lcom/android/settings/Settings;->switchToHeader(Landroid/preference/PreferenceActivity$Header;)V
@@ -573,7 +573,7 @@
     .line 236
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/Settings;->qG:Z
+    iput-boolean v0, p0, Lcom/android/settings/Settings;->qJ:Z
 
     .line 237
     return-void
@@ -586,12 +586,12 @@
 
     .prologue
     .line 76
-    invoke-direct {p0, p1}, Lcom/android/settings/Settings;->D(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/android/settings/Settings;->E(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private eC()Z
+.method private eG()Z
     .locals 2
 
     .prologue
@@ -609,7 +609,7 @@
     return v0
 .end method
 
-.method private eD()V
+.method private eH()V
     .locals 3
 
     .prologue
@@ -651,7 +651,7 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/android/settings/Settings;->qC:I
+    iput v1, p0, Lcom/android/settings/Settings;->qF:I
 
     .line 530
     iget-object v1, v0, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
@@ -662,7 +662,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/Settings;->qB:Ljava/lang/String;
+    iput-object v1, p0, Lcom/android/settings/Settings;->qE:Ljava/lang/String;
 
     .line 533
     iget-object v1, v0, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
@@ -690,10 +690,10 @@
 
     invoke-direct {v2}, Landroid/preference/PreferenceActivity$Header;-><init>()V
 
-    iput-object v2, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iput-object v2, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     .line 537
-    iget-object v2, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v2, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     iput-object v0, v2, Landroid/preference/PreferenceActivity$Header;->fragment:Ljava/lang/String;
 
@@ -701,7 +701,7 @@
     if-eqz v1, :cond_0
 
     .line 539
-    iget-object v0, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     invoke-virtual {p0}, Lcom/android/settings/Settings;->getResources()Landroid/content/res/Resources;
 
@@ -760,7 +760,7 @@
     if-ne v2, v3, :cond_3
 
     .line 416
-    invoke-direct {p0}, Lcom/android/settings/Settings;->eC()Z
+    invoke-direct {p0}, Lcom/android/settings/Settings;->eG()Z
 
     move-result v3
 
@@ -778,7 +778,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, p0, Lcom/android/settings/Settings;->qH:[I
+    iget-object v3, p0, Lcom/android/settings/Settings;->qK:[I
 
     invoke-static {v3, v2}, Lcom/android/internal/util/ArrayUtils;->contains([II)Z
 
@@ -798,7 +798,7 @@
     if-ne v3, v0, :cond_b
 
     .line 449
-    iget-object v3, p0, Lcom/android/settings/Settings;->qD:Landroid/preference/PreferenceActivity$Header;
+    iget-object v3, p0, Lcom/android/settings/Settings;->qG:Landroid/preference/PreferenceActivity$Header;
 
     if-nez v3, :cond_2
 
@@ -809,11 +809,11 @@
     if-eqz v3, :cond_2
 
     .line 451
-    iput-object v0, p0, Lcom/android/settings/Settings;->qD:Landroid/preference/PreferenceActivity$Header;
+    iput-object v0, p0, Lcom/android/settings/Settings;->qG:Landroid/preference/PreferenceActivity$Header;
 
     .line 453
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/Settings;->qJ:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qM:Ljava/util/HashMap;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -921,7 +921,7 @@
     if-ne v2, v3, :cond_0
 
     .line 434
-    iget-boolean v3, p0, Lcom/android/settings/Settings;->qI:Z
+    iget-boolean v3, p0, Lcom/android/settings/Settings;->qL:Z
 
     if-eqz v3, :cond_9
 
@@ -943,7 +943,7 @@
 
     if-eqz v3, :cond_9
 
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v3
 
@@ -973,11 +973,11 @@
 
     .prologue
     .line 340
-    iget-object v0, p0, Lcom/android/settings/Settings;->qB:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qE:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/Settings;->qB:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qE:Ljava/lang/String;
 
     .line 352
     :cond_0
@@ -1162,7 +1162,7 @@
 
     .prologue
     .line 769
-    iget-object v0, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->a(Landroid/content/Context;[Landroid/accounts/Account;)V
 
@@ -1366,7 +1366,7 @@
 
     .line 127
     :goto_0
-    invoke-direct {p0}, Lcom/android/settings/Settings;->eD()V
+    invoke-direct {p0}, Lcom/android/settings/Settings;->eH()V
 
     .line 128
     const-string v3, "com.android.settings.MiuiDeviceInfoSettings"
@@ -1392,7 +1392,7 @@
 
     const-string v3, "com.android.settings.MiuiDeviceInfoSettings"
 
-    iget-object v4, p0, Lcom/android/settings/Settings;->qB:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/settings/Settings;->qE:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1446,7 +1446,7 @@
     if-lez v3, :cond_3
 
     .line 140
-    iput-boolean v1, p0, Lcom/android/settings/Settings;->qI:Z
+    iput-boolean v1, p0, Lcom/android/settings/Settings;->qL:Z
 
     .line 143
     :cond_3
@@ -1454,15 +1454,15 @@
 
     invoke-direct {v3}, Lcom/android/settings/accounts/AuthenticatorHelper;-><init>()V
 
-    iput-object v3, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iput-object v3, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     .line 144
-    iget-object v3, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v3, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v3, p0}, Lcom/android/settings/accounts/AuthenticatorHelper;->E(Landroid/content/Context;)V
 
     .line 145
-    iget-object v3, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v3, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v3, p0, v6}, Lcom/android/settings/accounts/AuthenticatorHelper;->a(Landroid/content/Context;[Landroid/accounts/Account;)V
 
@@ -1482,13 +1482,13 @@
 
     .line 153
     :cond_4
-    iput-boolean v1, p0, Lcom/android/settings/Settings;->qG:Z
+    iput-boolean v1, p0, Lcom/android/settings/Settings;->qJ:Z
 
     .line 154
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 155
-    iput-boolean v2, p0, Lcom/android/settings/Settings;->qG:Z
+    iput-boolean v2, p0, Lcom/android/settings/Settings;->qJ:Z
 
     .line 157
     invoke-virtual {p0}, Lcom/android/settings/Settings;->onIsHidingHeaders()Z
@@ -1504,7 +1504,7 @@
     if-eqz v0, :cond_5
 
     .line 158
-    iget v0, p0, Lcom/android/settings/Settings;->qC:I
+    iget v0, p0, Lcom/android/settings/Settings;->qF:I
 
     invoke-direct {p0, v0}, Lcom/android/settings/Settings;->T(I)V
 
@@ -1526,7 +1526,7 @@
 
     check-cast v0, Landroid/preference/PreferenceActivity$Header;
 
-    iput-object v0, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iput-object v0, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     .line 167
     const-string v0, "com.android.settings.PARENT_HEADER"
@@ -1537,18 +1537,18 @@
 
     check-cast v0, Landroid/preference/PreferenceActivity$Header;
 
-    iput-object v0, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iput-object v0, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     .line 171
     :cond_6
     if-eqz p1, :cond_7
 
-    iget-object v0, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     if-eqz v0, :cond_7
 
     .line 173
-    iget-object v0, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     iget-object v0, v0, Landroid/preference/PreferenceActivity$Header;->title:Ljava/lang/CharSequence;
 
@@ -1556,12 +1556,12 @@
 
     .line 176
     :cond_7
-    iget-object v0, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     if-eqz v0, :cond_8
 
     .line 177
-    iget-object v0, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     iget-object v0, v0, Landroid/preference/PreferenceActivity$Header;->title:Ljava/lang/CharSequence;
 
@@ -1612,7 +1612,7 @@
     invoke-super {p0}, Landroid/preference/PreferenceActivity;->onDestroy()V
 
     .line 228
-    iget-boolean v0, p0, Lcom/android/settings/Settings;->qM:Z
+    iget-boolean v0, p0, Lcom/android/settings/Settings;->qP:Z
 
     if-eqz v0, :cond_0
 
@@ -1671,14 +1671,14 @@
     iput-object v1, v0, Landroid/preference/PreferenceActivity$Header;->fragmentArguments:Landroid/os/Bundle;
 
     .line 367
-    iput-object v0, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iput-object v0, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     .line 371
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/Settings;->qD:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qG:Landroid/preference/PreferenceActivity$Header;
 
     goto :goto_0
 .end method
@@ -1711,12 +1711,12 @@
     .line 735
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/Settings;->qL:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qO:Landroid/preference/PreferenceActivity$Header;
 
     if-eqz v0, :cond_1
 
     .line 736
-    iget-object v0, p0, Lcom/android/settings/Settings;->qL:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qO:Landroid/preference/PreferenceActivity$Header;
 
     iget-wide v0, v0, Landroid/preference/PreferenceActivity$Header;->id:J
 
@@ -1730,7 +1730,7 @@
 
     .line 738
     :cond_1
-    iput-object p1, p0, Lcom/android/settings/Settings;->qL:Landroid/preference/PreferenceActivity$Header;
+    iput-object p1, p0, Lcom/android/settings/Settings;->qO:Landroid/preference/PreferenceActivity$Header;
 
     goto :goto_0
 .end method
@@ -1754,7 +1754,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/Settings;->qD:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qG:Landroid/preference/PreferenceActivity$Header;
 
     if-eqz v0, :cond_0
 
@@ -1771,7 +1771,7 @@
     if-eqz v0, :cond_0
 
     .line 299
-    iget-object v0, p0, Lcom/android/settings/Settings;->qD:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qG:Landroid/preference/PreferenceActivity$Header;
 
     invoke-direct {p0, v0}, Lcom/android/settings/Settings;->a(Landroid/preference/PreferenceActivity$Header;)V
 
@@ -1943,27 +1943,27 @@
     invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
     .line 196
-    iget-object v0, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     if-eqz v0, :cond_0
 
     .line 197
     const-string v0, "com.android.settings.CURRENT_HEADER"
 
-    iget-object v1, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iget-object v1, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 199
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     if-eqz v0, :cond_1
 
     .line 200
     const-string v0, "com.android.settings.PARENT_HEADER"
 
-    iget-object v1, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iget-object v1, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
@@ -1997,7 +1997,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/Settings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v2, p0, Lcom/android/settings/Settings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/settings/dR;-><init>(Landroid/content/Context;Ljava/util/List;Lcom/android/settings/accounts/AuthenticatorHelper;)V
 
@@ -2033,15 +2033,15 @@
     const/4 v1, 0x0
 
     .line 254
-    iget-boolean v0, p0, Lcom/android/settings/Settings;->qG:Z
+    iget-boolean v0, p0, Lcom/android/settings/Settings;->qJ:Z
 
     if-nez v0, :cond_0
 
     .line 255
-    iput-object v1, p0, Lcom/android/settings/Settings;->qE:Landroid/preference/PreferenceActivity$Header;
+    iput-object v1, p0, Lcom/android/settings/Settings;->qH:Landroid/preference/PreferenceActivity$Header;
 
     .line 256
-    iput-object v1, p0, Lcom/android/settings/Settings;->qF:Landroid/preference/PreferenceActivity$Header;
+    iput-object v1, p0, Lcom/android/settings/Settings;->qI:Landroid/preference/PreferenceActivity$Header;
 
     .line 258
     :cond_0

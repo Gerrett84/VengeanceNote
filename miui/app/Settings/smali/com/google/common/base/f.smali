@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final vb:Lcom/google/common/base/m;
+.field private final vf:Lcom/google/common/base/m;
 
-.field private final vc:Ljava/lang/String;
+.field private final vg:Ljava/lang/String;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 351
-    iput-object p1, p0, Lcom/google/common/base/f;->vb:Lcom/google/common/base/m;
+    iput-object p1, p0, Lcom/google/common/base/f;->vf:Lcom/google/common/base/m;
 
     .line 352
     invoke-static {p2}, Lcom/google/common/base/c;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -29,7 +29,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/common/base/f;->vc:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/common/base/f;->vg:Ljava/lang/String;
 
     .line 353
     return-void
@@ -74,7 +74,7 @@
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 422
-    iget-object v1, p0, Lcom/google/common/base/f;->vb:Lcom/google/common/base/m;
+    iget-object v1, p0, Lcom/google/common/base/f;->vf:Lcom/google/common/base/m;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -87,12 +87,12 @@
     invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 423
-    iget-object v1, p0, Lcom/google/common/base/f;->vc:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/common/base/f;->vg:Ljava/lang/String;
 
     invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 424
-    iget-object v1, p0, Lcom/google/common/base/f;->vb:Lcom/google/common/base/m;
+    iget-object v1, p0, Lcom/google/common/base/f;->vf:Lcom/google/common/base/m;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -113,7 +113,7 @@
     if-eqz v0, :cond_0
 
     .line 426
-    iget-object v0, p0, Lcom/google/common/base/f;->vb:Lcom/google/common/base/m;
+    iget-object v0, p0, Lcom/google/common/base/f;->vf:Lcom/google/common/base/m;
 
     invoke-static {v0}, Lcom/google/common/base/m;->a(Lcom/google/common/base/m;)Ljava/lang/String;
 
@@ -129,7 +129,7 @@
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 428
-    iget-object v1, p0, Lcom/google/common/base/f;->vb:Lcom/google/common/base/m;
+    iget-object v1, p0, Lcom/google/common/base/f;->vf:Lcom/google/common/base/m;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -142,12 +142,12 @@
     invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 429
-    iget-object v1, p0, Lcom/google/common/base/f;->vc:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/common/base/f;->vg:Ljava/lang/String;
 
     invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 430
-    iget-object v1, p0, Lcom/google/common/base/f;->vb:Lcom/google/common/base/m;
+    iget-object v1, p0, Lcom/google/common/base/f;->vf:Lcom/google/common/base/m;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 

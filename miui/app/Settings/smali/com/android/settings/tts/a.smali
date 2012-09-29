@@ -8,19 +8,19 @@
 
 
 # instance fields
-.field private cd:Landroid/speech/tts/TtsEngines;
+.field private cg:Landroid/speech/tts/TtsEngines;
 
-.field private ce:Landroid/preference/ListPreference;
+.field private ch:Landroid/preference/ListPreference;
 
-.field private cf:Landroid/preference/Preference;
+.field private ci:Landroid/preference/Preference;
 
-.field private cg:Landroid/preference/Preference;
+.field private cj:Landroid/preference/Preference;
 
-.field private ch:Landroid/content/Intent;
+.field private ck:Landroid/content/Intent;
 
-.field private ci:Landroid/speech/tts/TextToSpeech;
+.field private cl:Landroid/speech/tts/TextToSpeech;
 
-.field private final cj:Landroid/speech/tts/TextToSpeech$OnInitListener;
+.field private final cm:Landroid/speech/tts/TextToSpeech$OnInitListener;
 
 
 # direct methods
@@ -36,7 +36,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/tts/g;-><init>(Lcom/android/settings/tts/a;)V
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->cj:Landroid/speech/tts/TextToSpeech$OnInitListener;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->cm:Landroid/speech/tts/TextToSpeech$OnInitListener;
 
     .line 75
     return-void
@@ -48,7 +48,7 @@
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     return-object v0
 .end method
@@ -67,9 +67,9 @@
     const/4 v2, 0x0
 
     .line 150
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cd:Landroid/speech/tts/TtsEngines;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/speech/tts/TtsEngines;
 
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v1
 
@@ -215,12 +215,12 @@
 
     .line 177
     :cond_4
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v6}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
     .line 178
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v7}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
@@ -228,7 +228,7 @@
     if-le v3, v4, :cond_5
 
     .line 180
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v3}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
@@ -238,7 +238,7 @@
 
     .line 182
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
@@ -249,7 +249,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/tts/a;->e(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/tts/a;->f(Ljava/lang/String;)V
 
     goto :goto_2
 .end method
@@ -260,31 +260,31 @@
 
     .prologue
     .line 39
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->s()V
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->w()V
 
     return-void
 .end method
 
-.method private e(Ljava/lang/String;)V
+.method private f(Ljava/lang/String;)V
     .locals 6
     .parameter
 
     .prologue
     .line 228
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cd:Landroid/speech/tts/TtsEngines;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/speech/tts/TtsEngines;
 
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1, p1}, Landroid/speech/tts/TtsEngines;->updateLocalePrefForEngine(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 229
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ci:Landroid/speech/tts/TextToSpeech;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->cl:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v1}, Landroid/speech/tts/TextToSpeech;->getCurrentEngine()Ljava/lang/String;
 
@@ -305,7 +305,7 @@
     if-eqz v0, :cond_0
 
     .line 232
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ci:Landroid/speech/tts/TextToSpeech;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->cl:Landroid/speech/tts/TextToSpeech;
 
     new-instance v2, Ljava/util/Locale;
 
@@ -330,7 +330,7 @@
     return-void
 .end method
 
-.method private s()V
+.method private w()V
     .locals 4
 
     .prologue
@@ -377,12 +377,12 @@
     new-array v0, v3, [Ljava/lang/CharSequence;
 
     .line 128
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
     .line 129
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
@@ -401,7 +401,7 @@
     if-lez v0, :cond_1
 
     .line 134
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     const/4 v2, 0x1
 
@@ -412,7 +412,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v2, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
@@ -435,7 +435,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v2, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
@@ -446,24 +446,24 @@
     new-array v0, v3, [Ljava/lang/CharSequence;
 
     .line 144
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
     .line 145
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
     goto :goto_0
 .end method
 
-.method private t()V
+.method private x()V
     .locals 4
 
     .prologue
     .line 192
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v0
 
@@ -491,7 +491,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 195
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v1
 
@@ -570,7 +570,7 @@
     goto :goto_0
 .end method
 
-.method private u()Ljava/lang/String;
+.method private y()Ljava/lang/String;
     .locals 2
 
     .prologue
@@ -588,7 +588,7 @@
     return-object v0
 .end method
 
-.method private v()Ljava/lang/String;
+.method private z()Ljava/lang/String;
     .locals 2
 
     .prologue
@@ -632,7 +632,7 @@
 
     invoke-direct {v0, v1}, Landroid/speech/tts/TtsEngines;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->cd:Landroid/speech/tts/TtsEngines;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/speech/tts/TtsEngines;
 
     .line 83
     invoke-virtual {p0}, Lcom/android/settings/tts/a;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -648,10 +648,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     .line 85
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -662,10 +662,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->cf:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->ci:Landroid/preference/Preference;
 
     .line 87
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cf:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ci:Landroid/preference/Preference;
 
     invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
@@ -676,34 +676,34 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     .line 89
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
     .line 91
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 94
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->v()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->z()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 95
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->setKey(Ljava/lang/String;)V
 
     .line 96
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cf:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ci:Landroid/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/tts/a;->getResources()Landroid/content/res/Resources;
 
@@ -715,7 +715,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->v()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->z()Ljava/lang/String;
 
     move-result-object v4
 
@@ -728,9 +728,9 @@
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 99
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cd:Landroid/speech/tts/TtsEngines;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/speech/tts/TtsEngines;
 
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v1
 
@@ -738,26 +738,26 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/content/Intent;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->ck:Landroid/content/Intent;
 
     .line 100
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ck:Landroid/content/Intent;
 
     if-nez v0, :cond_0
 
     .line 101
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cf:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ci:Landroid/preference/Preference;
 
     invoke-virtual {v0, v5}, Landroid/preference/Preference;->setEnabled(Z)V
 
     .line 103
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     invoke-virtual {v0, v5}, Landroid/preference/Preference;->setEnabled(Z)V
 
     .line 105
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v5}, Landroid/preference/ListPreference;->setEnabled(Z)V
 
@@ -772,15 +772,15 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/tts/a;->cj:Landroid/speech/tts/TextToSpeech$OnInitListener;
+    iget-object v2, p0, Lcom/android/settings/tts/a;->cm:Landroid/speech/tts/TextToSpeech$OnInitListener;
 
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->u()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->y()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v0, v1, v2, v3}, Landroid/speech/tts/TextToSpeech;-><init>(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$OnInitListener;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/android/settings/tts/a;->ci:Landroid/speech/tts/TextToSpeech;
+    iput-object v0, p0, Lcom/android/settings/tts/a;->cl:Landroid/speech/tts/TextToSpeech;
 
     .line 108
     return-void
@@ -791,7 +791,7 @@
 
     .prologue
     .line 112
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ci:Landroid/speech/tts/TextToSpeech;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->cl:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->shutdown()V
 
@@ -809,14 +809,14 @@
 
     .prologue
     .line 219
-    iget-object v0, p0, Lcom/android/settings/tts/a;->ce:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/tts/a;->ch:Landroid/preference/ListPreference;
 
     if-ne p1, v0, :cond_0
 
     .line 220
     check-cast p2, Ljava/lang/String;
 
-    invoke-direct {p0, p2}, Lcom/android/settings/tts/a;->e(Ljava/lang/String;)V
+    invoke-direct {p0, p2}, Lcom/android/settings/tts/a;->f(Ljava/lang/String;)V
 
     .line 221
     const/4 v0, 0x1
@@ -839,12 +839,12 @@
     const/4 v0, 0x1
 
     .line 206
-    iget-object v1, p0, Lcom/android/settings/tts/a;->cg:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->cj:Landroid/preference/Preference;
 
     if-ne p1, v1, :cond_0
 
     .line 207
-    invoke-direct {p0}, Lcom/android/settings/tts/a;->t()V
+    invoke-direct {p0}, Lcom/android/settings/tts/a;->x()V
 
     .line 214
     :goto_0
@@ -852,12 +852,12 @@
 
     .line 209
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/tts/a;->cf:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->ci:Landroid/preference/Preference;
 
     if-ne p1, v1, :cond_1
 
     .line 210
-    iget-object v1, p0, Lcom/android/settings/tts/a;->ch:Landroid/content/Intent;
+    iget-object v1, p0, Lcom/android/settings/tts/a;->ck:Landroid/content/Intent;
 
     invoke-virtual {p0, v1}, Lcom/android/settings/tts/a;->startActivity(Landroid/content/Intent;)V
 

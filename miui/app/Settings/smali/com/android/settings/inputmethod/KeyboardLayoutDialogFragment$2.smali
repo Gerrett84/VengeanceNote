@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic MF:Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
+.field final synthetic MI:Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 98
-    iput-object p1, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$2;->MF:Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$2;->MI:Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 101
-    iget-object v0, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$2;->MF:Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$2;->MI:Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;
 
     invoke-static {v0}, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;->a(Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment;)V
 

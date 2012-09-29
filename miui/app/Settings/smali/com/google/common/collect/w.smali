@@ -4,9 +4,9 @@
 
 
 # static fields
-.field static final oR:Lcom/google/common/collect/ap;
+.field static final oU:Lcom/google/common/collect/ap;
 
-.field private static final oS:Ljava/util/Iterator;
+.field private static final oV:Ljava/util/Iterator;
 
 
 # direct methods
@@ -19,14 +19,14 @@
 
     invoke-direct {v0}, Lcom/google/common/collect/m;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/w;->oR:Lcom/google/common/collect/ap;
+    sput-object v0, Lcom/google/common/collect/w;->oU:Lcom/google/common/collect/ap;
 
     .line 87
     new-instance v0, Lcom/google/common/collect/n;
 
     invoke-direct {v0}, Lcom/google/common/collect/n;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/w;->oS:Ljava/util/Iterator;
+    sput-object v0, Lcom/google/common/collect/w;->oV:Ljava/util/Iterator;
 
     return-void
 .end method
@@ -335,12 +335,12 @@
     throw v0
 .end method
 
-.method public static dE()Lcom/google/common/collect/ap;
+.method public static dI()Lcom/google/common/collect/ap;
     .locals 1
 
     .prologue
     .line 84
-    sget-object v0, Lcom/google/common/collect/w;->oR:Lcom/google/common/collect/ap;
+    sget-object v0, Lcom/google/common/collect/w;->oU:Lcom/google/common/collect/ap;
 
     return-object v0
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Kw:Lcom/android/settings/DisplaySettings;
+.field final synthetic Kz:Lcom/android/settings/DisplaySettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 67
-    iput-object p1, p0, Lcom/android/settings/dH;->Kw:Lcom/android/settings/DisplaySettings;
+    iput-object p1, p0, Lcom/android/settings/dH;->Kz:Lcom/android/settings/DisplaySettings;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
 
@@ -28,7 +28,7 @@
 
     .prologue
     .line 70
-    iget-object v0, p0, Lcom/android/settings/dH;->Kw:Lcom/android/settings/DisplaySettings;
+    iget-object v0, p0, Lcom/android/settings/dH;->Kz:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->a(Lcom/android/settings/DisplaySettings;)V
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ai:Lcom/android/settings/bluetooth/HidProfile;
+.field final synthetic al:Lcom/android/settings/bluetooth/HidProfile;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 42
-    iput-object p1, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->ai:Lcom/android/settings/bluetooth/HidProfile;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->al:Lcom/android/settings/bluetooth/HidProfile;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,14 +45,14 @@
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->ai:Lcom/android/settings/bluetooth/HidProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->al:Lcom/android/settings/bluetooth/HidProfile;
 
     check-cast p2, Landroid/bluetooth/BluetoothInputDevice;
 
     invoke-static {v0, p2}, Lcom/android/settings/bluetooth/HidProfile;->a(Lcom/android/settings/bluetooth/HidProfile;Landroid/bluetooth/BluetoothInputDevice;)Landroid/bluetooth/BluetoothInputDevice;
 
     .line 47
-    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->ai:Lcom/android/settings/bluetooth/HidProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->al:Lcom/android/settings/bluetooth/HidProfile;
 
     const/4 v1, 0x1
 
@@ -68,14 +68,14 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->ai:Lcom/android/settings/bluetooth/HidProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->al:Lcom/android/settings/bluetooth/HidProfile;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/bluetooth/HidProfile;->a(Lcom/android/settings/bluetooth/HidProfile;Z)Z
 
     .line 52
-    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->ai:Lcom/android/settings/bluetooth/HidProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/HidProfile$InputDeviceServiceListener;->al:Lcom/android/settings/bluetooth/HidProfile;
 
     const/4 v1, 0x0
 

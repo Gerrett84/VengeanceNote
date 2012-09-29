@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field HW:Z
+.field Ia:Z
 
-.field HX:I
+.field Ib:I
 
-.field HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+.field Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
 .field concurrencyLevel:I
 
@@ -42,7 +42,7 @@
     invoke-direct {p0}, Lcom/google/common/collect/GenericMapMaker;-><init>()V
 
     .line 123
-    iput v0, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iput v0, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     .line 124
     iput v0, p0, Lcom/google/common/collect/MapMaker;->concurrencyLevel:I
@@ -168,12 +168,12 @@
     goto :goto_2
 .end method
 
-.method private jY()Z
+.method private kc()Z
     .locals 1
 
     .prologue
     .line 147
-    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     if-nez v0, :cond_0
 
@@ -217,7 +217,7 @@
     iput-object v0, p0, Lcom/google/common/collect/GenericMapMaker;->removalListener:Lcom/google/common/collect/o;
 
     .line 569
-    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 570
     return-object p0
@@ -252,20 +252,20 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     if-nez v0, :cond_0
 
     .line 469
-    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->un:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->ur:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    iput-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iput-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 471
     :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v0, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 472
     return-object p0
@@ -308,7 +308,7 @@
     iput-object v0, p0, Lcom/google/common/collect/MapMaker;->keyEquivalence:Lcom/google/common/base/Equivalence;
 
     .line 162
-    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 163
     return-object p0
@@ -357,12 +357,12 @@
     iput-object v0, p0, Lcom/google/common/collect/MapMaker;->keyStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 339
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     if-eq p1, v0, :cond_0
 
     .line 341
-    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 343
     :cond_0
@@ -381,7 +381,7 @@
 
     .prologue
     .line 668
-    invoke-direct {p0}, Lcom/google/common/collect/MapMaker;->jY()Z
+    invoke-direct {p0}, Lcom/google/common/collect/MapMaker;->kc()Z
 
     move-result v0
 
@@ -412,7 +412,7 @@
     const/4 v2, 0x0
 
     .line 203
-    iget v0, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iget v0, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     const/4 v3, -0x1
 
@@ -425,7 +425,7 @@
 
     new-array v4, v1, [Ljava/lang/Object;
 
-    iget v5, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iget v5, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -442,7 +442,7 @@
     invoke-static {v1}, Lcom/google/common/base/c;->A(Z)V
 
     .line 206
-    iput p1, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iput p1, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     .line 207
     return-object p0
@@ -507,7 +507,7 @@
     iput p1, p0, Lcom/google/common/collect/MapMaker;->maximumSize:I
 
     .line 242
-    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 243
     iget v0, p0, Lcom/google/common/collect/MapMaker;->maximumSize:I
@@ -515,9 +515,9 @@
     if-nez v0, :cond_1
 
     .line 245
-    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->uo:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->us:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    iput-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iput-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 247
     :cond_1
@@ -625,7 +625,7 @@
     iput-object v0, p0, Lcom/google/common/collect/MapMaker;->valueEquivalence:Lcom/google/common/base/Equivalence;
 
     .line 183
-    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 184
     return-object p0
@@ -674,12 +674,12 @@
     iput-object v0, p0, Lcom/google/common/collect/MapMaker;->valueStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 412
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     if-eq p1, v0, :cond_0
 
     .line 414
-    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v1, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 416
     :cond_0
@@ -715,37 +715,37 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     if-nez v0, :cond_0
 
     .line 518
-    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->un:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->ur:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    iput-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iput-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 520
     :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iput-boolean v0, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     .line 521
     return-object p0
 .end method
 
-.method jZ()Lcom/google/common/base/Equivalence;
+.method kd()Lcom/google/common/base/Equivalence;
     .locals 2
 
     .prologue
     .line 167
     iget-object v0, p0, Lcom/google/common/collect/MapMaker;->keyEquivalence:Lcom/google/common/base/Equivalence;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->ke()Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->ki()Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/common/collect/MapMakerInternalMap$Strength;->S()Lcom/google/common/base/Equivalence;
+    invoke-virtual {v1}, Lcom/google/common/collect/MapMakerInternalMap$Strength;->W()Lcom/google/common/base/Equivalence;
 
     move-result-object v1
 
@@ -758,18 +758,18 @@
     return-object v0
 .end method
 
-.method ka()Lcom/google/common/base/Equivalence;
+.method ke()Lcom/google/common/base/Equivalence;
     .locals 2
 
     .prologue
     .line 188
     iget-object v0, p0, Lcom/google/common/collect/MapMaker;->valueEquivalence:Lcom/google/common/base/Equivalence;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kf()Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kj()Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/common/collect/MapMakerInternalMap$Strength;->S()Lcom/google/common/base/Equivalence;
+    invoke-virtual {v1}, Lcom/google/common/collect/MapMakerInternalMap$Strength;->W()Lcom/google/common/base/Equivalence;
 
     move-result-object v1
 
@@ -782,12 +782,12 @@
     return-object v0
 .end method
 
-.method kb()I
+.method kf()I
     .locals 2
 
     .prologue
     .line 211
-    iget v0, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iget v0, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     const/4 v1, -0x1
 
@@ -799,12 +799,12 @@
     return v0
 
     :cond_0
-    iget v0, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iget v0, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     goto :goto_0
 .end method
 
-.method kc()I
+.method kg()I
     .locals 2
 
     .prologue
@@ -826,12 +826,12 @@
     goto :goto_0
 .end method
 
-.method public kd()Lcom/google/common/collect/MapMaker;
+.method public kh()Lcom/google/common/collect/MapMaker;
     .locals 1
 
     .prologue
     .line 306
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dn:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dq:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MapMaker;->a(Lcom/google/common/collect/MapMakerInternalMap$Strength;)Lcom/google/common/collect/MapMaker;
 
@@ -840,14 +840,14 @@
     return-object v0
 .end method
 
-.method ke()Lcom/google/common/collect/MapMakerInternalMap$Strength;
+.method ki()Lcom/google/common/collect/MapMakerInternalMap$Strength;
     .locals 2
 
     .prologue
     .line 347
     iget-object v0, p0, Lcom/google/common/collect/MapMaker;->keyStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     invoke-static {v0, v1}, Lcom/google/common/base/g;->e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -858,14 +858,14 @@
     return-object v0
 .end method
 
-.method kf()Lcom/google/common/collect/MapMakerInternalMap$Strength;
+.method kj()Lcom/google/common/collect/MapMakerInternalMap$Strength;
     .locals 2
 
     .prologue
     .line 420
     iget-object v0, p0, Lcom/google/common/collect/MapMaker;->valueStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     invoke-static {v0, v1}, Lcom/google/common/base/g;->e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -876,7 +876,7 @@
     return-object v0
 .end method
 
-.method kg()J
+.method kk()J
     .locals 4
 
     .prologue
@@ -900,7 +900,7 @@
     goto :goto_0
 .end method
 
-.method kh()J
+.method kl()J
     .locals 4
 
     .prologue
@@ -924,14 +924,14 @@
     goto :goto_0
 .end method
 
-.method ki()Lcom/google/common/base/b;
+.method km()Lcom/google/common/base/b;
     .locals 2
 
     .prologue
     .line 530
     iget-object v0, p0, Lcom/google/common/collect/MapMaker;->ticker:Lcom/google/common/base/b;
 
-    invoke-static {}, Lcom/google/common/base/b;->dy()Lcom/google/common/base/b;
+    invoke-static {}, Lcom/google/common/base/b;->dC()Lcom/google/common/base/b;
 
     move-result-object v1
 
@@ -944,25 +944,25 @@
     return-object v0
 .end method
 
-.method public kj()Ljava/util/concurrent/ConcurrentMap;
+.method public kn()Ljava/util/concurrent/ConcurrentMap;
     .locals 4
 
     .prologue
     .line 587
-    iget-boolean v0, p0, Lcom/google/common/collect/MapMaker;->HW:Z
+    iget-boolean v0, p0, Lcom/google/common/collect/MapMaker;->Ia:Z
 
     if-nez v0, :cond_0
 
     .line 588
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kb()I
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kf()I
 
     move-result v1
 
     const/high16 v2, 0x3f40
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kc()I
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kg()I
 
     move-result v3
 
@@ -973,7 +973,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iget-object v0, p0, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     if-nez v0, :cond_1
 
@@ -1005,14 +1005,14 @@
     move-result-object v0
 
     .line 680
-    iget v1, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iget v1, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     if-eq v1, v3, :cond_0
 
     .line 681
     const-string v1, "initialCapacity"
 
-    iget v2, p0, Lcom/google/common/collect/MapMaker;->HX:I
+    iget v2, p0, Lcom/google/common/collect/MapMaker;->Ib:I
 
     invoke-virtual {v0, v1, v2}, Lcom/google/common/base/o;->c(Ljava/lang/String;I)Lcom/google/common/base/o;
 

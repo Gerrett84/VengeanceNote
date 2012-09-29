@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic eJ:Lcom/android/settings/AccessibilitySettings;
+.field final synthetic eM:Lcom/android/settings/AccessibilitySettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 151
-    iput-object p1, p0, Lcom/android/settings/dx;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iput-object p1, p0, Lcom/android/settings/dx;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
 
@@ -28,7 +28,7 @@
 
     .prologue
     .line 154
-    iget-object v0, p0, Lcom/android/settings/dx;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iget-object v0, p0, Lcom/android/settings/dx;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-static {v0}, Lcom/android/settings/AccessibilitySettings;->c(Lcom/android/settings/AccessibilitySettings;)V
 

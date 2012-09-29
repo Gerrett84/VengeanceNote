@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aY:Lcom/android/settings/RadioInfo;
+.field final synthetic bb:Lcom/android/settings/RadioInfo;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 821
-    iput-object p1, p0, Lcom/android/settings/z;->aY:Lcom/android/settings/RadioInfo;
+    iput-object p1, p0, Lcom/android/settings/z;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,7 +46,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 831
-    iget-object v1, p0, Lcom/android/settings/z;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v1, p0, Lcom/android/settings/z;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/RadioInfo;->startActivity(Landroid/content/Intent;)V
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Kr:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
+.field final synthetic Ku:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 300
-    iput-object p1, p0, Lcom/android/settings/dA;->Kr:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
+    iput-object p1, p0, Lcom/android/settings/dA;->Ku:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,9 +31,9 @@
 
     .prologue
     .line 302
-    iget-object v0, p0, Lcom/android/settings/dA;->Kr:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
+    iget-object v0, p0, Lcom/android/settings/dA;->Ku:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;
 
-    iget-object v0, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->qZ:Lmiui/widget/LockPatternView;
+    iget-object v0, v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment;->rc:Lmiui/widget/LockPatternView;
 
     invoke-virtual {v0}, Lmiui/widget/LockPatternView;->clearPattern()V
 

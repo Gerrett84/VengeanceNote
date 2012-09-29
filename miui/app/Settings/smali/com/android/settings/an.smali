@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic gq:Lcom/android/settings/ProxySelector;
+.field final synthetic gt:Lcom/android/settings/ProxySelector;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 294
-    iput-object p1, p0, Lcom/android/settings/an;->gq:Lcom/android/settings/ProxySelector;
+    iput-object p1, p0, Lcom/android/settings/an;->gt:Lcom/android/settings/ProxySelector;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

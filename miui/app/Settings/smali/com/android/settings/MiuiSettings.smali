@@ -9,23 +9,23 @@
 # instance fields
 .field private mActionBar:Landroid/app/ActionBar;
 
-.field private qH:[I
+.field private qK:[I
 
-.field private qI:Z
+.field private qL:Z
 
-.field private qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+.field private qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-.field private qM:Z
+.field private qP:Z
 
-.field private sn:Lcom/android/settings/FrequentlyFragment;
+.field private sq:Lcom/android/settings/FrequentlyFragment;
 
-.field private so:Lcom/android/settings/SettingsFragment;
+.field private sr:Lcom/android/settings/SettingsFragment;
 
-.field private sp:Lcom/android/settings/dJ;
+.field private ss:Lcom/android/settings/dJ;
 
-.field private sq:Landroid/support/v4/view/ViewPager;
+.field private st:Landroid/support/v4/view/ViewPager;
 
-.field private sr:Lcom/android/settings/MiuiSettings$TabState;
+.field private su:Lcom/android/settings/MiuiSettings$TabState;
 
 
 # direct methods
@@ -43,17 +43,17 @@
 
     fill-array-data v0, :array_0
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->qH:[I
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:[I
 
     .line 75
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/MiuiSettings;->qI:Z
+    iput-boolean v0, p0, Lcom/android/settings/MiuiSettings;->qL:Z
 
     .line 88
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/MiuiSettings$TabState;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->su:Lcom/android/settings/MiuiSettings$TabState;
 
     .line 486
     return-void
@@ -86,9 +86,9 @@
     const/4 v2, 0x0
 
     .line 354
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-    invoke-virtual {v0}, Lcom/android/settings/accounts/AuthenticatorHelper;->gz()[Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/settings/accounts/AuthenticatorHelper;->gD()[Ljava/lang/String;
 
     move-result-object v4
 
@@ -110,7 +110,7 @@
     aget-object v7, v4, v3
 
     .line 357
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v0, p0, v7}, Lcom/android/settings/accounts/AuthenticatorHelper;->h(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/CharSequence;
 
@@ -142,9 +142,9 @@
 
     if-ne v0, v1, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-    invoke-virtual {v0, v7}, Lcom/android/settings/accounts/AuthenticatorHelper;->M(Ljava/lang/String;)Z
+    invoke-virtual {v0, v7}, Lcom/android/settings/accounts/AuthenticatorHelper;->N(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -370,7 +370,7 @@
 
     .line 417
     :cond_7
-    iget-boolean v0, p0, Lcom/android/settings/MiuiSettings;->qM:Z
+    iget-boolean v0, p0, Lcom/android/settings/MiuiSettings;->qP:Z
 
     if-nez v0, :cond_8
 
@@ -384,7 +384,7 @@
     invoke-virtual {v0, p0, v2, v1}, Landroid/accounts/AccountManager;->addOnAccountsUpdatedListener(Landroid/accounts/OnAccountsUpdateListener;Landroid/os/Handler;Z)V
 
     .line 419
-    iput-boolean v1, p0, Lcom/android/settings/MiuiSettings;->qM:Z
+    iput-boolean v1, p0, Lcom/android/settings/MiuiSettings;->qP:Z
 
     .line 421
     :cond_8
@@ -411,7 +411,7 @@
 
     .prologue
     .line 61
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     return-object v0
 .end method
@@ -436,7 +436,7 @@
     invoke-virtual {v0, p2}, Landroid/app/ActionBar$Tab;->setText(I)Landroid/app/ActionBar$Tab;
 
     .line 145
-    iget-object v1, p0, Lcom/android/settings/MiuiSettings;->sp:Lcom/android/settings/dJ;
+    iget-object v1, p0, Lcom/android/settings/MiuiSettings;->ss:Lcom/android/settings/dJ;
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar$Tab;->setTabListener(Landroid/app/ActionBar$TabListener;)Landroid/app/ActionBar$Tab;
 
@@ -455,7 +455,7 @@
 
     .prologue
     .line 328
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -464,7 +464,7 @@
     if-ne p1, v0, :cond_0
 
     .line 329
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     .line 331
     :goto_0
@@ -472,7 +472,7 @@
 
     .line 330
     :cond_0
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -481,7 +481,7 @@
     if-ne p1, v0, :cond_1
 
     .line 331
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     goto :goto_0
 
@@ -518,12 +518,12 @@
 
     .prologue
     .line 61
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     return-object v0
 .end method
 
-.method private eC()Z
+.method private eG()Z
     .locals 2
 
     .prologue
@@ -541,7 +541,7 @@
     return v0
 .end method
 
-.method private fi()V
+.method private fm()V
     .locals 3
 
     .prologue
@@ -559,7 +559,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/dJ;-><init>(Lcom/android/settings/MiuiSettings;Lcom/android/settings/dY;)V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sp:Lcom/android/settings/dJ;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->ss:Lcom/android/settings/dJ;
 
     .line 133
     iget-object v0, p0, Lcom/android/settings/MiuiSettings;->mActionBar:Landroid/app/ActionBar;
@@ -578,14 +578,14 @@
     invoke-virtual {v0, v1, v2}, Landroid/app/ActionBar;->setDisplayOptions(II)V
 
     .line 137
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     const v1, 0x7f0b06cd
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/MiuiSettings;->a(Lcom/android/settings/MiuiSettings$TabState;I)V
 
     .line 138
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     const v1, 0x7f0b06cc
 
@@ -595,7 +595,7 @@
     return-void
 .end method
 
-.method private fj()V
+.method private fn()V
     .locals 5
 
     .prologue
@@ -618,7 +618,7 @@
 
     check-cast v0, Landroid/support/v4/view/ViewPager;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Landroid/support/v4/view/ViewPager;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->st:Landroid/support/v4/view/ViewPager;
 
     .line 155
     new-instance v0, Lcom/android/settings/by;
@@ -626,7 +626,7 @@
     invoke-direct {v0, p0}, Lcom/android/settings/by;-><init>(Lcom/android/settings/MiuiSettings;)V
 
     .line 156
-    iget-object v3, p0, Lcom/android/settings/MiuiSettings;->sq:Landroid/support/v4/view/ViewPager;
+    iget-object v3, p0, Lcom/android/settings/MiuiSettings;->st:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3, v0}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
 
@@ -638,7 +638,7 @@
     invoke-direct {v0, p0, v3}, Lcom/android/settings/bG;-><init>(Lcom/android/settings/MiuiSettings;Lcom/android/settings/dY;)V
 
     .line 158
-    iget-object v3, p0, Lcom/android/settings/MiuiSettings;->sq:Landroid/support/v4/view/ViewPager;
+    iget-object v3, p0, Lcom/android/settings/MiuiSettings;->st:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v3, v0}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
@@ -651,7 +651,7 @@
 
     check-cast v0, Lcom/android/settings/FrequentlyFragment;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     .line 168
     const-string v0, "com.android.settings.SettingsFragment"
@@ -662,10 +662,10 @@
 
     check-cast v0, Lcom/android/settings/SettingsFragment;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     .line 171
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     if-nez v0, :cond_0
 
@@ -674,10 +674,10 @@
 
     invoke-direct {v0}, Lcom/android/settings/FrequentlyFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     .line 173
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     const-string v3, "com.android.settings.FrequentlyFragment"
 
@@ -685,7 +685,7 @@
 
     .line 176
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     if-nez v0, :cond_1
 
@@ -694,10 +694,10 @@
 
     invoke-direct {v0}, Lcom/android/settings/SettingsFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     .line 178
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     const-string v3, "com.android.settings.SettingsFragment"
 
@@ -705,12 +705,12 @@
 
     .line 182
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sn:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Lcom/android/settings/FrequentlyFragment;
 
     invoke-virtual {v2, v0}, Landroid/app/FragmentTransaction;->hide(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
     .line 183
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     invoke-virtual {v2, v0}, Landroid/app/FragmentTransaction;->hide(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -743,10 +743,10 @@
 
     .line 339
     :cond_0
-    iput-object p1, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/MiuiSettings$TabState;
+    iput-object p1, p0, Lcom/android/settings/MiuiSettings;->su:Lcom/android/settings/MiuiSettings$TabState;
 
     .line 341
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/MiuiSettings$TabState;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->su:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -781,7 +781,7 @@
     if-eqz p2, :cond_2
 
     .line 348
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sq:Landroid/support/v4/view/ViewPager;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->st:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -835,7 +835,7 @@
     if-ne v2, v3, :cond_2
 
     .line 436
-    invoke-direct {p0}, Lcom/android/settings/MiuiSettings;->eC()Z
+    invoke-direct {p0}, Lcom/android/settings/MiuiSettings;->eG()Z
 
     move-result v3
 
@@ -853,7 +853,7 @@
 
     if-eqz v3, :cond_1
 
-    iget-object v3, p0, Lcom/android/settings/MiuiSettings;->qH:[I
+    iget-object v3, p0, Lcom/android/settings/MiuiSettings;->qK:[I
 
     invoke-static {v3, v2}, Lcom/android/internal/util/ArrayUtils;->contains([II)Z
 
@@ -1029,7 +1029,7 @@
     if-ne v2, v3, :cond_0
 
     .line 463
-    iget-boolean v3, p0, Lcom/android/settings/MiuiSettings;->qI:Z
+    iget-boolean v3, p0, Lcom/android/settings/MiuiSettings;->qL:Z
 
     if-eqz v3, :cond_b
 
@@ -1051,7 +1051,7 @@
 
     if-eqz v3, :cond_b
 
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v3
 
@@ -1073,12 +1073,12 @@
     goto/16 :goto_2
 .end method
 
-.method public fk()Lcom/android/settings/accounts/AuthenticatorHelper;
+.method public fo()Lcom/android/settings/accounts/AuthenticatorHelper;
     .locals 1
 
     .prologue
     .line 483
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     return-object v0
 .end method
@@ -1089,7 +1089,7 @@
 
     .prologue
     .line 678
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->a(Landroid/content/Context;[Landroid/accounts/Account;)V
 
@@ -1106,14 +1106,14 @@
 
     .prologue
     .line 687
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
     if-eqz v0, :cond_0
 
     .line 688
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->so:Lcom/android/settings/SettingsFragment;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/SettingsFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/SettingsFragment;->aP()V
+    invoke-virtual {v0}, Lcom/android/settings/SettingsFragment;->aT()V
 
     .line 690
     :cond_0
@@ -1212,15 +1212,15 @@
 
     invoke-direct {v0}, Lcom/android/settings/accounts/AuthenticatorHelper;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iput-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     .line 108
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/accounts/AuthenticatorHelper;->E(Landroid/content/Context;)V
 
     .line 109
-    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/MiuiSettings;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     const/4 v1, 0x0
 
@@ -1250,14 +1250,14 @@
     if-lez v0, :cond_0
 
     .line 116
-    iput-boolean v3, p0, Lcom/android/settings/MiuiSettings;->qI:Z
+    iput-boolean v3, p0, Lcom/android/settings/MiuiSettings;->qL:Z
 
     .line 120
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/MiuiSettings;->fj()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiSettings;->fn()V
 
     .line 121
-    invoke-direct {p0}, Lcom/android/settings/MiuiSettings;->fi()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiSettings;->fm()V
 
     .line 123
     invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -1267,7 +1267,7 @@
     .line 124
     const-string v1, "leave_fragment_index"
 
-    sget-object v2, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v2, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v2}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -1306,7 +1306,7 @@
     .line 211
     const-string v1, "leave_fragment_index"
 
-    iget-object v2, p0, Lcom/android/settings/MiuiSettings;->sr:Lcom/android/settings/MiuiSettings$TabState;
+    iget-object v2, p0, Lcom/android/settings/MiuiSettings;->su:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v2}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -1318,7 +1318,7 @@
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     .line 214
-    iget-boolean v0, p0, Lcom/android/settings/MiuiSettings;->qM:Z
+    iget-boolean v0, p0, Lcom/android/settings/MiuiSettings;->qP:Z
 
     if-eqz v0, :cond_0
 

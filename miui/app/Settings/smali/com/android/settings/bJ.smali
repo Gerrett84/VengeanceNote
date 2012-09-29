@@ -6,9 +6,9 @@
 # instance fields
 .field mItems:Ljava/util/ArrayList;
 
-.field yv:Landroid/widget/LinearLayout;
+.field yA:Ljava/util/ArrayList;
 
-.field yw:Ljava/util/ArrayList;
+.field yz:Landroid/widget/LinearLayout;
 
 
 # direct methods
@@ -24,7 +24,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/bJ;->yw:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/bJ;->yA:Ljava/util/ArrayList;
 
     .line 393
     new-instance v0, Ljava/util/ArrayList;

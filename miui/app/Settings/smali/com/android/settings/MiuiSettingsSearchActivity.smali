@@ -68,7 +68,7 @@
     move-result v0
 
     .line 25
-    invoke-static {}, Lcom/android/settings/bP;->hx()[I
+    invoke-static {}, Lcom/android/settings/bP;->hB()[I
 
     move-result-object v1
 

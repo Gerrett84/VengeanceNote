@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field private AT:Ljava/lang/Object;
+.field private AX:Ljava/lang/Object;
 
-.field private AU:Ljava/text/DateFormat;
+.field private AY:Ljava/text/DateFormat;
 
-.field private AV:Ljava/text/DateFormat;
+.field private AZ:Ljava/text/DateFormat;
 
-.field private AW:Landroid/content/SyncStatusObserver;
+.field private Ba:Landroid/content/SyncStatusObserver;
 
 .field private final mHandler:Landroid/os/Handler;
 
-.field private qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+.field private qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-.field private sZ:Ljava/util/HashMap;
+.field private td:Ljava/util/HashMap;
 
 
 # direct methods
@@ -40,21 +40,21 @@
     .line 56
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->sZ:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->td:Ljava/util/HashMap;
 
     .line 57
     new-instance v0, Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-direct {v0}, Lcom/android/settings/accounts/AuthenticatorHelper;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     .line 109
     new-instance v0, Lcom/android/settings/accounts/AccountPreferenceBase$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/accounts/AccountPreferenceBase$1;-><init>(Lcom/android/settings/accounts/AccountPreferenceBase;)V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AW:Landroid/content/SyncStatusObserver;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->Ba:Landroid/content/SyncStatusObserver;
 
     return-void
 .end method
@@ -72,13 +72,13 @@
 
 
 # virtual methods
-.method protected E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+.method protected F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 2
     .parameter
 
     .prologue
     .line 173
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->getActivity()Landroid/app/Activity;
 
@@ -91,13 +91,13 @@
     return-object v0
 .end method
 
-.method protected F(Ljava/lang/String;)Ljava/lang/CharSequence;
+.method protected G(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 2
     .parameter
 
     .prologue
     .line 177
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->getActivity()Landroid/app/Activity;
 
@@ -120,9 +120,9 @@
 
     .line 147
     .line 148
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-    invoke-virtual {v1, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->K(Ljava/lang/String;)Z
+    invoke-virtual {v1, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->L(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -130,9 +130,9 @@
 
     .line 151
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-    invoke-virtual {v1, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->L(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
+    invoke-virtual {v1, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->M(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
@@ -275,7 +275,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AU:Ljava/text/DateFormat;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AY:Ljava/text/DateFormat;
 
     invoke-virtual {v1, p1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
@@ -291,7 +291,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AV:Ljava/text/DateFormat;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AZ:Ljava/text/DateFormat;
 
     invoke-virtual {v1, p1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
@@ -308,7 +308,7 @@
     return-object v0
 .end method
 
-.method protected dg()V
+.method protected dk()V
     .locals 0
 
     .prologue
@@ -316,7 +316,7 @@
     return-void
 .end method
 
-.method protected di()V
+.method protected dm()V
     .locals 0
 
     .prologue
@@ -324,12 +324,12 @@
     return-void
 .end method
 
-.method public dj()V
+.method public dn()V
     .locals 2
 
     .prologue
     .line 168
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qK:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->qN:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->getActivity()Landroid/app/Activity;
 
@@ -338,7 +338,7 @@
     invoke-virtual {v0, v1}, Lcom/android/settings/accounts/AuthenticatorHelper;->E(Landroid/content/Context;)V
 
     .line 169
-    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->di()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dm()V
 
     .line 170
     return-void
@@ -371,14 +371,14 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AU:Ljava/text/DateFormat;
+    iput-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AY:Ljava/text/DateFormat;
 
     .line 89
     invoke-static {v0}, Landroid/text/format/DateFormat;->getTimeFormat(Landroid/content/Context;)Ljava/text/DateFormat;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AV:Ljava/text/DateFormat;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AZ:Ljava/text/DateFormat;
 
     .line 90
     return-void
@@ -392,7 +392,7 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
     .line 106
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AT:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AX:Ljava/lang/Object;
 
     invoke-static {v0}, Landroid/content/ContentResolver;->removeStatusChangeListener(Ljava/lang/Object;)V
 
@@ -410,28 +410,28 @@
     .line 95
     const/16 v0, 0xd
 
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AW:Landroid/content/SyncStatusObserver;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->Ba:Landroid/content/SyncStatusObserver;
 
     invoke-static {v0, v1}, Landroid/content/ContentResolver;->addStatusChangeListener(ILandroid/content/SyncStatusObserver;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AT:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->AX:Ljava/lang/Object;
 
     .line 100
-    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dg()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dk()V
 
     .line 101
     return-void
 .end method
 
-.method public x(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public y(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 8
     .parameter
 
     .prologue
     .line 120
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->sZ:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->td:Ljava/util/HashMap;
 
     if-nez v0, :cond_2
 
@@ -440,7 +440,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->sZ:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->td:Ljava/util/HashMap;
 
     .line 122
     invoke-static {}, Landroid/content/ContentResolver;->getSyncAdapterTypes()[Landroid/content/SyncAdapterType;
@@ -461,7 +461,7 @@
     aget-object v4, v2, v1
 
     .line 125
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->sZ:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->td:Ljava/util/HashMap;
 
     iget-object v5, v4, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
@@ -480,7 +480,7 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 128
-    iget-object v5, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->sZ:Ljava/util/HashMap;
+    iget-object v5, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->td:Ljava/util/HashMap;
 
     iget-object v6, v4, Landroid/content/SyncAdapterType;->accountType:Ljava/lang/String;
 
@@ -550,7 +550,7 @@
 
     .line 137
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->sZ:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase;->td:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

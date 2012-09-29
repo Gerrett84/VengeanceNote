@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final synthetic Ms:Lcom/android/settings/widget/a;
+.field final synthetic Mv:Lcom/android/settings/widget/a;
 
-.field final synthetic wo:Z
+.field final synthetic ws:Z
 
 
 # direct methods
@@ -17,9 +17,9 @@
 
     .prologue
     .line 444
-    iput-object p1, p0, Lcom/android/settings/widget/q;->Ms:Lcom/android/settings/widget/a;
+    iput-object p1, p0, Lcom/android/settings/widget/q;->Mv:Lcom/android/settings/widget/a;
 
-    iput-boolean p2, p0, Lcom/android/settings/widget/q;->wo:Z
+    iput-boolean p2, p0, Lcom/android/settings/widget/q;->ws:Z
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -49,11 +49,11 @@
 
     .prologue
     .line 447
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eI()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eM()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/android/settings/widget/q;->wo:Z
+    iget-boolean v1, p0, Lcom/android/settings/widget/q;->ws:Z
 
     invoke-virtual {v0, v1}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->D(Z)V
 

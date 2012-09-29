@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+.field final synthetic KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 47
-    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$2;->KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$2;->KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 50
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$2;->KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$2;->KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/fuelgauge/PowerModeSettings;->finish()V
 

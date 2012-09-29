@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private yP:Z
+.field private yT:Z
 
-.field private yQ:Landroid/preference/Preference;
+.field private yU:Landroid/preference/Preference;
 
-.field private yR:Z
+.field private yV:Z
 
 
 # direct methods
@@ -24,7 +24,7 @@
     .line 27
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/ProgressCategory;->yP:Z
+    iput-boolean v0, p0, Lcom/android/settings/ProgressCategory;->yT:Z
 
     .line 33
     const v0, 0x7f04005d
@@ -43,7 +43,7 @@
 
     .prologue
     .line 66
-    iput-boolean p1, p0, Lcom/android/settings/ProgressCategory;->yP:Z
+    iput-boolean p1, p0, Lcom/android/settings/ProgressCategory;->yT:Z
 
     .line 67
     invoke-virtual {p0}, Lcom/android/settings/ProgressCategory;->notifyChanged()V
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v3, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     if-ne v0, v3, :cond_3
 
@@ -97,7 +97,7 @@
 
     .line 43
     :goto_0
-    iget-boolean v3, p0, Lcom/android/settings/ProgressCategory;->yP:Z
+    iget-boolean v3, p0, Lcom/android/settings/ProgressCategory;->yT:Z
 
     if-eqz v3, :cond_4
 
@@ -107,7 +107,7 @@
     invoke-virtual {v4, v3}, Landroid/view/View;->setVisibility(I)V
 
     .line 45
-    iget-boolean v3, p0, Lcom/android/settings/ProgressCategory;->yP:Z
+    iget-boolean v3, p0, Lcom/android/settings/ProgressCategory;->yT:Z
 
     if-nez v3, :cond_1
 
@@ -115,17 +115,17 @@
 
     .line 46
     :cond_1
-    iget-boolean v0, p0, Lcom/android/settings/ProgressCategory;->yR:Z
+    iget-boolean v0, p0, Lcom/android/settings/ProgressCategory;->yV:Z
 
     if-eqz v0, :cond_2
 
     .line 47
-    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ProgressCategory;->removePreference(Landroid/preference/Preference;)Z
 
     .line 48
-    iput-boolean v1, p0, Lcom/android/settings/ProgressCategory;->yR:Z
+    iput-boolean v1, p0, Lcom/android/settings/ProgressCategory;->yV:Z
 
     .line 62
     :cond_2
@@ -146,12 +146,12 @@
 
     .line 51
     :cond_5
-    iget-boolean v0, p0, Lcom/android/settings/ProgressCategory;->yR:Z
+    iget-boolean v0, p0, Lcom/android/settings/ProgressCategory;->yV:Z
 
     if-nez v0, :cond_2
 
     .line 52
-    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     if-nez v0, :cond_6
 
@@ -164,35 +164,35 @@
 
     invoke-direct {v0, v3}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     .line 54
-    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     const v3, 0x7f040054
 
     invoke-virtual {v0, v3}, Landroid/preference/Preference;->setLayoutResource(I)V
 
     .line 55
-    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     const v3, 0x7f0b0079
 
     invoke-virtual {v0, v3}, Landroid/preference/Preference;->setTitle(I)V
 
     .line 56
-    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSelectable(Z)V
 
     .line 58
     :cond_6
-    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yQ:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/ProgressCategory;->yU:Landroid/preference/Preference;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ProgressCategory;->addPreference(Landroid/preference/Preference;)Z
 
     .line 59
-    iput-boolean v2, p0, Lcom/android/settings/ProgressCategory;->yR:Z
+    iput-boolean v2, p0, Lcom/android/settings/ProgressCategory;->yV:Z
 
     goto :goto_2
 .end method

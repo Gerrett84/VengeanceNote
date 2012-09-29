@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Ge:Lcom/android/settings/applications/RunningServiceDetails;
+.field final synthetic Gi:Lcom/android/settings/applications/RunningServiceDetails;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 415
-    iput-object p1, p0, Lcom/android/settings/applications/RunningServiceDetails$1;->Ge:Lcom/android/settings/applications/RunningServiceDetails;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningServiceDetails$1;->Gi:Lcom/android/settings/applications/RunningServiceDetails;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 418
-    iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails$1;->Ge:Lcom/android/settings/applications/RunningServiceDetails;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails$1;->Gi:Lcom/android/settings/applications/RunningServiceDetails;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/RunningServiceDetails;->getActivity()Landroid/app/Activity;
 

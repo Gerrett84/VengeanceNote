@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final uC:Ljava/util/Comparator;
+.field private static final uG:Ljava/util/Comparator;
 
 
 # instance fields
-.field private uB:Lcom/android/settings/co;
+.field private uF:Lcom/android/settings/co;
 
 
 # direct methods
@@ -21,7 +21,7 @@
 
     invoke-direct {v0}, Lcom/android/settings/u;-><init>()V
 
-    sput-object v0, Lcom/android/settings/AppPicker;->uC:Ljava/util/Comparator;
+    sput-object v0, Lcom/android/settings/AppPicker;->uG:Ljava/util/Comparator;
 
     return-void
 .end method
@@ -37,12 +37,12 @@
     return-void
 .end method
 
-.method static synthetic fG()Ljava/util/Comparator;
+.method static synthetic fK()Ljava/util/Comparator;
     .locals 1
 
     .prologue
     .line 43
-    sget-object v0, Lcom/android/settings/AppPicker;->uC:Ljava/util/Comparator;
+    sget-object v0, Lcom/android/settings/AppPicker;->uG:Ljava/util/Comparator;
 
     return-object v0
 .end method
@@ -62,10 +62,10 @@
 
     invoke-direct {v0, p0, p0}, Lcom/android/settings/co;-><init>(Lcom/android/settings/AppPicker;Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/AppPicker;->uB:Lcom/android/settings/co;
+    iput-object v0, p0, Lcom/android/settings/AppPicker;->uF:Lcom/android/settings/co;
 
     .line 51
-    iget-object v0, p0, Lcom/android/settings/AppPicker;->uB:Lcom/android/settings/co;
+    iget-object v0, p0, Lcom/android/settings/AppPicker;->uF:Lcom/android/settings/co;
 
     invoke-virtual {v0}, Lcom/android/settings/co;->getCount()I
 
@@ -82,7 +82,7 @@
 
     .line 54
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/AppPicker;->uB:Lcom/android/settings/co;
+    iget-object v0, p0, Lcom/android/settings/AppPicker;->uF:Lcom/android/settings/co;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/AppPicker;->setListAdapter(Landroid/widget/ListAdapter;)V
 
@@ -98,7 +98,7 @@
 
     .prologue
     .line 70
-    iget-object v0, p0, Lcom/android/settings/AppPicker;->uB:Lcom/android/settings/co;
+    iget-object v0, p0, Lcom/android/settings/AppPicker;->uF:Lcom/android/settings/co;
 
     invoke-virtual {v0, p3}, Lcom/android/settings/co;->getItem(I)Ljava/lang/Object;
 
@@ -112,11 +112,11 @@
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
     .line 72
-    iget-object v2, v0, Lcom/android/settings/aN;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v0, Lcom/android/settings/aN;->hP:Landroid/content/pm/ApplicationInfo;
 
     if-eqz v2, :cond_0
 
-    iget-object v0, v0, Lcom/android/settings/aN;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/aN;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 

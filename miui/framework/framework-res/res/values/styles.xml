@@ -1942,8 +1942,7 @@
         <item name="textAllCaps">true</item>
     </style>
     <style name="Widget.Holo.ActionBar.TabBar" parent="@style/Widget.ActionBar.TabBar">
-        <item name="paddingLeft">14.0dip</item>
-        <item name="paddingRight">14.0dip</item>
+        <item name="background">@drawable/ab_tab_bg</item>
         <item name="divider">@drawable/ab_tab_divider</item>
         <item name="showDividers">middle</item>
         <item name="dividerPadding">0.0dip</item>

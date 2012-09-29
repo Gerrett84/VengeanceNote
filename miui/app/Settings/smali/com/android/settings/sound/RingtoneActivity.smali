@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method protected G()I
+.method protected K()I
     .locals 1
 
     .prologue

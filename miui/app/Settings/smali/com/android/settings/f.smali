@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field au:Landroid/widget/LinearLayout;
+.field ax:Landroid/widget/LinearLayout;
 
-.field av:Landroid/widget/TextView;
+.field ay:Landroid/widget/TextView;
 
-.field aw:Landroid/widget/TextView;
+.field az:Landroid/widget/TextView;
 
 
 # direct methods

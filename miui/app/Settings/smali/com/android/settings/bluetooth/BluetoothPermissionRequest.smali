@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field BX:I
+.field Cb:I
 
-.field BY:Ljava/lang/String;
+.field Cc:Ljava/lang/String;
 
-.field BZ:Ljava/lang/String;
+.field Cd:Ljava/lang/String;
 
-.field kt:Landroid/bluetooth/BluetoothDevice;
+.field kw:Landroid/bluetooth/BluetoothDevice;
 
 .field mContext:Landroid/content/Context;
 
@@ -26,10 +26,10 @@
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     .line 44
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BY:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cc:Ljava/lang/String;
 
     .line 45
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BZ:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cd:Ljava/lang/String;
 
     return-void
 .end method
@@ -48,18 +48,18 @@
     invoke-direct {v1, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 171
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BY:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cc:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BZ:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cd:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     .line 172
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BY:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cc:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BZ:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cd:Ljava/lang/String;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
@@ -84,7 +84,7 @@
     :cond_1
     const-string v0, "android.bluetooth.device.extra.DEVICE"
 
-    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
@@ -105,7 +105,7 @@
     goto :goto_0
 .end method
 
-.method private ic()Z
+.method private ig()Z
     .locals 7
 
     .prologue
@@ -117,7 +117,7 @@
 
     .line 129
     .line 132
-    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BX:I
+    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cb:I
 
     if-eq v0, v6, :cond_1
 
@@ -135,12 +135,12 @@
     move-result-object v3
 
     .line 137
-    invoke-virtual {v3}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->eu()Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
+    invoke-virtual {v3}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ey()Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 
     move-result-object v4
 
     .line 139
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v4, v0}, Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;->m(Landroid/bluetooth/BluetoothDevice;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -150,15 +150,15 @@
     if-nez v0, :cond_2
 
     .line 142
-    invoke-virtual {v3}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->er()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-virtual {v3}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ev()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v3}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ew()Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+    invoke-virtual {v3}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->eA()Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     move-result-object v3
 
-    iget-object v5, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v5, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v4, v0, v3, v5}, Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;->a(Lcom/android/settings/bluetooth/LocalBluetoothAdapter;Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;Landroid/bluetooth/BluetoothDevice;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 
@@ -166,7 +166,7 @@
 
     .line 146
     :cond_2
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->go()I
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/CachedBluetoothDevice;->gs()I
 
     move-result v0
 
@@ -279,7 +279,7 @@
 
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     .line 57
     const-string v0, "android.bluetooth.device.extra.ACCESS_REQUEST_TYPE"
@@ -288,7 +288,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BX:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cb:I
 
     .line 59
     const-string v0, "android.bluetooth.device.extra.PACKAGE_NAME"
@@ -297,7 +297,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BY:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cc:Ljava/lang/String;
 
     .line 60
     const-string v0, "android.bluetooth.device.extra.CLASS_NAME"
@@ -306,7 +306,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BZ:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cd:Ljava/lang/String;
 
     .line 62
     new-instance v3, Landroid/content/Intent;
@@ -326,33 +326,33 @@
     .line 65
     const-string v0, "android.bluetooth.device.extra.ACCESS_REQUEST_TYPE"
 
-    iget v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BX:I
+    iget v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cb:I
 
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 67
     const-string v0, "android.bluetooth.device.extra.DEVICE"
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 68
     const-string v0, "android.bluetooth.device.extra.PACKAGE_NAME"
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BY:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cc:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 69
     const-string v0, "android.bluetooth.device.extra.CLASS_NAME"
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->BZ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->Cd:Ljava/lang/String;
 
     invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 74
-    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->ic()Z
+    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->ig()Z
 
     move-result v0
 
@@ -365,11 +365,11 @@
 
     .line 78
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
@@ -422,7 +422,7 @@
     .line 93
     const-string v1, "android.bluetooth.device.extra.DEVICE"
 
-    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
@@ -447,11 +447,11 @@
     invoke-direct {v1, v9, v4, v5, v6}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
     .line 101
-    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v4, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     if-eqz v4, :cond_4
 
-    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kt:Landroid/bluetooth/BluetoothDevice;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothPermissionRequest;->kw:Landroid/bluetooth/BluetoothDevice;
 
     invoke-virtual {v2}, Landroid/bluetooth/BluetoothDevice;->getAliasName()Ljava/lang/String;
 

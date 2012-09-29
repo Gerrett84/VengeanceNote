@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private LC:I
+.field private LF:I
 
 .field private final mContext:Landroid/content/Context;
 
-.field final synthetic ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+.field final synthetic pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
     .prologue
     .line 79
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iput v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     .line 82
     return-void
@@ -117,7 +117,7 @@
     const/4 v2, 0x1
 
     .line 95
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-virtual {v1}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->getListView()Landroid/widget/ListView;
 
@@ -141,7 +141,7 @@
     move-result-object v1
 
     .line 100
-    iget-object v3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-virtual {v3}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->getListView()Landroid/widget/ListView;
 
@@ -152,7 +152,7 @@
     move-result v3
 
     .line 101
-    iget v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iget v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     if-le v3, v4, :cond_0
 
@@ -179,7 +179,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iget v2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -195,7 +195,7 @@
 
     .line 105
     :cond_0
-    iget v3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iget v3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     if-lez v3, :cond_5
 
@@ -206,7 +206,7 @@
 
     .line 107
     :goto_1
-    iget v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iget v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     if-ge v0, v4, :cond_4
 
@@ -242,7 +242,7 @@
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v6, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v6}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -266,7 +266,7 @@
     :cond_2
     new-instance v4, Ljava/io/File;
 
-    iget-object v5, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v5, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v5}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -276,7 +276,7 @@
 
     move-result-object v5
 
-    iget-object v5, v5, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aQ:Ljava/lang/String;
+    iget-object v5, v5, Lcom/android/settings/deviceinfo/StorageMeasurement$FileInfo;->aT:Ljava/lang/String;
 
     invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -292,7 +292,7 @@
 
     .line 122
     :goto_3
-    iget-object v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v4}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -314,7 +314,7 @@
 
     .line 124
     :cond_4
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -323,7 +323,7 @@
     invoke-virtual {v0, v3}, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;->e(Ljava/util/List;)V
 
     .line 125
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -332,7 +332,7 @@
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;->notifyDataSetChanged()V
 
     .line 126
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -342,7 +342,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iput v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     .line 128
     :cond_5
@@ -353,7 +353,7 @@
     .line 133
     :goto_4
     :pswitch_1
-    iget v3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iget v3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     if-ge v0, v3, :cond_6
 
@@ -394,7 +394,7 @@
 
     .prologue
     .line 85
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->getMenuInflater()Landroid/view/MenuInflater;
 
@@ -435,7 +435,7 @@
     const/4 v1, 0x0
 
     .line 166
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->getListView()Landroid/widget/ListView;
 
@@ -447,7 +447,7 @@
     move-result v4
 
     .line 168
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v2}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->b(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Ljava/lang/String;
 
@@ -461,7 +461,7 @@
 
     aput-object v5, v3, v1
 
-    iget-object v5, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v5, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v5}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -498,7 +498,7 @@
 
     .line 174
     :goto_0
-    iget v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LC:I
+    iget v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->LF:I
 
     if-ge v0, v4, :cond_1
 
@@ -510,7 +510,7 @@
     if-eqz v4, :cond_0
 
     .line 177
-    iget-object v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v4, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v4}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
@@ -532,7 +532,7 @@
 
     .line 181
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->c(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Ljava/lang/String;
 
@@ -550,13 +550,13 @@
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->mContext:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->ph:Lcom/android/settings/deviceinfo/MiscFilesHandler;
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$ModeCallback;->pk:Lcom/android/settings/deviceinfo/MiscFilesHandler;
 
     invoke-static {v2}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->a(Lcom/android/settings/deviceinfo/MiscFilesHandler;)Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;->dO()J
+    invoke-virtual {v2}, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;->dS()J
 
     move-result-wide v2
 

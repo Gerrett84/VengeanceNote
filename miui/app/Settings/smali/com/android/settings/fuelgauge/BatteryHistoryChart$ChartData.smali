@@ -6,13 +6,13 @@
 # instance fields
 .field mColors:[I
 
-.field nP:[Landroid/graphics/Paint;
+.field nS:[Landroid/graphics/Paint;
 
-.field nQ:I
+.field nT:I
 
-.field nR:[I
+.field nU:[I
 
-.field nS:I
+.field nV:I
 
 
 # direct methods
@@ -34,7 +34,7 @@
 
     .prologue
     .line 81
-    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:I
+    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nV:I
 
     if-eqz v0, :cond_0
 
@@ -55,22 +55,22 @@
 
     .prologue
     .line 73
-    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:I
+    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nV:I
 
     if-eq p2, v0, :cond_0
 
-    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nQ:I
+    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nT:I
 
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nR:[I
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nU:[I
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_0
 
     .line 74
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nR:[I
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nU:[I
 
-    iget v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nQ:I
+    iget v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nT:I
 
     shl-int/lit8 v2, p2, 0x10
 
@@ -79,14 +79,14 @@
     aput v2, v0, v1
 
     .line 75
-    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nQ:I
+    iget v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nT:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nQ:I
+    iput v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nT:I
 
     .line 76
-    iput p2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:I
+    iput p2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nV:I
 
     .line 78
     :cond_0
@@ -112,12 +112,12 @@
 
     .line 89
     :goto_0
-    iget v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nQ:I
+    iget v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nT:I
 
     if-ge v6, v1, :cond_1
 
     .line 90
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nR:[I
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nU:[I
 
     aget v1, v1, v6
 
@@ -145,7 +145,7 @@
 
     int-to-float v4, v9
 
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nP:[Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:[Landroid/graphics/Paint;
 
     aget-object v5, v0, v5
 
@@ -185,14 +185,14 @@
 
     new-array v0, v0, [I
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nR:[I
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nU:[I
 
     .line 68
     :goto_0
-    iput v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nQ:I
+    iput v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nT:I
 
     .line 69
-    iput v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:I
+    iput v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nV:I
 
     .line 70
     return-void
@@ -201,7 +201,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nR:[I
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nU:[I
 
     goto :goto_0
 .end method
@@ -219,7 +219,7 @@
 
     new-array v0, v0, [Landroid/graphics/Paint;
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nP:[Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:[Landroid/graphics/Paint;
 
     .line 55
     const/4 v0, 0x0
@@ -230,7 +230,7 @@
     if-ge v0, v1, :cond_0
 
     .line 56
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nP:[Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:[Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/Paint;
 
@@ -239,7 +239,7 @@
     aput-object v2, v1, v0
 
     .line 57
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nP:[Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
 
@@ -248,7 +248,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 58
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nP:[Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$ChartData;->nS:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
 

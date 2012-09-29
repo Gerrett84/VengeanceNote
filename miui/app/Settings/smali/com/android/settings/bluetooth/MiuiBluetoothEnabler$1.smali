@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Ah:Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;
+.field final synthetic Al:Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 45
-    iput-object p1, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler$1;->Ah:Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler$1;->Al:Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -39,7 +39,7 @@
     move-result v0
 
     .line 49
-    iget-object v1, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler$1;->Ah:Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler$1;->Al:Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->f(I)V
 

@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method protected F()Landroid/content/Intent;
+.method protected J()Landroid/content/Intent;
     .locals 4
 
     .prologue
@@ -70,7 +70,7 @@
     .line 33
     const-string v2, "android.intent.extra.ringtone.TITLE"
 
-    invoke-virtual {p0}, Lcom/android/settings/sound/b;->G()I
+    invoke-virtual {p0}, Lcom/android/settings/sound/b;->K()I
 
     move-result v3
 
@@ -93,7 +93,7 @@
     return-object v0
 .end method
 
-.method protected abstract G()I
+.method protected abstract K()I
 .end method
 
 .method protected abstract getRingtoneType()I
@@ -166,7 +166,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
     .line 19
-    invoke-virtual {p0}, Lcom/android/settings/sound/b;->F()Landroid/content/Intent;
+    invoke-virtual {p0}, Lcom/android/settings/sound/b;->J()Landroid/content/Intent;
 
     move-result-object v0
 

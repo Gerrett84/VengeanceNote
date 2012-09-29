@@ -27,14 +27,14 @@
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
     .line 846
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->dA()Lcom/google/common/collect/o;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->dE()Lcom/google/common/collect/o;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMaker$NullConcurrentMap;->removalListener:Lcom/google/common/collect/o;
 
     .line 847
-    iget-object v0, p1, Lcom/google/common/collect/MapMaker;->HY:Lcom/google/common/collect/MapMaker$RemovalCause;
+    iget-object v0, p1, Lcom/google/common/collect/MapMaker;->Ic:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     iput-object v0, p0, Lcom/google/common/collect/MapMaker$NullConcurrentMap;->removalCause:Lcom/google/common/collect/MapMaker$RemovalCause;
 

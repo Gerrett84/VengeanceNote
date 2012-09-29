@@ -16,12 +16,12 @@
 
 
 # virtual methods
-.method public dx()J
+.method public dB()J
     .locals 2
 
     .prologue
     .line 57
-    invoke-static {}, Lcom/google/common/base/a;->cj()J
+    invoke-static {}, Lcom/google/common/base/a;->cn()J
 
     move-result-wide v0
 

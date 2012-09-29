@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private qh:Landroid/preference/ListPreference;
+.field private qk:Landroid/preference/ListPreference;
 
 
 # direct methods
@@ -57,10 +57,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     .line 44
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -190,7 +190,7 @@
     if-eqz v0, :cond_0
 
     .line 68
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     check-cast p2, Ljava/lang/String;
 
@@ -208,14 +208,14 @@
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 70
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
     .line 71
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 
@@ -238,7 +238,7 @@
     invoke-super {p0}, Lcom/android/settings/deviceinfo/Memory;->onResume()V
 
     .line 54
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     if-eqz v0, :cond_0
 
@@ -256,7 +256,7 @@
     move-result v0
 
     .line 58
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
@@ -271,14 +271,14 @@
     move-result v0
 
     .line 60
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
     .line 61
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/MiuiMemory;->qk:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 

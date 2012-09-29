@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic FG:Lcom/android/settings/CryptKeeper;
+.field final synthetic FK:Lcom/android/settings/CryptKeeper;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 214
-    iput-object p1, p0, Lcom/android/settings/dI;->FG:Lcom/android/settings/CryptKeeper;
+    iput-object p1, p0, Lcom/android/settings/dI;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -39,7 +39,7 @@
 
     .line 219
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/dI;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dI;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->e(Lcom/android/settings/CryptKeeper;)V
 
@@ -47,7 +47,7 @@
 
     .line 223
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/dI;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dI;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->b(Lcom/android/settings/CryptKeeper;)V
 
@@ -55,7 +55,7 @@
 
     .line 227
     :pswitch_2
-    iget-object v0, p0, Lcom/android/settings/dI;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dI;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->f(Lcom/android/settings/CryptKeeper;)V
 

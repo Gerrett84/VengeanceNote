@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private Gx:I
+.field private GB:I
 
 
 # direct methods
@@ -19,10 +19,10 @@
     .line 101
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/cJ;->Gx:I
+    iput v0, p0, Lcom/android/settings/cJ;->GB:I
 
     .line 104
-    iput p1, p0, Lcom/android/settings/cJ;->Gx:I
+    iput p1, p0, Lcom/android/settings/cJ;->GB:I
 
     .line 105
     return-void
@@ -35,7 +35,7 @@
 
     .prologue
     .line 108
-    iget v0, p0, Lcom/android/settings/cJ;->Gx:I
+    iget v0, p0, Lcom/android/settings/cJ;->GB:I
 
     return v0
 .end method
@@ -45,11 +45,11 @@
 
     .prologue
     .line 112
-    invoke-static {}, Lcom/android/settings/BandMode;->iW()[Ljava/lang/String;
+    invoke-static {}, Lcom/android/settings/BandMode;->ja()[Ljava/lang/String;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/settings/cJ;->Gx:I
+    iget v1, p0, Lcom/android/settings/cJ;->GB:I
 
     aget-object v0, v0, v1
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aO:Lcom/android/settings/MediaFormat;
+.field final synthetic aR:Lcom/android/settings/MediaFormat;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/settings/n;->aO:Lcom/android/settings/MediaFormat;
+    iput-object p1, p0, Lcom/android/settings/n;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 66
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v0
 
@@ -58,7 +58,7 @@
     .line 71
     const-string v1, "storage_volume"
 
-    iget-object v2, p0, Lcom/android/settings/n;->aO:Lcom/android/settings/MediaFormat;
+    iget-object v2, p0, Lcom/android/settings/n;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-static {v2}, Lcom/android/settings/MediaFormat;->a(Lcom/android/settings/MediaFormat;)Landroid/os/storage/StorageVolume;
 
@@ -67,7 +67,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 72
-    iget-object v1, p0, Lcom/android/settings/n;->aO:Lcom/android/settings/MediaFormat;
+    iget-object v1, p0, Lcom/android/settings/n;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-static {v1}, Lcom/android/settings/MediaFormat;->b(Lcom/android/settings/MediaFormat;)Z
 
@@ -84,12 +84,12 @@
 
     .line 75
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/n;->aO:Lcom/android/settings/MediaFormat;
+    iget-object v1, p0, Lcom/android/settings/n;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/MediaFormat;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
     .line 76
-    iget-object v0, p0, Lcom/android/settings/n;->aO:Lcom/android/settings/MediaFormat;
+    iget-object v0, p0, Lcom/android/settings/n;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-virtual {v0}, Lcom/android/settings/MediaFormat;->finish()V
 

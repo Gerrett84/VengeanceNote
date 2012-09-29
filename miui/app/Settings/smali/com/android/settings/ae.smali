@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field fx:Ljava/util/Map;
+.field fA:Ljava/util/Map;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 70
-    iput-object p1, p0, Lcom/android/settings/ae;->fx:Ljava/util/Map;
+    iput-object p1, p0, Lcom/android/settings/ae;->fA:Ljava/util/Map;
 
     .line 71
     return-void
@@ -35,7 +35,7 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Lcom/android/settings/ae;->fx:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/ae;->fA:Ljava/util/Map;
 
     iget-object v1, p1, Lcom/android/internal/os/PkgUsageStats;->packageName:Ljava/lang/String;
 
@@ -50,7 +50,7 @@
     move-result-object v1
 
     .line 74
-    iget-object v0, p0, Lcom/android/settings/ae;->fx:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/ae;->fA:Ljava/util/Map;
 
     iget-object v2, p2, Lcom/android/internal/os/PkgUsageStats;->packageName:Ljava/lang/String;
 

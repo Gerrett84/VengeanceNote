@@ -31,14 +31,14 @@
 .method public abstract f(Landroid/bluetooth/BluetoothDevice;)I
 .end method
 
-.method public abstract h()Z
-.end method
-
-.method public abstract i()Z
-.end method
-
 .method public abstract isConnectable()Z
 .end method
 
-.method public abstract j()I
+.method public abstract l()Z
+.end method
+
+.method public abstract m()Z
+.end method
+
+.method public abstract n()I
 .end method

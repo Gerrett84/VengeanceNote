@@ -37,9 +37,9 @@
 
     .prologue
     .line 193
-    iget-wide v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hJ:J
+    iget-wide v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:J
 
-    iget-wide v2, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hJ:J
+    iget-wide v2, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:J
 
     cmp-long v0, v0, v2
 
@@ -53,9 +53,9 @@
 
     .line 194
     :cond_0
-    iget-wide v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hJ:J
+    iget-wide v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:J
 
-    iget-wide v2, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hJ:J
+    iget-wide v2, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:J
 
     cmp-long v0, v0, v2
 

@@ -6,7 +6,7 @@
 # instance fields
 .field final transient element:Ljava/lang/Object;
 
-.field private transient vB:I
+.field private transient vF:I
 
 
 # direct methods
@@ -42,7 +42,7 @@
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
     .line 53
-    iput p2, p0, Lcom/google/common/collect/SingletonImmutableSet;->vB:I
+    iput p2, p0, Lcom/google/common/collect/SingletonImmutableSet;->vF:I
 
     .line 54
     return-void
@@ -50,12 +50,12 @@
 
 
 # virtual methods
-.method H()Z
+.method L()Z
     .locals 1
 
     .prologue
     .line 114
-    iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->vB:I
+    iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->vF:I
 
     if-eqz v0, :cond_0
 
@@ -85,7 +85,7 @@
     return v0
 .end method
 
-.method public dz()Lcom/google/common/collect/ap;
+.method public dD()Lcom/google/common/collect/ap;
     .locals 1
 
     .prologue
@@ -165,7 +165,7 @@
 
     .prologue
     .line 106
-    iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->vB:I
+    iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->vF:I
 
     .line 107
     if-nez v0, :cond_0
@@ -177,7 +177,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->vB:I
+    iput v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->vF:I
 
     .line 110
     :cond_0
@@ -199,7 +199,7 @@
 
     .prologue
     .line 32
-    invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableSet;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableSet;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 

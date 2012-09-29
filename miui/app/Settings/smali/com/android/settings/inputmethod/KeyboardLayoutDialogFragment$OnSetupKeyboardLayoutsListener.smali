@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract P(Ljava/lang/String;)V
+.method public abstract Q(Ljava/lang/String;)V
 .end method

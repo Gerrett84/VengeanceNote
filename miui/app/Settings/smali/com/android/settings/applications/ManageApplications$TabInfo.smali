@@ -7,49 +7,49 @@
 
 
 # instance fields
-.field private AA:J
+.field private AA:Landroid/widget/TextView;
 
-.field private AB:J
+.field private AB:Landroid/widget/TextView;
 
 .field private AC:J
 
-.field final AD:Ljava/lang/Runnable;
+.field private AD:J
 
-.field public final Ai:Lcom/android/settings/applications/ManageApplications;
+.field private AE:J
 
-.field public final Aj:Lcom/android/settings/applications/ApplicationsState;
+.field private AF:J
 
-.field public final Ak:I
+.field private AG:J
 
-.field public final Al:I
+.field final AH:Ljava/lang/Runnable;
 
-.field public final Am:Lcom/android/settings/applications/AppClickListener;
+.field public final Am:Lcom/android/settings/applications/ManageApplications;
 
-.field public final An:Ljava/lang/CharSequence;
+.field public final An:Lcom/android/settings/applications/ApplicationsState;
 
-.field public final Ao:Ljava/lang/CharSequence;
+.field public final Ao:I
 
-.field private final Ap:Landroid/os/Bundle;
+.field public final Ap:I
 
-.field public Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+.field public final Aq:Lcom/android/settings/applications/AppClickListener;
 
-.field private Ar:Lcom/android/internal/app/IMediaContainerService;
+.field public final Ar:Ljava/lang/CharSequence;
 
-.field private As:Landroid/view/View;
+.field public final As:Ljava/lang/CharSequence;
 
-.field private At:Lcom/android/settings/applications/RunningProcessesView;
+.field private final At:Landroid/os/Bundle;
 
-.field private Au:Lcom/android/settings/applications/LinearColorBar;
+.field public Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
-.field private Av:Landroid/widget/TextView;
+.field private Av:Lcom/android/internal/app/IMediaContainerService;
 
-.field private Aw:Landroid/widget/TextView;
+.field private Aw:Landroid/view/View;
 
-.field private Ax:Landroid/widget/TextView;
+.field private Ax:Lcom/android/settings/applications/RunningProcessesView;
 
-.field private Ay:J
+.field private Ay:Lcom/android/settings/applications/LinearColorBar;
 
-.field private Az:J
+.field private Az:Landroid/widget/TextView;
 
 .field public mInflater:Landroid/view/LayoutInflater;
 
@@ -79,30 +79,30 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 205
-    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     .line 208
     new-instance v0, Lcom/android/settings/applications/ManageApplications$TabInfo$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/applications/ManageApplications$TabInfo$1;-><init>(Lcom/android/settings/applications/ManageApplications$TabInfo;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AH:Ljava/lang/Runnable;
 
     .line 217
-    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     .line 218
-    iput-object p2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aj:Lcom/android/settings/applications/ApplicationsState;
+    iput-object p2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->An:Lcom/android/settings/applications/ApplicationsState;
 
     .line 219
     iput-object p3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mLabel:Ljava/lang/CharSequence;
 
     .line 220
-    iput p4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ak:I
+    iput p4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ao:I
 
     .line 221
     packed-switch p4, :pswitch_data_0
@@ -111,11 +111,11 @@
     :pswitch_0
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Al:I
+    iput v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:I
 
     .line 226
     :goto_0
-    iput-object p5, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/AppClickListener;
+    iput-object p5, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/AppClickListener;
 
     .line 227
     invoke-virtual {p1}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->An:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ar:Ljava/lang/CharSequence;
 
     .line 228
     invoke-virtual {p1}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
@@ -141,10 +141,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ao:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Ljava/lang/CharSequence;
 
     .line 229
-    iput-object p6, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:Landroid/os/Bundle;
+    iput-object p6, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Landroid/os/Bundle;
 
     .line 230
     return-void
@@ -153,7 +153,7 @@
     :pswitch_1
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Al:I
+    iput v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:I
 
     goto :goto_0
 
@@ -161,7 +161,7 @@
     :pswitch_2
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Al:I
+    iput v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:I
 
     goto :goto_0
 
@@ -193,7 +193,7 @@
 
     .prologue
     .line 175
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
     return-object v0
 .end method
@@ -204,7 +204,7 @@
 
     .prologue
     .line 175
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     return-object v0
 .end method
@@ -239,7 +239,7 @@
     iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mInflater:Landroid/view/LayoutInflater;
 
     .line 243
-    iget v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ak:I
+    iget v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ao:I
 
     if-ne v0, v3, :cond_4
 
@@ -263,10 +263,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
     .line 247
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
@@ -331,25 +331,25 @@
     .line 261
     new-instance v0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aj:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->An:Lcom/android/settings/applications/ApplicationsState;
 
-    iget v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Al:I
+    iget v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:I
 
     invoke-direct {v0, v1, p0, v2}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;-><init>(Lcom/android/settings/applications/ApplicationsState;Lcom/android/settings/applications/ManageApplications$TabInfo;I)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     .line 262
     iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mListView:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
     .line 263
     iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mListView:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setRecyclerListener(Landroid/widget/AbsListView$RecyclerListener;)V
 
@@ -364,7 +364,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LinearColorBar;
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/LinearColorBar;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:Lcom/android/settings/applications/LinearColorBar;
 
     .line 265
     iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mListContainer:Landroid/view/View;
@@ -377,7 +377,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:Landroid/widget/TextView;
 
     .line 266
     iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mListContainer:Landroid/view/View;
@@ -390,7 +390,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:Landroid/widget/TextView;
 
     .line 267
     iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mListContainer:Landroid/view/View;
@@ -403,7 +403,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:Landroid/widget/TextView;
 
     .line 268
     iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->mListView:Landroid/widget/ListView;
@@ -411,16 +411,16 @@
     invoke-static {p2, p3, v0, v4}, Lcom/android/settings/cu;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/widget/ListView;Z)V
 
     .line 269
-    iget v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Al:I
+    iget v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_5
 
     .line 270
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v1}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -436,7 +436,7 @@
 
     .line 276
     :goto_2
-    invoke-virtual {p0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hL()V
+    invoke-virtual {p0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hP()V
 
     .line 278
     :cond_2
@@ -450,17 +450,17 @@
 
     check-cast v0, Lcom/android/settings/applications/RunningProcessesView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iput-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     .line 280
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     if-eqz v0, :cond_3
 
     .line 281
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/RunningProcessesView;->d(Landroid/os/Bundle;)V
 
@@ -478,9 +478,9 @@
 
     .line 273
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v1}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -503,16 +503,16 @@
 
     .prologue
     .line 233
-    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ar:Lcom/android/internal/app/IMediaContainerService;
+    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Lcom/android/internal/app/IMediaContainerService;
 
     .line 234
-    invoke-virtual {p0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hK()V
+    invoke-virtual {p0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hO()V
 
     .line 235
     return-void
 .end method
 
-.method public hJ()V
+.method public hN()V
     .locals 2
 
     .prologue
@@ -543,7 +543,7 @@
     return-void
 .end method
 
-.method hK()V
+.method hO()V
     .locals 10
 
     .prologue
@@ -552,7 +552,7 @@
     const/4 v1, 0x0
 
     .line 322
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -567,34 +567,34 @@
 
     .line 324
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     if-eqz v0, :cond_0
 
     .line 326
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     .line 327
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     .line 328
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     .line 330
-    iget v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Al:I
+    iget v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ap:I
 
     const/4 v2, 0x2
 
     if-ne v0, v2, :cond_3
 
     .line 331
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ar:Lcom/android/internal/app/IMediaContainerService;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Lcom/android/internal/app/IMediaContainerService;
 
     if-eqz v0, :cond_2
 
     .line 333
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ar:Lcom/android/internal/app/IMediaContainerService;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Lcom/android/internal/app/IMediaContainerService;
 
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
@@ -613,26 +613,26 @@
 
     aget-wide v2, v0, v2
 
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     .line 336
     const/4 v2, 0x1
 
     aget-wide v2, v0, v2
 
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 342
     :cond_2
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     if-eqz v0, :cond_7
 
     .line 343
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->getCount()I
 
@@ -643,14 +643,14 @@
     if-ge v1, v0, :cond_7
 
     .line 345
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->k(I)Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     move-result-object v2
 
     .line 346
-    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     iget-wide v5, v2, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCodeSize:J
 
@@ -660,7 +660,7 @@
 
     add-long v2, v3, v5
 
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     .line 344
     add-int/lit8 v1, v1, 0x1
@@ -682,13 +682,13 @@
 
     .line 350
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ar:Lcom/android/internal/app/IMediaContainerService;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Lcom/android/internal/app/IMediaContainerService;
 
     if-eqz v0, :cond_4
 
     .line 352
     :try_start_1
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ar:Lcom/android/internal/app/IMediaContainerService;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Av:Lcom/android/internal/app/IMediaContainerService;
 
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
@@ -707,14 +707,14 @@
 
     aget-wide v2, v0, v2
 
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     .line 355
     const/4 v2, 0x1
 
     aget-wide v2, v0, v2
 
-    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iput-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -726,12 +726,12 @@
     move-result v2
 
     .line 362
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     if-eqz v0, :cond_6
 
     .line 363
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->getCount()I
 
@@ -744,14 +744,14 @@
     if-ge v0, v3, :cond_6
 
     .line 365
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->k(I)Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     move-result-object v1
 
     .line 366
-    iget-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iget-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     iget-wide v6, v1, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->codeSize:J
 
@@ -761,13 +761,13 @@
 
     add-long/2addr v4, v6
 
-    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     .line 367
     if-eqz v2, :cond_5
 
     .line 368
-    iget-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iget-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     iget-wide v6, v1, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCodeSize:J
 
@@ -777,7 +777,7 @@
 
     add-long/2addr v4, v6
 
-    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     .line 364
     :cond_5
@@ -800,26 +800,26 @@
 
     .line 372
     :cond_6
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aj:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->An:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v2}, Lcom/android/settings/applications/ApplicationsState;->jO()J
+    invoke-virtual {v2}, Lcom/android/settings/applications/ApplicationsState;->jS()J
 
     move-result-wide v2
 
     add-long/2addr v0, v2
 
-    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     .line 375
     :cond_7
-    invoke-virtual {p0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hL()V
+    invoke-virtual {p0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hP()V
 
     goto/16 :goto_0
 .end method
 
-.method hL()V
+.method hP()V
     .locals 9
 
     .prologue
@@ -843,7 +843,7 @@
 
     .line 383
     :cond_1
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     const-wide/16 v2, 0x0
 
@@ -852,41 +852,41 @@
     if-lez v0, :cond_3
 
     .line 384
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/LinearColorBar;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:Lcom/android/settings/applications/LinearColorBar;
 
-    iget-wide v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iget-wide v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
-    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     sub-long/2addr v1, v3
 
-    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     sub-long/2addr v1, v3
 
     long-to-float v1, v1
 
-    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     long-to-float v2, v2
 
     div-float/2addr v1, v2
 
-    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Az:J
+    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:J
 
     long-to-float v2, v2
 
-    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     long-to-float v3, v3
 
     div-float/2addr v2, v3
 
-    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v3, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     long-to-float v3, v3
 
-    iget-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iget-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
     long-to-float v4, v4
 
@@ -895,24 +895,24 @@
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/settings/applications/LinearColorBar;->a(FFF)V
 
     .line 386
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AE:J
 
-    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     sub-long/2addr v0, v2
 
     .line 387
-    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:J
+    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AF:J
 
     cmp-long v2, v2, v0
 
     if-eqz v2, :cond_2
 
     .line 388
-    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:J
+    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AF:J
 
     .line 389
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v2}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -923,9 +923,9 @@
     move-result-object v0
 
     .line 391
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v2}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -949,36 +949,36 @@
 
     .line 394
     :cond_2
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AG:J
 
-    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
     .line 395
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
+    iput-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AG:J
 
     .line 396
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-wide v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:J
+    iget-wide v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
 
     invoke-static {v0, v1, v2}, Landroid/text/format/Formatter;->formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v0
 
     .line 398
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v2}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -1004,22 +1004,22 @@
 
     .line 402
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/LinearColorBar;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ay:Lcom/android/settings/applications/LinearColorBar;
 
     invoke-virtual {v0, v6, v6, v6}, Lcom/android/settings/applications/LinearColorBar;->a(FFF)V
 
     .line 403
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AF:J
 
     cmp-long v0, v0, v4
 
     if-eqz v0, :cond_4
 
     .line 404
-    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:J
+    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AF:J
 
     .line 405
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AA:Landroid/widget/TextView;
 
     const-string v1, ""
 
@@ -1027,17 +1027,17 @@
 
     .line 407
     :cond_4
-    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
+    iget-wide v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AG:J
 
     cmp-long v0, v0, v4
 
     if-eqz v0, :cond_0
 
     .line 408
-    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AC:J
+    iput-wide v4, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AG:J
 
     .line 409
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AB:Landroid/widget/TextView;
 
     const-string v1, ""
 
@@ -1046,14 +1046,14 @@
     goto/16 :goto_0
 .end method
 
-.method hM()V
+.method hQ()V
     .locals 3
 
     .prologue
     .line 420
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v1}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -1068,9 +1068,9 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 422
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
     invoke-virtual {v1}, Lcom/android/settings/applications/ManageApplications;->getActivity()Landroid/app/Activity;
 
@@ -1085,14 +1085,14 @@
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/RunningProcessesView;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 424
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/RunningProcessesView;->setVisibility(I)V
 
     .line 425
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
     const/16 v1, 0x8
 
@@ -1111,7 +1111,7 @@
 
     .prologue
     .line 416
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/AppClickListener;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/AppClickListener;
 
     move-object v1, p0
 
@@ -1134,25 +1134,25 @@
 
     .prologue
     .line 312
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     if-eqz v0, :cond_0
 
     .line 313
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->pause()V
 
     .line 315
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     if-eqz v0, :cond_1
 
     .line 316
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/RunningProcessesView;->iZ()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/RunningProcessesView;->jd()V
 
     .line 318
     :cond_1
@@ -1167,27 +1167,27 @@
     const/4 v3, 0x0
 
     .line 297
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     if-eqz v0, :cond_0
 
     .line 298
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aq:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Au:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->resume(I)V
 
     .line 300
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     if-eqz v0, :cond_1
 
     .line 301
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ai:Lcom/android/settings/applications/ManageApplications;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Am:Lcom/android/settings/applications/ManageApplications;
 
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AD:Ljava/lang/Runnable;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->AH:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/applications/RunningProcessesView;->a(Landroid/app/Fragment;Ljava/lang/Runnable;)Z
 
@@ -1197,12 +1197,12 @@
     if-eqz v0, :cond_2
 
     .line 303
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->At:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Ax:Lcom/android/settings/applications/RunningProcessesView;
 
     invoke-virtual {v0, v3}, Lcom/android/settings/applications/RunningProcessesView;->setVisibility(I)V
 
     .line 304
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
     const/4 v1, 0x4
 
@@ -1215,7 +1215,7 @@
 
     .line 306
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->As:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo;->Aw:Landroid/view/View;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 

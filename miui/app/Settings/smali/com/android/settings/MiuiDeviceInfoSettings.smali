@@ -4,21 +4,21 @@
 
 
 # static fields
-.field private static mN:J
+.field private static mQ:J
 
 
 # instance fields
-.field private mK:Landroid/os/storage/StorageManager;
+.field private mN:Landroid/os/storage/StorageManager;
 
-.field private mL:Ljava/util/ArrayList;
+.field private mO:Ljava/util/ArrayList;
 
-.field private mM:Ljava/util/ArrayList;
+.field private mP:Ljava/util/ArrayList;
 
-.field private mO:Lcom/android/settings/cA;
+.field private mR:Lcom/android/settings/cA;
 
-.field private mP:Lcom/android/settings/cA;
+.field private mS:Lcom/android/settings/cA;
 
-.field private mQ:Landroid/os/Handler;
+.field private mT:Landroid/os/Handler;
 
 
 # direct methods
@@ -34,21 +34,21 @@
 
     invoke-direct {v0}, Lcom/android/settings/cA;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Lcom/android/settings/cA;
+    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mR:Lcom/android/settings/cA;
 
     .line 419
     new-instance v0, Lcom/android/settings/cA;
 
     invoke-direct {v0}, Lcom/android/settings/cA;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Lcom/android/settings/cA;
+    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mS:Lcom/android/settings/cA;
 
     .line 462
     new-instance v0, Lcom/android/settings/cS;
 
     invoke-direct {v0, p0}, Lcom/android/settings/cS;-><init>(Lcom/android/settings/MiuiDeviceInfoSettings;)V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mQ:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mT:Landroid/os/Handler;
 
     return-void
 .end method
@@ -59,7 +59,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mQ:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mT:Landroid/os/Handler;
 
     return-object v0
 .end method
@@ -195,7 +195,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Lcom/android/settings/cA;
+    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mR:Lcom/android/settings/cA;
 
     return-object v0
 .end method
@@ -247,7 +247,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Lcom/android/settings/cA;
+    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mS:Lcom/android/settings/cA;
 
     return-object v0
 .end method
@@ -303,7 +303,7 @@
     throw v0
 .end method
 
-.method private cT()Ljava/lang/String;
+.method private cX()Ljava/lang/String;
     .locals 4
 
     .prologue
@@ -313,7 +313,7 @@
     :try_start_0
     const-string v0, "/proc/version"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->w(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->x(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -500,7 +500,7 @@
     goto :goto_0
 .end method
 
-.method private cU()Ljava/lang/String;
+.method private cY()Ljava/lang/String;
     .locals 4
 
     .prologue
@@ -508,7 +508,7 @@
     :try_start_0
     const-string v0, "/sys/board_properties/soc/msv"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->w(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->x(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -553,7 +553,7 @@
     goto :goto_1
 .end method
 
-.method private cV()Ljava/lang/String;
+.method private cZ()Ljava/lang/String;
     .locals 11
 
     .prologue
@@ -847,7 +847,18 @@
     goto/16 :goto_0
 .end method
 
-.method private cW()V
+.method static synthetic d(Lcom/android/settings/MiuiDeviceInfoSettings;)Ljava/util/ArrayList;
+    .locals 1
+    .parameter
+
+    .prologue
+    .line 41
+    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method private da()V
     .locals 13
 
     .prologue
@@ -886,7 +897,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cU()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cY()Ljava/lang/String;
 
     move-result-object v2
 
@@ -938,7 +949,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 334
-    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cV()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cZ()Ljava/lang/String;
 
     move-result-object v1
 
@@ -979,7 +990,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 342
-    invoke-static {}, Lcom/android/settings/MiuiDeviceInfoSettings;->cX()J
+    invoke-static {}, Lcom/android/settings/MiuiDeviceInfoSettings;->db()J
 
     move-result-wide v1
 
@@ -1043,18 +1054,18 @@
     mul-long/2addr v0, v4
 
     .line 352
-    iget-object v2, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Lcom/android/settings/cA;
+    iget-object v2, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mS:Lcom/android/settings/cA;
 
-    iget-wide v4, v2, Lcom/android/settings/cA;->FH:J
+    iget-wide v4, v2, Lcom/android/settings/cA;->FL:J
 
     cmp-long v2, v0, v4
 
     if-eqz v2, :cond_1
 
     .line 353
-    iget-object v2, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Lcom/android/settings/cA;
+    iget-object v2, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mS:Lcom/android/settings/cA;
 
-    iget-wide v4, v2, Lcom/android/settings/cA;->FH:J
+    iget-wide v4, v2, Lcom/android/settings/cA;->FL:J
 
     add-long/2addr v0, v4
 
@@ -1112,9 +1123,9 @@
     move-result-object v2
 
     .line 363
-    iget-object v4, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Lcom/android/settings/cA;
+    iget-object v4, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mR:Lcom/android/settings/cA;
 
-    iget-wide v4, v4, Lcom/android/settings/cA;->dy:J
+    iget-wide v4, v4, Lcom/android/settings/cA;->dB:J
 
     const-wide/16 v6, 0x0
 
@@ -1139,9 +1150,9 @@
     :cond_0
     new-array v4, v9, [Ljava/lang/Object;
 
-    iget-object v5, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Lcom/android/settings/cA;
+    iget-object v5, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mR:Lcom/android/settings/cA;
 
-    iget-wide v5, v5, Lcom/android/settings/cA;->FH:J
+    iget-wide v5, v5, Lcom/android/settings/cA;->FL:J
 
     invoke-direct {p0, v5, v6}, Lcom/android/settings/MiuiDeviceInfoSettings;->h(J)Ljava/lang/String;
 
@@ -1156,9 +1167,9 @@
     .line 369
     new-array v5, v9, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Lcom/android/settings/cA;
+    iget-object v6, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mR:Lcom/android/settings/cA;
 
-    iget-wide v6, v6, Lcom/android/settings/cA;->dy:J
+    iget-wide v6, v6, Lcom/android/settings/cA;->dB:J
 
     invoke-direct {p0, v6, v7}, Lcom/android/settings/MiuiDeviceInfoSettings;->h(J)Ljava/lang/String;
 
@@ -1202,12 +1213,12 @@
     goto :goto_0
 .end method
 
-.method public static cX()J
+.method public static db()J
     .locals 4
 
     .prologue
     .line 382
-    sget-wide v0, Lcom/android/settings/MiuiDeviceInfoSettings;->mN:J
+    sget-wide v0, Lcom/android/settings/MiuiDeviceInfoSettings;->mQ:J
 
     const-wide/16 v2, 0x0
 
@@ -1252,14 +1263,14 @@
 
     move-result-wide v0
 
-    sput-wide v0, Lcom/android/settings/MiuiDeviceInfoSettings;->mN:J
+    sput-wide v0, Lcom/android/settings/MiuiDeviceInfoSettings;->mQ:J
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 393
     :cond_0
     :goto_0
-    sget-wide v0, Lcom/android/settings/MiuiDeviceInfoSettings;->mN:J
+    sget-wide v0, Lcom/android/settings/MiuiDeviceInfoSettings;->mQ:J
 
     return-wide v0
 
@@ -1270,24 +1281,13 @@
     goto :goto_0
 .end method
 
-.method static synthetic d(Lcom/android/settings/MiuiDeviceInfoSettings;)Ljava/util/ArrayList;
-    .locals 1
-    .parameter
-
-    .prologue
-    .line 41
-    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mM:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
 .method static synthetic e(Lcom/android/settings/MiuiDeviceInfoSettings;)V
     .locals 0
     .parameter
 
     .prologue
     .line 41
-    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cW()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->da()V
 
     return-void
 .end method
@@ -1326,7 +1326,7 @@
     return-object v0
 .end method
 
-.method private w(Ljava/lang/String;)Ljava/lang/String;
+.method private x(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
     .parameter
 
@@ -1436,7 +1436,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cT()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cX()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1516,24 +1516,24 @@
 
     check-cast v0, Landroid/os/storage/StorageManager;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mK:Landroid/os/storage/StorageManager;
+    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mN:Landroid/os/storage/StorageManager;
 
     .line 96
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mL:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Ljava/util/ArrayList;
 
     .line 97
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mM:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Ljava/util/ArrayList;
 
     .line 98
-    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mK:Landroid/os/storage/StorageManager;
+    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mN:Landroid/os/storage/StorageManager;
 
     invoke-virtual {v0}, Landroid/os/storage/StorageManager;->getVolumeList()[Landroid/os/storage/StorageVolume;
 
@@ -1557,7 +1557,7 @@
     .line 102
     const-string v6, "mounted"
 
-    iget-object v7, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mK:Landroid/os/storage/StorageManager;
+    iget-object v7, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mN:Landroid/os/storage/StorageManager;
 
     invoke-virtual {v7, v0}, Landroid/os/storage/StorageManager;->getVolumeState(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1593,7 +1593,7 @@
     invoke-direct {v6, p0, v7}, Lcom/android/settings/Q;-><init>(Lcom/android/settings/MiuiDeviceInfoSettings;Z)V
 
     .line 106
-    iget-object v7, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mM:Ljava/util/ArrayList;
+    iget-object v7, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mP:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1607,7 +1607,7 @@
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->measure()V
 
     .line 110
-    iget-object v6, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mL:Ljava/util/ArrayList;
+    iget-object v6, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1661,7 +1661,7 @@
 
     .prologue
     .line 261
-    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mL:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/MiuiDeviceInfoSettings;->mO:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -1681,7 +1681,7 @@
     check-cast v0, Lcom/android/settings/deviceinfo/StorageMeasurement;
 
     .line 262
-    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->n()V
+    invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageMeasurement;->r()V
 
     goto :goto_0
 
@@ -1754,7 +1754,7 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 270
-    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->cW()V
+    invoke-direct {p0}, Lcom/android/settings/MiuiDeviceInfoSettings;->da()V
 
     .line 271
     return-void

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final dT:Landroid/net/INetworkStatsSession;
+.field private final dW:Landroid/net/INetworkStatsSession;
 
 .field private final mArgs:Landroid/os/Bundle;
 
@@ -21,7 +21,7 @@
     invoke-direct {p0, p1}, Landroid/content/AsyncTaskLoader;-><init>(Landroid/content/Context;)V
 
     .line 45
-    iput-object p2, p0, Lcom/android/settings/a/e;->dT:Landroid/net/INetworkStatsSession;
+    iput-object p2, p0, Lcom/android/settings/a/e;->dW:Landroid/net/INetworkStatsSession;
 
     .line 46
     iput-object p3, p0, Lcom/android/settings/a/e;->mArgs:Landroid/os/Bundle;
@@ -63,7 +63,7 @@
 
 
 # virtual methods
-.method public ht()Landroid/net/NetworkStats;
+.method public hx()Landroid/net/NetworkStats;
     .locals 7
 
     .prologue
@@ -98,7 +98,7 @@
 
     .line 62
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/a/e;->dT:Landroid/net/INetworkStatsSession;
+    iget-object v0, p0, Lcom/android/settings/a/e;->dW:Landroid/net/INetworkStatsSession;
 
     const/4 v6, 0x0
 
@@ -127,7 +127,7 @@
 
     .prologue
     .line 27
-    invoke-virtual {p0}, Lcom/android/settings/a/e;->ht()Landroid/net/NetworkStats;
+    invoke-virtual {p0}, Lcom/android/settings/a/e;->hx()Landroid/net/NetworkStats;
 
     move-result-object v0
 

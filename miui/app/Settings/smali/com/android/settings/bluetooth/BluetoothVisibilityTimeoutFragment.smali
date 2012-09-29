@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final jt:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+.field private final jw:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
 
 # direct methods
@@ -27,11 +27,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->eq()Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->eu()Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->jt:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->jw:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     .line 52
     return-void
@@ -46,7 +46,7 @@
 
     .prologue
     .line 65
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->jt:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->jw:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->setDiscoverableTimeout(I)V
 
@@ -79,9 +79,9 @@
 
     const v1, 0x7f070018
 
-    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->jt:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothVisibilityTimeoutFragment;->jw:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
-    invoke-virtual {v2}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iB()I
+    invoke-virtual {v2}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iF()I
 
     move-result v2
 

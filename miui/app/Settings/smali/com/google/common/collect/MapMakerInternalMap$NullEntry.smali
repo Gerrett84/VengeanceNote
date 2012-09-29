@@ -7,9 +7,9 @@
 
 
 # static fields
-.field private static final synthetic yA:[Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+.field public static final enum yD:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
-.field public static final enum yz:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+.field private static final synthetic yE:[Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
 
 # direct methods
@@ -26,18 +26,18 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yz:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yD:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
     .line 771
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yz:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yD:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
     aput-object v1, v0, v2
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yA:[Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yE:[Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
     return-void
 .end method
@@ -76,7 +76,7 @@
 
     .prologue
     .line 771
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yA:[Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yE:[Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->clone()Ljava/lang/Object;
 
@@ -98,7 +98,7 @@
     return-void
 .end method
 
-.method public ab()Lcom/google/common/collect/ag;
+.method public af()Lcom/google/common/collect/ag;
     .locals 0
 
     .prologue
@@ -106,7 +106,7 @@
     return-object p0
 .end method
 
-.method public ac()Lcom/google/common/collect/ag;
+.method public ag()Lcom/google/common/collect/ag;
     .locals 0
 
     .prologue
@@ -150,7 +150,7 @@
     return-void
 .end method
 
-.method public dm()J
+.method public dq()J
     .locals 2
 
     .prologue
@@ -160,7 +160,7 @@
     return-wide v0
 .end method
 
-.method public dn()Lcom/google/common/collect/ag;
+.method public dr()Lcom/google/common/collect/ag;
     .locals 0
 
     .prologue
@@ -168,7 +168,7 @@
     return-object p0
 .end method
 
-.method public do()Lcom/google/common/collect/ag;
+.method public ds()Lcom/google/common/collect/ag;
     .locals 0
 
     .prologue
@@ -176,7 +176,7 @@
     return-object p0
 .end method
 
-.method public dp()Lcom/google/common/collect/az;
+.method public dt()Lcom/google/common/collect/az;
     .locals 1
 
     .prologue
@@ -186,7 +186,7 @@
     return-object v0
 .end method
 
-.method public dq()I
+.method public du()I
     .locals 1
 
     .prologue
@@ -196,7 +196,7 @@
     return v0
 .end method
 
-.method public dr()Lcom/google/common/collect/ag;
+.method public dv()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue

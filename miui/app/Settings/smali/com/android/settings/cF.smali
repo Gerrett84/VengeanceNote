@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Gh:Lcom/android/settings/Display;
+.field final synthetic Gl:Lcom/android/settings/Display;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 115
-    iput-object p1, p0, Lcom/android/settings/cF;->Gh:Lcom/android/settings/Display;
+    iput-object p1, p0, Lcom/android/settings/cF;->Gl:Lcom/android/settings/Display;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
     if-nez p3, :cond_0
 
     .line 119
-    iget-object v0, p0, Lcom/android/settings/cF;->Gh:Lcom/android/settings/Display;
+    iget-object v0, p0, Lcom/android/settings/cF;->Gl:Lcom/android/settings/Display;
 
     invoke-static {v0}, Lcom/android/settings/Display;->a(Lcom/android/settings/Display;)Landroid/content/res/Configuration;
 
@@ -50,7 +50,7 @@
 
     .line 126
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/cF;->Gh:Lcom/android/settings/Display;
+    iget-object v0, p0, Lcom/android/settings/cF;->Gl:Lcom/android/settings/Display;
 
     invoke-static {v0}, Lcom/android/settings/Display;->b(Lcom/android/settings/Display;)V
 
@@ -64,7 +64,7 @@
     if-ne p3, v0, :cond_1
 
     .line 121
-    iget-object v0, p0, Lcom/android/settings/cF;->Gh:Lcom/android/settings/Display;
+    iget-object v0, p0, Lcom/android/settings/cF;->Gl:Lcom/android/settings/Display;
 
     invoke-static {v0}, Lcom/android/settings/Display;->a(Lcom/android/settings/Display;)Landroid/content/res/Configuration;
 
@@ -78,7 +78,7 @@
 
     .line 123
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/cF;->Gh:Lcom/android/settings/Display;
+    iget-object v0, p0, Lcom/android/settings/cF;->Gl:Lcom/android/settings/Display;
 
     invoke-static {v0}, Lcom/android/settings/Display;->a(Lcom/android/settings/Display;)Landroid/content/res/Configuration;
 

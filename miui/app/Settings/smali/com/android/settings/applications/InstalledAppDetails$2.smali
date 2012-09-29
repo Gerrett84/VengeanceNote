@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic vl:Lcom/android/settings/applications/InstalledAppDetails;
+.field final synthetic vp:Lcom/android/settings/applications/InstalledAppDetails;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 969
-    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$2;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$2;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 972
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$2;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$2;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails$2;->getResultCode()I
 

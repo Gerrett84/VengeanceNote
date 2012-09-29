@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Of:Lcom/android/settings/deviceinfo/Status;
+.field final synthetic Oi:Lcom/android/settings/deviceinfo/Status;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 163
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/Status$1;->Of:Lcom/android/settings/deviceinfo/Status;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/Status$1;->Oi:Lcom/android/settings/deviceinfo/Status;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -44,7 +44,7 @@
     if-eqz v0, :cond_0
 
     .line 169
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/Status$1;->Of:Lcom/android/settings/deviceinfo/Status;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/Status$1;->Oi:Lcom/android/settings/deviceinfo/Status;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/Status;->b(Lcom/android/settings/deviceinfo/Status;)Landroid/preference/Preference;
 
@@ -57,13 +57,13 @@
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
     .line 170
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/Status$1;->Of:Lcom/android/settings/deviceinfo/Status;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/Status$1;->Oi:Lcom/android/settings/deviceinfo/Status;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/Status;->c(Lcom/android/settings/deviceinfo/Status;)Landroid/preference/Preference;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/Status$1;->Of:Lcom/android/settings/deviceinfo/Status;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/Status$1;->Oi:Lcom/android/settings/deviceinfo/Status;
 
     invoke-virtual {v1}, Lcom/android/settings/deviceinfo/Status;->getResources()Landroid/content/res/Resources;
 

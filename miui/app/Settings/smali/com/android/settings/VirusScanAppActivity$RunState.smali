@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static final enum Ek:Lcom/android/settings/VirusScanAppActivity$RunState;
+.field public static final enum Eo:Lcom/android/settings/VirusScanAppActivity$RunState;
 
-.field public static final enum El:Lcom/android/settings/VirusScanAppActivity$RunState;
+.field public static final enum Ep:Lcom/android/settings/VirusScanAppActivity$RunState;
 
-.field public static final enum Em:Lcom/android/settings/VirusScanAppActivity$RunState;
+.field public static final enum Eq:Lcom/android/settings/VirusScanAppActivity$RunState;
 
-.field public static final enum En:Lcom/android/settings/VirusScanAppActivity$RunState;
+.field public static final enum Er:Lcom/android/settings/VirusScanAppActivity$RunState;
 
-.field private static final synthetic Eo:[Lcom/android/settings/VirusScanAppActivity$RunState;
+.field private static final synthetic Es:[Lcom/android/settings/VirusScanAppActivity$RunState;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/VirusScanAppActivity$RunState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Ek:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Eo:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     .line 78
     new-instance v0, Lcom/android/settings/VirusScanAppActivity$RunState;
@@ -44,7 +44,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/VirusScanAppActivity$RunState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->El:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Ep:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     .line 79
     new-instance v0, Lcom/android/settings/VirusScanAppActivity$RunState;
@@ -53,7 +53,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/android/settings/VirusScanAppActivity$RunState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Em:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Eq:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     .line 80
     new-instance v0, Lcom/android/settings/VirusScanAppActivity$RunState;
@@ -62,30 +62,30 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/settings/VirusScanAppActivity$RunState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->En:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Er:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     .line 76
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/settings/VirusScanAppActivity$RunState;
 
-    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->Ek:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->Eo:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->El:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->Ep:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->Em:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->Eq:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->En:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sget-object v1, Lcom/android/settings/VirusScanAppActivity$RunState;->Er:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     aput-object v1, v0, v5
 
-    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Eo:[Lcom/android/settings/VirusScanAppActivity$RunState;
+    sput-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Es:[Lcom/android/settings/VirusScanAppActivity$RunState;
 
     return-void
 .end method
@@ -124,7 +124,7 @@
 
     .prologue
     .line 76
-    sget-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Eo:[Lcom/android/settings/VirusScanAppActivity$RunState;
+    sget-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Es:[Lcom/android/settings/VirusScanAppActivity$RunState;
 
     invoke-virtual {v0}, [Lcom/android/settings/VirusScanAppActivity$RunState;->clone()Ljava/lang/Object;
 

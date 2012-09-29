@@ -7,17 +7,17 @@
 
 
 # static fields
-.field private static final rw:Ljava/lang/Object;
+.field private static final rA:Ljava/lang/Object;
 
-.field private static final rx:Ljava/lang/Object;
+.field private static final rz:Ljava/lang/Object;
 
 
 # instance fields
-.field private fC:J
+.field private fF:J
 
-.field private fD:J
+.field private fG:J
 
-.field private fE:F
+.field private fH:F
 
 
 # direct methods
@@ -30,14 +30,14 @@
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/android/settings/widget/f;->rw:Ljava/lang/Object;
+    sput-object v0, Lcom/android/settings/widget/f;->rz:Ljava/lang/Object;
 
     .line 602
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/android/settings/widget/f;->rx:Ljava/lang/Object;
+    sput-object v0, Lcom/android/settings/widget/f;->rA:Ljava/lang/Object;
 
     return-void
 .end method
@@ -60,9 +60,9 @@
 
     .prologue
     .line 585
-    iget v0, p0, Lcom/android/settings/widget/f;->fE:F
+    iget v0, p0, Lcom/android/settings/widget/f;->fH:F
 
-    iget-wide v1, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v1, p0, Lcom/android/settings/widget/f;->fF:J
 
     sub-long v1, p1, v1
 
@@ -70,9 +70,9 @@
 
     mul-float/2addr v0, v1
 
-    iget-wide v1, p0, Lcom/android/settings/widget/f;->fD:J
+    iget-wide v1, p0, Lcom/android/settings/widget/f;->fG:J
 
-    iget-wide v3, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v3, p0, Lcom/android/settings/widget/f;->fF:J
 
     sub-long/2addr v1, v3
 
@@ -166,14 +166,14 @@
 
     .line 630
     :goto_1
-    sget-object v4, Lcom/android/settings/widget/f;->rw:Ljava/lang/Object;
+    sget-object v4, Lcom/android/settings/widget/f;->rz:Ljava/lang/Object;
 
     const-string v5, "^1"
 
     invoke-static {p2, v4, v0, v5}, Lcom/android/settings/widget/ChartDataUsageView;->b(Landroid/text/SpannableStringBuilder;Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/String;)V
 
     .line 631
-    sget-object v0, Lcom/android/settings/widget/f;->rx:Ljava/lang/Object;
+    sget-object v0, Lcom/android/settings/widget/f;->rA:Ljava/lang/Object;
 
     const-string v4, "^2"
 
@@ -241,14 +241,14 @@
 
     .prologue
     .line 568
-    iget v0, p0, Lcom/android/settings/widget/f;->fE:F
+    iget v0, p0, Lcom/android/settings/widget/f;->fH:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
     .line 569
-    iput p1, p0, Lcom/android/settings/widget/f;->fE:F
+    iput p1, p0, Lcom/android/settings/widget/f;->fH:F
 
     .line 570
     const/4 v0, 0x1
@@ -270,13 +270,13 @@
 
     .prologue
     .line 557
-    iget-wide v0, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v0, p0, Lcom/android/settings/widget/f;->fF:J
 
     cmp-long v0, v0, p1
 
     if-nez v0, :cond_0
 
-    iget-wide v0, p0, Lcom/android/settings/widget/f;->fD:J
+    iget-wide v0, p0, Lcom/android/settings/widget/f;->fG:J
 
     cmp-long v0, v0, p3
 
@@ -284,10 +284,10 @@
 
     .line 558
     :cond_0
-    iput-wide p1, p0, Lcom/android/settings/widget/f;->fC:J
+    iput-wide p1, p0, Lcom/android/settings/widget/f;->fF:J
 
     .line 559
-    iput-wide p3, p0, Lcom/android/settings/widget/f;->fD:J
+    iput-wide p3, p0, Lcom/android/settings/widget/f;->fG:J
 
     .line 560
     const/4 v0, 0x1
@@ -302,14 +302,14 @@
     goto :goto_0
 .end method
 
-.method public aa()[F
+.method public ae()[F
     .locals 7
 
     .prologue
     .line 638
-    iget-wide v0, p0, Lcom/android/settings/widget/f;->fD:J
+    iget-wide v0, p0, Lcom/android/settings/widget/f;->fG:J
 
-    iget-wide v2, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v2, p0, Lcom/android/settings/widget/f;->fF:J
 
     sub-long/2addr v0, v2
 
@@ -331,7 +331,7 @@
     new-array v5, v0, [F
 
     .line 644
-    iget-wide v1, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v1, p0, Lcom/android/settings/widget/f;->fF:J
 
     .line 645
     const/4 v0, 0x0
@@ -374,7 +374,7 @@
     .line 656
     float-to-double v1, v0
 
-    iget v3, p0, Lcom/android/settings/widget/f;->fE:F
+    iget v3, p0, Lcom/android/settings/widget/f;->fH:F
 
     float-to-double v3, v3
 
@@ -397,7 +397,7 @@
     :cond_0
     float-to-double v0, v0
 
-    iget v2, p0, Lcom/android/settings/widget/f;->fE:F
+    iget v2, p0, Lcom/android/settings/widget/f;->fH:F
 
     float-to-double v2, v2
 
@@ -427,13 +427,13 @@
 
     .prologue
     .line 597
-    iget-wide v0, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v0, p0, Lcom/android/settings/widget/f;->fF:J
 
     long-to-float v0, v0
 
-    iget-wide v1, p0, Lcom/android/settings/widget/f;->fD:J
+    iget-wide v1, p0, Lcom/android/settings/widget/f;->fG:J
 
-    iget-wide v3, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v3, p0, Lcom/android/settings/widget/f;->fF:J
 
     sub-long/2addr v1, v3
 
@@ -441,7 +441,7 @@
 
     mul-float/2addr v1, p1
 
-    iget v2, p0, Lcom/android/settings/widget/f;->fE:F
+    iget v2, p0, Lcom/android/settings/widget/f;->fH:F
 
     div-float/2addr v1, v2
 
@@ -463,7 +463,7 @@
 
     const/4 v1, 0x0
 
-    iget-wide v2, p0, Lcom/android/settings/widget/f;->fC:J
+    iget-wide v2, p0, Lcom/android/settings/widget/f;->fF:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -473,7 +473,7 @@
 
     const/4 v1, 0x1
 
-    iget-wide v2, p0, Lcom/android/settings/widget/f;->fD:J
+    iget-wide v2, p0, Lcom/android/settings/widget/f;->fG:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -483,7 +483,7 @@
 
     const/4 v1, 0x2
 
-    iget v2, p0, Lcom/android/settings/widget/f;->fE:F
+    iget v2, p0, Lcom/android/settings/widget/f;->fH:F
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 

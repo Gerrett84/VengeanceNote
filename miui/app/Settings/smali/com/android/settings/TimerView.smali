@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field private EA:Landroid/widget/ImageView;
+.field private EA:I
 
-.field private EB:Landroid/widget/ImageView;
+.field private EB:I
 
-.field private Eu:Landroid/graphics/Bitmap;
+.field private EC:Landroid/widget/TextView;
 
-.field private Ev:Landroid/graphics/Bitmap;
+.field private ED:Landroid/widget/TextView;
 
-.field private Ew:I
+.field private EE:Landroid/widget/ImageView;
 
-.field private Ex:I
+.field private EF:Landroid/widget/ImageView;
 
-.field private Ey:Landroid/widget/TextView;
+.field private Ey:Landroid/graphics/Bitmap;
 
-.field private Ez:Landroid/widget/TextView;
+.field private Ez:Landroid/graphics/Bitmap;
 
 .field private mCalendar:Ljava/util/Calendar;
 
@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/TimerView;->Eu:Landroid/graphics/Bitmap;
+    iput-object v0, p0, Lcom/android/settings/TimerView;->Ey:Landroid/graphics/Bitmap;
 
     .line 51
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -154,10 +154,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/TimerView;->Ev:Landroid/graphics/Bitmap;
+    iput-object v0, p0, Lcom/android/settings/TimerView;->Ez:Landroid/graphics/Bitmap;
 
     .line 53
-    iget-object v0, p0, Lcom/android/settings/TimerView;->Eu:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/android/settings/TimerView;->Ey:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -166,7 +166,7 @@
     iput v0, p0, Lcom/android/settings/TimerView;->mWidth:I
 
     .line 54
-    iget-object v0, p0, Lcom/android/settings/TimerView;->Eu:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/android/settings/TimerView;->Ey:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -179,14 +179,14 @@
 
     shr-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/TimerView;->Ew:I
+    iput v0, p0, Lcom/android/settings/TimerView;->EA:I
 
     .line 56
     iget v0, p0, Lcom/android/settings/TimerView;->mHeight:I
 
     shr-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/TimerView;->Ex:I
+    iput v0, p0, Lcom/android/settings/TimerView;->EB:I
 
     .line 58
     const v0, 0x7f080167
@@ -197,7 +197,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/TimerView;->Ey:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/TimerView;->EC:Landroid/widget/TextView;
 
     .line 59
     const v0, 0x7f08016b
@@ -208,7 +208,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/TimerView;->Ez:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/TimerView;->ED:Landroid/widget/TextView;
 
     .line 60
     const v0, 0x7f080169
@@ -219,7 +219,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/android/settings/TimerView;->EA:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/settings/TimerView;->EE:Landroid/widget/ImageView;
 
     .line 61
     const v0, 0x7f08016a
@@ -230,7 +230,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/android/settings/TimerView;->EB:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/settings/TimerView;->EF:Landroid/widget/ImageView;
 
     .line 63
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
@@ -322,7 +322,7 @@
     move-result-object v0
 
     .line 73
-    iget-object v2, p0, Lcom/android/settings/TimerView;->Ey:Landroid/widget/TextView;
+    iget-object v2, p0, Lcom/android/settings/TimerView;->EC:Landroid/widget/TextView;
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -377,7 +377,7 @@
     move-result-object v0
 
     .line 79
-    iget-object v2, p0, Lcom/android/settings/TimerView;->Ez:Landroid/widget/TextView;
+    iget-object v2, p0, Lcom/android/settings/TimerView;->ED:Landroid/widget/TextView;
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -402,18 +402,18 @@
 
     int-to-float v0, v0
 
-    iget v3, p0, Lcom/android/settings/TimerView;->Ex:I
+    iget v3, p0, Lcom/android/settings/TimerView;->EB:I
 
     int-to-float v3, v3
 
-    iget v4, p0, Lcom/android/settings/TimerView;->Ew:I
+    iget v4, p0, Lcom/android/settings/TimerView;->EA:I
 
     int-to-float v4, v4
 
     invoke-virtual {v2, v0, v3, v4}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
     .line 84
-    iget-object v0, p0, Lcom/android/settings/TimerView;->Eu:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/android/settings/TimerView;->Ey:Landroid/graphics/Bitmap;
 
     iget v3, p0, Lcom/android/settings/TimerView;->mWidth:I
 
@@ -428,7 +428,7 @@
     move-result-object v0
 
     .line 85
-    iget-object v2, p0, Lcom/android/settings/TimerView;->EA:Landroid/widget/ImageView;
+    iget-object v2, p0, Lcom/android/settings/TimerView;->EE:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
@@ -444,18 +444,18 @@
 
     int-to-float v2, v2
 
-    iget v3, p0, Lcom/android/settings/TimerView;->Ex:I
+    iget v3, p0, Lcom/android/settings/TimerView;->EB:I
 
     int-to-float v3, v3
 
-    iget v4, p0, Lcom/android/settings/TimerView;->Ew:I
+    iget v4, p0, Lcom/android/settings/TimerView;->EA:I
 
     int-to-float v4, v4
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
     .line 89
-    iget-object v0, p0, Lcom/android/settings/TimerView;->Ev:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/android/settings/TimerView;->Ez:Landroid/graphics/Bitmap;
 
     iget v3, p0, Lcom/android/settings/TimerView;->mWidth:I
 
@@ -470,7 +470,7 @@
     move-result-object v0
 
     .line 90
-    iget-object v1, p0, Lcom/android/settings/TimerView;->EB:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/TimerView;->EF:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 

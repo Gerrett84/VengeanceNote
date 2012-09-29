@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic at:Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;
+.field final synthetic aw:Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 599
-    iput-object p1, p0, Lcom/android/settings/wifi/c;->at:Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;
+    iput-object p1, p0, Lcom/android/settings/wifi/c;->aw:Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

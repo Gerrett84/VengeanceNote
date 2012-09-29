@@ -11,27 +11,27 @@
 
 
 # instance fields
-.field private final fW:Lcom/android/settings/SettingsPreferenceFragment;
+.field private final fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
-.field private final fX:Landroid/view/inputmethod/InputMethodInfo;
+.field private final ga:Landroid/view/inputmethod/InputMethodInfo;
 
-.field private final fY:Landroid/content/Intent;
+.field private final gb:Landroid/content/Intent;
 
-.field private final fZ:Z
+.field private final gc:Z
 
-.field private final ga:Z
+.field private final gd:Z
 
-.field private gb:Landroid/app/AlertDialog;
+.field private ge:Landroid/app/AlertDialog;
 
-.field private gc:Landroid/widget/ImageView;
+.field private gf:Landroid/widget/ImageView;
 
-.field private gd:Landroid/widget/TextView;
+.field private gg:Landroid/widget/TextView;
 
-.field private ge:Landroid/widget/TextView;
+.field private gh:Landroid/widget/TextView;
 
-.field private gf:Landroid/view/View;
+.field private gi:Landroid/view/View;
 
-.field private final gg:Landroid/view/View$OnClickListener;
+.field private final gj:Landroid/view/View$OnClickListener;
 
 .field private final mImm:Landroid/view/inputmethod/InputMethodManager;
 
@@ -74,14 +74,14 @@
     invoke-direct {p0, v0, v2, v1}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 60
-    iput-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iput-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
     .line 66
     new-instance v0, Lcom/android/settings/inputmethod/InputMethodPreference$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/inputmethod/InputMethodPreference$1;-><init>(Lcom/android/settings/inputmethod/InputMethodPreference;)V
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gg:Landroid/view/View$OnClickListener;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gj:Landroid/view/View$OnClickListener;
 
     .line 87
     const v0, 0x7f040059
@@ -94,19 +94,19 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/inputmethod/InputMethodPreference;->setWidgetLayoutResource(I)V
 
     .line 89
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     .line 90
-    iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fY:Landroid/content/Intent;
+    iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/content/Intent;
 
     .line 91
     iput-object p3, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
     .line 92
-    iput-object p4, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iput-object p4, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     .line 93
-    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aJ()V
+    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aN()V
 
     .line 94
     invoke-virtual {p1}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
@@ -117,17 +117,17 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Z
+    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Z
 
     .line 96
     invoke-static {p4}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->a(Landroid/view/inputmethod/InputMethodInfo;)Z
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Z
+    iput-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gd:Z
 
     .line 97
-    iget-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Z
+    iget-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Z
 
     if-eqz v0, :cond_0
 
@@ -150,11 +150,11 @@
     const/4 v3, 0x1
 
     .line 254
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->isShowing()Z
 
@@ -163,7 +163,7 @@
     if-eqz v0, :cond_0
 
     .line 255
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
@@ -171,7 +171,7 @@
     :cond_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 
@@ -219,12 +219,12 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
     .line 275
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/SettingsPreferenceFragment;->getResources()Landroid/content/res/Resources;
 
@@ -242,7 +242,7 @@
 
     iget-object v5, v5, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v6, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v6, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {v6}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 
@@ -265,7 +265,7 @@
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 278
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
@@ -381,12 +381,12 @@
 
     .prologue
     .line 49
-    iget-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Z
+    iget-boolean v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gd:Z
 
     return v0
 .end method
 
-.method private aH()V
+.method private aL()V
     .locals 4
 
     .prologue
@@ -398,22 +398,22 @@
     move-result v0
 
     .line 172
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_0
 
     .line 173
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setEnabled(Z)V
 
     .line 174
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setClickable(Z)V
 
     .line 175
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setFocusable(Z)V
 
@@ -421,7 +421,7 @@
     if-nez v0, :cond_0
 
     .line 177
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     const v2, 0x3ecccccd
 
@@ -429,39 +429,39 @@
 
     .line 180
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gd:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gg:Landroid/widget/TextView;
 
     if-eqz v1, :cond_1
 
     .line 181
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gd:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gg:Landroid/widget/TextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setEnabled(Z)V
 
     .line 183
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gh:Landroid/widget/TextView;
 
     if-eqz v1, :cond_2
 
     .line 184
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gh:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
     .line 186
     :cond_2
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     if-eqz v1, :cond_3
 
     .line 187
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setEnabled(Z)V
 
     .line 188
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLongClickable(Z)V
 
@@ -471,11 +471,11 @@
     move-result v1
 
     .line 190
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     if-eqz v1, :cond_4
 
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gg:Landroid/view/View$OnClickListener;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gj:Landroid/view/View$OnClickListener;
 
     :goto_0
     invoke-virtual {v2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -484,7 +484,7 @@
     if-nez v1, :cond_3
 
     .line 192
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     const/4 v1, 0x0
 
@@ -501,14 +501,14 @@
     goto :goto_0
 .end method
 
-.method private aK()V
+.method private aO()V
     .locals 5
 
     .prologue
     .line 292
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 
@@ -524,7 +524,7 @@
 
     move-result-object v3
 
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/SettingsPreferenceFragment;->getResources()Landroid/content/res/Resources;
 
@@ -571,7 +571,7 @@
 
     .prologue
     .line 49
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     return-object v0
 .end method
@@ -582,7 +582,7 @@
 
     .prologue
     .line 49
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     return-object v0
 .end method
@@ -593,7 +593,7 @@
 
     .prologue
     .line 49
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fY:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/content/Intent;
 
     return-object v0
 .end method
@@ -618,13 +618,13 @@
     if-ne v0, v1, :cond_0
 
     .line 284
-    iget-object v0, p1, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v0, p1, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p2, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v1, p2, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
@@ -668,17 +668,17 @@
     if-eqz p2, :cond_0
 
     .line 242
-    invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aK()V
+    invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aO()V
 
     .line 244
     :cond_0
-    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aJ()V
+    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aN()V
 
     .line 245
     return-void
 .end method
 
-.method public aI()Ljava/lang/String;
+.method public aM()Ljava/lang/String;
     .locals 6
 
     .prologue
@@ -690,7 +690,7 @@
     .line 214
     iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->mImm:Landroid/view/inputmethod/InputMethodManager;
 
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     const/4 v3, 0x1
 
@@ -730,19 +730,19 @@
 
     .line 219
     :cond_0
-    iget-object v3, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fW:Lcom/android/settings/SettingsPreferenceFragment;
+    iget-object v3, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fZ:Lcom/android/settings/SettingsPreferenceFragment;
 
     invoke-virtual {v3}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v4, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-virtual {v4}, Landroid/view/inputmethod/InputMethodInfo;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v5, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-virtual {v5}, Landroid/view/inputmethod/InputMethodInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
 
@@ -768,12 +768,12 @@
     return-object v0
 .end method
 
-.method public aJ()V
+.method public aN()V
     .locals 2
 
     .prologue
     .line 227
-    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aI()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aM()Ljava/lang/String;
 
     move-result-object v0
 
@@ -830,12 +830,12 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     .line 106
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gg:Landroid/view/View$OnClickListener;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gj:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -848,7 +848,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     .line 108
     const v0, 0x1020016
@@ -859,7 +859,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gd:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gg:Landroid/widget/TextView;
 
     .line 109
     const v0, 0x1020010
@@ -870,10 +870,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ge:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gh:Landroid/widget/TextView;
 
     .line 110
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodInfo;->getSubtypeCount()I
 
@@ -885,7 +885,7 @@
 
     .line 111
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fX:Landroid/view/inputmethod/InputMethodInfo;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->ga:Landroid/view/inputmethod/InputMethodInfo;
 
     invoke-virtual {v1}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
@@ -895,7 +895,7 @@
     if-eqz v0, :cond_0
 
     .line 113
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gi:Landroid/view/View;
 
     new-instance v3, Lcom/android/settings/inputmethod/InputMethodPreference$2;
 
@@ -905,12 +905,12 @@
 
     .line 125
     :cond_0
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fY:Landroid/content/Intent;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/content/Intent;
 
     if-eqz v2, :cond_1
 
     .line 126
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     new-instance v3, Lcom/android/settings/inputmethod/InputMethodPreference$3;
 
@@ -928,18 +928,18 @@
     invoke-direct {v0, p0, v1}, Lcom/android/settings/inputmethod/InputMethodPreference$4;-><init>(Lcom/android/settings/inputmethod/InputMethodPreference;Ljava/lang/String;)V
 
     .line 155
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 157
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->fY:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gb:Landroid/content/Intent;
 
     if-nez v0, :cond_4
 
     .line 158
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gc:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference;->gf:Landroid/widget/ImageView;
 
     const/16 v1, 0x8
 
@@ -957,7 +957,7 @@
 
     .line 160
     :cond_4
-    invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aH()V
+    invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aL()V
 
     goto :goto_1
 .end method
@@ -985,7 +985,7 @@
     invoke-super {p0, p1}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     .line 167
-    invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aH()V
+    invoke-direct {p0}, Lcom/android/settings/inputmethod/InputMethodPreference;->aL()V
 
     .line 168
     return-void

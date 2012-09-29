@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic ed:Lcom/google/common/collect/MapMakerInternalMap;
+.field final synthetic eg:Lcom/google/common/collect/MapMakerInternalMap;
 
 .field final key:Ljava/lang/Object;
 
@@ -20,7 +20,7 @@
 
     .prologue
     .line 3777
-    iput-object p1, p0, Lcom/google/common/collect/j;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iput-object p1, p0, Lcom/google/common/collect/j;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ae;-><init>()V
 
@@ -131,7 +131,7 @@
 
     .prologue
     .line 3810
-    iget-object v0, p0, Lcom/google/common/collect/j;->ed:Lcom/google/common/collect/MapMakerInternalMap;
+    iget-object v0, p0, Lcom/google/common/collect/j;->eg:Lcom/google/common/collect/MapMakerInternalMap;
 
     iget-object v1, p0, Lcom/google/common/collect/j;->key:Ljava/lang/Object;
 

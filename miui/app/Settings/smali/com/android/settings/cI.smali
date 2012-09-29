@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field protected cW:Lmiui/widget/SlidingButton;
+.field protected cZ:Lmiui/widget/SlidingButton;
 
 .field protected mActivity:Landroid/app/Activity;
 
@@ -39,7 +39,7 @@
     iput-object p1, p0, Lcom/android/settings/cI;->mActivity:Landroid/app/Activity;
 
     .line 25
-    iput-object p2, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iput-object p2, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     .line 26
     return-void
@@ -53,7 +53,7 @@
 
     .prologue
     .line 43
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     if-ne v0, p1, :cond_0
 
@@ -63,20 +63,20 @@
 
     .line 44
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 45
-    iput-object p1, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iput-object p1, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     .line 46
     invoke-virtual {p0}, Lcom/android/settings/cI;->update()V
 
     .line 47
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, p0}, Lmiui/widget/SlidingButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -112,7 +112,7 @@
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
     .line 39
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     const/4 v1, 0x0
 
@@ -147,7 +147,7 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     .line 34
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, p0}, Lmiui/widget/SlidingButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 

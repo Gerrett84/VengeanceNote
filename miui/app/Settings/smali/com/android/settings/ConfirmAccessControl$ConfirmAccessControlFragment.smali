@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private cX:I
+.field private da:I
 
-.field private cY:Lmiui/security/ChooseLockSettingsHelper;
+.field private db:Lmiui/security/ChooseLockSettingsHelper;
 
-.field private cZ:Landroid/widget/Button;
+.field private dc:Landroid/widget/Button;
 
 .field private mPackageName:Ljava/lang/String;
 
@@ -24,13 +24,13 @@
     .line 93
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cZ:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->dc:Landroid/widget/Button;
 
     .line 97
     return-void
 .end method
 
-.method private I()V
+.method private M()V
     .locals 4
 
     .prologue
@@ -39,12 +39,12 @@
     const/4 v2, 0x0
 
     .line 129
-    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cX:I
+    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->da:I
 
     if-ne v0, v3, :cond_1
 
     .line 130
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0, v2}, Lmiui/security/ChooseLockSettingsHelper;->setACLockEnabled(Z)V
 
@@ -55,14 +55,14 @@
 
     .line 131
     :cond_1
-    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cX:I
+    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->da:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_2
 
     .line 132
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0, v3}, Lmiui/security/ChooseLockSettingsHelper;->setPasswordForPrivacyModeEnabled(Z)V
 
@@ -70,14 +70,14 @@
 
     .line 133
     :cond_2
-    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cX:I
+    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->da:I
 
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_3
 
     .line 134
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0, v2}, Lmiui/security/ChooseLockSettingsHelper;->setPasswordForPrivacyModeEnabled(Z)V
 
@@ -85,21 +85,21 @@
 
     .line 135
     :cond_3
-    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cX:I
+    iget v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->da:I
 
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
 
     .line 136
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0, v2}, Lmiui/security/ChooseLockSettingsHelper;->setPrivacyModeEnabled(Z)V
 
     goto :goto_0
 .end method
 
-.method private g(Ljava/lang/String;)Ljava/lang/CharSequence;
+.method private h(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 7
     .parameter
 
@@ -170,12 +170,12 @@
 
 
 # virtual methods
-.method protected J()V
+.method protected N()V
     .locals 2
 
     .prologue
     .line 144
-    iget-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->tZ:Lmiui/security/MiuiLockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->ud:Lmiui/security/MiuiLockPatternUtils;
 
     invoke-virtual {v0}, Lmiui/security/MiuiLockPatternUtils;->savedAccessControlExists()Z
 
@@ -212,7 +212,7 @@
 
     .line 149
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->I()V
+    invoke-direct {p0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->M()V
 
     .line 150
     invoke-virtual {p0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->getActivity()Landroid/app/Activity;
@@ -226,7 +226,7 @@
     return-void
 .end method
 
-.method protected K()I
+.method protected O()I
     .locals 1
 
     .prologue
@@ -236,7 +236,7 @@
     return v0
 .end method
 
-.method protected L()Z
+.method protected P()Z
     .locals 3
 
     .prologue
@@ -260,7 +260,7 @@
     return v0
 .end method
 
-.method protected M()Z
+.method protected Q()Z
     .locals 3
 
     .prologue
@@ -324,7 +324,7 @@
 
     move-result v2
 
-    iput v2, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cX:I
+    iput v2, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->da:I
 
     .line 161
     iget-object v2, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->mPackageName:Ljava/lang/String;
@@ -400,7 +400,7 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->ue:Ljava/lang/CharSequence;
+    iput-object v1, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->ui:Ljava/lang/CharSequence;
 
     :cond_0
     move v1, v0
@@ -417,11 +417,11 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->g(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-direct {p0, v0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->h(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->uf:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->uj:Ljava/lang/CharSequence;
 
     .line 186
     :cond_2
@@ -439,7 +439,7 @@
 
     .line 177
     :cond_4
-    iget v2, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cX:I
+    iget v2, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->da:I
 
     const/4 v3, 0x4
 
@@ -481,7 +481,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->ue:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->ui:Ljava/lang/CharSequence;
 
     goto :goto_1
 
@@ -498,7 +498,7 @@
 
     .prologue
     .line 223
-    invoke-direct {p0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->I()V
+    invoke-direct {p0}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->M()V
 
     .line 224
     iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->mPackageName:Ljava/lang/String;
@@ -532,7 +532,7 @@
 
     .prologue
     .line 232
-    iget-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->tZ:Lmiui/security/MiuiLockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->ud:Lmiui/security/MiuiLockPatternUtils;
 
     invoke-virtual {v0, p1}, Lmiui/security/MiuiLockPatternUtils;->checkAccessControl(Ljava/util/List;)Z
 
@@ -558,7 +558,7 @@
 
     invoke-direct {v0, v1}, Lmiui/security/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iput-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     .line 103
     return-void
@@ -585,10 +585,10 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cZ:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->dc:Landroid/widget/Button;
 
     .line 110
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cZ:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->dc:Landroid/widget/Button;
 
     new-instance v2, Lcom/android/settings/L;
 
@@ -608,7 +608,7 @@
     if-eqz v0, :cond_0
 
     .line 120
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cZ:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->dc:Landroid/widget/Button;
 
     const/4 v2, 0x0
 
@@ -620,7 +620,7 @@
 
     .line 122
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->cZ:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->dc:Landroid/widget/Button;
 
     const/16 v2, 0x8
 

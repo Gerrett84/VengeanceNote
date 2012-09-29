@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field private PB:Landroid/net/nsd/NsdManager;
+.field private PE:Landroid/net/nsd/NsdManager;
 
-.field private final aJ:Landroid/content/IntentFilter;
+.field private final aM:Landroid/content/IntentFilter;
 
 .field private final mContext:Landroid/content/Context;
 
 .field private final mReceiver:Landroid/content/BroadcastReceiver;
 
-.field private final sk:Landroid/preference/CheckBoxPreference;
+.field private final sn:Landroid/preference/CheckBoxPreference;
 
 
 # virtual methods
@@ -35,12 +35,12 @@
     move-result v0
 
     .line 70
-    iget-object v1, p0, Lcom/android/settings/ee;->sk:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/ee;->sn:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     .line 71
-    iget-object v1, p0, Lcom/android/settings/ee;->PB:Landroid/net/nsd/NsdManager;
+    iget-object v1, p0, Lcom/android/settings/ee;->PE:Landroid/net/nsd/NsdManager;
 
     invoke-virtual {v1, v0}, Landroid/net/nsd/NsdManager;->setEnabled(Z)V
 
@@ -60,7 +60,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 64
-    iget-object v0, p0, Lcom/android/settings/ee;->sk:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ee;->sn:Landroid/preference/CheckBoxPreference;
 
     const/4 v1, 0x0
 
@@ -79,12 +79,12 @@
 
     iget-object v1, p0, Lcom/android/settings/ee;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    iget-object v2, p0, Lcom/android/settings/ee;->aJ:Landroid/content/IntentFilter;
+    iget-object v2, p0, Lcom/android/settings/ee;->aM:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 59
-    iget-object v0, p0, Lcom/android/settings/ee;->sk:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ee;->sn:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/CheckBoxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 

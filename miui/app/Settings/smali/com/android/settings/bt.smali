@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic uj:Lcom/android/settings/eb;
+.field final synthetic un:Lcom/android/settings/eb;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 374
-    iput-object p1, p0, Lcom/android/settings/bt;->uj:Lcom/android/settings/eb;
+    iput-object p1, p0, Lcom/android/settings/bt;->un:Lcom/android/settings/eb;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

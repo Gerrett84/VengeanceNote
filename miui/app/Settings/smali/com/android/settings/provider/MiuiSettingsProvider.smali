@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final dP:Landroid/content/UriMatcher;
+.field private static final dS:Landroid/content/UriMatcher;
 
-.field private static final dQ:[Ljava/lang/String;
+.field private static final dT:[Ljava/lang/String;
 
 
 # instance fields
-.field private dR:Lcom/android/settings/provider/d;
+.field private dU:Lcom/android/settings/provider/d;
 
 
 # direct methods
@@ -47,7 +47,7 @@
 
     aput-object v1, v0, v5
 
-    sput-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dQ:[Ljava/lang/String;
+    sput-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dT:[Ljava/lang/String;
 
     .line 29
     new-instance v0, Landroid/content/UriMatcher;
@@ -56,10 +56,10 @@
 
     invoke-direct {v0, v1}, Landroid/content/UriMatcher;-><init>(I)V
 
-    sput-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sput-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     .line 30
-    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     const-string v1, "miui_settings"
 
@@ -68,7 +68,7 @@
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 31
-    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     const-string v1, "miui_settings"
 
@@ -77,7 +77,7 @@
     invoke-virtual {v0, v1, v2, v5}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 32
-    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     const-string v1, "miui_settings"
 
@@ -110,12 +110,12 @@
     .line 146
     new-instance v4, Landroid/database/MatrixCursor;
 
-    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dQ:[Ljava/lang/String;
+    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dT:[Ljava/lang/String;
 
     invoke-direct {v4, v0}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;)V
 
     .line 147
-    invoke-static {}, Lcom/android/settings/bP;->hw()Ljava/util/ArrayList;
+    invoke-static {}, Lcom/android/settings/bP;->hA()Ljava/util/ArrayList;
 
     move-result-object v5
 
@@ -249,7 +249,7 @@
     goto :goto_0
 .end method
 
-.method private h(Ljava/lang/String;)Ljava/lang/String;
+.method private i(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
     .parameter
 
@@ -305,14 +305,14 @@
     .prologue
     .line 102
     .line 103
-    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dR:Lcom/android/settings/provider/d;
+    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dU:Lcom/android/settings/provider/d;
 
     invoke-virtual {v0}, Lcom/android/settings/provider/d;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
 
     .line 104
-    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     invoke-virtual {v0, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -407,7 +407,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, p2}, Lcom/android/settings/provider/MiuiSettingsProvider;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p2}, Lcom/android/settings/provider/MiuiSettingsProvider;->i(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -453,14 +453,14 @@
     const/4 v4, 0x0
 
     .line 83
-    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dR:Lcom/android/settings/provider/d;
+    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dU:Lcom/android/settings/provider/d;
 
     invoke-virtual {v0}, Lcom/android/settings/provider/d;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
     .line 85
-    sget-object v1, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v1, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     invoke-virtual {v1, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -555,10 +555,10 @@
 
     invoke-direct {v0, v1}, Lcom/android/settings/provider/d;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dR:Lcom/android/settings/provider/d;
+    iput-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dU:Lcom/android/settings/provider/d;
 
     .line 39
-    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dR:Lcom/android/settings/provider/d;
+    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dU:Lcom/android/settings/provider/d;
 
     invoke-virtual {v0}, Lcom/android/settings/provider/d;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -586,7 +586,7 @@
 
     .line 47
     .line 48
-    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dR:Lcom/android/settings/provider/d;
+    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dU:Lcom/android/settings/provider/d;
 
     invoke-virtual {v0}, Lcom/android/settings/provider/d;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
@@ -600,7 +600,7 @@
     move-result-object v8
 
     .line 50
-    sget-object v1, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v1, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     invoke-virtual {v1, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -719,7 +719,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, p3}, Lcom/android/settings/provider/MiuiSettingsProvider;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p3}, Lcom/android/settings/provider/MiuiSettingsProvider;->i(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -764,14 +764,14 @@
     .prologue
     .line 124
     .line 125
-    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dR:Lcom/android/settings/provider/d;
+    iget-object v0, p0, Lcom/android/settings/provider/MiuiSettingsProvider;->dU:Lcom/android/settings/provider/d;
 
     invoke-virtual {v0}, Lcom/android/settings/provider/d;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v1
 
     .line 126
-    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dP:Landroid/content/UriMatcher;
+    sget-object v0, Lcom/android/settings/provider/MiuiSettingsProvider;->dS:Landroid/content/UriMatcher;
 
     invoke-virtual {v0, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -866,7 +866,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, p3}, Lcom/android/settings/provider/MiuiSettingsProvider;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p3}, Lcom/android/settings/provider/MiuiSettingsProvider;->i(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 

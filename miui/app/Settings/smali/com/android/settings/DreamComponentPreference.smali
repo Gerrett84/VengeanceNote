@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final LW:Landroid/content/pm/PackageManager;
+.field private final LZ:Landroid/content/pm/PackageManager;
 
-.field private final LX:Landroid/content/ContentResolver;
+.field private final Ma:Landroid/content/ContentResolver;
 
-.field LY:Ljava/util/Comparator;
+.field Mb:Ljava/util/Comparator;
 
 .field private final sCollator:Ljava/text/Collator;
 
@@ -35,7 +35,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/a;-><init>(Lcom/android/settings/DreamComponentPreference;)V
 
-    iput-object v0, p0, Lcom/android/settings/DreamComponentPreference;->LY:Ljava/util/Comparator;
+    iput-object v0, p0, Lcom/android/settings/DreamComponentPreference;->Mb:Ljava/util/Comparator;
 
     .line 71
     invoke-virtual {p0}, Lcom/android/settings/DreamComponentPreference;->getContext()Landroid/content/Context;
@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DreamComponentPreference;->LW:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/DreamComponentPreference;->LZ:Landroid/content/pm/PackageManager;
 
     .line 72
     invoke-virtual {p0}, Lcom/android/settings/DreamComponentPreference;->getContext()Landroid/content/Context;
@@ -57,10 +57,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DreamComponentPreference;->LX:Landroid/content/ContentResolver;
+    iput-object v0, p0, Lcom/android/settings/DreamComponentPreference;->Ma:Landroid/content/ContentResolver;
 
     .line 74
-    invoke-direct {p0}, Lcom/android/settings/DreamComponentPreference;->lr()V
+    invoke-direct {p0}, Lcom/android/settings/DreamComponentPreference;->lv()V
 
     .line 75
     return-void
@@ -72,7 +72,7 @@
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/android/settings/DreamComponentPreference;->LW:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/DreamComponentPreference;->LZ:Landroid/content/pm/PackageManager;
 
     return-object v0
 .end method
@@ -88,7 +88,7 @@
     return-object v0
 .end method
 
-.method private lr()V
+.method private lv()V
     .locals 3
 
     .prologue
@@ -114,7 +114,7 @@
 
     .line 89
     :try_start_1
-    iget-object v1, p0, Lcom/android/settings/DreamComponentPreference;->LW:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/DreamComponentPreference;->LZ:Landroid/content/pm/PackageManager;
 
     const/4 v2, 0x0
 
@@ -122,7 +122,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/DreamComponentPreference;->LW:Landroid/content/pm/PackageManager;
+    iget-object v2, p0, Lcom/android/settings/DreamComponentPreference;->LZ:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v1, v2}, Landroid/content/pm/ActivityInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -153,7 +153,7 @@
 
     .line 92
     :try_start_2
-    iget-object v1, p0, Lcom/android/settings/DreamComponentPreference;->LW:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/DreamComponentPreference;->LZ:Landroid/content/pm/PackageManager;
 
     const/4 v2, 0x0
 
@@ -161,7 +161,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/DreamComponentPreference;->LW:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/DreamComponentPreference;->LZ:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, v1}, Landroid/content/pm/ServiceInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 

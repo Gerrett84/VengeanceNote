@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic Kc:Lcom/android/settings/TrustedCredentialsSettings;
+.field final synthetic Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-.field final synthetic Pz:Lcom/android/settings/dw;
+.field final synthetic PC:Lcom/android/settings/dw;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 168
-    iput-object p1, p0, Lcom/android/settings/ed;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iput-object p1, p0, Lcom/android/settings/ed;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-    iput-object p2, p0, Lcom/android/settings/ed;->Pz:Lcom/android/settings/dw;
+    iput-object p2, p0, Lcom/android/settings/ed;->PC:Lcom/android/settings/dw;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,9 +40,9 @@
 
     .prologue
     .line 170
-    iget-object v0, p0, Lcom/android/settings/ed;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iget-object v0, p0, Lcom/android/settings/ed;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-    iget-object v1, p0, Lcom/android/settings/ed;->Pz:Lcom/android/settings/dw;
+    iget-object v1, p0, Lcom/android/settings/ed;->PC:Lcom/android/settings/dw;
 
     invoke-virtual {v1, p3}, Lcom/android/settings/dw;->aS(I)Lcom/android/settings/as;
 

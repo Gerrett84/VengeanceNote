@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field private c:Landroid/net/wifi/WifiManager;
+.field private b:Landroid/net/wifi/WifiManager;
 
-.field private gC:Landroid/net/NetworkPolicyManager;
+.field private gF:Landroid/net/NetworkPolicyManager;
 
-.field private hm:Lcom/android/settings/a/i;
+.field private hp:Lcom/android/settings/a/i;
 
-.field private yU:Landroid/preference/PreferenceCategory;
+.field private yY:Landroid/preference/PreferenceCategory;
 
-.field private yV:Landroid/preference/PreferenceCategory;
+.field private yZ:Landroid/preference/PreferenceCategory;
 
-.field private yW:Landroid/preference/Preference;
+.field private za:Landroid/preference/Preference;
 
 
 # direct methods
@@ -39,12 +39,12 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/a/f;->yU:Landroid/preference/PreferenceCategory;
+    iget-object v1, p0, Lcom/android/settings/a/f;->yY:Landroid/preference/PreferenceCategory;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 82
-    iget-object v0, p0, Lcom/android/settings/a/f;->yV:Landroid/preference/PreferenceCategory;
+    iget-object v0, p0, Lcom/android/settings/a/f;->yZ:Landroid/preference/PreferenceCategory;
 
     invoke-virtual {v0}, Landroid/preference/PreferenceCategory;->removeAll()V
 
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/a/f;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/a/f;->b:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
 
@@ -64,7 +64,7 @@
     if-eqz v0, :cond_1
 
     .line 84
-    iget-object v0, p0, Lcom/android/settings/a/f;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/a/f;->b:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
 
@@ -94,9 +94,9 @@
     if-eqz v2, :cond_0
 
     .line 86
-    iget-object v2, p0, Lcom/android/settings/a/f;->yV:Landroid/preference/PreferenceCategory;
+    iget-object v2, p0, Lcom/android/settings/a/f;->yZ:Landroid/preference/PreferenceCategory;
 
-    invoke-direct {p0, p1, v0}, Lcom/android/settings/a/f;->a(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)Landroid/preference/Preference;
+    invoke-direct {p0, p1, v0}, Lcom/android/settings/a/f;->b(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)Landroid/preference/Preference;
 
     move-result-object v0
 
@@ -106,9 +106,9 @@
 
     .line 90
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/a/f;->yV:Landroid/preference/PreferenceCategory;
+    iget-object v0, p0, Lcom/android/settings/a/f;->yZ:Landroid/preference/PreferenceCategory;
 
-    iget-object v1, p0, Lcom/android/settings/a/f;->yW:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/a/f;->za:Landroid/preference/Preference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->addPreference(Landroid/preference/Preference;)Z
 
@@ -117,7 +117,18 @@
     return-void
 .end method
 
-.method private a(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)Landroid/preference/Preference;
+.method static synthetic a(Lcom/android/settings/a/f;)Lcom/android/settings/a/i;
+    .locals 1
+    .parameter
+
+    .prologue
+    .line 42
+    iget-object v0, p0, Lcom/android/settings/a/f;->hp:Lcom/android/settings/a/i;
+
+    return-object v0
+.end method
+
+.method private b(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)Landroid/preference/Preference;
     .locals 3
     .parameter
     .parameter
@@ -147,17 +158,6 @@
     return-object v2
 .end method
 
-.method static synthetic a(Lcom/android/settings/a/f;)Lcom/android/settings/a/i;
-    .locals 1
-    .parameter
-
-    .prologue
-    .line 42
-    iget-object v0, p0, Lcom/android/settings/a/f;->hm:Lcom/android/settings/a/i;
-
-    return-object v0
-.end method
-
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
@@ -178,7 +178,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/a/f;->gC:Landroid/net/NetworkPolicyManager;
+    iput-object v0, p0, Lcom/android/settings/a/f;->gF:Landroid/net/NetworkPolicyManager;
 
     .line 61
     const-string v0, "wifi"
@@ -189,19 +189,19 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    iput-object v0, p0, Lcom/android/settings/a/f;->c:Landroid/net/wifi/WifiManager;
+    iput-object v0, p0, Lcom/android/settings/a/f;->b:Landroid/net/wifi/WifiManager;
 
     .line 63
     new-instance v0, Lcom/android/settings/a/i;
 
-    iget-object v2, p0, Lcom/android/settings/a/f;->gC:Landroid/net/NetworkPolicyManager;
+    iget-object v2, p0, Lcom/android/settings/a/f;->gF:Landroid/net/NetworkPolicyManager;
 
     invoke-direct {v0, v2}, Lcom/android/settings/a/i;-><init>(Landroid/net/NetworkPolicyManager;)V
 
-    iput-object v0, p0, Lcom/android/settings/a/f;->hm:Lcom/android/settings/a/i;
+    iput-object v0, p0, Lcom/android/settings/a/f;->hp:Lcom/android/settings/a/i;
 
     .line 64
-    iget-object v0, p0, Lcom/android/settings/a/f;->hm:Lcom/android/settings/a/i;
+    iget-object v0, p0, Lcom/android/settings/a/f;->hp:Lcom/android/settings/a/i;
 
     invoke-virtual {v0}, Lcom/android/settings/a/i;->read()V
 
@@ -219,7 +219,7 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    iput-object v0, p0, Lcom/android/settings/a/f;->yU:Landroid/preference/PreferenceCategory;
+    iput-object v0, p0, Lcom/android/settings/a/f;->yY:Landroid/preference/PreferenceCategory;
 
     .line 68
     const-string v0, "wifi"
@@ -230,7 +230,7 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    iput-object v0, p0, Lcom/android/settings/a/f;->yV:Landroid/preference/PreferenceCategory;
+    iput-object v0, p0, Lcom/android/settings/a/f;->yZ:Landroid/preference/PreferenceCategory;
 
     .line 69
     const-string v0, "wifi_disabled"
@@ -239,7 +239,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/a/f;->yW:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/a/f;->za:Landroid/preference/Preference;
 
     .line 71
     invoke-direct {p0, v1}, Lcom/android/settings/a/f;->F(Landroid/content/Context;)V

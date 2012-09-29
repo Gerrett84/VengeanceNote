@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic pi:Lcom/google/common/collect/ab;
+.field final synthetic pl:Lcom/google/common/collect/ab;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 3399
-    iput-object p1, p0, Lcom/google/common/collect/z;->pi:Lcom/google/common/collect/ab;
+    iput-object p1, p0, Lcom/google/common/collect/z;->pl:Lcom/google/common/collect/ab;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/B;-><init>(Ljava/lang/Object;)V
 
@@ -30,14 +30,14 @@
 
     .prologue
     .line 3402
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dn()Lcom/google/common/collect/ag;
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->dr()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
     .line 3403
-    iget-object v1, p0, Lcom/google/common/collect/z;->pi:Lcom/google/common/collect/ab;
+    iget-object v1, p0, Lcom/google/common/collect/z;->pl:Lcom/google/common/collect/ab;
 
-    iget-object v1, v1, Lcom/google/common/collect/ab;->EI:Lcom/google/common/collect/ag;
+    iget-object v1, v1, Lcom/google/common/collect/ab;->EM:Lcom/google/common/collect/ag;
 
     if-ne v0, v1, :cond_0
 

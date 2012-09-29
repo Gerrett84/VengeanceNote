@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic PC:Lcom/android/settings/MasterClear;
+.field final synthetic PF:Lcom/android/settings/MasterClear;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 161
-    iput-object p1, p0, Lcom/android/settings/eg;->PC:Lcom/android/settings/MasterClear;
+    iput-object p1, p0, Lcom/android/settings/eg;->PF:Lcom/android/settings/MasterClear;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 165
-    iget-object v0, p0, Lcom/android/settings/eg;->PC:Lcom/android/settings/MasterClear;
+    iget-object v0, p0, Lcom/android/settings/eg;->PF:Lcom/android/settings/MasterClear;
 
     invoke-static {v0}, Lcom/android/settings/MasterClear;->b(Lcom/android/settings/MasterClear;)Landroid/widget/CheckBox;
 

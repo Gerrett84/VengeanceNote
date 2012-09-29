@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic vl:Lcom/android/settings/applications/InstalledAppDetails;
+.field final synthetic vp:Lcom/android/settings/applications/InstalledAppDetails;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 200
-    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageDataObserver$Stub;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 202
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-static {v0}, Lcom/android/settings/applications/InstalledAppDetails;->c(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/os/Handler;
 
@@ -51,7 +51,7 @@
     iput v0, v1, Landroid/os/Message;->arg1:I
 
     .line 204
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-static {v0}, Lcom/android/settings/applications/InstalledAppDetails;->c(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/os/Handler;
 

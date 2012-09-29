@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ys:Lcom/android/settings/accounts/SyncSettings;
+.field final synthetic yw:Lcom/android/settings/accounts/SyncSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 56
-    iput-object p1, p0, Lcom/android/settings/accounts/SyncSettings$1;->ys:Lcom/android/settings/accounts/SyncSettings;
+    iput-object p1, p0, Lcom/android/settings/accounts/SyncSettings$1;->yw:Lcom/android/settings/accounts/SyncSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

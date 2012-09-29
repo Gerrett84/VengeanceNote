@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic gy:Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;
+.field final synthetic gB:Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1961
-    iput-object p1, p0, Lcom/android/settings/aq;->gy:Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;
+    iput-object p1, p0, Lcom/android/settings/aq;->gB:Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 1964
-    iget-object v0, p0, Lcom/android/settings/aq;->gy:Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;
+    iget-object v0, p0, Lcom/android/settings/aq;->gB:Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary$ConfirmRestrictFragment;->getTargetFragment()Landroid/app/Fragment;
 

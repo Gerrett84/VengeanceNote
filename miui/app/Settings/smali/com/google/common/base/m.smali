@@ -40,7 +40,7 @@
     return-object v0
 .end method
 
-.method public static ak(Ljava/lang/String;)Lcom/google/common/base/m;
+.method public static al(Ljava/lang/String;)Lcom/google/common/base/m;
     .locals 1
     .parameter
 
@@ -176,7 +176,7 @@
     return-object v0
 .end method
 
-.method public al(Ljava/lang/String;)Lcom/google/common/base/f;
+.method public am(Ljava/lang/String;)Lcom/google/common/base/f;
     .locals 2
     .parameter
 

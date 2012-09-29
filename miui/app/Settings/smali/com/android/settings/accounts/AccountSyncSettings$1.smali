@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic va:Lcom/android/settings/accounts/AccountSyncSettings;
+.field final synthetic ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 95
-    iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->va:Lcom/android/settings/accounts/AccountSyncSettings;
+    iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 97
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->va:Lcom/android/settings/accounts/AccountSyncSettings;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/AccountSyncSettings;->getActivity()Landroid/app/Activity;
 
@@ -43,7 +43,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->va:Lcom/android/settings/accounts/AccountSyncSettings;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1;->ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-static {v1}, Lcom/android/settings/accounts/AccountSyncSettings;->a(Lcom/android/settings/accounts/AccountSyncSettings;)Landroid/accounts/Account;
 

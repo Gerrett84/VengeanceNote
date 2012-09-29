@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic rv:Lcom/android/settings/fuelgauge/PowerUsageDetail;
+.field final synthetic ry:Lcom/android/settings/fuelgauge/PowerUsageDetail;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 429
-    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageDetail$1;->rv:Lcom/android/settings/fuelgauge/PowerUsageDetail;
+    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageDetail$1;->ry:Lcom/android/settings/fuelgauge/PowerUsageDetail;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 432
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageDetail$1;->rv:Lcom/android/settings/fuelgauge/PowerUsageDetail;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageDetail$1;->ry:Lcom/android/settings/fuelgauge/PowerUsageDetail;
 
     invoke-static {v0}, Lcom/android/settings/fuelgauge/PowerUsageDetail;->a(Lcom/android/settings/fuelgauge/PowerUsageDetail;)Landroid/widget/Button;
 

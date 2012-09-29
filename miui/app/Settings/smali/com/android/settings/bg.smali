@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 654
-    iput-object p1, p0, Lcom/android/settings/bg;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/bg;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,7 +34,7 @@
     .line 657
     new-instance v0, Landroid/view/View;
 
-    iget-object v1, p0, Lcom/android/settings/bg;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/bg;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->c(Lcom/android/settings/DataUsageSummary;)Landroid/widget/TabHost;
 

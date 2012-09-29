@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private iD:I
+.field private iG:I
 
-.field private iE:I
+.field private iH:I
 
-.field private iF:Z
+.field private iI:Z
 
 .field private mPaint:Landroid/graphics/Paint;
 
@@ -27,7 +27,7 @@
     .line 14
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/LineView;->iF:Z
+    iput-boolean v0, p0, Lcom/android/settings/LineView;->iI:Z
 
     .line 15
     const/4 v0, 0x5
@@ -53,7 +53,7 @@
     .line 14
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/LineView;->iF:Z
+    iput-boolean v0, p0, Lcom/android/settings/LineView;->iI:Z
 
     .line 15
     const/4 v0, 0x5
@@ -80,7 +80,7 @@
     .line 14
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/LineView;->iF:Z
+    iput-boolean v0, p0, Lcom/android/settings/LineView;->iI:Z
 
     .line 15
     const/4 v0, 0x5
@@ -140,12 +140,12 @@
     const/4 v2, 0x0
 
     .line 47
-    iget-boolean v0, p0, Lcom/android/settings/LineView;->iF:Z
+    iget-boolean v0, p0, Lcom/android/settings/LineView;->iI:Z
 
     if-eqz v0, :cond_0
 
     .line 48
-    iget v0, p0, Lcom/android/settings/LineView;->iD:I
+    iget v0, p0, Lcom/android/settings/LineView;->iG:I
 
     iget v1, p0, Lcom/android/settings/LineView;->mStrokeWidth:I
 
@@ -153,7 +153,7 @@
 
     int-to-float v1, v0
 
-    iget v0, p0, Lcom/android/settings/LineView;->iD:I
+    iget v0, p0, Lcom/android/settings/LineView;->iG:I
 
     iget v3, p0, Lcom/android/settings/LineView;->mStrokeWidth:I
 
@@ -161,7 +161,7 @@
 
     int-to-float v3, v0
 
-    iget v0, p0, Lcom/android/settings/LineView;->iE:I
+    iget v0, p0, Lcom/android/settings/LineView;->iH:I
 
     int-to-float v4, v0
 
@@ -177,7 +177,7 @@
 
     .line 50
     :cond_0
-    iget v0, p0, Lcom/android/settings/LineView;->iE:I
+    iget v0, p0, Lcom/android/settings/LineView;->iH:I
 
     iget v1, p0, Lcom/android/settings/LineView;->mStrokeWidth:I
 
@@ -185,11 +185,11 @@
 
     int-to-float v3, v0
 
-    iget v0, p0, Lcom/android/settings/LineView;->iD:I
+    iget v0, p0, Lcom/android/settings/LineView;->iG:I
 
     int-to-float v4, v0
 
-    iget v0, p0, Lcom/android/settings/LineView;->iE:I
+    iget v0, p0, Lcom/android/settings/LineView;->iH:I
 
     iget v1, p0, Lcom/android/settings/LineView;->mStrokeWidth:I
 
@@ -215,10 +215,10 @@
 
     .prologue
     .line 41
-    iput p1, p0, Lcom/android/settings/LineView;->iD:I
+    iput p1, p0, Lcom/android/settings/LineView;->iG:I
 
     .line 42
-    iput p2, p0, Lcom/android/settings/LineView;->iE:I
+    iput p2, p0, Lcom/android/settings/LineView;->iH:I
 
     .line 43
     return-void
@@ -230,7 +230,7 @@
 
     .prologue
     .line 55
-    iput-boolean p1, p0, Lcom/android/settings/LineView;->iF:Z
+    iput-boolean p1, p0, Lcom/android/settings/LineView;->iI:Z
 
     .line 56
     return-void

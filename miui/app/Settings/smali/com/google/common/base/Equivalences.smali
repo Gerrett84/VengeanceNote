@@ -14,22 +14,22 @@
     return-void
 .end method
 
-.method public static me()Lcom/google/common/base/Equivalence;
+.method public static mi()Lcom/google/common/base/Equivalence;
     .locals 1
 
     .prologue
     .line 49
-    sget-object v0, Lcom/google/common/base/Equivalences$Equals;->HZ:Lcom/google/common/base/Equivalences$Equals;
+    sget-object v0, Lcom/google/common/base/Equivalences$Equals;->Id:Lcom/google/common/base/Equivalences$Equals;
 
     return-object v0
 .end method
 
-.method public static mf()Lcom/google/common/base/Equivalence;
+.method public static mj()Lcom/google/common/base/Equivalence;
     .locals 1
 
     .prologue
     .line 58
-    sget-object v0, Lcom/google/common/base/Equivalences$Identity;->Ox:Lcom/google/common/base/Equivalences$Identity;
+    sget-object v0, Lcom/google/common/base/Equivalences$Identity;->OA:Lcom/google/common/base/Equivalences$Identity;
 
     return-object v0
 .end method

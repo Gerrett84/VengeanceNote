@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic FG:Lcom/android/settings/CryptKeeper;
+.field final synthetic FK:Lcom/android/settings/CryptKeeper;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 668
-    iput-object p1, p0, Lcom/android/settings/dD;->FG:Lcom/android/settings/CryptKeeper;
+    iput-object p1, p0, Lcom/android/settings/dD;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 672
-    iget-object v0, p0, Lcom/android/settings/dD;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dD;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->g(Lcom/android/settings/CryptKeeper;)V
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aL:Lcom/android/settings/VirusScanAppActivity;
+.field final synthetic aO:Lcom/android/settings/VirusScanAppActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 619
-    iput-object p1, p0, Lcom/android/settings/k;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iput-object p1, p0, Lcom/android/settings/k;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

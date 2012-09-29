@@ -37,18 +37,18 @@
 
     .prologue
     .line 170
-    iget-object v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
 
-    iget-object v1, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, p2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-boolean v1, v1, Landroid/content/pm/ApplicationInfo;->enabled:Z
 
     if-eq v0, v1, :cond_1
 
     .line 171
-    iget-object v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
 

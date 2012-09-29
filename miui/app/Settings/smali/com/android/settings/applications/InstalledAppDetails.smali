@@ -9,95 +9,95 @@
 
 
 # instance fields
-.field private An:Ljava/lang/CharSequence;
+.field private Ar:Ljava/lang/CharSequence;
 
 .field private HA:Landroid/widget/TextView;
 
-.field private HB:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
+.field private HB:Landroid/widget/TextView;
 
 .field private HC:Landroid/widget/TextView;
 
-.field private HD:Landroid/widget/Button;
+.field private HD:Landroid/widget/TextView;
 
-.field private HE:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
+.field private HE:Landroid/widget/TextView;
 
-.field private HF:Landroid/widget/Button;
+.field private HF:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
 
-.field private HG:Landroid/widget/Button;
+.field private HG:Landroid/widget/TextView;
 
-.field private HH:Landroid/widget/CompoundButton;
+.field private HH:Landroid/widget/Button;
 
-.field private HI:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
+.field private HI:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
 
-.field private HJ:Z
+.field private HJ:Landroid/widget/Button;
 
-.field private HK:J
+.field private HK:Landroid/widget/Button;
 
-.field private HL:J
+.field private HL:Landroid/widget/CompoundButton;
 
-.field private HM:J
+.field private HM:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
 
-.field private HN:J
+.field private HN:Z
 
 .field private HO:J
 
 .field private HP:J
 
-.field private HQ:Ljava/lang/CharSequence;
+.field private HQ:J
 
-.field private HR:Ljava/util/HashSet;
+.field private HR:J
 
-.field private Hk:Landroid/hardware/usb/IUsbManager;
+.field private HS:J
 
-.field private Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+.field private HT:J
 
-.field private Hm:Landroid/content/pm/PackageInfo;
+.field private HU:Ljava/lang/CharSequence;
 
-.field private Hn:Landroid/widget/Button;
+.field private HV:Ljava/util/HashSet;
 
-.field private Ho:Z
+.field private Ho:Landroid/hardware/usb/IUsbManager;
 
-.field private Hp:Z
+.field private Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-.field private Hq:Landroid/widget/Button;
+.field private Hq:Landroid/content/pm/PackageInfo;
 
-.field private Hr:Landroid/view/View;
+.field private Hr:Landroid/widget/Button;
 
-.field private Hs:Landroid/widget/CheckBox;
+.field private Hs:Z
 
-.field private Ht:Landroid/widget/CheckBox;
+.field private Ht:Z
 
-.field private Hu:Z
+.field private Hu:Landroid/widget/Button;
 
-.field private Hv:Landroid/widget/TextView;
+.field private Hv:Landroid/view/View;
 
-.field private Hw:Landroid/widget/TextView;
+.field private Hw:Landroid/widget/CheckBox;
 
-.field private Hx:Landroid/widget/TextView;
+.field private Hx:Landroid/widget/CheckBox;
 
-.field private Hy:Landroid/widget/TextView;
+.field private Hy:Z
 
 .field private Hz:Landroid/widget/TextView;
 
 .field private a:Lcom/android/settings/applications/CanBeOnSdCardChecker;
 
-.field private be:Landroid/content/pm/PackageManager;
+.field private bh:Landroid/content/pm/PackageManager;
 
-.field private dt:Landroid/appwidget/AppWidgetManager;
+.field private dw:Landroid/appwidget/AppWidgetManager;
 
-.field private en:Lcom/android/settings/applications/ApplicationsState;
+.field private eq:Lcom/android/settings/applications/ApplicationsState;
 
-.field private eo:Lcom/android/settings/applications/ApplicationsState$Session;
+.field private er:Lcom/android/settings/applications/ApplicationsState$Session;
 
 .field private mHandler:Landroid/os/Handler;
 
 .field private mRootView:Landroid/view/View;
 
-.field private rL:Landroid/app/admin/DevicePolicyManager;
+.field private rO:Landroid/app/admin/DevicePolicyManager;
 
-.field private rR:Landroid/widget/Button;
+.field private rU:Landroid/widget/Button;
 
-.field private final sc:Landroid/content/BroadcastReceiver;
+.field private final sf:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
@@ -113,36 +113,36 @@
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     .line 109
-    iput-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Z
+    iput-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Z
 
     .line 110
-    iput-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Z
+    iput-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ht:Z
 
     .line 115
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hy:Z
 
     .line 134
-    iput-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Z
+    iput-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HN:Z
 
     .line 135
-    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:J
-
-    .line 136
-    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:J
-
-    .line 137
-    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HM:J
-
-    .line 138
-    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HN:J
-
-    .line 139
     iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HO:J
 
-    .line 140
+    .line 136
     iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HP:J
+
+    .line 137
+    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:J
+
+    .line 138
+    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HR:J
+
+    .line 139
+    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HS:J
+
+    .line 140
+    iput-wide v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HT:J
 
     .line 169
     new-instance v0, Lcom/android/settings/applications/InstalledAppDetails$1;
@@ -156,7 +156,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/applications/InstalledAppDetails$2;-><init>(Lcom/android/settings/applications/InstalledAppDetails;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->sc:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->sf:Landroid/content/BroadcastReceiver;
 
     .line 999
     return-void
@@ -168,12 +168,12 @@
 
     .prologue
     .line 977
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rR:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rU:Landroid/widget/Button;
 
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 978
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rR:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rU:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -187,9 +187,9 @@
 
     .prologue
     .line 1020
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -206,7 +206,7 @@
 
     .line 1024
     :try_start_0
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
 
@@ -224,7 +224,7 @@
     move-exception v0
 
     .line 1027
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     if-nez p1, :cond_0
 
@@ -247,7 +247,7 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     return-object v0
 .end method
@@ -292,14 +292,14 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 434
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     invoke-virtual {v2, v3}, Lcom/android/settings/applications/ApplicationsState;->a(Lcom/android/settings/applications/ApplicationsState$AppEntry;)V
 
     .line 435
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->icon:Landroid/graphics/drawable/Drawable;
 
@@ -315,7 +315,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 438
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->label:Ljava/lang/String;
 
@@ -330,7 +330,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hv:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hz:Landroid/widget/TextView;
 
     .line 442
     if-eqz p1, :cond_0
@@ -340,12 +340,12 @@
     if-eqz v0, :cond_0
 
     .line 443
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hv:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hz:Landroid/widget/TextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 444
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hv:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hz:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails;->getActivity()Landroid/app/Activity;
 
@@ -377,7 +377,7 @@
 
     .line 447
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hv:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hz:Landroid/widget/TextView;
 
     const/4 v1, 0x4
 
@@ -403,7 +403,7 @@
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(I)V
 
     .line 666
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Landroid/widget/Button;
 
     const/4 v1, 0x0
 
@@ -432,7 +432,7 @@
 
     .prologue
     .line 89
-    invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->ad(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/android/settings/applications/InstalledAppDetails;->ae(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -566,7 +566,7 @@
     .end packed-switch
 .end method
 
-.method private ad(Ljava/lang/String;)V
+.method private ae(Ljava/lang/String;)V
     .locals 4
     .parameter
 
@@ -619,7 +619,7 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
     return-object v0
 .end method
@@ -682,14 +682,14 @@
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     .line 740
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 741
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     const v3, 0x7f0b03bb
 
@@ -722,26 +722,26 @@
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 744
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/android/settings/applications/ApplicationsState;->Z(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/android/settings/applications/ApplicationsState;->aa(Ljava/lang/String;)V
 
     .line 748
     :goto_0
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->fe()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->fi()V
 
     .line 749
     return-void
 
     .line 746
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -834,16 +834,16 @@
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     .line 766
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 768
     const/4 v2, 0x0
 
-    iput-boolean v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Z
+    iput-boolean v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Z
 
     .line 769
     const/4 v2, 0x1
@@ -874,19 +874,19 @@
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 772
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/android/settings/applications/ApplicationsState;->Z(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/android/settings/applications/ApplicationsState;->aa(Ljava/lang/String;)V
 
     .line 776
     :goto_0
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jU()Z
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jY()Z
 
     .line 777
     return-void
@@ -906,7 +906,7 @@
 
     .prologue
     .line 89
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jX()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->kb()V
 
     return-void
 .end method
@@ -917,7 +917,7 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     return-object v0
 .end method
@@ -928,12 +928,12 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     return-object v0
 .end method
 
-.method private fe()V
+.method private fi()V
     .locals 8
 
     .prologue
@@ -944,9 +944,9 @@
     const/4 v2, 0x0
 
     .line 982
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rL:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rO:Landroid/app/admin/DevicePolicyManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -965,9 +965,9 @@
 
     .line 985
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -990,9 +990,9 @@
 
     const-string v3, "package"
 
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v4, v4, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v4, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v4, v4, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -1007,9 +1007,9 @@
 
     new-array v3, v6, [Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v4, v4, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v4, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v4, v4, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -1020,9 +1020,9 @@
     .line 993
     const-string v0, "android.intent.extra.UID"
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
 
@@ -1033,7 +1033,7 @@
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->sc:Landroid/content/BroadcastReceiver;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->sf:Landroid/content/BroadcastReceiver;
 
     move-object v4, v2
 
@@ -1068,14 +1068,14 @@
     invoke-virtual {v0, p1}, Landroid/app/ActivityManager;->forceStopPackage(Ljava/lang/String;)V
 
     .line 961
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v0, p1}, Lcom/android/settings/applications/ApplicationsState;->ac(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/android/settings/applications/ApplicationsState;->ad(Ljava/lang/String;)V
 
     .line 962
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v0, p1}, Lcom/android/settings/applications/ApplicationsState;->Y(Ljava/lang/String;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    invoke-virtual {v0, p1}, Lcom/android/settings/applications/ApplicationsState;->Z(Ljava/lang/String;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     move-result-object v0
 
@@ -1083,11 +1083,11 @@
     if-eqz v0, :cond_0
 
     .line 964
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     .line 966
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->fe()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->fi()V
 
     .line 967
     return-void
@@ -1099,12 +1099,12 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     return-object v0
 .end method
 
-.method private jP()V
+.method private jT()V
     .locals 4
 
     .prologue
@@ -1113,9 +1113,9 @@
     const/4 v2, 0x0
 
     .line 224
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -1125,9 +1125,9 @@
 
     if-eq v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rL:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rO:Landroid/app/admin/DevicePolicyManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -1139,17 +1139,17 @@
 
     .line 228
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setText(I)V
 
     .line 229
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 230
-    iput-boolean v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Z
+    iput-boolean v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hy:Z
 
     .line 239
     :goto_0
@@ -1157,16 +1157,16 @@
 
     .line 232
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->manageSpaceActivityName:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
     .line 233
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     const v1, 0x7f0b03cd
 
@@ -1174,7 +1174,7 @@
 
     .line 237
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1182,14 +1182,14 @@
 
     .line 235
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setText(I)V
 
     goto :goto_1
 .end method
 
-.method private jQ()V
+.method private jU()V
     .locals 4
 
     .prologue
@@ -1205,7 +1205,7 @@
     if-eqz v0, :cond_0
 
     .line 261
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     const/4 v1, 0x4
 
@@ -1217,11 +1217,11 @@
 
     .line 265
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     if-eqz v0, :cond_1
 
@@ -1232,7 +1232,7 @@
     if-eqz v0, :cond_2
 
     .line 268
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     const v3, 0x7f0b03ee
 
@@ -1245,7 +1245,7 @@
     if-eqz v0, :cond_5
 
     .line 281
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -1259,9 +1259,9 @@
 
     .line 269
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -1272,7 +1272,7 @@
     if-eqz v0, :cond_3
 
     .line 270
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     const v3, 0x7f0b03ef
 
@@ -1285,7 +1285,7 @@
 
     .line 274
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     const v3, 0x7f0b03f0
 
@@ -1312,9 +1312,9 @@
     .line 277
     iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->a:Lcom/android/settings/applications/CanBeOnSdCardChecker;
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v0, v3}, Lcom/android/settings/applications/CanBeOnSdCardChecker;->b(Landroid/content/pm/ApplicationInfo;)Z
 
@@ -1333,12 +1333,12 @@
 
     .line 283
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 284
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -1350,7 +1350,7 @@
     goto :goto_2
 .end method
 
-.method private jR()Z
+.method private jV()Z
     .locals 4
 
     .prologue
@@ -1358,7 +1358,7 @@
 
     .line 291
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     const-string v2, "android"
 
@@ -1369,11 +1369,11 @@
     move-result-object v1
 
     .line 292
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v2, v2, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
@@ -1385,7 +1385,7 @@
 
     aget-object v1, v1, v2
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v2, v2, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
@@ -1400,9 +1400,9 @@
     if-nez v1, :cond_1
 
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HR:Ljava/util/HashSet;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HV:Ljava/util/HashSet;
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v2, v2, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -1429,7 +1429,7 @@
     goto :goto_0
 .end method
 
-.method private jS()V
+.method private jW()V
     .locals 5
 
     .prologue
@@ -1438,9 +1438,9 @@
     const/4 v2, 0x0
 
     .line 301
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -1451,15 +1451,15 @@
     move v0, v1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ht:Z
 
     .line 303
-    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ht:Z
 
     if-eqz v0, :cond_2
 
     .line 304
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     const v3, 0x7f0b03bc
 
@@ -1467,9 +1467,9 @@
 
     .line 339
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rL:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rO:Landroid/app/admin/DevicePolicyManager;
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v3, v3, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -1481,7 +1481,7 @@
 
     .line 342
     :goto_2
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -1489,7 +1489,7 @@
     if-eqz v2, :cond_0
 
     .line 345
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1505,9 +1505,9 @@
 
     .line 306
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -1517,7 +1517,7 @@
 
     .line 313
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     const-string v3, "android"
 
@@ -1538,16 +1538,16 @@
     invoke-virtual {v0, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 317
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 318
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     const/4 v4, 0x0
 
@@ -1565,7 +1565,7 @@
     if-gtz v0, :cond_4
 
     :cond_3
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jR()Z
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jV()Z
 
     move-result v0
 
@@ -1573,7 +1573,7 @@
 
     .line 321
     :cond_4
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     const v1, 0x7f0b03b9
 
@@ -1585,16 +1585,16 @@
 
     .line 322
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
 
     if-eqz v0, :cond_6
 
     .line 323
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     const v3, 0x7f0b03b9
 
@@ -1623,7 +1623,7 @@
     .line 326
     :cond_6
     :try_start_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     const v3, 0x7f0b03ba
 
@@ -1635,7 +1635,7 @@
 
     .line 334
     :cond_7
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     const v3, 0x7f0b03b8
 
@@ -1649,7 +1649,7 @@
     goto/16 :goto_2
 .end method
 
-.method private jT()V
+.method private jX()V
     .locals 3
 
     .prologue
@@ -1668,9 +1668,9 @@
 
     .line 354
     :try_start_0
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v2, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -1682,19 +1682,19 @@
 
     .line 358
     :goto_0
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     invoke-virtual {v2, v0}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
     .line 359
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jR()Z
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jV()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 360
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     const/4 v1, 0x0
 
@@ -1714,19 +1714,19 @@
 
     .line 362
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setEnabled(Z)V
 
     .line 363
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     invoke-virtual {v0, p0}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     goto :goto_1
 .end method
 
-.method private jU()Z
+.method private jY()Z
     .locals 14
 
     .prologue
@@ -1741,7 +1741,7 @@
     const/4 v4, 0x0
 
     .line 496
-    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Z
 
     if-eqz v0, :cond_1
 
@@ -1799,26 +1799,26 @@
 
     .line 508
     :goto_3
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v0, v2}, Lcom/android/settings/applications/ApplicationsState;->Y(Ljava/lang/String;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    invoke-virtual {v0, v2}, Lcom/android/settings/applications/ApplicationsState;->Z(Ljava/lang/String;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     .line 510
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     if-eqz v0, :cond_0
 
     .line 516
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -1828,7 +1828,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1843,13 +1843,13 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 530
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v1, v0, v6, v2}, Landroid/content/pm/PackageManager;->getPreferredActivities(Ljava/util/List;Ljava/util/List;Ljava/lang/String;)I
 
     .line 535
     :try_start_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hk:Landroid/hardware/usb/IUsbManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Landroid/hardware/usb/IUsbManager;
 
     invoke-interface {v0, v2}, Landroid/hardware/usb/IUsbManager;->hasDefaults(Ljava/lang/String;)Z
     :try_end_1
@@ -1861,11 +1861,11 @@
 
     .line 539
     :goto_4
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->dw:Landroid/appwidget/AppWidgetManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -1934,7 +1934,7 @@
     invoke-virtual {v0, v2}, Landroid/app/ActivityManager;->getPackageScreenCompatMode(Ljava/lang/String;)I
 
     .line 598
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hv:Landroid/view/View;
 
     const/16 v1, 0x8
 
@@ -1990,9 +1990,9 @@
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 613
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -2026,7 +2026,7 @@
     aget-object v2, v1, v0
 
     .line 618
-    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v6, v6, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -2077,9 +2077,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -2246,12 +2246,12 @@
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 580
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Landroid/widget/Button;
 
     invoke-virtual {v0, v5}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 581
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -2318,7 +2318,7 @@
     .line 622
     :cond_f
     :try_start_2
-    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     const/4 v7, 0x0
 
@@ -2327,7 +2327,7 @@
     move-result-object v2
 
     .line 623
-    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v2, v6}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -2396,11 +2396,11 @@
 
     new-array v3, v11, [Ljava/lang/Object;
 
-    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     iget-object v6, v6, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v8, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v8, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v6, v8}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -2419,18 +2419,18 @@
     .line 655
     :cond_11
     :goto_e
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->fe()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->fi()V
 
     .line 656
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hm:Landroid/content/pm/PackageInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/content/pm/PackageInfo;
 
     invoke-direct {p0, v0}, Lcom/android/settings/applications/InstalledAppDetails;->a(Landroid/content/pm/PackageInfo;)V
 
     .line 657
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jW()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->ka()V
 
     .line 658
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jV()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jZ()V
 
     move v4, v5
 
@@ -2561,7 +2561,7 @@
     goto/16 :goto_3
 .end method
 
-.method private jV()V
+.method private jZ()V
     .locals 12
 
     .prologue
@@ -2574,7 +2574,7 @@
     const/4 v8, 0x0
 
     .line 678
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->size:J
 
@@ -2584,7 +2584,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->size:J
 
@@ -2594,55 +2594,55 @@
 
     .line 680
     :cond_0
+    iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HT:J
+
+    iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HS:J
+
     iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HP:J
 
     iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HO:J
 
-    iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:J
-
-    iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:J
-
     .line 681
-    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HN:Z
 
     if-nez v0, :cond_1
 
     .line 682
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hx:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HB:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HU:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 683
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hy:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HC:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HU:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 684
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HC:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HU:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 685
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hw:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HA:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HU:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 687
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v8}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 688
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/Button;
 
     invoke-virtual {v0, v8}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -2652,12 +2652,12 @@
 
     .line 691
     :cond_2
-    iput-boolean v9, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Z
+    iput-boolean v9, p0, Lcom/android/settings/applications/InstalledAppDetails;->HN:Z
 
     .line 692
-    iget-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:J
+    iget-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HO:J
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v2, v2, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->codeSize:J
 
@@ -2666,16 +2666,16 @@
     if-eqz v0, :cond_3
 
     .line 693
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v0, v0, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->codeSize:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:J
+    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HO:J
 
     .line 694
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hx:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HB:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v1, v1, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->codeSize:J
 
@@ -2687,9 +2687,9 @@
 
     .line 696
     :cond_3
-    iget-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:J
+    iget-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HP:J
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v2, v2, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->dataSize:J
 
@@ -2698,16 +2698,16 @@
     if-eqz v0, :cond_4
 
     .line 697
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v0, v0, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->dataSize:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:J
+    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HP:J
 
     .line 698
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hy:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HC:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v1, v1, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->dataSize:J
 
@@ -2719,9 +2719,9 @@
 
     .line 700
     :cond_4
-    iget-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HM:J
+    iget-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:J
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v2, v2, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCodeSize:J
 
@@ -2730,16 +2730,16 @@
     if-eqz v0, :cond_5
 
     .line 701
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v0, v0, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCodeSize:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HM:J
+    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:J
 
     .line 702
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hz:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v1, v1, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCodeSize:J
 
@@ -2751,28 +2751,28 @@
 
     .line 704
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v0, v0, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalDataSize:J
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v2, v2, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCacheSize:J
 
     sub-long/2addr v0, v2
 
     .line 705
-    iget-wide v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HN:J
+    iget-wide v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HR:J
 
     cmp-long v2, v2, v0
 
     if-eqz v2, :cond_6
 
     .line 706
-    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HN:J
+    iput-wide v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HR:J
 
     .line 707
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HA:Landroid/widget/TextView;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HE:Landroid/widget/TextView;
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/InstalledAppDetails;->x(J)Ljava/lang/String;
 
@@ -2782,28 +2782,28 @@
 
     .line 709
     :cond_6
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v2, v2, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->cacheSize:J
 
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v4, v4, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->externalCacheSize:J
 
     add-long/2addr v2, v4
 
     .line 710
-    iget-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HO:J
+    iget-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HS:J
 
     cmp-long v4, v4, v2
 
     if-eqz v4, :cond_7
 
     .line 711
-    iput-wide v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HO:J
+    iput-wide v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HS:J
 
     .line 712
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HC:Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/TextView;
 
     invoke-direct {p0, v2, v3}, Lcom/android/settings/applications/InstalledAppDetails;->x(J)Ljava/lang/String;
 
@@ -2813,9 +2813,9 @@
 
     .line 714
     :cond_7
-    iget-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HP:J
+    iget-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HT:J
 
-    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v6, v6, Lcom/android/settings/applications/ApplicationsState$AppEntry;->size:J
 
@@ -2824,16 +2824,16 @@
     if-eqz v4, :cond_8
 
     .line 715
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v4, v4, Lcom/android/settings/applications/ApplicationsState$AppEntry;->size:J
 
-    iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HP:J
+    iput-wide v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HT:J
 
     .line 716
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hw:Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->HA:Landroid/widget/TextView;
 
-    iget-object v5, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v5, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v5, v5, Lcom/android/settings/applications/ApplicationsState$AppEntry;->size:J
 
@@ -2845,7 +2845,7 @@
 
     .line 719
     :cond_8
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     iget-wide v4, v4, Lcom/android/settings/applications/ApplicationsState$SizeInfo;->dataSize:J
 
@@ -2855,13 +2855,13 @@
 
     if-lez v0, :cond_9
 
-    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hy:Z
 
     if-nez v0, :cond_a
 
     .line 720
     :cond_9
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v8}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -2872,7 +2872,7 @@
     if-gtz v0, :cond_b
 
     .line 726
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/Button;
 
     invoke-virtual {v0, v8}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -2880,12 +2880,12 @@
 
     .line 722
     :cond_a
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v9}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 723
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -2893,40 +2893,40 @@
 
     .line 728
     :cond_b
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/Button;
 
     invoke-virtual {v0, v9}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 729
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/Button;
 
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto/16 :goto_0
 .end method
 
-.method private jW()V
+.method private ka()V
     .locals 3
 
     .prologue
     const/4 v2, 0x0
 
     .line 752
-    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Z
 
     if-nez v0, :cond_0
 
     .line 753
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jS()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jW()V
 
     .line 754
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jP()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jT()V
 
     .line 755
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jQ()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jU()V
 
     .line 756
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jT()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jX()V
 
     .line 762
     :goto_0
@@ -2934,40 +2934,40 @@
 
     .line 758
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     const v1, 0x7f0b03f1
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
     .line 759
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 760
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
     goto :goto_0
 .end method
 
-.method private jX()V
+.method private kb()V
     .locals 5
 
     .prologue
     const/4 v4, 0x0
 
     .line 784
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 786
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -2995,7 +2995,7 @@
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 788
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HB:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
 
     if-nez v0, :cond_0
 
@@ -3004,7 +3004,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;-><init>(Lcom/android/settings/applications/InstalledAppDetails;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HB:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
 
     .line 791
     :cond_0
@@ -3021,7 +3021,7 @@
     check-cast v0, Landroid/app/ActivityManager;
 
     .line 793
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HB:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Lcom/android/settings/applications/InstalledAppDetails$ClearUserDataObserver;
 
     invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManager;->clearApplicationUserData(Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;)Z
 
@@ -3064,7 +3064,7 @@
 
     .line 799
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     const v1, 0x7f0b03d8
 
@@ -3086,7 +3086,7 @@
     if-nez v0, :cond_0
 
     .line 218
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->An:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ar:Ljava/lang/CharSequence;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -3110,18 +3110,18 @@
 
 
 # virtual methods
-.method public ah()V
+.method public al()V
     .locals 0
 
     .prologue
     .line 477
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jU()Z
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jY()Z
 
     .line 478
     return-void
 .end method
 
-.method public ai()V
+.method public am()V
     .locals 0
 
     .prologue
@@ -3129,7 +3129,7 @@
     return-void
 .end method
 
-.method public aj()V
+.method public an()V
     .locals 0
 
     .prologue
@@ -3155,15 +3155,15 @@
     return-void
 .end method
 
-.method public k(Ljava/lang/String;)V
+.method public l(Ljava/lang/String;)V
     .locals 1
     .parameter
 
     .prologue
     .line 486
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -3174,7 +3174,7 @@
     if-eqz v0, :cond_0
 
     .line 487
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jV()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jZ()V
 
     .line 489
     :cond_0
@@ -3192,9 +3192,9 @@
     const/4 v2, 0x0
 
     .line 1099
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v3, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -3212,7 +3212,7 @@
     check-cast v0, Landroid/app/ActivityManager;
 
     .line 1102
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Landroid/widget/CheckBox;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hw:Landroid/widget/CheckBox;
 
     if-ne p1, v4, :cond_1
 
@@ -3226,7 +3226,7 @@
 
     .line 1104
     :cond_1
-    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ht:Landroid/widget/CheckBox;
+    iget-object v4, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hx:Landroid/widget/CheckBox;
 
     if-ne p1, v4, :cond_3
 
@@ -3245,7 +3245,7 @@
 
     .line 1107
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     if-ne p1, v0, :cond_0
 
@@ -3278,19 +3278,19 @@
     const/4 v4, 0x0
 
     .line 1036
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v2, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 1037
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     if-ne p1, v3, :cond_4
 
     .line 1038
-    iget-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Z
+    iget-boolean v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ht:Z
 
     if-eqz v3, :cond_1
 
@@ -3304,9 +3304,9 @@
 
     .line 1041
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -3315,9 +3315,9 @@
     if-eqz v0, :cond_3
 
     .line 1042
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
 
@@ -3334,9 +3334,9 @@
     :cond_2
     new-instance v2, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;
 
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     invoke-direct {v2, p0, v0, v4}, Lcom/android/settings/applications/InstalledAppDetails$DisableChanger;-><init>(Lcom/android/settings/applications/InstalledAppDetails;Landroid/content/pm/ApplicationInfo;I)V
 
@@ -3354,24 +3354,24 @@
 
     .line 1050
     :cond_3
-    invoke-direct {p0, v2}, Lcom/android/settings/applications/InstalledAppDetails;->ad(Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/android/settings/applications/InstalledAppDetails;->ae(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 1053
     :cond_4
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/widget/Button;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Landroid/widget/Button;
 
     if-ne p1, v3, :cond_5
 
     .line 1054
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, v2}, Landroid/content/pm/PackageManager;->clearPackagePreferredActivities(Ljava/lang/String;)V
 
     .line 1056
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hk:Landroid/hardware/usb/IUsbManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Landroid/hardware/usb/IUsbManager;
 
     invoke-interface {v0, v2}, Landroid/hardware/usb/IUsbManager;->clearDefaults(Ljava/lang/String;)V
     :try_end_0
@@ -3379,7 +3379,7 @@
 
     .line 1060
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->dw:Landroid/appwidget/AppWidgetManager;
 
     invoke-virtual {v0, v2, v4}, Landroid/appwidget/AppWidgetManager;->setBindAppWidgetPermission(Ljava/lang/String;Z)V
 
@@ -3425,21 +3425,21 @@
 
     .line 1065
     :cond_5
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     if-ne p1, v3, :cond_7
 
     .line 1066
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->manageSpaceActivityName:Ljava/lang/String;
 
     if-eqz v0, :cond_6
 
     .line 1067
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v0
 
@@ -3453,15 +3453,15 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 1069
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v2, v2, Landroid/content/pm/ApplicationInfo;->manageSpaceActivityName:Ljava/lang/String;
 
@@ -3482,12 +3482,12 @@
 
     .line 1076
     :cond_7
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/Button;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/Button;
 
     if-ne p1, v3, :cond_9
 
     .line 1078
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HE:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HI:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
 
     if-nez v0, :cond_8
 
@@ -3496,13 +3496,13 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;-><init>(Lcom/android/settings/applications/InstalledAppDetails;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HE:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HI:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
 
     .line 1081
     :cond_8
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HE:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->HI:Lcom/android/settings/applications/InstalledAppDetails$ClearCacheObserver;
 
     invoke-virtual {v0, v2, v1}, Landroid/content/pm/PackageManager;->deleteApplicationCacheFiles(Ljava/lang/String;Landroid/content/pm/IPackageDataObserver;)V
 
@@ -3510,7 +3510,7 @@
 
     .line 1082
     :cond_9
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->rR:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->rU:Landroid/widget/Button;
 
     if-ne p1, v2, :cond_a
 
@@ -3523,12 +3523,12 @@
 
     .line 1085
     :cond_a
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     if-ne p1, v2, :cond_0
 
     .line 1086
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HI:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HM:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
 
     if-nez v2, :cond_b
 
@@ -3537,13 +3537,13 @@
 
     invoke-direct {v2, p0}, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;-><init>(Lcom/android/settings/applications/InstalledAppDetails;)V
 
-    iput-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HI:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
+    iput-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->HM:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
 
     .line 1089
     :cond_b
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget v2, v2, Landroid/content/pm/ApplicationInfo;->flags:I
 
@@ -3557,21 +3557,21 @@
 
     .line 1091
     :cond_c
-    iput-boolean v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Z
+    iput-boolean v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Z
 
     .line 1092
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jW()V
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->ka()V
 
     .line 1093
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
-    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hl:Lcom/android/settings/applications/ApplicationsState$AppEntry;
+    iget-object v2, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hp:Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
-    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v2, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HI:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
+    iget-object v3, p0, Lcom/android/settings/applications/InstalledAppDetails;->HM:Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;
 
     invoke-virtual {v1, v2, v3, v0}, Landroid/content/pm/PackageManager;->movePackage(Ljava/lang/String;Landroid/content/pm/IPackageMoveObserver;I)V
 
@@ -3599,16 +3599,16 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
     .line 373
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->en:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eq:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/applications/ApplicationsState;->a(Lcom/android/settings/applications/ApplicationsState$Callbacks;)Lcom/android/settings/applications/ApplicationsState$Session;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eo:Lcom/android/settings/applications/ApplicationsState$Session;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->er:Lcom/android/settings/applications/ApplicationsState$Session;
 
     .line 374
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails;->getActivity()Landroid/app/Activity;
@@ -3619,7 +3619,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->be:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->bh:Landroid/content/pm/PackageManager;
 
     .line 375
     const-string v0, "usb"
@@ -3633,7 +3633,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hk:Landroid/hardware/usb/IUsbManager;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ho:Landroid/hardware/usb/IUsbManager;
 
     .line 377
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails;->getActivity()Landroid/app/Activity;
@@ -3644,7 +3644,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->dt:Landroid/appwidget/AppWidgetManager;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->dw:Landroid/appwidget/AppWidgetManager;
 
     .line 378
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails;->getActivity()Landroid/app/Activity;
@@ -3659,7 +3659,7 @@
 
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rL:Landroid/app/admin/DevicePolicyManager;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rO:Landroid/app/admin/DevicePolicyManager;
 
     .line 380
     new-instance v0, Lcom/android/settings/applications/CanBeOnSdCardChecker;
@@ -3707,7 +3707,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HQ:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HU:Ljava/lang/CharSequence;
 
     .line 389
     invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails;->getActivity()Landroid/app/Activity;
@@ -3731,7 +3731,7 @@
 
     invoke-direct {v0, v4}, Ljava/util/HashSet;-><init>(I)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HR:Ljava/util/HashSet;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HV:Ljava/util/HashSet;
 
     .line 391
     array-length v4, v3
@@ -3744,7 +3744,7 @@
     aget-object v5, v3, v0
 
     .line 392
-    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->HR:Ljava/util/HashSet;
+    iget-object v6, p0, Lcom/android/settings/applications/InstalledAppDetails;->HV:Ljava/util/HashSet;
 
     invoke-virtual {v6, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -3763,7 +3763,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hw:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HA:Landroid/widget/TextView;
 
     .line 397
     const v0, 0x7f080087
@@ -3774,7 +3774,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hx:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HB:Landroid/widget/TextView;
 
     .line 398
     const v0, 0x7f08008c
@@ -3785,7 +3785,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hy:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HC:Landroid/widget/TextView;
 
     .line 399
     const v0, 0x7f080089
@@ -3796,7 +3796,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hz:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/TextView;
 
     .line 400
     const v0, 0x7f08008e
@@ -3807,7 +3807,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HA:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HE:Landroid/widget/TextView;
 
     .line 403
     const v0, 0x7f080081
@@ -3823,10 +3823,10 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rR:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rU:Landroid/widget/Button;
 
     .line 405
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rR:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rU:Landroid/widget/Button;
 
     const v4, 0x7f0b03b2
 
@@ -3839,10 +3839,10 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hn:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/widget/Button;
 
     .line 407
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rR:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->rU:Landroid/widget/Button;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -3860,7 +3860,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HF:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HJ:Landroid/widget/Button;
 
     .line 412
     invoke-virtual {v1, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3869,7 +3869,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HK:Landroid/widget/Button;
 
     .line 415
     const v0, 0x7f080093
@@ -3880,7 +3880,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HC:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HG:Landroid/widget/TextView;
 
     .line 416
     const v0, 0x7f080094
@@ -3891,7 +3891,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HD:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/Button;
 
     .line 418
     const v0, 0x7f080097
@@ -3902,7 +3902,7 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hq:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hu:Landroid/widget/Button;
 
     .line 421
     const v0, 0x7f080098
@@ -3911,7 +3911,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hr:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hv:Landroid/view/View;
 
     .line 422
     const v0, 0x7f080099
@@ -3922,7 +3922,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hs:Landroid/widget/CheckBox;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hw:Landroid/widget/CheckBox;
 
     .line 423
     const v0, 0x7f08009a
@@ -3933,7 +3933,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Ht:Landroid/widget/CheckBox;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->Hx:Landroid/widget/CheckBox;
 
     .line 425
     const v0, 0x7f080082
@@ -3944,7 +3944,7 @@
 
     check-cast v0, Landroid/widget/CompoundButton;
 
-    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HH:Landroid/widget/CompoundButton;
+    iput-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->HL:Landroid/widget/CompoundButton;
 
     .line 427
     return-object v2
@@ -3958,7 +3958,7 @@
     invoke-super {p0}, Landroid/app/Fragment;->onPause()V
 
     .line 464
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eo:Lcom/android/settings/applications/ApplicationsState$Session;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->er:Lcom/android/settings/applications/ApplicationsState$Session;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState$Session;->pause()V
 
@@ -3976,12 +3976,12 @@
     invoke-super {p0}, Landroid/app/Fragment;->onResume()V
 
     .line 455
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->eo:Lcom/android/settings/applications/ApplicationsState$Session;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails;->er:Lcom/android/settings/applications/ApplicationsState$Session;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState$Session;->resume()V
 
     .line 456
-    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jU()Z
+    invoke-direct {p0}, Lcom/android/settings/applications/InstalledAppDetails;->jY()Z
 
     move-result v0
 

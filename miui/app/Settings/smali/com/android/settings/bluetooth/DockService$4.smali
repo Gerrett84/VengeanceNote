@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic nf:Lcom/android/settings/bluetooth/DockService;
+.field final synthetic ni:Lcom/android/settings/bluetooth/DockService;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 546
-    iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$4;->nf:Lcom/android/settings/bluetooth/DockService;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$4;->ni:Lcom/android/settings/bluetooth/DockService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 550
-    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->nf:Lcom/android/settings/bluetooth/DockService;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->ni:Lcom/android/settings/bluetooth/DockService;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/DockService;->c(Lcom/android/settings/bluetooth/DockService;)Landroid/bluetooth/BluetoothDevice;
 
@@ -41,9 +41,9 @@
     if-nez v0, :cond_0
 
     .line 551
-    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->nf:Lcom/android/settings/bluetooth/DockService;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->ni:Lcom/android/settings/bluetooth/DockService;
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$4;->nf:Lcom/android/settings/bluetooth/DockService;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/DockService$4;->ni:Lcom/android/settings/bluetooth/DockService;
 
     invoke-static {v1}, Lcom/android/settings/bluetooth/DockService;->d(Lcom/android/settings/bluetooth/DockService;)I
 
@@ -53,7 +53,7 @@
 
     .line 554
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->nf:Lcom/android/settings/bluetooth/DockService;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$4;->ni:Lcom/android/settings/bluetooth/DockService;
 
     const/4 v1, 0x1
 

@@ -4,27 +4,27 @@
 
 
 # static fields
-.field private static cM:Z
+.field private static cP:Z
 
 
 # instance fields
-.field private wr:Ljava/util/ArrayList;
+.field private wA:I
 
-.field private ws:Ljava/util/ArrayList;
+.field private wB:I
 
-.field private wt:Lcom/android/settings/aV;
+.field private wC:Z
 
-.field private wu:Lcom/android/settings/aj;
+.field private wD:Z
 
-.field private wv:I
+.field private wv:Ljava/util/ArrayList;
 
-.field private ww:I
+.field private ww:Ljava/util/ArrayList;
 
-.field private wx:I
+.field private wx:Lcom/android/settings/aV;
 
-.field private wy:Z
+.field private wy:Lcom/android/settings/aj;
 
-.field private wz:Z
+.field private wz:I
 
 
 # direct methods
@@ -35,7 +35,7 @@
     .line 50
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/android/settings/VirusScanService;->cM:Z
+    sput-boolean v0, Lcom/android/settings/VirusScanService;->cP:Z
 
     return-void
 .end method
@@ -54,27 +54,27 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/VirusScanService;->wr:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/VirusScanService;->wv:Ljava/util/ArrayList;
 
     .line 41
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/VirusScanService;->ws:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/VirusScanService;->ww:Ljava/util/ArrayList;
 
     .line 43
     new-instance v0, Lcom/android/settings/aV;
 
     invoke-direct {v0, p0}, Lcom/android/settings/aV;-><init>(Lcom/android/settings/VirusScanService;)V
 
-    iput-object v0, p0, Lcom/android/settings/VirusScanService;->wt:Lcom/android/settings/aV;
+    iput-object v0, p0, Lcom/android/settings/VirusScanService;->wx:Lcom/android/settings/aV;
 
     .line 48
-    iput-boolean v1, p0, Lcom/android/settings/VirusScanService;->wy:Z
+    iput-boolean v1, p0, Lcom/android/settings/VirusScanService;->wC:Z
 
     .line 49
-    iput-boolean v1, p0, Lcom/android/settings/VirusScanService;->wz:Z
+    iput-boolean v1, p0, Lcom/android/settings/VirusScanService;->wD:Z
 
     .line 136
     return-void
@@ -87,7 +87,7 @@
 
     .prologue
     .line 39
-    iput-object p1, p0, Lcom/android/settings/VirusScanService;->wu:Lcom/android/settings/aj;
+    iput-object p1, p0, Lcom/android/settings/VirusScanService;->wy:Lcom/android/settings/aj;
 
     return-object p1
 .end method
@@ -98,7 +98,7 @@
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wv:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -110,7 +110,7 @@
 
     .prologue
     .line 39
-    iput-boolean p1, p0, Lcom/android/settings/VirusScanService;->wy:Z
+    iput-boolean p1, p0, Lcom/android/settings/VirusScanService;->wC:Z
 
     return p1
 .end method
@@ -121,7 +121,7 @@
 
     .prologue
     .line 39
-    iget-boolean v0, p0, Lcom/android/settings/VirusScanService;->wy:Z
+    iget-boolean v0, p0, Lcom/android/settings/VirusScanService;->wC:Z
 
     return v0
 .end method
@@ -133,7 +133,7 @@
 
     .prologue
     .line 39
-    iput-boolean p1, p0, Lcom/android/settings/VirusScanService;->wz:Z
+    iput-boolean p1, p0, Lcom/android/settings/VirusScanService;->wD:Z
 
     return p1
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 39
-    invoke-direct {p0}, Lcom/android/settings/VirusScanService;->ei()V
+    invoke-direct {p0}, Lcom/android/settings/VirusScanService;->em()V
 
     return-void
 .end method
@@ -155,11 +155,11 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->wx:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wB:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/VirusScanService;->wx:I
+    iput v0, p0, Lcom/android/settings/VirusScanService;->wB:I
 
     return v0
 .end method
@@ -170,31 +170,31 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->wx:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wB:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/android/settings/VirusScanService;->wx:I
+    iput v0, p0, Lcom/android/settings/VirusScanService;->wB:I
 
     return v0
 .end method
 
-.method private ei()V
+.method private em()V
     .locals 6
 
     .prologue
     const/4 v5, 0x0
 
     .line 164
-    sget-boolean v0, Lcom/android/settings/VirusScanService;->cM:Z
+    sget-boolean v0, Lcom/android/settings/VirusScanService;->cP:Z
 
     if-eqz v0, :cond_1
 
     .line 165
-    iput v5, p0, Lcom/android/settings/VirusScanService;->ww:I
+    iput v5, p0, Lcom/android/settings/VirusScanService;->wA:I
 
     .line 166
-    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wv:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -215,9 +215,9 @@
     check-cast v0, Lcom/android/settings/dM;
 
     .line 167
-    iget-object v2, v0, Lcom/android/settings/dM;->cU:Lcom/android/settings/ScanState;
+    iget-object v2, v0, Lcom/android/settings/dM;->cX:Lcom/android/settings/ScanState;
 
-    sget-object v3, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
+    sget-object v3, Lcom/android/settings/ScanState;->bM:Lcom/android/settings/ScanState;
 
     if-ne v2, v3, :cond_0
 
@@ -247,16 +247,16 @@
     return-void
 .end method
 
-.method private ej()V
+.method private en()V
     .locals 2
 
     .prologue
     .line 176
-    sget-boolean v0, Lcom/android/settings/VirusScanService;->cM:Z
+    sget-boolean v0, Lcom/android/settings/VirusScanService;->cP:Z
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/settings/VirusScanService;->wy:Z
+    iget-boolean v0, p0, Lcom/android/settings/VirusScanService;->wC:Z
 
     if-eqz v0, :cond_1
 
@@ -264,12 +264,12 @@
     :cond_0
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/android/settings/VirusScanService;->cM:Z
+    sput-boolean v0, Lcom/android/settings/VirusScanService;->cP:Z
 
     .line 178
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/VirusScanService;->wy:Z
+    iput-boolean v0, p0, Lcom/android/settings/VirusScanService;->wC:Z
 
     .line 179
     new-instance v0, Ljava/lang/Thread;
@@ -293,7 +293,7 @@
 
     .prologue
     .line 39
-    invoke-direct {p0}, Lcom/android/settings/VirusScanService;->ej()V
+    invoke-direct {p0}, Lcom/android/settings/VirusScanService;->en()V
 
     return-void
 .end method
@@ -304,12 +304,12 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->wv:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wz:I
 
     return v0
 .end method
 
-.method private gy()V
+.method private gC()V
     .locals 5
 
     .prologue
@@ -374,15 +374,15 @@
 
     move-result-object v0
 
-    iput-object v0, v4, Lcom/android/settings/dM;->cT:Ljava/lang/String;
+    iput-object v0, v4, Lcom/android/settings/dM;->cW:Ljava/lang/String;
 
     .line 273
     iget-object v0, v3, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
 
-    iput-object v0, v4, Lcom/android/settings/dM;->LD:Ljava/lang/String;
+    iput-object v0, v4, Lcom/android/settings/dM;->LG:Ljava/lang/String;
 
     .line 274
-    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wv:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -405,7 +405,7 @@
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/android/settings/VirusScanService;->ws:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/VirusScanService;->ww:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -416,7 +416,7 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->ww:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wA:I
 
     return v0
 .end method
@@ -426,7 +426,7 @@
 
     .prologue
     .line 56
-    sget-boolean v0, Lcom/android/settings/VirusScanService;->cM:Z
+    sget-boolean v0, Lcom/android/settings/VirusScanService;->cP:Z
 
     return v0
 .end method
@@ -437,7 +437,7 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->wx:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wB:I
 
     return v0
 .end method
@@ -448,11 +448,11 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->ww:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wA:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/VirusScanService;->ww:I
+    iput v0, p0, Lcom/android/settings/VirusScanService;->wA:I
 
     return v0
 .end method
@@ -463,7 +463,7 @@
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wu:Lcom/android/settings/aj;
+    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wy:Lcom/android/settings/aj;
 
     return-object v0
 .end method
@@ -474,11 +474,11 @@
 
     .prologue
     .line 39
-    iget v0, p0, Lcom/android/settings/VirusScanService;->wv:I
+    iget v0, p0, Lcom/android/settings/VirusScanService;->wz:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/VirusScanService;->wv:I
+    iput v0, p0, Lcom/android/settings/VirusScanService;->wz:I
 
     return v0
 .end method
@@ -489,7 +489,7 @@
 
     .prologue
     .line 39
-    iget-boolean v0, p0, Lcom/android/settings/VirusScanService;->wz:Z
+    iget-boolean v0, p0, Lcom/android/settings/VirusScanService;->wD:Z
 
     return v0
 .end method
@@ -502,7 +502,7 @@
 
     .prologue
     .line 254
-    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wt:Lcom/android/settings/aV;
+    iget-object v0, p0, Lcom/android/settings/VirusScanService;->wx:Lcom/android/settings/aV;
 
     return-object v0
 .end method
@@ -515,7 +515,7 @@
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
     .line 249
-    invoke-direct {p0}, Lcom/android/settings/VirusScanService;->gy()V
+    invoke-direct {p0}, Lcom/android/settings/VirusScanService;->gC()V
 
     .line 250
     return-void
@@ -531,7 +531,7 @@
     .line 261
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/android/settings/VirusScanService;->cM:Z
+    sput-boolean v0, Lcom/android/settings/VirusScanService;->cP:Z
 
     .line 262
     return-void

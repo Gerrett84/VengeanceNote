@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final synthetic Fx:Lcom/android/settings/ApnSettings;
+.field final synthetic FB:Lcom/android/settings/ApnSettings;
 
-.field private OO:Landroid/os/Handler;
+.field private OR:Landroid/os/Handler;
 
 
 # direct methods
@@ -18,13 +18,13 @@
 
     .prologue
     .line 331
-    iput-object p1, p0, Lcom/android/settings/dX;->Fx:Lcom/android/settings/ApnSettings;
+    iput-object p1, p0, Lcom/android/settings/dX;->FB:Lcom/android/settings/ApnSettings;
 
     .line 332
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     .line 333
-    iput-object p3, p0, Lcom/android/settings/dX;->OO:Landroid/os/Handler;
+    iput-object p3, p0, Lcom/android/settings/dX;->OR:Landroid/os/Handler;
 
     .line 334
     return-void
@@ -50,21 +50,21 @@
 
     .line 340
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/dX;->Fx:Lcom/android/settings/ApnSettings;
+    iget-object v0, p0, Lcom/android/settings/dX;->FB:Lcom/android/settings/ApnSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/ApnSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     .line 341
-    invoke-static {}, Lcom/android/settings/ApnSettings;->hR()Landroid/net/Uri;
+    invoke-static {}, Lcom/android/settings/ApnSettings;->hV()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-virtual {v0, v1, v2, v2}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
     .line 342
-    iget-object v0, p0, Lcom/android/settings/dX;->OO:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/dX;->OR:Landroid/os/Handler;
 
     const/4 v1, 0x2
 

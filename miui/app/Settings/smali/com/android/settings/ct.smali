@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private Fj:Landroid/app/Fragment;
+.field private Fn:Landroid/app/Fragment;
 
 .field private mActivity:Landroid/app/Activity;
 
-.field private pX:Lcom/android/internal/widget/LockPatternUtils;
+.field private qa:Lcom/android/internal/widget/LockPatternUtils;
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
     invoke-direct {v0, p1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/ct;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iput-object v0, p0, Lcom/android/settings/ct;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     .line 37
     return-void
@@ -44,7 +44,7 @@
     invoke-direct {p0, p1}, Lcom/android/settings/ct;-><init>(Landroid/app/Activity;)V
 
     .line 41
-    iput-object p2, p0, Lcom/android/settings/ct;->Fj:Landroid/app/Fragment;
+    iput-object p2, p0, Lcom/android/settings/ct;->Fn:Landroid/app/Fragment;
 
     .line 42
     return-void
@@ -58,7 +58,7 @@
 
     .prologue
     .line 80
-    iget-object v0, p0, Lcom/android/settings/ct;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/ct;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isLockPatternEnabled()Z
 
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/ct;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/ct;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->savedPatternExists()Z
 
@@ -106,12 +106,12 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 88
-    iget-object v1, p0, Lcom/android/settings/ct;->Fj:Landroid/app/Fragment;
+    iget-object v1, p0, Lcom/android/settings/ct;->Fn:Landroid/app/Fragment;
 
     if-eqz v1, :cond_2
 
     .line 89
-    iget-object v1, p0, Lcom/android/settings/ct;->Fj:Landroid/app/Fragment;
+    iget-object v1, p0, Lcom/android/settings/ct;->Fn:Landroid/app/Fragment;
 
     invoke-virtual {v1, v0, p1}, Landroid/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
 
@@ -136,7 +136,7 @@
 
     .prologue
     .line 102
-    iget-object v0, p0, Lcom/android/settings/ct;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/ct;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isLockPasswordEnabled()Z
 
@@ -164,12 +164,12 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 105
-    iget-object v1, p0, Lcom/android/settings/ct;->Fj:Landroid/app/Fragment;
+    iget-object v1, p0, Lcom/android/settings/ct;->Fn:Landroid/app/Fragment;
 
     if-eqz v1, :cond_1
 
     .line 106
-    iget-object v1, p0, Lcom/android/settings/ct;->Fj:Landroid/app/Fragment;
+    iget-object v1, p0, Lcom/android/settings/ct;->Fn:Landroid/app/Fragment;
 
     invoke-virtual {v1, v0, p1}, Landroid/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
 
@@ -201,7 +201,7 @@
     const/4 v0, 0x0
 
     .line 57
-    iget-object v1, p0, Lcom/android/settings/ct;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v1, p0, Lcom/android/settings/ct;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v1}, Lcom/android/internal/widget/LockPatternUtils;->getKeyguardStoredPasswordQuality()I
 

@@ -79,7 +79,7 @@
 
 
 # virtual methods
-.method public C()I
+.method public G()I
     .locals 1
 
     .prologue
@@ -89,7 +89,7 @@
     return v0
 .end method
 
-.method public D()I
+.method public H()I
     .locals 1
 
     .prologue
@@ -149,7 +149,7 @@
 
     .prologue
     .line 436
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eI()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eM()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
@@ -206,7 +206,7 @@
 
     .prologue
     .line 424
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eI()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eM()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
@@ -229,7 +229,7 @@
 
     .line 429
     :cond_0
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->er()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ev()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
@@ -237,7 +237,7 @@
 
     .line 431
     :cond_1
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eI()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eM()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 

@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field final synthetic mE:Lcom/android/settings/CredentialStorage;
+.field final synthetic mH:Lcom/android/settings/CredentialStorage;
 
-.field private nk:Z
+.field private nn:Z
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     .prologue
     .line 239
-    iput-object p1, p0, Lcom/android/settings/aD;->mE:Lcom/android/settings/CredentialStorage;
+    iput-object p1, p0, Lcom/android/settings/aD;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -101,7 +101,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/aD;->nk:Z
+    iput-boolean v0, p0, Lcom/android/settings/aD;->nn:Z
 
     .line 253
     return-void
@@ -121,17 +121,17 @@
     const/4 v3, 0x0
 
     .line 256
-    iget-boolean v0, p0, Lcom/android/settings/aD;->nk:Z
+    iget-boolean v0, p0, Lcom/android/settings/aD;->nn:Z
 
     if-eqz v0, :cond_0
 
     .line 257
-    iput-boolean v3, p0, Lcom/android/settings/aD;->nk:Z
+    iput-boolean v3, p0, Lcom/android/settings/aD;->nn:Z
 
     .line 258
     new-instance v0, Lcom/android/settings/bF;
 
-    iget-object v1, p0, Lcom/android/settings/aD;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v1, p0, Lcom/android/settings/aD;->mH:Lcom/android/settings/CredentialStorage;
 
     const/4 v2, 0x0
 
@@ -147,7 +147,7 @@
 
     .line 261
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/aD;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aD;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-virtual {v0}, Lcom/android/settings/CredentialStorage;->finish()V
 

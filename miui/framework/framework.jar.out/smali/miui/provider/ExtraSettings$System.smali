@@ -345,6 +345,15 @@
 
 .field public static final STATUS_BAR_UPDATE_NETWORK_SPEED_INTERVAL_DEFAULT:I = 0xfa0
 
+.field public static final T9_INDEXING_KEY:Ljava/lang/String; = "t9_indexing_key"
+
+#the value of this static final field might be set in the static constructor
+.field public static final T9_INDEXING_KEY_DEFAULT:I = 0x0
+
+.field public static final T9_INDEXING_KEY_PINYIN:I = 0x0
+
+.field public static final T9_INDEXING_KEY_ZHUYIN:I = 0x1
+
 .field public static final TORCH_STATE:Ljava/lang/String; = "torch_state"
 
 .field public static final TRACKBALL_WAKE_SCREEN:Ljava/lang/String; = "trackball_wake_screen"
@@ -407,9 +416,11 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
     .prologue
+    const/4 v2, 0x0
+
     .line 207
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -464,9 +475,7 @@
     .line 644
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -505,7 +514,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 648
+    .line 702
+    sput v2, Lmiui/provider/ExtraSettings$System;->T9_INDEXING_KEY_DEFAULT:I
+
+    .line 703
     return-void
 .end method
 

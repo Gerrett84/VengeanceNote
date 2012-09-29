@@ -4,27 +4,27 @@
 
 
 # instance fields
-.field final cD:Landroid/util/SparseArray;
+.field final cG:Landroid/util/SparseArray;
 
-.field final cE:Ljava/lang/String;
+.field final cH:Ljava/lang/String;
 
-.field cF:Lcom/android/settings/applications/RunningState$ProcessItem;
+.field cI:Lcom/android/settings/applications/RunningState$ProcessItem;
 
-.field cG:I
+.field cJ:I
 
-.field cH:I
+.field cK:I
 
-.field cI:Landroid/app/ActivityManager$RunningAppProcessInfo;
+.field cL:Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-.field cJ:Lcom/android/settings/applications/RunningState$MergedItem;
+.field cM:Lcom/android/settings/applications/RunningState$MergedItem;
 
-.field cK:Z
+.field cN:Z
 
-.field cL:Z
+.field cO:Z
 
-.field cM:Z
+.field cP:Z
 
-.field cN:J
+.field cQ:J
 
 .field mPid:I
 
@@ -58,7 +58,7 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     .line 275
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -77,13 +77,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->BU:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->BY:Ljava/lang/String;
 
     .line 277
     iput p2, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mUid:I
 
     .line 278
-    iput-object p3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cE:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cH:Ljava/lang/String;
 
     .line 279
     return-void
@@ -110,7 +110,7 @@
     .line 287
     :cond_0
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cE:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cH:Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -130,10 +130,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 290
-    iget-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -142,7 +142,7 @@
     iput-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mLabel:Ljava/lang/String;
 
     .line 291
-    iput-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -184,10 +184,10 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 306
-    iget-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -196,7 +196,7 @@
     iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mLabel:Ljava/lang/String;
 
     .line 307
-    iput-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -241,7 +241,7 @@
     if-eqz v3, :cond_3
 
     .line 322
-    iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 323
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -253,7 +253,7 @@
     .line 324
     iget-object v3, v4, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v3, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -296,23 +296,23 @@
 
     check-cast v0, Lcom/android/settings/applications/RunningState$ServiceItem;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MX:Landroid/content/pm/ServiceInfo;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->Na:Landroid/content/pm/ServiceInfo;
 
     iget-object v0, v0, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     .line 337
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageItemInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 338
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -340,10 +340,10 @@
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 346
-    iget-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -352,7 +352,7 @@
     iput-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mLabel:Ljava/lang/String;
 
     .line 347
-    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
     :try_end_3
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
 
@@ -372,7 +372,7 @@
 
     .prologue
     .line 445
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
@@ -387,7 +387,7 @@
     if-ge v1, v2, :cond_1
 
     .line 447
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -439,7 +439,7 @@
     iput-wide v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mSize:J
 
     .line 407
-    iget v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->It:I
+    iget v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iw:I
 
     if-ne v0, p4, :cond_0
 
@@ -451,7 +451,7 @@
     move-result-object v0
 
     .line 410
-    iget-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ix:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -460,7 +460,7 @@
     if-nez v1, :cond_0
 
     .line 411
-    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Ix:Ljava/lang/String;
 
     .line 418
     :cond_0
@@ -504,7 +504,7 @@
     invoke-direct {v2}, Lcom/android/settings/applications/RunningState$ServiceItem;-><init>()V
 
     .line 362
-    iput-object p2, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MW:Landroid/app/ActivityManager$RunningServiceInfo;
+    iput-object p2, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MZ:Landroid/app/ActivityManager$RunningServiceInfo;
 
     .line 364
     :try_start_0
@@ -516,13 +516,13 @@
 
     move-result-object v0
 
-    iput-object v0, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MX:Landroid/content/pm/ServiceInfo;
+    iput-object v0, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->Na:Landroid/content/pm/ServiceInfo;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 367
     :goto_0
-    iget-object v0, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MW:Landroid/app/ActivityManager$RunningServiceInfo;
+    iget-object v0, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MZ:Landroid/app/ActivityManager$RunningServiceInfo;
 
     iget-object v0, v0, Landroid/app/ActivityManager$RunningServiceInfo;->service:Landroid/content/ComponentName;
 
@@ -530,20 +530,20 @@
 
     move-result-object v0
 
-    iget-object v5, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MX:Landroid/content/pm/ServiceInfo;
+    iget-object v5, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->Na:Landroid/content/pm/ServiceInfo;
 
     invoke-static {v7, v0, v5}, Lcom/android/settings/applications/RunningState;->a(Landroid/content/pm/PackageManager;Ljava/lang/String;Landroid/content/pm/PackageItemInfo;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    iput-object v0, v2, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iput-object v0, v2, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     .line 369
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Is:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/CharSequence;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -553,11 +553,11 @@
     iput-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mLabel:Ljava/lang/String;
 
     .line 370
-    iget-object v0, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->MX:Landroid/content/pm/ServiceInfo;
+    iget-object v0, v2, Lcom/android/settings/applications/RunningState$ServiceItem;->Na:Landroid/content/pm/ServiceInfo;
 
     iget-object v0, v0, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iput-object v0, v2, Lcom/android/settings/applications/RunningState$BaseItem;->Ir:Landroid/content/pm/PackageItemInfo;
+    iput-object v0, v2, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Landroid/content/pm/PackageItemInfo;
 
     .line 371
     iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->mServices:Ljava/util/HashMap;
@@ -572,12 +572,12 @@
 
     .line 373
     :goto_2
-    iget v5, p0, Lcom/android/settings/applications/RunningState$BaseItem;->It:I
+    iget v5, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iw:I
 
-    iput v5, v0, Lcom/android/settings/applications/RunningState$BaseItem;->It:I
+    iput v5, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Iw:I
 
     .line 374
-    iput-object p2, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MW:Landroid/app/ActivityManager$RunningServiceInfo;
+    iput-object p2, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MZ:Landroid/app/ActivityManager$RunningServiceInfo;
 
     .line 375
     iget-wide v5, p2, Landroid/app/ActivityManager$RunningServiceInfo;->restarting:J
@@ -592,14 +592,14 @@
 
     .line 376
     :goto_3
-    iget-wide v8, v0, Lcom/android/settings/applications/RunningState$BaseItem;->cN:J
+    iget-wide v8, v0, Lcom/android/settings/applications/RunningState$BaseItem;->cQ:J
 
     cmp-long v8, v8, v5
 
     if-eqz v8, :cond_0
 
     .line 377
-    iput-wide v5, v0, Lcom/android/settings/applications/RunningState$BaseItem;->cN:J
+    iput-wide v5, v0, Lcom/android/settings/applications/RunningState$BaseItem;->cQ:J
 
     move v2, v3
 
@@ -614,12 +614,12 @@
     if-eqz v5, :cond_3
 
     .line 381
-    iget-boolean v5, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MY:Z
+    iget-boolean v5, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->Nb:Z
 
     if-eqz v5, :cond_5
 
     .line 382
-    iput-boolean v4, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MY:Z
+    iput-boolean v4, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->Nb:Z
 
     .line 386
     :goto_4
@@ -656,7 +656,7 @@
 
     move-result-object v2
 
-    iput-object v2, v0, Lcom/android/settings/applications/RunningState$BaseItem;->BU:Ljava/lang/String;
+    iput-object v2, v0, Lcom/android/settings/applications/RunningState$BaseItem;->BY:Ljava/lang/String;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -681,18 +681,18 @@
     move-exception v2
 
     .line 391
-    iput-object v1, v0, Lcom/android/settings/applications/RunningState$BaseItem;->BU:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/settings/applications/RunningState$BaseItem;->BY:Ljava/lang/String;
 
     goto :goto_5
 
     .line 394
     :cond_3
-    iget-boolean v1, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MY:Z
+    iget-boolean v1, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->Nb:Z
 
     if-nez v1, :cond_4
 
     .line 395
-    iput-boolean v3, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->MY:Z
+    iput-boolean v3, v0, Lcom/android/settings/applications/RunningState$ServiceItem;->Nb:Z
 
     .line 398
     :goto_6
@@ -706,7 +706,7 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/android/settings/applications/RunningState$BaseItem;->BU:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/settings/applications/RunningState$BaseItem;->BY:Ljava/lang/String;
 
     goto :goto_5
 
@@ -744,7 +744,7 @@
     const/4 v0, 0x0
 
     .line 422
-    iget-object v1, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
@@ -759,7 +759,7 @@
     if-ge v3, v4, :cond_1
 
     .line 425
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     invoke-virtual {v0, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
@@ -768,18 +768,18 @@
     check-cast v0, Lcom/android/settings/applications/RunningState$ProcessItem;
 
     .line 426
-    iget-object v5, v0, Lcom/android/settings/applications/RunningState$ProcessItem;->cF:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iget-object v5, v0, Lcom/android/settings/applications/RunningState$ProcessItem;->cI:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     if-eq v5, p0, :cond_0
 
     .line 428
-    iput-object p0, v0, Lcom/android/settings/applications/RunningState$ProcessItem;->cF:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iput-object p0, v0, Lcom/android/settings/applications/RunningState$ProcessItem;->cI:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     move v1, v2
 
     .line 430
     :cond_0
-    iput p3, v0, Lcom/android/settings/applications/RunningState$BaseItem;->It:I
+    iput p3, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Iw:I
 
     .line 431
     invoke-virtual {v0, p2}, Lcom/android/settings/applications/RunningState$ProcessItem;->a(Landroid/content/pm/PackageManager;)V
@@ -800,9 +800,9 @@
 
     .line 435
     :cond_1
-    iget v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:I
+    iget v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cJ:I
 
-    iget-object v3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
 
@@ -811,13 +811,13 @@
     if-eq v0, v3, :cond_2
 
     .line 437
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cD:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cG:I
+    iput v0, p0, Lcom/android/settings/applications/RunningState$ProcessItem;->cJ:I
 
     .line 440
     :goto_1

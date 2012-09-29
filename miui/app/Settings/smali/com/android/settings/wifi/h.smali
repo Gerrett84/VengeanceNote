@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aV:Lcom/android/settings/wifi/WifiStatusTest;
+.field final synthetic aY:Lcom/android/settings/wifi/WifiStatusTest;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 180
-    iput-object p1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iput-object p1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,7 +34,7 @@
     const/16 v5, 0x2e
 
     .line 182
-    iget-object v0, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v0, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->c(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/net/wifi/WifiManager;
 
@@ -45,9 +45,9 @@
     move-result-object v0
 
     .line 184
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
-    iget-object v2, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v2, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v2}, Lcom/android/settings/wifi/WifiStatusTest;->c(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/net/wifi/WifiManager;
 
@@ -60,7 +60,7 @@
     invoke-static {v1, v2}, Lcom/android/settings/wifi/WifiStatusTest;->c(Lcom/android/settings/wifi/WifiStatusTest;I)V
 
     .line 185
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->d(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -73,7 +73,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 186
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->e(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -141,7 +141,7 @@
     invoke-virtual {v3, v1}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
     .line 194
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->f(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -150,7 +150,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 195
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->g(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -185,7 +185,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 196
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->h(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -198,7 +198,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 197
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->i(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -215,7 +215,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 198
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->j(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -232,7 +232,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 199
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiStatusTest;->k(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
 
@@ -250,7 +250,7 @@
     move-result-object v0
 
     .line 202
-    iget-object v1, p0, Lcom/android/settings/wifi/h;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v1, p0, Lcom/android/settings/wifi/h;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v1, v0}, Lcom/android/settings/wifi/WifiStatusTest;->a(Lcom/android/settings/wifi/WifiStatusTest;Landroid/net/wifi/SupplicantState;)V
 

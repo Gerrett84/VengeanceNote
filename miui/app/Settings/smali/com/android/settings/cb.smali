@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+.field final synthetic Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 807
-    iput-object p1, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iput-object p1, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
     if-eqz p2, :cond_1
 
     .line 811
-    iget-object v2, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v2, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-static {v2}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->a(Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;)Ljava/lang/CharSequence;
 
@@ -56,7 +56,7 @@
     invoke-virtual {p1, v1}, Lcom/android/settings/af;->l(Z)V
 
     .line 813
-    iget-object v2, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v2, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->getArguments()Landroid/os/Bundle;
 
@@ -67,7 +67,7 @@
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 814
-    iget-object v1, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->showDialog(I)V
 
@@ -77,9 +77,9 @@
 
     .line 817
     :cond_0
-    iget-object v2, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v2, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
-    iget-object v3, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v3, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-static {v3}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->b(Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;)Ljava/lang/String;
 
@@ -95,7 +95,7 @@
 
     .line 819
     :cond_1
-    iget-object v2, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v2, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-static {v2}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->c(Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;)Ljava/lang/CharSequence;
 
@@ -111,7 +111,7 @@
     invoke-virtual {p1, v0}, Lcom/android/settings/af;->l(Z)V
 
     .line 821
-    iget-object v1, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->getArguments()Landroid/os/Bundle;
 
@@ -122,7 +122,7 @@
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 822
-    iget-object v1, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     const/4 v2, 0x2
 
@@ -132,9 +132,9 @@
 
     .line 825
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v0, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
-    iget-object v2, p0, Lcom/android/settings/cb;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v2, p0, Lcom/android/settings/cb;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-static {v2}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->b(Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;)Ljava/lang/String;
 

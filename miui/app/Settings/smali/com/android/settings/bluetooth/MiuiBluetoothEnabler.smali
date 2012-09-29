@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private final N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+.field private final Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
-.field private final aJ:Landroid/content/IntentFilter;
+.field private final aM:Landroid/content/IntentFilter;
 
-.field private cW:Lmiui/widget/SlidingButton;
+.field private cZ:Lmiui/widget/SlidingButton;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -39,7 +39,7 @@
     iput-object p1, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->mContext:Landroid/content/Context;
 
     .line 55
-    iput-object p2, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iput-object p2, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     .line 57
     invoke-static {p1}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->t(Landroid/content/Context;)Lcom/android/settings/bluetooth/LocalBluetoothManager;
@@ -52,10 +52,10 @@
     .line 60
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     .line 61
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     const/4 v1, 0x0
 
@@ -69,18 +69,18 @@
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->aJ:Landroid/content/IntentFilter;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->aM:Landroid/content/IntentFilter;
 
     .line 66
     return-void
 
     .line 63
     :cond_0
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->er()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ev()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     goto :goto_0
 .end method
@@ -100,12 +100,12 @@
     packed-switch p1, :pswitch_data_0
 
     .line 136
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
     .line 137
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v2}, Lmiui/widget/SlidingButton;->setEnabled(Z)V
 
@@ -115,7 +115,7 @@
 
     .line 122
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setEnabled(Z)V
 
@@ -123,12 +123,12 @@
 
     .line 125
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v2}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
     .line 126
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v2}, Lmiui/widget/SlidingButton;->setEnabled(Z)V
 
@@ -136,7 +136,7 @@
 
     .line 129
     :pswitch_2
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setEnabled(Z)V
 
@@ -144,12 +144,12 @@
 
     .line 132
     :pswitch_3
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
     .line 133
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v2}, Lmiui/widget/SlidingButton;->setEnabled(Z)V
 
@@ -202,18 +202,18 @@
 
     .line 113
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-eqz v0, :cond_1
 
     .line 114
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->D(Z)V
 
     .line 116
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v2}, Lmiui/widget/SlidingButton;->setEnabled(Z)V
 
@@ -226,7 +226,7 @@
 
     .prologue
     .line 82
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-nez v0, :cond_0
 
@@ -243,7 +243,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 87
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     const/4 v1, 0x0
 
@@ -257,12 +257,12 @@
 
     .prologue
     .line 69
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-nez v0, :cond_0
 
     .line 70
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     const/4 v1, 0x0
 
@@ -274,7 +274,7 @@
 
     .line 75
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getBluetoothState()I
 
@@ -287,12 +287,12 @@
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    iget-object v2, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->aJ:Landroid/content/IntentFilter;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->aM:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 78
-    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/MiuiBluetoothEnabler;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, p0}, Lmiui/widget/SlidingButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 

@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final transient GF:Lcom/google/common/collect/ImmutableMap;
+.field final transient GJ:Lcom/google/common/collect/ImmutableMap;
 
-.field final transient GG:Lcom/google/common/collect/ImmutableBiMap;
+.field final transient GK:Lcom/google/common/collect/ImmutableBiMap;
 
 
 # direct methods
@@ -19,15 +19,15 @@
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableBiMap;-><init>()V
 
     .line 33
-    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GF:Lcom/google/common/collect/ImmutableMap;
+    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GJ:Lcom/google/common/collect/ImmutableMap;
 
     .line 35
-    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->lt()Lcom/google/common/collect/O;
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->lx()Lcom/google/common/collect/O;
 
     move-result-object v1
 
     .line 36
-    invoke-virtual {p1}, Lcom/google/common/collect/ImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p1}, Lcom/google/common/collect/ImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -63,7 +63,7 @@
 
     .line 39
     :cond_0
-    invoke-virtual {v1}, Lcom/google/common/collect/O;->hs()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {v1}, Lcom/google/common/collect/O;->hw()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -72,7 +72,7 @@
 
     invoke-direct {v1, v0, p0}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;Lcom/google/common/collect/ImmutableBiMap;)V
 
-    iput-object v1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GG:Lcom/google/common/collect/ImmutableBiMap;
+    iput-object v1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GK:Lcom/google/common/collect/ImmutableBiMap;
 
     .line 41
     return-void
@@ -88,10 +88,10 @@
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableBiMap;-><init>()V
 
     .line 45
-    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GF:Lcom/google/common/collect/ImmutableMap;
+    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GJ:Lcom/google/common/collect/ImmutableMap;
 
     .line 46
-    iput-object p2, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GG:Lcom/google/common/collect/ImmutableBiMap;
+    iput-object p2, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GK:Lcom/google/common/collect/ImmutableBiMap;
 
     .line 47
     return-void
@@ -99,22 +99,22 @@
 
 
 # virtual methods
-.method dL()Lcom/google/common/collect/ImmutableMap;
+.method dP()Lcom/google/common/collect/ImmutableMap;
     .locals 1
 
     .prologue
     .line 50
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GF:Lcom/google/common/collect/ImmutableMap;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GJ:Lcom/google/common/collect/ImmutableMap;
 
     return-object v0
 .end method
 
-.method public dM()Lcom/google/common/collect/ImmutableBiMap;
+.method public dQ()Lcom/google/common/collect/ImmutableBiMap;
     .locals 1
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GG:Lcom/google/common/collect/ImmutableBiMap;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap;->GK:Lcom/google/common/collect/ImmutableBiMap;
 
     return-object v0
 .end method

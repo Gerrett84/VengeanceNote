@@ -454,7 +454,7 @@
     <string name="wifi_access_points">WLAN 网络</string>
     <string name="wifi_menu_wps_pbc">WPS 按钮</string>
     <string name="wifi_menu_wps_pin">WPS PIN 输入</string>
-    <string name="wifi_menu_p2p">Wi-Fi Direct</string>
+    <string name="wifi_menu_p2p">WLAN Direct</string>
     <string name="wifi_menu_scan">扫描</string>
     <string name="wifi_menu_advanced">高级</string>
     <string name="wifi_menu_connect">连接到网络</string>
@@ -1632,9 +1632,9 @@ PIN 可能不正确。"</string>
     <string name="search_language">语言;输入法;ShuRuFa</string>
     <string name="search_about">关于手机;系统版本;GuanYuShouJi;BanBen</string>
     <string name="search_power_mode">运行模式;高性能;性能优先;性能模式;正常模式;常规模式;默认模式;性能均衡;省电模式;节电模式;XingNeng;JieDian</string>
-    <string name="debug_log">调试日志</string>
-    <string name="upload_debug_log_title">允许上传调试日志</string>
-    <string name="upload_debug_log_summary">仅在WLAN连接可用情况下，上传调试日志以帮助MIUI开发更加稳定好用的ROM</string>
+    <string name="debug_log">用户体验计划</string>
+    <string name="upload_debug_log_title">加入“用户体验计划”</string>
+    <string name="upload_debug_log_summary">我们会统计您对产品各项功能的使用情况，用以提升我们的产品和服务。整个过程将遵循我们的隐私政策。</string>
     <string name="device_miui_version">MIUI 版本:</string>
     <string name="device_cpu">处理器:</string>
     <string name="device_memory">运行内存:</string>

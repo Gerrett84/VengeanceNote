@@ -8,25 +8,25 @@
 
 
 # static fields
-.field private static final dG:[Ljava/lang/String;
+.field private static final dJ:[Ljava/lang/String;
 
 
 # instance fields
-.field private be:Landroid/content/pm/PackageManager;
+.field private bh:Landroid/content/pm/PackageManager;
 
-.field private dH:Ljava/util/HashMap;
+.field private dK:Ljava/util/HashMap;
 
-.field private dI:Landroid/preference/PreferenceGroup;
+.field private dL:Landroid/preference/PreferenceGroup;
 
-.field private dJ:Landroid/preference/PreferenceGroup;
+.field private dM:Landroid/preference/PreferenceGroup;
 
-.field private dK:Landroid/preference/EditTextPreference;
+.field private dN:Landroid/preference/EditTextPreference;
 
-.field private dL:Landroid/content/pm/IPackageManager;
+.field private dO:Landroid/content/pm/IPackageManager;
 
-.field private dM:I
+.field private dP:I
 
-.field private dN:Z
+.field private dQ:Z
 
 
 # direct methods
@@ -57,7 +57,7 @@
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/android/settings/users/UserDetailsSettings;->dG:[Ljava/lang/String;
+    sput-object v0, Lcom/android/settings/users/UserDetailsSettings;->dJ:[Ljava/lang/String;
 
     return-void
 .end method
@@ -74,17 +74,17 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dH:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Ljava/util/HashMap;
 
     return-void
 .end method
 
-.method private U()V
+.method private Y()V
     .locals 5
 
     .prologue
     .line 145
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0}, Landroid/content/pm/PackageManager;->getUsers()Ljava/util/List;
 
@@ -114,7 +114,7 @@
     .line 148
     iget v3, v0, Landroid/content/pm/UserInfo;->id:I
 
-    iget v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iget v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     if-ne v3, v4, :cond_0
 
@@ -123,14 +123,14 @@
     if-eqz v0, :cond_1
 
     .line 154
-    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     iget-object v2, v0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     .line 155
-    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     iget-object v0, v0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
@@ -146,14 +146,14 @@
     goto :goto_0
 .end method
 
-.method private V()V
+.method private Z()V
     .locals 3
 
     .prologue
     const v2, 0x7f0b0655
 
     .line 161
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     invoke-virtual {p0, v2}, Lcom/android/settings/users/UserDetailsSettings;->getString(I)Ljava/lang/String;
 
@@ -162,7 +162,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/EditTextPreference;->setText(Ljava/lang/String;)V
 
     .line 162
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     invoke-virtual {p0, v2}, Lcom/android/settings/users/UserDetailsSettings;->getString(I)Ljava/lang/String;
 
@@ -172,271 +172,6 @@
 
     .line 163
     return-void
-.end method
-
-.method private W()V
-    .locals 1
-
-    .prologue
-    .line 166
-    iget-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Z
-
-    if-eqz v0, :cond_0
-
-    .line 167
-    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->X()V
-
-    .line 171
-    :goto_0
-    return-void
-
-    .line 169
-    :cond_0
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/users/UserDetailsSettings;->showDialog(I)V
-
-    goto :goto_0
-.end method
-
-.method private X()V
-    .locals 4
-
-    .prologue
-    .line 175
-    :try_start_0
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/content/pm/IPackageManager;
-
-    iget v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
-
-    invoke-interface {v0, v1}, Landroid/content/pm/IPackageManager;->removeUser(I)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 180
-    :goto_0
-    invoke-virtual {p0}, Lcom/android/settings/users/UserDetailsSettings;->finish()V
-
-    .line 181
-    return-void
-
-    .line 176
-    :catch_0
-    move-exception v0
-
-    .line 178
-    const-string v1, "UserDetailsSettings"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Couldn\'t remove user "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget v3, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method private Y()V
-    .locals 8
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 203
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dI:Landroid/preference/PreferenceGroup;
-
-    invoke-virtual {v0}, Landroid/preference/PreferenceGroup;->removeAll()V
-
-    .line 204
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dJ:Landroid/preference/PreferenceGroup;
-
-    invoke-virtual {v0}, Landroid/preference/PreferenceGroup;->removeAll()V
-
-    .line 206
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dH:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
-
-    move-result v3
-
-    .line 208
-    new-instance v0, Landroid/content/Intent;
-
-    const-string v1, "android.intent.action.MAIN"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    .line 209
-    const-string v1, "android.intent.category.LAUNCHER"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 210
-    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->be:Landroid/content/pm/PackageManager;
-
-    invoke-virtual {v1, v0, v2}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 212
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :cond_0
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/pm/ResolveInfo;
-
-    .line 215
-    :try_start_0
-    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/content/pm/IPackageManager;
-
-    iget-object v1, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v6, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
-
-    const/4 v7, 0x0
-
-    iget v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
-
-    if-gez v1, :cond_2
-
-    move v1, v2
-
-    :goto_1
-    invoke-interface {v5, v6, v7, v1}, Landroid/content/pm/IPackageManager;->getPackageInfo(Ljava/lang/String;II)Landroid/content/pm/PackageInfo;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    .line 221
-    if-eqz v3, :cond_1
-
-    .line 222
-    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dH:Ljava/util/HashMap;
-
-    iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
-
-    new-instance v6, Lcom/android/settings/users/UserDetailsSettings$AppState;
-
-    iget-object v7, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
-
-    iget-boolean v7, v7, Landroid/content/pm/ApplicationInfo;->enabled:Z
-
-    invoke-direct {v6, v7}, Lcom/android/settings/users/UserDetailsSettings$AppState;-><init>(Z)V
-
-    invoke-virtual {v5, v0, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 225
-    :cond_1
-    iget-object v0, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
-
-    iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
-
-    and-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_3
-
-    .line 226
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dI:Landroid/preference/PreferenceGroup;
-
-    iget-object v5, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v5}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 229
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dI:Landroid/preference/PreferenceGroup;
-
-    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dH:Ljava/util/HashMap;
-
-    invoke-direct {p0, v0, v5, v1, v2}, Lcom/android/settings/users/UserDetailsSettings;->a(Landroid/preference/PreferenceGroup;Ljava/util/HashMap;Landroid/content/pm/PackageInfo;Z)V
-
-    goto :goto_0
-
-    .line 215
-    :cond_2
-    :try_start_1
-    iget v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_1
-
-    .line 231
-    :cond_3
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dJ:Landroid/preference/PreferenceGroup;
-
-    iget-object v5, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v5}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    .line 234
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dJ:Landroid/preference/PreferenceGroup;
-
-    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dH:Ljava/util/HashMap;
-
-    invoke-direct {p0, v0, v5, v1, v2}, Lcom/android/settings/users/UserDetailsSettings;->a(Landroid/preference/PreferenceGroup;Ljava/util/HashMap;Landroid/content/pm/PackageInfo;Z)V
-
-    goto :goto_0
-
-    .line 237
-    :cond_4
-    return-void
-
-    .line 218
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
 .end method
 
 .method private a(Landroid/preference/PreferenceGroup;Ljava/util/HashMap;Landroid/content/pm/PackageInfo;Z)V
@@ -456,7 +191,7 @@
     .line 187
     iget-object v0, p3, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->be:Landroid/content/pm/PackageManager;
+    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, v1}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -469,7 +204,7 @@
     .line 188
     iget-object v0, p3, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v3, p0, Lcom/android/settings/users/UserDetailsSettings;->be:Landroid/content/pm/PackageManager;
+    iget-object v3, p0, Lcom/android/settings/users/UserDetailsSettings;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, v3}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -548,9 +283,274 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->X()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->ab()V
 
     return-void
+.end method
+
+.method private aa()V
+    .locals 1
+
+    .prologue
+    .line 166
+    iget-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dQ:Z
+
+    if-eqz v0, :cond_0
+
+    .line 167
+    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->ab()V
+
+    .line 171
+    :goto_0
+    return-void
+
+    .line 169
+    :cond_0
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcom/android/settings/users/UserDetailsSettings;->showDialog(I)V
+
+    goto :goto_0
+.end method
+
+.method private ab()V
+    .locals 4
+
+    .prologue
+    .line 175
+    :try_start_0
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dO:Landroid/content/pm/IPackageManager;
+
+    iget v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
+
+    invoke-interface {v0, v1}, Landroid/content/pm/IPackageManager;->removeUser(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 180
+    :goto_0
+    invoke-virtual {p0}, Lcom/android/settings/users/UserDetailsSettings;->finish()V
+
+    .line 181
+    return-void
+
+    .line 176
+    :catch_0
+    move-exception v0
+
+    .line 178
+    const-string v1, "UserDetailsSettings"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Couldn\'t remove user "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "\n"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method private ac()V
+    .locals 8
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 203
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/preference/PreferenceGroup;
+
+    invoke-virtual {v0}, Landroid/preference/PreferenceGroup;->removeAll()V
+
+    .line 204
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:Landroid/preference/PreferenceGroup;
+
+    invoke-virtual {v0}, Landroid/preference/PreferenceGroup;->removeAll()V
+
+    .line 206
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v3
+
+    .line 208
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.MAIN"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    .line 209
+    const-string v1, "android.intent.category.LAUNCHER"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 210
+    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->bh:Landroid/content/pm/PackageManager;
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 212
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_0
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/pm/ResolveInfo;
+
+    .line 215
+    :try_start_0
+    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dO:Landroid/content/pm/IPackageManager;
+
+    iget-object v1, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v6, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+
+    const/4 v7, 0x0
+
+    iget v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
+
+    if-gez v1, :cond_2
+
+    move v1, v2
+
+    :goto_1
+    invoke-interface {v5, v6, v7, v1}, Landroid/content/pm/IPackageManager;->getPackageInfo(Ljava/lang/String;II)Landroid/content/pm/PackageInfo;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 221
+    if-eqz v3, :cond_1
+
+    .line 222
+    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Ljava/util/HashMap;
+
+    iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+
+    new-instance v6, Lcom/android/settings/users/UserDetailsSettings$AppState;
+
+    iget-object v7, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget-boolean v7, v7, Landroid/content/pm/ApplicationInfo;->enabled:Z
+
+    invoke-direct {v6, v7}, Lcom/android/settings/users/UserDetailsSettings$AppState;-><init>(Z)V
+
+    invoke-virtual {v5, v0, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 225
+    :cond_1
+    iget-object v0, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
+
+    and-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_3
+
+    .line 226
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/preference/PreferenceGroup;
+
+    iget-object v5, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v0, v5}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 229
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/preference/PreferenceGroup;
+
+    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Ljava/util/HashMap;
+
+    invoke-direct {p0, v0, v5, v1, v2}, Lcom/android/settings/users/UserDetailsSettings;->a(Landroid/preference/PreferenceGroup;Ljava/util/HashMap;Landroid/content/pm/PackageInfo;Z)V
+
+    goto :goto_0
+
+    .line 215
+    :cond_2
+    :try_start_1
+    iget v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    .line 231
+    :cond_3
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:Landroid/preference/PreferenceGroup;
+
+    iget-object v5, v1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v0, v5}, Landroid/preference/PreferenceGroup;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 234
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:Landroid/preference/PreferenceGroup;
+
+    iget-object v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Ljava/util/HashMap;
+
+    invoke-direct {p0, v0, v5, v1, v2}, Lcom/android/settings/users/UserDetailsSettings;->a(Landroid/preference/PreferenceGroup;Ljava/util/HashMap;Landroid/content/pm/PackageInfo;Z)V
+
+    goto :goto_0
+
+    .line 237
+    :cond_4
+    return-void
+
+    .line 218
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
 .end method
 
 
@@ -594,17 +594,17 @@
     move v0, v1
 
     :cond_1
-    iput-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Z
+    iput-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dQ:Z
 
     .line 96
-    iget-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Z
+    iget-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dQ:Z
 
     if-eqz v0, :cond_3
 
     move v0, v2
 
     :goto_0
-    iput v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iput v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     .line 97
     const-string v0, "package"
@@ -617,16 +617,16 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/content/pm/IPackageManager;
+    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dO:Landroid/content/pm/IPackageManager;
 
     .line 99
-    iget v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iget v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     if-ne v0, v2, :cond_2
 
     .line 101
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/content/pm/IPackageManager;
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dO:Landroid/content/pm/IPackageManager;
 
     const v2, 0x7f0b0655
 
@@ -642,7 +642,7 @@
 
     iget v0, v0, Landroid/content/pm/UserInfo;->id:I
 
-    iput v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iput v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -657,7 +657,7 @@
 
     check-cast v0, Landroid/preference/PreferenceGroup;
 
-    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dI:Landroid/preference/PreferenceGroup;
+    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/preference/PreferenceGroup;
 
     .line 106
     const-string v0, "market_apps_category"
@@ -668,7 +668,7 @@
 
     check-cast v0, Landroid/preference/PreferenceGroup;
 
-    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dJ:Landroid/preference/PreferenceGroup;
+    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:Landroid/preference/PreferenceGroup;
 
     .line 107
     const-string v0, "user_name"
@@ -679,10 +679,10 @@
 
     check-cast v0, Landroid/preference/EditTextPreference;
 
-    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     .line 108
-    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -787,7 +787,7 @@
     .line 127
     const/4 v1, 0x1
 
-    iget-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Z
+    iget-boolean v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dQ:Z
 
     if-eqz v0, :cond_0
 
@@ -829,7 +829,7 @@
     if-ne v1, v0, :cond_0
 
     .line 137
-    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->W()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->aa()V
 
     .line 140
     :goto_0
@@ -877,11 +877,11 @@
     .line 246
     :goto_0
     :try_start_0
-    iget-object v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/content/pm/IPackageManager;
+    iget-object v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dO:Landroid/content/pm/IPackageManager;
 
     const/4 v5, 0x0
 
-    iget v6, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iget v6, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     invoke-interface {v4, v3, v1, v5, v6}, Landroid/content/pm/IPackageManager;->setApplicationEnabledSetting(Ljava/lang/String;III)V
     :try_end_0
@@ -925,7 +925,7 @@
 
     move-result-object v3
 
-    iget v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iget v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -941,7 +941,7 @@
 
     .line 251
     :cond_2
-    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     if-ne p1, v1, :cond_0
 
@@ -965,9 +965,9 @@
     .line 257
     :cond_3
     :try_start_1
-    iget-object v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dL:Landroid/content/pm/IPackageManager;
+    iget-object v4, p0, Lcom/android/settings/users/UserDetailsSettings;->dO:Landroid/content/pm/IPackageManager;
 
-    iget v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iget v5, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     move-object v0, p2
 
@@ -978,7 +978,7 @@
     invoke-interface {v4, v5, v1}, Landroid/content/pm/IPackageManager;->updateUserName(ILjava/lang/String;)V
 
     .line 258
-    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dK:Landroid/preference/EditTextPreference;
+    iget-object v1, p0, Lcom/android/settings/users/UserDetailsSettings;->dN:Landroid/preference/EditTextPreference;
 
     check-cast p2, Ljava/lang/String;
 
@@ -1014,26 +1014,26 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->be:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/users/UserDetailsSettings;->bh:Landroid/content/pm/PackageManager;
 
     .line 117
-    iget v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dM:I
+    iget v0, p0, Lcom/android/settings/users/UserDetailsSettings;->dP:I
 
     if-lez v0, :cond_0
 
     .line 118
-    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->U()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->Y()V
 
     .line 122
     :goto_0
-    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->Y()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->ac()V
 
     .line 123
     return-void
 
     .line 120
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->V()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserDetailsSettings;->Z()V
 
     goto :goto_0
 .end method

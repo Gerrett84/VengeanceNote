@@ -21,7 +21,7 @@
 
     .prologue
     .line 943
-    invoke-static {}, Lcom/google/common/collect/w;->dE()Lcom/google/common/collect/ap;
+    invoke-static {}, Lcom/google/common/collect/w;->dI()Lcom/google/common/collect/ap;
 
     move-result-object v0
 

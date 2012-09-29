@@ -4,27 +4,27 @@
 
 
 # instance fields
-.field final hI:Ljava/io/File;
+.field final hL:Ljava/io/File;
 
-.field hJ:J
+.field hM:J
 
-.field hK:J
+.field hN:J
 
-.field hL:Z
+.field hO:Z
 
-.field hM:Landroid/content/pm/ApplicationInfo;
+.field hP:Landroid/content/pm/ApplicationInfo;
 
-.field hN:Ljava/lang/String;
+.field hQ:Ljava/lang/String;
 
-.field hO:Ljava/lang/String;
-
-.field hP:Ljava/lang/String;
-
-.field hQ:Z
-
-.field hR:J
+.field hR:Ljava/lang/String;
 
 .field hS:Ljava/lang/String;
+
+.field hT:Z
+
+.field hU:J
+
+.field hV:Ljava/lang/String;
 
 .field icon:Landroid/graphics/drawable/Drawable;
 
@@ -53,13 +53,13 @@
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hI:Ljava/io/File;
+    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Ljava/io/File;
 
     .line 121
     iput-wide p3, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->id:J
 
     .line 122
-    iput-object p2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iput-object p2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     .line 123
     const-wide/16 v0, -0x1
@@ -69,7 +69,7 @@
     .line 124
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hQ:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hT:Z
 
     .line 125
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/ApplicationsState$AppEntry;->k(Landroid/content/Context;)V
@@ -96,7 +96,7 @@
     if-nez v2, :cond_2
 
     .line 145
-    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hI:Ljava/io/File;
+    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Ljava/io/File;
 
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -105,7 +105,7 @@
     if-eqz v2, :cond_0
 
     .line 146
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v1, p2}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -119,7 +119,7 @@
 
     .line 149
     :cond_0
-    iput-boolean v1, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Z
+    iput-boolean v1, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hO:Z
 
     .line 150
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -142,12 +142,12 @@
 
     .line 153
     :cond_2
-    iget-boolean v2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Z
+    iget-boolean v2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hO:Z
 
     if-nez v2, :cond_1
 
     .line 156
-    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hI:Ljava/io/File;
+    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Ljava/io/File;
 
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -156,10 +156,10 @@
     if-eqz v2, :cond_1
 
     .line 157
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hO:Z
 
     .line 158
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v1, p2}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -170,17 +170,17 @@
     goto :goto_0
 .end method
 
-.method bd()Ljava/lang/String;
+.method bh()Ljava/lang/String;
     .locals 1
 
     .prologue
     .line 101
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hS:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hV:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     .line 102
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hS:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hV:Ljava/lang/String;
 
     .line 105
     :goto_0
@@ -194,10 +194,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hS:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hV:Ljava/lang/String;
 
     .line 105
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hS:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hV:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -212,13 +212,13 @@
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hO:Z
 
     if-nez v0, :cond_1
 
     .line 130
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hI:Ljava/io/File;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -229,10 +229,10 @@
     .line 131
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hO:Z
 
     .line 132
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -247,10 +247,10 @@
     :cond_2
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hL:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hO:Z
 
     .line 135
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -273,7 +273,7 @@
     goto :goto_0
 
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hM:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$AppEntry;->hP:Landroid/content/pm/ApplicationInfo;
 
     iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 

@@ -7,10 +7,10 @@
 .method public abstract a(IZ)V
 .end method
 
-.method public abstract ax()V
+.method public abstract aB()V
 .end method
 
-.method public abstract ay()V
+.method public abstract aC()V
 .end method
 
 .method public abstract n(I)V

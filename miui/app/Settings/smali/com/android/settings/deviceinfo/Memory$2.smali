@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic d:Lcom/android/settings/deviceinfo/Memory;
+.field final synthetic g:Lcom/android/settings/deviceinfo/Memory;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 240
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$2;->d:Lcom/android/settings/deviceinfo/Memory;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$2;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -33,7 +33,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$2;->d:Lcom/android/settings/deviceinfo/Memory;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$2;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/Memory;->a(Lcom/android/settings/deviceinfo/Memory;)[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
@@ -44,7 +44,7 @@
     if-ge v0, v1, :cond_0
 
     .line 245
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$2;->d:Lcom/android/settings/deviceinfo/Memory;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$2;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/Memory;->a(Lcom/android/settings/deviceinfo/Memory;)[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
@@ -52,7 +52,7 @@
 
     aget-object v1, v1, v0
 
-    invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->ea()V
+    invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->ee()V
 
     .line 244
     add-int/lit8 v0, v0, 0x1

@@ -8,11 +8,11 @@
 
 
 # instance fields
-.field private mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+.field private mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
-.field private na:[Ljava/lang/String;
+.field private nd:[Ljava/lang/String;
 
-.field private nb:Landroid/widget/TextView;
+.field private ne:Landroid/widget/TextView;
 
 
 # direct methods
@@ -92,7 +92,7 @@
     return-object v0
 .end method
 
-.method protected dg()V
+.method protected dk()V
     .locals 24
 
     .prologue
@@ -534,7 +534,7 @@
     :cond_11
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nb:Landroid/widget/TextView;
+    iget-object v3, v0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->ne:Landroid/widget/TextView;
 
     if-eqz v5, :cond_12
 
@@ -551,7 +551,7 @@
     goto :goto_c
 .end method
 
-.method protected di()V
+.method protected dm()V
     .locals 3
 
     .prologue
@@ -595,7 +595,7 @@
 
     iget-object v2, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -608,7 +608,7 @@
 
     iget-object v2, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->F(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->G(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -627,17 +627,17 @@
     return-void
 .end method
 
-.method public bridge synthetic dj()V
+.method public bridge synthetic dn()V
     .locals 0
 
     .prologue
     .line 55
-    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dj()V
+    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dn()V
 
     return-void
 .end method
 
-.method public in()V
+.method public ir()V
     .locals 3
 
     .prologue
@@ -651,7 +651,7 @@
     .line 295
     const-string v1, "authorities"
 
-    iget-object v2, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->na:[Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nd:[Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/Intent;
 
@@ -704,19 +704,19 @@
     .line 252
     iget-object v0, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v4
 
     .line 255
-    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->na:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nd:[Ljava/lang/String;
 
     if-eqz v0, :cond_7
 
     if-eqz v4, :cond_7
 
     .line 257
-    iget-object v1, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->na:[Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nd:[Ljava/lang/String;
 
     array-length v3, v1
 
@@ -743,7 +743,7 @@
     .line 266
     iget-object v0, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -814,7 +814,7 @@
 
     .line 277
     :cond_5
-    invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->dg()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->dk()V
 
     goto :goto_0
 
@@ -876,10 +876,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nb:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->ne:Landroid/widget/TextView;
 
     .line 99
-    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nb:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->ne:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
@@ -896,10 +896,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->na:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->nd:[Ljava/lang/String;
 
     .line 103
-    invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->dj()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->dn()V
 
     .line 104
     return-void
@@ -989,7 +989,7 @@
     if-ne v1, v0, :cond_0
 
     .line 154
-    invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->in()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->ir()V
 
     .line 157
     :goto_0
@@ -1114,7 +1114,7 @@
 
     .prologue
     .line 136
-    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     if-eqz v0, :cond_0
 
@@ -1131,10 +1131,10 @@
 
     invoke-direct {v0, p0, p1}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;-><init>(Lcom/android/settings/v;I)V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iput-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     .line 140
-    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/MiuiManageAccountsSettings;->getActivity()Landroid/app/Activity;
 
@@ -1154,13 +1154,13 @@
     return-void
 .end method
 
-.method public bridge synthetic x(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public bridge synthetic y(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
     .parameter
 
     .prologue
     .line 55
-    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 

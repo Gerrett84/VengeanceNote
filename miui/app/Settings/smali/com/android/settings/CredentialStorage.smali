@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private Ce:Landroid/os/Bundle;
+.field private Ci:Landroid/os/Bundle;
 
-.field private Cf:I
+.field private Cj:I
 
-.field private final kK:Landroid/security/KeyStore;
+.field private final kN:Landroid/security/KeyStore;
 
 
 # direct methods
@@ -24,12 +24,12 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iput-object v0, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     .line 108
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/settings/CredentialStorage;->Cf:I
+    iput v0, p0, Lcom/android/settings/CredentialStorage;->Cj:I
 
     .line 379
     return-void
@@ -42,7 +42,7 @@
 
     .prologue
     .line 81
-    iput p1, p0, Lcom/android/settings/CredentialStorage;->Cf:I
+    iput p1, p0, Lcom/android/settings/CredentialStorage;->Cj:I
 
     return p1
 .end method
@@ -53,7 +53,7 @@
 
     .prologue
     .line 81
-    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     return-object v0
 .end method
@@ -64,7 +64,7 @@
 
     .prologue
     .line 81
-    iget v0, p0, Lcom/android/settings/CredentialStorage;->Cf:I
+    iget v0, p0, Lcom/android/settings/CredentialStorage;->Cj:I
 
     return v0
 .end method
@@ -75,7 +75,7 @@
 
     .prologue
     .line 81
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ig()V
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ik()V
 
     return-void
 .end method
@@ -86,12 +86,12 @@
 
     .prologue
     .line 81
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->if()V
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ij()V
 
     return-void
 .end method
 
-.method private if()V
+.method private ij()V
     .locals 3
 
     .prologue
@@ -110,9 +110,9 @@
 
     .line 137
     :cond_0
-    sget-object v0, Lcom/android/settings/bL;->yy:[I
+    sget-object v0, Lcom/android/settings/bL;->yC:[I
 
-    iget-object v1, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iget-object v1, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     invoke-virtual {v1}, Landroid/security/KeyStore;->state()Landroid/security/KeyStore$State;
 
@@ -130,7 +130,7 @@
 
     .line 139
     :pswitch_0
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ig()V
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ik()V
 
     goto :goto_0
 
@@ -144,7 +144,7 @@
 
     .line 147
     :pswitch_2
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ih()Z
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->il()Z
 
     move-result v0
 
@@ -159,7 +159,7 @@
 
     .line 151
     :cond_1
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ii()V
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->im()V
 
     .line 152
     invoke-virtual {p0}, Lcom/android/settings/CredentialStorage;->finish()V
@@ -177,12 +177,12 @@
     .end packed-switch
 .end method
 
-.method private ig()V
+.method private ik()V
     .locals 2
 
     .prologue
     .line 165
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ih()Z
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->il()Z
 
     move-result v0
 
@@ -202,7 +202,7 @@
 
     .line 172
     :cond_1
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ij()Z
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->in()Z
 
     move-result v0
 
@@ -214,7 +214,7 @@
     goto :goto_0
 .end method
 
-.method private ih()Z
+.method private il()Z
     .locals 2
 
     .prologue
@@ -243,16 +243,16 @@
     goto :goto_0
 .end method
 
-.method private ii()V
+.method private im()V
     .locals 4
 
     .prologue
     .line 191
-    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->Ce:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->Ci:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->Ce:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->Ci:Landroid/os/Bundle;
 
     invoke-virtual {v0}, Landroid/os/Bundle;->isEmpty()Z
 
@@ -261,12 +261,12 @@
     if-nez v0, :cond_0
 
     .line 192
-    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->Ce:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/android/settings/CredentialStorage;->Ci:Landroid/os/Bundle;
 
     .line 193
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/android/settings/CredentialStorage;->Ce:Landroid/os/Bundle;
+    iput-object v1, p0, Lcom/android/settings/CredentialStorage;->Ci:Landroid/os/Bundle;
 
     .line 195
     const-string v1, "user_private_key_name"
@@ -292,7 +292,7 @@
     move-result-object v2
 
     .line 199
-    iget-object v3, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iget-object v3, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     invoke-virtual {v3, v1, v2}, Landroid/security/KeyStore;->importKey(Ljava/lang/String;[B)Z
 
@@ -353,7 +353,7 @@
     move-result-object v2
 
     .line 209
-    iget-object v3, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iget-object v3, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     invoke-virtual {v3, v1, v2}, Landroid/security/KeyStore;->put(Ljava/lang/String;[B)Z
 
@@ -411,7 +411,7 @@
     move-result-object v0
 
     .line 219
-    iget-object v2, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iget-object v2, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     invoke-virtual {v2, v1, v0}, Landroid/security/KeyStore;->put(Ljava/lang/String;[B)Z
 
@@ -453,7 +453,7 @@
     goto :goto_0
 .end method
 
-.method private ij()Z
+.method private in()Z
     .locals 5
 
     .prologue
@@ -526,7 +526,7 @@
     if-nez v1, :cond_1
 
     .line 363
-    iget-object v1, p0, Lcom/android/settings/CredentialStorage;->kK:Landroid/security/KeyStore;
+    iget-object v1, p0, Lcom/android/settings/CredentialStorage;->kN:Landroid/security/KeyStore;
 
     invoke-virtual {v1, v0}, Landroid/security/KeyStore;->password(Ljava/lang/String;)Z
 
@@ -606,11 +606,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/CredentialStorage;->Ce:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/android/settings/CredentialStorage;->Ci:Landroid/os/Bundle;
 
     .line 124
     :cond_1
-    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->if()V
+    invoke-direct {p0}, Lcom/android/settings/CredentialStorage;->ij()V
 
     goto :goto_0
 .end method

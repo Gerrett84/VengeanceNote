@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field private dq:Landroid/widget/CheckBox;
+.field private dt:Landroid/widget/CheckBox;
 
-.field private dr:Landroid/content/ComponentName;
+.field private du:Landroid/content/ComponentName;
 
-.field private ds:Ljava/lang/String;
+.field private dv:Ljava/lang/String;
 
-.field private dt:Landroid/appwidget/AppWidgetManager;
+.field private dw:Landroid/appwidget/AppWidgetManager;
 
-.field private du:Z
+.field private dx:Z
 
 .field private mAppWidgetId:I
 
@@ -54,21 +54,21 @@
 
     if-eq v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dr:Landroid/content/ComponentName;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->du:Landroid/content/ComponentName;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     .line 58
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
     iget v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->mAppWidgetId:I
 
-    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dr:Landroid/content/ComponentName;
+    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->du:Landroid/content/ComponentName;
 
     invoke-virtual {v0, v1, v2}, Landroid/appwidget/AppWidgetManager;->bindAppWidgetId(ILandroid/content/ComponentName;)V
 
@@ -94,16 +94,16 @@
     .line 67
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
 
     move-result v0
 
     .line 68
-    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
-    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/appwidget/AppWidgetManager;->hasBindAppWidgetPermission(Ljava/lang/String;)Z
 
@@ -112,9 +112,9 @@
     if-eq v0, v1, :cond_1
 
     .line 69
-    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
-    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v0}, Landroid/appwidget/AppWidgetManager;->setBindAppWidgetPermission(Ljava/lang/String;Z)V
 
@@ -154,7 +154,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dr:Landroid/content/ComponentName;
+    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->du:Landroid/content/ComponentName;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -217,14 +217,14 @@
 
     check-cast v0, Landroid/content/ComponentName;
 
-    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dr:Landroid/content/ComponentName;
+    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->du:Landroid/content/ComponentName;
 
     .line 92
     invoke-virtual {p0}, Lcom/android/settings/AllowBindAppWidgetActivity;->getCallingPackage()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     .line 93
     invoke-virtual {p0}, Lcom/android/settings/AllowBindAppWidgetActivity;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -232,7 +232,7 @@
     move-result-object v0
 
     .line 94
-    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     const/4 v2, 0x0
 
@@ -328,10 +328,10 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     .line 117
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     const v2, 0x7f0b0486
 
@@ -346,27 +346,27 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
     .line 119
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
-    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     invoke-virtual {v1}, Landroid/widget/CheckBox;->getPaddingLeft()I
 
     move-result v1
 
-    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     invoke-virtual {v2}, Landroid/widget/CheckBox;->getPaddingTop()I
 
     move-result v2
 
-    iget-object v3, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v3, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     invoke-virtual {v3}, Landroid/widget/CheckBox;->getPaddingRight()I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v4, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
     invoke-virtual {v4}, Landroid/widget/CheckBox;->getPaddingBottom()I
 
@@ -395,14 +395,14 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iput-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
     .line 126
-    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dq:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/widget/CheckBox;
 
-    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v1, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
-    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/appwidget/AppWidgetManager;->hasBindAppWidgetPermission(Ljava/lang/String;)Z
 
@@ -425,10 +425,10 @@
     iput v3, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->mAppWidgetId:I
 
     .line 98
-    iput-object v5, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dr:Landroid/content/ComponentName;
+    iput-object v5, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->du:Landroid/content/ComponentName;
 
     .line 99
-    iput-object v5, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->ds:Ljava/lang/String;
+    iput-object v5, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dv:Ljava/lang/String;
 
     .line 100
     const-string v0, "BIND_APPWIDGET"
@@ -456,7 +456,7 @@
 
     .prologue
     .line 76
-    iget-boolean v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->du:Z
+    iget-boolean v0, p0, Lcom/android/settings/AllowBindAppWidgetActivity;->dx:Z
 
     if-nez v0, :cond_0
 

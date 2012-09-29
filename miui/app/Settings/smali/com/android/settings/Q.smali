@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private dA:Z
+.field private dC:Lcom/android/settings/cA;
 
-.field final synthetic dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+.field private dD:Z
 
-.field private dz:Lcom/android/settings/cA;
+.field final synthetic dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
     .prologue
     .line 440
-    iput-object p1, p0, Lcom/android/settings/Q;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iput-object p1, p0, Lcom/android/settings/Q;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,10 +31,10 @@
 
     invoke-direct {v0}, Lcom/android/settings/cA;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/Q;->dz:Lcom/android/settings/cA;
+    iput-object v0, p0, Lcom/android/settings/Q;->dC:Lcom/android/settings/cA;
 
     .line 441
-    iput-boolean p2, p0, Lcom/android/settings/Q;->dA:Z
+    iput-boolean p2, p0, Lcom/android/settings/Q;->dD:Z
 
     .line 442
     return-void
@@ -42,12 +42,12 @@
 
 
 # virtual methods
-.method public T()Lcom/android/settings/cA;
+.method public X()Lcom/android/settings/cA;
     .locals 1
 
     .prologue
     .line 437
-    iget-object v0, p0, Lcom/android/settings/Q;->dz:Lcom/android/settings/cA;
+    iget-object v0, p0, Lcom/android/settings/Q;->dC:Lcom/android/settings/cA;
 
     return-object v0
 .end method
@@ -58,7 +58,7 @@
 
     .prologue
     .line 450
-    iget-object v0, p0, Lcom/android/settings/Q;->dz:Lcom/android/settings/cA;
+    iget-object v0, p0, Lcom/android/settings/Q;->dC:Lcom/android/settings/cA;
 
     const-string v1, "total_size"
 
@@ -66,10 +66,10 @@
 
     move-result-wide v1
 
-    iput-wide v1, v0, Lcom/android/settings/cA;->dy:J
+    iput-wide v1, v0, Lcom/android/settings/cA;->dB:J
 
     .line 451
-    iget-object v0, p0, Lcom/android/settings/Q;->dz:Lcom/android/settings/cA;
+    iget-object v0, p0, Lcom/android/settings/Q;->dC:Lcom/android/settings/cA;
 
     const-string v1, "avail_size"
 
@@ -77,10 +77,10 @@
 
     move-result-wide v1
 
-    iput-wide v1, v0, Lcom/android/settings/cA;->FH:J
+    iput-wide v1, v0, Lcom/android/settings/cA;->FL:J
 
     .line 452
-    iget-object v0, p0, Lcom/android/settings/Q;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/Q;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->a(Lcom/android/settings/MiuiDeviceInfoSettings;)Landroid/os/Handler;
 
@@ -108,7 +108,7 @@
 
     .prologue
     .line 445
-    iget-boolean v0, p0, Lcom/android/settings/Q;->dA:Z
+    iget-boolean v0, p0, Lcom/android/settings/Q;->dD:Z
 
     return v0
 .end method

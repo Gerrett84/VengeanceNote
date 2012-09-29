@@ -19,19 +19,31 @@
 
 
 # virtual methods
-.method protected bridge synthetic a()Ljava/lang/Object;
+.method protected bridge synthetic A()Ljava/util/Map;
     .locals 1
 
     .prologue
     .line 32
-    invoke-virtual {p0}, Lcom/google/common/collect/k;->bz()Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/k;->bD()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected abstract bz()Ljava/util/concurrent/ConcurrentMap;
+.method protected abstract bD()Ljava/util/concurrent/ConcurrentMap;
+.end method
+
+.method protected bridge synthetic e()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 32
+    invoke-virtual {p0}, Lcom/google/common/collect/k;->bD()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -41,7 +53,7 @@
 
     .prologue
     .line 43
-    invoke-virtual {p0}, Lcom/google/common/collect/k;->bz()Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/k;->bD()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 
@@ -59,7 +71,7 @@
 
     .prologue
     .line 48
-    invoke-virtual {p0}, Lcom/google/common/collect/k;->bz()Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/k;->bD()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 
@@ -77,7 +89,7 @@
 
     .prologue
     .line 53
-    invoke-virtual {p0}, Lcom/google/common/collect/k;->bz()Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/k;->bD()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 
@@ -96,7 +108,7 @@
 
     .prologue
     .line 58
-    invoke-virtual {p0}, Lcom/google/common/collect/k;->bz()Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/k;->bD()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 
@@ -105,16 +117,4 @@
     move-result v0
 
     return v0
-.end method
-
-.method protected bridge synthetic w()Ljava/util/Map;
-    .locals 1
-
-    .prologue
-    .line 32
-    invoke-virtual {p0}, Lcom/google/common/collect/k;->bz()Ljava/util/concurrent/ConcurrentMap;
-
-    move-result-object v0
-
-    return-object v0
 .end method

@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final enum uk:Lcom/google/common/collect/MapMaker$RemovalCause;
-
-.field public static final enum ul:Lcom/google/common/collect/MapMaker$RemovalCause;
-
-.field public static final enum um:Lcom/google/common/collect/MapMaker$RemovalCause;
-
-.field public static final enum un:Lcom/google/common/collect/MapMaker$RemovalCause;
-
 .field public static final enum uo:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-.field private static final synthetic up:[Lcom/google/common/collect/MapMaker$RemovalCause;
+.field public static final enum up:Lcom/google/common/collect/MapMaker$RemovalCause;
+
+.field public static final enum uq:Lcom/google/common/collect/MapMaker$RemovalCause;
+
+.field public static final enum ur:Lcom/google/common/collect/MapMaker$RemovalCause;
+
+.field public static final enum us:Lcom/google/common/collect/MapMaker$RemovalCause;
+
+.field private static final synthetic ut:[Lcom/google/common/collect/MapMaker$RemovalCause;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMaker$RemovalCause$1;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->uk:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->uo:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 789
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$2;
@@ -48,7 +48,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/google/common/collect/MapMaker$RemovalCause$2;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->ul:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->up:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 801
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$3;
@@ -57,7 +57,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/google/common/collect/MapMaker$RemovalCause$3;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->um:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->uq:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 812
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$4;
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/google/common/collect/MapMaker$RemovalCause$4;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->un:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->ur:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 823
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$5;
@@ -75,34 +75,34 @@
 
     invoke-direct {v0, v1, v6}, Lcom/google/common/collect/MapMaker$RemovalCause$5;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->uo:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->us:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     .line 771
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->uk:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->uo:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->ul:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->up:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->um:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->uq:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->un:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->ur:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->uo:Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v1, Lcom/google/common/collect/MapMaker$RemovalCause;->us:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->up:[Lcom/google/common/collect/MapMaker$RemovalCause;
+    sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->ut:[Lcom/google/common/collect/MapMaker$RemovalCause;
 
     return-void
 .end method
@@ -154,7 +154,7 @@
 
     .prologue
     .line 771
-    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->up:[Lcom/google/common/collect/MapMaker$RemovalCause;
+    sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->ut:[Lcom/google/common/collect/MapMaker$RemovalCause;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/MapMaker$RemovalCause;->clone()Ljava/lang/Object;
 

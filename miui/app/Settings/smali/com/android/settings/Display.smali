@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field private BM:Landroid/content/res/Configuration;
+.field private BQ:Landroid/content/res/Configuration;
 
-.field private Fr:Landroid/widget/AdapterView$OnItemSelectedListener;
+.field private Fv:Landroid/widget/AdapterView$OnItemSelectedListener;
 
-.field private Fs:Landroid/widget/Spinner;
+.field private Fw:Landroid/widget/Spinner;
 
-.field private Ft:Landroid/widget/TextView;
+.field private Fx:Landroid/widget/TextView;
 
-.field private Fu:Landroid/util/TypedValue;
+.field private Fy:Landroid/util/TypedValue;
 
-.field private Fv:Landroid/util/DisplayMetrics;
+.field private Fz:Landroid/util/DisplayMetrics;
 
 
 # direct methods
@@ -33,14 +33,14 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/cF;-><init>(Lcom/android/settings/Display;)V
 
-    iput-object v0, p0, Lcom/android/settings/Display;->Fr:Landroid/widget/AdapterView$OnItemSelectedListener;
+    iput-object v0, p0, Lcom/android/settings/Display;->Fv:Landroid/widget/AdapterView$OnItemSelectedListener;
 
     .line 137
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iput-object v0, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     return-void
 .end method
@@ -51,7 +51,7 @@
 
     .prologue
     .line 35
-    iget-object v0, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iget-object v0, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     return-object v0
 .end method
@@ -62,23 +62,23 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Lcom/android/settings/Display;->je()V
+    invoke-direct {p0}, Lcom/android/settings/Display;->ji()V
 
     return-void
 .end method
 
-.method private je()V
+.method private ji()V
     .locals 3
 
     .prologue
     .line 99
-    iget-object v0, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
-    iget-object v1, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v1, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    iget-object v2, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iget-object v2, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     iget v2, v2, Landroid/content/res/Configuration;->fontScale:F
 
@@ -87,16 +87,16 @@
     iput v1, v0, Landroid/util/DisplayMetrics;->scaledDensity:F
 
     .line 102
-    iget-object v0, p0, Lcom/android/settings/Display;->Fu:Landroid/util/TypedValue;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fy:Landroid/util/TypedValue;
 
-    iget-object v1, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v1, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     invoke-virtual {v0, v1}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
 
     move-result v0
 
     .line 103
-    iget-object v1, p0, Lcom/android/settings/Display;->Ft:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/Display;->Fx:Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
@@ -119,7 +119,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iget-object v1, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     invoke-interface {v0, v1}, Landroid/app/IActivityManager;->updatePersistentConfiguration(Landroid/content/res/Configuration;)V
     :try_end_0
@@ -163,12 +163,12 @@
 
     check-cast v0, Landroid/widget/Spinner;
 
-    iput-object v0, p0, Lcom/android/settings/Display;->Fs:Landroid/widget/Spinner;
+    iput-object v0, p0, Lcom/android/settings/Display;->Fw:Landroid/widget/Spinner;
 
     .line 43
-    iget-object v0, p0, Lcom/android/settings/Display;->Fs:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fw:Landroid/widget/Spinner;
 
-    iget-object v1, p0, Lcom/android/settings/Display;->Fr:Landroid/widget/AdapterView$OnItemSelectedListener;
+    iget-object v1, p0, Lcom/android/settings/Display;->Fv:Landroid/widget/AdapterView$OnItemSelectedListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
@@ -226,7 +226,7 @@
     invoke-virtual {v2, v0}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
     .line 53
-    iget-object v0, p0, Lcom/android/settings/Display;->Fs:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fw:Landroid/widget/Spinner;
 
     invoke-virtual {v0, v2}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
@@ -239,10 +239,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/Display;->Ft:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/Display;->Fx:Landroid/widget/TextView;
 
     .line 56
-    iget-object v0, p0, Lcom/android/settings/Display;->Ft:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fx:Landroid/widget/TextView;
 
     const v2, 0x7f0b0033
 
@@ -278,7 +278,7 @@
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/Display;->Fu:Landroid/util/TypedValue;
+    iput-object v0, p0, Lcom/android/settings/Display;->Fy:Landroid/util/TypedValue;
 
     .line 63
     sget-object v0, Landroid/R$styleable;->TextView:[I
@@ -288,7 +288,7 @@
     move-result-object v0
 
     .line 65
-    iget-object v1, p0, Lcom/android/settings/Display;->Fu:Landroid/util/TypedValue;
+    iget-object v1, p0, Lcom/android/settings/Display;->Fy:Landroid/util/TypedValue;
 
     invoke-virtual {v0, v4, v1}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
@@ -306,45 +306,45 @@
 
     invoke-direct {v2}, Landroid/util/DisplayMetrics;-><init>()V
 
-    iput-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iput-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     .line 70
-    iget-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v3, v1, Landroid/util/DisplayMetrics;->density:F
 
     iput v3, v2, Landroid/util/DisplayMetrics;->density:F
 
     .line 71
-    iget-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v3, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
     iput v3, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
     .line 72
-    iget-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v3, v1, Landroid/util/DisplayMetrics;->scaledDensity:F
 
     iput v3, v2, Landroid/util/DisplayMetrics;->scaledDensity:F
 
     .line 73
-    iget-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v3, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
     iput v3, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
     .line 74
-    iget-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v3, v1, Landroid/util/DisplayMetrics;->xdpi:F
 
     iput v3, v2, Landroid/util/DisplayMetrics;->xdpi:F
 
     .line 75
-    iget-object v2, p0, Lcom/android/settings/Display;->Fv:Landroid/util/DisplayMetrics;
+    iget-object v2, p0, Lcom/android/settings/Display;->Fz:Landroid/util/DisplayMetrics;
 
     iget v1, v1, Landroid/util/DisplayMetrics;->ydpi:F
 
@@ -368,7 +368,7 @@
 
     .line 84
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iget-object v0, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -384,7 +384,7 @@
 
     .line 88
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iget-object v0, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     iget v0, v0, Landroid/content/res/Configuration;->fontScale:F
 
@@ -393,7 +393,7 @@
     if-gez v0, :cond_0
 
     .line 89
-    iget-object v0, p0, Lcom/android/settings/Display;->Fs:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fw:Landroid/widget/Spinner;
 
     const/4 v1, 0x0
 
@@ -401,14 +401,14 @@
 
     .line 95
     :goto_1
-    invoke-direct {p0}, Lcom/android/settings/Display;->je()V
+    invoke-direct {p0}, Lcom/android/settings/Display;->ji()V
 
     .line 96
     return-void
 
     .line 90
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/Display;->BM:Landroid/content/res/Configuration;
+    iget-object v0, p0, Lcom/android/settings/Display;->BQ:Landroid/content/res/Configuration;
 
     iget v0, v0, Landroid/content/res/Configuration;->fontScale:F
 
@@ -417,7 +417,7 @@
     if-lez v0, :cond_1
 
     .line 91
-    iget-object v0, p0, Lcom/android/settings/Display;->Fs:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fw:Landroid/widget/Spinner;
 
     const/4 v1, 0x2
 
@@ -427,7 +427,7 @@
 
     .line 93
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/Display;->Fs:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/Display;->Fw:Landroid/widget/Spinner;
 
     const/4 v1, 0x1
 

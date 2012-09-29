@@ -7,10 +7,10 @@
 .method public abstract a(Lcom/google/common/collect/ag;)V
 .end method
 
-.method public abstract ab()Lcom/google/common/collect/ag;
+.method public abstract af()Lcom/google/common/collect/ag;
 .end method
 
-.method public abstract ac()Lcom/google/common/collect/ag;
+.method public abstract ag()Lcom/google/common/collect/ag;
 .end method
 
 .method public abstract b(Lcom/google/common/collect/ag;)V
@@ -25,22 +25,22 @@
 .method public abstract d(Lcom/google/common/collect/ag;)V
 .end method
 
-.method public abstract dm()J
-.end method
-
-.method public abstract dn()Lcom/google/common/collect/ag;
-.end method
-
-.method public abstract do()Lcom/google/common/collect/ag;
-.end method
-
-.method public abstract dp()Lcom/google/common/collect/az;
-.end method
-
-.method public abstract dq()I
+.method public abstract dq()J
 .end method
 
 .method public abstract dr()Lcom/google/common/collect/ag;
+.end method
+
+.method public abstract ds()Lcom/google/common/collect/ag;
+.end method
+
+.method public abstract dt()Lcom/google/common/collect/az;
+.end method
+
+.method public abstract du()I
+.end method
+
+.method public abstract dv()Lcom/google/common/collect/ag;
 .end method
 
 .method public abstract getKey()Ljava/lang/Object;

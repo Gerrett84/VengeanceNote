@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aL:Lcom/android/settings/VirusScanAppActivity;
+.field final synthetic aO:Lcom/android/settings/VirusScanAppActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 109
-    iput-object p1, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iput-object p1, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,34 +33,34 @@
 
     .prologue
     .line 112
-    iget-object v0, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     check-cast p2, Lcom/android/settings/aV;
 
-    iput-object p2, v0, Lcom/android/settings/VirusScanAppActivity;->wt:Lcom/android/settings/aV;
+    iput-object p2, v0, Lcom/android/settings/VirusScanAppActivity;->wx:Lcom/android/settings/aV;
 
     .line 114
-    iget-object v0, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-static {v0}, Lcom/android/settings/VirusScanAppActivity;->a(Lcom/android/settings/VirusScanAppActivity;)V
 
     .line 116
-    iget-object v0, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v1, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v1, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-static {v1}, Lcom/android/settings/VirusScanAppActivity;->b(Lcom/android/settings/VirusScanAppActivity;)Lcom/android/settings/dC;
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/android/settings/VirusScanAppActivity;->OG:Lcom/android/settings/dC;
+    iput-object v1, v0, Lcom/android/settings/VirusScanAppActivity;->OJ:Lcom/android/settings/dC;
 
     .line 118
-    iget-object v0, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->wt:Lcom/android/settings/aV;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->wx:Lcom/android/settings/aV;
 
-    invoke-virtual {v0}, Lcom/android/settings/aV;->ej()V
+    invoke-virtual {v0}, Lcom/android/settings/aV;->en()V
 
     .line 119
     return-void
@@ -72,11 +72,11 @@
 
     .prologue
     .line 123
-    iget-object v0, p0, Lcom/android/settings/s;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/s;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lcom/android/settings/VirusScanAppActivity;->wt:Lcom/android/settings/aV;
+    iput-object v1, v0, Lcom/android/settings/VirusScanAppActivity;->wx:Lcom/android/settings/aV;
 
     .line 124
     return-void

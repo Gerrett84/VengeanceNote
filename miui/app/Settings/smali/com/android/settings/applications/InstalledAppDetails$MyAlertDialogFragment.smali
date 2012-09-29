@@ -49,7 +49,7 @@
 
 
 # virtual methods
-.method lR()Lcom/android/settings/applications/InstalledAppDetails;
+.method lV()Lcom/android/settings/applications/InstalledAppDetails;
     .locals 1
 
     .prologue
@@ -440,7 +440,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->lR()Lcom/android/settings/applications/InstalledAppDetails;
+    invoke-virtual {p0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->lV()Lcom/android/settings/applications/InstalledAppDetails;
 
     move-result-object v5
 

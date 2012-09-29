@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final synthetic AE:Ljava/lang/String;
+.field final synthetic AI:Ljava/lang/String;
 
-.field final synthetic AF:Lcom/google/common/base/m;
+.field final synthetic AJ:Lcom/google/common/base/m;
 
 
 # virtual methods
@@ -18,13 +18,13 @@
     .line 265
     if-nez p1, :cond_0
 
-    iget-object v0, p0, Lcom/google/common/base/j;->AE:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/common/base/j;->AI:Ljava/lang/String;
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/common/base/j;->AF:Lcom/google/common/base/m;
+    iget-object v0, p0, Lcom/google/common/base/j;->AJ:Lcom/google/common/base/m;
 
     invoke-virtual {v0, p1}, Lcom/google/common/base/m;->o(Ljava/lang/Object;)Ljava/lang/CharSequence;
 

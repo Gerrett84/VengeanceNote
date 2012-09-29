@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic xD:Lcom/android/settings/bluetooth/PanProfile;
+.field final synthetic xH:Lcom/android/settings/bluetooth/PanProfile;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 47
-    iput-object p1, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->xD:Lcom/android/settings/bluetooth/PanProfile;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->xH:Lcom/android/settings/bluetooth/PanProfile;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,7 +45,7 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->xD:Lcom/android/settings/bluetooth/PanProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->xH:Lcom/android/settings/bluetooth/PanProfile;
 
     check-cast p2, Landroid/bluetooth/BluetoothPan;
 
@@ -61,7 +61,7 @@
 
     .prologue
     .line 55
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->xD:Lcom/android/settings/bluetooth/PanProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile$PanServiceListener;->xH:Lcom/android/settings/bluetooth/PanProfile;
 
     const/4 v1, 0x0
 

@@ -46,14 +46,14 @@
 
     const-string v2, "location_gps"
 
-    invoke-static {v2}, Lcom/android/settings/bP;->O(Ljava/lang/String;)I
+    invoke-static {v2}, Lcom/android/settings/bP;->P(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/provider/b;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 25
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0}, Lmiui/widget/SlidingButton;->isChecked()Z
 
@@ -93,7 +93,7 @@
     move-result v0
 
     .line 40
-    iget-object v1, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v1, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v1, v0}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 

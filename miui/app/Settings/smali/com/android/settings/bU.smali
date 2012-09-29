@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic AX:Lcom/android/settings/DeviceAdminAdd;
+.field final synthetic Bb:Lcom/android/settings/DeviceAdminAdd;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 165
-    iput-object p1, p0, Lcom/android/settings/bU;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iput-object p1, p0, Lcom/android/settings/bU;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 167
-    iget-object v0, p0, Lcom/android/settings/bU;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bU;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/DeviceAdminAdd;->d(Landroid/view/View;)V
 

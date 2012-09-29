@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public C()I
+.method public G()I
     .locals 1
 
     .prologue
@@ -39,7 +39,7 @@
     return v0
 .end method
 
-.method public D()I
+.method public H()I
     .locals 1
 
     .prologue

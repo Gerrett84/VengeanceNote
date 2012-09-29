@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field GA:I
+.field GD:I
 
-.field GB:I
+.field GE:I
 
-.field GC:I
+.field GF:I
 
-.field GD:Z
+.field GG:I
 
-.field Gz:I
+.field GH:Z
 
 .field key:Ljava/lang/String;
 
@@ -35,19 +35,19 @@
     iput-object p1, p0, Lcom/android/settings/cK;->key:Ljava/lang/String;
 
     .line 161
-    iput p2, p0, Lcom/android/settings/cK;->Gz:I
+    iput p2, p0, Lcom/android/settings/cK;->GD:I
 
     .line 162
-    iput p3, p0, Lcom/android/settings/cK;->GA:I
+    iput p3, p0, Lcom/android/settings/cK;->GE:I
 
     .line 163
-    iput p4, p0, Lcom/android/settings/cK;->GB:I
+    iput p4, p0, Lcom/android/settings/cK;->GF:I
 
     .line 164
-    iput p5, p0, Lcom/android/settings/cK;->GC:I
+    iput p5, p0, Lcom/android/settings/cK;->GG:I
 
     .line 165
-    iput-boolean p6, p0, Lcom/android/settings/cK;->GD:Z
+    iput-boolean p6, p0, Lcom/android/settings/cK;->GH:Z
 
     .line 166
     return-void

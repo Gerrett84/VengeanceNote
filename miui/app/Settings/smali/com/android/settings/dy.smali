@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic eJ:Lcom/android/settings/AccessibilitySettings;
+.field final synthetic eM:Lcom/android/settings/AccessibilitySettings;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 389
-    iput-object p1, p0, Lcom/android/settings/dy;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iput-object p1, p0, Lcom/android/settings/dy;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-direct {p0, p2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -56,7 +56,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 399
-    iget-object v1, p0, Lcom/android/settings/dy;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iget-object v1, p0, Lcom/android/settings/dy;->eM:Lcom/android/settings/AccessibilitySettings;
 
     const v2, 0x7f0b04a5
 

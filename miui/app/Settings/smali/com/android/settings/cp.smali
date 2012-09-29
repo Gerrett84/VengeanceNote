@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final synthetic DG:[I
+.field static final synthetic DK:[I
 
 
 # direct methods
@@ -21,12 +21,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/settings/cp;->DG:[I
+    sput-object v0, Lcom/android/settings/cp;->DK:[I
 
     :try_start_0
-    sget-object v0, Lcom/android/settings/cp;->DG:[I
+    sget-object v0, Lcom/android/settings/cp;->DK:[I
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HS:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HW:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     invoke-virtual {v1}, Lcom/android/settings/ConfirmLockPattern$Stage;->ordinal()I
 
@@ -40,9 +40,9 @@
 
     :goto_0
     :try_start_1
-    sget-object v0, Lcom/android/settings/cp;->DG:[I
+    sget-object v0, Lcom/android/settings/cp;->DK:[I
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HT:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HX:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     invoke-virtual {v1}, Lcom/android/settings/ConfirmLockPattern$Stage;->ordinal()I
 
@@ -56,9 +56,9 @@
 
     :goto_1
     :try_start_2
-    sget-object v0, Lcom/android/settings/cp;->DG:[I
+    sget-object v0, Lcom/android/settings/cp;->DK:[I
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HU:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HY:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     invoke-virtual {v1}, Lcom/android/settings/ConfirmLockPattern$Stage;->ordinal()I
 

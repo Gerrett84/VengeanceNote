@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field BU:Ljava/lang/String;
+.field BY:Ljava/lang/String;
 
-.field final Iq:Z
+.field IA:Z
 
-.field Ir:Landroid/content/pm/PackageItemInfo;
+.field final It:Z
 
-.field Is:Ljava/lang/CharSequence;
+.field Iu:Landroid/content/pm/PackageItemInfo;
 
-.field It:I
+.field Iv:Ljava/lang/CharSequence;
 
-.field Iu:Ljava/lang/String;
+.field Iw:I
 
-.field Iv:Ljava/lang/String;
+.field Ix:Ljava/lang/String;
 
-.field Iw:Z
+.field Iy:Ljava/lang/String;
 
-.field Ix:Z
+.field Iz:Z
 
-.field cN:J
+.field cQ:J
 
 .field mLabel:Ljava/lang/String;
 
@@ -39,7 +39,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 232
-    iput-boolean p1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->Iq:Z
+    iput-boolean p1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->It:Z
 
     .line 233
     return-void

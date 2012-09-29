@@ -4,17 +4,17 @@
 
 
 # static fields
-.field private static pp:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+.field private static ps:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
 
 # instance fields
-.field private P:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+.field private S:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
 .field private final mAdapter:Landroid/bluetooth/BluetoothAdapter;
 
 .field private mState:I
 
-.field private pq:J
+.field private pt:J
 
 
 # direct methods
@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method static declared-synchronized dQ()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+.method static declared-synchronized dU()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     .locals 3
 
     .prologue
@@ -48,7 +48,7 @@
     monitor-enter v1
 
     :try_start_0
-    sget-object v0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pp:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    sget-object v0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->ps:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-nez v0, :cond_0
 
@@ -65,11 +65,11 @@
 
     invoke-direct {v2, v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;-><init>(Landroid/bluetooth/BluetoothAdapter;)V
 
-    sput-object v2, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pp:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    sput-object v2, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->ps:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     .line 75
     :cond_0
-    sget-object v0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pp:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    sget-object v0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->ps:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -106,7 +106,7 @@
     if-nez p1, :cond_2
 
     .line 147
-    iget-wide v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pq:J
+    iget-wide v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pt:J
 
     const-wide/32 v2, 0x493e0
 
@@ -127,16 +127,16 @@
 
     .line 152
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->P:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->S:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->fN()Lcom/android/settings/bluetooth/A2dpProfile;
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->fR()Lcom/android/settings/bluetooth/A2dpProfile;
 
     move-result-object v0
 
     .line 153
     if-eqz v0, :cond_2
 
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/A2dpProfile;->cS()Z
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/A2dpProfile;->cW()Z
 
     move-result v0
 
@@ -157,7 +157,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pq:J
+    iput-wide v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->pt:J
 
     goto :goto_0
 .end method
@@ -210,7 +210,7 @@
 
     .line 213
     :cond_2
-    invoke-virtual {p0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->dT()Z
+    invoke-virtual {p0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->dX()Z
 
     goto :goto_2
 .end method
@@ -246,14 +246,14 @@
     if-ne p1, v0, :cond_0
 
     .line 182
-    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->P:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->S:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     if-eqz v0, :cond_0
 
     .line 183
-    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->P:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->S:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->fJ()V
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;->fN()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -294,13 +294,13 @@
 
     .prologue
     .line 58
-    iput-object p1, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->P:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->S:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     .line 59
     return-void
 .end method
 
-.method dR()V
+.method dV()V
     .locals 1
 
     .prologue
@@ -313,7 +313,7 @@
     return-void
 .end method
 
-.method dS()V
+.method dW()V
     .locals 1
 
     .prologue
@@ -336,7 +336,7 @@
     return-void
 .end method
 
-.method dT()Z
+.method dX()Z
     .locals 2
 
     .prologue
@@ -410,7 +410,7 @@
     monitor-enter p0
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->dT()Z
+    invoke-virtual {p0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->dX()Z
 
     .line 173
     iget v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->mState:I

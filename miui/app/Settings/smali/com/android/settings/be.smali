@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1068
-    iput-object p1, p0, Lcom/android/settings/be;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/be;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 1071
-    iget-object v0, p0, Lcom/android/settings/be;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/be;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary;->isAdded()Z
 
@@ -46,9 +46,9 @@
 
     .line 1074
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/be;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/be;->fz:Lcom/android/settings/DataUsageSummary;
 
-    iget-object v1, p0, Lcom/android/settings/be;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/be;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->h(Lcom/android/settings/DataUsageSummary;)Landroid/content/Intent;
 

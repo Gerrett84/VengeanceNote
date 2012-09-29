@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic tF:Lcom/android/settings/BandMode;
+.field final synthetic tJ:Lcom/android/settings/BandMode;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 82
-    iput-object p1, p0, Lcom/android/settings/br;->tF:Lcom/android/settings/BandMode;
+    iput-object p1, p0, Lcom/android/settings/br;->tJ:Lcom/android/settings/BandMode;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,7 +35,7 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/android/settings/br;->tF:Lcom/android/settings/BandMode;
+    iget-object v0, p0, Lcom/android/settings/br;->tJ:Lcom/android/settings/BandMode;
 
     invoke-virtual {v0}, Lcom/android/settings/BandMode;->getWindow()Landroid/view/Window;
 
@@ -48,7 +48,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/view/Window;->setFeatureInt(II)V
 
     .line 90
-    iget-object v1, p0, Lcom/android/settings/br;->tF:Lcom/android/settings/BandMode;
+    iget-object v1, p0, Lcom/android/settings/br;->tJ:Lcom/android/settings/BandMode;
 
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
@@ -63,7 +63,7 @@
     invoke-static {v1, v0}, Lcom/android/settings/BandMode;->a(Lcom/android/settings/BandMode;Lcom/android/settings/cJ;)Lcom/android/settings/cJ;
 
     .line 94
-    iget-object v0, p0, Lcom/android/settings/br;->tF:Lcom/android/settings/BandMode;
+    iget-object v0, p0, Lcom/android/settings/br;->tJ:Lcom/android/settings/BandMode;
 
     invoke-static {v0}, Lcom/android/settings/BandMode;->a(Lcom/android/settings/BandMode;)Landroid/os/Handler;
 
@@ -76,13 +76,13 @@
     move-result-object v0
 
     .line 96
-    iget-object v1, p0, Lcom/android/settings/br;->tF:Lcom/android/settings/BandMode;
+    iget-object v1, p0, Lcom/android/settings/br;->tJ:Lcom/android/settings/BandMode;
 
     invoke-static {v1}, Lcom/android/settings/BandMode;->c(Lcom/android/settings/BandMode;)Lcom/android/internal/telephony/Phone;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/br;->tF:Lcom/android/settings/BandMode;
+    iget-object v2, p0, Lcom/android/settings/br;->tJ:Lcom/android/settings/BandMode;
 
     invoke-static {v2}, Lcom/android/settings/BandMode;->b(Lcom/android/settings/BandMode;)Lcom/android/settings/cJ;
 

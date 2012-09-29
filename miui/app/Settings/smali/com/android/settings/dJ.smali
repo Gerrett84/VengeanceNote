@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic vh:Lcom/android/settings/MiuiSettings;
+.field final synthetic vl:Lcom/android/settings/MiuiSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 292
-    iput-object p1, p0, Lcom/android/settings/dJ;->vh:Lcom/android/settings/MiuiSettings;
+    iput-object p1, p0, Lcom/android/settings/dJ;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,7 +55,7 @@
 
     .prologue
     .line 306
-    iget-object v1, p0, Lcom/android/settings/dJ;->vh:Lcom/android/settings/MiuiSettings;
+    iget-object v1, p0, Lcom/android/settings/dJ;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-virtual {p1}, Landroid/app/ActionBar$Tab;->getTag()Ljava/lang/Object;
 

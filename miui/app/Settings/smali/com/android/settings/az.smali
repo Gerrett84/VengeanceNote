@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic dE:Lcom/android/settings/bA;
+.field final synthetic dH:Lcom/android/settings/bA;
 
 .field private mItems:Ljava/util/ArrayList;
 
@@ -16,7 +16,7 @@
 
     .prologue
     .line 207
-    iput-object p1, p0, Lcom/android/settings/az;->dE:Lcom/android/settings/bA;
+    iput-object p1, p0, Lcom/android/settings/az;->dH:Lcom/android/settings/bA;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,16 +30,16 @@
     return-void
 .end method
 
-.method private cm()Lcom/android/settings/LineView;
+.method private cq()Lcom/android/settings/LineView;
     .locals 4
 
     .prologue
     .line 233
     new-instance v0, Lcom/android/settings/LineView;
 
-    iget-object v1, p0, Lcom/android/settings/az;->dE:Lcom/android/settings/bA;
+    iget-object v1, p0, Lcom/android/settings/az;->dH:Lcom/android/settings/bA;
 
-    iget-object v1, v1, Lcom/android/settings/bA;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v1, v1, Lcom/android/settings/bA;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->getActivity()Landroid/app/Activity;
 
@@ -72,7 +72,7 @@
     return-object v0
 .end method
 
-.method private cn()Lcom/android/settings/f;
+.method private cr()Lcom/android/settings/f;
     .locals 7
 
     .prologue
@@ -90,9 +90,9 @@
     .line 243
     new-instance v1, Landroid/widget/LinearLayout;
 
-    iget-object v2, p0, Lcom/android/settings/az;->dE:Lcom/android/settings/bA;
+    iget-object v2, p0, Lcom/android/settings/az;->dH:Lcom/android/settings/bA;
 
-    iget-object v2, v2, Lcom/android/settings/bA;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v2, v2, Lcom/android/settings/bA;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->getActivity()Landroid/app/Activity;
 
@@ -100,10 +100,10 @@
 
     invoke-direct {v1, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, v0, Lcom/android/settings/f;->au:Landroid/widget/LinearLayout;
+    iput-object v1, v0, Lcom/android/settings/f;->ax:Landroid/widget/LinearLayout;
 
     .line 244
-    iget-object v1, v0, Lcom/android/settings/f;->au:Landroid/widget/LinearLayout;
+    iget-object v1, v0, Lcom/android/settings/f;->ax:Landroid/widget/LinearLayout;
 
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
@@ -114,9 +114,9 @@
     .line 246
     new-instance v1, Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/android/settings/az;->dE:Lcom/android/settings/bA;
+    iget-object v2, p0, Lcom/android/settings/az;->dH:Lcom/android/settings/bA;
 
-    iget-object v2, v2, Lcom/android/settings/bA;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v2, v2, Lcom/android/settings/bA;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->getActivity()Landroid/app/Activity;
 
@@ -124,7 +124,7 @@
 
     invoke-direct {v1, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, v0, Lcom/android/settings/f;->aw:Landroid/widget/TextView;
+    iput-object v1, v0, Lcom/android/settings/f;->az:Landroid/widget/TextView;
 
     .line 247
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
@@ -139,21 +139,21 @@
     iput v6, v1, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     .line 249
-    iget-object v2, v0, Lcom/android/settings/f;->aw:Landroid/widget/TextView;
+    iget-object v2, v0, Lcom/android/settings/f;->az:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 250
-    iget-object v1, v0, Lcom/android/settings/f;->aw:Landroid/widget/TextView;
+    iget-object v1, v0, Lcom/android/settings/f;->az:Landroid/widget/TextView;
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 252
     new-instance v1, Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/android/settings/az;->dE:Lcom/android/settings/bA;
+    iget-object v2, p0, Lcom/android/settings/az;->dH:Lcom/android/settings/bA;
 
-    iget-object v2, v2, Lcom/android/settings/bA;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v2, v2, Lcom/android/settings/bA;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->getActivity()Landroid/app/Activity;
 
@@ -161,7 +161,7 @@
 
     invoke-direct {v1, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, v0, Lcom/android/settings/f;->av:Landroid/widget/TextView;
+    iput-object v1, v0, Lcom/android/settings/f;->ay:Landroid/widget/TextView;
 
     .line 253
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
@@ -174,28 +174,28 @@
     iput v2, v1, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     .line 255
-    iget-object v2, v0, Lcom/android/settings/f;->av:Landroid/widget/TextView;
+    iget-object v2, v0, Lcom/android/settings/f;->ay:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 256
-    iget-object v1, v0, Lcom/android/settings/f;->av:Landroid/widget/TextView;
+    iget-object v1, v0, Lcom/android/settings/f;->ay:Landroid/widget/TextView;
 
     const/16 v2, 0x10
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 258
-    iget-object v1, v0, Lcom/android/settings/f;->au:Landroid/widget/LinearLayout;
+    iget-object v1, v0, Lcom/android/settings/f;->ax:Landroid/widget/LinearLayout;
 
-    iget-object v2, v0, Lcom/android/settings/f;->aw:Landroid/widget/TextView;
+    iget-object v2, v0, Lcom/android/settings/f;->az:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 259
-    iget-object v1, v0, Lcom/android/settings/f;->au:Landroid/widget/LinearLayout;
+    iget-object v1, v0, Lcom/android/settings/f;->ax:Landroid/widget/LinearLayout;
 
-    iget-object v2, v0, Lcom/android/settings/f;->av:Landroid/widget/TextView;
+    iget-object v2, v0, Lcom/android/settings/f;->ay:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
@@ -224,7 +224,7 @@
     return-void
 .end method
 
-.method public cl()Lcom/android/settings/bd;
+.method public cp()Lcom/android/settings/bd;
     .locals 4
 
     .prologue
@@ -242,11 +242,11 @@
 
     new-instance v1, Lcom/android/settings/bd;
 
-    invoke-direct {p0}, Lcom/android/settings/az;->cn()Lcom/android/settings/f;
+    invoke-direct {p0}, Lcom/android/settings/az;->cr()Lcom/android/settings/f;
 
     move-result-object v2
 
-    invoke-direct {p0}, Lcom/android/settings/az;->cm()Lcom/android/settings/LineView;
+    invoke-direct {p0}, Lcom/android/settings/az;->cq()Lcom/android/settings/LineView;
 
     move-result-object v3
 

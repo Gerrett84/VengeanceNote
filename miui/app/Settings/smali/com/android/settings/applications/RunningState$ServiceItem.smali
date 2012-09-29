@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field MW:Landroid/app/ActivityManager$RunningServiceInfo;
+.field MZ:Landroid/app/ActivityManager$RunningServiceInfo;
 
-.field MX:Landroid/content/pm/ServiceInfo;
+.field Na:Landroid/content/pm/ServiceInfo;
 
-.field MY:Z
+.field Nb:Z
 
-.field cJ:Lcom/android/settings/applications/RunningState$MergedItem;
+.field cM:Lcom/android/settings/applications/RunningState$MergedItem;
 
 
 # direct methods

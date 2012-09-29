@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic iH:Landroid/preference/CheckBoxPreference;
+.field final synthetic iK:Landroid/preference/CheckBoxPreference;
 
-.field final synthetic iI:Lcom/android/settings/AccessControlFragment;
+.field final synthetic iL:Lcom/android/settings/AccessControlFragment;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 55
-    iput-object p1, p0, Lcom/android/settings/at;->iI:Lcom/android/settings/AccessControlFragment;
+    iput-object p1, p0, Lcom/android/settings/at;->iL:Lcom/android/settings/AccessControlFragment;
 
-    iput-object p2, p0, Lcom/android/settings/at;->iH:Landroid/preference/CheckBoxPreference;
+    iput-object p2, p0, Lcom/android/settings/at;->iK:Landroid/preference/CheckBoxPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
     const/4 v1, 0x1
 
     .line 58
-    iget-object v0, p0, Lcom/android/settings/at;->iI:Lcom/android/settings/AccessControlFragment;
+    iget-object v0, p0, Lcom/android/settings/at;->iL:Lcom/android/settings/AccessControlFragment;
 
     invoke-static {v0}, Lcom/android/settings/AccessControlFragment;->a(Lcom/android/settings/AccessControlFragment;)Lmiui/security/ChooseLockSettingsHelper;
 
@@ -49,7 +49,7 @@
     invoke-virtual {v0, v1}, Lmiui/security/ChooseLockSettingsHelper;->setPrivacyModeEnabled(Z)V
 
     .line 59
-    iget-object v0, p0, Lcom/android/settings/at;->iH:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/at;->iK:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 

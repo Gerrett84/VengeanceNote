@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field IP:I
+.field IS:I
 
-.field final synthetic IQ:Lcom/android/settings/applications/RunningState;
+.field final synthetic IT:Lcom/android/settings/applications/RunningState;
 
 
 # direct methods
@@ -16,14 +16,14 @@
 
     .prologue
     .line 172
-    iput-object p1, p0, Lcom/android/settings/applications/RunningState$1;->IQ:Lcom/android/settings/applications/RunningState;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningState$1;->IT:Lcom/android/settings/applications/RunningState;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     .line 173
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/applications/RunningState$1;->IP:I
+    iput v0, p0, Lcom/android/settings/applications/RunningState$1;->IS:I
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     const/4 v0, 0x2
 
     :goto_1
-    iput v0, p0, Lcom/android/settings/applications/RunningState$1;->IP:I
+    iput v0, p0, Lcom/android/settings/applications/RunningState$1;->IS:I
 
     goto :goto_0
 
@@ -67,7 +67,7 @@
 
     .line 184
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IT:Lcom/android/settings/applications/RunningState;
 
     iget-object v1, v0, Lcom/android/settings/applications/RunningState;->mLock:Ljava/lang/Object;
 
@@ -75,7 +75,7 @@
 
     .line 185
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IT:Lcom/android/settings/applications/RunningState;
 
     iget-boolean v0, v0, Lcom/android/settings/applications/RunningState;->mResumed:Z
 
@@ -116,25 +116,25 @@
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/settings/applications/RunningState$1;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     .line 193
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IT:Lcom/android/settings/applications/RunningState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningState;->CW:Lcom/android/settings/applications/RunningState$OnRefreshUiListener;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningState;->Da:Lcom/android/settings/applications/RunningState$OnRefreshUiListener;
 
     if-eqz v0, :cond_0
 
     .line 196
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$1;->IT:Lcom/android/settings/applications/RunningState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningState;->CW:Lcom/android/settings/applications/RunningState$OnRefreshUiListener;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningState;->Da:Lcom/android/settings/applications/RunningState$OnRefreshUiListener;
 
-    iget v1, p0, Lcom/android/settings/applications/RunningState$1;->IP:I
+    iget v1, p0, Lcom/android/settings/applications/RunningState$1;->IS:I
 
     invoke-interface {v0, v1}, Lcom/android/settings/applications/RunningState$OnRefreshUiListener;->D(I)V
 
     .line 197
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/applications/RunningState$1;->IP:I
+    iput v0, p0, Lcom/android/settings/applications/RunningState$1;->IS:I
 
     goto :goto_0
 

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private Cc:Lcom/android/settings/accounts/AuthenticatorHelper;
+.field private Cg:Lcom/android/settings/accounts/AuthenticatorHelper;
 
-.field private final MZ:Lcom/android/settings/wifi/s;
+.field private final Nc:Lcom/android/settings/wifi/s;
 
-.field private final Na:Lcom/android/settings/bluetooth/BluetoothEnabler;
+.field private final Nd:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
 .field private mInflater:Landroid/view/LayoutInflater;
 
@@ -27,7 +27,7 @@
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
     .line 616
-    iput-object p3, p0, Lcom/android/settings/dR;->Cc:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iput-object p3, p0, Lcom/android/settings/dR;->Cg:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     .line 617
     const-string v0, "layout_inflater"
@@ -49,7 +49,7 @@
 
     invoke-direct {v0, p1, v1}, Lcom/android/settings/wifi/s;-><init>(Landroid/content/Context;Landroid/widget/Switch;)V
 
-    iput-object v0, p0, Lcom/android/settings/dR;->MZ:Lcom/android/settings/wifi/s;
+    iput-object v0, p0, Lcom/android/settings/dR;->Nc:Lcom/android/settings/wifi/s;
 
     .line 622
     new-instance v0, Lcom/android/settings/bluetooth/BluetoothEnabler;
@@ -60,7 +60,7 @@
 
     invoke-direct {v0, p1, v1}, Lcom/android/settings/bluetooth/BluetoothEnabler;-><init>(Landroid/content/Context;Landroid/widget/Switch;)V
 
-    iput-object v0, p0, Lcom/android/settings/dR;->Na:Lcom/android/settings/bluetooth/BluetoothEnabler;
+    iput-object v0, p0, Lcom/android/settings/dR;->Nd:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     .line 623
     return-void
@@ -273,7 +273,7 @@
 
     check-cast v1, Landroid/widget/Switch;
 
-    iput-object v1, v3, Lcom/android/settings/bx;->uZ:Landroid/widget/Switch;
+    iput-object v1, v3, Lcom/android/settings/bx;->vd:Landroid/widget/Switch;
 
     goto :goto_0
 
@@ -361,9 +361,9 @@
     if-nez v3, :cond_1
 
     .line 679
-    iget-object v3, p0, Lcom/android/settings/dR;->MZ:Lcom/android/settings/wifi/s;
+    iget-object v3, p0, Lcom/android/settings/dR;->Nc:Lcom/android/settings/wifi/s;
 
-    iget-object v4, v1, Lcom/android/settings/bx;->uZ:Landroid/widget/Switch;
+    iget-object v4, v1, Lcom/android/settings/bx;->vd:Landroid/widget/Switch;
 
     invoke-virtual {v3, v4}, Lcom/android/settings/wifi/s;->a(Landroid/widget/Switch;)V
 
@@ -428,7 +428,7 @@
     invoke-virtual {v5, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 696
-    iget-object v4, p0, Lcom/android/settings/dR;->Cc:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v4, p0, Lcom/android/settings/dR;->Cg:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/dR;->getContext()Landroid/content/Context;
 
@@ -495,9 +495,9 @@
 
     .line 681
     :cond_1
-    iget-object v3, p0, Lcom/android/settings/dR;->Na:Lcom/android/settings/bluetooth/BluetoothEnabler;
+    iget-object v3, p0, Lcom/android/settings/dR;->Nd:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
-    iget-object v4, v1, Lcom/android/settings/bx;->uZ:Landroid/widget/Switch;
+    iget-object v4, v1, Lcom/android/settings/bx;->vd:Landroid/widget/Switch;
 
     invoke-virtual {v3, v4}, Lcom/android/settings/bluetooth/BluetoothEnabler;->a(Landroid/widget/Switch;)V
 
@@ -588,12 +588,12 @@
 
     .prologue
     .line 721
-    iget-object v0, p0, Lcom/android/settings/dR;->MZ:Lcom/android/settings/wifi/s;
+    iget-object v0, p0, Lcom/android/settings/dR;->Nc:Lcom/android/settings/wifi/s;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/s;->pause()V
 
     .line 722
-    iget-object v0, p0, Lcom/android/settings/dR;->Na:Lcom/android/settings/bluetooth/BluetoothEnabler;
+    iget-object v0, p0, Lcom/android/settings/dR;->Nd:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothEnabler;->pause()V
 
@@ -606,12 +606,12 @@
 
     .prologue
     .line 716
-    iget-object v0, p0, Lcom/android/settings/dR;->MZ:Lcom/android/settings/wifi/s;
+    iget-object v0, p0, Lcom/android/settings/dR;->Nc:Lcom/android/settings/wifi/s;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/s;->resume()V
 
     .line 717
-    iget-object v0, p0, Lcom/android/settings/dR;->Na:Lcom/android/settings/bluetooth/BluetoothEnabler;
+    iget-object v0, p0, Lcom/android/settings/dR;->Nd:Lcom/android/settings/bluetooth/BluetoothEnabler;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothEnabler;->resume()V
 

@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final enum bG:Lcom/android/settings/ScanState;
-
-.field public static final enum bH:Lcom/android/settings/ScanState;
-
-.field public static final enum bI:Lcom/android/settings/ScanState;
-
 .field public static final enum bJ:Lcom/android/settings/ScanState;
 
 .field public static final enum bK:Lcom/android/settings/ScanState;
 
-.field private static final synthetic bL:[Lcom/android/settings/ScanState;
+.field public static final enum bL:Lcom/android/settings/ScanState;
+
+.field public static final enum bM:Lcom/android/settings/ScanState;
+
+.field public static final enum bN:Lcom/android/settings/ScanState;
+
+.field private static final synthetic bO:[Lcom/android/settings/ScanState;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/ScanState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ScanState;->bG:Lcom/android/settings/ScanState;
+    sput-object v0, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
 
     .line 20
     new-instance v0, Lcom/android/settings/ScanState;
@@ -48,7 +48,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/ScanState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ScanState;->bH:Lcom/android/settings/ScanState;
+    sput-object v0, Lcom/android/settings/ScanState;->bK:Lcom/android/settings/ScanState;
 
     .line 21
     new-instance v0, Lcom/android/settings/ScanState;
@@ -57,7 +57,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/android/settings/ScanState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ScanState;->bI:Lcom/android/settings/ScanState;
+    sput-object v0, Lcom/android/settings/ScanState;->bL:Lcom/android/settings/ScanState;
 
     .line 22
     new-instance v0, Lcom/android/settings/ScanState;
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/settings/ScanState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
+    sput-object v0, Lcom/android/settings/ScanState;->bM:Lcom/android/settings/ScanState;
 
     .line 23
     new-instance v0, Lcom/android/settings/ScanState;
@@ -75,34 +75,34 @@
 
     invoke-direct {v0, v1, v6}, Lcom/android/settings/ScanState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ScanState;->bK:Lcom/android/settings/ScanState;
+    sput-object v0, Lcom/android/settings/ScanState;->bN:Lcom/android/settings/ScanState;
 
     .line 18
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/settings/ScanState;
 
-    sget-object v1, Lcom/android/settings/ScanState;->bG:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/ScanState;->bH:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bK:Lcom/android/settings/ScanState;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/ScanState;->bI:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bL:Lcom/android/settings/ScanState;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bM:Lcom/android/settings/ScanState;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/android/settings/ScanState;->bK:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bN:Lcom/android/settings/ScanState;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lcom/android/settings/ScanState;->bL:[Lcom/android/settings/ScanState;
+    sput-object v0, Lcom/android/settings/ScanState;->bO:[Lcom/android/settings/ScanState;
 
     return-void
 .end method
@@ -141,7 +141,7 @@
 
     .prologue
     .line 18
-    sget-object v0, Lcom/android/settings/ScanState;->bL:[Lcom/android/settings/ScanState;
+    sget-object v0, Lcom/android/settings/ScanState;->bO:[Lcom/android/settings/ScanState;
 
     invoke-virtual {v0}, [Lcom/android/settings/ScanState;->clone()Ljava/lang/Object;
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic FG:Lcom/android/settings/CryptKeeper;
+.field final synthetic FK:Lcom/android/settings/CryptKeeper;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 183
-    iput-object p1, p0, Lcom/android/settings/cz;->FG:Lcom/android/settings/CryptKeeper;
+    iput-object p1, p0, Lcom/android/settings/cz;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -43,7 +43,7 @@
     const/4 v2, 0x1
 
     .line 203
-    iget-object v0, p0, Lcom/android/settings/cz;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/cz;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0, v2}, Lcom/android/settings/CryptKeeper;->a(Lcom/android/settings/CryptKeeper;Z)Z
 
@@ -64,13 +64,13 @@
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 206
-    iget-object v0, p0, Lcom/android/settings/cz;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/cz;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0, v2}, Lcom/android/settings/CryptKeeper;->b(Lcom/android/settings/CryptKeeper;Z)Z
 
     .line 210
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/cz;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/cz;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->d(Lcom/android/settings/CryptKeeper;)V
 
@@ -96,7 +96,7 @@
     const/4 v1, 0x1
 
     .line 186
-    iget-object v0, p0, Lcom/android/settings/cz;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/cz;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->a(Lcom/android/settings/CryptKeeper;)Landroid/os/storage/IMountService;
 

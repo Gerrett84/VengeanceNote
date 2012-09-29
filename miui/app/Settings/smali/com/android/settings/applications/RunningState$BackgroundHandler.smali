@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic IQ:Lcom/android/settings/applications/RunningState;
+.field final synthetic IT:Lcom/android/settings/applications/RunningState;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 143
-    iput-object p1, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
     .line 144
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -44,7 +44,7 @@
 
     .line 151
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
     invoke-static {v0}, Lcom/android/settings/applications/RunningState;->a(Lcom/android/settings/applications/RunningState;)V
 
@@ -52,7 +52,7 @@
 
     .line 154
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
     iget-object v1, v0, Lcom/android/settings/applications/RunningState;->mLock:Ljava/lang/Object;
 
@@ -60,7 +60,7 @@
 
     .line 155
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
     iget-boolean v0, v0, Lcom/android/settings/applications/RunningState;->mResumed:Z
 
@@ -88,7 +88,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 159
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
     iget-object v0, v0, Lcom/android/settings/applications/RunningState;->mHandler:Landroid/os/Handler;
 
@@ -99,15 +99,15 @@
     move-result-object v1
 
     .line 160
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
-    iget-object v2, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v2, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
-    iget-object v2, v2, Lcom/android/settings/applications/RunningState;->CV:Landroid/content/Context;
+    iget-object v2, v2, Lcom/android/settings/applications/RunningState;->CZ:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
-    iget-object v3, v3, Lcom/android/settings/applications/RunningState;->tb:Landroid/app/ActivityManager;
+    iget-object v3, v3, Lcom/android/settings/applications/RunningState;->tf:Landroid/app/ActivityManager;
 
     invoke-static {v0, v2, v3}, Lcom/android/settings/applications/RunningState;->a(Lcom/android/settings/applications/RunningState;Landroid/content/Context;Landroid/app/ActivityManager;)Z
 
@@ -121,7 +121,7 @@
     iput v0, v1, Landroid/os/Message;->arg1:I
 
     .line 161
-    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IQ:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningState$BackgroundHandler;->IT:Lcom/android/settings/applications/RunningState;
 
     iget-object v0, v0, Lcom/android/settings/applications/RunningState;->mHandler:Landroid/os/Handler;
 

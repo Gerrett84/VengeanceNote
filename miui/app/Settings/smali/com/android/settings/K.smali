@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic cR:Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
+.field final synthetic cU:Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 184
-    iput-object p1, p0, Lcom/android/settings/K;->cR:Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
+    iput-object p1, p0, Lcom/android/settings/K;->cU:Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 186
-    iget-object v0, p0, Lcom/android/settings/K;->cR:Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
+    iget-object v0, p0, Lcom/android/settings/K;->cU:Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;
 
     invoke-static {v0}, Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;->a(Lcom/android/settings/ConfirmLockPassword$ConfirmLockPasswordFragment;)Landroid/widget/TextView;
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final yx:Landroid/os/PowerManager$WakeLock;
+.field final yB:Landroid/os/PowerManager$WakeLock;
 
 
 # direct methods
@@ -17,7 +17,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 126
-    iput-object p1, p0, Lcom/android/settings/bK;->yx:Landroid/os/PowerManager$WakeLock;
+    iput-object p1, p0, Lcom/android/settings/bK;->yB:Landroid/os/PowerManager$WakeLock;
 
     .line 127
     return-void

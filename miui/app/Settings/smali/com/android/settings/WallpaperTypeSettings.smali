@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method private jI()V
+.method private jM()V
     .locals 10
 
     .prologue
@@ -144,7 +144,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/WallpaperTypeSettings;->addPreferencesFromResource(I)V
 
     .line 36
-    invoke-direct {p0}, Lcom/android/settings/WallpaperTypeSettings;->jI()V
+    invoke-direct {p0}, Lcom/android/settings/WallpaperTypeSettings;->jM()V
 
     .line 37
     return-void

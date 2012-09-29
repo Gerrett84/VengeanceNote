@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public FH:J
+.field public FL:J
 
-.field public dy:J
+.field public dB:J
 
 
 # direct methods

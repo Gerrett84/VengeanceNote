@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final Kv:Landroid/util/SparseArray;
+.field private final Ky:Landroid/util/SparseArray;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -30,7 +30,7 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     .line 41
     return-void
@@ -245,7 +245,7 @@
     :try_start_1
     new-array v5, v0, [Ljava/lang/CharSequence;
 
-    iput-object v5, v2, Lcom/android/settings/a/c;->uq:[Ljava/lang/CharSequence;
+    iput-object v5, v2, Lcom/android/settings/a/c;->uu:[Ljava/lang/CharSequence;
 
     .line 115
     :goto_3
@@ -269,7 +269,7 @@
     move-result-object v7
 
     .line 120
-    iget-object v8, v2, Lcom/android/settings/a/c;->uq:[Ljava/lang/CharSequence;
+    iget-object v8, v2, Lcom/android/settings/a/c;->uu:[Ljava/lang/CharSequence;
 
     invoke-virtual {v7, v4}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -340,13 +340,13 @@
 
     .prologue
     .line 44
-    iget-object v1, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     monitor-enter v1
 
     .line 45
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
@@ -374,13 +374,13 @@
 
     .prologue
     .line 55
-    iget-object v1, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     monitor-enter v1
 
     .line 56
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -424,13 +424,13 @@
     move-result-object v0
 
     .line 67
-    iget-object v1, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     monitor-enter v1
 
     .line 68
     :try_start_1
-    iget-object v2, p0, Lcom/android/settings/a/h;->Kv:Landroid/util/SparseArray;
+    iget-object v2, p0, Lcom/android/settings/a/h;->Ky:Landroid/util/SparseArray;
 
     invoke-virtual {v2, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 

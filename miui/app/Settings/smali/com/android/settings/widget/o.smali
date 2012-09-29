@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field IX:Lcom/android/settings/widget/b;
+.field Ja:Lcom/android/settings/widget/b;
 
-.field IY:Lcom/android/settings/widget/b;
+.field Jb:Lcom/android/settings/widget/b;
 
-.field private IZ:I
+.field private Jc:I
 
-.field private Ja:F
+.field private Jd:F
 
-.field private Jb:Landroid/graphics/Rect;
+.field private Je:Landroid/graphics/Rect;
 
 
 # direct methods
@@ -64,20 +64,20 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 46
-    iput v1, p0, Lcom/android/settings/widget/o;->IZ:I
+    iput v1, p0, Lcom/android/settings/widget/o;->Jc:I
 
     .line 48
-    iput v4, p0, Lcom/android/settings/widget/o;->Ja:F
+    iput v4, p0, Lcom/android/settings/widget/o;->Jd:F
 
     .line 50
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/o;->Jb:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/android/settings/widget/o;->Je:Landroid/graphics/Rect;
 
     .line 63
-    sget-object v0, Lcom/android/settings/aT;->pN:[I
+    sget-object v0, Lcom/android/settings/aT;->pQ:[I
 
     invoke-virtual {p1, p2, v0, p3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -118,10 +118,10 @@
 
     .prologue
     .line 79
-    iput p1, p0, Lcom/android/settings/widget/o;->IZ:I
+    iput p1, p0, Lcom/android/settings/widget/o;->Jc:I
 
     .line 80
-    iput p2, p0, Lcom/android/settings/widget/o;->Ja:F
+    iput p2, p0, Lcom/android/settings/widget/o;->Jd:F
 
     .line 81
     invoke-virtual {p0}, Lcom/android/settings/widget/o;->requestLayout()V
@@ -140,12 +140,12 @@
     const/16 v4, 0x33
 
     .line 138
-    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->bV()Landroid/graphics/Rect;
+    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->bZ()Landroid/graphics/Rect;
 
     move-result-object v0
 
     .line 141
-    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->bU()I
+    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->bY()I
 
     move-result v1
 
@@ -158,7 +158,7 @@
 
     iget v2, v0, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->cc()F
+    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->cg()F
 
     move-result v3
 
@@ -214,7 +214,7 @@
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->cc()F
+    invoke-virtual {p1}, Lcom/android/settings/widget/ChartSweepView;->cg()F
 
     move-result v3
 
@@ -278,7 +278,7 @@
 
     check-cast v0, Lcom/android/settings/widget/b;
 
-    iput-object v0, p0, Lcom/android/settings/widget/o;->IX:Lcom/android/settings/widget/b;
+    iput-object v0, p0, Lcom/android/settings/widget/o;->Ja:Lcom/android/settings/widget/b;
 
     .line 75
     const-string v0, "missing vert"
@@ -289,7 +289,7 @@
 
     check-cast v0, Lcom/android/settings/widget/b;
 
-    iput-object v0, p0, Lcom/android/settings/widget/o;->IY:Lcom/android/settings/widget/b;
+    iput-object v0, p0, Lcom/android/settings/widget/o;->Jb:Lcom/android/settings/widget/b;
 
     .line 76
     return-void
@@ -303,7 +303,7 @@
     .line 130
     new-instance v0, Landroid/graphics/Rect;
 
-    iget-object v1, p0, Lcom/android/settings/widget/o;->Jb:Landroid/graphics/Rect;
+    iget-object v1, p0, Lcom/android/settings/widget/o;->Je:Landroid/graphics/Rect;
 
     invoke-direct {v0, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
@@ -340,7 +340,7 @@
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/android/settings/widget/o;->Jb:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/android/settings/widget/o;->Je:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Lcom/android/settings/widget/o;->getPaddingLeft()I
 
@@ -369,28 +369,28 @@
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 100
-    iget-object v0, p0, Lcom/android/settings/widget/o;->Jb:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/android/settings/widget/o;->Je:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v3
 
     .line 101
-    iget-object v0, p0, Lcom/android/settings/widget/o;->Jb:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/android/settings/widget/o;->Je:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
 
     move-result v4
 
     .line 104
-    iget-object v0, p0, Lcom/android/settings/widget/o;->IX:Lcom/android/settings/widget/b;
+    iget-object v0, p0, Lcom/android/settings/widget/o;->Ja:Lcom/android/settings/widget/b;
 
     int-to-float v1, v3
 
     invoke-interface {v0, v1}, Lcom/android/settings/widget/b;->a(F)Z
 
     .line 105
-    iget-object v0, p0, Lcom/android/settings/widget/o;->IY:Lcom/android/settings/widget/b;
+    iget-object v0, p0, Lcom/android/settings/widget/o;->Jb:Lcom/android/settings/widget/b;
 
     int-to-float v1, v4
 
@@ -431,7 +431,7 @@
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
     .line 114
-    iget-object v7, p0, Lcom/android/settings/widget/o;->Jb:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/android/settings/widget/o;->Je:Landroid/graphics/Rect;
 
     invoke-virtual {v5, v7}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
@@ -515,25 +515,25 @@
 
     move-result v0
 
-    iget v1, p0, Lcom/android/settings/widget/o;->IZ:I
+    iget v1, p0, Lcom/android/settings/widget/o;->Jc:I
 
     sub-int/2addr v0, v1
 
     .line 89
-    iget v1, p0, Lcom/android/settings/widget/o;->IZ:I
+    iget v1, p0, Lcom/android/settings/widget/o;->Jc:I
 
     if-lez v1, :cond_0
 
     if-lez v0, :cond_0
 
     .line 90
-    iget v1, p0, Lcom/android/settings/widget/o;->IZ:I
+    iget v1, p0, Lcom/android/settings/widget/o;->Jc:I
 
     int-to-float v1, v1
 
     int-to-float v0, v0
 
-    iget v2, p0, Lcom/android/settings/widget/o;->Ja:F
+    iget v2, p0, Lcom/android/settings/widget/o;->Jd:F
 
     mul-float/2addr v0, v2
 

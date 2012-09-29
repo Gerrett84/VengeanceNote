@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic GE:Lcom/android/settings/bl;
+.field final synthetic GI:Lcom/android/settings/bl;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 29
-    iput-object p1, p0, Lcom/android/settings/cL;->GE:Lcom/android/settings/bl;
+    iput-object p1, p0, Lcom/android/settings/cL;->GI:Lcom/android/settings/bl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -39,7 +39,7 @@
 
     .line 34
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/cL;->GE:Lcom/android/settings/bl;
+    iget-object v0, p0, Lcom/android/settings/cL;->GI:Lcom/android/settings/bl;
 
     invoke-virtual {v0}, Lcom/android/settings/bl;->update()V
 

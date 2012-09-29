@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic FG:Lcom/android/settings/CryptKeeper;
+.field final synthetic FK:Lcom/android/settings/CryptKeeper;
 
-.field final synthetic Kt:Landroid/view/inputmethod/InputMethodManager;
+.field final synthetic Kw:Landroid/view/inputmethod/InputMethodManager;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 533
-    iput-object p1, p0, Lcom/android/settings/dE;->FG:Lcom/android/settings/CryptKeeper;
+    iput-object p1, p0, Lcom/android/settings/dE;->FK:Lcom/android/settings/CryptKeeper;
 
-    iput-object p2, p0, Lcom/android/settings/dE;->Kt:Landroid/view/inputmethod/InputMethodManager;
+    iput-object p2, p0, Lcom/android/settings/dE;->Kw:Landroid/view/inputmethod/InputMethodManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
 
     .prologue
     .line 535
-    iget-object v0, p0, Lcom/android/settings/dE;->Kt:Landroid/view/inputmethod/InputMethodManager;
+    iget-object v0, p0, Lcom/android/settings/dE;->Kw:Landroid/view/inputmethod/InputMethodManager;
 
     const/4 v1, 0x0
 

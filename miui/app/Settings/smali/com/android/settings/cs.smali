@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private Fh:I
+.field private Fl:I
 
-.field private Fi:I
+.field private Fm:I
 
 
 # direct methods
@@ -56,7 +56,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
     .line 31
-    iget v0, p0, Lcom/android/settings/cs;->Fh:I
+    iget v0, p0, Lcom/android/settings/cs;->Fl:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setMinimumHeight(I)V
 
@@ -70,7 +70,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 33
-    iget v1, p0, Lcom/android/settings/cs;->Fi:I
+    iget v1, p0, Lcom/android/settings/cs;->Fm:I
 
     int-to-float v1, v1
 
@@ -86,7 +86,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 35
-    iget v1, p0, Lcom/android/settings/cs;->Fi:I
+    iget v1, p0, Lcom/android/settings/cs;->Fm:I
 
     int-to-float v1, v1
 
@@ -103,10 +103,10 @@
 
     .prologue
     .line 20
-    iput p1, p0, Lcom/android/settings/cs;->Fh:I
+    iput p1, p0, Lcom/android/settings/cs;->Fl:I
 
     .line 21
-    iput p2, p0, Lcom/android/settings/cs;->Fi:I
+    iput p2, p0, Lcom/android/settings/cs;->Fm:I
 
     .line 22
     return-void

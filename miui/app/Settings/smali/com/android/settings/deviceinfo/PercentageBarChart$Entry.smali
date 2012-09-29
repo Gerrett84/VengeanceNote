@@ -6,7 +6,7 @@
 # instance fields
 .field public final paint:Landroid/graphics/Paint;
 
-.field public final uG:F
+.field public final uK:F
 
 
 # direct methods
@@ -20,7 +20,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
-    iput p1, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->uG:F
+    iput p1, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->uK:F
 
     .line 47
     iput-object p2, p0, Lcom/android/settings/deviceinfo/PercentageBarChart$Entry;->paint:Landroid/graphics/Paint;

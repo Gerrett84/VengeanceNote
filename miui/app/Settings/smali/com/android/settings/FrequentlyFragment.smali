@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public aQ()V
+.method public aU()V
     .locals 8
 
     .prologue
@@ -45,7 +45,7 @@
     invoke-static {v3}, Ljava/util/Arrays;->sort([I)V
 
     .line 78
-    invoke-static {}, Lcom/android/settings/bP;->hx()[I
+    invoke-static {}, Lcom/android/settings/bP;->hB()[I
 
     move-result-object v4
 
@@ -82,7 +82,7 @@
     invoke-virtual {v0, v2}, Lcom/android/settings/MiuiSettings;->f(Ljava/util/List;)V
 
     .line 87
-    iput-object v2, p0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iput-object v2, p0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     .line 88
     return-void
@@ -96,17 +96,17 @@
     invoke-super {p0}, Lcom/android/settings/BasePreferenceFragment;->onResume()V
 
     .line 65
-    sget-boolean v0, Lcom/android/settings/provider/b;->Fl:Z
+    sget-boolean v0, Lcom/android/settings/provider/b;->Fp:Z
 
     if-eqz v0, :cond_0
 
     .line 66
-    invoke-virtual {p0}, Lcom/android/settings/FrequentlyFragment;->aP()V
+    invoke-virtual {p0}, Lcom/android/settings/FrequentlyFragment;->aT()V
 
     .line 67
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/android/settings/provider/b;->Fl:Z
+    sput-boolean v0, Lcom/android/settings/provider/b;->Fp:Z
 
     .line 69
     :cond_0

@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic l:Lcom/android/settings/DreamComponentPreference;
+.field private final mK:Landroid/view/LayoutInflater;
 
-.field private final mH:Landroid/view/LayoutInflater;
+.field final synthetic o:Lcom/android/settings/DreamComponentPreference;
 
 .field private results:Ljava/util/ArrayList;
 
@@ -22,7 +22,7 @@
 
     .prologue
     .line 129
-    iput-object p1, p0, Lcom/android/settings/aC;->l:Lcom/android/settings/DreamComponentPreference;
+    iput-object p1, p0, Lcom/android/settings/aC;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -48,7 +48,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    iput-object v0, p0, Lcom/android/settings/aC;->mH:Landroid/view/LayoutInflater;
+    iput-object v0, p0, Lcom/android/settings/aC;->mK:Landroid/view/LayoutInflater;
 
     .line 135
     new-instance v0, Ljava/util/ArrayList;
@@ -75,7 +75,7 @@
     .line 146
     iget-object v0, p0, Lcom/android/settings/aC;->results:Ljava/util/ArrayList;
 
-    iget-object v1, p1, Lcom/android/settings/DreamComponentPreference;->LY:Ljava/util/Comparator;
+    iget-object v1, p1, Lcom/android/settings/DreamComponentPreference;->Mb:Ljava/util/Comparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -154,7 +154,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/android/settings/aC;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v2, p0, Lcom/android/settings/aC;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v2}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 
@@ -175,7 +175,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    iget-object v2, p0, Lcom/android/settings/aC;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v2, p0, Lcom/android/settings/aC;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v2}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 
@@ -192,7 +192,7 @@
 
     .line 196
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/aC;->mH:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Lcom/android/settings/aC;->mK:Landroid/view/LayoutInflater;
 
     const v1, 0x7f040033
 

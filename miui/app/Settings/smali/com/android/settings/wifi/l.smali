@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic cx:Lcom/android/settings/wifi/WifiSettings;
+.field final synthetic cA:Lcom/android/settings/wifi/WifiSettings;
 
 .field private store:Ljava/util/HashMap;
 
@@ -16,7 +16,7 @@
 
     .prologue
     .line 721
-    iput-object p1, p0, Lcom/android/settings/wifi/l;->cx:Lcom/android/settings/wifi/WifiSettings;
+    iput-object p1, p0, Lcom/android/settings/wifi/l;->cA:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

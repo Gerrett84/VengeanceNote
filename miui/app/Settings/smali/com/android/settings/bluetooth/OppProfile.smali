@@ -117,26 +117,6 @@
     return v0
 .end method
 
-.method public h()Z
-    .locals 1
-
-    .prologue
-    .line 40
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public i()Z
-    .locals 1
-
-    .prologue
-    .line 67
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method public isConnectable()Z
     .locals 1
 
@@ -147,7 +127,27 @@
     return v0
 .end method
 
-.method public j()I
+.method public l()Z
+    .locals 1
+
+    .prologue
+    .line 40
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public m()Z
+    .locals 1
+
+    .prologue
+    .line 67
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public n()I
     .locals 1
 
     .prologue

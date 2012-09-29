@@ -43,7 +43,7 @@
     if-eqz p1, :cond_3
 
     .line 112
-    sget-object v2, Lcom/android/settings/bluetooth/A2dpProfile;->mJ:[Landroid/os/ParcelUuid;
+    sget-object v2, Lcom/android/settings/bluetooth/A2dpProfile;->mM:[Landroid/os/ParcelUuid;
 
     invoke-static {p1, v2}, Landroid/bluetooth/BluetoothUuid;->containsAnyUuid([Landroid/os/ParcelUuid;[Landroid/os/ParcelUuid;)Z
 
@@ -58,7 +58,7 @@
 
     .line 115
     :cond_1
-    sget-object v2, Lcom/android/settings/bluetooth/HeadsetProfile;->nV:[Landroid/os/ParcelUuid;
+    sget-object v2, Lcom/android/settings/bluetooth/HeadsetProfile;->nY:[Landroid/os/ParcelUuid;
 
     invoke-static {p1, v2}, Landroid/bluetooth/BluetoothUuid;->containsAnyUuid([Landroid/os/ParcelUuid;[Landroid/os/ParcelUuid;)Z
 

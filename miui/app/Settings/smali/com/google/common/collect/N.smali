@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field on:Lcom/google/common/collect/ag;
+.field oq:Lcom/google/common/collect/ag;
 
-.field oo:Lcom/google/common/collect/ag;
+.field or:Lcom/google/common/collect/ag;
 
 .field volatile time:J
 
@@ -32,18 +32,18 @@
     iput-wide v0, p0, Lcom/google/common/collect/N;->time:J
 
     .line 1596
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eV()Lcom/google/common/collect/ag;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eZ()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/N;->on:Lcom/google/common/collect/ag;
+    iput-object v0, p0, Lcom/google/common/collect/N;->oq:Lcom/google/common/collect/ag;
 
     .line 1609
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eV()Lcom/google/common/collect/ag;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eZ()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/N;->oo:Lcom/google/common/collect/ag;
+    iput-object v0, p0, Lcom/google/common/collect/N;->or:Lcom/google/common/collect/ag;
 
     .line 1580
     return-void
@@ -57,7 +57,7 @@
 
     .prologue
     .line 1606
-    iput-object p1, p0, Lcom/google/common/collect/N;->on:Lcom/google/common/collect/ag;
+    iput-object p1, p0, Lcom/google/common/collect/N;->oq:Lcom/google/common/collect/ag;
 
     .line 1607
     return-void
@@ -69,13 +69,13 @@
 
     .prologue
     .line 1619
-    iput-object p1, p0, Lcom/google/common/collect/N;->oo:Lcom/google/common/collect/ag;
+    iput-object p1, p0, Lcom/google/common/collect/N;->or:Lcom/google/common/collect/ag;
 
     .line 1620
     return-void
 .end method
 
-.method public dm()J
+.method public dq()J
     .locals 2
 
     .prologue
@@ -85,22 +85,22 @@
     return-wide v0
 .end method
 
-.method public dn()Lcom/google/common/collect/ag;
+.method public dr()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
     .line 1601
-    iget-object v0, p0, Lcom/google/common/collect/N;->on:Lcom/google/common/collect/ag;
+    iget-object v0, p0, Lcom/google/common/collect/N;->oq:Lcom/google/common/collect/ag;
 
     return-object v0
 .end method
 
-.method public do()Lcom/google/common/collect/ag;
+.method public ds()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
     .line 1614
-    iget-object v0, p0, Lcom/google/common/collect/N;->oo:Lcom/google/common/collect/ag;
+    iget-object v0, p0, Lcom/google/common/collect/N;->or:Lcom/google/common/collect/ag;
 
     return-object v0
 .end method

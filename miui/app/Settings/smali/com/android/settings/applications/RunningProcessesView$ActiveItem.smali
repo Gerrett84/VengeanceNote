@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field gu:Lcom/android/settings/applications/RunningState$BaseItem;
+.field gA:Z
 
-.field gv:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
+.field gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
-.field gw:J
+.field gy:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
 
-.field gx:Z
+.field gz:J
 
 .field mRootView:Landroid/view/View;
 
@@ -42,16 +42,16 @@
     const/4 v3, 0x0
 
     .line 99
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
     instance-of v0, v0, Lcom/android/settings/applications/RunningState$ServiceItem;
 
     if-eqz v0, :cond_2
 
     .line 102
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gv:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gy:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oo:Landroid/widget/TextView;
 
     move-object v3, v0
 
@@ -61,10 +61,10 @@
     if-eqz v3, :cond_1
 
     .line 125
-    iput-boolean v2, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Z
+    iput-boolean v2, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gA:Z
 
     .line 126
-    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gw:J
+    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gz:J
 
     const-wide/16 v6, 0x0
 
@@ -77,7 +77,7 @@
 
     move-result-wide v0
 
-    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gw:J
+    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gz:J
 
     sub-long/2addr v0, v4
 
@@ -98,21 +98,21 @@
 
     .line 105
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Ix:Ljava/lang/String;
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Iu:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Ix:Ljava/lang/String;
 
     .line 106
     :goto_2
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
-    iget-object v4, v4, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/String;
+    iget-object v4, v4, Lcom/android/settings/applications/RunningState$BaseItem;->Iy:Ljava/lang/String;
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -121,37 +121,37 @@
     if-nez v4, :cond_3
 
     .line 107
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
-    iput-object v0, v4, Lcom/android/settings/applications/RunningState$BaseItem;->Iv:Ljava/lang/String;
+    iput-object v0, v4, Lcom/android/settings/applications/RunningState$BaseItem;->Iy:Ljava/lang/String;
 
     .line 108
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gv:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gy:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
 
-    iget-object v4, v4, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->ol:Landroid/widget/TextView;
+    iget-object v4, v4, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->oo:Landroid/widget/TextView;
 
     invoke-virtual {v4, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 111
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
-    iget-boolean v0, v0, Lcom/android/settings/applications/RunningState$BaseItem;->Ix:Z
+    iget-boolean v0, v0, Lcom/android/settings/applications/RunningState$BaseItem;->IA:Z
 
     if-eqz v0, :cond_5
 
     .line 113
-    iget-boolean v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gA:Z
 
     if-nez v0, :cond_0
 
     .line 114
-    iput-boolean v1, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Z
+    iput-boolean v1, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gA:Z
 
     .line 115
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gv:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gy:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->om:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->op:Landroid/widget/TextView;
 
     const-string v4, ""
 
@@ -167,16 +167,16 @@
 
     .line 117
     :cond_5
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
     instance-of v0, v0, Lcom/android/settings/applications/RunningState$MergedItem;
 
     if-eqz v0, :cond_0
 
     .line 120
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gv:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gy:Lcom/android/settings/applications/RunningProcessesView$ViewHolder;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->om:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView$ViewHolder;->op:Landroid/widget/TextView;
 
     move-object v3, v0
 
@@ -184,18 +184,18 @@
 
     .line 133
     :cond_6
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
     instance-of v0, v0, Lcom/android/settings/applications/RunningState$MergedItem;
 
     if-eqz v0, :cond_9
 
     .line 134
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gu:Lcom/android/settings/applications/RunningState$BaseItem;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$ActiveItem;->gx:Lcom/android/settings/applications/RunningState$BaseItem;
 
     check-cast v0, Lcom/android/settings/applications/RunningState$MergedItem;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningState$MergedItem;->PI:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningState$MergedItem;->PL:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 

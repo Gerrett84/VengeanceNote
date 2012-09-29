@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic d:Lcom/android/settings/deviceinfo/Memory;
+.field final synthetic g:Lcom/android/settings/deviceinfo/Memory;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 132
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$1;->d:Lcom/android/settings/deviceinfo/Memory;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$1;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct {p0}, Landroid/os/storage/StorageEventListener;-><init>()V
 
@@ -77,7 +77,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$1;->d:Lcom/android/settings/deviceinfo/Memory;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$1;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/Memory;->a(Lcom/android/settings/deviceinfo/Memory;)[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
@@ -88,7 +88,7 @@
     if-ge v0, v1, :cond_0
 
     .line 138
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$1;->d:Lcom/android/settings/deviceinfo/Memory;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/Memory$1;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/Memory;->a(Lcom/android/settings/deviceinfo/Memory;)[Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;
 
@@ -97,7 +97,7 @@
     aget-object v1, v1, v0
 
     .line 139
-    invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->dW()Landroid/os/storage/StorageVolume;
+    invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->ea()Landroid/os/storage/StorageVolume;
 
     move-result-object v2
 
@@ -112,7 +112,7 @@
     if-eqz v2, :cond_1
 
     .line 140
-    invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->dZ()V
+    invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory;->ed()V
 
     .line 144
     :cond_0

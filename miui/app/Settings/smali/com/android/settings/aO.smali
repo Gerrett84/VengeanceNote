@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic oP:Landroid/preference/PreferenceActivity$Header;
+.field final synthetic oS:Landroid/preference/PreferenceActivity$Header;
 
-.field final synthetic oQ:Lcom/android/settings/dt;
+.field final synthetic oT:Lcom/android/settings/dt;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 43
-    iput-object p1, p0, Lcom/android/settings/aO;->oQ:Lcom/android/settings/dt;
+    iput-object p1, p0, Lcom/android/settings/aO;->oT:Lcom/android/settings/dt;
 
-    iput-object p2, p0, Lcom/android/settings/aO;->oP:Landroid/preference/PreferenceActivity$Header;
+    iput-object p2, p0, Lcom/android/settings/aO;->oS:Landroid/preference/PreferenceActivity$Header;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/android/settings/aO;->oP:Landroid/preference/PreferenceActivity$Header;
+    iget-object v0, p0, Lcom/android/settings/aO;->oS:Landroid/preference/PreferenceActivity$Header;
 
     iget-wide v0, v0, Landroid/preference/PreferenceActivity$Header;->id:J
 
@@ -52,9 +52,9 @@
     if-ltz v0, :cond_0
 
     .line 48
-    iget-object v1, p0, Lcom/android/settings/aO;->oQ:Lcom/android/settings/dt;
+    iget-object v1, p0, Lcom/android/settings/aO;->oT:Lcom/android/settings/dt;
 
-    iget-object v1, v1, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iget-object v1, v1, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
     invoke-virtual {v1}, Lcom/android/settings/FrequentlyFragment;->getActivity()Landroid/app/Activity;
 
@@ -67,11 +67,11 @@
     invoke-static {v1, v0}, Lcom/android/settings/provider/b;->j(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 49
-    iget-object v0, p0, Lcom/android/settings/aO;->oQ:Lcom/android/settings/dt;
+    iget-object v0, p0, Lcom/android/settings/aO;->oT:Lcom/android/settings/dt;
 
-    iget-object v0, v0, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, v0, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/FrequentlyFragment;->aP()V
+    invoke-virtual {v0}, Lcom/android/settings/FrequentlyFragment;->aT()V
 
     .line 51
     :cond_0

@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final enum mX:Lcom/android/settings/MiuiSettings$TabState;
+.field public static final enum na:Lcom/android/settings/MiuiSettings$TabState;
 
-.field public static final enum mY:Lcom/android/settings/MiuiSettings$TabState;
+.field public static final enum nb:Lcom/android/settings/MiuiSettings$TabState;
 
-.field private static final synthetic mZ:[Lcom/android/settings/MiuiSettings$TabState;
+.field private static final synthetic nc:[Lcom/android/settings/MiuiSettings$TabState;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/MiuiSettings$TabState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sput-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     .line 92
     new-instance v0, Lcom/android/settings/MiuiSettings$TabState;
@@ -36,22 +36,22 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/MiuiSettings$TabState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sput-object v0, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     .line 90
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/settings/MiuiSettings$TabState;
 
-    sget-object v1, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v1, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v1, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/android/settings/MiuiSettings$TabState;->mZ:[Lcom/android/settings/MiuiSettings$TabState;
+    sput-object v0, Lcom/android/settings/MiuiSettings$TabState;->nc:[Lcom/android/settings/MiuiSettings$TabState;
 
     return-void
 .end method
@@ -74,7 +74,7 @@
 
     .prologue
     .line 95
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -83,7 +83,7 @@
     if-ne v0, p0, :cond_0
 
     .line 96
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mX:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->na:Lcom/android/settings/MiuiSettings$TabState;
 
     .line 99
     :goto_0
@@ -91,7 +91,7 @@
 
     .line 98
     :cond_0
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiSettings$TabState;->ordinal()I
 
@@ -100,7 +100,7 @@
     if-ne v0, p0, :cond_1
 
     .line 99
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mY:Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->nb:Lcom/android/settings/MiuiSettings$TabState;
 
     goto :goto_0
 
@@ -153,7 +153,7 @@
 
     .prologue
     .line 90
-    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->mZ:[Lcom/android/settings/MiuiSettings$TabState;
+    sget-object v0, Lcom/android/settings/MiuiSettings$TabState;->nc:[Lcom/android/settings/MiuiSettings$TabState;
 
     invoke-virtual {v0}, [Lcom/android/settings/MiuiSettings$TabState;->clone()Ljava/lang/Object;
 

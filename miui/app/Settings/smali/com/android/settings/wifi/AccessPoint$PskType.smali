@@ -4,15 +4,15 @@
 
 
 # static fields
-.field public static final enum IS:Lcom/android/settings/wifi/AccessPoint$PskType;
-
-.field public static final enum IT:Lcom/android/settings/wifi/AccessPoint$PskType;
-
-.field public static final enum IU:Lcom/android/settings/wifi/AccessPoint$PskType;
-
 .field public static final enum IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-.field private static final synthetic IW:[Lcom/android/settings/wifi/AccessPoint$PskType;
+.field public static final enum IW:Lcom/android/settings/wifi/AccessPoint$PskType;
+
+.field public static final enum IX:Lcom/android/settings/wifi/AccessPoint$PskType;
+
+.field public static final enum IY:Lcom/android/settings/wifi/AccessPoint$PskType;
+
+.field private static final synthetic IZ:[Lcom/android/settings/wifi/AccessPoint$PskType;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/wifi/AccessPoint$PskType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IS:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 63
     new-instance v0, Lcom/android/settings/wifi/AccessPoint$PskType;
@@ -44,7 +44,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/wifi/AccessPoint$PskType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IT:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IW:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 64
     new-instance v0, Lcom/android/settings/wifi/AccessPoint$PskType;
@@ -53,7 +53,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/android/settings/wifi/AccessPoint$PskType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IU:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IX:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 65
     new-instance v0, Lcom/android/settings/wifi/AccessPoint$PskType;
@@ -62,30 +62,30 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/settings/wifi/AccessPoint$PskType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IY:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 61
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IS:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IT:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IW:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IU:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IX:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint$PskType;->IY:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     aput-object v1, v0, v5
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IW:[Lcom/android/settings/wifi/AccessPoint$PskType;
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IZ:[Lcom/android/settings/wifi/AccessPoint$PskType;
 
     return-void
 .end method
@@ -124,7 +124,7 @@
 
     .prologue
     .line 61
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IW:[Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IZ:[Lcom/android/settings/wifi/AccessPoint$PskType;
 
     invoke-virtual {v0}, [Lcom/android/settings/wifi/AccessPoint$PskType;->clone()Ljava/lang/Object;
 

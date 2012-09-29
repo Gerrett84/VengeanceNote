@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public BQ:Landroid/widget/ImageView;
+.field public BU:Landroid/widget/ImageView;
 
-.field public BR:Landroid/widget/TextView;
+.field public BV:Landroid/widget/TextView;
 
-.field public BS:Landroid/widget/CheckBox;
+.field public BW:Landroid/widget/CheckBox;
 
-.field final synthetic eG:Lcom/android/settings/VirusScanActivity;
+.field final synthetic eJ:Lcom/android/settings/VirusScanActivity;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     .prologue
     .line 33
-    iput-object p1, p0, Lcom/android/settings/cg;->eG:Lcom/android/settings/VirusScanActivity;
+    iput-object p1, p0, Lcom/android/settings/cg;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

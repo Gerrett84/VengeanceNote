@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+.field private lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
 .field private mHandler:Landroid/os/Handler;
 
-.field private sH:Z
+.field private sK:Z
 
 
 # direct methods
@@ -35,10 +35,10 @@
 
     invoke-direct {v0, p1, v1}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
 
-    iput-object v0, p0, Lcom/android/settings/bl;->ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+    iput-object v0, p0, Lcom/android/settings/bl;->lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
     .line 43
-    iget-object v0, p0, Lcom/android/settings/bl;->ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+    iget-object v0, p0, Lcom/android/settings/bl;->lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
     const/4 v1, 0x3
 
@@ -96,7 +96,7 @@
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 71
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, p1}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
@@ -196,7 +196,7 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v1, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v1}, Lmiui/widget/SlidingButton;->isChecked()Z
 
@@ -222,7 +222,7 @@
 
     const-string v2, "airplane_mode_settings"
 
-    invoke-static {v2}, Lcom/android/settings/bP;->O(Ljava/lang/String;)I
+    invoke-static {v2}, Lcom/android/settings/bP;->P(Ljava/lang/String;)I
 
     move-result v2
 
@@ -262,7 +262,7 @@
 
     .line 102
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0}, Lmiui/widget/SlidingButton;->isChecked()Z
 
@@ -278,19 +278,19 @@
 
     .prologue
     .line 54
-    iget-boolean v0, p0, Lcom/android/settings/bl;->sH:Z
+    iget-boolean v0, p0, Lcom/android/settings/bl;->sK:Z
 
     if-eqz v0, :cond_0
 
     .line 55
-    iget-object v0, p0, Lcom/android/settings/bl;->ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+    iget-object v0, p0, Lcom/android/settings/bl;->lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->unregisterIntent()V
 
     .line 56
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/bl;->sH:Z
+    iput-boolean v0, p0, Lcom/android/settings/bl;->sK:Z
 
     .line 58
     :cond_0
@@ -307,10 +307,10 @@
     .line 48
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/bl;->sH:Z
+    iput-boolean v0, p0, Lcom/android/settings/bl;->sK:Z
 
     .line 49
-    iget-object v0, p0, Lcom/android/settings/bl;->ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+    iget-object v0, p0, Lcom/android/settings/bl;->lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->registerIntent()V
 
@@ -326,7 +326,7 @@
 
     .prologue
     .line 121
-    iget-object v0, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     iget-object v1, p0, Lcom/android/settings/cI;->mActivity:Landroid/app/Activity;
 

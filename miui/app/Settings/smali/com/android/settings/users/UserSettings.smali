@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private CC:Landroid/preference/PreferenceGroup;
+.field private CG:Landroid/preference/PreferenceGroup;
 
 
 # direct methods
@@ -21,7 +21,7 @@
     return-void
 .end method
 
-.method private it()V
+.method private ix()V
     .locals 7
 
     .prologue
@@ -54,7 +54,7 @@
     return-void
 .end method
 
-.method private iu()V
+.method private iy()V
     .locals 5
 
     .prologue
@@ -72,7 +72,7 @@
     move-result-object v0
 
     .line 84
-    iget-object v1, p0, Lcom/android/settings/users/UserSettings;->CC:Landroid/preference/PreferenceGroup;
+    iget-object v1, p0, Lcom/android/settings/users/UserSettings;->CG:Landroid/preference/PreferenceGroup;
 
     invoke-virtual {v1}, Landroid/preference/PreferenceGroup;->removeAll()V
 
@@ -141,7 +141,7 @@
     invoke-virtual {v2, v0}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
 
     .line 91
-    iget-object v0, p0, Lcom/android/settings/users/UserSettings;->CC:Landroid/preference/PreferenceGroup;
+    iget-object v0, p0, Lcom/android/settings/users/UserSettings;->CG:Landroid/preference/PreferenceGroup;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceGroup;->addPreference(Landroid/preference/Preference;)Z
 
@@ -176,7 +176,7 @@
 
     check-cast v0, Landroid/preference/PreferenceGroup;
 
-    iput-object v0, p0, Lcom/android/settings/users/UserSettings;->CC:Landroid/preference/PreferenceGroup;
+    iput-object v0, p0, Lcom/android/settings/users/UserSettings;->CG:Landroid/preference/PreferenceGroup;
 
     .line 48
     const/4 v0, 0x1
@@ -229,7 +229,7 @@
     if-ne v1, v0, :cond_0
 
     .line 68
-    invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->it()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->ix()V
 
     .line 71
     :goto_0
@@ -326,7 +326,7 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 54
-    invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->iu()V
+    invoke-direct {p0}, Lcom/android/settings/users/UserSettings;->iy()V
 
     .line 55
     return-void

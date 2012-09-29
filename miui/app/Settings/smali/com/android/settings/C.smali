@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aY:Lcom/android/settings/RadioInfo;
+.field final synthetic bb:Lcom/android/settings/RadioInfo;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 729
-    iput-object p1, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iput-object p1, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,13 +31,13 @@
 
     .prologue
     .line 731
-    iget-object v0, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->r(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v1, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->q(Lcom/android/settings/RadioInfo;)Ljava/lang/String;
 
@@ -46,13 +46,13 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 732
-    iget-object v0, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->t(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v1, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->s(Lcom/android/settings/RadioInfo;)Ljava/lang/String;
 
@@ -61,13 +61,13 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 733
-    iget-object v0, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->v(Lcom/android/settings/RadioInfo;)Landroid/widget/TextView;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/C;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v1, p0, Lcom/android/settings/C;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->u(Lcom/android/settings/RadioInfo;)Ljava/lang/String;
 

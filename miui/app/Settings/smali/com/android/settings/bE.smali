@@ -6,11 +6,11 @@
 # instance fields
 .field icon:Landroid/widget/ImageView;
 
-.field oj:Landroid/widget/TextView;
+.field om:Landroid/widget/TextView;
 
-.field ok:Landroid/widget/TextView;
+.field on:Landroid/widget/TextView;
 
-.field wA:Landroid/widget/CheckBox;
+.field wE:Landroid/widget/CheckBox;
 
 
 # direct methods

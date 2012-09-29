@@ -4,11 +4,11 @@
 
 
 # static fields
-.field static final NK:Lcom/google/common/collect/EmptyImmutableSet;
+.field static final NN:Lcom/google/common/collect/EmptyImmutableSet;
 
 .field private static final serialVersionUID:J
 
-.field private static final vQ:[Ljava/lang/Object;
+.field private static final vU:[Ljava/lang/Object;
 
 
 # direct methods
@@ -21,14 +21,14 @@
 
     invoke-direct {v0}, Lcom/google/common/collect/EmptyImmutableSet;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/EmptyImmutableSet;->NK:Lcom/google/common/collect/EmptyImmutableSet;
+    sput-object v0, Lcom/google/common/collect/EmptyImmutableSet;->NN:Lcom/google/common/collect/EmptyImmutableSet;
 
     .line 58
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    sput-object v0, Lcom/google/common/collect/EmptyImmutableSet;->vQ:[Ljava/lang/Object;
+    sput-object v0, Lcom/google/common/collect/EmptyImmutableSet;->vU:[Ljava/lang/Object;
 
     return-void
 .end method
@@ -45,7 +45,7 @@
 
 
 # virtual methods
-.method H()Z
+.method L()Z
     .locals 1
 
     .prologue
@@ -79,12 +79,12 @@
     return v0
 .end method
 
-.method public dz()Lcom/google/common/collect/ap;
+.method public dD()Lcom/google/common/collect/ap;
     .locals 1
 
     .prologue
     .line 51
-    invoke-static {}, Lcom/google/common/collect/w;->dE()Lcom/google/common/collect/ap;
+    invoke-static {}, Lcom/google/common/collect/w;->dI()Lcom/google/common/collect/ap;
 
     move-result-object v0
 
@@ -144,7 +144,7 @@
 
     .prologue
     .line 31
-    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSet;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSet;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 
@@ -156,7 +156,7 @@
 
     .prologue
     .line 96
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->NK:Lcom/google/common/collect/EmptyImmutableSet;
+    sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->NN:Lcom/google/common/collect/EmptyImmutableSet;
 
     return-object v0
 .end method
@@ -176,7 +176,7 @@
 
     .prologue
     .line 61
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->vQ:[Ljava/lang/Object;
+    sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->vU:[Ljava/lang/Object;
 
     return-object v0
 .end method

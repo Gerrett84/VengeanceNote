@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field CS:I
+.field CW:I
 
 .field final mLastConfiguration:Landroid/content/res/Configuration;
 
@@ -50,7 +50,7 @@
     move-result v3
 
     .line 29
-    iget v2, p0, Lcom/android/settings/applications/InterestingConfigChanges;->CS:I
+    iget v2, p0, Lcom/android/settings/applications/InterestingConfigChanges;->CW:I
 
     invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -78,7 +78,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->densityDpi:I
 
-    iput v0, p0, Lcom/android/settings/applications/InterestingConfigChanges;->CS:I
+    iput v0, p0, Lcom/android/settings/applications/InterestingConfigChanges;->CW:I
 
     move v0, v1
 

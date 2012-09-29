@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private Gj:Landroid/widget/Spinner;
+.field private Gn:Landroid/widget/Spinner;
 
-.field private Gk:Lcom/android/settings/dT;
+.field private Go:Lcom/android/settings/dT;
 
-.field private bc:Lcom/android/internal/app/IUsageStats;
+.field private bf:Lcom/android/internal/app/IUsageStats;
 
-.field private be:Landroid/content/pm/PackageManager;
+.field private bh:Landroid/content/pm/PackageManager;
 
 .field private mInflater:Landroid/view/LayoutInflater;
 
@@ -38,7 +38,7 @@
 
     .prologue
     .line 57
-    iget-object v0, p0, Lcom/android/settings/UsageStats;->bc:Lcom/android/internal/app/IUsageStats;
+    iget-object v0, p0, Lcom/android/settings/UsageStats;->bf:Lcom/android/internal/app/IUsageStats;
 
     return-object v0
 .end method
@@ -49,7 +49,7 @@
 
     .prologue
     .line 57
-    iget-object v0, p0, Lcom/android/settings/UsageStats;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/UsageStats;->bh:Landroid/content/pm/PackageManager;
 
     return-object v0
 .end method
@@ -86,10 +86,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/UsageStats;->bc:Lcom/android/internal/app/IUsageStats;
+    iput-object v0, p0, Lcom/android/settings/UsageStats;->bf:Lcom/android/internal/app/IUsageStats;
 
     .line 226
-    iget-object v0, p0, Lcom/android/settings/UsageStats;->bc:Lcom/android/internal/app/IUsageStats;
+    iget-object v0, p0, Lcom/android/settings/UsageStats;->bf:Lcom/android/internal/app/IUsageStats;
 
     if-nez v0, :cond_0
 
@@ -121,7 +121,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/UsageStats;->be:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/UsageStats;->bh:Landroid/content/pm/PackageManager;
 
     .line 233
     const v0, 0x7f04007e
@@ -137,10 +137,10 @@
 
     check-cast v0, Landroid/widget/Spinner;
 
-    iput-object v0, p0, Lcom/android/settings/UsageStats;->Gj:Landroid/widget/Spinner;
+    iput-object v0, p0, Lcom/android/settings/UsageStats;->Gn:Landroid/widget/Spinner;
 
     .line 235
-    iget-object v0, p0, Lcom/android/settings/UsageStats;->Gj:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/UsageStats;->Gn:Landroid/widget/Spinner;
 
     invoke-virtual {v0, p0}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
@@ -160,12 +160,12 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/dT;-><init>(Lcom/android/settings/UsageStats;)V
 
-    iput-object v0, p0, Lcom/android/settings/UsageStats;->Gk:Lcom/android/settings/dT;
+    iput-object v0, p0, Lcom/android/settings/UsageStats;->Go:Lcom/android/settings/dT;
 
     .line 241
     iget-object v0, p0, Lcom/android/settings/UsageStats;->mListView:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcom/android/settings/UsageStats;->Gk:Lcom/android/settings/dT;
+    iget-object v1, p0, Lcom/android/settings/UsageStats;->Go:Lcom/android/settings/dT;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -181,7 +181,7 @@
 
     .prologue
     .line 246
-    iget-object v0, p0, Lcom/android/settings/UsageStats;->Gk:Lcom/android/settings/dT;
+    iget-object v0, p0, Lcom/android/settings/UsageStats;->Go:Lcom/android/settings/dT;
 
     invoke-virtual {v0, p3}, Lcom/android/settings/dT;->bb(I)V
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic nr:Lcom/android/settings/MiuiApnEditor;
+.field final synthetic nu:Lcom/android/settings/MiuiApnEditor;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 49
-    iput-object p1, p0, Lcom/android/settings/aF;->nr:Lcom/android/settings/MiuiApnEditor;
+    iput-object p1, p0, Lcom/android/settings/aF;->nu:Lcom/android/settings/MiuiApnEditor;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 52
-    iget-object v0, p0, Lcom/android/settings/aF;->nr:Lcom/android/settings/MiuiApnEditor;
+    iget-object v0, p0, Lcom/android/settings/aF;->nu:Lcom/android/settings/MiuiApnEditor;
 
     const/4 v1, 0x0
 
@@ -44,7 +44,7 @@
     if-eqz v0, :cond_0
 
     .line 53
-    iget-object v0, p0, Lcom/android/settings/aF;->nr:Lcom/android/settings/MiuiApnEditor;
+    iget-object v0, p0, Lcom/android/settings/aF;->nu:Lcom/android/settings/MiuiApnEditor;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiApnEditor;->finish()V
 

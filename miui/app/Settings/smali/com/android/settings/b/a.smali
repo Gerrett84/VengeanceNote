@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final mF:I
+.field private final mI:I
 
 
 # direct methods
@@ -18,7 +18,7 @@
     invoke-direct {p0, p1}, Lcom/android/settings/b/b;-><init>(Landroid/graphics/drawable/Drawable;)V
 
     .line 30
-    iput p2, p0, Lcom/android/settings/b/a;->mF:I
+    iput p2, p0, Lcom/android/settings/b/a;->mI:I
 
     .line 31
     return-void
@@ -35,11 +35,11 @@
 
     .prologue
     .line 35
-    iget v0, p0, Lcom/android/settings/b/a;->mF:I
+    iget v0, p0, Lcom/android/settings/b/a;->mI:I
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Lcom/android/settings/b/a;->mF:I
+    iget v1, p0, Lcom/android/settings/b/a;->mI:I
 
     sub-int v1, p3, v1
 

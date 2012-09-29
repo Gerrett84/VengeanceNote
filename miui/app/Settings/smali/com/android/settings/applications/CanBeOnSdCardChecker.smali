@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final BV:Landroid/content/pm/IPackageManager;
+.field final BZ:Landroid/content/pm/IPackageManager;
 
-.field BW:I
+.field Ca:I
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->BV:Landroid/content/pm/IPackageManager;
+    iput-object v0, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->BZ:Landroid/content/pm/IPackageManager;
 
     .line 90
     return-void
@@ -87,7 +87,7 @@
     if-ne v2, v3, :cond_2
 
     .line 112
-    iget v2, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->BW:I
+    iget v2, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->Ca:I
 
     if-eq v2, v4, :cond_0
 
@@ -103,13 +103,13 @@
     .prologue
     .line 94
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->BV:Landroid/content/pm/IPackageManager;
+    iget-object v0, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->BZ:Landroid/content/pm/IPackageManager;
 
     invoke-interface {v0}, Landroid/content/pm/IPackageManager;->getInstallLocation()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->BW:I
+    iput v0, p0, Lcom/android/settings/applications/CanBeOnSdCardChecker;->Ca:I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

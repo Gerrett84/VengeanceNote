@@ -7,17 +7,17 @@
 
 
 # static fields
-.field private static final GM:Ljava/util/HashSet;
+.field private static final GQ:Ljava/util/HashSet;
 
 
 # instance fields
-.field private Cg:Z
+.field private Ck:Z
 
-.field private final GL:Ljava/util/Comparator;
+.field private final GP:Ljava/util/Comparator;
 
-.field private be:Landroid/content/pm/PackageManager;
+.field private bh:Landroid/content/pm/PackageManager;
 
-.field private cY:Lmiui/security/ChooseLockSettingsHelper;
+.field private db:Lmiui/security/ChooseLockSettingsHelper;
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -32,206 +32,206 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    sput-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sput-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     .line 52
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.soundrecorder"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 53
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.contacts"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 54
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.browser"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 55
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.stk"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 56
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.mms"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 57
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.thememanager"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 58
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.deskclock"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 59
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.gallery3d"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 60
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.updater"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 61
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.fileexplorer"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 62
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.calendar"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 63
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.vending"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 64
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.apps.tag"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 65
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.email"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 66
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.monitor"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 67
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.providers.downloads.ui"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 68
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.google.android.talk"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 69
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.google.android.gm"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 70
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.android.camera"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 71
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.miui.camera"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 72
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.miui.gallery"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 73
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.miui.player"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 74
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.miui.backup"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 75
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.miui.notes"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 76
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.lbe.security.miui"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 77
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.xiaomi.market"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 78
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.miui.antispam"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 79
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "net.cactii.flash2"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 84
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     const-string v1, "com.htc.album"
 
@@ -251,14 +251,14 @@
     .line 33
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     .line 39
     new-instance v0, Lcom/android/settings/bI;
 
     invoke-direct {v0, p0}, Lcom/android/settings/bI;-><init>(Lcom/android/settings/AccessControlSetApp;)V
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->GL:Ljava/util/Comparator;
+    iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->GP:Ljava/util/Comparator;
 
     return-void
 .end method
@@ -269,7 +269,7 @@
 
     .prologue
     .line 28
-    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->bh:Landroid/content/pm/PackageManager;
 
     return-object v0
 .end method
@@ -280,12 +280,12 @@
 
     .prologue
     .line 28
-    invoke-direct {p0}, Lcom/android/settings/AccessControlSetApp;->jK()V
+    invoke-direct {p0}, Lcom/android/settings/AccessControlSetApp;->jO()V
 
     return-void
 .end method
 
-.method private jK()V
+.method private jO()V
     .locals 8
 
     .prologue
@@ -296,7 +296,7 @@
     const/high16 v7, -0x8000
 
     .line 124
-    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->bh:Landroid/content/pm/PackageManager;
 
     const v3, 0x20001
 
@@ -305,7 +305,7 @@
     move-result-object v0
 
     .line 125
-    iget-object v3, p0, Lcom/android/settings/AccessControlSetApp;->GL:Ljava/util/Comparator;
+    iget-object v3, p0, Lcom/android/settings/AccessControlSetApp;->GP:Ljava/util/Comparator;
 
     invoke-static {v0, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
@@ -342,7 +342,7 @@
 
     if-ne v0, v1, :cond_1
 
-    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GM:Ljava/util/HashSet;
+    sget-object v0, Lcom/android/settings/AccessControlSetApp;->GQ:Ljava/util/HashSet;
 
     iget-object v6, v4, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
@@ -361,7 +361,7 @@
     invoke-direct {v6, p0, v0}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 140
-    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v4, v0}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
@@ -378,7 +378,7 @@
     invoke-virtual {v6, v0}, Landroid/preference/CheckBoxPreference;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 146
-    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v4, v0}, Landroid/content/pm/ApplicationInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
@@ -454,7 +454,7 @@
     .line 194
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     .line 199
     :cond_0
@@ -488,7 +488,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     .line 96
     :cond_0
@@ -496,10 +496,10 @@
 
     invoke-direct {v0, p0}, Lmiui/security/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     .line 97
-    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlSetApp;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0}, Lmiui/security/ChooseLockSettingsHelper;->isACLockEnabled()Z
 
@@ -507,7 +507,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     if-nez v0, :cond_2
 
@@ -546,7 +546,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->be:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->bh:Landroid/content/pm/PackageManager;
 
     .line 110
     new-instance v0, Landroid/os/Handler;
@@ -556,12 +556,12 @@
     iput-object v0, p0, Lcom/android/settings/AccessControlSetApp;->mHandler:Landroid/os/Handler;
 
     .line 111
-    iget-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     if-eqz v0, :cond_3
 
     .line 112
-    invoke-direct {p0}, Lcom/android/settings/AccessControlSetApp;->jK()V
+    invoke-direct {p0}, Lcom/android/settings/AccessControlSetApp;->jO()V
 
     .line 121
     :goto_1
@@ -569,7 +569,7 @@
 
     .line 101
     :cond_2
-    iput-boolean v2, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iput-boolean v2, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     goto :goto_0
 
@@ -638,7 +638,7 @@
     check-cast p2, Ljava/lang/Boolean;
 
     .line 204
-    iget-object v2, p0, Lcom/android/settings/AccessControlSetApp;->be:Landroid/content/pm/PackageManager;
+    iget-object v2, p0, Lcom/android/settings/AccessControlSetApp;->bh:Landroid/content/pm/PackageManager;
 
     invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
@@ -696,7 +696,7 @@
     .line 187
     const-string v0, "password_confirmed"
 
-    iget-boolean v1, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iget-boolean v1, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
@@ -712,14 +712,14 @@
     invoke-super {p0}, Landroid/preference/PreferenceActivity;->onStop()V
 
     .line 165
-    iget-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     if-eqz v0, :cond_0
 
     .line 166
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Cg:Z
+    iput-boolean v0, p0, Lcom/android/settings/AccessControlSetApp;->Ck:Z
 
     .line 167
     invoke-virtual {p0}, Lcom/android/settings/AccessControlSetApp;->finish()V

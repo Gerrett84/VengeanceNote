@@ -1,82 +1,177 @@
-.class Lcom/android/settings/wifi/G;
-.super Ljava/lang/Object;
-.source "WifiConfigUiForSetupWizardXL.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public Lcom/android/settings/wifi/G;
+.super Lcom/android/settings/wifi/AccessPoint;
+.source "MiuiAccessPoint.java"
 
 
 # instance fields
-.field final yX:Landroid/view/View;
-
-.field final synthetic yY:Lcom/android/settings/wifi/N;
+.field private yW:Landroid/view/View$OnClickListener;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/settings/wifi/N;Landroid/view/View;)V
+.method constructor <init>(Landroid/content/Context;Landroid/net/wifi/ScanResult;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 186
-    iput-object p1, p0, Lcom/android/settings/wifi/G;->yY:Lcom/android/settings/wifi/N;
+    .line 26
+    invoke-direct {p0, p1, p2}, Lcom/android/settings/wifi/AccessPoint;-><init>(Landroid/content/Context;Landroid/net/wifi/ScanResult;)V
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 27
+    return-void
+.end method
 
-    .line 187
-    iput-object p2, p0, Lcom/android/settings/wifi/G;->yX:Landroid/view/View;
+.method constructor <init>(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)V
+    .locals 0
+    .parameter
+    .parameter
 
-    .line 188
+    .prologue
+    .line 22
+    invoke-direct {p0, p1, p2}, Lcom/android/settings/wifi/AccessPoint;-><init>(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)V
+
+    .line 23
+    return-void
+.end method
+
+.method constructor <init>(Landroid/content/Context;Landroid/os/Bundle;)V
+    .locals 0
+    .parameter
+    .parameter
+
+    .prologue
+    .line 18
+    invoke-direct {p0, p1, p2}, Lcom/android/settings/wifi/AccessPoint;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V
+
+    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public a(Landroid/view/View$OnClickListener;)V
+    .locals 0
+    .parameter
 
     .prologue
-    .line 193
-    iget-object v0, p0, Lcom/android/settings/wifi/G;->yY:Lcom/android/settings/wifi/N;
+    .line 40
+    iput-object p1, p0, Lcom/android/settings/wifi/G;->yW:Landroid/view/View$OnClickListener;
 
-    invoke-static {v0}, Lcom/android/settings/wifi/N;->a(Lcom/android/settings/wifi/N;)Landroid/view/inputmethod/InputMethodManager;
+    .line 41
+    return-void
+.end method
 
-    move-result-object v0
+.method public bridge synthetic c(Landroid/os/Bundle;)V
+    .locals 0
+    .parameter
 
-    iget-object v1, p0, Lcom/android/settings/wifi/G;->yX:Landroid/view/View;
+    .prologue
+    .line 14
+    invoke-super {p0, p1}, Lcom/android/settings/wifi/AccessPoint;->c(Landroid/os/Bundle;)V
 
-    const/4 v2, 0x0
+    return-void
+.end method
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
+.method public compareTo(Landroid/preference/Preference;)I
+    .locals 2
+    .parameter
+
+    .prologue
+    .line 45
+    instance-of v0, p1, Lcom/android/settings/wifi/AccessPoint;
+
+    if-nez v0, :cond_0
+
+    .line 46
+    const/4 v0, 0x1
+
+    .line 50
+    :goto_0
+    return v0
+
+    .line 48
+    :cond_0
+    check-cast p1, Lcom/android/settings/wifi/AccessPoint;
+
+    .line 50
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
+
+    iget-object v1, p1, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 195
-    if-eqz v0, :cond_0
+    goto :goto_0
+.end method
 
-    .line 196
-    iget-object v0, p0, Lcom/android/settings/wifi/G;->yY:Lcom/android/settings/wifi/N;
+.method public bridge synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
+    .parameter
 
-    invoke-static {v0}, Lcom/android/settings/wifi/N;->b(Lcom/android/settings/wifi/N;)Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;
+    .prologue
+    .line 14
+    check-cast p1, Landroid/preference/Preference;
+
+    invoke-virtual {p0, p1}, Lcom/android/settings/wifi/G;->compareTo(Landroid/preference/Preference;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected onBindView(Landroid/view/View;)V
+    .locals 2
+    .parameter
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 31
+    invoke-super {p0, p1}, Lcom/android/settings/wifi/AccessPoint;->onBindView(Landroid/view/View;)V
+
+    .line 32
+    invoke-virtual {p1, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    .line 33
+    const v0, 0x1020006
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const/16 v1, 0x8
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
 
-    invoke-virtual {v0, v1}, Lcom/android/settings/wifi/WifiSettingsForSetupWizardXL;->aQ(I)V
+    .line 34
+    const v0, 0x7f0800f6
 
-    .line 200
-    :goto_0
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    .line 35
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 36
+    iget-object v1, p0, Lcom/android/settings/wifi/G;->yW:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 37
     return-void
+.end method
 
-    .line 198
-    :cond_0
-    const-string v0, "SetupWizard"
+.method public bridge synthetic z(Z)Ljava/lang/String;
+    .locals 1
+    .parameter
 
-    const-string v1, "Failed to show software keyboard "
+    .prologue
+    .line 14
+    invoke-super {p0, p1}, Lcom/android/settings/wifi/AccessPoint;->z(Z)Ljava/lang/String;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v0
 
-    goto :goto_0
+    return-object v0
 .end method

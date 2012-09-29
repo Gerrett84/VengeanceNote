@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final synthetic fv:Lcom/android/settings/aP;
+.field final synthetic fy:Lcom/android/settings/aP;
 
-.field private ss:Lcom/android/settings/aa;
+.field private sv:Lcom/android/settings/aa;
 
 
 # direct methods
@@ -17,12 +17,12 @@
 
     .prologue
     .line 282
-    iput-object p1, p0, Lcom/android/settings/bb;->fv:Lcom/android/settings/aP;
+    iput-object p1, p0, Lcom/android/settings/bb;->fy:Lcom/android/settings/aP;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageDeleteObserver$Stub;-><init>()V
 
     .line 283
-    iput-object p2, p0, Lcom/android/settings/bb;->ss:Lcom/android/settings/aa;
+    iput-object p2, p0, Lcom/android/settings/bb;->sv:Lcom/android/settings/aa;
 
     .line 284
     return-void
@@ -41,7 +41,7 @@
 
     .line 296
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/bb;->ss:Lcom/android/settings/aa;
+    iget-object v0, p0, Lcom/android/settings/bb;->sv:Lcom/android/settings/aa;
 
     invoke-virtual {v0}, Lcom/android/settings/aa;->finish()V
 

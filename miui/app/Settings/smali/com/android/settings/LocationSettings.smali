@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field private eA:Landroid/preference/CheckBoxPreference;
-
 .field private eB:Landroid/preference/CheckBoxPreference;
 
-.field private eC:Landroid/content/ContentQueryMap;
+.field private eC:Landroid/preference/CheckBoxPreference;
 
-.field private eD:Ljava/util/Observer;
+.field private eD:Landroid/preference/CheckBoxPreference;
 
-.field private ey:Landroid/preference/CheckBoxPreference;
+.field private eE:Landroid/preference/CheckBoxPreference;
 
-.field private ez:Landroid/preference/CheckBoxPreference;
+.field private eF:Landroid/content/ContentQueryMap;
+
+.field private eG:Ljava/util/Observer;
 
 
 # direct methods
@@ -37,12 +37,12 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->ak()V
+    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->ao()V
 
     return-void
 .end method
 
-.method private af()Landroid/preference/PreferenceScreen;
+.method private aj()Landroid/preference/PreferenceScreen;
     .locals 5
 
     .prologue
@@ -81,7 +81,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LocationSettings;->ey:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/LocationSettings;->eB:Landroid/preference/CheckBoxPreference;
 
     .line 87
     const-string v0, "location_gps"
@@ -92,7 +92,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LocationSettings;->ez:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/preference/CheckBoxPreference;
 
     .line 88
     const-string v0, "assisted_gps"
@@ -103,7 +103,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     .line 89
     invoke-virtual {p0}, Lcom/android/settings/LocationSettings;->getActivity()Landroid/app/Activity;
@@ -170,7 +170,7 @@
     invoke-virtual {v0, v4}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
     .line 101
-    iput-object v4, p0, Lcom/android/settings/LocationSettings;->eB:Landroid/preference/CheckBoxPreference;
+    iput-object v4, p0, Lcom/android/settings/LocationSettings;->eE:Landroid/preference/CheckBoxPreference;
 
     .line 104
     :cond_1
@@ -183,7 +183,7 @@
     goto :goto_0
 .end method
 
-.method private ak()V
+.method private ao()V
     .locals 6
 
     .prologue
@@ -202,7 +202,7 @@
     move-result v2
 
     .line 156
-    iget-object v3, p0, Lcom/android/settings/LocationSettings;->ey:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/LocationSettings;->eB:Landroid/preference/CheckBoxPreference;
 
     const-string v4, "network"
 
@@ -213,17 +213,17 @@
     invoke-virtual {v3, v4}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 158
-    iget-object v3, p0, Lcom/android/settings/LocationSettings;->ez:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 159
-    iget-object v3, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     if-eqz v3, :cond_0
 
     .line 160
-    iget-object v3, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     const-string v4, "assisted_gps_enabled"
 
@@ -239,7 +239,7 @@
     invoke-virtual {v3, v0}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 162
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
@@ -267,7 +267,7 @@
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/SettingsPreferenceFragment;->onActivityResult(IILandroid/content/Intent;)V
 
     .line 172
-    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->af()Landroid/preference/PreferenceScreen;
+    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->aj()Landroid/preference/PreferenceScreen;
 
     .line 173
     return-void
@@ -282,7 +282,7 @@
     const/4 v1, 0x0
 
     .line 176
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eB:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eE:Landroid/preference/CheckBoxPreference;
 
     if-ne p1, v0, :cond_1
 
@@ -327,7 +327,7 @@
 
     .prologue
     .line 131
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->ey:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eB:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_1
 
@@ -338,7 +338,7 @@
 
     const-string v1, "network"
 
-    iget-object v2, p0, Lcom/android/settings/LocationSettings;->ey:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/LocationSettings;->eB:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -357,12 +357,12 @@
 
     .line 134
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->ez:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_2
 
     .line 135
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->ez:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -378,12 +378,12 @@
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->setLocationProviderEnabled(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
 
     .line 138
-    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     if-eqz v1, :cond_0
 
     .line 139
-    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
@@ -391,7 +391,7 @@
 
     .line 141
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_0
 
@@ -402,7 +402,7 @@
 
     const-string v2, "assisted_gps_enabled"
 
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eA:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -431,13 +431,13 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 113
-    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->af()Landroid/preference/PreferenceScreen;
+    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->aj()Landroid/preference/PreferenceScreen;
 
     .line 114
-    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->ak()V
+    invoke-direct {p0}, Lcom/android/settings/LocationSettings;->ao()V
 
     .line 116
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Ljava/util/Observer;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eG:Ljava/util/Observer;
 
     if-nez v0, :cond_0
 
@@ -446,13 +446,13 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/I;-><init>(Lcom/android/settings/LocationSettings;)V
 
-    iput-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Ljava/util/Observer;
+    iput-object v0, p0, Lcom/android/settings/LocationSettings;->eG:Ljava/util/Observer;
 
     .line 124
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/content/ContentQueryMap;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eF:Landroid/content/ContentQueryMap;
 
-    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eD:Ljava/util/Observer;
+    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eG:Ljava/util/Observer;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentQueryMap;->addObserver(Ljava/util/Observer;)V
 
@@ -501,7 +501,7 @@
 
     invoke-direct {v1, v0, v3, v7, v2}, Landroid/content/ContentQueryMap;-><init>(Landroid/database/Cursor;Ljava/lang/String;ZLandroid/os/Handler;)V
 
-    iput-object v1, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/content/ContentQueryMap;
+    iput-object v1, p0, Lcom/android/settings/LocationSettings;->eF:Landroid/content/ContentQueryMap;
 
     .line 68
     return-void
@@ -515,14 +515,14 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onStop()V
 
     .line 73
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eD:Ljava/util/Observer;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eG:Ljava/util/Observer;
 
     if-eqz v0, :cond_0
 
     .line 74
-    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eC:Landroid/content/ContentQueryMap;
+    iget-object v0, p0, Lcom/android/settings/LocationSettings;->eF:Landroid/content/ContentQueryMap;
 
-    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eD:Ljava/util/Observer;
+    iget-object v1, p0, Lcom/android/settings/LocationSettings;->eG:Ljava/util/Observer;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentQueryMap;->deleteObserver(Ljava/util/Observer;)V
 

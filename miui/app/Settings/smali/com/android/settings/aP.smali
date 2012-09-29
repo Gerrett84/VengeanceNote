@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic pj:Lcom/android/settings/MiuiMasterClear;
+.field final synthetic pm:Lcom/android/settings/MiuiMasterClear;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 278
-    iput-object p1, p0, Lcom/android/settings/aP;->pj:Lcom/android/settings/MiuiMasterClear;
+    iput-object p1, p0, Lcom/android/settings/aP;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -59,7 +59,7 @@
     invoke-direct {v2, p0, v1}, Lcom/android/settings/bb;-><init>(Lcom/android/settings/aP;Lcom/android/settings/aa;)V
 
     .line 323
-    iget-object v0, p0, Lcom/android/settings/aP;->pj:Lcom/android/settings/MiuiMasterClear;
+    iget-object v0, p0, Lcom/android/settings/aP;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-virtual {v0}, Lcom/android/settings/MiuiMasterClear;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -99,7 +99,7 @@
 
     if-nez v5, :cond_0
 
-    iget-object v5, p0, Lcom/android/settings/aP;->pj:Lcom/android/settings/MiuiMasterClear;
+    iget-object v5, p0, Lcom/android/settings/aP;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-static {v5}, Lcom/android/settings/MiuiMasterClear;->d(Lcom/android/settings/MiuiMasterClear;)Ljava/util/HashSet;
 
@@ -119,7 +119,7 @@
     invoke-virtual {v3, v0, v2, v7}, Landroid/content/pm/PackageManager;->deletePackage(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;I)V
 
     .line 331
-    invoke-virtual {v1}, Lcom/android/settings/aa;->ap()V
+    invoke-virtual {v1}, Lcom/android/settings/aa;->at()V
 
     goto :goto_0
 
@@ -149,7 +149,7 @@
 
     .prologue
     .line 339
-    iget-object v0, p0, Lcom/android/settings/aP;->pj:Lcom/android/settings/MiuiMasterClear;
+    iget-object v0, p0, Lcom/android/settings/aP;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-static {v0}, Lcom/android/settings/MiuiMasterClear;->e(Lcom/android/settings/MiuiMasterClear;)Landroid/app/Dialog;
 
@@ -158,7 +158,7 @@
     if-eqz v0, :cond_0
 
     .line 340
-    iget-object v0, p0, Lcom/android/settings/aP;->pj:Lcom/android/settings/MiuiMasterClear;
+    iget-object v0, p0, Lcom/android/settings/aP;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-static {v0}, Lcom/android/settings/MiuiMasterClear;->e(Lcom/android/settings/MiuiMasterClear;)Landroid/app/Dialog;
 
@@ -168,7 +168,7 @@
 
     .line 342
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/aP;->pj:Lcom/android/settings/MiuiMasterClear;
+    iget-object v0, p0, Lcom/android/settings/aP;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-static {v0}, Lcom/android/settings/MiuiMasterClear;->c(Lcom/android/settings/MiuiMasterClear;)V
 

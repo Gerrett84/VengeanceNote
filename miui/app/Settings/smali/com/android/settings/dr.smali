@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aY:Lcom/android/settings/RadioInfo;
+.field final synthetic bb:Lcom/android/settings/RadioInfo;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 897
-    iput-object p1, p0, Lcom/android/settings/dr;->aY:Lcom/android/settings/RadioInfo;
+    iput-object p1, p0, Lcom/android/settings/dr;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,7 +48,7 @@
 
     aput-object v0, v5, v2
 
-    iget-object v0, p0, Lcom/android/settings/dr;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/dr;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->B(Lcom/android/settings/RadioInfo;)Z
 
@@ -68,7 +68,7 @@
     invoke-static {v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 902
-    iget-object v0, p0, Lcom/android/settings/dr;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/dr;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->B(Lcom/android/settings/RadioInfo;)Z
 
@@ -90,7 +90,7 @@
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 905
-    iget-object v0, p0, Lcom/android/settings/dr;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/dr;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->C(Lcom/android/settings/RadioInfo;)V
 

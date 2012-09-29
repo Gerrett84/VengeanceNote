@@ -7,21 +7,21 @@
 
 
 # instance fields
-.field private final Ds:Landroid/preference/Preference;
+.field private DA:I
 
-.field private final Dt:Landroid/content/SharedPreferences;
+.field private final DB:Ljava/lang/Runnable;
 
-.field private Du:Z
+.field private final Dw:Landroid/preference/Preference;
 
-.field private Dv:I
+.field private final Dx:Landroid/content/SharedPreferences;
 
-.field private Dw:I
+.field private Dy:Z
 
-.field private final Dx:Ljava/lang/Runnable;
+.field private Dz:I
 
-.field private final N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+.field private final Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
-.field private final iY:Landroid/os/Handler;
+.field private final jb:Landroid/os/Handler;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -42,7 +42,7 @@
     .line 69
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     .line 71
     new-instance v0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;
@@ -56,7 +56,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$2;-><init>(Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;)V
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DB:Ljava/lang/Runnable;
 
     .line 92
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->mContext:Landroid/content/Context;
@@ -66,20 +66,20 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iY:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->jb:Landroid/os/Handler;
 
     .line 94
-    iput-object p2, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iput-object p2, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     .line 95
-    iput-object p3, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iput-object p3, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     .line 96
     invoke-virtual {p3}, Landroid/preference/Preference;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dt:Landroid/content/SharedPreferences;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Landroid/content/SharedPreferences;
 
     .line 97
     const/4 v0, 0x0
@@ -103,7 +103,7 @@
     if-nez v0, :cond_0
 
     .line 145
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     const v1, 0x7f0b005a
 
@@ -120,7 +120,7 @@
     move-result-object v0
 
     .line 148
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->mContext:Landroid/content/Context;
 
@@ -200,7 +200,7 @@
 
     .prologue
     .line 37
-    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iD()V
+    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iH()V
 
     return-void
 .end method
@@ -212,12 +212,12 @@
     const/4 v1, -0x1
 
     .line 194
-    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     if-eq v0, v1, :cond_0
 
     .line 195
-    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     .line 214
     :goto_0
@@ -235,7 +235,7 @@
     if-gez v0, :cond_1
 
     .line 200
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dt:Landroid/content/SharedPreferences;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Landroid/content/SharedPreferences;
 
     const-string v1, "bt_discoverable_timeout"
 
@@ -260,7 +260,7 @@
     .line 213
     :cond_1
     :goto_1
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     goto :goto_0
 
@@ -301,17 +301,17 @@
     goto :goto_1
 .end method
 
-.method private iC()V
+.method private iG()V
     .locals 2
 
     .prologue
     .line 251
-    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dv:I
+    iget v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dz:I
 
     if-eqz v0, :cond_0
 
     .line 252
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     const v1, 0x7f0b005c
 
@@ -323,7 +323,7 @@
 
     .line 254
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     const v1, 0x7f0b005b
 
@@ -332,14 +332,14 @@
     goto :goto_0
 .end method
 
-.method private iD()V
+.method private iH()V
     .locals 7
 
     .prologue
     const-wide/16 v5, 0x3e8
 
     .line 259
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getScanMode()I
 
@@ -395,16 +395,16 @@
 
     .line 277
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iY:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->jb:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DB:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 278
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iY:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->jb:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DB:Ljava/lang/Runnable;
 
     const-wide/16 v2, 0x3e8
 
@@ -439,7 +439,7 @@
     move-result v0
 
     .line 131
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->setDiscoverableTimeout(I)V
 
@@ -462,14 +462,14 @@
     invoke-static {v3, v1, v2}, Lcom/android/settings/bluetooth/LocalBluetoothPreferences;->a(Landroid/content/Context;J)V
 
     .line 136
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     const/16 v2, 0x17
 
     invoke-virtual {v1, v2, v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->setScanMode(II)Z
 
     .line 137
-    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iD()V
+    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iH()V
 
     .line 141
     :goto_0
@@ -477,7 +477,7 @@
 
     .line 139
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     const/16 v1, 0x15
 
@@ -494,10 +494,10 @@
 
     .prologue
     .line 236
-    iput p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dv:I
+    iput p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dz:I
 
     .line 237
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getScanMode()I
 
@@ -522,10 +522,10 @@
     .line 242
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Du:Z
+    iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dy:Z
 
     .line 243
-    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iD()V
+    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iH()V
 
     .line 248
     :goto_0
@@ -535,15 +535,15 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Du:Z
+    iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dy:Z
 
     .line 246
-    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iC()V
+    invoke-direct {p0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iG()V
 
     goto :goto_0
 .end method
 
-.method iB()I
+.method iF()I
     .locals 1
 
     .prologue
@@ -599,17 +599,17 @@
     const/4 v1, 0x1
 
     .line 123
-    iget-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Du:Z
+    iget-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dy:Z
 
     if-nez v0, :cond_0
 
     move v0, v1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Du:Z
+    iput-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dy:Z
 
     .line 124
-    iget-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Du:Z
+    iget-boolean v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dy:Z
 
     invoke-direct {p0, v0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->setEnabled(Z)V
 
@@ -628,7 +628,7 @@
 
     .prologue
     .line 112
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-nez v0, :cond_0
 
@@ -638,9 +638,9 @@
 
     .line 116
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->iY:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->jb:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Ljava/lang/Runnable;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DB:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
@@ -652,7 +652,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 118
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     const/4 v1, 0x0
 
@@ -666,7 +666,7 @@
 
     .prologue
     .line 101
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     if-nez v0, :cond_0
 
@@ -690,12 +690,12 @@
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 107
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Ds:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:Landroid/preference/Preference;
 
     invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
     .line 108
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->N:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Q:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/LocalBluetoothAdapter;->getScanMode()I
 
@@ -717,14 +717,14 @@
     .line 170
     const/16 v0, 0x78
 
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     .line 171
     const-string v0, "twomin"
 
     .line 189
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dt:Landroid/content/SharedPreferences;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dx:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -750,7 +750,7 @@
     :pswitch_0
     const/16 v0, 0x12c
 
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     .line 176
     const-string v0, "fivemin"
@@ -761,7 +761,7 @@
     :pswitch_1
     const/16 v0, 0xe10
 
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     .line 181
     const-string v0, "onehour"
@@ -772,7 +772,7 @@
     :pswitch_2
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->Dw:I
+    iput v0, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->DA:I
 
     .line 186
     const-string v0, "never"

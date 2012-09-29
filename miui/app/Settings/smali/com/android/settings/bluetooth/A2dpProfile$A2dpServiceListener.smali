@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Ck:Lcom/android/settings/bluetooth/A2dpProfile;
+.field final synthetic Co:Lcom/android/settings/bluetooth/A2dpProfile;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 50
-    iput-object p1, p0, Lcom/android/settings/bluetooth/A2dpProfile$A2dpServiceListener;->Ck:Lcom/android/settings/bluetooth/A2dpProfile;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/A2dpProfile$A2dpServiceListener;->Co:Lcom/android/settings/bluetooth/A2dpProfile;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,7 +45,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/android/settings/bluetooth/A2dpProfile$A2dpServiceListener;->Ck:Lcom/android/settings/bluetooth/A2dpProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/A2dpProfile$A2dpServiceListener;->Co:Lcom/android/settings/bluetooth/A2dpProfile;
 
     check-cast p2, Landroid/bluetooth/BluetoothA2dp;
 
@@ -61,7 +61,7 @@
 
     .prologue
     .line 58
-    iget-object v0, p0, Lcom/android/settings/bluetooth/A2dpProfile$A2dpServiceListener;->Ck:Lcom/android/settings/bluetooth/A2dpProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/A2dpProfile$A2dpServiceListener;->Co:Lcom/android/settings/bluetooth/A2dpProfile;
 
     const/4 v1, 0x0
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+.field final synthetic IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 269
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$5;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$5;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

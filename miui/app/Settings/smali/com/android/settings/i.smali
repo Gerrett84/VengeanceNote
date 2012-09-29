@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+.field final synthetic aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 135
-    iput-object p1, p0, Lcom/android/settings/i;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iput-object p1, p0, Lcom/android/settings/i;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -29,7 +29,7 @@
 
     .prologue
     .line 138
-    iget-object v0, p0, Lcom/android/settings/i;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v0, p0, Lcom/android/settings/i;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-static {v0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->a(Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;)I
 
@@ -40,7 +40,7 @@
     if-ne v0, v1, :cond_0
 
     .line 139
-    iget-object v0, p0, Lcom/android/settings/i;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v0, p0, Lcom/android/settings/i;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-static {v0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->b(Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;)Z
 
@@ -48,14 +48,14 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/i;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v0, p0, Lcom/android/settings/i;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
-    iget-boolean v0, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:Z
+    iget-boolean v0, v0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
 
     if-nez v0, :cond_0
 
     .line 140
-    iget-object v0, p0, Lcom/android/settings/i;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v0, p0, Lcom/android/settings/i;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-static {v0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->c(Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;)Lcom/android/settings/TimerView;
 

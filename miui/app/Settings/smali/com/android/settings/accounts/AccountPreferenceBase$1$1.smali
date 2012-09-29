@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic dZ:Lcom/android/settings/accounts/AccountPreferenceBase$1;
+.field final synthetic ec:Lcom/android/settings/accounts/AccountPreferenceBase$1;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 111
-    iput-object p1, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1$1;->dZ:Lcom/android/settings/accounts/AccountPreferenceBase$1;
+    iput-object p1, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1$1;->ec:Lcom/android/settings/accounts/AccountPreferenceBase$1;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,11 +31,11 @@
 
     .prologue
     .line 113
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1$1;->dZ:Lcom/android/settings/accounts/AccountPreferenceBase$1;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1$1;->ec:Lcom/android/settings/accounts/AccountPreferenceBase$1;
 
-    iget-object v0, v0, Lcom/android/settings/accounts/AccountPreferenceBase$1;->ob:Lcom/android/settings/accounts/AccountPreferenceBase;
+    iget-object v0, v0, Lcom/android/settings/accounts/AccountPreferenceBase$1;->oe:Lcom/android/settings/accounts/AccountPreferenceBase;
 
-    invoke-virtual {v0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dg()V
+    invoke-virtual {v0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dk()V
 
     .line 114
     return-void

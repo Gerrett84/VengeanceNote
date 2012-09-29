@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private cP:Lcom/android/settings/wifi/S;
+.field private cS:Lcom/android/settings/wifi/T;
 
-.field private cQ:Z
+.field private cT:Z
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     .prologue
     .line 72
-    iput-boolean p1, p0, Lcom/android/settings/wifi/m;->cQ:Z
+    iput-boolean p1, p0, Lcom/android/settings/wifi/m;->cT:Z
 
     .line 73
     invoke-virtual {p0}, Lcom/android/settings/wifi/m;->getActivity()Landroid/app/Activity;
@@ -63,7 +63,7 @@
     move-result-object v2
 
     .line 37
-    new-instance v0, Lcom/android/settings/wifi/S;
+    new-instance v0, Lcom/android/settings/wifi/T;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/m;->getActivity()Landroid/app/Activity;
 
@@ -75,9 +75,9 @@
 
     move-object v5, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/android/settings/wifi/S;-><init>(Landroid/app/Activity;Landroid/view/View;Lcom/android/settings/wifi/AccessPoint;ZLcom/android/settings/wifi/t;)V
+    invoke-direct/range {v0 .. v5}, Lcom/android/settings/wifi/T;-><init>(Landroid/app/Activity;Landroid/view/View;Lcom/android/settings/wifi/AccessPoint;ZLcom/android/settings/wifi/t;)V
 
-    iput-object v0, p0, Lcom/android/settings/wifi/m;->cP:Lcom/android/settings/wifi/S;
+    iput-object v0, p0, Lcom/android/settings/wifi/m;->cS:Lcom/android/settings/wifi/T;
 
     .line 38
     return-void
@@ -118,7 +118,7 @@
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
     .line 47
-    iget-boolean v1, p0, Lcom/android/settings/wifi/m;->cQ:Z
+    iget-boolean v1, p0, Lcom/android/settings/wifi/m;->cT:Z
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
@@ -189,9 +189,9 @@
 
     .line 58
     :pswitch_1
-    iget-object v1, p0, Lcom/android/settings/wifi/m;->cP:Lcom/android/settings/wifi/S;
+    iget-object v1, p0, Lcom/android/settings/wifi/m;->cS:Lcom/android/settings/wifi/T;
 
-    invoke-virtual {v1}, Lcom/android/settings/wifi/S;->ds()Landroid/net/wifi/WifiConfiguration;
+    invoke-virtual {v1}, Lcom/android/settings/wifi/T;->dw()Landroid/net/wifi/WifiConfiguration;
 
     move-result-object v1
 

@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field transient Fg:Ljava/util/concurrent/ConcurrentMap;
+.field transient Fk:Ljava/util/concurrent/ConcurrentMap;
 
 .field final concurrencyLevel:I
 
@@ -78,7 +78,7 @@
     iput-object p11, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->removalListener:Lcom/google/common/collect/o;
 
     .line 3977
-    iput-object p12, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iput-object p12, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     .line 3978
     return-void
@@ -86,6 +86,18 @@
 
 
 # virtual methods
+.method protected bridge synthetic A()Ljava/util/Map;
+    .locals 1
+
+    .prologue
+    .line 3947
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->bD()Ljava/util/concurrent/ConcurrentMap;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method a(Ljava/io/ObjectInputStream;)Lcom/google/common/collect/MapMaker;
     .locals 6
     .parameter
@@ -189,25 +201,13 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic a()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 3947
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->bz()Ljava/util/concurrent/ConcurrentMap;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method a(Ljava/io/ObjectOutputStream;)V
     .locals 3
     .parameter
 
     .prologue
     .line 3986
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v0}, Ljava/util/concurrent/ConcurrentMap;->size()I
 
@@ -216,7 +216,7 @@
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
     .line 3987
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v0}, Ljava/util/concurrent/ConcurrentMap;->entrySet()Ljava/util/Set;
 
@@ -289,29 +289,29 @@
     move-result-object v1
 
     .line 4025
-    iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v2, v0, v1}, Ljava/util/concurrent/ConcurrentMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
 
-.method protected bz()Ljava/util/concurrent/ConcurrentMap;
+.method protected bD()Ljava/util/concurrent/ConcurrentMap;
     .locals 1
 
     .prologue
     .line 3982
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fg:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->Fk:Ljava/util/concurrent/ConcurrentMap;
 
     return-object v0
 .end method
 
-.method protected bridge synthetic w()Ljava/util/Map;
+.method protected bridge synthetic e()Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 3947
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->bz()Ljava/util/concurrent/ConcurrentMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;->bD()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 

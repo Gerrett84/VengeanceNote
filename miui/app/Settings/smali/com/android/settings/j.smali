@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final synthetic aK:[I
+.field static final synthetic aN:[I
 
 
 # direct methods
@@ -21,12 +21,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/settings/j;->aK:[I
+    sput-object v0, Lcom/android/settings/j;->aN:[I
 
     :try_start_0
-    sget-object v0, Lcom/android/settings/j;->aK:[I
+    sget-object v0, Lcom/android/settings/j;->aN:[I
 
-    sget-object v1, Lcom/android/settings/ScanState;->bG:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
 
     invoke-virtual {v1}, Lcom/android/settings/ScanState;->ordinal()I
 
@@ -40,9 +40,9 @@
 
     :goto_0
     :try_start_1
-    sget-object v0, Lcom/android/settings/j;->aK:[I
+    sget-object v0, Lcom/android/settings/j;->aN:[I
 
-    sget-object v1, Lcom/android/settings/ScanState;->bH:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bK:Lcom/android/settings/ScanState;
 
     invoke-virtual {v1}, Lcom/android/settings/ScanState;->ordinal()I
 
@@ -56,9 +56,9 @@
 
     :goto_1
     :try_start_2
-    sget-object v0, Lcom/android/settings/j;->aK:[I
+    sget-object v0, Lcom/android/settings/j;->aN:[I
 
-    sget-object v1, Lcom/android/settings/ScanState;->bI:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bL:Lcom/android/settings/ScanState;
 
     invoke-virtual {v1}, Lcom/android/settings/ScanState;->ordinal()I
 
@@ -72,9 +72,9 @@
 
     :goto_2
     :try_start_3
-    sget-object v0, Lcom/android/settings/j;->aK:[I
+    sget-object v0, Lcom/android/settings/j;->aN:[I
 
-    sget-object v1, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
+    sget-object v1, Lcom/android/settings/ScanState;->bM:Lcom/android/settings/ScanState;
 
     invoke-virtual {v1}, Lcom/android/settings/ScanState;->ordinal()I
 

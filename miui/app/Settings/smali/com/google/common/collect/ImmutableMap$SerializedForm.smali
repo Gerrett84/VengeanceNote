@@ -47,7 +47,7 @@
     const/4 v0, 0x0
 
     .line 409
-    invoke-virtual {p1}, Lcom/google/common/collect/ImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p1}, Lcom/google/common/collect/ImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v1
 
@@ -135,7 +135,7 @@
 
     .line 423
     :cond_0
-    invoke-virtual {p1}, Lcom/google/common/collect/O;->hs()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p1}, Lcom/google/common/collect/O;->hw()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 

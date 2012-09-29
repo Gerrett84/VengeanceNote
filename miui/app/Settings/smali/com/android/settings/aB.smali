@@ -9,15 +9,15 @@
 
 
 # instance fields
-.field private mA:Z
+.field private mD:Z
 
-.field private final mB:Landroid/widget/Button;
+.field private final mE:Landroid/widget/Button;
 
-.field private final mC:Landroid/widget/TextView;
+.field private final mF:Landroid/widget/TextView;
 
-.field private final mD:Landroid/widget/TextView;
+.field private final mG:Landroid/widget/TextView;
 
-.field final synthetic mE:Lcom/android/settings/CredentialStorage;
+.field final synthetic mH:Lcom/android/settings/CredentialStorage;
 
 
 # direct methods
@@ -33,7 +33,7 @@
     const/4 v4, 0x0
 
     .line 388
-    iput-object p1, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iput-object p1, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -87,15 +87,15 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/aB;->mC:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/aB;->mF:Landroid/widget/TextView;
 
     .line 404
-    iget-object v0, p0, Lcom/android/settings/aB;->mC:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/aB;->mF:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 405
-    iget-object v0, p0, Lcom/android/settings/aB;->mC:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/aB;->mF:Landroid/widget/TextView;
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
@@ -108,7 +108,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/aB;->mD:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/aB;->mG:Landroid/widget/TextView;
 
     .line 408
     new-instance v0, Landroid/app/AlertDialog$Builder;
@@ -152,10 +152,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/aB;->mB:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/aB;->mE:Landroid/widget/Button;
 
     .line 417
-    iget-object v0, p0, Lcom/android/settings/aB;->mB:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/aB;->mE:Landroid/widget/Button;
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setEnabled(Z)V
 
@@ -255,13 +255,13 @@
 
     .prologue
     .line 421
-    iget-object v1, p0, Lcom/android/settings/aB;->mB:Landroid/widget/Button;
+    iget-object v1, p0, Lcom/android/settings/aB;->mE:Landroid/widget/Button;
 
-    iget-object v0, p0, Lcom/android/settings/aB;->mC:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/aB;->mF:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/aB;->mC:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/aB;->mF:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -315,7 +315,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/aB;->mA:Z
+    iput-boolean v0, p0, Lcom/android/settings/aB;->mD:Z
 
     .line 432
     return-void
@@ -337,26 +337,26 @@
     const/4 v2, 0x0
 
     .line 435
-    iget-boolean v0, p0, Lcom/android/settings/aB;->mA:Z
+    iget-boolean v0, p0, Lcom/android/settings/aB;->mD:Z
 
     if-eqz v0, :cond_3
 
     .line 436
-    iput-boolean v2, p0, Lcom/android/settings/aB;->mA:Z
+    iput-boolean v2, p0, Lcom/android/settings/aB;->mD:Z
 
     .line 437
-    iget-object v0, p0, Lcom/android/settings/aB;->mD:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/aB;->mG:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 438
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0}, Lcom/android/settings/CredentialStorage;->a(Lcom/android/settings/CredentialStorage;)Landroid/security/KeyStore;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/aB;->mC:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/android/settings/aB;->mF:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -369,7 +369,7 @@
     invoke-virtual {v0, v1}, Landroid/security/KeyStore;->unlock(Ljava/lang/String;)Z
 
     .line 439
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0}, Lcom/android/settings/CredentialStorage;->a(Lcom/android/settings/CredentialStorage;)Landroid/security/KeyStore;
 
@@ -385,12 +385,12 @@
     if-ne v0, v1, :cond_1
 
     .line 441
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0, v3}, Lcom/android/settings/CredentialStorage;->a(Lcom/android/settings/CredentialStorage;I)I
 
     .line 442
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     const v1, 0x7f0b0536
 
@@ -401,7 +401,7 @@
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     .line 447
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0}, Lcom/android/settings/CredentialStorage;->c(Lcom/android/settings/CredentialStorage;)V
 
@@ -417,12 +417,12 @@
     if-ne v0, v1, :cond_2
 
     .line 449
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0, v3}, Lcom/android/settings/CredentialStorage;->a(Lcom/android/settings/CredentialStorage;I)I
 
     .line 450
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     const v1, 0x7f0b0534
 
@@ -433,7 +433,7 @@
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     .line 454
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0}, Lcom/android/settings/CredentialStorage;->d(Lcom/android/settings/CredentialStorage;)V
 
@@ -446,7 +446,7 @@
     if-lt v0, v1, :cond_0
 
     .line 457
-    iget-object v1, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v1, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     add-int/lit8 v0, v0, -0xa
 
@@ -455,7 +455,7 @@
     invoke-static {v1, v0}, Lcom/android/settings/CredentialStorage;->a(Lcom/android/settings/CredentialStorage;I)I
 
     .line 458
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-static {v0}, Lcom/android/settings/CredentialStorage;->d(Lcom/android/settings/CredentialStorage;)V
 
@@ -463,7 +463,7 @@
 
     .line 462
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/aB;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/aB;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-virtual {v0}, Lcom/android/settings/CredentialStorage;->finish()V
 

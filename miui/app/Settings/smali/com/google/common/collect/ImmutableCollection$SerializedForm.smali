@@ -43,7 +43,7 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lcom/google/common/collect/ImmutableCollection;->sG:Lcom/google/common/collect/ImmutableCollection;
+    sget-object v0, Lcom/google/common/collect/ImmutableCollection;->sJ:Lcom/google/common/collect/ImmutableCollection;
 
     :goto_0
     return-object v0

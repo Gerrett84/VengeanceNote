@@ -8,9 +8,9 @@
 
 
 # instance fields
-.field final synthetic mE:Lcom/android/settings/CredentialStorage;
+.field final synthetic mH:Lcom/android/settings/CredentialStorage;
 
-.field private uE:Z
+.field private uI:Z
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     .prologue
     .line 310
-    iput-object p1, p0, Lcom/android/settings/bw;->mE:Lcom/android/settings/CredentialStorage;
+    iput-object p1, p0, Lcom/android/settings/bw;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -101,7 +101,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/bw;->uE:Z
+    iput-boolean v0, p0, Lcom/android/settings/bw;->uI:Z
 
     .line 324
     return-void
@@ -119,14 +119,14 @@
 
     .prologue
     .line 327
-    iget-boolean v0, p0, Lcom/android/settings/bw;->uE:Z
+    iget-boolean v0, p0, Lcom/android/settings/bw;->uI:Z
 
     if-eqz v0, :cond_0
 
     .line 328
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/bw;->uE:Z
+    iput-boolean v0, p0, Lcom/android/settings/bw;->uI:Z
 
     .line 329
     new-instance v0, Landroid/content/Intent;
@@ -143,7 +143,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 332
-    iget-object v1, p0, Lcom/android/settings/bw;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v1, p0, Lcom/android/settings/bw;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/CredentialStorage;->startActivity(Landroid/content/Intent;)V
 
@@ -153,7 +153,7 @@
 
     .line 335
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bw;->mE:Lcom/android/settings/CredentialStorage;
+    iget-object v0, p0, Lcom/android/settings/bw;->mH:Lcom/android/settings/CredentialStorage;
 
     invoke-virtual {v0}, Lcom/android/settings/CredentialStorage;->finish()V
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic aL:Lcom/android/settings/VirusScanAppActivity;
+.field final synthetic aO:Lcom/android/settings/VirusScanAppActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 386
-    iput-object p1, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iput-object p1, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-direct {p0, p1}, Lcom/android/settings/dC;-><init>(Lcom/android/settings/VirusScanAppActivity;)V
 
@@ -23,22 +23,22 @@
 
 
 # virtual methods
-.method fo()Lcom/android/settings/VirusScanAppActivity$RunState;
+.method fs()Lcom/android/settings/VirusScanAppActivity$RunState;
     .locals 1
 
     .prologue
     .line 397
-    sget-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->El:Lcom/android/settings/VirusScanAppActivity$RunState;
+    sget-object v0, Lcom/android/settings/VirusScanAppActivity$RunState;->Ep:Lcom/android/settings/VirusScanAppActivity$RunState;
 
     return-object v0
 .end method
 
-.method fp()Ljava/lang/String;
+.method ft()Ljava/lang/String;
     .locals 2
 
     .prologue
     .line 407
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/VirusScanAppActivity;->getResources()Landroid/content/res/Resources;
 
@@ -53,7 +53,7 @@
     return-object v0
 .end method
 
-.method public fq()V
+.method public fu()V
     .locals 5
 
     .prologue
@@ -62,93 +62,93 @@
     const/4 v4, 0x0
 
     .line 412
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->Oz:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OC:Landroid/widget/TextView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 413
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OB:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OE:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 414
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OB:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OE:Landroid/widget/ImageView;
 
     const v1, 0x7f0200d7
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 415
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OC:Landroid/widget/LinearLayout;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OF:Landroid/widget/LinearLayout;
 
     const v1, 0x7f0200da
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
     .line 416
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OE:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OH:Landroid/widget/Button;
 
     invoke-virtual {v0, v4}, Landroid/widget/Button;->setVisibility(I)V
 
     .line 417
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OD:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OG:Landroid/widget/Button;
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 418
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OD:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OG:Landroid/widget/Button;
 
     const v1, 0x7f0b0761
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
     .line 419
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->Oy:Landroid/widget/ListView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OB:Landroid/widget/ListView;
 
     invoke-virtual {v0, v4}, Landroid/widget/ListView;->smoothScrollToPosition(I)V
 
     .line 421
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->ay:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->aB:Landroid/widget/TextView;
 
     const v1, 0x7f0b0763
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     .line 422
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->wt:Lcom/android/settings/aV;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->wx:Lcom/android/settings/aV;
 
-    invoke-virtual {v0}, Lcom/android/settings/aV;->el()I
+    invoke-virtual {v0}, Lcom/android/settings/aV;->ep()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
     .line 423
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OA:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OD:Landroid/widget/TextView;
 
     const v1, 0x7f0b0766
 
@@ -160,11 +160,11 @@
 
     .line 425
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OA:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->OD:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v1, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-virtual {v1}, Lcom/android/settings/VirusScanAppActivity;->getResources()Landroid/content/res/Resources;
 
@@ -178,11 +178,11 @@
 
     new-array v2, v3, [Ljava/lang/Object;
 
-    iget-object v3, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v3, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v3, v3, Lcom/android/settings/VirusScanAppActivity;->wt:Lcom/android/settings/aV;
+    iget-object v3, v3, Lcom/android/settings/VirusScanAppActivity;->wx:Lcom/android/settings/aV;
 
-    invoke-virtual {v3}, Lcom/android/settings/aV;->el()I
+    invoke-virtual {v3}, Lcom/android/settings/aV;->ep()I
 
     move-result v3
 
@@ -201,27 +201,27 @@
     goto :goto_0
 .end method
 
-.method public kY()V
+.method public lc()V
     .locals 2
 
     .prologue
     .line 391
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->wt:Lcom/android/settings/aV;
+    iget-object v0, v0, Lcom/android/settings/VirusScanAppActivity;->wx:Lcom/android/settings/aV;
 
-    invoke-virtual {v0}, Lcom/android/settings/aV;->ej()V
+    invoke-virtual {v0}, Lcom/android/settings/aV;->en()V
 
     .line 392
-    iget-object v0, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v0, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
-    iget-object v1, p0, Lcom/android/settings/dZ;->aL:Lcom/android/settings/VirusScanAppActivity;
+    iget-object v1, p0, Lcom/android/settings/dZ;->aO:Lcom/android/settings/VirusScanAppActivity;
 
     invoke-static {v1}, Lcom/android/settings/VirusScanAppActivity;->b(Lcom/android/settings/VirusScanAppActivity;)Lcom/android/settings/dC;
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/android/settings/VirusScanAppActivity;->OG:Lcom/android/settings/dC;
+    iput-object v1, v0, Lcom/android/settings/VirusScanAppActivity;->OJ:Lcom/android/settings/dC;
 
     .line 393
     return-void

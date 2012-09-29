@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic dS:Lcom/android/settings/wifi/s;
+.field final synthetic dV:Lcom/android/settings/wifi/s;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 45
-    iput-object p1, p0, Lcom/android/settings/wifi/n;->dS:Lcom/android/settings/wifi/s;
+    iput-object p1, p0, Lcom/android/settings/wifi/n;->dV:Lcom/android/settings/wifi/s;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -44,7 +44,7 @@
     if-eqz v1, :cond_1
 
     .line 50
-    iget-object v0, p0, Lcom/android/settings/wifi/n;->dS:Lcom/android/settings/wifi/s;
+    iget-object v0, p0, Lcom/android/settings/wifi/n;->dV:Lcom/android/settings/wifi/s;
 
     const-string v1, "wifi_state"
 
@@ -72,7 +72,7 @@
     if-eqz v1, :cond_2
 
     .line 53
-    iget-object v0, p0, Lcom/android/settings/wifi/n;->dS:Lcom/android/settings/wifi/s;
+    iget-object v0, p0, Lcom/android/settings/wifi/n;->dV:Lcom/android/settings/wifi/s;
 
     invoke-static {v0}, Lcom/android/settings/wifi/s;->a(Lcom/android/settings/wifi/s;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -85,7 +85,7 @@
     if-nez v0, :cond_0
 
     .line 54
-    iget-object v1, p0, Lcom/android/settings/wifi/n;->dS:Lcom/android/settings/wifi/s;
+    iget-object v1, p0, Lcom/android/settings/wifi/n;->dV:Lcom/android/settings/wifi/s;
 
     const-string v0, "newState"
 
@@ -123,7 +123,7 @@
     check-cast v0, Landroid/net/NetworkInfo;
 
     .line 60
-    iget-object v1, p0, Lcom/android/settings/wifi/n;->dS:Lcom/android/settings/wifi/s;
+    iget-object v1, p0, Lcom/android/settings/wifi/n;->dV:Lcom/android/settings/wifi/s;
 
     invoke-static {v1}, Lcom/android/settings/wifi/s;->a(Lcom/android/settings/wifi/s;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -136,7 +136,7 @@
     invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 61
-    iget-object v1, p0, Lcom/android/settings/wifi/n;->dS:Lcom/android/settings/wifi/s;
+    iget-object v1, p0, Lcom/android/settings/wifi/n;->dV:Lcom/android/settings/wifi/s;
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aV:Lcom/android/settings/wifi/WifiStatusTest;
+.field final synthetic aY:Lcom/android/settings/wifi/WifiStatusTest;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 174
-    iput-object p1, p0, Lcom/android/settings/wifi/e;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iput-object p1, p0, Lcom/android/settings/wifi/e;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 176
-    iget-object v0, p0, Lcom/android/settings/wifi/e;->aV:Lcom/android/settings/wifi/WifiStatusTest;
+    iget-object v0, p0, Lcom/android/settings/wifi/e;->aY:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->b(Lcom/android/settings/wifi/WifiStatusTest;)V
 

@@ -4,13 +4,13 @@
 
 
 # static fields
-.field static final sI:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+.field static final sM:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
-.field static final sJ:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+.field static final sN:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
-.field static final sK:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+.field static final sO:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
-.field private static final sL:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+.field private static final sP:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
 
 # direct methods
@@ -25,21 +25,21 @@
 
     invoke-direct {v0, v3}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$AllFilter;-><init>(Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;)V
 
-    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sI:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sM:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     .line 43
     new-instance v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$BondedDeviceFilter;
 
     invoke-direct {v0, v3}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$BondedDeviceFilter;-><init>(Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;)V
 
-    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sJ:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sN:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     .line 46
     new-instance v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$UnbondedDeviceFilter;
 
     invoke-direct {v0, v3}, Lcom/android/settings/bluetooth/BluetoothDeviceFilter$UnbondedDeviceFilter;-><init>(Lcom/android/settings/bluetooth/BluetoothDeviceFilter$1;)V
 
-    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sK:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sO:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     .line 49
     const/4 v0, 0x5
@@ -48,7 +48,7 @@
 
     const/4 v1, 0x0
 
-    sget-object v2, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sI:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sget-object v2, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sM:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     aput-object v2, v0, v1
 
@@ -84,7 +84,7 @@
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sL:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sput-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sP:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     return-void
 .end method
@@ -108,14 +108,14 @@
     .line 69
     if-ltz p0, :cond_0
 
-    sget-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sL:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sget-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sP:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     array-length v0, v0
 
     if-ge p0, v0, :cond_0
 
     .line 70
-    sget-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sL:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sget-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sP:[Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     aget-object v0, v0, p0
 
@@ -154,7 +154,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 73
-    sget-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sI:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
+    sget-object v0, Lcom/android/settings/bluetooth/BluetoothDeviceFilter;->sM:Lcom/android/settings/bluetooth/BluetoothDeviceFilter$Filter;
 
     goto :goto_0
 .end method

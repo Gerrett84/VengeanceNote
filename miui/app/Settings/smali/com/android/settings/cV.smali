@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Gg:Lcom/android/settings/SettingsLicenseActivity;
+.field final synthetic Gk:Lcom/android/settings/SettingsLicenseActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 202
-    iput-object p1, p0, Lcom/android/settings/cV;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iput-object p1, p0, Lcom/android/settings/cV;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 205
-    iget-object v0, p0, Lcom/android/settings/cV;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iget-object v0, p0, Lcom/android/settings/cV;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-static {v0}, Lcom/android/settings/SettingsLicenseActivity;->b(Lcom/android/settings/SettingsLicenseActivity;)Landroid/app/ProgressDialog;
 
@@ -39,7 +39,7 @@
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 206
-    iget-object v0, p0, Lcom/android/settings/cV;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iget-object v0, p0, Lcom/android/settings/cV;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-static {v0}, Lcom/android/settings/SettingsLicenseActivity;->c(Lcom/android/settings/SettingsLicenseActivity;)Landroid/app/AlertDialog;
 

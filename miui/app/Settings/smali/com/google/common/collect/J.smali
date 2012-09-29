@@ -9,7 +9,7 @@
 # instance fields
 .field final computingFunction:Lcom/google/common/base/l;
 
-.field volatile vk:Lcom/google/common/collect/az;
+.field volatile vo:Lcom/google/common/collect/az;
 
 
 # direct methods
@@ -22,11 +22,11 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 288
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eU()Lcom/google/common/collect/az;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eY()Lcom/google/common/collect/az;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/J;->vk:Lcom/google/common/collect/az;
+    iput-object v0, p0, Lcom/google/common/collect/J;->vo:Lcom/google/common/collect/az;
 
     .line 292
     iput-object p1, p0, Lcom/google/common/collect/J;->computingFunction:Lcom/google/common/base/l;
@@ -114,14 +114,14 @@
 
     .line 367
     :try_start_0
-    iget-object v0, p0, Lcom/google/common/collect/J;->vk:Lcom/google/common/collect/az;
+    iget-object v0, p0, Lcom/google/common/collect/J;->vo:Lcom/google/common/collect/az;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap;->rA:Lcom/google/common/collect/az;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap;->rD:Lcom/google/common/collect/az;
 
     if-ne v0, v1, :cond_0
 
     .line 368
-    iput-object p1, p0, Lcom/google/common/collect/J;->vk:Lcom/google/common/collect/az;
+    iput-object p1, p0, Lcom/google/common/collect/J;->vo:Lcom/google/common/collect/az;
 
     .line 369
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
@@ -144,7 +144,7 @@
     throw v0
 .end method
 
-.method public cY()Lcom/google/common/collect/ag;
+.method public dc()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
@@ -154,7 +154,7 @@
     return-object v0
 .end method
 
-.method public cZ()Z
+.method public dd()Z
     .locals 1
 
     .prologue
@@ -164,14 +164,14 @@
     return v0
 .end method
 
-.method public da()Ljava/lang/Object;
+.method public de()Ljava/lang/Object;
     .locals 3
 
     .prologue
     .line 322
-    iget-object v0, p0, Lcom/google/common/collect/J;->vk:Lcom/google/common/collect/az;
+    iget-object v0, p0, Lcom/google/common/collect/J;->vo:Lcom/google/common/collect/az;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap;->rA:Lcom/google/common/collect/az;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap;->rD:Lcom/google/common/collect/az;
 
     if-ne v0, v1, :cond_1
 
@@ -187,9 +187,9 @@
     .line 326
     :goto_0
     :try_start_1
-    iget-object v0, p0, Lcom/google/common/collect/J;->vk:Lcom/google/common/collect/az;
+    iget-object v0, p0, Lcom/google/common/collect/J;->vo:Lcom/google/common/collect/az;
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap;->rA:Lcom/google/common/collect/az;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap;->rD:Lcom/google/common/collect/az;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -233,9 +233,9 @@
 
     .line 340
     :cond_1
-    iget-object v0, p0, Lcom/google/common/collect/J;->vk:Lcom/google/common/collect/az;
+    iget-object v0, p0, Lcom/google/common/collect/J;->vo:Lcom/google/common/collect/az;
 
-    invoke-interface {v0}, Lcom/google/common/collect/az;->da()Ljava/lang/Object;
+    invoke-interface {v0}, Lcom/google/common/collect/az;->de()Ljava/lang/Object;
 
     move-result-object v0
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+.field final synthetic CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 534
-    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-direct {p0}, Landroid/widget/Filter;-><init>()V
 
@@ -29,9 +29,9 @@
 
     .prologue
     .line 537
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-static {v1}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->a(Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;)Ljava/util/ArrayList;
 
@@ -67,12 +67,12 @@
 
     .prologue
     .line 547
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
-    iput-object p1, v0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->ew:Ljava/lang/CharSequence;
+    iput-object p1, v0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->ez:Ljava/lang/CharSequence;
 
     .line 548
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     iget-object v0, p2, Landroid/widget/Filter$FilterResults;->values:Ljava/lang/Object;
 
@@ -81,18 +81,18 @@
     invoke-static {v1, v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->a(Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
     .line 549
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->notifyDataSetChanged()V
 
     .line 550
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CD:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter$1;->CH:Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;->b(Lcom/android/settings/applications/ManageApplications$ApplicationsAdapter;)Lcom/android/settings/applications/ManageApplications$TabInfo;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hK()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hO()V
 
     .line 551
     return-void

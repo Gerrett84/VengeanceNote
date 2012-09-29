@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final enum HS:Lcom/android/settings/ConfirmLockPattern$Stage;
+.field public static final enum HW:Lcom/android/settings/ConfirmLockPattern$Stage;
 
-.field public static final enum HT:Lcom/android/settings/ConfirmLockPattern$Stage;
+.field public static final enum HX:Lcom/android/settings/ConfirmLockPattern$Stage;
 
-.field public static final enum HU:Lcom/android/settings/ConfirmLockPattern$Stage;
+.field public static final enum HY:Lcom/android/settings/ConfirmLockPattern$Stage;
 
-.field private static final synthetic HV:[Lcom/android/settings/ConfirmLockPattern$Stage;
+.field private static final synthetic HZ:[Lcom/android/settings/ConfirmLockPattern$Stage;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/ConfirmLockPattern$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HS:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HW:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     .line 68
     new-instance v0, Lcom/android/settings/ConfirmLockPattern$Stage;
@@ -40,7 +40,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/ConfirmLockPattern$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HT:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HX:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     .line 69
     new-instance v0, Lcom/android/settings/ConfirmLockPattern$Stage;
@@ -49,26 +49,26 @@
 
     invoke-direct {v0, v1, v4}, Lcom/android/settings/ConfirmLockPattern$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HU:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HY:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     .line 65
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/settings/ConfirmLockPattern$Stage;
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HS:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HW:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HT:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HX:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HU:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HY:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HV:[Lcom/android/settings/ConfirmLockPattern$Stage;
+    sput-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HZ:[Lcom/android/settings/ConfirmLockPattern$Stage;
 
     return-void
 .end method
@@ -107,7 +107,7 @@
 
     .prologue
     .line 65
-    sget-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HV:[Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v0, Lcom/android/settings/ConfirmLockPattern$Stage;->HZ:[Lcom/android/settings/ConfirmLockPattern$Stage;
 
     invoke-virtual {v0}, [Lcom/android/settings/ConfirmLockPattern$Stage;->clone()Ljava/lang/Object;
 

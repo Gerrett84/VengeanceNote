@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field protected gz:Ljava/util/List;
+.field protected gC:Ljava/util/List;
 
 .field private mOnItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
 
@@ -135,15 +135,15 @@
 
 
 # virtual methods
-.method public aP()V
+.method public aT()V
     .locals 5
 
     .prologue
     .line 26
-    invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->aQ()V
+    invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->aU()V
 
     .line 28
-    iget-object v0, p0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     if-nez v0, :cond_0
 
@@ -152,7 +152,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iput-object v0, p0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     .line 32
     invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->getListView()Landroid/widget/ListView;
@@ -179,7 +179,7 @@
     if-ge v1, v0, :cond_0
 
     .line 35
-    iget-object v3, p0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iget-object v3, p0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     invoke-interface {v2, v1}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
 
@@ -229,9 +229,9 @@
 
     new-instance v2, Lcom/android/settings/ch;
 
-    iget-object v3, p0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iget-object v3, p0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
-    invoke-virtual {v0}, Lcom/android/settings/MiuiSettings;->fk()Lcom/android/settings/accounts/AuthenticatorHelper;
+    invoke-virtual {v0}, Lcom/android/settings/MiuiSettings;->fo()Lcom/android/settings/accounts/AuthenticatorHelper;
 
     move-result-object v4
 
@@ -243,7 +243,7 @@
     return-void
 .end method
 
-.method public aQ()V
+.method public aU()V
     .locals 3
 
     .prologue
@@ -253,7 +253,7 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 92
-    invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->aR()I
+    invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->aV()I
 
     move-result v2
 
@@ -275,13 +275,13 @@
 
     .line 99
     :cond_0
-    iput-object v1, p0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iput-object v1, p0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     .line 100
     return-void
 .end method
 
-.method protected aR()I
+.method protected aV()I
     .locals 1
 
     .prologue
@@ -315,7 +315,7 @@
     .line 130
     check-cast v0, Lcom/android/settings/ch;
 
-    invoke-virtual {v0}, Lcom/android/settings/ch;->ie()Lcom/android/settings/bl;
+    invoke-virtual {v0}, Lcom/android/settings/ch;->ii()Lcom/android/settings/bl;
 
     move-result-object v0
 
@@ -399,7 +399,7 @@
 
     .prologue
     .line 51
-    invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->aP()V
+    invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->aT()V
 
     .line 52
     invoke-virtual {p0}, Lcom/android/settings/BasePreferenceFragment;->getListView()Landroid/widget/ListView;

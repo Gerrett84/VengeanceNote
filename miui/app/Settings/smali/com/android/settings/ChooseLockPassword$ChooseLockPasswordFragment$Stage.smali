@@ -4,13 +4,13 @@
 
 
 # static fields
-.field public static final enum JX:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+.field public static final enum Ka:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-.field public static final enum JY:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+.field public static final enum Kb:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-.field public static final enum JZ:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+.field public static final enum Kc:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-.field private static final synthetic Ka:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+.field private static final synthetic Kd:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
 
 # instance fields
@@ -45,7 +45,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;-><init>(Ljava/lang/String;IIII)V
 
-    sput-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->JX:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sput-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Ka:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     .line 129
     new-instance v6, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
@@ -60,7 +60,7 @@
 
     invoke-direct/range {v6 .. v11}, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;-><init>(Ljava/lang/String;IIII)V
 
-    sput-object v6, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->JY:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sput-object v6, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Kb:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     .line 133
     new-instance v9, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
@@ -77,26 +77,26 @@
 
     invoke-direct/range {v9 .. v14}, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;-><init>(Ljava/lang/String;IIII)V
 
-    sput-object v9, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->JZ:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sput-object v9, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Kc:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     .line 123
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    sget-object v1, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->JX:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sget-object v1, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Ka:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->JY:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sget-object v1, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Kb:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     aput-object v1, v0, v8
 
-    sget-object v1, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->JZ:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sget-object v1, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Kc:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     aput-object v1, v0, v15
 
-    sput-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Ka:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sput-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Kd:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     return-void
 .end method
@@ -148,7 +148,7 @@
 
     .prologue
     .line 123
-    sget-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Ka:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
+    sget-object v0, Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Kd:[Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     invoke-virtual {v0}, [Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->clone()Ljava/lang/Object;
 

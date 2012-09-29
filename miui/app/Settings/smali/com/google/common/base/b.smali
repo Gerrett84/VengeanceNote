@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final nW:Lcom/google/common/base/b;
+.field private static final nZ:Lcom/google/common/base/b;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/google/common/base/k;-><init>()V
 
-    sput-object v0, Lcom/google/common/base/b;->nW:Lcom/google/common/base/b;
+    sput-object v0, Lcom/google/common/base/b;->nZ:Lcom/google/common/base/b;
 
     return-void
 .end method
@@ -32,17 +32,17 @@
     return-void
 .end method
 
-.method public static dy()Lcom/google/common/base/b;
+.method public static dC()Lcom/google/common/base/b;
     .locals 1
 
     .prologue
     .line 51
-    sget-object v0, Lcom/google/common/base/b;->nW:Lcom/google/common/base/b;
+    sget-object v0, Lcom/google/common/base/b;->nZ:Lcom/google/common/base/b;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract dx()J
+.method public abstract dB()J
 .end method

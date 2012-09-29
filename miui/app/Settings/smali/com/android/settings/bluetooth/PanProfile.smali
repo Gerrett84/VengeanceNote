@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private qo:Landroid/bluetooth/BluetoothPan;
+.field private qr:Landroid/bluetooth/BluetoothPan;
 
-.field private final qp:Ljava/util/HashMap;
+.field private final qs:Ljava/util/HashMap;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qp:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qs:Ljava/util/HashMap;
 
     .line 60
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
@@ -55,7 +55,7 @@
 
     .prologue
     .line 34
-    iput-object p1, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     return-object p1
 .end method
@@ -89,7 +89,7 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothPan;->getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
 
@@ -105,7 +105,7 @@
 
     .prologue
     .line 147
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qp:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qs:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -134,7 +134,7 @@
 
     .prologue
     .line 74
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothPan;->getConnectedDevices()Ljava/util/List;
 
@@ -162,7 +162,7 @@
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
     .line 77
-    iget-object v2, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v2, v0}, Landroid/bluetooth/BluetoothPan;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -170,7 +170,7 @@
 
     .line 80
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothPan;->connect(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -196,7 +196,7 @@
 
     .prologue
     .line 84
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothPan;->disconnect(Landroid/bluetooth/BluetoothDevice;)Z
 
@@ -236,7 +236,7 @@
 
     .prologue
     .line 124
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qo:Landroid/bluetooth/BluetoothPan;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qr:Landroid/bluetooth/BluetoothPan;
 
     invoke-virtual {v0, p1}, Landroid/bluetooth/BluetoothPan;->getConnectionState(Landroid/bluetooth/BluetoothDevice;)I
 
@@ -288,26 +288,6 @@
     .end packed-switch
 .end method
 
-.method public h()Z
-    .locals 1
-
-    .prologue
-    .line 70
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public i()Z
-    .locals 1
-
-    .prologue
-    .line 104
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method public isConnectable()Z
     .locals 1
 
@@ -318,7 +298,27 @@
     return v0
 .end method
 
-.method public j()I
+.method public l()Z
+    .locals 1
+
+    .prologue
+    .line 70
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public m()Z
+    .locals 1
+
+    .prologue
+    .line 104
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public n()I
     .locals 1
 
     .prologue
@@ -338,7 +338,7 @@
     const/4 v2, 0x0
 
     .line 151
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qp:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qs:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -347,7 +347,7 @@
     if-eqz v0, :cond_1
 
     .line 152
-    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qp:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/PanProfile;->qs:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

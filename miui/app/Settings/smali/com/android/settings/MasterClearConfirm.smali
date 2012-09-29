@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field private DX:Landroid/widget/Button;
+.field private Eb:Landroid/widget/Button;
 
-.field private DY:Landroid/view/View$OnClickListener;
+.field private Ec:Landroid/view/View$OnClickListener;
 
-.field private Ed:Z
+.field private Eh:Z
 
-.field private oc:Landroid/view/View;
+.field private of:Landroid/view/View;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/aZ;-><init>(Lcom/android/settings/MasterClearConfirm;)V
 
-    iput-object v0, p0, Lcom/android/settings/MasterClearConfirm;->DY:Landroid/view/View$OnClickListener;
+    iput-object v0, p0, Lcom/android/settings/MasterClearConfirm;->Ec:Landroid/view/View$OnClickListener;
 
     return-void
 .end method
@@ -37,17 +37,17 @@
 
     .prologue
     .line 43
-    iget-boolean v0, p0, Lcom/android/settings/MasterClearConfirm;->Ed:Z
+    iget-boolean v0, p0, Lcom/android/settings/MasterClearConfirm;->Eh:Z
 
     return v0
 .end method
 
-.method private iS()V
+.method private iW()V
     .locals 2
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->oc:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->of:Landroid/view/View;
 
     const v1, 0x7f0800bc
 
@@ -57,12 +57,12 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/MasterClearConfirm;->DX:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/MasterClearConfirm;->Eb:Landroid/widget/Button;
 
     .line 77
-    iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->DX:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->Eb:Landroid/widget/Button;
 
-    iget-object v1, p0, Lcom/android/settings/MasterClearConfirm;->DY:Landroid/view/View$OnClickListener;
+    iget-object v1, p0, Lcom/android/settings/MasterClearConfirm;->Ec:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -95,7 +95,7 @@
     move-result v0
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/MasterClearConfirm;->Ed:Z
+    iput-boolean v0, p0, Lcom/android/settings/MasterClearConfirm;->Eh:Z
 
     .line 94
     return-void
@@ -123,13 +123,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/MasterClearConfirm;->oc:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/MasterClearConfirm;->of:Landroid/view/View;
 
     .line 84
-    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->iS()V
+    invoke-direct {p0}, Lcom/android/settings/MasterClearConfirm;->iW()V
 
     .line 85
-    iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->oc:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/MasterClearConfirm;->of:Landroid/view/View;
 
     return-object v0
 .end method

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private fy:Lcom/android/settings/cO;
+.field private fB:Lcom/android/settings/cO;
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
     .prologue
     .line 601
-    iput-object p1, p0, Lcom/android/settings/af;->fy:Lcom/android/settings/cO;
+    iput-object p1, p0, Lcom/android/settings/af;->fB:Lcom/android/settings/cO;
 
     .line 602
     return-void
@@ -52,11 +52,11 @@
 
     .prologue
     .line 606
-    iget-object v0, p0, Lcom/android/settings/af;->fy:Lcom/android/settings/cO;
+    iget-object v0, p0, Lcom/android/settings/af;->fB:Lcom/android/settings/cO;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/af;->fy:Lcom/android/settings/cO;
+    iget-object v0, p0, Lcom/android/settings/af;->fB:Lcom/android/settings/cO;
 
     invoke-interface {v0, p0, p1}, Lcom/android/settings/cO;->a(Lcom/android/settings/af;Z)Z
 

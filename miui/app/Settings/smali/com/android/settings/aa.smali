@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private fu:I
+.field private fx:I
 
-.field final synthetic fv:Lcom/android/settings/aP;
+.field final synthetic fy:Lcom/android/settings/aP;
 
 
 # direct methods
@@ -17,12 +17,12 @@
 
     .prologue
     .line 303
-    iput-object p1, p0, Lcom/android/settings/aa;->fv:Lcom/android/settings/aP;
+    iput-object p1, p0, Lcom/android/settings/aa;->fy:Lcom/android/settings/aP;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 304
-    iput p2, p0, Lcom/android/settings/aa;->fu:I
+    iput p2, p0, Lcom/android/settings/aa;->fx:I
 
     .line 305
     return-void
@@ -30,7 +30,7 @@
 
 
 # virtual methods
-.method public declared-synchronized ap()V
+.method public declared-synchronized at()V
     .locals 2
 
     .prologue
@@ -38,7 +38,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget v0, p0, Lcom/android/settings/aa;->fu:I
+    iget v0, p0, Lcom/android/settings/aa;->fx:I
 
     int-to-long v0, v0
 

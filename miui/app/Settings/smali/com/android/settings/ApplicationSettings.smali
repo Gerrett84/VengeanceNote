@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private uI:Landroid/preference/CheckBoxPreference;
+.field private uM:Landroid/preference/CheckBoxPreference;
 
-.field private uJ:Landroid/preference/ListPreference;
+.field private uN:Landroid/preference/ListPreference;
 
 
 # direct methods
@@ -69,7 +69,7 @@
     goto :goto_0
 .end method
 
-.method private fH()Z
+.method private fL()Z
     .locals 3
 
     .prologue
@@ -94,7 +94,7 @@
     return v0
 .end method
 
-.method private fI()Ljava/lang/String;
+.method private fM()Ljava/lang/String;
     .locals 3
 
     .prologue
@@ -152,7 +152,7 @@
 
 
 # virtual methods
-.method protected I(Ljava/lang/String;)V
+.method protected J(Ljava/lang/String;)V
     .locals 3
     .parameter
 
@@ -181,7 +181,7 @@
 
     .line 94
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uJ:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uN:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
@@ -269,12 +269,12 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/ApplicationSettings;->uI:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/ApplicationSettings;->uM:Landroid/preference/CheckBoxPreference;
 
     .line 53
-    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uI:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uM:Landroid/preference/CheckBoxPreference;
 
-    invoke-direct {p0}, Lcom/android/settings/ApplicationSettings;->fH()Z
+    invoke-direct {p0}, Lcom/android/settings/ApplicationSettings;->fL()Z
 
     move-result v2
 
@@ -285,7 +285,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/ApplicationSettings;->uI:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/ApplicationSettings;->uM:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
@@ -298,7 +298,7 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/ApplicationSettings;->uJ:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/ApplicationSettings;->uN:Landroid/preference/ListPreference;
 
     .line 63
     invoke-virtual {p0}, Lcom/android/settings/ApplicationSettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -324,7 +324,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/ApplicationSettings;->uJ:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/ApplicationSettings;->uN:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
@@ -340,16 +340,16 @@
 
     .line 68
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uJ:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uN:Landroid/preference/ListPreference;
 
-    invoke-direct {p0}, Lcom/android/settings/ApplicationSettings;->fI()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/ApplicationSettings;->fM()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
     .line 69
-    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uJ:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uN:Landroid/preference/ListPreference;
 
     new-instance v1, Lcom/android/settings/cd;
 
@@ -367,12 +367,12 @@
 
     .prologue
     .line 99
-    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uI:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uM:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_0
 
     .line 100
-    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uI:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ApplicationSettings;->uM:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 

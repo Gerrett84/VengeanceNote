@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field ot:Landroid/app/admin/DevicePolicyManager;
+.field ow:Landroid/app/admin/DevicePolicyManager;
 
-.field final ur:Ljava/util/HashSet;
+.field final uv:Ljava/util/HashSet;
 
-.field final us:Ljava/util/ArrayList;
+.field final uw:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -24,14 +24,14 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->ur:Ljava/util/HashSet;
+    iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->uv:Ljava/util/HashSet;
 
     .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->us:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->uw:Ljava/util/ArrayList;
 
     .line 123
     return-void
@@ -39,19 +39,19 @@
 
 
 # virtual methods
-.method fD()V
+.method fH()V
     .locals 8
 
     .prologue
     const/4 v1, 0x0
 
     .line 77
-    iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->ur:Ljava/util/HashSet;
+    iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->uv:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
     .line 78
-    iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->ot:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->ow:Landroid/app/admin/DevicePolicyManager;
 
     invoke-virtual {v0}, Landroid/app/admin/DevicePolicyManager;->getActiveAdmins()Ljava/util/List;
 
@@ -71,7 +71,7 @@
     if-ge v0, v3, :cond_0
 
     .line 81
-    iget-object v3, p0, Lcom/android/settings/DeviceAdminSettings;->ur:Ljava/util/HashSet;
+    iget-object v3, p0, Lcom/android/settings/DeviceAdminSettings;->uv:Ljava/util/HashSet;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -86,7 +86,7 @@
 
     .line 85
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->us:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->uw:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -147,7 +147,7 @@
 
     if-nez v5, :cond_1
 
-    iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings;->ur:Ljava/util/HashSet;
+    iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings;->uv:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Landroid/app/admin/DeviceAdminInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -161,7 +161,7 @@
 
     .line 95
     :cond_1
-    iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings;->us:Ljava/util/ArrayList;
+    iget-object v5, p0, Lcom/android/settings/DeviceAdminSettings;->uw:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
@@ -297,7 +297,7 @@
 
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
-    iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->ot:Landroid/app/admin/DevicePolicyManager;
+    iput-object v0, p0, Lcom/android/settings/DeviceAdminSettings;->ow:Landroid/app/admin/DevicePolicyManager;
 
     .line 67
     const v0, 0x7f04002e
@@ -368,7 +368,7 @@
     invoke-super {p0}, Landroid/app/ListFragment;->onResume()V
 
     .line 73
-    invoke-virtual {p0}, Lcom/android/settings/DeviceAdminSettings;->fD()V
+    invoke-virtual {p0}, Lcom/android/settings/DeviceAdminSettings;->fH()V
 
     .line 74
     return-void

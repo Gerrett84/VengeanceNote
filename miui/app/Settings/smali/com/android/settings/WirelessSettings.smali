@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field private Fn:Lcom/android/settings/ce;
+.field private Fr:Lcom/android/settings/ce;
 
-.field private Fo:Landroid/preference/CheckBoxPreference;
+.field private Fs:Landroid/preference/CheckBoxPreference;
 
-.field private Fp:Lcom/android/settings/nfc/a;
+.field private Ft:Lcom/android/settings/nfc/a;
 
-.field private Fq:Lcom/android/settings/ee;
+.field private Fu:Lcom/android/settings/ee;
 
-.field private sm:Landroid/nfc/NfcAdapter;
+.field private sp:Landroid/nfc/NfcAdapter;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     return-void
 .end method
 
-.method private X(Ljava/lang/String;)V
+.method private Y(Ljava/lang/String;)V
     .locals 2
     .parameter
 
@@ -37,7 +37,7 @@
     move-result-object v1
 
     .line 204
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fo:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fs:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
@@ -124,7 +124,7 @@
 
 
 # virtual methods
-.method protected A()I
+.method protected E()I
     .locals 1
 
     .prologue
@@ -146,7 +146,7 @@
 
     if-ne p1, v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fn:Lcom/android/settings/ce;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fr:Lcom/android/settings/ce;
 
     if-eqz v0, :cond_0
 
@@ -164,13 +164,13 @@
     move-result-object v0
 
     .line 249
-    iget-object v1, p0, Lcom/android/settings/WirelessSettings;->Fn:Lcom/android/settings/ce;
+    iget-object v1, p0, Lcom/android/settings/WirelessSettings;->Fr:Lcom/android/settings/ce;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    iget-object v2, p0, Lcom/android/settings/WirelessSettings;->Fo:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/WirelessSettings;->Fs:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -212,7 +212,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/WirelessSettings;->Fo:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/WirelessSettings;->Fs:Landroid/preference/CheckBoxPreference;
 
     .line 104
     const-string v0, "toggle_nfc"
@@ -246,7 +246,7 @@
 
     invoke-direct {v5, v4, v0, v1}, Lcom/android/settings/nfc/a;-><init>(Landroid/content/Context;Landroid/preference/CheckBoxPreference;Landroid/preference/PreferenceScreen;)V
 
-    iput-object v5, p0, Lcom/android/settings/WirelessSettings;->Fp:Lcom/android/settings/nfc/a;
+    iput-object v5, p0, Lcom/android/settings/WirelessSettings;->Ft:Lcom/android/settings/nfc/a;
 
     .line 111
     invoke-virtual {p0}, Lcom/android/settings/WirelessSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -314,7 +314,7 @@
     :cond_1
     const-string v5, "vpn_settings"
 
-    invoke-direct {p0, v5}, Lcom/android/settings/WirelessSettings;->X(Ljava/lang/String;)V
+    invoke-direct {p0, v5}, Lcom/android/settings/WirelessSettings;->Y(Ljava/lang/String;)V
 
     .line 136
     :cond_2
@@ -344,12 +344,12 @@
     :cond_4
     const-string v2, "toggle_nfc"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/WirelessSettings;->X(Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/android/settings/WirelessSettings;->Y(Ljava/lang/String;)V
 
     .line 143
     const-string v2, "android_beam_settings"
 
-    invoke-direct {p0, v2}, Lcom/android/settings/WirelessSettings;->X(Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/android/settings/WirelessSettings;->Y(Ljava/lang/String;)V
 
     .line 147
     :cond_5
@@ -357,10 +357,10 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/WirelessSettings;->sm:Landroid/nfc/NfcAdapter;
+    iput-object v2, p0, Lcom/android/settings/WirelessSettings;->sp:Landroid/nfc/NfcAdapter;
 
     .line 148
-    iget-object v2, p0, Lcom/android/settings/WirelessSettings;->sm:Landroid/nfc/NfcAdapter;
+    iget-object v2, p0, Lcom/android/settings/WirelessSettings;->sp:Landroid/nfc/NfcAdapter;
 
     if-nez v2, :cond_6
 
@@ -381,7 +381,7 @@
     .line 151
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/WirelessSettings;->Fp:Lcom/android/settings/nfc/a;
+    iput-object v0, p0, Lcom/android/settings/WirelessSettings;->Ft:Lcom/android/settings/nfc/a;
 
     .line 155
     :cond_6
@@ -554,7 +554,7 @@
     :cond_a
     const-string v5, "wimax_settings"
 
-    invoke-direct {p0, v5}, Lcom/android/settings/WirelessSettings;->X(Ljava/lang/String;)V
+    invoke-direct {p0, v5}, Lcom/android/settings/WirelessSettings;->Y(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -601,34 +601,34 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
     .line 232
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fn:Lcom/android/settings/ce;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fr:Lcom/android/settings/ce;
 
     if-eqz v0, :cond_0
 
     .line 233
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fn:Lcom/android/settings/ce;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fr:Lcom/android/settings/ce;
 
     invoke-virtual {v0}, Lcom/android/settings/ce;->pause()V
 
     .line 235
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fp:Lcom/android/settings/nfc/a;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Ft:Lcom/android/settings/nfc/a;
 
     if-eqz v0, :cond_1
 
     .line 236
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fp:Lcom/android/settings/nfc/a;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Ft:Lcom/android/settings/nfc/a;
 
     invoke-virtual {v0}, Lcom/android/settings/nfc/a;->pause()V
 
     .line 238
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fq:Lcom/android/settings/ee;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fu:Lcom/android/settings/ee;
 
     if-eqz v0, :cond_2
 
     .line 239
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fq:Lcom/android/settings/ee;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fu:Lcom/android/settings/ee;
 
     invoke-virtual {v0}, Lcom/android/settings/ee;->pause()V
 
@@ -646,7 +646,7 @@
     const/4 v0, 0x1
 
     .line 73
-    iget-object v1, p0, Lcom/android/settings/WirelessSettings;->Fo:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/WirelessSettings;->Fs:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_0
 
@@ -693,34 +693,34 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 216
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fn:Lcom/android/settings/ce;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fr:Lcom/android/settings/ce;
 
     if-eqz v0, :cond_0
 
     .line 217
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fn:Lcom/android/settings/ce;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fr:Lcom/android/settings/ce;
 
     invoke-virtual {v0}, Lcom/android/settings/ce;->resume()V
 
     .line 219
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fp:Lcom/android/settings/nfc/a;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Ft:Lcom/android/settings/nfc/a;
 
     if-eqz v0, :cond_1
 
     .line 220
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fp:Lcom/android/settings/nfc/a;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Ft:Lcom/android/settings/nfc/a;
 
     invoke-virtual {v0}, Lcom/android/settings/nfc/a;->resume()V
 
     .line 222
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fq:Lcom/android/settings/ee;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fu:Lcom/android/settings/ee;
 
     if-eqz v0, :cond_2
 
     .line 223
-    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fq:Lcom/android/settings/ee;
+    iget-object v0, p0, Lcom/android/settings/WirelessSettings;->Fu:Lcom/android/settings/ee;
 
     invoke-virtual {v0}, Lcom/android/settings/ee;->resume()V
 

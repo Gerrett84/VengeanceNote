@@ -28,24 +28,24 @@
 
 
 # virtual methods
-.method bridge synthetic a()Ljava/lang/Object;
+.method bridge synthetic cR()Ljava/util/Collection;
     .locals 1
 
     .prologue
     .line 208
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iE()Ljava/util/Set;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iI()Ljava/util/Set;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method bridge synthetic cN()Ljava/util/Collection;
+.method bridge synthetic e()Ljava/lang/Object;
     .locals 1
 
     .prologue
     .line 208
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iE()Ljava/util/Set;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iI()Ljava/util/Set;
 
     move-result-object v0
 
@@ -75,7 +75,7 @@
 
     .line 224
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iE()Ljava/util/Set;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iI()Ljava/util/Set;
 
     move-result-object v0
 
@@ -109,7 +109,7 @@
 
     .line 230
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iE()Ljava/util/Set;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSet;->iI()Ljava/util/Set;
 
     move-result-object v0
 
@@ -132,12 +132,12 @@
     throw v0
 .end method
 
-.method iE()Ljava/util/Set;
+.method iI()Ljava/util/Set;
     .locals 1
 
     .prologue
     .line 216
-    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cN()Ljava/util/Collection;
+    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->cR()Ljava/util/Collection;
 
     move-result-object v0
 

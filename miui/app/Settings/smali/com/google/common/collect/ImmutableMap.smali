@@ -44,17 +44,17 @@
     return-object v0
 .end method
 
-.method public static ls()Lcom/google/common/collect/ImmutableMap;
+.method public static lw()Lcom/google/common/collect/ImmutableMap;
     .locals 1
 
     .prologue
     .line 65
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableMap;->qz:Lcom/google/common/collect/EmptyImmutableMap;
+    sget-object v0, Lcom/google/common/collect/EmptyImmutableMap;->qC:Lcom/google/common/collect/EmptyImmutableMap;
 
     return-object v0
 .end method
 
-.method public static lt()Lcom/google/common/collect/O;
+.method public static lx()Lcom/google/common/collect/O;
     .locals 1
 
     .prologue
@@ -103,7 +103,13 @@
     goto :goto_0
 .end method
 
-.method public abstract dN()Lcom/google/common/collect/ImmutableCollection;
+.method public abstract dR()Lcom/google/common/collect/ImmutableCollection;
+.end method
+
+.method public abstract eB()Lcom/google/common/collect/ImmutableSet;
+.end method
+
+.method public abstract eC()Lcom/google/common/collect/ImmutableSet;
 .end method
 
 .method public bridge synthetic entrySet()Ljava/util/Set;
@@ -111,7 +117,7 @@
 
     .prologue
     .line 54
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -143,7 +149,7 @@
     check-cast p1, Ljava/util/Map;
 
     .line 380
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -164,12 +170,6 @@
     goto :goto_0
 .end method
 
-.method public abstract ex()Lcom/google/common/collect/ImmutableSet;
-.end method
-
-.method public abstract ey()Lcom/google/common/collect/ImmutableSet;
-.end method
-
 .method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
 .end method
 
@@ -178,7 +178,7 @@
 
     .prologue
     .line 390
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -216,7 +216,7 @@
 
     .prologue
     .line 54
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->ey()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->eC()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -280,7 +280,7 @@
 
     .prologue
     .line 54
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->dN()Lcom/google/common/collect/ImmutableCollection;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMap;->dR()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic mz:Lcom/android/settings/bluetooth/RequestPermissionActivity;
+.field final synthetic mC:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 74
-    iput-object p1, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mz:Lcom/android/settings/bluetooth/RequestPermissionActivity;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mC:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -39,7 +39,7 @@
 
     .line 81
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mz:Lcom/android/settings/bluetooth/RequestPermissionActivity;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mC:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->a(Lcom/android/settings/bluetooth/RequestPermissionActivity;)Z
 
@@ -74,7 +74,7 @@
     if-ne v0, v1, :cond_0
 
     .line 85
-    iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mz:Lcom/android/settings/bluetooth/RequestPermissionActivity;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mC:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->b(Lcom/android/settings/bluetooth/RequestPermissionActivity;)Z
 
@@ -83,7 +83,7 @@
     if-eqz v0, :cond_0
 
     .line 86
-    iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mz:Lcom/android/settings/bluetooth/RequestPermissionActivity;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$1;->mC:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->c(Lcom/android/settings/bluetooth/RequestPermissionActivity;)V
 

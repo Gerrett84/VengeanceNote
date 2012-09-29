@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final Fw:Ljava/util/ArrayList;
+.field final FA:Ljava/util/ArrayList;
 
-.field final synthetic qc:Lcom/android/settings/H;
+.field final synthetic qf:Lcom/android/settings/H;
 
 
 # direct methods
@@ -19,7 +19,7 @@
     const/4 v1, 0x0
 
     .line 108
-    iput-object p1, p0, Lcom/android/settings/cv;->qc:Lcom/android/settings/H;
+    iput-object p1, p0, Lcom/android/settings/cv;->qf:Lcom/android/settings/H;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/cv;->Fw:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/cv;->FA:Ljava/util/ArrayList;
 
     .line 109
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
@@ -73,7 +73,7 @@
 
     .line 122
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/cv;->Fw:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/cv;->FA:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

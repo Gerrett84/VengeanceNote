@@ -4,19 +4,19 @@
 
 
 # instance fields
-.field private aJ:Landroid/content/IntentFilter;
+.field private aM:Landroid/content/IntentFilter;
 
 .field private mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-.field private oc:Landroid/view/View;
-
-.field private od:Landroid/widget/Button;
-
-.field private oe:Landroid/view/View;
-
 .field private of:Landroid/view/View;
 
-.field private og:Landroid/view/View$OnClickListener;
+.field private og:Landroid/widget/Button;
+
+.field private oh:Landroid/view/View;
+
+.field private oi:Landroid/view/View;
+
+.field private oj:Landroid/view/View$OnClickListener;
 
 
 # direct methods
@@ -39,12 +39,12 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/cC;-><init>(Lcom/android/settings/CryptKeeperSettings;)V
 
-    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->og:Landroid/view/View$OnClickListener;
+    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oj:Landroid/view/View$OnClickListener;
 
     return-void
 .end method
 
-.method private A(Ljava/lang/String;)V
+.method private B(Ljava/lang/String;)V
     .locals 3
     .parameter
 
@@ -188,7 +188,7 @@
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->od:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->og:Landroid/widget/Button;
 
     return-object v0
 .end method
@@ -213,7 +213,7 @@
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oe:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oh:Landroid/view/View;
 
     return-object v0
 .end method
@@ -224,7 +224,7 @@
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oi:Landroid/view/View;
 
     return-object v0
 .end method
@@ -335,7 +335,7 @@
     if-nez v1, :cond_0
 
     .line 198
-    invoke-direct {p0, v0}, Lcom/android/settings/CryptKeeperSettings;->A(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/CryptKeeperSettings;->B(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -356,24 +356,24 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oc:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
 
     .line 111
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->aJ:Landroid/content/IntentFilter;
+    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->aM:Landroid/content/IntentFilter;
 
     .line 112
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->aJ:Landroid/content/IntentFilter;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->aM:Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 114
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oc:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
 
     const v1, 0x7f08003b
 
@@ -383,24 +383,24 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->od:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->og:Landroid/widget/Button;
 
     .line 115
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->od:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->og:Landroid/widget/Button;
 
-    iget-object v1, p0, Lcom/android/settings/CryptKeeperSettings;->og:Landroid/view/View$OnClickListener;
+    iget-object v1, p0, Lcom/android/settings/CryptKeeperSettings;->oj:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 116
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->od:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->og:Landroid/widget/Button;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 118
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oc:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
 
     const v1, 0x7f08003a
 
@@ -408,10 +408,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oe:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oh:Landroid/view/View;
 
     .line 119
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oc:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
 
     const v1, 0x7f080039
 
@@ -419,10 +419,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oi:Landroid/view/View;
 
     .line 121
-    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->oc:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/CryptKeeperSettings;->of:Landroid/view/View;
 
     return-object v0
 .end method
@@ -461,7 +461,7 @@
 
     iget-object v1, p0, Lcom/android/settings/CryptKeeperSettings;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    iget-object v2, p0, Lcom/android/settings/CryptKeeperSettings;->aJ:Landroid/content/IntentFilter;
+    iget-object v2, p0, Lcom/android/settings/CryptKeeperSettings;->aM:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 

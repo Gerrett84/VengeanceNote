@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Kc:Lcom/android/settings/TrustedCredentialsSettings;
+.field final synthetic Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 347
-    iput-object p1, p0, Lcom/android/settings/ec;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iput-object p1, p0, Lcom/android/settings/ec;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

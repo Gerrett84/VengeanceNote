@@ -7,7 +7,7 @@
 .method public abstract a(Ljava/lang/CharSequence;)V
 .end method
 
-.method public abstract ar()Landroid/widget/Button;
+.method public abstract av()Landroid/widget/Button;
 .end method
 
 .method public abstract b(Ljava/lang/CharSequence;)V

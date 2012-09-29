@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+.field final synthetic dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 805
-    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -48,9 +48,9 @@
     check-cast v0, Lcom/android/settings/fuelgauge/BatterySipper;
 
     .line 812
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
-    iget-object v2, v0, Lcom/android/settings/fuelgauge/BatterySipper;->zy:Landroid/os/BatteryStats$Uid;
+    iget-object v2, v0, Lcom/android/settings/fuelgauge/BatterySipper;->zC:Landroid/os/BatteryStats$Uid;
 
     invoke-virtual {v2}, Landroid/os/BatteryStats$Uid;->getUid()I
 

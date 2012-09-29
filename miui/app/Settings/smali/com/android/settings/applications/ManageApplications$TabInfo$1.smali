@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Ig:Lcom/android/settings/applications/ManageApplications$TabInfo;
+.field final synthetic Ij:Lcom/android/settings/applications/ManageApplications$TabInfo;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 208
-    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo$1;->Ig:Lcom/android/settings/applications/ManageApplications$TabInfo;
+    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$TabInfo$1;->Ij:Lcom/android/settings/applications/ManageApplications$TabInfo;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,9 +31,9 @@
 
     .prologue
     .line 210
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo$1;->Ig:Lcom/android/settings/applications/ManageApplications$TabInfo;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$TabInfo$1;->Ij:Lcom/android/settings/applications/ManageApplications$TabInfo;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hM()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/ManageApplications$TabInfo;->hQ()V
 
     .line 211
     return-void

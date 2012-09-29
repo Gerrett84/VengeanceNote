@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic FF:Lcom/android/settings/quicklaunch/QuickLaunchSettings;
+.field final synthetic FJ:Lcom/android/settings/quicklaunch/QuickLaunchSettings;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 362
-    iput-object p1, p0, Lcom/android/settings/quicklaunch/b;->FF:Lcom/android/settings/quicklaunch/QuickLaunchSettings;
+    iput-object p1, p0, Lcom/android/settings/quicklaunch/b;->FJ:Lcom/android/settings/quicklaunch/QuickLaunchSettings;
 
     .line 363
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -35,7 +35,7 @@
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
     .line 370
-    iget-object v0, p0, Lcom/android/settings/quicklaunch/b;->FF:Lcom/android/settings/quicklaunch/QuickLaunchSettings;
+    iget-object v0, p0, Lcom/android/settings/quicklaunch/b;->FJ:Lcom/android/settings/quicklaunch/QuickLaunchSettings;
 
     invoke-static {v0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->a(Lcom/android/settings/quicklaunch/QuickLaunchSettings;)V
 

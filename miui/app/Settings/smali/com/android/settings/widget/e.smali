@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field private pk:Z
-
-.field private pl:Ljava/lang/Boolean;
-
-.field private pm:Ljava/lang/Boolean;
-
 .field private pn:Z
+
+.field private po:Ljava/lang/Boolean;
+
+.field private pp:Ljava/lang/Boolean;
+
+.field private pq:Z
 
 
 # direct methods
@@ -26,16 +26,16 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 126
-    iput-boolean v0, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v0, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 127
-    iput-object v1, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iput-object v1, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     .line 128
-    iput-object v1, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iput-object v1, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     .line 134
-    iput-boolean v0, p0, Lcom/android/settings/widget/e;->pn:Z
+    iput-boolean v0, p0, Lcom/android/settings/widget/e;->pq:Z
 
     return-void
 .end method
@@ -53,10 +53,10 @@
 
 
 # virtual methods
-.method public abstract C()I
+.method public abstract G()I
 .end method
 
-.method public abstract D()I
+.method public abstract H()I
 .end method
 
 .method protected final a(Landroid/content/Context;I)V
@@ -70,7 +70,7 @@
     const/4 v2, 0x0
 
     .line 241
-    iget-boolean v0, p0, Lcom/android/settings/widget/e;->pk:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 242
     packed-switch p2, :pswitch_data_0
@@ -79,12 +79,12 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/android/settings/widget/e;->pk:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/e;->pn:Z
 
     if-nez v0, :cond_1
 
     .line 262
-    iget-boolean v0, p0, Lcom/android/settings/widget/e;->pn:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/e;->pq:Z
 
     if-eqz v0, :cond_1
 
@@ -96,17 +96,17 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 264
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     invoke-virtual {v0, v1}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
 
@@ -124,7 +124,7 @@
     .line 271
     :cond_0
     :goto_1
-    iput-boolean v2, p0, Lcom/android/settings/widget/e;->pn:Z
+    iput-boolean v2, p0, Lcom/android/settings/widget/e;->pq:Z
 
     .line 274
     :cond_1
@@ -132,67 +132,67 @@
 
     .line 244
     :pswitch_0
-    iput-boolean v2, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v2, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 245
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iput-object v1, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     goto :goto_0
 
     .line 248
     :pswitch_1
-    iput-boolean v2, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v2, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 249
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iput-object v1, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     goto :goto_0
 
     .line 252
     :pswitch_2
-    iput-boolean v3, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v3, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 253
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iput-object v1, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     goto :goto_0
 
     .line 256
     :pswitch_3
-    iput-boolean v3, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v3, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 257
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/android/settings/widget/e;->pl:Ljava/lang/Boolean;
+    iput-object v1, p0, Lcom/android/settings/widget/e;->po:Ljava/lang/Boolean;
 
     goto :goto_0
 
     .line 267
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
 
     .line 268
-    iput-boolean v3, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v3, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 269
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -226,12 +226,12 @@
     const/4 v4, 0x0
 
     .line 196
-    invoke-virtual {p0}, Lcom/android/settings/widget/e;->C()I
+    invoke-virtual {p0}, Lcom/android/settings/widget/e;->G()I
 
     move-result v0
 
     .line 197
-    invoke-virtual {p0}, Lcom/android/settings/widget/e;->D()I
+    invoke-virtual {p0}, Lcom/android/settings/widget/e;->H()I
 
     move-result v1
 
@@ -261,7 +261,7 @@
     invoke-virtual {p2, v0, v3}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
     .line 202
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eF()[I
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eJ()[I
 
     move-result-object v0
 
@@ -280,7 +280,7 @@
     invoke-virtual {p2, v0, v3}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
     .line 207
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eG()[I
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eK()[I
 
     move-result-object v0
 
@@ -292,7 +292,7 @@
 
     .line 216
     :pswitch_3
-    invoke-virtual {p0}, Lcom/android/settings/widget/e;->dP()Z
+    invoke-virtual {p0}, Lcom/android/settings/widget/e;->dT()Z
 
     move-result v3
 
@@ -306,7 +306,7 @@
     invoke-virtual {p2, v0, v3}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
     .line 218
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eH()[I
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eL()[I
 
     move-result-object v0
 
@@ -325,7 +325,7 @@
     invoke-virtual {p2, v0, v3}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
     .line 222
-    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eF()[I
+    invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->eJ()[I
 
     move-result-object v0
 
@@ -356,16 +356,16 @@
 .method public abstract c(Landroid/content/Context;)I
 .end method
 
-.method public final dP()Z
+.method public final dT()Z
     .locals 1
 
     .prologue
     .line 282
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v0, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -419,15 +419,15 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iput-object v2, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     .line 158
-    iget-boolean v2, p0, Lcom/android/settings/widget/e;->pk:Z
+    iget-boolean v2, p0, Lcom/android/settings/widget/e;->pn:Z
 
     if-eqz v2, :cond_1
 
     .line 163
-    iput-boolean v1, p0, Lcom/android/settings/widget/e;->pn:Z
+    iput-boolean v1, p0, Lcom/android/settings/widget/e;->pq:Z
 
     .line 168
     :goto_1
@@ -441,12 +441,12 @@
 
     .line 152
     :pswitch_2
-    iget-object v2, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     if-eqz v2, :cond_0
 
     .line 153
-    iget-object v2, p0, Lcom/android/settings/widget/e;->pm:Ljava/lang/Boolean;
+    iget-object v2, p0, Lcom/android/settings/widget/e;->pp:Ljava/lang/Boolean;
 
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -460,7 +460,7 @@
 
     .line 165
     :cond_1
-    iput-boolean v1, p0, Lcom/android/settings/widget/e;->pk:Z
+    iput-boolean v1, p0, Lcom/android/settings/widget/e;->pn:Z
 
     .line 166
     invoke-virtual {p0, p1, v0}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Z)V
@@ -487,7 +487,7 @@
     const/4 v0, 0x5
 
     .line 292
-    iget-boolean v1, p0, Lcom/android/settings/widget/e;->pk:Z
+    iget-boolean v1, p0, Lcom/android/settings/widget/e;->pn:Z
 
     if-eqz v1, :cond_0
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic DA:Lcom/android/settings/bluetooth/BluetoothSettings;
+.field final synthetic DE:Lcom/android/settings/bluetooth/BluetoothSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 404
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2;->DA:Lcom/android/settings/bluetooth/BluetoothSettings;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2;->DE:Lcom/android/settings/bluetooth/BluetoothSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,7 +66,7 @@
     invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 413
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2;->DA:Lcom/android/settings/bluetooth/BluetoothSettings;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothSettings$2;->DE:Lcom/android/settings/bluetooth/BluetoothSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothSettings;->getActivity()Landroid/app/Activity;
 

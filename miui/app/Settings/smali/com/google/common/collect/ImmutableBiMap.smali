@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final qq:Lcom/google/common/collect/ImmutableBiMap;
+.field private static final qt:Lcom/google/common/collect/ImmutableBiMap;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$EmptyBiMap;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/ImmutableBiMap;->qq:Lcom/google/common/collect/ImmutableBiMap;
+    sput-object v0, Lcom/google/common/collect/ImmutableBiMap;->qt:Lcom/google/common/collect/ImmutableBiMap;
 
     return-void
 .end method
@@ -35,22 +35,22 @@
     return-void
 .end method
 
-.method static synthetic eB()Lcom/google/common/collect/ImmutableBiMap;
-    .locals 1
-
-    .prologue
-    .line 43
-    sget-object v0, Lcom/google/common/collect/ImmutableBiMap;->qq:Lcom/google/common/collect/ImmutableBiMap;
-
-    return-object v0
-.end method
-
-.method public static ez()Lcom/google/common/collect/ImmutableBiMap;
+.method public static eD()Lcom/google/common/collect/ImmutableBiMap;
     .locals 1
 
     .prologue
     .line 55
-    sget-object v0, Lcom/google/common/collect/ImmutableBiMap;->qq:Lcom/google/common/collect/ImmutableBiMap;
+    sget-object v0, Lcom/google/common/collect/ImmutableBiMap;->qt:Lcom/google/common/collect/ImmutableBiMap;
+
+    return-object v0
+.end method
+
+.method static synthetic eF()Lcom/google/common/collect/ImmutableBiMap;
+    .locals 1
+
+    .prologue
+    .line 43
+    sget-object v0, Lcom/google/common/collect/ImmutableBiMap;->qt:Lcom/google/common/collect/ImmutableBiMap;
 
     return-object v0
 .end method
@@ -63,7 +63,7 @@
 
     .prologue
     .line 227
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -80,7 +80,7 @@
 
     .prologue
     .line 231
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dM()Lcom/google/common/collect/ImmutableBiMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dQ()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 
@@ -91,46 +91,78 @@
     return v0
 .end method
 
-.method abstract dL()Lcom/google/common/collect/ImmutableMap;
+.method abstract dP()Lcom/google/common/collect/ImmutableMap;
 .end method
 
-.method public abstract dM()Lcom/google/common/collect/ImmutableBiMap;
+.method public abstract dQ()Lcom/google/common/collect/ImmutableBiMap;
 .end method
 
-.method public bridge synthetic dN()Lcom/google/common/collect/ImmutableCollection;
+.method public bridge synthetic dR()Lcom/google/common/collect/ImmutableCollection;
     .locals 1
 
     .prologue
     .line 42
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eA()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eE()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic dl()Ljava/util/Set;
+.method public bridge synthetic dp()Ljava/util/Set;
     .locals 1
 
     .prologue
     .line 42
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eA()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eE()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public eA()Lcom/google/common/collect/ImmutableSet;
+.method public eB()Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+
+    .prologue
+    .line 235
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public eC()Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+
+    .prologue
+    .line 243
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->eC()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public eE()Lcom/google/common/collect/ImmutableSet;
     .locals 1
 
     .prologue
     .line 251
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dM()Lcom/google/common/collect/ImmutableBiMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dQ()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap;->ey()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap;->eC()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -142,7 +174,7 @@
 
     .prologue
     .line 42
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -157,7 +189,7 @@
     .line 274
     if-eq p1, p0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -179,45 +211,13 @@
     goto :goto_0
 .end method
 
-.method public ex()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-
-    .prologue
-    .line 235
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public ey()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-
-    .prologue
-    .line 243
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->ey()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .parameter
 
     .prologue
     .line 239
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -233,7 +233,7 @@
 
     .prologue
     .line 278
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -249,7 +249,7 @@
 
     .prologue
     .line 265
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -265,7 +265,7 @@
 
     .prologue
     .line 42
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->ey()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eC()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -277,7 +277,7 @@
 
     .prologue
     .line 270
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -293,7 +293,7 @@
 
     .prologue
     .line 282
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dL()Lcom/google/common/collect/ImmutableMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->dP()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -309,7 +309,7 @@
 
     .prologue
     .line 42
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eA()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->eE()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 

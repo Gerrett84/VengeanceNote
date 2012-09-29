@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+.field final synthetic fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
 .field private final mStarted:Z
 
@@ -20,7 +20,7 @@
 
     .prologue
     .line 172
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,7 +41,7 @@
 
     .prologue
     .line 177
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothEventManager;->c(Lcom/android/settings/bluetooth/BluetoothEventManager;)Ljava/util/Collection;
 
@@ -51,7 +51,7 @@
 
     .line 178
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothEventManager;->c(Lcom/android/settings/bluetooth/BluetoothEventManager;)Ljava/util/Collection;
 
@@ -98,7 +98,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 182
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$ScanningStateChangedHandler;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothEventManager;->d(Lcom/android/settings/bluetooth/BluetoothEventManager;)Lcom/android/settings/bluetooth/CachedBluetoothDeviceManager;
 

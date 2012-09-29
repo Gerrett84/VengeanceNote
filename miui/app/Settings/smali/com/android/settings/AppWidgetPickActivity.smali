@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private dt:Landroid/appwidget/AppWidgetManager;
+.field private dw:Landroid/appwidget/AppWidgetManager;
 
 .field private mAppWidgetId:I
 
@@ -214,7 +214,7 @@
     goto :goto_1
 .end method
 
-.method protected eN()Ljava/util/List;
+.method protected eR()Ljava/util/List;
     .locals 2
 
     .prologue
@@ -494,7 +494,7 @@
 
     .prologue
     .line 226
-    iget-object v0, p0, Lcom/android/settings/AppWidgetPickActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v0, p0, Lcom/android/settings/AppWidgetPickActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
     invoke-virtual {v0}, Landroid/appwidget/AppWidgetManager;->getInstalledProviders()Ljava/util/List;
 
@@ -542,7 +542,7 @@
     .line 149
     :cond_0
     :try_start_0
-    iget-object v2, p0, Lcom/android/settings/AppWidgetPickActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iget-object v2, p0, Lcom/android/settings/AppWidgetPickActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
     iget v3, p0, Lcom/android/settings/AppWidgetPickActivity;->mAppWidgetId:I
 
@@ -591,7 +591,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/AppWidgetPickActivity;->dt:Landroid/appwidget/AppWidgetManager;
+    iput-object v0, p0, Lcom/android/settings/AppWidgetPickActivity;->dw:Landroid/appwidget/AppWidgetManager;
 
     .line 63
     invoke-super {p0, p1}, Lcom/android/settings/ActivityPicker;->onCreate(Landroid/os/Bundle;)V

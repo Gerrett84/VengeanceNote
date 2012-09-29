@@ -8,7 +8,7 @@
 
 .field public label:Ljava/lang/CharSequence;
 
-.field public uq:[Ljava/lang/CharSequence;
+.field public uu:[Ljava/lang/CharSequence;
 
 
 # direct methods

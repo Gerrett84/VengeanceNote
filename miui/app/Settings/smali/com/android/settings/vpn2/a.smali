@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private dX:Lcom/android/settings/vpn2/c;
+.field private ea:Lcom/android/settings/vpn2/c;
 
-.field final synthetic dY:Lcom/android/settings/vpn2/VpnSettings;
+.field final synthetic eb:Lcom/android/settings/vpn2/VpnSettings;
 
 .field private mState:I
 
@@ -22,7 +22,7 @@
     const/4 v1, 0x0
 
     .line 476
-    iput-object p1, p0, Lcom/android/settings/vpn2/a;->dY:Lcom/android/settings/vpn2/VpnSettings;
+    iput-object p1, p0, Lcom/android/settings/vpn2/a;->eb:Lcom/android/settings/vpn2/VpnSettings;
 
     .line 477
     invoke-direct {p0, p2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
@@ -42,7 +42,7 @@
     invoke-virtual {p0, p1}, Lcom/android/settings/vpn2/a;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
 
     .line 482
-    iput-object p3, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iput-object p3, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     .line 483
     invoke-virtual {p0}, Lcom/android/settings/vpn2/a;->update()V
@@ -59,7 +59,7 @@
 
     .prologue
     .line 491
-    iput-object p1, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iput-object p1, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     .line 492
     invoke-virtual {p0}, Lcom/android/settings/vpn2/a;->update()V
@@ -68,12 +68,12 @@
     return-void
 .end method
 
-.method ad()Lcom/android/settings/vpn2/c;
+.method ah()Lcom/android/settings/vpn2/c;
     .locals 1
 
     .prologue
     .line 487
-    iget-object v0, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v0, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     return-object v0
 .end method
@@ -103,11 +103,11 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v0, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget-object v0, v0, Lcom/android/settings/vpn2/c;->name:Ljava/lang/String;
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v1, p1, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget-object v1, v1, Lcom/android/settings/vpn2/c;->name:Ljava/lang/String;
 
@@ -117,11 +117,11 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v0, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget v0, v0, Lcom/android/settings/vpn2/c;->type:I
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v1, p1, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget v1, v1, Lcom/android/settings/vpn2/c;->type:I
 
@@ -130,11 +130,11 @@
     if-nez v0, :cond_0
 
     .line 522
-    iget-object v0, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v0, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget-object v0, v0, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
-    iget-object v1, p1, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v1, p1, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget-object v1, v1, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
 
@@ -187,7 +187,7 @@
     move-result-object v0
 
     .line 504
-    iget-object v1, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v1, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget v1, v1, Lcom/android/settings/vpn2/c;->type:I
 
@@ -197,7 +197,7 @@
 
     .line 510
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/vpn2/a;->dX:Lcom/android/settings/vpn2/c;
+    iget-object v0, p0, Lcom/android/settings/vpn2/a;->ea:Lcom/android/settings/vpn2/c;
 
     iget-object v0, v0, Lcom/android/settings/vpn2/c;->name:Ljava/lang/String;
 

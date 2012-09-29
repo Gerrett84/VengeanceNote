@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic Ii:Lcom/android/settings/tts/k;
+.field final synthetic Il:Lcom/android/settings/tts/k;
 
-.field final synthetic Ij:Landroid/widget/RadioButton;
+.field final synthetic Im:Landroid/widget/RadioButton;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 127
-    iput-object p1, p0, Lcom/android/settings/tts/j;->Ii:Lcom/android/settings/tts/k;
+    iput-object p1, p0, Lcom/android/settings/tts/j;->Il:Lcom/android/settings/tts/k;
 
-    iput-object p2, p0, Lcom/android/settings/tts/j;->Ij:Landroid/widget/RadioButton;
+    iput-object p2, p0, Lcom/android/settings/tts/j;->Im:Landroid/widget/RadioButton;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,11 +37,11 @@
 
     .prologue
     .line 130
-    iget-object v1, p0, Lcom/android/settings/tts/j;->Ii:Lcom/android/settings/tts/k;
+    iget-object v1, p0, Lcom/android/settings/tts/j;->Il:Lcom/android/settings/tts/k;
 
-    iget-object v2, p0, Lcom/android/settings/tts/j;->Ij:Landroid/widget/RadioButton;
+    iget-object v2, p0, Lcom/android/settings/tts/j;->Im:Landroid/widget/RadioButton;
 
-    iget-object v0, p0, Lcom/android/settings/tts/j;->Ij:Landroid/widget/RadioButton;
+    iget-object v0, p0, Lcom/android/settings/tts/j;->Im:Landroid/widget/RadioButton;
 
     invoke-virtual {v0}, Landroid/widget/RadioButton;->isChecked()Z
 

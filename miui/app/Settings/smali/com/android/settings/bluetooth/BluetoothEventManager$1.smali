@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+.field final synthetic fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 139
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$1;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$1;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -44,7 +44,7 @@
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
     .line 146
-    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$1;->fg:Lcom/android/settings/bluetooth/BluetoothEventManager;
+    iget-object v2, p0, Lcom/android/settings/bluetooth/BluetoothEventManager$1;->fj:Lcom/android/settings/bluetooth/BluetoothEventManager;
 
     invoke-static {v2}, Lcom/android/settings/bluetooth/BluetoothEventManager;->a(Lcom/android/settings/bluetooth/BluetoothEventManager;)Ljava/util/Map;
 

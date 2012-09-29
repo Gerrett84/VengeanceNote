@@ -7,11 +7,7 @@
 
 
 # instance fields
-.field BA:Ljava/lang/String;
-
-.field BB:Ljava/lang/String;
-
-.field BC:Z
+.field BC:Ljava/lang/String;
 
 .field BD:Ljava/lang/String;
 
@@ -19,17 +15,21 @@
 
 .field BF:Ljava/lang/String;
 
-.field BG:Ljava/lang/String;
+.field BG:Z
 
 .field BH:Ljava/lang/String;
 
 .field BI:Ljava/lang/String;
 
-.field BJ:Z
+.field BJ:Ljava/lang/String;
 
-.field By:Ljava/lang/String;
+.field BK:Ljava/lang/String;
 
-.field Bz:Ljava/lang/String;
+.field BL:Ljava/lang/String;
+
+.field BM:Ljava/lang/String;
+
+.field BN:Z
 
 .field final key:Ljava/lang/String;
 
@@ -64,12 +64,12 @@
     .line 42
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     .line 43
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     .line 44
     const-string v0, ""
@@ -79,12 +79,12 @@
     .line 45
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BA:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
 
     .line 46
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BB:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
 
     .line 47
     const-string v0, ""
@@ -94,40 +94,40 @@
     .line 48
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/vpn2/c;->BC:Z
+    iput-boolean v0, p0, Lcom/android/settings/vpn2/c;->BG:Z
 
     .line 49
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
 
     .line 50
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
 
     .line 51
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BJ:Ljava/lang/String;
 
     .line 52
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BG:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BK:Ljava/lang/String;
 
     .line 53
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BL:Ljava/lang/String;
 
     .line 54
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/vpn2/c;->BM:Ljava/lang/String;
 
     .line 57
-    iput-boolean v1, p0, Lcom/android/settings/vpn2/c;->BJ:Z
+    iput-boolean v1, p0, Lcom/android/settings/vpn2/c;->BN:Z
 
     .line 60
     iput-object p1, p0, Lcom/android/settings/vpn2/c;->key:Ljava/lang/String;
@@ -229,14 +229,14 @@
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     .line 82
     const/4 v5, 0x3
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     .line 83
     const/4 v5, 0x4
@@ -250,14 +250,14 @@
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BA:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
 
     .line 85
     const/4 v5, 0x6
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BB:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
 
     .line 86
     const/4 v5, 0x7
@@ -279,42 +279,42 @@
 
     move-result v5
 
-    iput-boolean v5, v1, Lcom/android/settings/vpn2/c;->BC:Z
+    iput-boolean v5, v1, Lcom/android/settings/vpn2/c;->BG:Z
 
     .line 88
     const/16 v5, 0x9
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
 
     .line 89
     const/16 v5, 0xa
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
 
     .line 90
     const/16 v5, 0xb
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BJ:Ljava/lang/String;
 
     .line 91
     const/16 v5, 0xc
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BG:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BK:Ljava/lang/String;
 
     .line 92
     const/16 v5, 0xd
 
     aget-object v5, v4, v5
 
-    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
+    iput-object v5, v1, Lcom/android/settings/vpn2/c;->BL:Ljava/lang/String;
 
     .line 93
     array-length v5, v4
@@ -326,10 +326,10 @@
     aget-object v4, v4, v5
 
     :goto_1
-    iput-object v4, v1, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
+    iput-object v4, v1, Lcom/android/settings/vpn2/c;->BM:Ljava/lang/String;
 
     .line 95
-    iget-object v4, v1, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v4, v1, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
 
@@ -349,7 +349,7 @@
     move v2, v3
 
     :cond_3
-    iput-boolean v2, v1, Lcom/android/settings/vpn2/c;->BJ:Z
+    iput-boolean v2, v1, Lcom/android/settings/vpn2/c;->BN:Z
 
     move-object v0, v1
 
@@ -373,7 +373,7 @@
 
 
 # virtual methods
-.method hX()[B
+.method ib()[B
     .locals 4
 
     .prologue
@@ -400,7 +400,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->By:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BC:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -409,11 +409,11 @@
 
     move-result-object v2
 
-    iget-boolean v0, p0, Lcom/android/settings/vpn2/c;->BJ:Z
+    iget-boolean v0, p0, Lcom/android/settings/vpn2/c;->BN:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/vpn2/c;->Bz:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
 
     :goto_0
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -423,7 +423,7 @@
 
     move-result-object v2
 
-    iget-boolean v0, p0, Lcom/android/settings/vpn2/c;->BJ:Z
+    iget-boolean v0, p0, Lcom/android/settings/vpn2/c;->BN:Z
 
     if-eqz v0, :cond_1
 
@@ -437,7 +437,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BA:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -446,7 +446,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BB:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -464,7 +464,7 @@
 
     move-result-object v0
 
-    iget-boolean v2, p0, Lcom/android/settings/vpn2/c;->BC:Z
+    iget-boolean v2, p0, Lcom/android/settings/vpn2/c;->BG:Z
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -473,7 +473,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BD:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -482,7 +482,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BE:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -491,7 +491,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BF:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BJ:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -500,7 +500,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BK:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -509,7 +509,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BH:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BL:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -518,7 +518,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BI:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/vpn2/c;->BM:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

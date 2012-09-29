@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic tE:Lcom/android/settings/sound/a;
+.field final synthetic tI:Lcom/android/settings/sound/a;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 393
-    iput-object p1, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iput-object p1, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
@@ -33,7 +33,7 @@
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
     .line 397
-    iget-object v0, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v0, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v0}, Lcom/android/settings/sound/a;->a(Lcom/android/settings/sound/a;)Landroid/widget/SeekBar;
 
@@ -41,7 +41,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v0, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v0}, Lcom/android/settings/sound/a;->b(Lcom/android/settings/sound/a;)Landroid/media/AudioManager;
 
@@ -50,13 +50,13 @@
     if-eqz v0, :cond_0
 
     .line 398
-    iget-object v0, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v0, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v0}, Lcom/android/settings/sound/a;->b(Lcom/android/settings/sound/a;)Landroid/media/AudioManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v1, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v1}, Lcom/android/settings/sound/a;->c(Lcom/android/settings/sound/a;)I
 
@@ -68,13 +68,13 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v0, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v0}, Lcom/android/settings/sound/a;->b(Lcom/android/settings/sound/a;)Landroid/media/AudioManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v1, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v1}, Lcom/android/settings/sound/a;->c(Lcom/android/settings/sound/a;)I
 
@@ -86,7 +86,7 @@
 
     .line 401
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v1, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v1}, Lcom/android/settings/sound/a;->a(Lcom/android/settings/sound/a;)Landroid/widget/SeekBar;
 
@@ -100,13 +100,13 @@
 
     .line 398
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v0, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v0}, Lcom/android/settings/sound/a;->b(Lcom/android/settings/sound/a;)Landroid/media/AudioManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/sound/d;->tE:Lcom/android/settings/sound/a;
+    iget-object v1, p0, Lcom/android/settings/sound/d;->tI:Lcom/android/settings/sound/a;
 
     invoke-static {v1}, Lcom/android/settings/sound/a;->c(Lcom/android/settings/sound/a;)I
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+.field final synthetic fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 168
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$2;->fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$2;->fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
     if-eqz p2, :cond_0
 
     .line 171
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$2;->fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$2;->fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     const/4 v1, 0x1
 
@@ -48,7 +48,7 @@
 
     .line 173
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$2;->fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$2;->fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     const/4 v1, 0x0
 

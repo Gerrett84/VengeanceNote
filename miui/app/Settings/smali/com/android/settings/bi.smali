@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1017
-    iput-object p1, p0, Lcom/android/settings/bi;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/bi;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 1020
-    iget-object v0, p0, Lcom/android/settings/bi;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bi;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->d(Lcom/android/settings/DataUsageSummary;)Z
 
@@ -47,7 +47,7 @@
 
     .line 1023
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bi;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bi;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->e(Lcom/android/settings/DataUsageSummary;)Ljava/lang/String;
 
@@ -66,7 +66,7 @@
     if-eqz p2, :cond_2
 
     .line 1026
-    iget-object v0, p0, Lcom/android/settings/bi;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bi;->fz:Lcom/android/settings/DataUsageSummary;
 
     const/4 v1, 0x1
 
@@ -75,7 +75,7 @@
     .line 1034
     :cond_1
     :goto_1
-    iget-object v0, p0, Lcom/android/settings/bi;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bi;->fz:Lcom/android/settings/DataUsageSummary;
 
     const/4 v1, 0x0
 
@@ -85,7 +85,7 @@
 
     .line 1030
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/bi;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bi;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;->w(Lcom/android/settings/DataUsageSummary;)V
 

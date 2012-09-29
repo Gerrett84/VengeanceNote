@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Fx:Lcom/android/settings/ApnSettings;
+.field final synthetic FB:Lcom/android/settings/ApnSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 97
-    iput-object p1, p0, Lcom/android/settings/cw;->Fx:Lcom/android/settings/ApnSettings;
+    iput-object p1, p0, Lcom/android/settings/cw;->FB:Lcom/android/settings/ApnSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -72,7 +72,7 @@
     if-nez v0, :cond_1
 
     .line 106
-    iget-object v0, p0, Lcom/android/settings/cw;->Fx:Lcom/android/settings/ApnSettings;
+    iget-object v0, p0, Lcom/android/settings/cw;->FB:Lcom/android/settings/ApnSettings;
 
     invoke-static {v0}, Lcom/android/settings/ApnSettings;->a(Lcom/android/settings/ApnSettings;)V
 
@@ -80,7 +80,7 @@
 
     .line 108
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/cw;->Fx:Lcom/android/settings/ApnSettings;
+    iget-object v0, p0, Lcom/android/settings/cw;->FB:Lcom/android/settings/ApnSettings;
 
     const/16 v1, 0x3e9
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private MT:Z
+.field private MW:Z
 
 
 # direct methods
@@ -24,7 +24,7 @@
 
     .prologue
     .line 2042
-    iget-boolean v0, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MT:Z
+    iget-boolean v0, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MW:Z
 
     return v0
 .end method
@@ -53,7 +53,7 @@
     invoke-direct {v0}, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;-><init>()V
 
     .line 2050
-    iput-boolean p1, v0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MT:Z
+    iput-boolean p1, v0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MW:Z
 
     .line 2051
     const/4 v1, 0x0
@@ -94,7 +94,7 @@
 
     move-result v1
 
-    iput-boolean v1, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MT:Z
+    iput-boolean v1, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MW:Z
 
     .line 2062
     :cond_0
@@ -103,7 +103,7 @@
     invoke-direct {v1, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 2063
-    iget-boolean v0, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MT:Z
+    iget-boolean v0, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MW:Z
 
     if-nez v0, :cond_1
 
@@ -166,7 +166,7 @@
     .line 2085
     const-string v0, "enabling"
 
-    iget-boolean v1, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MT:Z
+    iget-boolean v1, p0, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->MW:Z
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 

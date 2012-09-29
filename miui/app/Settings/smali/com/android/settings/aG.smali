@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final gn:Lcom/android/settings/a/h;
+.field private final gq:Lcom/android/settings/a/h;
 
-.field private final nv:Lcom/android/settings/P;
+.field private final ny:Lcom/android/settings/P;
 
-.field private final nw:Landroid/view/View;
+.field private final nz:Landroid/view/View;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     check-cast v0, Lcom/android/settings/a/h;
 
-    iput-object v0, p0, Lcom/android/settings/aG;->gn:Lcom/android/settings/a/h;
+    iput-object v0, p0, Lcom/android/settings/aG;->gq:Lcom/android/settings/a/h;
 
     .line 2122
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -38,7 +38,7 @@
 
     check-cast v0, Lcom/android/settings/P;
 
-    iput-object v0, p0, Lcom/android/settings/aG;->nv:Lcom/android/settings/P;
+    iput-object v0, p0, Lcom/android/settings/aG;->ny:Lcom/android/settings/P;
 
     .line 2123
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -47,7 +47,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    iput-object v0, p0, Lcom/android/settings/aG;->nw:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/aG;->nz:Landroid/view/View;
 
     .line 2124
     return-void
@@ -130,7 +130,7 @@
 
     .line 2133
     :cond_0
-    iget v0, p1, Lcom/android/settings/P;->dv:I
+    iget v0, p1, Lcom/android/settings/P;->dy:I
 
     invoke-virtual {p0, v0, v2}, Lcom/android/settings/a/h;->f(IZ)Lcom/android/settings/a/c;
 
@@ -173,11 +173,11 @@
 
     .prologue
     .line 2162
-    iget-object v0, p0, Lcom/android/settings/aG;->gn:Lcom/android/settings/a/h;
+    iget-object v0, p0, Lcom/android/settings/aG;->gq:Lcom/android/settings/a/h;
 
-    iget-object v1, p0, Lcom/android/settings/aG;->nv:Lcom/android/settings/P;
+    iget-object v1, p0, Lcom/android/settings/aG;->ny:Lcom/android/settings/P;
 
-    iget v1, v1, Lcom/android/settings/P;->dv:I
+    iget v1, v1, Lcom/android/settings/P;->dy:I
 
     const/4 v2, 0x1
 
@@ -194,7 +194,7 @@
 
     .prologue
     .line 2167
-    iget-object v0, p0, Lcom/android/settings/aG;->nw:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/aG;->nz:Landroid/view/View;
 
     invoke-static {p1, v0}, Lcom/android/settings/aG;->a(Lcom/android/settings/a/c;Landroid/view/View;)V
 
@@ -237,7 +237,7 @@
     .line 2157
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/aG;->nw:Landroid/view/View;
+    iget-object v1, p0, Lcom/android/settings/aG;->nz:Landroid/view/View;
 
     invoke-static {v0, v1}, Lcom/android/settings/aG;->a(Lcom/android/settings/a/c;Landroid/view/View;)V
 

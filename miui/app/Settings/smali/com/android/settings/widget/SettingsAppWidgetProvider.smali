@@ -4,27 +4,27 @@
 
 
 # static fields
-.field static final qN:Landroid/content/ComponentName;
+.field static final qQ:Landroid/content/ComponentName;
 
-.field private static qO:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+.field private static qR:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
-.field private static final qP:[I
+.field private static final qS:[I
 
-.field private static final qQ:[I
+.field private static final qT:[I
 
-.field private static final qR:[I
+.field private static final qU:[I
 
-.field private static qS:I
-
-.field private static final qT:Lcom/android/settings/widget/e;
-
-.field private static final qU:Lcom/android/settings/widget/e;
-
-.field private static final qV:Lcom/android/settings/widget/e;
+.field private static qV:I
 
 .field private static final qW:Lcom/android/settings/widget/e;
 
-.field private static qX:Lcom/android/settings/widget/u;
+.field private static final qX:Lcom/android/settings/widget/e;
+
+.field private static final qY:Lcom/android/settings/widget/e;
+
+.field private static final qZ:Lcom/android/settings/widget/e;
+
+.field private static ra:Lcom/android/settings/widget/u;
 
 
 # direct methods
@@ -45,59 +45,59 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qN:Landroid/content/ComponentName;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qQ:Landroid/content/ComponentName;
 
     .line 58
-    sput-object v3, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qO:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    sput-object v3, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qR:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     .line 81
     new-array v0, v4, [I
 
     fill-array-data v0, :array_0
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qP:[I
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qS:[I
 
     .line 87
     new-array v0, v4, [I
 
     fill-array-data v0, :array_1
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qQ:[I
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qT:[I
 
     .line 93
     new-array v0, v4, [I
 
     fill-array-data v0, :array_2
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qR:[I
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qU:[I
 
     .line 110
     new-instance v0, Lcom/android/settings/widget/p;
 
     invoke-direct {v0, v3}, Lcom/android/settings/widget/p;-><init>(Lcom/android/settings/widget/l;)V
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qT:Lcom/android/settings/widget/e;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
 
     .line 111
     new-instance v0, Lcom/android/settings/widget/a;
 
     invoke-direct {v0, v3}, Lcom/android/settings/widget/a;-><init>(Lcom/android/settings/widget/l;)V
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qU:Lcom/android/settings/widget/e;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/e;
 
     .line 112
     new-instance v0, Lcom/android/settings/widget/w;
 
     invoke-direct {v0, v3}, Lcom/android/settings/widget/w;-><init>(Lcom/android/settings/widget/l;)V
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:Lcom/android/settings/widget/e;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qY:Lcom/android/settings/widget/e;
 
     .line 113
     new-instance v0, Lcom/android/settings/widget/g;
 
     invoke-direct {v0, v3}, Lcom/android/settings/widget/g;-><init>(Lcom/android/settings/widget/l;)V
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qZ:Lcom/android/settings/widget/e;
 
     return-void
 
@@ -204,7 +204,7 @@
     if-ne v0, v2, :cond_1
 
     .line 840
-    sget v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qS:I
+    sget v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:I
 
     move v2, v0
 
@@ -270,7 +270,7 @@
 
     .line 848
     :cond_3
-    sget v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qS:I
+    sget v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
@@ -359,7 +359,7 @@
 
     .prologue
     .line 51
-    sput-object p0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qO:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    sput-object p0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qR:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     return-object p0
 .end method
@@ -379,22 +379,22 @@
     const v2, 0x7f0801af
 
     .line 679
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qT:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p0}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/widget/RemoteViews;)V
 
     .line 680
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qU:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p0}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/widget/RemoteViews;)V
 
     .line 681
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qY:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p0}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/widget/RemoteViews;)V
 
     .line 682
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qZ:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p0}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/widget/RemoteViews;)V
 
@@ -527,42 +527,42 @@
     return-object v0
 .end method
 
-.method static synthetic eF()[I
+.method static synthetic eJ()[I
     .locals 1
 
     .prologue
     .line 51
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qP:[I
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qS:[I
 
     return-object v0
 .end method
 
-.method static synthetic eG()[I
+.method static synthetic eK()[I
     .locals 1
 
     .prologue
     .line 51
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qR:[I
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qU:[I
 
     return-object v0
 .end method
 
-.method static synthetic eH()[I
+.method static synthetic eL()[I
     .locals 1
 
     .prologue
     .line 51
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qQ:[I
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qT:[I
 
     return-object v0
 .end method
 
-.method static synthetic eI()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+.method static synthetic eM()Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
     .locals 1
 
     .prologue
     .line 51
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qO:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qR:Lcom/android/settings/bluetooth/LocalBluetoothAdapter;
 
     return-object v0
 .end method
@@ -573,7 +573,7 @@
 
     .prologue
     .line 590
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/u;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->ra:Lcom/android/settings/widget/u;
 
     if-nez v0, :cond_0
 
@@ -590,12 +590,12 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/widget/u;-><init>(Landroid/os/Handler;Landroid/content/Context;)V
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/u;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->ra:Lcom/android/settings/widget/u;
 
     .line 593
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/u;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->ra:Lcom/android/settings/widget/u;
 
-    invoke-virtual {v0}, Lcom/android/settings/widget/u;->lJ()V
+    invoke-virtual {v0}, Lcom/android/settings/widget/u;->lN()V
 
     .line 595
     :cond_0
@@ -696,7 +696,7 @@
     move-result-object v1
 
     .line 668
-    sget-object v2, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qN:Landroid/content/ComponentName;
+    sget-object v2, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qQ:Landroid/content/ComponentName;
 
     invoke-virtual {v1, v2, v0}, Landroid/appwidget/AppWidgetManager;->updateAppWidget(Landroid/content/ComponentName;Landroid/widget/RemoteViews;)V
 
@@ -874,19 +874,19 @@
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
 
     .line 629
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/u;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->ra:Lcom/android/settings/widget/u;
 
     if-eqz v0, :cond_0
 
     .line 630
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/u;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->ra:Lcom/android/settings/widget/u;
 
     invoke-virtual {v0}, Lcom/android/settings/widget/u;->stopObserving()V
 
     .line 631
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/u;
+    sput-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->ra:Lcom/android/settings/widget/u;
 
     .line 633
     :cond_0
@@ -937,7 +937,7 @@
 
     move-result v0
 
-    sput v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qS:I
+    sput v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:I
 
     .line 619
     return-void
@@ -967,7 +967,7 @@
     if-eqz v1, :cond_2
 
     .line 741
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qT:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -991,7 +991,7 @@
     if-eqz v1, :cond_3
 
     .line 743
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qU:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -1008,7 +1008,7 @@
     if-eqz v1, :cond_4
 
     .line 745
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qY:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -1029,7 +1029,7 @@
     if-eqz v0, :cond_5
 
     .line 748
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qZ:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/settings/widget/e;->a(Landroid/content/Context;Landroid/content/Intent;)V
 
@@ -1063,7 +1063,7 @@
     if-nez v0, :cond_6
 
     .line 753
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qT:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/widget/e;->r(Landroid/content/Context;)V
 
@@ -1087,7 +1087,7 @@
     if-ne v0, v1, :cond_8
 
     .line 757
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qW:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qZ:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/widget/e;->r(Landroid/content/Context;)V
 
@@ -1100,7 +1100,7 @@
     if-ne v0, v1, :cond_9
 
     .line 759
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qV:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qY:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/widget/e;->r(Landroid/content/Context;)V
 
@@ -1113,7 +1113,7 @@
     if-ne v0, v1, :cond_0
 
     .line 761
-    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qU:Lcom/android/settings/widget/e;
+    sget-object v0, Lcom/android/settings/widget/SettingsAppWidgetProvider;->qX:Lcom/android/settings/widget/e;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/widget/e;->r(Landroid/content/Context;)V
 

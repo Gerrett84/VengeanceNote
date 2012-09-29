@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic eW:I
+.field final synthetic eZ:I
 
-.field final synthetic eY:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
+.field final synthetic fb:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
 .field final synthetic val$listView:Landroid/widget/ListView;
 
@@ -23,11 +23,11 @@
 
     .prologue
     .line 257
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->eY:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->fb:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->val$listView:Landroid/widget/ListView;
 
-    iput p3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->eW:I
+    iput p3, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->eZ:I
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,7 +45,7 @@
     .line 261
     iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->val$listView:Landroid/widget/ListView;
 
-    iget v1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->eW:I
+    iget v1, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter$1;->eZ:I
 
     invoke-virtual {v0, v1, p2}, Landroid/widget/ListView;->setItemChecked(IZ)V
 

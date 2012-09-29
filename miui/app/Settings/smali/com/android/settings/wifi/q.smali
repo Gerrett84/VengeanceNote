@@ -9,35 +9,35 @@
 
 
 # static fields
-.field private static final fV:Ljava/lang/String;
+.field private static final fY:Ljava/lang/String;
 
 
 # instance fields
-.field private fI:Landroid/widget/TextView;
+.field private fL:Landroid/widget/TextView;
 
-.field private fJ:Landroid/widget/EditText;
+.field private fM:Landroid/widget/EditText;
 
-.field private fK:Landroid/widget/TextView;
+.field private fN:Landroid/widget/TextView;
 
-.field private fL:Landroid/widget/EditText;
+.field private fO:Landroid/widget/EditText;
 
-.field private fM:Landroid/widget/TextView;
+.field private fP:Landroid/widget/TextView;
 
-.field private fN:Landroid/widget/EditText;
+.field private fQ:Landroid/widget/EditText;
 
-.field private fO:Landroid/widget/TextView;
+.field private fR:Landroid/widget/TextView;
 
-.field private fP:Landroid/widget/Spinner;
+.field private fS:Landroid/widget/Spinner;
 
-.field private fQ:Ljava/lang/String;
+.field private fT:Ljava/lang/String;
 
-.field private fR:Ljava/lang/CharSequence;
+.field private fU:Ljava/lang/CharSequence;
 
-.field private fS:I
+.field private fV:I
 
-.field private fT:I
+.field private fW:I
 
-.field private fU:I
+.field private fX:I
 
 .field private mMode:I
 
@@ -58,7 +58,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/android/settings/wifi/q;->fV:Ljava/lang/String;
+    sput-object v0, Lcom/android/settings/wifi/q;->fY:Ljava/lang/String;
 
     return-void
 .end method
@@ -79,13 +79,13 @@
     iput v0, p0, Lcom/android/settings/wifi/q;->mMode:I
 
     .line 69
-    iput v1, p0, Lcom/android/settings/wifi/q;->fS:I
+    iput v1, p0, Lcom/android/settings/wifi/q;->fV:I
 
     .line 70
-    iput v1, p0, Lcom/android/settings/wifi/q;->fT:I
+    iput v1, p0, Lcom/android/settings/wifi/q;->fW:I
 
     .line 71
-    iput v1, p0, Lcom/android/settings/wifi/q;->fU:I
+    iput v1, p0, Lcom/android/settings/wifi/q;->fX:I
 
     .line 81
     return-void
@@ -165,7 +165,7 @@
     return-void
 .end method
 
-.method private aB()V
+.method private aF()V
     .locals 5
 
     .prologue
@@ -193,7 +193,7 @@
     .line 99
     const/4 v2, -0x1
 
-    iput v2, p0, Lcom/android/settings/wifi/q;->fS:I
+    iput v2, p0, Lcom/android/settings/wifi/q;->fV:I
 
     .line 105
     :goto_0
@@ -202,7 +202,7 @@
     .line 106
     const/4 v3, -0x2
 
-    iput v3, p0, Lcom/android/settings/wifi/q;->fU:I
+    iput v3, p0, Lcom/android/settings/wifi/q;->fX:I
 
     .line 108
     invoke-direct {p0, v1, v2, v0}, Lcom/android/settings/wifi/q;->a(III)V
@@ -227,7 +227,7 @@
     .line 103
     const/4 v2, -0x3
 
-    iput v2, p0, Lcom/android/settings/wifi/q;->fT:I
+    iput v2, p0, Lcom/android/settings/wifi/q;->fW:I
 
     move v4, v1
 
@@ -243,7 +243,7 @@
     goto :goto_0
 .end method
 
-.method private aC()V
+.method private aG()V
     .locals 10
 
     .prologue
@@ -323,7 +323,7 @@
 
     .line 182
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fJ:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fM:Landroid/widget/EditText;
 
     invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->a(Landroid/widget/EditText;)Ljava/lang/String;
 
@@ -477,7 +477,7 @@
 
     .line 215
     :cond_5
-    iget-object v1, p0, Lcom/android/settings/wifi/q;->fL:Landroid/widget/EditText;
+    iget-object v1, p0, Lcom/android/settings/wifi/q;->fO:Landroid/widget/EditText;
 
     invoke-direct {p0, v1}, Lcom/android/settings/wifi/q;->a(Landroid/widget/EditText;)Ljava/lang/String;
 
@@ -525,7 +525,7 @@
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 223
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -537,7 +537,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/android/settings/wifi/q;->fV:Ljava/lang/String;
+    sget-object v4, Lcom/android/settings/wifi/q;->fY:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -596,7 +596,7 @@
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 235
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -606,7 +606,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/android/settings/wifi/q;->fV:Ljava/lang/String;
+    sget-object v4, Lcom/android/settings/wifi/q;->fY:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -626,7 +626,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/settings/wifi/q;->l(Ljava/lang/String;)Z
+    invoke-direct {p0, v3}, Lcom/android/settings/wifi/q;->m(Ljava/lang/String;)Z
 
     move-result v3
 
@@ -662,7 +662,7 @@
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 245
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -718,7 +718,7 @@
     if-nez v2, :cond_b
 
     .line 257
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -737,13 +737,13 @@
 
     .line 261
     :cond_a
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
     .line 265
     :cond_b
-    iget-object v2, p0, Lcom/android/settings/wifi/q;->fN:Landroid/widget/EditText;
+    iget-object v2, p0, Lcom/android/settings/wifi/q;->fQ:Landroid/widget/EditText;
 
     invoke-direct {p0, v2}, Lcom/android/settings/wifi/q;->a(Landroid/widget/EditText;)Ljava/lang/String;
 
@@ -791,7 +791,7 @@
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 273
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -803,7 +803,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/android/settings/wifi/q;->fV:Ljava/lang/String;
+    sget-object v4, Lcom/android/settings/wifi/q;->fY:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -864,7 +864,7 @@
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 284
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -874,7 +874,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/android/settings/wifi/q;->fV:Ljava/lang/String;
+    sget-object v4, Lcom/android/settings/wifi/q;->fY:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -894,7 +894,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/settings/wifi/q;->m(Ljava/lang/String;)Z
+    invoke-direct {p0, v2}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -932,7 +932,7 @@
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     .line 294
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -988,7 +988,7 @@
     if-nez v1, :cond_11
 
     .line 305
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1007,7 +1007,7 @@
 
     .line 309
     :cond_10
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
@@ -1078,7 +1078,7 @@
     goto/16 :goto_0
 .end method
 
-.method private aD()V
+.method private aH()V
     .locals 2
 
     .prologue
@@ -1090,21 +1090,21 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 416
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fQ:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fT:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     .line 417
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fQ:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fT:Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     .line 419
     :cond_0
     return-void
 .end method
 
-.method private aE()V
+.method private aI()V
     .locals 5
 
     .prologue
@@ -1179,7 +1179,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
     .line 440
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fP:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fS:Landroid/widget/Spinner;
 
     invoke-virtual {v0, v3}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
     :try_end_0
@@ -1203,12 +1203,12 @@
     goto :goto_1
 .end method
 
-.method private aF()I
+.method private aJ()I
     .locals 1
 
     .prologue
     .line 448
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fP:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fS:Landroid/widget/Spinner;
 
     invoke-virtual {v0}, Landroid/widget/Spinner;->getSelectedItemPosition()I
 
@@ -1218,7 +1218,7 @@
     return v0
 .end method
 
-.method private aG()V
+.method private aK()V
     .locals 0
 
     .prologue
@@ -1245,7 +1245,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fI:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fL:Landroid/widget/TextView;
 
     .line 120
     const v0, 0x7f080209
@@ -1256,7 +1256,7 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fJ:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fM:Landroid/widget/EditText;
 
     .line 122
     const v0, 0x7f08020a
@@ -1267,7 +1267,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fK:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fN:Landroid/widget/TextView;
 
     .line 123
     const v0, 0x7f08020b
@@ -1278,7 +1278,7 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fL:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fO:Landroid/widget/EditText;
 
     .line 125
     const v0, 0x7f08020c
@@ -1289,7 +1289,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fM:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fP:Landroid/widget/TextView;
 
     .line 126
     const v0, 0x7f08020d
@@ -1300,7 +1300,7 @@
 
     check-cast v0, Landroid/widget/EditText;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fN:Landroid/widget/EditText;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fQ:Landroid/widget/EditText;
 
     .line 133
     :cond_0
@@ -1324,7 +1324,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fO:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fR:Landroid/widget/TextView;
 
     .line 129
     const v0, 0x7f08020f
@@ -1335,20 +1335,20 @@
 
     check-cast v0, Landroid/widget/Spinner;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fP:Landroid/widget/Spinner;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fS:Landroid/widget/Spinner;
 
     .line 130
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fP:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fS:Landroid/widget/Spinner;
 
     invoke-virtual {v0, p0}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
     .line 131
-    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aE()V
+    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aI()V
 
     goto :goto_0
 .end method
 
-.method private l(Ljava/lang/String;)Z
+.method private m(Ljava/lang/String;)Z
     .locals 7
     .parameter
 
@@ -1478,7 +1478,7 @@
     goto :goto_0
 .end method
 
-.method private m(Ljava/lang/String;)Z
+.method private n(Ljava/lang/String;)Z
     .locals 7
     .parameter
 
@@ -1608,7 +1608,7 @@
     goto :goto_0
 .end method
 
-.method private n(Ljava/lang/String;)V
+.method private o(Ljava/lang/String;)V
     .locals 5
     .parameter
 
@@ -1692,7 +1692,7 @@
     move-result-object v4
 
     .line 482
-    invoke-direct {p0, v4}, Lcom/android/settings/wifi/q;->n(Ljava/lang/String;)V
+    invoke-direct {p0, v4}, Lcom/android/settings/wifi/q;->o(Ljava/lang/String;)V
 
     .line 480
     add-int/lit8 v0, v0, 0x1
@@ -1779,7 +1779,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/wifi/q;->fQ:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/wifi/q;->fT:Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1896,12 +1896,12 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 156
-    iget v0, p0, Lcom/android/settings/wifi/q;->fS:I
+    iget v0, p0, Lcom/android/settings/wifi/q;->fV:I
 
     if-ne p2, v0, :cond_1
 
     .line 157
-    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aC()V
+    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aG()V
 
     .line 163
     :cond_0
@@ -1910,23 +1910,23 @@
 
     .line 158
     :cond_1
-    iget v0, p0, Lcom/android/settings/wifi/q;->fT:I
+    iget v0, p0, Lcom/android/settings/wifi/q;->fW:I
 
     if-ne p2, v0, :cond_2
 
     .line 159
-    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aD()V
+    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aH()V
 
     goto :goto_0
 
     .line 160
     :cond_2
-    iget v0, p0, Lcom/android/settings/wifi/q;->fU:I
+    iget v0, p0, Lcom/android/settings/wifi/q;->fX:I
 
     if-ne p2, v0, :cond_0
 
     .line 161
-    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aG()V
+    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aK()V
 
     goto :goto_0
 .end method
@@ -1953,7 +1953,7 @@
 
     .prologue
     .line 85
-    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aB()V
+    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aF()V
 
     .line 86
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->onCreate(Landroid/os/Bundle;)V
@@ -1978,12 +1978,12 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 505
-    iget-object v0, p0, Lcom/android/settings/wifi/q;->fP:Landroid/widget/Spinner;
+    iget-object v0, p0, Lcom/android/settings/wifi/q;->fS:Landroid/widget/Spinner;
 
     if-ne p1, v0, :cond_0
 
     .line 506
-    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aF()I
+    invoke-direct {p0}, Lcom/android/settings/wifi/q;->aJ()I
 
     move-result v0
 
@@ -2051,7 +2051,7 @@
     invoke-super {p0, p1}, Landroid/app/AlertDialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 513
-    iput-object p1, p0, Lcom/android/settings/wifi/q;->fR:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lcom/android/settings/wifi/q;->fU:Ljava/lang/CharSequence;
 
     .line 514
     return-void

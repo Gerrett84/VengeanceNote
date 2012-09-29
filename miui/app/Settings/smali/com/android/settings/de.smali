@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic eG:Lcom/android/settings/VirusScanActivity;
+.field final synthetic eJ:Lcom/android/settings/VirusScanActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 60
-    iput-object p1, p0, Lcom/android/settings/de;->eG:Lcom/android/settings/VirusScanActivity;
+    iput-object p1, p0, Lcom/android/settings/de;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,7 +34,7 @@
     .line 63
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/settings/de;->eG:Lcom/android/settings/VirusScanActivity;
+    iget-object v1, p0, Lcom/android/settings/de;->eJ:Lcom/android/settings/VirusScanActivity;
 
     const-class v2, Lcom/android/settings/VirusScanAppActivity;
 
@@ -46,7 +46,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 65
-    iget-object v1, p0, Lcom/android/settings/de;->eG:Lcom/android/settings/VirusScanActivity;
+    iget-object v1, p0, Lcom/android/settings/de;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/VirusScanActivity;->startActivity(Landroid/content/Intent;)V
 

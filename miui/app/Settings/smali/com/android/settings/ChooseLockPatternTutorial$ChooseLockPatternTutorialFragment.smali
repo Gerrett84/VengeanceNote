@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private JB:Landroid/view/View;
+.field private JE:Landroid/view/View;
 
-.field private JC:Landroid/view/View;
+.field private JF:Landroid/view/View;
 
-.field private JD:Lmiui/widget/LockPatternView;
+.field private JG:Lmiui/widget/LockPatternView;
 
 
 # direct methods
@@ -35,7 +35,7 @@
     const/4 v4, 0x0
 
     .line 108
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JC:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JF:Landroid/view/View;
 
     if-ne p1, v0, :cond_1
 
@@ -62,7 +62,7 @@
 
     .line 112
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JB:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JE:Landroid/view/View;
 
     if-ne p1, v0, :cond_0
 
@@ -233,10 +233,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JB:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JE:Landroid/view/View;
 
     .line 90
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JB:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JE:Landroid/view/View;
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -247,10 +247,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JC:Landroid/view/View;
+    iput-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JF:Landroid/view/View;
 
     .line 92
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JC:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JF:Landroid/view/View;
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -263,7 +263,7 @@
 
     check-cast v0, Lmiui/widget/LockPatternView;
 
-    iput-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JD:Lmiui/widget/LockPatternView;
+    iput-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JG:Lmiui/widget/LockPatternView;
 
     .line 96
     new-instance v0, Ljava/util/ArrayList;
@@ -301,14 +301,14 @@
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 101
-    iget-object v2, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JD:Lmiui/widget/LockPatternView;
+    iget-object v2, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JG:Lmiui/widget/LockPatternView;
 
     sget-object v3, Lmiui/widget/LockPatternView$DisplayMode;->Animate:Lmiui/widget/LockPatternView$DisplayMode;
 
     invoke-virtual {v2, v3, v0}, Lmiui/widget/LockPatternView;->setPattern(Lmiui/widget/LockPatternView$DisplayMode;Ljava/util/List;)V
 
     .line 102
-    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JD:Lmiui/widget/LockPatternView;
+    iget-object v0, p0, Lcom/android/settings/ChooseLockPatternTutorial$ChooseLockPatternTutorialFragment;->JG:Lmiui/widget/LockPatternView;
 
     invoke-virtual {v0}, Lmiui/widget/LockPatternView;->disableInput()V
 

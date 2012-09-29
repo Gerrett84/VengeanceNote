@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private uL:Landroid/preference/Preference;
+.field private uP:Landroid/preference/Preference;
 
-.field private uM:Landroid/preference/Preference;
+.field private uQ:Landroid/preference/Preference;
 
-.field private uN:Landroid/preference/Preference;
+.field private uR:Landroid/preference/Preference;
 
 
 # direct methods
@@ -85,7 +85,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/Legal;->uL:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/Legal;->uP:Landroid/preference/Preference;
 
     .line 50
     const-string v0, "miuiUserAgreement"
@@ -94,7 +94,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/Legal;->uM:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/Legal;->uQ:Landroid/preference/Preference;
 
     .line 51
     const-string v0, "miuiPrivacyPolicy"
@@ -103,7 +103,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/Legal;->uN:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/Legal;->uR:Landroid/preference/Preference;
 
     .line 52
     return-void
@@ -123,7 +123,7 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 57
-    iget-object v1, p0, Lcom/android/settings/Legal;->uL:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/Legal;->uP:Landroid/preference/Preference;
 
     if-ne p2, v1, :cond_1
 
@@ -148,7 +148,7 @@
 
     .line 60
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/Legal;->uM:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/Legal;->uQ:Landroid/preference/Preference;
 
     if-ne p2, v1, :cond_2
 
@@ -166,7 +166,7 @@
 
     .line 63
     :cond_2
-    iget-object v1, p0, Lcom/android/settings/Legal;->uN:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/Legal;->uR:Landroid/preference/Preference;
 
     if-ne p2, v1, :cond_0
 

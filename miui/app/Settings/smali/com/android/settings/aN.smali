@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field hM:Landroid/content/pm/ApplicationInfo;
+.field hP:Landroid/content/pm/ApplicationInfo;
 
 .field label:Ljava/lang/CharSequence;
 
-.field final synthetic oM:Lcom/android/settings/AppPicker;
+.field final synthetic oP:Lcom/android/settings/AppPicker;
 
 
 # direct methods
@@ -18,7 +18,7 @@
 
     .prologue
     .line 77
-    iput-object p1, p0, Lcom/android/settings/aN;->oM:Lcom/android/settings/AppPicker;
+    iput-object p1, p0, Lcom/android/settings/aN;->oP:Lcom/android/settings/AppPicker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

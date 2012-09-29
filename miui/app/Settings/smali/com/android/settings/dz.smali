@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic eJ:Lcom/android/settings/AccessibilitySettings;
+.field final synthetic eM:Lcom/android/settings/AccessibilitySettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 490
-    iput-object p1, p0, Lcom/android/settings/dz;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iput-object p1, p0, Lcom/android/settings/dz;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 495
-    iget-object v0, p0, Lcom/android/settings/dz;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iget-object v0, p0, Lcom/android/settings/dz;->eM:Lcom/android/settings/AccessibilitySettings;
 
     const/4 v1, 0x1
 
@@ -61,7 +61,7 @@
     invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     .line 501
-    iget-object v0, p0, Lcom/android/settings/dz;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iget-object v0, p0, Lcom/android/settings/dz;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/AccessibilitySettings;->startActivity(Landroid/content/Intent;)V
 

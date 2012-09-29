@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final nn:Ljava/util/Locale;
+.field private static final nq:Ljava/util/Locale;
 
-.field private static final no:Landroid/text/TextUtils$SimpleStringSplitter;
+.field private static final nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
-.field private static final np:Landroid/text/TextUtils$SimpleStringSplitter;
+.field private static final ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/Locale;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nn:Ljava/util/Locale;
+    sput-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nq:Ljava/util/Locale;
 
     .line 53
     new-instance v0, Landroid/text/TextUtils$SimpleStringSplitter;
@@ -32,7 +32,7 @@
 
     invoke-direct {v0, v1}, Landroid/text/TextUtils$SimpleStringSplitter;-><init>(C)V
 
-    sput-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sput-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     .line 56
     new-instance v0, Landroid/text/TextUtils$SimpleStringSplitter;
@@ -41,7 +41,7 @@
 
     invoke-direct {v0, v1}, Landroid/text/TextUtils$SimpleStringSplitter;-><init>(C)V
 
-    sput-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->np:Landroid/text/TextUtils$SimpleStringSplitter;
+    sput-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
     return-void
 .end method
@@ -1354,7 +1354,7 @@
     if-nez v1, :cond_0
 
     .line 393
-    sget-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nn:Ljava/util/Locale;
+    sget-object v0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nq:Ljava/util/Locale;
 
     invoke-virtual {v0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
@@ -1483,14 +1483,14 @@
 
     .line 126
     :cond_1
-    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v2, v1}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
 
     .line 127
     :cond_2
     :goto_0
-    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
@@ -1499,19 +1499,19 @@
     if-eqz v1, :cond_0
 
     .line 128
-    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
     move-result-object v1
 
     .line 129
-    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->np:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v2, v1}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
 
     .line 130
-    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->np:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
@@ -1525,7 +1525,7 @@
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     .line 133
-    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->np:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
@@ -1533,7 +1533,7 @@
 
     .line 134
     :goto_1
-    sget-object v3, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->np:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v3, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v3}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
@@ -1542,7 +1542,7 @@
     if-eqz v3, :cond_3
 
     .line 135
-    sget-object v3, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->np:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v3, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->ns:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v3}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
@@ -1589,13 +1589,13 @@
 
     .line 150
     :cond_1
-    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v2, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v2, v1}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
 
     .line 151
     :goto_0
-    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
@@ -1604,7 +1604,7 @@
     if-eqz v1, :cond_0
 
     .line 152
-    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->no:Landroid/text/TextUtils$SimpleStringSplitter;
+    sget-object v1, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->nr:Landroid/text/TextUtils$SimpleStringSplitter;
 
     invoke-virtual {v1}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 

@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field Im:Landroid/widget/ImageView;
+.field Ip:Landroid/widget/ImageView;
 
-.field In:Landroid/widget/TextView;
+.field Iq:Landroid/widget/TextView;
 
-.field Io:Lcom/android/settings/MomentView;
+.field Ir:Lcom/android/settings/MomentView;
 
-.field Ip:Lcom/android/settings/bJ;
+.field Is:Lcom/android/settings/bJ;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
     invoke-direct {v0}, Lcom/android/settings/bJ;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/dh;->Ip:Lcom/android/settings/bJ;
+    iput-object v0, p0, Lcom/android/settings/dh;->Is:Lcom/android/settings/bJ;
 
     .line 390
     return-void

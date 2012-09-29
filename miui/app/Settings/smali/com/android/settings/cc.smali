@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+.field final synthetic Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 650
-    iput-object p1, p0, Lcom/android/settings/cc;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iput-object p1, p0, Lcom/android/settings/cc;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-direct {p0, p2}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
 
@@ -28,7 +28,7 @@
 
     .prologue
     .line 663
-    iget-object v0, p0, Lcom/android/settings/cc;->Bh:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
+    iget-object v0, p0, Lcom/android/settings/cc;->Bl:Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/AccessibilitySettings$ToggleAccessibilityServicePreferenceFragment;->getActivity()Landroid/app/Activity;
 

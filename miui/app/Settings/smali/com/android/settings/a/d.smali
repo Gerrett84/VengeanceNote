@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final hi:Landroid/net/NetworkTemplate;
+.field private final hl:Landroid/net/NetworkTemplate;
 
-.field private hs:Z
+.field private hv:Z
 
-.field final synthetic uF:Lcom/android/settings/a/f;
+.field final synthetic uJ:Lcom/android/settings/a/f;
 
 
 # direct methods
@@ -24,19 +24,19 @@
     const/4 v5, 0x0
 
     .line 115
-    iput-object p1, p0, Lcom/android/settings/a/d;->uF:Lcom/android/settings/a/f;
+    iput-object p1, p0, Lcom/android/settings/a/d;->uJ:Lcom/android/settings/a/f;
 
     .line 116
     invoke-direct {p0, p2}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;)V
 
     .line 117
-    iput-object p3, p0, Lcom/android/settings/a/d;->hi:Landroid/net/NetworkTemplate;
+    iput-object p3, p0, Lcom/android/settings/a/d;->hl:Landroid/net/NetworkTemplate;
 
     .line 119
     invoke-virtual {p0, v5}, Lcom/android/settings/a/d;->setPersistent(Z)V
 
     .line 121
-    iput-boolean v6, p0, Lcom/android/settings/a/d;->hs:Z
+    iput-boolean v6, p0, Lcom/android/settings/a/d;->hv:Z
 
     .line 122
     invoke-static {p1}, Lcom/android/settings/a/f;->a(Lcom/android/settings/a/f;)Lcom/android/settings/a/i;
@@ -67,7 +67,7 @@
 
     .line 133
     :goto_0
-    iput-boolean v5, p0, Lcom/android/settings/a/d;->hs:Z
+    iput-boolean v5, p0, Lcom/android/settings/a/d;->hv:Z
 
     .line 134
     return-void
@@ -97,18 +97,18 @@
     invoke-super {p0}, Landroid/preference/CheckBoxPreference;->notifyChanged()V
 
     .line 139
-    iget-boolean v0, p0, Lcom/android/settings/a/d;->hs:Z
+    iget-boolean v0, p0, Lcom/android/settings/a/d;->hv:Z
 
     if-nez v0, :cond_0
 
     .line 140
-    iget-object v0, p0, Lcom/android/settings/a/d;->uF:Lcom/android/settings/a/f;
+    iget-object v0, p0, Lcom/android/settings/a/d;->uJ:Lcom/android/settings/a/f;
 
     invoke-static {v0}, Lcom/android/settings/a/f;->a(Lcom/android/settings/a/f;)Lcom/android/settings/a/i;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/a/d;->hi:Landroid/net/NetworkTemplate;
+    iget-object v1, p0, Lcom/android/settings/a/d;->hl:Landroid/net/NetworkTemplate;
 
     invoke-virtual {p0}, Lcom/android/settings/a/d;->isChecked()Z
 

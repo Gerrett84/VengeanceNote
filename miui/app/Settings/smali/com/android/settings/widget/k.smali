@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public CA:Landroid/graphics/Path;
+.field public CC:Landroid/graphics/Path;
 
-.field final synthetic CB:Lcom/android/settings/widget/PieChartView;
+.field public CD:Landroid/graphics/Path;
 
-.field public Cy:Landroid/graphics/Path;
+.field public CE:Landroid/graphics/Path;
 
-.field public Cz:Landroid/graphics/Path;
+.field final synthetic CF:Lcom/android/settings/widget/PieChartView;
 
 .field public paint:Landroid/graphics/Paint;
 
@@ -26,7 +26,7 @@
 
     .prologue
     .line 71
-    iput-object p1, p0, Lcom/android/settings/widget/k;->CB:Lcom/android/settings/widget/PieChartView;
+    iput-object p1, p0, Lcom/android/settings/widget/k;->CF:Lcom/android/settings/widget/PieChartView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,21 +35,21 @@
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/k;->Cy:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/settings/widget/k;->CC:Landroid/graphics/Path;
 
     .line 66
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     .line 67
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     .line 72
     iput-wide p2, p0, Lcom/android/settings/widget/k;->value:J

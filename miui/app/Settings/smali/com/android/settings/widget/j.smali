@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field final synthetic wo:Z
+.field final synthetic ws:Z
 
-.field final synthetic yN:Landroid/net/wifi/WifiManager;
+.field final synthetic yR:Landroid/net/wifi/WifiManager;
 
-.field final synthetic yO:Lcom/android/settings/widget/p;
+.field final synthetic yS:Lcom/android/settings/widget/p;
 
 
 # direct methods
@@ -20,11 +20,11 @@
 
     .prologue
     .line 364
-    iput-object p1, p0, Lcom/android/settings/widget/j;->yO:Lcom/android/settings/widget/p;
+    iput-object p1, p0, Lcom/android/settings/widget/j;->yS:Lcom/android/settings/widget/p;
 
-    iput-object p2, p0, Lcom/android/settings/widget/j;->yN:Landroid/net/wifi/WifiManager;
+    iput-object p2, p0, Lcom/android/settings/widget/j;->yR:Landroid/net/wifi/WifiManager;
 
-    iput-boolean p3, p0, Lcom/android/settings/widget/j;->wo:Z
+    iput-boolean p3, p0, Lcom/android/settings/widget/j;->ws:Z
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -56,14 +56,14 @@
     const/4 v2, 0x0
 
     .line 370
-    iget-object v0, p0, Lcom/android/settings/widget/j;->yN:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/widget/j;->yR:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiApState()I
 
     move-result v0
 
     .line 371
-    iget-boolean v1, p0, Lcom/android/settings/widget/j;->wo:Z
+    iget-boolean v1, p0, Lcom/android/settings/widget/j;->ws:Z
 
     if-eqz v1, :cond_1
 
@@ -77,7 +77,7 @@
 
     .line 373
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/widget/j;->yN:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/widget/j;->yR:Landroid/net/wifi/WifiManager;
 
     const/4 v1, 0x0
 
@@ -85,9 +85,9 @@
 
     .line 376
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/widget/j;->yN:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/widget/j;->yR:Landroid/net/wifi/WifiManager;
 
-    iget-boolean v1, p0, Lcom/android/settings/widget/j;->wo:Z
+    iget-boolean v1, p0, Lcom/android/settings/widget/j;->ws:Z
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 

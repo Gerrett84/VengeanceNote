@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private NQ:Landroid/widget/AlphabetIndexer;
+.field private NT:Landroid/widget/AlphabetIndexer;
 
-.field private NR:Landroid/widget/SimpleCursorAdapter$ViewBinder;
+.field private NU:Landroid/widget/SimpleCursorAdapter$ViewBinder;
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/ax;-><init>(Lcom/android/settings/dS;)V
 
-    iput-object v0, p0, Lcom/android/settings/dS;->NR:Landroid/widget/SimpleCursorAdapter$ViewBinder;
+    iput-object v0, p0, Lcom/android/settings/dS;->NU:Landroid/widget/SimpleCursorAdapter$ViewBinder;
 
     .line 271
     if-eqz p3, :cond_0
@@ -55,11 +55,11 @@
 
     invoke-direct {v2, p3, v1, v0}, Landroid/widget/AlphabetIndexer;-><init>(Landroid/database/Cursor;ILjava/lang/CharSequence;)V
 
-    iput-object v2, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iput-object v2, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     .line 277
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/dS;->NR:Landroid/widget/SimpleCursorAdapter$ViewBinder;
+    iget-object v0, p0, Lcom/android/settings/dS;->NU:Landroid/widget/SimpleCursorAdapter$ViewBinder;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/dS;->setViewBinder(Landroid/widget/SimpleCursorAdapter$ViewBinder;)V
 
@@ -75,7 +75,7 @@
 
     .prologue
     .line 281
-    iget-object v0, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iget-object v0, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     if-nez v0, :cond_0
 
@@ -85,7 +85,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iget-object v0, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     invoke-virtual {v0, p1}, Landroid/widget/AlphabetIndexer;->getPositionForSection(I)I
 
@@ -100,7 +100,7 @@
 
     .prologue
     .line 285
-    iget-object v0, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iget-object v0, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     if-nez v0, :cond_0
 
@@ -110,7 +110,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iget-object v0, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     invoke-virtual {v0, p1}, Landroid/widget/AlphabetIndexer;->getSectionForPosition(I)I
 
@@ -124,7 +124,7 @@
 
     .prologue
     .line 289
-    iget-object v0, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iget-object v0, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     if-nez v0, :cond_0
 
@@ -134,7 +134,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/dS;->NQ:Landroid/widget/AlphabetIndexer;
+    iget-object v0, p0, Lcom/android/settings/dS;->NT:Landroid/widget/AlphabetIndexer;
 
     invoke-virtual {v0}, Landroid/widget/AlphabetIndexer;->getSections()[Ljava/lang/Object;
 

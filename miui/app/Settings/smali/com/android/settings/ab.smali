@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,21 +17,21 @@
 
     .prologue
     .line 1223
-    iput-object p1, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private aq()V
+.method private au()V
     .locals 3
 
     .prologue
     const/4 v1, 0x0
 
     .line 1244
-    iget-object v0, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->r(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/al;
 
@@ -43,7 +43,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->s(Lcom/android/settings/DataUsageSummary;)Z
 
@@ -55,7 +55,7 @@
 
     .line 1245
     :goto_0
-    iget-object v2, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v2, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v2}, Lcom/android/settings/DataUsageSummary;->t(Lcom/android/settings/DataUsageSummary;)Landroid/widget/TextView;
 
@@ -91,7 +91,7 @@
 
     .prologue
     .line 1231
-    iget-object v0, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->q(Lcom/android/settings/DataUsageSummary;)Landroid/net/NetworkPolicyManager;
 
@@ -104,7 +104,7 @@
     move-result-object v0
 
     .line 1233
-    iget-object v1, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/DataUsageSummary;->r(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/al;
 
@@ -113,7 +113,7 @@
     invoke-virtual {v1, p2, v0}, Lcom/android/settings/al;->a(Landroid/net/NetworkStats;[I)V
 
     .line 1234
-    invoke-direct {p0}, Lcom/android/settings/ab;->aq()V
+    invoke-direct {p0}, Lcom/android/settings/ab;->au()V
 
     .line 1235
     return-void
@@ -128,13 +128,13 @@
     .line 1226
     new-instance v0, Lcom/android/settings/a/e;
 
-    iget-object v1, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-virtual {v1}, Lcom/android/settings/DataUsageSummary;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v2, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v2}, Lcom/android/settings/DataUsageSummary;->m(Lcom/android/settings/DataUsageSummary;)Landroid/net/INetworkStatsSession;
 
@@ -165,7 +165,7 @@
 
     .prologue
     .line 1239
-    iget-object v0, p0, Lcom/android/settings/ab;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/ab;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->r(Lcom/android/settings/DataUsageSummary;)Lcom/android/settings/al;
 
@@ -180,7 +180,7 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/al;->a(Landroid/net/NetworkStats;[I)V
 
     .line 1240
-    invoke-direct {p0}, Lcom/android/settings/ab;->aq()V
+    invoke-direct {p0}, Lcom/android/settings/ab;->au()V
 
     .line 1241
     return-void

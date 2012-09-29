@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+.field final synthetic Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     .prologue
     .line 286
-    iput-object p1, p0, Lcom/android/settings/cl;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iput-object p1, p0, Lcom/android/settings/cl;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
 
@@ -30,16 +30,16 @@
 
     .prologue
     .line 299
-    iget-object v0, p0, Lcom/android/settings/cl;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iget-object v0, p0, Lcom/android/settings/cl;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->a(Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;I)I
 
     .line 300
-    iget-object v0, p0, Lcom/android/settings/cl;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iget-object v0, p0, Lcom/android/settings/cl;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HS:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HW:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->a(Lcom/android/settings/ConfirmLockPattern$Stage;)V
 
@@ -53,7 +53,7 @@
 
     .prologue
     .line 290
-    iget-object v0, p0, Lcom/android/settings/cl;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iget-object v0, p0, Lcom/android/settings/cl;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-static {v0}, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->e(Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;)Landroid/widget/TextView;
 
@@ -71,13 +71,13 @@
     long-to-int v0, v0
 
     .line 292
-    iget-object v1, p0, Lcom/android/settings/cl;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iget-object v1, p0, Lcom/android/settings/cl;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-static {v1}, Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;->f(Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;)Landroid/widget/TextView;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/cl;->Cq:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
+    iget-object v2, p0, Lcom/android/settings/cl;->Cu:Lcom/android/settings/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     const v3, 0x7f0b0399
 

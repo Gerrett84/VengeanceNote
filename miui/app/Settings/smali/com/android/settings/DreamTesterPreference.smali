@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final LW:Landroid/content/pm/PackageManager;
+.field private final LZ:Landroid/content/pm/PackageManager;
 
-.field private final LX:Landroid/content/ContentResolver;
+.field private final Ma:Landroid/content/ContentResolver;
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DreamTesterPreference;->LW:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/DreamTesterPreference;->LZ:Landroid/content/pm/PackageManager;
 
     .line 61
     invoke-virtual {p0}, Lcom/android/settings/DreamTesterPreference;->getContext()Landroid/content/Context;
@@ -39,7 +39,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DreamTesterPreference;->LX:Landroid/content/ContentResolver;
+    iput-object v0, p0, Lcom/android/settings/DreamTesterPreference;->Ma:Landroid/content/ContentResolver;
 
     .line 62
     return-void
@@ -52,7 +52,7 @@
 
     .prologue
     .line 66
-    iget-object v0, p0, Lcom/android/settings/DreamTesterPreference;->LX:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/settings/DreamTesterPreference;->Ma:Landroid/content/ContentResolver;
 
     const-string v1, "screensaver_component"
 

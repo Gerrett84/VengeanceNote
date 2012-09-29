@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic as:Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;
+.field final synthetic av:Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1925
-    iput-object p1, p0, Lcom/android/settings/e;->as:Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;
+    iput-object p1, p0, Lcom/android/settings/e;->av:Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 1928
-    iget-object v0, p0, Lcom/android/settings/e;->as:Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;
+    iget-object v0, p0, Lcom/android/settings/e;->av:Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary$ConfirmDataRoamingFragment;->getTargetFragment()Landroid/app/Fragment;
 

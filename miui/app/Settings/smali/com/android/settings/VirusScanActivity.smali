@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final oO:[I
+.field private static final oR:[I
 
 
 # instance fields
 .field mList:Landroid/widget/ListView;
 
-.field private final oN:I
+.field private final oQ:I
 
 
 # direct methods
@@ -25,7 +25,7 @@
 
     fill-array-data v0, :array_0
 
-    sput-object v0, Lcom/android/settings/VirusScanActivity;->oO:[I
+    sput-object v0, Lcom/android/settings/VirusScanActivity;->oR:[I
 
     return-void
 
@@ -48,7 +48,7 @@
     .line 25
     const/16 v0, 0x111
 
-    iput v0, p0, Lcom/android/settings/VirusScanActivity;->oN:I
+    iput v0, p0, Lcom/android/settings/VirusScanActivity;->oQ:I
 
     .line 33
     return-void
@@ -59,7 +59,7 @@
 
     .prologue
     .line 24
-    sget-object v0, Lcom/android/settings/VirusScanActivity;->oO:[I
+    sget-object v0, Lcom/android/settings/VirusScanActivity;->oR:[I
 
     return-object v0
 .end method

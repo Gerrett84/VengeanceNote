@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field hU:I
+.field hX:I
 
 .field progress:I
 
@@ -48,7 +48,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/ar;->hU:I
+    iput v0, p0, Lcom/android/settings/ar;->hX:I
 
     .line 158
     return-void
@@ -83,7 +83,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 164
-    iget v0, p0, Lcom/android/settings/ar;->hU:I
+    iget v0, p0, Lcom/android/settings/ar;->hX:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

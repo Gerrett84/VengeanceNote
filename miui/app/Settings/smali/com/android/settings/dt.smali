@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic JE:Lcom/android/settings/FrequentlyFragment;
+.field final synthetic JH:Lcom/android/settings/FrequentlyFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 32
-    iput-object p1, p0, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iput-object p1, p0, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +39,9 @@
     const/4 v7, 0x1
 
     .line 36
-    iget-object v0, p0, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iget-object v0, p0, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
-    iget-object v0, v0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iget-object v0, v0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -52,7 +52,7 @@
     .line 38
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
-    iget-object v2, p0, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iget-object v2, p0, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/FrequentlyFragment;->getActivity()Landroid/app/Activity;
 
@@ -70,7 +70,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iget-object v2, p0, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
     const v3, 0x7f0b0724
 
@@ -82,7 +82,7 @@
 
     const/4 v4, 0x0
 
-    iget-object v5, p0, Lcom/android/settings/dt;->JE:Lcom/android/settings/FrequentlyFragment;
+    iget-object v5, p0, Lcom/android/settings/dt;->JH:Lcom/android/settings/FrequentlyFragment;
 
     iget v6, v0, Landroid/preference/PreferenceActivity$Header;->titleRes:I
 

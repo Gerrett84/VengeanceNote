@@ -4,21 +4,21 @@
 
 
 # static fields
-.field public static final enum yC:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
-
-.field public static final enum yD:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
-
-.field public static final enum yE:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
-
-.field public static final enum yF:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
-
 .field public static final enum yG:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
 .field public static final enum yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
 .field public static final enum yI:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
-.field private static final synthetic yJ:[Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+.field public static final enum yJ:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+
+.field public static final enum yK:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+
+.field public static final enum yL:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+
+.field public static final enum yM:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+
+.field private static final synthetic yN:[Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
 
 # direct methods
@@ -43,7 +43,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yC:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yG:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 63
     new-instance v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
@@ -52,7 +52,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yD:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 64
     new-instance v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
@@ -61,7 +61,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yE:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yI:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 65
     new-instance v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
@@ -70,7 +70,7 @@
 
     invoke-direct {v0, v1, v6}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yF:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yJ:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 66
     new-instance v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
@@ -79,7 +79,7 @@
 
     invoke-direct {v0, v1, v7}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yG:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yK:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 67
     new-instance v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
@@ -90,7 +90,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yL:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 68
     new-instance v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
@@ -101,46 +101,46 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yI:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yM:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     .line 61
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yC:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yG:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yD:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yE:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yI:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yF:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yJ:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yG:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v1, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yK:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yH:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v2, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yL:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yI:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v2, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yM:Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yJ:[Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sput-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yN:[Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     return-void
 .end method
@@ -179,7 +179,7 @@
 
     .prologue
     .line 61
-    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yJ:[Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
+    sget-object v0, Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->yN:[Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;
 
     invoke-virtual {v0}, [Lcom/android/settings/fuelgauge/PowerUsageDetail$DrainType;->clone()Ljava/lang/Object;
 

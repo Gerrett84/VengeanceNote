@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Iy:Lcom/android/settings/display/ScreenTimeoutDialogActivity;
+.field final synthetic IB:Lcom/android/settings/display/ScreenTimeoutDialogActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 93
-    iput-object p1, p0, Lcom/android/settings/display/d;->Iy:Lcom/android/settings/display/ScreenTimeoutDialogActivity;
+    iput-object p1, p0, Lcom/android/settings/display/d;->IB:Lcom/android/settings/display/ScreenTimeoutDialogActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 97
-    iget-object v0, p0, Lcom/android/settings/display/d;->Iy:Lcom/android/settings/display/ScreenTimeoutDialogActivity;
+    iget-object v0, p0, Lcom/android/settings/display/d;->IB:Lcom/android/settings/display/ScreenTimeoutDialogActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->finish()V
 

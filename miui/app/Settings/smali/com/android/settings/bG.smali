@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic vh:Lcom/android/settings/MiuiSettings;
+.field final synthetic vl:Lcom/android/settings/MiuiSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 310
-    iput-object p1, p0, Lcom/android/settings/bG;->vh:Lcom/android/settings/MiuiSettings;
+    iput-object p1, p0, Lcom/android/settings/bG;->vl:Lcom/android/settings/MiuiSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -69,7 +69,7 @@
     move-result-object v0
 
     .line 323
-    iget-object v1, p0, Lcom/android/settings/bG;->vh:Lcom/android/settings/MiuiSettings;
+    iget-object v1, p0, Lcom/android/settings/bG;->vl:Lcom/android/settings/MiuiSettings;
 
     const/4 v2, 0x0
 

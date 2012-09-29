@@ -4,15 +4,15 @@
 
 
 # static fields
-.field private static final nB:[I
+.field private static final nE:[I
 
 
 # instance fields
-.field private OY:Landroid/widget/ImageView;
+.field private Pb:Landroid/widget/ImageView;
 
 .field public device:Landroid/net/wifi/p2p/WifiP2pDevice;
 
-.field private nK:I
+.field private nN:I
 
 
 # direct methods
@@ -31,7 +31,7 @@
 
     aput v2, v0, v1
 
-    sput-object v0, Lcom/android/settings/wifi/a/j;->nB:[I
+    sput-object v0, Lcom/android/settings/wifi/a/j;->nE:[I
 
     return-void
 .end method
@@ -56,7 +56,7 @@
     .line 48
     const/16 v0, 0x3c
 
-    iput v0, p0, Lcom/android/settings/wifi/a/j;->nK:I
+    iput v0, p0, Lcom/android/settings/wifi/a/j;->nN:I
 
     .line 49
     return-void
@@ -67,7 +67,7 @@
 
     .prologue
     .line 99
-    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->OY:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->Pb:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
@@ -82,7 +82,7 @@
     move-result-object v0
 
     .line 103
-    iget-object v1, p0, Lcom/android/settings/wifi/a/j;->OY:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/settings/wifi/a/j;->Pb:Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Lcom/android/settings/wifi/a/j;->getLevel()I
 
@@ -222,7 +222,7 @@
 
     .prologue
     .line 92
-    iget v0, p0, Lcom/android/settings/wifi/a/j;->nK:I
+    iget v0, p0, Lcom/android/settings/wifi/a/j;->nN:I
 
     const v1, 0x7fffffff
 
@@ -236,7 +236,7 @@
     return v0
 
     :cond_0
-    iget v0, p0, Lcom/android/settings/wifi/a/j;->nK:I
+    iget v0, p0, Lcom/android/settings/wifi/a/j;->nN:I
 
     const/4 v1, 0x4
 
@@ -280,17 +280,17 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/a/j;->OY:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/settings/wifi/a/j;->Pb:Landroid/widget/ImageView;
 
     .line 60
-    iget v0, p0, Lcom/android/settings/wifi/a/j;->nK:I
+    iget v0, p0, Lcom/android/settings/wifi/a/j;->nN:I
 
     const v1, 0x7fffffff
 
     if-ne v0, v1, :cond_1
 
     .line 61
-    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->OY:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->Pb:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
@@ -329,16 +329,16 @@
 
     .line 63
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->OY:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->Pb:Landroid/widget/ImageView;
 
     const v1, 0x7f0200df
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 64
-    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->OY:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/j;->Pb:Landroid/widget/ImageView;
 
-    sget-object v1, Lcom/android/settings/wifi/a/j;->nB:[I
+    sget-object v1, Lcom/android/settings/wifi/a/j;->nE:[I
 
     const/4 v2, 0x1
 

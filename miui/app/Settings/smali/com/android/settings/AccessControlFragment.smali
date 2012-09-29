@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field private AH:Landroid/preference/CheckBoxPreference;
+.field private AL:Landroid/preference/CheckBoxPreference;
 
-.field private AI:Landroid/preference/CheckBoxPreference;
+.field private AM:Landroid/preference/CheckBoxPreference;
 
-.field private AJ:Landroid/preference/CheckBoxPreference;
+.field private AN:Landroid/preference/CheckBoxPreference;
 
-.field private cY:Lmiui/security/ChooseLockSettingsHelper;
+.field private db:Lmiui/security/ChooseLockSettingsHelper;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
     .prologue
     .line 14
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     return-object v0
 .end method
@@ -55,7 +55,7 @@
     if-nez p2, :cond_0
 
     .line 115
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AH:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AL:Landroid/preference/CheckBoxPreference;
 
     const/4 v1, 0x0
 
@@ -83,7 +83,7 @@
 
     invoke-direct {v0, v1}, Lmiui/security/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     .line 29
     const v0, 0x7f050002
@@ -104,7 +104,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->AI:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->AM:Landroid/preference/CheckBoxPreference;
 
     .line 33
     const-string v0, "ac_enable"
@@ -115,7 +115,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->AH:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->AL:Landroid/preference/CheckBoxPreference;
 
     .line 34
     const-string v0, "ac_privacy_mode"
@@ -126,7 +126,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->AJ:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/AccessControlFragment;->AN:Landroid/preference/CheckBoxPreference;
 
     .line 35
     return-void
@@ -159,7 +159,7 @@
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
     .line 49
-    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lmiui/security/ChooseLockSettingsHelper;->isPrivacyModeEnabled()Z
 
@@ -227,7 +227,7 @@
 
     .line 72
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0}, Lmiui/security/ChooseLockSettingsHelper;->isACLockEnabled()Z
 
@@ -235,7 +235,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0}, Lmiui/security/ChooseLockSettingsHelper;->isPasswordForPrivacyModeEnabled()Z
 
@@ -283,7 +283,7 @@
 
     .line 82
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0, v2}, Lmiui/security/ChooseLockSettingsHelper;->setPrivacyModeEnabled(Z)V
 
@@ -304,7 +304,7 @@
     if-eqz v0, :cond_5
 
     .line 86
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0}, Lmiui/security/ChooseLockSettingsHelper;->isACLockEnabled()Z
 
@@ -370,7 +370,7 @@
     if-eqz v0, :cond_0
 
     .line 97
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v0}, Lmiui/security/ChooseLockSettingsHelper;->isPasswordForPrivacyModeEnabled()Z
 
@@ -422,9 +422,9 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 40
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AI:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AM:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lmiui/security/ChooseLockSettingsHelper;->isPrivacyModeEnabled()Z
 
@@ -433,9 +433,9 @@
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 41
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AH:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AL:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lmiui/security/ChooseLockSettingsHelper;->isACLockEnabled()Z
 
@@ -444,9 +444,9 @@
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 42
-    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AJ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/AccessControlFragment;->AN:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v1, p0, Lcom/android/settings/AccessControlFragment;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lmiui/security/ChooseLockSettingsHelper;->isPasswordForPrivacyModeEnabled()Z
 

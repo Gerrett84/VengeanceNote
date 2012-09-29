@@ -6,11 +6,11 @@
 # instance fields
 .field final synthetic val$context:Landroid/content/Context;
 
-.field final synthetic wo:Z
+.field final synthetic ws:Z
 
-.field final synthetic wp:Z
+.field final synthetic wt:Z
 
-.field final synthetic wq:Lcom/android/settings/widget/g;
+.field final synthetic wu:Lcom/android/settings/widget/g;
 
 
 # direct methods
@@ -23,11 +23,11 @@
 
     .prologue
     .line 560
-    iput-object p1, p0, Lcom/android/settings/widget/i;->wq:Lcom/android/settings/widget/g;
+    iput-object p1, p0, Lcom/android/settings/widget/i;->wu:Lcom/android/settings/widget/g;
 
-    iput-boolean p2, p0, Lcom/android/settings/widget/i;->wo:Z
+    iput-boolean p2, p0, Lcom/android/settings/widget/i;->ws:Z
 
-    iput-boolean p3, p0, Lcom/android/settings/widget/i;->wp:Z
+    iput-boolean p3, p0, Lcom/android/settings/widget/i;->wt:Z
 
     iput-object p4, p0, Lcom/android/settings/widget/i;->val$context:Landroid/content/Context;
 
@@ -44,7 +44,7 @@
 
     .prologue
     .line 580
-    iget-object v1, p0, Lcom/android/settings/widget/i;->wq:Lcom/android/settings/widget/g;
+    iget-object v1, p0, Lcom/android/settings/widget/i;->wu:Lcom/android/settings/widget/g;
 
     iget-object v2, p0, Lcom/android/settings/widget/i;->val$context:Landroid/content/Context;
 
@@ -84,12 +84,12 @@
     const/4 v1, 0x0
 
     .line 564
-    iget-boolean v0, p0, Lcom/android/settings/widget/i;->wo:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/i;->ws:Z
 
     if-eqz v0, :cond_1
 
     .line 565
-    iget-boolean v0, p0, Lcom/android/settings/widget/i;->wp:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/i;->wt:Z
 
     if-nez v0, :cond_0
 
@@ -108,7 +108,7 @@
 
     .line 572
     :cond_1
-    iget-boolean v0, p0, Lcom/android/settings/widget/i;->wp:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/i;->wt:Z
 
     if-eqz v0, :cond_2
 

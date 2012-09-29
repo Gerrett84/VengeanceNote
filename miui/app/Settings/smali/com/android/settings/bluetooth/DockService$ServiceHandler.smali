@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic nf:Lcom/android/settings/bluetooth/DockService;
+.field final synthetic ni:Lcom/android/settings/bluetooth/DockService;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 243
-    iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$ServiceHandler;->nf:Lcom/android/settings/bluetooth/DockService;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/DockService$ServiceHandler;->ni:Lcom/android/settings/bluetooth/DockService;
 
     .line 244
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -45,7 +45,7 @@
 
     .prologue
     .line 249
-    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$ServiceHandler;->nf:Lcom/android/settings/bluetooth/DockService;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/DockService$ServiceHandler;->ni:Lcom/android/settings/bluetooth/DockService;
 
     invoke-static {v0, p1}, Lcom/android/settings/bluetooth/DockService;->a(Lcom/android/settings/bluetooth/DockService;Landroid/os/Message;)V
 

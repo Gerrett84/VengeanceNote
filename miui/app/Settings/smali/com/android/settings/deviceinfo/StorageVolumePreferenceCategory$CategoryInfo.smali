@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final ic:I
+.field final ig:I
 
-.field final ie:I
+.field final ih:I
 
 
 # direct methods
@@ -16,15 +16,15 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 82
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
-    iput p1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$CategoryInfo;->ic:I
-
-    .line 82
-    iput p2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$CategoryInfo;->ie:I
-
     .line 83
+    iput p1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$CategoryInfo;->ig:I
+
+    .line 84
+    iput p2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreferenceCategory$CategoryInfo;->ih:I
+
+    .line 85
     return-void
 .end method

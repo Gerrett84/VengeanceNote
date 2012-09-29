@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic bC:Lcom/android/settings/applications/ManageApplications;
+.field final synthetic bF:Lcom/android/settings/applications/ManageApplications;
 
-.field dF:I
+.field dI:I
 
 
 # direct methods
@@ -19,14 +19,14 @@
 
     .prologue
     .line 460
-    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
     .line 462
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->dF:I
+    iput v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->dI:I
 
     return-void
 .end method
@@ -54,7 +54,7 @@
 
     .prologue
     .line 466
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageApplications;->a(Lcom/android/settings/applications/ManageApplications;)Ljava/util/ArrayList;
 
@@ -73,7 +73,7 @@
 
     .prologue
     .line 489
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageApplications;->a(Lcom/android/settings/applications/ManageApplications;)Ljava/util/ArrayList;
 
@@ -97,7 +97,7 @@
 
     .prologue
     .line 471
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageApplications;->a(Lcom/android/settings/applications/ManageApplications;)Ljava/util/ArrayList;
 
@@ -110,19 +110,19 @@
     check-cast v0, Lcom/android/settings/applications/ManageApplications$TabInfo;
 
     .line 472
-    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v1}, Lcom/android/settings/applications/ManageApplications;->b(Lcom/android/settings/applications/ManageApplications;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v2}, Lcom/android/settings/applications/ManageApplications;->c(Lcom/android/settings/applications/ManageApplications;)Landroid/view/ViewGroup;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v3, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v3}, Lcom/android/settings/applications/ManageApplications;->d(Lcom/android/settings/applications/ManageApplications;)Landroid/view/View;
 
@@ -168,9 +168,9 @@
     if-nez p1, :cond_0
 
     .line 504
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->bF:Lcom/android/settings/applications/ManageApplications;
 
-    iget v1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->dF:I
+    iget v1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->dI:I
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/ManageApplications;->aP(I)V
 
@@ -196,7 +196,7 @@
 
     .prologue
     .line 498
-    iput p1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->dF:I
+    iput p1, p0, Lcom/android/settings/applications/ManageApplications$MyPagerAdapter;->dI:I
 
     .line 499
     return-void

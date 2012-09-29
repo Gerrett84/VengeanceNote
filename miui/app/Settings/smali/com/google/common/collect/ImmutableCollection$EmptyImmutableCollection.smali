@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final vQ:[Ljava/lang/Object;
+.field private static final vU:[Ljava/lang/Object;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    sput-object v0, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->vQ:[Ljava/lang/Object;
+    sput-object v0, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->vU:[Ljava/lang/Object;
 
     return-void
 .end method
@@ -56,12 +56,12 @@
     return v0
 .end method
 
-.method public dz()Lcom/google/common/collect/ap;
+.method public dD()Lcom/google/common/collect/ap;
     .locals 1
 
     .prologue
     .line 189
-    sget-object v0, Lcom/google/common/collect/w;->oR:Lcom/google/common/collect/ap;
+    sget-object v0, Lcom/google/common/collect/w;->oU:Lcom/google/common/collect/ap;
 
     return-object v0
 .end method
@@ -81,7 +81,7 @@
 
     .prologue
     .line 173
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
 
     .prologue
     .line 195
-    sget-object v0, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->vQ:[Ljava/lang/Object;
+    sget-object v0, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->vU:[Ljava/lang/Object;
 
     return-object v0
 .end method

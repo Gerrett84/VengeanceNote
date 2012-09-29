@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aY:Lcom/android/settings/RadioInfo;
+.field final synthetic bb:Lcom/android/settings/RadioInfo;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1012
-    iput-object p1, p0, Lcom/android/settings/cY;->aY:Lcom/android/settings/RadioInfo;
+    iput-object p1, p0, Lcom/android/settings/cY;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,7 +35,7 @@
 
     .prologue
     .line 1014
-    iget-object v0, p0, Lcom/android/settings/cY;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/cY;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->J(Lcom/android/settings/RadioInfo;)Landroid/os/Handler;
 
@@ -55,7 +55,7 @@
     if-gt p3, v1, :cond_0
 
     .line 1016
-    iget-object v1, p0, Lcom/android/settings/cY;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v1, p0, Lcom/android/settings/cY;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->m(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
 

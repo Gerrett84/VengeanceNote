@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract dK()Ljava/util/Set;
+.method public abstract dO()Ljava/util/Set;
 .end method

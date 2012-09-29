@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic OZ:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
+.field final synthetic Pc:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 864
-    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$3;->OZ:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
+    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$3;->Pc:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,9 +35,9 @@
     const/4 v1, 0x1
 
     .line 867
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$3;->OZ:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment$3;->Pc:Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->lR()Lcom/android/settings/applications/InstalledAppDetails;
+    invoke-virtual {v0}, Lcom/android/settings/applications/InstalledAppDetails$MyAlertDialogFragment;->lV()Lcom/android/settings/applications/InstalledAppDetails;
 
     move-result-object v0
 

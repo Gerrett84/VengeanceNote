@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final synthetic GI:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
+.field final synthetic GM:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
-.field final synthetic GJ:Landroid/preference/CheckBoxPreference;
+.field final synthetic GN:Landroid/preference/CheckBoxPreference;
 
-.field final synthetic GK:Ljava/lang/String;
+.field final synthetic GO:Ljava/lang/String;
 
 
 # direct methods
@@ -23,11 +23,11 @@
 
     .prologue
     .line 164
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GI:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GM:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
-    iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GJ:Landroid/preference/CheckBoxPreference;
+    iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GN:Landroid/preference/CheckBoxPreference;
 
-    iput-object p3, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GK:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GO:Ljava/lang/String;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,20 +45,20 @@
     const/4 v3, 0x1
 
     .line 167
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GJ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GN:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v3}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 168
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GI:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GM:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
-    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GI:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GM:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
     invoke-static {v1}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;->a(Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;)Ljava/util/List;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GK:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$2;->GO:Ljava/lang/String;
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/settings/inputmethod/InputMethodAndSubtypeUtil;->a(Lcom/android/settings/SettingsPreferenceFragment;Ljava/util/List;Ljava/lang/String;Z)V
 

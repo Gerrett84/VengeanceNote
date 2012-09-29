@@ -10,45 +10,37 @@
 
 
 # instance fields
-.field private cY:Lmiui/security/ChooseLockSettingsHelper;
+.field private cn:Landroid/app/backup/IBackupManager;
 
-.field private ck:Landroid/app/backup/IBackupManager;
+.field private db:Lmiui/security/ChooseLockSettingsHelper;
 
-.field private pX:Lcom/android/internal/widget/LockPatternUtils;
+.field private qa:Lcom/android/internal/widget/LockPatternUtils;
 
-.field private rL:Landroid/app/admin/DevicePolicyManager;
+.field private rO:Landroid/app/admin/DevicePolicyManager;
 
-.field private xE:Landroid/view/IWindowManager;
+.field private xI:Landroid/view/IWindowManager;
 
-.field private xF:Lmiui/widget/SlidingButton;
+.field private xJ:Lmiui/widget/SlidingButton;
 
-.field private xG:Z
+.field private xK:Z
 
-.field private xH:Z
+.field private xL:Z
 
-.field private xI:Z
+.field private xM:Z
 
-.field private xJ:Landroid/preference/CheckBoxPreference;
+.field private xN:Landroid/preference/CheckBoxPreference;
 
-.field private xK:Landroid/preference/CheckBoxPreference;
+.field private xO:Landroid/preference/CheckBoxPreference;
 
-.field private xL:Landroid/preference/CheckBoxPreference;
-
-.field private xM:Landroid/preference/CheckBoxPreference;
-
-.field private xN:Landroid/preference/PreferenceScreen;
-
-.field private xO:Ljava/lang/String;
-
-.field private xP:Landroid/preference/Preference;
+.field private xP:Landroid/preference/CheckBoxPreference;
 
 .field private xQ:Landroid/preference/CheckBoxPreference;
 
-.field private xR:Landroid/preference/CheckBoxPreference;
+.field private xR:Landroid/preference/PreferenceScreen;
 
-.field private xS:Landroid/preference/CheckBoxPreference;
+.field private xS:Ljava/lang/String;
 
-.field private xT:Landroid/preference/CheckBoxPreference;
+.field private xT:Landroid/preference/Preference;
 
 .field private xU:Landroid/preference/CheckBoxPreference;
 
@@ -66,35 +58,43 @@
 
 .field private yb:Landroid/preference/CheckBoxPreference;
 
-.field private yc:Landroid/preference/ListPreference;
+.field private yc:Landroid/preference/CheckBoxPreference;
 
-.field private yd:Landroid/preference/ListPreference;
+.field private yd:Landroid/preference/CheckBoxPreference;
 
-.field private ye:Landroid/preference/ListPreference;
+.field private ye:Landroid/preference/CheckBoxPreference;
 
-.field private yf:Landroid/preference/MultiCheckPreference;
+.field private yf:Landroid/preference/CheckBoxPreference;
 
-.field private yg:Landroid/preference/CheckBoxPreference;
+.field private yg:Landroid/preference/ListPreference;
 
 .field private yh:Landroid/preference/ListPreference;
 
-.field private yi:Landroid/preference/CheckBoxPreference;
+.field private yi:Landroid/preference/ListPreference;
 
-.field private final yj:Ljava/util/ArrayList;
+.field private yj:Landroid/preference/MultiCheckPreference;
 
-.field private final yk:Ljava/util/ArrayList;
+.field private yk:Landroid/preference/CheckBoxPreference;
 
-.field private yl:Landroid/preference/CheckBoxPreference;
+.field private yl:Landroid/preference/ListPreference;
 
 .field private ym:Landroid/preference/CheckBoxPreference;
 
-.field private final yn:Ljava/util/HashSet;
+.field private final yn:Ljava/util/ArrayList;
 
-.field private yo:Z
+.field private final yo:Ljava/util/ArrayList;
 
-.field private yp:Landroid/app/Dialog;
+.field private yp:Landroid/preference/CheckBoxPreference;
 
-.field private yq:Landroid/app/Dialog;
+.field private yq:Landroid/preference/CheckBoxPreference;
+
+.field private final yr:Ljava/util/HashSet;
+
+.field private ys:Z
+
+.field private yt:Landroid/app/Dialog;
+
+.field private yu:Landroid/app/Dialog;
 
 
 # direct methods
@@ -110,21 +110,21 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
     .line 163
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yk:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Ljava/util/ArrayList;
 
     .line 178
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/HashSet;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yr:Ljava/util/HashSet;
 
     .line 1060
     return-void
@@ -141,7 +141,7 @@
     move v1, v2
 
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -150,7 +150,7 @@
     if-ge v1, v0, :cond_1
 
     .line 321
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -161,7 +161,7 @@
     .line 322
     if-eqz p1, :cond_0
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/HashSet;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->yr:Ljava/util/HashSet;
 
     invoke-virtual {v3, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -189,13 +189,13 @@
 
     .line 324
     :cond_1
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gB()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gF()V
 
     .line 325
     return-void
 .end method
 
-.method private N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+.method private O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
     .locals 3
     .parameter
 
@@ -237,12 +237,12 @@
 
     .line 268
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 269
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yk:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yo:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -260,7 +260,7 @@
 
     .line 697
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xE:Landroid/view/IWindowManager;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xI:Landroid/view/IWindowManager;
 
     invoke-interface {v1, p1}, Landroid/view/IWindowManager;->getAnimationScale(I)F
 
@@ -276,7 +276,7 @@
     .line 699
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 701
     :cond_0
@@ -379,7 +379,7 @@
 
     .line 725
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xE:Landroid/view/IWindowManager;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xI:Landroid/view/IWindowManager;
 
     invoke-interface {v1, p1, v0}, Landroid/view/IWindowManager;->setAnimationScale(IF)V
 
@@ -411,7 +411,7 @@
 
     .prologue
     .line 79
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gB()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gF()V
 
     return-void
 .end method
@@ -465,7 +465,7 @@
     return-void
 .end method
 
-.method private gA()V
+.method private gE()V
     .locals 2
 
     .prologue
@@ -498,7 +498,7 @@
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
 
     .line 314
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
@@ -507,7 +507,7 @@
     return-void
 .end method
 
-.method private gB()V
+.method private gF()V
     .locals 6
 
     .prologue
@@ -526,10 +526,10 @@
     move-result-object v4
 
     .line 368
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 369
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/CheckBoxPreference;
 
     const-string v0, "adb_enabled"
 
@@ -545,7 +545,7 @@
     invoke-virtual {p0, v5, v0}, Lcom/android/settings/DevelopmentSettings;->a(Landroid/preference/CheckBoxPreference;Z)V
 
     .line 371
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xK:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xO:Landroid/preference/CheckBoxPreference;
 
     const-string v0, "stay_on_while_plugged_in"
 
@@ -561,7 +561,7 @@
     invoke-virtual {p0, v5, v0}, Lcom/android/settings/DevelopmentSettings;->a(Landroid/preference/CheckBoxPreference;Z)V
 
     .line 373
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xL:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/CheckBoxPreference;
 
     const-string v5, "android.permission.READ_EXTERNAL_STORAGE"
 
@@ -572,7 +572,7 @@
     invoke-virtual {p0, v0, v3}, Lcom/android/settings/DevelopmentSettings;->a(Landroid/preference/CheckBoxPreference;Z)V
 
     .line 374
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xM:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
 
     const-string v3, "mock_location"
 
@@ -586,64 +586,64 @@
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->a(Landroid/preference/CheckBoxPreference;Z)V
 
     .line 377
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gC()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gG()V
 
     .line 378
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gE()V
-
-    .line 379
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gF()V
-
-    .line 380
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gI()V
 
+    .line 379
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gJ()V
+
+    .line 380
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gM()V
+
     .line 381
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gL()V
-
-    .line 382
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gN()V
-
-    .line 383
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gP()V
 
-    .line 384
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gQ()V
+    .line 382
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gR()V
 
-    .line 385
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hd()V
-
-    .line 386
+    .line 383
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gT()V
 
-    .line 387
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gV()V
+    .line 384
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gU()V
 
-    .line 388
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gX()V
-
-    .line 389
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gZ()V
-
-    .line 390
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hb()V
-
-    .line 391
+    .line 385
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hh()V
 
-    .line 392
+    .line 386
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gX()V
+
+    .line 387
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gZ()V
+
+    .line 388
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hb()V
+
+    .line 389
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hd()V
+
+    .line 390
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hf()V
+
+    .line 391
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hl()V
 
+    .line 392
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hp()V
+
     .line 393
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hg()V
-
-    .line 394
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hi()V
-
-    .line 395
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hk()V
 
-    .line 396
+    .line 394
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hm()V
+
+    .line 395
     invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->ho()V
+
+    .line 396
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hs()V
 
     .line 397
     return-void
@@ -667,12 +667,12 @@
     goto :goto_2
 .end method
 
-.method private gC()V
+.method private gG()V
     .locals 2
 
     .prologue
     .line 401
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0}, Lmiui/widget/SlidingButton;->isChecked()Z
 
@@ -687,7 +687,7 @@
 
     .line 404
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z
 
@@ -696,21 +696,21 @@
     if-nez v0, :cond_2
 
     .line 405
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     .line 406
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_0
 
     .line 407
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     invoke-virtual {v1}, Lmiui/security/ChooseLockSettingsHelper;->utils()Lmiui/security/MiuiLockPatternUtils;
 
@@ -726,7 +726,7 @@
 
     .line 410
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
     const/4 v1, 0x0
 
@@ -735,7 +735,7 @@
     goto :goto_0
 .end method
 
-.method private gD()V
+.method private gH()V
     .locals 6
 
     .prologue
@@ -746,13 +746,13 @@
     const/4 v2, 0x0
 
     .line 415
-    iput-boolean v5, p0, Lcom/android/settings/DevelopmentSettings;->xI:Z
+    iput-boolean v5, p0, Lcom/android/settings/DevelopmentSettings;->xM:Z
 
     move v1, v2
 
     .line 416
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yk:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -761,7 +761,7 @@
     if-ge v1, v0, :cond_1
 
     .line 417
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yk:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -792,22 +792,22 @@
 
     .line 423
     :cond_1
-    invoke-static {}, Lcom/android/settings/DevelopmentSettings;->gH()V
+    invoke-static {}, Lcom/android/settings/DevelopmentSettings;->gL()V
 
     .line 424
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v2, v0, v4}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;Ljava/lang/Object;)V
 
     .line 425
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v5, v0, v4}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;Ljava/lang/Object;)V
 
     .line 426
     const/4 v0, 0x2
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v0, v1, v4}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;Ljava/lang/Object;)V
 
@@ -820,22 +820,22 @@
     invoke-direct {p0, v4}, Lcom/android/settings/DevelopmentSettings;->n(Ljava/lang/Object;)V
 
     .line 429
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 430
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gB()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gF()V
 
     .line 431
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xI:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xM:Z
 
     .line 432
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 433
     return-void
 .end method
 
-.method private gE()V
+.method private gI()V
     .locals 7
 
     .prologue
@@ -930,13 +930,13 @@
     goto :goto_1
 .end method
 
-.method private gF()V
+.method private gJ()V
     .locals 2
 
     .prologue
     .line 456
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ck:Landroid/app/backup/IBackupManager;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->cn:Landroid/app/backup/IBackupManager;
 
     invoke-interface {v0}, Landroid/app/backup/IBackupManager;->hasBackupPassword()Z
 
@@ -945,7 +945,7 @@
     if-eqz v0, :cond_0
 
     .line 457
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/PreferenceScreen;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/PreferenceScreen;
 
     const v1, 0x7f0b0546
 
@@ -957,7 +957,7 @@
 
     .line 459
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/PreferenceScreen;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/PreferenceScreen;
 
     const v1, 0x7f0b0545
 
@@ -974,7 +974,7 @@
     goto :goto_0
 .end method
 
-.method private gG()V
+.method private gK()V
     .locals 4
 
     .prologue
@@ -984,9 +984,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1009,7 +1009,7 @@
     goto :goto_0
 .end method
 
-.method private static gH()V
+.method private static gL()V
     .locals 4
 
     .prologue
@@ -1040,7 +1040,7 @@
     goto :goto_0
 .end method
 
-.method private gI()V
+.method private gM()V
     .locals 7
 
     .prologue
@@ -1063,10 +1063,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
     .line 485
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1090,11 +1090,11 @@
     invoke-virtual {p0, v3, v0}, Lcom/android/settings/DevelopmentSettings;->a(Landroid/preference/CheckBoxPreference;Z)V
 
     .line 487
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -1112,7 +1112,7 @@
 
     move-result-object v0
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
     const/16 v4, 0x200
 
@@ -1144,7 +1144,7 @@
 
     .line 497
     :goto_1
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/Preference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getResources()Landroid/content/res/Resources;
 
@@ -1163,12 +1163,12 @@
     invoke-virtual {v3, v0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
     .line 498
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     .line 499
-    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 504
     :goto_2
@@ -1183,7 +1183,7 @@
     .line 493
     :cond_1
     :try_start_1
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -1194,13 +1194,13 @@
     move-exception v0
 
     .line 495
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
     goto :goto_1
 
     .line 501
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/Preference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/Preference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getResources()Landroid/content/res/Resources;
 
@@ -1215,14 +1215,14 @@
     invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
     .line 502
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setEnabled(Z)V
 
     goto :goto_2
 .end method
 
-.method private static gJ()I
+.method private static gN()I
     .locals 2
 
     .prologue
@@ -1266,15 +1266,15 @@
     goto :goto_0
 .end method
 
-.method private gK()V
+.method private gO()V
     .locals 2
 
     .prologue
     .line 521
     :try_start_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xE:Landroid/view/IWindowManager;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xI:Landroid/view/IWindowManager;
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1306,16 +1306,16 @@
     goto :goto_1
 .end method
 
-.method private gL()V
+.method private gP()V
     .locals 3
 
     .prologue
     const/4 v0, 0x1
 
     .line 528
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
 
-    invoke-static {}, Lcom/android/settings/DevelopmentSettings;->gJ()I
+    invoke-static {}, Lcom/android/settings/DevelopmentSettings;->gN()I
 
     move-result v2
 
@@ -1334,7 +1334,7 @@
     goto :goto_0
 .end method
 
-.method private gM()V
+.method private gQ()V
     .locals 3
 
     .prologue
@@ -1349,7 +1349,7 @@
 
     const-string v2, "pointer_location"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1372,14 +1372,14 @@
     goto :goto_0
 .end method
 
-.method private gN()V
+.method private gR()V
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 537
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xS:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1406,7 +1406,7 @@
     return-void
 .end method
 
-.method private gO()V
+.method private gS()V
     .locals 3
 
     .prologue
@@ -1421,7 +1421,7 @@
 
     const-string v2, "show_touches"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1444,14 +1444,14 @@
     goto :goto_0
 .end method
 
-.method private gP()V
+.method private gT()V
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 547
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1478,7 +1478,7 @@
     return-void
 .end method
 
-.method private gQ()V
+.method private gU()V
     .locals 7
 
     .prologue
@@ -1531,7 +1531,7 @@
     move-result v2
 
     .line 565
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
 
     if-eqz v2, :cond_1
 
@@ -1549,7 +1549,7 @@
     move-result v2
 
     .line 569
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
 
     if-eqz v2, :cond_2
 
@@ -1588,7 +1588,7 @@
     goto :goto_2
 .end method
 
-.method private gR()V
+.method private gV()V
     .locals 5
 
     .prologue
@@ -1616,7 +1616,7 @@
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 583
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1643,7 +1643,7 @@
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
     .line 588
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gQ()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gU()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1659,7 +1659,7 @@
     goto :goto_0
 .end method
 
-.method private gS()V
+.method private gW()V
     .locals 5
 
     .prologue
@@ -1687,7 +1687,7 @@
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 600
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1714,7 +1714,7 @@
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
     .line 605
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gQ()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gU()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1730,12 +1730,12 @@
     goto :goto_0
 .end method
 
-.method private gT()V
+.method private gX()V
     .locals 3
 
     .prologue
     .line 612
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
 
     const-string v1, "persist.sys.ui.hw"
 
@@ -1751,14 +1751,14 @@
     return-void
 .end method
 
-.method private gU()V
+.method private gY()V
     .locals 2
 
     .prologue
     .line 616
     const-string v1, "persist.sys.ui.hw"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1772,7 +1772,7 @@
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 617
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 618
     return-void
@@ -1784,12 +1784,12 @@
     goto :goto_0
 .end method
 
-.method private gV()V
+.method private gZ()V
     .locals 3
 
     .prologue
     .line 621
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/CheckBoxPreference;
 
     const-string v1, "debug.hwui.profile"
 
@@ -1805,14 +1805,14 @@
     return-void
 .end method
 
-.method private gW()V
+.method private ha()V
     .locals 2
 
     .prologue
     .line 626
     const-string v1, "debug.hwui.profile"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1826,7 +1826,7 @@
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 628
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 629
     return-void
@@ -1838,12 +1838,12 @@
     goto :goto_0
 .end method
 
-.method private gX()V
+.method private hb()V
     .locals 3
 
     .prologue
     .line 632
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/CheckBoxPreference;
 
     const-string v1, "debug.hwui.show_dirty_regions"
 
@@ -1859,14 +1859,14 @@
     return-void
 .end method
 
-.method private gY()V
+.method private hc()V
     .locals 2
 
     .prologue
     .line 637
     const-string v1, "debug.hwui.show_dirty_regions"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1880,7 +1880,7 @@
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 639
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 640
     return-void
@@ -1892,12 +1892,12 @@
     goto :goto_0
 .end method
 
-.method private gZ()V
+.method private hd()V
     .locals 3
 
     .prologue
     .line 643
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/CheckBoxPreference;
 
     const-string v1, "debug.layout"
 
@@ -1913,14 +1913,14 @@
     return-void
 .end method
 
-.method private ha()V
+.method private he()V
     .locals 2
 
     .prologue
     .line 648
     const-string v1, "debug.layout"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -1934,7 +1934,7 @@
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 650
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 651
     return-void
@@ -1946,14 +1946,14 @@
     goto :goto_0
 .end method
 
-.method private hb()V
+.method private hf()V
     .locals 6
 
     .prologue
     const/4 v0, 0x1
 
     .line 654
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -1994,7 +1994,7 @@
     goto :goto_0
 .end method
 
-.method private hc()V
+.method private hg()V
     .locals 3
 
     .prologue
@@ -2009,7 +2009,7 @@
 
     const-string v2, "show_rounded_corners"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -2032,14 +2032,14 @@
     goto :goto_0
 .end method
 
-.method private hd()V
+.method private hh()V
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 665
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2066,12 +2066,12 @@
     return-void
 .end method
 
-.method private he()V
+.method private hi()V
     .locals 4
 
     .prologue
     .line 670
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -2139,7 +2139,7 @@
     goto :goto_1
 .end method
 
-.method private hf()V
+.method private hj()V
     .locals 2
 
     .prologue
@@ -2149,7 +2149,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yk:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -2170,14 +2170,14 @@
     goto :goto_0
 .end method
 
-.method private hg()V
+.method private hk()V
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 691
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yk:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2204,28 +2204,28 @@
     return-void
 .end method
 
-.method private hh()V
+.method private hl()V
     .locals 2
 
     .prologue
     .line 717
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;)V
 
     .line 718
     const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;)V
 
     .line 719
     const/4 v0, 0x2
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;)V
 
@@ -2233,7 +2233,7 @@
     return-void
 .end method
 
-.method private hi()V
+.method private hm()V
     .locals 4
 
     .prologue
@@ -2250,7 +2250,7 @@
     move-result v1
 
     .line 734
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     invoke-virtual {v2}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
@@ -2282,18 +2282,18 @@
     .line 739
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 741
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
     .line 742
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     invoke-virtual {v2}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
@@ -2315,16 +2315,16 @@
 
     .line 746
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setValueIndex(I)V
 
     .line 747
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
@@ -2347,7 +2347,7 @@
     goto :goto_1
 .end method
 
-.method private hj()V
+.method private hn()V
     .locals 3
 
     .prologue
@@ -2362,7 +2362,7 @@
 
     const-string v2, "anr_show_background"
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -2385,14 +2385,14 @@
     goto :goto_0
 .end method
 
-.method private hk()V
+.method private ho()V
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 768
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2419,7 +2419,7 @@
     return-void
 .end method
 
-.method private hl()V
+.method private hp()V
     .locals 12
 
     .prologue
@@ -2442,7 +2442,7 @@
     move-result-wide v5
 
     .line 775
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     invoke-virtual {v0}, Landroid/preference/MultiCheckPreference;->getEntryValues()[Ljava/lang/String;
 
@@ -2473,7 +2473,7 @@
 
     .line 779
     :goto_1
-    iget-object v8, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v8, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     add-int/lit8 v9, v0, -0x1
 
@@ -2502,7 +2502,7 @@
     if-nez v2, :cond_3
 
     .line 785
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     const v1, 0x7f0b05c6
 
@@ -2519,10 +2519,10 @@
     if-ne v2, v0, :cond_4
 
     .line 787
-    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 788
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     const v1, 0x7f0b05c8
 
@@ -2532,10 +2532,10 @@
 
     .line 790
     :cond_4
-    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 791
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     const v4, 0x7f0b05c7
 
@@ -2556,7 +2556,7 @@
     goto :goto_2
 .end method
 
-.method private hm()V
+.method private hq()V
     .locals 7
 
     .prologue
@@ -2566,7 +2566,7 @@
     const-wide/16 v2, 0x0
 
     .line 797
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     invoke-virtual {v0}, Landroid/preference/MultiCheckPreference;->getEntryValues()[Ljava/lang/String;
 
@@ -2581,7 +2581,7 @@
     if-ge v0, v5, :cond_1
 
     .line 799
-    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v5, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     add-int/lit8 v6, v0, -0x1
 
@@ -2609,13 +2609,13 @@
     invoke-direct {p0, v2, v3}, Lcom/android/settings/DevelopmentSettings;->t(J)V
 
     .line 805
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hl()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hp()V
 
     .line 806
     return-void
 .end method
 
-.method private hn()V
+.method private hr()V
     .locals 3
 
     .prologue
@@ -2630,7 +2630,7 @@
 
     sget-object v2, Lmiui/provider/ExtraSettings$Secure;->FORCE_CLOCE_DIALOG_ENABLED:Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -2653,12 +2653,12 @@
     goto :goto_0
 .end method
 
-.method private ho()V
+.method private hs()V
     .locals 2
 
     .prologue
     .line 863
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
 
@@ -2674,38 +2674,38 @@
     return-void
 .end method
 
-.method private hp()V
+.method private ht()V
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
     .line 972
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
     .line 973
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     .line 974
-    iput-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iput-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     .line 976
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     if-eqz v0, :cond_1
 
     .line 977
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     .line 978
-    iput-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iput-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     .line 980
     :cond_1
@@ -2774,7 +2774,7 @@
     invoke-interface {v1, v0}, Landroid/app/IActivityManager;->setProcessLimit(I)V
 
     .line 756
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hi()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hm()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2830,7 +2830,7 @@
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 811
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 812
     return-void
@@ -2848,22 +2848,22 @@
     invoke-virtual {p1, p2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 362
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     or-int/2addr v0, p2
 
-    iput-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iput-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     .line 363
     return-void
 .end method
 
-.method hq()V
+.method hu()V
     .locals 2
 
     .prologue
     .line 1028
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xI:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xM:Z
 
     if-nez v0, :cond_0
 
@@ -2901,10 +2901,10 @@
 
     invoke-direct {v1, v0}, Lmiui/widget/SlidingButton;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iput-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     .line 280
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, p0}, Lmiui/widget/SlidingButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -2934,13 +2934,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Ljava/lang/String;
 
     .line 847
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gG()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gK()V
 
     .line 848
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gI()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gM()V
 
     .line 853
     :cond_0
@@ -2963,12 +2963,12 @@
     const/4 v2, 0x0
 
     .line 817
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     if-ne p1, v0, :cond_1
 
     .line 818
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     if-eq p2, v0, :cond_1
 
@@ -2976,14 +2976,14 @@
     if-eqz p2, :cond_2
 
     .line 820
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->yo:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->ys:Z
 
     .line 821
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hp()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->ht()V
 
     .line 822
     :cond_0
@@ -3041,10 +3041,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     .line 830
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
@@ -3055,7 +3055,7 @@
 
     .line 832
     :cond_2
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gD()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gH()V
 
     .line 833
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
@@ -3071,10 +3071,10 @@
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 835
-    iput-boolean p2, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iput-boolean p2, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     .line 836
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->M(Z)V
 
@@ -3094,7 +3094,7 @@
     const/4 v2, 0x1
 
     .line 983
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     if-ne p1, v0, :cond_2
 
@@ -3102,7 +3102,7 @@
     if-ne p2, v1, :cond_1
 
     .line 985
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->yo:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->ys:Z
 
     .line 986
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
@@ -3124,7 +3124,7 @@
 
     .line 990
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v3}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
@@ -3132,7 +3132,7 @@
 
     .line 992
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     if-ne p1, v0, :cond_0
 
@@ -3140,7 +3140,7 @@
     if-ne p2, v1, :cond_3
 
     .line 994
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->yo:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->ys:Z
 
     .line 995
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
@@ -3156,10 +3156,10 @@
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 997
-    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iput-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     .line 998
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->M(Z)V
 
@@ -3167,7 +3167,7 @@
 
     .line 1001
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v3}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
@@ -3195,7 +3195,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xE:Landroid/view/IWindowManager;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xI:Landroid/view/IWindowManager;
 
     .line 191
     const-string v0, "backup"
@@ -3208,7 +3208,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ck:Landroid/app/backup/IBackupManager;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->cn:Landroid/app/backup/IBackupManager;
 
     .line 193
     invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->getActivity()Landroid/app/Activity;
@@ -3223,7 +3223,7 @@
 
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->rL:Landroid/app/admin/DevicePolicyManager;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->rO:Landroid/app/admin/DevicePolicyManager;
 
     .line 195
     const v0, 0x7f050018
@@ -3233,38 +3233,38 @@
     .line 197
     const-string v0, "enable_adb"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/CheckBoxPreference;
 
     .line 198
     const-string v0, "keep_screen_on"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xO:Landroid/preference/CheckBoxPreference;
 
     .line 199
     const-string v0, "enforce_read_external"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xL:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/CheckBoxPreference;
 
     .line 200
     const-string v0, "allow_mock_location"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xM:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
 
     .line 201
     const-string v0, "local_backup_password"
@@ -3275,12 +3275,12 @@
 
     check-cast v0, Landroid/preference/PreferenceScreen;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/PreferenceScreen;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/PreferenceScreen;
 
     .line 202
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/PreferenceScreen;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/PreferenceScreen;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -3291,122 +3291,122 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/Preference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/Preference;
 
     .line 205
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/Preference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/Preference;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 206
     const-string v0, "wait_for_debugger"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
-
-    .line 207
-    const-string v0, "strict_mode"
-
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/CheckBoxPreference;
-
-    .line 208
-    const-string v0, "pointer_location"
-
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xS:Landroid/preference/CheckBoxPreference;
-
-    .line 209
-    const-string v0, "show_touches"
-
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/CheckBoxPreference;
-
-    .line 210
-    const-string v0, "show_screen_updates"
-
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
 
-    .line 211
-    const-string v0, "disable_overlays"
+    .line 207
+    const-string v0, "strict_mode"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
 
-    .line 212
-    const-string v0, "show_cpu_usage"
+    .line 208
+    const-string v0, "pointer_location"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
 
-    .line 213
-    const-string v0, "force_hw_ui"
+    .line 209
+    const-string v0, "show_touches"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
 
-    .line 214
-    const-string v0, "track_frame_time"
+    .line 210
+    const-string v0, "show_screen_updates"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
 
-    .line 215
-    const-string v0, "show_hw_screen_udpates"
+    .line 211
+    const-string v0, "disable_overlays"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
 
-    .line 216
-    const-string v0, "debug_layout"
+    .line 212
+    const-string v0, "show_cpu_usage"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
 
-    .line 217
-    const-string v0, "show_rounded_corners"
+    .line 213
+    const-string v0, "force_hw_ui"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
+
+    .line 214
+    const-string v0, "track_frame_time"
+
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/CheckBoxPreference;
+
+    .line 215
+    const-string v0, "show_hw_screen_udpates"
+
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/CheckBoxPreference;
+
+    .line 216
+    const-string v0, "debug_layout"
+
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/CheckBoxPreference;
+
+    .line 217
+    const-string v0, "show_rounded_corners"
+
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/CheckBoxPreference;
 
     .line 219
     const-string v0, "window_animation_scale"
@@ -3417,17 +3417,17 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     .line 220
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 221
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -3440,17 +3440,17 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     .line 223
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 224
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -3463,17 +3463,17 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     .line 226
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 227
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -3486,7 +3486,7 @@
 
     check-cast v0, Landroid/preference/MultiCheckPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     .line 229
     sget-object v0, Landroid/os/Trace;->TRACE_TAGS:[Ljava/lang/String;
@@ -3519,26 +3519,26 @@
 
     .line 233
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     sget-object v1, Landroid/os/Trace;->TRACE_TAGS:[Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/preference/MultiCheckPreference;->setEntries([Ljava/lang/CharSequence;)V
 
     .line 234
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/MultiCheckPreference;->setEntryValues([Ljava/lang/String;)V
 
     .line 235
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 236
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/MultiCheckPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -3551,19 +3551,19 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yk:Landroid/preference/CheckBoxPreference;
 
     .line 240
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yk:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 241
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yk:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yk:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -3576,17 +3576,17 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     .line 243
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 244
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -3599,39 +3599,39 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
 
     .line 248
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 249
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yk:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 250
     const-string v0, "show_fc"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/preference/CheckBoxPreference;
 
     .line 252
     const-string v0, "unlock_enter_system"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->N(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
+    invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->O(Ljava/lang/String;)Landroid/preference/CheckBoxPreference;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
     .line 253
     new-instance v0, Lmiui/security/ChooseLockSettingsHelper;
@@ -3642,7 +3642,7 @@
 
     invoke-direct {v0, v1}, Lmiui/security/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->cY:Lmiui/security/ChooseLockSettingsHelper;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->db:Lmiui/security/ChooseLockSettingsHelper;
 
     .line 254
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
@@ -3653,7 +3653,7 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     .line 256
     const-string v0, "hdcp_checking"
@@ -3666,13 +3666,13 @@
     if-eqz v0, :cond_1
 
     .line 258
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yj:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 260
     :cond_1
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gA()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gE()V
 
     .line 261
     return-void
@@ -3683,7 +3683,7 @@
 
     .prologue
     .line 1023
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hp()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->ht()V
 
     .line 1024
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onDestroy()V
@@ -3702,23 +3702,23 @@
     const/4 v1, 0x0
 
     .line 1008
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     if-ne p1, v0, :cond_2
 
     .line 1009
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->ys:Z
 
     if-nez v0, :cond_0
 
     .line 1010
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 1012
     :cond_0
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     .line 1019
     :cond_1
@@ -3727,23 +3727,23 @@
 
     .line 1013
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     if-ne p1, v0, :cond_1
 
     .line 1014
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->ys:Z
 
     if-nez v0, :cond_3
 
     .line 1015
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
     .line 1017
     :cond_3
-    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/app/Dialog;
+    iput-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yt:Landroid/app/Dialog;
 
     goto :goto_0
 .end method
@@ -3781,10 +3781,10 @@
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 949
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gE()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gI()V
 
     .line 950
-    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
+    invoke-virtual {p0}, Lcom/android/settings/DevelopmentSettings;->hu()V
 
     .line 968
     :goto_0
@@ -3792,12 +3792,12 @@
 
     .line 952
     :cond_0
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     if-ne p1, v2, :cond_1
 
     .line 953
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v1, v2, p2}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;Ljava/lang/Object;)V
 
@@ -3805,12 +3805,12 @@
 
     .line 955
     :cond_1
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     if-ne p1, v2, :cond_2
 
     .line 956
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/ListPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v0, v1, p2}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;Ljava/lang/Object;)V
 
@@ -3818,14 +3818,14 @@
 
     .line 958
     :cond_2
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     if-ne p1, v2, :cond_3
 
     .line 959
     const/4 v1, 0x2
 
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v1, v2, p2}, Lcom/android/settings/DevelopmentSettings;->a(ILandroid/preference/ListPreference;Ljava/lang/Object;)V
 
@@ -3833,18 +3833,18 @@
 
     .line 961
     :cond_3
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/MultiCheckPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yj:Landroid/preference/MultiCheckPreference;
 
     if-ne p1, v2, :cond_4
 
     .line 962
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hm()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hq()V
 
     goto :goto_0
 
     .line 964
     :cond_4
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yh:Landroid/preference/ListPreference;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/ListPreference;
 
     if-ne p1, v2, :cond_5
 
@@ -3869,7 +3869,7 @@
     const/4 v0, 0x0
 
     .line 870
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v1
 
@@ -3881,12 +3881,12 @@
 
     .line 874
     :cond_0
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_4
 
     .line 875
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xN:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -3895,14 +3895,14 @@
     if-eqz v1, :cond_3
 
     .line 876
-    iput-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->yo:Z
+    iput-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->ys:Z
 
     .line 877
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     if-eqz v0, :cond_1
 
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hp()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->ht()V
 
     .line 878
     :cond_1
@@ -3960,10 +3960,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iput-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     .line 885
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yu:Landroid/app/Dialog;
 
     invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
@@ -3994,7 +3994,7 @@
 
     .line 890
     :cond_4
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xK:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xO:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_6
 
@@ -4009,7 +4009,7 @@
 
     const-string v2, "stay_on_while_plugged_in"
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xK:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xO:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -4026,12 +4026,12 @@
 
     .line 895
     :cond_6
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xL:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_8
 
     .line 896
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xL:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -4058,7 +4058,7 @@
 
     .line 901
     :cond_8
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xM:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_a
 
@@ -4073,7 +4073,7 @@
 
     const-string v2, "mock_location"
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xM:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v3}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -4090,7 +4090,7 @@
 
     .line 905
     :cond_a
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xP:Landroid/preference/Preference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/Preference;
 
     if-ne p2, v1, :cond_b
 
@@ -4113,173 +4113,173 @@
 
     .line 907
     :cond_b
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xQ:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_c
 
     .line 908
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gG()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gK()V
 
     goto :goto_1
 
     .line 909
     :cond_c
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xR:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_d
 
     .line 910
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gK()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gO()V
 
     goto/16 :goto_1
 
     .line 911
     :cond_d
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xS:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_e
 
     .line 912
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gM()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gQ()V
 
     goto/16 :goto_1
 
     .line 913
     :cond_e
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xT:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_f
 
     .line 914
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gO()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gS()V
 
     goto/16 :goto_1
 
     .line 915
     :cond_f
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xU:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_10
 
     .line 916
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gR()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gV()V
 
     goto/16 :goto_1
 
     .line 917
     :cond_10
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xV:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_11
 
     .line 918
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gS()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gW()V
 
     goto/16 :goto_1
 
     .line 919
     :cond_11
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xW:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_12
 
     .line 920
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->he()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hi()V
 
     goto/16 :goto_1
 
     .line 921
     :cond_12
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yg:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yk:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_13
 
     .line 922
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hf()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hj()V
 
     goto/16 :goto_1
 
     .line 923
     :cond_13
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yi:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_14
 
     .line 924
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hj()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hn()V
 
     goto/16 :goto_1
 
     .line 925
     :cond_14
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xX:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_15
 
     .line 926
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gU()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gY()V
 
     goto/16 :goto_1
 
     .line 927
     :cond_15
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xY:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yc:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_16
 
     .line 928
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gW()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->ha()V
 
     goto/16 :goto_1
 
     .line 929
     :cond_16
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xZ:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yd:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_17
 
     .line 930
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->gY()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hc()V
 
     goto/16 :goto_1
 
     .line 931
     :cond_17
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ya:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->ye:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_18
 
     .line 932
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->ha()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->he()V
 
     goto/16 :goto_1
 
     .line 933
     :cond_18
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yb:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yf:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_19
 
     .line 934
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hc()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hg()V
 
     goto/16 :goto_1
 
     .line 935
     :cond_19
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v1, :cond_1a
 
     .line 936
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/widget/LockPatternUtils;->clearLock(Z)V
 
     .line 937
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->pX:Lcom/android/internal/widget/LockPatternUtils;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->qa:Lcom/android/internal/widget/LockPatternUtils;
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yl:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->yp:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -4291,12 +4291,12 @@
 
     .line 938
     :cond_1a
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->ym:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->yq:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_2
 
     .line 939
-    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hn()V
+    invoke-direct {p0}, Lcom/android/settings/DevelopmentSettings;->hr()V
 
     goto/16 :goto_1
 .end method
@@ -4313,7 +4313,7 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 332
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->rL:Landroid/app/admin/DevicePolicyManager;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->rO:Landroid/app/admin/DevicePolicyManager;
 
     const/4 v3, 0x0
 
@@ -4328,9 +4328,9 @@
     if-lez v2, :cond_2
 
     .line 337
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/HashSet;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yr:Ljava/util/HashSet;
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xK:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xO:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -4356,26 +4356,26 @@
     move v0, v1
 
     :cond_0
-    iput-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iput-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     .line 345
-    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v0, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
-    iget-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v2, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     invoke-virtual {v0, v2}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
     .line 346
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->M(Z)V
 
     .line 348
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xH:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xL:Z
 
     if-eqz v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     if-nez v0, :cond_1
 
@@ -4393,10 +4393,10 @@
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 355
-    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iput-boolean v1, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     .line 356
-    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xG:Z
+    iget-boolean v0, p0, Lcom/android/settings/DevelopmentSettings;->xK:Z
 
     invoke-direct {p0, v0}, Lcom/android/settings/DevelopmentSettings;->M(Z)V
 
@@ -4406,9 +4406,9 @@
 
     .line 339
     :cond_2
-    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yn:Ljava/util/HashSet;
+    iget-object v2, p0, Lcom/android/settings/DevelopmentSettings;->yr:Ljava/util/HashSet;
 
-    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xK:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/DevelopmentSettings;->xO:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v3}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
@@ -4464,7 +4464,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xF:Lmiui/widget/SlidingButton;
+    iget-object v1, p0, Lcom/android/settings/DevelopmentSettings;->xJ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, v1, v2}, Landroid/app/ActionBar;->setCustomView(Landroid/view/View;Landroid/app/ActionBar$LayoutParams;)V
 

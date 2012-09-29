@@ -1896,6 +1896,7 @@ Since data usage is measured by your phone, and your carrier may account for usa
     <string name="wfd_disconnect_diag_msg">If your Wi-Fi session is interrupted your connection with %1$s will end.</string>
     <string name="wfd_disconnect_multiple_diag_message">If you break Wi-Fi Display session, your connection with %1$s and %2$s other devices will end.</string>
     <string name="power_mode">Power Mode</string>
+    <string name="skip_step">Skip this step</string>
     <string name="wifi_wapi_fail_to_init">Unable to open WAPI certificates. Credential storage might not enabled</string>
     <string name="wifi_wapi_fail_to_auth">WAPI authentication failed, please check your certificates</string>
     <string name="wifi_wapi_psk_type">Password type</string>

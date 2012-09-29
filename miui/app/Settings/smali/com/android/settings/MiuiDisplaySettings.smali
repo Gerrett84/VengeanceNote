@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private Ps:Landroid/preference/CheckBoxPreference;
+.field private Pv:Landroid/preference/CheckBoxPreference;
 
 
 # direct methods
@@ -37,10 +37,10 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/MiuiDisplaySettings;->Ps:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/MiuiDisplaySettings;->Pv:Landroid/preference/CheckBoxPreference;
 
     .line 16
-    iget-object v0, p0, Lcom/android/settings/MiuiDisplaySettings;->Ps:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiDisplaySettings;->Pv:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/MiuiDisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -67,7 +67,7 @@
 
     .prologue
     .line 23
-    iget-object v0, p0, Lcom/android/settings/MiuiDisplaySettings;->Ps:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/MiuiDisplaySettings;->Pv:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_0
 
@@ -78,7 +78,7 @@
 
     const-string v1, "enable_screen_on_proximity_sensor"
 
-    iget-object v2, p0, Lcom/android/settings/MiuiDisplaySettings;->Ps:Landroid/preference/CheckBoxPreference;
+    iget-object v2, p0, Lcom/android/settings/MiuiDisplaySettings;->Pv:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v2}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 

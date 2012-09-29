@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final vR:Landroid/net/Uri;
+.field private static final vV:Landroid/net/Uri;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/android/settings/bD;->vR:Landroid/net/Uri;
+    sput-object v0, Lcom/android/settings/bD;->vV:Landroid/net/Uri;
 
     return-void
 .end method
@@ -44,7 +44,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lcom/android/settings/bD;->fW()Landroid/content/Intent;
+    invoke-static {}, Lcom/android/settings/bD;->ga()Landroid/content/Intent;
 
     move-result-object v1
 
@@ -84,7 +84,7 @@
 
     .line 90
     :try_start_0
-    sget-object v1, Lcom/android/settings/bD;->vR:Landroid/net/Uri;
+    sget-object v1, Lcom/android/settings/bD;->vV:Landroid/net/Uri;
 
     const/4 v2, 0x1
 
@@ -237,7 +237,7 @@
 
     .prologue
     .line 119
-    invoke-static {}, Lcom/android/settings/bD;->fW()Landroid/content/Intent;
+    invoke-static {}, Lcom/android/settings/bD;->ga()Landroid/content/Intent;
 
     move-result-object v1
 
@@ -286,7 +286,7 @@
     goto :goto_1
 .end method
 
-.method private static fW()Landroid/content/Intent;
+.method private static ga()Landroid/content/Intent;
     .locals 2
 
     .prologue

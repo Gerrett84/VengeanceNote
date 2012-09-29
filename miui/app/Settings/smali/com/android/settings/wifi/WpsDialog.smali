@@ -4,23 +4,23 @@
 
 
 # instance fields
-.field private Ia:Landroid/widget/ProgressBar;
+.field private Ie:Landroid/widget/ProgressBar;
 
-.field private Ib:Landroid/net/wifi/WifiManager$Channel;
+.field private If:Landroid/net/wifi/WifiManager$WpsListener;
 
-.field private Ic:Landroid/net/wifi/WifiManager$WpsListener;
+.field private Ig:I
 
-.field private Id:I
+.field private final Ih:Landroid/content/IntentFilter;
 
-.field private final Ie:Landroid/content/IntentFilter;
+.field Ii:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
-.field If:Lcom/android/settings/wifi/WpsDialog$DialogState;
+.field private b:Landroid/net/wifi/WifiManager;
 
-.field private c:Landroid/net/wifi/WifiManager;
-
-.field private mB:Landroid/widget/Button;
+.field private c:Landroid/net/wifi/WifiManager$Channel;
 
 .field private mContext:Landroid/content/Context;
+
+.field private mE:Landroid/widget/Button;
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -53,41 +53,41 @@
     iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mHandler:Landroid/os/Handler;
 
     .line 76
-    sget-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gl:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gp:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->If:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ii:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 80
     iput-object p1, p0, Lcom/android/settings/wifi/WpsDialog;->mContext:Landroid/content/Context;
 
     .line 81
-    iput p2, p0, Lcom/android/settings/wifi/WpsDialog;->Id:I
+    iput p2, p0, Lcom/android/settings/wifi/WpsDialog;->Ig:I
 
     .line 121
-    new-instance v0, Lcom/android/settings/wifi/H;
+    new-instance v0, Lcom/android/settings/wifi/I;
 
-    invoke-direct {v0, p0}, Lcom/android/settings/wifi/H;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
+    invoke-direct {v0, p0}, Lcom/android/settings/wifi/I;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ic:Landroid/net/wifi/WifiManager$WpsListener;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->If:Landroid/net/wifi/WifiManager$WpsListener;
 
     .line 124
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/content/IntentFilter;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ih:Landroid/content/IntentFilter;
 
     .line 125
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/content/IntentFilter;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ih:Landroid/content/IntentFilter;
 
     const-string v1, "android.net.wifi.STATE_CHANGE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 126
-    new-instance v0, Lcom/android/settings/wifi/aa;
+    new-instance v0, Lcom/android/settings/wifi/ab;
 
-    invoke-direct {v0, p0}, Lcom/android/settings/wifi/aa;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
+    invoke-direct {v0, p0}, Lcom/android/settings/wifi/ab;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
 
     iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
@@ -115,7 +115,7 @@
     const/16 v3, 0x8
 
     .line 207
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->If:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ii:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WpsDialog$DialogState;->ordinal()I
 
@@ -133,10 +133,10 @@
 
     .line 211
     :cond_0
-    iput-object p1, p0, Lcom/android/settings/wifi/WpsDialog;->If:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    iput-object p1, p0, Lcom/android/settings/wifi/WpsDialog;->Ii:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 213
-    sget-object v0, Lcom/android/settings/wifi/X;->PA:[I
+    sget-object v0, Lcom/android/settings/wifi/Y;->PD:[I
 
     invoke-virtual {p1}, Lcom/android/settings/wifi/WpsDialog$DialogState;->ordinal()I
 
@@ -157,7 +157,7 @@
 
     .line 215
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ia:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
@@ -172,7 +172,7 @@
 
     .line 220
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mB:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mE:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->mContext:Landroid/content/Context;
 
@@ -185,7 +185,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
     .line 221
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ia:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0, v3}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
@@ -256,7 +256,7 @@
 
     .prologue
     .line 45
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ia:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/widget/ProgressBar;
 
     return-object v0
 .end method
@@ -311,14 +311,14 @@
 
     if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->If:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ii:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gn:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gr:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     if-ne v0, v1, :cond_0
 
     .line 240
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->b:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
@@ -353,7 +353,7 @@
     move-result-object v0
 
     .line 244
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Go:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gs:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     invoke-direct {p0, v1, v0}, Lcom/android/settings/wifi/WpsDialog;->a(Lcom/android/settings/wifi/WpsDialog$DialogState;Ljava/lang/String;)V
 
@@ -415,17 +415,17 @@
 
     check-cast v0, Landroid/widget/ProgressBar;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ia:Landroid/widget/ProgressBar;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/widget/ProgressBar;
 
     .line 142
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ia:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/widget/ProgressBar;
 
     const/16 v1, 0x78
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setMax(I)V
 
     .line 143
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ia:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/widget/ProgressBar;
 
     const/4 v1, 0x0
 
@@ -462,21 +462,21 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mB:Landroid/widget/Button;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mE:Landroid/widget/Button;
 
     .line 149
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mB:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mE:Landroid/widget/Button;
 
     const v1, 0x7f0b0211
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 
     .line 150
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mB:Landroid/widget/Button;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mE:Landroid/widget/Button;
 
-    new-instance v1, Lcom/android/settings/wifi/Z;
+    new-instance v1, Lcom/android/settings/wifi/aa;
 
-    invoke-direct {v1, p0}, Lcom/android/settings/wifi/Z;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
+    invoke-direct {v1, p0}, Lcom/android/settings/wifi/aa;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -491,10 +491,10 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->b:Landroid/net/wifi/WifiManager;
 
     .line 158
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->b:Landroid/net/wifi/WifiManager;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->mContext:Landroid/content/Context;
 
@@ -508,7 +508,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ib:Landroid/net/wifi/WifiManager$Channel;
+    iput-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager$Channel;
 
     .line 160
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mView:Landroid/view/View;
@@ -540,9 +540,9 @@
     .line 170
     iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->mTimer:Ljava/util/Timer;
 
-    new-instance v1, Lcom/android/settings/wifi/Y;
+    new-instance v1, Lcom/android/settings/wifi/Z;
 
-    invoke-direct {v1, p0}, Lcom/android/settings/wifi/Y;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
+    invoke-direct {v1, p0}, Lcom/android/settings/wifi/Z;-><init>(Lcom/android/settings/wifi/WpsDialog;)V
 
     move-wide v4, v2
 
@@ -553,7 +553,7 @@
 
     iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    iget-object v2, p0, Lcom/android/settings/wifi/WpsDialog;->Ie:Landroid/content/IntentFilter;
+    iget-object v2, p0, Lcom/android/settings/wifi/WpsDialog;->Ih:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -563,16 +563,16 @@
     invoke-direct {v0}, Landroid/net/wifi/WpsInfo;-><init>()V
 
     .line 186
-    iget v1, p0, Lcom/android/settings/wifi/WpsDialog;->Id:I
+    iget v1, p0, Lcom/android/settings/wifi/WpsDialog;->Ig:I
 
     iput v1, v0, Landroid/net/wifi/WpsInfo;->setup:I
 
     .line 187
-    iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager;
+    iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->b:Landroid/net/wifi/WifiManager;
 
-    iget-object v2, p0, Lcom/android/settings/wifi/WpsDialog;->Ib:Landroid/net/wifi/WifiManager$Channel;
+    iget-object v2, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager$Channel;
 
-    iget-object v3, p0, Lcom/android/settings/wifi/WpsDialog;->Ic:Landroid/net/wifi/WifiManager$WpsListener;
+    iget-object v3, p0, Lcom/android/settings/wifi/WpsDialog;->If:Landroid/net/wifi/WifiManager$WpsListener;
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/net/wifi/WifiManager;->startWps(Landroid/net/wifi/WifiManager$Channel;Landroid/net/wifi/WpsInfo;Landroid/net/wifi/WifiManager$WpsListener;)V
 
@@ -587,16 +587,16 @@
     const/4 v2, 0x0
 
     .line 192
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->If:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->Ii:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gn:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gr:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     if-eq v0, v1, :cond_0
 
     .line 193
-    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/wifi/WpsDialog;->b:Landroid/net/wifi/WifiManager;
 
-    iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->Ib:Landroid/net/wifi/WifiManager$Channel;
+    iget-object v1, p0, Lcom/android/settings/wifi/WpsDialog;->c:Landroid/net/wifi/WifiManager$Channel;
 
     invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiManager;->cancelWps(Landroid/net/wifi/WifiManager$Channel;Landroid/net/wifi/WifiManager$ActionListener;)V
 

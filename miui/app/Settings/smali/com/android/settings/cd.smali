@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Bn:Lcom/android/settings/ApplicationSettings;
+.field final synthetic Br:Lcom/android/settings/ApplicationSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 69
-    iput-object p1, p0, Lcom/android/settings/cd;->Bn:Lcom/android/settings/ApplicationSettings;
+    iput-object p1, p0, Lcom/android/settings/cd;->Br:Lcom/android/settings/ApplicationSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,9 +36,9 @@
     check-cast p2, Ljava/lang/String;
 
     .line 72
-    iget-object v0, p0, Lcom/android/settings/cd;->Bn:Lcom/android/settings/ApplicationSettings;
+    iget-object v0, p0, Lcom/android/settings/cd;->Br:Lcom/android/settings/ApplicationSettings;
 
-    invoke-virtual {v0, p2}, Lcom/android/settings/ApplicationSettings;->I(Ljava/lang/String;)V
+    invoke-virtual {v0, p2}, Lcom/android/settings/ApplicationSettings;->J(Ljava/lang/String;)V
 
     .line 73
     const/4 v0, 0x0

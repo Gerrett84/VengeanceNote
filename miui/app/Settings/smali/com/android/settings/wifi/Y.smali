@@ -1,45 +1,90 @@
-.class Lcom/android/settings/wifi/Y;
-.super Ljava/util/TimerTask;
+.class synthetic Lcom/android/settings/wifi/Y;
+.super Ljava/lang/Object;
 .source "WpsDialog.java"
 
 
-# instance fields
-.field final synthetic zL:Lcom/android/settings/wifi/WpsDialog;
+# static fields
+.field static final synthetic PD:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/wifi/WpsDialog;)V
-    .locals 0
-    .parameter
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 170
-    iput-object p1, p0, Lcom/android/settings/wifi/Y;->zL:Lcom/android/settings/wifi/WpsDialog;
-
-    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public run()V
-    .locals 2
-
-    .prologue
-    .line 173
-    iget-object v0, p0, Lcom/android/settings/wifi/Y;->zL:Lcom/android/settings/wifi/WpsDialog;
-
-    invoke-static {v0}, Lcom/android/settings/wifi/WpsDialog;->c(Lcom/android/settings/wifi/WpsDialog;)Landroid/os/Handler;
+    .line 213
+    invoke-static {}, Lcom/android/settings/wifi/WpsDialog$DialogState;->values()[Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     move-result-object v0
 
-    new-instance v1, Lcom/android/settings/wifi/I;
+    array-length v0, v0
 
-    invoke-direct {v1, p0}, Lcom/android/settings/wifi/I;-><init>(Lcom/android/settings/wifi/Y;)V
+    new-array v0, v0, [I
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    sput-object v0, Lcom/android/settings/wifi/Y;->PD:[I
 
-    .line 180
+    :try_start_0
+    sget-object v0, Lcom/android/settings/wifi/Y;->PD:[I
+
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gr:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+    invoke-virtual {v1}, Lcom/android/settings/wifi/WpsDialog$DialogState;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_2
+
+    :goto_0
+    :try_start_1
+    sget-object v0, Lcom/android/settings/wifi/Y;->PD:[I
+
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gs:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+    invoke-virtual {v1}, Lcom/android/settings/wifi/WpsDialog$DialogState;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Lcom/android/settings/wifi/Y;->PD:[I
+
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gt:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+    invoke-virtual {v1}, Lcom/android/settings/wifi/WpsDialog$DialogState;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
+
+    :goto_2
     return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_0
 .end method

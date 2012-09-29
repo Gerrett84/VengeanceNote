@@ -8,37 +8,31 @@
 
 
 # instance fields
-.field private bb:Lcom/android/settings/TimerView;
+.field private be:Lcom/android/settings/TimerView;
 
-.field private bc:Lcom/android/internal/app/IUsageStats;
+.field private bf:Lcom/android/internal/app/IUsageStats;
 
-.field private bd:Lcom/android/settings/bA;
+.field private bg:Lcom/android/settings/bA;
 
-.field private be:Landroid/content/pm/PackageManager;
+.field private bh:Landroid/content/pm/PackageManager;
 
-.field private final bf:I
+.field private final bi:I
 
-.field private final bg:I
-
-.field private bh:I
-
-.field private bi:F
-
-.field private bj:I
+.field private final bj:I
 
 .field private bk:I
 
-.field private bl:I
+.field private bl:F
 
-.field private bm:Lcom/android/settings/H;
+.field private bm:I
 
-.field bn:Z
+.field private bn:I
 
 .field private bo:I
 
-.field private bp:I
+.field private bp:Lcom/android/settings/H;
 
-.field private bq:Z
+.field bq:Z
 
 .field private br:I
 
@@ -46,11 +40,17 @@
 
 .field private bt:Z
 
-.field private bu:Landroid/widget/FrameLayout$LayoutParams;
+.field private bu:I
 
-.field private bv:[I
+.field private bv:I
 
-.field private bw:I
+.field private bw:Z
+
+.field private bx:Landroid/widget/FrameLayout$LayoutParams;
+
+.field private by:[I
+
+.field private bz:I
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -74,41 +74,41 @@
     .line 65
     const/16 v0, 0x28
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bf:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bi:I
 
     .line 66
     const/16 v0, 0x5a
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bg:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
 
     .line 70
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bi:F
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:F
 
     .line 71
-    iput v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     .line 76
     new-instance v0, Lcom/android/settings/H;
 
     invoke-direct {v0}, Lcom/android/settings/H;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:Lcom/android/settings/H;
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:Lcom/android/settings/H;
 
     .line 78
-    iput-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:Z
+    iput-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
 
     .line 80
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bo:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->br:I
 
     .line 82
-    iput v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iput v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
     .line 87
-    iput-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
+    iput-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:Z
 
     .line 384
     return-void
@@ -120,7 +120,7 @@
 
     .prologue
     .line 56
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bo:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->br:I
 
     return v0
 .end method
@@ -132,7 +132,7 @@
 
     .prologue
     .line 56
-    iput p1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iput p1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
     return p1
 .end method
@@ -144,7 +144,7 @@
 
     .prologue
     .line 56
-    iput p1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
+    iput p1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bv:I
 
     return p1
 .end method
@@ -155,7 +155,7 @@
 
     .prologue
     .line 56
-    iget-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
+    iget-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
 
     return v0
 .end method
@@ -166,7 +166,7 @@
 
     .prologue
     .line 56
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
 
     return-object v0
 .end method
@@ -177,7 +177,7 @@
 
     .prologue
     .line 56
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:Lcom/android/settings/H;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:Lcom/android/settings/H;
 
     return-object v0
 .end method
@@ -199,7 +199,7 @@
 
     .prologue
     .line 56
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bv:I
 
     return v0
 .end method
@@ -210,7 +210,7 @@
 
     .prologue
     .line 56
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->br:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:I
 
     return v0
 .end method
@@ -221,7 +221,7 @@
 
     .prologue
     .line 56
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bh:Landroid/content/pm/PackageManager;
 
     return-object v0
 .end method
@@ -250,28 +250,28 @@
     if-ltz p1, :cond_3
 
     .line 442
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
     if-gt v1, v2, :cond_0
 
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     add-int/2addr v1, p1
 
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
     if-le v1, v2, :cond_0
 
     .line 443
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     .line 468
     :goto_0
-    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->m()V
+    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->q()V
 
     .line 469
     return-void
@@ -280,7 +280,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
 
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:I
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bo:I
 
     add-int/lit8 v2, v2, -0x1
 
@@ -298,218 +298,70 @@
 
     .line 451
     :cond_1
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     add-int/2addr v1, p1
 
     if-le v1, v0, :cond_2
 
     .line 452
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     goto :goto_0
 
     .line 454
     :cond_2
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     add-int/2addr v0, p1
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     goto :goto_0
 
     .line 459
     :cond_3
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
     if-lt v1, v2, :cond_4
 
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     add-int/2addr v1, p1
 
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
     if-ge v1, v2, :cond_4
 
     .line 460
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bp:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bs:I
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     goto :goto_0
 
     .line 461
     :cond_4
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     add-int/2addr v1, p1
 
     if-gez v1, :cond_5
 
     .line 462
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     goto :goto_0
 
     .line 464
     :cond_5
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     add-int/2addr v0, p1
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
-
-    goto :goto_0
-.end method
-
-.method m()V
-    .locals 7
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 535
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:I
-
-    if-lez v0, :cond_3
-
-    .line 536
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
-
-    invoke-virtual {v0, v6}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getTop()I
-
-    move-result v1
-
-    .line 537
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
-
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->br:I
-
-    add-int/2addr v2, v0
-
-    .line 539
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
-
-    :goto_0
-    iget v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
-
-    iget v4, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:I
-
-    add-int/2addr v3, v4
-
-    if-ge v0, v3, :cond_1
-
-    .line 540
-    iget-object v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bv:[I
-
-    aget v3, v3, v0
-
-    if-nez v3, :cond_0
-
-    .line 541
-    iget-object v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bv:[I
-
-    iget-object v4, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
-
-    iget v5, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
-
-    sub-int v5, v0, v5
-
-    invoke-virtual {v4, v5}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
-
-    move-result v4
-
-    aput v4, v3, v0
-
-    .line 543
-    :cond_0
-    iget-object v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bv:[I
-
-    aget v3, v3, v0
-
-    add-int/2addr v1, v3
-
-    .line 545
-    if-le v1, v2, :cond_4
-
-    .line 549
-    :cond_1
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:I
-
-    if-ge v0, v1, :cond_3
-
-    .line 550
-    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
-
-    invoke-virtual {v1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/settings/R;
-
-    .line 551
-    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
-
-    iget-object v0, v0, Lcom/android/settings/R;->dD:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/settings/aI;
-
-    iget-object v0, v0, Lcom/android/settings/aI;->nA:Ljava/lang/Long;
-
-    invoke-virtual {v1, v0}, Lcom/android/settings/TimerView;->a(Ljava/lang/Long;)V
-
-    .line 552
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
-
-    if-gez v0, :cond_2
-
-    .line 553
-    iput v6, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
-
-    .line 554
-    :cond_2
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:Landroid/widget/FrameLayout$LayoutParams;
-
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bh:I
-
-    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
-
-    invoke-virtual {v0, v1, v2, v6, v6}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
-
-    .line 555
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
-
-    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:Landroid/widget/FrameLayout$LayoutParams;
-
-    invoke-virtual {v0, v1}, Lcom/android/settings/TimerView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 558
-    :cond_3
-    return-void
-
-    .line 539
-    :cond_4
-    add-int/lit8 v0, v0, 0x1
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     goto :goto_0
 .end method
@@ -533,10 +385,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bc:Lcom/android/internal/app/IUsageStats;
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bf:Lcom/android/internal/app/IUsageStats;
 
     .line 98
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bc:Lcom/android/internal/app/IUsageStats;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bf:Lcom/android/internal/app/IUsageStats;
 
     if-nez v0, :cond_0
 
@@ -582,7 +434,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Landroid/content/pm/PackageManager;
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bh:Landroid/content/pm/PackageManager;
 
     .line 113
     const v0, 0x7f08015f
@@ -604,24 +456,24 @@
 
     check-cast v0, Lcom/android/settings/TimerView;
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
 
     .line 116
     new-instance v0, Lcom/android/settings/bA;
 
     invoke-direct {v0, p0}, Lcom/android/settings/bA;-><init>(Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;)V
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bd:Lcom/android/settings/bA;
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bg:Lcom/android/settings/bA;
 
     .line 117
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bd:Lcom/android/settings/bA;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bg:Lcom/android/settings/bA;
 
     invoke-static {v0}, Lcom/android/settings/bA;->a(Lcom/android/settings/bA;)V
 
     .line 118
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
 
-    iget-object v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bd:Lcom/android/settings/bA;
+    iget-object v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bg:Lcom/android/settings/bA;
 
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -636,20 +488,20 @@
     invoke-virtual {v0, p0}, Landroid/widget/ListView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 122
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bd:Lcom/android/settings/bA;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bg:Lcom/android/settings/bA;
 
     invoke-virtual {v0}, Lcom/android/settings/bA;->getCount()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bz:I
 
     .line 123
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bz:I
 
     new-array v0, v0, [I
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bv:[I
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->by:[I
 
     .line 125
     new-instance v0, Landroid/util/DisplayMetrics;
@@ -677,7 +529,7 @@
     iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mScreenWidth:I
 
     .line 129
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
 
     invoke-virtual {v0}, Lcom/android/settings/TimerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -685,7 +537,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:Landroid/widget/FrameLayout$LayoutParams;
+    iput-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bx:Landroid/widget/FrameLayout$LayoutParams;
 
     .line 131
     const/high16 v0, 0x42b4
@@ -725,14 +577,14 @@
 
     float-to-int v2, v2
 
-    iput v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->br:I
+    iput v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:I
 
     .line 133
     iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mScreenWidth:I
 
     sub-int v0, v2, v0
 
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bh:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
 
     .line 135
     new-instance v0, Lcom/android/settings/i;
@@ -756,13 +608,13 @@
     .line 433
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
+    iput-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:Z
 
     .line 435
-    iput p2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
+    iput p2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:I
 
     .line 436
-    iput p3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:I
+    iput p3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bo:I
 
     .line 437
     return-void
@@ -785,10 +637,10 @@
     :pswitch_0
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:Z
+    iput-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
 
     .line 410
-    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->m()V
+    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->q()V
 
     .line 411
     new-instance v0, Ljava/util/Timer;
@@ -809,7 +661,7 @@
     :pswitch_1
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:Z
+    iput-boolean v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
 
     goto :goto_0
 
@@ -844,42 +696,42 @@
     if-nez v0, :cond_1
 
     .line 476
-    iput-boolean v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
+    iput-boolean v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:Z
 
     .line 477
-    iput-boolean v5, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
+    iput-boolean v5, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
 
     .line 479
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:I
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bz:I
 
     if-lez v0, :cond_0
 
     .line 480
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/TimerView;->setVisibility(I)V
 
     .line 481
-    iput v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bi:F
+    iput v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:F
 
     .line 482
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:Landroid/widget/FrameLayout$LayoutParams;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bx:Landroid/widget/FrameLayout$LayoutParams;
 
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bh:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
 
-    iget v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     invoke-virtual {v0, v1, v3, v2, v2}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
     .line 483
-    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bb:Lcom/android/settings/TimerView;
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
 
-    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:Landroid/widget/FrameLayout$LayoutParams;
+    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bx:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/TimerView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 485
-    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->m()V
+    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->q()V
 
     .line 531
     :cond_0
@@ -897,17 +749,17 @@
     if-ne v0, v1, :cond_5
 
     .line 489
-    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bi:F
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:F
 
     sub-float/2addr v0, v3
 
     .line 491
-    iget-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
+    iget-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:Z
 
     if-eqz v1, :cond_4
 
     .line 493
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     int-to-float v1, v1
 
@@ -925,7 +777,7 @@
     .line 496
     iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
 
-    iget v4, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:I
+    iget v4, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bo:I
 
     add-int/lit8 v4, v4, -0x1
 
@@ -946,23 +798,23 @@
 
     .line 508
     :goto_1
-    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     if-eq v0, v1, :cond_2
 
     .line 509
-    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bj:I
+    iput v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
 
     .line 510
-    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->m()V
+    invoke-virtual {p0}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->q()V
 
     .line 515
     :cond_2
     :goto_2
-    iput v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bi:F
+    iput v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bl:F
 
     .line 516
-    iput-boolean v5, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
+    iput-boolean v5, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bw:Z
 
     goto :goto_0
 
@@ -977,7 +829,7 @@
 
     .line 512
     :cond_4
-    iget-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:Z
+    iget-boolean v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
 
     if-eqz v1, :cond_2
 
@@ -997,7 +849,7 @@
     if-ne v5, v0, :cond_0
 
     .line 519
-    iput-boolean v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bq:Z
+    iput-boolean v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bt:Z
 
     .line 520
     new-instance v0, Ljava/util/Timer;
@@ -1018,4 +870,152 @@
     move v0, v1
 
     goto :goto_1
+.end method
+
+.method q()V
+    .locals 7
+
+    .prologue
+    const/4 v6, 0x0
+
+    .line 535
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bz:I
+
+    if-lez v0, :cond_3
+
+    .line 536
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
+
+    invoke-virtual {v0, v6}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+    move-result v1
+
+    .line 537
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
+
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bu:I
+
+    add-int/2addr v2, v0
+
+    .line 539
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:I
+
+    :goto_0
+    iget v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:I
+
+    iget v4, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bo:I
+
+    add-int/2addr v3, v4
+
+    if-ge v0, v3, :cond_1
+
+    .line 540
+    iget-object v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->by:[I
+
+    aget v3, v3, v0
+
+    if-nez v3, :cond_0
+
+    .line 541
+    iget-object v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->by:[I
+
+    iget-object v4, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
+
+    iget v5, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bn:I
+
+    sub-int v5, v0, v5
+
+    invoke-virtual {v4, v5}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
+
+    move-result v4
+
+    aput v4, v3, v0
+
+    .line 543
+    :cond_0
+    iget-object v3, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->by:[I
+
+    aget v3, v3, v0
+
+    add-int/2addr v1, v3
+
+    .line 545
+    if-le v1, v2, :cond_4
+
+    .line 549
+    :cond_1
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bz:I
+
+    if-ge v0, v1, :cond_3
+
+    .line 550
+    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->mListView:Landroid/widget/ListView;
+
+    invoke-virtual {v1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
+
+    move-result-object v1
+
+    invoke-interface {v1, v0}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/settings/R;
+
+    .line 551
+    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
+
+    iget-object v0, v0, Lcom/android/settings/R;->dG:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/settings/aI;
+
+    iget-object v0, v0, Lcom/android/settings/aI;->nD:Ljava/lang/Long;
+
+    invoke-virtual {v1, v0}, Lcom/android/settings/TimerView;->a(Ljava/lang/Long;)V
+
+    .line 552
+    iget v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
+
+    if-gez v0, :cond_2
+
+    .line 553
+    iput v6, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
+
+    .line 554
+    :cond_2
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bx:Landroid/widget/FrameLayout$LayoutParams;
+
+    iget v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bk:I
+
+    iget v2, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bm:I
+
+    invoke-virtual {v0, v1, v2, v6, v6}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
+
+    .line 555
+    iget-object v0, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->be:Lcom/android/settings/TimerView;
+
+    iget-object v1, p0, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->bx:Landroid/widget/FrameLayout$LayoutParams;
+
+    invoke-virtual {v0, v1}, Lcom/android/settings/TimerView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 558
+    :cond_3
+    return-void
+
+    .line 539
+    :cond_4
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
 .end method

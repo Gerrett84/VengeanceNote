@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic uH:Lcom/android/settings/accounts/AccountSyncSettings$1;
+.field final synthetic uL:Lcom/android/settings/accounts/AccountSyncSettings$1;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 99
-    iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uH:Lcom/android/settings/accounts/AccountSyncSettings$1;
+    iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uL:Lcom/android/settings/accounts/AccountSyncSettings$1;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,9 +34,9 @@
     const/4 v1, 0x1
 
     .line 102
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uH:Lcom/android/settings/accounts/AccountSyncSettings$1;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uL:Lcom/android/settings/accounts/AccountSyncSettings$1;
 
-    iget-object v0, v0, Lcom/android/settings/accounts/AccountSyncSettings$1;->va:Lcom/android/settings/accounts/AccountSyncSettings;
+    iget-object v0, v0, Lcom/android/settings/accounts/AccountSyncSettings$1;->ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/AccountSyncSettings;->isResumed()Z
 
@@ -78,9 +78,9 @@
     if-eqz v1, :cond_1
 
     .line 118
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uH:Lcom/android/settings/accounts/AccountSyncSettings$1;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uL:Lcom/android/settings/accounts/AccountSyncSettings$1;
 
-    iget-object v0, v0, Lcom/android/settings/accounts/AccountSyncSettings$1;->va:Lcom/android/settings/accounts/AccountSyncSettings;
+    iget-object v0, v0, Lcom/android/settings/accounts/AccountSyncSettings$1;->ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
     const/16 v1, 0x65
 
@@ -90,9 +90,9 @@
 
     .line 120
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uH:Lcom/android/settings/accounts/AccountSyncSettings$1;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings$1$1;->uL:Lcom/android/settings/accounts/AccountSyncSettings$1;
 
-    iget-object v0, v0, Lcom/android/settings/accounts/AccountSyncSettings$1;->va:Lcom/android/settings/accounts/AccountSyncSettings;
+    iget-object v0, v0, Lcom/android/settings/accounts/AccountSyncSettings$1;->ve:Lcom/android/settings/accounts/AccountSyncSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/accounts/AccountSyncSettings;->finish()V
 

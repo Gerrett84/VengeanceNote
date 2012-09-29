@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field fA:F
+.field fC:F
 
-.field fz:F
+.field fD:F
 
 .field mBitmap:Landroid/graphics/Bitmap;
 
@@ -122,9 +122,9 @@
     invoke-virtual {p1, v0, v2, v2, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 56
-    iget v0, p0, Lcom/android/settings/MomentView;->fz:F
+    iget v0, p0, Lcom/android/settings/MomentView;->fC:F
 
-    iget v1, p0, Lcom/android/settings/MomentView;->fA:F
+    iget v1, p0, Lcom/android/settings/MomentView;->fD:F
 
     iget v2, p0, Lcom/android/settings/MomentView;->mRadius:F
 
@@ -149,7 +149,7 @@
 
     int-to-float v0, v0
 
-    iput v0, p0, Lcom/android/settings/MomentView;->fz:F
+    iput v0, p0, Lcom/android/settings/MomentView;->fC:F
 
     .line 48
     div-int/lit8 v0, p2, 0x2
@@ -158,7 +158,7 @@
 
     int-to-float v0, v0
 
-    iput v0, p0, Lcom/android/settings/MomentView;->fA:F
+    iput v0, p0, Lcom/android/settings/MomentView;->fD:F
 
     .line 49
     const/high16 v0, 0x40a0

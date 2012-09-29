@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic eJ:Lcom/android/settings/AccessibilitySettings;
+.field final synthetic eM:Lcom/android/settings/AccessibilitySettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 141
-    iput-object p1, p0, Lcom/android/settings/dv;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iput-object p1, p0, Lcom/android/settings/dv;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -32,12 +32,12 @@
     invoke-super {p0, p1}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
 
     .line 145
-    iget-object v0, p0, Lcom/android/settings/dv;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iget-object v0, p0, Lcom/android/settings/dv;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-static {v0}, Lcom/android/settings/AccessibilitySettings;->a(Lcom/android/settings/AccessibilitySettings;)V
 
     .line 146
-    iget-object v0, p0, Lcom/android/settings/dv;->eJ:Lcom/android/settings/AccessibilitySettings;
+    iget-object v0, p0, Lcom/android/settings/dv;->eM:Lcom/android/settings/AccessibilitySettings;
 
     invoke-static {v0}, Lcom/android/settings/AccessibilitySettings;->b(Lcom/android/settings/AccessibilitySettings;)V
 

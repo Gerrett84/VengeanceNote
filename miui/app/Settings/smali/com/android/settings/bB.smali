@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic vI:Lcom/android/settings/SoundSettings;
+.field final synthetic vM:Lcom/android/settings/SoundSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 210
-    iput-object p1, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iput-object p1, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 213
-    iget-object v0, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-static {v0}, Lcom/android/settings/SoundSettings;->a(Lcom/android/settings/SoundSettings;)Lcom/android/settings/DefaultRingtonePreference;
 
@@ -40,9 +40,9 @@
     if-eqz v0, :cond_0
 
     .line 214
-    iget-object v0, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
-    iget-object v1, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v1, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-static {v1}, Lcom/android/settings/SoundSettings;->a(Lcom/android/settings/SoundSettings;)Lcom/android/settings/DefaultRingtonePreference;
 
@@ -58,7 +58,7 @@
 
     .line 217
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-static {v0}, Lcom/android/settings/SoundSettings;->b(Lcom/android/settings/SoundSettings;)Lcom/android/settings/DefaultRingtonePreference;
 
@@ -67,9 +67,9 @@
     if-eqz v0, :cond_1
 
     .line 218
-    iget-object v0, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
-    iget-object v1, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v1, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-static {v1}, Lcom/android/settings/SoundSettings;->b(Lcom/android/settings/SoundSettings;)Lcom/android/settings/DefaultRingtonePreference;
 
@@ -85,9 +85,9 @@
 
     .line 221
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/bB;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bB;->vM:Lcom/android/settings/SoundSettings;
 
-    invoke-virtual {v0}, Lcom/android/settings/SoundSettings;->an()V
+    invoke-virtual {v0}, Lcom/android/settings/SoundSettings;->ar()V
 
     .line 222
     return-void

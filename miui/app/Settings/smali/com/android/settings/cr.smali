@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Et:Lcom/android/settings/DeviceAdminSettings;
+.field final synthetic Ex:Lcom/android/settings/DeviceAdminSettings;
 
 .field final mInflater:Landroid/view/LayoutInflater;
 
@@ -16,7 +16,7 @@
 
     .prologue
     .line 126
-    iput-object p1, p0, Lcom/android/settings/cr;->Et:Lcom/android/settings/DeviceAdminSettings;
+    iput-object p1, p0, Lcom/android/settings/cr;->Ex:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -82,7 +82,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v2, Lcom/android/settings/bE;->oj:Landroid/widget/TextView;
+    iput-object v0, v2, Lcom/android/settings/bE;->om:Landroid/widget/TextView;
 
     .line 171
     const v0, 0x7f08006e
@@ -93,7 +93,7 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, v2, Lcom/android/settings/bE;->wA:Landroid/widget/CheckBox;
+    iput-object v0, v2, Lcom/android/settings/bE;->wE:Landroid/widget/CheckBox;
 
     .line 172
     const v0, 0x7f08006d
@@ -104,7 +104,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v2, Lcom/android/settings/bE;->ok:Landroid/widget/TextView;
+    iput-object v0, v2, Lcom/android/settings/bE;->on:Landroid/widget/TextView;
 
     .line 173
     invoke-virtual {v1, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
@@ -120,7 +120,7 @@
 
     .prologue
     .line 178
-    iget-object v0, p0, Lcom/android/settings/cr;->Et:Lcom/android/settings/DeviceAdminSettings;
+    iget-object v0, p0, Lcom/android/settings/cr;->Ex:Lcom/android/settings/DeviceAdminSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminSettings;->getActivity()Landroid/app/Activity;
 
@@ -134,9 +134,9 @@
     check-cast v0, Lcom/android/settings/bE;
 
     .line 180
-    iget-object v1, p0, Lcom/android/settings/cr;->Et:Lcom/android/settings/DeviceAdminSettings;
+    iget-object v1, p0, Lcom/android/settings/cr;->Ex:Lcom/android/settings/DeviceAdminSettings;
 
-    iget-object v1, v1, Lcom/android/settings/DeviceAdminSettings;->us:Ljava/util/ArrayList;
+    iget-object v1, v1, Lcom/android/settings/DeviceAdminSettings;->uw:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -158,7 +158,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 182
-    iget-object v3, v0, Lcom/android/settings/bE;->oj:Landroid/widget/TextView;
+    iget-object v3, v0, Lcom/android/settings/bE;->om:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -171,11 +171,11 @@
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 183
-    iget-object v3, v0, Lcom/android/settings/bE;->wA:Landroid/widget/CheckBox;
+    iget-object v3, v0, Lcom/android/settings/bE;->wE:Landroid/widget/CheckBox;
 
-    iget-object v4, p0, Lcom/android/settings/cr;->Et:Lcom/android/settings/DeviceAdminSettings;
+    iget-object v4, p0, Lcom/android/settings/cr;->Ex:Lcom/android/settings/DeviceAdminSettings;
 
-    iget-object v4, v4, Lcom/android/settings/DeviceAdminSettings;->ur:Ljava/util/HashSet;
+    iget-object v4, v4, Lcom/android/settings/DeviceAdminSettings;->uv:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Landroid/app/admin/DeviceAdminInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -189,7 +189,7 @@
 
     .line 185
     :try_start_0
-    iget-object v0, v0, Lcom/android/settings/bE;->ok:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/bE;->on:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -229,9 +229,9 @@
 
     .prologue
     .line 136
-    iget-object v0, p0, Lcom/android/settings/cr;->Et:Lcom/android/settings/DeviceAdminSettings;
+    iget-object v0, p0, Lcom/android/settings/cr;->Ex:Lcom/android/settings/DeviceAdminSettings;
 
-    iget-object v0, v0, Lcom/android/settings/DeviceAdminSettings;->us:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/DeviceAdminSettings;->uw:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -246,9 +246,9 @@
 
     .prologue
     .line 140
-    iget-object v0, p0, Lcom/android/settings/cr;->Et:Lcom/android/settings/DeviceAdminSettings;
+    iget-object v0, p0, Lcom/android/settings/cr;->Ex:Lcom/android/settings/DeviceAdminSettings;
 
-    iget-object v0, v0, Lcom/android/settings/DeviceAdminSettings;->us:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/DeviceAdminSettings;->uw:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

@@ -16,14 +16,14 @@
 
 
 # virtual methods
-.method protected F()Landroid/content/Intent;
+.method protected J()Landroid/content/Intent;
     .locals 3
 
     .prologue
     const/4 v2, 0x2
 
     .line 22
-    invoke-super {p0}, Lcom/android/settings/sound/b;->F()Landroid/content/Intent;
+    invoke-super {p0}, Lcom/android/settings/sound/b;->J()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -45,7 +45,7 @@
     return-object v0
 .end method
 
-.method protected G()I
+.method protected K()I
     .locals 1
 
     .prologue

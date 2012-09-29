@@ -4,9 +4,9 @@
 
 
 # static fields
-.field private static final fa:Ljava/lang/Object;
+.field private static final fd:Ljava/lang/Object;
 
-.field private static fb:Landroid/os/PowerManager$WakeLock;
+.field private static fe:Landroid/os/PowerManager$WakeLock;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fa:Ljava/lang/Object;
+    sput-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fd:Ljava/lang/Object;
 
     return-void
 .end method
@@ -41,13 +41,13 @@
 
     .prologue
     .line 142
-    sget-object v1, Lcom/android/settings/bluetooth/DockEventReceiver;->fa:Ljava/lang/Object;
+    sget-object v1, Lcom/android/settings/bluetooth/DockEventReceiver;->fd:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 143
     :try_start_0
-    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fb:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fe:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v0, :cond_0
 
@@ -66,7 +66,7 @@
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 147
-    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fb:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fe:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
@@ -95,13 +95,13 @@
 
     .prologue
     .line 122
-    sget-object v1, Lcom/android/settings/bluetooth/DockEventReceiver;->fa:Ljava/lang/Object;
+    sget-object v1, Lcom/android/settings/bluetooth/DockEventReceiver;->fd:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 123
     :try_start_0
-    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fb:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fe:Landroid/os/PowerManager$WakeLock;
 
     if-nez v0, :cond_0
 
@@ -123,11 +123,11 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fb:Landroid/os/PowerManager$WakeLock;
+    sput-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fe:Landroid/os/PowerManager$WakeLock;
 
     .line 129
     :cond_0
-    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fb:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/android/settings/bluetooth/DockEventReceiver;->fe:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 

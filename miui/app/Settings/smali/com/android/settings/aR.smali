@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic pj:Lcom/android/settings/MiuiMasterClear;
+.field final synthetic pm:Lcom/android/settings/MiuiMasterClear;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 144
-    iput-object p1, p0, Lcom/android/settings/aR;->pj:Lcom/android/settings/MiuiMasterClear;
+    iput-object p1, p0, Lcom/android/settings/aR;->pm:Lcom/android/settings/MiuiMasterClear;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

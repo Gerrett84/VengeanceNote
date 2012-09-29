@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private wV:Landroid/os/BatteryStats;
+.field private wZ:Landroid/os/BatteryStats;
 
 
 # direct methods
@@ -23,7 +23,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/fuelgauge/BatteryHistoryPreference;->setLayoutResource(I)V
 
     .line 41
-    iput-object p2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryPreference;->wV:Landroid/os/BatteryStats;
+    iput-object p2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryPreference;->wZ:Landroid/os/BatteryStats;
 
     .line 42
     return-void
@@ -49,7 +49,7 @@
     check-cast v0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;
 
     .line 54
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryPreference;->wV:Landroid/os/BatteryStats;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryPreference;->wZ:Landroid/os/BatteryStats;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->a(Landroid/os/BatteryStats;)V
 

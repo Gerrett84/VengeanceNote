@@ -9,11 +9,11 @@
 # instance fields
 .field private mAccountType:Ljava/lang/String;
 
-.field private na:[Ljava/lang/String;
+.field private nd:[Ljava/lang/String;
 
-.field private nb:Landroid/widget/TextView;
+.field private ne:Landroid/widget/TextView;
 
-.field private nc:Landroid/accounts/Account;
+.field private nf:Landroid/accounts/Account;
 
 
 # direct methods
@@ -86,7 +86,7 @@
     :cond_0
     const-string v3, "account"
 
-    iget-object v4, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iget-object v4, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
@@ -163,7 +163,7 @@
     return-void
 .end method
 
-.method private dh()V
+.method private dl()V
     .locals 2
 
     .prologue
@@ -333,7 +333,7 @@
     return-object v0
 .end method
 
-.method protected dg()V
+.method protected dk()V
     .locals 28
 
     .prologue
@@ -867,7 +867,7 @@
     :cond_12
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/settings/accounts/ManageAccountsSettings;->nb:Landroid/widget/TextView;
+    iget-object v3, v0, Lcom/android/settings/accounts/ManageAccountsSettings;->ne:Landroid/widget/TextView;
 
     if-eqz v8, :cond_13
 
@@ -884,7 +884,7 @@
     goto :goto_a
 .end method
 
-.method protected di()V
+.method protected dm()V
     .locals 3
 
     .prologue
@@ -928,7 +928,7 @@
 
     iget-object v2, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/ManageAccountsSettings;->F(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/ManageAccountsSettings;->G(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -947,12 +947,12 @@
     return-void
 .end method
 
-.method public bridge synthetic dj()V
+.method public bridge synthetic dn()V
     .locals 0
 
     .prologue
     .line 64
-    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dj()V
+    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dn()V
 
     return-void
 .end method
@@ -988,7 +988,7 @@
     .line 313
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iput-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     .line 314
     const v0, 0x7f05002c
@@ -1034,19 +1034,19 @@
     :cond_2
     iget-object v0, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/ManageAccountsSettings;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/ManageAccountsSettings;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v4
 
     .line 322
-    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->na:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nd:[Ljava/lang/String;
 
     if-eqz v0, :cond_8
 
     if-eqz v4, :cond_8
 
     .line 324
-    iget-object v1, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->na:[Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nd:[Ljava/lang/String;
 
     array-length v3, v1
 
@@ -1073,7 +1073,7 @@
     .line 333
     iget-object v0, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/ManageAccountsSettings;->E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/ManageAccountsSettings;->F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -1106,12 +1106,12 @@
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
     .line 342
-    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     if-nez v0, :cond_1
 
     .line 343
-    iput-object v2, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iput-object v2, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     goto :goto_2
 
@@ -1139,16 +1139,16 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     if-eqz v0, :cond_6
 
     .line 348
-    invoke-direct {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->dh()V
+    invoke-direct {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->dl()V
 
     .line 355
     :goto_6
-    invoke-virtual {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->dg()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->dk()V
 
     goto/16 :goto_0
 
@@ -1212,10 +1212,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nb:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->ne:Landroid/widget/TextView;
 
     .line 119
-    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nb:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->ne:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
@@ -1232,7 +1232,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->na:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nd:[Ljava/lang/String;
 
     .line 123
     invoke-virtual {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->getArguments()Landroid/os/Bundle;
@@ -1265,7 +1265,7 @@
 
     .line 127
     :cond_0
-    invoke-virtual {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->dj()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/ManageAccountsSettings;->dn()V
 
     .line 128
     return-void
@@ -1506,7 +1506,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v3, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iget-object v3, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     if-eqz v3, :cond_1
 
@@ -1524,7 +1524,7 @@
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nc:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/android/settings/accounts/ManageAccountsSettings;->nf:Landroid/accounts/Account;
 
     if-eqz v0, :cond_2
 
@@ -1633,13 +1633,13 @@
     return-void
 .end method
 
-.method public bridge synthetic x(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public bridge synthetic y(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
     .parameter
 
     .prologue
     .line 64
-    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 

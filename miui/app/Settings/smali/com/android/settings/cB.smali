@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private FS:Z
+.field private FW:Z
 
-.field private FT:Z
+.field private FX:Z
 
-.field private final FU:Lcom/android/settings/cN;
+.field private final FY:Lcom/android/settings/cN;
 
 
 # direct methods
@@ -25,10 +25,10 @@
     invoke-direct {p0, p1, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
     .line 1366
-    iput-boolean v1, p0, Lcom/android/settings/cB;->FS:Z
+    iput-boolean v1, p0, Lcom/android/settings/cB;->FW:Z
 
     .line 1367
-    iput-boolean v1, p0, Lcom/android/settings/cB;->FT:Z
+    iput-boolean v1, p0, Lcom/android/settings/cB;->FX:Z
 
     .line 1373
     const v0, 0x1090009
@@ -40,32 +40,32 @@
 
     invoke-direct {v0, p1}, Lcom/android/settings/cN;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/cB;->FU:Lcom/android/settings/cN;
+    iput-object v0, p0, Lcom/android/settings/cB;->FY:Lcom/android/settings/cN;
 
     .line 1375
     return-void
 .end method
 
-.method private jl()V
+.method private jp()V
     .locals 1
 
     .prologue
     .line 1388
-    iget-object v0, p0, Lcom/android/settings/cB;->FU:Lcom/android/settings/cN;
+    iget-object v0, p0, Lcom/android/settings/cB;->FY:Lcom/android/settings/cN;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/cB;->remove(Ljava/lang/Object;)V
 
     .line 1389
-    iget-boolean v0, p0, Lcom/android/settings/cB;->FS:Z
+    iget-boolean v0, p0, Lcom/android/settings/cB;->FW:Z
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/settings/cB;->FT:Z
+    iget-boolean v0, p0, Lcom/android/settings/cB;->FX:Z
 
     if-eqz v0, :cond_0
 
     .line 1390
-    iget-object v0, p0, Lcom/android/settings/cB;->FU:Lcom/android/settings/cN;
+    iget-object v0, p0, Lcom/android/settings/cB;->FY:Lcom/android/settings/cN;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/cB;->add(Ljava/lang/Object;)V
 
@@ -82,10 +82,10 @@
 
     .prologue
     .line 1378
-    iput-boolean p1, p0, Lcom/android/settings/cB;->FS:Z
+    iput-boolean p1, p0, Lcom/android/settings/cB;->FW:Z
 
     .line 1379
-    invoke-direct {p0}, Lcom/android/settings/cB;->jl()V
+    invoke-direct {p0}, Lcom/android/settings/cB;->jp()V
 
     .line 1380
     return-void
@@ -97,10 +97,10 @@
 
     .prologue
     .line 1383
-    iput-boolean p1, p0, Lcom/android/settings/cB;->FT:Z
+    iput-boolean p1, p0, Lcom/android/settings/cB;->FX:Z
 
     .line 1384
-    invoke-direct {p0}, Lcom/android/settings/cB;->jl()V
+    invoke-direct {p0}, Lcom/android/settings/cB;->jp()V
 
     .line 1385
     return-void

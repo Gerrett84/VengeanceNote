@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private ns:Landroid/preference/CheckBoxPreference;
+.field private nv:Landroid/preference/CheckBoxPreference;
 
-.field private nt:Landroid/widget/Switch;
+.field private nw:Landroid/widget/Switch;
 
-.field private nu:Lcom/android/settings/dO;
+.field private nx:Lcom/android/settings/dO;
 
 
 # direct methods
@@ -112,7 +112,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/DreamSettings;->ns:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/DreamSettings;->nv:Landroid/preference/CheckBoxPreference;
 
     .line 66
     invoke-virtual {p0}, Lcom/android/settings/DreamSettings;->getActivity()Landroid/app/Activity;
@@ -124,7 +124,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/Switch;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/android/settings/DreamSettings;->nt:Landroid/widget/Switch;
+    iput-object v0, p0, Lcom/android/settings/DreamSettings;->nw:Landroid/widget/Switch;
 
     .line 70
     instance-of v0, v1, Landroid/preference/PreferenceActivity;
@@ -148,7 +148,7 @@
     move-result v0
 
     .line 77
-    iget-object v2, p0, Lcom/android/settings/DreamSettings;->nt:Landroid/widget/Switch;
+    iget-object v2, p0, Lcom/android/settings/DreamSettings;->nw:Landroid/widget/Switch;
 
     invoke-virtual {v2, v3, v3, v0, v3}, Landroid/widget/Switch;->setPadding(IIII)V
 
@@ -164,7 +164,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/DreamSettings;->nt:Landroid/widget/Switch;
+    iget-object v2, p0, Lcom/android/settings/DreamSettings;->nw:Landroid/widget/Switch;
 
     new-instance v3, Landroid/app/ActionBar$LayoutParams;
 
@@ -187,11 +187,11 @@
     :cond_0
     new-instance v0, Lcom/android/settings/dO;
 
-    iget-object v2, p0, Lcom/android/settings/DreamSettings;->nt:Landroid/widget/Switch;
+    iget-object v2, p0, Lcom/android/settings/DreamSettings;->nw:Landroid/widget/Switch;
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/dO;-><init>(Landroid/content/Context;Landroid/widget/Switch;)V
 
-    iput-object v0, p0, Lcom/android/settings/DreamSettings;->nu:Lcom/android/settings/dO;
+    iput-object v0, p0, Lcom/android/settings/DreamSettings;->nx:Lcom/android/settings/dO;
 
     .line 88
     return-void
@@ -202,12 +202,12 @@
 
     .prologue
     .line 143
-    iget-object v0, p0, Lcom/android/settings/DreamSettings;->nu:Lcom/android/settings/dO;
+    iget-object v0, p0, Lcom/android/settings/DreamSettings;->nx:Lcom/android/settings/dO;
 
     if-eqz v0, :cond_0
 
     .line 144
-    iget-object v0, p0, Lcom/android/settings/DreamSettings;->nu:Lcom/android/settings/dO;
+    iget-object v0, p0, Lcom/android/settings/DreamSettings;->nx:Lcom/android/settings/dO;
 
     invoke-virtual {v0}, Lcom/android/settings/dO;->pause()V
 
@@ -226,7 +226,7 @@
 
     .prologue
     .line 152
-    iget-object v0, p0, Lcom/android/settings/DreamSettings;->ns:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DreamSettings;->nv:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_0
 
@@ -237,7 +237,7 @@
 
     const-string v2, "screensaver_activate_on_dock"
 
-    iget-object v0, p0, Lcom/android/settings/DreamSettings;->ns:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/DreamSettings;->nv:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
 
@@ -272,12 +272,12 @@
     const/4 v0, 0x1
 
     .line 131
-    iget-object v1, p0, Lcom/android/settings/DreamSettings;->nu:Lcom/android/settings/dO;
+    iget-object v1, p0, Lcom/android/settings/DreamSettings;->nx:Lcom/android/settings/dO;
 
     if-eqz v1, :cond_0
 
     .line 132
-    iget-object v1, p0, Lcom/android/settings/DreamSettings;->nu:Lcom/android/settings/dO;
+    iget-object v1, p0, Lcom/android/settings/DreamSettings;->nx:Lcom/android/settings/dO;
 
     invoke-virtual {v1}, Lcom/android/settings/dO;->resume()V
 
@@ -297,7 +297,7 @@
 
     .line 137
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/DreamSettings;->ns:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/DreamSettings;->nv:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v1, v0}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 

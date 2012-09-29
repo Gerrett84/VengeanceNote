@@ -269,7 +269,7 @@
 
     .line 245
     :pswitch_0
-    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->iL()Lcom/google/common/collect/ImmutableSet;
+    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->iP()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -295,12 +295,12 @@
     .end packed-switch
 .end method
 
-.method public static iL()Lcom/google/common/collect/ImmutableSet;
+.method public static iP()Lcom/google/common/collect/ImmutableSet;
     .locals 1
 
     .prologue
     .line 78
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->NK:Lcom/google/common/collect/EmptyImmutableSet;
+    sget-object v0, Lcom/google/common/collect/EmptyImmutableSet;->NN:Lcom/google/common/collect/EmptyImmutableSet;
 
     return-object v0
 .end method
@@ -320,7 +320,7 @@
 
 
 # virtual methods
-.method H()Z
+.method L()Z
     .locals 1
 
     .prologue
@@ -330,7 +330,7 @@
     return v0
 .end method
 
-.method public abstract dz()Lcom/google/common/collect/ap;
+.method public abstract dD()Lcom/google/common/collect/ap;
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -354,7 +354,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet;->H()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet;->L()Z
 
     move-result v0
 
@@ -364,7 +364,7 @@
 
     check-cast v0, Lcom/google/common/collect/ImmutableSet;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet;->H()Z
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet;->L()Z
 
     move-result v0
 
@@ -411,7 +411,7 @@
 
     .prologue
     .line 66
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 

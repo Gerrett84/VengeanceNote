@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final gn:Lcom/android/settings/a/h;
+.field private final gq:Lcom/android/settings/a/h;
 
-.field private final go:I
+.field private final gr:I
 
-.field private gp:J
+.field private gs:J
 
 .field private mItems:Ljava/util/ArrayList;
 
@@ -37,10 +37,10 @@
 
     check-cast v0, Lcom/android/settings/a/h;
 
-    iput-object v0, p0, Lcom/android/settings/al;->gn:Lcom/android/settings/a/h;
+    iput-object v0, p0, Lcom/android/settings/al;->gq:Lcom/android/settings/a/h;
 
     .line 1476
-    iput p2, p0, Lcom/android/settings/al;->go:I
+    iput p2, p0, Lcom/android/settings/al;->gr:I
 
     .line 1477
     return-void
@@ -159,7 +159,7 @@
 
     .line 1503
     :cond_1
-    iget-wide v8, v1, Lcom/android/settings/P;->dy:J
+    iget-wide v8, v1, Lcom/android/settings/P;->dB:J
 
     iget-wide v10, v4, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
@@ -169,7 +169,7 @@
 
     add-long/2addr v8, v10
 
-    iput-wide v8, v1, Lcom/android/settings/P;->dy:J
+    iput-wide v8, v1, Lcom/android/settings/P;->dB:J
 
     .line 1504
     iget v5, v4, Landroid/net/NetworkStats$Entry;->uid:I
@@ -204,7 +204,7 @@
 
     .line 1506
     :cond_4
-    iget-wide v8, v6, Lcom/android/settings/P;->dy:J
+    iget-wide v8, v6, Lcom/android/settings/P;->dB:J
 
     iget-wide v10, v4, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
@@ -214,7 +214,7 @@
 
     add-long/2addr v8, v10
 
-    iput-wide v8, v6, Lcom/android/settings/P;->dy:J
+    iput-wide v8, v6, Lcom/android/settings/P;->dB:J
 
     .line 1507
     iget v1, v4, Landroid/net/NetworkStats$Entry;->uid:I
@@ -256,7 +256,7 @@
     .line 1515
     const-wide/16 v4, -0x1
 
-    iput-wide v4, v1, Lcom/android/settings/P;->dy:J
+    iput-wide v4, v1, Lcom/android/settings/P;->dB:J
 
     .line 1516
     iget-object v4, p0, Lcom/android/settings/al;->mItems:Ljava/util/ArrayList;
@@ -267,7 +267,7 @@
     :cond_6
     const/4 v4, 0x1
 
-    iput-boolean v4, v1, Lcom/android/settings/P;->dw:Z
+    iput-boolean v4, v1, Lcom/android/settings/P;->dz:Z
 
     .line 1511
     add-int/lit8 v1, v2, 0x1
@@ -278,7 +278,7 @@
 
     .line 1521
     :cond_7
-    iget-wide v1, v6, Lcom/android/settings/P;->dy:J
+    iget-wide v1, v6, Lcom/android/settings/P;->dB:J
 
     const-wide/16 v3, 0x0
 
@@ -316,10 +316,10 @@
 
     check-cast v1, Lcom/android/settings/P;
 
-    iget-wide v1, v1, Lcom/android/settings/P;->dy:J
+    iget-wide v1, v1, Lcom/android/settings/P;->dB:J
 
     :goto_5
-    iput-wide v1, p0, Lcom/android/settings/al;->gp:J
+    iput-wide v1, p0, Lcom/android/settings/al;->gs:J
 
     .line 1527
     invoke-virtual {p0}, Lcom/android/settings/al;->notifyDataSetChanged()V
@@ -377,7 +377,7 @@
 
     check-cast v0, Lcom/android/settings/P;
 
-    iget v0, v0, Lcom/android/settings/P;->dv:I
+    iget v0, v0, Lcom/android/settings/P;->dy:I
 
     int-to-long v0, v0
 
@@ -414,14 +414,14 @@
     move-result-object p2
 
     .line 1551
-    iget v0, p0, Lcom/android/settings/al;->go:I
+    iget v0, p0, Lcom/android/settings/al;->gr:I
 
     if-lez v0, :cond_0
 
     .line 1552
-    iget v0, p0, Lcom/android/settings/al;->go:I
+    iget v0, p0, Lcom/android/settings/al;->gr:I
 
-    iget v1, p0, Lcom/android/settings/al;->go:I
+    iget v1, p0, Lcom/android/settings/al;->gr:I
 
     invoke-virtual {p2, v0, v3, v1, v3}, Landroid/view/View;->setPadding(IIII)V
 
@@ -459,16 +459,16 @@
     check-cast v2, Lcom/android/settings/P;
 
     .line 1564
-    iget-object v5, p0, Lcom/android/settings/al;->gn:Lcom/android/settings/a/h;
+    iget-object v5, p0, Lcom/android/settings/al;->gq:Lcom/android/settings/a/h;
 
     invoke-static {v5, v2, p2}, Lcom/android/settings/aG;->a(Lcom/android/settings/a/h;Lcom/android/settings/P;Landroid/view/View;)V
 
     .line 1566
-    iget-boolean v5, v2, Lcom/android/settings/P;->dw:Z
+    iget-boolean v5, v2, Lcom/android/settings/P;->dz:Z
 
     if-eqz v5, :cond_1
 
-    iget-wide v5, v2, Lcom/android/settings/P;->dy:J
+    iget-wide v5, v2, Lcom/android/settings/P;->dB:J
 
     cmp-long v5, v5, v7
 
@@ -486,19 +486,19 @@
 
     .line 1574
     :goto_0
-    iget-wide v4, p0, Lcom/android/settings/al;->gp:J
+    iget-wide v4, p0, Lcom/android/settings/al;->gs:J
 
     cmp-long v0, v4, v7
 
     if-eqz v0, :cond_2
 
-    iget-wide v2, v2, Lcom/android/settings/P;->dy:J
+    iget-wide v2, v2, Lcom/android/settings/P;->dB:J
 
     const-wide/16 v4, 0x64
 
     mul-long/2addr v2, v4
 
-    iget-wide v4, p0, Lcom/android/settings/al;->gp:J
+    iget-wide v4, p0, Lcom/android/settings/al;->gs:J
 
     div-long/2addr v2, v4
 
@@ -513,7 +513,7 @@
 
     .line 1570
     :cond_1
-    iget-wide v5, v2, Lcom/android/settings/P;->dy:J
+    iget-wide v5, v2, Lcom/android/settings/P;->dB:J
 
     invoke-static {v4, v5, v6}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
 

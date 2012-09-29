@@ -30,14 +30,14 @@
     const/4 v0, -0x1
 
     .line 525
-    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cM:Z
+    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cP:Z
 
-    iget-boolean v3, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cM:Z
+    iget-boolean v3, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cP:Z
 
     if-eq v2, v3, :cond_2
 
     .line 527
-    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cM:Z
+    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cP:Z
 
     if-eqz v2, :cond_1
 
@@ -54,14 +54,14 @@
 
     .line 529
     :cond_2
-    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cL:Z
+    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cO:Z
 
-    iget-boolean v3, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cL:Z
+    iget-boolean v3, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cO:Z
 
     if-eq v2, v3, :cond_4
 
     .line 531
-    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cL:Z
+    iget-boolean v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cO:Z
 
     if-eqz v2, :cond_3
 
@@ -77,18 +77,18 @@
 
     .line 533
     :cond_4
-    iget-wide v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cN:J
+    iget-wide v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cQ:J
 
-    iget-wide v4, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cN:J
+    iget-wide v4, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cQ:J
 
     cmp-long v2, v2, v4
 
     if-eqz v2, :cond_5
 
     .line 536
-    iget-wide v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cN:J
+    iget-wide v2, p1, Lcom/android/settings/applications/RunningState$ProcessItem;->cQ:J
 
-    iget-wide v4, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cN:J
+    iget-wide v4, p2, Lcom/android/settings/applications/RunningState$ProcessItem;->cQ:J
 
     cmp-long v2, v2, v4
 

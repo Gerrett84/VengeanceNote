@@ -8,7 +8,7 @@
 
 
 # static fields
-.field static final sG:Lcom/google/common/collect/ImmutableCollection;
+.field static final sJ:Lcom/google/common/collect/ImmutableCollection;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;-><init>(Lcom/google/common/collect/d;)V
 
-    sput-object v0, Lcom/google/common/collect/ImmutableCollection;->sG:Lcom/google/common/collect/ImmutableCollection;
+    sput-object v0, Lcom/google/common/collect/ImmutableCollection;->sJ:Lcom/google/common/collect/ImmutableCollection;
 
     return-void
 .end method
@@ -86,7 +86,7 @@
     .line 67
     if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 
@@ -120,7 +120,7 @@
     return v0
 .end method
 
-.method public abstract dz()Lcom/google/common/collect/ap;
+.method public abstract dD()Lcom/google/common/collect/ap;
 .end method
 
 .method public isEmpty()Z
@@ -150,7 +150,7 @@
 
     .prologue
     .line 40
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 

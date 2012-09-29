@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final Kb:Ljava/util/List;
+.field private final Ke:Ljava/util/List;
 
-.field final synthetic Kc:Lcom/android/settings/TrustedCredentialsSettings;
+.field final synthetic Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-.field private final iw:Lcom/android/settings/TrustedCredentialsSettings$Tab;
+.field private final iz:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     .prologue
     .line 178
-    iput-object p1, p0, Lcom/android/settings/dw;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iput-object p1, p0, Lcom/android/settings/dw;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -28,13 +28,13 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/dw;->Kb:Ljava/util/List;
+    iput-object v0, p0, Lcom/android/settings/dw;->Ke:Ljava/util/List;
 
     .line 179
-    iput-object p2, p0, Lcom/android/settings/dw;->iw:Lcom/android/settings/TrustedCredentialsSettings$Tab;
+    iput-object p2, p0, Lcom/android/settings/dw;->iz:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     .line 180
-    invoke-direct {p0}, Lcom/android/settings/dw;->fC()V
+    invoke-direct {p0}, Lcom/android/settings/dw;->fG()V
 
     .line 181
     return-void
@@ -59,7 +59,7 @@
 
     .prologue
     .line 175
-    iget-object v0, p0, Lcom/android/settings/dw;->Kb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/dw;->Ke:Ljava/util/List;
 
     return-object v0
 .end method
@@ -70,7 +70,7 @@
 
     .prologue
     .line 175
-    invoke-direct {p0}, Lcom/android/settings/dw;->fC()V
+    invoke-direct {p0}, Lcom/android/settings/dw;->fG()V
 
     return-void
 .end method
@@ -81,12 +81,12 @@
 
     .prologue
     .line 175
-    iget-object v0, p0, Lcom/android/settings/dw;->iw:Lcom/android/settings/TrustedCredentialsSettings$Tab;
+    iget-object v0, p0, Lcom/android/settings/dw;->iz:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     return-object v0
 .end method
 
-.method private fC()V
+.method private fG()V
     .locals 2
 
     .prologue
@@ -115,7 +115,7 @@
 
     .prologue
     .line 189
-    iget-object v0, p0, Lcom/android/settings/dw;->Kb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/dw;->Ke:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -131,7 +131,7 @@
 
     .prologue
     .line 186
-    iget-object v0, p0, Lcom/android/settings/dw;->Kb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/dw;->Ke:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -177,7 +177,7 @@
     if-nez p2, :cond_1
 
     .line 197
-    iget-object v0, p0, Lcom/android/settings/dw;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iget-object v0, p0, Lcom/android/settings/dw;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/TrustedCredentialsSettings;->getActivity()Landroid/app/Activity;
 
@@ -239,7 +239,7 @@
 
     .line 209
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/dw;->Kb:Ljava/util/List;
+    iget-object v0, p0, Lcom/android/settings/dw;->Ke:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -270,7 +270,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 212
-    iget-object v3, p0, Lcom/android/settings/dw;->iw:Lcom/android/settings/TrustedCredentialsSettings$Tab;
+    iget-object v3, p0, Lcom/android/settings/dw;->iz:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     invoke-static {v3}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->f(Lcom/android/settings/TrustedCredentialsSettings$Tab;)Z
 

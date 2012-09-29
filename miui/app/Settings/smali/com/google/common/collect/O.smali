@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final yT:Ljava/util/ArrayList;
+.field final yX:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/O;->yT:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/common/collect/O;->yX:Ljava/util/ArrayList;
 
     .line 171
     return-void
@@ -64,7 +64,7 @@
 
     .line 239
     :pswitch_0
-    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->ls()Lcom/google/common/collect/ImmutableMap;
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->lw()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
 
     .prologue
     .line 178
-    iget-object v0, p0, Lcom/google/common/collect/O;->yT:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/common/collect/O;->yX:Ljava/util/ArrayList;
 
     invoke-static {p1, p2}, Lcom/google/common/collect/ImmutableMap;->h(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
@@ -115,12 +115,12 @@
     return-object p0
 .end method
 
-.method public hs()Lcom/google/common/collect/ImmutableMap;
+.method public hw()Lcom/google/common/collect/ImmutableMap;
     .locals 1
 
     .prologue
     .line 231
-    iget-object v0, p0, Lcom/google/common/collect/O;->yT:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/common/collect/O;->yX:Ljava/util/ArrayList;
 
     invoke-static {v0}, Lcom/google/common/collect/O;->i(Ljava/util/List;)Lcom/google/common/collect/ImmutableMap;
 

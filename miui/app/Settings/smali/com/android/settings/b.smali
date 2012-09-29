@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic l:Lcom/android/settings/DreamComponentPreference;
+.field final synthetic o:Lcom/android/settings/DreamComponentPreference;
 
-.field final synthetic m:Lcom/android/settings/aC;
+.field final synthetic p:Lcom/android/settings/aC;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 212
-    iput-object p1, p0, Lcom/android/settings/b;->l:Lcom/android/settings/DreamComponentPreference;
+    iput-object p1, p0, Lcom/android/settings/b;->o:Lcom/android/settings/DreamComponentPreference;
 
-    iput-object p2, p0, Lcom/android/settings/b;->m:Lcom/android/settings/aC;
+    iput-object p2, p0, Lcom/android/settings/b;->p:Lcom/android/settings/aC;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
 
     .prologue
     .line 215
-    iget-object v0, p0, Lcom/android/settings/b;->m:Lcom/android/settings/aC;
+    iget-object v0, p0, Lcom/android/settings/b;->p:Lcom/android/settings/aC;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/aC;->getItem(I)Ljava/lang/Object;
 
@@ -74,9 +74,9 @@
     invoke-direct {v3, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 221
-    iget-object v1, p0, Lcom/android/settings/b;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v1, p0, Lcom/android/settings/b;->o:Lcom/android/settings/DreamComponentPreference;
 
-    iget-object v2, p0, Lcom/android/settings/b;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v2, p0, Lcom/android/settings/b;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v2}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 

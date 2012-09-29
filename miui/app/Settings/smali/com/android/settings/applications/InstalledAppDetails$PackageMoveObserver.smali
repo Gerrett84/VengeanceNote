@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic vl:Lcom/android/settings/applications/InstalledAppDetails;
+.field final synthetic vp:Lcom/android/settings/applications/InstalledAppDetails;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 208
-    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iput-object p1, p0, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageMoveObserver$Stub;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 210
-    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iget-object v0, p0, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-static {v0}, Lcom/android/settings/applications/InstalledAppDetails;->c(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/os/Handler;
 
@@ -46,7 +46,7 @@
     iput p2, v0, Landroid/os/Message;->arg1:I
 
     .line 212
-    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;->vl:Lcom/android/settings/applications/InstalledAppDetails;
+    iget-object v1, p0, Lcom/android/settings/applications/InstalledAppDetails$PackageMoveObserver;->vp:Lcom/android/settings/applications/InstalledAppDetails;
 
     invoke-static {v1}, Lcom/android/settings/applications/InstalledAppDetails;->c(Lcom/android/settings/applications/InstalledAppDetails;)Landroid/os/Handler;
 

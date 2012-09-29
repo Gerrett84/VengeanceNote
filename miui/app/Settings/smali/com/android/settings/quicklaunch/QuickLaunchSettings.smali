@@ -8,25 +8,25 @@
 
 
 # static fields
-.field private static final K:[Ljava/lang/String;
+.field private static final N:[Ljava/lang/String;
 
 
 # instance fields
-.field private FA:Landroid/util/SparseBooleanArray;
+.field private FC:Landroid/database/Cursor;
 
-.field private FB:Landroid/preference/PreferenceGroup;
+.field private FD:Lcom/android/settings/quicklaunch/b;
 
-.field private FC:Landroid/util/SparseArray;
+.field private FE:Landroid/util/SparseBooleanArray;
 
-.field private FD:Ljava/lang/CharSequence;
+.field private FF:Landroid/preference/PreferenceGroup;
 
-.field private FE:C
+.field private FG:Landroid/util/SparseArray;
 
-.field private Fy:Landroid/database/Cursor;
+.field private FH:Ljava/lang/CharSequence;
 
-.field private Fz:Lcom/android/settings/quicklaunch/b;
+.field private FI:C
 
-.field private iY:Landroid/os/Handler;
+.field private jb:Landroid/os/Handler;
 
 
 # direct methods
@@ -57,7 +57,7 @@
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->K:[Ljava/lang/String;
+    sput-object v0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->N:[Ljava/lang/String;
 
     return-void
 .end method
@@ -74,7 +74,7 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->iY:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jb:Landroid/os/Handler;
 
     .line 360
     return-void
@@ -145,7 +145,7 @@
 
     .prologue
     .line 54
-    invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jg()V
+    invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jk()V
 
     return-void
 .end method
@@ -156,7 +156,7 @@
 
     .prologue
     .line 176
-    invoke-virtual {p1}, Lcom/android/settings/quicklaunch/a;->fl()Z
+    invoke-virtual {p1}, Lcom/android/settings/quicklaunch/a;->fp()Z
 
     move-result v0
 
@@ -172,14 +172,14 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FH:Ljava/lang/CharSequence;
 
     .line 179
     invoke-virtual {p1}, Lcom/android/settings/quicklaunch/a;->getShortcut()C
 
     move-result v0
 
-    iput-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iput-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     .line 180
     const/4 v0, 0x0
@@ -195,7 +195,7 @@
 
     .prologue
     .line 249
-    iget-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FC:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FG:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -259,12 +259,12 @@
     invoke-direct {v0, p0, p1}, Lcom/android/settings/quicklaunch/a;-><init>(Landroid/content/Context;C)V
 
     .line 260
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FB:Landroid/preference/PreferenceGroup;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FF:Landroid/preference/PreferenceGroup;
 
     invoke-virtual {v1, v0}, Landroid/preference/PreferenceGroup;->addPreference(Landroid/preference/Preference;)Z
 
     .line 261
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FC:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FG:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -272,7 +272,7 @@
     return-object v0
 .end method
 
-.method private jf()V
+.method private jj()V
     .locals 5
 
     .prologue
@@ -348,7 +348,7 @@
     return-void
 .end method
 
-.method private declared-synchronized jg()V
+.method private declared-synchronized jk()V
     .locals 9
 
     .prologue
@@ -356,7 +356,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v2, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->Fy:Landroid/database/Cursor;
+    iget-object v2, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FC:Landroid/database/Cursor;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -400,7 +400,7 @@
     .line 302
     :cond_1
     :try_start_2
-    iget-object v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FA:Landroid/util/SparseBooleanArray;
+    iget-object v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:Landroid/util/SparseBooleanArray;
 
     .line 303
     new-instance v4, Landroid/util/SparseBooleanArray;
@@ -565,7 +565,7 @@
     int-to-char v0, v0
 
     .line 347
-    iget-object v5, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FC:Landroid/util/SparseArray;
+    iget-object v5, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FG:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -591,7 +591,7 @@
 
     .line 355
     :cond_6
-    iput-object v4, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FA:Landroid/util/SparseBooleanArray;
+    iput-object v4, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:Landroid/util/SparseBooleanArray;
 
     .line 357
     invoke-interface {v2}, Landroid/database/Cursor;->deactivate()V
@@ -672,7 +672,7 @@
 
     .prologue
     .line 184
-    iget-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iget-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     if-lez v0, :cond_0
 
@@ -681,7 +681,7 @@
     if-ne p2, v0, :cond_0
 
     .line 186
-    iget-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iget-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     invoke-direct {p0, v0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->a(C)V
 
@@ -689,12 +689,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FH:Ljava/lang/CharSequence;
 
     .line 189
     const/4 v0, 0x0
 
-    iput-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iput-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     .line 190
     return-void
@@ -724,37 +724,37 @@
 
     check-cast v0, Landroid/preference/PreferenceGroup;
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FB:Landroid/preference/PreferenceGroup;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FF:Landroid/preference/PreferenceGroup;
 
     .line 102
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FC:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FG:Landroid/util/SparseArray;
 
     .line 103
     new-instance v0, Lcom/android/settings/quicklaunch/b;
 
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->iY:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jb:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/quicklaunch/b;-><init>(Lcom/android/settings/quicklaunch/QuickLaunchSettings;Landroid/os/Handler;)V
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->Fz:Lcom/android/settings/quicklaunch/b;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Lcom/android/settings/quicklaunch/b;
 
     .line 104
-    invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jf()V
+    invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jj()V
 
     .line 105
     sget-object v0, Landroid/provider/Settings$Bookmarks;->CONTENT_URI:Landroid/net/Uri;
 
-    sget-object v1, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->K:[Ljava/lang/String;
+    sget-object v1, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->N:[Ljava/lang/String;
 
     invoke-virtual {p0, v0, v1, v2, v2}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->Fy:Landroid/database/Cursor;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FC:Landroid/database/Cursor;
 
     .line 106
     invoke-virtual {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->getListView()Landroid/widget/ListView;
@@ -813,7 +813,7 @@
 
     const/4 v3, 0x0
 
-    iget-char v4, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iget-char v4, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     invoke-static {v4}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
@@ -823,7 +823,7 @@
 
     const/4 v3, 0x1
 
-    iget-object v4, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Ljava/lang/CharSequence;
+    iget-object v4, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FH:Ljava/lang/CharSequence;
 
     aput-object v4, v2, v3
 
@@ -918,7 +918,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->Fz:Lcom/android/settings/quicklaunch/b;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Lcom/android/settings/quicklaunch/b;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
@@ -1004,7 +1004,7 @@
 
     const/4 v2, 0x0
 
-    iget-char v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iget-char v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     invoke-static {v3}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
@@ -1014,7 +1014,7 @@
 
     const/4 v2, 0x1
 
-    iget-object v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Ljava/lang/CharSequence;
+    iget-object v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FH:Ljava/lang/CharSequence;
 
     aput-object v3, v1, v2
 
@@ -1048,7 +1048,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FH:Ljava/lang/CharSequence;
 
     .line 129
     const-string v0, "CLEAR_DIALOG_SHORTCUT"
@@ -1061,7 +1061,7 @@
 
     int-to-char v0, v0
 
-    iput-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iput-char v0, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     .line 130
     return-void
@@ -1083,12 +1083,12 @@
 
     const/4 v2, 0x1
 
-    iget-object v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->Fz:Lcom/android/settings/quicklaunch/b;
+    iget-object v3, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Lcom/android/settings/quicklaunch/b;
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     .line 114
-    invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jg()V
+    invoke-direct {p0}, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->jk()V
 
     .line 115
     return-void
@@ -1105,14 +1105,14 @@
     .line 137
     const-string v0, "CLEAR_DIALOG_BOOKMARK_TITLE"
 
-    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FD:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FH:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
     .line 138
     const-string v0, "CLEAR_DIALOG_SHORTCUT"
 
-    iget-char v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FE:C
+    iget-char v1, p0, Lcom/android/settings/quicklaunch/QuickLaunchSettings;->FI:C
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 

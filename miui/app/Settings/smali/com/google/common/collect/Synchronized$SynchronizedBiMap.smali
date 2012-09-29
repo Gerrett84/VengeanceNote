@@ -12,23 +12,23 @@
 
 
 # instance fields
-.field private transient DZ:Ljava/util/Set;
+.field private transient Ed:Ljava/util/Set;
 
 
 # virtual methods
-.method bridge synthetic a()Ljava/lang/Object;
+.method bridge synthetic A()Ljava/util/Map;
     .locals 1
 
     .prologue
     .line 1106
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->iT()Lcom/google/common/collect/q;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->iX()Lcom/google/common/collect/q;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public dl()Ljava/util/Set;
+.method public dp()Ljava/util/Set;
     .locals 3
 
     .prologue
@@ -39,16 +39,16 @@
 
     .line 1123
     :try_start_0
-    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->DZ:Ljava/util/Set;
+    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->Ed:Ljava/util/Set;
 
     if-nez v0, :cond_0
 
     .line 1124
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->iT()Lcom/google/common/collect/q;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->iX()Lcom/google/common/collect/q;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/q;->dl()Ljava/util/Set;
+    invoke-interface {v0}, Lcom/google/common/collect/q;->dp()Ljava/util/Set;
 
     move-result-object v0
 
@@ -58,11 +58,11 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->DZ:Ljava/util/Set;
+    iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->Ed:Ljava/util/Set;
 
     .line 1126
     :cond_0
-    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->DZ:Ljava/util/Set;
+    iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->Ed:Ljava/util/Set;
 
     monitor-exit v1
 
@@ -79,12 +79,24 @@
     throw v0
 .end method
 
-.method iT()Lcom/google/common/collect/q;
+.method bridge synthetic e()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 1106
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->iX()Lcom/google/common/collect/q;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method iX()Lcom/google/common/collect/q;
     .locals 1
 
     .prologue
     .line 1118
-    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->w()Ljava/util/Map;
+    invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->A()Ljava/util/Map;
 
     move-result-object v0
 
@@ -98,19 +110,7 @@
 
     .prologue
     .line 1106
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->dl()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method bridge synthetic w()Ljava/util/Map;
-    .locals 1
-
-    .prologue
-    .line 1106
-    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->iT()Lcom/google/common/collect/q;
+    invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedBiMap;->dp()Ljava/util/Set;
 
     move-result-object v0
 

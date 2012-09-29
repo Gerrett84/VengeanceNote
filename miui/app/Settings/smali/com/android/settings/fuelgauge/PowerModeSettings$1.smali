@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+.field final synthetic KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 35
-    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
     invoke-static {v0}, Lcom/android/settings/fuelgauge/PowerModeSettings;->a(Lcom/android/settings/fuelgauge/PowerModeSettings;)[Ljava/lang/CharSequence;
 
@@ -48,7 +48,7 @@
     .line 38
     const-string v0, "persist.sys.aries.power_profile"
 
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
     invoke-static {v1}, Lcom/android/settings/fuelgauge/PowerModeSettings;->a(Lcom/android/settings/fuelgauge/PowerModeSettings;)[Ljava/lang/CharSequence;
 
@@ -67,7 +67,7 @@
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     .line 41
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KJ:Lcom/android/settings/fuelgauge/PowerModeSettings;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings$1;->KM:Lcom/android/settings/fuelgauge/PowerModeSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/fuelgauge/PowerModeSettings;->finish()V
 

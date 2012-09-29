@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private Pa:Ljava/lang/String;
+.field private Pd:Ljava/lang/String;
 
-.field private mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+.field private mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     return-object v0
 .end method
@@ -42,14 +42,14 @@
 
     .prologue
     .line 46
-    iput-object p1, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iput-object p1, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     return-object p1
 .end method
 
 
 # virtual methods
-.method protected A()I
+.method protected E()I
     .locals 1
 
     .prologue
@@ -251,7 +251,7 @@
     return v0
 .end method
 
-.method public final lZ()V
+.method public final md()V
     .locals 1
 
     .prologue
@@ -275,7 +275,7 @@
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
     .line 70
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pa:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pd:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -302,7 +302,7 @@
     invoke-super {p0, p1}, Landroid/preference/PreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
     .line 61
-    invoke-virtual {p0}, Lcom/android/settings/SettingsPreferenceFragment;->A()I
+    invoke-virtual {p0}, Lcom/android/settings/SettingsPreferenceFragment;->E()I
 
     move-result v0
 
@@ -318,7 +318,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pa:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pd:Ljava/lang/String;
 
     .line 65
     :cond_0
@@ -345,7 +345,7 @@
     const/4 v3, 0x0
 
     .line 85
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pa:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pd:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
@@ -354,7 +354,7 @@
 
     const-string v1, "android.intent.action.VIEW"
 
-    iget-object v2, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pa:Ljava/lang/String;
+    iget-object v2, p0, Lcom/android/settings/SettingsPreferenceFragment;->Pd:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -421,19 +421,19 @@
     if-eqz v0, :cond_0
 
     .line 150
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     if-eqz v0, :cond_0
 
     .line 151
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;->dismiss()V
 
     .line 152
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     .line 155
     :cond_0
@@ -461,7 +461,7 @@
 
     if-nez v1, :cond_0
 
-    invoke-static {v0}, Lcom/android/settings/bP;->O(Ljava/lang/String;)I
+    invoke-static {v0}, Lcom/android/settings/bP;->P(Ljava/lang/String;)I
 
     move-result v1
 
@@ -485,20 +485,20 @@
 
     .prologue
     .line 176
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;->fm()I
+    invoke-virtual {v0}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;->fq()I
 
     move-result v0
 
     if-ne v0, p1, :cond_0
 
     .line 177
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;->dismiss()V
 
@@ -506,7 +506,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     .line 180
     return-void
@@ -518,7 +518,7 @@
 
     .prologue
     .line 161
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     if-eqz v0, :cond_0
 
@@ -535,10 +535,10 @@
 
     invoke-direct {v0, p0, p1}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;-><init>(Lcom/android/settings/v;I)V
 
-    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iput-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     .line 165
-    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/SettingsPreferenceFragment;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     invoke-virtual {p0}, Lcom/android/settings/SettingsPreferenceFragment;->getActivity()Landroid/app/Activity;
 

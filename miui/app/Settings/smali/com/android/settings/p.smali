@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aO:Lcom/android/settings/MediaFormat;
+.field final synthetic aR:Lcom/android/settings/MediaFormat;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 115
-    iput-object p1, p0, Lcom/android/settings/p;->aO:Lcom/android/settings/MediaFormat;
+    iput-object p1, p0, Lcom/android/settings/p;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 117
-    iget-object v0, p0, Lcom/android/settings/p;->aO:Lcom/android/settings/MediaFormat;
+    iget-object v0, p0, Lcom/android/settings/p;->aR:Lcom/android/settings/MediaFormat;
 
     const/16 v1, 0x37
 
@@ -43,7 +43,7 @@
     if-nez v0, :cond_0
 
     .line 118
-    iget-object v0, p0, Lcom/android/settings/p;->aO:Lcom/android/settings/MediaFormat;
+    iget-object v0, p0, Lcom/android/settings/p;->aR:Lcom/android/settings/MediaFormat;
 
     invoke-static {v0}, Lcom/android/settings/MediaFormat;->c(Lcom/android/settings/MediaFormat;)V
 

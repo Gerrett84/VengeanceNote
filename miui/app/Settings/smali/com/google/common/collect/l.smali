@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic kH:Ljava/util/Iterator;
+.field final synthetic kK:Ljava/util/Iterator;
 
-.field final synthetic kI:Lcom/google/common/base/l;
+.field final synthetic kL:Lcom/google/common/base/l;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 804
-    iput-object p1, p0, Lcom/google/common/collect/l;->kH:Ljava/util/Iterator;
+    iput-object p1, p0, Lcom/google/common/collect/l;->kK:Ljava/util/Iterator;
 
-    iput-object p2, p0, Lcom/google/common/collect/l;->kI:Lcom/google/common/base/l;
+    iput-object p2, p0, Lcom/google/common/collect/l;->kL:Lcom/google/common/base/l;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,7 +36,7 @@
 
     .prologue
     .line 807
-    iget-object v0, p0, Lcom/google/common/collect/l;->kH:Ljava/util/Iterator;
+    iget-object v0, p0, Lcom/google/common/collect/l;->kK:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -50,14 +50,14 @@
 
     .prologue
     .line 811
-    iget-object v0, p0, Lcom/google/common/collect/l;->kH:Ljava/util/Iterator;
+    iget-object v0, p0, Lcom/google/common/collect/l;->kK:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     .line 812
-    iget-object v1, p0, Lcom/google/common/collect/l;->kI:Lcom/google/common/base/l;
+    iget-object v1, p0, Lcom/google/common/collect/l;->kL:Lcom/google/common/base/l;
 
     invoke-interface {v1, v0}, Lcom/google/common/base/l;->l(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -71,7 +71,7 @@
 
     .prologue
     .line 816
-    iget-object v0, p0, Lcom/google/common/collect/l;->kH:Ljava/util/Iterator;
+    iget-object v0, p0, Lcom/google/common/collect/l;->kK:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 

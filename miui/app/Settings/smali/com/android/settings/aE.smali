@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic nl:J
+.field final synthetic no:J
 
-.field final synthetic nm:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
+.field final synthetic np:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 1674
-    iput-object p1, p0, Lcom/android/settings/aE;->nm:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
+    iput-object p1, p0, Lcom/android/settings/aE;->np:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
 
-    iput-wide p2, p0, Lcom/android/settings/aE;->nl:J
+    iput-wide p2, p0, Lcom/android/settings/aE;->no:J
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
 
     .prologue
     .line 1677
-    iget-object v0, p0, Lcom/android/settings/aE;->nm:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
+    iget-object v0, p0, Lcom/android/settings/aE;->np:Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;->getTargetFragment()Landroid/app/Fragment;
 
@@ -50,7 +50,7 @@
     if-eqz v0, :cond_0
 
     .line 1679
-    iget-wide v1, p0, Lcom/android/settings/aE;->nl:J
+    iget-wide v1, p0, Lcom/android/settings/aE;->no:J
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/DataUsageSummary;->a(Lcom/android/settings/DataUsageSummary;J)V
 

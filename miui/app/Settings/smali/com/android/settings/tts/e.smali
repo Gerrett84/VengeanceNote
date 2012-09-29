@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic vj:Lcom/android/settings/tts/TextToSpeechSettings;
+.field final synthetic vn:Lcom/android/settings/tts/TextToSpeechSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 106
-    iput-object p1, p0, Lcom/android/settings/tts/e;->vj:Lcom/android/settings/tts/TextToSpeechSettings;
+    iput-object p1, p0, Lcom/android/settings/tts/e;->vn:Lcom/android/settings/tts/TextToSpeechSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 109
-    iget-object v0, p0, Lcom/android/settings/tts/e;->vj:Lcom/android/settings/tts/TextToSpeechSettings;
+    iget-object v0, p0, Lcom/android/settings/tts/e;->vn:Lcom/android/settings/tts/TextToSpeechSettings;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/tts/TextToSpeechSettings;->aU(I)V
 

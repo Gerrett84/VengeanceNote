@@ -1,18 +1,21 @@
 .class public Lmiui/app/screenelement/util/ZipResourceLoader;
-.super Ljava/lang/Object;
+.super Lmiui/app/screenelement/ResourceLoader;
 .source "ZipResourceLoader.java"
-
-# interfaces
-.implements Lmiui/app/screenelement/ResourceManager$ResourceLoader;
 
 
 # static fields
+.field private static final IMAGES_FOLDER_NAME:Ljava/lang/String; = "images"
+
 .field private static final MANIFEST_FILE_NAME:Ljava/lang/String; = "manifest.xml"
 
 .field private static final TAG:Ljava/lang/String; = "MAML_ZipResourceLoader"
 
 
 # instance fields
+.field private mImagesLanguageCountryFolderExists:Ljava/lang/Boolean;
+
+.field private mImagesLanguageFolderExists:Ljava/lang/Boolean;
+
 .field private mInnerPath:Ljava/lang/String;
 
 .field private mManifestName:Ljava/lang/String;
@@ -26,14 +29,14 @@
     .parameter "zipPath"
 
     .prologue
-    .line 42
+    .line 43
     const/4 v0, 0x0
 
     const-string v1, "manifest.xml"
 
     invoke-direct {p0, p1, v0, v1}, Lmiui/app/screenelement/util/ZipResourceLoader;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 43
+    .line 44
     return-void
 .end method
 
@@ -43,12 +46,12 @@
     .parameter "innerPath"
 
     .prologue
-    .line 46
+    .line 47
     const-string v0, "manifest.xml"
 
     invoke-direct {p0, p1, p2, v0}, Lmiui/app/screenelement/util/ZipResourceLoader;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -59,17 +62,17 @@
     .parameter "manifestName"
 
     .prologue
-    .line 55
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 56
+    invoke-direct {p0}, Lmiui/app/screenelement/ResourceLoader;-><init>()V
+
+    .line 57
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 57
+    .line 58
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "empty zip path"
@@ -78,11 +81,11 @@
 
     throw v0
 
-    .line 59
+    .line 60
     :cond_0
     iput-object p1, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mResourcePath:Ljava/lang/String;
 
-    .line 60
+    .line 61
     if-nez p2, :cond_1
 
     const-string p2, ""
@@ -91,10 +94,10 @@
     :cond_1
     iput-object p2, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mInnerPath:Ljava/lang/String;
 
-    .line 61
+    .line 62
     iput-object p3, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mManifestName:Ljava/lang/String;
 
-    .line 62
+    .line 63
     return-void
 .end method
 
@@ -108,14 +111,14 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 66
+    .line 67
     const/4 v5, 0x0
 
-    .line 67
+    .line 68
     .local v5, zip:Ljava/util/zip/ZipFile;
     const/4 v3, 0x0
 
-    .line 69
+    .line 70
     .local v3, is:Ljava/io/InputStream;
     :try_start_0
     new-instance v6, Ljava/util/zip/ZipFile;
@@ -128,10 +131,133 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 70
+    .line 71
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .local v6, zip:Ljava/util/zip/ZipFile;
+    const/4 v2, 0x0
+
+    .line 72
+    .local v2, entry:Ljava/util/zip/ZipEntry;
     :try_start_1
+    iget-object v8, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageCountrySuffix:Ljava/lang/String;
+
+    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
+    .line 74
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v9, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mInnerPath:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "images"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "_"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    iget-object v9, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageCountrySuffix:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "/"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+
+    move-result-object v2
+
+    .line 76
+    :cond_0
+    if-nez v2, :cond_1
+
+    iget-object v8, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageSuffix:Ljava/lang/String;
+
+    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_1
+
+    .line 78
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v9, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mInnerPath:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "images"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "_"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    iget-object v9, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageSuffix:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "/"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+
+    move-result-object v2
+
+    .line 81
+    :cond_1
+    if-nez v2, :cond_2
+
+    .line 82
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -154,21 +280,21 @@
 
     move-result-object v2
 
-    .line 71
-    .local v2, entry:Ljava/util/zip/ZipEntry;
-    if-eqz v2, :cond_6
+    .line 84
+    :cond_2
+    if-eqz v2, :cond_9
 
-    .line 72
+    .line 85
     invoke-virtual {v6, v2}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
     move-result-object v3
 
-    .line 73
+    .line 86
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
-    .line 74
+    .line 87
     .local v4, padding:Landroid/graphics/Rect;
     invoke-static {v3, v4, p2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     :try_end_1
@@ -178,51 +304,51 @@
 
     move-result-object v0
 
-    .line 75
-    .local v0, bm:Landroid/graphics/Bitmap;
-    if-nez v0, :cond_3
-
-    .line 84
-    if-eqz v3, :cond_0
-
     .line 88
+    .local v0, bm:Landroid/graphics/Bitmap;
+    if-nez v0, :cond_6
+
+    .line 97
+    if-eqz v3, :cond_3
+
+    .line 101
     :try_start_2
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
 
-    .line 94
-    :cond_0
+    .line 107
+    :cond_3
     :goto_0
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_4
 
-    .line 96
+    .line 109
     :try_start_3
     invoke-virtual {v6}, Ljava/util/zip/ZipFile;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_6
 
-    :cond_1
+    :cond_4
     :goto_1
     move-object v5, v6
 
-    .line 102
+    .line 115
     .end local v0           #bm:Landroid/graphics/Bitmap;
     .end local v2           #entry:Ljava/util/zip/ZipEntry;
     .end local v4           #padding:Landroid/graphics/Rect;
     .end local v6           #zip:Ljava/util/zip/ZipFile;
     .restart local v5       #zip:Ljava/util/zip/ZipFile;
-    :cond_2
+    :cond_5
     :goto_2
     return-object v7
 
-    .line 77
+    .line 90
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .restart local v0       #bm:Landroid/graphics/Bitmap;
     .restart local v2       #entry:Ljava/util/zip/ZipEntry;
     .restart local v4       #padding:Landroid/graphics/Rect;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
-    :cond_3
+    :cond_6
     :try_start_4
     new-instance v8, Lmiui/app/screenelement/ResourceManager$BitmapInfo;
 
@@ -232,27 +358,27 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_f
     .catch Ljava/lang/OutOfMemoryError; {:try_start_4 .. :try_end_4} :catch_e
 
-    .line 84
-    if-eqz v3, :cond_4
+    .line 97
+    if-eqz v3, :cond_7
 
-    .line 88
+    .line 101
     :try_start_5
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_7
 
-    .line 94
-    :cond_4
+    .line 107
+    :cond_7
     :goto_3
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_8
 
-    .line 96
+    .line 109
     :try_start_6
     invoke-virtual {v6}, Ljava/util/zip/ZipFile;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_8
 
-    :cond_5
+    :cond_8
     :goto_4
     move-object v5, v6
 
@@ -260,29 +386,29 @@
     .restart local v5       #zip:Ljava/util/zip/ZipFile;
     move-object v7, v8
 
-    .line 98
+    .line 111
     goto :goto_2
 
-    .line 84
+    .line 97
     .end local v0           #bm:Landroid/graphics/Bitmap;
     .end local v4           #padding:Landroid/graphics/Rect;
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
-    :cond_6
-    if-eqz v3, :cond_7
+    :cond_9
+    if-eqz v3, :cond_a
 
-    .line 88
+    .line 101
     :try_start_7
     throw v3
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_9
 
-    .line 94
-    :cond_7
+    .line 107
+    :cond_a
     :goto_5
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_f
 
-    .line 96
+    .line 109
     :try_start_8
     invoke-virtual {v6}, Ljava/util/zip/ZipFile;->close()V
     :try_end_8
@@ -290,12 +416,12 @@
 
     move-object v5, v6
 
-    .line 98
+    .line 111
     .end local v6           #zip:Ljava/util/zip/ZipFile;
     .restart local v5       #zip:Ljava/util/zip/ZipFile;
     goto :goto_2
 
-    .line 97
+    .line 110
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
     :catch_0
@@ -303,17 +429,17 @@
 
     move-object v5, v6
 
-    .line 98
+    .line 111
     .end local v6           #zip:Ljava/util/zip/ZipFile;
     .restart local v5       #zip:Ljava/util/zip/ZipFile;
     goto :goto_2
 
-    .line 79
+    .line 92
     .end local v2           #entry:Ljava/util/zip/ZipEntry;
     :catch_1
     move-exception v1
 
-    .line 80
+    .line 93
     .local v1, e:Ljava/io/IOException;
     :goto_6
     :try_start_9
@@ -327,21 +453,21 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 84
-    if-eqz v3, :cond_8
+    .line 97
+    if-eqz v3, :cond_b
 
-    .line 88
+    .line 101
     :try_start_a
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_a
 
-    .line 94
-    :cond_8
+    .line 107
+    :cond_b
     :goto_7
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_5
 
-    .line 96
+    .line 109
     :try_start_b
     invoke-virtual {v5}, Ljava/util/zip/ZipFile;->close()V
     :try_end_b
@@ -349,18 +475,18 @@
 
     goto :goto_2
 
-    .line 97
+    .line 110
     :catch_2
     move-exception v8
 
     goto :goto_2
 
-    .line 81
+    .line 94
     .end local v1           #e:Ljava/io/IOException;
     :catch_3
     move-exception v1
 
-    .line 82
+    .line 95
     .local v1, e:Ljava/lang/OutOfMemoryError;
     :goto_8
     :try_start_c
@@ -374,21 +500,21 @@
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_0
 
-    .line 84
-    if-eqz v3, :cond_9
+    .line 97
+    if-eqz v3, :cond_c
 
-    .line 88
+    .line 101
     :try_start_d
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_b
 
-    .line 94
-    :cond_9
+    .line 107
+    :cond_c
     :goto_9
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_5
 
-    .line 96
+    .line 109
     :try_start_e
     invoke-virtual {v5}, Ljava/util/zip/ZipFile;->close()V
     :try_end_e
@@ -396,43 +522,43 @@
 
     goto :goto_2
 
-    .line 97
+    .line 110
     :catch_4
     move-exception v8
 
     goto :goto_2
 
-    .line 84
+    .line 97
     .end local v1           #e:Ljava/lang/OutOfMemoryError;
     :catchall_0
     move-exception v7
 
     :goto_a
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_d
 
-    .line 88
+    .line 101
     :try_start_f
     invoke-virtual {v3}, Ljava/io/InputStream;->close()V
     :try_end_f
     .catch Ljava/io/IOException; {:try_start_f .. :try_end_f} :catch_c
 
-    .line 94
-    :cond_a
+    .line 107
+    :cond_d
     :goto_b
-    if-eqz v5, :cond_b
+    if-eqz v5, :cond_e
 
-    .line 96
+    .line 109
     :try_start_10
     invoke-virtual {v5}, Ljava/util/zip/ZipFile;->close()V
     :try_end_10
     .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_d
 
-    .line 98
-    :cond_b
+    .line 111
+    :cond_e
     :goto_c
     throw v7
 
-    .line 89
+    .line 102
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .restart local v0       #bm:Landroid/graphics/Bitmap;
     .restart local v2       #entry:Ljava/util/zip/ZipEntry;
@@ -443,25 +569,25 @@
 
     goto :goto_0
 
-    .line 97
+    .line 110
     :catch_6
     move-exception v8
 
     goto :goto_1
 
-    .line 89
+    .line 102
     :catch_7
     move-exception v7
 
     goto :goto_3
 
-    .line 97
+    .line 110
     :catch_8
     move-exception v7
 
     goto :goto_4
 
-    .line 89
+    .line 102
     .end local v0           #bm:Landroid/graphics/Bitmap;
     .end local v4           #padding:Landroid/graphics/Rect;
     :catch_9
@@ -490,14 +616,15 @@
 
     goto :goto_b
 
-    .line 97
+    .line 110
     :catch_d
     move-exception v8
 
     goto :goto_c
 
-    .line 84
+    .line 97
     .end local v5           #zip:Ljava/util/zip/ZipFile;
+    .restart local v2       #entry:Ljava/util/zip/ZipEntry;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
     :catchall_1
     move-exception v7
@@ -508,7 +635,7 @@
     .restart local v5       #zip:Ljava/util/zip/ZipFile;
     goto :goto_a
 
-    .line 81
+    .line 94
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
     :catch_e
@@ -520,7 +647,7 @@
     .restart local v5       #zip:Ljava/util/zip/ZipFile;
     goto :goto_8
 
-    .line 79
+    .line 92
     .end local v5           #zip:Ljava/util/zip/ZipFile;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
     :catch_f
@@ -533,9 +660,8 @@
     goto :goto_6
 
     .end local v5           #zip:Ljava/util/zip/ZipFile;
-    .restart local v2       #entry:Ljava/util/zip/ZipEntry;
     .restart local v6       #zip:Ljava/util/zip/ZipFile;
-    :cond_c
+    :cond_f
     move-object v5, v6
 
     .end local v6           #zip:Ljava/util/zip/ZipFile;
@@ -550,14 +676,14 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 107
+    .line 120
     const/4 v9, 0x0
 
-    .line 108
+    .line 121
     .local v9, zip:Ljava/util/zip/ZipFile;
     const/4 v4, 0x0
 
-    .line 110
+    .line 123
     .local v4, is:Ljava/io/InputStream;
     :try_start_0
     new-instance v10, Ljava/util/zip/ZipFile;
@@ -570,7 +696,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 111
+    .line 124
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .local v10, zip:Ljava/util/zip/ZipFile;
     :try_start_1
@@ -596,18 +722,18 @@
 
     move-result-object v3
 
-    .line 112
+    .line 125
     .local v3, entry:Ljava/util/zip/ZipEntry;
     if-eqz v3, :cond_6
 
-    .line 113
+    .line 126
     invoke-virtual {v3}, Ljava/util/zip/ZipEntry;->getSize()J
 
     move-result-wide v12
 
     long-to-int v7, v12
 
-    .line 114
+    .line 127
     .local v7, size:I
     invoke-virtual {v10, v3}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
     :try_end_1
@@ -617,24 +743,24 @@
 
     move-result-object v4
 
-    .line 115
+    .line 128
     if-nez v4, :cond_2
 
-    .line 135
+    .line 148
     if-eqz v4, :cond_0
 
-    .line 139
+    .line 152
     :try_start_2
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
 
-    .line 145
+    .line 158
     :cond_0
     :goto_0
     if-eqz v10, :cond_1
 
-    .line 147
+    .line 160
     :try_start_3
     invoke-virtual {v10}, Ljava/util/zip/ZipFile;->close()V
     :try_end_3
@@ -648,13 +774,13 @@
     .restart local v9       #zip:Ljava/util/zip/ZipFile;
     move-object v5, v11
 
-    .line 153
+    .line 166
     .end local v3           #entry:Ljava/util/zip/ZipEntry;
     .end local v7           #size:I
     :goto_2
     return-object v5
 
-    .line 118
+    .line 131
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .restart local v3       #entry:Ljava/util/zip/ZipEntry;
     .restart local v7       #size:I
@@ -662,14 +788,14 @@
     :cond_2
     const/high16 v0, 0x1
 
-    .line 119
+    .line 132
     .local v0, COUNT:I
     const/high16 v12, 0x1
 
     :try_start_4
     new-array v1, v12, [B
 
-    .line 120
+    .line 133
     .local v1, buff:[B
     new-instance v5, Landroid/os/MemoryFile;
 
@@ -677,15 +803,15 @@
 
     invoke-direct {v5, v12, v7}, Landroid/os/MemoryFile;-><init>(Ljava/lang/String;I)V
 
-    .line 121
+    .line 134
     .local v5, mf:Landroid/os/MemoryFile;
     const/4 v6, -0x1
 
-    .line 122
+    .line 135
     .local v6, read:I
     const/4 v8, 0x0
 
-    .line 123
+    .line 136
     .local v8, start:I
     :goto_3
     const/4 v12, 0x0
@@ -698,17 +824,17 @@
 
     if-lez v6, :cond_3
 
-    .line 124
+    .line 137
     const/4 v12, 0x0
 
     invoke-virtual {v5, v1, v12, v8, v6}, Landroid/os/MemoryFile;->writeBytes([BIII)V
 
-    .line 125
+    .line 138
     add-int/2addr v8, v6
 
     goto :goto_3
 
-    .line 127
+    .line 140
     :cond_3
     invoke-virtual {v5}, Landroid/os/MemoryFile;->length()I
     :try_end_4
@@ -720,21 +846,21 @@
 
     if-lez v12, :cond_6
 
-    .line 135
+    .line 148
     if-eqz v4, :cond_4
 
-    .line 139
+    .line 152
     :try_start_5
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_7
 
-    .line 145
+    .line 158
     :cond_4
     :goto_4
     if-eqz v10, :cond_5
 
-    .line 147
+    .line 160
     :try_start_6
     invoke-virtual {v10}, Ljava/util/zip/ZipFile;->close()V
     :try_end_6
@@ -744,12 +870,12 @@
     :goto_5
     move-object v9, v10
 
-    .line 149
+    .line 162
     .end local v10           #zip:Ljava/util/zip/ZipFile;
     .restart local v9       #zip:Ljava/util/zip/ZipFile;
     goto :goto_2
 
-    .line 135
+    .line 148
     .end local v0           #COUNT:I
     .end local v1           #buff:[B
     .end local v5           #mf:Landroid/os/MemoryFile;
@@ -761,18 +887,18 @@
     :cond_6
     if-eqz v4, :cond_7
 
-    .line 139
+    .line 152
     :try_start_7
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_9
 
-    .line 145
+    .line 158
     :cond_7
     :goto_6
     if-eqz v10, :cond_d
 
-    .line 147
+    .line 160
     :try_start_8
     invoke-virtual {v10}, Ljava/util/zip/ZipFile;->close()V
     :try_end_8
@@ -787,10 +913,10 @@
     :goto_7
     move-object v5, v11
 
-    .line 153
+    .line 166
     goto :goto_2
 
-    .line 148
+    .line 161
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .restart local v3       #entry:Ljava/util/zip/ZipEntry;
     .restart local v10       #zip:Ljava/util/zip/ZipFile;
@@ -799,17 +925,17 @@
 
     move-object v9, v10
 
-    .line 149
+    .line 162
     .end local v10           #zip:Ljava/util/zip/ZipFile;
     .restart local v9       #zip:Ljava/util/zip/ZipFile;
     goto :goto_7
 
-    .line 130
+    .line 143
     .end local v3           #entry:Ljava/util/zip/ZipEntry;
     :catch_1
     move-exception v2
 
-    .line 131
+    .line 144
     .local v2, e:Ljava/io/IOException;
     :goto_8
     :try_start_9
@@ -823,21 +949,21 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 135
+    .line 148
     if-eqz v4, :cond_9
 
-    .line 139
+    .line 152
     :try_start_a
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_a
 
-    .line 145
+    .line 158
     :cond_9
     :goto_9
     if-eqz v9, :cond_8
 
-    .line 147
+    .line 160
     :try_start_b
     invoke-virtual {v9}, Ljava/util/zip/ZipFile;->close()V
     :try_end_b
@@ -845,18 +971,18 @@
 
     goto :goto_7
 
-    .line 148
+    .line 161
     :catch_2
     move-exception v12
 
     goto :goto_7
 
-    .line 132
+    .line 145
     .end local v2           #e:Ljava/io/IOException;
     :catch_3
     move-exception v2
 
-    .line 133
+    .line 146
     .local v2, e:Ljava/lang/OutOfMemoryError;
     :goto_a
     :try_start_c
@@ -870,21 +996,21 @@
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_0
 
-    .line 135
+    .line 148
     if-eqz v4, :cond_a
 
-    .line 139
+    .line 152
     :try_start_d
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_b
 
-    .line 145
+    .line 158
     :cond_a
     :goto_b
     if-eqz v9, :cond_8
 
-    .line 147
+    .line 160
     :try_start_e
     invoke-virtual {v9}, Ljava/util/zip/ZipFile;->close()V
     :try_end_e
@@ -892,13 +1018,13 @@
 
     goto :goto_7
 
-    .line 148
+    .line 161
     :catch_4
     move-exception v12
 
     goto :goto_7
 
-    .line 135
+    .line 148
     .end local v2           #e:Ljava/lang/OutOfMemoryError;
     :catchall_0
     move-exception v11
@@ -906,29 +1032,29 @@
     :goto_c
     if-eqz v4, :cond_b
 
-    .line 139
+    .line 152
     :try_start_f
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_f
     .catch Ljava/io/IOException; {:try_start_f .. :try_end_f} :catch_c
 
-    .line 145
+    .line 158
     :cond_b
     :goto_d
     if-eqz v9, :cond_c
 
-    .line 147
+    .line 160
     :try_start_10
     invoke-virtual {v9}, Ljava/util/zip/ZipFile;->close()V
     :try_end_10
     .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_d
 
-    .line 149
+    .line 162
     :cond_c
     :goto_e
     throw v11
 
-    .line 140
+    .line 153
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .restart local v3       #entry:Ljava/util/zip/ZipEntry;
     .restart local v7       #size:I
@@ -938,13 +1064,13 @@
 
     goto/16 :goto_0
 
-    .line 148
+    .line 161
     :catch_6
     move-exception v12
 
     goto :goto_1
 
-    .line 140
+    .line 153
     .restart local v0       #COUNT:I
     .restart local v1       #buff:[B
     .restart local v5       #mf:Landroid/os/MemoryFile;
@@ -955,13 +1081,13 @@
 
     goto :goto_4
 
-    .line 148
+    .line 161
     :catch_8
     move-exception v11
 
     goto :goto_5
 
-    .line 140
+    .line 153
     .end local v0           #COUNT:I
     .end local v1           #buff:[B
     .end local v5           #mf:Landroid/os/MemoryFile;
@@ -994,13 +1120,13 @@
 
     goto :goto_d
 
-    .line 148
+    .line 161
     :catch_d
     move-exception v12
 
     goto :goto_e
 
-    .line 135
+    .line 148
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .restart local v10       #zip:Ljava/util/zip/ZipFile;
     :catchall_1
@@ -1012,7 +1138,7 @@
     .restart local v9       #zip:Ljava/util/zip/ZipFile;
     goto :goto_c
 
-    .line 132
+    .line 145
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .restart local v10       #zip:Ljava/util/zip/ZipFile;
     :catch_e
@@ -1024,7 +1150,7 @@
     .restart local v9       #zip:Ljava/util/zip/ZipFile;
     goto :goto_a
 
-    .line 130
+    .line 143
     .end local v9           #zip:Ljava/util/zip/ZipFile;
     .restart local v10       #zip:Ljava/util/zip/ZipFile;
     :catch_f
@@ -1048,34 +1174,19 @@
 .end method
 
 .method public getManifestRoot()Lorg/w3c/dom/Element;
-    .locals 1
-
-    .prologue
-    .line 214
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lmiui/app/screenelement/util/ZipResourceLoader;->getManifestRoot(Ljava/lang/String;)Lorg/w3c/dom/Element;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getManifestRoot(Ljava/lang/String;)Lorg/w3c/dom/Element;
     .locals 12
-    .parameter "language"
 
     .prologue
     const/4 v9, 0x0
 
-    .line 158
+    .line 171
     const/4 v7, 0x0
 
-    .line 159
+    .line 172
     .local v7, zip:Ljava/util/zip/ZipFile;
     const/4 v5, 0x0
 
-    .line 161
+    .line 174
     .local v5, is:Ljava/io/InputStream;
     :try_start_0
     new-instance v8, Ljava/util/zip/ZipFile;
@@ -1091,28 +1202,33 @@
     .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_7
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_9
 
-    .line 162
+    .line 175
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .local v8, zip:Ljava/util/zip/ZipFile;
-    :try_start_1
-    iget-object v6, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mManifestName:Ljava/lang/String;
+    const/4 v4, 0x0
 
-    .line 163
-    .local v6, manifestName:Ljava/lang/String;
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 176
+    .local v4, entry:Ljava/util/zip/ZipEntry;
+    :try_start_1
+    iget-object v10, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageCountrySuffix:Ljava/lang/String;
+
+    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v10
 
     if-nez v10, :cond_0
 
-    .line 164
+    .line 177
     iget-object v10, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mManifestName:Ljava/lang/String;
 
-    invoke-static {v10, p1}, Lmiui/app/screenelement/util/Utils;->addFileNameSuffix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-object v11, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageCountrySuffix:Ljava/lang/String;
+
+    invoke-static {v10, v11}, Lmiui/app/screenelement/util/Utils;->addFileNameSuffix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 165
+    .line 178
+    .local v6, manifestName:Ljava/lang/String;
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -1133,15 +1249,60 @@
 
     invoke-virtual {v8, v10}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
 
+    move-result-object v4
+
+    .line 180
+    .end local v6           #manifestName:Ljava/lang/String;
+    :cond_0
+    if-nez v4, :cond_1
+
+    iget-object v10, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageSuffix:Ljava/lang/String;
+
+    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_1
+
+    .line 181
+    iget-object v10, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mManifestName:Ljava/lang/String;
+
+    iget-object v11, p0, Lmiui/app/screenelement/ResourceLoader;->mLanguageSuffix:Ljava/lang/String;
+
+    invoke-static {v10, v11}, Lmiui/app/screenelement/util/Utils;->addFileNameSuffix(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 182
+    .restart local v6       #manifestName:Ljava/lang/String;
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v11, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mInnerPath:Ljava/lang/String;
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v10
 
-    if-eqz v10, :cond_0
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 166
-    iget-object v6, p0, Lmiui/app/screenelement/util/ZipResourceLoader;->mManifestName:Ljava/lang/String;
+    move-result-object v10
 
-    .line 170
-    :cond_0
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v8, v10}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+
+    move-result-object v4
+
+    .line 185
+    .end local v6           #manifestName:Ljava/lang/String;
+    :cond_1
+    if-nez v4, :cond_2
+
+    .line 186
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -1166,11 +1327,11 @@
 
     move-result-object v4
 
-    .line 171
-    .local v4, entry:Ljava/util/zip/ZipEntry;
-    if-eqz v4, :cond_7
+    .line 188
+    :cond_2
+    if-eqz v4, :cond_9
 
-    .line 172
+    .line 189
     invoke-virtual {v8, v4}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
@@ -1182,66 +1343,64 @@
 
     move-result-object v5
 
-    .line 173
-    if-nez v5, :cond_4
+    .line 190
+    if-nez v5, :cond_6
 
-    .line 191
-    if-eqz v5, :cond_1
+    .line 208
+    if-eqz v5, :cond_3
 
-    .line 195
+    .line 212
     :try_start_2
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_b
 
-    .line 201
-    :cond_1
+    .line 218
+    :cond_3
     :goto_0
-    if-eqz v8, :cond_2
+    if-eqz v8, :cond_4
 
-    .line 203
+    .line 220
     :try_start_3
     invoke-virtual {v8}, Ljava/util/zip/ZipFile;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_c
 
-    :cond_2
+    :cond_4
     :goto_1
     move-object v7, v8
 
-    .line 209
+    .line 226
     .end local v4           #entry:Ljava/util/zip/ZipEntry;
-    .end local v6           #manifestName:Ljava/lang/String;
     .end local v8           #zip:Ljava/util/zip/ZipFile;
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
-    :cond_3
+    :cond_5
     :goto_2
     return-object v9
 
-    .line 175
+    .line 192
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v4       #entry:Ljava/util/zip/ZipEntry;
-    .restart local v6       #manifestName:Ljava/lang/String;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
-    :cond_4
+    :cond_6
     :try_start_4
     invoke-static {}, Ljavax/xml/parsers/DocumentBuilderFactory;->newInstance()Ljavax/xml/parsers/DocumentBuilderFactory;
 
     move-result-object v1
 
-    .line 176
+    .line 193
     .local v1, dbf:Ljavax/xml/parsers/DocumentBuilderFactory;
     invoke-virtual {v1}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
 
     move-result-object v0
 
-    .line 177
+    .line 194
     .local v0, db:Ljavax/xml/parsers/DocumentBuilder;
     invoke-virtual {v0, v5}, Ljavax/xml/parsers/DocumentBuilder;->parse(Ljava/io/InputStream;)Lorg/w3c/dom/Document;
 
     move-result-object v2
 
-    .line 178
+    .line 195
     .local v2, doc:Lorg/w3c/dom/Document;
     invoke-interface {v2}, Lorg/w3c/dom/Document;->getDocumentElement()Lorg/w3c/dom/Element;
     :try_end_4
@@ -1254,56 +1413,56 @@
 
     move-result-object v9
 
-    .line 191
-    if-eqz v5, :cond_5
+    .line 208
+    if-eqz v5, :cond_7
 
-    .line 195
+    .line 212
     :try_start_5
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_d
 
-    .line 201
-    :cond_5
+    .line 218
+    :cond_7
     :goto_3
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_8
 
-    .line 203
+    .line 220
     :try_start_6
     invoke-virtual {v8}, Ljava/util/zip/ZipFile;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_e
 
-    :cond_6
+    :cond_8
     :goto_4
     move-object v7, v8
 
-    .line 205
+    .line 222
     .end local v8           #zip:Ljava/util/zip/ZipFile;
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_2
 
-    .line 191
+    .line 208
     .end local v0           #db:Ljavax/xml/parsers/DocumentBuilder;
     .end local v1           #dbf:Ljavax/xml/parsers/DocumentBuilderFactory;
     .end local v2           #doc:Lorg/w3c/dom/Document;
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
-    :cond_7
-    if-eqz v5, :cond_8
+    :cond_9
+    if-eqz v5, :cond_a
 
-    .line 195
+    .line 212
     :try_start_7
     throw v5
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_f
 
-    .line 201
-    :cond_8
+    .line 218
+    :cond_a
     :goto_5
-    if-eqz v8, :cond_10
+    if-eqz v8, :cond_12
 
-    .line 203
+    .line 220
     :try_start_8
     invoke-virtual {v8}, Ljava/util/zip/ZipFile;->close()V
     :try_end_8
@@ -1311,12 +1470,12 @@
 
     move-object v7, v8
 
-    .line 205
+    .line 222
     .end local v8           #zip:Ljava/util/zip/ZipFile;
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_2
 
-    .line 204
+    .line 221
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_0
@@ -1324,18 +1483,17 @@
 
     move-object v7, v8
 
-    .line 205
+    .line 222
     .end local v8           #zip:Ljava/util/zip/ZipFile;
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_2
 
-    .line 180
+    .line 197
     .end local v4           #entry:Ljava/util/zip/ZipEntry;
-    .end local v6           #manifestName:Ljava/lang/String;
     :catch_1
     move-exception v3
 
-    .line 181
+    .line 198
     .local v3, e:Ljava/io/IOException;
     :goto_6
     :try_start_9
@@ -1349,21 +1507,21 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 191
-    if-eqz v5, :cond_9
+    .line 208
+    if-eqz v5, :cond_b
 
-    .line 195
+    .line 212
     :try_start_a
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_10
 
-    .line 201
-    :cond_9
+    .line 218
+    :cond_b
     :goto_7
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
-    .line 203
+    .line 220
     :try_start_b
     invoke-virtual {v7}, Ljava/util/zip/ZipFile;->close()V
     :try_end_b
@@ -1371,18 +1529,18 @@
 
     goto :goto_2
 
-    .line 204
+    .line 221
     :catch_2
     move-exception v10
 
     goto :goto_2
 
-    .line 182
+    .line 199
     .end local v3           #e:Ljava/io/IOException;
     :catch_3
     move-exception v3
 
-    .line 183
+    .line 200
     .local v3, e:Ljava/lang/OutOfMemoryError;
     :goto_8
     :try_start_c
@@ -1396,21 +1554,21 @@
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_0
 
-    .line 191
-    if-eqz v5, :cond_a
+    .line 208
+    if-eqz v5, :cond_c
 
-    .line 195
+    .line 212
     :try_start_d
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_11
 
-    .line 201
-    :cond_a
+    .line 218
+    :cond_c
     :goto_9
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
-    .line 203
+    .line 220
     :try_start_e
     invoke-virtual {v7}, Ljava/util/zip/ZipFile;->close()V
     :try_end_e
@@ -1418,18 +1576,18 @@
 
     goto :goto_2
 
-    .line 204
+    .line 221
     :catch_4
     move-exception v10
 
     goto :goto_2
 
-    .line 184
+    .line 201
     .end local v3           #e:Ljava/lang/OutOfMemoryError;
     :catch_5
     move-exception v3
 
-    .line 185
+    .line 202
     .local v3, e:Ljavax/xml/parsers/ParserConfigurationException;
     :goto_a
     :try_start_f
@@ -1443,21 +1601,21 @@
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_0
 
-    .line 191
-    if-eqz v5, :cond_b
+    .line 208
+    if-eqz v5, :cond_d
 
-    .line 195
+    .line 212
     :try_start_10
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_10
     .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_12
 
-    .line 201
-    :cond_b
+    .line 218
+    :cond_d
     :goto_b
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
-    .line 203
+    .line 220
     :try_start_11
     invoke-virtual {v7}, Ljava/util/zip/ZipFile;->close()V
     :try_end_11
@@ -1465,18 +1623,18 @@
 
     goto :goto_2
 
-    .line 204
+    .line 221
     :catch_6
     move-exception v10
 
     goto :goto_2
 
-    .line 186
+    .line 203
     .end local v3           #e:Ljavax/xml/parsers/ParserConfigurationException;
     :catch_7
     move-exception v3
 
-    .line 187
+    .line 204
     .local v3, e:Lorg/xml/sax/SAXException;
     :goto_c
     :try_start_12
@@ -1490,21 +1648,21 @@
     :try_end_12
     .catchall {:try_start_12 .. :try_end_12} :catchall_0
 
-    .line 191
-    if-eqz v5, :cond_c
+    .line 208
+    if-eqz v5, :cond_e
 
-    .line 195
+    .line 212
     :try_start_13
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_13
     .catch Ljava/io/IOException; {:try_start_13 .. :try_end_13} :catch_13
 
-    .line 201
-    :cond_c
+    .line 218
+    :cond_e
     :goto_d
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
-    .line 203
+    .line 220
     :try_start_14
     invoke-virtual {v7}, Ljava/util/zip/ZipFile;->close()V
     :try_end_14
@@ -1512,18 +1670,18 @@
 
     goto/16 :goto_2
 
-    .line 204
+    .line 221
     :catch_8
     move-exception v10
 
     goto/16 :goto_2
 
-    .line 188
+    .line 205
     .end local v3           #e:Lorg/xml/sax/SAXException;
     :catch_9
     move-exception v3
 
-    .line 189
+    .line 206
     .local v3, e:Ljava/lang/Exception;
     :goto_e
     :try_start_15
@@ -1537,21 +1695,21 @@
     :try_end_15
     .catchall {:try_start_15 .. :try_end_15} :catchall_0
 
-    .line 191
-    if-eqz v5, :cond_d
+    .line 208
+    if-eqz v5, :cond_f
 
-    .line 195
+    .line 212
     :try_start_16
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_16
     .catch Ljava/io/IOException; {:try_start_16 .. :try_end_16} :catch_14
 
-    .line 201
-    :cond_d
+    .line 218
+    :cond_f
     :goto_f
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
-    .line 203
+    .line 220
     :try_start_17
     invoke-virtual {v7}, Ljava/util/zip/ZipFile;->close()V
     :try_end_17
@@ -1559,59 +1717,58 @@
 
     goto/16 :goto_2
 
-    .line 204
+    .line 221
     :catch_a
     move-exception v10
 
     goto/16 :goto_2
 
-    .line 191
+    .line 208
     .end local v3           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v9
 
     :goto_10
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_10
 
-    .line 195
+    .line 212
     :try_start_18
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
     :try_end_18
     .catch Ljava/io/IOException; {:try_start_18 .. :try_end_18} :catch_15
 
-    .line 201
-    :cond_e
+    .line 218
+    :cond_10
     :goto_11
-    if-eqz v7, :cond_f
+    if-eqz v7, :cond_11
 
-    .line 203
+    .line 220
     :try_start_19
     invoke-virtual {v7}, Ljava/util/zip/ZipFile;->close()V
     :try_end_19
     .catch Ljava/io/IOException; {:try_start_19 .. :try_end_19} :catch_16
 
-    .line 205
-    :cond_f
+    .line 222
+    :cond_11
     :goto_12
     throw v9
 
-    .line 196
+    .line 213
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v4       #entry:Ljava/util/zip/ZipEntry;
-    .restart local v6       #manifestName:Ljava/lang/String;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_b
     move-exception v10
 
     goto/16 :goto_0
 
-    .line 204
+    .line 221
     :catch_c
     move-exception v10
 
     goto/16 :goto_1
 
-    .line 196
+    .line 213
     .restart local v0       #db:Ljavax/xml/parsers/DocumentBuilder;
     .restart local v1       #dbf:Ljavax/xml/parsers/DocumentBuilderFactory;
     .restart local v2       #doc:Lorg/w3c/dom/Document;
@@ -1620,13 +1777,13 @@
 
     goto/16 :goto_3
 
-    .line 204
+    .line 221
     :catch_e
     move-exception v10
 
     goto/16 :goto_4
 
-    .line 196
+    .line 213
     .end local v0           #db:Ljavax/xml/parsers/DocumentBuilder;
     .end local v1           #dbf:Ljavax/xml/parsers/DocumentBuilderFactory;
     .end local v2           #doc:Lorg/w3c/dom/Document;
@@ -1636,7 +1793,6 @@
     goto/16 :goto_5
 
     .end local v4           #entry:Ljava/util/zip/ZipEntry;
-    .end local v6           #manifestName:Ljava/lang/String;
     .end local v8           #zip:Ljava/util/zip/ZipFile;
     .local v3, e:Ljava/io/IOException;
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
@@ -1675,14 +1831,15 @@
 
     goto :goto_11
 
-    .line 204
+    .line 221
     :catch_16
     move-exception v10
 
     goto :goto_12
 
-    .line 191
+    .line 208
     .end local v7           #zip:Ljava/util/zip/ZipFile;
+    .restart local v4       #entry:Ljava/util/zip/ZipEntry;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catchall_1
     move-exception v9
@@ -1693,7 +1850,7 @@
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_10
 
-    .line 188
+    .line 205
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_17
@@ -1705,7 +1862,7 @@
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_e
 
-    .line 186
+    .line 203
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_18
@@ -1717,7 +1874,7 @@
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_c
 
-    .line 184
+    .line 201
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_19
@@ -1729,7 +1886,7 @@
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto :goto_a
 
-    .line 182
+    .line 199
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_1a
@@ -1741,7 +1898,7 @@
     .restart local v7       #zip:Ljava/util/zip/ZipFile;
     goto/16 :goto_8
 
-    .line 180
+    .line 197
     .end local v7           #zip:Ljava/util/zip/ZipFile;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
     :catch_1b
@@ -1754,10 +1911,8 @@
     goto/16 :goto_6
 
     .end local v7           #zip:Ljava/util/zip/ZipFile;
-    .restart local v4       #entry:Ljava/util/zip/ZipEntry;
-    .restart local v6       #manifestName:Ljava/lang/String;
     .restart local v8       #zip:Ljava/util/zip/ZipFile;
-    :cond_10
+    :cond_12
     move-object v7, v8
 
     .end local v8           #zip:Ljava/util/zip/ZipFile;

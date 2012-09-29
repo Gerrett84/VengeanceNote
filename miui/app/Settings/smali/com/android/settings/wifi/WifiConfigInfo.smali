@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private b:Landroid/widget/TextView;
+.field private b:Landroid/net/wifi/WifiManager;
 
-.field private c:Landroid/net/wifi/WifiManager;
+.field private f:Landroid/widget/TextView;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->c:Landroid/net/wifi/WifiManager;
+    iput-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->b:Landroid/net/wifi/WifiManager;
 
     .line 52
     const v0, 0x7f040091
@@ -55,7 +55,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->b:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->f:Landroid/widget/TextView;
 
     .line 54
     return-void
@@ -69,7 +69,7 @@
     invoke-super {p0}, Lcom/android/settings/J;->onResume()V
 
     .line 59
-    iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->c:Landroid/net/wifi/WifiManager;
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->b:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
 
@@ -104,7 +104,7 @@
 
     .line 64
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->b:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->f:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 

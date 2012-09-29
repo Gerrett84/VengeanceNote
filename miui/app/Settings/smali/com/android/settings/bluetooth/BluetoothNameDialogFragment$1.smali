@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+.field final synthetic DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 76
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -44,9 +44,9 @@
     if-eqz v1, :cond_1
 
     .line 81
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->iw()V
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->iA()V
 
     .line 87
     :cond_0
@@ -76,9 +76,9 @@
     if-ne v0, v1, :cond_0
 
     .line 85
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->DU:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->DY:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
-    invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->iw()V
+    invoke-virtual {v0}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->iA()V
 
     goto :goto_0
 .end method

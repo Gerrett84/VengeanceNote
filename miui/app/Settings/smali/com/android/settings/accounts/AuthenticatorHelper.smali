@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field private sY:[Landroid/accounts/AuthenticatorDescription;
+.field private tc:[Landroid/accounts/AuthenticatorDescription;
 
-.field private ta:Ljava/util/Map;
+.field private te:Ljava/util/Map;
 
-.field private xB:Ljava/util/ArrayList;
+.field private xF:Ljava/util/ArrayList;
 
-.field private xC:Ljava/util/Map;
+.field private xG:Ljava/util/Map;
 
 
 # direct methods
@@ -26,21 +26,21 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     .line 38
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xB:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xF:Ljava/util/ArrayList;
 
     .line 39
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xC:Ljava/util/Map;
+    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xG:Ljava/util/Map;
 
     .line 42
     return-void
@@ -62,28 +62,28 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->sY:[Landroid/accounts/AuthenticatorDescription;
+    iput-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->tc:[Landroid/accounts/AuthenticatorDescription;
 
     .line 101
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->sY:[Landroid/accounts/AuthenticatorDescription;
+    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->tc:[Landroid/accounts/AuthenticatorDescription;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_0
 
     .line 102
-    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
-    iget-object v2, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->sY:[Landroid/accounts/AuthenticatorDescription;
+    iget-object v2, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->tc:[Landroid/accounts/AuthenticatorDescription;
 
     aget-object v2, v2, v0
 
     iget-object v2, v2, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->sY:[Landroid/accounts/AuthenticatorDescription;
+    iget-object v3, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->tc:[Landroid/accounts/AuthenticatorDescription;
 
     aget-object v3, v3, v0
 
@@ -99,13 +99,13 @@
     return-void
 .end method
 
-.method public K(Ljava/lang/String;)Z
+.method public L(Ljava/lang/String;)Z
     .locals 1
     .parameter
 
     .prologue
     .line 120
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -114,13 +114,13 @@
     return v0
 .end method
 
-.method public L(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
+.method public M(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
     .locals 1
     .parameter
 
     .prologue
     .line 124
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -131,20 +131,20 @@
     return-object v0
 .end method
 
-.method public M(Ljava/lang/String;)Z
+.method public N(Ljava/lang/String;)Z
     .locals 1
     .parameter
 
     .prologue
     .line 128
-    invoke-virtual {p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->K(Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->L(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 129
-    invoke-virtual {p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->L(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
+    invoke-virtual {p0, p1}, Lcom/android/settings/accounts/AuthenticatorHelper;->M(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;
 
     move-result-object v0
 
@@ -188,12 +188,12 @@
 
     .line 110
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xB:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xF:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     .line 111
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xC:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xG:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
@@ -208,7 +208,7 @@
     aget-object v2, p2, v0
 
     .line 113
-    iget-object v3, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xB:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xF:Ljava/util/ArrayList;
 
     iget-object v4, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -219,7 +219,7 @@
     if-nez v3, :cond_1
 
     .line 114
-    iget-object v3, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xB:Ljava/util/ArrayList;
+    iget-object v3, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xF:Ljava/util/ArrayList;
 
     iget-object v2, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
@@ -246,7 +246,7 @@
     const/4 v1, 0x0
 
     .line 55
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xC:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xG:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -255,7 +255,7 @@
     if-eqz v0, :cond_1
 
     .line 56
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xC:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xG:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -270,7 +270,7 @@
 
     .line 58
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -280,7 +280,7 @@
 
     .line 60
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -313,7 +313,7 @@
 
     .line 63
     :try_start_1
-    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xC:Ljava/util/Map;
+    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xG:Ljava/util/Map;
 
     invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
@@ -370,14 +370,14 @@
     goto :goto_1
 .end method
 
-.method public gz()[Ljava/lang/String;
+.method public gD()[Ljava/lang/String;
     .locals 2
 
     .prologue
     .line 45
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xB:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xF:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xB:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->xF:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -404,7 +404,7 @@
     const/4 v1, 0x0
 
     .line 81
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -414,7 +414,7 @@
 
     .line 83
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->ta:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/settings/accounts/AuthenticatorHelper;->te:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field dC:Ljava/lang/String;
+.field dF:Ljava/lang/String;
 
-.field dD:Ljava/util/ArrayList;
+.field dG:Ljava/util/ArrayList;
 
-.field final synthetic dE:Lcom/android/settings/bA;
+.field final synthetic dH:Lcom/android/settings/bA;
 
 
 # direct methods
@@ -18,7 +18,7 @@
 
     .prologue
     .line 158
-    iput-object p1, p0, Lcom/android/settings/R;->dE:Lcom/android/settings/bA;
+    iput-object p1, p0, Lcom/android/settings/R;->dH:Lcom/android/settings/bA;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,7 +27,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/R;->dD:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/R;->dG:Ljava/util/ArrayList;
 
     return-void
 .end method

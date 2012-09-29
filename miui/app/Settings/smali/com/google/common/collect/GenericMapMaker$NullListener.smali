@@ -7,9 +7,9 @@
 
 
 # static fields
-.field public static final enum PO:Lcom/google/common/collect/GenericMapMaker$NullListener;
+.field public static final enum PR:Lcom/google/common/collect/GenericMapMaker$NullListener;
 
-.field private static final synthetic PP:[Lcom/google/common/collect/GenericMapMaker$NullListener;
+.field private static final synthetic PS:[Lcom/google/common/collect/GenericMapMaker$NullListener;
 
 
 # direct methods
@@ -26,18 +26,18 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/GenericMapMaker$NullListener;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/GenericMapMaker$NullListener;->PO:Lcom/google/common/collect/GenericMapMaker$NullListener;
+    sput-object v0, Lcom/google/common/collect/GenericMapMaker$NullListener;->PR:Lcom/google/common/collect/GenericMapMaker$NullListener;
 
     .line 43
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/collect/GenericMapMaker$NullListener;
 
-    sget-object v1, Lcom/google/common/collect/GenericMapMaker$NullListener;->PO:Lcom/google/common/collect/GenericMapMaker$NullListener;
+    sget-object v1, Lcom/google/common/collect/GenericMapMaker$NullListener;->PR:Lcom/google/common/collect/GenericMapMaker$NullListener;
 
     aput-object v1, v0, v2
 
-    sput-object v0, Lcom/google/common/collect/GenericMapMaker$NullListener;->PP:[Lcom/google/common/collect/GenericMapMaker$NullListener;
+    sput-object v0, Lcom/google/common/collect/GenericMapMaker$NullListener;->PS:[Lcom/google/common/collect/GenericMapMaker$NullListener;
 
     return-void
 .end method
@@ -76,7 +76,7 @@
 
     .prologue
     .line 43
-    sget-object v0, Lcom/google/common/collect/GenericMapMaker$NullListener;->PP:[Lcom/google/common/collect/GenericMapMaker$NullListener;
+    sget-object v0, Lcom/google/common/collect/GenericMapMaker$NullListener;->PS:[Lcom/google/common/collect/GenericMapMaker$NullListener;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/GenericMapMaker$NullListener;->clone()Ljava/lang/Object;
 

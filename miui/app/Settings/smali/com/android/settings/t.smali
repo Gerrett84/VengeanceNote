@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic aS:Landroid/content/ContentResolver;
+.field final synthetic aV:Landroid/content/ContentResolver;
 
-.field final synthetic aT:Lcom/android/settings/OwnerInfoSettings;
+.field final synthetic aW:Lcom/android/settings/OwnerInfoSettings;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 54
-    iput-object p1, p0, Lcom/android/settings/t;->aT:Lcom/android/settings/OwnerInfoSettings;
+    iput-object p1, p0, Lcom/android/settings/t;->aW:Lcom/android/settings/OwnerInfoSettings;
 
-    iput-object p2, p0, Lcom/android/settings/t;->aS:Landroid/content/ContentResolver;
+    iput-object p2, p0, Lcom/android/settings/t;->aV:Landroid/content/ContentResolver;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
 
     .prologue
     .line 56
-    iget-object v1, p0, Lcom/android/settings/t;->aS:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/android/settings/t;->aV:Landroid/content/ContentResolver;
 
     const-string v2, "lock_screen_owner_info_enabled"
 
@@ -50,7 +50,7 @@
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 58
-    iget-object v0, p0, Lcom/android/settings/t;->aT:Lcom/android/settings/OwnerInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/t;->aW:Lcom/android/settings/OwnerInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/OwnerInfoSettings;->a(Lcom/android/settings/OwnerInfoSettings;)Landroid/widget/EditText;
 

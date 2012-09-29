@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field final synthetic NO:Landroid/content/ContentResolver;
+.field final synthetic NR:Landroid/content/ContentResolver;
 
-.field final synthetic NP:Lcom/android/settings/widget/w;
+.field final synthetic NS:Lcom/android/settings/widget/w;
 
 .field final synthetic val$context:Landroid/content/Context;
 
-.field final synthetic wo:Z
+.field final synthetic ws:Z
 
 
 # direct methods
@@ -23,11 +23,11 @@
 
     .prologue
     .line 511
-    iput-object p1, p0, Lcom/android/settings/widget/v;->NP:Lcom/android/settings/widget/w;
+    iput-object p1, p0, Lcom/android/settings/widget/v;->NS:Lcom/android/settings/widget/w;
 
-    iput-object p2, p0, Lcom/android/settings/widget/v;->NO:Landroid/content/ContentResolver;
+    iput-object p2, p0, Lcom/android/settings/widget/v;->NR:Landroid/content/ContentResolver;
 
-    iput-boolean p3, p0, Lcom/android/settings/widget/v;->wo:Z
+    iput-boolean p3, p0, Lcom/android/settings/widget/v;->ws:Z
 
     iput-object p4, p0, Lcom/android/settings/widget/v;->val$context:Landroid/content/Context;
 
@@ -44,7 +44,7 @@
 
     .prologue
     .line 523
-    iget-object v1, p0, Lcom/android/settings/widget/v;->NP:Lcom/android/settings/widget/w;
+    iget-object v1, p0, Lcom/android/settings/widget/v;->NS:Lcom/android/settings/widget/w;
 
     iget-object v2, p0, Lcom/android/settings/widget/v;->val$context:Landroid/content/Context;
 
@@ -80,16 +80,16 @@
 
     .prologue
     .line 514
-    iget-object v0, p0, Lcom/android/settings/widget/v;->NO:Landroid/content/ContentResolver;
+    iget-object v0, p0, Lcom/android/settings/widget/v;->NR:Landroid/content/ContentResolver;
 
     const-string v1, "gps"
 
-    iget-boolean v2, p0, Lcom/android/settings/widget/v;->wo:Z
+    iget-boolean v2, p0, Lcom/android/settings/widget/v;->ws:Z
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->setLocationProviderEnabled(Landroid/content/ContentResolver;Ljava/lang/String;Z)V
 
     .line 518
-    iget-boolean v0, p0, Lcom/android/settings/widget/v;->wo:Z
+    iget-boolean v0, p0, Lcom/android/settings/widget/v;->ws:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 

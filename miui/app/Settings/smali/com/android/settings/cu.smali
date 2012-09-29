@@ -138,7 +138,7 @@
     return-object v0
 .end method
 
-.method public static W(Ljava/lang/String;)Ljava/util/Locale;
+.method public static X(Ljava/lang/String;)Ljava/util/Locale;
     .locals 5
     .parameter
 
@@ -1094,7 +1094,7 @@
     return-object v0
 .end method
 
-.method public static jd()Z
+.method public static jh()Z
     .locals 1
 
     .prologue

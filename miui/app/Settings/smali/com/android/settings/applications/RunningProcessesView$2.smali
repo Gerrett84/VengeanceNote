@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic dc:Lcom/android/settings/applications/RunningProcessesView;
+.field final synthetic df:Lcom/android/settings/applications/RunningProcessesView;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 422
-    iput-object p1, p0, Lcom/android/settings/applications/RunningProcessesView$2;->dc:Lcom/android/settings/applications/RunningProcessesView;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningProcessesView$2;->df:Lcom/android/settings/applications/RunningProcessesView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,9 +32,9 @@
 
     .prologue
     .line 425
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$2;->dc:Lcom/android/settings/applications/RunningProcessesView;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView$2;->df:Lcom/android/settings/applications/RunningProcessesView;
 
-    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView;->EO:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
+    iget-object v0, v0, Lcom/android/settings/applications/RunningProcessesView;->ES:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
     const/4 v1, 0x0
 

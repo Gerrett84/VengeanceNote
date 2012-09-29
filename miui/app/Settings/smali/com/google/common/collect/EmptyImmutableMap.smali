@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final qz:Lcom/google/common/collect/EmptyImmutableMap;
+.field static final qC:Lcom/google/common/collect/EmptyImmutableMap;
 
 .field private static final serialVersionUID:J
 
@@ -19,7 +19,7 @@
 
     invoke-direct {v0}, Lcom/google/common/collect/EmptyImmutableMap;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/EmptyImmutableMap;->qz:Lcom/google/common/collect/EmptyImmutableMap;
+    sput-object v0, Lcom/google/common/collect/EmptyImmutableMap;->qC:Lcom/google/common/collect/EmptyImmutableMap;
 
     return-void
 .end method
@@ -58,12 +58,36 @@
     return v0
 .end method
 
-.method public dN()Lcom/google/common/collect/ImmutableCollection;
+.method public dR()Lcom/google/common/collect/ImmutableCollection;
     .locals 1
 
     .prologue
     .line 67
-    sget-object v0, Lcom/google/common/collect/ImmutableCollection;->sG:Lcom/google/common/collect/ImmutableCollection;
+    sget-object v0, Lcom/google/common/collect/ImmutableCollection;->sJ:Lcom/google/common/collect/ImmutableCollection;
+
+    return-object v0
+.end method
+
+.method public eB()Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+
+    .prologue
+    .line 59
+    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->iP()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public eC()Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+
+    .prologue
+    .line 63
+    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->iP()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -73,7 +97,7 @@
 
     .prologue
     .line 31
-    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableMap;->ex()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableMap;->eB()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -106,30 +130,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public ex()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-
-    .prologue
-    .line 59
-    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->iL()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public ey()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-
-    .prologue
-    .line 63
-    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->iL()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -168,7 +168,7 @@
 
     .prologue
     .line 31
-    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableMap;->ey()Lcom/google/common/collect/ImmutableSet;
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableMap;->eC()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
@@ -180,7 +180,7 @@
 
     .prologue
     .line 91
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableMap;->qz:Lcom/google/common/collect/EmptyImmutableMap;
+    sget-object v0, Lcom/google/common/collect/EmptyImmutableMap;->qC:Lcom/google/common/collect/EmptyImmutableMap;
 
     return-object v0
 .end method
@@ -210,7 +210,7 @@
 
     .prologue
     .line 31
-    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableMap;->dN()Lcom/google/common/collect/ImmutableCollection;
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableMap;->dR()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 

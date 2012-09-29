@@ -49,7 +49,7 @@
 
 
 # virtual methods
-.method hV()Lcom/android/settings/applications/RunningServiceDetails;
+.method hZ()Lcom/android/settings/applications/RunningServiceDetails;
     .locals 1
 
     .prologue
@@ -124,7 +124,7 @@
     check-cast v0, Landroid/content/ComponentName;
 
     .line 512
-    invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->hV()Lcom/android/settings/applications/RunningServiceDetails;
+    invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->hZ()Lcom/android/settings/applications/RunningServiceDetails;
 
     move-result-object v2
 

@@ -6,19 +6,19 @@
 # instance fields
 .field private mMatrix:Landroid/graphics/Matrix;
 
-.field private vJ:Ljava/util/ArrayList;
+.field private vN:Ljava/util/ArrayList;
 
-.field private vK:I
+.field private vO:I
 
-.field private vL:Landroid/graphics/Paint;
+.field private vP:Landroid/graphics/Paint;
 
-.field private vM:Landroid/graphics/Path;
+.field private vQ:Landroid/graphics/Path;
 
-.field private vN:Landroid/graphics/Path;
+.field private vR:Landroid/graphics/Path;
 
-.field private vO:Landroid/graphics/Path;
+.field private vS:Landroid/graphics/Path;
 
-.field private vP:I
+.field private vT:I
 
 
 # direct methods
@@ -66,7 +66,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     .line 51
     new-instance v0, Landroid/graphics/Matrix;
@@ -80,45 +80,45 @@
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     .line 55
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vM:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vQ:Landroid/graphics/Path;
 
     .line 56
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vR:Landroid/graphics/Path;
 
     .line 58
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vO:Landroid/graphics/Path;
+    iput-object v0, p0, Lcom/android/settings/widget/PieChartView;->vS:Landroid/graphics/Path;
 
     .line 88
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     const/high16 v1, -0x100
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 89
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 90
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     const/high16 v1, 0x4040
 
@@ -137,7 +137,7 @@
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     .line 91
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
@@ -160,7 +160,7 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Lcom/android/settings/widget/PieChartView;->vP:I
+    iput v0, p0, Lcom/android/settings/widget/PieChartView;->vT:I
 
     .line 95
     const/4 v0, 0x0
@@ -222,7 +222,7 @@
 
     .prologue
     .line 118
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/android/settings/widget/k;
 
@@ -240,18 +240,18 @@
 
     .prologue
     .line 114
-    iput p1, p0, Lcom/android/settings/widget/PieChartView;->vK:I
+    iput p1, p0, Lcom/android/settings/widget/PieChartView;->vO:I
 
     .line 115
     return-void
 .end method
 
-.method public fU()V
+.method public fY()V
     .locals 1
 
     .prologue
     .line 122
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -259,7 +259,7 @@
     return-void
 .end method
 
-.method public fV()V
+.method public fZ()V
     .locals 17
 
     .prologue
@@ -269,7 +269,7 @@
     .line 141
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iget-object v3, v0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -291,17 +291,17 @@
     check-cast v1, Lcom/android/settings/widget/k;
 
     .line 142
-    iget-object v5, v1, Lcom/android/settings/widget/k;->Cy:Landroid/graphics/Path;
+    iget-object v5, v1, Lcom/android/settings/widget/k;->CC:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->reset()V
 
     .line 143
-    iget-object v5, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v5, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->reset()V
 
     .line 144
-    iget-object v5, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v5, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->reset()V
 
@@ -318,21 +318,21 @@
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vM:Landroid/graphics/Path;
+    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vQ:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
     .line 149
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vN:Landroid/graphics/Path;
+    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vR:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
     .line 150
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vO:Landroid/graphics/Path;
+    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vS:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
 
@@ -385,7 +385,7 @@
     .line 164
     move-object/from16 v0, p0
 
-    iget v1, v0, Lcom/android/settings/widget/PieChartView;->vP:I
+    iget v1, v0, Lcom/android/settings/widget/PieChartView;->vT:I
 
     neg-int v1, v1
 
@@ -398,7 +398,7 @@
     .line 166
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vM:Landroid/graphics/Path;
+    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vQ:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -407,7 +407,7 @@
     .line 167
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vN:Landroid/graphics/Path;
+    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vR:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -416,7 +416,7 @@
     .line 168
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vO:Landroid/graphics/Path;
+    iget-object v1, v0, Lcom/android/settings/widget/PieChartView;->vS:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
@@ -425,12 +425,12 @@
     .line 170
     move-object/from16 v0, p0
 
-    iget v1, v0, Lcom/android/settings/widget/PieChartView;->vK:I
+    iget v1, v0, Lcom/android/settings/widget/PieChartView;->vO:I
 
     .line 171
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iget-object v4, v0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -510,7 +510,7 @@
 
     .line 181
     :goto_4
-    iget-object v6, v1, Lcom/android/settings/widget/k;->Cy:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CC:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/RectF;->centerX()F
 
@@ -523,7 +523,7 @@
     invoke-virtual {v6, v7, v14}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 182
-    iget-object v6, v1, Lcom/android/settings/widget/k;->Cy:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CC:Landroid/graphics/Path;
 
     int-to-float v7, v4
 
@@ -532,7 +532,7 @@
     invoke-virtual {v6, v9, v7, v14}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
     .line 183
-    iget-object v6, v1, Lcom/android/settings/widget/k;->Cy:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CC:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/RectF;->centerX()F
 
@@ -568,7 +568,7 @@
     sub-float v13, v6, v7
 
     .line 193
-    iget-object v14, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v14, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/RectF;->centerX()F
 
@@ -581,18 +581,18 @@
     invoke-virtual/range {v14 .. v16}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 194
-    iget-object v14, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v14, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     const/4 v15, 0x0
 
     invoke-virtual {v14, v9, v7, v15}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
     .line 195
-    iget-object v14, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v14, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Lcom/android/settings/widget/PieChartView;->vP:I
+    iget v15, v0, Lcom/android/settings/widget/PieChartView;->vT:I
 
     neg-int v15, v15
 
@@ -603,16 +603,16 @@
     invoke-virtual/range {v14 .. v16}, Landroid/graphics/Path;->rLineTo(FF)V
 
     .line 196
-    iget-object v14, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v14, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     invoke-virtual {v14, v10, v7, v13}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
     .line 197
-    iget-object v7, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v7, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Lcom/android/settings/widget/PieChartView;->vP:I
+    iget v14, v0, Lcom/android/settings/widget/PieChartView;->vT:I
 
     int-to-float v14, v14
 
@@ -621,7 +621,7 @@
     invoke-virtual {v7, v14, v15}, Landroid/graphics/Path;->rLineTo(FF)V
 
     .line 198
-    iget-object v7, v1, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v7, v1, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     neg-float v13, v13
 
@@ -629,7 +629,7 @@
 
     .line 202
     :cond_3
-    iget-object v6, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/RectF;->centerX()F
 
@@ -642,7 +642,7 @@
     invoke-virtual {v6, v7, v13}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 203
-    iget-object v6, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     int-to-float v7, v4
 
@@ -654,11 +654,11 @@
     if-eqz v8, :cond_4
 
     .line 205
-    iget-object v6, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/android/settings/widget/PieChartView;->vP:I
+    iget v7, v0, Lcom/android/settings/widget/PieChartView;->vT:I
 
     neg-int v7, v7
 
@@ -670,7 +670,7 @@
 
     .line 207
     :cond_4
-    iget-object v6, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     invoke-virtual {v9}, Landroid/graphics/RectF;->centerX()F
 
@@ -683,7 +683,7 @@
     invoke-virtual {v6, v7, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 208
-    iget-object v6, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v6, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     add-int v7, v4, v12
 
@@ -697,11 +697,11 @@
     if-eqz v5, :cond_5
 
     .line 210
-    iget-object v1, v1, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v1, v1, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/android/settings/widget/PieChartView;->vP:I
+    iget v5, v0, Lcom/android/settings/widget/PieChartView;->vT:I
 
     neg-int v5, v5
 
@@ -766,7 +766,7 @@
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
 
     .line 224
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -786,7 +786,7 @@
     check-cast v0, Lcom/android/settings/widget/k;
 
     .line 225
-    iget-object v2, v0, Lcom/android/settings/widget/k;->Cz:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/android/settings/widget/k;->CD:Landroid/graphics/Path;
 
     iget-object v0, v0, Lcom/android/settings/widget/k;->paint:Landroid/graphics/Paint;
 
@@ -796,14 +796,14 @@
 
     .line 227
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Landroid/graphics/Path;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vR:Landroid/graphics/Path;
 
-    iget-object v1, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 229
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vJ:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vN:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -823,16 +823,16 @@
     check-cast v0, Lcom/android/settings/widget/k;
 
     .line 230
-    iget-object v2, v0, Lcom/android/settings/widget/k;->Cy:Landroid/graphics/Path;
+    iget-object v2, v0, Lcom/android/settings/widget/k;->CC:Landroid/graphics/Path;
 
     iget-object v3, v0, Lcom/android/settings/widget/k;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 231
-    iget-object v0, v0, Lcom/android/settings/widget/k;->CA:Landroid/graphics/Path;
+    iget-object v0, v0, Lcom/android/settings/widget/k;->CE:Landroid/graphics/Path;
 
-    iget-object v2, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v2, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
@@ -840,9 +840,9 @@
 
     .line 233
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vO:Landroid/graphics/Path;
+    iget-object v0, p0, Lcom/android/settings/widget/PieChartView;->vS:Landroid/graphics/Path;
 
-    iget-object v1, p0, Lcom/android/settings/widget/PieChartView;->vL:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/android/settings/widget/PieChartView;->vP:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
@@ -899,7 +899,7 @@
     invoke-virtual {v2, v3, v0, v1}, Landroid/graphics/Matrix;->postRotate(FFF)Z
 
     .line 134
-    invoke-virtual {p0}, Lcom/android/settings/widget/PieChartView;->fV()V
+    invoke-virtual {p0}, Lcom/android/settings/widget/PieChartView;->fZ()V
 
     .line 135
     return-void

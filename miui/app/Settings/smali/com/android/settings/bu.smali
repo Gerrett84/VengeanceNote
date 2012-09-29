@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic uD:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
+.field final synthetic uH:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1888
-    iput-object p1, p0, Lcom/android/settings/bu;->uD:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
+    iput-object p1, p0, Lcom/android/settings/bu;->uH:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 1891
-    iget-object v0, p0, Lcom/android/settings/bu;->uD:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
+    iget-object v0, p0, Lcom/android/settings/bu;->uH:Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/DataUsageSummary$ConfirmDataDisableFragment;->getTargetFragment()Landroid/app/Fragment;
 

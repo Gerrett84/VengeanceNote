@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field Cd:[J
+.field Ch:[J
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     new-array v0, v0, [J
 
-    iput-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iput-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
     return-void
 .end method
@@ -191,7 +191,7 @@
     goto :goto_0
 .end method
 
-.method private cT()Ljava/lang/String;
+.method private cX()Ljava/lang/String;
     .locals 4
 
     .prologue
@@ -201,7 +201,7 @@
     :try_start_0
     const-string v0, "/proc/version"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DeviceInfoSettings;->w(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcom/android/settings/DeviceInfoSettings;->x(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -388,7 +388,7 @@
     goto :goto_0
 .end method
 
-.method private cU()Ljava/lang/String;
+.method private cY()Ljava/lang/String;
     .locals 4
 
     .prologue
@@ -396,7 +396,7 @@
     :try_start_0
     const-string v0, "/sys/board_properties/soc/msv"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/DeviceInfoSettings;->w(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v0}, Lcom/android/settings/DeviceInfoSettings;->x(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -441,7 +441,7 @@
     goto :goto_1
 .end method
 
-.method private w(Ljava/lang/String;)Ljava/lang/String;
+.method private x(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
     .parameter
 
@@ -531,7 +531,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/android/settings/DeviceInfoSettings;->cU()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/DeviceInfoSettings;->cY()Ljava/lang/String;
 
     move-result-object v2
 
@@ -573,7 +573,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/android/settings/DeviceInfoSettings;->cT()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/settings/DeviceInfoSettings;->cX()Ljava/lang/String;
 
     move-result-object v1
 
@@ -729,13 +729,13 @@
     if-eqz v0, :cond_0
 
     .line 130
-    iget-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iget-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iget-object v2, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
-    iget-object v3, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iget-object v3, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
     array-length v3, v3
 
@@ -744,9 +744,9 @@
     invoke-static {v0, v1, v2, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 131
-    iget-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iget-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
-    iget-object v1, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iget-object v1, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
     array-length v1, v1
 
@@ -759,7 +759,7 @@
     aput-wide v2, v0, v1
 
     .line 132
-    iget-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Cd:[J
+    iget-object v0, p0, Lcom/android/settings/DeviceInfoSettings;->Ch:[J
 
     aget-wide v0, v0, v4
 

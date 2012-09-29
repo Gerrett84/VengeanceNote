@@ -206,7 +206,7 @@
 
     .line 98
     :cond_1
-    invoke-static {p1}, Lcom/android/settings/cu;->W(Ljava/lang/String;)Ljava/util/Locale;
+    invoke-static {p1}, Lcom/android/settings/cu;->X(Ljava/lang/String;)Ljava/util/Locale;
 
     move-result-object v2
 

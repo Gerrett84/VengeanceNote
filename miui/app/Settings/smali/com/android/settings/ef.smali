@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic PC:Lcom/android/settings/MasterClear;
+.field final synthetic PF:Lcom/android/settings/MasterClear;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 111
-    iput-object p1, p0, Lcom/android/settings/ef;->PC:Lcom/android/settings/MasterClear;
+    iput-object p1, p0, Lcom/android/settings/ef;->PF:Lcom/android/settings/MasterClear;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 114
-    iget-object v0, p0, Lcom/android/settings/ef;->PC:Lcom/android/settings/MasterClear;
+    iget-object v0, p0, Lcom/android/settings/ef;->PF:Lcom/android/settings/MasterClear;
 
     const/16 v1, 0x37
 
@@ -43,7 +43,7 @@
     if-nez v0, :cond_0
 
     .line 115
-    iget-object v0, p0, Lcom/android/settings/ef;->PC:Lcom/android/settings/MasterClear;
+    iget-object v0, p0, Lcom/android/settings/ef;->PF:Lcom/android/settings/MasterClear;
 
     invoke-static {v0}, Lcom/android/settings/MasterClear;->a(Lcom/android/settings/MasterClear;)V
 

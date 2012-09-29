@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic oh:Lcom/android/settings/DateTimeSettings;
+.field final synthetic ok:Lcom/android/settings/DateTimeSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 407
-    iput-object p1, p0, Lcom/android/settings/aL;->oh:Lcom/android/settings/DateTimeSettings;
+    iput-object p1, p0, Lcom/android/settings/aL;->ok:Lcom/android/settings/DateTimeSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 410
-    iget-object v0, p0, Lcom/android/settings/aL;->oh:Lcom/android/settings/DateTimeSettings;
+    iget-object v0, p0, Lcom/android/settings/aL;->ok:Lcom/android/settings/DateTimeSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/DateTimeSettings;->getActivity()Landroid/app/Activity;
 
@@ -40,7 +40,7 @@
     if-eqz v0, :cond_0
 
     .line 412
-    iget-object v1, p0, Lcom/android/settings/aL;->oh:Lcom/android/settings/DateTimeSettings;
+    iget-object v1, p0, Lcom/android/settings/aL;->ok:Lcom/android/settings/DateTimeSettings;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/DateTimeSettings;->l(Landroid/content/Context;)V
 

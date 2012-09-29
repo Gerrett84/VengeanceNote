@@ -20,12 +20,12 @@
 
 
 # virtual methods
-.method S()Lcom/google/common/base/Equivalence;
+.method W()Lcom/google/common/base/Equivalence;
     .locals 1
 
     .prologue
     .line 305
-    invoke-static {}, Lcom/google/common/base/Equivalences;->me()Lcom/google/common/base/Equivalence;
+    invoke-static {}, Lcom/google/common/base/Equivalences;->mi()Lcom/google/common/base/Equivalence;
 
     move-result-object v0
 

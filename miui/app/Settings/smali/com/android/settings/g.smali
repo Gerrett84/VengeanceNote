@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+.field final synthetic aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 520
-    iput-object p1, p0, Lcom/android/settings/g;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iput-object p1, p0, Lcom/android/settings/g;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
@@ -33,7 +33,7 @@
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
     .line 524
-    iget-object v1, p0, Lcom/android/settings/g;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v1, p0, Lcom/android/settings/g;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-static {v1}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->a(Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;)I
 
@@ -42,7 +42,7 @@
     iput v1, v0, Landroid/os/Message;->what:I
 
     .line 525
-    iget-object v1, p0, Lcom/android/settings/g;->ax:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
+    iget-object v1, p0, Lcom/android/settings/g;->aA:Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;
 
     invoke-static {v1}, Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;->i(Lcom/android/settings/UsageStatsActivity$UsageStatsFragment;)Landroid/os/Handler;
 

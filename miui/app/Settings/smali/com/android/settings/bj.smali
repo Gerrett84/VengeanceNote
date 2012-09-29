@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic fw:Lcom/android/settings/DataUsageSummary;
+.field final synthetic fz:Lcom/android/settings/DataUsageSummary;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1038
-    iput-object p1, p0, Lcom/android/settings/bj;->fw:Lcom/android/settings/DataUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/bj;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 1041
-    iget-object v0, p0, Lcom/android/settings/bj;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bj;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary;->f(Lcom/android/settings/DataUsageSummary;)Landroid/widget/CheckBox;
 
@@ -51,7 +51,7 @@
     if-eqz v0, :cond_1
 
     .line 1045
-    iget-object v0, p0, Lcom/android/settings/bj;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bj;->fz:Lcom/android/settings/DataUsageSummary;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary$ConfirmLimitFragment;->w(Lcom/android/settings/DataUsageSummary;)V
 
@@ -67,7 +67,7 @@
 
     .line 1047
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/bj;->fw:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/bj;->fz:Lcom/android/settings/DataUsageSummary;
 
     const-wide/16 v1, -0x1
 

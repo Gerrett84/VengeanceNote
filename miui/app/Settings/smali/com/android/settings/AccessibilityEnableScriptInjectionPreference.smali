@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private nd:Z
+.field private ng:Z
 
-.field private ne:Z
+.field private nh:Z
 
 
 # direct methods
@@ -45,18 +45,18 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->setDialogIcon(I)V
 
     .line 48
-    invoke-direct {p0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->aJ()V
+    invoke-direct {p0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->aN()V
 
     .line 49
     return-void
 .end method
 
-.method private aJ()V
+.method private aN()V
     .locals 2
 
     .prologue
     .line 143
-    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ng:Z
 
     if-eqz v0, :cond_0
 
@@ -106,7 +106,7 @@
     move-result-object v0
 
     .line 76
-    iget-boolean v1, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ne:Z
+    iget-boolean v1, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nh:Z
 
     if-eqz v1, :cond_0
 
@@ -139,7 +139,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ne:Z
+    iput-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nh:Z
 
     .line 84
     return-void
@@ -180,12 +180,12 @@
 
 
 # virtual methods
-.method public dk()Z
+.method public do()Z
     .locals 1
 
     .prologue
     .line 60
-    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ng:Z
 
     return v0
 .end method
@@ -219,7 +219,7 @@
     const/4 v1, 0x0
 
     .line 88
-    invoke-virtual {p0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->dk()Z
+    invoke-virtual {p0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->do()Z
 
     move-result v0
 
@@ -234,7 +234,7 @@
     .line 92
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ne:Z
+    iput-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nh:Z
 
     .line 97
     :goto_0
@@ -245,7 +245,7 @@
     invoke-super {p0}, Landroid/preference/DialogPreference;->onClick()V
 
     .line 95
-    iput-boolean v1, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ne:Z
+    iput-boolean v1, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nh:Z
 
     goto :goto_0
 .end method
@@ -367,7 +367,7 @@
     invoke-direct {v1, v0}, Lcom/android/settings/dL;-><init>(Landroid/os/Parcelable;)V
 
     .line 127
-    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ng:Z
 
     invoke-static {v1, v0}, Lcom/android/settings/dL;->a(Lcom/android/settings/dL;Z)Z
 
@@ -386,7 +386,7 @@
     .line 106
     if-eqz p1, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ng:Z
 
     invoke-virtual {p0, v0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->getPersistedBoolean(Z)Z
 
@@ -415,18 +415,18 @@
 
     .prologue
     .line 52
-    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ng:Z
 
     if-eq v0, p1, :cond_0
 
     .line 53
-    iput-boolean p1, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->nd:Z
+    iput-boolean p1, p0, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->ng:Z
 
     .line 54
     invoke-virtual {p0, p1}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->persistBoolean(Z)Z
 
     .line 55
-    invoke-direct {p0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->aJ()V
+    invoke-direct {p0}, Lcom/android/settings/AccessibilityEnableScriptInjectionPreference;->aN()V
 
     .line 57
     :cond_0

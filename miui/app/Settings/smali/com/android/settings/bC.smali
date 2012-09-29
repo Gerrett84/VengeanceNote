@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic vI:Lcom/android/settings/SoundSettings;
+.field final synthetic vM:Lcom/android/settings/SoundSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 97
-    iput-object p1, p0, Lcom/android/settings/bC;->vI:Lcom/android/settings/SoundSettings;
+    iput-object p1, p0, Lcom/android/settings/bC;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -34,7 +34,7 @@
     packed-switch v0, :pswitch_data_0
 
     .line 108
-    iget-object v0, p0, Lcom/android/settings/bC;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bC;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/SoundSettings;->a(Landroid/os/Message;)V
 
@@ -44,7 +44,7 @@
 
     .line 102
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/bC;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bC;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-static {v0}, Lcom/android/settings/SoundSettings;->a(Lcom/android/settings/SoundSettings;)Lcom/android/settings/DefaultRingtonePreference;
 
@@ -60,7 +60,7 @@
 
     .line 105
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/bC;->vI:Lcom/android/settings/SoundSettings;
+    iget-object v0, p0, Lcom/android/settings/bC;->vM:Lcom/android/settings/SoundSettings;
 
     invoke-static {v0}, Lcom/android/settings/SoundSettings;->b(Lcom/android/settings/SoundSettings;)Lcom/android/settings/DefaultRingtonePreference;
 

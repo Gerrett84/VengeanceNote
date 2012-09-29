@@ -28,13 +28,13 @@
     const-wide/16 v4, 0x0
 
     .line 373
-    iget-object v0, p1, Lcom/android/settings/aU;->nA:Ljava/lang/Long;
+    iget-object v0, p1, Lcom/android/settings/aU;->nD:Ljava/lang/Long;
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
-    iget-object v2, p2, Lcom/android/settings/aU;->nA:Ljava/lang/Long;
+    iget-object v2, p2, Lcom/android/settings/aU;->nD:Ljava/lang/Long;
 
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic kG:Lcom/android/settings/bluetooth/BluetoothDevicePreference;
+.field final synthetic kJ:Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 195
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference$1;->kG:Lcom/android/settings/bluetooth/BluetoothDevicePreference;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference$1;->kJ:Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 197
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference$1;->kG:Lcom/android/settings/bluetooth/BluetoothDevicePreference;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothDevicePreference$1;->kJ:Lcom/android/settings/bluetooth/BluetoothDevicePreference;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothDevicePreference;->c(Lcom/android/settings/bluetooth/BluetoothDevicePreference;)Lcom/android/settings/bluetooth/CachedBluetoothDevice;
 

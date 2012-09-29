@@ -1,64 +1,103 @@
 .class Lcom/android/settings/wifi/V;
 .super Ljava/lang/Object;
-.source "MiuiWifiDetailFragment.java"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
-
-# instance fields
-.field final synthetic Mq:Lcom/android/settings/wifi/o;
+.source "Summary.java"
 
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/wifi/o;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
 
     .prologue
-    .line 72
-    iput-object p1, p0, Lcom/android/settings/wifi/V;->Mq:Lcom/android/settings/wifi/o;
-
+    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+.method static a(Landroid/content/Context;Landroid/net/NetworkInfo$DetailedState;)Ljava/lang/String;
+    .locals 1
     .parameter
     .parameter
 
     .prologue
-    .line 75
-    new-instance v0, Landroid/content/Intent;
+    .line 37
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+    invoke-static {p0, v0, p1}, Lcom/android/settings/wifi/V;->a(Landroid/content/Context;Ljava/lang/String;Landroid/net/NetworkInfo$DetailedState;)Ljava/lang/String;
 
-    .line 76
-    const-string v1, "network_id"
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/android/settings/wifi/V;->Mq:Lcom/android/settings/wifi/o;
+    return-object v0
+.end method
 
-    invoke-static {v2}, Lcom/android/settings/wifi/o;->a(Lcom/android/settings/wifi/o;)I
+.method static a(Landroid/content/Context;Ljava/lang/String;Landroid/net/NetworkInfo$DetailedState;)Ljava/lang/String;
+    .locals 3
+    .parameter
+    .parameter
+    .parameter
 
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 77
-    iget-object v1, p0, Lcom/android/settings/wifi/V;->Mq:Lcom/android/settings/wifi/o;
-
-    invoke-virtual {v1}, Lcom/android/settings/wifi/o;->getActivity()Landroid/app/Activity;
+    .prologue
+    .line 26
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const/4 v2, -0x1
+    if-nez p1, :cond_1
 
-    invoke-virtual {v1, v2, v0}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V
+    const v0, 0x7f070010
 
-    .line 78
-    return-void
+    :goto_0
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 28
+    invoke-virtual {p2}, Landroid/net/NetworkInfo$DetailedState;->ordinal()I
+
+    move-result v1
+
+    .line 30
+    array-length v2, v0
+
+    if-ge v1, v2, :cond_0
+
+    aget-object v2, v0, v1
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    .line 31
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 33
+    :goto_1
+    return-object v0
+
+    .line 26
+    :cond_1
+    const v0, 0x7f070011
+
+    goto :goto_0
+
+    .line 33
+    :cond_2
+    aget-object v0, v0, v1
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
 .end method

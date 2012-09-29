@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Fk:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
+.field final synthetic Fo:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 469
-    iput-object p1, p0, Lcom/google/common/collect/ad;->Fk:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
+    iput-object p1, p0, Lcom/google/common/collect/ad;->Fo:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/K;-><init>(I)V
 
@@ -30,9 +30,9 @@
 
     .prologue
     .line 471
-    iget-object v0, p0, Lcom/google/common/collect/ad;->Fk:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
+    iget-object v0, p0, Lcom/google/common/collect/ad;->Fo:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
 
-    iget-object v1, p0, Lcom/google/common/collect/ad;->Fk:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
+    iget-object v1, p0, Lcom/google/common/collect/ad;->Fo:Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;
 
     iget-object v1, v1, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->source:[Ljava/lang/Object;
 

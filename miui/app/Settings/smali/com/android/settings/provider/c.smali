@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field Il:Ljava/lang/String;
+.field Io:Ljava/lang/String;
 
 .field count:I
 

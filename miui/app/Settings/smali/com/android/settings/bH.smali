@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic yr:Lcom/android/settings/DockSettings;
+.field final synthetic yv:Lcom/android/settings/DockSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 46
-    iput-object p1, p0, Lcom/android/settings/bH;->yr:Lcom/android/settings/DockSettings;
+    iput-object p1, p0, Lcom/android/settings/bH;->yv:Lcom/android/settings/DockSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -43,7 +43,7 @@
     if-eqz v0, :cond_0
 
     .line 50
-    iget-object v0, p0, Lcom/android/settings/bH;->yr:Lcom/android/settings/DockSettings;
+    iget-object v0, p0, Lcom/android/settings/bH;->yv:Lcom/android/settings/DockSettings;
 
     invoke-static {v0, p2}, Lcom/android/settings/DockSettings;->a(Lcom/android/settings/DockSettings;Landroid/content/Intent;)V
 

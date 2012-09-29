@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+.field final synthetic fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -53,7 +53,7 @@
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
     .line 68
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     invoke-static {v1}, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->a(Lcom/android/settings/bluetooth/BluetoothPermissionActivity;)Landroid/bluetooth/BluetoothDevice;
 
@@ -65,7 +65,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->fF:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothPermissionActivity$1;->fI:Lcom/android/settings/bluetooth/BluetoothPermissionActivity;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->b(Lcom/android/settings/bluetooth/BluetoothPermissionActivity;)V
 

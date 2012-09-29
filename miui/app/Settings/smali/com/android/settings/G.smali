@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic cq:Lcom/android/settings/BasePreferenceFragment;
+.field final synthetic ct:Lcom/android/settings/BasePreferenceFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 81
-    iput-object p1, p0, Lcom/android/settings/G;->cq:Lcom/android/settings/BasePreferenceFragment;
+    iput-object p1, p0, Lcom/android/settings/G;->ct:Lcom/android/settings/BasePreferenceFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,9 +35,9 @@
 
     .prologue
     .line 85
-    iget-object v0, p0, Lcom/android/settings/G;->cq:Lcom/android/settings/BasePreferenceFragment;
+    iget-object v0, p0, Lcom/android/settings/G;->ct:Lcom/android/settings/BasePreferenceFragment;
 
-    iget-object v0, v0, Lcom/android/settings/BasePreferenceFragment;->gz:Ljava/util/List;
+    iget-object v0, v0, Lcom/android/settings/BasePreferenceFragment;->gC:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -46,7 +46,7 @@
     check-cast v0, Landroid/preference/PreferenceActivity$Header;
 
     .line 86
-    iget-object v1, p0, Lcom/android/settings/G;->cq:Lcom/android/settings/BasePreferenceFragment;
+    iget-object v1, p0, Lcom/android/settings/G;->ct:Lcom/android/settings/BasePreferenceFragment;
 
     invoke-static {v1, v0, p3}, Lcom/android/settings/BasePreferenceFragment;->a(Lcom/android/settings/BasePreferenceFragment;Landroid/preference/PreferenceActivity$Header;I)V
 

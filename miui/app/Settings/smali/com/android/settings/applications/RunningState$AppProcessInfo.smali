@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field final Cn:Landroid/app/ActivityManager$RunningAppProcessInfo;
+.field final Cr:Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-.field Co:Z
+.field Cs:Z
 
-.field Cp:Z
+.field Ct:Z
 
 
 # direct methods
@@ -21,7 +21,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 109
-    iput-object p1, p0, Lcom/android/settings/applications/RunningState$AppProcessInfo;->Cn:Landroid/app/ActivityManager$RunningAppProcessInfo;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningState$AppProcessInfo;->Cr:Landroid/app/ActivityManager$RunningAppProcessInfo;
 
     .line 110
     return-void

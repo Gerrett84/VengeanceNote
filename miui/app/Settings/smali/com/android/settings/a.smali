@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic l:Lcom/android/settings/DreamComponentPreference;
+.field final synthetic o:Lcom/android/settings/DreamComponentPreference;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 100
-    iput-object p1, p0, Lcom/android/settings/a;->l:Lcom/android/settings/DreamComponentPreference;
+    iput-object p1, p0, Lcom/android/settings/a;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -60,7 +60,7 @@
     if-nez v2, :cond_3
 
     .line 109
-    iget-object v2, p0, Lcom/android/settings/a;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v2, p0, Lcom/android/settings/a;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v2}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 
@@ -71,7 +71,7 @@
     move-result-object v0
 
     .line 110
-    iget-object v2, p0, Lcom/android/settings/a;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v2, p0, Lcom/android/settings/a;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v2}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 
@@ -84,7 +84,7 @@
     .line 121
     :cond_0
     :goto_2
-    iget-object v2, p0, Lcom/android/settings/a;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v2, p0, Lcom/android/settings/a;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v2}, Lcom/android/settings/DreamComponentPreference;->b(Lcom/android/settings/DreamComponentPreference;)Ljava/text/Collator;
 
@@ -122,7 +122,7 @@
 
     .line 112
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/a;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v0, p0, Lcom/android/settings/a;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v0}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 
@@ -147,7 +147,7 @@
     .line 116
     :cond_4
     :goto_3
-    iget-object v1, p0, Lcom/android/settings/a;->l:Lcom/android/settings/DreamComponentPreference;
+    iget-object v1, p0, Lcom/android/settings/a;->o:Lcom/android/settings/DreamComponentPreference;
 
     invoke-static {v1}, Lcom/android/settings/DreamComponentPreference;->a(Lcom/android/settings/DreamComponentPreference;)Landroid/content/pm/PackageManager;
 

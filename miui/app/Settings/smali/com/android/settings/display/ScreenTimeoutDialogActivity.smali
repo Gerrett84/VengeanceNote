@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private gr:[Ljava/lang/CharSequence;
+.field private gu:[Ljava/lang/CharSequence;
 
-.field private gs:[Ljava/lang/CharSequence;
+.field private gv:[Ljava/lang/CharSequence;
 
-.field private gt:J
+.field private gw:J
 
 
 # direct methods
@@ -28,12 +28,12 @@
 
     .prologue
     .line 18
-    iget-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     return-object v0
 .end method
 
-.method private aN()V
+.method private aR()V
     .locals 9
 
     .prologue
@@ -78,10 +78,10 @@
 
     .line 47
     :cond_2
-    iget-object v3, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gr:[Ljava/lang/CharSequence;
+    iget-object v3, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gu:[Ljava/lang/CharSequence;
 
     .line 48
-    iget-object v4, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iget-object v4, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     .line 49
     new-instance v5, Ljava/util/ArrayList;
@@ -165,7 +165,7 @@
 
     check-cast v0, [Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gr:[Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gu:[Ljava/lang/CharSequence;
 
     .line 60
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -180,27 +180,27 @@
 
     check-cast v0, [Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     .line 61
-    iget-wide v3, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gt:J
+    iget-wide v3, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gw:J
 
     cmp-long v0, v3, v1
 
     if-lez v0, :cond_0
 
     .line 62
-    iput-wide v1, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gt:J
+    iput-wide v1, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gw:J
 
     goto :goto_1
 .end method
 
-.method private aO()V
+.method private aS()V
     .locals 4
 
     .prologue
     .line 68
-    iget-wide v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gt:J
+    iget-wide v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gw:J
 
     invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -221,7 +221,7 @@
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 71
-    iget-object v2, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gr:[Ljava/lang/CharSequence;
+    iget-object v2, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gu:[Ljava/lang/CharSequence;
 
     new-instance v3, Lcom/android/settings/display/f;
 
@@ -262,12 +262,12 @@
     .line 106
     if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_1
 
     .line 107
-    iget-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     array-length v0, v0
 
@@ -277,7 +277,7 @@
     if-ltz v0, :cond_1
 
     .line 108
-    iget-object v1, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     aget-object v1, v1, v0
 
@@ -337,7 +337,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gr:[Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gu:[Ljava/lang/CharSequence;
 
     .line 33
     invoke-virtual {p0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->getResources()Landroid/content/res/Resources;
@@ -350,7 +350,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gs:[Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gv:[Ljava/lang/CharSequence;
 
     .line 34
     invoke-virtual {p0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->getContentResolver()Landroid/content/ContentResolver;
@@ -365,13 +365,13 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gt:J
+    iput-wide v0, p0, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->gw:J
 
     .line 36
-    invoke-direct {p0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->aN()V
+    invoke-direct {p0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->aR()V
 
     .line 37
-    invoke-direct {p0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->aO()V
+    invoke-direct {p0}, Lcom/android/settings/display/ScreenTimeoutDialogActivity;->aS()V
 
     .line 38
     return-void

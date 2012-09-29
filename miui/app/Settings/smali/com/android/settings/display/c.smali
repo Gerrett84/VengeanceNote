@@ -46,7 +46,7 @@
 
     const-string v2, "accelerometer"
 
-    invoke-static {v2}, Lcom/android/settings/bP;->O(Ljava/lang/String;)I
+    invoke-static {v2}, Lcom/android/settings/bP;->P(Ljava/lang/String;)I
 
     move-result v2
 
@@ -65,7 +65,7 @@
     move-result-object v0
 
     .line 34
-    iget-object v1, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v1, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v1}, Lmiui/widget/SlidingButton;->isChecked()Z
 
@@ -104,7 +104,7 @@
     const/4 v0, 0x0
 
     .line 50
-    iget-object v1, p0, Lcom/android/settings/cI;->cW:Lmiui/widget/SlidingButton;
+    iget-object v1, p0, Lcom/android/settings/cI;->cZ:Lmiui/widget/SlidingButton;
 
     iget-object v2, p0, Lcom/android/settings/cI;->mActivity:Landroid/app/Activity;
 

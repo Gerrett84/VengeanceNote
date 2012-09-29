@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic KY:Lcom/android/settings/PointerSpeedPreference;
+.field final synthetic Lb:Lcom/android/settings/PointerSpeedPreference;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 43
-    iput-object p1, p0, Lcom/android/settings/dK;->KY:Lcom/android/settings/PointerSpeedPreference;
+    iput-object p1, p0, Lcom/android/settings/dK;->Lb:Lcom/android/settings/PointerSpeedPreference;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/android/settings/dK;->KY:Lcom/android/settings/PointerSpeedPreference;
+    iget-object v0, p0, Lcom/android/settings/dK;->Lb:Lcom/android/settings/PointerSpeedPreference;
 
     invoke-static {v0}, Lcom/android/settings/PointerSpeedPreference;->a(Lcom/android/settings/PointerSpeedPreference;)V
 

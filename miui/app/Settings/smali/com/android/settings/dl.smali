@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic aY:Lcom/android/settings/RadioInfo;
+.field final synthetic bb:Lcom/android/settings/RadioInfo;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 868
-    iput-object p1, p0, Lcom/android/settings/dl;->aY:Lcom/android/settings/RadioInfo;
+    iput-object p1, p0, Lcom/android/settings/dl;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,7 +34,7 @@
     const/4 v2, 0x1
 
     .line 870
-    iget-object v0, p0, Lcom/android/settings/dl;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v0, p0, Lcom/android/settings/dl;->bb:Lcom/android/settings/RadioInfo;
 
     const-string v1, "connectivity"
 
@@ -45,7 +45,7 @@
     check-cast v0, Landroid/net/ConnectivityManager;
 
     .line 872
-    iget-object v1, p0, Lcom/android/settings/dl;->aY:Lcom/android/settings/RadioInfo;
+    iget-object v1, p0, Lcom/android/settings/dl;->bb:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->z(Lcom/android/settings/RadioInfo;)Landroid/telephony/TelephonyManager;
 

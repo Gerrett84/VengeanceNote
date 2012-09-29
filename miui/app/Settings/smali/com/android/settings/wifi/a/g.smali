@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Bo:Lcom/android/settings/wifi/a/b;
+.field final synthetic Bs:Lcom/android/settings/wifi/a/b;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 451
-    iput-object p1, p0, Lcom/android/settings/wifi/a/g;->Bo:Lcom/android/settings/wifi/a/b;
+    iput-object p1, p0, Lcom/android/settings/wifi/a/g;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

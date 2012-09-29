@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private Ca:Ljava/util/HashMap;
+.field private Ce:Ljava/util/HashMap;
 
-.field private final Cb:Lcom/android/settings/bl;
+.field private final Cf:Lcom/android/settings/bl;
 
-.field private Cc:Lcom/android/settings/accounts/AuthenticatorHelper;
+.field private Cg:Lcom/android/settings/accounts/AuthenticatorHelper;
 
 .field private mInflater:Landroid/view/LayoutInflater;
 
@@ -27,7 +27,7 @@
     invoke-direct {p0, p1, v0, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
     .line 553
-    iput-object p3, p0, Lcom/android/settings/ch;->Cc:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iput-object p3, p0, Lcom/android/settings/ch;->Cg:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     .line 554
     const-string v0, "layout_inflater"
@@ -45,7 +45,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     .line 556
     new-instance v0, Lcom/android/settings/bl;
@@ -56,10 +56,10 @@
 
     invoke-direct {v0, p1, v1}, Lcom/android/settings/bl;-><init>(Landroid/app/Activity;Lmiui/widget/SlidingButton;)V
 
-    iput-object v0, p0, Lcom/android/settings/ch;->Cb:Lcom/android/settings/bl;
+    iput-object v0, p0, Lcom/android/settings/ch;->Cf:Lcom/android/settings/bl;
 
     .line 557
-    iget-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     const-wide/32 v1, 0x7f080217
 
@@ -67,12 +67,12 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/ch;->Cb:Lcom/android/settings/bl;
+    iget-object v2, p0, Lcom/android/settings/ch;->Cf:Lcom/android/settings/bl;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 558
-    iget-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     const-wide/32 v1, 0x7f080215
 
@@ -91,7 +91,7 @@
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 559
-    iget-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     const-wide/32 v1, 0x7f08021d
 
@@ -223,7 +223,7 @@
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 654
-    iget-object v1, p0, Lcom/android/settings/ch;->Cc:Lcom/android/settings/accounts/AuthenticatorHelper;
+    iget-object v1, p0, Lcom/android/settings/ch;->Cg:Lcom/android/settings/accounts/AuthenticatorHelper;
 
     invoke-virtual {p0}, Lcom/android/settings/ch;->getContext()Landroid/content/Context;
 
@@ -427,7 +427,7 @@
 
     check-cast v1, Lmiui/widget/SlidingButton;
 
-    iput-object v1, v3, Lcom/android/settings/dV;->Og:Lmiui/widget/SlidingButton;
+    iput-object v1, v3, Lcom/android/settings/dV;->Oj:Lmiui/widget/SlidingButton;
 
     goto :goto_1
 
@@ -497,7 +497,7 @@
 
     .line 620
     :pswitch_4
-    iget-object v1, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     iget-wide v4, v0, Landroid/preference/PreferenceActivity$Header;->id:J
 
@@ -515,7 +515,7 @@
     if-eqz v1, :cond_0
 
     .line 622
-    iget-object v4, v3, Lcom/android/settings/dV;->Og:Lmiui/widget/SlidingButton;
+    iget-object v4, v3, Lcom/android/settings/dV;->Oj:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v1, v4}, Lcom/android/settings/cI;->a(Lmiui/widget/SlidingButton;)V
 
@@ -647,12 +647,12 @@
     return v0
 .end method
 
-.method public ie()Lcom/android/settings/bl;
+.method public ii()Lcom/android/settings/bl;
     .locals 1
 
     .prologue
     .line 548
-    iget-object v0, p0, Lcom/android/settings/ch;->Cb:Lcom/android/settings/bl;
+    iget-object v0, p0, Lcom/android/settings/ch;->Cf:Lcom/android/settings/bl;
 
     return-object v0
 .end method
@@ -685,7 +685,7 @@
 
     .prologue
     .line 669
-    iget-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -724,7 +724,7 @@
 
     .prologue
     .line 662
-    iget-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -764,7 +764,7 @@
 
     .prologue
     .line 517
-    iget-object v0, p0, Lcom/android/settings/ch;->Ca:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/ch;->Ce:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic uj:Lcom/android/settings/eb;
+.field final synthetic un:Lcom/android/settings/eb;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 366
-    iput-object p1, p0, Lcom/android/settings/bs;->uj:Lcom/android/settings/eb;
+    iput-object p1, p0, Lcom/android/settings/bs;->un:Lcom/android/settings/eb;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,13 +35,13 @@
     .line 368
     new-instance v0, Lcom/android/settings/dQ;
 
-    iget-object v1, p0, Lcom/android/settings/bs;->uj:Lcom/android/settings/eb;
+    iget-object v1, p0, Lcom/android/settings/bs;->un:Lcom/android/settings/eb;
 
-    iget-object v1, v1, Lcom/android/settings/eb;->Kc:Lcom/android/settings/TrustedCredentialsSettings;
+    iget-object v1, v1, Lcom/android/settings/eb;->Kf:Lcom/android/settings/TrustedCredentialsSettings;
 
-    iget-object v2, p0, Lcom/android/settings/bs;->uj:Lcom/android/settings/eb;
+    iget-object v2, p0, Lcom/android/settings/bs;->un:Lcom/android/settings/eb;
 
-    iget-object v2, v2, Lcom/android/settings/eb;->Px:Lcom/android/settings/as;
+    iget-object v2, v2, Lcom/android/settings/eb;->PA:Lcom/android/settings/as;
 
     const/4 v3, 0x0
 
@@ -57,9 +57,9 @@
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     .line 370
-    iget-object v0, p0, Lcom/android/settings/bs;->uj:Lcom/android/settings/eb;
+    iget-object v0, p0, Lcom/android/settings/bs;->un:Lcom/android/settings/eb;
 
-    iget-object v0, v0, Lcom/android/settings/eb;->Py:Landroid/app/Dialog;
+    iget-object v0, v0, Lcom/android/settings/eb;->PB:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 

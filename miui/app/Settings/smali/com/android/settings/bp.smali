@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic tD:Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;
+.field final synthetic tH:Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 2071
-    iput-object p1, p0, Lcom/android/settings/bp;->tD:Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;
+    iput-object p1, p0, Lcom/android/settings/bp;->tH:Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 2074
-    iget-object v0, p0, Lcom/android/settings/bp;->tD:Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;
+    iget-object v0, p0, Lcom/android/settings/bp;->tH:Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;
 
     invoke-static {v0}, Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;->a(Lcom/android/settings/DataUsageSummary$ConfirmAutoSyncChangeFragment;)Z
 

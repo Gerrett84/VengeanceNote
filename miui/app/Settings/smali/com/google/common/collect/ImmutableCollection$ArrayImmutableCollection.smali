@@ -25,7 +25,7 @@
 
 
 # virtual methods
-.method public dz()Lcom/google/common/collect/ap;
+.method public dD()Lcom/google/common/collect/ap;
     .locals 1
 
     .prologue
@@ -54,7 +54,7 @@
 
     .prologue
     .line 217
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection$ArrayImmutableCollection;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection$ArrayImmutableCollection;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 

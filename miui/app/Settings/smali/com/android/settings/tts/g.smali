@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Cj:Lcom/android/settings/tts/a;
+.field final synthetic Cn:Lcom/android/settings/tts/a;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 56
-    iput-object p1, p0, Lcom/android/settings/tts/g;->Cj:Lcom/android/settings/tts/a;
+    iput-object p1, p0, Lcom/android/settings/tts/g;->Cn:Lcom/android/settings/tts/a;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,9 +35,9 @@
     if-eqz p1, :cond_0
 
     .line 60
-    iget-object v0, p0, Lcom/android/settings/tts/g;->Cj:Lcom/android/settings/tts/a;
+    iget-object v0, p0, Lcom/android/settings/tts/g;->Cn:Lcom/android/settings/tts/a;
 
-    invoke-virtual {v0}, Lcom/android/settings/tts/a;->lZ()V
+    invoke-virtual {v0}, Lcom/android/settings/tts/a;->md()V
 
     .line 70
     :goto_0
@@ -45,7 +45,7 @@
 
     .line 62
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/tts/g;->Cj:Lcom/android/settings/tts/a;
+    iget-object v0, p0, Lcom/android/settings/tts/g;->Cn:Lcom/android/settings/tts/a;
 
     invoke-virtual {v0}, Lcom/android/settings/tts/a;->getActivity()Landroid/app/Activity;
 

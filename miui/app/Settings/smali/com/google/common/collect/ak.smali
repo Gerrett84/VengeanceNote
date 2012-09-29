@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic JG:Ljava/util/Collection;
+.field final synthetic JJ:Ljava/util/Collection;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 321
-    iput-object p1, p0, Lcom/google/common/collect/ak;->JG:Ljava/util/Collection;
+    iput-object p1, p0, Lcom/google/common/collect/ak;->JJ:Ljava/util/Collection;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 323
-    iget-object v0, p0, Lcom/google/common/collect/ak;->JG:Ljava/util/Collection;
+    iget-object v0, p0, Lcom/google/common/collect/ak;->JJ:Ljava/util/Collection;
 
     if-ne p1, v0, :cond_0
 

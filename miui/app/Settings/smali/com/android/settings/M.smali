@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public cT:Ljava/lang/String;
+.field public cW:Ljava/lang/String;
 
-.field public cU:Lcom/android/settings/ScanState;
+.field public cX:Lcom/android/settings/ScanState;
 
 .field public mChecked:Z
 
@@ -20,9 +20,9 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
-    sget-object v0, Lcom/android/settings/ScanState;->bG:Lcom/android/settings/ScanState;
+    sget-object v0, Lcom/android/settings/ScanState;->bJ:Lcom/android/settings/ScanState;
 
-    iput-object v0, p0, Lcom/android/settings/M;->cU:Lcom/android/settings/ScanState;
+    iput-object v0, p0, Lcom/android/settings/M;->cX:Lcom/android/settings/ScanState;
 
     .line 40
     const/4 v0, 0x1

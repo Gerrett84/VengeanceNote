@@ -1,13 +1,10 @@
 .class Lcom/android/settings/wifi/Z;
-.super Ljava/lang/Object;
+.super Ljava/util/TimerTask;
 .source "WpsDialog.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic zL:Lcom/android/settings/wifi/WpsDialog;
+.field final synthetic zP:Lcom/android/settings/wifi/WpsDialog;
 
 
 # direct methods
@@ -16,26 +13,33 @@
     .parameter
 
     .prologue
-    .line 150
-    iput-object p1, p0, Lcom/android/settings/wifi/Z;->zL:Lcom/android/settings/wifi/WpsDialog;
+    .line 170
+    iput-object p1, p0, Lcom/android/settings/wifi/Z;->zP:Lcom/android/settings/wifi/WpsDialog;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 1
-    .parameter
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 153
-    iget-object v0, p0, Lcom/android/settings/wifi/Z;->zL:Lcom/android/settings/wifi/WpsDialog;
+    .line 173
+    iget-object v0, p0, Lcom/android/settings/wifi/Z;->zP:Lcom/android/settings/wifi/WpsDialog;
 
-    invoke-virtual {v0}, Lcom/android/settings/wifi/WpsDialog;->dismiss()V
+    invoke-static {v0}, Lcom/android/settings/wifi/WpsDialog;->c(Lcom/android/settings/wifi/WpsDialog;)Landroid/os/Handler;
 
-    .line 154
+    move-result-object v0
+
+    new-instance v1, Lcom/android/settings/wifi/J;
+
+    invoke-direct {v1, p0}, Lcom/android/settings/wifi/J;-><init>(Lcom/android/settings/wifi/Z;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 180
     return-void
 .end method

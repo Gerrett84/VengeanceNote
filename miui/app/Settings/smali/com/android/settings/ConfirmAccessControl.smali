@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private yL:Z
+.field private yP:Z
 
-.field private yM:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
+.field private yQ:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
     .prologue
     .line 35
-    iput-boolean p1, p0, Lcom/android/settings/ConfirmAccessControl;->yL:Z
+    iput-boolean p1, p0, Lcom/android/settings/ConfirmAccessControl;->yP:Z
 
     return p1
 .end method
@@ -78,7 +78,7 @@
     .line 78
     check-cast p1, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
 
-    iput-object p1, p0, Lcom/android/settings/ConfirmAccessControl;->yM:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
+    iput-object p1, p0, Lcom/android/settings/ConfirmAccessControl;->yQ:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
 
     .line 79
     return-void
@@ -89,7 +89,7 @@
 
     .prologue
     .line 55
-    iget-boolean v0, p0, Lcom/android/settings/ConfirmAccessControl;->yL:Z
+    iget-boolean v0, p0, Lcom/android/settings/ConfirmAccessControl;->yP:Z
 
     if-nez v0, :cond_0
 
@@ -138,14 +138,14 @@
     invoke-super {p0, p1}, Lcom/android/settings/ConfirmLockPattern;->onNewIntent(Landroid/content/Intent;)V
 
     .line 84
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl;->yM:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl;->yQ:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->a(Landroid/content/Intent;)V
 
     .line 85
-    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl;->yM:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
+    iget-object v0, p0, Lcom/android/settings/ConfirmAccessControl;->yQ:Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;
 
-    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HS:Lcom/android/settings/ConfirmLockPattern$Stage;
+    sget-object v1, Lcom/android/settings/ConfirmLockPattern$Stage;->HW:Lcom/android/settings/ConfirmLockPattern$Stage;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ConfirmAccessControl$ConfirmAccessControlFragment;->a(Lcom/android/settings/ConfirmLockPattern$Stage;)V
 
@@ -161,7 +161,7 @@
     invoke-super {p0}, Lcom/android/settings/ConfirmLockPattern;->onStop()V
 
     .line 63
-    iget-boolean v0, p0, Lcom/android/settings/ConfirmAccessControl;->yL:Z
+    iget-boolean v0, p0, Lcom/android/settings/ConfirmAccessControl;->yP:Z
 
     if-eqz v0, :cond_0
 

@@ -12,13 +12,13 @@
 
 
 # instance fields
-.field public final dv:I
+.field public dA:Landroid/util/SparseBooleanArray;
 
-.field public dw:Z
+.field public dB:J
 
-.field public dx:Landroid/util/SparseBooleanArray;
+.field public final dy:I
 
-.field public dy:J
+.field public dz:Z
 
 
 # direct methods
@@ -49,10 +49,10 @@
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iput-object v0, p0, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     .line 1421
-    iput p1, p0, Lcom/android/settings/P;->dv:I
+    iput p1, p0, Lcom/android/settings/P;->dy:I
 
     .line 1422
     return-void
@@ -71,28 +71,28 @@
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iput-object v0, p0, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     .line 1425
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/P;->dv:I
+    iput v0, p0, Lcom/android/settings/P;->dy:I
 
     .line 1426
     invoke-virtual {p1}, Landroid/os/Parcel;->readSparseBooleanArray()Landroid/util/SparseBooleanArray;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iput-object v0, p0, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     .line 1427
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/settings/P;->dy:J
+    iput-wide v0, p0, Lcom/android/settings/P;->dB:J
 
     .line 1428
     return-void
@@ -106,9 +106,9 @@
 
     .prologue
     .line 1448
-    iget-wide v0, p1, Lcom/android/settings/P;->dy:J
+    iget-wide v0, p1, Lcom/android/settings/P;->dB:J
 
-    iget-wide v2, p0, Lcom/android/settings/P;->dy:J
+    iget-wide v2, p0, Lcom/android/settings/P;->dB:J
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Long;->compare(JJ)I
 
@@ -148,7 +148,7 @@
 
     .prologue
     .line 1431
-    iget-object v0, p0, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iget-object v0, p0, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     const/4 v1, 0x1
 
@@ -165,17 +165,17 @@
 
     .prologue
     .line 1436
-    iget v0, p0, Lcom/android/settings/P;->dv:I
+    iget v0, p0, Lcom/android/settings/P;->dy:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1437
-    iget-object v0, p0, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iget-object v0, p0, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeSparseBooleanArray(Landroid/util/SparseBooleanArray;)V
 
     .line 1438
-    iget-wide v0, p0, Lcom/android/settings/P;->dy:J
+    iget-wide v0, p0, Lcom/android/settings/P;->dB:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 

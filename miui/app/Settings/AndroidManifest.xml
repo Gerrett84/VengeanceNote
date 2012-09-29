@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.1-2.9.21" package="com.android.settings" coreApp="true"
+<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.1-2.9.28" package="com.android.settings" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16" />
     <original-package android:name="com.android.settings" />
@@ -918,6 +918,18 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="com.xiaomi.action.FIND_DEVICE_STATUS_CHANGED" />
                 <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".wifi.WifiRestoreService">
+            <intent-filter>
+                <action android:name="android.net.wifi.SCAN_RESULTS" />
+                <action android:name="android.intent.action.RESTORE_FINISH" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".wifi.WifiRestoreReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.SCAN_RESULTS" />
+                <action android:name="android.intent.action.RESTORE_FINISH" />
             </intent-filter>
         </receiver>
     </application>

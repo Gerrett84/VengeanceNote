@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic vi:Ljava/lang/String;
+.field final synthetic vm:Ljava/lang/String;
 
-.field final synthetic vj:Lcom/android/settings/tts/TextToSpeechSettings;
+.field final synthetic vn:Lcom/android/settings/tts/TextToSpeechSettings;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 340
-    iput-object p1, p0, Lcom/android/settings/tts/d;->vj:Lcom/android/settings/tts/TextToSpeechSettings;
+    iput-object p1, p0, Lcom/android/settings/tts/d;->vn:Lcom/android/settings/tts/TextToSpeechSettings;
 
-    iput-object p2, p0, Lcom/android/settings/tts/d;->vi:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/settings/tts/d;->vm:Ljava/lang/String;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,9 +38,9 @@
 
     .prologue
     .line 342
-    iget-object v0, p0, Lcom/android/settings/tts/d;->vj:Lcom/android/settings/tts/TextToSpeechSettings;
+    iget-object v0, p0, Lcom/android/settings/tts/d;->vn:Lcom/android/settings/tts/TextToSpeechSettings;
 
-    iget-object v1, p0, Lcom/android/settings/tts/d;->vi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/tts/d;->vm:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/android/settings/tts/TextToSpeechSettings;->a(Lcom/android/settings/tts/TextToSpeechSettings;Ljava/lang/String;)V
 

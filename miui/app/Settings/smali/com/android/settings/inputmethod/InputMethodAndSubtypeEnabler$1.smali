@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic GI:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
+.field final synthetic GM:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 175
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$1;->GI:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler$1;->GM:Lcom/android/settings/inputmethod/InputMethodAndSubtypeEnabler;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 

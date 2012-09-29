@@ -7,13 +7,13 @@
 
 
 # static fields
-.field private static KV:Landroid/util/SparseArray;
+.field private static KY:Landroid/util/SparseArray;
 
 
 # instance fields
-.field private KW:Ljava/util/ArrayList;
+.field private KZ:Ljava/util/ArrayList;
 
-.field private KX:I
+.field private La:I
 
 
 # direct methods
@@ -28,10 +28,10 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    sput-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sput-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     .line 27
-    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     const/16 v1, 0xc
 
@@ -44,7 +44,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 28
-    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -53,7 +53,7 @@
     invoke-virtual {v0, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 29
-    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     const/16 v1, 0xd
 
@@ -66,7 +66,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 30
-    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     const/16 v1, 0xe
 
@@ -79,7 +79,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 31
-    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     const/16 v1, 0xf
 
@@ -107,7 +107,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/display/FontSizeSettings;->KW:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/display/FontSizeSettings;->KZ:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -160,7 +160,7 @@
     if-eqz v0, :cond_4
 
     .line 53
-    sget-object v4, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v4, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     iget v0, v0, Landroid/content/res/Configuration;->uiMode:I
 
@@ -183,7 +183,7 @@
     move-result v0
 
     :goto_1
-    iput v0, p0, Lcom/android/settings/display/FontSizeSettings;->KX:I
+    iput v0, p0, Lcom/android/settings/display/FontSizeSettings;->La:I
 
     .line 60
     invoke-virtual {p0}, Lcom/android/settings/display/FontSizeSettings;->getResources()Landroid/content/res/Resources;
@@ -280,7 +280,7 @@
     invoke-virtual {v9, p0}, Lcom/android/settings/cs;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     .line 77
-    iget v4, p0, Lcom/android/settings/display/FontSizeSettings;->KX:I
+    iget v4, p0, Lcom/android/settings/display/FontSizeSettings;->La:I
 
     if-ne v1, v4, :cond_2
 
@@ -290,7 +290,7 @@
     invoke-virtual {v9, v4}, Lcom/android/settings/cs;->setChecked(Z)V
 
     .line 79
-    iget-object v4, p0, Lcom/android/settings/display/FontSizeSettings;->KW:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/settings/display/FontSizeSettings;->KZ:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -392,14 +392,14 @@
     move-result v2
 
     .line 90
-    iget v0, p0, Lcom/android/settings/display/FontSizeSettings;->KX:I
+    iget v0, p0, Lcom/android/settings/display/FontSizeSettings;->La:I
 
     if-eq v2, v0, :cond_0
 
     .line 91
-    iget-object v0, p0, Lcom/android/settings/display/FontSizeSettings;->KW:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/display/FontSizeSettings;->KZ:Ljava/util/ArrayList;
 
-    iget v3, p0, Lcom/android/settings/display/FontSizeSettings;->KX:I
+    iget v3, p0, Lcom/android/settings/display/FontSizeSettings;->La:I
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -412,12 +412,12 @@
     invoke-virtual {v0, v3}, Lcom/android/settings/cs;->setChecked(Z)V
 
     .line 92
-    iput v2, p0, Lcom/android/settings/display/FontSizeSettings;->KX:I
+    iput v2, p0, Lcom/android/settings/display/FontSizeSettings;->La:I
 
     .line 94
-    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v0, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
-    sget-object v3, Lcom/android/settings/display/FontSizeSettings;->KV:Landroid/util/SparseArray;
+    sget-object v3, Lcom/android/settings/display/FontSizeSettings;->KY:Landroid/util/SparseArray;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

@@ -43,24 +43,24 @@
     return-object p0
 .end method
 
-.method public bridge synthetic hs()Lcom/google/common/collect/ImmutableMap;
+.method public bridge synthetic hw()Lcom/google/common/collect/ImmutableMap;
     .locals 1
 
     .prologue
     .line 137
-    invoke-virtual {p0}, Lcom/google/common/collect/T;->id()Lcom/google/common/collect/ImmutableBiMap;
+    invoke-virtual {p0}, Lcom/google/common/collect/T;->ih()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public id()Lcom/google/common/collect/ImmutableBiMap;
+.method public ih()Lcom/google/common/collect/ImmutableBiMap;
     .locals 2
 
     .prologue
     .line 172
-    invoke-super {p0}, Lcom/google/common/collect/O;->hs()Lcom/google/common/collect/ImmutableMap;
+    invoke-super {p0}, Lcom/google/common/collect/O;->hw()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v1
 
@@ -72,7 +72,7 @@
     if-eqz v0, :cond_0
 
     .line 174
-    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->ez()Lcom/google/common/collect/ImmutableBiMap;
+    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->eD()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 

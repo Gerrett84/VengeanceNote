@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final aU:Ljava/text/Collator;
+.field private final aX:Ljava/text/Collator;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/u;->aU:Ljava/text/Collator;
+    iput-object v0, p0, Lcom/android/settings/u;->aX:Ljava/text/Collator;
 
     return-void
 .end method
@@ -37,7 +37,7 @@
 
     .prologue
     .line 139
-    iget-object v0, p0, Lcom/android/settings/u;->aU:Ljava/text/Collator;
+    iget-object v0, p0, Lcom/android/settings/u;->aX:Ljava/text/Collator;
 
     iget-object v1, p1, Lcom/android/settings/aN;->label:Ljava/lang/CharSequence;
 

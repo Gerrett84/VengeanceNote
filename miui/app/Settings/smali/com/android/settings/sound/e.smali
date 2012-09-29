@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic k:Lcom/android/settings/sound/RingerVolumeActivity;
+.field final synthetic n:Lcom/android/settings/sound/RingerVolumeActivity;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 180
-    iput-object p1, p0, Lcom/android/settings/sound/e;->k:Lcom/android/settings/sound/RingerVolumeActivity;
+    iput-object p1, p0, Lcom/android/settings/sound/e;->n:Lcom/android/settings/sound/RingerVolumeActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,9 +33,9 @@
 
     .prologue
     .line 184
-    iget-object v0, p0, Lcom/android/settings/sound/e;->k:Lcom/android/settings/sound/RingerVolumeActivity;
+    iget-object v0, p0, Lcom/android/settings/sound/e;->n:Lcom/android/settings/sound/RingerVolumeActivity;
 
-    invoke-virtual {v0}, Lcom/android/settings/sound/RingerVolumeActivity;->ji()V
+    invoke-virtual {v0}, Lcom/android/settings/sound/RingerVolumeActivity;->jm()V
 
     .line 185
     return-void

@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private gr:[Ljava/lang/CharSequence;
+.field private gu:[Ljava/lang/CharSequence;
 
-.field private gs:[Ljava/lang/CharSequence;
+.field private gv:[Ljava/lang/CharSequence;
 
 
 # direct methods
@@ -26,12 +26,12 @@
 
     .prologue
     .line 13
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gs:[Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gv:[Ljava/lang/CharSequence;
 
     return-object v0
 .end method
 
-.method private eb()V
+.method private ef()V
     .locals 4
 
     .prologue
@@ -48,7 +48,7 @@
     .line 32
     const-string v1, "persist.sys.aries.power_profile"
 
-    iget-object v2, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gr:[Ljava/lang/CharSequence;
+    iget-object v2, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gu:[Ljava/lang/CharSequence;
 
     const/4 v3, 0x1
 
@@ -68,7 +68,7 @@
     move-result v1
 
     .line 34
-    iget-object v2, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gr:[Ljava/lang/CharSequence;
+    iget-object v2, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gu:[Ljava/lang/CharSequence;
 
     new-instance v3, Lcom/android/settings/fuelgauge/PowerModeSettings$1;
 
@@ -109,12 +109,12 @@
     .line 56
     if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gs:[Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gv:[Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_1
 
     .line 57
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gs:[Ljava/lang/CharSequence;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gv:[Ljava/lang/CharSequence;
 
     array-length v0, v0
 
@@ -124,7 +124,7 @@
     if-ltz v0, :cond_1
 
     .line 58
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gs:[Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gv:[Ljava/lang/CharSequence;
 
     aget-object v1, v1, v0
 
@@ -184,7 +184,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gr:[Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gu:[Ljava/lang/CharSequence;
 
     .line 25
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/PowerModeSettings;->getResources()Landroid/content/res/Resources;
@@ -197,10 +197,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gs:[Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/PowerModeSettings;->gv:[Ljava/lang/CharSequence;
 
     .line 26
-    invoke-direct {p0}, Lcom/android/settings/fuelgauge/PowerModeSettings;->eb()V
+    invoke-direct {p0}, Lcom/android/settings/fuelgauge/PowerModeSettings;->ef()V
 
     .line 27
     return-void

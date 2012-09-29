@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final Mz:Landroid/view/textservice/TextServicesManager;
+.field private final MC:Landroid/view/textservice/TextServicesManager;
 
 
 # direct methods
@@ -26,10 +26,10 @@
 
     check-cast v0, Landroid/view/textservice/TextServicesManager;
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersPreference;->Mz:Landroid/view/textservice/TextServicesManager;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersPreference;->MC:Landroid/view/textservice/TextServicesManager;
 
     .line 30
-    iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersPreference;->Mz:Landroid/view/textservice/TextServicesManager;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersPreference;->MC:Landroid/view/textservice/TextServicesManager;
 
     invoke-virtual {v0}, Landroid/view/textservice/TextServicesManager;->isSpellCheckerEnabled()Z
 
@@ -43,12 +43,12 @@
 
 
 # virtual methods
-.method protected be()V
+.method protected bi()V
     .locals 2
 
     .prologue
     .line 35
-    invoke-super {p0}, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;->be()V
+    invoke-super {p0}, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;->bi()V
 
     .line 36
     invoke-virtual {p0}, Lcom/android/settings/inputmethod/SpellCheckersPreference;->isChecked()Z
@@ -56,7 +56,7 @@
     move-result v0
 
     .line 37
-    iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersPreference;->Mz:Landroid/view/textservice/TextServicesManager;
+    iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersPreference;->MC:Landroid/view/textservice/TextServicesManager;
 
     invoke-virtual {v1, v0}, Landroid/view/textservice/TextServicesManager;->setSpellCheckerEnabled(Z)V
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final transient cV:[Ljava/lang/Object;
+.field final transient cY:[Ljava/lang/Object;
 
 .field private final transient hashCode:I
 
@@ -24,7 +24,7 @@
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;-><init>([Ljava/lang/Object;)V
 
     .line 40
-    iput-object p3, p0, Lcom/google/common/collect/RegularImmutableSet;->cV:[Ljava/lang/Object;
+    iput-object p3, p0, Lcom/google/common/collect/RegularImmutableSet;->cY:[Ljava/lang/Object;
 
     .line 41
     iput p4, p0, Lcom/google/common/collect/RegularImmutableSet;->mask:I
@@ -38,7 +38,7 @@
 
 
 # virtual methods
-.method H()Z
+.method L()Z
     .locals 1
 
     .prologue
@@ -76,7 +76,7 @@
 
     .line 50
     :goto_1
-    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSet;->cV:[Ljava/lang/Object;
+    iget-object v2, p0, Lcom/google/common/collect/RegularImmutableSet;->cY:[Ljava/lang/Object;
 
     iget v3, p0, Lcom/google/common/collect/RegularImmutableSet;->mask:I
 

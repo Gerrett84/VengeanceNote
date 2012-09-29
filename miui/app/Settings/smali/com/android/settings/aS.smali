@@ -9,7 +9,7 @@
 # instance fields
 .field public label:Ljava/lang/CharSequence;
 
-.field public pI:J
+.field public pL:J
 
 .field public start:J
 
@@ -36,7 +36,7 @@
     iput-wide p2, p0, Lcom/android/settings/aS;->start:J
 
     .line 1318
-    iput-wide p4, p0, Lcom/android/settings/aS;->pI:J
+    iput-wide p4, p0, Lcom/android/settings/aS;->pL:J
 
     .line 1319
     return-void
@@ -115,9 +115,9 @@
 
     if-nez v1, :cond_0
 
-    iget-wide v1, p0, Lcom/android/settings/aS;->pI:J
+    iget-wide v1, p0, Lcom/android/settings/aS;->pL:J
 
-    iget-wide v3, p1, Lcom/android/settings/aS;->pI:J
+    iget-wide v3, p1, Lcom/android/settings/aS;->pL:J
 
     cmp-long v1, v1, v3
 

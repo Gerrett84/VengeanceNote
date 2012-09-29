@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private NL:Ljava/lang/String;
+.field private NO:Ljava/lang/String;
 
-.field private NM:Ljava/lang/String;
+.field private NP:Ljava/lang/String;
 
-.field private NN:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
+.field private NQ:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
 .field private mInflater:Landroid/view/LayoutInflater;
 
@@ -31,7 +31,7 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NN:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NQ:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
     return-object v0
 .end method
@@ -42,7 +42,7 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NL:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NO:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -53,7 +53,7 @@
 
     .prologue
     .line 51
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NM:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NP:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NL:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NO:Ljava/lang/String;
 
     .line 64
     const v0, 0x7f0b05a9
@@ -105,14 +105,14 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NM:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NP:Ljava/lang/String;
 
     .line 65
     new-instance v0, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
     invoke-direct {v0, p0, p0}, Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;-><init>(Lcom/android/settings/deviceinfo/MiscFilesHandler;Landroid/app/Activity;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NN:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NQ:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
     .line 66
     const-string v0, "layout_inflater"
@@ -151,7 +151,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setMultiChoiceModeListener(Landroid/widget/AbsListView$MultiChoiceModeListener;)V
 
     .line 72
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NN:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/MiscFilesHandler;->NQ:Lcom/android/settings/deviceinfo/MiscFilesHandler$MemoryMearurementAdapter;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/MiscFilesHandler;->setListAdapter(Landroid/widget/ListAdapter;)V
 

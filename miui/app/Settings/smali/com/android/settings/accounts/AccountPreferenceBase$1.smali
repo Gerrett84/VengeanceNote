@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ob:Lcom/android/settings/accounts/AccountPreferenceBase;
+.field final synthetic oe:Lcom/android/settings/accounts/AccountPreferenceBase;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 109
-    iput-object p1, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1;->ob:Lcom/android/settings/accounts/AccountPreferenceBase;
+    iput-object p1, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1;->oe:Lcom/android/settings/accounts/AccountPreferenceBase;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 111
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1;->ob:Lcom/android/settings/accounts/AccountPreferenceBase;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountPreferenceBase$1;->oe:Lcom/android/settings/accounts/AccountPreferenceBase;
 
     invoke-static {v0}, Lcom/android/settings/accounts/AccountPreferenceBase;->a(Lcom/android/settings/accounts/AccountPreferenceBase;)Landroid/os/Handler;
 

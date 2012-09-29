@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+.field final synthetic dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 462
-    iput-object p1, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iput-object p1, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -41,43 +41,43 @@
 
     .line 467
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->b(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v0
 
-    iput-wide v1, v0, Lcom/android/settings/cA;->FH:J
+    iput-wide v1, v0, Lcom/android/settings/cA;->FL:J
 
     .line 468
-    iget-object v0, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->b(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v0
 
-    iput-wide v1, v0, Lcom/android/settings/cA;->dy:J
+    iput-wide v1, v0, Lcom/android/settings/cA;->dB:J
 
     .line 469
-    iget-object v0, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->c(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v0
 
-    iput-wide v1, v0, Lcom/android/settings/cA;->FH:J
+    iput-wide v1, v0, Lcom/android/settings/cA;->FL:J
 
     .line 470
-    iget-object v0, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->c(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v0
 
-    iput-wide v1, v0, Lcom/android/settings/cA;->dy:J
+    iput-wide v1, v0, Lcom/android/settings/cA;->dB:J
 
     .line 471
-    iget-object v0, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->d(Lcom/android/settings/MiuiDeviceInfoSettings;)Ljava/util/ArrayList;
 
@@ -108,89 +108,89 @@
     if-eqz v2, :cond_0
 
     .line 473
-    iget-object v2, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v2, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v2}, Lcom/android/settings/MiuiDeviceInfoSettings;->c(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v2
 
-    iget-wide v3, v2, Lcom/android/settings/cA;->dy:J
+    iget-wide v3, v2, Lcom/android/settings/cA;->dB:J
 
-    invoke-virtual {v0}, Lcom/android/settings/Q;->T()Lcom/android/settings/cA;
+    invoke-virtual {v0}, Lcom/android/settings/Q;->X()Lcom/android/settings/cA;
 
     move-result-object v5
 
-    iget-wide v5, v5, Lcom/android/settings/cA;->dy:J
+    iget-wide v5, v5, Lcom/android/settings/cA;->dB:J
 
     add-long/2addr v3, v5
 
-    iput-wide v3, v2, Lcom/android/settings/cA;->dy:J
+    iput-wide v3, v2, Lcom/android/settings/cA;->dB:J
 
     .line 474
-    iget-object v2, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v2, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v2}, Lcom/android/settings/MiuiDeviceInfoSettings;->c(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v2
 
-    iget-wide v3, v2, Lcom/android/settings/cA;->FH:J
+    iget-wide v3, v2, Lcom/android/settings/cA;->FL:J
 
-    invoke-virtual {v0}, Lcom/android/settings/Q;->T()Lcom/android/settings/cA;
+    invoke-virtual {v0}, Lcom/android/settings/Q;->X()Lcom/android/settings/cA;
 
     move-result-object v0
 
-    iget-wide v5, v0, Lcom/android/settings/cA;->FH:J
+    iget-wide v5, v0, Lcom/android/settings/cA;->FL:J
 
     add-long/2addr v3, v5
 
-    iput-wide v3, v2, Lcom/android/settings/cA;->FH:J
+    iput-wide v3, v2, Lcom/android/settings/cA;->FL:J
 
     goto :goto_1
 
     .line 476
     :cond_0
-    iget-object v2, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v2, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v2}, Lcom/android/settings/MiuiDeviceInfoSettings;->b(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v2
 
-    iget-wide v3, v2, Lcom/android/settings/cA;->dy:J
+    iget-wide v3, v2, Lcom/android/settings/cA;->dB:J
 
-    invoke-virtual {v0}, Lcom/android/settings/Q;->T()Lcom/android/settings/cA;
+    invoke-virtual {v0}, Lcom/android/settings/Q;->X()Lcom/android/settings/cA;
 
     move-result-object v5
 
-    iget-wide v5, v5, Lcom/android/settings/cA;->dy:J
+    iget-wide v5, v5, Lcom/android/settings/cA;->dB:J
 
     add-long/2addr v3, v5
 
-    iput-wide v3, v2, Lcom/android/settings/cA;->dy:J
+    iput-wide v3, v2, Lcom/android/settings/cA;->dB:J
 
     .line 477
-    iget-object v2, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v2, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v2}, Lcom/android/settings/MiuiDeviceInfoSettings;->b(Lcom/android/settings/MiuiDeviceInfoSettings;)Lcom/android/settings/cA;
 
     move-result-object v2
 
-    iget-wide v3, v2, Lcom/android/settings/cA;->FH:J
+    iget-wide v3, v2, Lcom/android/settings/cA;->FL:J
 
-    invoke-virtual {v0}, Lcom/android/settings/Q;->T()Lcom/android/settings/cA;
+    invoke-virtual {v0}, Lcom/android/settings/Q;->X()Lcom/android/settings/cA;
 
     move-result-object v0
 
-    iget-wide v5, v0, Lcom/android/settings/cA;->FH:J
+    iget-wide v5, v0, Lcom/android/settings/cA;->FL:J
 
     add-long/2addr v3, v5
 
-    iput-wide v3, v2, Lcom/android/settings/cA;->FH:J
+    iput-wide v3, v2, Lcom/android/settings/cA;->FL:J
 
     goto :goto_1
 
     .line 480
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/cS;->dB:Lcom/android/settings/MiuiDeviceInfoSettings;
+    iget-object v0, p0, Lcom/android/settings/cS;->dE:Lcom/android/settings/MiuiDeviceInfoSettings;
 
     invoke-static {v0}, Lcom/android/settings/MiuiDeviceInfoSettings;->e(Lcom/android/settings/MiuiDeviceInfoSettings;)V
 

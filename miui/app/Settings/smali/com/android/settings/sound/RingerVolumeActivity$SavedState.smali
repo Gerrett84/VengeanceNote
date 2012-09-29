@@ -41,7 +41,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 312
-    sget-object v0, Lcom/android/settings/sound/RingerVolumeActivity;->FJ:[I
+    sget-object v0, Lcom/android/settings/sound/RingerVolumeActivity;->FN:[I
 
     array-length v0, v0
 
@@ -53,7 +53,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    sget-object v1, Lcom/android/settings/sound/RingerVolumeActivity;->FJ:[I
+    sget-object v1, Lcom/android/settings/sound/RingerVolumeActivity;->FN:[I
 
     array-length v1, v1
 
@@ -186,7 +186,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    sget-object v1, Lcom/android/settings/sound/RingerVolumeActivity;->FJ:[I
+    sget-object v1, Lcom/android/settings/sound/RingerVolumeActivity;->FN:[I
 
     array-length v1, v1
 

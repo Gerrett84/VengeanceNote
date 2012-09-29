@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic FR:Lcom/android/settings/widget/ChartSweepView;
+.field final synthetic FV:Lcom/android/settings/widget/ChartSweepView;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 149
-    iput-object p1, p0, Lcom/android/settings/widget/m;->FR:Lcom/android/settings/widget/ChartSweepView;
+    iput-object p1, p0, Lcom/android/settings/widget/m;->FV:Lcom/android/settings/widget/ChartSweepView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 151
-    iget-object v0, p0, Lcom/android/settings/widget/m;->FR:Lcom/android/settings/widget/ChartSweepView;
+    iget-object v0, p0, Lcom/android/settings/widget/m;->FV:Lcom/android/settings/widget/ChartSweepView;
 
     invoke-static {v0}, Lcom/android/settings/widget/ChartSweepView;->d(Lcom/android/settings/widget/ChartSweepView;)V
 

@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field private nd:Z
+.field private ng:Z
 
 
 # direct methods
@@ -44,7 +44,7 @@
     if-ne v1, v0, :cond_0
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/dL;->nd:Z
+    iput-boolean v0, p0, Lcom/android/settings/dL;->ng:Z
 
     .line 159
     return-void
@@ -74,7 +74,7 @@
 
     .prologue
     .line 153
-    iget-boolean v0, p0, Lcom/android/settings/dL;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/dL;->ng:Z
 
     return v0
 .end method
@@ -86,7 +86,7 @@
 
     .prologue
     .line 153
-    iput-boolean p1, p0, Lcom/android/settings/dL;->nd:Z
+    iput-boolean p1, p0, Lcom/android/settings/dL;->ng:Z
 
     return p1
 .end method
@@ -103,7 +103,7 @@
     invoke-super {p0, p1, p2}, Landroid/preference/Preference$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 164
-    iget-boolean v0, p0, Lcom/android/settings/dL;->nd:Z
+    iget-boolean v0, p0, Lcom/android/settings/dL;->ng:Z
 
     if-eqz v0, :cond_0
 

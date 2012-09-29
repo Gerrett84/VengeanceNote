@@ -4,15 +4,15 @@
 
 
 # static fields
-.field private static yZ:Ljava/util/HashMap;
+.field private static zd:Ljava/util/HashMap;
 
-.field private static za:Ljava/util/HashMap;
+.field private static ze:Ljava/util/HashMap;
 
-.field private static zb:Ljava/util/ArrayList;
+.field private static zf:Ljava/util/ArrayList;
 
-.field private static zc:Ljava/util/ArrayList;
+.field private static zg:Ljava/util/ArrayList;
 
-.field private static zd:Ljava/util/ArrayList;
+.field private static zh:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -27,35 +27,35 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sput-object v0, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     .line 26
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lcom/android/settings/bP;->yZ:Ljava/util/HashMap;
+    sput-object v0, Lcom/android/settings/bP;->zd:Ljava/util/HashMap;
 
     .line 27
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lcom/android/settings/bP;->za:Ljava/util/HashMap;
+    sput-object v0, Lcom/android/settings/bP;->ze:Ljava/util/HashMap;
 
     .line 28
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/android/settings/bP;->zc:Ljava/util/ArrayList;
+    sput-object v0, Lcom/android/settings/bP;->zg:Ljava/util/ArrayList;
 
     .line 29
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/android/settings/bP;->zd:Ljava/util/ArrayList;
+    sput-object v0, Lcom/android/settings/bP;->zh:Ljava/util/ArrayList;
 
     .line 31
     const-string v0, "airplane_mode_settings"
@@ -429,13 +429,13 @@
     return-void
 .end method
 
-.method public static O(Ljava/lang/String;)I
+.method public static P(Ljava/lang/String;)I
     .locals 1
     .parameter
 
     .prologue
     .line 99
-    sget-object v0, Lcom/android/settings/bP;->yZ:Ljava/util/HashMap;
+    sget-object v0, Lcom/android/settings/bP;->zd:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -498,14 +498,14 @@
 
     .prologue
     .line 67
-    sget-object v0, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sget-object v0, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
     .line 68
-    sget-object v0, Lcom/android/settings/bP;->yZ:Ljava/util/HashMap;
+    sget-object v0, Lcom/android/settings/bP;->zd:Ljava/util/HashMap;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -514,7 +514,7 @@
     invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 69
-    sget-object v0, Lcom/android/settings/bP;->za:Ljava/util/HashMap;
+    sget-object v0, Lcom/android/settings/bP;->ze:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -527,7 +527,7 @@
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 70
-    sget-object v8, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sget-object v8, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     new-instance v0, Lcom/android/settings/cK;
 
@@ -555,7 +555,7 @@
     if-nez v0, :cond_0
 
     .line 73
-    sget-object v0, Lcom/android/settings/bP;->zc:Ljava/util/ArrayList;
+    sget-object v0, Lcom/android/settings/bP;->zg:Ljava/util/ArrayList;
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -564,7 +564,7 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 74
-    sget-object v0, Lcom/android/settings/bP;->zd:Ljava/util/ArrayList;
+    sget-object v0, Lcom/android/settings/bP;->zh:Ljava/util/ArrayList;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -590,7 +590,7 @@
     if-ne v1, p0, :cond_0
 
     .line 80
-    invoke-static {}, Lcom/android/settings/bP;->hu()Z
+    invoke-static {}, Lcom/android/settings/bP;->hy()Z
 
     move-result v1
 
@@ -612,7 +612,7 @@
     const/4 v0, 0x0
 
     .line 105
-    sget-object v1, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sget-object v1, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -621,7 +621,7 @@
     if-ge p0, v1, :cond_0
 
     .line 106
-    sget-object v0, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sget-object v0, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -642,7 +642,7 @@
 
     .prologue
     .line 112
-    sget-object v0, Lcom/android/settings/bP;->za:Ljava/util/HashMap;
+    sget-object v0, Lcom/android/settings/bP;->ze:Ljava/util/HashMap;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -680,7 +680,7 @@
     .line 131
     if-le p0, v0, :cond_0
 
-    sget-object v1, Lcom/android/settings/bP;->zd:Ljava/util/ArrayList;
+    sget-object v1, Lcom/android/settings/bP;->zh:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -689,7 +689,7 @@
     if-ge p0, v1, :cond_0
 
     .line 132
-    sget-object v0, Lcom/android/settings/bP;->zd:Ljava/util/ArrayList;
+    sget-object v0, Lcom/android/settings/bP;->zh:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -717,7 +717,7 @@
     move-result v0
 
     .line 139
-    sget-object v1, Lcom/android/settings/bP;->za:Ljava/util/HashMap;
+    sget-object v1, Lcom/android/settings/bP;->ze:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -730,7 +730,7 @@
     .line 140
     if-ge v0, v1, :cond_0
 
-    sget-object v1, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sget-object v1, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -738,7 +738,7 @@
 
     check-cast v0, Lcom/android/settings/cK;
 
-    iget v0, v0, Lcom/android/settings/cK;->GB:I
+    iget v0, v0, Lcom/android/settings/cK;->GF:I
 
     :goto_0
     return v0
@@ -749,7 +749,64 @@
     goto :goto_0
 .end method
 
-.method private static hu()Z
+.method public static hA()Ljava/util/ArrayList;
+    .locals 1
+
+    .prologue
+    .line 127
+    sget-object v0, Lcom/android/settings/bP;->zg:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method public static hB()[I
+    .locals 4
+
+    .prologue
+    .line 144
+    sget-object v0, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    .line 145
+    new-array v3, v2, [I
+
+    .line 146
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v2, :cond_0
+
+    .line 147
+    sget-object v0, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/settings/cK;
+
+    iget v0, v0, Lcom/android/settings/cK;->GD:I
+
+    aput v0, v3, v1
+
+    .line 146
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 149
+    :cond_0
+    return-object v3
+.end method
+
+.method private static hy()Z
     .locals 2
 
     .prologue
@@ -793,7 +850,7 @@
     goto :goto_0
 .end method
 
-.method public static hv()Ljava/util/ArrayList;
+.method public static hz()Ljava/util/ArrayList;
     .locals 4
 
     .prologue
@@ -803,7 +860,7 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 118
-    sget-object v0, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
+    sget-object v0, Lcom/android/settings/bP;->zf:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -824,7 +881,7 @@
     check-cast v0, Lcom/android/settings/cK;
 
     .line 119
-    iget-boolean v3, v0, Lcom/android/settings/cK;->GD:Z
+    iget-boolean v3, v0, Lcom/android/settings/cK;->GH:Z
 
     if-eqz v3, :cond_0
 
@@ -838,61 +895,4 @@
     .line 123
     :cond_1
     return-object v1
-.end method
-
-.method public static hw()Ljava/util/ArrayList;
-    .locals 1
-
-    .prologue
-    .line 127
-    sget-object v0, Lcom/android/settings/bP;->zc:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method public static hx()[I
-    .locals 4
-
-    .prologue
-    .line 144
-    sget-object v0, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    .line 145
-    new-array v3, v2, [I
-
-    .line 146
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    if-ge v1, v2, :cond_0
-
-    .line 147
-    sget-object v0, Lcom/android/settings/bP;->zb:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/settings/cK;
-
-    iget v0, v0, Lcom/android/settings/cK;->Gz:I
-
-    aput v0, v3, v1
-
-    .line 146
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    .line 149
-    :cond_0
-    return-object v3
 .end method

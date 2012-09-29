@@ -4,31 +4,31 @@
 
 
 # static fields
-.field private static final nB:[I
+.field private static final nE:[I
 
-.field private static final nC:[I
+.field private static final nF:[I
 
 
 # instance fields
-.field nD:Ljava/lang/String;
+.field nG:Ljava/lang/String;
 
-.field nE:Ljava/lang/String;
+.field nH:Ljava/lang/String;
 
-.field nF:I
+.field nI:I
 
-.field nG:Z
+.field nJ:Z
 
-.field nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+.field nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-.field protected nI:Landroid/net/wifi/WifiConfiguration;
+.field protected nL:Landroid/net/wifi/WifiConfiguration;
 
-.field nJ:Landroid/net/wifi/ScanResult;
+.field nM:Landroid/net/wifi/ScanResult;
 
-.field private nK:I
+.field private nN:I
 
-.field private nL:Landroid/net/wifi/WifiInfo;
+.field private nO:Landroid/net/wifi/WifiInfo;
 
-.field private nM:Landroid/net/NetworkInfo$DetailedState;
+.field private nP:Landroid/net/NetworkInfo$DetailedState;
 
 .field networkId:I
 
@@ -49,12 +49,12 @@
 
     aput v1, v0, v2
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint;->nB:[I
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint;->nE:[I
 
     .line 47
     new-array v0, v2, [I
 
-    sput-object v0, Lcom/android/settings/wifi/AccessPoint;->nC:[I
+    sput-object v0, Lcom/android/settings/wifi/AccessPoint;->nF:[I
 
     return-void
 .end method
@@ -71,12 +71,12 @@
     .line 72
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Z
+    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Z
 
     .line 74
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IS:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 183
     const v0, 0x7f040065
@@ -105,12 +105,12 @@
     .line 72
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Z
+    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Z
 
     .line 74
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IS:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 176
     const v0, 0x7f040065
@@ -139,12 +139,12 @@
     .line 72
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Z
+    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Z
 
     .line 74
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IS:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 191
     const v0, 0x7f040065
@@ -160,15 +160,15 @@
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     .line 194
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     if-eqz v0, :cond_0
 
     .line 195
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {p0, v0}, Lcom/android/settings/wifi/AccessPoint;->c(Landroid/net/wifi/WifiConfiguration;)V
 
@@ -182,15 +182,15 @@
 
     check-cast v0, Landroid/net/wifi/ScanResult;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Landroid/net/wifi/ScanResult;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/wifi/ScanResult;
 
     .line 198
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Landroid/net/wifi/ScanResult;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/wifi/ScanResult;
 
     if-eqz v0, :cond_1
 
     .line 199
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Landroid/net/wifi/ScanResult;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/wifi/ScanResult;
 
     invoke-direct {p0, v0}, Lcom/android/settings/wifi/AccessPoint;->c(Landroid/net/wifi/ScanResult;)V
 
@@ -204,7 +204,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiInfo;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     .line 202
     const-string v0, "key_detailedstate"
@@ -226,16 +226,16 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     .line 206
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     if-eqz v0, :cond_3
 
     .line 207
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     iget v0, v0, Landroid/net/wifi/WifiConfiguration;->networkId:I
 
@@ -243,9 +243,9 @@
 
     .line 209
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
-    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/wifi/AccessPoint;->a(Landroid/net/wifi/WifiInfo;Landroid/net/NetworkInfo$DetailedState;)V
 
@@ -480,7 +480,7 @@
     if-eqz v0, :cond_0
 
     .line 163
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IY:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 170
     :goto_0
@@ -491,7 +491,7 @@
     if-eqz v1, :cond_1
 
     .line 165
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IU:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IX:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     goto :goto_0
 
@@ -500,7 +500,7 @@
     if-eqz v0, :cond_2
 
     .line 167
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IT:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IW:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     goto :goto_0
 
@@ -531,7 +531,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 170
-    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IS:Lcom/android/settings/wifi/AccessPoint$PskType;
+    sget-object v0, Lcom/android/settings/wifi/AccessPoint$PskType;->IV:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     goto :goto_0
 .end method
@@ -544,22 +544,22 @@
     .line 231
     iget-object v0, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
     .line 232
     iget-object v0, p1, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nE:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Ljava/lang/String;
 
     .line 233
     invoke-static {p1}, Lcom/android/settings/wifi/AccessPoint;->a(Landroid/net/wifi/ScanResult;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     .line 234
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     const/4 v1, 0x3
 
@@ -578,10 +578,10 @@
     const/4 v0, 0x1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Z
+    iput-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Z
 
     .line 235
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     const/4 v1, 0x2
 
@@ -592,7 +592,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 237
     :cond_0
@@ -603,10 +603,10 @@
     .line 238
     iget v0, p1, Landroid/net/wifi/ScanResult;->level:I
 
-    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     .line 239
-    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Landroid/net/wifi/ScanResult;
+    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/wifi/ScanResult;
 
     .line 240
     return-void
@@ -631,19 +631,19 @@
     const-string v0, ""
 
     :goto_0
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
     .line 223
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->BSSID:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nE:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Ljava/lang/String;
 
     .line 224
     invoke-static {p1}, Lcom/android/settings/wifi/AccessPoint;->b(Landroid/net/wifi/WifiConfiguration;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     .line 225
     iget v0, p1, Landroid/net/wifi/WifiConfiguration;->networkId:I
@@ -653,10 +653,10 @@
     .line 226
     const v0, 0x7fffffff
 
-    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iput v0, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     .line 227
-    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     .line 228
     return-void
@@ -679,7 +679,7 @@
     const/4 v5, 0x1
 
     .line 359
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/AccessPoint;->setTitle(Ljava/lang/CharSequence;)V
 
@@ -694,14 +694,14 @@
     move-result-object v1
 
     .line 363
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     if-eqz v0, :cond_0
 
     .line 364
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
-    invoke-static {v1, v0}, Lcom/android/settings/wifi/U;->a(Landroid/content/Context;Landroid/net/NetworkInfo$DetailedState;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lcom/android/settings/wifi/V;->a(Landroid/content/Context;Landroid/net/NetworkInfo$DetailedState;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -718,7 +718,7 @@
 
     .line 366
     :cond_0
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     const v2, 0x7fffffff
 
@@ -737,18 +737,18 @@
 
     .line 368
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     iget v0, v0, Landroid/net/wifi/WifiConfiguration;->status:I
 
     if-ne v0, v5, :cond_2
 
     .line 369
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     iget v0, v0, Landroid/net/wifi/WifiConfiguration;->disableReason:I
 
@@ -799,7 +799,7 @@
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 382
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     if-eqz v0, :cond_3
 
@@ -814,7 +814,7 @@
 
     .line 386
     :cond_3
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     if-eqz v0, :cond_4
 
@@ -852,11 +852,11 @@
 
     .line 396
     :cond_4
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     if-nez v0, :cond_5
 
-    iget-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Z
+    iget-boolean v0, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Z
 
     if-eqz v0, :cond_5
 
@@ -966,7 +966,7 @@
     return-object p0
 .end method
 
-.method static y(Ljava/lang/String;)Ljava/lang/String;
+.method static z(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
     .parameter
 
@@ -1032,7 +1032,7 @@
     if-ne v2, v3, :cond_2
 
     .line 308
-    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     if-nez v2, :cond_1
 
@@ -1042,13 +1042,13 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iput v1, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     .line 310
-    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     .line 311
-    iput-object p2, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iput-object p2, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     .line 312
     invoke-direct {p0}, Lcom/android/settings/wifi/AccessPoint;->refresh()V
@@ -1072,15 +1072,15 @@
 
     .line 313
     :cond_2
-    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     if-eqz v2, :cond_3
 
     .line 315
-    iput-object v4, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iput-object v4, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     .line 316
-    iput-object v4, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iput-object v4, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     .line 317
     invoke-direct {p0}, Lcom/android/settings/wifi/AccessPoint;->refresh()V
@@ -1101,33 +1101,33 @@
     .line 213
     const-string v0, "key_config"
 
-    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 214
     const-string v0, "key_scanresult"
 
-    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Landroid/net/wifi/ScanResult;
+    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/wifi/ScanResult;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 215
     const-string v0, "key_wifiinfo"
 
-    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 216
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     if-eqz v0, :cond_0
 
     .line 217
     const-string v0, "key_detailedstate"
 
-    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo$DetailedState;->toString()Ljava/lang/String;
 
@@ -1166,14 +1166,14 @@
     check-cast p1, Lcom/android/settings/wifi/AccessPoint;
 
     .line 263
-    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
-    iget-object v3, p1, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v3, p1, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     if-eq v2, v3, :cond_2
 
     .line 264
-    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     if-nez v2, :cond_0
 
@@ -1183,16 +1183,16 @@
 
     .line 267
     :cond_2
-    iget v2, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v2, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
-    iget v3, p1, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v3, p1, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     xor-int/2addr v2, v3
 
     if-gez v2, :cond_3
 
     .line 268
-    iget v2, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v2, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     const v3, 0x7fffffff
 
@@ -1223,9 +1223,9 @@
 
     .line 275
     :cond_4
-    iget v0, p1, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v0, p1, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
-    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     invoke-static {v0, v1}, Landroid/net/wifi/WifiManager;->compareSignalLevel(II)I
 
@@ -1235,9 +1235,9 @@
     if-nez v0, :cond_0
 
     .line 280
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
-    iget-object v1, p1, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iget-object v1, p1, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
 
@@ -1267,7 +1267,7 @@
 
     .prologue
     .line 285
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
     iget-object v1, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
@@ -1277,7 +1277,7 @@
 
     if-eqz v0, :cond_2
 
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     invoke-static {p1}, Lcom/android/settings/wifi/AccessPoint;->a(Landroid/net/wifi/ScanResult;)I
 
@@ -1288,7 +1288,7 @@
     .line 286
     iget v0, p1, Landroid/net/wifi/ScanResult;->level:I
 
-    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     invoke-static {v0, v1}, Landroid/net/wifi/WifiManager;->compareSignalLevel(II)I
 
@@ -1304,7 +1304,7 @@
     .line 288
     iget v1, p1, Landroid/net/wifi/ScanResult;->level:I
 
-    iput v1, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iput v1, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     .line 289
     invoke-virtual {p0}, Lcom/android/settings/wifi/AccessPoint;->getLevel()I
@@ -1318,7 +1318,7 @@
 
     .line 294
     :cond_0
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     const/4 v1, 0x2
 
@@ -1329,14 +1329,14 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     .line 297
     :cond_1
     invoke-direct {p0}, Lcom/android/settings/wifi/AccessPoint;->refresh()V
 
     .line 298
-    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nJ:Landroid/net/wifi/ScanResult;
+    iput-object p1, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/wifi/ScanResult;
 
     .line 299
     const/4 v0, 0x1
@@ -1351,42 +1351,42 @@
     goto :goto_0
 .end method
 
-.method ds()Landroid/net/wifi/WifiConfiguration;
+.method dw()Landroid/net/wifi/WifiConfiguration;
     .locals 1
 
     .prologue
     .line 332
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     return-object v0
 .end method
 
-.method dt()Landroid/net/wifi/WifiInfo;
+.method dx()Landroid/net/wifi/WifiInfo;
     .locals 1
 
     .prologue
     .line 336
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiInfo;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nO:Landroid/net/wifi/WifiInfo;
 
     return-object v0
 .end method
 
-.method du()Landroid/net/NetworkInfo$DetailedState;
+.method dy()Landroid/net/NetworkInfo$DetailedState;
     .locals 1
 
     .prologue
     .line 340
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nM:Landroid/net/NetworkInfo$DetailedState;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nP:Landroid/net/NetworkInfo$DetailedState;
 
     return-object v0
 .end method
 
-.method protected dv()V
+.method protected dz()V
     .locals 2
 
     .prologue
     .line 413
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     if-eqz v0, :cond_0
 
@@ -1399,7 +1399,7 @@
 
     .line 415
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     if-eqz v0, :cond_1
 
@@ -1413,21 +1413,21 @@
 
     invoke-direct {v0}, Landroid/net/wifi/WifiConfiguration;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iput-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     .line 418
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
-    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/wifi/AccessPoint;->nG:Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/android/settings/wifi/AccessPoint;->y(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/android/settings/wifi/AccessPoint;->z(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
     .line 419
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nI:Landroid/net/wifi/WifiConfiguration;
+    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nL:Landroid/net/wifi/WifiConfiguration;
 
     iget-object v0, v0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
@@ -1443,7 +1443,7 @@
 
     .prologue
     .line 325
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     const v1, 0x7fffffff
 
@@ -1457,7 +1457,7 @@
     return v0
 
     :cond_0
-    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v0, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     const/4 v1, 0x4
 
@@ -1486,7 +1486,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 246
-    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nK:I
+    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nN:I
 
     const v2, 0x7fffffff
 
@@ -1515,11 +1515,11 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 251
-    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     if-eqz v1, :cond_1
 
-    sget-object v1, Lcom/android/settings/wifi/AccessPoint;->nB:[I
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint;->nE:[I
 
     :goto_1
     const/4 v2, 0x1
@@ -1529,7 +1529,7 @@
     goto :goto_0
 
     :cond_1
-    sget-object v1, Lcom/android/settings/wifi/AccessPoint;->nC:[I
+    sget-object v1, Lcom/android/settings/wifi/AccessPoint;->nF:[I
 
     goto :goto_1
 .end method
@@ -1545,7 +1545,7 @@
     move-result-object v0
 
     .line 122
-    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nF:I
+    iget v1, p0, Lcom/android/settings/wifi/AccessPoint;->nI:I
 
     packed-switch v1, :pswitch_data_0
 
@@ -1580,9 +1580,9 @@
 
     .line 127
     :pswitch_1
-    sget-object v1, Lcom/android/settings/wifi/D;->yt:[I
+    sget-object v1, Lcom/android/settings/wifi/E;->yx:[I
 
-    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nH:Lcom/android/settings/wifi/AccessPoint$PskType;
+    iget-object v2, p0, Lcom/android/settings/wifi/AccessPoint;->nK:Lcom/android/settings/wifi/AccessPoint$PskType;
 
     invoke-virtual {v2}, Lcom/android/settings/wifi/AccessPoint$PskType;->ordinal()I
 

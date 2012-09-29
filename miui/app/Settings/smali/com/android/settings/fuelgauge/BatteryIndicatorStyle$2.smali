@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic mG:Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;
+.field final synthetic mJ:Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 50
-    iput-object p1, p0, Lcom/android/settings/fuelgauge/BatteryIndicatorStyle$2;->mG:Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;
+    iput-object p1, p0, Lcom/android/settings/fuelgauge/BatteryIndicatorStyle$2;->mJ:Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryIndicatorStyle$2;->mG:Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;
+    iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryIndicatorStyle$2;->mJ:Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;
 
     invoke-virtual {v0}, Lcom/android/settings/fuelgauge/BatteryIndicatorStyle;->finish()V
 

@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+.field final synthetic IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
-.field final synthetic IO:Lcom/android/settings/inputmethod/InputMethodPreference;
+.field final synthetic IR:Lcom/android/settings/inputmethod/InputMethodPreference;
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     .prologue
     .line 262
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$6;->ID:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodPreference$6;->IG:Lcom/android/settings/inputmethod/InputMethodPreference;
 
-    iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodPreference$6;->IO:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iput-object p2, p0, Lcom/android/settings/inputmethod/InputMethodPreference$6;->IR:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +40,7 @@
     const/4 v1, 0x1
 
     .line 265
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$6;->IO:Lcom/android/settings/inputmethod/InputMethodPreference;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodPreference$6;->IR:Lcom/android/settings/inputmethod/InputMethodPreference;
 
     invoke-virtual {v0, v1, v1}, Lcom/android/settings/inputmethod/InputMethodPreference;->a(ZZ)V
 

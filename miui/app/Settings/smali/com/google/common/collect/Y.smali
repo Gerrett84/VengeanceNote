@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Dy:[Ljava/lang/Object;
+.field final synthetic DC:[Ljava/lang/Object;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 1038
-    iput-object p2, p0, Lcom/google/common/collect/Y;->Dy:[Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/common/collect/Y;->DC:[Ljava/lang/Object;
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/K;-><init>(I)V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 1040
-    iget-object v0, p0, Lcom/google/common/collect/Y;->Dy:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/common/collect/Y;->DC:[Ljava/lang/Object;
 
     aget-object v0, v0, p1
 

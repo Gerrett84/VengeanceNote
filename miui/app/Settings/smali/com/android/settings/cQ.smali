@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic GN:Lcom/android/settings/MiuiSoundSettings;
+.field final synthetic GR:Lcom/android/settings/MiuiSoundSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 171
-    iput-object p1, p0, Lcom/android/settings/cQ;->GN:Lcom/android/settings/MiuiSoundSettings;
+    iput-object p1, p0, Lcom/android/settings/cQ;->GR:Lcom/android/settings/MiuiSoundSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -30,9 +30,9 @@
 
     .prologue
     .line 175
-    iget-object v0, p0, Lcom/android/settings/cQ;->GN:Lcom/android/settings/MiuiSoundSettings;
+    iget-object v0, p0, Lcom/android/settings/cQ;->GR:Lcom/android/settings/MiuiSoundSettings;
 
-    invoke-virtual {v0}, Lcom/android/settings/MiuiSoundSettings;->eM()V
+    invoke-virtual {v0}, Lcom/android/settings/MiuiSoundSettings;->eQ()V
 
     .line 176
     return-void

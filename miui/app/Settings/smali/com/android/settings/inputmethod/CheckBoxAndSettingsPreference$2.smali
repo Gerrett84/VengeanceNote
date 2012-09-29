@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic OX:Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;
+.field final synthetic Pa:Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference$2;->OX:Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference$2;->Pa:Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,9 +32,9 @@
 
     .prologue
     .line 65
-    iget-object v0, p0, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference$2;->OX:Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference$2;->Pa:Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;
 
-    invoke-virtual {v0}, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;->bf()V
+    invoke-virtual {v0}, Lcom/android/settings/inputmethod/CheckBoxAndSettingsPreference;->bj()V
 
     .line 66
     return-void

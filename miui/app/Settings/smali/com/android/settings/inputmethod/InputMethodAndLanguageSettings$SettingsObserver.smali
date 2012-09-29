@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic qs:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
+.field final synthetic qv:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
 
 # direct methods
@@ -18,7 +18,7 @@
     const/4 v2, 0x0
 
     .line 592
-    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->qs:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
+    iput-object p1, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->qv:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     .line 593
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -58,7 +58,7 @@
 
     .prologue
     .line 602
-    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->qs:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings$SettingsObserver;->qv:Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;
 
     invoke-static {v0}, Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;->a(Lcom/android/settings/inputmethod/InputMethodAndLanguageSettings;)V
 

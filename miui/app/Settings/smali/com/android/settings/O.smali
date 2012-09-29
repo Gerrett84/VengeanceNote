@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic dd:Lcom/android/settings/TetherSettings;
+.field final synthetic dg:Lcom/android/settings/TetherSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 194
-    iput-object p1, p0, Lcom/android/settings/O;->dd:Lcom/android/settings/TetherSettings;
+    iput-object p1, p0, Lcom/android/settings/O;->dg:Lcom/android/settings/TetherSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 196
-    iget-object v0, p0, Lcom/android/settings/O;->dd:Lcom/android/settings/TetherSettings;
+    iget-object v0, p0, Lcom/android/settings/O;->dg:Lcom/android/settings/TetherSettings;
 
     check-cast p2, Landroid/bluetooth/BluetoothPan;
 
@@ -49,7 +49,7 @@
 
     .prologue
     .line 199
-    iget-object v0, p0, Lcom/android/settings/O;->dd:Lcom/android/settings/TetherSettings;
+    iget-object v0, p0, Lcom/android/settings/O;->dg:Lcom/android/settings/TetherSettings;
 
     const/4 v1, 0x0
 

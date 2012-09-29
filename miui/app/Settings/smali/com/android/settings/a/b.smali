@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final dT:Landroid/net/INetworkStatsSession;
+.field private final dW:Landroid/net/INetworkStatsSession;
 
 .field private final mArgs:Landroid/os/Bundle;
 
@@ -21,7 +21,7 @@
     invoke-direct {p0, p1}, Landroid/content/AsyncTaskLoader;-><init>(Landroid/content/Context;)V
 
     .line 61
-    iput-object p2, p0, Lcom/android/settings/a/b;->dT:Landroid/net/INetworkStatsSession;
+    iput-object p2, p0, Lcom/android/settings/a/b;->dW:Landroid/net/INetworkStatsSession;
 
     .line 62
     iput-object p3, p0, Lcom/android/settings/a/b;->mArgs:Landroid/os/Bundle;
@@ -39,7 +39,7 @@
 
     .prologue
     .line 135
-    iget-object v0, p0, Lcom/android/settings/a/b;->dT:Landroid/net/INetworkStatsSession;
+    iget-object v0, p0, Lcom/android/settings/a/b;->dW:Landroid/net/INetworkStatsSession;
 
     const/4 v4, 0x0
 
@@ -135,19 +135,19 @@
     invoke-direct {v2}, Lcom/android/settings/a/g;-><init>()V
 
     .line 89
-    iget-object v0, p0, Lcom/android/settings/a/b;->dT:Landroid/net/INetworkStatsSession;
+    iget-object v0, p0, Lcom/android/settings/a/b;->dW:Landroid/net/INetworkStatsSession;
 
     invoke-interface {v0, p1, p3}, Landroid/net/INetworkStatsSession;->getHistoryForNetwork(Landroid/net/NetworkTemplate;I)Landroid/net/NetworkStatsHistory;
 
     move-result-object v0
 
-    iput-object v0, v2, Lcom/android/settings/a/g;->Ep:Landroid/net/NetworkStatsHistory;
+    iput-object v0, v2, Lcom/android/settings/a/g;->Et:Landroid/net/NetworkStatsHistory;
 
     .line 91
     if-eqz p2, :cond_1
 
     .line 93
-    iget-object v0, p2, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iget-object v0, p2, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0}, Landroid/util/SparseBooleanArray;->size()I
 
@@ -160,31 +160,31 @@
     if-ge v0, v3, :cond_0
 
     .line 95
-    iget-object v4, p2, Lcom/android/settings/P;->dx:Landroid/util/SparseBooleanArray;
+    iget-object v4, p2, Lcom/android/settings/P;->dA:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v4, v0}, Landroid/util/SparseBooleanArray;->keyAt(I)I
 
     move-result v4
 
     .line 96
-    iget-object v5, v2, Lcom/android/settings/a/g;->Er:Landroid/net/NetworkStatsHistory;
+    iget-object v5, v2, Lcom/android/settings/a/g;->Ev:Landroid/net/NetworkStatsHistory;
 
     invoke-direct {p0, p1, v4, v1, v5}, Lcom/android/settings/a/b;->a(Landroid/net/NetworkTemplate;IILandroid/net/NetworkStatsHistory;)Landroid/net/NetworkStatsHistory;
 
     move-result-object v5
 
-    iput-object v5, v2, Lcom/android/settings/a/g;->Er:Landroid/net/NetworkStatsHistory;
+    iput-object v5, v2, Lcom/android/settings/a/g;->Ev:Landroid/net/NetworkStatsHistory;
 
     .line 98
     const/4 v5, 0x1
 
-    iget-object v6, v2, Lcom/android/settings/a/g;->Es:Landroid/net/NetworkStatsHistory;
+    iget-object v6, v2, Lcom/android/settings/a/g;->Ew:Landroid/net/NetworkStatsHistory;
 
     invoke-direct {p0, p1, v4, v5, v6}, Lcom/android/settings/a/b;->a(Landroid/net/NetworkTemplate;IILandroid/net/NetworkStatsHistory;)Landroid/net/NetworkStatsHistory;
 
     move-result-object v4
 
-    iput-object v4, v2, Lcom/android/settings/a/g;->Es:Landroid/net/NetworkStatsHistory;
+    iput-object v4, v2, Lcom/android/settings/a/g;->Ew:Landroid/net/NetworkStatsHistory;
 
     .line 94
     add-int/lit8 v0, v0, 0x1
@@ -198,7 +198,7 @@
     .line 103
     new-instance v0, Landroid/net/NetworkStatsHistory;
 
-    iget-object v1, v2, Lcom/android/settings/a/g;->Es:Landroid/net/NetworkStatsHistory;
+    iget-object v1, v2, Lcom/android/settings/a/g;->Ew:Landroid/net/NetworkStatsHistory;
 
     invoke-virtual {v1}, Landroid/net/NetworkStatsHistory;->getBucketDuration()J
 
@@ -206,19 +206,19 @@
 
     invoke-direct {v0, v3, v4}, Landroid/net/NetworkStatsHistory;-><init>(J)V
 
-    iput-object v0, v2, Lcom/android/settings/a/g;->Eq:Landroid/net/NetworkStatsHistory;
+    iput-object v0, v2, Lcom/android/settings/a/g;->Eu:Landroid/net/NetworkStatsHistory;
 
     .line 104
-    iget-object v0, v2, Lcom/android/settings/a/g;->Eq:Landroid/net/NetworkStatsHistory;
+    iget-object v0, v2, Lcom/android/settings/a/g;->Eu:Landroid/net/NetworkStatsHistory;
 
-    iget-object v1, v2, Lcom/android/settings/a/g;->Er:Landroid/net/NetworkStatsHistory;
+    iget-object v1, v2, Lcom/android/settings/a/g;->Ev:Landroid/net/NetworkStatsHistory;
 
     invoke-virtual {v0, v1}, Landroid/net/NetworkStatsHistory;->recordEntireHistory(Landroid/net/NetworkStatsHistory;)V
 
     .line 105
-    iget-object v0, v2, Lcom/android/settings/a/g;->Eq:Landroid/net/NetworkStatsHistory;
+    iget-object v0, v2, Lcom/android/settings/a/g;->Eu:Landroid/net/NetworkStatsHistory;
 
-    iget-object v1, v2, Lcom/android/settings/a/g;->Es:Landroid/net/NetworkStatsHistory;
+    iget-object v1, v2, Lcom/android/settings/a/g;->Ew:Landroid/net/NetworkStatsHistory;
 
     invoke-virtual {v0, v1}, Landroid/net/NetworkStatsHistory;->recordEntireHistory(Landroid/net/NetworkStatsHistory;)V
 
@@ -233,28 +233,28 @@
 
     invoke-direct {v0, v7, v8}, Landroid/net/NetworkStatsHistory;-><init>(J)V
 
-    iput-object v0, v2, Lcom/android/settings/a/g;->Er:Landroid/net/NetworkStatsHistory;
+    iput-object v0, v2, Lcom/android/settings/a/g;->Ev:Landroid/net/NetworkStatsHistory;
 
     .line 108
     new-instance v0, Landroid/net/NetworkStatsHistory;
 
     invoke-direct {v0, v7, v8}, Landroid/net/NetworkStatsHistory;-><init>(J)V
 
-    iput-object v0, v2, Lcom/android/settings/a/g;->Es:Landroid/net/NetworkStatsHistory;
+    iput-object v0, v2, Lcom/android/settings/a/g;->Ew:Landroid/net/NetworkStatsHistory;
 
     .line 109
     new-instance v0, Landroid/net/NetworkStatsHistory;
 
     invoke-direct {v0, v7, v8}, Landroid/net/NetworkStatsHistory;-><init>(J)V
 
-    iput-object v0, v2, Lcom/android/settings/a/g;->Eq:Landroid/net/NetworkStatsHistory;
+    iput-object v0, v2, Lcom/android/settings/a/g;->Eu:Landroid/net/NetworkStatsHistory;
 
     goto :goto_1
 .end method
 
 
 # virtual methods
-.method public Z()Lcom/android/settings/a/g;
+.method public ad()Lcom/android/settings/a/g;
     .locals 4
 
     .prologue
@@ -318,7 +318,7 @@
 
     .prologue
     .line 39
-    invoke-virtual {p0}, Lcom/android/settings/a/b;->Z()Lcom/android/settings/a/g;
+    invoke-virtual {p0}, Lcom/android/settings/a/b;->ad()Lcom/android/settings/a/g;
 
     move-result-object v0
 

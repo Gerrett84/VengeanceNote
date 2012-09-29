@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic OL:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+.field final synthetic OO:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 71
-    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;->OL:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;->OO:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -55,7 +55,7 @@
     if-eq v0, v2, :cond_0
 
     .line 78
-    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;->OL:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
+    iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;->OO:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->aB(I)V
 

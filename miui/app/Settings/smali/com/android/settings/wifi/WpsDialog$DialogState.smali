@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final enum Gl:Lcom/android/settings/wifi/WpsDialog$DialogState;
-
-.field public static final enum Gm:Lcom/android/settings/wifi/WpsDialog$DialogState;
-
-.field public static final enum Gn:Lcom/android/settings/wifi/WpsDialog$DialogState;
-
-.field public static final enum Go:Lcom/android/settings/wifi/WpsDialog$DialogState;
-
 .field public static final enum Gp:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
-.field private static final synthetic Gq:[Lcom/android/settings/wifi/WpsDialog$DialogState;
+.field public static final enum Gq:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+.field public static final enum Gr:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+.field public static final enum Gs:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+.field public static final enum Gt:Lcom/android/settings/wifi/WpsDialog$DialogState;
+
+.field private static final synthetic Gu:[Lcom/android/settings/wifi/WpsDialog$DialogState;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/wifi/WpsDialog$DialogState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gl:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gp:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 71
     new-instance v0, Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -48,7 +48,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/settings/wifi/WpsDialog$DialogState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gm:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gq:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 72
     new-instance v0, Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -57,7 +57,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/android/settings/wifi/WpsDialog$DialogState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gn:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gr:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 73
     new-instance v0, Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/android/settings/wifi/WpsDialog$DialogState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Go:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gs:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 74
     new-instance v0, Lcom/android/settings/wifi/WpsDialog$DialogState;
@@ -75,34 +75,34 @@
 
     invoke-direct {v0, v1, v6}, Lcom/android/settings/wifi/WpsDialog$DialogState;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gp:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gt:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     .line 69
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/settings/wifi/WpsDialog$DialogState;
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gl:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gp:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gm:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gq:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gn:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gr:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Go:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gs:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gp:Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v1, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gt:Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gq:[Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sput-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gu:[Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     return-void
 .end method
@@ -141,7 +141,7 @@
 
     .prologue
     .line 69
-    sget-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gq:[Lcom/android/settings/wifi/WpsDialog$DialogState;
+    sget-object v0, Lcom/android/settings/wifi/WpsDialog$DialogState;->Gu:[Lcom/android/settings/wifi/WpsDialog$DialogState;
 
     invoke-virtual {v0}, [Lcom/android/settings/wifi/WpsDialog$DialogState;->clone()Ljava/lang/Object;
 

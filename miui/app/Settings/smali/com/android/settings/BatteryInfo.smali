@@ -4,8 +4,6 @@
 
 
 # instance fields
-.field private aA:Landroid/widget/TextView;
-
 .field private aB:Landroid/widget/TextView;
 
 .field private aC:Landroid/widget/TextView;
@@ -18,15 +16,17 @@
 
 .field private aG:Landroid/widget/TextView;
 
-.field private aH:Lcom/android/internal/app/IBatteryStats;
+.field private aH:Landroid/widget/TextView;
 
-.field private aI:Landroid/os/IPowerManager;
+.field private aI:Landroid/widget/TextView;
 
-.field private aJ:Landroid/content/IntentFilter;
+.field private aJ:Landroid/widget/TextView;
 
-.field private ay:Landroid/widget/TextView;
+.field private aK:Lcom/android/internal/app/IBatteryStats;
 
-.field private az:Landroid/widget/TextView;
+.field private aL:Landroid/os/IPowerManager;
+
+.field private aM:Landroid/content/IntentFilter;
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -120,7 +120,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Lcom/android/settings/BatteryInfo;->k()V
+    invoke-direct {p0}, Lcom/android/settings/BatteryInfo;->o()V
 
     return-void
 .end method
@@ -131,7 +131,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aA:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aD:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -142,7 +142,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aB:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aE:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -153,7 +153,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aD:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aG:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -164,7 +164,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aE:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aH:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -175,7 +175,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aF:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aI:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -186,7 +186,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->ay:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aB:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -197,7 +197,7 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->az:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aC:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -208,12 +208,12 @@
 
     .prologue
     .line 40
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aC:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aF:Landroid/widget/TextView;
 
     return-object v0
 .end method
 
-.method private k()V
+.method private o()V
     .locals 5
 
     .prologue
@@ -223,7 +223,7 @@
     move-result-wide v0
 
     .line 184
-    iget-object v2, p0, Lcom/android/settings/BatteryInfo;->aG:Landroid/widget/TextView;
+    iget-object v2, p0, Lcom/android/settings/BatteryInfo;->aJ:Landroid/widget/TextView;
 
     const-wide/16 v3, 0x3e8
 
@@ -259,10 +259,10 @@
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aJ:Landroid/content/IntentFilter;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aM:Landroid/content/IntentFilter;
 
     .line 148
-    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aJ:Landroid/content/IntentFilter;
+    iget-object v0, p0, Lcom/android/settings/BatteryInfo;->aM:Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
@@ -311,7 +311,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->ay:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aB:Landroid/widget/TextView;
 
     .line 156
     const v0, 0x7f08000a
@@ -322,7 +322,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->az:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aC:Landroid/widget/TextView;
 
     .line 157
     const v0, 0x7f08000b
@@ -333,7 +333,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aA:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aD:Landroid/widget/TextView;
 
     .line 158
     const v0, 0x7f08000c
@@ -344,7 +344,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aB:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aE:Landroid/widget/TextView;
 
     .line 159
     const v0, 0x7f08000d
@@ -355,7 +355,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aC:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aF:Landroid/widget/TextView;
 
     .line 160
     const v0, 0x7f080010
@@ -366,7 +366,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aF:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aI:Landroid/widget/TextView;
 
     .line 161
     const v0, 0x7f08000e
@@ -377,7 +377,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aD:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aG:Landroid/widget/TextView;
 
     .line 162
     const v0, 0x7f08000f
@@ -388,7 +388,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aE:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aH:Landroid/widget/TextView;
 
     .line 163
     const v0, 0x7f080011
@@ -399,7 +399,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aG:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aJ:Landroid/widget/TextView;
 
     .line 166
     const-string v0, "batteryinfo"
@@ -412,7 +412,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aH:Lcom/android/internal/app/IBatteryStats;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aK:Lcom/android/internal/app/IBatteryStats;
 
     .line 167
     const-string v0, "power"
@@ -425,7 +425,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aI:Landroid/os/IPowerManager;
+    iput-object v0, p0, Lcom/android/settings/BatteryInfo;->aL:Landroid/os/IPowerManager;
 
     .line 168
     iget-object v0, p0, Lcom/android/settings/BatteryInfo;->mHandler:Landroid/os/Handler;
@@ -439,7 +439,7 @@
     .line 170
     iget-object v0, p0, Lcom/android/settings/BatteryInfo;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    iget-object v1, p0, Lcom/android/settings/BatteryInfo;->aJ:Landroid/content/IntentFilter;
+    iget-object v1, p0, Lcom/android/settings/BatteryInfo;->aM:Landroid/content/IntentFilter;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/BatteryInfo;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 

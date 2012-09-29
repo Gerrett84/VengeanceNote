@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Bt:Lcom/android/settings/nfc/a;
+.field final synthetic Bx:Lcom/android/settings/nfc/a;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 42
-    iput-object p1, p0, Lcom/android/settings/nfc/b;->Bt:Lcom/android/settings/nfc/a;
+    iput-object p1, p0, Lcom/android/settings/nfc/b;->Bx:Lcom/android/settings/nfc/a;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -44,7 +44,7 @@
     if-eqz v0, :cond_0
 
     .line 47
-    iget-object v0, p0, Lcom/android/settings/nfc/b;->Bt:Lcom/android/settings/nfc/a;
+    iget-object v0, p0, Lcom/android/settings/nfc/b;->Bx:Lcom/android/settings/nfc/a;
 
     const-string v1, "android.nfc.extra.ADAPTER_STATE"
 

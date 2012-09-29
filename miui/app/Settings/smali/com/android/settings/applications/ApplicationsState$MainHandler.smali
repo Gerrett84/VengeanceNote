@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic iG:Lcom/android/settings/applications/ApplicationsState;
+.field final synthetic iJ:Lcom/android/settings/applications/ApplicationsState;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 332
-    iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -31,9 +31,9 @@
     const/4 v1, 0x0
 
     .line 342
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState;->jL()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState;->jP()V
 
     .line 343
     iget v0, p1, Landroid/os/Message;->what:I
@@ -52,9 +52,9 @@
     check-cast v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
     .line 346
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
@@ -63,9 +63,9 @@
     if-eqz v1, :cond_0
 
     .line 347
-    iget-object v1, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iget-object v1, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rJ:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rM:Ljava/util/ArrayList;
 
     invoke-interface {v1, v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->b(Ljava/util/ArrayList;)V
 
@@ -74,9 +74,9 @@
     .line 351
     :goto_1
     :pswitch_1
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -85,9 +85,9 @@
     if-ge v1, v0, :cond_0
 
     .line 352
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -95,9 +95,9 @@
 
     check-cast v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
-    invoke-interface {v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->ah()V
+    invoke-interface {v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->al()V
 
     .line 351
     add-int/lit8 v0, v1, 0x1
@@ -109,9 +109,9 @@
     .line 356
     :goto_2
     :pswitch_2
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -120,9 +120,9 @@
     if-ge v1, v0, :cond_0
 
     .line 357
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -130,9 +130,9 @@
 
     check-cast v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
-    invoke-interface {v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->ai()V
+    invoke-interface {v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->am()V
 
     .line 356
     add-int/lit8 v1, v1, 0x1
@@ -142,9 +142,9 @@
     .line 361
     :goto_3
     :pswitch_3
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -153,9 +153,9 @@
     if-ge v1, v0, :cond_0
 
     .line 362
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -163,13 +163,13 @@
 
     check-cast v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
-    iget-object v2, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iget-object v2, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-interface {v2, v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->k(Ljava/lang/String;)V
+    invoke-interface {v2, v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->l(Ljava/lang/String;)V
 
     .line 361
     add-int/lit8 v1, v1, 0x1
@@ -179,9 +179,9 @@
     .line 367
     :goto_4
     :pswitch_4
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -190,9 +190,9 @@
     if-ge v1, v0, :cond_0
 
     .line 368
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -200,9 +200,9 @@
 
     check-cast v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
-    invoke-interface {v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->aj()V
+    invoke-interface {v0}, Lcom/android/settings/applications/ApplicationsState$Callbacks;->an()V
 
     .line 367
     add-int/lit8 v1, v1, 0x1
@@ -214,9 +214,9 @@
 
     .line 372
     :goto_5
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -225,9 +225,9 @@
     if-ge v2, v0, :cond_0
 
     .line 373
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$MainHandler;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -235,7 +235,7 @@
 
     check-cast v0, Lcom/android/settings/applications/ApplicationsState$Session;
 
-    iget-object v3, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iget-object v3, v0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
     iget v0, p1, Landroid/os/Message;->arg1:I
 

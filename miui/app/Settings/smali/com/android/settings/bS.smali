@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field AR:Ljava/text/Collator;
+.field AV:Ljava/text/Collator;
 
-.field final synthetic AS:Lcom/android/settings/AppWidgetPickActivity;
+.field final synthetic AW:Lcom/android/settings/AppWidgetPickActivity;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     .prologue
     .line 212
-    iput-object p1, p0, Lcom/android/settings/bS;->AS:Lcom/android/settings/AppWidgetPickActivity;
+    iput-object p1, p0, Lcom/android/settings/bS;->AW:Lcom/android/settings/AppWidgetPickActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,7 +28,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/bS;->AR:Ljava/text/Collator;
+    iput-object v0, p0, Lcom/android/settings/bS;->AV:Ljava/text/Collator;
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 
     .prologue
     .line 215
-    iget-object v0, p0, Lcom/android/settings/bS;->AR:Ljava/text/Collator;
+    iget-object v0, p0, Lcom/android/settings/bS;->AV:Ljava/text/Collator;
 
     iget-object v1, p1, Lcom/android/settings/eh;->label:Ljava/lang/CharSequence;
 

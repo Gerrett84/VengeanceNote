@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic FG:Lcom/android/settings/CryptKeeper;
+.field final synthetic FK:Lcom/android/settings/CryptKeeper;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 146
-    iput-object p1, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iput-object p1, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
@@ -41,7 +41,7 @@
 
     .prologue
     .line 149
-    iget-object v0, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->a(Lcom/android/settings/CryptKeeper;)Landroid/os/storage/IMountService;
 
@@ -120,19 +120,19 @@
     .line 165
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v1, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     const-class v2, Lcom/android/settings/CryptKeeper$FadeToBlack;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 166
-    iget-object v1, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v1, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-virtual {v1}, Lcom/android/settings/CryptKeeper;->finish()V
 
     .line 167
-    iget-object v1, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v1, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/CryptKeeper;->startActivity(Landroid/content/Intent;)V
 
@@ -149,7 +149,7 @@
     if-ne v0, v1, :cond_1
 
     .line 170
-    iget-object v0, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     new-instance v1, Landroid/content/Intent;
 
@@ -172,12 +172,12 @@
     if-nez v0, :cond_2
 
     .line 172
-    iget-object v0, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0, v1}, Lcom/android/settings/CryptKeeper;->a(Lcom/android/settings/CryptKeeper;I)I
 
     .line 173
-    iget-object v0, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->b(Lcom/android/settings/CryptKeeper;)V
 
@@ -185,7 +185,7 @@
 
     .line 175
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     const v1, 0x7f080009
 
@@ -201,7 +201,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
     .line 178
-    iget-object v0, p0, Lcom/android/settings/dj;->FG:Lcom/android/settings/CryptKeeper;
+    iget-object v0, p0, Lcom/android/settings/dj;->FK:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->c(Lcom/android/settings/CryptKeeper;)Landroid/widget/EditText;
 

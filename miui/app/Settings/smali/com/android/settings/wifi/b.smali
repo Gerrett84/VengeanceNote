@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field final synthetic am:Lcom/android/settings/wifi/K;
+.field final synthetic ap:Lcom/android/settings/wifi/L;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/settings/wifi/K;)V
+.method constructor <init>(Lcom/android/settings/wifi/L;)V
     .locals 0
     .parameter
 
     .prologue
     .line 46
-    iput-object p1, p0, Lcom/android/settings/wifi/b;->am:Lcom/android/settings/wifi/K;
+    iput-object p1, p0, Lcom/android/settings/wifi/b;->ap:Lcom/android/settings/wifi/L;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -44,7 +44,7 @@
     if-eqz v1, :cond_1
 
     .line 51
-    iget-object v0, p0, Lcom/android/settings/wifi/b;->am:Lcom/android/settings/wifi/K;
+    iget-object v0, p0, Lcom/android/settings/wifi/b;->ap:Lcom/android/settings/wifi/L;
 
     const-string v1, "wifi_state"
 
@@ -54,7 +54,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/settings/wifi/K;->a(Lcom/android/settings/wifi/K;I)V
+    invoke-static {v0, v1}, Lcom/android/settings/wifi/L;->a(Lcom/android/settings/wifi/L;I)V
 
     .line 64
     :cond_0
@@ -72,9 +72,9 @@
     if-eqz v1, :cond_2
 
     .line 54
-    iget-object v0, p0, Lcom/android/settings/wifi/b;->am:Lcom/android/settings/wifi/K;
+    iget-object v0, p0, Lcom/android/settings/wifi/b;->ap:Lcom/android/settings/wifi/L;
 
-    invoke-static {v0}, Lcom/android/settings/wifi/K;->a(Lcom/android/settings/wifi/K;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {v0}, Lcom/android/settings/wifi/L;->a(Lcom/android/settings/wifi/L;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v0
 
@@ -85,7 +85,7 @@
     if-nez v0, :cond_0
 
     .line 55
-    iget-object v1, p0, Lcom/android/settings/wifi/b;->am:Lcom/android/settings/wifi/K;
+    iget-object v1, p0, Lcom/android/settings/wifi/b;->ap:Lcom/android/settings/wifi/L;
 
     const-string v0, "newState"
 
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/settings/wifi/K;->a(Lcom/android/settings/wifi/K;Landroid/net/NetworkInfo$DetailedState;)V
+    invoke-static {v1, v0}, Lcom/android/settings/wifi/L;->a(Lcom/android/settings/wifi/L;Landroid/net/NetworkInfo$DetailedState;)V
 
     goto :goto_0
 
@@ -123,9 +123,9 @@
     check-cast v0, Landroid/net/NetworkInfo;
 
     .line 61
-    iget-object v1, p0, Lcom/android/settings/wifi/b;->am:Lcom/android/settings/wifi/K;
+    iget-object v1, p0, Lcom/android/settings/wifi/b;->ap:Lcom/android/settings/wifi/L;
 
-    invoke-static {v1}, Lcom/android/settings/wifi/K;->a(Lcom/android/settings/wifi/K;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {v1}, Lcom/android/settings/wifi/L;->a(Lcom/android/settings/wifi/L;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v1
 
@@ -136,13 +136,13 @@
     invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 62
-    iget-object v1, p0, Lcom/android/settings/wifi/b;->am:Lcom/android/settings/wifi/K;
+    iget-object v1, p0, Lcom/android/settings/wifi/b;->ap:Lcom/android/settings/wifi/L;
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/settings/wifi/K;->a(Lcom/android/settings/wifi/K;Landroid/net/NetworkInfo$DetailedState;)V
+    invoke-static {v1, v0}, Lcom/android/settings/wifi/L;->a(Lcom/android/settings/wifi/L;Landroid/net/NetworkInfo$DetailedState;)V
 
     goto :goto_0
 .end method

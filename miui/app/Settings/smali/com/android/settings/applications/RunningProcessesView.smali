@@ -9,47 +9,47 @@
 
 
 # instance fields
-.field Au:Lcom/android/settings/applications/LinearColorBar;
+.field Ay:Lcom/android/settings/applications/LinearColorBar;
 
-.field EJ:J
+.field EN:J
 
-.field final EK:Ljava/util/HashMap;
+.field final EO:Ljava/util/HashMap;
 
-.field EL:Landroid/app/Fragment;
+.field EP:Landroid/app/Fragment;
 
-.field EM:Ljava/lang/Runnable;
+.field EQ:Ljava/lang/Runnable;
 
-.field EN:Lcom/android/settings/applications/RunningState$BaseItem;
+.field ER:Lcom/android/settings/applications/RunningState$BaseItem;
 
-.field EO:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
+.field ES:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
-.field EP:Landroid/widget/TextView;
+.field ET:Landroid/widget/TextView;
 
-.field EQ:Landroid/widget/TextView;
+.field EU:Landroid/widget/TextView;
 
-.field ER:I
+.field EV:I
 
-.field ES:I
+.field EW:I
 
-.field ET:I
+.field EX:I
 
-.field EU:J
+.field EY:J
 
-.field EV:J
+.field EZ:J
 
-.field EW:J
+.field Fa:J
 
-.field EX:J
+.field Fb:J
 
-.field EY:Lcom/android/internal/util/MemInfoReader;
+.field Fc:Lcom/android/internal/util/MemInfoReader;
 
-.field da:Lcom/android/settings/applications/RunningState;
+.field dd:Lcom/android/settings/applications/RunningState;
 
 .field mBuilder:Ljava/lang/StringBuilder;
 
 .field mListView:Landroid/widget/ListView;
 
-.field tb:Landroid/app/ActivityManager;
+.field tf:Landroid/app/ActivityManager;
 
 
 # direct methods
@@ -71,7 +71,7 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EK:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EO:Ljava/util/HashMap;
 
     .line 66
     new-instance v0, Ljava/lang/StringBuilder;
@@ -83,32 +83,32 @@
     iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->mBuilder:Ljava/lang/StringBuilder;
 
     .line 76
-    iput v4, p0, Lcom/android/settings/applications/RunningProcessesView;->ER:I
+    iput v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EV:I
 
     .line 77
-    iput v4, p0, Lcom/android/settings/applications/RunningProcessesView;->ES:I
+    iput v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:I
 
     .line 78
-    iput v4, p0, Lcom/android/settings/applications/RunningProcessesView;->ET:I
+    iput v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:I
 
     .line 79
-    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:J
+    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:J
 
     .line 80
-    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->EV:J
+    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->EZ:J
 
     .line 81
-    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:J
+    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->Fa:J
 
     .line 82
-    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:J
+    iput-wide v2, p0, Lcom/android/settings/applications/RunningProcessesView;->Fb:J
 
     .line 86
     new-instance v0, Lcom/android/internal/util/MemInfoReader;
 
     invoke-direct {v0}, Lcom/android/internal/util/MemInfoReader;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:Lcom/android/internal/util/MemInfoReader;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->Fc:Lcom/android/internal/util/MemInfoReader;
 
     .line 395
     return-void
@@ -122,7 +122,7 @@
     const/4 v4, 0x0
 
     .line 376
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EL:Landroid/app/Fragment;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/app/Fragment;
 
     if-eqz v0, :cond_0
 
@@ -134,7 +134,7 @@
     .line 379
     const-string v0, "uid"
 
-    iget-object v1, p1, Lcom/android/settings/applications/RunningState$MergedItem;->PG:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iget-object v1, p1, Lcom/android/settings/applications/RunningState$MergedItem;->PJ:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     iget v1, v1, Lcom/android/settings/applications/RunningState$ProcessItem;->mUid:I
 
@@ -143,23 +143,23 @@
     .line 380
     const-string v0, "process"
 
-    iget-object v1, p1, Lcom/android/settings/applications/RunningState$MergedItem;->PG:Lcom/android/settings/applications/RunningState$ProcessItem;
+    iget-object v1, p1, Lcom/android/settings/applications/RunningState$MergedItem;->PJ:Lcom/android/settings/applications/RunningState$ProcessItem;
 
-    iget-object v1, v1, Lcom/android/settings/applications/RunningState$ProcessItem;->cE:Ljava/lang/String;
+    iget-object v1, v1, Lcom/android/settings/applications/RunningState$ProcessItem;->cH:Ljava/lang/String;
 
     invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 381
     const-string v0, "background"
 
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->EO:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->ES:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
-    iget-boolean v1, v1, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;->db:Z
+    iget-boolean v1, v1, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;->de:Z
 
     invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 383
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EL:Landroid/app/Fragment;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/app/Fragment;
 
     invoke-virtual {v0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
@@ -203,7 +203,7 @@
 
     .line 470
     :pswitch_0
-    invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->fv()V
+    invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->fz()V
 
     goto :goto_0
 
@@ -214,7 +214,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/RunningProcessesView;->G(Z)V
 
     .line 474
-    invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->fv()V
+    invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->fz()V
 
     goto :goto_0
 
@@ -225,7 +225,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/RunningProcessesView;->G(Z)V
 
     .line 478
-    invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->fv()V
+    invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->fz()V
 
     goto :goto_0
 
@@ -260,41 +260,41 @@
     check-cast v0, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
     .line 308
-    invoke-virtual {v0}, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;->O()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;->S()V
 
     .line 309
     invoke-virtual {v0}, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;->notifyDataSetChanged()V
 
     .line 312
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EM:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
     .line 313
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EM:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     .line 314
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EM:Ljava/lang/Runnable;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Ljava/lang/Runnable;
 
     .line 319
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:Lcom/android/internal/util/MemInfoReader;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->Fc:Lcom/android/internal/util/MemInfoReader;
 
     invoke-virtual {v0}, Lcom/android/internal/util/MemInfoReader;->readMemInfo()V
 
     .line 320
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:Lcom/android/internal/util/MemInfoReader;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->Fc:Lcom/android/internal/util/MemInfoReader;
 
     invoke-virtual {v0}, Lcom/android/internal/util/MemInfoReader;->getFreeSize()J
 
     move-result-wide v0
 
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:Lcom/android/internal/util/MemInfoReader;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->Fc:Lcom/android/internal/util/MemInfoReader;
 
     invoke-virtual {v4}, Lcom/android/internal/util/MemInfoReader;->getCachedSize()J
 
@@ -302,7 +302,7 @@
 
     add-long/2addr v0, v4
 
-    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EJ:J
+    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EN:J
 
     sub-long/2addr v0, v4
 
@@ -315,7 +315,7 @@
 
     .line 326
     :cond_2
-    iget-object v2, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v2, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
     iget-object v2, v2, Lcom/android/settings/applications/RunningState;->mLock:Ljava/lang/Object;
 
@@ -323,25 +323,25 @@
 
     .line 327
     :try_start_0
-    iget v3, p0, Lcom/android/settings/applications/RunningProcessesView;->ER:I
+    iget v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EV:I
 
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget v4, v4, Lcom/android/settings/applications/RunningState;->Dk:I
+    iget v4, v4, Lcom/android/settings/applications/RunningState;->Do:I
 
     if-ne v3, v4, :cond_3
 
-    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:J
+    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:J
 
-    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget-wide v5, v5, Lcom/android/settings/applications/RunningState;->Dl:J
+    iget-wide v5, v5, Lcom/android/settings/applications/RunningState;->Dp:J
 
     cmp-long v3, v3, v5
 
     if-nez v3, :cond_3
 
-    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:J
+    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->Fb:J
 
     cmp-long v3, v3, v0
 
@@ -349,26 +349,26 @@
 
     .line 330
     :cond_3
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget v3, v3, Lcom/android/settings/applications/RunningState;->Dk:I
+    iget v3, v3, Lcom/android/settings/applications/RunningState;->Do:I
 
-    iput v3, p0, Lcom/android/settings/applications/RunningProcessesView;->ER:I
+    iput v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EV:I
 
     .line 331
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget-wide v3, v3, Lcom/android/settings/applications/RunningState;->Dl:J
+    iget-wide v3, v3, Lcom/android/settings/applications/RunningState;->Dp:J
 
-    iput-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:J
+    iput-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:J
 
     .line 332
-    iput-wide v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:J
+    iput-wide v0, p0, Lcom/android/settings/applications/RunningProcessesView;->Fb:J
 
     .line 333
-    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:J
+    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->Fb:J
 
-    iget-wide v5, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:J
+    iget-wide v5, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:J
 
     add-long/2addr v3, v5
 
@@ -382,7 +382,7 @@
     move-result-object v5
 
     .line 335
-    iget-object v6, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/widget/TextView;
+    iget-object v6, p0, Lcom/android/settings/applications/RunningProcessesView;->ET:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->getResources()Landroid/content/res/Resources;
 
@@ -409,7 +409,7 @@
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:Lcom/android/internal/util/MemInfoReader;
+    iget-object v6, p0, Lcom/android/settings/applications/RunningProcessesView;->Fc:Lcom/android/internal/util/MemInfoReader;
 
     invoke-virtual {v6}, Lcom/android/internal/util/MemInfoReader;->getTotalSize()J
 
@@ -422,7 +422,7 @@
     move-result-object v3
 
     .line 339
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Landroid/widget/TextView;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->getResources()Landroid/content/res/Resources;
 
@@ -446,37 +446,37 @@
 
     .line 342
     :cond_4
-    iget v3, p0, Lcom/android/settings/applications/RunningProcessesView;->ES:I
+    iget v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:I
 
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget v4, v4, Lcom/android/settings/applications/RunningState;->Dm:I
+    iget v4, v4, Lcom/android/settings/applications/RunningState;->Dq:I
 
     if-ne v3, v4, :cond_5
 
-    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EV:J
+    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EZ:J
 
-    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget-wide v5, v5, Lcom/android/settings/applications/RunningState;->Dn:J
+    iget-wide v5, v5, Lcom/android/settings/applications/RunningState;->Dr:J
 
     cmp-long v3, v3, v5
 
     if-nez v3, :cond_5
 
-    iget v3, p0, Lcom/android/settings/applications/RunningProcessesView;->ET:I
+    iget v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:I
 
-    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v4, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget v4, v4, Lcom/android/settings/applications/RunningState;->Do:I
+    iget v4, v4, Lcom/android/settings/applications/RunningState;->Ds:I
 
     if-ne v3, v4, :cond_5
 
-    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:J
+    iget-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->Fa:J
 
-    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v5, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget-wide v5, v5, Lcom/android/settings/applications/RunningState;->Dp:J
+    iget-wide v5, v5, Lcom/android/settings/applications/RunningState;->Dt:J
 
     cmp-long v3, v3, v5
 
@@ -484,36 +484,36 @@
 
     .line 346
     :cond_5
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget v3, v3, Lcom/android/settings/applications/RunningState;->Dm:I
+    iget v3, v3, Lcom/android/settings/applications/RunningState;->Dq:I
 
-    iput v3, p0, Lcom/android/settings/applications/RunningProcessesView;->ES:I
+    iput v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:I
 
     .line 347
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget-wide v3, v3, Lcom/android/settings/applications/RunningState;->Dn:J
+    iget-wide v3, v3, Lcom/android/settings/applications/RunningState;->Dr:J
 
-    iput-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EV:J
+    iput-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EZ:J
 
     .line 348
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget v3, v3, Lcom/android/settings/applications/RunningState;->Do:I
+    iget v3, v3, Lcom/android/settings/applications/RunningState;->Ds:I
 
-    iput v3, p0, Lcom/android/settings/applications/RunningProcessesView;->ET:I
+    iput v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EX:I
 
     .line 349
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
-    iget-wide v3, v3, Lcom/android/settings/applications/RunningState;->Dp:J
+    iget-wide v3, v3, Lcom/android/settings/applications/RunningState;->Dt:J
 
-    iput-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:J
+    iput-wide v3, p0, Lcom/android/settings/applications/RunningProcessesView;->Fa:J
 
     .line 358
     :cond_6
-    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:Lcom/android/internal/util/MemInfoReader;
+    iget-object v3, p0, Lcom/android/settings/applications/RunningProcessesView;->Fc:Lcom/android/internal/util/MemInfoReader;
 
     invoke-virtual {v3}, Lcom/android/internal/util/MemInfoReader;->getTotalSize()J
 
@@ -522,30 +522,30 @@
     long-to-float v3, v3
 
     .line 359
-    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:J
+    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:J
 
     add-long/2addr v0, v4
 
-    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:J
+    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->Fa:J
 
     add-long/2addr v0, v4
 
     long-to-float v0, v0
 
     .line 361
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->Au:Lcom/android/settings/applications/LinearColorBar;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->Ay:Lcom/android/settings/applications/LinearColorBar;
 
     sub-float v0, v3, v0
 
     div-float/2addr v0, v3
 
-    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->EW:J
+    iget-wide v4, p0, Lcom/android/settings/applications/RunningProcessesView;->Fa:J
 
     long-to-float v4, v4
 
     div-float/2addr v4, v3
 
-    iget-wide v5, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:J
+    iget-wide v5, p0, Lcom/android/settings/applications/RunningProcessesView;->EY:J
 
     long-to-float v5, v5
 
@@ -579,15 +579,15 @@
     const/4 v0, 0x1
 
     .line 441
-    iput-object p1, p0, Lcom/android/settings/applications/RunningProcessesView;->EL:Landroid/app/Fragment;
+    iput-object p1, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/app/Fragment;
 
     .line 442
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
     invoke-virtual {v1, p0}, Lcom/android/settings/applications/RunningState;->a(Lcom/android/settings/applications/RunningState$OnRefreshUiListener;)V
 
     .line 443
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
     invoke-virtual {v1}, Lcom/android/settings/applications/RunningState;->hasData()Z
 
@@ -604,7 +604,7 @@
 
     .line 449
     :cond_0
-    iput-object p2, p0, Lcom/android/settings/applications/RunningProcessesView;->EM:Ljava/lang/Runnable;
+    iput-object p2, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Ljava/lang/Runnable;
 
     .line 450
     const/4 v0, 0x0
@@ -630,7 +630,7 @@
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->tb:Landroid/app/ActivityManager;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->tf:Landroid/app/ActivityManager;
 
     .line 400
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->getContext()Landroid/content/Context;
@@ -641,7 +641,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
     .line 401
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningProcessesView;->getContext()Landroid/content/Context;
@@ -701,16 +701,16 @@
     .line 411
     new-instance v0, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;-><init>(Lcom/android/settings/applications/RunningProcessesView;Lcom/android/settings/applications/RunningState;)V
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EO:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->ES:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
     .line 412
     iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->mListView:Landroid/widget/ListView;
 
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->EO:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->ES:Lcom/android/settings/applications/RunningProcessesView$ServiceListAdapter;
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
@@ -723,7 +723,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LinearColorBar;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->Au:Lcom/android/settings/applications/LinearColorBar;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->Ay:Lcom/android/settings/applications/LinearColorBar;
 
     .line 414
     const v0, 0x7f080129
@@ -734,10 +734,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->ET:Landroid/widget/TextView;
 
     .line 415
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->ET:Landroid/widget/TextView;
 
     new-instance v1, Lcom/android/settings/applications/RunningProcessesView$1;
 
@@ -754,10 +754,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:Landroid/widget/TextView;
 
     .line 422
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EU:Landroid/widget/TextView;
 
     new-instance v1, Lcom/android/settings/applications/RunningProcessesView$2;
 
@@ -771,25 +771,25 @@
     invoke-direct {v0}, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
 
     .line 430
-    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->tb:Landroid/app/ActivityManager;
+    iget-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->tf:Landroid/app/ActivityManager;
 
     invoke-virtual {v1, v0}, Landroid/app/ActivityManager;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
 
     .line 431
     iget-wide v0, v0, Landroid/app/ActivityManager$MemoryInfo;->secondaryServerThreshold:J
 
-    iput-wide v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EJ:J
+    iput-wide v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EN:J
 
     .line 432
     return-void
 .end method
 
-.method fv()V
+.method fz()V
     .locals 4
 
     .prologue
     .line 454
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EK:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EO:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -845,22 +845,22 @@
     return-void
 .end method
 
-.method public iZ()V
+.method public jd()V
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
     .line 435
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->da:Lcom/android/settings/applications/RunningState;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->dd:Lcom/android/settings/applications/RunningState;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/RunningState;->pause()V
 
     .line 436
-    iput-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->EM:Ljava/lang/Runnable;
+    iput-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->EQ:Ljava/lang/Runnable;
 
     .line 437
-    iput-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->EL:Landroid/app/Fragment;
+    iput-object v1, p0, Lcom/android/settings/applications/RunningProcessesView;->EP:Landroid/app/Fragment;
 
     .line 438
     return-void
@@ -889,7 +889,7 @@
     check-cast v0, Lcom/android/settings/applications/RunningState$MergedItem;
 
     .line 370
-    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EN:Lcom/android/settings/applications/RunningState$BaseItem;
+    iput-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->ER:Lcom/android/settings/applications/RunningState$BaseItem;
 
     .line 371
     invoke-direct {p0, v0}, Lcom/android/settings/applications/RunningProcessesView;->a(Lcom/android/settings/applications/RunningState$MergedItem;)V
@@ -904,7 +904,7 @@
 
     .prologue
     .line 390
-    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EK:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/settings/applications/RunningProcessesView;->EO:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 

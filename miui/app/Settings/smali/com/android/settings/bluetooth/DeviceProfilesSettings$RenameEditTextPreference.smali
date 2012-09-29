@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic al:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
+.field final synthetic ao:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 72
-    iput-object p1, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$RenameEditTextPreference;->al:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$RenameEditTextPreference;->ao:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,7 +44,7 @@
 
     .prologue
     .line 74
-    iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$RenameEditTextPreference;->al:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$RenameEditTextPreference;->ao:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->a(Lcom/android/settings/bluetooth/DeviceProfilesSettings;)Landroid/preference/EditTextPreference;
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic d:Lcom/android/settings/deviceinfo/Memory;
+.field final synthetic g:Lcom/android/settings/deviceinfo/Memory;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 256
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$3;->d:Lcom/android/settings/deviceinfo/Memory;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/Memory$3;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 258
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/Memory$3;->d:Lcom/android/settings/deviceinfo/Memory;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/Memory$3;->g:Lcom/android/settings/deviceinfo/Memory;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/Memory;->b(Lcom/android/settings/deviceinfo/Memory;)V
 

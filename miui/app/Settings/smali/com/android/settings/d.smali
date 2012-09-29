@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic ap:Lcom/android/settings/DebugIntentSender;
+.field final synthetic as:Lcom/android/settings/DebugIntentSender;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 40
-    iput-object p1, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iput-object p1, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 42
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v0}, Lcom/android/settings/DebugIntentSender;->a(Lcom/android/settings/DebugIntentSender;)Landroid/widget/Button;
 
@@ -40,7 +40,7 @@
 
     if-eq p1, v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v0}, Lcom/android/settings/DebugIntentSender;->b(Lcom/android/settings/DebugIntentSender;)Landroid/widget/Button;
 
@@ -50,7 +50,7 @@
 
     .line 44
     :cond_0
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v0}, Lcom/android/settings/DebugIntentSender;->c(Lcom/android/settings/DebugIntentSender;)Landroid/widget/EditText;
 
@@ -65,7 +65,7 @@
     move-result-object v0
 
     .line 45
-    iget-object v1, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v1, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v1}, Lcom/android/settings/DebugIntentSender;->d(Lcom/android/settings/DebugIntentSender;)Landroid/widget/EditText;
 
@@ -80,7 +80,7 @@
     move-result-object v1
 
     .line 46
-    iget-object v2, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v2, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v2}, Lcom/android/settings/DebugIntentSender;->e(Lcom/android/settings/DebugIntentSender;)Landroid/widget/EditText;
 
@@ -95,7 +95,7 @@
     move-result-object v2
 
     .line 47
-    iget-object v3, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v3, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v3}, Lcom/android/settings/DebugIntentSender;->f(Lcom/android/settings/DebugIntentSender;)Landroid/widget/EditText;
 
@@ -140,7 +140,7 @@
     invoke-virtual {v4, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 55
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-static {v0}, Lcom/android/settings/DebugIntentSender;->a(Lcom/android/settings/DebugIntentSender;)Landroid/widget/Button;
 
@@ -149,20 +149,20 @@
     if-ne p1, v0, :cond_3
 
     .line 56
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-virtual {v0, v4}, Lcom/android/settings/DebugIntentSender;->sendBroadcast(Landroid/content/Intent;)V
 
     .line 61
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Lcom/android/settings/DebugIntentSender;->setResult(I)V
 
     .line 62
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-virtual {v0}, Lcom/android/settings/DebugIntentSender;->finish()V
 
@@ -172,7 +172,7 @@
 
     .line 58
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/d;->ap:Lcom/android/settings/DebugIntentSender;
+    iget-object v0, p0, Lcom/android/settings/d;->as:Lcom/android/settings/DebugIntentSender;
 
     invoke-virtual {v0, v4}, Lcom/android/settings/DebugIntentSender;->startActivity(Landroid/content/Intent;)V
 

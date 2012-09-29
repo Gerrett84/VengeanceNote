@@ -164,12 +164,12 @@
     move-result-object v1
 
     .line 96
-    invoke-virtual {v1}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->es()Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ew()Landroid/content/Context;
 
     move-result-object v2
 
     .line 97
-    invoke-virtual {v1}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->et()Z
+    invoke-virtual {v1}, Lcom/android/settings/bluetooth/LocalBluetoothManager;->ex()Z
 
     move-result v1
 

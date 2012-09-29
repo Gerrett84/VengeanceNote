@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private final Br:Landroid/preference/CheckBoxPreference;
+.field private final Bv:Landroid/preference/CheckBoxPreference;
 
-.field private Bs:Landroid/database/ContentObserver;
+.field private Bw:Landroid/database/ContentObserver;
 
-.field private ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+.field private lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -65,7 +65,7 @@
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 98
-    iget-object v0, p0, Lcom/android/settings/ce;->Br:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ce;->Bv:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
@@ -96,12 +96,12 @@
     goto :goto_0
 .end method
 
-.method private hW()V
+.method private ia()V
     .locals 2
 
     .prologue
     .line 115
-    iget-object v0, p0, Lcom/android/settings/ce;->Br:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ce;->Bv:Landroid/preference/CheckBoxPreference;
 
     iget-object v1, p0, Lcom/android/settings/ce;->mContext:Landroid/content/Context;
 
@@ -135,7 +135,7 @@
 
     .line 137
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/ce;->hW()V
+    invoke-direct {p0}, Lcom/android/settings/ce;->ia()V
 
     goto :goto_0
 .end method
@@ -183,12 +183,12 @@
 
     .prologue
     .line 83
-    iget-object v0, p0, Lcom/android/settings/ce;->ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+    iget-object v0, p0, Lcom/android/settings/ce;->lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->unregisterIntent()V
 
     .line 84
-    iget-object v0, p0, Lcom/android/settings/ce;->Br:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ce;->Bv:Landroid/preference/CheckBoxPreference;
 
     const/4 v1, 0x0
 
@@ -201,7 +201,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/ce;->Bs:Landroid/database/ContentObserver;
+    iget-object v1, p0, Lcom/android/settings/ce;->Bw:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
@@ -214,7 +214,7 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Lcom/android/settings/ce;->Br:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ce;->Bv:Landroid/preference/CheckBoxPreference;
 
     iget-object v1, p0, Lcom/android/settings/ce;->mContext:Landroid/content/Context;
 
@@ -225,12 +225,12 @@
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 75
-    iget-object v0, p0, Lcom/android/settings/ce;->ly:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
+    iget-object v0, p0, Lcom/android/settings/ce;->lB:Lcom/android/internal/telephony/PhoneStateIntentReceiver;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->registerIntent()V
 
     .line 76
-    iget-object v0, p0, Lcom/android/settings/ce;->Br:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/ce;->Bv:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/CheckBoxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -249,7 +249,7 @@
 
     const/4 v2, 0x1
 
-    iget-object v3, p0, Lcom/android/settings/ce;->Bs:Landroid/database/ContentObserver;
+    iget-object v3, p0, Lcom/android/settings/ce;->Bw:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 

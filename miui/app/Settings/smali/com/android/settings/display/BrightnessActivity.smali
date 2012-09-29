@@ -8,29 +8,29 @@
 
 
 # instance fields
-.field private Je:Landroid/widget/CheckBox;
+.field private Jh:Landroid/widget/CheckBox;
 
-.field private OP:I
-
-.field private OQ:I
-
-.field private OR:Z
-
-.field private OS:Z
+.field private OS:I
 
 .field private OT:I
 
-.field private OU:I
+.field private OU:Z
 
-.field private OV:Landroid/database/ContentObserver;
+.field private OV:Z
 
-.field private OW:Landroid/database/ContentObserver;
+.field private OW:I
 
-.field private h:Landroid/widget/SeekBar;
+.field private OX:I
+
+.field private OY:Landroid/database/ContentObserver;
+
+.field private OZ:Landroid/database/ContentObserver;
+
+.field private k:Landroid/widget/SeekBar;
 
 .field private mDialog:Landroid/app/Dialog;
 
-.field private mw:Z
+.field private mz:Z
 
 
 # direct methods
@@ -44,7 +44,7 @@
     .line 37
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     .line 48
     new-instance v0, Lcom/android/settings/display/b;
@@ -55,7 +55,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/display/b;-><init>(Lcom/android/settings/display/BrightnessActivity;Landroid/os/Handler;)V
 
-    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->OV:Landroid/database/ContentObserver;
+    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->OY:Landroid/database/ContentObserver;
 
     .line 56
     new-instance v0, Lcom/android/settings/display/a;
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/display/a;-><init>(Lcom/android/settings/display/BrightnessActivity;Landroid/os/Handler;)V
 
-    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:Landroid/database/ContentObserver;
+    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->OZ:Landroid/database/ContentObserver;
 
     .line 258
     return-void
@@ -79,7 +79,7 @@
 
     .prologue
     .line 25
-    iput p1, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iput p1, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     return p1
 .end method
@@ -90,7 +90,7 @@
 
     .prologue
     .line 25
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->lX()V
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->mb()V
 
     return-void
 .end method
@@ -101,12 +101,12 @@
 
     .prologue
     .line 25
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->lY()V
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->mc()V
 
     return-void
 .end method
 
-.method private bP()V
+.method private bT()V
     .locals 4
 
     .prologue
@@ -128,26 +128,26 @@
 
     check-cast v0, Landroid/widget/SeekBar;
 
-    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
     .line 84
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
     const/16 v3, 0x2710
 
     invoke-virtual {v0, v3}, Landroid/widget/SeekBar;->setMax(I)V
 
     .line 85
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->lW()I
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->ma()I
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OP:I
+    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OS:I
 
     .line 86
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
-    iget v3, p0, Lcom/android/settings/display/BrightnessActivity;->OP:I
+    iget v3, p0, Lcom/android/settings/display/BrightnessActivity;->OS:I
 
     invoke-virtual {v0, v3}, Landroid/widget/SeekBar;->setProgress(I)V
 
@@ -160,15 +160,15 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Je:Landroid/widget/CheckBox;
+    iput-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Jh:Landroid/widget/CheckBox;
 
     .line 89
-    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OR:Z
+    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OU:Z
 
     if-eqz v0, :cond_2
 
     .line 90
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Je:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Jh:Landroid/widget/CheckBox;
 
     invoke-virtual {v0, p0}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
@@ -177,22 +177,22 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OQ:I
+    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
 
     .line 92
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OQ:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
 
     if-ne v0, v1, :cond_0
 
     move v0, v1
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OS:Z
+    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OV:Z
 
     .line 93
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Je:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Jh:Landroid/widget/CheckBox;
 
-    iget v3, p0, Lcom/android/settings/display/BrightnessActivity;->OQ:I
+    iget v3, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
 
     if-eqz v3, :cond_1
 
@@ -201,7 +201,7 @@
 
     .line 97
     :goto_2
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
     invoke-virtual {v0, p0}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
@@ -222,7 +222,7 @@
 
     .line 95
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Je:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->Jh:Landroid/widget/CheckBox;
 
     const/16 v1, 0x8
 
@@ -262,12 +262,12 @@
     goto :goto_0
 .end method
 
-.method private cP()V
+.method private cT()V
     .locals 2
 
     .prologue
     .line 170
-    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->mw:Z
+    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->mz:Z
 
     if-eqz v0, :cond_0
 
@@ -277,18 +277,18 @@
 
     .line 172
     :cond_0
-    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OR:Z
+    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OU:Z
 
     if-eqz v0, :cond_1
 
     .line 173
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OQ:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
 
     invoke-direct {p0, v0}, Lcom/android/settings/display/BrightnessActivity;->setMode(I)V
 
     .line 175
     :cond_1
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OP:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OS:I
 
     const/4 v1, 0x0
 
@@ -297,12 +297,12 @@
     .line 176
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->mw:Z
+    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->mz:Z
 
     .line 177
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     goto :goto_0
 .end method
@@ -314,7 +314,7 @@
 
     .prologue
     .line 181
-    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OS:Z
+    iget-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OV:Z
 
     if-eqz v0, :cond_2
 
@@ -374,7 +374,7 @@
 
     .line 197
     :cond_2
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OU:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OX:I
 
     rsub-int v0, v0, 0xff
 
@@ -383,7 +383,7 @@
 
     div-int/lit16 v0, v0, 0x2710
 
-    iget v1, p0, Lcom/android/settings/display/BrightnessActivity;->OU:I
+    iget v1, p0, Lcom/android/settings/display/BrightnessActivity;->OX:I
 
     add-int/2addr v0, v1
 
@@ -412,7 +412,7 @@
     .line 206
     const/4 v1, -0x1
 
-    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     .line 207
     invoke-virtual {p0}, Lcom/android/settings/display/BrightnessActivity;->getContentResolver()Landroid/content/ContentResolver;
@@ -434,7 +434,7 @@
 
     .line 211
     :cond_4
-    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -447,7 +447,7 @@
     goto :goto_0
 .end method
 
-.method private lW()I
+.method private ma()I
     .locals 3
 
     .prologue
@@ -497,7 +497,7 @@
 
     .line 137
     :cond_0
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     if-gez v0, :cond_1
 
@@ -518,13 +518,13 @@
 
     .line 143
     :goto_1
-    iget v1, p0, Lcom/android/settings/display/BrightnessActivity;->OU:I
+    iget v1, p0, Lcom/android/settings/display/BrightnessActivity;->OX:I
 
     int-to-float v1, v1
 
     sub-float/2addr v0, v1
 
-    iget v1, p0, Lcom/android/settings/display/BrightnessActivity;->OU:I
+    iget v1, p0, Lcom/android/settings/display/BrightnessActivity;->OX:I
 
     rsub-int v1, v1, 0xff
 
@@ -536,21 +536,21 @@
 
     .line 141
     :cond_1
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     int-to-float v0, v0
 
     goto :goto_1
 .end method
 
-.method private lX()V
+.method private mb()V
     .locals 2
 
     .prologue
     .line 150
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->lW()I
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->ma()I
 
     move-result v1
 
@@ -560,7 +560,7 @@
     return-void
 .end method
 
-.method private lY()V
+.method private mc()V
     .locals 3
 
     .prologue
@@ -577,14 +577,14 @@
 
     .line 156
     :goto_0
-    iget-object v1, p0, Lcom/android/settings/display/BrightnessActivity;->Je:Landroid/widget/CheckBox;
+    iget-object v1, p0, Lcom/android/settings/display/BrightnessActivity;->Jh:Landroid/widget/CheckBox;
 
     invoke-virtual {v1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 157
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->lW()I
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->ma()I
 
     move-result v1
 
@@ -611,7 +611,7 @@
     if-ne p1, v0, :cond_0
 
     :goto_0
-    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OS:Z
+    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OV:Z
 
     .line 220
     invoke-virtual {p0}, Lcom/android/settings/display/BrightnessActivity;->getContentResolver()Landroid/content/ContentResolver;
@@ -651,16 +651,16 @@
     invoke-direct {p0, v0}, Lcom/android/settings/display/BrightnessActivity;->setMode(I)V
 
     .line 115
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->lW()I
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->ma()I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Landroid/widget/SeekBar;->setProgress(I)V
 
     .line 116
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
     invoke-virtual {v0}, Landroid/widget/SeekBar;->getProgress()I
 
@@ -699,7 +699,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OR:Z
+    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->OU:Z
 
     .line 67
     invoke-virtual {p0}, Lcom/android/settings/display/BrightnessActivity;->getResources()Landroid/content/res/Resources;
@@ -712,10 +712,10 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OU:I
+    iput v0, p0, Lcom/android/settings/display/BrightnessActivity;->OX:I
 
     .line 69
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->bP()V
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->bT()V
 
     .line 71
     invoke-virtual {p0}, Lcom/android/settings/display/BrightnessActivity;->getContentResolver()Landroid/content/ContentResolver;
@@ -728,7 +728,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->OV:Landroid/database/ContentObserver;
+    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->OY:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
@@ -743,14 +743,14 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->OW:Landroid/database/ContentObserver;
+    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->OZ:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
     .line 78
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->mw:Z
+    iput-boolean v0, p0, Lcom/android/settings/display/BrightnessActivity;->mz:Z
 
     .line 79
     return-void
@@ -766,17 +766,17 @@
     move-result-object v0
 
     .line 163
-    iget-object v1, p0, Lcom/android/settings/display/BrightnessActivity;->OV:Landroid/database/ContentObserver;
+    iget-object v1, p0, Lcom/android/settings/display/BrightnessActivity;->OY:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
     .line 164
-    iget-object v1, p0, Lcom/android/settings/display/BrightnessActivity;->OW:Landroid/database/ContentObserver;
+    iget-object v1, p0, Lcom/android/settings/display/BrightnessActivity;->OZ:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
     .line 165
-    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v0, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
     invoke-virtual {v0}, Landroid/widget/SeekBar;->getProgress()I
 
@@ -843,7 +843,7 @@
     .line 249
     iget v1, v0, Lcom/android/settings/display/BrightnessActivity$SavedState;->oldProgress:I
 
-    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OP:I
+    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OS:I
 
     .line 250
     iget-boolean v1, v0, Lcom/android/settings/display/BrightnessActivity$SavedState;->oldAutomatic:Z
@@ -853,12 +853,12 @@
     move v1, v2
 
     :goto_0
-    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OQ:I
+    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
 
     .line 251
     iget v1, v0, Lcom/android/settings/display/BrightnessActivity$SavedState;->curBrightness:I
 
-    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iput v1, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     .line 252
     iget-boolean v1, v0, Lcom/android/settings/display/BrightnessActivity$SavedState;->automatic:Z
@@ -919,7 +919,7 @@
     invoke-direct {v1}, Lcom/android/settings/display/BrightnessActivity$SavedState;-><init>()V
 
     .line 230
-    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->Je:Landroid/widget/CheckBox;
+    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->Jh:Landroid/widget/CheckBox;
 
     invoke-virtual {v2}, Landroid/widget/CheckBox;->isChecked()Z
 
@@ -928,7 +928,7 @@
     iput-boolean v2, v1, Lcom/android/settings/display/BrightnessActivity$SavedState;->automatic:Z
 
     .line 231
-    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->h:Landroid/widget/SeekBar;
+    iget-object v2, p0, Lcom/android/settings/display/BrightnessActivity;->k:Landroid/widget/SeekBar;
 
     invoke-virtual {v2}, Landroid/widget/SeekBar;->getProgress()I
 
@@ -937,7 +937,7 @@
     iput v2, v1, Lcom/android/settings/display/BrightnessActivity$SavedState;->progress:I
 
     .line 232
-    iget v2, p0, Lcom/android/settings/display/BrightnessActivity;->OQ:I
+    iget v2, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
 
     if-ne v2, v0, :cond_1
 
@@ -945,12 +945,12 @@
     iput-boolean v0, v1, Lcom/android/settings/display/BrightnessActivity$SavedState;->oldAutomatic:Z
 
     .line 233
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OP:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OS:I
 
     iput v0, v1, Lcom/android/settings/display/BrightnessActivity$SavedState;->oldProgress:I
 
     .line 234
-    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OT:I
+    iget v0, p0, Lcom/android/settings/display/BrightnessActivity;->OW:I
 
     iput v0, v1, Lcom/android/settings/display/BrightnessActivity$SavedState;->curBrightness:I
 
@@ -960,7 +960,7 @@
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 238
-    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->cP()V
+    invoke-direct {p0}, Lcom/android/settings/display/BrightnessActivity;->cT()V
 
     .line 241
     :cond_0

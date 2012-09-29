@@ -8,11 +8,11 @@
 
 
 # instance fields
-.field private mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+.field private mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
-.field private na:[Ljava/lang/String;
+.field private nd:[Ljava/lang/String;
 
-.field private uw:Landroid/preference/CheckBoxPreference;
+.field private uA:Landroid/preference/CheckBoxPreference;
 
 
 # direct methods
@@ -62,7 +62,7 @@
     return-void
 .end method
 
-.method private fF()V
+.method private fJ()V
     .locals 3
 
     .prologue
@@ -126,7 +126,7 @@
     return-object v0
 .end method
 
-.method protected di()V
+.method protected dm()V
     .locals 3
 
     .prologue
@@ -178,7 +178,7 @@
 
     iget-object v2, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/SyncSettings;->E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/SyncSettings;->F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -191,7 +191,7 @@
 
     iget-object v2, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/SyncSettings;->F(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v2}, Lcom/android/settings/accounts/SyncSettings;->G(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
@@ -210,12 +210,12 @@
     return-void
 .end method
 
-.method public bridge synthetic dj()V
+.method public bridge synthetic dn()V
     .locals 0
 
     .prologue
     .line 39
-    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dj()V
+    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dn()V
 
     return-void
 .end method
@@ -242,7 +242,7 @@
 
     .line 134
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/accounts/SyncSettings;->fF()V
+    invoke-direct {p0}, Lcom/android/settings/accounts/SyncSettings;->fJ()V
 
     .line 135
     array-length v8, p1
@@ -258,19 +258,19 @@
     .line 137
     iget-object v0, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/SyncSettings;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/SyncSettings;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v4
 
     .line 140
-    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->na:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->nd:[Ljava/lang/String;
 
     if-eqz v0, :cond_5
 
     if-eqz v4, :cond_5
 
     .line 142
-    iget-object v1, p0, Lcom/android/settings/accounts/SyncSettings;->na:[Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/accounts/SyncSettings;->nd:[Ljava/lang/String;
 
     array-length v3, v1
 
@@ -297,7 +297,7 @@
     .line 151
     iget-object v0, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/SyncSettings;->E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v0}, Lcom/android/settings/accounts/SyncSettings;->F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -320,7 +320,7 @@
     .line 155
     iget-object v1, v2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Lcom/android/settings/accounts/SyncSettings;->F(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v1}, Lcom/android/settings/accounts/SyncSettings;->G(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -342,7 +342,7 @@
 
     .line 158
     :cond_3
-    invoke-virtual {p0}, Lcom/android/settings/accounts/SyncSettings;->dg()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/SyncSettings;->dk()V
 
     goto :goto_0
 
@@ -371,7 +371,7 @@
     move-result-object v0
 
     .line 79
-    iget-object v1, p0, Lcom/android/settings/accounts/SyncSettings;->uw:Landroid/preference/CheckBoxPreference;
+    iget-object v1, p0, Lcom/android/settings/accounts/SyncSettings;->uA:Landroid/preference/CheckBoxPreference;
 
     invoke-static {}, Landroid/content/ContentResolver;->getMasterSyncAutomatically()Z
 
@@ -390,10 +390,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->na:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->nd:[Ljava/lang/String;
 
     .line 82
-    invoke-virtual {p0}, Lcom/android/settings/accounts/SyncSettings;->dj()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/SyncSettings;->dn()V
 
     .line 83
     return-void
@@ -425,10 +425,10 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->uw:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->uA:Landroid/preference/CheckBoxPreference;
 
     .line 56
-    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->uw:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->uA:Landroid/preference/CheckBoxPreference;
 
     new-instance v1, Lcom/android/settings/accounts/SyncSettings$1;
 
@@ -550,7 +550,7 @@
 
     .prologue
     .line 112
-    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     if-eqz v0, :cond_0
 
@@ -567,10 +567,10 @@
 
     invoke-direct {v0, p0, p1}, Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;-><init>(Lcom/android/settings/v;I)V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iput-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     .line 116
-    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->mh:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
+    iget-object v0, p0, Lcom/android/settings/accounts/SyncSettings;->mk:Lcom/android/settings/SettingsPreferenceFragment$SettingsDialogFragment;
 
     invoke-virtual {p0}, Lcom/android/settings/accounts/SyncSettings;->getActivity()Landroid/app/Activity;
 
@@ -590,13 +590,13 @@
     return-void
 .end method
 
-.method public bridge synthetic x(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public bridge synthetic y(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
     .parameter
 
     .prologue
     .line 39
-    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 

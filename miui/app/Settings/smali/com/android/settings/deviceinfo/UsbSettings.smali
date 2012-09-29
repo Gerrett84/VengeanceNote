@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field private ee:Landroid/hardware/usb/UsbManager;
+.field private eh:Landroid/hardware/usb/UsbManager;
 
-.field private ef:Landroid/preference/CheckBoxPreference;
+.field private ei:Landroid/preference/CheckBoxPreference;
 
-.field private eg:Landroid/preference/CheckBoxPreference;
+.field private ej:Landroid/preference/CheckBoxPreference;
 
-.field private final em:Landroid/content/BroadcastReceiver;
+.field private final ep:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
     invoke-direct {v0, p0}, Lcom/android/settings/deviceinfo/UsbSettings$1;-><init>(Lcom/android/settings/deviceinfo/UsbSettings;)V
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->em:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ep:Landroid/content/BroadcastReceiver;
 
     return-void
 .end method
@@ -37,7 +37,7 @@
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
     return-object v0
 .end method
@@ -49,12 +49,12 @@
 
     .prologue
     .line 44
-    invoke-direct {p0, p1}, Lcom/android/settings/deviceinfo/UsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/android/settings/deviceinfo/UsbSettings;->k(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private af()Landroid/preference/PreferenceScreen;
+.method private aj()Landroid/preference/PreferenceScreen;
     .locals 2
 
     .prologue
@@ -89,7 +89,7 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     .line 70
     const-string v0, "usb_ptp"
@@ -100,13 +100,13 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     .line 72
     return-object v1
 .end method
 
-.method private j(Ljava/lang/String;)V
+.method private k(Ljava/lang/String;)V
     .locals 3
     .parameter
 
@@ -125,12 +125,12 @@
     if-eqz v0, :cond_0
 
     .line 102
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 103
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
@@ -149,12 +149,12 @@
     if-eqz v0, :cond_1
 
     .line 105
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 106
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
@@ -162,12 +162,12 @@
 
     .line 108
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
     .line 109
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
 
@@ -193,7 +193,7 @@
 
     check-cast v0, Landroid/hardware/usb/UsbManager;
 
-    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iput-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
     .line 79
     return-void
@@ -211,7 +211,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings;->em:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ep:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
@@ -228,7 +228,7 @@
     const/4 v1, 0x1
 
     .line 119
-    invoke-static {}, Lcom/android/settings/cu;->jd()Z
+    invoke-static {}, Lcom/android/settings/cu;->jh()Z
 
     move-result v0
 
@@ -263,12 +263,12 @@
 
     .line 130
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ef:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ei:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_3
 
     .line 131
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
     const-string v2, "mtp"
 
@@ -277,7 +277,7 @@
     .line 132
     const-string v0, "mtp"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/UsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/UsbSettings;->k(Ljava/lang/String;)V
 
     .line 137
     :cond_2
@@ -290,12 +290,12 @@
 
     .line 133
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eg:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ej:Landroid/preference/CheckBoxPreference;
 
     if-ne p2, v0, :cond_2
 
     .line 134
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ee:Landroid/hardware/usb/UsbManager;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings;->eh:Landroid/hardware/usb/UsbManager;
 
     const-string v2, "ptp"
 
@@ -304,7 +304,7 @@
     .line 135
     const-string v0, "ptp"
 
-    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/UsbSettings;->j(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/UsbSettings;->k(Ljava/lang/String;)V
 
     goto :goto_1
 .end method
@@ -317,14 +317,14 @@
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
     .line 93
-    invoke-direct {p0}, Lcom/android/settings/deviceinfo/UsbSettings;->af()Landroid/preference/PreferenceScreen;
+    invoke-direct {p0}, Lcom/android/settings/deviceinfo/UsbSettings;->aj()Landroid/preference/PreferenceScreen;
 
     .line 96
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/UsbSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings;->em:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings;->ep:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Landroid/content/IntentFilter;
 

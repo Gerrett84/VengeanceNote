@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic cw:Lcom/android/settings/LocationSettings;
+.field final synthetic cz:Lcom/android/settings/LocationSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 117
-    iput-object p1, p0, Lcom/android/settings/I;->cw:Lcom/android/settings/LocationSettings;
+    iput-object p1, p0, Lcom/android/settings/I;->cz:Lcom/android/settings/LocationSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 119
-    iget-object v0, p0, Lcom/android/settings/I;->cw:Lcom/android/settings/LocationSettings;
+    iget-object v0, p0, Lcom/android/settings/I;->cz:Lcom/android/settings/LocationSettings;
 
     invoke-static {v0}, Lcom/android/settings/LocationSettings;->a(Lcom/android/settings/LocationSettings;)V
 

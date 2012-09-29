@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic eG:Lcom/android/settings/VirusScanActivity;
+.field final synthetic eJ:Lcom/android/settings/VirusScanActivity;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 70
-    iput-object p1, p0, Lcom/android/settings/dg;->eG:Lcom/android/settings/VirusScanActivity;
+    iput-object p1, p0, Lcom/android/settings/dg;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -75,12 +75,12 @@
     .line 91
     new-instance v1, Lcom/android/settings/T;
 
-    iget-object v0, p0, Lcom/android/settings/dg;->eG:Lcom/android/settings/VirusScanActivity;
+    iget-object v0, p0, Lcom/android/settings/dg;->eJ:Lcom/android/settings/VirusScanActivity;
 
     invoke-direct {v1, v0, v3}, Lcom/android/settings/T;-><init>(Lcom/android/settings/VirusScanActivity;Lcom/android/settings/de;)V
 
     .line 92
-    iget-object v0, p0, Lcom/android/settings/dg;->eG:Lcom/android/settings/VirusScanActivity;
+    iget-object v0, p0, Lcom/android/settings/dg;->eJ:Lcom/android/settings/VirusScanActivity;
 
     const-string v2, "layout_inflater"
 
@@ -106,7 +106,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v1, Lcom/android/settings/T;->eE:Landroid/widget/TextView;
+    iput-object v0, v1, Lcom/android/settings/T;->eH:Landroid/widget/TextView;
 
     .line 95
     const v0, 0x7f080184
@@ -117,7 +117,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, v1, Lcom/android/settings/T;->eF:Landroid/widget/TextView;
+    iput-object v0, v1, Lcom/android/settings/T;->eI:Landroid/widget/TextView;
 
     .line 96
     invoke-virtual {p2, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
@@ -126,7 +126,7 @@
 
     .line 101
     :goto_0
-    iget-object v1, v0, Lcom/android/settings/T;->eE:Landroid/widget/TextView;
+    iget-object v1, v0, Lcom/android/settings/T;->eH:Landroid/widget/TextView;
 
     invoke-static {}, Lcom/android/settings/VirusScanActivity;->access$000()[I
 
@@ -155,7 +155,7 @@
 
     .line 104
     :pswitch_0
-    iget-object v0, v0, Lcom/android/settings/T;->eF:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/T;->eI:Landroid/widget/TextView;
 
     const-string v1, ""
 
@@ -165,7 +165,7 @@
 
     .line 108
     :pswitch_1
-    iget-object v0, v0, Lcom/android/settings/T;->eF:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/settings/T;->eI:Landroid/widget/TextView;
 
     const-string v1, ""
 

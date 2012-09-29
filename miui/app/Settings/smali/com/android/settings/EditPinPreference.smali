@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private Kn:Lcom/android/settings/dW;
+.field private Kq:Lcom/android/settings/dW;
 
 
 # direct methods
@@ -43,13 +43,13 @@
 
     .prologue
     .line 47
-    iput-object p1, p0, Lcom/android/settings/EditPinPreference;->Kn:Lcom/android/settings/dW;
+    iput-object p1, p0, Lcom/android/settings/EditPinPreference;->Kq:Lcom/android/settings/dW;
 
     .line 48
     return-void
 .end method
 
-.method public bI()V
+.method public bM()V
     .locals 1
 
     .prologue
@@ -78,7 +78,7 @@
     return-void
 .end method
 
-.method public kW()Z
+.method public la()Z
     .locals 1
 
     .prologue
@@ -142,12 +142,12 @@
     invoke-super {p0, p1}, Landroid/preference/EditTextPreference;->onDialogClosed(Z)V
 
     .line 70
-    iget-object v0, p0, Lcom/android/settings/EditPinPreference;->Kn:Lcom/android/settings/dW;
+    iget-object v0, p0, Lcom/android/settings/EditPinPreference;->Kq:Lcom/android/settings/dW;
 
     if-eqz v0, :cond_0
 
     .line 71
-    iget-object v0, p0, Lcom/android/settings/EditPinPreference;->Kn:Lcom/android/settings/dW;
+    iget-object v0, p0, Lcom/android/settings/EditPinPreference;->Kq:Lcom/android/settings/dW;
 
     invoke-interface {v0, p0, p1}, Lcom/android/settings/dW;->a(Lcom/android/settings/EditPinPreference;Z)V
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic mm:Lcom/android/settings/cM;
+.field final synthetic mp:Lcom/android/settings/cM;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 32
-    iput-object p1, p0, Lcom/android/settings/aA;->mm:Lcom/android/settings/cM;
+    iput-object p1, p0, Lcom/android/settings/aA;->mp:Lcom/android/settings/cM;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 36
-    iget-object v0, p0, Lcom/android/settings/aA;->mm:Lcom/android/settings/cM;
+    iget-object v0, p0, Lcom/android/settings/aA;->mp:Lcom/android/settings/cM;
 
     invoke-virtual {v0}, Lcom/android/settings/cM;->getKey()Ljava/lang/String;
 
@@ -52,7 +52,7 @@
     move-result-object v0
 
     .line 38
-    iget-object v1, p0, Lcom/android/settings/aA;->mm:Lcom/android/settings/cM;
+    iget-object v1, p0, Lcom/android/settings/aA;->mp:Lcom/android/settings/cM;
 
     invoke-virtual {v1}, Lcom/android/settings/cM;->getContext()Landroid/content/Context;
 

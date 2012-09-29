@@ -20,7 +20,7 @@
 
     .prologue
     .line 92
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kd()Lcom/google/common/collect/MapMaker;
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->kh()Lcom/google/common/collect/MapMaker;
 
     move-result-object v0
 

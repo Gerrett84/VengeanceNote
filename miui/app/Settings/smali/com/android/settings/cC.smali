@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Gf:Lcom/android/settings/CryptKeeperSettings;
+.field final synthetic Gj:Lcom/android/settings/CryptKeeperSettings;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 91
-    iput-object p1, p0, Lcom/android/settings/cC;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iput-object p1, p0, Lcom/android/settings/cC;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,7 +32,7 @@
 
     .prologue
     .line 94
-    iget-object v0, p0, Lcom/android/settings/cC;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iget-object v0, p0, Lcom/android/settings/cC;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     const/16 v1, 0x37
 
@@ -45,7 +45,7 @@
     .line 96
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    iget-object v1, p0, Lcom/android/settings/cC;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iget-object v1, p0, Lcom/android/settings/cC;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/CryptKeeperSettings;->getActivity()Landroid/app/Activity;
 

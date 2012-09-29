@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic sU:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
+.field final synthetic sY:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 111
-    iput-object p1, p0, Lcom/android/settings/bn;->sU:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
+    iput-object p1, p0, Lcom/android/settings/bn;->sY:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -36,7 +36,7 @@
     if-ne v0, v1, :cond_0
 
     .line 115
-    iget-object v1, p0, Lcom/android/settings/bn;->sU:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
+    iget-object v1, p0, Lcom/android/settings/bn;->sY:Lcom/android/settings/ChooseLockPassword$ChooseLockPasswordFragment;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Gf:Lcom/android/settings/CryptKeeperSettings;
+.field final synthetic Gj:Lcom/android/settings/CryptKeeperSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 63
-    iput-object p1, p0, Lcom/android/settings/cD;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iput-object p1, p0, Lcom/android/settings/cD;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -92,7 +92,7 @@
 
     .line 79
     :goto_1
-    iget-object v5, p0, Lcom/android/settings/cD;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iget-object v5, p0, Lcom/android/settings/cD;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-static {v5}, Lcom/android/settings/CryptKeeperSettings;->a(Lcom/android/settings/CryptKeeperSettings;)Landroid/widget/Button;
 
@@ -106,7 +106,7 @@
     invoke-virtual {v5, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 80
-    iget-object v2, p0, Lcom/android/settings/cD;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iget-object v2, p0, Lcom/android/settings/cD;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-static {v2}, Lcom/android/settings/CryptKeeperSettings;->b(Lcom/android/settings/CryptKeeperSettings;)Landroid/view/View;
 
@@ -120,7 +120,7 @@
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 81
-    iget-object v0, p0, Lcom/android/settings/cD;->Gf:Lcom/android/settings/CryptKeeperSettings;
+    iget-object v0, p0, Lcom/android/settings/cD;->Gj:Lcom/android/settings/CryptKeeperSettings;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeperSettings;->c(Lcom/android/settings/CryptKeeperSettings;)Landroid/view/View;
 

@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field final synthetic Bw:Landroid/widget/NumberPicker;
+.field final synthetic BA:Landroid/widget/NumberPicker;
 
-.field final synthetic CQ:Lcom/android/settings/DataUsageSummary$LimitEditorFragment;
+.field final synthetic CU:Lcom/android/settings/DataUsageSummary$LimitEditorFragment;
 
-.field final synthetic qv:Lcom/android/settings/a/i;
+.field final synthetic qA:Lcom/android/settings/DataUsageSummary;
 
-.field final synthetic qw:Landroid/net/NetworkTemplate;
+.field final synthetic qy:Lcom/android/settings/a/i;
 
-.field final synthetic qx:Lcom/android/settings/DataUsageSummary;
+.field final synthetic qz:Landroid/net/NetworkTemplate;
 
 
 # direct methods
@@ -29,15 +29,15 @@
 
     .prologue
     .line 1854
-    iput-object p1, p0, Lcom/android/settings/cn;->CQ:Lcom/android/settings/DataUsageSummary$LimitEditorFragment;
+    iput-object p1, p0, Lcom/android/settings/cn;->CU:Lcom/android/settings/DataUsageSummary$LimitEditorFragment;
 
-    iput-object p2, p0, Lcom/android/settings/cn;->Bw:Landroid/widget/NumberPicker;
+    iput-object p2, p0, Lcom/android/settings/cn;->BA:Landroid/widget/NumberPicker;
 
-    iput-object p3, p0, Lcom/android/settings/cn;->qv:Lcom/android/settings/a/i;
+    iput-object p3, p0, Lcom/android/settings/cn;->qy:Lcom/android/settings/a/i;
 
-    iput-object p4, p0, Lcom/android/settings/cn;->qw:Landroid/net/NetworkTemplate;
+    iput-object p4, p0, Lcom/android/settings/cn;->qz:Landroid/net/NetworkTemplate;
 
-    iput-object p5, p0, Lcom/android/settings/cn;->qx:Lcom/android/settings/DataUsageSummary;
+    iput-object p5, p0, Lcom/android/settings/cn;->qA:Lcom/android/settings/DataUsageSummary;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,12 +53,12 @@
 
     .prologue
     .line 1858
-    iget-object v0, p0, Lcom/android/settings/cn;->Bw:Landroid/widget/NumberPicker;
+    iget-object v0, p0, Lcom/android/settings/cn;->BA:Landroid/widget/NumberPicker;
 
     invoke-virtual {v0}, Landroid/widget/NumberPicker;->clearFocus()V
 
     .line 1860
-    iget-object v0, p0, Lcom/android/settings/cn;->Bw:Landroid/widget/NumberPicker;
+    iget-object v0, p0, Lcom/android/settings/cn;->BA:Landroid/widget/NumberPicker;
 
     invoke-virtual {v0}, Landroid/widget/NumberPicker;->getValue()I
 
@@ -71,14 +71,14 @@
     mul-long/2addr v0, v2
 
     .line 1861
-    iget-object v2, p0, Lcom/android/settings/cn;->qv:Lcom/android/settings/a/i;
+    iget-object v2, p0, Lcom/android/settings/cn;->qy:Lcom/android/settings/a/i;
 
-    iget-object v3, p0, Lcom/android/settings/cn;->qw:Landroid/net/NetworkTemplate;
+    iget-object v3, p0, Lcom/android/settings/cn;->qz:Landroid/net/NetworkTemplate;
 
     invoke-virtual {v2, v3, v0, v1}, Lcom/android/settings/a/i;->b(Landroid/net/NetworkTemplate;J)V
 
     .line 1862
-    iget-object v0, p0, Lcom/android/settings/cn;->qx:Lcom/android/settings/DataUsageSummary;
+    iget-object v0, p0, Lcom/android/settings/cn;->qA:Lcom/android/settings/DataUsageSummary;
 
     const/4 v1, 0x0
 

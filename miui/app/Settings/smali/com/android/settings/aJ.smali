@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic nX:Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;
+.field final synthetic oa:Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1082
-    iput-object p1, p0, Lcom/android/settings/aJ;->nX:Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;
+    iput-object p1, p0, Lcom/android/settings/aJ;->oa:Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 1085
-    iget-object v0, p0, Lcom/android/settings/aJ;->nX:Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;
+    iget-object v0, p0, Lcom/android/settings/aJ;->oa:Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/DevelopmentSettings$ConfirmEnforceFragment;->getTargetFragment()Landroid/app/Fragment;
 

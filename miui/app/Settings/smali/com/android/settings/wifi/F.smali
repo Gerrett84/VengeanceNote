@@ -1,177 +1,130 @@
-.class public Lcom/android/settings/wifi/F;
-.super Lcom/android/settings/wifi/AccessPoint;
-.source "MiuiAccessPoint.java"
+.class Lcom/android/settings/wifi/F;
+.super Landroid/content/BroadcastReceiver;
+.source "WifiApEnabler.java"
 
 
 # instance fields
-.field private yS:Landroid/view/View$OnClickListener;
+.field final synthetic yF:Lcom/android/settings/wifi/k;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/net/wifi/ScanResult;)V
+.method constructor <init>(Lcom/android/settings/wifi/k;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 26
-    invoke-direct {p0, p1, p2}, Lcom/android/settings/wifi/AccessPoint;-><init>(Landroid/content/Context;Landroid/net/wifi/ScanResult;)V
+    .line 55
+    iput-object p1, p0, Lcom/android/settings/wifi/F;->yF:Lcom/android/settings/wifi/k;
 
-    .line 27
-    return-void
-.end method
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-.method constructor <init>(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)V
-    .locals 0
-    .parameter
-    .parameter
-
-    .prologue
-    .line 22
-    invoke-direct {p0, p1, p2}, Lcom/android/settings/wifi/AccessPoint;-><init>(Landroid/content/Context;Landroid/net/wifi/WifiConfiguration;)V
-
-    .line 23
-    return-void
-.end method
-
-.method constructor <init>(Landroid/content/Context;Landroid/os/Bundle;)V
-    .locals 0
-    .parameter
-    .parameter
-
-    .prologue
-    .line 18
-    invoke-direct {p0, p1, p2}, Lcom/android/settings/wifi/AccessPoint;-><init>(Landroid/content/Context;Landroid/os/Bundle;)V
-
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View$OnClickListener;)V
-    .locals 0
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
+    .parameter
     .parameter
 
     .prologue
-    .line 40
-    iput-object p1, p0, Lcom/android/settings/wifi/F;->yS:Landroid/view/View$OnClickListener;
+    .line 58
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    .line 41
-    return-void
-.end method
+    move-result-object v0
 
-.method public bridge synthetic c(Landroid/os/Bundle;)V
-    .locals 0
-    .parameter
+    .line 59
+    const-string v1, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
-    .prologue
-    .line 14
-    invoke-super {p0, p1}, Lcom/android/settings/wifi/AccessPoint;->c(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return-void
-.end method
+    move-result v1
 
-.method public compareTo(Landroid/preference/Preference;)I
-    .locals 2
-    .parameter
+    if-eqz v1, :cond_1
 
-    .prologue
-    .line 45
-    instance-of v0, p1, Lcom/android/settings/wifi/AccessPoint;
+    .line 60
+    iget-object v0, p0, Lcom/android/settings/wifi/F;->yF:Lcom/android/settings/wifi/k;
 
-    if-nez v0, :cond_0
+    const-string v1, "wifi_state"
 
-    .line 46
-    const/4 v0, 0x1
+    const/16 v2, 0xe
 
-    .line 50
-    :goto_0
-    return v0
+    invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    .line 48
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/android/settings/wifi/k;->a(Lcom/android/settings/wifi/k;I)V
+
+    .line 74
     :cond_0
-    check-cast p1, Lcom/android/settings/wifi/AccessPoint;
+    :goto_0
+    return-void
 
-    .line 50
-    iget-object v0, p0, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    .line 62
+    :cond_1
+    const-string v1, "android.net.conn.TETHER_STATE_CHANGED"
 
-    iget-object v1, p1, Lcom/android/settings/wifi/AccessPoint;->nD:Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
+    move-result v1
 
-    move-result v0
+    if-eqz v1, :cond_2
+
+    .line 63
+    const-string v0, "availableArray"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    .line 65
+    const-string v1, "activeArray"
+
+    invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    .line 67
+    const-string v2, "erroredArray"
+
+    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringArrayListExtra(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    .line 69
+    iget-object v3, p0, Lcom/android/settings/wifi/F;->yF:Lcom/android/settings/wifi/k;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v3, v0, v1, v2}, Lcom/android/settings/wifi/k;->a(Lcom/android/settings/wifi/k;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
 
     goto :goto_0
-.end method
 
-.method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 1
-    .parameter
+    .line 70
+    :cond_2
+    const-string v1, "android.intent.action.AIRPLANE_MODE"
 
-    .prologue
-    .line 14
-    check-cast p1, Landroid/preference/Preference;
-
-    invoke-virtual {p0, p1}, Lcom/android/settings/wifi/F;->compareTo(Landroid/preference/Preference;)I
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    return v0
-.end method
+    if-eqz v0, :cond_0
 
-.method protected onBindView(Landroid/view/View;)V
-    .locals 2
-    .parameter
+    .line 71
+    iget-object v0, p0, Lcom/android/settings/wifi/F;->yF:Lcom/android/settings/wifi/k;
 
-    .prologue
-    const/4 v1, 0x0
+    invoke-static {v0}, Lcom/android/settings/wifi/k;->a(Lcom/android/settings/wifi/k;)V
 
-    .line 31
-    invoke-super {p0, p1}, Lcom/android/settings/wifi/AccessPoint;->onBindView(Landroid/view/View;)V
-
-    .line 32
-    invoke-virtual {p1, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
-
-    .line 33
-    const v0, 0x1020006
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
-
-    .line 34
-    const v0, 0x7f0800f6
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    .line 35
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 36
-    iget-object v1, p0, Lcom/android/settings/wifi/F;->yS:Landroid/view/View$OnClickListener;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 37
-    return-void
-.end method
-
-.method public bridge synthetic z(Z)Ljava/lang/String;
-    .locals 1
-    .parameter
-
-    .prologue
-    .line 14
-    invoke-super {p0, p1}, Lcom/android/settings/wifi/AccessPoint;->z(Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method

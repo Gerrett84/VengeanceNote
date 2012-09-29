@@ -10,9 +10,9 @@
 # static fields
 .field private static final logger:Ljava/util/logging/Logger; = null
 
-.field static final rA:Lcom/google/common/collect/az; = null
+.field static final rD:Lcom/google/common/collect/az; = null
 
-.field static final rB:Ljava/util/Queue; = null
+.field static final rE:Ljava/util/Queue; = null
 
 .field private static final serialVersionUID:J = 0x5L
 
@@ -34,13 +34,13 @@
 
 .field final maximumSize:I
 
+.field final transient rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+
+.field final transient rC:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+
 .field final removalListener:Lcom/google/common/collect/o;
 
 .field final removalNotificationQueue:Ljava/util/Queue;
-
-.field final transient ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
-
-.field final transient rz:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
 .field final transient segmentMask:I
 
@@ -78,14 +78,14 @@
 
     invoke-direct {v0}, Lcom/google/common/collect/P;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rA:Lcom/google/common/collect/az;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rD:Lcom/google/common/collect/az;
 
     .line 920
     new-instance v0, Lcom/google/common/collect/R;
 
     invoke-direct {v0}, Lcom/google/common/collect/R;-><init>()V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rB:Ljava/util/Queue;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rE:Ljava/util/Queue;
 
     return-void
 .end method
@@ -103,7 +103,7 @@
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
     .line 197
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kc()I
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kg()I
 
     move-result v0
 
@@ -116,28 +116,28 @@
     iput v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->concurrencyLevel:I
 
     .line 199
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->ke()Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->ki()Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->keyStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 200
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kf()Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kj()Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->valueStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     .line 202
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->jZ()Lcom/google/common/base/Equivalence;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kd()Lcom/google/common/base/Equivalence;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->keyEquivalence:Lcom/google/common/base/Equivalence;
 
     .line 203
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->ka()Lcom/google/common/base/Equivalence;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->ke()Lcom/google/common/base/Equivalence;
 
     move-result-object v0
 
@@ -149,14 +149,14 @@
     iput v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->maximumSize:I
 
     .line 206
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kh()J
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kl()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->expireAfterAccessNanos:J
 
     .line 207
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kg()J
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kk()J
 
     move-result-wide v0
 
@@ -165,11 +165,11 @@
     .line 209
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->keyStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eP()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eT()Z
 
     move-result v1
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eO()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eS()Z
 
     move-result v3
 
@@ -177,17 +177,17 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->rz:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->rC:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 210
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->ki()Lcom/google/common/base/b;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->km()Lcom/google/common/base/b;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->ticker:Lcom/google/common/base/b;
 
     .line 212
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->dA()Lcom/google/common/collect/o;
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->dE()Lcom/google/common/collect/o;
 
     move-result-object v0
 
@@ -196,11 +196,11 @@
     .line 213
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->removalListener:Lcom/google/common/collect/o;
 
-    sget-object v1, Lcom/google/common/collect/GenericMapMaker$NullListener;->PO:Lcom/google/common/collect/GenericMapMaker$NullListener;
+    sget-object v1, Lcom/google/common/collect/GenericMapMaker$NullListener;->PR:Lcom/google/common/collect/GenericMapMaker$NullListener;
 
     if-ne v0, v1, :cond_2
 
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eW()Ljava/util/Queue;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->fa()Ljava/util/Queue;
 
     move-result-object v0
 
@@ -208,7 +208,7 @@
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->removalNotificationQueue:Ljava/util/Queue;
 
     .line 217
-    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kb()I
+    invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->kf()I
 
     move-result v0
 
@@ -219,7 +219,7 @@
     move-result v0
 
     .line 218
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eO()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eS()Z
 
     move-result v1
 
@@ -243,7 +243,7 @@
 
     if-ge v1, v5, :cond_3
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eO()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eS()Z
 
     move-result v5
 
@@ -288,7 +288,7 @@
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iput-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     .line 237
     div-int v3, v0, v1
@@ -312,7 +312,7 @@
 
     .line 247
     :cond_4
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eO()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eS()Z
 
     move-result v0
 
@@ -332,7 +332,7 @@
 
     .line 251
     :goto_3
-    iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     array-length v3, v3
 
@@ -346,7 +346,7 @@
 
     .line 255
     :cond_5
-    iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     invoke-virtual {p0, v2, v0}, Lcom/google/common/collect/MapMakerInternalMap;->c(II)Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
@@ -362,14 +362,14 @@
     .line 259
     :cond_6
     :goto_4
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     array-length v0, v0
 
     if-ge v4, v0, :cond_7
 
     .line 260
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     const/4 v1, -0x1
 
@@ -470,32 +470,32 @@
     return-void
 .end method
 
-.method static eU()Lcom/google/common/collect/az;
+.method static eY()Lcom/google/common/collect/az;
     .locals 1
 
     .prologue
     .line 666
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rA:Lcom/google/common/collect/az;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rD:Lcom/google/common/collect/az;
 
     return-object v0
 .end method
 
-.method static eV()Lcom/google/common/collect/ag;
+.method static eZ()Lcom/google/common/collect/ag;
     .locals 1
 
     .prologue
     .line 917
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yz:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->yD:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
     return-object v0
 .end method
 
-.method static eW()Ljava/util/Queue;
+.method static fa()Ljava/util/Queue;
     .locals 1
 
     .prologue
     .line 952
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rB:Ljava/util/Queue;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap;->rE:Ljava/util/Queue;
 
     return-object v0
 .end method
@@ -506,7 +506,7 @@
 
     .prologue
     .line 1985
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eV()Lcom/google/common/collect/ag;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eZ()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
@@ -526,7 +526,7 @@
 
     .prologue
     .line 2017
-    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eV()Lcom/google/common/collect/ag;
+    invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->eZ()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
@@ -548,7 +548,7 @@
 
     .prologue
     .line 1933
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     iget v1, p0, Lcom/google/common/collect/MapMakerInternalMap;->segmentShift:I
 
@@ -600,7 +600,7 @@
 
     .prologue
     .line 1896
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dq()I
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->du()I
 
     move-result v0
 
@@ -625,7 +625,7 @@
 
     .prologue
     .line 1974
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dm()J
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->dq()J
 
     move-result-wide v0
 
@@ -669,7 +669,7 @@
 
     .prologue
     .line 1886
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dq()I
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->du()I
 
     move-result v0
 
@@ -691,12 +691,12 @@
 
     .prologue
     .line 1906
-    invoke-interface {p1}, Lcom/google/common/collect/az;->cY()Lcom/google/common/collect/ag;
+    invoke-interface {p1}, Lcom/google/common/collect/az;->dc()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
     .line 1907
-    invoke-interface {v0}, Lcom/google/common/collect/ag;->dq()I
+    invoke-interface {v0}, Lcom/google/common/collect/ag;->du()I
 
     move-result v1
 
@@ -720,7 +720,7 @@
 
     .prologue
     .line 3615
-    iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     array-length v2, v1
 
@@ -794,7 +794,7 @@
 
     .line 3525
     :cond_0
-    iget-object v8, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v8, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     .line 3526
     const-wide/16 v3, -0x1
@@ -879,7 +879,7 @@
 
     .line 3536
     :cond_1
-    invoke-interface {v0}, Lcom/google/common/collect/ag;->dr()Lcom/google/common/collect/ag;
+    invoke-interface {v0}, Lcom/google/common/collect/ag;->dv()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
@@ -951,7 +951,7 @@
     return v0
 .end method
 
-.method eO()Z
+.method eS()Z
     .locals 2
 
     .prologue
@@ -973,18 +973,18 @@
     goto :goto_0
 .end method
 
-.method eP()Z
+.method eT()Z
     .locals 1
 
     .prologue
     .line 271
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eQ()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eU()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eR()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eV()Z
 
     move-result v0
 
@@ -1002,7 +1002,7 @@
     goto :goto_0
 .end method
 
-.method eQ()Z
+.method eU()Z
     .locals 4
 
     .prologue
@@ -1026,7 +1026,7 @@
     goto :goto_0
 .end method
 
-.method eR()Z
+.method eV()Z
     .locals 4
 
     .prologue
@@ -1050,14 +1050,14 @@
     goto :goto_0
 .end method
 
-.method eS()Z
+.method eW()Z
     .locals 2
 
     .prologue
     .line 283
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->keyStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     if-eq v0, v1, :cond_0
 
@@ -1072,14 +1072,14 @@
     goto :goto_0
 .end method
 
-.method eT()Z
+.method eX()Z
     .locals 2
 
     .prologue
     .line 287
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->valueStrength:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->dl:Lcom/google/common/collect/MapMakerInternalMap$Strength;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$Strength;->do:Lcom/google/common/collect/MapMakerInternalMap$Strength;
 
     if-eq v0, v1, :cond_0
 
@@ -1094,7 +1094,51 @@
     goto :goto_0
 .end method
 
-.method eX()V
+.method public entrySet()Ljava/util/Set;
+    .locals 1
+
+    .prologue
+    .line 3640
+    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->entrySet:Ljava/util/Set;
+
+    .line 3641
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/common/collect/an;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/an;-><init>(Lcom/google/common/collect/MapMakerInternalMap;)V
+
+    iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->entrySet:Ljava/util/Set;
+
+    goto :goto_0
+.end method
+
+.method f(Lcom/google/common/collect/ag;)V
+    .locals 2
+    .parameter
+
+    .prologue
+    .line 1912
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->du()I
+
+    move-result v0
+
+    .line 1913
+    invoke-virtual {p0, v0}, Lcom/google/common/collect/MapMakerInternalMap;->A(I)Lcom/google/common/collect/MapMakerInternalMap$Segment;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, v0}, Lcom/google/common/collect/MapMakerInternalMap$Segment;->a(Lcom/google/common/collect/ag;I)Z
+
+    .line 1914
+    return-void
+.end method
+
+.method fb()V
     .locals 4
 
     .prologue
@@ -1140,57 +1184,13 @@
     return-void
 .end method
 
-.method public entrySet()Ljava/util/Set;
-    .locals 1
-
-    .prologue
-    .line 3640
-    iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->entrySet:Ljava/util/Set;
-
-    .line 3641
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lcom/google/common/collect/an;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/an;-><init>(Lcom/google/common/collect/MapMakerInternalMap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->entrySet:Ljava/util/Set;
-
-    goto :goto_0
-.end method
-
-.method f(Lcom/google/common/collect/ag;)V
-    .locals 2
-    .parameter
-
-    .prologue
-    .line 1912
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dq()I
-
-    move-result v0
-
-    .line 1913
-    invoke-virtual {p0, v0}, Lcom/google/common/collect/MapMakerInternalMap;->A(I)Lcom/google/common/collect/MapMakerInternalMap$Segment;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, v0}, Lcom/google/common/collect/MapMakerInternalMap$Segment;->a(Lcom/google/common/collect/ag;I)Z
-
-    .line 1914
-    return-void
-.end method
-
 .method g(Lcom/google/common/collect/ag;)Z
     .locals 1
     .parameter
 
     .prologue
     .line 1922
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dq()I
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->du()I
 
     move-result v0
 
@@ -1269,7 +1269,7 @@
 
     .line 1949
     :cond_1
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dp()Lcom/google/common/collect/az;
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->dt()Lcom/google/common/collect/az;
 
     move-result-object v1
 
@@ -1281,7 +1281,7 @@
     if-eqz v1, :cond_0
 
     .line 1954
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eP()Z
+    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap;->eT()Z
 
     move-result v2
 
@@ -1308,7 +1308,7 @@
     .line 1966
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap;->ticker:Lcom/google/common/base/b;
 
-    invoke-virtual {v0}, Lcom/google/common/base/b;->dx()J
+    invoke-virtual {v0}, Lcom/google/common/base/b;->dB()J
 
     move-result-wide v0
 
@@ -1329,7 +1329,7 @@
 
     .line 3440
     .line 3441
-    iget-object v6, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v6, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     move v0, v1
 
@@ -1691,7 +1691,7 @@
 
     .prologue
     .line 3465
-    iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->ry:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
+    iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap;->rB:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     .line 3466
     const-wide/16 v1, 0x0

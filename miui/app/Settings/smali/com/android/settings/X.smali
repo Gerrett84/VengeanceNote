@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic fc:Lcom/android/settings/BatteryInfo;
+.field final synthetic ff:Lcom/android/settings/BatteryInfo;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 55
-    iput-object p1, p0, Lcom/android/settings/X;->fc:Lcom/android/settings/BatteryInfo;
+    iput-object p1, p0, Lcom/android/settings/X;->ff:Lcom/android/settings/BatteryInfo;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -39,7 +39,7 @@
 
     .line 60
     :pswitch_0
-    iget-object v0, p0, Lcom/android/settings/X;->fc:Lcom/android/settings/BatteryInfo;
+    iget-object v0, p0, Lcom/android/settings/X;->ff:Lcom/android/settings/BatteryInfo;
 
     invoke-static {v0}, Lcom/android/settings/BatteryInfo;->a(Lcom/android/settings/BatteryInfo;)V
 

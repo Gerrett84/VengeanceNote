@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final enum ac:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
-
-.field public static final enum ad:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
-
-.field public static final enum ae:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
-
 .field public static final enum af:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
 .field public static final enum ag:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
-.field private static final synthetic ah:[Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+.field public static final enum ah:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+
+.field public static final enum ai:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+
+.field public static final enum aj:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+
+.field private static final synthetic ak:[Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
 
 # instance fields
@@ -47,7 +47,7 @@
 
     invoke-direct {v0, v1, v4, v2, v3}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;-><init>(Ljava/lang/String;IIZ)V
 
-    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ac:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->af:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     .line 222
     new-instance v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
@@ -58,7 +58,7 @@
 
     invoke-direct {v0, v1, v3, v2, v4}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;-><init>(Ljava/lang/String;IIZ)V
 
-    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ad:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ag:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     .line 223
     new-instance v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
@@ -69,7 +69,7 @@
 
     invoke-direct {v0, v1, v5, v2, v3}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;-><init>(Ljava/lang/String;IIZ)V
 
-    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ae:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ah:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     .line 224
     new-instance v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
@@ -80,7 +80,7 @@
 
     invoke-direct {v0, v1, v6, v2, v4}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;-><init>(Ljava/lang/String;IIZ)V
 
-    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->af:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ai:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     .line 225
     new-instance v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
@@ -91,34 +91,34 @@
 
     invoke-direct {v0, v1, v7, v2, v3}, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;-><init>(Ljava/lang/String;IIZ)V
 
-    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ag:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->aj:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     .line 220
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
-    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ac:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->af:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ad:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ag:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ae:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ah:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->af:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ai:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ag:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sget-object v1, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->aj:Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     aput-object v1, v0, v7
 
-    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ah:[Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sput-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ak:[Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     return-void
 .end method
@@ -166,7 +166,7 @@
 
     .prologue
     .line 220
-    sget-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ah:[Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
+    sget-object v0, Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->ak:[Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
     invoke-virtual {v0}, [Lcom/android/settings/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;->clone()Ljava/lang/Object;
 

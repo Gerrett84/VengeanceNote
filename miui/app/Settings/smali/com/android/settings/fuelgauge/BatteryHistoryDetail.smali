@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private sP:Lcom/android/internal/os/BatteryStatsImpl;
+.field private sT:Lcom/android/internal/os/BatteryStatsImpl;
 
 
 # direct methods
@@ -63,7 +63,7 @@
 
     check-cast v0, Lcom/android/internal/os/BatteryStatsImpl;
 
-    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->sP:Lcom/android/internal/os/BatteryStatsImpl;
+    iput-object v0, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->sT:Lcom/android/internal/os/BatteryStatsImpl;
 
     .line 43
     return-void
@@ -95,7 +95,7 @@
     check-cast v0, Lcom/android/settings/fuelgauge/BatteryHistoryChart;
 
     .line 50
-    iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->sP:Lcom/android/internal/os/BatteryStatsImpl;
+    iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryDetail;->sT:Lcom/android/internal/os/BatteryStatsImpl;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/fuelgauge/BatteryHistoryChart;->a(Landroid/os/BatteryStats;)V
 

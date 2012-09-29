@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field final synthetic iG:Lcom/android/settings/applications/ApplicationsState;
+.field final synthetic iJ:Lcom/android/settings/applications/ApplicationsState;
 
 .field mResumed:Z
 
-.field final rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+.field final rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
-.field final rD:Ljava/lang/Object;
+.field final rG:Ljava/lang/Object;
 
-.field rE:Z
+.field rH:Z
 
-.field rF:Z
+.field rI:Z
 
-.field rG:Lcom/android/settings/applications/ApplicationsState$AppFilter;
+.field rJ:Lcom/android/settings/applications/ApplicationsState$AppFilter;
 
-.field rH:Ljava/util/Comparator;
+.field rK:Ljava/util/Comparator;
 
-.field rI:Ljava/util/ArrayList;
+.field rL:Ljava/util/ArrayList;
 
-.field rJ:Ljava/util/ArrayList;
+.field rM:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -33,7 +33,7 @@
 
     .prologue
     .line 440
-    iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,10 +42,10 @@
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rD:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Ljava/lang/Object;
 
     .line 441
-    iput-object p2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rC:Lcom/android/settings/applications/ApplicationsState$Callbacks;
+    iput-object p2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Lcom/android/settings/applications/ApplicationsState$Callbacks;
 
     .line 442
     return-void
@@ -60,15 +60,15 @@
 
     .prologue
     .line 471
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rD:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 472
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v2, v0, Lcom/android/settings/applications/ApplicationsState;->GZ:Ljava/util/HashMap;
+    iget-object v2, v0, Lcom/android/settings/applications/ApplicationsState;->Hd:Ljava/util/HashMap;
 
     monitor-enter v2
     :try_end_0
@@ -76,37 +76,37 @@
 
     .line 473
     :try_start_1
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->GY:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hc:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 474
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rE:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Z
 
     .line 475
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Z
 
     .line 476
-    iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Lcom/android/settings/applications/ApplicationsState$AppFilter;
+    iput-object p1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rJ:Lcom/android/settings/applications/ApplicationsState$AppFilter;
 
     .line 477
-    iput-object p2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Ljava/util/Comparator;
+    iput-object p2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rK:Ljava/util/Comparator;
 
     .line 478
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rL:Ljava/util/ArrayList;
 
     .line 479
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hn:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
 
     const/4 v3, 0x1
 
@@ -117,9 +117,9 @@
     if-nez v0, :cond_0
 
     .line 480
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hn:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
 
     const/4 v3, 0x1
 
@@ -128,9 +128,9 @@
     move-result-object v0
 
     .line 482
-    iget-object v3, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v3, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState;->Hj:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
+    iget-object v3, v3, Lcom/android/settings/applications/ApplicationsState;->Hn:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
 
     invoke-virtual {v3, v0}, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->sendMessage(Landroid/os/Message;)Z
 
@@ -152,7 +152,7 @@
 
     .line 489
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rL:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
@@ -170,10 +170,10 @@
     :cond_1
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Z
+    iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Z
 
     .line 502
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rL:Ljava/util/ArrayList;
 
     monitor-exit v1
     :try_end_2
@@ -206,7 +206,7 @@
     .line 495
     :cond_2
     :try_start_5
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rD:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Ljava/lang/Object;
 
     sub-long v4, v2, v4
 
@@ -224,20 +224,20 @@
     goto :goto_0
 .end method
 
-.method eY()V
+.method fc()V
     .locals 8
 
     .prologue
     const/4 v0, 0x0
 
     .line 509
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rD:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 510
     :try_start_0
-    iget-boolean v2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rE:Z
+    iget-boolean v2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Z
 
     if-nez v2, :cond_0
 
@@ -250,25 +250,25 @@
 
     .line 514
     :cond_0
-    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Lcom/android/settings/applications/ApplicationsState$AppFilter;
+    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rJ:Lcom/android/settings/applications/ApplicationsState$AppFilter;
 
     .line 515
-    iget-object v3, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Ljava/util/Comparator;
+    iget-object v3, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rK:Ljava/util/Comparator;
 
     .line 516
     const/4 v4, 0x0
 
-    iput-boolean v4, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rE:Z
+    iput-boolean v4, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Z
 
     .line 517
     const/4 v4, 0x0
 
-    iput-object v4, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Lcom/android/settings/applications/ApplicationsState$AppFilter;
+    iput-object v4, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rJ:Lcom/android/settings/applications/ApplicationsState$AppFilter;
 
     .line 518
     const/4 v4, 0x0
 
-    iput-object v4, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Ljava/util/Comparator;
+    iput-object v4, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rK:Ljava/util/Comparator;
 
     .line 519
     monitor-exit v1
@@ -288,9 +288,9 @@
 
     .line 528
     :cond_1
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState;->GZ:Ljava/util/HashMap;
+    iget-object v1, v1, Lcom/android/settings/applications/ApplicationsState;->Hd:Ljava/util/HashMap;
 
     monitor-enter v1
 
@@ -298,9 +298,9 @@
     :try_start_1
     new-instance v4, Ljava/util/ArrayList;
 
-    iget-object v5, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v5, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v5, v5, Lcom/android/settings/applications/ApplicationsState;->Hb:Ljava/util/List;
+    iget-object v5, v5, Lcom/android/settings/applications/ApplicationsState;->Hf:Ljava/util/List;
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
@@ -342,22 +342,22 @@
 
     .line 537
     :cond_2
-    iget-object v6, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v6, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v6, v6, Lcom/android/settings/applications/ApplicationsState;->GZ:Ljava/util/HashMap;
+    iget-object v6, v6, Lcom/android/settings/applications/ApplicationsState;->Hd:Ljava/util/HashMap;
 
     monitor-enter v6
 
     .line 539
     :try_start_2
-    iget-object v7, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v7, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
     invoke-virtual {v7, v0}, Lcom/android/settings/applications/ApplicationsState;->c(Landroid/content/pm/ApplicationInfo;)Lcom/android/settings/applications/ApplicationsState$AppEntry;
 
     move-result-object v0
 
     .line 540
-    iget-object v7, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v7, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
     iget-object v7, v7, Lcom/android/settings/applications/ApplicationsState;->mContext:Landroid/content/Context;
 
@@ -417,29 +417,29 @@
     invoke-static {v5, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 550
-    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rD:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 551
     :try_start_6
-    iget-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rE:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rH:Z
 
     if-nez v0, :cond_5
 
     .line 552
-    iput-object v5, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rJ:Ljava/util/ArrayList;
+    iput-object v5, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rM:Ljava/util/ArrayList;
 
     .line 553
-    iget-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rF:Z
+    iget-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Z
 
     if-nez v0, :cond_6
 
     .line 554
-    iput-object v5, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rI:Ljava/util/ArrayList;
+    iput-object v5, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rL:Ljava/util/ArrayList;
 
     .line 555
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rD:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->rG:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
@@ -460,9 +460,9 @@
     .line 557
     :cond_6
     :try_start_7
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hg:Lcom/android/settings/applications/ApplicationsState$MainHandler;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hk:Lcom/android/settings/applications/ApplicationsState$MainHandler;
 
     const/4 v2, 0x1
 
@@ -473,9 +473,9 @@
     if-nez v0, :cond_5
 
     .line 558
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hg:Lcom/android/settings/applications/ApplicationsState$MainHandler;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hk:Lcom/android/settings/applications/ApplicationsState$MainHandler;
 
     const/4 v2, 0x1
 
@@ -484,9 +484,9 @@
     move-result-object v0
 
     .line 560
-    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v2, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->Hg:Lcom/android/settings/applications/ApplicationsState$MainHandler;
+    iget-object v2, v2, Lcom/android/settings/applications/ApplicationsState;->Hk:Lcom/android/settings/applications/ApplicationsState$MainHandler;
 
     invoke-virtual {v2, v0}, Lcom/android/settings/applications/ApplicationsState$MainHandler;->sendMessage(Landroid/os/Message;)Z
 
@@ -508,9 +508,9 @@
 
     .prologue
     .line 458
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v1, v0, Lcom/android/settings/applications/ApplicationsState;->GZ:Ljava/util/HashMap;
+    iget-object v1, v0, Lcom/android/settings/applications/ApplicationsState;->Hd:Ljava/util/HashMap;
 
     monitor-enter v1
 
@@ -526,25 +526,25 @@
     iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->mResumed:Z
 
     .line 461
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
     const/4 v2, 0x1
 
-    iput-boolean v2, v0, Lcom/android/settings/applications/ApplicationsState;->He:Z
+    iput-boolean v2, v0, Lcom/android/settings/applications/ApplicationsState;->Hi:Z
 
     .line 462
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hj:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
+    iget-object v0, v0, Lcom/android/settings/applications/ApplicationsState;->Hn:Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, p0}, Lcom/android/settings/applications/ApplicationsState$BackgroundHandler;->removeMessages(ILjava/lang/Object;)V
 
     .line 463
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState;->jN()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState;->jR()V
 
     .line 466
     :cond_0
@@ -569,9 +569,9 @@
 
     .prologue
     .line 446
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    iget-object v1, v0, Lcom/android/settings/applications/ApplicationsState;->GZ:Ljava/util/HashMap;
+    iget-object v1, v0, Lcom/android/settings/applications/ApplicationsState;->Hd:Ljava/util/HashMap;
 
     monitor-enter v1
 
@@ -587,16 +587,16 @@
     iput-boolean v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->mResumed:Z
 
     .line 449
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
     const/4 v2, 0x1
 
-    iput-boolean v2, v0, Lcom/android/settings/applications/ApplicationsState;->He:Z
+    iput-boolean v2, v0, Lcom/android/settings/applications/ApplicationsState;->Hi:Z
 
     .line 450
-    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iG:Lcom/android/settings/applications/ApplicationsState;
+    iget-object v0, p0, Lcom/android/settings/applications/ApplicationsState$Session;->iJ:Lcom/android/settings/applications/ApplicationsState;
 
-    invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState;->jM()V
+    invoke-virtual {v0}, Lcom/android/settings/applications/ApplicationsState;->jQ()V
 
     .line 452
     :cond_0

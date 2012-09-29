@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic gq:Lcom/android/settings/ProxySelector;
+.field final synthetic gt:Lcom/android/settings/ProxySelector;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 271
-    iput-object p1, p0, Lcom/android/settings/ao;->gq:Lcom/android/settings/ProxySelector;
+    iput-object p1, p0, Lcom/android/settings/ao;->gt:Lcom/android/settings/ProxySelector;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,16 +32,16 @@
 
     .prologue
     .line 273
-    iget-object v0, p0, Lcom/android/settings/ao;->gq:Lcom/android/settings/ProxySelector;
+    iget-object v0, p0, Lcom/android/settings/ao;->gt:Lcom/android/settings/ProxySelector;
 
-    invoke-virtual {v0}, Lcom/android/settings/ProxySelector;->cM()Z
+    invoke-virtual {v0}, Lcom/android/settings/ProxySelector;->cQ()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 274
-    iget-object v0, p0, Lcom/android/settings/ao;->gq:Lcom/android/settings/ProxySelector;
+    iget-object v0, p0, Lcom/android/settings/ao;->gt:Lcom/android/settings/ProxySelector;
 
     invoke-virtual {v0}, Lcom/android/settings/ProxySelector;->getActivity()Landroid/app/Activity;
 

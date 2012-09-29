@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private Jc:Landroid/widget/TextView;
+.field private Jf:Landroid/widget/TextView;
 
-.field private Jd:Landroid/widget/TextView;
+.field private Jg:Landroid/widget/TextView;
 
-.field private Je:Landroid/widget/CheckBox;
+.field private Jh:Landroid/widget/CheckBox;
 
 
 # direct methods
@@ -40,7 +40,7 @@
 
     .prologue
     .line 335
-    iput-object p1, p0, Lcom/android/settings/dk;->Je:Landroid/widget/CheckBox;
+    iput-object p1, p0, Lcom/android/settings/dk;->Jh:Landroid/widget/CheckBox;
 
     return-object p1
 .end method
@@ -51,7 +51,7 @@
 
     .prologue
     .line 335
-    iget-object v0, p0, Lcom/android/settings/dk;->Jc:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/dk;->Jf:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -63,7 +63,7 @@
 
     .prologue
     .line 335
-    iput-object p1, p0, Lcom/android/settings/dk;->Jc:Landroid/widget/TextView;
+    iput-object p1, p0, Lcom/android/settings/dk;->Jf:Landroid/widget/TextView;
 
     return-object p1
 .end method
@@ -74,7 +74,7 @@
 
     .prologue
     .line 335
-    iget-object v0, p0, Lcom/android/settings/dk;->Jd:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/dk;->Jg:Landroid/widget/TextView;
 
     return-object v0
 .end method
@@ -86,7 +86,7 @@
 
     .prologue
     .line 335
-    iput-object p1, p0, Lcom/android/settings/dk;->Jd:Landroid/widget/TextView;
+    iput-object p1, p0, Lcom/android/settings/dk;->Jg:Landroid/widget/TextView;
 
     return-object p1
 .end method
@@ -97,7 +97,7 @@
 
     .prologue
     .line 335
-    iget-object v0, p0, Lcom/android/settings/dk;->Je:Landroid/widget/CheckBox;
+    iget-object v0, p0, Lcom/android/settings/dk;->Jh:Landroid/widget/CheckBox;
 
     return-object v0
 .end method

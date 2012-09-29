@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final BT:Ljava/lang/String;
+.field private final BX:Ljava/lang/String;
 
-.field private final BU:Ljava/lang/String;
+.field private final BY:Ljava/lang/String;
 
 
 # direct methods
@@ -20,7 +20,7 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 175
-    iput-object p2, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BT:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BX:Ljava/lang/String;
 
     .line 176
     if-nez p2, :cond_0
@@ -32,7 +32,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BU:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BY:Ljava/lang/String;
 
     .line 183
     :goto_0
@@ -55,13 +55,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BU:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BY:Ljava/lang/String;
 
     goto :goto_0
 
     .line 181
     :cond_1
-    invoke-static {p2}, Lcom/android/settings/cu;->W(Ljava/lang/String;)Ljava/util/Locale;
+    invoke-static {p2}, Lcom/android/settings/cu;->X(Ljava/lang/String;)Ljava/util/Locale;
 
     move-result-object v0
 
@@ -69,29 +69,29 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BU:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BY:Ljava/lang/String;
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method public ia()Ljava/lang/String;
+.method public ie()Ljava/lang/String;
     .locals 1
 
     .prologue
     .line 189
-    iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BT:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BX:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public ib()Z
+.method public if()Z
     .locals 1
 
     .prologue
     .line 193
-    iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BT:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BX:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
@@ -111,7 +111,7 @@
 
     .prologue
     .line 186
-    iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BU:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->BY:Ljava/lang/String;
 
     return-object v0
 .end method

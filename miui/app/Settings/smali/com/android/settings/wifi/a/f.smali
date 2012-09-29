@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Bo:Lcom/android/settings/wifi/a/b;
+.field final synthetic Bs:Lcom/android/settings/wifi/a/b;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 172
-    iput-object p1, p0, Lcom/android/settings/wifi/a/f;->Bo:Lcom/android/settings/wifi/a/b;
+    iput-object p1, p0, Lcom/android/settings/wifi/a/f;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,7 +38,7 @@
     if-ne p2, v0, :cond_0
 
     .line 176
-    iget-object v0, p0, Lcom/android/settings/wifi/a/f;->Bo:Lcom/android/settings/wifi/a/b;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/f;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-static {v0}, Lcom/android/settings/wifi/a/b;->b(Lcom/android/settings/wifi/a/b;)Landroid/net/wifi/p2p/WifiP2pManager;
 
@@ -47,19 +47,19 @@
     if-eqz v0, :cond_0
 
     .line 177
-    iget-object v0, p0, Lcom/android/settings/wifi/a/f;->Bo:Lcom/android/settings/wifi/a/b;
+    iget-object v0, p0, Lcom/android/settings/wifi/a/f;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-static {v0}, Lcom/android/settings/wifi/a/b;->b(Lcom/android/settings/wifi/a/b;)Landroid/net/wifi/p2p/WifiP2pManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/settings/wifi/a/f;->Bo:Lcom/android/settings/wifi/a/b;
+    iget-object v1, p0, Lcom/android/settings/wifi/a/f;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-static {v1}, Lcom/android/settings/wifi/a/b;->c(Lcom/android/settings/wifi/a/b;)Landroid/net/wifi/p2p/WifiP2pManager$Channel;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/wifi/a/f;->Bo:Lcom/android/settings/wifi/a/b;
+    iget-object v2, p0, Lcom/android/settings/wifi/a/f;->Bs:Lcom/android/settings/wifi/a/b;
 
     invoke-static {v2}, Lcom/android/settings/wifi/a/b;->f(Lcom/android/settings/wifi/a/b;)Landroid/widget/EditText;
 

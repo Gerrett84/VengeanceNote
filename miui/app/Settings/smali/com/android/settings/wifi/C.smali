@@ -1,10 +1,13 @@
 .class Lcom/android/settings/wifi/C;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "WifiSettings.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic cx:Lcom/android/settings/wifi/WifiSettings;
+.field final synthetic cA:Lcom/android/settings/wifi/WifiSettings;
 
 
 # direct methods
@@ -13,27 +16,38 @@
     .parameter
 
     .prologue
-    .line 194
-    iput-object p1, p0, Lcom/android/settings/wifi/C;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 218
+    iput-object p1, p0, Lcom/android/settings/wifi/C;->cA:Lcom/android/settings/wifi/WifiSettings;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onClick(Landroid/view/View;)V
     .locals 1
-    .parameter
     .parameter
 
     .prologue
-    .line 197
-    iget-object v0, p0, Lcom/android/settings/wifi/C;->cx:Lcom/android/settings/wifi/WifiSettings;
+    .line 221
+    iget-object v0, p0, Lcom/android/settings/wifi/C;->cA:Lcom/android/settings/wifi/WifiSettings;
 
-    invoke-static {v0, p1, p2}, Lcom/android/settings/wifi/WifiSettings;->a(Lcom/android/settings/wifi/WifiSettings;Landroid/content/Context;Landroid/content/Intent;)V
+    iget-object v0, v0, Lcom/android/settings/wifi/WifiSettings;->b:Landroid/net/wifi/WifiManager;
 
-    .line 198
+    invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 222
+    iget-object v0, p0, Lcom/android/settings/wifi/C;->cA:Lcom/android/settings/wifi/WifiSettings;
+
+    invoke-virtual {v0}, Lcom/android/settings/wifi/WifiSettings;->lt()V
+
+    .line 224
+    :cond_0
     return-void
 .end method

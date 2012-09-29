@@ -4,12 +4,6 @@
 
 
 # static fields
-.field public static final enum ih:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
-
-.field public static final enum ii:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
-
-.field public static final enum ij:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
-
 .field public static final enum ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
 .field public static final enum il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
@@ -28,9 +22,15 @@
 
 .field public static final enum is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
-.field static final it:[[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+.field public static final enum it:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
-.field private static final synthetic iu:[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+.field public static final enum iu:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+
+.field public static final enum iv:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+
+.field static final iw:[[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+
+.field private static final synthetic ix:[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
 
 # direct methods
@@ -55,7 +55,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$1;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ih:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 360
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$2;
@@ -64,7 +64,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$2;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ii:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 375
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$3;
@@ -73,7 +73,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$3;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ij:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->im:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 390
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$4;
@@ -82,7 +82,7 @@
 
     invoke-direct {v0, v1, v6}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$4;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->in:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 407
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$5;
@@ -91,7 +91,7 @@
 
     invoke-direct {v0, v1, v7}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$5;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->io:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 414
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$6;
@@ -102,7 +102,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$6;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->im:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ip:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 429
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$7;
@@ -113,7 +113,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$7;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->in:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iq:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 444
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$8;
@@ -124,7 +124,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$8;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->io:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ir:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 461
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$9;
@@ -135,7 +135,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$9;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ip:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 468
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$10;
@@ -146,7 +146,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$10;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iq:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->it:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 483
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$11;
@@ -157,7 +157,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$11;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ir:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iu:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 498
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$12;
@@ -168,95 +168,95 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$12;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iv:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 352
     const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ih:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ii:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ij:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->im:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->in:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->io:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->im:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ip:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->in:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iq:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->io:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ir:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ip:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iq:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->it:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ir:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iu:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iv:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iu:[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ix:[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     .line 525
     new-array v0, v6, [[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     new-array v1, v7, [Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ih:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ii:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v4
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ij:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->im:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v5
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ik:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->in:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v6
 
@@ -264,19 +264,19 @@
 
     new-array v1, v7, [Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->il:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->io:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->im:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ip:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v4
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->in:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iq:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v5
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->io:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ir:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v6
 
@@ -284,25 +284,25 @@
 
     new-array v1, v7, [Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ip:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iq:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->it:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v4
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ir:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iu:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v5
 
-    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->is:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v2, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iv:Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     aput-object v2, v1, v6
 
     aput-object v1, v0, v5
 
-    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->it:[[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sput-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iw:[[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     return-void
 .end method
@@ -355,7 +355,7 @@
     or-int/2addr v0, v1
 
     .line 534
-    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->it:[[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v1, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iw:[[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$Strength;->ordinal()I
 
@@ -396,7 +396,7 @@
 
     .prologue
     .line 352
-    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->iu:[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
+    sget-object v0, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->ix:[Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;->clone()Ljava/lang/Object;
 
@@ -421,7 +421,7 @@
 
     move-result-object v0
 
-    invoke-interface {p2}, Lcom/google/common/collect/ag;->dq()I
+    invoke-interface {p2}, Lcom/google/common/collect/ag;->du()I
 
     move-result v1
 
@@ -442,21 +442,21 @@
 
     .prologue
     .line 564
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dm()J
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->dq()J
 
     move-result-wide v0
 
     invoke-interface {p2, v0, v1}, Lcom/google/common/collect/ag;->i(J)V
 
     .line 566
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->do()Lcom/google/common/collect/ag;
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->ds()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
     invoke-static {v0, p2}, Lcom/google/common/collect/MapMakerInternalMap;->d(Lcom/google/common/collect/ag;Lcom/google/common/collect/ag;)V
 
     .line 567
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->dn()Lcom/google/common/collect/ag;
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->dr()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
@@ -476,14 +476,14 @@
 
     .prologue
     .line 576
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->ac()Lcom/google/common/collect/ag;
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->ag()Lcom/google/common/collect/ag;
 
     move-result-object v0
 
     invoke-static {v0, p2}, Lcom/google/common/collect/MapMakerInternalMap;->e(Lcom/google/common/collect/ag;Lcom/google/common/collect/ag;)V
 
     .line 577
-    invoke-interface {p1}, Lcom/google/common/collect/ag;->ab()Lcom/google/common/collect/ag;
+    invoke-interface {p1}, Lcom/google/common/collect/ag;->af()Lcom/google/common/collect/ag;
 
     move-result-object v0
 

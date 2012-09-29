@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic bC:Lcom/android/settings/applications/ManageApplications;
+.field final synthetic bF:Lcom/android/settings/applications/ManageApplications;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 1221
-    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$2;->bC:Lcom/android/settings/applications/ManageApplications;
+    iput-object p1, p0, Lcom/android/settings/applications/ManageApplications$2;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,7 +33,7 @@
 
     .prologue
     .line 1224
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {p2}, Lcom/android/internal/app/IMediaContainerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IMediaContainerService;
 
@@ -47,7 +47,7 @@
     move v1, v0
 
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageApplications;->a(Lcom/android/settings/applications/ManageApplications;)Ljava/util/ArrayList;
 
@@ -60,7 +60,7 @@
     if-ge v1, v0, :cond_0
 
     .line 1226
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageApplications;->a(Lcom/android/settings/applications/ManageApplications;)Ljava/util/ArrayList;
 
@@ -72,7 +72,7 @@
 
     check-cast v0, Lcom/android/settings/applications/ManageApplications$TabInfo;
 
-    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$2;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v2, p0, Lcom/android/settings/applications/ManageApplications$2;->bF:Lcom/android/settings/applications/ManageApplications;
 
     invoke-static {v2}, Lcom/android/settings/applications/ManageApplications;->h(Lcom/android/settings/applications/ManageApplications;)Lcom/android/internal/app/IMediaContainerService;
 
@@ -98,7 +98,7 @@
 
     .prologue
     .line 1232
-    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bC:Lcom/android/settings/applications/ManageApplications;
+    iget-object v0, p0, Lcom/android/settings/applications/ManageApplications$2;->bF:Lcom/android/settings/applications/ManageApplications;
 
     const/4 v1, 0x0
 

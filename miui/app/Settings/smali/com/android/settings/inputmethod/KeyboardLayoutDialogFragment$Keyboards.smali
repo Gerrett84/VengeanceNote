@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final Bp:Ljava/util/ArrayList;
+.field public final Bt:Ljava/util/ArrayList;
 
-.field public Bq:I
+.field public Bu:I
 
 
 # direct methods
@@ -22,12 +22,12 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$Keyboards;->Bp:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$Keyboards;->Bt:Ljava/util/ArrayList;
 
     .line 348
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$Keyboards;->Bq:I
+    iput v0, p0, Lcom/android/settings/inputmethod/KeyboardLayoutDialogFragment$Keyboards;->Bu:I
 
     return-void
 .end method

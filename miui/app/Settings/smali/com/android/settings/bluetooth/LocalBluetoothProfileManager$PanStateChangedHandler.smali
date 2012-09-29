@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic uK:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+.field final synthetic uO:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     .prologue
     .line 230
-    iput-object p1, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$PanStateChangedHandler;->uK:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
+    iput-object p1, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$PanStateChangedHandler;->uO:Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;
 
     .line 231
     invoke-direct {p0, p1, p2}, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;-><init>(Lcom/android/settings/bluetooth/LocalBluetoothProfileManager;Lcom/android/settings/bluetooth/LocalBluetoothProfile;)V
@@ -34,7 +34,7 @@
 
     .prologue
     .line 236
-    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->uO:Lcom/android/settings/bluetooth/LocalBluetoothProfile;
+    iget-object v0, p0, Lcom/android/settings/bluetooth/LocalBluetoothProfileManager$StateChangedHandler;->uS:Lcom/android/settings/bluetooth/LocalBluetoothProfile;
 
     check-cast v0, Lcom/android/settings/bluetooth/PanProfile;
 

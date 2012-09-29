@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic AX:Lcom/android/settings/DeviceAdminAdd;
+.field final synthetic Bb:Lcom/android/settings/DeviceAdminAdd;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     .prologue
     .line 183
-    iput-object p1, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iput-object p1, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -34,34 +34,34 @@
     const/4 v4, -0x1
 
     .line 185
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-boolean v0, v0, Lcom/android/settings/DeviceAdminAdd;->oI:Z
+    iget-boolean v0, v0, Lcom/android/settings/DeviceAdminAdd;->oL:Z
 
     if-eqz v0, :cond_1
 
     .line 187
     :try_start_0
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->ot:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->ow:Landroid/app/admin/DevicePolicyManager;
 
-    iget-object v1, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v1, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->ou:Landroid/app/admin/DeviceAdminInfo;
+    iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->ox:Landroid/app/admin/DeviceAdminInfo;
 
     invoke-virtual {v1}, Landroid/app/admin/DeviceAdminInfo;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v2, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-boolean v2, v2, Lcom/android/settings/DeviceAdminAdd;->oJ:Z
+    iget-boolean v2, v2, Lcom/android/settings/DeviceAdminAdd;->oM:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/app/admin/DevicePolicyManager;->setActiveAdmin(Landroid/content/ComponentName;Z)V
 
     .line 188
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     const/4 v1, -0x1
 
@@ -72,7 +72,7 @@
     .line 198
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminAdd;->finish()V
 
@@ -97,9 +97,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v3, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v3, v3, Lcom/android/settings/DeviceAdminAdd;->ou:Landroid/app/admin/DeviceAdminInfo;
+    iget-object v3, v3, Lcom/android/settings/DeviceAdminAdd;->ox:Landroid/app/admin/DeviceAdminInfo;
 
     invoke-virtual {v3}, Landroid/app/admin/DeviceAdminInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -116,13 +116,13 @@
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 194
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->ot:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->ow:Landroid/app/admin/DevicePolicyManager;
 
-    iget-object v1, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v1, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->ou:Landroid/app/admin/DeviceAdminInfo;
+    iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->ox:Landroid/app/admin/DeviceAdminInfo;
 
     invoke-virtual {v1}, Landroid/app/admin/DeviceAdminInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -135,7 +135,7 @@
     if-eqz v0, :cond_0
 
     .line 195
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0, v4}, Lcom/android/settings/DeviceAdminAdd;->setResult(I)V
 
@@ -154,13 +154,13 @@
 
     .line 206
     :goto_2
-    iget-object v0, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v0, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->ot:Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd;->ow:Landroid/app/admin/DevicePolicyManager;
 
-    iget-object v1, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v1, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
-    iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->ou:Landroid/app/admin/DeviceAdminInfo;
+    iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->ox:Landroid/app/admin/DeviceAdminInfo;
 
     invoke-virtual {v1}, Landroid/app/admin/DeviceAdminInfo;->getComponent()Landroid/content/ComponentName;
 
@@ -168,7 +168,7 @@
 
     new-instance v2, Lcom/android/settings/bo;
 
-    iget-object v3, p0, Lcom/android/settings/bW;->AX:Lcom/android/settings/DeviceAdminAdd;
+    iget-object v3, p0, Lcom/android/settings/bW;->Bb:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v3, v3, Lcom/android/settings/DeviceAdminAdd;->mHandler:Landroid/os/Handler;
 

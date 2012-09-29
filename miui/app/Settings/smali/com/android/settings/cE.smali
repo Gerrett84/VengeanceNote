@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic Gg:Lcom/android/settings/SettingsLicenseActivity;
+.field final synthetic Gk:Lcom/android/settings/SettingsLicenseActivity;
 
-.field private aQ:Ljava/lang/String;
+.field private aT:Ljava/lang/String;
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -23,12 +23,12 @@
 
     .prologue
     .line 69
-    iput-object p1, p0, Lcom/android/settings/cE;->Gg:Lcom/android/settings/SettingsLicenseActivity;
+    iput-object p1, p0, Lcom/android/settings/cE;->Gk:Lcom/android/settings/SettingsLicenseActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 70
-    iput-object p2, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     .line 71
     iput-object p3, p0, Lcom/android/settings/cE;->mHandler:Landroid/os/Handler;
@@ -62,7 +62,7 @@
     new-array v4, v1, [C
 
     .line 83
-    iget-object v1, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     const-string v5, ".gz"
 
@@ -79,7 +79,7 @@
 
     new-instance v6, Ljava/io/FileInputStream;
 
-    iget-object v7, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iget-object v7, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     invoke-direct {v6, v7}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
 
@@ -130,7 +130,7 @@
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -180,7 +180,7 @@
 
     move-result-object v1
 
-    iget-object v4, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -233,7 +233,7 @@
     :try_start_4
     new-instance v1, Ljava/io/FileReader;
 
-    iget-object v5, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iget-object v5, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     invoke-direct {v1, v5}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
     :try_end_4
@@ -290,7 +290,7 @@
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/android/settings/cE;->aQ:Ljava/lang/String;
+    iget-object v6, p0, Lcom/android/settings/cE;->aT:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

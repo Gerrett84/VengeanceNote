@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method protected aR()I
+.method protected aV()I
     .locals 1
 
     .prologue

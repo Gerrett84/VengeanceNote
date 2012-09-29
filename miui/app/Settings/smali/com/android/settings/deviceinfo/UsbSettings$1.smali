@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic MI:Lcom/android/settings/deviceinfo/UsbSettings;
+.field final synthetic ML:Lcom/android/settings/deviceinfo/UsbSettings;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 55
-    iput-object p1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->MI:Lcom/android/settings/deviceinfo/UsbSettings;
+    iput-object p1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->ML:Lcom/android/settings/deviceinfo/UsbSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -30,9 +30,9 @@
 
     .prologue
     .line 57
-    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->MI:Lcom/android/settings/deviceinfo/UsbSettings;
+    iget-object v0, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->ML:Lcom/android/settings/deviceinfo/UsbSettings;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->MI:Lcom/android/settings/deviceinfo/UsbSettings;
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/UsbSettings$1;->ML:Lcom/android/settings/deviceinfo/UsbSettings;
 
     invoke-static {v1}, Lcom/android/settings/deviceinfo/UsbSettings;->a(Lcom/android/settings/deviceinfo/UsbSettings;)Landroid/hardware/usb/UsbManager;
 

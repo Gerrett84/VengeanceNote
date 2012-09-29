@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic tF:Lcom/android/settings/BandMode;
+.field final synthetic tJ:Lcom/android/settings/BandMode;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 193
-    iput-object p1, p0, Lcom/android/settings/bq;->tF:Lcom/android/settings/BandMode;
+    iput-object p1, p0, Lcom/android/settings/bq;->tJ:Lcom/android/settings/BandMode;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
@@ -44,7 +44,7 @@
     check-cast v0, Landroid/os/AsyncResult;
 
     .line 200
-    iget-object v1, p0, Lcom/android/settings/bq;->tF:Lcom/android/settings/BandMode;
+    iget-object v1, p0, Lcom/android/settings/bq;->tJ:Lcom/android/settings/BandMode;
 
     invoke-static {v1, v0}, Lcom/android/settings/BandMode;->a(Lcom/android/settings/BandMode;Landroid/os/AsyncResult;)V
 
@@ -57,7 +57,7 @@
     check-cast v0, Landroid/os/AsyncResult;
 
     .line 206
-    iget-object v1, p0, Lcom/android/settings/bq;->tF:Lcom/android/settings/BandMode;
+    iget-object v1, p0, Lcom/android/settings/bq;->tJ:Lcom/android/settings/BandMode;
 
     invoke-virtual {v1}, Lcom/android/settings/BandMode;->getWindow()Landroid/view/Window;
 
@@ -70,7 +70,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/view/Window;->setFeatureInt(II)V
 
     .line 210
-    iget-object v1, p0, Lcom/android/settings/bq;->tF:Lcom/android/settings/BandMode;
+    iget-object v1, p0, Lcom/android/settings/bq;->tJ:Lcom/android/settings/BandMode;
 
     iget-object v0, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 

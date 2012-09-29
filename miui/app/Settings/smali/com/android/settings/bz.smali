@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field vC:Landroid/widget/TextView;
+.field vG:Landroid/widget/TextView;
 
-.field vD:Landroid/widget/TextView;
+.field vH:Landroid/widget/TextView;
 
-.field vE:Landroid/widget/TextView;
+.field vI:Landroid/widget/TextView;
 
 
 # direct methods

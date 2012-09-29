@@ -7,13 +7,7 @@
 
 
 # instance fields
-.field private BL:Landroid/preference/CheckBoxPreference;
-
-.field private MJ:Landroid/preference/ListPreference;
-
-.field private MK:Landroid/preference/ListPreference;
-
-.field private ML:Landroid/preference/PreferenceCategory;
+.field private BP:Landroid/preference/CheckBoxPreference;
 
 .field private MM:Landroid/preference/ListPreference;
 
@@ -26,6 +20,12 @@
 .field private MQ:Landroid/preference/ListPreference;
 
 .field private MR:Landroid/preference/PreferenceCategory;
+
+.field private MS:Landroid/preference/ListPreference;
+
+.field private MT:Landroid/preference/ListPreference;
+
+.field private MU:Landroid/preference/PreferenceCategory;
 
 
 # direct methods
@@ -187,10 +187,10 @@
 
     check-cast v0, Landroid/preference/CheckBoxPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->BL:Landroid/preference/CheckBoxPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->BP:Landroid/preference/CheckBoxPreference;
 
     .line 47
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->BL:Landroid/preference/CheckBoxPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->BP:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/CheckBoxPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -203,10 +203,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MJ:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MM:Landroid/preference/ListPreference;
 
     .line 50
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->MJ:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MM:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -219,10 +219,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MK:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
 
     .line 52
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->MK:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -235,7 +235,7 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->ML:Landroid/preference/PreferenceCategory;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MO:Landroid/preference/PreferenceCategory;
 
     .line 55
     const-string v0, "call_breathing_light_color"
@@ -246,10 +246,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MM:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MP:Landroid/preference/ListPreference;
 
     .line 56
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->MM:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MP:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -262,10 +262,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
 
     .line 58
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -278,7 +278,7 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MO:Landroid/preference/PreferenceCategory;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MR:Landroid/preference/PreferenceCategory;
 
     .line 61
     const-string v0, "mms_breathing_light_color"
@@ -289,10 +289,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MP:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MS:Landroid/preference/ListPreference;
 
     .line 62
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->MP:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MS:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -305,10 +305,10 @@
 
     check-cast v0, Landroid/preference/ListPreference;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MT:Landroid/preference/ListPreference;
 
     .line 64
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MT:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -321,7 +321,7 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    iput-object v0, p0, Lcom/android/settings/LedSettings;->MR:Landroid/preference/PreferenceCategory;
+    iput-object v0, p0, Lcom/android/settings/LedSettings;->MU:Landroid/preference/PreferenceCategory;
 
     .line 67
     invoke-virtual {p0}, Lcom/android/settings/LedSettings;->getResources()Landroid/content/res/Resources;
@@ -368,17 +368,17 @@
     move-result v0
 
     .line 76
-    iget-object v5, p0, Lcom/android/settings/LedSettings;->MJ:Landroid/preference/ListPreference;
+    iget-object v5, p0, Lcom/android/settings/LedSettings;->MM:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v5, v3, v1}, Lcom/android/settings/LedSettings;->a(Landroid/preference/ListPreference;IZ)V
 
     .line 77
-    iget-object v3, p0, Lcom/android/settings/LedSettings;->MM:Landroid/preference/ListPreference;
+    iget-object v3, p0, Lcom/android/settings/LedSettings;->MP:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v3, v4, v1}, Lcom/android/settings/LedSettings;->a(Landroid/preference/ListPreference;IZ)V
 
     .line 78
-    iget-object v3, p0, Lcom/android/settings/LedSettings;->MP:Landroid/preference/ListPreference;
+    iget-object v3, p0, Lcom/android/settings/LedSettings;->MS:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v3, v0, v1}, Lcom/android/settings/LedSettings;->a(Landroid/preference/ListPreference;IZ)V
 
@@ -427,22 +427,22 @@
     move-result v0
 
     .line 89
-    iget-object v5, p0, Lcom/android/settings/LedSettings;->MK:Landroid/preference/ListPreference;
+    iget-object v5, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v5, v3, v2}, Lcom/android/settings/LedSettings;->a(Landroid/preference/ListPreference;IZ)V
 
     .line 90
-    iget-object v3, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
+    iget-object v3, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v3, v4, v2}, Lcom/android/settings/LedSettings;->a(Landroid/preference/ListPreference;IZ)V
 
     .line 91
-    iget-object v3, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
+    iget-object v3, p0, Lcom/android/settings/LedSettings;->MT:Landroid/preference/ListPreference;
 
     invoke-direct {p0, v3, v0, v2}, Lcom/android/settings/LedSettings;->a(Landroid/preference/ListPreference;IZ)V
 
     .line 94
-    iget-object v3, p0, Lcom/android/settings/LedSettings;->BL:Landroid/preference/CheckBoxPreference;
+    iget-object v3, p0, Lcom/android/settings/LedSettings;->BP:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {p0}, Lcom/android/settings/LedSettings;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -467,23 +467,23 @@
     if-eqz v0, :cond_0
 
     .line 98
-    iget-object v0, p0, Lcom/android/settings/LedSettings;->ML:Landroid/preference/PreferenceCategory;
-
-    iget-object v1, p0, Lcom/android/settings/LedSettings;->MK:Landroid/preference/ListPreference;
-
-    invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    .line 99
     iget-object v0, p0, Lcom/android/settings/LedSettings;->MO:Landroid/preference/PreferenceCategory;
 
     iget-object v1, p0, Lcom/android/settings/LedSettings;->MN:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
-    .line 100
+    .line 99
     iget-object v0, p0, Lcom/android/settings/LedSettings;->MR:Landroid/preference/PreferenceCategory;
 
     iget-object v1, p0, Lcom/android/settings/LedSettings;->MQ:Landroid/preference/ListPreference;
+
+    invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    .line 100
+    iget-object v0, p0, Lcom/android/settings/LedSettings;->MU:Landroid/preference/PreferenceCategory;
+
+    iget-object v1, p0, Lcom/android/settings/LedSettings;->MT:Landroid/preference/ListPreference;
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 

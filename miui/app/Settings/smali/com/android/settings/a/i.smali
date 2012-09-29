@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private Mr:Ljava/util/ArrayList;
+.field private Mu:Ljava/util/ArrayList;
 
-.field private gC:Landroid/net/NetworkPolicyManager;
+.field private gF:Landroid/net/NetworkPolicyManager;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     .line 58
     invoke-static {p1}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -32,7 +32,7 @@
 
     check-cast v0, Landroid/net/NetworkPolicyManager;
 
-    iput-object v0, p0, Lcom/android/settings/a/i;->gC:Landroid/net/NetworkPolicyManager;
+    iput-object v0, p0, Lcom/android/settings/a/i;->gF:Landroid/net/NetworkPolicyManager;
 
     .line 59
     return-void
@@ -109,7 +109,7 @@
 
     .prologue
     .line 278
-    invoke-virtual/range {p0 .. p1}, Lcom/android/settings/a/i;->an(Ljava/lang/String;)Z
+    invoke-virtual/range {p0 .. p1}, Lcom/android/settings/a/i;->ao(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -177,21 +177,21 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v5, v0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 296
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v2, v0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 297
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
@@ -246,7 +246,7 @@
     .line 305
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v2, v0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     move-object/from16 v0, v18
 
@@ -255,7 +255,7 @@
     .line 306
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     move-object/from16 v19, v0
 
@@ -300,7 +300,7 @@
     .line 309
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, v0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
@@ -354,7 +354,7 @@
     goto/16 :goto_0
 .end method
 
-.method private lv()Z
+.method private lz()Z
     .locals 4
 
     .prologue
@@ -366,7 +366,7 @@
     move-result-object v1
 
     .line 232
-    iget-object v0, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -454,7 +454,7 @@
     move-result-object v0
 
     .line 114
-    iget-object v1, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -490,7 +490,7 @@
     invoke-virtual {v0}, Landroid/net/NetworkPolicy;->clearSnooze()V
 
     .line 161
-    invoke-virtual {p0}, Lcom/android/settings/a/i;->lu()V
+    invoke-virtual {p0}, Lcom/android/settings/a/i;->ly()V
 
     .line 162
     return-void
@@ -519,7 +519,7 @@
     invoke-virtual {v0}, Landroid/net/NetworkPolicy;->clearSnooze()V
 
     .line 173
-    invoke-virtual {p0}, Lcom/android/settings/a/i;->lu()V
+    invoke-virtual {p0}, Lcom/android/settings/a/i;->ly()V
 
     .line 174
     return-void
@@ -559,7 +559,7 @@
     iput-boolean v1, v2, Landroid/net/NetworkPolicy;->inferred:Z
 
     .line 206
-    iget-object v1, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -567,7 +567,7 @@
     :goto_0
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/settings/a/i;->lu()V
+    invoke-virtual {p0}, Lcom/android/settings/a/i;->ly()V
 
     .line 225
     :cond_0
@@ -621,7 +621,7 @@
 
     .prologue
     .line 102
-    iget-object v0, p0, Lcom/android/settings/a/i;->gC:Landroid/net/NetworkPolicyManager;
+    iget-object v0, p0, Lcom/android/settings/a/i;->gF:Landroid/net/NetworkPolicyManager;
 
     invoke-virtual {v0, p1}, Landroid/net/NetworkPolicyManager;->setNetworkPolicies([Landroid/net/NetworkPolicy;)V
 
@@ -629,7 +629,7 @@
     return-void
 .end method
 
-.method public an(Ljava/lang/String;)Z
+.method public ao(Ljava/lang/String;)Z
     .locals 7
     .parameter
 
@@ -640,7 +640,7 @@
 
     .line 245
     .line 247
-    iget-object v0, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -743,7 +743,7 @@
 
     .prologue
     .line 120
-    iget-object v0, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -804,7 +804,7 @@
     invoke-virtual {v0}, Landroid/net/NetworkPolicy;->clearSnooze()V
 
     .line 185
-    invoke-virtual {p0}, Lcom/android/settings/a/i;->lu()V
+    invoke-virtual {p0}, Lcom/android/settings/a/i;->ly()V
 
     .line 186
     return-void
@@ -854,7 +854,7 @@
     if-eqz v0, :cond_0
 
     .line 266
-    invoke-virtual {p0}, Lcom/android/settings/a/i;->lu()V
+    invoke-virtual {p0}, Lcom/android/settings/a/i;->ly()V
 
     .line 268
     :cond_0
@@ -876,14 +876,14 @@
     return-wide v0
 .end method
 
-.method public lu()V
+.method public ly()V
     .locals 2
 
     .prologue
     .line 91
-    iget-object v0, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -923,14 +923,14 @@
     const-wide/16 v8, -0x1
 
     .line 62
-    iget-object v2, p0, Lcom/android/settings/a/i;->gC:Landroid/net/NetworkPolicyManager;
+    iget-object v2, p0, Lcom/android/settings/a/i;->gF:Landroid/net/NetworkPolicyManager;
 
     invoke-virtual {v2}, Landroid/net/NetworkPolicyManager;->getNetworkPolicies()[Landroid/net/NetworkPolicy;
 
     move-result-object v3
 
     .line 65
-    iget-object v2, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
@@ -971,7 +971,7 @@
 
     .line 77
     :cond_1
-    iget-object v6, p0, Lcom/android/settings/a/i;->Mr:Ljava/util/ArrayList;
+    iget-object v6, p0, Lcom/android/settings/a/i;->Mu:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -982,7 +982,7 @@
 
     .line 82
     :cond_2
-    invoke-direct {p0}, Lcom/android/settings/a/i;->lv()Z
+    invoke-direct {p0}, Lcom/android/settings/a/i;->lz()Z
 
     move-result v1
 
@@ -991,7 +991,7 @@
     .line 86
     if-eqz v0, :cond_3
 
-    invoke-virtual {p0}, Lcom/android/settings/a/i;->lu()V
+    invoke-virtual {p0}, Lcom/android/settings/a/i;->ly()V
 
     .line 87
     :cond_3

@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field private Lo:Landroid/widget/TextView;
+.field private Lr:Landroid/widget/TextView;
 
-.field private Lp:Landroid/widget/TextView;
+.field private Ls:Landroid/widget/TextView;
 
-.field private Lq:Landroid/widget/ImageView;
+.field private Lt:Landroid/widget/ImageView;
 
-.field private Lr:[Landroid/accounts/Account;
+.field private Lu:[Landroid/accounts/Account;
 
-.field private Ls:Ljava/util/ArrayList;
+.field private Lv:Ljava/util/ArrayList;
 
-.field private Lt:Ljava/util/ArrayList;
+.field private Lw:Ljava/util/ArrayList;
 
 .field private mAccount:Landroid/accounts/Account;
 
-.field private nb:Landroid/widget/TextView;
+.field private ne:Landroid/widget/TextView;
 
 
 # direct methods
@@ -34,14 +34,14 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     .line 84
     invoke-static {}, Lcom/google/android/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lt:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lw:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -162,7 +162,7 @@
     invoke-virtual {v0, p2}, Lcom/android/settings/accounts/SyncStateCheckBoxPreference;->setKey(Ljava/lang/String;)V
 
     .line 221
-    iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -191,7 +191,7 @@
     const/4 v2, 0x0
 
     .line 437
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lt:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lw:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -308,7 +308,7 @@
 
     .line 458
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lt:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lw:Ljava/util/ArrayList;
 
     iget-object v6, v6, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
@@ -318,7 +318,7 @@
 
     .line 462
     :cond_3
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -334,7 +334,7 @@
 
     move-result-object v4
 
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -353,7 +353,7 @@
 
     .line 465
     :cond_4
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -515,12 +515,12 @@
 
     .line 488
     :cond_a
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
     .line 489
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -536,7 +536,7 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lv:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -689,7 +689,7 @@
     if-eqz v0, :cond_3
 
     .line 327
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lt:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lw:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -720,7 +720,7 @@
     return-void
 .end method
 
-.method private lg()V
+.method private lk()V
     .locals 1
 
     .prologue
@@ -740,7 +740,7 @@
     return-void
 .end method
 
-.method private lh()V
+.method private ll()V
     .locals 1
 
     .prologue
@@ -760,7 +760,7 @@
     return-void
 .end method
 
-.method private li()V
+.method private lm()V
     .locals 21
 
     .prologue
@@ -780,7 +780,7 @@
     .line 365
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/settings/accounts/AccountSyncSettings;->Lr:[Landroid/accounts/Account;
+    iget-object v2, v0, Lcom/android/settings/accounts/AccountSyncSettings;->Lu:[Landroid/accounts/Account;
 
     move-object/from16 v0, p0
 
@@ -1208,7 +1208,7 @@
     :cond_10
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/settings/accounts/AccountSyncSettings;->nb:Landroid/widget/TextView;
+    iget-object v3, v0, Lcom/android/settings/accounts/AccountSyncSettings;->ne:Landroid/widget/TextView;
 
     if-eqz v4, :cond_11
 
@@ -1277,7 +1277,7 @@
 
 
 # virtual methods
-.method protected A()I
+.method protected E()I
     .locals 1
 
     .prologue
@@ -1301,7 +1301,7 @@
     return-object v0
 .end method
 
-.method protected dg()V
+.method protected dk()V
     .locals 1
 
     .prologue
@@ -1318,17 +1318,17 @@
 
     .line 355
     :cond_0
-    invoke-direct {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->li()V
+    invoke-direct {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->lm()V
 
     goto :goto_0
 .end method
 
-.method protected di()V
+.method protected dm()V
     .locals 2
 
     .prologue
     .line 499
-    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->di()V
+    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dm()V
 
     .line 500
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
@@ -1343,26 +1343,26 @@
     if-eqz v0, :cond_0
 
     .line 502
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lq:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lt:Landroid/widget/ImageView;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mAccount:Landroid/accounts/Account;
 
     iget-object v1, v1, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Lcom/android/settings/accounts/AccountSyncSettings;->E(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0, v1}, Lcom/android/settings/accounts/AccountSyncSettings;->F(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 503
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lp:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mAccount:Landroid/accounts/Account;
 
     iget-object v1, v1, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Lcom/android/settings/accounts/AccountSyncSettings;->F(Ljava/lang/String;)Ljava/lang/CharSequence;
+    invoke-virtual {p0, v1}, Lcom/android/settings/accounts/AccountSyncSettings;->G(Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -1378,12 +1378,12 @@
     return-void
 .end method
 
-.method public bridge synthetic dj()V
+.method public bridge synthetic dn()V
     .locals 0
 
     .prologue
     .line 65
-    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dj()V
+    invoke-super {p0}, Lcom/android/settings/accounts/AccountPreferenceBase;->dn()V
 
     return-void
 .end method
@@ -1407,10 +1407,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->nb:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->ne:Landroid/widget/TextView;
 
     .line 164
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->nb:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->ne:Landroid/widget/TextView;
 
     const/16 v1, 0x8
 
@@ -1425,7 +1425,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lo:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lr:Landroid/widget/TextView;
 
     .line 167
     const v0, 0x7f080145
@@ -1436,7 +1436,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lp:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Landroid/widget/TextView;
 
     .line 168
     const v0, 0x7f080143
@@ -1447,7 +1447,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lq:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lt:Landroid/widget/ImageView;
 
     .line 169
     return-void
@@ -1462,13 +1462,13 @@
     invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->onAccountsUpdated([Landroid/accounts/Account;)V
 
     .line 431
-    iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lr:[Landroid/accounts/Account;
+    iput-object p1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lu:[Landroid/accounts/Account;
 
     .line 432
     invoke-direct {p0, p1}, Lcom/android/settings/accounts/AccountSyncSettings;->a([Landroid/accounts/Account;)V
 
     .line 433
-    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->dg()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->dk()V
 
     .line 434
     return-void
@@ -1556,7 +1556,7 @@
 
     .line 184
     :cond_2
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lo:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lr:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mAccount:Landroid/accounts/Account;
 
@@ -1565,7 +1565,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 185
-    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Lp:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->Ls:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mAccount:Landroid/accounts/Account;
 
@@ -1857,13 +1857,13 @@
 
     .line 260
     :pswitch_0
-    invoke-direct {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->lg()V
+    invoke-direct {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->lk()V
 
     goto :goto_0
 
     .line 263
     :pswitch_1
-    invoke-direct {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->lh()V
+    invoke-direct {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->ll()V
 
     goto :goto_0
 
@@ -2068,7 +2068,7 @@
     invoke-virtual {v1, p0, v2, v3}, Landroid/accounts/AccountManager;->addOnAccountsUpdatedListener(Landroid/accounts/OnAccountsUpdateListener;Landroid/os/Handler;Z)V
 
     .line 193
-    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->dj()V
+    invoke-virtual {p0}, Lcom/android/settings/accounts/AccountSyncSettings;->dn()V
 
     .line 194
     invoke-static {v0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
@@ -2088,13 +2088,13 @@
     return-void
 .end method
 
-.method public bridge synthetic x(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public bridge synthetic y(Ljava/lang/String;)Ljava/util/ArrayList;
     .locals 1
     .parameter
 
     .prologue
     .line 65
-    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->x(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-super {p0, p1}, Lcom/android/settings/accounts/AccountPreferenceBase;->y(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 

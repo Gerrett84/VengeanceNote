@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method H()Z
+.method L()Z
     .locals 1
 
     .prologue
@@ -41,7 +41,7 @@
     return v0
 .end method
 
-.method public dz()Lcom/google/common/collect/ap;
+.method public dD()Lcom/google/common/collect/ap;
     .locals 2
 
     .prologue
@@ -82,7 +82,7 @@
 
     .prologue
     .line 448
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->dz()Lcom/google/common/collect/ap;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSet$TransformedImmutableSet;->dD()Lcom/google/common/collect/ap;
 
     move-result-object v0
 

@@ -86,8 +86,6 @@
 
 .field private mType:I
 
-.field protected mVisible:Z
-
 .field final synthetic this$0:Landroid/widget/MiuiCursorController;
 
 
@@ -120,16 +118,13 @@
 
     invoke-direct {p0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 790
+    .line 791
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPreviousOffset:I
 
-    .line 792
+    .line 793
     iput-boolean v6, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionHasChanged:Z
-
-    .line 795
-    iput-boolean v6, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mVisible:Z
 
     .line 832
     new-array v1, v2, [J
@@ -374,56 +369,6 @@
     return-void
 .end method
 
-.method private isVisible()Z
-    .locals 3
-
-    .prologue
-    .line 930
-    iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
-
-    if-eqz v0, :cond_0
-
-    .line 931
-    const/4 v0, 0x1
-
-    .line 938
-    :goto_0
-    return v0
-
-    .line 934
-    :cond_0
-    iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->isInBatchEditMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 935
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 938
-    :cond_1
-    iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
-
-    iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
-
-    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mHotspotX:I
-
-    add-int/2addr v1, v2
-
-    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/Editor;->isPositionVisibleWrap(II)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
 .method private startTouchUpFilter(I)V
     .locals 1
     .parameter "offset"
@@ -447,24 +392,24 @@
     .locals 1
 
     .prologue
-    .line 909
+    .line 896
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
-    .line 910
+    .line 897
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainer:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 911
+    .line 898
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->onDetached()V
 
-    .line 912
+    .line 899
     return-void
 .end method
 
-.method public abstract getCurrentCursorOffset()I
+.method protected abstract getCurrentCursorOffset()I
 .end method
 
 .method public getHotspotLocationOnScreen([I)V
@@ -472,7 +417,7 @@
     .parameter "location"
 
     .prologue
-    .line 884
+    .line 871
     const/4 v0, 0x0
 
     iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerX:I
@@ -483,14 +428,14 @@
 
     aput v1, p1, v0
 
-    .line 885
+    .line 872
     const/4 v0, 0x1
 
     iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerY:I
 
     aput v1, p1, v0
 
-    .line 886
+    .line 873
     return-void
 .end method
 
@@ -501,15 +446,15 @@
     .locals 1
 
     .prologue
-    .line 915
+    .line 907
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->dismiss()V
 
-    .line 917
+    .line 909
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0, p0}, Landroid/widget/Editor;->removePositionListenerSubscriber(Landroid/widget/Editor$TextViewPositionListener;)V
 
-    .line 918
+    .line 910
     return-void
 .end method
 
@@ -517,17 +462,12 @@
     .locals 1
 
     .prologue
-    .line 879
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mVisible:Z
-
-    .line 880
+    .line 903
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainer:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 881
+    .line 904
     return-void
 .end method
 
@@ -535,7 +475,7 @@
     .locals 1
 
     .prologue
-    .line 1073
+    .line 1078
     iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
     return v0
@@ -545,7 +485,7 @@
     .locals 1
 
     .prologue
-    .line 921
+    .line 913
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainer:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -555,43 +495,71 @@
     return v0
 .end method
 
-.method protected isVisibleWrap()Z
-    .locals 1
+.method protected isVisible()Z
+    .locals 3
 
     .prologue
-    .line 925
-    invoke-direct {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isVisible()Z
+    .line 922
+    iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
-    move-result v0
+    if-eqz v0, :cond_0
 
-    return v0
-.end method
-
-.method public offsetHasBeenChanged()Z
-    .locals 2
-
-    .prologue
+    .line 923
     const/4 v0, 0x1
 
-    .line 866
-    iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mNumberPreviousOffsets:I
-
-    if-le v1, v0, :cond_0
-
+    .line 930
     :goto_0
     return v0
 
+    .line 926
     :cond_0
+    iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->isInBatchEditMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 927
     const/4 v0, 0x0
 
     goto :goto_0
+
+    .line 930
+    :cond_1
+    iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
+
+    iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
+
+    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mHotspotX:I
+
+    add-int/2addr v1, v2
+
+    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/Editor;->isPositionVisibleWrap(II)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method protected needShowHandle()Z
+    .locals 1
+
+    .prologue
+    .line 917
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public onDetached()V
     .locals 0
 
     .prologue
-    .line 1080
+    .line 1085
     return-void
 .end method
 
@@ -602,7 +570,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1016
+    .line 1021
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Landroid/view/View;->mRight:I
@@ -619,12 +587,12 @@
 
     invoke-virtual {v0, v4, v4, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1017
+    .line 1022
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1018
+    .line 1023
     return-void
 .end method
 
@@ -632,7 +600,7 @@
     .locals 0
 
     .prologue
-    .line 1077
+    .line 1082
     return-void
 .end method
 
@@ -642,7 +610,7 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 871
+    .line 867
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -657,7 +625,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/MiuiCursorController$MiuiHandleView;->setMeasuredDimension(II)V
 
-    .line 872
+    .line 868
     return-void
 .end method
 
@@ -670,23 +638,23 @@
 
     const/4 v10, 0x0
 
-    .line 1022
+    .line 1027
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v9
 
     packed-switch v9, :pswitch_data_0
 
-    .line 1068
+    .line 1073
     :goto_0
     iget-object v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mCursorController:Landroid/widget/MiuiCursorController;
 
     invoke-virtual {v9, p0, p1}, Landroid/widget/MiuiCursorController;->onHandleTouchEvent(Landroid/widget/MiuiCursorController$MiuiHandleView;Landroid/view/MotionEvent;)Z
 
-    .line 1069
+    .line 1074
     return v11
 
-    .line 1024
+    .line 1029
     :pswitch_0
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->getCurrentCursorOffset()I
 
@@ -694,7 +662,7 @@
 
     invoke-direct {p0, v9}, Landroid/widget/MiuiCursorController$MiuiHandleView;->startTouchUpFilter(I)V
 
-    .line 1025
+    .line 1030
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v9
@@ -707,7 +675,7 @@
 
     iput v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetX:F
 
-    .line 1026
+    .line 1031
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v9
@@ -720,14 +688,14 @@
 
     iput v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetY:F
 
-    .line 1028
+    .line 1033
     iget-object v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v9}, Landroid/widget/Editor;->getPositionListenerPostion()J
 
     move-result-wide v4
 
-    .line 1029
+    .line 1034
     .local v4, pos:J
     #calls: Landroid/widget/MiuiCursorController;->extractRangeStartFromLong(J)I
     invoke-static {v4, v5}, Landroid/widget/MiuiCursorController;->access$300(J)I
@@ -736,7 +704,7 @@
 
     iput v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentX:I
 
-    .line 1030
+    .line 1035
     #calls: Landroid/widget/MiuiCursorController;->extractRangeEndFromLong(J)I
     invoke-static {v4, v5}, Landroid/widget/MiuiCursorController;->access$400(J)I
 
@@ -744,25 +712,25 @@
 
     iput v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentY:I
 
-    .line 1031
+    .line 1036
     iput-boolean v11, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
     goto :goto_0
 
-    .line 1036
+    .line 1041
     .end local v4           #pos:J
     :pswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v7
 
-    .line 1037
+    .line 1042
     .local v7, rawX:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v8
 
-    .line 1040
+    .line 1045
     .local v8, rawY:F
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetY:F
 
@@ -772,7 +740,7 @@
 
     sub-float v6, v9, v10
 
-    .line 1041
+    .line 1046
     .local v6, previousVerticalOffset:F
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
 
@@ -786,7 +754,7 @@
 
     sub-float v0, v9, v10
 
-    .line 1043
+    .line 1048
     .local v0, currentVerticalOffset:F
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIdealVerticalOffset:F
 
@@ -794,20 +762,20 @@
 
     if-gez v9, :cond_0
 
-    .line 1044
+    .line 1049
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIdealVerticalOffset:F
 
     invoke-static {v0, v9}, Ljava/lang/Math;->min(FF)F
 
     move-result v3
 
-    .line 1045
+    .line 1050
     .local v3, newVerticalOffset:F
     invoke-static {v3, v6}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    .line 1050
+    .line 1055
     :goto_1
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentY:I
 
@@ -817,7 +785,7 @@
 
     iput v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetY:F
 
-    .line 1052
+    .line 1057
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetX:F
 
     sub-float v9, v7, v9
@@ -828,7 +796,7 @@
 
     add-float v1, v9, v10
 
-    .line 1053
+    .line 1058
     .local v1, newPosX:F
     iget v9, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetY:F
 
@@ -838,13 +806,13 @@
 
     add-float v2, v9, v10
 
-    .line 1055
+    .line 1060
     .local v2, newPosY:F
     invoke-virtual {p0, v1, v2}, Landroid/widget/MiuiCursorController$MiuiHandleView;->updatePosition(FF)V
 
     goto :goto_0
 
-    .line 1047
+    .line 1052
     .end local v1           #newPosX:F
     .end local v2           #newPosY:F
     .end local v3           #newVerticalOffset:F
@@ -855,7 +823,7 @@
 
     move-result v3
 
-    .line 1048
+    .line 1053
     .restart local v3       #newVerticalOffset:F
     invoke-static {v3, v6}, Ljava/lang/Math;->min(FF)F
 
@@ -863,7 +831,7 @@
 
     goto :goto_1
 
-    .line 1060
+    .line 1065
     .end local v0           #currentVerticalOffset:F
     .end local v3           #newVerticalOffset:F
     .end local v6           #previousVerticalOffset:F
@@ -872,18 +840,18 @@
     :pswitch_2
     invoke-direct {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->filterOnTouchUp()V
 
-    .line 1061
+    .line 1066
     iput-boolean v10, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
     goto/16 :goto_0
 
-    .line 1065
+    .line 1070
     :pswitch_3
     iput-boolean v10, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
     goto/16 :goto_0
 
-    .line 1022
+    .line 1027
     nop
 
     :pswitch_data_0
@@ -895,129 +863,58 @@
     .end packed-switch
 .end method
 
-.method protected positionAtCursorOffset(IZ)V
-    .locals 3
+.method public positionAtCursorOffset(IZ)V
+    .locals 1
     .parameter "offset"
     .parameter "parentScrolled"
 
     .prologue
-    .line 949
-    iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+    .line 941
+    iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    .line 951
-    iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
+    .line 943
+    iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
-    invoke-virtual {v1}, Landroid/widget/Editor;->prepareCursorControllers()V
+    invoke-virtual {v0}, Landroid/widget/Editor;->prepareCursorControllers()V
 
-    .line 970
+    .line 954
     :cond_0
     :goto_0
     return-void
 
-    .line 955
+    .line 947
     :cond_1
-    iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPreviousOffset:I
+    iget v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPreviousOffset:I
 
-    if-ne p1, v1, :cond_2
+    if-ne p1, v0, :cond_2
 
     if-eqz p2, :cond_0
 
-    .line 956
+    .line 948
     :cond_2
     invoke-virtual {p0, p1}, Landroid/widget/MiuiCursorController$MiuiHandleView;->updateSelection(I)V
 
-    .line 957
+    .line 949
     invoke-direct {p0, p1}, Landroid/widget/MiuiCursorController$MiuiHandleView;->addPositionToTouchUpFilter(I)V
 
-    .line 958
-    iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+    .line 950
+    const/4 v0, 0x0
 
-    invoke-virtual {v1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+    invoke-virtual {p0, p1, v0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->updatePositionXY(IZ)V
 
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Landroid/text/Layout;->getLineForOffset(I)I
-
-    move-result v0
-
-    .line 960
-    .local v0, line:I
-    iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
-
-    move-result v1
-
-    const/high16 v2, 0x3f00
-
-    sub-float/2addr v1, v2
-
-    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mHotspotX:I
-
-    int-to-float v2, v2
-
-    sub-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    iput v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
-
-    .line 961
-    iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/text/Layout;->getLineBottom(I)I
-
-    move-result v1
-
-    iput v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
-
-    .line 964
-    iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
-
-    iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v2}, Landroid/widget/TextView;->viewportToContentHorizontalOffset()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
-
-    .line 965
-    iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
-
-    iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v2}, Landroid/widget/TextView;->viewportToContentVerticalOffset()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
-
-    .line 967
+    .line 951
     iput p1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPreviousOffset:I
 
-    .line 968
-    const/4 v1, 0x1
+    .line 952
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionHasChanged:Z
+    iput-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionHasChanged:Z
 
     goto :goto_0
 .end method
@@ -1027,10 +924,10 @@
     .parameter "cc"
 
     .prologue
-    .line 893
+    .line 880
     iput-object p1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mCursorController:Landroid/widget/MiuiCursorController;
 
-    .line 894
+    .line 881
     return-void
 .end method
 
@@ -1039,22 +936,10 @@
     .parameter "type"
 
     .prologue
-    .line 889
+    .line 876
     iput p1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mType:I
 
-    .line 890
-    return-void
-.end method
-
-.method public setVisible(Z)V
-    .locals 0
-    .parameter "visible"
-
-    .prologue
-    .line 875
-    iput-boolean p1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mVisible:Z
-
-    .line 876
+    .line 877
     return-void
 .end method
 
@@ -1062,7 +947,7 @@
     .locals 3
 
     .prologue
-    .line 897
+    .line 884
     const-string v0, "MiuiHandleView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1093,18 +978,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 899
+    .line 886
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 906
+    .line 893
     :goto_0
     return-void
 
-    .line 901
+    .line 888
     :cond_0
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
@@ -1112,12 +997,12 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/widget/Editor;->addPositionListenerSubscriber(Landroid/widget/Editor$TextViewPositionListener;Z)V
 
-    .line 904
+    .line 891
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPreviousOffset:I
 
-    .line 905
+    .line 892
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->getCurrentCursorOffset()I
 
     move-result v0
@@ -1178,7 +1063,7 @@
     goto :goto_0
 .end method
 
-.method public abstract updatePosition(FF)V
+.method protected abstract updatePosition(FF)V
 .end method
 
 .method public updatePosition(IIZZ)V
@@ -1193,7 +1078,7 @@
 
     const/4 v3, -0x1
 
-    .line 975
+    .line 977
     const-string v0, "MiuiHandleView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1238,27 +1123,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 976
+    .line 979
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->getCurrentCursorOffset()I
 
     move-result v0
 
     invoke-virtual {p0, v0, p4}, Landroid/widget/MiuiCursorController$MiuiHandleView;->positionAtCursorOffset(IZ)V
 
-    .line 977
+    .line 980
     if-nez p3, :cond_0
 
     iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionHasChanged:Z
 
     if-eqz v0, :cond_5
 
-    .line 978
+    .line 981
     :cond_0
     iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mIsDragging:Z
 
     if-eqz v0, :cond_3
 
-    .line 980
+    .line 983
     iget v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentX:I
 
     if-ne p1, v0, :cond_1
@@ -1267,7 +1152,7 @@
 
     if-eq p2, v0, :cond_2
 
-    .line 981
+    .line 984
     :cond_1
     iget v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetX:F
 
@@ -1281,7 +1166,7 @@
 
     iput v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetX:F
 
-    .line 982
+    .line 985
     iget v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetY:F
 
     iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentY:I
@@ -1294,13 +1179,13 @@
 
     iput v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTouchToWindowOffsetY:F
 
-    .line 983
+    .line 986
     iput p1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentX:I
 
-    .line 984
+    .line 987
     iput p2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mLastParentY:I
 
-    .line 985
+    .line 988
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0}, Landroid/widget/Editor;->hasMagnifierController()Z
@@ -1309,7 +1194,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 986
+    .line 989
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0}, Landroid/widget/Editor;->getMagnifierController()Landroid/widget/MagnifierController;
@@ -1318,40 +1203,47 @@
 
     invoke-virtual {v0}, Landroid/widget/MagnifierController;->onParentChanged()V
 
-    .line 989
+    .line 992
     :cond_2
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->onHandleMoved()V
 
-    .line 992
+    .line 996
     :cond_3
-    invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isVisibleWrap()Z
+    invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isVisible()Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 993
+    .line 997
     iget v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerX:I
 
-    .line 994
+    .line 998
     iget v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
 
     add-int/2addr v0, p2
 
     iput v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerY:I
 
-    .line 995
+    .line 999
+    invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->needShowHandle()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 1000
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 996
+    .line 1001
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainer:Landroid/widget/PopupWindow;
 
     iget v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerX:I
@@ -1360,27 +1252,22 @@
 
     invoke-virtual {v0, v1, v2, v3, v3}, Landroid/widget/PopupWindow;->update(IIII)V
 
-    .line 1009
+    .line 1013
     :cond_4
     :goto_0
     iput-boolean v4, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionHasChanged:Z
 
-    .line 1011
+    .line 1016
     :cond_5
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mCursorController:Landroid/widget/MiuiCursorController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController;->updatePosition()V
 
-    .line 1012
+    .line 1017
     return-void
 
-    .line 998
+    .line 1003
     :cond_6
-    iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mVisible:Z
-
-    if-eqz v0, :cond_4
-
-    .line 999
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainer:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
@@ -1393,7 +1280,7 @@
 
     goto :goto_0
 
-    .line 1004
+    .line 1008
     :cond_7
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isShowing()Z
 
@@ -1401,10 +1288,134 @@
 
     if-eqz v0, :cond_4
 
-    .line 1005
+    .line 1009
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->dismiss()V
 
     goto :goto_0
+.end method
+
+.method protected updatePositionXY(IZ)V
+    .locals 4
+    .parameter "offset"
+    .parameter "container"
+
+    .prologue
+    .line 958
+    iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v2}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Landroid/text/Layout;->getLineForOffset(I)I
+
+    move-result v0
+
+    .line 959
+    .local v0, line:I
+    iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v2}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
+
+    move-result v2
+
+    const/high16 v3, 0x3f00
+
+    sub-float/2addr v2, v3
+
+    iget v3, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mHotspotX:I
+
+    int-to-float v3, v3
+
+    sub-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    iput v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
+
+    .line 960
+    iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v2}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/text/Layout;->getLineBottom(I)I
+
+    move-result v2
+
+    iput v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
+
+    .line 963
+    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
+
+    iget-object v3, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v3}, Landroid/widget/TextView;->viewportToContentHorizontalOffset()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    iput v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
+
+    .line 964
+    iget v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
+
+    iget-object v3, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v3}, Landroid/widget/TextView;->viewportToContentVerticalOffset()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    iput v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
+
+    .line 966
+    if-eqz p2, :cond_0
+
+    .line 967
+    const/4 v2, 0x2
+
+    new-array v1, v2, [I
+
+    .line 968
+    .local v1, location:[I
+    iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->getLocationOnScreen([I)V
+
+    .line 969
+    const/4 v2, 0x0
+
+    aget v2, v1, v2
+
+    iget v3, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionX:I
+
+    add-int/2addr v2, v3
+
+    iput v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerX:I
+
+    .line 970
+    const/4 v2, 0x1
+
+    aget v2, v1, v2
+
+    iget v3, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mPositionY:I
+
+    add-int/2addr v2, v3
+
+    iput v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mContainerY:I
+
+    .line 972
+    .end local v1           #location:[I
+    :cond_0
+    return-void
 .end method
 
 .method protected abstract updateSelection(I)V

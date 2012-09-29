@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+.field final synthetic dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     .prologue
     .line 114
-    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+    iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
@@ -49,7 +49,7 @@
     move-result-object v0
 
     .line 121
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-virtual {v1}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->getResources()Landroid/content/res/Resources;
 
@@ -83,7 +83,7 @@
     move-result-object v0
 
     .line 125
-    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->dk:Lcom/android/settings/fuelgauge/PowerUsageSummary;
+    iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->dn:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-static {v1}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->a(Lcom/android/settings/fuelgauge/PowerUsageSummary;)Landroid/preference/Preference;
 
