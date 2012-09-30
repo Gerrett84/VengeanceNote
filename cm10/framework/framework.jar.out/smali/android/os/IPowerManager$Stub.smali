@@ -30,6 +30,8 @@
 
 .field static final TRANSACTION_clearUserActivityTimeout:I = 0x8
 
+.field static final TRANSACTION_cpuBoost:I = 0x19
+
 .field static final TRANSACTION_crash:I = 0x10
 
 .field static final TRANSACTION_getLightSensorButtonBrightness:I = 0x17
@@ -168,7 +170,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 292
+    .line 301
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v7
@@ -880,7 +882,30 @@
 
     goto/16 :goto_0
 
+    .line 293
+    .end local v6           #_result:I
+    :sswitch_19
+    const-string v8, "android.os.IPowerManager"
+
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 295
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 296
+    .local v0, _arg0:I
+    invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->cpuBoost(I)V
+
+    .line 297
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
     .line 39
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -907,6 +932,7 @@
         0x16 -> :sswitch_16
         0x17 -> :sswitch_17
         0x18 -> :sswitch_18
+        0x19 -> :sswitch_19
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

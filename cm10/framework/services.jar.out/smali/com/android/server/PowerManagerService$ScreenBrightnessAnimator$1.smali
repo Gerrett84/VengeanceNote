@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2266
+    .line 2279
     iput-object p1, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,7 +43,7 @@
 
     const/4 v10, 0x0
 
-    .line 2268
+    .line 2281
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -68,7 +68,7 @@
 
     move v0, v9
 
-    .line 2271
+    .line 2284
     .local v0, brightnessMode:I
     :goto_0
     iget v11, p1, Landroid/os/Message;->what:I
@@ -77,26 +77,26 @@
 
     if-ne v11, v12, :cond_c
 
-    .line 2272
+    .line 2285
     iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 2273
+    .line 2286
     .local v4, mask:I
     iget v8, p1, Landroid/os/Message;->arg2:I
 
-    .line 2274
+    .line 2287
     .local v8, value:I
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v6
 
-    .line 2275
+    .line 2288
     .local v6, tStart:J
     and-int/lit8 v11, v4, 0x2
 
     if-eqz v11, :cond_0
 
-    .line 2277
+    .line 2290
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -108,7 +108,7 @@
 
     invoke-virtual {v11, v8, v0}, Lcom/android/server/LightsService$Light;->setBrightness(II)V
 
-    .line 2279
+    .line 2292
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -116,13 +116,13 @@
 
     sub-long v2, v11, v6
 
-    .line 2280
+    .line 2293
     .local v2, elapsed:J
     and-int/lit8 v11, v4, 0x4
 
     if-eqz v11, :cond_1
 
-    .line 2285
+    .line 2298
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -157,13 +157,13 @@
     :goto_1
     invoke-virtual {v12, v11}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
 
-    .line 2289
+    .line 2302
     :cond_1
     and-int/lit8 v11, v4, 0x8
 
     if-eqz v11, :cond_2
 
-    .line 2290
+    .line 2303
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -198,13 +198,13 @@
     :goto_2
     invoke-virtual {v12, v11}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
 
-    .line 2294
+    .line 2307
     :cond_2
     and-int/lit8 v11, v4, 0x2
 
     if-eqz v11, :cond_3
 
-    .line 2300
+    .line 2313
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -216,7 +216,7 @@
 
     invoke-virtual {v11, v8, v0}, Lcom/android/server/LightsService$Light;->setBrightness(II)V
 
-    .line 2301
+    .line 2314
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -224,13 +224,13 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLastLcdValue:I
     invoke-static {v11, v8}, Lcom/android/server/PowerManagerService;->access$5302(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2303
+    .line 2316
     :cond_3
     and-int/lit8 v11, v4, 0x4
 
     if-eqz v11, :cond_4
 
-    .line 2304
+    .line 2317
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -242,13 +242,13 @@
 
     invoke-virtual {v11, v8}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
 
-    .line 2306
+    .line 2319
     :cond_4
     and-int/lit8 v11, v4, 0x8
 
     if-eqz v11, :cond_5
 
-    .line 2307
+    .line 2320
     iget-object v11, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iget-object v11, v11, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->this$0:Lcom/android/server/PowerManagerService;
@@ -260,7 +260,7 @@
 
     invoke-virtual {v11, v8}, Lcom/android/server/LightsService$Light;->setBrightness(I)V
 
-    .line 2310
+    .line 2323
     :cond_5
     const-wide/16 v11, 0x64
 
@@ -268,7 +268,7 @@
 
     if-lez v11, :cond_6
 
-    .line 2311
+    .line 2324
     const-string v11, "PowerManagerService"
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -301,7 +301,7 @@
 
     invoke-static {v11, v12}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2316
+    .line 2329
     :cond_6
     const-wide/16 v11, 0x10
 
@@ -311,29 +311,29 @@
 
     const/16 v1, 0x10
 
-    .line 2317
+    .line 2330
     .local v1, delay:I
     :goto_3
     monitor-enter p0
 
-    .line 2318
+    .line 2331
     :try_start_0
     iget-object v9, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     iput v8, v9, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->currentValue:I
 
-    .line 2319
+    .line 2332
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2320
+    .line 2333
     iget-object v9, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 
     #calls: Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->animateInternal(IZI)V
     invoke-static {v9, v4, v10, v1}, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;->access$5400(Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;IZI)V
 
-    .line 2325
+    .line 2338
     .end local v1           #delay:I
     .end local v2           #elapsed:J
     .end local v4           #mask:I
@@ -347,7 +347,7 @@
     :cond_8
     move v0, v10
 
-    .line 2268
+    .line 2281
     goto/16 :goto_0
 
     .restart local v0       #brightnessMode:I
@@ -358,22 +358,22 @@
     :cond_9
     move v11, v8
 
-    .line 2285
+    .line 2298
     goto/16 :goto_1
 
     :cond_a
     move v11, v8
 
-    .line 2290
+    .line 2303
     goto :goto_2
 
     :cond_b
     move v1, v9
 
-    .line 2316
+    .line 2329
     goto :goto_3
 
-    .line 2319
+    .line 2332
     .restart local v1       #delay:I
     :catchall_0
     move-exception v9
@@ -385,7 +385,7 @@
 
     throw v9
 
-    .line 2321
+    .line 2334
     .end local v1           #delay:I
     .end local v2           #elapsed:J
     .end local v4           #mask:I
@@ -398,10 +398,10 @@
 
     if-ne v9, v10, :cond_7
 
-    .line 2322
+    .line 2335
     iget v5, p1, Landroid/os/Message;->arg1:I
 
-    .line 2323
+    .line 2336
     .local v5, mode:I
     iget-object v9, p0, Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator$1;->this$1:Lcom/android/server/PowerManagerService$ScreenBrightnessAnimator;
 

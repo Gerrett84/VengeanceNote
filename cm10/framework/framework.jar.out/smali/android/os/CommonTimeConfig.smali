@@ -333,10 +333,9 @@
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
     .line 374
-    :goto_0
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 370
+    :goto_0
     return v3
 
     .line 369
@@ -350,8 +349,12 @@
     .line 373
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
+    .line 374
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
     goto :goto_0
 
+    .line 373
     .end local v1           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v3
@@ -361,7 +364,6 @@
     .line 374
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 373
     throw v3
 .end method
 

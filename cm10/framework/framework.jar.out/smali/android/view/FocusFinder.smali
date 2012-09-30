@@ -161,10 +161,8 @@
     .local v6, next:Landroid/view/View;
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 187
     return-object v6
 
-    .line 189
     .end local v6           #next:Landroid/view/View;
     :catchall_0
     move-exception v0

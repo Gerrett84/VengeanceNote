@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2802
+    .line 2815
     iput-object p1, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 
     const/4 v4, 0x0
 
-    .line 2804
+    .line 2817
     iget-object v5, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
@@ -55,10 +55,10 @@
 
     monitor-enter v5
 
-    .line 2805
+    .line 2818
     const/4 v0, 0x0
 
-    .line 2806
+    .line 2819
     .local v0, again:Z
     :try_start_0
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
@@ -79,7 +79,7 @@
 
     if-nez v6, :cond_2
 
-    .line 2807
+    .line 2820
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLightFilterSamples:[I
@@ -96,7 +96,7 @@
 
     aget v2, v6, v7
 
-    .line 2808
+    .line 2821
     .local v2, discarded:I
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -121,7 +121,7 @@
 
     aput v8, v6, v7
 
-    .line 2809
+    .line 2822
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v7, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
@@ -147,7 +147,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLightFilterIndex:I
     invoke-static {v6, v7}, Lcom/android/server/PowerManagerService;->access$7302(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2811
+    .line 2824
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v7, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
@@ -175,7 +175,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLightFilterSampleCounter:I
     invoke-static {v6, v7}, Lcom/android/server/PowerManagerService;->access$7402(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2813
+    .line 2826
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLightFilterSampleCounter:I
@@ -194,10 +194,10 @@
 
     if-ge v6, v7, :cond_0
 
-    .line 2814
+    .line 2827
     const/4 v2, 0x0
 
-    .line 2817
+    .line 2830
     :cond_0
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -210,12 +210,12 @@
 
     invoke-static {v6, v7}, Lcom/android/server/PowerManagerService;->access$7512(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2819
+    .line 2832
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-static {v6, v2}, Lcom/android/server/PowerManagerService;->access$7520(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2821
+    .line 2834
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLightFilterSum:I
@@ -240,7 +240,7 @@
 
     move-result v1
 
-    .line 2823
+    .line 2836
     .local v1, average:I
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -253,7 +253,7 @@
 
     if-eq v1, v6, :cond_1
 
-    .line 2824
+    .line 2837
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v7, 0x1
@@ -261,7 +261,7 @@
     #calls: Lcom/android/server/PowerManagerService;->lightSensorChangedLocked(IZ)V
     invoke-static {v6, v1, v7}, Lcom/android/server/PowerManagerService;->access$6900(Lcom/android/server/PowerManagerService;IZ)V
 
-    .line 2826
+    .line 2839
     :cond_1
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -281,7 +281,7 @@
 
     if-eq v6, v7, :cond_3
 
-    .line 2827
+    .line 2840
     iget-object v3, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v4, 0x0
@@ -289,17 +289,17 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLightFilterEqualCounter:I
     invoke-static {v3, v4}, Lcom/android/server/PowerManagerService;->access$7702(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2828
+    .line 2841
     const/4 v0, 0x1
 
-    .line 2844
+    .line 2857
     .end local v1           #average:I
     .end local v2           #discarded:I
     :cond_2
     :goto_0
     if-eqz v0, :cond_5
 
-    .line 2845
+    .line 2858
     iget-object v3, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
@@ -325,14 +325,14 @@
 
     invoke-virtual {v3, v4, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2849
+    .line 2862
     :goto_1
     monitor-exit v5
 
-    .line 2850
+    .line 2863
     return-void
 
-    .line 2835
+    .line 2848
     .restart local v1       #average:I
     .restart local v2       #discarded:I
     :cond_3
@@ -340,7 +340,7 @@
 
     invoke-static {v6}, Lcom/android/server/PowerManagerService;->access$7708(Lcom/android/server/PowerManagerService;)I
 
-    .line 2836
+    .line 2849
     iget-object v6, p0, Lcom/android/server/PowerManagerService$10;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLightFilterEqualCounter:I
@@ -369,7 +369,7 @@
 
     goto :goto_2
 
-    .line 2847
+    .line 2860
     .end local v1           #average:I
     .end local v2           #discarded:I
     :cond_5
@@ -380,7 +380,7 @@
 
     goto :goto_1
 
-    .line 2849
+    .line 2862
     :catchall_0
     move-exception v3
 

@@ -568,7 +568,6 @@
     :cond_3
     invoke-virtual {p0}, Landroid/view/Surface;->release()V
 
-    .line 540
     throw v0
 .end method
 

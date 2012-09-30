@@ -101,7 +101,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x1040346
+    const v0, 0x1040348
 
     :goto_0
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
@@ -203,7 +203,7 @@
 
     .line 107
     :cond_0
-    const v0, 0x1040345
+    const v0, 0x1040347
 
     goto :goto_0
 .end method
@@ -647,7 +647,7 @@
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/AccountUnlockScreen;->mContext:Landroid/content/Context;
 
-    const v3, 0x104034d
+    const v3, 0x104034f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

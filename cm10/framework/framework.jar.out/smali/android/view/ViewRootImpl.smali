@@ -3707,7 +3707,7 @@
     :try_start_4
     invoke-virtual {p1, v1}, Landroid/view/Surface;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
     :try_end_4
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_3
 
     move v6, v7
 
@@ -3810,6 +3810,7 @@
 
     iput-boolean v9, p2, Landroid/view/View$AttachInfo;->mIgnoreDirtyState:Z
 
+    .line 2260
     :cond_9
     throw v8
     :try_end_6
@@ -3823,9 +3824,9 @@
     :try_start_7
     invoke-virtual {p1, v1}, Landroid/view/Surface;->unlockCanvasAndPost(Landroid/graphics/Canvas;)V
     :try_end_7
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_7 .. :try_end_7} :catch_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_7 .. :try_end_7} :catch_2
 
-    .line 2272
+    .line 2266
     throw v8
 
     .line 2268
@@ -3841,6 +3842,7 @@
     invoke-static {v8, v9, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 2270
+    :goto_3
     iput-boolean v7, p0, Landroid/view/ViewRootImpl;->mLayoutRequested:Z
 
     goto/16 :goto_0
@@ -3858,10 +3860,7 @@
 
     invoke-static {v8, v9, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2270
-    iput-boolean v7, p0, Landroid/view/ViewRootImpl;->mLayoutRequested:Z
-
-    goto/16 :goto_0
+    goto :goto_3
 
     .line 2204
     .end local v0           #bottom:I
@@ -5896,6 +5895,7 @@
     .line 2022
     invoke-static {v8, v9}, Landroid/os/Trace;->traceEnd(J)V
 
+    .line 2021
     throw v6
 
     .line 2044
@@ -8302,6 +8302,7 @@
 
     iput-object v10, v0, Landroid/view/ViewRootImpl;->mResizeBuffer:Landroid/view/HardwareLayer;
 
+    .line 1461
     :cond_3f
     throw v4
 
@@ -15544,6 +15545,7 @@
     :try_start_5
     invoke-virtual {p2}, Landroid/view/WindowManager$LayoutParams;->restore()V
 
+    .line 564
     :cond_a
     throw v1
 

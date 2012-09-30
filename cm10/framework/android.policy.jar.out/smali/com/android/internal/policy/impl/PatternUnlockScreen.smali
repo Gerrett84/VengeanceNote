@@ -207,7 +207,7 @@
     .line 180
     iget-object v0, p0, Lcom/android/internal/policy/impl/PatternUnlockScreen;->mForgotPatternButton:Landroid/widget/Button;
 
-    const v1, 0x1040344
+    const v1, 0x1040346
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 

@@ -769,6 +769,7 @@
     <string name="lockscreen_password_wrong">Prøv igen</string>
     <string name="faceunlock_multiple_failures">Det maksimale antal forsøg på at bruge Ansigtslås er overskredet</string>
     <string name="lockscreen_plugged_in">Oplader, %d %%</string>
+    <string name="lockscreen_discharging">Aflader, %d%%</string>
     <string name="lockscreen_charged">Opladt.</string>
     <string name="lockscreen_battery_short">%d %%</string>
     <string name="lockscreen_low_battery">Tilslut din oplader.</string>
@@ -1155,6 +1156,7 @@ for kontoen %s."</string>
     <string name="share">Del</string>
     <string name="find">Find</string>
     <string name="websearch">Websøgning</string>
+    <string name="openurl">Åbn URL</string>
     <string name="gpsNotifTicker">Placeringsanmodning fra %s</string>
     <string name="gpsNotifTitle">Placeringsanmodning</string>
     <string name="gpsNotifMessage">Anmodet om af %1$s (%2$s)</string>
@@ -1212,6 +1214,7 @@ for kontoen %s."</string>
     <string name="action_menu_overflow_description">Flere valgmuligheder</string>
     <string name="storage_internal">Internt lager</string>
     <string name="storage_sd_card">SD-kort</string>
+    <string name="storage_sd_dock_card">Dockstationens SD-kort</string>
     <string name="storage_usb">USB-lager</string>
     <string name="extract_edit_menu_button">Rediger</string>
     <string name="data_usage_warning_title">Advarsel om dataforbrug</string>
@@ -1319,4 +1322,7 @@ for kontoen %s."</string>
     <string name="weather_no_data">Ingen data</string>
     <string name="weather_tap_to_refresh">Tryk for at opdatere</string>
     <string name="weather_refreshing">Opdaterer</string>
+    <string name="weather_last_sync_just_now">Lige nu</string>
+    <string name="toast_rotation_unlocked">Skærmrotation Ulåst</string>
+    <string name="toast_rotation_locked">Skærmrotation Låst</string>
 </resources>

@@ -122,6 +122,5 @@
     .line 110
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 109
     throw v2
 .end method

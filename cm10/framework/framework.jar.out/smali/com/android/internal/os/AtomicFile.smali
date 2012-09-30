@@ -304,7 +304,6 @@
     .line 165
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
 
-    .line 154
     return-object v2
 
     .line 156

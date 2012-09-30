@@ -240,7 +240,7 @@
 
     .line 140
     .local v8, actualTitle:Ljava/lang/String;
-    const v2, 0x1040424
+    const v2, 0x1040426
 
     const/4 v3, 0x1
 
@@ -263,7 +263,7 @@
     if-nez v12, :cond_1
 
     .line 179
-    const v2, 0x1040427
+    const v2, 0x1040429
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -500,7 +500,6 @@
     .line 172
     invoke-interface {v11}, Landroid/database/Cursor;->close()V
 
-    .line 171
     :cond_8
     throw v2
 
@@ -544,13 +543,6 @@
     return-object v0
 
     .line 120
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
-
-    throw v0
-
     :cond_0
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
@@ -559,6 +551,14 @@
     const/4 v0, 0x0
 
     goto :goto_0
+
+    .line 120
+    :catchall_0
+    move-exception v0
+
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    throw v0
 .end method
 
 

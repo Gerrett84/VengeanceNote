@@ -2324,11 +2324,11 @@
     if-eqz v16, :cond_9
 
     .line 1190
-    :goto_7
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
     .line 1194
     :cond_9
+    :goto_7
     return-object v25
 
     .line 1096
@@ -2392,6 +2392,9 @@
     move-object/from16 v0, v28
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_3
 
@@ -2409,6 +2412,9 @@
     .line 1189
     if-eqz v16, :cond_9
 
+    .line 1190
+    invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
+
     goto :goto_7
 
     .line 1140
@@ -2423,6 +2429,7 @@
     :pswitch_0
     const/16 v2, 0xa
 
+    :try_start_2
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->indexOf(I)I
@@ -2461,9 +2468,9 @@
     move-object/from16 v0, v28
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
     goto/16 :goto_4
 
@@ -2485,7 +2492,6 @@
     .line 1190
     invoke-interface/range {v16 .. v16}, Landroid/database/Cursor;->close()V
 
-    .line 1189
     :cond_d
     throw v2
 
@@ -2500,7 +2506,7 @@
     .restart local v32       #start:Ljava/util/Date;
     .restart local v33       #title:Ljava/lang/String;
     :cond_e
-    :try_start_2
+    :try_start_3
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2628,15 +2634,13 @@
     move-object/from16 v1, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
     goto/16 :goto_6
 
     .line 1137
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -4842,7 +4846,7 @@
     if-ne p2, v3, :cond_1
 
     .line 1306
-    const v2, 0x1040322
+    const v2, 0x1040324
 
     .line 1307
     .local v2, textId:I
@@ -4872,7 +4876,7 @@
 
     .line 1310
     :cond_1
-    const v2, 0x1040321
+    const v2, 0x1040323
 
     .line 1311
     .restart local v2       #textId:I

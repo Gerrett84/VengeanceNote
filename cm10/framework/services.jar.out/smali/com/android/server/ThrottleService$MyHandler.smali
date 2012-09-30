@@ -471,9 +471,9 @@
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 624
-    const v21, 0x10404b1
+    const v21, 0x10404b3
 
-    const v22, 0x10404b2
+    const v22, 0x10404b4
 
     const v23, 0x1080583
 
@@ -713,9 +713,9 @@
     invoke-virtual/range {v21 .. v22}, Landroid/app/NotificationManager;->cancel(I)V
 
     .line 659
-    const v21, 0x10404af
+    const v21, 0x10404b1
 
-    const v22, 0x10404b0
+    const v22, 0x10404b2
 
     const v23, 0x1080583
 

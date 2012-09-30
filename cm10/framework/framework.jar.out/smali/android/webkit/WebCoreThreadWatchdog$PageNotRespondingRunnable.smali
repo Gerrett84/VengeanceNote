@@ -128,13 +128,13 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x10403ff
+    const v1, 0x1040401
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x10403fc
+    const v1, 0x10403fe
 
     new-instance v2, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$3;
 
@@ -144,7 +144,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403fe
+    const v1, 0x1040400
 
     new-instance v2, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$2;
 

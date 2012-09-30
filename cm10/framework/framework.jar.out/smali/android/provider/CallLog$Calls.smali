@@ -597,13 +597,13 @@
     .line 369
     if-eqz v6, :cond_1
 
-    :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 367
     :cond_1
+    :goto_0
     return-object v1
 
+    .line 367
     :cond_2
     const/4 v1, 0x0
 
@@ -616,6 +616,8 @@
 
     .line 369
     if-eqz v6, :cond_1
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 

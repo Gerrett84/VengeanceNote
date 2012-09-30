@@ -1884,7 +1884,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 815
     .end local v1           #is:Ljava/io/FileInputStream;
@@ -1938,7 +1938,7 @@
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_5
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 836
     :cond_1
@@ -1974,7 +1974,7 @@
     :try_start_3
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_6
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 836
     :cond_4
@@ -1992,10 +1992,11 @@
 
     goto :goto_2
 
-    .line 830
-    :catchall_0
+    .line 827
+    :catch_0
     move-exception v5
 
+    .line 830
     :goto_5
     if-eqz v1, :cond_5
 
@@ -2010,11 +2011,10 @@
     :goto_6
     invoke-static {v4}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
-    .line 830
-    throw v5
+    goto :goto_4
 
-    .line 827
-    :catch_0
+    .line 828
+    :catch_1
     move-exception v5
 
     .line 830
@@ -2025,7 +2025,7 @@
     :try_start_5
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_5
 
     .line 836
     :cond_6
@@ -2034,56 +2034,63 @@
 
     goto :goto_4
 
-    .line 833
-    :catch_1
-    move-exception v5
-
-    goto :goto_8
-
-    .line 828
-    :catch_2
-    move-exception v5
-
     .line 830
+    :catchall_0
+    move-exception v5
+
     :goto_9
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
     .line 832
     :try_start_6
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_6
 
-    goto :goto_8
+    .line 836
+    :cond_7
+    :goto_a
+    invoke-static {v4}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+
+    throw v5
 
     .line 833
-    :catch_3
-    move-exception v5
-
-    goto :goto_8
-
-    :catch_4
-    move-exception v6
-
-    goto :goto_6
-
     .end local v1           #is:Ljava/io/FileInputStream;
     .restart local v0       #i:I
     .restart local v2       #is:Ljava/io/FileInputStream;
     .restart local v3       #len:I
-    :catch_5
+    :catch_2
     move-exception v6
 
     goto :goto_1
 
     .end local v0           #i:I
-    :catch_6
+    :catch_3
     move-exception v5
 
     goto :goto_3
 
-    .line 830
+    .end local v2           #is:Ljava/io/FileInputStream;
     .end local v3           #len:I
+    .restart local v1       #is:Ljava/io/FileInputStream;
+    :catch_4
+    move-exception v5
+
+    goto :goto_6
+
+    :catch_5
+    move-exception v5
+
+    goto :goto_8
+
+    :catch_6
+    move-exception v6
+
+    goto :goto_a
+
+    .line 830
+    .end local v1           #is:Ljava/io/FileInputStream;
+    .restart local v2       #is:Ljava/io/FileInputStream;
     :catchall_1
     move-exception v5
 
@@ -2091,7 +2098,7 @@
 
     .end local v2           #is:Ljava/io/FileInputStream;
     .restart local v1       #is:Ljava/io/FileInputStream;
-    goto :goto_5
+    goto :goto_9
 
     .line 828
     .end local v1           #is:Ljava/io/FileInputStream;
@@ -2103,7 +2110,7 @@
 
     .end local v2           #is:Ljava/io/FileInputStream;
     .restart local v1       #is:Ljava/io/FileInputStream;
-    goto :goto_9
+    goto :goto_7
 
     .line 827
     .end local v1           #is:Ljava/io/FileInputStream;
@@ -2115,7 +2122,7 @@
 
     .end local v2           #is:Ljava/io/FileInputStream;
     .restart local v1       #is:Ljava/io/FileInputStream;
-    goto :goto_7
+    goto :goto_5
 .end method
 
 

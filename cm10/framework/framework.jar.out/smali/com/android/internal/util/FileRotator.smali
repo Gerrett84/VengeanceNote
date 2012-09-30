@@ -630,7 +630,6 @@
     .line 381
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 380
     throw v2
 .end method
 

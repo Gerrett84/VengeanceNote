@@ -1345,7 +1345,7 @@
     .local v3, n:Landroid/app/Notification;
     iget-object v8, p0, Landroid/accounts/AccountManagerService;->mContext:Landroid/content/Context;
 
-    const v9, 0x1040499
+    const v9, 0x104049b
 
     const/4 v10, 0x1
 

@@ -1090,8 +1090,8 @@
     invoke-direct {v2, v0}, Ljava/io/FileReader;-><init>(Ljava/io/File;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_6
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_7
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 1315
     .end local v1           #confreader:Ljava/io/FileReader;
@@ -1125,7 +1125,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_6
 
     move-result v7
 
@@ -1137,17 +1137,16 @@
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileReader;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
     :cond_1
-    :goto_1
     move-object v1, v2
 
     .line 1337
     .end local v2           #confreader:Ljava/io/FileReader;
     .restart local v1       #confreader:Ljava/io/FileReader;
     :cond_2
-    :goto_2
+    :goto_1
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v7
@@ -1184,7 +1183,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_5
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_6
 
     goto :goto_0
 
@@ -1198,7 +1197,7 @@
     .line 1334
     .end local v2           #confreader:Ljava/io/FileReader;
     .restart local v1       #confreader:Ljava/io/FileReader;
-    :goto_3
+    :goto_2
     if-eqz v1, :cond_2
 
     :try_start_4
@@ -1206,20 +1205,32 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_1
     move-exception v7
 
-    goto :goto_2
+    goto :goto_1
+
+    .end local v1           #confreader:Ljava/io/FileReader;
+    .restart local v2       #confreader:Ljava/io/FileReader;
+    :catch_2
+    move-exception v7
+
+    move-object v1, v2
+
+    .line 1335
+    .end local v2           #confreader:Ljava/io/FileReader;
+    .restart local v1       #confreader:Ljava/io/FileReader;
+    goto :goto_1
 
     .line 1331
-    :catch_2
+    :catch_3
     move-exception v3
 
     .line 1332
     .local v3, e:Ljava/lang/Exception;
-    :goto_4
+    :goto_3
     :try_start_5
     const-string v7, "InputManager"
 
@@ -1261,38 +1272,38 @@
     :try_start_6
     invoke-virtual {v1}, Ljava/io/FileReader;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
-    goto :goto_2
+    goto :goto_1
 
-    .end local v3           #e:Ljava/lang/Exception;
-    :catchall_0
-    move-exception v7
-
-    :goto_5
-    if-eqz v1, :cond_4
-
-    :try_start_7
-    invoke-virtual {v1}, Ljava/io/FileReader;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
-
-    :cond_4
-    :goto_6
-    throw v7
-
-    :catch_3
-    move-exception v8
-
-    goto :goto_6
-
-    .end local v1           #confreader:Ljava/io/FileReader;
-    .restart local v2       #confreader:Ljava/io/FileReader;
     :catch_4
     move-exception v7
 
     goto :goto_1
 
+    .end local v3           #e:Ljava/lang/Exception;
+    :catchall_0
+    move-exception v7
+
+    :goto_4
+    if-eqz v1, :cond_4
+
+    :try_start_7
+    invoke-virtual {v1}, Ljava/io/FileReader;->close()V
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
+
+    :cond_4
+    :goto_5
+    throw v7
+
+    :catch_5
+    move-exception v8
+
+    goto :goto_5
+
+    .end local v1           #confreader:Ljava/io/FileReader;
+    .restart local v2       #confreader:Ljava/io/FileReader;
     :catchall_1
     move-exception v7
 
@@ -1300,25 +1311,25 @@
 
     .end local v2           #confreader:Ljava/io/FileReader;
     .restart local v1       #confreader:Ljava/io/FileReader;
-    goto :goto_5
+    goto :goto_4
 
     .line 1331
     .end local v1           #confreader:Ljava/io/FileReader;
     .restart local v2       #confreader:Ljava/io/FileReader;
-    :catch_5
+    :catch_6
     move-exception v3
 
     move-object v1, v2
 
     .end local v2           #confreader:Ljava/io/FileReader;
     .restart local v1       #confreader:Ljava/io/FileReader;
-    goto :goto_4
+    goto :goto_3
 
     .line 1329
-    :catch_6
+    :catch_7
     move-exception v7
 
-    goto :goto_3
+    goto :goto_2
 .end method
 
 .method private getHoverTapSlop()I
@@ -1783,7 +1794,7 @@
     .line 674
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v1, 0x1040470
+    const v1, 0x1040472
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -2185,7 +2196,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x1040470
+    const v5, 0x1040472
 
     const/4 v4, 0x0
 
@@ -2246,7 +2257,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040471
+    const v4, 0x1040473
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

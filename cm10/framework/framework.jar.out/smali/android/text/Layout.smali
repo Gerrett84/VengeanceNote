@@ -2175,7 +2175,6 @@
     .line 1556
     invoke-static {v15}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
-    .line 1553
     return v3
 
     .line 1528
@@ -2240,7 +2239,6 @@
     .line 1556
     invoke-static {v15}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
-    .line 1555
     throw v3
 .end method
 

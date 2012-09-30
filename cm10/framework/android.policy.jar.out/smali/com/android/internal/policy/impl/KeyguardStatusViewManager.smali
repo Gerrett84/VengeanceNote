@@ -512,7 +512,7 @@
     .line 267
     iget-object v5, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyCallButton:Landroid/widget/Button;
 
-    const v6, 0x1040321
+    const v6, 0x1040323
 
     invoke-virtual {v5, v6}, Landroid/widget/Button;->setText(I)V
 
@@ -949,7 +949,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040329
+    const v2, 0x104032b
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -970,7 +970,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040327
+    const v2, 0x1040329
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -1001,7 +1001,7 @@
 
     move-result-object v1
 
-    const v2, 0x104032b
+    const v2, 0x104032d
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -1033,7 +1033,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040328
+    const v2, 0x104032a
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -1235,7 +1235,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040329
+    const v2, 0x104032b
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1253,7 +1253,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040327
+    const v2, 0x1040329
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -1284,7 +1284,7 @@
 
     move-result-object v1
 
-    const v2, 0x104032b
+    const v2, 0x104032d
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -1316,7 +1316,7 @@
 
     move-result-object v1
 
-    const v2, 0x1040328
+    const v2, 0x104032a
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -1991,7 +1991,7 @@
     .line 490
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherCity:Landroid/widget/TextView;
 
-    const v1, 0x1040565
+    const v1, 0x1040567
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -2013,7 +2013,7 @@
     .line 494
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherCondition:Landroid/widget/TextView;
 
-    const v1, 0x1040566
+    const v1, 0x1040568
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -2347,7 +2347,7 @@
 
     iget-object v1, v0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherUpdateTime:Landroid/widget/TextView;
 
-    const v2, 0x1040568
+    const v2, 0x104056a
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
@@ -2705,7 +2705,7 @@
     .parameter "simState"
 
     .prologue
-    const v5, 0x104032c
+    const v5, 0x104032e
 
     const/4 v4, 0x1
 
@@ -2780,7 +2780,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040338
+    const v3, 0x104033a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2793,7 +2793,7 @@
     move-result-object v1
 
     .line 945
-    const v0, 0x104031f
+    const v0, 0x1040321
 
     .line 946
     goto :goto_0
@@ -2815,7 +2815,7 @@
     move-result-object v1
 
     .line 956
-    const v0, 0x104032f
+    const v0, 0x1040331
 
     .line 957
     goto :goto_0
@@ -2826,14 +2826,14 @@
 
     move-result-object v2
 
-    const v3, 0x1040330
+    const v3, 0x1040332
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
 
     .line 962
-    const v0, 0x1040331
+    const v0, 0x1040333
 
     .line 963
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
@@ -2857,7 +2857,7 @@
     move-result-object v1
 
     .line 970
-    const v0, 0x104032e
+    const v0, 0x1040330
 
     .line 971
     iput-boolean v4, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mEmergencyButtonEnabledBecauseSimLocked:Z
@@ -2870,7 +2870,7 @@
 
     move-result-object v2
 
-    const v3, 0x104033b
+    const v3, 0x104033d
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2893,7 +2893,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040339
+    const v3, 0x104033b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -3531,7 +3531,7 @@
     .line 1126
     iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager;->mWeatherCondition:Landroid/widget/TextView;
 
-    const v1, 0x1040567
+    const v1, 0x1040569
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -3630,7 +3630,7 @@
 
     move-result-object v0
 
-    const v1, 0x1040326
+    const v1, 0x1040328
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

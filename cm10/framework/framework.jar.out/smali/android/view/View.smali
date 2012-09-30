@@ -4679,11 +4679,11 @@
 
     if-eqz v1, :cond_1
 
-    if-nez p2, :cond_10
+    if-nez p2, :cond_e
 
     iget-boolean v1, p0, Landroid/view/View;->mRecreateDisplayList:Z
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_e
 
     .line 12341
     :cond_1
@@ -4874,7 +4874,7 @@
     invoke-virtual {p1, v8}, Landroid/view/DisplayList;->setCaching(Z)V
 
     .line 12417
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_10
 
     .line 12418
     const/4 v1, 0x0
@@ -4964,7 +4964,7 @@
 
     invoke-virtual {p1, v2, v3, v13, v9}, Landroid/view/DisplayList;->setLeftTopRightBottom(IIII)V
 
-    .line 12420
+    .line 12413
     :goto_5
     throw v1
 
@@ -5065,24 +5065,13 @@
 
     goto :goto_3
 
-    .line 12420
-    :cond_e
-    invoke-virtual {p0, p1}, Landroid/view/View;->setDisplayListProperties(Landroid/view/DisplayList;)V
-
-    goto :goto_4
-
-    .end local v11           #layerType:I
-    :cond_f
-    invoke-virtual {p0, p1}, Landroid/view/View;->setDisplayListProperties(Landroid/view/DisplayList;)V
-
-    goto :goto_5
-
     .line 12423
     .end local v0           #canvas:Landroid/view/HardwareCanvas;
     .end local v8           #caching:Z
     .end local v9           #height:I
+    .end local v11           #layerType:I
     .end local v13           #width:I
-    :cond_10
+    :cond_e
     if-nez p2, :cond_7
 
     .line 12424
@@ -5102,6 +5091,22 @@
     and-int/2addr v1, v2
 
     iput v1, p0, Landroid/view/View;->mPrivateFlags:I
+
+    goto/16 :goto_4
+
+    .line 12420
+    .restart local v0       #canvas:Landroid/view/HardwareCanvas;
+    .restart local v8       #caching:Z
+    .restart local v9       #height:I
+    .restart local v13       #width:I
+    :cond_f
+    invoke-virtual {p0, p1}, Landroid/view/View;->setDisplayListProperties(Landroid/view/DisplayList;)V
+
+    goto :goto_5
+
+    .restart local v11       #layerType:I
+    :cond_10
+    invoke-virtual {p0, p1}, Landroid/view/View;->setDisplayListProperties(Landroid/view/DisplayList;)V
 
     goto/16 :goto_4
 .end method

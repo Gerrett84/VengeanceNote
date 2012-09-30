@@ -443,7 +443,7 @@
     invoke-virtual {v6}, Ljava/io/BufferedReader;->close()V
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_3
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
 
     :cond_4
     :goto_4
@@ -473,10 +473,20 @@
     invoke-virtual {v7}, Ljava/io/BufferedReader;->close()V
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_4
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
 
     :cond_6
-    :goto_5
+    move-object v6, v7
+
+    .end local v7           #reader:Ljava/io/BufferedReader;
+    .restart local v6       #reader:Ljava/io/BufferedReader;
+    goto/16 :goto_0
+
+    .end local v6           #reader:Ljava/io/BufferedReader;
+    .restart local v7       #reader:Ljava/io/BufferedReader;
+    :catch_3
+    move-exception v9
+
     move-object v6, v7
 
     .line 255
@@ -486,22 +496,11 @@
 
     .line 254
     .end local v2           #line:Ljava/lang/String;
-    :catch_3
+    :catch_4
     move-exception v11
 
     goto :goto_4
 
-    .end local v6           #reader:Ljava/io/BufferedReader;
-    .restart local v2       #line:Ljava/lang/String;
-    .restart local v7       #reader:Ljava/io/BufferedReader;
-    :catch_4
-    move-exception v9
-
-    goto :goto_5
-
-    .end local v2           #line:Ljava/lang/String;
-    .end local v7           #reader:Ljava/io/BufferedReader;
-    .restart local v6       #reader:Ljava/io/BufferedReader;
     :catchall_2
     move-exception v9
 

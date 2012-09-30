@@ -4329,7 +4329,7 @@
 
     move-object/from16 v23, v0
 
-    const v25, 0x104046d
+    const v25, 0x104046f
 
     new-instance v26, Lcom/android/server/InputMethodManagerService$8;
 
@@ -8761,7 +8761,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mRes:Landroid/content/res/Resources;
 
-    const v14, 0x104046c
+    const v14, 0x104046e
 
     invoke-virtual {v12, v14}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -8863,7 +8863,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v14, 0x104046c
+    const v14, 0x104046e
 
     move-object/from16 v0, p0
 
@@ -8974,7 +8974,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v14, 0x104046c
+    const v14, 0x104046e
 
     invoke-virtual {v12, v14}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -10383,7 +10383,7 @@
 
     const-string v3, "android.intent.extra.client_label"
 
-    const v4, 0x104049a
+    const v4, 0x104049c
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 

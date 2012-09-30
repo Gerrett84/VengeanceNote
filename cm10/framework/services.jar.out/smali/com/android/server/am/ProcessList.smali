@@ -430,7 +430,7 @@
     invoke-direct {v2, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 209
     .end local v1           #fos:Ljava/io/FileOutputStream;
@@ -446,32 +446,43 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 213
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     .line 215
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :cond_0
-    :goto_0
     move-object v1, v2
 
     .line 220
     .end local v2           #fos:Ljava/io/FileOutputStream;
     .restart local v1       #fos:Ljava/io/FileOutputStream;
-    :cond_1
-    :goto_1
+    :cond_0
+    :goto_0
     return-void
 
-    .line 210
+    .line 216
+    .end local v1           #fos:Ljava/io/FileOutputStream;
+    .restart local v2       #fos:Ljava/io/FileOutputStream;
     :catch_0
+    move-exception v3
+
+    move-object v1, v2
+
+    .line 217
+    .end local v2           #fos:Ljava/io/FileOutputStream;
+    .restart local v1       #fos:Ljava/io/FileOutputStream;
+    goto :goto_0
+
+    .line 210
+    :catch_1
     move-exception v0
 
     .line 211
     .local v0, e:Ljava/io/IOException;
-    :goto_2
+    :goto_1
     :try_start_3
     const-string v3, "ActivityManager"
 
@@ -498,55 +509,50 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 213
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 215
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    goto :goto_1
+    goto :goto_0
 
     .line 216
-    :catch_1
+    :catch_2
     move-exception v3
 
-    goto :goto_1
+    goto :goto_0
 
     .line 213
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v3
 
-    :goto_3
-    if-eqz v1, :cond_2
+    :goto_2
+    if-eqz v1, :cond_1
 
     .line 215
     :try_start_5
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 213
-    :cond_2
-    :goto_4
+    .line 217
+    :cond_1
+    :goto_3
     throw v3
 
     .line 216
-    :catch_2
+    :catch_3
     move-exception v4
 
-    goto :goto_4
-
-    .end local v1           #fos:Ljava/io/FileOutputStream;
-    .restart local v2       #fos:Ljava/io/FileOutputStream;
-    :catch_3
-    move-exception v3
-
-    goto :goto_0
+    goto :goto_3
 
     .line 213
+    .end local v1           #fos:Ljava/io/FileOutputStream;
+    .restart local v2       #fos:Ljava/io/FileOutputStream;
     :catchall_1
     move-exception v3
 
@@ -554,7 +560,7 @@
 
     .end local v2           #fos:Ljava/io/FileOutputStream;
     .restart local v1       #fos:Ljava/io/FileOutputStream;
-    goto :goto_3
+    goto :goto_2
 
     .line 210
     .end local v1           #fos:Ljava/io/FileOutputStream;
@@ -566,7 +572,16 @@
 
     .end local v2           #fos:Ljava/io/FileOutputStream;
     .restart local v1       #fos:Ljava/io/FileOutputStream;
-    goto :goto_2
+    goto :goto_1
+
+    .end local v1           #fos:Ljava/io/FileOutputStream;
+    .restart local v2       #fos:Ljava/io/FileOutputStream;
+    :cond_2
+    move-object v1, v2
+
+    .end local v2           #fos:Ljava/io/FileOutputStream;
+    .restart local v1       #fos:Ljava/io/FileOutputStream;
+    goto :goto_0
 .end method
 
 

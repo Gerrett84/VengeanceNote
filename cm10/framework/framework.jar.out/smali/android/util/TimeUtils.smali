@@ -1098,12 +1098,12 @@
     if-nez v8, :cond_4
 
     .line 206
-    .end local v2           #element:Ljava/lang/String;
     :cond_3
-    :goto_2
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 209
+    .end local v2           #element:Ljava/lang/String;
+    :goto_2
     sget-object v9, Landroid/util/TimeUtils;->sLastLockObj:Ljava/lang/Object;
 
     monitor-enter v9
@@ -1253,18 +1253,13 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    goto :goto_2
-
     .line 206
-    .end local v1           #e:Lorg/xmlpull/v1/XmlPullParserException;
-    :catchall_2
-    move-exception v8
-
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
 
-    throw v8
+    goto :goto_2
 
     .line 203
+    .end local v1           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_1
     move-exception v1
 
@@ -1301,7 +1296,18 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
+    .line 206
+    invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
+
     goto/16 :goto_2
+
+    .end local v1           #e:Ljava/io/IOException;
+    :catchall_2
+    move-exception v8
+
+    invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
+
+    throw v8
 .end method
 
 .method public static getTimeZonesWithUniqueOffsets(Ljava/lang/String;)Ljava/util/ArrayList;

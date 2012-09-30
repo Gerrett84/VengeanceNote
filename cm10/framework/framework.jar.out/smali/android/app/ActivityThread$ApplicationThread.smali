@@ -3042,8 +3042,10 @@
     .line 869
     invoke-virtual {v1}, Ljava/io/PrintWriter;->flush()V
 
+    .line 867
     return-object v2
 
+    .line 869
     :catchall_0
     move-exception v2
 

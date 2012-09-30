@@ -68,10 +68,10 @@
     invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
     .line 87
-    :goto_0
     invoke-static {v4}, Ljava/lang/System;->exit(I)V
 
     .line 89
+    :goto_0
     return-void
 
     .line 67
@@ -141,6 +141,9 @@
 
     invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
+    .line 87
+    invoke-static {v4}, Ljava/lang/System;->exit(I)V
+
     goto :goto_0
 
     .line 72
@@ -201,8 +204,12 @@
 
     invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
+    .line 87
+    invoke-static {v4}, Ljava/lang/System;->exit(I)V
+
     goto :goto_0
 
+    .line 86
     .end local v0           #t2:Ljava/lang/Throwable;
     :catchall_0
     move-exception v1
@@ -216,7 +223,6 @@
     .line 87
     invoke-static {v4}, Ljava/lang/System;->exit(I)V
 
-    .line 86
     throw v1
 
     .line 81

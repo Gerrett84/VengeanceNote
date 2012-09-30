@@ -438,7 +438,7 @@
     invoke-direct {v1, p3}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 4752
     .end local v0           #clientStream:Ljava/io/OutputStream;
@@ -456,7 +456,7 @@
     :try_start_2
     invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 4766
     .end local v1           #clientStream:Ljava/io/OutputStream;
@@ -465,27 +465,14 @@
     :goto_0
     return-void
 
-    .line 4759
-    .restart local v1       #clientStream:Ljava/io/OutputStream;
+    .line 4753
+    .restart local v0       #clientStream:Ljava/io/OutputStream;
     .restart local v3       #view:Landroid/view/View;
     :catch_0
     move-exception v2
 
-    .line 4760
-    .local v2, e:Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_0
-
-    .line 4753
-    .end local v1           #clientStream:Ljava/io/OutputStream;
-    .end local v2           #e:Ljava/io/IOException;
-    .restart local v0       #clientStream:Ljava/io/OutputStream;
-    :catch_1
-    move-exception v2
-
     .line 4754
-    .restart local v2       #e:Ljava/io/IOException;
+    .local v2, e:Ljava/io/IOException;
     :goto_1
     :try_start_3
     invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
@@ -499,52 +486,61 @@
     :try_start_4
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
     goto :goto_0
 
     .line 4759
-    :catch_2
+    :catch_1
     move-exception v2
 
     .line 4760
+    .end local v0           #clientStream:Ljava/io/OutputStream;
+    :goto_2
     invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 
     .line 4756
     .end local v2           #e:Ljava/io/IOException;
+    .restart local v0       #clientStream:Ljava/io/OutputStream;
     :catchall_0
     move-exception v5
 
-    :goto_2
+    :goto_3
     if-eqz v0, :cond_2
 
     .line 4758
     :try_start_5
     invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 4761
+    .line 4756
     :cond_2
-    :goto_3
+    :goto_4
     throw v5
 
     .line 4759
-    :catch_3
+    :catch_2
     move-exception v2
 
     .line 4760
     .restart local v2       #e:Ljava/io/IOException;
     invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 4756
+    .line 4759
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .end local v2           #e:Ljava/io/IOException;
     .restart local v1       #clientStream:Ljava/io/OutputStream;
+    :catch_3
+    move-exception v2
+
+    goto :goto_2
+
+    .line 4756
     :catchall_1
     move-exception v5
 
@@ -552,7 +548,7 @@
 
     .end local v1           #clientStream:Ljava/io/OutputStream;
     .restart local v0       #clientStream:Ljava/io/OutputStream;
-    goto :goto_2
+    goto :goto_3
 
     .line 4753
     .end local v0           #clientStream:Ljava/io/OutputStream;

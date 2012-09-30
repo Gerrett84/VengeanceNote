@@ -512,7 +512,7 @@
     invoke-virtual {v3, v6, v7}, Lcom/android/internal/widget/SlidingTab;->setHoldAfterTrigger(ZZ)V
 
     .line 655
-    const v6, 0x104034e
+    const v6, 0x1040350
 
     invoke-virtual {v3, v6}, Lcom/android/internal/widget/SlidingTab;->setLeftHintText(I)V
 

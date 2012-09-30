@@ -820,7 +820,6 @@
     .line 232
     iput-object v9, p2, Lcom/android/server/am/ProcessRecord;->curReceiver:Lcom/android/server/am/BroadcastRecord;
 
-    .line 227
     :cond_2
     throw v0
 .end method

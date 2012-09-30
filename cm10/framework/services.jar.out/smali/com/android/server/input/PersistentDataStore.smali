@@ -169,13 +169,12 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 200
-    .end local v2           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :goto_0
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     .line 202
     .end local v1           #is:Ljava/io/InputStream;
-    :goto_1
+    .end local v2           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    :goto_0
     return-void
 
     .line 184
@@ -184,7 +183,7 @@
 
     .line 185
     .local v0, ex:Ljava/io/FileNotFoundException;
-    goto :goto_1
+    goto :goto_0
 
     .line 193
     .end local v0           #ex:Ljava/io/FileNotFoundException;
@@ -206,18 +205,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_0
-
     .line 200
-    .end local v0           #ex:Ljava/io/IOException;
-    :catchall_0
-    move-exception v3
-
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    throw v3
+    goto :goto_0
 
     .line 196
+    .end local v0           #ex:Ljava/io/IOException;
     :catch_2
     move-exception v0
 
@@ -235,7 +229,18 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
+    .line 200
+    invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
     goto :goto_0
+
+    .end local v0           #ex:Lorg/xmlpull/v1/XmlPullParserException;
+    :catchall_0
+    move-exception v3
+
+    invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    throw v3
 .end method
 
 .method private loadFromXml(Lorg/xmlpull/v1/XmlPullParser;)V
@@ -465,7 +470,7 @@
     const/4 v3, 0x1
 
     .line 216
-    if-eqz v3, :cond_1
+    if-eqz v3, :cond_0
 
     .line 217
     :try_start_2
@@ -480,27 +485,22 @@
     :goto_0
     return-void
 
-    .line 216
+    .line 219
     .restart local v1       #os:Ljava/io/FileOutputStream;
+    .restart local v2       #serializer:Lorg/xmlpull/v1/XmlSerializer;
     .restart local v3       #success:Z
-    :catchall_0
-    move-exception v4
+    :cond_0
+    iget-object v4, p0, Lcom/android/server/input/PersistentDataStore;->mAtomicFile:Lcom/android/internal/os/AtomicFile;
 
-    if-eqz v3, :cond_0
-
-    .line 217
-    iget-object v5, p0, Lcom/android/server/input/PersistentDataStore;->mAtomicFile:Lcom/android/internal/os/AtomicFile;
-
-    invoke-virtual {v5, v1}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
-
-    .line 216
-    :goto_1
-    throw v4
+    invoke-virtual {v4, v1}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
+    goto :goto_0
+
     .line 222
     .end local v1           #os:Ljava/io/FileOutputStream;
+    .end local v2           #serializer:Lorg/xmlpull/v1/XmlSerializer;
     .end local v3           #success:Z
     :catch_0
     move-exception v0
@@ -515,27 +515,33 @@
 
     goto :goto_0
 
-    .line 219
+    .line 216
     .end local v0           #ex:Ljava/io/IOException;
     .restart local v1       #os:Ljava/io/FileOutputStream;
     .restart local v3       #success:Z
-    :cond_0
+    :catchall_0
+    move-exception v4
+
+    if-eqz v3, :cond_1
+
+    .line 217
     :try_start_3
     iget-object v5, p0, Lcom/android/server/input/PersistentDataStore;->mAtomicFile:Lcom/android/internal/os/AtomicFile;
 
-    invoke-virtual {v5, v1}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
+    invoke-virtual {v5, v1}, Lcom/android/internal/os/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
 
-    goto :goto_1
+    .line 219
+    :goto_1
+    throw v4
 
-    .restart local v2       #serializer:Lorg/xmlpull/v1/XmlSerializer;
     :cond_1
-    iget-object v4, p0, Lcom/android/server/input/PersistentDataStore;->mAtomicFile:Lcom/android/internal/os/AtomicFile;
+    iget-object v5, p0, Lcom/android/server/input/PersistentDataStore;->mAtomicFile:Lcom/android/internal/os/AtomicFile;
 
-    invoke-virtual {v4, v1}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
+    invoke-virtual {v5, v1}, Lcom/android/internal/os/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V

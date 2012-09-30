@@ -122,12 +122,12 @@
     if-nez v0, :cond_0
 
     .line 212
-    :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 210
+    :goto_0
     return-object v5
 
+    .line 210
     :cond_0
     const/4 v0, 0x0
 
@@ -138,9 +138,11 @@
 
     move-result-object v5
 
+    .line 212
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
     goto :goto_0
 
-    .line 212
     :catchall_0
     move-exception v0
 

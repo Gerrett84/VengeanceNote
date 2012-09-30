@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.1-eng..20120924.011237" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.1-eng.adodd.20120927.192252" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:pluto="http://www.w3.org/2001/pluto.html">
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16" />
     <eat-comment />
@@ -97,6 +97,7 @@
     <eat-comment />
     <permission-group android:label="@string/permgrouplab_costMoney" android:name="android.permission-group.COST_MONEY" android:description="@string/permgroupdesc_costMoney" />
     <permission android:label="@string/permlab_sendSms" android:name="android.permission.SEND_SMS" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.COST_MONEY" android:description="@string/permdesc_sendSms" />
+    <permission android:label="@string/permlab_sendMockSms" android:name="android.permission.SEND_MOCK_SMS" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.MESSAGES" android:description="@string/permdesc_sendMockSms" />
     <permission android:label="@string/permlab_sendSmsNoConfirmation" android:name="android.permission.SEND_SMS_NO_CONFIRMATION" android:protectionLevel="system|signature" android:permissionGroup="android.permission-group.COST_MONEY" android:description="@string/permdesc_sendSmsNoConfirmation" />
     <permission android:label="@string/permlab_callPhone" android:name="android.permission.CALL_PHONE" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.COST_MONEY" android:description="@string/permdesc_callPhone" />
     <eat-comment />

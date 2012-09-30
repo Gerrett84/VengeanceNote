@@ -390,7 +390,6 @@
 
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 72
     :cond_0
     return-object v3
 

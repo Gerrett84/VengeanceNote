@@ -7441,6 +7441,7 @@
 
     move v5, v3
 
+    .line 2458
     goto :goto_0
 
     .line 2453
@@ -7451,15 +7452,6 @@
 
     .line 2463
     .end local v0           #child:Landroid/view/View;
-    :cond_2
-    invoke-virtual {v2}, Landroid/view/ViewGroup$ChildListForAccessibility;->recycle()V
-
-    .line 2465
-    const/4 v5, 0x0
-
-    goto :goto_0
-
-    .line 2463
     .end local v1           #childCount:I
     .end local v4           #i:I
     :catchall_0
@@ -7468,6 +7460,16 @@
     invoke-virtual {v2}, Landroid/view/ViewGroup$ChildListForAccessibility;->recycle()V
 
     throw v5
+
+    .restart local v1       #childCount:I
+    .restart local v4       #i:I
+    :cond_2
+    invoke-virtual {v2}, Landroid/view/ViewGroup$ChildListForAccessibility;->recycle()V
+
+    .line 2465
+    const/4 v5, 0x0
+
+    goto :goto_0
 .end method
 
 .method protected dispatchRestoreInstanceState(Landroid/util/SparseArray;)V

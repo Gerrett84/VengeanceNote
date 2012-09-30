@@ -2268,7 +2268,7 @@
     invoke-virtual {v1, v6}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     .line 461
-    const v6, 0x1040428
+    const v6, 0x104042a
 
     new-array v7, v10, [Ljava/lang/Object;
 
@@ -2284,7 +2284,7 @@
 
     .line 462
     .local v5, title:Ljava/lang/CharSequence;
-    const v6, 0x1040429
+    const v6, 0x104042b
 
     new-array v7, v10, [Ljava/lang/Object;
 

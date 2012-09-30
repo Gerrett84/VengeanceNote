@@ -161,25 +161,27 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 304
-    :goto_0
     invoke-virtual {v0}, Landroid/os/DropBoxManager$Entry;->close()V
 
     .line 306
+    :goto_0
     return-void
 
+    .line 301
+    :catch_0
+    move-exception v1
+
     .line 304
+    invoke-virtual {v0}, Landroid/os/DropBoxManager$Entry;->close()V
+
+    goto :goto_0
+
     :catchall_0
     move-exception v1
 
     invoke-virtual {v0}, Landroid/os/DropBoxManager$Entry;->close()V
 
     throw v1
-
-    .line 301
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
 .end method
 
 .method public addText(Ljava/lang/String;Ljava/lang/String;)V

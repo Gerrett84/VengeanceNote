@@ -358,7 +358,7 @@
 
     .line 60
     .local v6, context:Landroid/content/Context;
-    const v9, 0x10403e4
+    const v9, 0x10403e6
 
     invoke-virtual {v6, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

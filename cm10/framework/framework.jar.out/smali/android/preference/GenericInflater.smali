@@ -784,10 +784,8 @@
     .line 265
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 263
     return-object v1
 
-    .line 265
     :catchall_0
     move-exception v1
 

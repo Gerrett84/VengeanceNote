@@ -940,13 +940,12 @@
     invoke-static {v14}, Lcom/android/internal/os/ZygoteInit;->setEffectiveUser(I)V
 
     .line 326
-    .end local v3           #e:Ljava/io/IOException;
-    :goto_2
     invoke-static {v14}, Lcom/android/internal/os/ZygoteInit;->setEffectiveGroup(I)V
 
     goto/16 :goto_0
 
     .line 301
+    .end local v3           #e:Ljava/io/IOException;
     .restart local v0       #br:Ljava/io/BufferedReader;
     .restart local v1       #count:I
     .restart local v5       #line:Ljava/lang/String;
@@ -1019,7 +1018,6 @@
     .line 326
     invoke-static {v14}, Lcom/android/internal/os/ZygoteInit;->setEffectiveGroup(I)V
 
-    .line 318
     throw v10
 
     .line 306
@@ -1110,7 +1108,10 @@
     .line 325
     invoke-static {v14}, Lcom/android/internal/os/ZygoteInit;->setEffectiveUser(I)V
 
-    goto/16 :goto_2
+    .line 326
+    invoke-static {v14}, Lcom/android/internal/os/ZygoteInit;->setEffectiveGroup(I)V
+
+    goto/16 :goto_0
 .end method
 
 .method private static preloadColorStateLists(Ldalvik/system/VMRuntime;Landroid/content/res/TypedArray;)I
@@ -1355,10 +1356,10 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 372
-    :goto_0
     invoke-static {}, Landroid/os/Debug;->stopAllocCounting()V
 
     .line 374
+    :goto_0
     return-void
 
     .line 369
@@ -1376,9 +1377,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 372
+    invoke-static {}, Landroid/os/Debug;->stopAllocCounting()V
+
     goto :goto_0
 
-    .line 372
     .end local v0           #e:Ljava/lang/RuntimeException;
     :catchall_0
     move-exception v2
@@ -1533,10 +1536,10 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 591
-    :goto_1
     sput-object v5, Lcom/android/internal/os/ZygoteInit;->sServerSocket:Landroid/net/LocalServerSocket;
 
     .line 594
+    :goto_1
     invoke-virtual {v1}, Lcom/android/internal/os/ZygoteConnection;->run()V
 
     .line 602
@@ -1557,9 +1560,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 591
+    sput-object v5, Lcom/android/internal/os/ZygoteInit;->sServerSocket:Landroid/net/LocalServerSocket;
+
     goto :goto_1
 
-    .line 591
     .end local v0           #ex:Ljava/io/IOException;
     :catchall_0
     move-exception v3

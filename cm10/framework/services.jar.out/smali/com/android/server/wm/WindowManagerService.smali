@@ -7116,7 +7116,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_22
+    if-nez v2, :cond_21
 
     const/16 v29, 0x1
 
@@ -7173,7 +7173,7 @@
     add-int/lit8 v24, v15, -0x1
 
     :goto_5
-    if-ltz v24, :cond_25
+    if-ltz v24, :cond_24
 
     .line 8667
     move-object/from16 v0, p0
@@ -7201,7 +7201,7 @@
 
     move-result v8
 
-    if-eq v2, v8, :cond_23
+    if-eq v2, v8, :cond_22
 
     const/16 v27, 0x1
 
@@ -7491,7 +7491,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/AppWindowToken;->startingWindow:Lcom/android/server/wm/WindowState;
 
-    if-eq v3, v2, :cond_24
+    if-eq v3, v2, :cond_23
 
     .line 8751
     move-object/from16 v0, v17
@@ -7758,7 +7758,7 @@
     add-int/lit8 v24, v2, -0x1
 
     :goto_a
-    if-ltz v24, :cond_21
+    if-ltz v24, :cond_20
 
     .line 8647
     move-object/from16 v0, p0
@@ -7832,17 +7832,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 8791
-    .end local v22           #e:Ljava/lang/RuntimeException;
-    :cond_18
-    :goto_b
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
     .line 8797
+    .end local v22           #e:Ljava/lang/RuntimeException;
+    :goto_b
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mAppTransitionReady:Z
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_18
 
     .line 8798
     move-object/from16 v0, p0
@@ -7871,7 +7870,7 @@
     invoke-virtual {v0, v2, v8}, Lcom/android/server/wm/WindowManagerService;->debugLayoutRepeats(Ljava/lang/String;I)V
 
     .line 8803
-    :cond_19
+    :cond_18
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
@@ -7887,13 +7886,13 @@
 
     iget-boolean v2, v2, Lcom/android/server/wm/WindowAnimator;->mAnimating:Z
 
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_19
 
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mAppTransitionRunning:Z
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_19
 
     .line 8812
     move-object/from16 v0, p0
@@ -7922,26 +7921,26 @@
     invoke-virtual {v0, v2, v8}, Lcom/android/server/wm/WindowManagerService;->debugLayoutRepeats(Ljava/lang/String;I)V
 
     .line 8817
-    :cond_1a
+    :cond_19
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
 
     iget-boolean v2, v2, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mWallpaperForceHidingChanged:Z
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1a
 
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/wm/WindowManagerService;->mPendingLayoutChanges:I
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_1a
 
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mAppTransitionReady:Z
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_1a
 
     .line 8825
     move-object/from16 v0, p0
@@ -7970,7 +7969,7 @@
     invoke-virtual {v0, v2, v8}, Lcom/android/server/wm/WindowManagerService;->debugLayoutRepeats(Ljava/lang/String;I)V
 
     .line 8829
-    :cond_1b
+    :cond_1a
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
@@ -7986,7 +7985,7 @@
 
     iget-boolean v2, v2, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mWallpaperMayChange:Z
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1b
 
     .line 8834
     move-object/from16 v0, p0
@@ -8004,7 +8003,7 @@
     iput v8, v2, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mAdjResult:I
 
     .line 8837
-    :cond_1c
+    :cond_1b
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
@@ -8030,13 +8029,13 @@
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->assignLayersLocked()V
 
     .line 8848
-    :cond_1d
+    :cond_1c
     :goto_c
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mFocusMayChange:Z
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1d
 
     .line 8849
     const/4 v2, 0x0
@@ -8056,7 +8055,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1d
 
     .line 8852
     move-object/from16 v0, p0
@@ -8079,12 +8078,12 @@
     iput v8, v2, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mAdjResult:I
 
     .line 8857
-    :cond_1e
+    :cond_1d
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/server/wm/WindowManagerService;->mLayoutNeeded:Z
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1e
 
     .line 8858
     move-object/from16 v0, p0
@@ -8109,7 +8108,7 @@
     invoke-virtual {v0, v2, v8}, Lcom/android/server/wm/WindowManagerService;->debugLayoutRepeats(Ljava/lang/String;I)V
 
     .line 8862
-    :cond_1f
+    :cond_1e
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mResizingWindows:Ljava/util/ArrayList;
@@ -8176,7 +8175,7 @@
 
     iget-object v2, v0, Lcom/android/server/wm/WindowState;->mConfiguration:Landroid/content/res/Configuration;
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1f
 
     move-object/from16 v0, p0
 
@@ -8192,7 +8191,7 @@
 
     if-eqz v20, :cond_29
 
-    :cond_20
+    :cond_1f
     const/16 v18, 0x1
 
     .line 8881
@@ -8285,7 +8284,7 @@
     .end local v20           #diff:I
     .end local v33           #win:Lcom/android/server/wm/WindowState;
     .end local v34           #winAnimator:Lcom/android/server/wm/WindowStateAnimator;
-    :cond_21
+    :cond_20
     :try_start_3
     move-object/from16 v0, p0
 
@@ -8326,7 +8325,7 @@
     goto/16 :goto_3
 
     .line 8657
-    :cond_22
+    :cond_21
     const/16 v29, 0x0
 
     goto/16 :goto_4
@@ -8337,7 +8336,7 @@
     .restart local v23       #focusDisplayed:Z
     .restart local v29       #someoneLosingFocus:Z
     .restart local v31       #updateAllDrawn:Z
-    :cond_23
+    :cond_22
     const/16 v27, 0x0
 
     goto/16 :goto_6
@@ -8346,7 +8345,7 @@
     .restart local v17       #atoken:Lcom/android/server/wm/AppWindowToken;
     .restart local v27       #obscuredChanged:Z
     .restart local v34       #winAnimator:Lcom/android/server/wm/WindowStateAnimator;
-    :cond_24
+    :cond_23
     invoke-virtual {v3}, Lcom/android/server/wm/WindowState;->isDrawnLw()Z
 
     move-result v2
@@ -8386,16 +8385,16 @@
     .restart local v23       #focusDisplayed:Z
     .restart local v29       #someoneLosingFocus:Z
     .restart local v31       #updateAllDrawn:Z
-    :cond_25
-    if-eqz v31, :cond_26
+    :cond_24
+    if-eqz v31, :cond_25
 
     .line 8778
     :try_start_4
     invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/WindowManagerService;->updateAllDrawnLocked()V
 
     .line 8781
-    :cond_26
-    if-eqz v23, :cond_27
+    :cond_25
+    if-eqz v23, :cond_26
 
     .line 8782
     move-object/from16 v0, p0
@@ -8407,14 +8406,14 @@
     invoke-virtual {v2, v8}, Lcom/android/server/wm/WindowManagerService$H;->sendEmptyMessage(I)Z
 
     .line 8785
-    :cond_27
+    :cond_26
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/wm/WindowManagerService;->mInnerFields:Lcom/android/server/wm/WindowManagerService$LayoutFields;
 
     iget-boolean v2, v2, Lcom/android/server/wm/WindowManagerService$LayoutFields;->mDimming:Z
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_27
 
     move-object/from16 v0, p0
 
@@ -8424,7 +8423,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_27
 
     .line 8786
     move-object/from16 v0, p0
@@ -8435,6 +8434,10 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_0
+
+    .line 8791
+    :cond_27
+    invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
     goto/16 :goto_b
 
@@ -8452,7 +8455,7 @@
 
     and-int/lit8 v2, v2, 0x4
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1c
 
     .line 8845
     move-object/from16 v0, p0
@@ -17083,8 +17086,8 @@
     invoke-direct {v2, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
     .line 9481
     .end local v1           #in:Ljava/io/FileInputStream;
@@ -17131,102 +17134,113 @@
     iput-object v6, p0, Lcom/android/server/wm/WindowManagerService;->mWatermark:Lcom/android/server/wm/Watermark;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_6
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_7
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
 
     .line 9492
     .end local v5           #toks:[Ljava/lang/String;
     :cond_2
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     .line 9494
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :cond_3
-    :goto_1
     move-object v1, v2
 
-    .line 9498
+    .line 9496
     .end local v2           #in:Ljava/io/FileInputStream;
     .restart local v1       #in:Ljava/io/FileInputStream;
     goto :goto_0
 
-    .line 9492
-    .end local v3           #ind:Ljava/io/DataInputStream;
-    .end local v4           #line:Ljava/lang/String;
-    :catchall_0
+    .line 9495
+    .end local v1           #in:Ljava/io/FileInputStream;
+    .restart local v2       #in:Ljava/io/FileInputStream;
+    :catch_0
     move-exception v6
 
-    :goto_2
-    if-eqz v1, :cond_4
+    move-object v1, v2
+
+    .line 9496
+    .end local v2           #in:Ljava/io/FileInputStream;
+    .restart local v1       #in:Ljava/io/FileInputStream;
+    goto :goto_0
+
+    .line 9489
+    .end local v3           #ind:Ljava/io/DataInputStream;
+    .end local v4           #line:Ljava/lang/String;
+    :catch_1
+    move-exception v6
+
+    .line 9492
+    :goto_1
+    if-eqz v1, :cond_0
 
     .line 9494
     :try_start_3
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
-
-    .line 9492
-    :cond_4
-    :goto_3
-    throw v6
-
-    .line 9489
-    :catch_0
-    move-exception v6
-
-    .line 9492
-    :goto_4
-    if-eqz v1, :cond_0
-
-    .line 9494
-    :try_start_4
-    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     goto :goto_0
 
     .line 9495
-    :catch_1
+    :catch_2
     move-exception v6
 
     goto :goto_0
 
     .line 9490
-    :catch_2
+    :catch_3
     move-exception v6
 
     .line 9492
-    :goto_5
+    :goto_2
     if-eqz v1, :cond_0
 
     .line 9494
+    :try_start_4
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
     goto :goto_0
 
     .line 9495
-    :catch_3
-    move-exception v7
-
-    goto :goto_3
-
-    .end local v1           #in:Ljava/io/FileInputStream;
-    .restart local v2       #in:Ljava/io/FileInputStream;
-    .restart local v3       #ind:Ljava/io/DataInputStream;
-    .restart local v4       #line:Ljava/lang/String;
     :catch_4
     move-exception v6
 
-    goto :goto_1
+    goto :goto_0
 
     .line 9492
-    .end local v3           #ind:Ljava/io/DataInputStream;
-    .end local v4           #line:Ljava/lang/String;
+    :catchall_0
+    move-exception v6
+
+    :goto_3
+    if-eqz v1, :cond_3
+
+    .line 9494
+    :try_start_5
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_5
+
+    .line 9496
+    :cond_3
+    :goto_4
+    throw v6
+
+    .line 9495
+    :catch_5
+    move-exception v7
+
+    goto :goto_4
+
+    .line 9492
+    .end local v1           #in:Ljava/io/FileInputStream;
+    .restart local v2       #in:Ljava/io/FileInputStream;
     :catchall_1
     move-exception v6
 
@@ -17234,21 +17248,9 @@
 
     .end local v2           #in:Ljava/io/FileInputStream;
     .restart local v1       #in:Ljava/io/FileInputStream;
-    goto :goto_2
+    goto :goto_3
 
     .line 9490
-    .end local v1           #in:Ljava/io/FileInputStream;
-    .restart local v2       #in:Ljava/io/FileInputStream;
-    :catch_5
-    move-exception v6
-
-    move-object v1, v2
-
-    .end local v2           #in:Ljava/io/FileInputStream;
-    .restart local v1       #in:Ljava/io/FileInputStream;
-    goto :goto_5
-
-    .line 9489
     .end local v1           #in:Ljava/io/FileInputStream;
     .restart local v2       #in:Ljava/io/FileInputStream;
     :catch_6
@@ -17258,7 +17260,30 @@
 
     .end local v2           #in:Ljava/io/FileInputStream;
     .restart local v1       #in:Ljava/io/FileInputStream;
-    goto :goto_4
+    goto :goto_2
+
+    .line 9489
+    .end local v1           #in:Ljava/io/FileInputStream;
+    .restart local v2       #in:Ljava/io/FileInputStream;
+    :catch_7
+    move-exception v6
+
+    move-object v1, v2
+
+    .end local v2           #in:Ljava/io/FileInputStream;
+    .restart local v1       #in:Ljava/io/FileInputStream;
+    goto :goto_1
+
+    .end local v1           #in:Ljava/io/FileInputStream;
+    .restart local v2       #in:Ljava/io/FileInputStream;
+    .restart local v3       #ind:Ljava/io/DataInputStream;
+    .restart local v4       #line:Ljava/lang/String;
+    :cond_4
+    move-object v1, v2
+
+    .end local v2           #in:Ljava/io/FileInputStream;
+    .restart local v1       #in:Ljava/io/FileInputStream;
+    goto :goto_0
 .end method
 
 .method debugLayoutRepeats(Ljava/lang/String;I)V
@@ -26240,12 +26265,12 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 3049
-    :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3046
+    :goto_0
     return v3
 
+    .line 3046
     :cond_0
     :try_start_2
     iget-object v3, v2, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
@@ -26259,6 +26284,11 @@
     move-result v3
 
     monitor-exit v4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 3049
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
@@ -26267,14 +26297,15 @@
     :catchall_0
     move-exception v3
 
-    monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
     :try_start_3
-    throw v3
+    monitor-exit v4
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    throw v3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 3049
     :catchall_1
@@ -26702,10 +26733,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 3033
-    :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 3035
+    :goto_0
     return-void
 
     .line 3030
@@ -26717,21 +26748,28 @@
 
     .line 3031
     monitor-exit v4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 3033
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
+    .line 3031
     .end local v2           #win:Lcom/android/server/wm/WindowState;
     :catchall_0
     move-exception v3
 
-    monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
     :try_start_3
-    throw v3
+    monitor-exit v4
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    throw v3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 3033
     :catchall_1
@@ -36866,18 +36904,20 @@
     const/4 v3, 0x1
 
     .line 3824
-    :goto_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 3822
+    :goto_0
     return v3
 
+    .line 3822
     :cond_0
     const/4 v3, 0x0
 
+    .line 3824
+    invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
     goto :goto_0
 
-    .line 3824
     .end local v2           #req:I
     :catchall_0
     move-exception v3
@@ -37255,7 +37295,6 @@
     .line 5819
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
-    .line 5818
     :cond_a
     throw v0
 
@@ -38622,7 +38661,7 @@
     invoke-direct {v4, v6, v7}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 6097
     .end local v3           #out:Ljava/io/BufferedWriter;
@@ -38668,31 +38707,47 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 6107
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     .line 6109
     :try_start_2
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    :cond_3
-    :goto_1
     move-object v3, v4
 
-    .line 6114
+    .line 6112
+    .end local v4           #out:Ljava/io/BufferedWriter;
+    .restart local v3       #out:Ljava/io/BufferedWriter;
+    goto :goto_0
+
+    .line 6110
+    .end local v3           #out:Ljava/io/BufferedWriter;
+    .restart local v4       #out:Ljava/io/BufferedWriter;
+    :catch_0
+    move-exception v1
+
+    .line 6111
+    .local v1, e:Ljava/io/IOException;
+    const/4 v5, 0x0
+
+    move-object v3, v4
+
+    .line 6112
     .end local v4           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
     goto :goto_0
 
     .line 6104
     .end local v0           #clientStream:Ljava/io/OutputStream;
-    :catch_0
+    .end local v1           #e:Ljava/io/IOException;
+    :catch_1
     move-exception v1
 
     .line 6105
     .local v1, e:Ljava/lang/Exception;
-    :goto_2
+    :goto_1
     const/4 v5, 0x0
 
     .line 6107
@@ -38702,18 +38757,19 @@
     :try_start_3
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     goto :goto_0
 
     .line 6110
-    :catch_1
+    :catch_2
     move-exception v1
 
     .line 6111
     .local v1, e:Ljava/io/IOException;
     const/4 v5, 0x0
 
+    .line 6112
     goto :goto_0
 
     .line 6107
@@ -38721,35 +38777,21 @@
     :catchall_0
     move-exception v6
 
-    :goto_3
-    if-eqz v3, :cond_4
+    :goto_2
+    if-eqz v3, :cond_3
 
     .line 6109
     :try_start_4
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 6107
-    :cond_4
-    :goto_4
+    .line 6112
+    :cond_3
+    :goto_3
     throw v6
 
     .line 6110
-    :catch_2
-    move-exception v1
-
-    .line 6111
-    .restart local v1       #e:Ljava/io/IOException;
-    const/4 v5, 0x0
-
-    goto :goto_4
-
-    .line 6110
-    .end local v1           #e:Ljava/io/IOException;
-    .end local v3           #out:Ljava/io/BufferedWriter;
-    .restart local v0       #clientStream:Ljava/io/OutputStream;
-    .restart local v4       #out:Ljava/io/BufferedWriter;
     :catch_3
     move-exception v1
 
@@ -38757,10 +38799,13 @@
     .restart local v1       #e:Ljava/io/IOException;
     const/4 v5, 0x0
 
-    goto :goto_1
+    goto :goto_3
 
     .line 6107
     .end local v1           #e:Ljava/io/IOException;
+    .end local v3           #out:Ljava/io/BufferedWriter;
+    .restart local v0       #clientStream:Ljava/io/OutputStream;
+    .restart local v4       #out:Ljava/io/BufferedWriter;
     :catchall_1
     move-exception v6
 
@@ -38768,7 +38813,7 @@
 
     .end local v4           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
-    goto :goto_3
+    goto :goto_2
 
     .line 6104
     .end local v3           #out:Ljava/io/BufferedWriter;
@@ -38780,7 +38825,16 @@
 
     .end local v4           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
-    goto :goto_2
+    goto :goto_1
+
+    .end local v3           #out:Ljava/io/BufferedWriter;
+    .restart local v4       #out:Ljava/io/BufferedWriter;
+    :cond_4
+    move-object v3, v4
+
+    .end local v4           #out:Ljava/io/BufferedWriter;
+    .restart local v3       #out:Ljava/io/BufferedWriter;
+    goto :goto_0
 .end method
 
 .method viewServerListWindows(Ljava/net/Socket;)Z
@@ -38860,7 +38914,7 @@
     invoke-direct {v5, v9, v10}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 6048
     .end local v4           #out:Ljava/io/BufferedWriter;
@@ -38954,19 +39008,34 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 6062
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
     .line 6064
     :try_start_5
     invoke-virtual {v5}, Ljava/io/BufferedWriter;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_0
 
-    :cond_3
-    :goto_2
     move-object v4, v5
 
-    .line 6069
+    .line 6067
+    .end local v5           #out:Ljava/io/BufferedWriter;
+    .restart local v4       #out:Ljava/io/BufferedWriter;
+    goto :goto_0
+
+    .line 6065
+    .end local v4           #out:Ljava/io/BufferedWriter;
+    .restart local v5       #out:Ljava/io/BufferedWriter;
+    :catch_0
+    move-exception v2
+
+    .line 6066
+    .local v2, e:Ljava/io/IOException;
+    const/4 v6, 0x0
+
+    move-object v4, v5
+
+    .line 6067
     .end local v5           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
     goto :goto_0
@@ -38974,13 +39043,14 @@
     .line 6059
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .end local v1           #count:I
+    .end local v2           #e:Ljava/io/IOException;
     .end local v3           #i:I
-    :catch_0
+    :catch_1
     move-exception v2
 
     .line 6060
     .local v2, e:Ljava/lang/Exception;
-    :goto_3
+    :goto_2
     const/4 v6, 0x0
 
     .line 6062
@@ -38990,18 +39060,19 @@
     :try_start_6
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
     goto :goto_0
 
     .line 6065
-    :catch_1
+    :catch_2
     move-exception v2
 
     .line 6066
     .local v2, e:Ljava/io/IOException;
     const/4 v6, 0x0
 
+    .line 6067
     goto :goto_0
 
     .line 6062
@@ -39009,37 +39080,21 @@
     :catchall_1
     move-exception v9
 
-    :goto_4
-    if-eqz v4, :cond_4
+    :goto_3
+    if-eqz v4, :cond_3
 
     .line 6064
     :try_start_7
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
 
-    .line 6062
-    :cond_4
-    :goto_5
+    .line 6067
+    :cond_3
+    :goto_4
     throw v9
 
     .line 6065
-    :catch_2
-    move-exception v2
-
-    .line 6066
-    .restart local v2       #e:Ljava/io/IOException;
-    const/4 v6, 0x0
-
-    goto :goto_5
-
-    .line 6065
-    .end local v2           #e:Ljava/io/IOException;
-    .end local v4           #out:Ljava/io/BufferedWriter;
-    .restart local v0       #clientStream:Ljava/io/OutputStream;
-    .restart local v1       #count:I
-    .restart local v3       #i:I
-    .restart local v5       #out:Ljava/io/BufferedWriter;
     :catch_3
     move-exception v2
 
@@ -39047,12 +39102,13 @@
     .restart local v2       #e:Ljava/io/IOException;
     const/4 v6, 0x0
 
-    goto :goto_2
+    goto :goto_4
 
     .line 6062
-    .end local v1           #count:I
     .end local v2           #e:Ljava/io/IOException;
-    .end local v3           #i:I
+    .end local v4           #out:Ljava/io/BufferedWriter;
+    .restart local v0       #clientStream:Ljava/io/OutputStream;
+    .restart local v5       #out:Ljava/io/BufferedWriter;
     :catchall_2
     move-exception v9
 
@@ -39060,7 +39116,7 @@
 
     .end local v5           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
-    goto :goto_4
+    goto :goto_3
 
     .line 6059
     .end local v4           #out:Ljava/io/BufferedWriter;
@@ -39072,7 +39128,18 @@
 
     .end local v5           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
-    goto :goto_3
+    goto :goto_2
+
+    .end local v4           #out:Ljava/io/BufferedWriter;
+    .restart local v1       #count:I
+    .restart local v3       #i:I
+    .restart local v5       #out:Ljava/io/BufferedWriter;
+    :cond_4
+    move-object v4, v5
+
+    .end local v5           #out:Ljava/io/BufferedWriter;
+    .restart local v4       #out:Ljava/io/BufferedWriter;
+    goto :goto_0
 .end method
 
 .method viewServerWindowCommand(Ljava/net/Socket;Ljava/lang/String;Ljava/lang/String;)Z
@@ -39177,7 +39244,7 @@
     invoke-direct {p0, v5}, Lcom/android/server/wm/WindowManagerService;->findWindow(I)Lcom/android/server/wm/WindowState;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
     move-result-object v11
 
@@ -39215,19 +39282,13 @@
     goto :goto_0
 
     .line 6206
-    .end local v2           #code:Ljava/lang/String;
-    .end local v5           #hashCode:I
-    .end local v6           #index:I
-    .end local v11           #window:Lcom/android/server/wm/WindowState;
     :catch_0
     move-exception v12
 
     goto :goto_0
 
     .line 6164
-    .restart local v2       #code:Ljava/lang/String;
-    .restart local v5       #hashCode:I
-    .restart local v6       #index:I
+    .end local v11           #window:Lcom/android/server/wm/WindowState;
     .restart local v10       #success:Z
     :cond_5
     :try_start_2
@@ -39315,7 +39376,7 @@
     invoke-direct {v8, v12}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 6189
     .end local v7           #out:Ljava/io/BufferedWriter;
@@ -39329,7 +39390,7 @@
     invoke-virtual {v8}, Ljava/io/BufferedWriter;->flush()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_5
 
     move-object v7, v8
 
@@ -39357,7 +39418,13 @@
     :try_start_4
     invoke-virtual {v7}, Ljava/io/BufferedWriter;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+
+    goto/16 :goto_0
+
+    .line 6206
+    :catch_1
+    move-exception v12
 
     goto/16 :goto_0
 
@@ -39367,7 +39434,7 @@
     .end local v5           #hashCode:I
     .end local v6           #index:I
     .end local v11           #window:Lcom/android/server/wm/WindowState;
-    :catch_1
+    :catch_2
     move-exception v4
 
     .line 6194
@@ -39436,7 +39503,13 @@
     :try_start_6
     invoke-virtual {v7}, Ljava/io/BufferedWriter;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+
+    goto/16 :goto_0
+
+    .line 6206
+    :catch_3
+    move-exception v12
 
     goto/16 :goto_0
 
@@ -39466,15 +39539,15 @@
     :try_start_7
     invoke-virtual {v7}, Ljava/io/BufferedWriter;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
 
-    .line 6197
+    .line 6208
     :cond_e
     :goto_4
     throw v12
 
     .line 6206
-    :catch_2
+    :catch_4
     move-exception v13
 
     goto :goto_4
@@ -39499,7 +39572,7 @@
     .line 6193
     .end local v7           #out:Ljava/io/BufferedWriter;
     .restart local v8       #out:Ljava/io/BufferedWriter;
-    :catch_3
+    :catch_5
     move-exception v4
 
     move-object v7, v8

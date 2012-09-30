@@ -189,7 +189,7 @@
     :cond_2
     iget-object v0, p0, Landroid/database/sqlite/SQLiteOpenHelper;->mDatabase:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 274
+    .line 278
     :cond_3
     :goto_0
     return-object v0
@@ -315,7 +315,6 @@
     .line 278
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    .line 276
     :cond_6
     throw v4
 

@@ -205,7 +205,7 @@
 
     const-string v2, "android.intent.extra.client_label"
 
-    const v3, 0x104049c
+    const v3, 0x104049e
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -492,7 +492,6 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1731
-    :goto_2
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
 
     goto :goto_0
@@ -549,9 +548,11 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    goto :goto_2
-
     .line 1731
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
+
+    goto :goto_0
+
     .end local v2           #re:Landroid/os/RemoteException;
     :catchall_1
     move-exception v3
@@ -1189,10 +1190,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1457
-    :goto_2
     invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1459
+    :goto_2
     move-object/from16 v0, p0
 
     invoke-direct {v0, v15}, Lcom/android/server/accessibility/AccessibilityManagerService$Service;->getCompatibilityScale(I)F
@@ -1210,22 +1211,24 @@
 
     goto :goto_1
 
-    .line 1457
+    .line 1452
     .restart local v8       #allFlags:I
     .restart local v9       #interrogatingPid:I
     .restart local v12       #identityToken:J
+    :catch_0
+    move-exception v2
+
+    .line 1457
+    invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_2
+
     :catchall_1
     move-exception v2
 
     invoke-static {v12, v13}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v2
-
-    .line 1452
-    :catch_0
-    move-exception v2
-
-    goto :goto_2
 .end method
 
 .method public findAccessibilityNodeInfoByViewId(IJIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
@@ -1439,10 +1442,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1369
-    :goto_2
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1371
+    :goto_2
     move-object/from16 v0, p0
 
     move/from16 v1, v17
@@ -1462,22 +1465,24 @@
 
     goto :goto_1
 
-    .line 1369
+    .line 1364
     .restart local v10       #flags:I
     .restart local v11       #interrogatingPid:I
     .restart local v14       #identityToken:J
+    :catch_0
+    move-exception v3
+
+    .line 1369
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_2
+
     :catchall_1
     move-exception v3
 
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v3
-
-    .line 1364
-    :catch_0
-    move-exception v3
-
-    goto :goto_2
 .end method
 
 .method public findAccessibilityNodeInfosByText(IJLjava/lang/String;ILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
@@ -1693,10 +1698,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1413
-    :goto_2
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1415
+    :goto_2
     move-object/from16 v0, p0
 
     move/from16 v1, v17
@@ -1716,22 +1721,24 @@
 
     goto :goto_1
 
-    .line 1413
+    .line 1408
     .restart local v10       #flags:I
     .restart local v11       #interrogatingPid:I
     .restart local v14       #identityToken:J
+    :catch_0
+    move-exception v3
+
+    .line 1413
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_2
+
     :catchall_1
     move-exception v3
 
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v3
-
-    .line 1408
-    :catch_0
-    move-exception v3
-
-    goto :goto_2
 .end method
 
 .method public findFocus(IJIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
@@ -1947,10 +1954,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1500
-    :goto_2
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1502
+    :goto_2
     move-object/from16 v0, p0
 
     move/from16 v1, v17
@@ -1970,22 +1977,24 @@
 
     goto :goto_1
 
-    .line 1500
+    .line 1495
     .restart local v10       #flags:I
     .restart local v11       #interrogatingPid:I
     .restart local v14       #identityToken:J
+    :catch_0
+    move-exception v3
+
+    .line 1500
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_2
+
     :catchall_1
     move-exception v3
 
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v3
-
-    .line 1495
-    :catch_0
-    move-exception v3
-
-    goto :goto_2
 .end method
 
 .method public focusSearch(IJIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;J)F
@@ -2201,10 +2210,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1543
-    :goto_2
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1545
+    :goto_2
     move-object/from16 v0, p0
 
     move/from16 v1, v17
@@ -2224,22 +2233,24 @@
 
     goto :goto_1
 
-    .line 1543
+    .line 1538
     .restart local v10       #flags:I
     .restart local v11       #interrogatingPid:I
     .restart local v14       #identityToken:J
+    :catch_0
+    move-exception v3
+
+    .line 1543
+    invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_2
+
     :catchall_1
     move-exception v3
 
     invoke-static {v14, v15}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v3
-
-    .line 1538
-    :catch_0
-    move-exception v3
-
-    goto :goto_2
 .end method
 
 .method public getServiceInfo()Landroid/accessibilityservice/AccessibilityServiceInfo;
@@ -2682,10 +2693,10 @@
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1578
-    :goto_2
     invoke-static/range {v15 .. v16}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1580
+    :goto_2
     const/4 v5, 0x1
 
     goto :goto_0
@@ -2699,22 +2710,24 @@
 
     goto :goto_1
 
-    .line 1578
+    .line 1573
     .restart local v11       #flags:I
     .restart local v12       #interrogatingPid:I
     .restart local v15       #identityToken:J
+    :catch_0
+    move-exception v5
+
+    .line 1578
+    invoke-static/range {v15 .. v16}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_2
+
     :catchall_1
     move-exception v5
 
     invoke-static/range {v15 .. v16}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v5
-
-    .line 1573
-    :catch_0
-    move-exception v5
-
-    goto :goto_2
 .end method
 
 .method public performGlobalAction(I)Z

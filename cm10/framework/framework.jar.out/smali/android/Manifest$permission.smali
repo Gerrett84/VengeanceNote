@@ -288,6 +288,8 @@
 
 .field public static final RETRIEVE_WINDOW_CONTENT:Ljava/lang/String; = "android.permission.RETRIEVE_WINDOW_CONTENT"
 
+.field public static final SEND_MOCK_SMS:Ljava/lang/String; = "android.permission.SEND_MOCK_SMS"
+
 .field public static final SEND_SMS:Ljava/lang/String; = "android.permission.SEND_SMS"
 
 .field public static final SEND_SMS_NO_CONFIRMATION:Ljava/lang/String; = "android.permission.SEND_SMS_NO_CONFIRMATION"

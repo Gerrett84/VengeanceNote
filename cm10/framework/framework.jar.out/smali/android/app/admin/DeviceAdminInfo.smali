@@ -124,9 +124,9 @@
 
     const-string/jumbo v5, "wipe-data"
 
-    const v6, 0x10402c2
+    const v6, 0x10402c4
 
-    const v7, 0x10402c3
+    const v7, 0x10402c5
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -141,9 +141,9 @@
 
     const-string/jumbo v5, "reset-password"
 
-    const v6, 0x10402be
+    const v6, 0x10402c0
 
-    const v7, 0x10402bf
+    const v7, 0x10402c1
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -158,9 +158,9 @@
 
     const-string v5, "limit-password"
 
-    const v6, 0x10402ba
+    const v6, 0x10402bc
 
-    const v7, 0x10402bb
+    const v7, 0x10402bd
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -175,9 +175,9 @@
 
     const-string/jumbo v5, "watch-login"
 
-    const v6, 0x10402bc
+    const v6, 0x10402be
 
-    const v7, 0x10402bd
+    const v7, 0x10402bf
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -192,9 +192,9 @@
 
     const-string v5, "force-lock"
 
-    const v6, 0x10402c0
+    const v6, 0x10402c2
 
-    const v7, 0x10402c1
+    const v7, 0x10402c3
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -209,9 +209,9 @@
 
     const-string/jumbo v5, "set-global-proxy"
 
-    const v6, 0x10402c4
+    const v6, 0x10402c6
 
-    const v7, 0x10402c5
+    const v7, 0x10402c7
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -226,9 +226,9 @@
 
     const-string v5, "expire-password"
 
-    const v6, 0x10402c6
+    const v6, 0x10402c8
 
-    const v7, 0x10402c7
+    const v7, 0x10402c9
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -243,9 +243,9 @@
 
     const-string v5, "encrypted-storage"
 
-    const v6, 0x10402c8
+    const v6, 0x10402ca
 
-    const v7, 0x10402c9
+    const v7, 0x10402cb
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -260,9 +260,9 @@
 
     const-string v5, "disable-camera"
 
-    const v6, 0x10402ca
+    const v6, 0x10402cc
 
-    const v7, 0x10402cb
+    const v7, 0x10402cd
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 

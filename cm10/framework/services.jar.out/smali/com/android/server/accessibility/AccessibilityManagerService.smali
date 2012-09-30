@@ -2418,40 +2418,49 @@
 
     .line 567
     .local v3, root:Landroid/view/accessibility/AccessibilityNodeInfo;
-    if-nez v3, :cond_1
+    if-nez v3, :cond_0
 
     .line 578
-    :cond_0
-    :goto_0
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityInteractionClient;->removeConnection(I)V
 
-    .line 576
+    :goto_0
     return v5
 
     .line 570
-    :cond_1
+    :cond_0
     const/4 v6, 0x2
 
     :try_start_1
     invoke-virtual {v3, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->findFocus(I)Landroid/view/accessibility/AccessibilityNodeInfo;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v2
 
     .line 572
     .local v2, focus:Landroid/view/accessibility/AccessibilityNodeInfo;
-    if-eqz v2, :cond_0
+    if-nez v2, :cond_1
+
+    .line 578
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityInteractionClient;->removeConnection(I)V
+
+    goto :goto_0
 
     .line 575
+    :cond_1
+    :try_start_2
     invoke-virtual {v2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInScreen(Landroid/graphics/Rect;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 576
     const/4 v5, 0x1
 
+    .line 578
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityInteractionClient;->removeConnection(I)V
+
     goto :goto_0
 
-    .line 578
     .end local v2           #focus:Landroid/view/accessibility/AccessibilityNodeInfo;
     .end local v3           #root:Landroid/view/accessibility/AccessibilityNodeInfo;
     :catchall_0

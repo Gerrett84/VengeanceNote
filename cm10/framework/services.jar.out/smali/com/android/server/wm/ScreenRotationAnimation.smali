@@ -418,11 +418,11 @@
     if-nez p3, :cond_3
 
     .line 251
-    :goto_1
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
     .line 256
     :cond_3
+    :goto_1
     return-void
 
     .line 200
@@ -502,9 +502,14 @@
     move/from16 v0, p6
 
     invoke-direct {p0, v0}, Lcom/android/server/wm/ScreenRotationAnimation;->setRotation(I)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 250
     if-nez p3, :cond_3
+
+    .line 251
+    invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
     goto :goto_1
 
@@ -514,13 +519,14 @@
 
     .line 241
     .local v10, e:Landroid/view/Surface$OutOfResourcesException;
+    :try_start_3
     const-string v1, "ScreenRotationAnimation"
 
     const-string v2, "Unable to allocate freeze surface"
 
     invoke-static {v1, v2, v10}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_2
 
@@ -534,7 +540,6 @@
     .line 251
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
-    .line 250
     :cond_9
     throw v1
 .end method
@@ -914,13 +919,13 @@
     .catch Landroid/view/Surface$OutOfResourcesException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 539
-    .end local v7           #inner:Landroid/graphics/Rect;
-    .end local v8           #outer:Landroid/graphics/Rect;
-    :goto_2
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
     .line 567
+    .end local v7           #inner:Landroid/graphics/Rect;
+    .end local v8           #outer:Landroid/graphics/Rect;
     :cond_2
+    :goto_2
     const/4 v9, 0x1
 
     goto/16 :goto_0
@@ -1055,9 +1060,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    .line 539
+    invoke-static {}, Landroid/view/Surface;->closeTransaction()V
+
     goto :goto_2
 
-    .line 539
     .end local v3           #e:Landroid/view/Surface$OutOfResourcesException;
     :catchall_0
     move-exception v9
@@ -1067,8 +1074,6 @@
     throw v9
 
     .line 383
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
