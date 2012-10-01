@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">"Consente all'applicazione di leggere i messaggi cell broadcast ricevuti dal dispositivo. Gli avvisi cell broadcast vengono trasmessi in alcune località per avvertire di eventuali situazioni di emergenza. Le applicazioni dannose potrebbero interferire con il rendimento o con il funzionamento del dispositivo quando si riceve un messaggio cell broadcast di emergenza."</string>
     <string name="permlab_sendSms">invio SMS</string>
     <string name="permdesc_sendSms">"Consente all'applicazione di inviare messaggi SMS. Ciò potrebbe comportare costi imprevisti. Applicazioni dannose potrebbero generare dei costi inviando messaggi senza la tua conferma."</string>
+    <string name="permlab_sendMockSms">invio SMS fittizi</string>
+    <string name="permdesc_sendMockSms">"Consente all'applicazione di inviare messaggi SMS fittizi verso altre applicazioni. Le applicazioni dannose potrebbero inviare messaggi continuamente, bloccando il sistema delle notifiche e creando confusione nell'utente."</string>
     <string name="permlab_sendSmsNoConfirmation">invio di messaggi SMS senza conferma</string>
     <string name="permdesc_sendSmsNoConfirmation">"Consente all'applicazione di inviare messaggi SMS. Ciò potrebbe comportare costi imprevisti. Applicazioni dannose potrebbero generare dei costi inviando messaggi senza la tua conferma."</string>
     <string name="permlab_readSms">lettura messaggi di testo personali (SMS o MMS)</string>

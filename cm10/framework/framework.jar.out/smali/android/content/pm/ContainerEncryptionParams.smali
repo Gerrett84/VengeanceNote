@@ -946,7 +946,7 @@
 
     .line 279
     .local v0, sb:Ljava/lang/StringBuilder;
-    const-string v1, "mEncryptionAlgorithm=\""
+    const-string/jumbo v1, "mEncryptionAlgorithm=\""
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
