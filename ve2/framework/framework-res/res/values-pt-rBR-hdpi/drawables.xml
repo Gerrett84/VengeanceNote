@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="drawable" name="sym_keyboard_delete">false</item>
-    <item type="drawable" name="sym_keyboard_feedback_delete">false</item>
-    <item type="drawable" name="sym_keyboard_ok">false</item>
-</resources>
