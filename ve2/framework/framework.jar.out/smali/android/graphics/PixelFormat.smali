@@ -12,20 +12,32 @@
 .end field
 
 .field public static final LA_88:I = 0xa
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final L_8:I = 0x9
 
 .field public static final OPAQUE:I = -0x1
 
 .field public static final RGBA_4444:I = 0x7
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final RGBA_5551:I = 0x6
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final RGBA_8888:I = 0x1
 
 .field public static final RGBX_8888:I = 0x2
 
 .field public static final RGB_332:I = 0xb
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final RGB_565:I = 0x4
 
@@ -64,7 +76,7 @@
     .locals 0
 
     .prologue
-    .line 83
+    .line 87
     invoke-static {}, Landroid/graphics/PixelFormat;->nativeClassInit()V
 
     return-void
@@ -85,23 +97,23 @@
     .parameter "format"
 
     .prologue
-    .line 87
+    .line 91
     packed-switch p0, :pswitch_data_0
 
-    .line 97
+    .line 101
     :pswitch_0
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 95
+    .line 99
     :pswitch_1
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 87
+    .line 91
     nop
 
     :pswitch_data_0

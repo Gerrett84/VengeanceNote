@@ -38,9 +38,13 @@
 
 .field public static final enum MATRIX_4X4:Landroid/renderscript/Element$DataType;
 
+.field public static final enum NONE:Landroid/renderscript/Element$DataType;
+
 .field public static final enum RS_ALLOCATION:Landroid/renderscript/Element$DataType;
 
 .field public static final enum RS_ELEMENT:Landroid/renderscript/Element$DataType;
+
+.field public static final enum RS_FONT:Landroid/renderscript/Element$DataType;
 
 .field public static final enum RS_MESH:Landroid/renderscript/Element$DataType;
 
@@ -92,7 +96,7 @@
     .locals 10
 
     .prologue
-    const/16 v9, 0x10
+    const/4 v9, 0x0
 
     const/4 v8, 0x1
 
@@ -102,67 +106,76 @@
 
     const/4 v5, 0x4
 
-    .line 85
+    .line 117
+    new-instance v0, Landroid/renderscript/Element$DataType;
+
+    const-string v1, "NONE"
+
+    invoke-direct {v0, v1, v9, v9, v9}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+
+    sput-object v0, Landroid/renderscript/Element$DataType;->NONE:Landroid/renderscript/Element$DataType;
+
+    .line 119
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "FLOAT_32"
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v6, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v8, v6, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->FLOAT_32:Landroid/renderscript/Element$DataType;
 
-    .line 86
+    .line 120
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "FLOAT_64"
 
     const/4 v2, 0x3
 
-    invoke-direct {v0, v1, v8, v2, v7}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v6, v2, v7}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->FLOAT_64:Landroid/renderscript/Element$DataType;
 
-    .line 87
+    .line 121
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "SIGNED_8"
 
-    invoke-direct {v0, v1, v6, v5, v8}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    const/4 v2, 0x3
+
+    invoke-direct {v0, v1, v2, v5, v8}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->SIGNED_8:Landroid/renderscript/Element$DataType;
 
-    .line 88
+    .line 122
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "SIGNED_16"
 
-    const/4 v2, 0x3
+    const/4 v2, 0x5
 
-    const/4 v3, 0x5
-
-    invoke-direct {v0, v1, v2, v3, v6}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v5, v2, v6}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->SIGNED_16:Landroid/renderscript/Element$DataType;
 
-    .line 89
+    .line 123
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "SIGNED_32"
 
-    const/4 v2, 0x6
+    const/4 v2, 0x5
 
-    invoke-direct {v0, v1, v5, v2, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    const/4 v3, 0x6
+
+    invoke-direct {v0, v1, v2, v3, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->SIGNED_32:Landroid/renderscript/Element$DataType;
 
-    .line 90
+    .line 124
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "SIGNED_64"
 
-    const/4 v2, 0x5
+    const/4 v2, 0x6
 
     const/4 v3, 0x7
 
@@ -170,47 +183,47 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->SIGNED_64:Landroid/renderscript/Element$DataType;
 
-    .line 91
+    .line 125
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_8"
 
-    const/4 v2, 0x6
+    const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2, v7, v8}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_8:Landroid/renderscript/Element$DataType;
 
-    .line 92
+    .line 126
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_16"
 
-    const/4 v2, 0x7
+    const/16 v2, 0x9
 
-    const/16 v3, 0x9
-
-    invoke-direct {v0, v1, v2, v3, v6}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v7, v2, v6}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_16:Landroid/renderscript/Element$DataType;
 
-    .line 93
+    .line 127
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_32"
 
-    const/16 v2, 0xa
+    const/16 v2, 0x9
 
-    invoke-direct {v0, v1, v7, v2, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    const/16 v3, 0xa
+
+    invoke-direct {v0, v1, v2, v3, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_32:Landroid/renderscript/Element$DataType;
 
-    .line 94
+    .line 128
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_64"
 
-    const/16 v2, 0x9
+    const/16 v2, 0xa
 
     const/16 v3, 0xb
 
@@ -218,12 +231,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_64:Landroid/renderscript/Element$DataType;
 
-    .line 96
+    .line 130
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "BOOLEAN"
 
-    const/16 v2, 0xa
+    const/16 v2, 0xb
 
     const/16 v3, 0xc
 
@@ -231,12 +244,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->BOOLEAN:Landroid/renderscript/Element$DataType;
 
-    .line 98
+    .line 132
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_5_6_5"
 
-    const/16 v2, 0xb
+    const/16 v2, 0xc
 
     const/16 v3, 0xd
 
@@ -244,12 +257,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_5_6_5:Landroid/renderscript/Element$DataType;
 
-    .line 99
+    .line 133
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_5_5_5_1"
 
-    const/16 v2, 0xc
+    const/16 v2, 0xd
 
     const/16 v3, 0xe
 
@@ -257,12 +270,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_5_5_5_1:Landroid/renderscript/Element$DataType;
 
-    .line 100
+    .line 134
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "UNSIGNED_4_4_4_4"
 
-    const/16 v2, 0xd
+    const/16 v2, 0xe
 
     const/16 v3, 0xf
 
@@ -270,25 +283,27 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->UNSIGNED_4_4_4_4:Landroid/renderscript/Element$DataType;
 
-    .line 102
+    .line 136
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "MATRIX_4X4"
 
-    const/16 v2, 0xe
+    const/16 v2, 0xf
 
-    const/16 v3, 0x40
+    const/16 v3, 0x10
 
-    invoke-direct {v0, v1, v2, v9, v3}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    const/16 v4, 0x40
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->MATRIX_4X4:Landroid/renderscript/Element$DataType;
 
-    .line 103
+    .line 137
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "MATRIX_3X3"
 
-    const/16 v2, 0xf
+    const/16 v2, 0x10
 
     const/16 v3, 0x11
 
@@ -298,23 +313,27 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->MATRIX_3X3:Landroid/renderscript/Element$DataType;
 
-    .line 104
+    .line 138
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "MATRIX_2X2"
 
-    const/16 v2, 0x12
+    const/16 v2, 0x11
 
-    invoke-direct {v0, v1, v9, v2, v9}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+    const/16 v3, 0x12
+
+    const/16 v4, 0x10
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Landroid/renderscript/Element$DataType;->MATRIX_2X2:Landroid/renderscript/Element$DataType;
 
-    .line 106
+    .line 140
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_ELEMENT"
 
-    const/16 v2, 0x11
+    const/16 v2, 0x12
 
     const/16 v3, 0x3e8
 
@@ -322,12 +341,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_ELEMENT:Landroid/renderscript/Element$DataType;
 
-    .line 107
+    .line 141
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_TYPE"
 
-    const/16 v2, 0x12
+    const/16 v2, 0x13
 
     const/16 v3, 0x3e9
 
@@ -335,12 +354,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_TYPE:Landroid/renderscript/Element$DataType;
 
-    .line 108
+    .line 142
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_ALLOCATION"
 
-    const/16 v2, 0x13
+    const/16 v2, 0x14
 
     const/16 v3, 0x3ea
 
@@ -348,12 +367,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_ALLOCATION:Landroid/renderscript/Element$DataType;
 
-    .line 109
+    .line 143
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_SAMPLER"
 
-    const/16 v2, 0x14
+    const/16 v2, 0x15
 
     const/16 v3, 0x3eb
 
@@ -361,12 +380,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_SAMPLER:Landroid/renderscript/Element$DataType;
 
-    .line 110
+    .line 144
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_SCRIPT"
 
-    const/16 v2, 0x15
+    const/16 v2, 0x16
 
     const/16 v3, 0x3ec
 
@@ -374,12 +393,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_SCRIPT:Landroid/renderscript/Element$DataType;
 
-    .line 111
+    .line 145
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_MESH"
 
-    const/16 v2, 0x16
+    const/16 v2, 0x17
 
     const/16 v3, 0x3ed
 
@@ -387,12 +406,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_MESH:Landroid/renderscript/Element$DataType;
 
-    .line 112
+    .line 146
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_PROGRAM_FRAGMENT"
 
-    const/16 v2, 0x17
+    const/16 v2, 0x18
 
     const/16 v3, 0x3ee
 
@@ -400,12 +419,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_PROGRAM_FRAGMENT:Landroid/renderscript/Element$DataType;
 
-    .line 113
+    .line 147
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_PROGRAM_VERTEX"
 
-    const/16 v2, 0x18
+    const/16 v2, 0x19
 
     const/16 v3, 0x3ef
 
@@ -413,12 +432,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_PROGRAM_VERTEX:Landroid/renderscript/Element$DataType;
 
-    .line 114
+    .line 148
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_PROGRAM_RASTER"
 
-    const/16 v2, 0x19
+    const/16 v2, 0x1a
 
     const/16 v3, 0x3f0
 
@@ -426,12 +445,12 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_PROGRAM_RASTER:Landroid/renderscript/Element$DataType;
 
-    .line 115
+    .line 149
     new-instance v0, Landroid/renderscript/Element$DataType;
 
     const-string v1, "RS_PROGRAM_STORE"
 
-    const/16 v2, 0x1a
+    const/16 v2, 0x1b
 
     const/16 v3, 0x3f1
 
@@ -439,160 +458,185 @@
 
     sput-object v0, Landroid/renderscript/Element$DataType;->RS_PROGRAM_STORE:Landroid/renderscript/Element$DataType;
 
-    .line 83
-    const/16 v0, 0x1b
+    .line 150
+    new-instance v0, Landroid/renderscript/Element$DataType;
+
+    const-string v1, "RS_FONT"
+
+    const/16 v2, 0x1c
+
+    const/16 v3, 0x3f2
+
+    invoke-direct {v0, v1, v2, v3, v5}, Landroid/renderscript/Element$DataType;-><init>(Ljava/lang/String;III)V
+
+    sput-object v0, Landroid/renderscript/Element$DataType;->RS_FONT:Landroid/renderscript/Element$DataType;
+
+    .line 116
+    const/16 v0, 0x1d
 
     new-array v0, v0, [Landroid/renderscript/Element$DataType;
 
-    const/4 v1, 0x0
+    sget-object v1, Landroid/renderscript/Element$DataType;->NONE:Landroid/renderscript/Element$DataType;
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->FLOAT_32:Landroid/renderscript/Element$DataType;
+    aput-object v1, v0, v9
 
-    aput-object v2, v0, v1
-
-    sget-object v1, Landroid/renderscript/Element$DataType;->FLOAT_64:Landroid/renderscript/Element$DataType;
+    sget-object v1, Landroid/renderscript/Element$DataType;->FLOAT_32:Landroid/renderscript/Element$DataType;
 
     aput-object v1, v0, v8
 
-    sget-object v1, Landroid/renderscript/Element$DataType;->SIGNED_8:Landroid/renderscript/Element$DataType;
+    sget-object v1, Landroid/renderscript/Element$DataType;->FLOAT_64:Landroid/renderscript/Element$DataType;
 
     aput-object v1, v0, v6
 
     const/4 v1, 0x3
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->SIGNED_16:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->SIGNED_8:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
-    sget-object v1, Landroid/renderscript/Element$DataType;->SIGNED_32:Landroid/renderscript/Element$DataType;
+    sget-object v1, Landroid/renderscript/Element$DataType;->SIGNED_16:Landroid/renderscript/Element$DataType;
 
     aput-object v1, v0, v5
 
     const/4 v1, 0x5
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->SIGNED_64:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->SIGNED_32:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_8:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->SIGNED_64:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_16:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_8:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
-    sget-object v1, Landroid/renderscript/Element$DataType;->UNSIGNED_32:Landroid/renderscript/Element$DataType;
+    sget-object v1, Landroid/renderscript/Element$DataType;->UNSIGNED_16:Landroid/renderscript/Element$DataType;
 
     aput-object v1, v0, v7
 
     const/16 v1, 0x9
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_64:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_32:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->BOOLEAN:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_64:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_5_6_5:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->BOOLEAN:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_5_5_5_1:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_5_6_5:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_4_4_4_4:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_5_5_5_1:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->MATRIX_4X4:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->UNSIGNED_4_4_4_4:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
+    sget-object v2, Landroid/renderscript/Element$DataType;->MATRIX_4X4:Landroid/renderscript/Element$DataType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x10
+
     sget-object v2, Landroid/renderscript/Element$DataType;->MATRIX_3X3:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
-    sget-object v1, Landroid/renderscript/Element$DataType;->MATRIX_2X2:Landroid/renderscript/Element$DataType;
-
-    aput-object v1, v0, v9
-
     const/16 v1, 0x11
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_ELEMENT:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->MATRIX_2X2:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_TYPE:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_ELEMENT:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x13
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_ALLOCATION:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_TYPE:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x14
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_SAMPLER:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_ALLOCATION:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x15
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_SCRIPT:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_SAMPLER:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x16
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_MESH:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_SCRIPT:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x17
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_FRAGMENT:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_MESH:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x18
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_VERTEX:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_FRAGMENT:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x19
 
-    sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_RASTER:Landroid/renderscript/Element$DataType;
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_VERTEX:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1a
 
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_RASTER:Landroid/renderscript/Element$DataType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1b
+
     sget-object v2, Landroid/renderscript/Element$DataType;->RS_PROGRAM_STORE:Landroid/renderscript/Element$DataType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x1c
+
+    sget-object v2, Landroid/renderscript/Element$DataType;->RS_FONT:Landroid/renderscript/Element$DataType;
 
     aput-object v2, v0, v1
 
@@ -614,16 +658,16 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 154
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 120
+    .line 155
     iput p3, p0, Landroid/renderscript/Element$DataType;->mID:I
 
-    .line 121
+    .line 156
     iput p4, p0, Landroid/renderscript/Element$DataType;->mSize:I
 
-    .line 122
+    .line 157
     return-void
 .end method
 
@@ -632,7 +676,7 @@
     .parameter "name"
 
     .prologue
-    .line 83
+    .line 116
     const-class v0, Landroid/renderscript/Element$DataType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -648,7 +692,7 @@
     .locals 1
 
     .prologue
-    .line 83
+    .line 116
     sget-object v0, Landroid/renderscript/Element$DataType;->$VALUES:[Landroid/renderscript/Element$DataType;
 
     invoke-virtual {v0}, [Landroid/renderscript/Element$DataType;->clone()Ljava/lang/Object;

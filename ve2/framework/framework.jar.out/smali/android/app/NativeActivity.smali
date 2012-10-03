@@ -223,16 +223,20 @@
     .line 357
     iput-boolean v2, p0, Landroid/app/NativeActivity;->mDispatchingUnhandledKey:Z
 
+    .line 354
     :goto_0
     return v1
 
+    .line 357
     :cond_0
     iput-boolean v2, p0, Landroid/app/NativeActivity;->mDispatchingUnhandledKey:Z
 
     move v1, v2
 
+    .line 354
     goto :goto_0
 
+    .line 357
     .end local v0           #decor:Landroid/view/View;
     :catchall_0
     move-exception v1

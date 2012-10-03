@@ -447,7 +447,7 @@
 
     .line 236
     :try_start_0
-    const-string v2, "localhost"
+    const-string/jumbo v2, "localhost"
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

@@ -80,9 +80,9 @@
     .parameter "defRoamInd"
 
     .prologue
-    const v10, 0x10400f8
+    const v10, 0x10400fe
 
-    const v9, 0x10400f6
+    const v9, 0x10400fc
 
     const/4 v8, 0x2
 
@@ -197,7 +197,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400f7
+    const v5, 0x10400fd
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -241,7 +241,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400f9
+    const v5, 0x10400ff
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -264,7 +264,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400fa
+    const v5, 0x1040100
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -287,7 +287,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400fb
+    const v5, 0x1040101
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -310,7 +310,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400fc
+    const v5, 0x1040102
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -333,7 +333,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400fd
+    const v5, 0x1040103
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -356,7 +356,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400fe
+    const v5, 0x1040104
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -379,7 +379,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400ff
+    const v5, 0x1040105
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -402,7 +402,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040100
+    const v5, 0x1040106
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -425,7 +425,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040101
+    const v5, 0x1040107
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -448,7 +448,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x1040102
+    const v5, 0x1040108
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -511,7 +511,7 @@
 
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/EriManager;->mContext:Landroid/content/Context;
 
-    const v5, 0x10400f7
+    const v5, 0x10400fd
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -763,7 +763,7 @@
     :try_start_0
     const-string v2, "CDMA"
 
-    const-string v18, "loadEriFileFromXml: check for alternate file"
+    const-string/jumbo v18, "loadEriFileFromXml: check for alternate file"
 
     move-object/from16 v0, v18
 
@@ -772,7 +772,7 @@
     .line 163
     new-instance v16, Ljava/io/FileInputStream;
 
-    const v2, 0x1040442
+    const v2, 0x104047a
 
     invoke-virtual {v14, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -803,14 +803,14 @@
     .line 167
     const-string v2, "CDMA"
 
-    const-string v18, "loadEriFileFromXml: opened alternate file"
+    const-string/jumbo v18, "loadEriFileFromXml: opened alternate file"
 
     move-object/from16 v0, v18
 
     invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_7
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_6
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_5
 
     move-object/from16 v15, v16
 
@@ -823,7 +823,7 @@
     .line 177
     const-string v2, "CDMA"
 
-    const-string v18, "loadEriFileFromXml: open normal file"
+    const-string/jumbo v18, "loadEriFileFromXml: open normal file"
 
     move-object/from16 v0, v18
 
@@ -1004,7 +1004,7 @@
     :cond_2
     const-string v2, "CDMA"
 
-    const-string v18, "loadEriFileFromXml: eri parsing successful, file loaded"
+    const-string/jumbo v18, "loadEriFileFromXml: eri parsing successful, file loaded"
 
     move-object/from16 v0, v18
 
@@ -1039,7 +1039,7 @@
     :try_start_3
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_4
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 240
     .end local v11           #name:Ljava/lang/String;
@@ -1058,7 +1058,7 @@
     :goto_3
     const-string v2, "CDMA"
 
-    const-string v18, "loadEriFileFromXml: no alternate file"
+    const-string/jumbo v18, "loadEriFileFromXml: no alternate file"
 
     move-object/from16 v0, v18
 
@@ -1080,7 +1080,7 @@
     :goto_4
     const-string v2, "CDMA"
 
-    const-string v18, "loadEriFileFromXml: no parser for alternate file"
+    const-string/jumbo v18, "loadEriFileFromXml: no parser for alternate file"
 
     move-object/from16 v0, v18
 
@@ -1199,13 +1199,13 @@
     goto :goto_2
 
     .line 236
+    .end local v9           #e:Ljava/lang/Exception;
     :catch_3
     move-exception v2
 
     goto :goto_2
 
     .line 205
-    .end local v9           #e:Ljava/lang/Exception;
     .restart local v10       #id:I
     .restart local v11       #name:Ljava/lang/String;
     .restart local v12       #parsedEriEntries:I
@@ -1278,9 +1278,9 @@
     :try_start_8
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_5
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
 
-    .line 238
+    .line 229
     :cond_9
     :goto_5
     throw v2
@@ -1429,15 +1429,10 @@
     .end local v6           #eriText:Ljava/lang/String;
     .end local v7           #callPromptId:I
     .end local v8           #alertId:I
-    .end local v13           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :catch_4
-    move-exception v2
-
-    goto/16 :goto_2
-
     .end local v11           #name:Ljava/lang/String;
     .end local v12           #parsedEriEntries:I
-    :catch_5
+    .end local v13           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    :catch_4
     move-exception v18
 
     goto :goto_5
@@ -1446,7 +1441,7 @@
     .end local v15           #stream:Ljava/io/FileInputStream;
     .restart local v13       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v16       #stream:Ljava/io/FileInputStream;
-    :catch_6
+    :catch_5
     move-exception v9
 
     move-object/from16 v15, v16
@@ -1458,7 +1453,7 @@
     .line 168
     .end local v15           #stream:Ljava/io/FileInputStream;
     .restart local v16       #stream:Ljava/io/FileInputStream;
-    :catch_7
+    :catch_6
     move-exception v9
 
     move-object/from16 v15, v16

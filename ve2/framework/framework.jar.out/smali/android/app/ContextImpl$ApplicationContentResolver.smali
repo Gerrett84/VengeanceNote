@@ -25,28 +25,30 @@
     .parameter "mainThread"
 
     .prologue
-    .line 1628
+    .line 1704
     invoke-direct {p0, p1}, Landroid/content/ContentResolver;-><init>(Landroid/content/Context;)V
 
-    .line 1629
+    .line 1705
     iput-object p2, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 1630
+    .line 1706
     return-void
 .end method
 
 
 # virtual methods
 .method protected acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-    .locals 1
+    .locals 2
     .parameter "context"
     .parameter "name"
 
     .prologue
-    .line 1639
+    .line 1715
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    invoke-virtual {v0, p1, p2}, Landroid/app/ActivityThread;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, p2, v1}, Landroid/app/ActivityThread;->acquireExistingProvider(Landroid/content/Context;Ljava/lang/String;Z)Landroid/content/IContentProvider;
 
     move-result-object v0
 
@@ -54,15 +56,35 @@
 .end method
 
 .method protected acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
-    .locals 1
+    .locals 2
     .parameter "context"
     .parameter "name"
 
     .prologue
-    .line 1634
+    .line 1710
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    invoke-virtual {v0, p1, p2}, Landroid/app/ActivityThread;->acquireProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, p2, v1}, Landroid/app/ActivityThread;->acquireProvider(Landroid/content/Context;Ljava/lang/String;Z)Landroid/content/IContentProvider;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected acquireUnstableProvider(Landroid/content/Context;Ljava/lang/String;)Landroid/content/IContentProvider;
+    .locals 2
+    .parameter "c"
+    .parameter "name"
+
+    .prologue
+    .line 1725
+    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, p2, v1}, Landroid/app/ActivityThread;->acquireProvider(Landroid/content/Context;Ljava/lang/String;Z)Landroid/content/IContentProvider;
 
     move-result-object v0
 
@@ -70,16 +92,55 @@
 .end method
 
 .method public releaseProvider(Landroid/content/IContentProvider;)Z
-    .locals 1
+    .locals 2
     .parameter "provider"
 
     .prologue
-    .line 1644
+    .line 1720
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    invoke-virtual {v0, p1}, Landroid/app/ActivityThread;->releaseProvider(Landroid/content/IContentProvider;)Z
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->releaseProvider(Landroid/content/IContentProvider;Z)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public releaseUnstableProvider(Landroid/content/IContentProvider;)Z
+    .locals 2
+    .parameter "icp"
+
+    .prologue
+    .line 1730
+    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Landroid/app/ActivityThread;->releaseProvider(Landroid/content/IContentProvider;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public unstableProviderDied(Landroid/content/IContentProvider;)V
+    .locals 3
+    .parameter "icp"
+
+    .prologue
+    .line 1735
+    iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
+
+    invoke-interface {p1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/ActivityThread;->handleUnstableProviderDied(Landroid/os/IBinder;Z)V
+
+    .line 1736
+    return-void
 .end method

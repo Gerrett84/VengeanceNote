@@ -355,17 +355,17 @@
     .locals 1
 
     .prologue
-    .line 204
+    .line 206
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 205
+    .line 207
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter;->dismissPopupMenus()Z
 
-    .line 207
+    .line 209
     :cond_0
     return-void
 .end method
@@ -410,19 +410,19 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 188
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 187
+    .line 189
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter;->hideOverflowMenu()Z
 
     move-result v0
 
-    .line 189
+    .line 191
     :goto_0
     return v0
 
@@ -436,19 +436,19 @@
     .locals 1
 
     .prologue
-    .line 193
+    .line 195
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 194
+    .line 196
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter;->isOverflowMenuShowing()Z
 
     move-result v0
 
-    .line 196
+    .line 198
     :goto_0
     return v0
 
@@ -462,7 +462,7 @@
     .locals 1
 
     .prologue
-    .line 200
+    .line 202
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     if-eqz v0, :cond_0
@@ -494,7 +494,7 @@
     .parameter "spacing"
 
     .prologue
-    .line 211
+    .line 213
     const/high16 v0, -0x8000
 
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -503,17 +503,17 @@
 
     invoke-virtual {p1, v0, p3}, Landroid/view/View;->measure(II)V
 
-    .line 214
+    .line 216
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 215
+    .line 217
     sub-int/2addr p2, p4
 
-    .line 217
+    .line 219
     const/4 v0, 0x0
 
     invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
@@ -575,7 +575,7 @@
 
     move-result-object v1
 
-    const v2, 0x1110001
+    const v2, 0x1110002
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -607,18 +607,18 @@
     .parameter "contentHeight"
 
     .prologue
-    .line 221
+    .line 223
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
 
-    .line 222
+    .line 224
     .local v2, childWidth:I
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 223
+    .line 225
     .local v0, childHeight:I
     sub-int v3, p4, v0
 
@@ -626,7 +626,7 @@
 
     add-int v1, p3, v3
 
-    .line 225
+    .line 227
     .local v1, childTop:I
     add-int v3, p2, v2
 
@@ -634,7 +634,7 @@
 
     invoke-virtual {p1, p2, v1, v3, v4}, Landroid/view/View;->layout(IIII)V
 
-    .line 227
+    .line 229
     return v2
 .end method
 
@@ -646,18 +646,18 @@
     .parameter "contentHeight"
 
     .prologue
-    .line 231
+    .line 233
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
 
-    .line 232
+    .line 234
     .local v2, childWidth:I
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 233
+    .line 235
     .local v0, childHeight:I
     sub-int v3, p4, v0
 
@@ -665,7 +665,7 @@
 
     add-int v1, p3, v3
 
-    .line 235
+    .line 237
     .local v1, childTop:I
     sub-int v3, p2, v2
 
@@ -673,7 +673,7 @@
 
     invoke-virtual {p1, v3, v1, p2, v4}, Landroid/view/View;->layout(IIII)V
 
-    .line 237
+    .line 239
     return v2
 .end method
 
@@ -681,14 +681,14 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 180
     new-instance v0, Lcom/android/internal/widget/AbsActionBarView$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/AbsActionBarView$1;-><init>(Lcom/android/internal/widget/AbsActionBarView;)V
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/AbsActionBarView;->post(Ljava/lang/Runnable;)Z
 
-    .line 183
+    .line 185
     return-void
 .end method
 
@@ -749,20 +749,28 @@
 
     .prologue
     .line 164
-    iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mVisibilityAnim:Landroid/animation/Animator;
+    invoke-virtual {p0}, Lcom/android/internal/widget/AbsActionBarView;->getVisibility()I
 
-    if-eqz v0, :cond_0
+    move-result v0
+
+    if-eq p1, v0, :cond_1
 
     .line 165
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mVisibilityAnim:Landroid/animation/Animator;
 
+    if-eqz v0, :cond_0
+
+    .line 166
+    iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mVisibilityAnim:Landroid/animation/Animator;
+
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
-    .line 167
+    .line 168
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 168
+    .line 170
+    :cond_1
     return-void
 .end method
 
@@ -770,19 +778,19 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 173
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     if-eqz v0, :cond_0
 
-    .line 172
+    .line 174
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView;->mActionMenuPresenter:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter;->showOverflowMenu()Z
 
     move-result v0
 
-    .line 174
+    .line 176
     :goto_0
     return v0
 

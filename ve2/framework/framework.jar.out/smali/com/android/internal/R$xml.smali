@@ -21,11 +21,7 @@
 
 .field public static final eri:I = 0x10f0002
 
-.field public static final password_kbd_extension:I = 0x10f0003
-
 .field public static final password_kbd_numeric:I = 0x10f0004
-
-.field public static final password_kbd_popup_template:I = 0x10f0005
 
 .field public static final password_kbd_qwerty:I = 0x10f0006
 
@@ -37,8 +33,6 @@
 
 .field public static final power_profile:I = 0x10f000a
 
-.field public static final preferred_time_zones:I = 0x10f000b
-
 .field public static final storage_list:I = 0x10f000c
 
 .field public static final time_zones_by_country:I = 0x10f000d
@@ -49,7 +43,7 @@
     .locals 0
 
     .prologue
-    .line 19723
+    .line 15377
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 706
+    .line 712
     iput-object p1, p0, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand$1;->this$0:Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand;
 
     iput-boolean p2, p0, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand$1;->val$_on:Z
@@ -43,12 +43,12 @@
     .locals 2
 
     .prologue
-    .line 708
+    .line 714
     iget-boolean v0, p0, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand$1;->val$_on:Z
 
     if-eqz v0, :cond_0
 
-    .line 709
+    .line 715
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand$1;->this$0:Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand;
 
     #getter for: Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand;->mStorageManager:Landroid/os/storage/StorageManager;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0}, Landroid/os/storage/StorageManager;->enableUsbMassStorage()V
 
-    .line 713
+    .line 719
     :goto_0
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand$1;->this$0:Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand;
 
@@ -71,10 +71,10 @@
     :goto_1
     invoke-virtual {v1, v0}, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand;->updateState(I)V
 
-    .line 714
+    .line 720
     return-void
 
-    .line 711
+    .line 717
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand$1;->this$0:Lmiui/app/screenelement/ActionCommand$UsbStorageSwitchCommand;
 
@@ -87,7 +87,7 @@
 
     goto :goto_0
 
-    .line 713
+    .line 719
     :cond_1
     const/4 v0, 0x1
 

@@ -53,13 +53,8 @@
     .parameter "unlockerCallback"
 
     .prologue
-    .line 74
-    invoke-direct {p0, p1}, Lmiui/app/screenelement/ScreenElementRoot;-><init>(Lmiui/app/screenelement/ScreenContext;)V
-
     .line 75
-    iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
-
-    iput-object p0, v0, Lmiui/app/screenelement/ScreenContext;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
+    invoke-direct {p0, p1}, Lmiui/app/screenelement/ScreenElementRoot;-><init>(Lmiui/app/screenelement/ScreenContext;)V
 
     .line 76
     iput-object p2, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot;->mUnlockerCallback:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;
@@ -112,7 +107,7 @@
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
 
-    invoke-direct {v0, p1, v1}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementGroup;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v0, p1, v1, p0}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementGroup;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     return-object v0
 .end method
@@ -568,7 +563,7 @@
     goto :goto_1
 .end method
 
-.method public onTouch(Landroid/view/MotionEvent;)V
+.method public onTouch(Landroid/view/MotionEvent;)Z
     .locals 2
     .parameter "event"
 
@@ -585,13 +580,17 @@
 
     invoke-interface {v0, v1}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;->unlocked(Landroid/content/Intent;)V
 
-    .line 89
-    :goto_0
-    return-void
+    .line 85
+    const/4 v0, 0x0
 
     .line 88
+    :goto_0
+    return v0
+
     :cond_0
-    invoke-super {p0, p1}, Lmiui/app/screenelement/ScreenElementRoot;->onTouch(Landroid/view/MotionEvent;)V
+    invoke-super {p0, p1}, Lmiui/app/screenelement/ScreenElementRoot;->onTouch(Landroid/view/MotionEvent;)Z
+
+    move-result v0
 
     goto :goto_0
 .end method

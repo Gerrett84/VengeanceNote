@@ -23,8 +23,6 @@
 
 
 # instance fields
-.field private final accountManagerService:Landroid/accounts/AccountManagerService;
-
 .field private mAccount:Landroid/accounts/Account;
 
 .field private mAuthTokenType:Ljava/lang/String;
@@ -49,14 +47,108 @@
 
     iput-object v0, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mResultBundle:Landroid/os/Bundle;
 
-    .line 51
-    invoke-static {}, Landroid/accounts/AccountManagerService;->getSingleton()Landroid/accounts/AccountManagerService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->accountManagerService:Landroid/accounts/AccountManagerService;
-
     return-void
+.end method
+
+.method private getAccountLabel(Landroid/accounts/Account;)Ljava/lang/String;
+    .locals 7
+    .parameter "account"
+
+    .prologue
+    .line 136
+    invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/accounts/AccountManager;->getAuthenticatorTypes()[Landroid/accounts/AuthenticatorDescription;
+
+    move-result-object v1
+
+    .line 138
+    .local v1, authenticatorTypes:[Landroid/accounts/AuthenticatorDescription;
+    const/4 v4, 0x0
+
+    .local v4, i:I
+    array-length v0, v1
+
+    .local v0, N:I
+    :goto_0
+    if-ge v4, v0, :cond_1
+
+    .line 139
+    aget-object v2, v1, v4
+
+    .line 140
+    .local v2, desc:Landroid/accounts/AuthenticatorDescription;
+    iget-object v5, v2, Landroid/accounts/AuthenticatorDescription;->type:Ljava/lang/String;
+
+    iget-object v6, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    .line 142
+    :try_start_0
+    iget-object v5, v2, Landroid/accounts/AuthenticatorDescription;->packageName:Ljava/lang/String;
+
+    const/4 v6, 0x0
+
+    invoke-virtual {p0, v5, v6}, Landroid/accounts/GrantCredentialsPermissionActivity;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+
+    move-result-object v5
+
+    iget v6, v2, Landroid/accounts/AuthenticatorDescription;->labelId:I
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v5
+
+    .line 150
+    .end local v2           #desc:Landroid/accounts/AuthenticatorDescription;
+    :goto_1
+    return-object v5
+
+    .line 143
+    .restart local v2       #desc:Landroid/accounts/AuthenticatorDescription;
+    :catch_0
+    move-exception v3
+
+    .line 144
+    .local v3, e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    iget-object v5, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
+
+    goto :goto_1
+
+    .line 145
+    .end local v3           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    :catch_1
+    move-exception v3
+
+    .line 146
+    .local v3, e:Landroid/content/res/Resources$NotFoundException;
+    iget-object v5, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
+
+    goto :goto_1
+
+    .line 138
+    .end local v3           #e:Landroid/content/res/Resources$NotFoundException;
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    .line 150
+    .end local v2           #desc:Landroid/accounts/AuthenticatorDescription;
+    :cond_1
+    iget-object v5, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
+
+    goto :goto_1
 .end method
 
 .method private newPackageView(Ljava/lang/String;)Landroid/view/View;
@@ -64,10 +156,10 @@
     .parameter "packageLabel"
 
     .prologue
-    .line 139
+    .line 154
     iget-object v1, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x1090067
+    const v2, 0x109007b
 
     const/4 v3, 0x0
 
@@ -75,9 +167,9 @@
 
     move-result-object v0
 
-    .line 140
+    .line 155
     .local v0, view:Landroid/view/View;
-    const v1, 0x10202cb
+    const v1, 0x10202ff
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -87,7 +179,7 @@
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 141
+    .line 156
     return-object v0
 .end method
 
@@ -97,12 +189,12 @@
     .locals 4
 
     .prologue
-    .line 171
+    .line 186
     invoke-virtual {p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 172
+    .line 187
     .local v0, intent:Landroid/content/Intent;
     const-string/jumbo v2, "response"
 
@@ -112,29 +204,29 @@
 
     check-cast v1, Landroid/accounts/AccountAuthenticatorResponse;
 
-    .line 173
+    .line 188
     .local v1, response:Landroid/accounts/AccountAuthenticatorResponse;
     if-eqz v1, :cond_0
 
-    .line 175
+    .line 190
     iget-object v2, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mResultBundle:Landroid/os/Bundle;
 
     if-eqz v2, :cond_1
 
-    .line 176
+    .line 191
     iget-object v2, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mResultBundle:Landroid/os/Bundle;
 
     invoke-virtual {v1, v2}, Landroid/accounts/AccountAuthenticatorResponse;->onResult(Landroid/os/Bundle;)V
 
-    .line 181
+    .line 196
     :cond_0
     :goto_0
     invoke-super {p0}, Landroid/app/Activity;->finish()V
 
-    .line 182
+    .line 197
     return-void
 
-    .line 178
+    .line 193
     :cond_1
     const/4 v2, 0x4
 
@@ -146,27 +238,33 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 5
+    .locals 7
     .parameter "v"
 
     .prologue
-    .line 145
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    .line 160
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v1
 
     packed-switch v1, :pswitch_data_0
 
-    .line 159
+    .line 174
     :goto_0
     invoke-virtual {p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->finish()V
 
-    .line 160
+    .line 175
     return-void
 
-    .line 147
+    .line 162
     :pswitch_0
-    iget-object v1, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->accountManagerService:Landroid/accounts/AccountManagerService;
+    invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
+
+    move-result-object v1
 
     iget-object v2, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
 
@@ -174,27 +272,25 @@
 
     iget v4, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mUid:I
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/accounts/AccountManagerService;->grantAppPermission(Landroid/accounts/Account;Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v3, v4, v6}, Landroid/accounts/AccountManager;->updateAppPermission(Landroid/accounts/Account;Ljava/lang/String;IZ)V
 
-    .line 148
+    .line 163
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 149
+    .line 164
     .local v0, result:Landroid/content/Intent;
     const-string/jumbo v1, "retry"
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 150
+    .line 165
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1, v0}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 151
+    .line 166
     invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
@@ -203,10 +299,12 @@
 
     goto :goto_0
 
-    .line 155
+    .line 170
     .end local v0           #result:Landroid/content/Intent;
     :pswitch_1
-    iget-object v1, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->accountManagerService:Landroid/accounts/AccountManagerService;
+    invoke-static {p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
+
+    move-result-object v1
 
     iget-object v2, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
 
@@ -214,400 +312,478 @@
 
     iget v4, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mUid:I
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/accounts/AccountManagerService;->revokeAppPermission(Landroid/accounts/Account;Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/accounts/AccountManager;->updateAppPermission(Landroid/accounts/Account;Ljava/lang/String;IZ)V
 
-    .line 156
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
+    .line 171
+    invoke-virtual {p0, v5}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
 
     goto :goto_0
 
-    .line 145
+    .line 160
     :pswitch_data_0
-    .packed-switch 0x102026f
+    .packed-switch 0x1020281
         :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 17
+    .locals 21
     .parameter "savedInstanceState"
 
     .prologue
-    .line 54
+    .line 53
     invoke-super/range {p0 .. p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
+    .line 54
+    const v17, 0x1090043
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setContentView(I)V
+
     .line 55
-    const v14, 0x1090042
+    const v17, 0x1040470
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->setContentView(I)V
+    move/from16 v1, v17
 
-    .line 56
-    const v14, 0x1040438
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setTitle(I)V
 
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->setTitle(I)V
-
-    .line 58
-    const-string v14, "layout_inflater"
+    .line 57
+    const-string v17, "layout_inflater"
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-object/from16 v1, v17
 
-    move-result-object v14
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    check-cast v14, Landroid/view/LayoutInflater;
+    move-result-object v17
 
-    move-object/from16 v0, p0
+    check-cast v17, Landroid/view/LayoutInflater;
 
-    iput-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mInflater:Landroid/view/LayoutInflater;
+    move-object/from16 v0, v17
 
-    .line 60
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Landroid/accounts/GrantCredentialsPermissionActivity;->mInflater:Landroid/view/LayoutInflater;
+
+    .line 59
     invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v14
+    move-result-object v17
 
-    invoke-virtual {v14}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-
-    move-result-object v5
-
-    .line 61
-    .local v5, extras:Landroid/os/Bundle;
-    if-nez v5, :cond_0
-
-    .line 63
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
-
-    .line 64
-    invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->finish()V
-
-    .line 136
-    :goto_0
-    return-void
-
-    .line 69
-    :cond_0
-    const-string v14, "account"
-
-    invoke-virtual {v5, v14}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v14
-
-    check-cast v14, Landroid/accounts/Account;
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
-
-    .line 70
-    const-string v14, "authTokenType"
-
-    invoke-virtual {v5, v14}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v14
-
-    move-object/from16 v0, p0
-
-    iput-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAuthTokenType:Ljava/lang/String;
-
-    .line 71
-    const-string/jumbo v14, "uid"
-
-    invoke-virtual {v5, v14}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v14
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mUid:I
-
-    .line 72
-    invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v12
-
-    .line 73
-    .local v12, pm:Landroid/content/pm/PackageManager;
-    move-object/from16 v0, p0
-
-    iget v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mUid:I
-
-    invoke-virtual {v12, v14}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+    invoke-virtual/range {v17 .. v17}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v9
 
-    .line 75
-    .local v9, packages:[Ljava/lang/String;
-    move-object/from16 v0, p0
+    .line 60
+    .local v9, extras:Landroid/os/Bundle;
+    if-nez v9, :cond_0
 
-    iget-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
-
-    if-eqz v14, :cond_1
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAuthTokenType:Ljava/lang/String;
-
-    if-eqz v14, :cond_1
-
-    if-nez v9, :cond_2
-
-    .line 77
-    :cond_1
-    const/4 v14, 0x0
+    .line 62
+    const/16 v17, 0x0
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
+    move/from16 v1, v17
 
-    .line 78
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
+
+    .line 63
     invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->finish()V
 
-    goto :goto_0
+    .line 133
+    :goto_0
+    return-void
 
-    .line 84
-    :cond_2
-    :try_start_0
+    .line 68
+    :cond_0
+    const-string v17, "account"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v9, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v17
+
+    check-cast v17, Landroid/accounts/Account;
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
+
+    .line 69
+    const-string v17, "authTokenType"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v9, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput-object v0, v1, Landroid/accounts/GrantCredentialsPermissionActivity;->mAuthTokenType:Ljava/lang/String;
+
+    .line 70
+    const-string/jumbo v17, "uid"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v9, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v17
+
+    move/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    iput v0, v1, Landroid/accounts/GrantCredentialsPermissionActivity;->mUid:I
+
+    .line 71
+    invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v16
+
+    .line 72
+    .local v16, pm:Landroid/content/pm/PackageManager;
     move-object/from16 v0, p0
 
-    iget-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->accountManagerService:Landroid/accounts/AccountManagerService;
+    iget v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mUid:I
 
+    move/from16 v17, v0
+
+    invoke-virtual/range {v16 .. v17}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 74
+    .local v13, packages:[Ljava/lang/String;
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
+    iget-object v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
 
-    iget-object v15, v15, Landroid/accounts/Account;->type:Ljava/lang/String;
+    move-object/from16 v17, v0
 
-    invoke-virtual {v14, v15}, Landroid/accounts/AccountManagerService;->getAccountLabel(Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    .line 92
-    .local v1, accountTypeLabel:Ljava/lang/String;
-    const v14, 0x102026c
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/TextView;
-
-    .line 93
-    .local v3, authTokenTypeView:Landroid/widget/TextView;
-    const/16 v14, 0x8
-
-    invoke-virtual {v3, v14}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 96
-    new-instance v13, Landroid/accounts/GrantCredentialsPermissionActivity$1;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v13, v0, v3}, Landroid/accounts/GrantCredentialsPermissionActivity$1;-><init>(Landroid/accounts/GrantCredentialsPermissionActivity;Landroid/widget/TextView;)V
-
-    .line 116
-    .local v13, response:Landroid/accounts/IAccountManagerResponse;
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->accountManagerService:Landroid/accounts/AccountManagerService;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
+    if-eqz v17, :cond_1
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAuthTokenType:Ljava/lang/String;
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, v16
+    if-eqz v17, :cond_1
 
-    invoke-virtual {v14, v13, v15, v0}, Landroid/accounts/AccountManagerService;->getAuthTokenLabel(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Ljava/lang/String;)V
+    if-nez v13, :cond_2
+
+    .line 76
+    :cond_1
+    const/16 v17, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
+
+    .line 77
+    invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->finish()V
+
+    goto :goto_0
+
+    .line 83
+    :cond_2
+    :try_start_0
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v17
+
+    invoke-direct {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->getAccountLabel(Landroid/accounts/Account;)Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v4
+
+    .line 91
+    .local v4, accountTypeLabel:Ljava/lang/String;
+    const v17, 0x102027e
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/TextView;
+
+    .line 92
+    .local v6, authTokenTypeView:Landroid/widget/TextView;
+    const/16 v17, 0x8
+
+    move/from16 v0, v17
+
+    invoke-virtual {v6, v0}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 94
+    new-instance v7, Landroid/accounts/GrantCredentialsPermissionActivity$1;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v7, v0, v6}, Landroid/accounts/GrantCredentialsPermissionActivity$1;-><init>(Landroid/accounts/GrantCredentialsPermissionActivity;Landroid/widget/TextView;)V
+
+    .line 114
+    .local v7, callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Ljava/lang/String;>;"
+    invoke-static/range {p0 .. p0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
+
+    move-result-object v17
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, v18
+
+    iget-object v0, v0, Landroid/accounts/Account;->type:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAuthTokenType:Ljava/lang/String;
+
+    move-object/from16 v19, v0
+
+    const/16 v20, 0x0
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    move-object/from16 v2, v19
+
+    move-object/from16 v3, v20
+
+    invoke-virtual {v0, v1, v2, v7, v3}, Landroid/accounts/AccountManager;->getAuthTokenLabel(Ljava/lang/String;Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
+
+    .line 116
+    const v17, 0x1020282
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 117
+    const v17, 0x1020281
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 119
-    const v14, 0x1020270
+    const v17, 0x102027a
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v14
 
-    move-object/from16 v0, p0
+    check-cast v14, Landroid/widget/LinearLayout;
 
-    invoke-virtual {v14, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 121
+    .local v14, packagesListView:Landroid/widget/LinearLayout;
+    move-object v5, v13
 
-    .line 120
-    const v14, 0x102026f
+    .local v5, arr$:[Ljava/lang/String;
+    array-length v11, v5
 
-    move-object/from16 v0, p0
+    .local v11, len$:I
+    const/4 v10, 0x0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+    .local v10, i$:I
+    :goto_1
+    if-ge v10, v11, :cond_3
 
-    move-result-object v14
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v14, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 122
-    const v14, 0x1020268
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v10
-
-    check-cast v10, Landroid/widget/LinearLayout;
+    aget-object v15, v5, v10
 
     .line 124
-    .local v10, packagesListView:Landroid/widget/LinearLayout;
-    move-object v2, v9
-
-    .local v2, arr$:[Ljava/lang/String;
-    array-length v7, v2
-
-    .local v7, len$:I
-    const/4 v6, 0x0
-
-    .local v6, i$:I
-    :goto_1
-    if-ge v6, v7, :cond_3
-
-    aget-object v11, v2, v6
-
-    .line 127
-    .local v11, pkg:Ljava/lang/String;
-    const/4 v14, 0x0
+    .local v15, pkg:Ljava/lang/String;
+    const/16 v17, 0x0
 
     :try_start_1
-    invoke-virtual {v12, v11, v14}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    move-object/from16 v0, v16
 
-    move-result-object v14
+    move/from16 v1, v17
 
-    invoke-virtual {v12, v14}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v15, v1}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
-    move-result-object v14
+    move-result-object v17
 
-    invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v17}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
+
+    move-result-object v17
+
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Object;->toString()Ljava/lang/String;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-result-object v8
+    move-result-object v12
 
-    .line 131
-    .local v8, packageLabel:Ljava/lang/String;
+    .line 128
+    .local v12, packageLabel:Ljava/lang/String;
     :goto_2
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v8}, Landroid/accounts/GrantCredentialsPermissionActivity;->newPackageView(Ljava/lang/String;)Landroid/view/View;
+    invoke-direct {v0, v12}, Landroid/accounts/GrantCredentialsPermissionActivity;->newPackageView(Ljava/lang/String;)Landroid/view/View;
 
-    move-result-object v14
+    move-result-object v17
 
-    invoke-virtual {v10, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    move-object/from16 v0, v17
 
-    .line 124
-    add-int/lit8 v6, v6, 0x1
+    invoke-virtual {v14, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 121
+    add-int/lit8 v10, v10, 0x1
 
     goto :goto_1
 
-    .line 85
-    .end local v1           #accountTypeLabel:Ljava/lang/String;
-    .end local v2           #arr$:[Ljava/lang/String;
-    .end local v3           #authTokenTypeView:Landroid/widget/TextView;
-    .end local v6           #i$:I
-    .end local v7           #len$:I
-    .end local v8           #packageLabel:Ljava/lang/String;
-    .end local v10           #packagesListView:Landroid/widget/LinearLayout;
-    .end local v11           #pkg:Ljava/lang/String;
-    .end local v13           #response:Landroid/accounts/IAccountManagerResponse;
+    .line 84
+    .end local v4           #accountTypeLabel:Ljava/lang/String;
+    .end local v5           #arr$:[Ljava/lang/String;
+    .end local v6           #authTokenTypeView:Landroid/widget/TextView;
+    .end local v7           #callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Ljava/lang/String;>;"
+    .end local v10           #i$:I
+    .end local v11           #len$:I
+    .end local v12           #packageLabel:Ljava/lang/String;
+    .end local v14           #packagesListView:Landroid/widget/LinearLayout;
+    .end local v15           #pkg:Ljava/lang/String;
     :catch_0
-    move-exception v4
+    move-exception v8
 
-    .line 87
-    .local v4, e:Ljava/lang/IllegalArgumentException;
-    const/4 v14, 0x0
+    .line 86
+    .local v8, e:Ljava/lang/IllegalArgumentException;
+    const/16 v17, 0x0
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
+    move/from16 v1, v17
 
-    .line 88
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setResult(I)V
+
+    .line 87
     invoke-virtual/range {p0 .. p0}, Landroid/accounts/GrantCredentialsPermissionActivity;->finish()V
 
     goto/16 :goto_0
 
-    .line 128
-    .end local v4           #e:Ljava/lang/IllegalArgumentException;
-    .restart local v1       #accountTypeLabel:Ljava/lang/String;
-    .restart local v2       #arr$:[Ljava/lang/String;
-    .restart local v3       #authTokenTypeView:Landroid/widget/TextView;
-    .restart local v6       #i$:I
-    .restart local v7       #len$:I
-    .restart local v10       #packagesListView:Landroid/widget/LinearLayout;
-    .restart local v11       #pkg:Ljava/lang/String;
-    .restart local v13       #response:Landroid/accounts/IAccountManagerResponse;
+    .line 125
+    .end local v8           #e:Ljava/lang/IllegalArgumentException;
+    .restart local v4       #accountTypeLabel:Ljava/lang/String;
+    .restart local v5       #arr$:[Ljava/lang/String;
+    .restart local v6       #authTokenTypeView:Landroid/widget/TextView;
+    .restart local v7       #callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Ljava/lang/String;>;"
+    .restart local v10       #i$:I
+    .restart local v11       #len$:I
+    .restart local v14       #packagesListView:Landroid/widget/LinearLayout;
+    .restart local v15       #pkg:Ljava/lang/String;
     :catch_1
-    move-exception v4
+    move-exception v8
 
-    .line 129
-    .local v4, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    move-object v8, v11
+    .line 126
+    .local v8, e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    move-object v12, v15
 
-    .restart local v8       #packageLabel:Ljava/lang/String;
+    .restart local v12       #packageLabel:Ljava/lang/String;
     goto :goto_2
 
-    .line 134
-    .end local v4           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    .end local v8           #packageLabel:Ljava/lang/String;
-    .end local v11           #pkg:Ljava/lang/String;
+    .line 131
+    .end local v8           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    .end local v12           #packageLabel:Ljava/lang/String;
+    .end local v15           #pkg:Ljava/lang/String;
     :cond_3
-    const v14, 0x102026b
+    const v17, 0x102027d
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+    move/from16 v1, v17
 
-    move-result-object v14
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
 
-    check-cast v14, Landroid/widget/TextView;
+    move-result-object v17
 
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
-
-    iget-object v15, v15, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-virtual {v14, v15}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 135
-    const v14, 0x102026a
+    check-cast v17, Landroid/widget/TextView;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+    iget-object v0, v0, Landroid/accounts/GrantCredentialsPermissionActivity;->mAccount:Landroid/accounts/Account;
 
-    move-result-object v14
+    move-object/from16 v18, v0
 
-    check-cast v14, Landroid/widget/TextView;
+    move-object/from16 v0, v18
 
-    invoke-virtual {v14, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object v0, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    move-object/from16 v18, v0
+
+    invoke-virtual/range {v17 .. v18}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 132
+    const v17, 0x102027c
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v17
+
+    check-cast v17, Landroid/widget/TextView;
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_0
 .end method
@@ -617,9 +793,9 @@
     .parameter "result"
 
     .prologue
-    .line 163
+    .line 178
     iput-object p1, p0, Landroid/accounts/GrantCredentialsPermissionActivity;->mResultBundle:Landroid/os/Bundle;
 
-    .line 164
+    .line 179
     return-void
 .end method

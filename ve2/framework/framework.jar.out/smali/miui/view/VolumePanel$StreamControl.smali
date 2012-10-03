@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 185
+    .line 206
     iput-object p1, p0, Lmiui/view/VolumePanel$StreamControl;->this$0:Lmiui/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
     .parameter "x1"
 
     .prologue
-    .line 185
+    .line 206
     invoke-direct {p0, p1}, Lmiui/view/VolumePanel$StreamControl;-><init>(Lmiui/view/VolumePanel;)V
 
     return-void

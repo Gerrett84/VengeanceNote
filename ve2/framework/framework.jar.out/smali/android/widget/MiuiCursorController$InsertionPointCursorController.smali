@@ -31,7 +31,7 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/TextView;Landroid/content/Context;)V
+.method constructor <init>(Landroid/widget/Editor;Landroid/content/Context;)V
     .locals 3
     .parameter "owner"
     .parameter "context"
@@ -39,29 +39,29 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 347
-    invoke-direct {p0, p1, p2}, Landroid/widget/MiuiCursorController;-><init>(Landroid/widget/TextView;Landroid/content/Context;)V
+    .line 349
+    invoke-direct {p0, p1, p2}, Landroid/widget/MiuiCursorController;-><init>(Landroid/widget/Editor;Landroid/content/Context;)V
 
-    .line 344
+    .line 346
     const/4 v1, 0x2
 
     new-array v1, v1, [I
 
     iput-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mCoords:[I
 
-    .line 389
+    .line 391
     iput-boolean v2, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mShowOnOneShot:Z
 
-    .line 348
-    iget-object v1, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    .line 350
+    iget-object v1, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {p0, v1, v2, p0}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->initHandleView(Landroid/widget/TextView;ILandroid/widget/MiuiCursorController;)Landroid/widget/MiuiCursorController$MiuiHandleView;
+    invoke-virtual {p0, v1, v2, p0}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->initHandleView(Landroid/widget/Editor;ILandroid/widget/MiuiCursorController;)Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
-    .line 349
+    .line 351
     const v1, 0x6030033
 
     invoke-virtual {p0, v1}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->createFloatPanelViewController(I)Landroid/widget/MiuiCursorController$FloatPanelViewController;
@@ -70,7 +70,7 @@
 
     iput-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
-    .line 350
+    .line 352
     const v1, 0x6030030
 
     invoke-virtual {p0, v1}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->createFloatPanelViewController(I)Landroid/widget/MiuiCursorController$FloatPanelViewController;
@@ -79,12 +79,12 @@
 
     iput-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
-    .line 351
+    .line 353
     new-instance v0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;
 
     invoke-direct {v0, p0}, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;-><init>(Landroid/widget/MiuiCursorController$InsertionPointCursorController;)V
 
-    .line 358
+    .line 360
     .local v0, l:Landroid/view/View$OnClickListener;
     iget-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
@@ -92,28 +92,28 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
-    .line 359
+    .line 361
     iget-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     const v2, 0x60b001a
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
-    .line 360
+    .line 362
     iget-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     const v2, 0x60b0017
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
-    .line 361
+    .line 363
     iget-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     const v2, 0x60b0018
 
     invoke-virtual {v1, v2, v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->setButtonOnClickListener(ILandroid/view/View$OnClickListener;)V
 
-    .line 362
+    .line 364
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .parameter "x0"
 
     .prologue
-    .line 335
+    .line 337
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     return-object v0
@@ -132,27 +132,27 @@
     .locals 2
 
     .prologue
-    .line 515
+    .line 517
     const-string v0, "MiuiCursorController"
 
     const-string v1, ">need InsertPanel, to show Panel and hide handle"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 516
+    .line 518
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
 
-    .line 517
+    .line 519
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->invisible()V
 
-    .line 518
-    iget-object v0, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    .line 520
+    iget-object v0, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionController()Landroid/widget/MiuiCursorController;
+    invoke-virtual {v0}, Landroid/widget/Editor;->getSelectionController()Landroid/widget/MiuiCursorController;
 
     move-result-object v0
 
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/MiuiCursorController;->setMinMaxOffset(I)V
 
-    .line 519
+    .line 521
     return-void
 .end method
 
@@ -171,12 +171,12 @@
     .parameter "pos"
 
     .prologue
-    .line 460
+    .line 461
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     invoke-virtual {v0, p1}, Landroid/widget/MiuiCursorController$MiuiHandleView;->getHotspotLocationOnScreen([I)V
 
-    .line 461
+    .line 462
     return-void
 .end method
 
@@ -184,14 +184,14 @@
     .locals 2
 
     .prologue
-    .line 466
+    .line 467
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     iget-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mCoords:[I
 
     invoke-virtual {v0, v1}, Landroid/widget/MiuiCursorController$MiuiHandleView;->getHotspotLocationOnScreen([I)V
 
-    .line 467
+    .line 468
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mCoords:[I
 
     const/4 v1, 0x1
@@ -205,29 +205,29 @@
     .locals 2
 
     .prologue
-    .line 427
+    .line 428
     const-string v0, "MiuiCursorController"
 
     const-string v1, "InsertionPointCursorController is hidden including all panels and handle"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 428
+    .line 429
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 429
+    .line 430
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 430
+    .line 431
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->hide()V
 
-    .line 431
+    .line 432
     return-void
 .end method
 
@@ -235,7 +235,7 @@
     .locals 1
 
     .prologue
-    .line 434
+    .line 435
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->isShowing()Z
@@ -276,12 +276,12 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 367
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 366
+    .line 368
     return-void
 .end method
 
@@ -291,21 +291,21 @@
     .parameter "ev"
 
     .prologue
-    .line 486
+    .line 487
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 512
+    .line 514
     :cond_0
     :goto_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 488
+    .line 489
     :pswitch_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -359,9 +359,9 @@
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 499
-    iget-object v0, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    iget-object v0, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->needInsertPanel()Z
+    invoke-virtual {v0}, Landroid/widget/Editor;->needInsertPanel()Z
 
     move-result v0
 
@@ -380,18 +380,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     .line 507
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
+    .line 510
+    :cond_2
+    iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
+
+    invoke-virtual {v0}, Landroid/widget/MiuiCursorController$MiuiHandleView;->onHandleMoved()V
+
     goto :goto_0
 
-    .line 486
-    nop
-
+    .line 487
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -405,21 +409,21 @@
     .parameter "ev"
 
     .prologue
-    .line 474
+    .line 475
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 481
+    .line 482
     :cond_0
     :goto_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 476
+    .line 477
     :pswitch_0
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
@@ -429,12 +433,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 478
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->hide()V
 
     goto :goto_0
 
-    .line 474
+    .line 475
     nop
 
     :pswitch_data_0
@@ -453,7 +457,7 @@
 
     const/4 v9, -0x2
 
-    .line 369
+    .line 371
     iget-object v7, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     const v8, 0x60b001b
@@ -464,16 +468,16 @@
 
     check-cast v5, Landroid/widget/LinearLayout;
 
-    .line 370
+    .line 372
     .local v5, ll:Landroid/widget/LinearLayout;
     invoke-virtual {v5}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 371
+    .line 373
     invoke-virtual {p1}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v0
 
-    .line 372
+    .line 374
     .local v0, historyCount:I
     const/4 v7, 0x3
 
@@ -483,7 +487,7 @@
 
     add-int/lit8 v3, v7, -0x1
 
-    .line 373
+    .line 375
     .local v3, lastIndex:I
     iget-object v7, p0, Landroid/widget/MiuiCursorController;->mContext:Landroid/content/Context;
 
@@ -495,7 +499,7 @@
 
     check-cast v4, Landroid/view/LayoutInflater;
 
-    .line 374
+    .line 376
     .local v4, layoutInflater:Landroid/view/LayoutInflater;
     const/4 v1, 0x0
 
@@ -503,7 +507,7 @@
     :goto_0
     if-gt v1, v3, :cond_1
 
-    .line 375
+    .line 377
     const v7, 0x6030031
 
     const/4 v8, 0x0
@@ -514,7 +518,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 376
+    .line 378
     .local v6, tv:Landroid/widget/TextView;
     invoke-virtual {p1, v1}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
 
@@ -528,59 +532,59 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 377
+    .line 379
     invoke-virtual {v6, p2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 378
+    .line 380
     new-instance v7, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v7, v10, v9}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v5, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 379
+    .line 381
     if-eq v1, v3, :cond_0
 
-    .line 380
+    .line 382
     new-instance v2, Landroid/widget/ImageView;
 
     iget-object v7, p0, Landroid/widget/MiuiCursorController;->mContext:Landroid/content/Context;
 
     invoke-direct {v2, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 381
+    .line 383
     .local v2, im:Landroid/widget/ImageView;
     const v7, 0x602010c
 
     invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 382
+    .line 384
     sget-object v7, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 383
+    .line 385
     new-instance v7, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v7, v10, v9}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v5, v2, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 374
+    .line 376
     .end local v2           #im:Landroid/widget/ImageView;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 386
+    .line 388
     .end local v6           #tv:Landroid/widget/TextView;
     :cond_1
     iget-object v7, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v7}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
 
-    .line 387
+    .line 389
     return-void
 .end method
 
@@ -592,14 +596,14 @@
 
     const/4 v6, 0x0
 
-    .line 392
+    .line 394
     const/4 v8, 0x4
 
     new-array v0, v8, [I
 
     fill-array-data v0, :array_0
 
-    .line 396
+    .line 398
     .local v0, buttons:[I
     const/4 v8, 0x3
 
@@ -607,15 +611,15 @@
 
     fill-array-data v4, :array_1
 
-    .line 399
+    .line 401
     .local v4, separators:[I
-    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {v8, v0}, Landroid/widget/TextView;->getFloatPanelShowHides([I)Ljava/util/ArrayList;
+    invoke-virtual {v8, v0}, Landroid/widget/Editor;->getFloatPanelShowHides([I)Ljava/util/ArrayList;
 
     move-result-object v5
 
-    .line 400
+    .line 402
     .local v5, showHides:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Boolean;>;"
     const-string v8, "MiuiCursorController"
 
@@ -643,42 +647,42 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 401
+    .line 403
     iget-object v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v8, v0, v4, v5}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->showHideButtons([I[ILjava/util/ArrayList;)V
 
-    .line 403
+    .line 405
     const-string v8, "MiuiCursorController"
 
     const-string v9, "InsertionPointCursorController is shown with hidden panels and shown handle"
 
     invoke-static {v8, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 404
+    .line 406
     iget-object v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v8}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 405
+    .line 407
     iget-object v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v8}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 407
-    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    .line 409
+    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/widget/TextView;->getSelectionStart()I
 
     move-result v2
 
-    .line 408
+    .line 410
     .local v2, offset:I
     iget v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mTextOffset:I
 
     if-eq v2, v8, :cond_0
 
-    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/widget/TextView;->length()I
 
@@ -689,23 +693,23 @@
     :cond_0
     move v3, v7
 
-    .line 409
+    .line 411
     .local v3, oneShot:Z
     :goto_0
     iput v2, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mTextOffset:I
 
-    .line 411
-    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    .line 413
+    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {v8}, Landroid/widget/TextView;->hasMagnifierController()Z
+    invoke-virtual {v8}, Landroid/widget/Editor;->hasMagnifierController()Z
 
     move-result v8
 
     if-eqz v8, :cond_3
 
-    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {v8}, Landroid/widget/TextView;->getMagnifierController()Landroid/widget/MagnifierController;
+    invoke-virtual {v8}, Landroid/widget/Editor;->getMagnifierController()Landroid/widget/MagnifierController;
 
     move-result-object v8
 
@@ -717,63 +721,51 @@
 
     move v1, v7
 
-    .line 412
+    .line 414
     .local v1, isShowMag:Z
     :goto_1
-    iget-object v9, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
-
-    if-nez v1, :cond_4
-
-    if-nez v3, :cond_4
-
-    move v8, v7
-
-    :goto_2
-    invoke-virtual {v9, v8}, Landroid/widget/MiuiCursorController$MiuiHandleView;->setVisible(Z)V
-
-    .line 413
     iget-object v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     invoke-virtual {v8}, Landroid/widget/MiuiCursorController$MiuiHandleView;->show()V
 
-    .line 414
+    .line 415
     if-eqz v3, :cond_1
 
     if-nez v1, :cond_1
 
-    .line 415
+    .line 416
     const-string v8, "MiuiCursorController"
 
     const-string v9, "Show InsertionPointCursorController in one shot context"
 
     invoke-static {v8, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 416
-    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    .line 417
+    iget-object v8, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
-    invoke-virtual {v8}, Landroid/widget/TextView;->needInsertPanel()Z
+    invoke-virtual {v8}, Landroid/widget/Editor;->needInsertPanel()Z
 
     move-result v8
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_4
 
     iget-boolean v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mShowOnOneShot:Z
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_4
 
-    .line 417
+    .line 418
     invoke-direct {p0}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->showInsertionPanel()V
 
-    .line 422
-    :goto_3
+    .line 423
+    :goto_2
     iget-boolean v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mShowOnOneShot:Z
 
-    if-nez v8, :cond_6
+    if-nez v8, :cond_5
 
-    :goto_4
+    :goto_3
     iput-boolean v7, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mShowOnOneShot:Z
 
-    .line 424
+    .line 425
     :cond_1
     return-void
 
@@ -782,38 +774,32 @@
     :cond_2
     move v3, v6
 
-    .line 408
+    .line 410
     goto :goto_0
 
     .restart local v3       #oneShot:Z
     :cond_3
     move v1, v6
 
-    .line 411
+    .line 413
     goto :goto_1
 
+    .line 421
     .restart local v1       #isShowMag:Z
     :cond_4
-    move v8, v6
-
-    .line 412
-    goto :goto_2
-
-    .line 420
-    :cond_5
     iget-object v8, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     invoke-virtual {v8}, Landroid/widget/MiuiCursorController$MiuiHandleView;->hide()V
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_6
+    :cond_5
     move v7, v6
 
-    .line 422
-    goto :goto_4
+    .line 423
+    goto :goto_3
 
-    .line 392
+    .line 394
     :array_0
     .array-data 0x4
         0x19t 0x0t 0xbt 0x6t
@@ -822,7 +808,7 @@
         0x18t 0x0t 0xbt 0x6t
     .end array-data
 
-    .line 396
+    .line 398
     :array_1
     .array-data 0x4
         0x1ct 0x0t 0xbt 0x6t
@@ -835,8 +821,8 @@
     .locals 3
 
     .prologue
-    .line 438
-    iget-object v0, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    .line 439
+    iget-object v0, p0, Landroid/widget/MiuiCursorController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionStart()I
 
@@ -844,27 +830,27 @@
 
     iput v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mTextOffset:I
 
-    .line 440
+    .line 441
     iget v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mTextOffset:I
 
     if-gez v0, :cond_1
 
-    .line 442
+    .line 443
     const-string v0, "MiuiCursorController"
 
     const-string v1, "Update cursor controller position called with no cursor"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 443
+    .line 444
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->hide()V
 
-    .line 456
+    .line 457
     :cond_0
     :goto_0
     return-void
 
-    .line 447
+    .line 448
     :cond_1
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
@@ -882,7 +868,7 @@
 
     if-nez v0, :cond_2
 
-    .line 448
+    .line 449
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mHandle:Landroid/widget/MiuiCursorController$MiuiHandleView;
 
     iget v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mTextOffset:I
@@ -891,7 +877,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/MiuiCursorController$MiuiHandleView;->positionAtCursorOffset(IZ)V
 
-    .line 450
+    .line 451
     :cond_2
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
@@ -901,12 +887,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 451
+    .line 452
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V
 
-    .line 453
+    .line 454
     :cond_3
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
@@ -916,7 +902,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 454
+    .line 455
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mClipboardPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->showAndUpdatePositionAsync()V

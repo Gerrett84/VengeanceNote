@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/AccountManagerService;->confirmCredentials(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Landroid/os/Bundle;Z)V
+    value = Landroid/accounts/AccountManagerService;->addAcount(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;ZLandroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,31 +17,42 @@
 # instance fields
 .field final synthetic this$0:Landroid/accounts/AccountManagerService;
 
-.field final synthetic val$account:Landroid/accounts/Account;
+.field final synthetic val$accountType:Ljava/lang/String;
+
+.field final synthetic val$authTokenType:Ljava/lang/String;
 
 .field final synthetic val$options:Landroid/os/Bundle;
 
+.field final synthetic val$requiredFeatures:[Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountManagerService;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZLandroid/accounts/Account;Landroid/os/Bundle;)V
+.method constructor <init>(Landroid/accounts/AccountManagerService;Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZLjava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
     .parameter
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
     .parameter "x3"
+    .parameter "x4"
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 1177
+    .line 1270
     iput-object p1, p0, Landroid/accounts/AccountManagerService$5;->this$0:Landroid/accounts/AccountManagerService;
 
-    iput-object p6, p0, Landroid/accounts/AccountManagerService$5;->val$account:Landroid/accounts/Account;
+    iput-object p7, p0, Landroid/accounts/AccountManagerService$5;->val$authTokenType:Ljava/lang/String;
 
-    iput-object p7, p0, Landroid/accounts/AccountManagerService$5;->val$options:Landroid/os/Bundle;
+    iput-object p8, p0, Landroid/accounts/AccountManagerService$5;->val$requiredFeatures:[Ljava/lang/String;
 
-    invoke-direct/range {p0 .. p5}, Landroid/accounts/AccountManagerService$Session;-><init>(Landroid/accounts/AccountManagerService;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZ)V
+    iput-object p9, p0, Landroid/accounts/AccountManagerService$5;->val$options:Landroid/os/Bundle;
+
+    iput-object p10, p0, Landroid/accounts/AccountManagerService$5;->val$accountType:Ljava/lang/String;
+
+    invoke-direct/range {p0 .. p6}, Landroid/accounts/AccountManagerService$Session;-><init>(Landroid/accounts/AccountManagerService;Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZ)V
 
     return-void
 .end method
@@ -49,7 +60,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -57,25 +68,31 @@
     .end annotation
 
     .prologue
-    .line 1179
+    .line 1272
     iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
-    iget-object v1, p0, Landroid/accounts/AccountManagerService$5;->val$account:Landroid/accounts/Account;
+    iget-object v2, p0, Landroid/accounts/AccountManagerService$Session;->mAccountType:Ljava/lang/String;
 
-    iget-object v2, p0, Landroid/accounts/AccountManagerService$5;->val$options:Landroid/os/Bundle;
+    iget-object v3, p0, Landroid/accounts/AccountManagerService$5;->val$authTokenType:Ljava/lang/String;
 
-    invoke-interface {v0, p0, v1, v2}, Landroid/accounts/IAccountAuthenticator;->confirmCredentials(Landroid/accounts/IAccountAuthenticatorResponse;Landroid/accounts/Account;Landroid/os/Bundle;)V
+    iget-object v4, p0, Landroid/accounts/AccountManagerService$5;->val$requiredFeatures:[Ljava/lang/String;
 
-    .line 1180
+    iget-object v5, p0, Landroid/accounts/AccountManagerService$5;->val$options:Landroid/os/Bundle;
+
+    move-object v1, p0
+
+    invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountAuthenticator;->addAccount(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)V
+
+    .line 1274
     return-void
 .end method
 
 .method protected toDebugString(J)Ljava/lang/String;
-    .locals 2
+    .locals 3
     .parameter "now"
 
     .prologue
-    .line 1182
+    .line 1277
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -88,21 +105,44 @@
 
     move-result-object v0
 
-    const-string v1, ", confirmCredentials"
+    const-string v1, ", addAccount"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, ", "
+    const-string v1, ", accountType "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/accounts/AccountManagerService$5;->val$account:Landroid/accounts/Account;
+    iget-object v1, p0, Landroid/accounts/AccountManagerService$5;->val$accountType:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", requiredFeatures "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v0, p0, Landroid/accounts/AccountManagerService$5;->val$requiredFeatures:[Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const-string v0, ","
+
+    iget-object v2, p0, Landroid/accounts/AccountManagerService$5;->val$requiredFeatures:[Ljava/lang/String;
+
+    invoke-static {v0, v2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -111,4 +151,9 @@
     move-result-object v0
 
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

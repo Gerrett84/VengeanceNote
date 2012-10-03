@@ -188,7 +188,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0013
+    const v1, 0x10e0017
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -203,7 +203,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0014
+    const v1, 0x10e0018
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -218,7 +218,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0015
+    const v1, 0x10e0019
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -344,9 +344,9 @@
     .parameter "level"
 
     .prologue
-    const v0, 0x1080507
+    const v0, 0x1080527
 
-    const v1, 0x10804f9
+    const v1, 0x1080519
 
     .line 474
     iget v2, p0, Lcom/android/server/BatteryService;->mBatteryStatus:I
@@ -409,7 +409,7 @@
 
     .line 486
     :cond_5
-    const v0, 0x1080515
+    const v0, 0x1080535
 
     goto :goto_0
 .end method
@@ -1469,7 +1469,7 @@
 
     .line 333
     .local v13, statusIntent:Landroid/content/Intent;
-    const/high16 v0, 0x1000
+    const/high16 v0, 0x800
 
     invoke-virtual {v13, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 

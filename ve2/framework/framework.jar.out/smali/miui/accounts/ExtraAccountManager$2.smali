@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lmiui/accounts/ExtraAccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
+    value = Lmiui/accounts/ExtraAccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,12 +26,15 @@
 
 .field final synthetic val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
 
+.field final synthetic val$preAdd:Z
+
 .field final synthetic val$type:I
 
 
 # direct methods
-.method constructor <init>(Lmiui/accounts/ExtraAccountManager;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
+.method constructor <init>(Lmiui/accounts/ExtraAccountManager;ZLandroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
     .locals 0
+    .parameter
     .parameter
     .parameter
     .parameter
@@ -39,16 +42,18 @@
     .parameter
 
     .prologue
-    .line 141
+    .line 159
     iput-object p1, p0, Lmiui/accounts/ExtraAccountManager$2;->this$0:Lmiui/accounts/ExtraAccountManager;
 
-    iput-object p2, p0, Lmiui/accounts/ExtraAccountManager$2;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
+    iput-boolean p2, p0, Lmiui/accounts/ExtraAccountManager$2;->val$preAdd:Z
 
-    iput-object p3, p0, Lmiui/accounts/ExtraAccountManager$2;->val$account:Landroid/accounts/Account;
+    iput-object p3, p0, Lmiui/accounts/ExtraAccountManager$2;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
 
-    iput p4, p0, Lmiui/accounts/ExtraAccountManager$2;->val$type:I
+    iput-object p4, p0, Lmiui/accounts/ExtraAccountManager$2;->val$account:Landroid/accounts/Account;
 
-    iput-object p5, p0, Lmiui/accounts/ExtraAccountManager$2;->val$extra:Landroid/os/Bundle;
+    iput p5, p0, Lmiui/accounts/ExtraAccountManager$2;->val$type:I
+
+    iput-object p6, p0, Lmiui/accounts/ExtraAccountManager$2;->val$extra:Landroid/os/Bundle;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -61,8 +66,13 @@
     .locals 5
 
     .prologue
-    .line 144
+    .line 162
     :try_start_0
+    iget-boolean v1, p0, Lmiui/accounts/ExtraAccountManager$2;->val$preAdd:Z
+
+    if-eqz v1, :cond_0
+
+    .line 163
     iget-object v1, p0, Lmiui/accounts/ExtraAccountManager$2;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
 
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager$2;->val$account:Landroid/accounts/Account;
@@ -72,18 +82,32 @@
     iget-object v4, p0, Lmiui/accounts/ExtraAccountManager$2;->val$extra:Landroid/os/Bundle;
 
     invoke-interface {v1, v2, v3, v4}, Landroid/accounts/MiuiOnAccountsUpdateListener;->onPreAccountUpdated(Landroid/accounts/Account;ILandroid/os/Bundle;)V
-    :try_end_0
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 150
+    .line 172
     :goto_0
     return-void
 
-    .line 145
+    .line 165
+    :cond_0
+    iget-object v1, p0, Lmiui/accounts/ExtraAccountManager$2;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
+
+    iget-object v2, p0, Lmiui/accounts/ExtraAccountManager$2;->val$account:Landroid/accounts/Account;
+
+    iget v3, p0, Lmiui/accounts/ExtraAccountManager$2;->val$type:I
+
+    iget-object v4, p0, Lmiui/accounts/ExtraAccountManager$2;->val$extra:Landroid/os/Bundle;
+
+    invoke-interface {v1, v2, v3, v4}, Landroid/accounts/MiuiOnAccountsUpdateListener;->onPostAccountUpdated(Landroid/accounts/Account;ILandroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 167
     :catch_0
     move-exception v0
 
-    .line 148
+    .line 170
     .local v0, e:Landroid/database/SQLException;
     const-string v1, "ExtraAccountManager"
 

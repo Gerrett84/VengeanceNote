@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 250
+    .line 276
     iput-object p1, p0, Lmiui/view/VolumePanel$3;->this$0:Lmiui/view/VolumePanel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "dialog"
 
     .prologue
-    .line 252
+    .line 278
     iget-object v0, p0, Lmiui/view/VolumePanel$3;->this$0:Lmiui/view/VolumePanel;
 
     iget v0, v0, Lmiui/view/VolumePanel;->mRestoreRingVolume:I
 
     if-eqz v0, :cond_0
 
-    .line 253
+    .line 279
     iget-object v0, p0, Lmiui/view/VolumePanel$3;->this$0:Lmiui/view/VolumePanel;
 
     iget-object v0, v0, Lmiui/view/VolumePanel;->mContext:Landroid/content/Context;
@@ -60,14 +60,14 @@
 
     invoke-static {v0, v1}, Lmiui/util/AudioManagerHelper;->saveLastAudibleRingVolume(Landroid/content/Context;I)V
 
-    .line 254
+    .line 280
     iget-object v0, p0, Lmiui/view/VolumePanel$3;->this$0:Lmiui/view/VolumePanel;
 
     const/4 v1, 0x0
 
     iput v1, v0, Lmiui/view/VolumePanel;->mRestoreRingVolume:I
 
-    .line 256
+    .line 282
     :cond_0
     iget-object v0, p0, Lmiui/view/VolumePanel$3;->this$0:Lmiui/view/VolumePanel;
 
@@ -76,7 +76,7 @@
     #setter for: Lmiui/view/VolumePanel;->mActiveStreamType:I
     invoke-static {v0, v1}, Lmiui/view/VolumePanel;->access$202(Lmiui/view/VolumePanel;I)I
 
-    .line 257
+    .line 283
     iget-object v0, p0, Lmiui/view/VolumePanel$3;->this$0:Lmiui/view/VolumePanel;
 
     #getter for: Lmiui/view/VolumePanel;->mAudioManager:Landroid/media/AudioManager;
@@ -93,6 +93,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->forceVolumeControlStream(I)V
 
-    .line 258
+    .line 284
     return-void
 .end method

@@ -26,6 +26,8 @@
 # static fields
 .field private static final DESCRIPTOR:Ljava/lang/String; = "com.android.internal.statusbar.IStatusBarService"
 
+.field static final TRANSACTION_cancelPreloadRecentApps:I = 0x13
+
 .field static final TRANSACTION_collapse:I = 0x2
 
 .field static final TRANSACTION_disable:I = 0x3
@@ -41,6 +43,8 @@
 .field static final TRANSACTION_onNotificationError:I = 0xc
 
 .field static final TRANSACTION_onPanelRevealed:I = 0xa
+
+.field static final TRANSACTION_preloadRecentApps:I = 0x12
 
 .field static final TRANSACTION_registerStatusBar:I = 0x9
 
@@ -150,7 +154,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 253
+    .line 269
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -786,20 +790,27 @@
 
     move-result v2
 
-    .line 232
-    .local v2, _arg0:I
-    invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->setSystemUiVisibility(I)V
-
     .line 233
-    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+    .local v2, _arg0:I
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
 
     .line 234
+    .local v3, _arg1:I
+    invoke-virtual {p0, v2, v3}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->setSystemUiVisibility(II)V
+
+    .line 235
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 236
     const/4 v1, 0x1
 
     goto/16 :goto_0
 
-    .line 238
+    .line 240
     .end local v2           #_arg0:I
+    .end local v3           #_arg1:I
     :sswitch_10
     const-string v1, "com.android.internal.statusbar.IStatusBarService"
 
@@ -807,7 +818,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 240
+    .line 242
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -816,27 +827,27 @@
 
     const/4 v2, 0x1
 
-    .line 241
+    .line 243
     .local v2, _arg0:Z
     :goto_5
     invoke-virtual {p0, v2}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->setHardKeyboardEnabled(Z)V
 
-    .line 242
+    .line 244
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 243
+    .line 245
     const/4 v1, 0x1
 
     goto/16 :goto_0
 
-    .line 240
+    .line 242
     .end local v2           #_arg0:Z
     :cond_4
     const/4 v2, 0x0
 
     goto :goto_5
 
-    .line 247
+    .line 249
     :sswitch_11
     const-string v1, "com.android.internal.statusbar.IStatusBarService"
 
@@ -844,13 +855,51 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 248
+    .line 250
     invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->toggleRecentApps()V
 
-    .line 249
+    .line 251
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 250
+    .line 252
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 256
+    :sswitch_12
+    const-string v1, "com.android.internal.statusbar.IStatusBarService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 257
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->preloadRecentApps()V
+
+    .line 258
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 259
+    const/4 v1, 0x1
+
+    goto/16 :goto_0
+
+    .line 263
+    :sswitch_13
+    const-string v1, "com.android.internal.statusbar.IStatusBarService"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 264
+    invoke-virtual {p0}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->cancelPreloadRecentApps()V
+
+    .line 265
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 266
     const/4 v1, 0x1
 
     goto/16 :goto_0
@@ -875,6 +924,8 @@
         0xf -> :sswitch_f
         0x10 -> :sswitch_10
         0x11 -> :sswitch_11
+        0x12 -> :sswitch_12
+        0x13 -> :sswitch_13
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 186
+    .line 194
     iput-object p1, p0, Landroid/content/SyncManager$3;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,14 +35,14 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 7
+    .locals 8
     .parameter "context"
     .parameter "intent"
 
     .prologue
     const/4 v1, 0x0
 
-    .line 188
+    .line 196
     iget-object v0, p0, Landroid/content/SyncManager$3;->this$0:Landroid/content/SyncManager;
 
     #calls: Landroid/content/SyncManager;->getConnectivityManager()Landroid/net/ConnectivityManager;
@@ -56,22 +56,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 189
+    .line 197
     iget-object v0, p0, Landroid/content/SyncManager$3;->this$0:Landroid/content/SyncManager;
 
-    new-instance v3, Landroid/os/Bundle;
+    const/4 v2, -0x1
 
-    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
+    new-instance v4, Landroid/os/Bundle;
 
-    const-wide/16 v4, 0x0
+    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
-    const/4 v6, 0x0
+    const-wide/16 v5, 0x0
 
-    move-object v2, v1
+    const/4 v7, 0x0
 
-    invoke-virtual/range {v0 .. v6}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;JZ)V
+    move-object v3, v1
 
-    .line 192
+    invoke-virtual/range {v0 .. v7}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;JZ)V
+
+    .line 201
     :cond_0
     return-void
 .end method

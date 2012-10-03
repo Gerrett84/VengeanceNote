@@ -48,6 +48,8 @@
 
 .field static final TRANSACTION_setAttentionLight:I = 0x12
 
+.field static final TRANSACTION_setAutoBrightnessAdjustment:I = 0x13
+
 .field static final TRANSACTION_setBacklightBrightness:I = 0x11
 
 .field static final TRANSACTION_setMaximumScreenOffTimeount:I = 0xc
@@ -156,7 +158,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 243
+    .line 252
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v7
@@ -743,7 +745,29 @@
     .line 235
     goto :goto_7
 
+    .line 244
+    :sswitch_13
+    const-string v8, "android.os.IPowerManager"
+
+    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 246
+    invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v0
+
+    .line 247
+    .local v0, _arg0:F
+    invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setAutoBrightnessAdjustment(F)V
+
+    .line 248
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_0
+
     .line 39
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -764,6 +788,7 @@
         0x10 -> :sswitch_10
         0x11 -> :sswitch_11
         0x12 -> :sswitch_12
+        0x13 -> :sswitch_13
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

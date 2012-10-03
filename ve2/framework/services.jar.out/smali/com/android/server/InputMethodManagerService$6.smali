@@ -3,7 +3,7 @@
 .source "InputMethodManagerService.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
 
 # annotations
@@ -27,28 +27,32 @@
     .parameter
 
     .prologue
-    .line 2274
+    .line 2429
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$6;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 1
-    .parameter "dialog"
-    .parameter "whichButton"
+    .parameter "buttonView"
+    .parameter "isChecked"
 
     .prologue
-    .line 2277
+    .line 2433
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$6;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    #calls: Lcom/android/server/InputMethodManagerService;->showConfigureInputMethods()V
-    invoke-static {v0}, Lcom/android/server/InputMethodManagerService;->access$800(Lcom/android/server/InputMethodManagerService;)V
+    #getter for: Lcom/android/server/InputMethodManagerService;->mWindowManagerService:Lcom/android/server/wm/WindowManagerService;
+    invoke-static {v0}, Lcom/android/server/InputMethodManagerService;->access$1100(Lcom/android/server/InputMethodManagerService;)Lcom/android/server/wm/WindowManagerService;
 
-    .line 2278
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Lcom/android/server/wm/WindowManagerService;->setHardKeyboardEnabled(Z)V
+
+    .line 2434
     return-void
 .end method

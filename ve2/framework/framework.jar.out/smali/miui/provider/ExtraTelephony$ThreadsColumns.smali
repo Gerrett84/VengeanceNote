@@ -15,6 +15,6 @@
 
 
 # static fields
-.field public static final STATE:Ljava/lang/String; = "state"
+.field public static final HAS_DRAFT:Ljava/lang/String; = "has_draft"
 
 .field public static final UNREAD_COUNT:Ljava/lang/String; = "unread_count"

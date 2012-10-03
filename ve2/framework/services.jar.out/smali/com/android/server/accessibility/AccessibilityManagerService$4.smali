@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 309
+    .line 336
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,79 +36,55 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 7
+    .locals 2
     .parameter "selfChange"
 
     .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 312
+    .line 339
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 314
-    iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
+    .line 340
+    iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    iget-object v2, v2, Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
+    iget-object v1, v0, Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
 
-    .line 315
+    .line 342
     :try_start_0
-    iget-object v3, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
-
-    iget-object v4, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
-
-    iget-object v4, v4, Lcom/android/server/accessibility/AccessibilityManagerService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v4
-
-    const-string v5, "touch_exploration_enabled"
-
-    const/4 v6, 0x0
-
-    invoke-static {v4, v5, v6}, Landroid/provider/Settings$Secure;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v4
-
-    if-ne v4, v0, :cond_0
-
-    :goto_0
-    #setter for: Lcom/android/server/accessibility/AccessibilityManagerService;->mIsTouchExplorationEnabled:Z
-    invoke-static {v3, v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$502(Lcom/android/server/accessibility/AccessibilityManagerService;Z)Z
-
-    .line 318
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->updateInputFilterLocked()V
-    invoke-static {v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$600(Lcom/android/server/accessibility/AccessibilityManagerService;)V
+    #getter for: Lcom/android/server/accessibility/AccessibilityManagerService;->mUiAutomationService:Lcom/android/server/accessibility/AccessibilityManagerService$Service;
+    invoke-static {v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$100(Lcom/android/server/accessibility/AccessibilityManagerService;)Lcom/android/server/accessibility/AccessibilityManagerService$Service;
 
-    .line 319
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 343
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->sendStateToClientsLocked()V
+    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->populateEnabledAccessibilityServicesLocked()V
     invoke-static {v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$700(Lcom/android/server/accessibility/AccessibilityManagerService;)V
 
-    .line 320
-    monitor-exit v2
+    .line 344
+    iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$4;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    .line 321
+    #calls: Lcom/android/server/accessibility/AccessibilityManagerService;->manageServicesLocked()V
+    invoke-static {v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$300(Lcom/android/server/accessibility/AccessibilityManagerService;)V
+
+    .line 346
+    :cond_0
+    monitor-exit v1
+
+    .line 347
     return-void
 
-    :cond_0
-    move v0, v1
-
-    .line 315
-    goto :goto_0
-
-    .line 320
+    .line 346
     :catchall_0
     move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

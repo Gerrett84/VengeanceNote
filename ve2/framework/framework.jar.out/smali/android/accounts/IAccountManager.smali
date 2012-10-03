@@ -79,6 +79,14 @@
     .end annotation
 .end method
 
+.method public abstract getAuthTokenLabel(Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getAuthenticatorTypes()[Landroid/accounts/AuthenticatorDescription;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -152,6 +160,14 @@
 .end method
 
 .method public abstract setUserData(Landroid/accounts/Account;Ljava/lang/String;Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateAppPermission(Landroid/accounts/Account;Ljava/lang/String;IZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

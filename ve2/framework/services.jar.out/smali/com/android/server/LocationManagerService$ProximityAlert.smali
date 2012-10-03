@@ -44,30 +44,30 @@
     .parameter "intent"
 
     .prologue
-    .line 1372
+    .line 1451
     iput-object p1, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1373
+    .line 1452
     iput p2, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mUid:I
 
-    .line 1374
+    .line 1453
     iput-wide p3, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLatitude:D
 
-    .line 1375
+    .line 1454
     iput-wide p5, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLongitude:D
 
-    .line 1376
+    .line 1455
     iput p7, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mRadius:F
 
-    .line 1377
+    .line 1456
     iput-wide p8, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mExpiration:J
 
-    .line 1378
+    .line 1457
     iput-object p10, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mIntent:Landroid/app/PendingIntent;
 
-    .line 1380
+    .line 1459
     new-instance v0, Landroid/location/Location;
 
     const-string v1, ""
@@ -76,17 +76,17 @@
 
     iput-object v0, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLocation:Landroid/location/Location;
 
-    .line 1381
+    .line 1460
     iget-object v0, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLocation:Landroid/location/Location;
 
     invoke-virtual {v0, p3, p4}, Landroid/location/Location;->setLatitude(D)V
 
-    .line 1382
+    .line 1461
     iget-object v0, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLocation:Landroid/location/Location;
 
     invoke-virtual {v0, p5, p6}, Landroid/location/Location;->setLongitude(D)V
 
-    .line 1383
+    .line 1462
     return-void
 .end method
 
@@ -98,7 +98,7 @@
     .parameter "prefix"
 
     .prologue
-    .line 1410
+    .line 1489
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -117,7 +117,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1411
+    .line 1490
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -156,7 +156,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1412
+    .line 1491
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -195,7 +195,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1413
+    .line 1492
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -222,7 +222,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1414
+    .line 1493
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -243,7 +243,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1415
+    .line 1494
     iget-object v0, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLocation:Landroid/location/Location;
 
     new-instance v1, Landroid/util/PrintWriterPrinter;
@@ -270,7 +270,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->dump(Landroid/util/Printer;Ljava/lang/String;)V
 
-    .line 1416
+    .line 1495
     return-void
 .end method
 
@@ -278,7 +278,7 @@
     .locals 2
 
     .prologue
-    .line 1386
+    .line 1465
     iget-wide v0, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mExpiration:J
 
     return-wide v0
@@ -288,7 +288,7 @@
     .locals 1
 
     .prologue
-    .line 1390
+    .line 1469
     iget-object v0, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mIntent:Landroid/app/PendingIntent;
 
     return-object v0
@@ -301,21 +301,21 @@
     .parameter "accuracy"
 
     .prologue
-    .line 1394
+    .line 1473
     new-instance v0, Landroid/location/Location;
 
     const-string v3, ""
 
     invoke-direct {v0, v3}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
 
-    .line 1395
+    .line 1474
     .local v0, loc:Landroid/location/Location;
     invoke-virtual {v0, p1, p2}, Landroid/location/Location;->setLatitude(D)V
 
-    .line 1396
+    .line 1475
     invoke-virtual {v0, p3, p4}, Landroid/location/Location;->setLongitude(D)V
 
-    .line 1398
+    .line 1477
     iget-object v3, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mLocation:Landroid/location/Location;
 
     invoke-virtual {v0, v3}, Landroid/location/Location;->distanceTo(Landroid/location/Location;)F
@@ -324,7 +324,7 @@
 
     float-to-double v1, v3
 
-    .line 1399
+    .line 1478
     .local v1, radius:D
     iget v3, p0, Lcom/android/server/LocationManagerService$ProximityAlert;->mRadius:F
 
@@ -353,7 +353,7 @@
     .locals 2
 
     .prologue
-    .line 1404
+    .line 1483
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -1,5 +1,5 @@
 .class Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;
-.super Lcom/android/internal/view/BaseInputHandler;
+.super Landroid/content/BroadcastReceiver;
 .source "MiuiPhoneWindowManager.java"
 
 
@@ -15,10 +15,6 @@
 
 
 # instance fields
-.field private mDownX:F
-
-.field private mDownY:F
-
 .field final synthetic this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
 
@@ -28,243 +24,52 @@
     .parameter
 
     .prologue
-    .line 488
+    .line 586
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    invoke-direct {p0}, Lcom/android/internal/view/BaseInputHandler;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMotion(Landroid/view/MotionEvent;Landroid/view/InputQueue$FinishedCallback;)V
-    .locals 9
-    .parameter "event"
-    .parameter "finishedCallback"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 493
-    const/4 v2, 0x0
+    .line 588
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    .line 495
-    .local v2, handled:Z
-    :try_start_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
+    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    move-result v4
+    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    and-int/lit8 v4, v4, 0x2
+    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordLongPress:Ljava/lang/Runnable;
 
-    if-eqz v4, :cond_0
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    .line 589
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    iget-object v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
+    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    if-eqz v4, :cond_0
+    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordLongPress:Ljava/lang/Runnable;
 
-    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mIsStatusBarVisibleInFullscreen:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$100(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    const-string v2, "capture_delay"
 
-    move-result v4
+    const-wide/16 v3, 0x3e8
 
-    if-eqz v4, :cond_1
+    invoke-virtual {p2, v2, v3, v4}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    .line 526
-    :cond_0
-    invoke-virtual {p2, v2}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
+    move-result-wide v2
 
-    .line 528
-    :goto_0
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 592
     return-void
-
-    .line 498
-    :cond_1
-    const/4 v2, 0x1
-
-    .line 499
-    :try_start_1
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget-object v5, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
-
-    monitor-enter v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 500
-    :try_start_2
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v4
-
-    packed-switch v4, :pswitch_data_0
-
-    .line 524
-    :cond_2
-    :goto_1
-    monitor-exit v5
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 526
-    invoke-virtual {p2, v2}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
-
-    goto :goto_0
-
-    .line 502
-    :pswitch_0
-    :try_start_3
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result v4
-
-    iput v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->mDownX:F
-
-    .line 503
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v4
-
-    iput v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->mDownY:F
-
-    goto :goto_1
-
-    .line 524
-    :catchall_0
-    move-exception v4
-
-    monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v4
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    .line 526
-    :catchall_1
-    move-exception v4
-
-    invoke-virtual {p2, v2}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
-
-    throw v4
-
-    .line 510
-    :pswitch_1
-    :try_start_5
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget-object v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    const/high16 v6, 0x611
-
-    iget-object v7, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget v7, v7, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarHeight:I
-
-    iget-object v8, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget v8, v8, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarHeight:I
-
-    invoke-virtual {v4, v6, v7, v8}, Landroid/content/res/Resources;->getFraction(III)F
-
-    move-result v3
-
-    .line 514
-    .local v3, statusBarExpandHeight:F
-    iget v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->mDownY:F
-
-    cmpg-float v4, v3, v4
-
-    if-ltz v4, :cond_2
-
-    .line 516
-    iget v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->mDownX:F
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result v6
-
-    sub-float/2addr v4, v6
-
-    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    .line 517
-    .local v0, distanceX:F
-    iget v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->mDownY:F
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v6
-
-    sub-float/2addr v4, v6
-
-    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
-
-    move-result v1
-
-    .line 518
-    .local v1, distanceY:F
-    const/high16 v4, 0x4000
-
-    mul-float/2addr v4, v0
-
-    cmpl-float v4, v4, v1
-
-    if-gtz v4, :cond_2
-
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarHeight:I
-
-    mul-int/lit8 v4, v4, 0x2
-
-    int-to-float v4, v4
-
-    cmpl-float v4, v4, v1
-
-    if-gtz v4, :cond_2
-
-    .line 520
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    const/4 v6, 0x1
-
-    #calls: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->setStatusBarInFullscreen(Z)V
-    invoke-static {v4, v6}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$000(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Z)V
-
-    .line 521
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarHeight:I
-
-    int-to-float v4, v4
-
-    iput v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;->mDownY:F
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    goto :goto_1
-
-    .line 500
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
 .end method

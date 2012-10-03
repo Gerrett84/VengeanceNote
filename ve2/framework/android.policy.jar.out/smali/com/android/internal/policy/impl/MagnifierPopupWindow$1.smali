@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/MagnifierPopupWindow$1;
-.super Landroid/os/Handler;
+.super Ljava/lang/Object;
 .source "MagnifierPopupWindow.java"
+
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/MagnifierPopupWindow;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/MagnifierPopupWindow;-><init>(Landroid/content/Context;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,56 +27,53 @@
     .parameter
 
     .prologue
-    .line 245
+    .line 228
     iput-object p1, p0, Lcom/android/internal/policy/impl/MagnifierPopupWindow$1;->this$0:Lcom/android/internal/policy/impl/MagnifierPopupWindow;
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 2
-    .parameter "msg"
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
 
     .prologue
-    .line 247
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_1
-
-    .line 248
-    iget-object v0, p0, Lcom/android/internal/policy/impl/MagnifierPopupWindow$1;->this$0:Lcom/android/internal/policy/impl/MagnifierPopupWindow;
-
-    #calls: Lcom/android/internal/policy/impl/MagnifierPopupWindow;->showMagnifier()V
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->access$800(Lcom/android/internal/policy/impl/MagnifierPopupWindow;)V
-
-    .line 252
-    :cond_0
-    :goto_0
+    .line 231
     return-void
+.end method
 
-    .line 249
-    :cond_1
-    iget v0, p1, Landroid/os/Message;->what:I
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+    .parameter "animation"
 
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    .line 250
+    .prologue
+    .line 235
     iget-object v0, p0, Lcom/android/internal/policy/impl/MagnifierPopupWindow$1;->this$0:Lcom/android/internal/policy/impl/MagnifierPopupWindow;
 
-    #getter for: Lcom/android/internal/policy/impl/MagnifierPopupWindow;->mMagnifierView:Lcom/android/internal/policy/impl/MagnifierPopupWindow$MagnifierView;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->access$900(Lcom/android/internal/policy/impl/MagnifierPopupWindow;)Lcom/android/internal/policy/impl/MagnifierPopupWindow$MagnifierView;
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->dismiss()V
 
-    move-result-object v0
+    .line 236
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MagnifierPopupWindow$MagnifierView;->hide()V
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
 
-    goto :goto_0
+    .prologue
+    .line 240
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
+
+    .prologue
+    .line 244
+    return-void
 .end method

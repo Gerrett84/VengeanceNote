@@ -91,7 +91,7 @@
     .parameter "attrs"
 
     .prologue
-    const v5, 0x1080398
+    const v5, 0x10803ab
 
     const/4 v2, 0x1
 
@@ -162,9 +162,9 @@
     .line 457
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
-    const v3, 0x108038a
+    const v3, 0x108039d
 
-    const v4, 0x1080379
+    const v4, 0x108038c
 
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/internal/widget/SlidingTab$Slider;-><init>(Landroid/view/ViewGroup;III)V
 
@@ -173,9 +173,9 @@
     .line 461
     new-instance v2, Lcom/android/internal/widget/SlidingTab$Slider;
 
-    const v3, 0x1080393
+    const v3, 0x10803a6
 
-    const v4, 0x1080382
+    const v4, 0x1080395
 
     invoke-direct {v2, p0, v3, v4, v5}, Lcom/android/internal/widget/SlidingTab$Slider;-><init>(Landroid/view/ViewGroup;III)V
 

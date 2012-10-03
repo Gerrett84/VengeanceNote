@@ -36,30 +36,30 @@
     .parameter "icp"
 
     .prologue
-    .line 1579
+    .line 1832
     iput-object p1, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 
-    .line 1580
+    .line 1833
     invoke-direct {p0, p2}, Landroid/database/CrossProcessCursorWrapper;-><init>(Landroid/database/Cursor;)V
 
-    .line 1576
+    .line 1829
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
-    .line 1581
+    .line 1834
     iput-object p3, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mContentProvider:Landroid/content/IContentProvider;
 
-    .line 1582
+    .line 1835
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v1, "close"
 
     invoke-virtual {v0, v1}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 1583
+    .line 1836
     return-void
 .end method
 
@@ -69,32 +69,32 @@
     .locals 2
 
     .prologue
-    .line 1587
+    .line 1840
     invoke-super {p0}, Landroid/database/CrossProcessCursorWrapper;->close()V
 
-    .line 1588
+    .line 1841
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mContentProvider:Landroid/content/IContentProvider;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->releaseProvider(Landroid/content/IContentProvider;)Z
 
-    .line 1589
+    .line 1842
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mProviderReleased:Z
 
-    .line 1591
+    .line 1844
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 1592
+    .line 1845
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 1594
+    .line 1847
     :cond_0
     return-void
 .end method
@@ -108,18 +108,18 @@
     .end annotation
 
     .prologue
-    .line 1599
+    .line 1852
     :try_start_0
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 1600
+    .line 1853
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 1603
+    .line 1856
     :cond_0
     iget-boolean v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mProviderReleased:Z
 
@@ -129,14 +129,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1606
+    .line 1859
     const-string v0, "CursorWrapperInner"
 
     const-string v1, "Cursor finalized without prior close()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1607
+    .line 1860
     iget-object v0, p0, Landroid/content/ContentResolver$CursorWrapperInner;->this$0:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Landroid/content/ContentResolver$CursorWrapperInner;->mContentProvider:Landroid/content/IContentProvider;
@@ -145,14 +145,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1610
+    .line 1863
     :cond_1
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 1612
+    .line 1865
     return-void
 
-    .line 1610
+    .line 1863
     :catchall_0
     move-exception v0
 

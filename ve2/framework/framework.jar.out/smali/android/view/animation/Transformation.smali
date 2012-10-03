@@ -141,7 +141,7 @@
     .locals 1
 
     .prologue
-    .line 134
+    .line 144
     iget v0, p0, Landroid/view/animation/Transformation;->mAlpha:F
 
     return v0
@@ -151,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 129
     iget-object v0, p0, Landroid/view/animation/Transformation;->mMatrix:Landroid/graphics/Matrix;
 
     return-object v0
@@ -167,12 +167,41 @@
     return v0
 .end method
 
+.method public postCompose(Landroid/view/animation/Transformation;)V
+    .locals 2
+    .parameter "t"
+
+    .prologue
+    .line 120
+    iget v0, p0, Landroid/view/animation/Transformation;->mAlpha:F
+
+    invoke-virtual {p1}, Landroid/view/animation/Transformation;->getAlpha()F
+
+    move-result v1
+
+    mul-float/2addr v0, v1
+
+    iput v0, p0, Landroid/view/animation/Transformation;->mAlpha:F
+
+    .line 121
+    iget-object v0, p0, Landroid/view/animation/Transformation;->mMatrix:Landroid/graphics/Matrix;
+
+    invoke-virtual {p1}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
+
+    .line 122
+    return-void
+.end method
+
 .method public printShortString(Ljava/io/PrintWriter;)V
     .locals 1
     .parameter "pw"
 
     .prologue
-    .line 168
+    .line 178
     const-string/jumbo v0, "{alpha="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -181,22 +210,22 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(F)V
 
-    .line 169
+    .line 179
     const-string v0, " matrix="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 170
+    .line 180
     iget-object v0, p0, Landroid/view/animation/Transformation;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->printShortString(Ljava/io/PrintWriter;)V
 
-    .line 171
+    .line 181
     const/16 v0, 0x7d
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 172
+    .line 182
     return-void
 .end method
 
@@ -237,10 +266,10 @@
     .parameter "alpha"
 
     .prologue
-    .line 127
+    .line 137
     iput p1, p0, Landroid/view/animation/Transformation;->mAlpha:F
 
-    .line 128
+    .line 138
     return-void
 .end method
 
@@ -260,18 +289,18 @@
     .locals 2
 
     .prologue
-    .line 149
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x40
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 150
+    .line 160
     .local v0, sb:Ljava/lang/StringBuilder;
     invoke-virtual {p0, v0}, Landroid/view/animation/Transformation;->toShortString(Ljava/lang/StringBuilder;)V
 
-    .line 151
+    .line 161
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -284,7 +313,7 @@
     .parameter "sb"
 
     .prologue
-    .line 158
+    .line 168
     const-string/jumbo v0, "{alpha="
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -293,7 +322,7 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 159
+    .line 169
     const-string v0, " matrix="
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -302,12 +331,12 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->toShortString(Ljava/lang/StringBuilder;)V
 
-    .line 160
+    .line 170
     const/16 v0, 0x7d
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 161
+    .line 171
     return-void
 .end method
 
@@ -315,23 +344,23 @@
     .locals 2
 
     .prologue
-    .line 139
+    .line 149
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x40
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 140
+    .line 150
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "Transformation"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 141
+    .line 151
     invoke-virtual {p0, v0}, Landroid/view/animation/Transformation;->toShortString(Ljava/lang/StringBuilder;)V
 
-    .line 142
+    .line 152
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

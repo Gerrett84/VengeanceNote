@@ -15,22 +15,16 @@
 
 
 # instance fields
-.field private final mCid:I
-
 .field private final mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
-.field private final mLac:I
-
-.field private final mPlmn:Ljava/lang/String;
+.field private final mLocation:Landroid/telephony/SmsCbLocation;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/internal/telephony/gsm/SmsCbHeader;Ljava/lang/String;II)V
+.method public constructor <init>(Lcom/android/internal/telephony/gsm/SmsCbHeader;Landroid/telephony/SmsCbLocation;)V
     .locals 0
     .parameter "header"
-    .parameter "plmn"
-    .parameter "lac"
-    .parameter "cid"
+    .parameter "location"
 
     .prologue
     .line 329
@@ -40,15 +34,9 @@
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
     .line 331
-    iput-object p2, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mPlmn:Ljava/lang/String;
+    iput-object p2, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
     .line 332
-    iput p3, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLac:I
-
-    .line 333
-    iput p4, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mCid:I
-
-    .line 334
     return-void
 .end method
 
@@ -59,114 +47,70 @@
     .parameter "obj"
 
     .prologue
-    .line 343
-    instance-of v1, p1, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
+    const/4 v1, 0x0
 
-    if-eqz v1, :cond_0
+    .line 341
+    instance-of v2, p1, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
+
+    if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 344
+    .line 342
     check-cast v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
 
-    .line 349
+    .line 347
     .local v0, other:Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->geographicalScope:I
+    invoke-virtual {v2}, Lcom/android/internal/telephony/gsm/SmsCbHeader;->getSerialNumber()I
 
-    iget-object v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    move-result v2
 
-    iget v2, v2, Lcom/android/internal/telephony/gsm/SmsCbHeader;->geographicalScope:I
+    iget-object v3, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
-    if-ne v1, v2, :cond_0
+    invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/SmsCbHeader;->getSerialNumber()I
 
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    move-result v3
 
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->messageCode:I
+    if-ne v2, v3, :cond_0
 
-    iget-object v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
-    iget v2, v2, Lcom/android/internal/telephony/gsm/SmsCbHeader;->messageCode:I
+    iget-object v3, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
-    if-ne v1, v2, :cond_0
+    invoke-virtual {v2, v3}, Landroid/telephony/SmsCbLocation;->equals(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    move-result v2
 
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->updateNumber:I
+    if-eqz v2, :cond_0
 
-    iget-object v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    const/4 v1, 0x1
 
-    iget v2, v2, Lcom/android/internal/telephony/gsm/SmsCbHeader;->updateNumber:I
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
-
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->messageIdentifier:I
-
-    iget-object v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
-
-    iget v2, v2, Lcom/android/internal/telephony/gsm/SmsCbHeader;->messageIdentifier:I
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
-
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->dataCodingScheme:I
-
-    iget-object v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
-
-    iget v2, v2, Lcom/android/internal/telephony/gsm/SmsCbHeader;->dataCodingScheme:I
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
-
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->nrOfPages:I
-
-    iget-object v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
-
-    iget v2, v2, Lcom/android/internal/telephony/gsm/SmsCbHeader;->nrOfPages:I
-
-    if-ne v1, v2, :cond_0
-
-    .line 355
-    iget-object v1, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mPlmn:Ljava/lang/String;
-
-    iget v2, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLac:I
-
-    iget v3, v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mCid:I
-
-    invoke-virtual {p0, v1, v2, v3}, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->matchesLocation(Ljava/lang/String;II)Z
-
-    move-result v1
-
-    .line 359
+    .line 351
     .end local v0           #other:Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
-    :goto_0
-    return v1
-
     :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
+    return v1
 .end method
 
 .method public hashCode()I
     .locals 2
 
     .prologue
-    .line 338
+    .line 336
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
-    iget v0, v0, Lcom/android/internal/telephony/gsm/SmsCbHeader;->messageIdentifier:I
+    invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SmsCbHeader;->getSerialNumber()I
+
+    move-result v0
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->updateNumber:I
+    invoke-virtual {v1}, Landroid/telephony/SmsCbLocation;->hashCode()I
+
+    move-result v1
 
     add-int/2addr v0, v1
 
@@ -174,64 +118,18 @@
 .end method
 
 .method public matchesLocation(Ljava/lang/String;II)Z
-    .locals 2
+    .locals 1
     .parameter "plmn"
     .parameter "lac"
     .parameter "cid"
 
     .prologue
-    const/4 v0, 0x0
+    .line 365
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
-    .line 372
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
+    invoke-virtual {v0, p1, p2, p3}, Landroid/telephony/SmsCbLocation;->isInLocationArea(Ljava/lang/String;II)Z
 
-    iget v1, v1, Lcom/android/internal/telephony/gsm/SmsCbHeader;->geographicalScope:I
+    move-result v0
 
-    packed-switch v1, :pswitch_data_0
-
-    .line 388
-    :cond_0
-    :goto_0
     return v0
-
-    .line 375
-    :pswitch_0
-    iget v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mCid:I
-
-    if-ne v1, p3, :cond_0
-
-    .line 380
-    :pswitch_1
-    iget v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLac:I
-
-    if-ne v1, p2, :cond_0
-
-    .line 385
-    :pswitch_2
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mPlmn:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mPlmn:Ljava/lang/String;
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 372
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

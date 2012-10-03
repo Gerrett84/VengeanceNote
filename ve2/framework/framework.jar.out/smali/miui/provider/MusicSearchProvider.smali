@@ -186,7 +186,7 @@
 
     .prologue
     .line 84
-    const-string v0, "limit"
+    const-string/jumbo v0, "limit"
 
     const/4 v1, -0x1
 
@@ -280,7 +280,7 @@
 
     move-result-object v0
 
-    const-string v1, "limit"
+    const-string/jumbo v1, "limit"
 
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 

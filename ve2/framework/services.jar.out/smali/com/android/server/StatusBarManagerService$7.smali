@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 576
+    .line 595
     iput-object p1, p0, Lcom/android/server/StatusBarManagerService$7;->this$0:Lcom/android/server/StatusBarManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 578
+    .line 597
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 579
+    .line 598
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -63,13 +63,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 581
+    .line 600
     :cond_0
     iget-object v1, p0, Lcom/android/server/StatusBarManagerService$7;->this$0:Lcom/android/server/StatusBarManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/StatusBarManagerService;->collapse()V
 
-    .line 594
+    .line 613
     :cond_1
     return-void
 .end method

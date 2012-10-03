@@ -33,7 +33,7 @@
     .locals 2
 
     .prologue
-    .line 379
+    .line 470
     sget-object v0, Landroid/provider/BrowserContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "searches"
@@ -51,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 374
+    .line 465
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

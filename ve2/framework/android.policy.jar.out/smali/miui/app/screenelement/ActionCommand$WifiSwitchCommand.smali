@@ -27,14 +27,14 @@
     .parameter "value"
 
     .prologue
-    .line 518
+    .line 524
     const-string v0, "wifi_state"
 
     sget-object v1, Lmiui/app/screenelement/NotifierManager$NotifierType;->WifiState:Lmiui/app/screenelement/NotifierManager$NotifierType;
 
     invoke-direct {p0, p1, v0, v1}, Lmiui/app/screenelement/ActionCommand$NotificationReceiver;-><init>(Lmiui/app/screenelement/ScreenContext;Ljava/lang/String;Lmiui/app/screenelement/NotifierManager$NotifierType;)V
 
-    .line 514
+    .line 520
     new-instance v0, Lmiui/app/screenelement/ActionCommand$WifiStateTracker;
 
     const/4 v1, 0x0
@@ -43,34 +43,34 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
-    .line 519
+    .line 525
     invoke-virtual {p0}, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->update()V
 
-    .line 520
+    .line 526
     new-instance v0, Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;
 
     invoke-direct {v0, p2}, Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mOnOffHelper:Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;
 
-    .line 521
+    .line 527
     return-void
 .end method
 
 
 # virtual methods
-.method public doPerform()V
+.method protected doPerform()V
     .locals 4
 
     .prologue
-    .line 530
+    .line 536
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mOnOffHelper:Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;
 
     iget-boolean v1, v1, Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;->mIsToggle:Z
 
     if-eqz v1, :cond_1
 
-    .line 531
+    .line 537
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
     iget-object v2, p0, Lmiui/app/screenelement/ActionCommand;->mContext:Lmiui/app/screenelement/ScreenContext;
@@ -79,19 +79,19 @@
 
     invoke-virtual {v1, v2}, Lmiui/app/screenelement/ActionCommand$StateTracker;->toggleState(Landroid/content/Context;)V
 
-    .line 551
+    .line 557
     :cond_0
     :goto_0
     invoke-virtual {p0}, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->update()V
 
-    .line 552
+    .line 558
     return-void
 
-    .line 533
+    .line 539
     :cond_1
     const/4 v0, 0x0
 
-    .line 534
+    .line 540
     .local v0, change:Z
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
@@ -105,12 +105,12 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 547
+    .line 553
     :cond_2
     :goto_1
     if-eqz v0, :cond_0
 
-    .line 548
+    .line 554
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
     iget-object v2, p0, Lmiui/app/screenelement/ActionCommand;->mContext:Lmiui/app/screenelement/ScreenContext;
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 536
+    .line 542
     :pswitch_0
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mOnOffHelper:Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;
 
@@ -133,12 +133,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 537
+    .line 543
     const/4 v0, 0x1
 
     goto :goto_1
 
-    .line 540
+    .line 546
     :pswitch_1
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mOnOffHelper:Lmiui/app/screenelement/ActionCommand$OnOffCommandHelper;
 
@@ -146,12 +146,12 @@
 
     if-nez v1, :cond_2
 
-    .line 541
+    .line 547
     const/4 v0, 0x1
 
     goto :goto_1
 
-    .line 534
+    .line 540
     nop
 
     :pswitch_data_0
@@ -168,15 +168,15 @@
     .parameter "o"
 
     .prologue
-    .line 524
+    .line 530
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
     invoke-virtual {v0, p1, p2}, Lmiui/app/screenelement/ActionCommand$StateTracker;->onActualStateChange(Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 525
+    .line 531
     invoke-super {p0, p1, p2, p3}, Lmiui/app/screenelement/ActionCommand$NotificationReceiver;->onNotify(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/Object;)V
 
-    .line 526
+    .line 532
     return-void
 .end method
 
@@ -186,7 +186,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 556
+    .line 562
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
     iget-object v2, p0, Lmiui/app/screenelement/ActionCommand;->mContext:Lmiui/app/screenelement/ScreenContext;
@@ -199,18 +199,18 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 567
+    .line 573
     :goto_0
     :pswitch_0
     return-void
 
-    .line 558
+    .line 564
     :pswitch_1
     invoke-virtual {p0, v0}, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->updateState(I)V
 
     goto :goto_0
 
-    .line 561
+    .line 567
     :pswitch_2
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
@@ -232,7 +232,7 @@
 
     goto :goto_1
 
-    .line 564
+    .line 570
     :pswitch_3
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$WifiSwitchCommand;->mWifiState:Lmiui/app/screenelement/ActionCommand$StateTracker;
 
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 556
+    .line 562
     nop
 
     :pswitch_data_0

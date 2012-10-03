@@ -3,14 +3,6 @@
 .source "WebResourceResponse.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/webkit/WebResourceResponse$Loader;
-    }
-.end annotation
-
-
 # instance fields
 .field private mEncoding:Ljava/lang/String;
 
@@ -27,53 +19,20 @@
     .parameter "data"
 
     .prologue
-    .line 60
+    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 46
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
 
-    .line 62
+    .line 47
     iput-object p2, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
 
-    .line 63
+    .line 48
     iput-object p3, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
 
-    .line 64
+    .line 49
     return-void
-.end method
-
-.method static synthetic access$000(Landroid/webkit/WebResourceResponse;)Ljava/io/InputStream;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 28
-    iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Landroid/webkit/WebResourceResponse;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 28
-    iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$200(Landroid/webkit/WebResourceResponse;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 28
-    iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 
@@ -82,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 104
     iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
 
     return-object v0
@@ -92,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 85
     iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
 
     return-object v0
@@ -102,21 +61,8 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 66
     iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method loader(Landroid/webkit/LoadListener;)Landroid/webkit/StreamLoader;
-    .locals 1
-    .parameter "listener"
-
-    .prologue
-    .line 114
-    new-instance v0, Landroid/webkit/WebResourceResponse$Loader;
-
-    invoke-direct {v0, p0, p1}, Landroid/webkit/WebResourceResponse$Loader;-><init>(Landroid/webkit/WebResourceResponse;Landroid/webkit/LoadListener;)V
 
     return-object v0
 .end method
@@ -126,10 +72,10 @@
     .parameter "data"
 
     .prologue
-    .line 103
+    .line 95
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
 
-    .line 104
+    .line 96
     return-void
 .end method
 
@@ -138,10 +84,10 @@
     .parameter "encoding"
 
     .prologue
-    .line 87
+    .line 76
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
 
-    .line 88
+    .line 77
     return-void
 .end method
 
@@ -150,9 +96,9 @@
     .parameter "mimeType"
 
     .prologue
-    .line 71
+    .line 57
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
 
-    .line 72
+    .line 58
     return-void
 .end method

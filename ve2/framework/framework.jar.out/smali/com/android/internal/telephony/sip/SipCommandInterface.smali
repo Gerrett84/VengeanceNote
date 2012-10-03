@@ -26,7 +26,7 @@
     .parameter "result"
 
     .prologue
-    .line 120
+    .line 123
     return-void
 .end method
 
@@ -37,7 +37,7 @@
     .parameter "result"
 
     .prologue
-    .line 211
+    .line 214
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .parameter "result"
 
     .prologue
-    .line 207
+    .line 210
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "result"
 
     .prologue
-    .line 203
+    .line 206
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .parameter "response"
 
     .prologue
-    .line 281
+    .line 287
     return-void
 .end method
 
@@ -114,7 +114,7 @@
     .parameter "response"
 
     .prologue
-    .line 411
+    .line 417
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .parameter "response"
 
     .prologue
-    .line 406
+    .line 412
     return-void
 .end method
 
@@ -135,7 +135,7 @@
     .parameter "result"
 
     .prologue
-    .line 107
+    .line 110
     return-void
 .end method
 
@@ -146,7 +146,7 @@
     .parameter "result"
 
     .prologue
-    .line 193
+    .line 196
     return-void
 .end method
 
@@ -156,7 +156,7 @@
     .parameter "response"
 
     .prologue
-    .line 179
+    .line 182
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .parameter "response"
 
     .prologue
-    .line 176
+    .line 179
     return-void
 .end method
 
@@ -198,7 +198,7 @@
     .parameter "response"
 
     .prologue
-    .line 386
+    .line 392
     return-void
 .end method
 
@@ -207,7 +207,7 @@
     .parameter "result"
 
     .prologue
-    .line 126
+    .line 129
     return-void
 .end method
 
@@ -216,7 +216,7 @@
     .parameter "response"
 
     .prologue
-    .line 241
+    .line 247
     return-void
 .end method
 
@@ -225,7 +225,7 @@
     .parameter "response"
 
     .prologue
-    .line 255
+    .line 261
     return-void
 .end method
 
@@ -234,7 +234,7 @@
     .parameter "response"
 
     .prologue
-    .line 353
+    .line 359
     return-void
 .end method
 
@@ -243,7 +243,7 @@
     .parameter "result"
 
     .prologue
-    .line 218
+    .line 224
     return-void
 .end method
 
@@ -252,7 +252,7 @@
     .parameter "response"
 
     .prologue
-    .line 377
+    .line 383
     return-void
 .end method
 
@@ -261,7 +261,7 @@
     .parameter "response"
 
     .prologue
-    .line 337
+    .line 343
     return-void
 .end method
 
@@ -288,7 +288,7 @@
     .parameter "result"
 
     .prologue
-    .line 151
+    .line 154
     return-void
 .end method
 
@@ -297,7 +297,7 @@
     .parameter "response"
 
     .prologue
-    .line 350
+    .line 356
     return-void
 .end method
 
@@ -306,7 +306,7 @@
     .parameter "response"
 
     .prologue
-    .line 340
+    .line 346
     return-void
 .end method
 
@@ -315,7 +315,7 @@
     .parameter "result"
 
     .prologue
-    .line 88
+    .line 91
     return-void
 .end method
 
@@ -324,7 +324,7 @@
     .parameter "result"
 
     .prologue
-    .line 91
+    .line 94
     return-void
 .end method
 
@@ -334,6 +334,16 @@
 
     .prologue
     .line 85
+    return-void
+.end method
+
+.method public getIMSIForApp(Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "aid"
+    .parameter "result"
+
+    .prologue
+    .line 88
     return-void
 .end method
 
@@ -351,7 +361,7 @@
     .parameter "result"
 
     .prologue
-    .line 129
+    .line 132
     return-void
 .end method
 
@@ -360,7 +370,7 @@
     .parameter "result"
 
     .prologue
-    .line 136
+    .line 139
     return-void
 .end method
 
@@ -369,7 +379,7 @@
     .parameter "result"
 
     .prologue
-    .line 133
+    .line 136
     return-void
 .end method
 
@@ -378,7 +388,7 @@
     .parameter "response"
 
     .prologue
-    .line 142
+    .line 145
     return-void
 .end method
 
@@ -387,7 +397,7 @@
     .parameter "response"
 
     .prologue
-    .line 318
+    .line 324
     return-void
 .end method
 
@@ -396,7 +406,7 @@
     .parameter "response"
 
     .prologue
-    .line 238
+    .line 244
     return-void
 .end method
 
@@ -405,7 +415,7 @@
     .parameter "result"
 
     .prologue
-    .line 154
+    .line 157
     return-void
 .end method
 
@@ -425,7 +435,7 @@
     .parameter "response"
 
     .prologue
-    .line 315
+    .line 321
     return-void
 .end method
 
@@ -434,7 +444,7 @@
     .parameter "result"
 
     .prologue
-    .line 114
+    .line 117
     return-void
 .end method
 
@@ -443,7 +453,7 @@
     .parameter "result"
 
     .prologue
-    .line 145
+    .line 148
     return-void
 .end method
 
@@ -452,7 +462,16 @@
     .parameter "result"
 
     .prologue
-    .line 324
+    .line 330
+    return-void
+.end method
+
+.method public getVoiceRadioTechnology(Landroid/os/Message;)V
+    .locals 0
+    .parameter "result"
+
+    .prologue
+    .line 423
     return-void
 .end method
 
@@ -461,7 +480,7 @@
     .parameter "result"
 
     .prologue
-    .line 148
+    .line 151
     return-void
 .end method
 
@@ -471,7 +490,7 @@
     .parameter "response"
 
     .prologue
-    .line 309
+    .line 315
     return-void
 .end method
 
@@ -481,7 +500,7 @@
     .parameter "result"
 
     .prologue
-    .line 95
+    .line 98
     return-void
 .end method
 
@@ -490,7 +509,7 @@
     .parameter "result"
 
     .prologue
-    .line 101
+    .line 104
     return-void
 .end method
 
@@ -499,7 +518,7 @@
     .parameter "result"
 
     .prologue
-    .line 98
+    .line 101
     return-void
 .end method
 
@@ -516,7 +535,25 @@
     .parameter "result"
 
     .prologue
-    .line 215
+    .line 218
+    return-void
+.end method
+
+.method public iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "command"
+    .parameter "fileid"
+    .parameter "path"
+    .parameter "p1"
+    .parameter "p2"
+    .parameter "p3"
+    .parameter "data"
+    .parameter "pin2"
+    .parameter "aid"
+    .parameter "result"
+
+    .prologue
+    .line 221
     return-void
 .end method
 
@@ -526,7 +563,7 @@
     .parameter "response"
 
     .prologue
-    .line 287
+    .line 293
     return-void
 .end method
 
@@ -536,7 +573,7 @@
     .parameter "response"
 
     .prologue
-    .line 290
+    .line 296
     return-void
 .end method
 
@@ -545,7 +582,7 @@
     .parameter "response"
 
     .prologue
-    .line 296
+    .line 302
     return-void
 .end method
 
@@ -554,7 +591,7 @@
     .parameter "response"
 
     .prologue
-    .line 252
+    .line 258
     return-void
 .end method
 
@@ -566,7 +603,7 @@
     .parameter "response"
 
     .prologue
-    .line 249
+    .line 255
     return-void
 .end method
 
@@ -576,7 +613,7 @@
     .parameter "response"
 
     .prologue
-    .line 224
+    .line 230
     return-void
 .end method
 
@@ -585,7 +622,7 @@
     .parameter "response"
 
     .prologue
-    .line 359
+    .line 365
     return-void
 .end method
 
@@ -597,7 +634,7 @@
     .parameter "response"
 
     .prologue
-    .line 260
+    .line 266
     return-void
 .end method
 
@@ -610,7 +647,7 @@
     .parameter "response"
 
     .prologue
-    .line 265
+    .line 271
     return-void
 .end method
 
@@ -619,7 +656,7 @@
     .parameter "response"
 
     .prologue
-    .line 368
+    .line 374
     return-void
 .end method
 
@@ -628,7 +665,7 @@
     .parameter "result"
 
     .prologue
-    .line 123
+    .line 126
     return-void
 .end method
 
@@ -638,7 +675,7 @@
     .parameter "result"
 
     .prologue
-    .line 330
+    .line 336
     return-void
 .end method
 
@@ -647,7 +684,7 @@
     .parameter "result"
 
     .prologue
-    .line 333
+    .line 339
     return-void
 .end method
 
@@ -657,7 +694,7 @@
     .parameter "response"
 
     .prologue
-    .line 414
+    .line 420
     return-void
 .end method
 
@@ -666,7 +703,7 @@
     .parameter "result"
 
     .prologue
-    .line 284
+    .line 290
     return-void
 .end method
 
@@ -678,7 +715,7 @@
     .parameter "result"
 
     .prologue
-    .line 167
+    .line 170
     return-void
 .end method
 
@@ -688,7 +725,7 @@
     .parameter "response"
 
     .prologue
-    .line 374
+    .line 380
     return-void
 .end method
 
@@ -698,7 +735,7 @@
     .parameter "result"
 
     .prologue
-    .line 173
+    .line 176
     return-void
 .end method
 
@@ -708,7 +745,7 @@
     .parameter "result"
 
     .prologue
-    .line 157
+    .line 160
     return-void
 .end method
 
@@ -718,7 +755,7 @@
     .parameter "response"
 
     .prologue
-    .line 302
+    .line 308
     return-void
 .end method
 
@@ -728,7 +765,7 @@
     .parameter "response"
 
     .prologue
-    .line 305
+    .line 311
     return-void
 .end method
 
@@ -739,7 +776,7 @@
     .parameter "result"
 
     .prologue
-    .line 170
+    .line 173
     return-void
 .end method
 
@@ -749,7 +786,7 @@
     .parameter "response"
 
     .prologue
-    .line 299
+    .line 305
     return-void
 .end method
 
@@ -759,7 +796,7 @@
     .parameter "response"
 
     .prologue
-    .line 278
+    .line 284
     return-void
 .end method
 
@@ -769,7 +806,7 @@
     .parameter "result"
 
     .prologue
-    .line 117
+    .line 120
     return-void
 .end method
 
@@ -779,7 +816,7 @@
     .parameter "response"
 
     .prologue
-    .line 293
+    .line 299
     return-void
 .end method
 
@@ -789,7 +826,7 @@
     .parameter "result"
 
     .prologue
-    .line 221
+    .line 227
     return-void
 .end method
 
@@ -803,7 +840,7 @@
     .parameter "response"
 
     .prologue
-    .line 245
+    .line 251
     return-void
 .end method
 
@@ -814,7 +851,7 @@
     .parameter "response"
 
     .prologue
-    .line 228
+    .line 234
     return-void
 .end method
 
@@ -824,7 +861,7 @@
     .parameter "response"
 
     .prologue
-    .line 383
+    .line 389
     return-void
 .end method
 
@@ -834,7 +871,7 @@
     .parameter "response"
 
     .prologue
-    .line 380
+    .line 386
     return-void
 .end method
 
@@ -844,7 +881,7 @@
     .parameter "response"
 
     .prologue
-    .line 362
+    .line 368
     return-void
 .end method
 
@@ -854,7 +891,7 @@
     .parameter "response"
 
     .prologue
-    .line 365
+    .line 371
     return-void
 .end method
 
@@ -867,7 +904,7 @@
     .parameter "response"
 
     .prologue
-    .line 270
+    .line 276
     return-void
 .end method
 
@@ -881,7 +918,7 @@
     .parameter "response"
 
     .prologue
-    .line 275
+    .line 281
     return-void
 .end method
 
@@ -891,7 +928,7 @@
     .parameter "response"
 
     .prologue
-    .line 346
+    .line 352
     return-void
 .end method
 
@@ -901,7 +938,7 @@
     .parameter "response"
 
     .prologue
-    .line 343
+    .line 349
     return-void
 .end method
 
@@ -911,7 +948,7 @@
     .parameter "response"
 
     .prologue
-    .line 321
+    .line 327
     return-void
 .end method
 
@@ -921,7 +958,7 @@
     .parameter "response"
 
     .prologue
-    .line 139
+    .line 142
     return-void
 .end method
 
@@ -930,7 +967,7 @@
     .parameter "response"
 
     .prologue
-    .line 231
+    .line 237
     return-void
 .end method
 
@@ -940,7 +977,7 @@
     .parameter "response"
 
     .prologue
-    .line 235
+    .line 241
     return-void
 .end method
 
@@ -960,7 +997,7 @@
     .parameter "phoneType"
 
     .prologue
-    .line 356
+    .line 362
     return-void
 .end method
 
@@ -970,7 +1007,7 @@
     .parameter "response"
 
     .prologue
-    .line 312
+    .line 318
     return-void
 .end method
 
@@ -980,7 +1017,7 @@
     .parameter "result"
 
     .prologue
-    .line 111
+    .line 114
     return-void
 .end method
 
@@ -990,7 +1027,7 @@
     .parameter "result"
 
     .prologue
-    .line 196
+    .line 199
     return-void
 .end method
 
@@ -1000,7 +1037,7 @@
     .parameter "result"
 
     .prologue
-    .line 327
+    .line 333
     return-void
 .end method
 
@@ -1010,7 +1047,7 @@
     .parameter "result"
 
     .prologue
-    .line 199
+    .line 202
     return-void
 .end method
 
@@ -1020,7 +1057,7 @@
     .parameter "response"
 
     .prologue
-    .line 371
+    .line 377
     return-void
 .end method
 
@@ -1036,7 +1073,7 @@
     .parameter "result"
 
     .prologue
-    .line 190
+    .line 193
     return-void
 .end method
 
@@ -1046,7 +1083,7 @@
     .parameter "result"
 
     .prologue
-    .line 160
+    .line 163
     return-void
 .end method
 
@@ -1055,7 +1092,7 @@
     .parameter "result"
 
     .prologue
-    .line 163
+    .line 166
     return-void
 .end method
 
@@ -1086,7 +1123,7 @@
     .parameter "response"
 
     .prologue
-    .line 398
+    .line 404
     return-void
 .end method
 
@@ -1097,7 +1134,7 @@
     .parameter "response"
 
     .prologue
-    .line 390
+    .line 396
     return-void
 .end method
 
@@ -1131,7 +1168,7 @@
     .parameter "response"
 
     .prologue
-    .line 402
+    .line 408
     return-void
 .end method
 
@@ -1143,7 +1180,7 @@
     .parameter "response"
 
     .prologue
-    .line 394
+    .line 400
     return-void
 .end method
 
@@ -1162,7 +1199,7 @@
     .parameter "result"
 
     .prologue
-    .line 104
+    .line 107
     return-void
 .end method
 
@@ -1173,7 +1210,7 @@
     .parameter "response"
 
     .prologue
-    .line 185
+    .line 188
     return-void
 .end method
 
@@ -1185,6 +1222,6 @@
     .parameter "response"
 
     .prologue
-    .line 182
+    .line 185
     return-void
 .end method

@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 209
+    .line 212
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$3;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;-><init>(II)V
@@ -37,24 +37,20 @@
 
 # virtual methods
 .method public onPress()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 212
+    .line 215
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$3;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
-    #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$100(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/content/Context;
+    #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$500(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->rebootSafeMode()V
 
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Lcom/android/internal/app/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
-
-    .line 213
+    .line 216
     return-void
 .end method
 
@@ -62,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 223
     const/4 v0, 0x1
 
     return v0
@@ -72,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 219
     const/4 v0, 0x1
 
     return v0

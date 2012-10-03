@@ -1,14 +1,11 @@
 .class Lcom/android/server/InputMethodManagerService$4;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "InputMethodManagerService.java"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/InputMethodManagerService;->showInputMethodMenuInternal(Z)V
+    value = Lcom/android/server/InputMethodManagerService;->systemReady(Lcom/android/server/StatusBarManagerService;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,26 +24,30 @@
     .parameter
 
     .prologue
-    .line 2234
+    .line 765
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .locals 1
-    .parameter "dialog"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 2
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 2237
+    .line 768
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$4;->this$0:Lcom/android/server/InputMethodManagerService;
 
-    invoke-virtual {v0}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenu()V
+    const/4 v1, 0x0
 
-    .line 2238
+    #setter for: Lcom/android/server/InputMethodManagerService;->mUiContext:Landroid/content/Context;
+    invoke-static {v0, v1}, Lcom/android/server/InputMethodManagerService;->access$1002(Lcom/android/server/InputMethodManagerService;Landroid/content/Context;)Landroid/content/Context;
+
+    .line 769
     return-void
 .end method

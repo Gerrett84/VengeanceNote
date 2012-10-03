@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/webkit/SelectionFloatPanel;->getInstance(Landroid/content/Context;Landroid/webkit/WebView;)Landroid/webkit/SelectionFloatPanel;
+    value = Landroid/webkit/SelectionFloatPanel;->getInstance(Landroid/content/Context;Landroid/webkit/WebViewClassic;)Landroid/webkit/SelectionFloatPanel;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,18 @@
 # instance fields
 .field final synthetic val$instance:Landroid/webkit/SelectionFloatPanel;
 
-.field final synthetic val$webview:Landroid/webkit/WebView;
+.field final synthetic val$wvclassic:Landroid/webkit/WebViewClassic;
 
 
 # direct methods
-.method constructor <init>(Landroid/webkit/WebView;Landroid/webkit/SelectionFloatPanel;)V
+.method constructor <init>(Landroid/webkit/WebViewClassic;Landroid/webkit/SelectionFloatPanel;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 26
-    iput-object p1, p0, Landroid/webkit/SelectionFloatPanel$1;->val$webview:Landroid/webkit/WebView;
+    .line 28
+    iput-object p1, p0, Landroid/webkit/SelectionFloatPanel$1;->val$wvclassic:Landroid/webkit/WebViewClassic;
 
     iput-object p2, p0, Landroid/webkit/SelectionFloatPanel$1;->val$instance:Landroid/webkit/SelectionFloatPanel;
 
@@ -47,23 +47,23 @@
     .parameter "v"
 
     .prologue
-    .line 29
-    iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$webview:Landroid/webkit/WebView;
-
-    invoke-virtual {v0}, Landroid/webkit/WebView;->copySelection()Z
-
-    .line 30
-    iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$webview:Landroid/webkit/WebView;
-
-    invoke-virtual {v0}, Landroid/webkit/WebView;->selectionDone()V
-
     .line 31
+    iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$wvclassic:Landroid/webkit/WebViewClassic;
+
+    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->copySelection()Z
+
+    .line 32
+    iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$wvclassic:Landroid/webkit/WebViewClassic;
+
+    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->selectionDone()V
+
+    .line 33
     iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$instance:Landroid/webkit/SelectionFloatPanel;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/webkit/SelectionFloatPanel;->setVisibility(I)V
 
-    .line 32
+    .line 34
     return-void
 .end method

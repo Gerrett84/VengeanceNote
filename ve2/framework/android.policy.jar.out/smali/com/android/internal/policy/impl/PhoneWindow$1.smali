@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2875
+    .line 2955
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindow$1;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2878
+    .line 2958
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$1;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     #calls: Lcom/android/internal/policy/impl/PhoneWindow;->getPanelState(IZ)Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;
@@ -51,7 +51,7 @@
 
     move-result-object v0
 
-    .line 2879
+    .line 2959
     .local v0, st:Lcom/android/internal/policy/impl/PhoneWindow$PanelFeatureState;
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$1;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
@@ -67,7 +67,7 @@
 
     if-nez v1, :cond_1
 
-    .line 2880
+    .line 2960
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$1;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindow;->invalidatePanelMenu(I)V
 
-    .line 2882
+    .line 2962
     :cond_1
     return-void
 .end method

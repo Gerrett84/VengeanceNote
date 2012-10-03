@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4090
+    .line 4236
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$6;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,44 +35,44 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 12
+    .locals 13
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 4093
+    .line 4239
     const-string v0, "android.intent.extra.PACKAGES"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
-    .line 4094
-    .local v10, pkgs:[Ljava/lang/String;
-    if-eqz v10, :cond_0
+    .line 4240
+    .local v11, pkgs:[Ljava/lang/String;
+    if-eqz v11, :cond_0
 
-    .line 4095
-    move-object v7, v10
+    .line 4241
+    move-object v8, v11
 
-    .local v7, arr$:[Ljava/lang/String;
-    array-length v9, v7
+    .local v8, arr$:[Ljava/lang/String;
+    array-length v10, v8
 
-    .local v9, len$:I
-    const/4 v8, 0x0
+    .local v10, len$:I
+    const/4 v9, 0x0
 
-    .local v8, i$:I
+    .local v9, i$:I
     :goto_0
-    if-ge v8, v9, :cond_0
+    if-ge v9, v10, :cond_0
 
-    aget-object v1, v7, v8
+    aget-object v1, v8, v9
 
-    .line 4096
+    .line 4242
     .local v1, pkg:Ljava/lang/String;
-    iget-object v11, p0, Lcom/android/server/am/ActivityManagerService$6;->this$0:Lcom/android/server/am/ActivityManagerService;
+    iget-object v12, p0, Lcom/android/server/am/ActivityManagerService$6;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    monitor-enter v11
+    monitor-enter v12
 
-    .line 4097
+    .line 4243
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$6;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -86,47 +86,49 @@
 
     const/4 v6, 0x0
 
-    #calls: Lcom/android/server/am/ActivityManagerService;->forceStopPackageLocked(Ljava/lang/String;IZZZZ)Z
-    invoke-static/range {v0 .. v6}, Lcom/android/server/am/ActivityManagerService;->access$500(Lcom/android/server/am/ActivityManagerService;Ljava/lang/String;IZZZZ)Z
+    const/4 v7, 0x0
+
+    #calls: Lcom/android/server/am/ActivityManagerService;->forceStopPackageLocked(Ljava/lang/String;IZZZZI)Z
+    invoke-static/range {v0 .. v7}, Lcom/android/server/am/ActivityManagerService;->access$400(Lcom/android/server/am/ActivityManagerService;Ljava/lang/String;IZZZZI)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 4098
+    .line 4244
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/ActivityManagerService$6;->setResultCode(I)V
 
-    .line 4099
-    monitor-exit v11
+    .line 4245
+    monitor-exit v12
 
-    .line 4104
+    .line 4250
     .end local v1           #pkg:Ljava/lang/String;
-    .end local v7           #arr$:[Ljava/lang/String;
-    .end local v8           #i$:I
-    .end local v9           #len$:I
+    .end local v8           #arr$:[Ljava/lang/String;
+    .end local v9           #i$:I
+    .end local v10           #len$:I
     :cond_0
     return-void
 
-    .line 4101
+    .line 4247
     .restart local v1       #pkg:Ljava/lang/String;
-    .restart local v7       #arr$:[Ljava/lang/String;
-    .restart local v8       #i$:I
-    .restart local v9       #len$:I
+    .restart local v8       #arr$:[Ljava/lang/String;
+    .restart local v9       #i$:I
+    .restart local v10       #len$:I
     :cond_1
-    monitor-exit v11
+    monitor-exit v12
 
-    .line 4095
-    add-int/lit8 v8, v8, 0x1
+    .line 4241
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 4101
+    .line 4247
     :catchall_0
     move-exception v0
 
-    monitor-exit v11
+    monitor-exit v12
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

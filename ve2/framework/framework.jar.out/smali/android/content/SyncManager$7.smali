@@ -1,6 +1,9 @@
 .class Landroid/content/SyncManager$7;
-.super Landroid/content/ISyncStatusObserver$Stub;
+.super Ljava/lang/Object;
 .source "SyncManager.java"
+
+# interfaces
+.implements Landroid/content/SyncStorageEngine$OnSyncRequestListener;
 
 
 # annotations
@@ -24,27 +27,41 @@
     .parameter
 
     .prologue
-    .line 368
+    .line 351
     iput-object p1, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
-    invoke-direct {p0}, Landroid/content/ISyncStatusObserver$Stub;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onStatusChanged(I)V
-    .locals 1
-    .parameter "which"
+.method public onSyncRequest(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;)V
+    .locals 8
+    .parameter "account"
+    .parameter "userId"
+    .parameter "authority"
+    .parameter "extras"
 
     .prologue
-    .line 371
+    .line 354
     iget-object v0, p0, Landroid/content/SyncManager$7;->this$0:Landroid/content/SyncManager;
 
-    #calls: Landroid/content/SyncManager;->sendCheckAlarmsMessage()V
-    invoke-static {v0}, Landroid/content/SyncManager;->access$100(Landroid/content/SyncManager;)V
+    const-wide/16 v5, 0x0
 
-    .line 372
+    const/4 v7, 0x0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-virtual/range {v0 .. v7}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;JZ)V
+
+    .line 355
     return-void
 .end method

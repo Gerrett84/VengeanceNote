@@ -61,6 +61,8 @@
 
 .field public static final ACTION_NFCSHARING_SETTINGS:Ljava/lang/String; = "android.settings.NFCSHARING_SETTINGS"
 
+.field public static final ACTION_NFC_SETTINGS:Ljava/lang/String; = "android.settings.NFC_SETTINGS"
+
 .field public static final ACTION_PRIVACY_SETTINGS:Ljava/lang/String; = "android.settings.PRIVACY_SETTINGS"
 
 .field public static final ACTION_QUICK_LAUNCH_SETTINGS:Ljava/lang/String; = "android.settings.QUICK_LAUNCH_SETTINGS"
@@ -111,10 +113,10 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 60
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4163
+    .line 4378
     return-void
 .end method
 
@@ -123,7 +125,7 @@
     .parameter "androidId"
 
     .prologue
-    .line 4368
+    .line 4583
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -3,35 +3,46 @@
 .source "JsResult.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/webkit/JsResult$ResultReceiver;
+    }
+.end annotation
+
+
 # instance fields
-.field private final mDefaultValue:Z
+.field private final mReceiver:Landroid/webkit/JsResult$ResultReceiver;
 
-.field protected final mProxy:Landroid/webkit/CallbackProxy;
-
-.field private mReady:Z
-
-.field protected mResult:Z
-
-.field private mTriedToNotifyBeforeReady:Z
+.field private mResult:Z
 
 
 # direct methods
-.method constructor <init>(Landroid/webkit/CallbackProxy;Z)V
+.method public constructor <init>(Landroid/webkit/JsResult$ResultReceiver;)V
     .locals 0
-    .parameter "proxy"
-    .parameter "defaultVal"
+    .parameter "receiver"
 
     .prologue
-    .line 53
+    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
-    iput-object p1, p0, Landroid/webkit/JsResult;->mProxy:Landroid/webkit/CallbackProxy;
+    .line 58
+    iput-object p1, p0, Landroid/webkit/JsResult;->mReceiver:Landroid/webkit/JsResult$ResultReceiver;
 
-    .line 55
-    iput-boolean p2, p0, Landroid/webkit/JsResult;->mDefaultValue:Z
+    .line 59
+    return-void
+.end method
 
-    .line 56
+.method private final wakeUp()V
+    .locals 1
+
+    .prologue
+    .line 70
+    iget-object v0, p0, Landroid/webkit/JsResult;->mReceiver:Landroid/webkit/JsResult$ResultReceiver;
+
+    invoke-interface {v0, p0}, Landroid/webkit/JsResult$ResultReceiver;->onJsResultComplete(Landroid/webkit/JsResult;)V
+
+    .line 71
     return-void
 .end method
 
@@ -41,15 +52,15 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/webkit/JsResult;->mResult:Z
 
-    .line 42
-    invoke-virtual {p0}, Landroid/webkit/JsResult;->wakeUp()V
-
     .line 43
+    invoke-direct {p0}, Landroid/webkit/JsResult;->wakeUp()V
+
+    .line 44
     return-void
 .end method
 
@@ -57,111 +68,24 @@
     .locals 1
 
     .prologue
-    .line 49
+    .line 50
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/webkit/JsResult;->mResult:Z
 
-    .line 50
-    invoke-virtual {p0}, Landroid/webkit/JsResult;->wakeUp()V
-
     .line 51
+    invoke-direct {p0}, Landroid/webkit/JsResult;->wakeUp()V
+
+    .line 52
     return-void
 .end method
 
-.method final getResult()Z
+.method public final getResult()Z
     .locals 1
 
     .prologue
-    .line 59
+    .line 65
     iget-boolean v0, p0, Landroid/webkit/JsResult;->mResult:Z
 
     return v0
-.end method
-
-.method handleDefault()V
-    .locals 1
-
-    .prologue
-    .line 70
-    invoke-virtual {p0}, Landroid/webkit/JsResult;->setReady()V
-
-    .line 71
-    iget-boolean v0, p0, Landroid/webkit/JsResult;->mDefaultValue:Z
-
-    iput-boolean v0, p0, Landroid/webkit/JsResult;->mResult:Z
-
-    .line 72
-    invoke-virtual {p0}, Landroid/webkit/JsResult;->wakeUp()V
-
-    .line 73
-    return-void
-.end method
-
-.method final setReady()V
-    .locals 1
-
-    .prologue
-    .line 63
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/webkit/JsResult;->mReady:Z
-
-    .line 64
-    iget-boolean v0, p0, Landroid/webkit/JsResult;->mTriedToNotifyBeforeReady:Z
-
-    if-eqz v0, :cond_0
-
-    .line 65
-    invoke-virtual {p0}, Landroid/webkit/JsResult;->wakeUp()V
-
-    .line 67
-    :cond_0
-    return-void
-.end method
-
-.method protected final wakeUp()V
-    .locals 2
-
-    .prologue
-    .line 77
-    iget-boolean v0, p0, Landroid/webkit/JsResult;->mReady:Z
-
-    if-eqz v0, :cond_0
-
-    .line 78
-    iget-object v1, p0, Landroid/webkit/JsResult;->mProxy:Landroid/webkit/CallbackProxy;
-
-    monitor-enter v1
-
-    .line 79
-    :try_start_0
-    iget-object v0, p0, Landroid/webkit/JsResult;->mProxy:Landroid/webkit/CallbackProxy;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
-
-    .line 80
-    monitor-exit v1
-
-    .line 84
-    :goto_0
-    return-void
-
-    .line 80
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 82
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/webkit/JsResult;->mTriedToNotifyBeforeReady:Z
-
-    goto :goto_0
 .end method

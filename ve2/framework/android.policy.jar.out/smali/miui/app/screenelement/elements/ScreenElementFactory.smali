@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 8
+    .line 9
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,10 +16,11 @@
 
 
 # virtual methods
-.method public createInstance(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)Lmiui/app/screenelement/elements/ScreenElement;
+.method public createInstance(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)Lmiui/app/screenelement/elements/ScreenElement;
     .locals 2
     .parameter "ele"
     .parameter "context"
+    .parameter "root"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lmiui/app/screenelement/ScreenElementLoadException;
@@ -27,12 +28,12 @@
     .end annotation
 
     .prologue
-    .line 12
+    .line 13
     invoke-interface {p1}, Lorg/w3c/dom/Element;->getTagName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 13
+    .line 14
     .local v0, tag:Ljava/lang/String;
     const-string v1, "Image"
 
@@ -42,16 +43,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 14
+    .line 15
     new-instance v1, Lmiui/app/screenelement/elements/ImageScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/ImageScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/ImageScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
-    .line 42
+    .line 43
     :goto_0
     return-object v1
 
-    .line 15
+    .line 16
     :cond_0
     const-string v1, "Time"
 
@@ -61,14 +62,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 16
+    .line 17
     new-instance v1, Lmiui/app/screenelement/elements/TimepanelScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/TimepanelScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/TimepanelScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 17
+    .line 18
     :cond_1
     const-string v1, "ImageNumber"
 
@@ -78,14 +79,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 18
+    .line 19
     new-instance v1, Lmiui/app/screenelement/elements/ImageNumberScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/ImageNumberScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/ImageNumberScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 19
+    .line 20
     :cond_2
     const-string v1, "Text"
 
@@ -95,14 +96,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 20
+    .line 21
     new-instance v1, Lmiui/app/screenelement/elements/TextScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/TextScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/TextScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 21
+    .line 22
     :cond_3
     const-string v1, "DateTime"
 
@@ -112,14 +113,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 22
+    .line 23
     new-instance v1, Lmiui/app/screenelement/elements/DateTimeScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/DateTimeScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/DateTimeScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 23
+    .line 24
     :cond_4
     const-string v1, "Button"
 
@@ -129,14 +130,14 @@
 
     if-eqz v1, :cond_5
 
-    .line 24
+    .line 25
     new-instance v1, Lmiui/app/screenelement/elements/ButtonScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/ButtonScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/ButtonScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 25
+    .line 26
     :cond_5
     const-string v1, "MusicControl"
 
@@ -146,14 +147,14 @@
 
     if-eqz v1, :cond_6
 
-    .line 26
+    .line 27
     new-instance v1, Lmiui/app/screenelement/elements/MusicControlScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/MusicControlScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/MusicControlScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 27
+    .line 28
     :cond_6
     const-string v1, "ElementGroup"
 
@@ -171,15 +172,15 @@
 
     if-eqz v1, :cond_8
 
-    .line 28
+    .line 29
     :cond_7
     new-instance v1, Lmiui/app/screenelement/elements/ElementGroup;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/ElementGroup;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/ElementGroup;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 29
+    .line 30
     :cond_8
     const-string v1, "Var"
 
@@ -189,14 +190,14 @@
 
     if-eqz v1, :cond_9
 
-    .line 30
+    .line 31
     new-instance v1, Lmiui/app/screenelement/elements/VariableElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/VariableElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/VariableElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 31
+    .line 32
     :cond_9
     const-string v1, "VarArray"
 
@@ -206,14 +207,14 @@
 
     if-eqz v1, :cond_a
 
-    .line 32
+    .line 33
     new-instance v1, Lmiui/app/screenelement/elements/VariableArrayElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/VariableArrayElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/VariableArrayElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto/16 :goto_0
 
-    .line 33
+    .line 34
     :cond_a
     const-string v1, "SpectrumVisualizer"
 
@@ -223,14 +224,14 @@
 
     if-eqz v1, :cond_b
 
-    .line 34
+    .line 35
     new-instance v1, Lmiui/app/screenelement/elements/SpectrumVisualizerScreenElement;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/SpectrumVisualizerScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/SpectrumVisualizerScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto/16 :goto_0
 
-    .line 35
+    .line 36
     :cond_b
     const-string v1, "Slider"
 
@@ -240,14 +241,14 @@
 
     if-eqz v1, :cond_c
 
-    .line 36
+    .line 37
     new-instance v1, Lmiui/app/screenelement/elements/AdvancedSlider;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/AdvancedSlider;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/AdvancedSlider;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto/16 :goto_0
 
-    .line 37
+    .line 38
     :cond_c
     const-string v1, "FramerateController"
 
@@ -257,14 +258,14 @@
 
     if-eqz v1, :cond_d
 
-    .line 38
+    .line 39
     new-instance v1, Lmiui/app/screenelement/elements/FramerateController;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/FramerateController;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/FramerateController;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto/16 :goto_0
 
-    .line 39
+    .line 40
     :cond_d
     const-string v1, "VirtualScreen"
 
@@ -274,14 +275,14 @@
 
     if-eqz v1, :cond_e
 
-    .line 40
+    .line 41
     new-instance v1, Lmiui/app/screenelement/elements/VirtualScreen;
 
-    invoke-direct {v1, p1, p2}, Lmiui/app/screenelement/elements/VirtualScreen;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-direct {v1, p1, p2, p3}, Lmiui/app/screenelement/elements/VirtualScreen;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto/16 :goto_0
 
-    .line 42
+    .line 43
     :cond_e
     const/4 v1, 0x0
 

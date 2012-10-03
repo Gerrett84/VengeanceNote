@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 119
+    .line 122
     iput-object p1, p0, Lcom/android/server/DeviceStorageMonitorService$CachePackageDataObserver;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageDataObserver$Stub;-><init>()V
@@ -42,19 +42,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 121
+    .line 124
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$CachePackageDataObserver;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mClearSucceeded:Z
     invoke-static {v0, p2}, Lcom/android/server/DeviceStorageMonitorService;->access$102(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
-    .line 122
+    .line 125
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$CachePackageDataObserver;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     #setter for: Lcom/android/server/DeviceStorageMonitorService;->mClearingCache:Z
     invoke-static {v0, v3}, Lcom/android/server/DeviceStorageMonitorService;->access$202(Lcom/android/server/DeviceStorageMonitorService;Z)Z
 
-    .line 125
+    .line 128
     iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService$CachePackageDataObserver;->this$0:Lcom/android/server/DeviceStorageMonitorService;
 
     const-wide/16 v1, 0x0
@@ -62,6 +62,6 @@
     #calls: Lcom/android/server/DeviceStorageMonitorService;->postCheckMemoryMsg(ZJ)V
     invoke-static {v0, v3, v1, v2}, Lcom/android/server/DeviceStorageMonitorService;->access$300(Lcom/android/server/DeviceStorageMonitorService;ZJ)V
 
-    .line 126
+    .line 129
     return-void
 .end method

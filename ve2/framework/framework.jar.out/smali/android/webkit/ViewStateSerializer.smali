@@ -14,16 +14,15 @@
     .locals 0
 
     .prologue
-    .line 82
+    .line 78
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static deserializeViewState(Ljava/io/InputStream;Landroid/webkit/WebView;)Landroid/webkit/WebViewCore$DrawData;
-    .locals 11
+.method static deserializeViewState(Ljava/io/InputStream;)Landroid/webkit/WebViewCore$DrawData;
+    .locals 9
     .parameter "stream"
-    .parameter "web"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -31,8 +30,6 @@
     .end annotation
 
     .prologue
-    const/4 v10, 0x0
-
     .line 53
     new-instance v3, Ljava/io/DataInputStream;
 
@@ -46,34 +43,34 @@
 
     .line 55
     .local v5, version:I
-    const/4 v8, 0x1
+    const/4 v6, 0x1
 
-    if-eq v5, v8, :cond_0
+    if-le v5, v6, :cond_0
 
     .line 56
-    new-instance v8, Ljava/io/IOException;
+    new-instance v6, Ljava/io/IOException;
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "Unexpected version: "
+    const-string v8, "Unexpected version: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-direct {v8, v9}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v8
+    throw v6
 
     .line 58
     :cond_0
@@ -89,11 +86,11 @@
 
     .line 60
     .local v1, contentHeight:I
-    const/16 v8, 0x4000
+    const/16 v6, 0x4000
 
-    new-array v8, v8, [B
+    new-array v6, v6, [B
 
-    invoke-static {v3, v8}, Landroid/webkit/ViewStateSerializer;->nativeDeserializeViewState(Ljava/io/InputStream;[B)I
+    invoke-static {v5, v3, v6}, Landroid/webkit/ViewStateSerializer;->nativeDeserializeViewState(ILjava/io/InputStream;[B)I
 
     move-result v0
 
@@ -105,77 +102,39 @@
 
     .line 64
     .local v4, draw:Landroid/webkit/WebViewCore$DrawData;
-    new-instance v8, Landroid/webkit/WebViewCore$ViewState;
+    new-instance v6, Landroid/webkit/WebViewCore$ViewState;
 
-    invoke-direct {v8}, Landroid/webkit/WebViewCore$ViewState;-><init>()V
+    invoke-direct {v6}, Landroid/webkit/WebViewCore$ViewState;-><init>()V
 
-    iput-object v8, v4, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
+    iput-object v6, v4, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
 
     .line 65
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getViewWidth()I
+    new-instance v6, Landroid/graphics/Point;
 
-    move-result v7
+    invoke-direct {v6, v2, v1}, Landroid/graphics/Point;-><init>(II)V
+
+    iput-object v6, v4, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
     .line 66
-    .local v7, viewWidth:I
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getViewHeightWithTitle()I
-
-    move-result v8
-
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getTitleHeight()I
-
-    move-result v9
-
-    sub-int v6, v8, v9
-
-    .line 67
-    .local v6, viewHeight:I
-    new-instance v8, Landroid/graphics/Point;
-
-    invoke-direct {v8, v7, v6}, Landroid/graphics/Point;-><init>(II)V
-
-    iput-object v8, v4, Landroid/webkit/WebViewCore$DrawData;->mViewSize:Landroid/graphics/Point;
-
-    .line 68
-    new-instance v8, Landroid/graphics/Point;
-
-    invoke-direct {v8, v2, v1}, Landroid/graphics/Point;-><init>(II)V
-
-    iput-object v8, v4, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
-
-    .line 69
-    iget-object v8, v4, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
-
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getDefaultZoomScale()F
-
-    move-result v9
-
-    iput v9, v8, Landroid/webkit/WebViewCore$ViewState;->mDefaultScale:F
-
-    .line 70
     iput v0, v4, Landroid/webkit/WebViewCore$DrawData;->mBaseLayer:I
 
-    .line 71
-    new-instance v8, Landroid/graphics/Region;
+    .line 67
+    invoke-virtual {p0}, Ljava/io/InputStream;->close()V
 
-    invoke-direct {v8, v10, v10, v2, v1}, Landroid/graphics/Region;-><init>(IIII)V
-
-    iput-object v8, v4, Landroid/webkit/WebViewCore$DrawData;->mInvalRegion:Landroid/graphics/Region;
-
-    .line 72
+    .line 68
     return-object v4
 .end method
 
-.method private static native nativeDeserializeViewState(Ljava/io/InputStream;[B)I
+.method private static native nativeDeserializeViewState(ILjava/io/InputStream;[B)I
 .end method
 
 .method private static native nativeSerializeViewState(ILjava/io/OutputStream;[B)Z
 .end method
 
-.method static serializeViewState(Ljava/io/OutputStream;Landroid/webkit/WebView;)Z
+.method static serializeViewState(Ljava/io/OutputStream;Landroid/webkit/WebViewCore$DrawData;)Z
     .locals 3
     .parameter "stream"
-    .parameter "web"
+    .parameter "draw"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -184,9 +143,7 @@
 
     .prologue
     .line 39
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getBaseLayer()I
-
-    move-result v0
+    iget v0, p1, Landroid/webkit/WebViewCore$DrawData;->mBaseLayer:I
 
     .line 40
     .local v0, baseLayer:I
@@ -212,16 +169,16 @@
     invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
     .line 45
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getContentWidth()I
+    iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
-    move-result v2
+    iget v2, v2, Landroid/graphics/Point;->x:I
 
     invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
     .line 46
-    invoke-virtual {p1}, Landroid/webkit/WebView;->getContentHeight()I
+    iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mContentSize:Landroid/graphics/Point;
 
-    move-result v2
+    iget v2, v2, Landroid/graphics/Point;->y:I
 
     invoke-virtual {v1, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 

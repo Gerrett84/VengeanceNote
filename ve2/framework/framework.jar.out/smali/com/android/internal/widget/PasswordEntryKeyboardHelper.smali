@@ -149,7 +149,7 @@
     .locals 5
 
     .prologue
-    const v4, 0x102033c
+    const v4, 0x1020371
 
     const/4 v3, 0x1
 
@@ -248,7 +248,7 @@
     .parameter "viewHeight"
 
     .prologue
-    const v3, 0x102033c
+    const v3, 0x1020371
 
     const/4 v6, 0x1
 
@@ -667,12 +667,12 @@
     .line 150
     iget-object v5, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mTargetView:Landroid/view/View;
 
-    invoke-virtual {v5}, Landroid/view/View;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v5}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 151
-    .local v3, handler:Landroid/os/Handler;
+    .local v4, viewRootImpl:Landroid/view/ViewRootImpl;
     const/4 v5, -0x1
 
     invoke-static {v5}, Landroid/view/KeyCharacterMap;->load(I)Landroid/view/KeyCharacterMap;
@@ -702,14 +702,14 @@
 
     .line 155
     .local v0, N:I
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    .local v4, i:I
+    .local v3, i:I
     :goto_0
-    if-ge v4, v0, :cond_0
+    if-ge v3, v0, :cond_0
 
     .line 156
-    aget-object v1, v2, v4
+    aget-object v1, v2, v3
 
     .line 157
     .local v1, event:Landroid/view/KeyEvent;
@@ -726,23 +726,17 @@
     move-result-object v1
 
     .line 159
-    const/16 v5, 0x3ed
-
-    invoke-virtual {v3, v5, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v4, v1}, Landroid/view/ViewRootImpl;->dispatchKey(Landroid/view/KeyEvent;)V
 
     .line 155
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     .line 162
     .end local v0           #N:I
     .end local v1           #event:Landroid/view/KeyEvent;
-    .end local v4           #i:I
+    .end local v3           #i:I
     :cond_0
     return-void
 .end method
@@ -894,7 +888,7 @@
 .end method
 
 .method public sendDownUpKeyEvents(I)V
-    .locals 14
+    .locals 13
     .parameter "keyEventCode"
 
     .prologue
@@ -907,14 +901,12 @@
     .local v1, eventTime:J
     iget-object v0, p0, Lcom/android/internal/widget/PasswordEntryKeyboardHelper;->mTargetView:Landroid/view/View;
 
-    invoke-virtual {v0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v0}, Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v12
 
     .line 167
-    .local v12, handler:Landroid/os/Handler;
-    const/16 v13, 0x3f3
-
+    .local v12, viewRootImpl:Landroid/view/ViewRootImpl;
     new-instance v0, Landroid/view/KeyEvent;
 
     const/4 v5, 0x0
@@ -935,15 +927,9 @@
 
     invoke-direct/range {v0 .. v11}, Landroid/view/KeyEvent;-><init>(JJIIIIIII)V
 
-    invoke-virtual {v12, v13, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v12, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v12, v0}, Landroid/view/ViewRootImpl;->dispatchKeyFromIme(Landroid/view/KeyEvent;)V
 
     .line 171
-    const/16 v13, 0x3f3
-
     new-instance v0, Landroid/view/KeyEvent;
 
     const/4 v5, 0x1
@@ -964,11 +950,7 @@
 
     invoke-direct/range {v0 .. v11}, Landroid/view/KeyEvent;-><init>(JJIIIIIII)V
 
-    invoke-virtual {v12, v13, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v12, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v12, v0}, Landroid/view/ViewRootImpl;->dispatchKeyFromIme(Landroid/view/KeyEvent;)V
 
     .line 175
     return-void

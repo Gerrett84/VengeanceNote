@@ -31,14 +31,6 @@
     .end annotation
 .end method
 
-.method public abstract getPrivateKey(Ljava/lang/String;)[B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract hasGrant(ILjava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -48,6 +40,14 @@
 .end method
 
 .method public abstract installCaCertificate([B)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract requestPrivateKey(Ljava/lang/String;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 179
+    .line 182
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$2;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;-><init>(II)V
@@ -42,7 +42,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 183
+    .line 186
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$2;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mAudioManager:Landroid/media/AudioManager;
@@ -58,10 +58,10 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 184
+    .line 187
     const/4 v0, 0x2
 
-    .line 191
+    .line 194
     .local v0, ringerMode:I
     :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$2;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
@@ -73,10 +73,10 @@
 
     invoke-static {v1, v0}, Lmiui/util/AudioManagerHelper;->setRingerMode(Landroid/content/Context;I)V
 
-    .line 192
+    .line 195
     return-void
 
-    .line 185
+    .line 188
     .end local v0           #ringerMode:I
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$2;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
@@ -98,13 +98,13 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 187
+    .line 190
     const/4 v0, 0x1
 
     .restart local v0       #ringerMode:I
     goto :goto_0
 
-    .line 189
+    .line 192
     .end local v0           #ringerMode:I
     :cond_1
     const/4 v0, 0x0
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 202
     const/4 v0, 0x1
 
     return v0
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 198
     const/4 v0, 0x1
 
     return v0

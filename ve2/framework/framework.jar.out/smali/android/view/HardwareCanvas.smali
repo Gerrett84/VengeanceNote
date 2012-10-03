@@ -16,21 +16,41 @@
 
 
 # virtual methods
-.method public callDrawGLFunction(I)Z
+.method abstract attachFunctor(I)V
+.end method
+
+.method public callDrawGLFunction(I)I
     .locals 1
     .parameter "drawGLFunction"
 
     .prologue
-    .line 94
+    .line 101
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method abstract drawDisplayList(Landroid/view/DisplayList;IILandroid/graphics/Rect;)Z
+.method abstract detachFunctor(I)V
+.end method
+
+.method public abstract drawDisplayList(Landroid/view/DisplayList;Landroid/graphics/Rect;I)I
 .end method
 
 .method abstract drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
+.end method
+
+.method abstract endTileRendering()V
+.end method
+
+.method public invokeFunctors(Landroid/graphics/Rect;)I
+    .locals 1
+    .parameter "dirty"
+
+    .prologue
+    .line 113
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public isHardwareAccelerated()Z
@@ -43,10 +63,10 @@
     return v0
 .end method
 
-.method abstract onPostDraw()V
+.method public abstract onPostDraw()V
 .end method
 
-.method abstract onPreDraw(Landroid/graphics/Rect;)V
+.method public abstract onPreDraw(Landroid/graphics/Rect;)I
 .end method
 
 .method abstract outputDisplayList(Landroid/view/DisplayList;)V
@@ -63,4 +83,7 @@
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
+
+.method abstract startTileRendering(Landroid/graphics/Rect;)V
 .end method

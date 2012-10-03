@@ -605,7 +605,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 80
-    const v0, 0x60b006a
+    const v0, 0x60b0038
 
     invoke-virtual {p0, v0}, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -616,7 +616,7 @@
     iput-object v0, p0, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->mFirstDigital:Landroid/widget/ImageView;
 
     .line 81
-    const v0, 0x60b006b
+    const v0, 0x60b0039
 
     invoke-virtual {p0, v0}, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -627,7 +627,7 @@
     iput-object v0, p0, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->mSecondDigital:Landroid/widget/ImageView;
 
     .line 82
-    const v0, 0x60b006d
+    const v0, 0x60b003a
 
     invoke-virtual {p0, v0}, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -638,7 +638,7 @@
     iput-object v0, p0, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->mThirdDigital:Landroid/widget/ImageView;
 
     .line 83
-    const v0, 0x60b006e
+    const v0, 0x60b003b
 
     invoke-virtual {p0, v0}, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -649,7 +649,7 @@
     iput-object v0, p0, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->mFouthDigital:Landroid/widget/ImageView;
 
     .line 84
-    const v0, 0x60b006f
+    const v0, 0x60b003c
 
     invoke-virtual {p0, v0}, Lcom/miui/internal/policy/impl/LockScreenDigitalClock;->findViewById(I)Landroid/view/View;
 

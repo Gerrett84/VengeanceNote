@@ -125,17 +125,17 @@
     .parameter "headers"
 
     .prologue
-    .line 1700
+    .line 1703
     if-nez p0, :cond_0
 
-    .line 1701
+    .line 1704
     const/16 v37, 0x0
 
-    .line 1907
+    .line 1910
     :goto_0
     return v37
 
-    .line 1705
+    .line 1708
     :cond_0
     const/16 v37, 0x8c
 
@@ -147,7 +147,7 @@
 
     move-result v8
 
-    .line 1708
+    .line 1711
     .local v8, messageType:I
     const/16 v37, 0x8d
 
@@ -159,25 +159,25 @@
 
     move-result v9
 
-    .line 1709
+    .line 1712
     .local v9, mmsVersion:I
     if-nez v9, :cond_1
 
-    .line 1711
-    const/16 v37, 0x0
-
-    goto :goto_0
-
-    .line 1715
-    :cond_1
-    packed-switch v8, :pswitch_data_0
-
-    .line 1904
+    .line 1714
     const/16 v37, 0x0
 
     goto :goto_0
 
     .line 1718
+    :cond_1
+    packed-switch v8, :pswitch_data_0
+
+    .line 1907
+    const/16 v37, 0x0
+
+    goto :goto_0
+
+    .line 1721
     :pswitch_0
     const/16 v37, 0x84
 
@@ -189,16 +189,16 @@
 
     move-result-object v34
 
-    .line 1719
+    .line 1722
     .local v34, srContentType:[B
     if-nez v34, :cond_2
 
-    .line 1720
+    .line 1723
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1724
+    .line 1727
     :cond_2
     const/16 v37, 0x89
 
@@ -210,16 +210,16 @@
 
     move-result-object v35
 
-    .line 1725
+    .line 1728
     .local v35, srFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v35, :cond_3
 
-    .line 1726
+    .line 1729
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1730
+    .line 1733
     :cond_3
     const/16 v37, 0x98
 
@@ -231,16 +231,16 @@
 
     move-result-object v36
 
-    .line 1731
+    .line 1734
     .local v36, srTransactionId:[B
     if-nez v36, :cond_15
 
-    .line 1732
+    .line 1735
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1738
+    .line 1741
     .end local v34           #srContentType:[B
     .end local v35           #srFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     .end local v36           #srTransactionId:[B
@@ -255,16 +255,16 @@
 
     move-result v32
 
-    .line 1739
+    .line 1742
     .local v32, scResponseStatus:I
     if-nez v32, :cond_4
 
-    .line 1740
+    .line 1743
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1744
+    .line 1747
     :cond_4
     const/16 v37, 0x98
 
@@ -276,16 +276,16 @@
 
     move-result-object v33
 
-    .line 1745
+    .line 1748
     .local v33, scTransactionId:[B
     if-nez v33, :cond_15
 
-    .line 1746
+    .line 1749
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1752
+    .line 1755
     .end local v32           #scResponseStatus:I
     .end local v33           #scTransactionId:[B
     :pswitch_2
@@ -299,16 +299,16 @@
 
     move-result-object v10
 
-    .line 1753
+    .line 1756
     .local v10, niContentLocation:[B
     if-nez v10, :cond_5
 
-    .line 1754
+    .line 1757
     const/16 v37, 0x0
 
     goto :goto_0
 
-    .line 1758
+    .line 1761
     :cond_5
     const/16 v37, 0x88
 
@@ -320,7 +320,7 @@
 
     move-result-wide v11
 
-    .line 1759
+    .line 1762
     .local v11, niExpiry:J
     const-wide/16 v37, -0x1
 
@@ -328,12 +328,12 @@
 
     if-nez v37, :cond_6
 
-    .line 1760
+    .line 1763
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1764
+    .line 1767
     :cond_6
     const/16 v37, 0x8a
 
@@ -345,16 +345,16 @@
 
     move-result-object v13
 
-    .line 1765
+    .line 1768
     .local v13, niMessageClass:[B
     if-nez v13, :cond_7
 
-    .line 1766
+    .line 1769
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1770
+    .line 1773
     :cond_7
     const/16 v37, 0x8e
 
@@ -366,7 +366,7 @@
 
     move-result-wide v14
 
-    .line 1771
+    .line 1774
     .local v14, niMessageSize:J
     const-wide/16 v37, -0x1
 
@@ -374,12 +374,12 @@
 
     if-nez v37, :cond_8
 
-    .line 1772
+    .line 1775
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1776
+    .line 1779
     :cond_8
     const/16 v37, 0x98
 
@@ -391,16 +391,16 @@
 
     move-result-object v16
 
-    .line 1777
+    .line 1780
     .local v16, niTransactionId:[B
     if-nez v16, :cond_15
 
-    .line 1778
+    .line 1781
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1784
+    .line 1787
     .end local v10           #niContentLocation:[B
     .end local v11           #niExpiry:J
     .end local v13           #niMessageClass:[B
@@ -417,16 +417,16 @@
 
     move-result v17
 
-    .line 1785
+    .line 1788
     .local v17, nriStatus:I
     if-nez v17, :cond_9
 
-    .line 1786
+    .line 1789
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1790
+    .line 1793
     :cond_9
     const/16 v37, 0x98
 
@@ -438,16 +438,16 @@
 
     move-result-object v18
 
-    .line 1791
+    .line 1794
     .local v18, nriTransactionId:[B
     if-nez v18, :cond_15
 
-    .line 1792
+    .line 1795
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1798
+    .line 1801
     .end local v17           #nriStatus:I
     .end local v18           #nriTransactionId:[B
     :pswitch_4
@@ -461,16 +461,16 @@
 
     move-result-object v19
 
-    .line 1799
+    .line 1802
     .local v19, rcContentType:[B
     if-nez v19, :cond_a
 
-    .line 1800
+    .line 1803
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1804
+    .line 1807
     :cond_a
     const/16 v37, 0x85
 
@@ -482,7 +482,7 @@
 
     move-result-wide v20
 
-    .line 1805
+    .line 1808
     .local v20, rcDate:J
     const-wide/16 v37, -0x1
 
@@ -490,12 +490,12 @@
 
     if-nez v37, :cond_15
 
-    .line 1806
+    .line 1809
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1812
+    .line 1815
     .end local v19           #rcContentType:[B
     .end local v20           #rcDate:J
     :pswitch_5
@@ -509,7 +509,7 @@
 
     move-result-wide v3
 
-    .line 1813
+    .line 1816
     .local v3, diDate:J
     const-wide/16 v37, -0x1
 
@@ -517,12 +517,12 @@
 
     if-nez v37, :cond_b
 
-    .line 1814
+    .line 1817
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1818
+    .line 1821
     :cond_b
     const/16 v37, 0x8b
 
@@ -534,16 +534,16 @@
 
     move-result-object v5
 
-    .line 1819
+    .line 1822
     .local v5, diMessageId:[B
     if-nez v5, :cond_c
 
-    .line 1820
+    .line 1823
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1824
+    .line 1827
     :cond_c
     const/16 v37, 0x95
 
@@ -555,16 +555,16 @@
 
     move-result v6
 
-    .line 1825
+    .line 1828
     .local v6, diStatus:I
     if-nez v6, :cond_d
 
-    .line 1826
+    .line 1829
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1830
+    .line 1833
     :cond_d
     const/16 v37, 0x97
 
@@ -576,16 +576,16 @@
 
     move-result-object v7
 
-    .line 1831
+    .line 1834
     .local v7, diTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v7, :cond_15
 
-    .line 1832
+    .line 1835
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1838
+    .line 1841
     .end local v3           #diDate:J
     .end local v5           #diMessageId:[B
     .end local v6           #diStatus:I
@@ -601,16 +601,16 @@
 
     move-result-object v2
 
-    .line 1839
+    .line 1842
     .local v2, aiTransactionId:[B
     if-nez v2, :cond_15
 
-    .line 1840
+    .line 1843
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1846
+    .line 1849
     .end local v2           #aiTransactionId:[B
     :pswitch_7
     const/16 v37, 0x85
@@ -623,7 +623,7 @@
 
     move-result-wide v22
 
-    .line 1847
+    .line 1850
     .local v22, roDate:J
     const-wide/16 v37, -0x1
 
@@ -631,12 +631,12 @@
 
     if-nez v37, :cond_e
 
-    .line 1848
+    .line 1851
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1852
+    .line 1855
     :cond_e
     const/16 v37, 0x89
 
@@ -648,16 +648,16 @@
 
     move-result-object v24
 
-    .line 1853
+    .line 1856
     .local v24, roFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v24, :cond_f
 
-    .line 1854
+    .line 1857
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1858
+    .line 1861
     :cond_f
     const/16 v37, 0x8b
 
@@ -669,16 +669,16 @@
 
     move-result-object v25
 
-    .line 1859
+    .line 1862
     .local v25, roMessageId:[B
     if-nez v25, :cond_10
 
-    .line 1860
+    .line 1863
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1864
+    .line 1867
     :cond_10
     const/16 v37, 0x9b
 
@@ -690,16 +690,16 @@
 
     move-result v26
 
-    .line 1865
+    .line 1868
     .local v26, roReadStatus:I
     if-nez v26, :cond_11
 
-    .line 1866
+    .line 1869
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1870
+    .line 1873
     :cond_11
     const/16 v37, 0x97
 
@@ -711,16 +711,16 @@
 
     move-result-object v27
 
-    .line 1871
+    .line 1874
     .local v27, roTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v27, :cond_15
 
-    .line 1872
+    .line 1875
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1878
+    .line 1881
     .end local v22           #roDate:J
     .end local v24           #roFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     .end local v25           #roMessageId:[B
@@ -737,16 +737,16 @@
 
     move-result-object v28
 
-    .line 1879
+    .line 1882
     .local v28, rrFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v28, :cond_12
 
-    .line 1880
+    .line 1883
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1884
+    .line 1887
     :cond_12
     const/16 v37, 0x8b
 
@@ -758,16 +758,16 @@
 
     move-result-object v29
 
-    .line 1885
+    .line 1888
     .local v29, rrMessageId:[B
     if-nez v29, :cond_13
 
-    .line 1886
+    .line 1889
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1890
+    .line 1893
     :cond_13
     const/16 v37, 0x9b
 
@@ -779,16 +779,16 @@
 
     move-result v30
 
-    .line 1891
+    .line 1894
     .local v30, rrReadStatus:I
     if-nez v30, :cond_14
 
-    .line 1892
+    .line 1895
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1896
+    .line 1899
     :cond_14
     const/16 v37, 0x97
 
@@ -800,16 +800,16 @@
 
     move-result-object v31
 
-    .line 1897
+    .line 1900
     .local v31, rrTo:[Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v31, :cond_15
 
-    .line 1898
+    .line 1901
     const/16 v37, 0x0
 
     goto/16 :goto_0
 
-    .line 1907
+    .line 1910
     .end local v28           #rrFrom:Lcom/google/android/mms/pdu/EncodedStringValue;
     .end local v29           #rrMessageId:[B
     .end local v30           #rrReadStatus:I
@@ -819,7 +819,7 @@
 
     goto/16 :goto_0
 
-    .line 1715
+    .line 1718
     :pswitch_data_0
     .packed-switch 0x80
         :pswitch_0
@@ -843,7 +843,7 @@
 
     const/4 v2, 0x1
 
-    .line 1664
+    .line 1667
     sget-boolean v4, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v4, :cond_0
@@ -856,7 +856,7 @@
 
     throw v2
 
-    .line 1665
+    .line 1668
     :cond_0
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
@@ -866,27 +866,27 @@
 
     if-nez v4, :cond_2
 
-    .line 1690
+    .line 1693
     :cond_1
     :goto_0
     return v2
 
-    .line 1671
+    .line 1674
     :cond_2
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
     if-eqz v4, :cond_3
 
-    .line 1672
+    .line 1675
     invoke-virtual {p0}, Lcom/google/android/mms/pdu/PduPart;->getContentId()[B
 
     move-result-object v0
 
-    .line 1673
+    .line 1676
     .local v0, contentId:[B
     if-eqz v0, :cond_3
 
-    .line 1674
+    .line 1677
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mStartParam:[B
 
     invoke-static {v4, v0}, Ljava/util/Arrays;->equals([B[B)Z
@@ -897,26 +897,26 @@
 
     move v2, v3
 
-    .line 1675
+    .line 1678
     goto :goto_0
 
-    .line 1681
+    .line 1684
     .end local v0           #contentId:[B
     :cond_3
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
     if-eqz v4, :cond_1
 
-    .line 1682
+    .line 1685
     invoke-virtual {p0}, Lcom/google/android/mms/pdu/PduPart;->getContentType()[B
 
     move-result-object v1
 
-    .line 1683
+    .line 1686
     .local v1, contentType:[B
     if-eqz v1, :cond_1
 
-    .line 1684
+    .line 1687
     sget-object v4, Lcom/google/android/mms/pdu/PduParser;->mTypeParam:[B
 
     invoke-static {v4, v1}, Ljava/util/Arrays;->equals([B[B)Z
@@ -927,7 +927,7 @@
 
     move v2, v3
 
-    .line 1685
+    .line 1688
     goto :goto_0
 .end method
 
@@ -936,7 +936,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 1125
+    .line 1128
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_0
@@ -949,13 +949,13 @@
 
     throw v1
 
-    .line 1126
+    .line 1129
     :cond_0
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1127
+    .line 1130
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -971,7 +971,7 @@
 
     throw v1
 
-    .line 1128
+    .line 1131
     :cond_1
     and-int/lit16 v1, v0, 0xff
 
@@ -986,7 +986,7 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 1091
+    .line 1094
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_0
@@ -999,19 +999,19 @@
 
     throw v2
 
-    .line 1092
+    .line 1095
     :cond_0
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 1093
+    .line 1096
     .local v0, out:Ljava/io/ByteArrayOutputStream;
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 1094
+    .line 1097
     .local v1, temp:I
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1025,35 +1025,35 @@
 
     throw v2
 
-    .line 1095
+    .line 1098
     :cond_1
     if-eq v3, v1, :cond_4
 
     if-eqz v1, :cond_4
 
-    .line 1097
+    .line 1100
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_3
 
-    .line 1098
+    .line 1101
     invoke-static {v1}, Lcom/google/android/mms/pdu/PduParser;->isTokenCharacter(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1099
+    .line 1102
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 1107
+    .line 1110
     :cond_2
     :goto_0
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v1
 
-    .line 1108
+    .line 1111
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_1
@@ -1066,7 +1066,7 @@
 
     throw v2
 
-    .line 1102
+    .line 1105
     :cond_3
     invoke-static {v1}, Lcom/google/android/mms/pdu/PduParser;->isText(I)Z
 
@@ -1074,12 +1074,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 1103
+    .line 1106
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
     goto :goto_0
 
-    .line 1111
+    .line 1114
     :cond_4
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->size()I
 
@@ -1087,12 +1087,12 @@
 
     if-lez v2, :cond_5
 
-    .line 1112
+    .line 1115
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v2
 
-    .line 1115
+    .line 1118
     :goto_1
     return-object v2
 
@@ -1109,7 +1109,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1075
+    .line 1078
     const/16 v1, 0x20
 
     if-lt p0, v1, :cond_0
@@ -1127,23 +1127,23 @@
 
     if-gt p0, v1, :cond_2
 
-    .line 1086
+    .line 1089
     :cond_1
     :goto_0
     :pswitch_0
     return v0
 
-    .line 1079
+    .line 1082
     :cond_2
     packed-switch p0, :pswitch_data_0
 
-    .line 1086
+    .line 1089
     :pswitch_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 1079
+    .line 1082
     nop
 
     :pswitch_data_0
@@ -1163,7 +1163,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1031
+    .line 1034
     const/16 v1, 0x21
 
     if-lt p0, v1, :cond_0
@@ -1172,22 +1172,22 @@
 
     if-le p0, v1, :cond_1
 
-    .line 1056
+    .line 1059
     :cond_0
     :goto_0
     :sswitch_0
     return v0
 
-    .line 1035
+    .line 1038
     :cond_1
     sparse-switch p0, :sswitch_data_0
 
-    .line 1056
+    .line 1059
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1035
+    .line 1038
     nop
 
     :sswitch_data_0
@@ -1238,7 +1238,7 @@
     .end annotation
 
     .prologue
-    .line 1429
+    .line 1432
     .local p1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     sget-boolean v9, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1252,22 +1252,22 @@
 
     throw v9
 
-    .line 1431
+    .line 1434
     :cond_0
     const/4 v0, 0x0
 
-    .line 1432
+    .line 1435
     .local v0, contentType:[B
     const/4 v9, 0x1
 
     invoke-virtual {p0, v9}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1433
+    .line 1436
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v8
 
-    .line 1434
+    .line 1437
     .local v8, temp:I
     sget-boolean v9, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1283,42 +1283,42 @@
 
     throw v9
 
-    .line 1435
+    .line 1438
     :cond_1
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1437
+    .line 1440
     and-int/lit16 v1, v8, 0xff
 
-    .line 1439
+    .line 1442
     .local v1, cur:I
     const/16 v9, 0x20
 
     if-ge v1, v9, :cond_7
 
-    .line 1440
+    .line 1443
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
     move-result v5
 
-    .line 1441
+    .line 1444
     .local v5, length:I
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v7
 
-    .line 1442
+    .line 1445
     .local v7, startPos:I
     const/4 v9, 0x1
 
     invoke-virtual {p0, v9}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1443
+    .line 1446
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v8
 
-    .line 1444
+    .line 1447
     sget-boolean v9, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v9, :cond_2
@@ -1333,14 +1333,14 @@
 
     throw v9
 
-    .line 1445
+    .line 1448
     :cond_2
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1446
+    .line 1449
     and-int/lit16 v3, v8, 0xff
 
-    .line 1448
+    .line 1451
     .local v3, first:I
     const/16 v9, 0x20
 
@@ -1350,48 +1350,48 @@
 
     if-gt v3, v9, :cond_4
 
-    .line 1449
+    .line 1452
     const/4 v9, 0x0
 
     invoke-static {p0, v9}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
 
     move-result-object v0
 
-    .line 1464
+    .line 1467
     :goto_0
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v2
 
-    .line 1465
+    .line 1468
     .local v2, endPos:I
     sub-int v9, v7, v2
 
     sub-int v6, v5, v9
 
-    .line 1466
+    .line 1469
     .local v6, parameterLen:I
     if-lez v6, :cond_3
 
-    .line 1467
+    .line 1470
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
     invoke-static {p0, p1, v9}, Lcom/google/android/mms/pdu/PduParser;->parseContentTypeParams(Ljava/io/ByteArrayInputStream;Ljava/util/HashMap;Ljava/lang/Integer;)V
 
-    .line 1470
+    .line 1473
     :cond_3
     if-gez v6, :cond_8
 
-    .line 1471
+    .line 1474
     const-string v9, "PduParser"
 
     const-string v10, "Corrupt MMS message"
 
     invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1472
+    .line 1475
     sget-object v9, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     const/4 v10, 0x0
@@ -1402,7 +1402,7 @@
 
     move-result-object v9
 
-    .line 1481
+    .line 1484
     .end local v2           #endPos:I
     .end local v3           #first:I
     .end local v5           #length:I
@@ -1411,7 +1411,7 @@
     :goto_1
     return-object v9
 
-    .line 1450
+    .line 1453
     .restart local v3       #first:I
     .restart local v5       #length:I
     .restart local v7       #startPos:I
@@ -1420,12 +1420,12 @@
 
     if-le v3, v9, :cond_6
 
-    .line 1451
+    .line 1454
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v4
 
-    .line 1453
+    .line 1456
     .local v4, index:I
     sget-object v9, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
@@ -1433,7 +1433,7 @@
 
     if-ge v4, v9, :cond_5
 
-    .line 1454
+    .line 1457
     sget-object v9, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     aget-object v9, v9, v4
@@ -1444,11 +1444,11 @@
 
     goto :goto_0
 
-    .line 1456
+    .line 1459
     :cond_5
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1457
+    .line 1460
     const/4 v9, 0x0
 
     invoke-static {p0, v9}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -1457,7 +1457,7 @@
 
     goto :goto_0
 
-    .line 1460
+    .line 1463
     .end local v4           #index:I
     :cond_6
     const-string v9, "PduParser"
@@ -1466,7 +1466,7 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1461
+    .line 1464
     sget-object v9, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     const/4 v10, 0x0
@@ -1479,7 +1479,7 @@
 
     goto :goto_1
 
-    .line 1474
+    .line 1477
     .end local v3           #first:I
     .end local v5           #length:I
     .end local v7           #startPos:I
@@ -1488,7 +1488,7 @@
 
     if-gt v1, v9, :cond_9
 
-    .line 1475
+    .line 1478
     const/4 v9, 0x0
 
     invoke-static {p0, v9}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
@@ -1499,10 +1499,10 @@
     :goto_2
     move-object v9, v0
 
-    .line 1481
+    .line 1484
     goto :goto_1
 
-    .line 1477
+    .line 1480
     :cond_9
     sget-object v9, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
@@ -1539,7 +1539,7 @@
     .end annotation
 
     .prologue
-    .line 1258
+    .line 1261
     .local p1, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/Integer;Ljava/lang/Object;>;"
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1553,7 +1553,7 @@
 
     throw v17
 
-    .line 1259
+    .line 1262
     :cond_0
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1571,33 +1571,33 @@
 
     throw v17
 
-    .line 1261
+    .line 1264
     :cond_1
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v14
 
-    .line 1262
+    .line 1265
     .local v14, startPos:I
     const/4 v15, 0x0
 
-    .line 1263
+    .line 1266
     .local v15, tempPos:I
     invoke-virtual/range {p2 .. p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v10
 
-    .line 1264
+    .line 1267
     .local v10, lastLen:I
     :goto_0
     if-lez v10, :cond_c
 
-    .line 1265
+    .line 1268
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v12
 
-    .line 1266
+    .line 1269
     .local v12, param:I
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -1615,14 +1615,14 @@
 
     throw v17
 
-    .line 1267
+    .line 1270
     :cond_2
     add-int/lit8 v10, v10, -0x1
 
-    .line 1269
+    .line 1272
     sparse-switch v12, :sswitch_data_0
 
-    .line 1400
+    .line 1403
     const/16 v17, -0x1
 
     move-object/from16 v0, p0
@@ -1637,7 +1637,7 @@
 
     if-ne v0, v1, :cond_b
 
-    .line 1401
+    .line 1404
     const-string v17, "PduParser"
 
     const-string v18, "Corrupt Content-Type"
@@ -1646,7 +1646,7 @@
 
     goto :goto_0
 
-    .line 1285
+    .line 1288
     :sswitch_0
     const/16 v17, 0x1
 
@@ -1656,28 +1656,28 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1286
+    .line 1289
     invoke-static/range {p0 .. p0}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
     move-result v7
 
-    .line 1287
+    .line 1290
     .local v7, first:I
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1288
+    .line 1291
     const/16 v17, 0x7f
 
     move/from16 v0, v17
 
     if-le v7, v0, :cond_4
 
-    .line 1290
+    .line 1293
     invoke-static/range {p0 .. p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v9
 
-    .line 1292
+    .line 1295
     .local v9, index:I
     sget-object v17, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
@@ -1691,7 +1691,7 @@
 
     if-ge v9, v0, :cond_3
 
-    .line 1293
+    .line 1296
     sget-object v17, Lcom/google/android/mms/pdu/PduContentTypes;->contentTypes:[Ljava/lang/String;
 
     aget-object v17, v17, v9
@@ -1700,7 +1700,7 @@
 
     move-result-object v16
 
-    .line 1294
+    .line 1297
     .local v16, type:[B
     const/16 v17, 0x83
 
@@ -1716,7 +1716,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1306
+    .line 1309
     .end local v9           #index:I
     .end local v16           #type:[B
     :cond_3
@@ -1725,7 +1725,7 @@
 
     move-result v15
 
-    .line 1307
+    .line 1310
     invoke-virtual/range {p2 .. p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v17
@@ -1734,10 +1734,10 @@
 
     sub-int v10, v17, v18
 
-    .line 1308
+    .line 1311
     goto :goto_0
 
-    .line 1300
+    .line 1303
     :cond_4
     const/16 v17, 0x0
 
@@ -1749,13 +1749,13 @@
 
     move-result-object v16
 
-    .line 1301
+    .line 1304
     .restart local v16       #type:[B
     if-eqz v16, :cond_3
 
     if-eqz p1, :cond_3
 
-    .line 1302
+    .line 1305
     const/16 v17, 0x83
 
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1772,7 +1772,7 @@
 
     goto :goto_1
 
-    .line 1325
+    .line 1328
     .end local v7           #first:I
     .end local v16           #type:[B
     :sswitch_1
@@ -1786,13 +1786,13 @@
 
     move-result-object v13
 
-    .line 1326
+    .line 1329
     .local v13, start:[B
     if-eqz v13, :cond_5
 
     if-eqz p1, :cond_5
 
-    .line 1327
+    .line 1330
     const/16 v17, 0x99
 
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1805,13 +1805,13 @@
 
     invoke-virtual {v0, v1, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1330
+    .line 1333
     :cond_5
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v15
 
-    .line 1331
+    .line 1334
     invoke-virtual/range {p2 .. p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v17
@@ -1820,10 +1820,10 @@
 
     sub-int v10, v17, v18
 
-    .line 1332
+    .line 1335
     goto/16 :goto_0
 
-    .line 1349
+    .line 1352
     .end local v13           #start:[B
     :sswitch_2
     const/16 v17, 0x1
@@ -1834,16 +1834,16 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1350
+    .line 1353
     invoke-static/range {p0 .. p0}, Lcom/google/android/mms/pdu/PduParser;->extractByteValue(Ljava/io/ByteArrayInputStream;)I
 
     move-result v8
 
-    .line 1351
+    .line 1354
     .local v8, firstValue:I
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1353
+    .line 1356
     const/16 v17, 0x20
 
     move/from16 v0, v17
@@ -1859,7 +1859,7 @@
     :cond_6
     if-nez v8, :cond_9
 
-    .line 1356
+    .line 1359
     :cond_7
     const/16 v17, 0x0
 
@@ -1871,7 +1871,7 @@
 
     move-result-object v5
 
-    .line 1358
+    .line 1361
     .local v5, charsetStr:[B
     :try_start_0
     new-instance v17, Ljava/lang/String;
@@ -1884,7 +1884,7 @@
 
     move-result v4
 
-    .line 1360
+    .line 1363
     .local v4, charsetInt:I
     const/16 v17, 0x81
 
@@ -1906,7 +1906,7 @@
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1374
+    .line 1377
     .end local v4           #charsetInt:I
     .end local v5           #charsetStr:[B
     :cond_8
@@ -1915,7 +1915,7 @@
 
     move-result v15
 
-    .line 1375
+    .line 1378
     invoke-virtual/range {p2 .. p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v17
@@ -1924,15 +1924,15 @@
 
     sub-int v10, v17, v18
 
-    .line 1376
+    .line 1379
     goto/16 :goto_0
 
-    .line 1361
+    .line 1364
     .restart local v5       #charsetStr:[B
     :catch_0
     move-exception v6
 
-    .line 1363
+    .line 1366
     .local v6, e:Ljava/io/UnsupportedEncodingException;
     const-string v17, "PduParser"
 
@@ -1946,7 +1946,7 @@
 
     invoke-static {v0, v1, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1364
+    .line 1367
     const/16 v17, 0x81
 
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1969,7 +1969,7 @@
 
     goto :goto_2
 
-    .line 1368
+    .line 1371
     .end local v5           #charsetStr:[B
     .end local v6           #e:Ljava/io/UnsupportedEncodingException;
     :cond_9
@@ -1981,11 +1981,11 @@
 
     long-to-int v3, v0
 
-    .line 1369
+    .line 1372
     .local v3, charset:I
     if-eqz p1, :cond_8
 
-    .line 1370
+    .line 1373
     const/16 v17, 0x81
 
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2006,7 +2006,7 @@
 
     goto :goto_2
 
-    .line 1388
+    .line 1391
     .end local v3           #charset:I
     .end local v8           #firstValue:I
     :sswitch_3
@@ -2020,13 +2020,13 @@
 
     move-result-object v11
 
-    .line 1389
+    .line 1392
     .local v11, name:[B
     if-eqz v11, :cond_a
 
     if-eqz p1, :cond_a
 
-    .line 1390
+    .line 1393
     const/16 v17, 0x97
 
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2039,13 +2039,13 @@
 
     invoke-virtual {v0, v1, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1393
+    .line 1396
     :cond_a
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v15
 
-    .line 1394
+    .line 1397
     invoke-virtual/range {p2 .. p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v17
@@ -2054,33 +2054,33 @@
 
     sub-int v10, v17, v18
 
-    .line 1395
+    .line 1398
     goto/16 :goto_0
 
-    .line 1403
+    .line 1406
     .end local v11           #name:[B
     :cond_b
     const/4 v10, 0x0
 
     goto/16 :goto_0
 
-    .line 1409
+    .line 1412
     .end local v12           #param:I
     :cond_c
     if-eqz v10, :cond_d
 
-    .line 1410
+    .line 1413
     const-string v17, "PduParser"
 
     const-string v18, "Corrupt Content-Type"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1412
+    .line 1415
     :cond_d
     return-void
 
-    .line 1269
+    .line 1272
     nop
 
     :sswitch_data_0
@@ -2096,14 +2096,16 @@
 .end method
 
 .method protected static parseEncodedStringValue(Ljava/io/ByteArrayInputStream;)Lcom/google/android/mms/pdu/EncodedStringValue;
-    .locals 8
+    .locals 9
     .parameter "pduDataStream"
 
     .prologue
-    .line 930
-    sget-boolean v7, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
+    const/4 v7, 0x0
 
-    if-nez v7, :cond_0
+    .line 930
+    sget-boolean v8, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
+
+    if-nez v8, :cond_0
 
     if-nez p0, :cond_0
 
@@ -2115,9 +2117,9 @@
 
     .line 931
     :cond_0
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
-    invoke-virtual {p0, v7}, Ljava/io/ByteArrayInputStream;->mark(I)V
+    invoke-virtual {p0, v8}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
     .line 932
     const/4 v3, 0x0
@@ -2134,13 +2136,13 @@
 
     .line 935
     .local v5, temp:I
-    sget-boolean v7, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
+    sget-boolean v8, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
-    if-nez v7, :cond_1
+    if-nez v8, :cond_1
 
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
-    if-ne v7, v5, :cond_1
+    if-ne v8, v5, :cond_1
 
     new-instance v7, Ljava/lang/AssertionError;
 
@@ -2152,36 +2154,44 @@
     :cond_1
     and-int/lit16 v2, v5, 0xff
 
-    .line 938
+    .line 937
     .local v2, first:I
+    if-nez v2, :cond_2
+
+    .line 960
+    :goto_0
+    return-object v7
+
+    .line 941
+    :cond_2
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 939
-    const/16 v7, 0x20
+    .line 942
+    const/16 v8, 0x20
 
-    if-ge v2, v7, :cond_2
+    if-ge v2, v8, :cond_3
 
-    .line 940
+    .line 943
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
-    .line 942
+    .line 945
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v0
 
-    .line 945
-    :cond_2
-    const/4 v7, 0x0
+    .line 948
+    :cond_3
+    const/4 v8, 0x0
 
-    invoke-static {p0, v7}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
+    invoke-static {p0, v8}, Lcom/google/android/mms/pdu/PduParser;->parseWapString(Ljava/io/ByteArrayInputStream;I)[B
 
     move-result-object v6
 
-    .line 948
+    .line 951
     .local v6, textString:[B
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
-    .line 949
+    .line 952
     :try_start_0
     new-instance v4, Lcom/google/android/mms/pdu/EncodedStringValue;
 
@@ -2193,15 +2203,14 @@
 
     .end local v4           #returnValue:Lcom/google/android/mms/pdu/EncodedStringValue;
     .restart local v3       #returnValue:Lcom/google/android/mms/pdu/EncodedStringValue;
-    :goto_0
+    :goto_1
     move-object v7, v3
 
-    .line 957
-    :goto_1
-    return-object v7
+    .line 960
+    goto :goto_0
 
-    .line 951
-    :cond_3
+    .line 954
+    :cond_4
     new-instance v4, Lcom/google/android/mms/pdu/EncodedStringValue;
 
     invoke-direct {v4, v6}, Lcom/google/android/mms/pdu/EncodedStringValue;-><init>([B)V
@@ -2214,17 +2223,15 @@
 
     .end local v4           #returnValue:Lcom/google/android/mms/pdu/EncodedStringValue;
     .restart local v3       #returnValue:Lcom/google/android/mms/pdu/EncodedStringValue;
-    goto :goto_0
+    goto :goto_1
 
-    .line 953
+    .line 956
     :catch_0
     move-exception v1
 
-    .line 954
+    .line 957
     .local v1, e:Ljava/lang/Exception;
-    const/4 v7, 0x0
-
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method protected static parseIntegerValue(Ljava/io/ByteArrayInputStream;)J
@@ -2232,7 +2239,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 1200
+    .line 1203
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_0
@@ -2245,18 +2252,18 @@
 
     throw v1
 
-    .line 1201
+    .line 1204
     :cond_0
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1202
+    .line 1205
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1203
+    .line 1206
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2272,23 +2279,23 @@
 
     throw v1
 
-    .line 1204
+    .line 1207
     :cond_1
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1205
+    .line 1208
     const/16 v1, 0x7f
 
     if-le v0, v1, :cond_2
 
-    .line 1206
+    .line 1209
     invoke-static {p0}, Lcom/google/android/mms/pdu/PduParser;->parseShortInteger(Ljava/io/ByteArrayInputStream;)I
 
     move-result v1
 
     int-to-long v1, v1
 
-    .line 1208
+    .line 1211
     :goto_0
     return-wide v1
 
@@ -2309,7 +2316,7 @@
 
     const/4 v7, -0x1
 
-    .line 1168
+    .line 1171
     sget-boolean v5, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v5, :cond_0
@@ -2322,13 +2329,13 @@
 
     throw v5
 
-    .line 1169
+    .line 1172
     :cond_0
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v4
 
-    .line 1170
+    .line 1173
     .local v4, temp:I
     sget-boolean v5, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2342,15 +2349,15 @@
 
     throw v5
 
-    .line 1171
+    .line 1174
     :cond_1
     and-int/lit16 v0, v4, 0xff
 
-    .line 1173
+    .line 1176
     .local v0, count:I
     if-le v0, v8, :cond_2
 
-    .line 1174
+    .line 1177
     new-instance v5, Ljava/lang/RuntimeException;
 
     const-string v6, "Octet count greater than 8 and I can\'t represent that!"
@@ -2359,11 +2366,11 @@
 
     throw v5
 
-    .line 1177
+    .line 1180
     :cond_2
     const-wide/16 v2, 0x0
 
-    .line 1179
+    .line 1182
     .local v2, result:J
     const/4 v1, 0x0
 
@@ -2371,12 +2378,12 @@
     :goto_0
     if-ge v1, v0, :cond_4
 
-    .line 1180
+    .line 1183
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v4
 
-    .line 1181
+    .line 1184
     sget-boolean v5, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v5, :cond_3
@@ -2389,23 +2396,23 @@
 
     throw v5
 
-    .line 1182
+    .line 1185
     :cond_3
     shl-long/2addr v2, v8
 
-    .line 1183
+    .line 1186
     and-int/lit16 v5, v4, 0xff
 
     int-to-long v5, v5
 
     add-long/2addr v2, v5
 
-    .line 1179
+    .line 1182
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1186
+    .line 1189
     :cond_4
     return-wide v2
 .end method
@@ -2417,7 +2424,7 @@
     .parameter "length"
 
     .prologue
-    .line 1494
+    .line 1497
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v17, :cond_0
@@ -2430,7 +2437,7 @@
 
     throw v17
 
-    .line 1495
+    .line 1498
     :cond_0
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2444,7 +2451,7 @@
 
     throw v17
 
-    .line 1496
+    .line 1499
     :cond_1
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2458,32 +2465,32 @@
 
     throw v17
 
-    .line 1514
+    .line 1517
     :cond_2
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v9
 
-    .line 1515
+    .line 1518
     .local v9, startPos:I
     const/4 v12, 0x0
 
-    .line 1516
+    .line 1519
     .local v12, tempPos:I
     move/from16 v7, p2
 
-    .line 1517
+    .line 1520
     .local v7, lastLen:I
     :cond_3
     :goto_0
     if-lez v7, :cond_11
 
-    .line 1518
+    .line 1521
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v5
 
-    .line 1519
+    .line 1522
     .local v5, header:I
     sget-boolean v17, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -2501,21 +2508,21 @@
 
     throw v17
 
-    .line 1520
+    .line 1523
     :cond_4
     add-int/lit8 v7, v7, -0x1
 
-    .line 1522
+    .line 1525
     const/16 v17, 0x7f
 
     move/from16 v0, v17
 
     if-le v5, v0, :cond_d
 
-    .line 1524
+    .line 1527
     sparse-switch v5, :sswitch_data_0
 
-    .line 1615
+    .line 1618
     const/16 v17, -0x1
 
     move-object/from16 v0, p0
@@ -2530,22 +2537,22 @@
 
     if-ne v0, v1, :cond_c
 
-    .line 1616
+    .line 1619
     const-string v17, "PduParser"
 
     const-string v18, "Corrupt Part headers"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1617
+    .line 1620
     const/16 v17, 0x0
 
-    .line 1653
+    .line 1656
     .end local v5           #header:I
     :goto_1
     return v17
 
-    .line 1530
+    .line 1533
     .restart local v5       #header:I
     :sswitch_0
     const/16 v17, 0x0
@@ -2558,30 +2565,30 @@
 
     move-result-object v4
 
-    .line 1531
+    .line 1534
     .local v4, contentLocation:[B
     if-eqz v4, :cond_5
 
-    .line 1532
+    .line 1535
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4}, Lcom/google/android/mms/pdu/PduPart;->setContentLocation([B)V
 
-    .line 1535
+    .line 1538
     :cond_5
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v12
 
-    .line 1536
+    .line 1539
     sub-int v17, v9, v12
 
     sub-int v7, p2, v17
 
-    .line 1537
+    .line 1540
     goto :goto_0
 
-    .line 1543
+    .line 1546
     .end local v4           #contentLocation:[B
     :sswitch_1
     const/16 v17, 0x1
@@ -2594,52 +2601,52 @@
 
     move-result-object v3
 
-    .line 1544
+    .line 1547
     .local v3, contentId:[B
     if-eqz v3, :cond_6
 
-    .line 1545
+    .line 1548
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v3}, Lcom/google/android/mms/pdu/PduPart;->setContentId([B)V
 
-    .line 1548
+    .line 1551
     :cond_6
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v12
 
-    .line 1549
+    .line 1552
     sub-int v17, v9, v12
 
     sub-int v7, p2, v17
 
-    .line 1550
+    .line 1553
     goto :goto_0
 
-    .line 1566
+    .line 1569
     .end local v3           #contentId:[B
     :sswitch_2
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v17
 
-    const v18, 0x111002b
+    const v18, 0x1110031
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v2
 
-    .line 1569
+    .line 1572
     .local v2, contentDisposition:Z
     if-eqz v2, :cond_3
 
-    .line 1570
+    .line 1573
     invoke-static/range {p0 .. p0}, Lcom/google/android/mms/pdu/PduParser;->parseValueLength(Ljava/io/ByteArrayInputStream;)I
 
     move-result v8
 
-    .line 1571
+    .line 1574
     .local v8, len:I
     const/16 v17, 0x1
 
@@ -2649,22 +2656,22 @@
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1572
+    .line 1575
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v15
 
-    .line 1573
+    .line 1576
     .local v15, thisStartPos:I
     const/4 v14, 0x0
 
-    .line 1574
+    .line 1577
     .local v14, thisEndPos:I
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v16
 
-    .line 1576
+    .line 1579
     .local v16, value:I
     const/16 v17, 0x80
 
@@ -2674,7 +2681,7 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 1577
+    .line 1580
     sget-object v17, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_FROM_DATA:[B
 
     move-object/from16 v0, p1
@@ -2683,25 +2690,25 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduPart;->setContentDisposition([B)V
 
-    .line 1590
+    .line 1593
     :goto_2
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v14
 
-    .line 1591
+    .line 1594
     sub-int v17, v15, v14
 
     move/from16 v0, v17
 
     if-ge v0, v8, :cond_8
 
-    .line 1592
+    .line 1595
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v16
 
-    .line 1593
+    .line 1596
     const/16 v17, 0x98
 
     move/from16 v0, v16
@@ -2710,7 +2717,7 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 1594
+    .line 1597
     const/16 v17, 0x0
 
     move-object/from16 v0, p0
@@ -2727,29 +2734,29 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/mms/pdu/PduPart;->setFilename([B)V
 
-    .line 1599
+    .line 1602
     :cond_7
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v14
 
-    .line 1600
+    .line 1603
     sub-int v17, v15, v14
 
     move/from16 v0, v17
 
     if-ge v0, v8, :cond_8
 
-    .line 1601
+    .line 1604
     sub-int v17, v15, v14
 
     sub-int v6, v8, v17
 
-    .line 1602
+    .line 1605
     .local v6, last:I
     new-array v10, v6, [B
 
-    .line 1603
+    .line 1606
     .local v10, temp:[B
     const/16 v17, 0x0
 
@@ -2759,7 +2766,7 @@
 
     invoke-virtual {v0, v10, v1, v6}, Ljava/io/ByteArrayInputStream;->read([BII)I
 
-    .line 1607
+    .line 1610
     .end local v6           #last:I
     .end local v10           #temp:[B
     :cond_8
@@ -2767,15 +2774,15 @@
 
     move-result v12
 
-    .line 1608
+    .line 1611
     sub-int v17, v9, v12
 
     sub-int v7, p2, v17
 
-    .line 1609
+    .line 1612
     goto/16 :goto_0
 
-    .line 1578
+    .line 1581
     :cond_9
     const/16 v17, 0x81
 
@@ -2785,7 +2792,7 @@
 
     if-ne v0, v1, :cond_a
 
-    .line 1579
+    .line 1582
     sget-object v17, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_ATTACHMENT:[B
 
     move-object/from16 v0, p1
@@ -2796,7 +2803,7 @@
 
     goto :goto_2
 
-    .line 1580
+    .line 1583
     :cond_a
     const/16 v17, 0x82
 
@@ -2806,7 +2813,7 @@
 
     if-ne v0, v1, :cond_b
 
-    .line 1581
+    .line 1584
     sget-object v17, Lcom/google/android/mms/pdu/PduPart;->DISPOSITION_INLINE:[B
 
     move-object/from16 v0, p1
@@ -2817,11 +2824,11 @@
 
     goto :goto_2
 
-    .line 1583
+    .line 1586
     :cond_b
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
-    .line 1585
+    .line 1588
     const/16 v17, 0x0
 
     move-object/from16 v0, p0
@@ -2840,7 +2847,7 @@
 
     goto/16 :goto_2
 
-    .line 1619
+    .line 1622
     .end local v2           #contentDisposition:Z
     .end local v8           #len:I
     .end local v14           #thisEndPos:I
@@ -2851,7 +2858,7 @@
 
     goto/16 :goto_0
 
-    .line 1622
+    .line 1625
     :cond_d
     const/16 v17, 0x20
 
@@ -2865,7 +2872,7 @@
 
     if-gt v5, v0, :cond_f
 
-    .line 1624
+    .line 1627
     const/16 v17, 0x0
 
     move-object/from16 v0, p0
@@ -2876,7 +2883,7 @@
 
     move-result-object v11
 
-    .line 1625
+    .line 1628
     .local v11, tempHeader:[B
     const/16 v17, 0x0
 
@@ -2888,7 +2895,7 @@
 
     move-result-object v13
 
-    .line 1628
+    .line 1631
     .local v13, tempValue:[B
     const/16 v17, 0x1
 
@@ -2910,26 +2917,26 @@
 
     if-ne v0, v1, :cond_e
 
-    .line 1630
+    .line 1633
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v13}, Lcom/google/android/mms/pdu/PduPart;->setContentTransferEncoding([B)V
 
-    .line 1633
+    .line 1636
     :cond_e
     invoke-virtual/range {p0 .. p0}, Ljava/io/ByteArrayInputStream;->available()I
 
     move-result v12
 
-    .line 1634
+    .line 1637
     sub-int v17, v9, v12
 
     sub-int v7, p2, v17
 
-    .line 1635
+    .line 1638
     goto/16 :goto_0
 
-    .line 1640
+    .line 1643
     .end local v11           #tempHeader:[B
     .end local v13           #tempValue:[B
     :cond_f
@@ -2947,48 +2954,48 @@
 
     if-ne v0, v1, :cond_10
 
-    .line 1641
+    .line 1644
     const-string v17, "PduParser"
 
     const-string v18, "Corrupt Part headers"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1642
+    .line 1645
     const/16 v17, 0x0
 
     goto/16 :goto_1
 
-    .line 1644
+    .line 1647
     :cond_10
     const/4 v7, 0x0
 
     goto/16 :goto_0
 
-    .line 1648
+    .line 1651
     .end local v5           #header:I
     :cond_11
     if-eqz v7, :cond_12
 
-    .line 1649
+    .line 1652
     const-string v17, "PduParser"
 
     const-string v18, "Corrupt Part headers"
 
     invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1650
+    .line 1653
     const/16 v17, 0x0
 
     goto/16 :goto_1
 
-    .line 1653
+    .line 1656
     :cond_12
     const/16 v17, 0x1
 
     goto/16 :goto_1
 
-    .line 1524
+    .line 1527
     :sswitch_data_0
     .sparse-switch
         0x8e -> :sswitch_0
@@ -3445,7 +3452,7 @@
     .parameter "pduDataStream"
 
     .prologue
-    .line 1145
+    .line 1148
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_0
@@ -3458,13 +3465,13 @@
 
     throw v1
 
-    .line 1146
+    .line 1149
     :cond_0
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 1147
+    .line 1150
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -3480,7 +3487,7 @@
 
     throw v1
 
-    .line 1148
+    .line 1151
     :cond_1
     and-int/lit8 v1, v0, 0x7f
 
@@ -3657,7 +3664,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 969
+    .line 972
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v1, :cond_0
@@ -3670,16 +3677,16 @@
 
     throw v1
 
-    .line 987
+    .line 990
     :cond_0
     invoke-virtual {p0, v2}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 990
+    .line 993
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->read()I
 
     move-result v0
 
-    .line 991
+    .line 994
     .local v0, temp:I
     sget-boolean v1, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
@@ -3695,7 +3702,7 @@
 
     throw v1
 
-    .line 992
+    .line 995
     :cond_1
     if-ne v2, p1, :cond_2
 
@@ -3703,10 +3710,10 @@
 
     if-ne v1, v0, :cond_2
 
-    .line 995
+    .line 998
     invoke-virtual {p0, v2}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
-    .line 1010
+    .line 1013
     :goto_0
     invoke-static {p0, p1}, Lcom/google/android/mms/pdu/PduParser;->getWapString(Ljava/io/ByteArrayInputStream;I)[B
 
@@ -3714,7 +3721,7 @@
 
     return-object v1
 
-    .line 996
+    .line 999
     :cond_2
     if-nez p1, :cond_3
 
@@ -3722,12 +3729,12 @@
 
     if-ne v1, v0, :cond_3
 
-    .line 999
+    .line 1002
     invoke-virtual {p0, v2}, Ljava/io/ByteArrayInputStream;->mark(I)V
 
     goto :goto_0
 
-    .line 1002
+    .line 1005
     :cond_3
     invoke-virtual {p0}, Ljava/io/ByteArrayInputStream;->reset()V
 
@@ -3740,7 +3747,7 @@
     .parameter "length"
 
     .prologue
-    .line 1220
+    .line 1223
     sget-boolean v2, Lcom/google/android/mms/pdu/PduParser;->$assertionsDisabled:Z
 
     if-nez v2, :cond_0
@@ -3753,11 +3760,11 @@
 
     throw v2
 
-    .line 1221
+    .line 1224
     :cond_0
     new-array v0, p1, [B
 
-    .line 1222
+    .line 1225
     .local v0, area:[B
     const/4 v2, 0x0
 
@@ -3765,14 +3772,14 @@
 
     move-result v1
 
-    .line 1223
+    .line 1226
     .local v1, readLen:I
     if-ge v1, p1, :cond_1
 
-    .line 1224
+    .line 1227
     const/4 v1, -0x1
 
-    .line 1226
+    .line 1229
     .end local v1           #readLen:I
     :cond_1
     return v1

@@ -35,6 +35,8 @@
 
 .field public static final SMS_REJECTED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_REJECTED"
 
+.field public static final SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED"
+
 .field public static final WAP_PUSH_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.WAP_PUSH_RECEIVED"
 
 
@@ -54,7 +56,7 @@
     .parameter "intent"
 
     .prologue
-    .line 668
+    .line 688
     const-string/jumbo v7, "pdus"
 
     invoke-virtual {p0, v7}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -67,7 +69,7 @@
 
     check-cast v2, [Ljava/lang/Object;
 
-    .line 669
+    .line 689
     .local v2, messages:[Ljava/lang/Object;
     const-string v7, "format"
 
@@ -75,13 +77,13 @@
 
     move-result-object v0
 
-    .line 670
+    .line 690
     .local v0, format:Ljava/lang/String;
     array-length v7, v2
 
     new-array v5, v7, [[B
 
-    .line 672
+    .line 692
     .local v5, pduObjs:[[B
     const/4 v1, 0x0
 
@@ -91,7 +93,7 @@
 
     if-ge v1, v7, :cond_0
 
-    .line 673
+    .line 693
     aget-object v7, v2, v1
 
     check-cast v7, [B
@@ -100,38 +102,38 @@
 
     aput-object v7, v5, v1
 
-    .line 672
+    .line 692
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 675
+    .line 695
     :cond_0
     array-length v7, v5
 
     new-array v6, v7, [[B
 
-    .line 676
+    .line 696
     .local v6, pdus:[[B
     array-length v4, v6
 
-    .line 677
+    .line 697
     .local v4, pduCount:I
     new-array v3, v4, [Landroid/telephony/SmsMessage;
 
-    .line 678
+    .line 698
     .local v3, msgs:[Landroid/telephony/SmsMessage;
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v4, :cond_1
 
-    .line 679
+    .line 699
     aget-object v7, v5, v1
 
     aput-object v7, v6, v1
 
-    .line 680
+    .line 700
     aget-object v7, v6, v1
 
     invoke-static {v7, v0}, Landroid/telephony/SmsMessage;->createFromPdu([BLjava/lang/String;)Landroid/telephony/SmsMessage;
@@ -140,12 +142,12 @@
 
     aput-object v7, v3, v1
 
-    .line 678
+    .line 698
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 682
+    .line 702
     :cond_1
     return-object v3
 .end method

@@ -257,6 +257,7 @@
         <item name="textAppearanceListItemSmall">?textAppearanceLarge</item>
         <item name="listPreferredItemPaddingLeft">6.0dip</item>
         <item name="listPreferredItemPaddingRight">6.0dip</item>
+        <item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.MediaRouteButton</item>
         <item name="searchWidgetCorpusItemBackground">@color/search_widget_corpus_item_background</item>
         <item name="textAppearanceEasyCorrectSuggestion">@style/TextAppearance.EasyCorrectSuggestion</item>
         <item name="textAppearanceMisspelledSuggestion">@style/TextAppearance.MisspelledSuggestion</item>
@@ -271,9 +272,6 @@
         <item name="gestureOverlayViewStyle">@style/Widget.GestureOverlayView</item>
         <item name="quickContactBadgeOverlay">@drawable/quickcontact_badge_overlay_dark</item>
         <item name="numberPickerStyle">@style/Widget.NumberPicker</item>
-        <item name="numberPickerUpButtonStyle">@style/Widget.ImageButton.NumberPickerUpButton</item>
-        <item name="numberPickerDownButtonStyle">@style/Widget.ImageButton.NumberPickerDownButton</item>
-        <item name="numberPickerInputTextStyle">@style/Widget.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.TimePicker</item>
         <item name="activityChooserViewStyle">@style/Widget.ActivityChooserView</item>
         <item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_dark</item>
@@ -298,6 +296,13 @@
         <item name="searchDialogTheme">@style/Theme.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.PreferenceFrameLayout</item>
         <item name="pointerStyle">@style/Pointer</item>
+        <item name="accessibilityFocusedDrawable">@drawable/view_accessibility_focused</item>
+        <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_dark</item>
+        <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_dark</item>
+        <item name="windowFixedWidthMajor">0.0dip</item>
+        <item name="windowFixedHeightMinor">0.0dip</item>
+        <item name="windowFixedWidthMinor">0.0dip</item>
+        <item name="windowFixedHeightMajor">0.0dip</item>
         <item name="keyboardViewStyle">@style/Widget.KeyboardView</item>
     </style>
     <style name="Theme.NoTitleBar" parent="@style/Theme">
@@ -401,6 +406,7 @@
         <item name="editTextColor">@color/primary_text_light</item>
         <item name="actionModeSelectAllDrawable">@drawable/ic_menu_selectall_holo_light</item>
         <item name="actionModeSplitBackground">@drawable/cab_background_bottom_holo_light</item>
+        <item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.Light.MediaRouteButton</item>
         <item name="gestureOverlayViewStyle">@style/Widget.GestureOverlayView.White</item>
         <item name="quickContactBadgeOverlay">@drawable/quickcontact_badge_overlay_light</item>
         <item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_light</item>
@@ -414,6 +420,8 @@
         <item name="searchViewEditQuery">@drawable/ic_commit_search_api_holo_light</item>
         <item name="searchViewTextField">@drawable/textfield_searchview_holo_light</item>
         <item name="searchViewTextFieldRight">@drawable/textfield_searchview_right_holo_light</item>
+        <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_light</item>
+        <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_light</item>
     </style>
     <style name="Theme.Light.NoTitleBar" parent="@style/Theme.Light">
         <item name="windowNoTitle">true</item>
@@ -632,6 +640,7 @@
     </style>
     <style name="Widget.WebView" parent="@style/Widget">
         <item name="focusable">true</item>
+        <item name="focusableInTouchMode">true</item>
         <item name="scrollbars">horizontal|vertical</item>
     </style>
     <style name="Widget.TabWidget" parent="@style/Widget">
@@ -730,6 +739,7 @@
         <item name="textColor">@color/primary_text_light_nodisable</item>
     </style>
     <style name="TextAppearance.Widget.IconMenu.Item" parent="@style/TextAppearance.Small">
+        <item name="textSize">14.0dip</item>
         <item name="textColor">?textColorPrimary</item>
     </style>
     <style name="TextAppearance.Widget.EditText" parent="@style/TextAppearance.Widget">
@@ -878,6 +888,7 @@
         <item name="textSize">17.0sp</item>
         <item name="textStyle">bold</item>
         <item name="textColor">@color/primary_text_holo_light</item>
+        <item name="fontFamily">sans-serif-light</item>
     </style>
     <style name="Theme.WithActionBar" parent="@style/Theme">
         <item name="windowActionBar">true</item>
@@ -1087,6 +1098,7 @@
         <item name="textAppearanceListItemSmall">?textAppearanceMedium</item>
         <item name="listPreferredItemPaddingLeft">8.0dip</item>
         <item name="listPreferredItemPaddingRight">8.0dip</item>
+        <item name="mediaRouteButtonStyle">@style/Widget.Holo.MediaRouteButton</item>
         <item name="searchWidgetCorpusItemBackground">@color/search_widget_corpus_item_background</item>
         <item name="errorMessageBackground">@drawable/popup_inline_error_holo_dark</item>
         <item name="errorMessageAboveBackground">@drawable/popup_inline_error_above_holo_dark</item>
@@ -1099,9 +1111,6 @@
         <item name="gestureOverlayViewStyle">@style/Widget.Holo.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.Holo.StackView</item>
         <item name="numberPickerStyle">@style/Widget.Holo.NumberPicker</item>
-        <item name="numberPickerUpButtonStyle">@style/Widget.Holo.ImageButton.NumberPickerUpButton</item>
-        <item name="numberPickerDownButtonStyle">@style/Widget.Holo.ImageButton.NumberPickerDownButton</item>
-        <item name="numberPickerInputTextStyle">@style/Widget.Holo.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.Holo.TimePicker</item>
         <item name="activityChooserViewStyle">@style/Widget.Holo.ActivityChooserView</item>
         <item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_dark</item>
@@ -1117,6 +1126,8 @@
         <item name="searchDialogTheme">@style/Theme.Holo.SearchBar</item>
         <item name="preferenceFrameLayoutStyle">@style/Widget.Holo.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.Holo.CompoundButton.Switch</item>
+        <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_dark</item>
+        <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_dark</item>
         <item name="keyboardViewStyle">@style/Widget.Holo.KeyboardView</item>
     </style>
     <style name="Theme.Holo.NoActionBar" parent="@style/Theme.Holo">
@@ -1329,6 +1340,7 @@
         <item name="textAppearanceListItemSmall">?textAppearanceMedium</item>
         <item name="listPreferredItemPaddingLeft">8.0dip</item>
         <item name="listPreferredItemPaddingRight">8.0dip</item>
+        <item name="mediaRouteButtonStyle">@style/Widget.Holo.Light.MediaRouteButton</item>
         <item name="searchWidgetCorpusItemBackground">@color/search_widget_corpus_item_background</item>
         <item name="errorMessageBackground">@drawable/popup_inline_error_holo_light</item>
         <item name="errorMessageAboveBackground">@drawable/popup_inline_error_above_holo_light</item>
@@ -1341,9 +1353,6 @@
         <item name="gestureOverlayViewStyle">@style/Widget.Holo.Light.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.Holo.StackView</item>
         <item name="numberPickerStyle">@style/Widget.Holo.Light.NumberPicker</item>
-        <item name="numberPickerUpButtonStyle">@style/Widget.Holo.Light.ImageButton.NumberPickerUpButton</item>
-        <item name="numberPickerDownButtonStyle">@style/Widget.Holo.Light.ImageButton.NumberPickerDownButton</item>
-        <item name="numberPickerInputTextStyle">@style/Widget.Holo.Light.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.Holo.Light.TimePicker</item>
         <item name="activityChooserViewStyle">@style/Widget.Holo.Light.ActivityChooserView</item>
         <item name="actionModeShareDrawable">@drawable/ic_menu_share_holo_light</item>
@@ -1358,6 +1367,8 @@
         <item name="searchDropdownBackground">@drawable/search_dropdown_light</item>
         <item name="searchDialogTheme">@style/Theme.Holo.Light.SearchBar</item>
         <item name="switchStyle">@style/Widget.Holo.Light.CompoundButton.Switch</item>
+        <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_light</item>
+        <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_light</item>
         <item name="keyboardViewStyle">@style/Widget.Holo.KeyboardView</item>
     </style>
     <style name="Theme.Holo.Dialog" parent="@style/Theme.Holo">
@@ -1494,6 +1505,7 @@
         <item name="paddingRight">12.0dip</item>
         <item name="minWidth">@dimen/action_button_min_width</item>
         <item name="minHeight">?actionBarSize</item>
+        <item name="maxLines">2</item>
     </style>
     <style name="Widget.ListPopupWindow" parent="@style/Widget">
         <item name="dropDownSelector">@drawable/list_selector_background</item>
@@ -1565,7 +1577,6 @@
     <style name="Widget.Holo.PopupWindow" parent="@style/Widget.PopupWindow" />
     <style name="Widget.Holo.ProgressBar" parent="@style/Widget.ProgressBar">
         <item name="indeterminateDrawable">@drawable/progress_medium_holo</item>
-        <item name="animationResolution">33</item>
     </style>
     <style name="Widget.Holo.ProgressBar.Horizontal" parent="@style/Widget.ProgressBar.Horizontal">
         <item name="maxHeight">16.0dip</item>
@@ -1575,12 +1586,10 @@
     </style>
     <style name="Widget.Holo.ProgressBar.Small" parent="@style/Widget.ProgressBar.Small">
         <item name="indeterminateDrawable">@drawable/progress_small_holo</item>
-        <item name="animationResolution">33</item>
     </style>
     <style name="Widget.Holo.ProgressBar.Small.Title" parent="@style/Widget.Holo.ProgressBar.Small" />
     <style name="Widget.Holo.ProgressBar.Large" parent="@style/Widget.ProgressBar.Large">
         <item name="indeterminateDrawable">@drawable/progress_large_holo</item>
-        <item name="animationResolution">33</item>
     </style>
     <style name="Widget.Holo.SeekBar" parent="@style/Widget.Holo">
         <item name="paddingLeft">16.0dip</item>
@@ -1664,6 +1673,7 @@
         <item name="paddingRight">12.0dip</item>
         <item name="scaleType">center</item>
         <item name="minWidth">@dimen/action_button_min_width</item>
+        <item name="maxLines">2</item>
     </style>
     <style name="Widget.Holo.ActionButton.Overflow" parent="@style/Widget.Holo.ActionButton">
         <item name="background">?actionBarItemBackground</item>
@@ -1890,12 +1900,12 @@
         <item name="weekDayTextAppearance">@style/TextAppearance.Holo.Light.CalendarViewWeekDayView</item>
     </style>
     <style name="Widget.DatePicker" parent="@style/Widget">
-        <item name="layout">@layout/date_picker</item>
         <item name="calendarViewShown">false</item>
+        <item name="internalLayout">@layout/date_picker</item>
     </style>
     <style name="Widget.Holo.DatePicker" parent="@style/Widget.DatePicker">
-        <item name="layout">@layout/date_picker_holo</item>
         <item name="calendarViewShown">true</item>
+        <item name="internalLayout">@layout/date_picker_holo</item>
     </style>
     <style name="Theme.Holo.Light.NoActionBar" parent="@style/Theme.Holo.Light">
         <item name="windowNoTitle">true</item>
@@ -1925,15 +1935,14 @@
     <style name="Widget.Holo.ActionBar.TabText" parent="@style/Widget.ActionBar.TabText">
         <item name="textAppearance">@style/TextAppearance.Holo.Medium</item>
         <item name="textSize">12.0sp</item>
-        <item name="textStyle">bold</item>
+        <item name="textStyle">normal</item>
         <item name="textColor">?textColorPrimary</item>
         <item name="ellipsize">marquee</item>
         <item name="maxLines">2</item>
         <item name="textAllCaps">true</item>
     </style>
     <style name="Widget.Holo.ActionBar.TabBar" parent="@style/Widget.ActionBar.TabBar">
-        <item name="paddingLeft">14.0dip</item>
-        <item name="paddingRight">14.0dip</item>
+        <item name="background">@drawable/ab_tab_bg</item>
         <item name="divider">@drawable/ab_tab_divider</item>
         <item name="showDividers">middle</item>
         <item name="dividerPadding">0.0dip</item>
@@ -2240,12 +2249,10 @@
         <item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>
         <item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.TextSuggestionsPopupWindow</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.ActionMode</item>
+        <item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.MediaRouteButton</item>
         <item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>
         <item name="numberPickerStyle">@style/Widget.DeviceDefault.NumberPicker</item>
-        <item name="numberPickerUpButtonStyle">@style/Widget.DeviceDefault.ImageButton.NumberPickerUpButton</item>
-        <item name="numberPickerDownButtonStyle">@style/Widget.DeviceDefault.ImageButton.NumberPickerDownButton</item>
-        <item name="numberPickerInputTextStyle">@style/Widget.DeviceDefault.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.DeviceDefault.TimePicker</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.PopupWindow.ActionMode</item>
         <item name="searchDialogTheme">@style/Theme.DeviceDefault.SearchBar</item>
@@ -2353,12 +2360,10 @@
         <item name="switchPreferenceStyle">@style/Preference.DeviceDefault.SwitchPreference</item>
         <item name="textSuggestionsWindowStyle">@style/Widget.DeviceDefault.Light.TextSuggestionsPopupWindow</item>
         <item name="actionModeStyle">@style/Widget.DeviceDefault.Light.ActionMode</item>
+        <item name="mediaRouteButtonStyle">@style/Widget.DeviceDefault.Light.MediaRouteButton</item>
         <item name="gestureOverlayViewStyle">@style/Widget.DeviceDefault.Light.GestureOverlayView</item>
         <item name="stackViewStyle">@style/Widget.DeviceDefault.StackView</item>
         <item name="numberPickerStyle">@style/Widget.DeviceDefault.Light.NumberPicker</item>
-        <item name="numberPickerUpButtonStyle">@style/Widget.DeviceDefault.Light.ImageButton.NumberPickerUpButton</item>
-        <item name="numberPickerDownButtonStyle">@style/Widget.DeviceDefault.Light.ImageButton.NumberPickerDownButton</item>
-        <item name="numberPickerInputTextStyle">@style/Widget.DeviceDefault.Light.EditText.NumberPickerInputText</item>
         <item name="timePickerStyle">@style/Widget.DeviceDefault.Light.TimePicker</item>
         <item name="actionModePopupWindowStyle">@style/Widget.DeviceDefault.Light.PopupWindow.ActionMode</item>
         <item name="searchDialogTheme">@style/Theme.DeviceDefault.Light.SearchBar</item>
@@ -2558,6 +2563,20 @@
     <style name="DeviceDefault.Light.ButtonBar" parent="@style/Holo.Light.ButtonBar" />
     <style name="DeviceDefault.Light.ButtonBar.AlertDialog" parent="@style/Holo.Light.ButtonBar.AlertDialog" />
     <style name="DeviceDefault.Light.SegmentedButton" parent="@style/Holo.Light.SegmentedButton" />
+    <style name="Widget.Holo.MediaRouteButton" parent="@style/Widget.Holo">
+        <item name="background">?selectableItemBackground</item>
+        <item name="minWidth">56.0dip</item>
+        <item name="minHeight">48.0dip</item>
+        <item name="externalRouteEnabledDrawable">@drawable/ic_media_route_holo_dark</item>
+    </style>
+    <style name="Widget.Holo.Light.MediaRouteButton" parent="@style/Widget.Holo.Light">
+        <item name="background">?selectableItemBackground</item>
+        <item name="minWidth">56.0dip</item>
+        <item name="minHeight">48.0dip</item>
+        <item name="externalRouteEnabledDrawable">@drawable/ic_media_route_holo_light</item>
+    </style>
+    <style name="Widget.DeviceDefault.MediaRouteButton" parent="@style/Widget.Holo.MediaRouteButton" />
+    <style name="Widget.DeviceDefault.Light.MediaRouteButton" parent="@style/Widget.Holo.Light.MediaRouteButton" />
     <style name="WindowTitleBackground">
         <item name="background">@drawable/title_bar</item>
     </style>
@@ -2637,8 +2656,10 @@
         <item name="windowExitAnimation">@anim/wallpaper_exit</item>
     </style>
     <style name="Animation.RecentApplications" parent="@style/Animation">
-        <item name="windowEnterAnimation">@anim/fade_in</item>
-        <item name="windowExitAnimation">@anim/fade_out</item>
+        <item name="windowEnterAnimation">@anim/recents_fade_in</item>
+        <item name="windowExitAnimation">@anim/recents_fade_out</item>
+        <item name="windowShowAnimation">@anim/recents_fade_in</item>
+        <item name="windowHideAnimation">@anim/recents_fade_out</item>
     </style>
     <style name="Animation.PopupWindow" parent="@style/Animation" />
     <style name="Animation.PopupWindow.ActionMode" parent="@style/Animation.PopupWindow">
@@ -2649,17 +2670,28 @@
         <item name="windowEnterAnimation">@null</item>
         <item name="windowExitAnimation">@anim/fade_out</item>
     </style>
+    <style name="Animation.Dream" parent="@style/Animation">
+        <item name="windowEnterAnimation">@anim/slow_fade_in</item>
+        <item name="windowExitAnimation">@anim/fast_fade_out</item>
+    </style>
     <style name="TextAppearance.StatusBar" parent="@style/TextAppearance">
         <item name="textAppearance">?textAppearanceSmall</item>
     </style>
     <style name="TextAppearance.StatusBar.Ticker" parent="@style/TextAppearance.StatusBar" />
     <style name="TextAppearance.StatusBar.EventContent.Line2" parent="@style/TextAppearance.StatusBar.EventContent">
-        <item name="textSize">13.0sp</item>
+        <item name="textSize">@dimen/notification_subtext_size</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Info" parent="@style/TextAppearance.StatusBar.EventContent">
         <item name="textSize">13.0sp</item>
+        <item name="textColor">#ff999999</item>
     </style>
-    <style name="TextAppearance.StatusBar.EventContent.Time" parent="@style/TextAppearance.StatusBar.EventContent" />
+    <style name="TextAppearance.StatusBar.EventContent.Time" parent="@style/TextAppearance.StatusBar.EventContent">
+        <item name="textSize">@dimen/notification_subtext_size</item>
+        <item name="textColor">#ff999999</item>
+    </style>
+    <style name="TextAppearance.StatusBar.EventContent.Emphasis" parent="@style/TextAppearance.StatusBar.EventContent">
+        <item name="textColor">#ffcccccc</item>
+    </style>
     <style name="TextAppearance.Small.CalendarViewWeekDayView" parent="@style/TextAppearance.Small">
         <item name="textStyle">bold</item>
     </style>
@@ -2667,7 +2699,7 @@
         <item name="textUnderlineThickness">2.0dip</item>
     </style>
     <style name="TextAppearance.EasyCorrectSuggestion" parent="@style/TextAppearance.Suggestion">
-        <item name="textUnderlineColor">#ffc8c8c8</item>
+        <item name="textUnderlineColor">#88c8c8c8</item>
     </style>
     <style name="TextAppearance.MisspelledSuggestion" parent="@style/TextAppearance.Suggestion">
         <item name="textUnderlineColor">@color/holo_red_light</item>
@@ -2737,26 +2769,10 @@
         <item name="orientation">vertical</item>
         <item name="fadingEdge">vertical</item>
         <item name="fadingEdgeLength">50.0dip</item>
-        <item name="flingable">false</item>
+        <item name="internalLayout">@layout/number_picker</item>
     </style>
     <style name="Widget.TimePicker" parent="@style/Widget">
-        <item name="layout">@layout/time_picker</item>
-    </style>
-    <style name="Widget.ImageButton.NumberPickerUpButton" parent="@style/Widget.ImageButton">
-        <item name="background">@drawable/numberpicker_up_btn</item>
-        <item name="paddingTop">22.0dip</item>
-        <item name="paddingBottom">22.0dip</item>
-    </style>
-    <style name="Widget.ImageButton.NumberPickerDownButton" parent="@style/Widget.ImageButton">
-        <item name="background">@drawable/numberpicker_down_btn</item>
-        <item name="paddingTop">22.0dip</item>
-        <item name="paddingBottom">22.0dip</item>
-    </style>
-    <style name="Widget.EditText.NumberPickerInputText" parent="@style/Widget.EditText">
-        <item name="textAppearance">@style/TextAppearance.Large.Inverse.NumberPickerInputText</item>
-        <item name="gravity">center</item>
-        <item name="background">@drawable/numberpicker_input</item>
-        <item name="singleLine">true</item>
+        <item name="internalLayout">@layout/time_picker</item>
     </style>
     <style name="Widget.HorizontalScrollView" parent="@style/Widget">
         <item name="scrollbars">horizontal</item>
@@ -3063,37 +3079,17 @@
     <style name="Widget.Holo.Gallery" parent="@style/Widget.Gallery" />
     <style name="Widget.Holo.GestureOverlayView" parent="@style/Widget.GestureOverlayView" />
     <style name="Widget.Holo.NumberPicker" parent="@style/Widget.NumberPicker">
-        <item name="maxHeight">200.0dip</item>
-        <item name="minWidth">48.0dip</item>
         <item name="solidColor">@color/transparent</item>
-        <item name="flingable">true</item>
+        <item name="internalLayout">@layout/number_picker_with_selector_wheel</item>
         <item name="selectionDivider">@drawable/numberpicker_selection_divider</item>
         <item name="selectionDividerHeight">2.0dip</item>
+        <item name="selectionDividersDistance">48.0dip</item>
+        <item name="internalMaxHeight">180.0dip</item>
+        <item name="internalMinWidth">64.0dip</item>
+        <item name="virtualButtonPressedDrawable">?selectableItemBackground</item>
     </style>
     <style name="Widget.Holo.TimePicker" parent="@style/Widget.TimePicker">
-        <item name="layout">@layout/time_picker_holo</item>
-    </style>
-    <style name="Widget.Holo.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.ImageButton">
-        <item name="background">@null</item>
-        <item name="paddingTop">16.0dip</item>
-        <item name="paddingBottom">22.0dip</item>
-        <item name="src">@drawable/numberpicker_up_btn_holo_dark</item>
-    </style>
-    <style name="Widget.Holo.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.ImageButton">
-        <item name="background">@null</item>
-        <item name="paddingTop">22.0dip</item>
-        <item name="paddingBottom">16.0dip</item>
-        <item name="src">@drawable/numberpicker_down_btn_holo_dark</item>
-    </style>
-    <style name="Widget.Holo.EditText.NumberPickerInputText" parent="@style/Widget.Holo.EditText">
-        <item name="textSize">18.0sp</item>
-        <item name="gravity">center</item>
-        <item name="background">@null</item>
-        <item name="paddingLeft">2.0sp</item>
-        <item name="paddingTop">13.0sp</item>
-        <item name="paddingRight">2.0sp</item>
-        <item name="paddingBottom">13.0sp</item>
-        <item name="singleLine">true</item>
+        <item name="internalLayout">@layout/time_picker_holo</item>
     </style>
     <style name="Widget.Holo.ActivityChooserView" parent="@style/Widget.ActivityChooserView" />
     <style name="Widget.Holo.ImageWell" parent="@style/Widget.ImageWell" />
@@ -3152,13 +3148,6 @@
     <style name="Widget.Holo.Light.NumberPicker" parent="@style/Widget.Holo.NumberPicker" />
     <style name="Widget.Holo.Light.TimePicker" parent="@style/Widget.Holo.TimePicker" />
     <style name="Widget.Holo.Light.DatePicker" parent="@style/Widget.Holo.DatePicker" />
-    <style name="Widget.Holo.Light.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.ImageButton.NumberPickerUpButton">
-        <item name="src">@drawable/numberpicker_up_btn_holo_light</item>
-    </style>
-    <style name="Widget.Holo.Light.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.ImageButton.NumberPickerDownButton">
-        <item name="src">@drawable/numberpicker_down_btn_holo_light</item>
-    </style>
-    <style name="Widget.Holo.Light.EditText.NumberPickerInputText" parent="@style/Widget.Holo.EditText.NumberPickerInputText" />
     <style name="Widget.Holo.Light.ActivityChooserView" parent="@style/Widget.Holo.ActivityChooserView">
         <item name="background">@drawable/ab_share_pack_holo_light</item>
     </style>
@@ -3254,16 +3243,37 @@
         <item name="pointerIconSpotTouch">@drawable/pointer_spot_touch_icon</item>
         <item name="pointerIconSpotAnchor">@drawable/pointer_spot_anchor_icon</item>
     </style>
+    <style name="wifi_item">
+        <item name="gravity">left</item>
+        <item name="orientation">vertical</item>
+        <item name="layout_width">200.0dip</item>
+        <item name="layout_height">wrap_content</item>
+        <item name="layout_marginLeft">16.0dip</item>
+        <item name="layout_marginTop">8.0dip</item>
+        <item name="layout_marginRight">16.0dip</item>
+    </style>
+    <style name="wifi_item_label">
+        <item name="textSize">14.0sp</item>
+        <item name="layout_width">wrap_content</item>
+        <item name="layout_height">wrap_content</item>
+    </style>
+    <style name="wifi_item_content">
+        <item name="textSize">18.0sp</item>
+        <item name="layout_width">fill_parent</item>
+        <item name="layout_height">wrap_content</item>
+    </style>
+    <style name="wifi_section">
+        <item name="orientation">vertical</item>
+        <item name="layout_width">fill_parent</item>
+        <item name="layout_height">wrap_content</item>
+    </style>
     <style name="Widget.DeviceDefault.AbsListView" parent="@style/Widget.Holo.AbsListView" />
     <style name="Widget.DeviceDefault.Spinner.DropDown.ActionBar" parent="@style/Widget.Holo.Spinner.DropDown.ActionBar" />
     <style name="Widget.DeviceDefault.PopupWindow.ActionMode" parent="@style/Widget.Holo.PopupWindow.ActionMode" />
     <style name="Widget.DeviceDefault.CompoundButton.Switch" parent="@style/Widget.Holo.CompoundButton.Switch" />
-    <style name="Widget.DeviceDefault.EditText.NumberPickerInputText" parent="@style/Widget.Holo.EditText.NumberPickerInputText" />
     <style name="Widget.DeviceDefault.ExpandableListView.White" parent="@style/Widget.Holo.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Gallery" parent="@style/Widget.Holo.Gallery" />
     <style name="Widget.DeviceDefault.GestureOverlayView" parent="@style/Widget.Holo.GestureOverlayView" />
-    <style name="Widget.DeviceDefault.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.ImageButton.NumberPickerDownButton" />
-    <style name="Widget.DeviceDefault.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.ImageButton.NumberPickerUpButton" />
     <style name="Widget.DeviceDefault.ImageWell" parent="@style/Widget.Holo.ImageWell" />
     <style name="Widget.DeviceDefault.KeyboardView" parent="@style/Widget.Holo.KeyboardView" />
     <style name="Widget.DeviceDefault.ListView.White" parent="@style/Widget.Holo.ListView.White" />
@@ -3289,12 +3299,9 @@
     <style name="Widget.DeviceDefault.Light.PopupWindow.ActionMode" parent="@style/Widget.Holo.Light.PopupWindow.ActionMode" />
     <style name="Widget.DeviceDefault.Light.Button.Borderless" parent="@style/Widget.Holo.Light.Button.Borderless" />
     <style name="Widget.DeviceDefault.Light.DatePicker" parent="@style/Widget.Holo.Light.DatePicker" />
-    <style name="Widget.DeviceDefault.Light.EditText.NumberPickerInputText" parent="@style/Widget.Holo.Light.EditText.NumberPickerInputText" />
     <style name="Widget.DeviceDefault.Light.ExpandableListView.White" parent="@style/Widget.Holo.Light.ExpandableListView.White" />
     <style name="Widget.DeviceDefault.Light.Gallery" parent="@style/Widget.Holo.Light.Gallery" />
     <style name="Widget.DeviceDefault.Light.GestureOverlayView" parent="@style/Widget.Holo.Light.GestureOverlayView" />
-    <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerDownButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerDownButton" />
-    <style name="Widget.DeviceDefault.Light.ImageButton.NumberPickerUpButton" parent="@style/Widget.Holo.Light.ImageButton.NumberPickerUpButton" />
     <style name="Widget.DeviceDefault.Light.ImageWell" parent="@style/Widget.Holo.Light.ImageWell" />
     <style name="Widget.DeviceDefault.Light.ListView.White" parent="@style/Widget.Holo.Light.ListView.White" />
     <style name="Widget.DeviceDefault.Light.NumberPicker" parent="@style/Widget.Holo.Light.NumberPicker" />
@@ -3424,6 +3431,18 @@
         <item name="windowAnimationStyle">@style/Animation.VolumePanel</item>
         <item name="windowCloseOnTouchOutside">true</item>
     </style>
+    <style name="Theme.Holo.Dialog.FixedSize" parent="@style/Theme.Holo.Dialog">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.Holo.Dialog.NoActionBar.FixedSize" parent="@style/Theme.Holo.Dialog.NoActionBar">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
     <style name="Theme.Holo.Dialog.NoFrame" parent="@style/Theme.Holo.Dialog">
         <item name="windowBackground">@color/transparent</item>
         <item name="windowFrame">@null</item>
@@ -3441,12 +3460,48 @@
         <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
         <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
     </style>
+    <style name="Theme.Holo.Light.Dialog.FixedSize" parent="@style/Theme.Holo.Light.Dialog">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.Holo.Light.Dialog.NoActionBar.FixedSize" parent="@style/Theme.Holo.Light.Dialog.NoActionBar">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
     <style name="Theme.Holo.Light.Dialog.Alert" parent="@style/Theme.Holo.Light.Dialog">
         <item name="windowBackground">@color/transparent</item>
         <item name="windowContentOverlay">@null</item>
         <item name="windowTitleStyle">@style/DialogWindowTitle.Holo.Light</item>
         <item name="windowMinWidthMajor">@dimen/dialog_min_width_major</item>
         <item name="windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
+    </style>
+    <style name="Theme.DeviceDefault.Dialog.FixedSize" parent="@style/Theme.DeviceDefault.Dialog">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.DeviceDefault.Dialog.NoActionBar.FixedSize" parent="@style/Theme.DeviceDefault.Dialog.NoActionBar">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.DeviceDefault.Light.Dialog.FixedSize" parent="@style/Theme.DeviceDefault.Light.Dialog">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
+    </style>
+    <style name="Theme.DeviceDefault.Light.Dialog.NoActionBar.FixedSize" parent="@style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+        <item name="windowFixedWidthMajor">@dimen/dialog_fixed_width_major</item>
+        <item name="windowFixedHeightMinor">@dimen/dialog_fixed_height_minor</item>
+        <item name="windowFixedWidthMinor">@dimen/dialog_fixed_width_minor</item>
+        <item name="windowFixedHeightMajor">@dimen/dialog_fixed_height_major</item>
     </style>
     <style name="Theme.DeviceDefault.Dialog.Alert" parent="@style/Theme.Holo.Dialog.Alert">
         <item name="windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item>

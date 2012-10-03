@@ -1,29 +1,16 @@
 .class Landroid/content/SyncManager$9;
-.super Ljava/lang/Object;
+.super Landroid/content/ISyncStatusObserver$Stub;
 .source "SyncManager.java"
-
-# interfaces
-.implements Ljava/util/Comparator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/content/SyncManager;->dumpRecentHistory(Ljava/io/PrintWriter;)V
+    value = Landroid/content/SyncManager;-><init>(Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x0
     name = null
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Landroid/content/SyncManager$AccountSyncStats;",
-        ">;"
-    }
 .end annotation
 
 
@@ -37,65 +24,27 @@
     .parameter
 
     .prologue
-    .line 1323
+    .line 429
     iput-object p1, p0, Landroid/content/SyncManager$9;->this$0:Landroid/content/SyncManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/ISyncStatusObserver$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public compare(Landroid/content/SyncManager$AccountSyncStats;Landroid/content/SyncManager$AccountSyncStats;)I
-    .locals 5
-    .parameter "lhs"
-    .parameter "rhs"
-
-    .prologue
-    .line 1327
-    iget v1, p2, Landroid/content/SyncManager$AccountSyncStats;->times:I
-
-    iget v2, p1, Landroid/content/SyncManager$AccountSyncStats;->times:I
-
-    invoke-static {v1, v2}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v0
-
-    .line 1328
-    .local v0, compare:I
-    if-nez v0, :cond_0
-
-    .line 1329
-    iget-wide v1, p2, Landroid/content/SyncManager$AccountSyncStats;->elapsedTime:J
-
-    iget-wide v3, p1, Landroid/content/SyncManager$AccountSyncStats;->elapsedTime:J
-
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Long;->compare(JJ)I
-
-    move-result v0
-
-    .line 1331
-    :cond_0
-    return v0
-.end method
-
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public onStatusChanged(I)V
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .parameter "which"
 
     .prologue
-    .line 1323
-    check-cast p1, Landroid/content/SyncManager$AccountSyncStats;
+    .line 432
+    iget-object v0, p0, Landroid/content/SyncManager$9;->this$0:Landroid/content/SyncManager;
 
-    .end local p1
-    check-cast p2, Landroid/content/SyncManager$AccountSyncStats;
+    #calls: Landroid/content/SyncManager;->sendCheckAlarmsMessage()V
+    invoke-static {v0}, Landroid/content/SyncManager;->access$100(Landroid/content/SyncManager;)V
 
-    .end local p2
-    invoke-virtual {p0, p1, p2}, Landroid/content/SyncManager$9;->compare(Landroid/content/SyncManager$AccountSyncStats;Landroid/content/SyncManager$AccountSyncStats;)I
-
-    move-result v0
-
-    return v0
+    .line 433
+    return-void
 .end method

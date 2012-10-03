@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 104
+    .line 102
     invoke-direct {p0}, Lorg/apache/harmony/luni/internal/util/TimezoneGetter;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 107
+    .line 105
     const-string/jumbo v0, "persist.sys.timezone"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;

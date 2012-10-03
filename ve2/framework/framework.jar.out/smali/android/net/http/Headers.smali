@@ -228,7 +228,7 @@
 
     const/4 v1, 0x5
 
-    const-string v2, "location"
+    const-string/jumbo v2, "location"
 
     aput-object v2, v0, v1
 
@@ -1000,7 +1000,7 @@
 
     .line 227
     :sswitch_5
-    const-string v5, "location"
+    const-string/jumbo v5, "location"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1320,6 +1320,8 @@
     goto/16 :goto_0
 
     .line 176
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x5034229e -> :sswitch_12

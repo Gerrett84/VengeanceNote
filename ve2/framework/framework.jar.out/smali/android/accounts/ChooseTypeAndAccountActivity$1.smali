@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 203
+    .line 269
     iput-object p1, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 6
+    .locals 2
     .parameter
     .parameter "v"
     .parameter "position"
@@ -54,22 +54,25 @@
     .end annotation
 
     .prologue
-    .line 205
+    .line 272
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
-    move-object v1, p1
+    #setter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mSelectedItemIndex:I
+    invoke-static {v0, p3}, Landroid/accounts/ChooseTypeAndAccountActivity;->access$002(Landroid/accounts/ChooseTypeAndAccountActivity;I)I
 
-    check-cast v1, Landroid/widget/ListView;
+    .line 273
+    iget-object v0, p0, Landroid/accounts/ChooseTypeAndAccountActivity$1;->this$0:Landroid/accounts/ChooseTypeAndAccountActivity;
 
-    move-object v2, p2
+    #getter for: Landroid/accounts/ChooseTypeAndAccountActivity;->mOkButton:Landroid/widget/Button;
+    invoke-static {v0}, Landroid/accounts/ChooseTypeAndAccountActivity;->access$100(Landroid/accounts/ChooseTypeAndAccountActivity;)Landroid/widget/Button;
 
-    move v3, p3
+    move-result-object v0
 
-    move-wide v4, p4
+    const/4 v1, 0x1
 
-    invoke-virtual/range {v0 .. v5}, Landroid/accounts/ChooseTypeAndAccountActivity;->onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 206
+    .line 274
     return-void
 .end method

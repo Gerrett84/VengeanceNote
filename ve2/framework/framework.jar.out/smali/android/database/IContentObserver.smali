@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onChange(Z)V
+.method public abstract onChange(ZLandroid/net/Uri;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

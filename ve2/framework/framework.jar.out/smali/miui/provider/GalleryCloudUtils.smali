@@ -183,30 +183,30 @@
     .parameter "groupID"
 
     .prologue
-    .line 134
+    .line 136
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_0
 
-    .line 135
+    .line 137
     const-string v0, "image/jpeg"
 
-    .line 141
+    .line 143
     :goto_0
     return-object v0
 
-    .line 138
+    .line 140
     :cond_0
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_1
 
-    .line 139
+    .line 141
     const-string v0, "image/png"
 
     goto :goto_0
 
-    .line 141
+    .line 143
     :cond_1
     const-string v0, ""
 
@@ -257,6 +257,51 @@
     if-eqz v3, :cond_0
 
     const/4 v2, 0x1
+
+    goto :goto_0
+.end method
+
+.method private static putExifIntToContentValues(Landroid/media/ExifInterface;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
+    .locals 3
+    .parameter "exifInterface"
+    .parameter "exifkey"
+    .parameter "values"
+    .parameter "contentKey"
+
+    .prologue
+    .line 162
+    invoke-virtual {p0, p1}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 163
+    .local v1, value:Ljava/lang/String;
+    if-nez v1, :cond_0
+
+    .line 171
+    :goto_0
+    return-void
+
+    .line 167
+    :cond_0
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {p2, p3, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 168
+    :catch_0
+    move-exception v0
+
+    .line 169
+    .local v0, ex:Ljava/lang/NumberFormatException;
+    invoke-virtual {v0}, Ljava/lang/NumberFormatException;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -314,49 +359,65 @@
 .end method
 
 .method public static saveToCloudDB(Landroid/content/Context;Ljava/lang/String;II)V
-    .locals 0
+    .locals 2
     .parameter "context"
     .parameter "filePath"
     .parameter "groupId"
     .parameter "serverType"
 
     .prologue
-    .line 262
-    invoke-static {p0, p1, p2, p3}, Lmiui/provider/GalleryCloudUtils;->saveToCloudDBWithoutSync(Landroid/content/Context;Ljava/lang/String;II)V
+    .line 276
+    const/4 v0, 0x1
 
-    .line 264
+    .line 279
+    .local v0, localFlag:I
+    invoke-static {p0}, Lmiui/provider/GalleryCloudUtils;->isGalleryCloudSyncable(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 280
+    const/4 v0, 0x4
+
+    .line 283
+    :cond_0
+    invoke-static {p0, p1, p2, p3, v0}, Lmiui/provider/GalleryCloudUtils;->saveToCloudDBWithoutSync(Landroid/content/Context;Ljava/lang/String;III)V
+
+    .line 285
     invoke-static {p0}, Lmiui/provider/GalleryCloudUtils;->requestSync(Landroid/content/Context;)V
 
-    .line 265
+    .line 286
     return-void
 .end method
 
-.method public static saveToCloudDBWithoutSync(Landroid/content/Context;Ljava/lang/String;II)V
-    .locals 18
+.method public static saveToCloudDBWithoutSync(Landroid/content/Context;Ljava/lang/String;III)V
+    .locals 19
     .parameter "context"
     .parameter "filePath"
     .parameter "groupId"
     .parameter "serverType"
+    .parameter "localFlag"
 
     .prologue
-    .line 146
-    new-instance v17, Ljava/io/File;
+    .line 148
+    new-instance v18, Ljava/io/File;
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p1
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 147
-    .local v17, file:Ljava/io/File;
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->exists()Z
+    .line 149
+    .local v18, file:Ljava/io/File;
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->exists()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 148
+    .line 150
     const-string v3, "GalleryCloudUtils"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -381,15 +442,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
+    .line 159
     :goto_0
     return-void
 
-    .line 152
+    .line 154
     :cond_0
     new-instance v2, Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;
 
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->length()J
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->length()J
 
     move-result-wide v4
 
@@ -397,15 +458,15 @@
 
     move-result-object v6
 
-    invoke-static/range {v17 .. v17}, Lmiui/os/ExtraFileUtils;->getFileTitle(Ljava/io/File;)Ljava/lang/String;
+    invoke-static/range {v18 .. v18}, Lmiui/os/ExtraFileUtils;->getFileTitle(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual/range {v17 .. v17}, Ljava/io/File;->lastModified()J
+    invoke-virtual/range {v18 .. v18}, Ljava/io/File;->lastModified()J
 
     move-result-wide v9
 
@@ -423,9 +484,11 @@
 
     move/from16 v16, p3
 
-    invoke-direct/range {v2 .. v16}, Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;-><init>(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JIIILandroid/location/Location;II)V
+    move/from16 v17, p4
 
-    .line 156
+    invoke-direct/range {v2 .. v17}, Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;-><init>(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JIIILandroid/location/Location;III)V
+
+    .line 158
     .local v2, toSave:Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;
     move-object/from16 v0, p0
 
@@ -440,12 +503,12 @@
     .parameter "toSave"
 
     .prologue
-    .line 160
+    .line 174
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v8
 
-    .line 163
+    .line 177
     .local v8, start:J
     invoke-static/range {p0 .. p0}, Lmiui/provider/GalleryCloudUtils;->existXiaomiAccount(Landroid/content/Context;)Z
 
@@ -453,11 +516,11 @@
 
     if-nez v12, :cond_0
 
-    .line 254
+    .line 268
     :goto_0
     return-void
 
-    .line 167
+    .line 181
     :cond_0
     :try_start_0
     new-instance v3, Landroid/media/ExifInterface;
@@ -468,13 +531,13 @@
 
     invoke-direct {v3, v12}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 168
+    .line 182
     .local v3, exifInterface:Landroid/media/ExifInterface;
     new-instance v10, Landroid/content/ContentValues;
 
     invoke-direct {v10}, Landroid/content/ContentValues;-><init>()V
 
-    .line 170
+    .line 184
     .local v10, values:Landroid/content/ContentValues;
     const-string v12, "groupId"
 
@@ -488,7 +551,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 171
+    .line 185
     const-string/jumbo v12, "serverType"
 
     move-object/from16 v0, p1
@@ -501,10 +564,12 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 172
-    const-string v12, "localFlag"
+    .line 186
+    const-string/jumbo v12, "localFlag"
 
-    const/4 v13, 0x1
+    move-object/from16 v0, p1
+
+    iget v13, v0, Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;->localFlag:I
 
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -512,7 +577,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 173
+    .line 187
     const-string/jumbo v12, "size"
 
     move-object/from16 v0, p1
@@ -525,7 +590,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 174
+    .line 188
     const-string/jumbo v12, "mimeType"
 
     move-object/from16 v0, p1
@@ -534,7 +599,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 175
+    .line 189
     const-string/jumbo v12, "title"
 
     move-object/from16 v0, p1
@@ -543,7 +608,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 176
+    .line 190
     const-string v12, "fileName"
 
     move-object/from16 v0, p1
@@ -552,7 +617,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 177
+    .line 191
     const-string v12, "dateTaken"
 
     move-object/from16 v0, p1
@@ -565,7 +630,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 178
+    .line 192
     new-instance v4, Ljava/io/File;
 
     move-object/from16 v0, p1
@@ -574,7 +639,7 @@
 
     invoke-direct {v4, v12}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 179
+    .line 193
     .local v4, file:Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
@@ -582,7 +647,7 @@
 
     if-eqz v12, :cond_1
 
-    .line 180
+    .line 194
     const-string v12, "dateModified"
 
     invoke-virtual {v4}, Ljava/io/File;->lastModified()J
@@ -595,9 +660,9 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 182
+    .line 196
     :cond_1
-    const-string v12, "localFile"
+    const-string/jumbo v12, "localFile"
 
     move-object/from16 v0, p1
 
@@ -605,7 +670,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 184
+    .line 198
     const-string v12, "ImageWidth"
 
     const/4 v13, 0x0
@@ -614,7 +679,7 @@
 
     move-result v11
 
-    .line 185
+    .line 199
     .local v11, width:I
     const-string v12, "ImageLength"
 
@@ -624,13 +689,13 @@
 
     move-result v5
 
-    .line 186
+    .line 200
     .local v5, height:I
-    if-eqz v11, :cond_2
+    if-lez v11, :cond_2
 
-    if-nez v5, :cond_3
+    if-gtz v5, :cond_3
 
-    .line 188
+    .line 202
     :cond_2
     move-object/from16 v0, p1
 
@@ -640,14 +705,14 @@
 
     move-result-object v1
 
-    .line 189
+    .line 203
     .local v1, bitmapOptions:Landroid/graphics/BitmapFactory$Options;
     iget v11, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 190
+    .line 204
     iget v5, v1, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
-    .line 192
+    .line 206
     .end local v1           #bitmapOptions:Landroid/graphics/BitmapFactory$Options;
     :cond_3
     const-string v12, "exifImageWidth"
@@ -658,7 +723,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 193
+    .line 207
     const-string v12, "exifImageLength"
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -667,7 +732,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 195
+    .line 209
     const-string v12, "exifOrientation"
 
     const-string v13, "Orientation"
@@ -686,7 +751,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 200
+    .line 214
     const-string v12, "GPSLatitude"
 
     invoke-virtual {v3, v12}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
@@ -696,7 +761,7 @@
     .local v6, latitude:Ljava/lang/String;
     if-nez v6, :cond_4
 
-    .line 201
+    .line 215
     move-object/from16 v0, p1
 
     iget-object v12, v0, Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;->location:Landroid/location/Location;
@@ -720,13 +785,13 @@
 
     move-result-object v6
 
-    .line 204
+    .line 218
     :cond_4
     const-string v12, "exifGPSLatitude"
 
     invoke-virtual {v10, v12, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 206
+    .line 220
     const-string v12, "GPSLongitude"
 
     invoke-virtual {v3, v12}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
@@ -736,7 +801,7 @@
     .local v7, longitude:Ljava/lang/String;
     if-nez v7, :cond_5
 
-    .line 207
+    .line 221
     move-object/from16 v0, p1
 
     iget-object v12, v0, Lmiui/provider/GalleryCloudUtils$SaveToCloudDB;->location:Landroid/location/Location;
@@ -760,13 +825,13 @@
 
     move-result-object v7
 
-    .line 210
+    .line 224
     :cond_5
     const-string v12, "exifGPSLongitude"
 
     invoke-virtual {v10, v12, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 211
+    .line 225
     const-string v12, "exifMake"
 
     const-string v13, "Make"
@@ -777,7 +842,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 213
+    .line 227
     const-string v12, "exifModel"
 
     const-string v13, "Model"
@@ -788,24 +853,14 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 215
-    const-string v12, "exifFlash"
+    .line 230
+    const-string v12, "Flash"
 
-    const-string v13, "Flash"
+    const-string v13, "exifFlash"
 
-    const/4 v14, 0x0
+    invoke-static {v3, v12, v10, v13}, Lmiui/provider/GalleryCloudUtils;->putExifIntToContentValues(Landroid/media/ExifInterface;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v13, v14}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
-
-    move-result v13
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 217
+    .line 231
     const-string v12, "exifGPSLatitudeRef"
 
     const-string v13, "GPSLatitudeRef"
@@ -816,7 +871,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 219
+    .line 233
     const-string v12, "exifGPSLongitudeRef"
 
     const-string v13, "GPSLongitudeRef"
@@ -827,7 +882,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 221
+    .line 235
     const-string v12, "exifExposureTime"
 
     const-string v13, "ExposureTime"
@@ -838,7 +893,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 223
+    .line 237
     const-string v12, "exifFNumber"
 
     const-string v13, "FNumber"
@@ -849,7 +904,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 225
+    .line 239
     const-string v12, "exifISOSpeedRatings"
 
     const-string v13, "ISOSpeedRatings"
@@ -860,7 +915,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 227
+    .line 241
     const-string v12, "exifGPSAltitude"
 
     const-string v13, "GPSAltitude"
@@ -871,24 +926,14 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 229
-    const-string v12, "exifGPSAltitudeRef"
+    .line 244
+    const-string v12, "GPSAltitudeRef"
 
-    const-string v13, "GPSAltitudeRef"
+    const-string v13, "exifGPSAltitudeRef"
 
-    const/4 v14, 0x0
+    invoke-static {v3, v12, v10, v13}, Lmiui/provider/GalleryCloudUtils;->putExifIntToContentValues(Landroid/media/ExifInterface;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v13, v14}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
-
-    move-result v13
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 231
+    .line 245
     const-string v12, "exifGPSTimeStamp"
 
     const-string v13, "GPSTimeStamp"
@@ -899,7 +944,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 247
     const-string v12, "exifGPSDateStamp"
 
     const-string v13, "GPSDateStamp"
@@ -910,24 +955,14 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 235
-    const-string v12, "exifWhiteBalance"
+    .line 250
+    const-string v12, "WhiteBalance"
 
-    const-string v13, "WhiteBalance"
+    const-string v13, "exifWhiteBalance"
 
-    const/4 v14, 0x0
+    invoke-static {v3, v12, v10, v13}, Lmiui/provider/GalleryCloudUtils;->putExifIntToContentValues(Landroid/media/ExifInterface;Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v13, v14}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
-
-    move-result v13
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    .line 237
+    .line 251
     const-string v12, "exifFocalLength"
 
     const-string v13, "FocalLength"
@@ -938,7 +973,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 239
+    .line 253
     const-string v12, "exifGPSProcessingMethod"
 
     const-string v13, "GPSProcessingMethod"
@@ -949,7 +984,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 241
+    .line 255
     const-string v12, "exifDateTime"
 
     const-string v13, "DateTime"
@@ -960,7 +995,7 @@
 
     invoke-virtual {v10, v12, v13}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 244
+    .line 258
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v12
@@ -973,7 +1008,7 @@
 
     if-nez v12, :cond_6
 
-    .line 245
+    .line 259
     const-string v12, "GalleryCloudUtils"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -1009,7 +1044,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 253
+    .line 267
     .end local v3           #exifInterface:Landroid/media/ExifInterface;
     .end local v4           #file:Ljava/io/File;
     .end local v5           #height:I
@@ -1049,7 +1084,7 @@
 
     goto/16 :goto_0
 
-    .line 201
+    .line 215
     .restart local v3       #exifInterface:Landroid/media/ExifInterface;
     .restart local v4       #file:Ljava/io/File;
     .restart local v5       #height:I
@@ -1061,14 +1096,14 @@
 
     goto/16 :goto_1
 
-    .line 207
+    .line 221
     .restart local v7       #longitude:Ljava/lang/String;
     :cond_8
     const/4 v12, 0x0
 
     goto/16 :goto_2
 
-    .line 247
+    .line 261
     .end local v3           #exifInterface:Landroid/media/ExifInterface;
     .end local v4           #file:Ljava/io/File;
     .end local v5           #height:I
@@ -1079,7 +1114,7 @@
     :catch_0
     move-exception v2
 
-    .line 248
+    .line 262
     .local v2, e:Ljava/io/IOException;
     const-string v12, "GalleryCloudUtils"
 
@@ -1115,12 +1150,12 @@
 
     goto :goto_3
 
-    .line 249
+    .line 263
     .end local v2           #e:Ljava/io/IOException;
     :catch_1
     move-exception v2
 
-    .line 251
+    .line 265
     .local v2, e:Ljava/lang/IllegalArgumentException;
     const-string v12, "GalleryCloudUtils"
 

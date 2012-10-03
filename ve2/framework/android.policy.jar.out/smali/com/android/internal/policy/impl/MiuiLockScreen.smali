@@ -346,7 +346,7 @@
     invoke-virtual {v1, v3, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 294
-    const v3, 0x60b0055
+    const v3, 0x60b002c
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/MiuiLockScreen;->findViewById(I)Landroid/view/View;
 
@@ -362,7 +362,7 @@
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 298
-    const v3, 0x60b0056
+    const v3, 0x60b002d
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/MiuiLockScreen;->findViewById(I)Landroid/view/View;
 
@@ -373,7 +373,7 @@
     iput-object v3, p0, Lcom/android/internal/policy/impl/MiuiLockScreen;->mScreenLocked:Landroid/widget/TextView;
 
     .line 300
-    const v3, 0x60b0054
+    const v3, 0x60b002e
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/MiuiLockScreen;->findViewById(I)Landroid/view/View;
 
@@ -404,7 +404,7 @@
     invoke-virtual {v3, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 310
-    const v3, 0x60b0057
+    const v3, 0x60b002f
 
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/MiuiLockScreen;->findViewById(I)Landroid/view/View;
 
@@ -1549,7 +1549,7 @@
     .line 401
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen;->mBatteryInfo:Landroid/view/View;
 
-    const v1, 0x60b0058
+    const v1, 0x60b0032
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1585,7 +1585,7 @@
     .line 379
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiLockScreen;->mCallsControlView:Landroid/view/View;
 
-    const v2, 0x60b0059
+    const v2, 0x60b0030
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1715,7 +1715,7 @@
     .line 390
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiLockScreen;->mSmsControlView:Landroid/view/View;
 
-    const v2, 0x60b0067
+    const v2, 0x60b0031
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2657,6 +2657,14 @@
     return-void
 .end method
 
+.method public onDevicePolicyManagerStateChanged()V
+    .locals 0
+
+    .prologue
+    .line 2114
+    return-void
+.end method
+
 .method public onDeviceProvisioned()V
     .locals 0
 
@@ -3387,6 +3395,15 @@
     goto :goto_0
 .end method
 
+.method public onUserChanged(I)V
+    .locals 0
+    .parameter "userId"
+
+    .prologue
+    .line 2120
+    return-void
+.end method
+
 .method public setBatteryInfo(Ljava/lang/String;)V
     .locals 1
     .parameter "info"
@@ -3437,14 +3454,6 @@
     .line 844
     .local v0, isKeyboardOpen:Z
     :goto_0
-    iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiLockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
-
-    invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isKeyguardBypassEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
     if-eqz v0, :cond_0
 
     .line 845

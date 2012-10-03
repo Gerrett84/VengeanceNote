@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "ActivityThread.java"
 
-# interfaces
-.implements Landroid/os/IBinder$DeathRecipient;
-
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -18,9 +15,11 @@
 
 
 # instance fields
+.field final mHolder:Landroid/app/IActivityManager$ContentProviderHolder;
+
 .field final mLocalProvider:Landroid/content/ContentProvider;
 
-.field final mName:Ljava/lang/String;
+.field final mNames:[Ljava/lang/String;
 
 .field final mProvider:Landroid/content/IContentProvider;
 
@@ -28,47 +27,32 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/app/ActivityThread;Ljava/lang/String;Landroid/content/IContentProvider;Landroid/content/ContentProvider;)V
+.method constructor <init>(Landroid/app/ActivityThread;[Ljava/lang/String;Landroid/content/IContentProvider;Landroid/content/ContentProvider;Landroid/app/IActivityManager$ContentProviderHolder;)V
     .locals 0
     .parameter
-    .parameter "name"
+    .parameter "names"
     .parameter "provider"
     .parameter "localProvider"
+    .parameter "holder"
 
     .prologue
-    .line 285
+    .line 301
     iput-object p1, p0, Landroid/app/ActivityThread$ProviderClientRecord;->this$0:Landroid/app/ActivityThread;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 286
-    iput-object p2, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mName:Ljava/lang/String;
+    .line 302
+    iput-object p2, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mNames:[Ljava/lang/String;
 
-    .line 287
+    .line 303
     iput-object p3, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mProvider:Landroid/content/IContentProvider;
 
-    .line 288
+    .line 304
     iput-object p4, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mLocalProvider:Landroid/content/ContentProvider;
 
-    .line 289
-    return-void
-.end method
+    .line 305
+    iput-object p5, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mHolder:Landroid/app/IActivityManager$ContentProviderHolder;
 
-
-# virtual methods
-.method public binderDied()V
-    .locals 3
-
-    .prologue
-    .line 292
-    iget-object v0, p0, Landroid/app/ActivityThread$ProviderClientRecord;->this$0:Landroid/app/ActivityThread;
-
-    iget-object v1, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mName:Ljava/lang/String;
-
-    iget-object v2, p0, Landroid/app/ActivityThread$ProviderClientRecord;->mProvider:Landroid/content/IContentProvider;
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/ActivityThread;->removeDeadProvider(Ljava/lang/String;Landroid/content/IContentProvider;)V
-
-    .line 293
+    .line 306
     return-void
 .end method

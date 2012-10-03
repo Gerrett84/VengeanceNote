@@ -411,6 +411,7 @@
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
+    .line 313
     return-object v0
 .end method
 
@@ -482,6 +483,7 @@
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
+    .line 323
     return v0
 .end method
 
@@ -517,12 +519,12 @@
 
     move-result-object v1
 
+    :goto_0
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
-    :goto_0
+    .line 300
     return v0
 
-    .line 300
     :cond_0
     :try_start_1
     invoke-direct {p0}, Landroid/bluetooth/BluetoothSocket;->bindListenNative()I
@@ -537,8 +539,6 @@
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
 
     move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
     goto :goto_0
 
@@ -937,6 +937,7 @@
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
+    .line 333
     return v0
 .end method
 
@@ -1019,5 +1020,6 @@
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
+    .line 343
     return v0
 .end method

@@ -8,10 +8,11 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+.method public constructor <init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
     .locals 2
     .parameter "node"
     .parameter "c"
+    .parameter "root"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lmiui/app/screenelement/ScreenElementLoadException;
@@ -19,10 +20,10 @@
     .end annotation
 
     .prologue
-    .line 17
-    invoke-direct {p0, p1, p2}, Lmiui/app/screenelement/elements/ImageScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
-
     .line 18
+    invoke-direct {p0, p1, p2, p3}, Lmiui/app/screenelement/elements/ImageScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
+
+    .line 19
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
 
     iget-object v1, v1, Lmiui/app/screenelement/ScreenContext;->mContext:Landroid/content/Context;
@@ -33,18 +34,18 @@
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 20
+    .line 21
     .local v0, drawable:Landroid/graphics/drawable/BitmapDrawable;
     if-eqz v0, :cond_0
 
-    .line 21
+    .line 22
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, p0, Lmiui/app/screenelement/elements/ImageScreenElement;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 23
+    .line 24
     :cond_0
     return-void
 .end method
@@ -55,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 39
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getHeight()F
@@ -69,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 49
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getMaxHeight()F
@@ -83,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 44
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getMaxWidth()F
@@ -97,7 +98,7 @@
     .locals 1
 
     .prologue
-    .line 33
+    .line 34
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getWidth()F
@@ -111,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 28
     const/4 v0, 0x0
 
     return v0

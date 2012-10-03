@@ -7,10 +7,16 @@
 .method public abstract finish()V
 .end method
 
+.method public abstract getName()Ljava/lang/CharSequence;
+.end method
+
 .method public abstract init()V
 .end method
 
 .method public abstract pause()V
+.end method
+
+.method public abstract refresh()V
 .end method
 
 .method public abstract resume()V

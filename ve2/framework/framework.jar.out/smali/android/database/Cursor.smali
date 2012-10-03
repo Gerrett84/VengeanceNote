@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "Cursor.java"
 
+# interfaces
+.implements Ljava/io/Closeable;
+
 
 # static fields
 .field public static final FIELD_TYPE_BLOB:I = 0x4

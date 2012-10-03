@@ -21,22 +21,23 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/accounts/AccountManagerService;Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;)V
-    .locals 6
+.method public constructor <init>(Landroid/accounts/AccountManagerService;Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;)V
+    .locals 7
     .parameter
+    .parameter "accounts"
     .parameter "response"
     .parameter "account"
 
     .prologue
-    .line 561
+    .line 667
     iput-object p1, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->this$0:Landroid/accounts/AccountManagerService;
 
-    .line 562
-    iget-object v3, p3, Landroid/accounts/Account;->type:Ljava/lang/String;
+    .line 668
+    iget-object v4, p4, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     move-object v0, p0
 
@@ -44,12 +45,14 @@
 
     move-object v2, p2
 
-    invoke-direct/range {v0 .. v5}, Landroid/accounts/AccountManagerService$Session;-><init>(Landroid/accounts/AccountManagerService;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZ)V
+    move-object v3, p3
 
-    .line 564
-    iput-object p3, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
+    invoke-direct/range {v0 .. v6}, Landroid/accounts/AccountManagerService$Session;-><init>(Landroid/accounts/AccountManagerService;Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZ)V
 
-    .line 565
+    .line 670
+    iput-object p4, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
+
+    .line 671
     return-void
 .end method
 
@@ -60,7 +63,7 @@
     .parameter "result"
 
     .prologue
-    .line 577
+    .line 683
     if-eqz p1, :cond_2
 
     const-string v3, "booleanResult"
@@ -79,35 +82,38 @@
 
     if-nez v3, :cond_2
 
-    .line 579
+    .line 685
     const-string v3, "booleanResult"
 
     invoke-virtual {p1, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 580
+    .line 686
     .local v0, removalAllowed:Z
     if-eqz v0, :cond_0
 
-    .line 581
+    .line 687
     iget-object v3, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->this$0:Landroid/accounts/AccountManagerService;
 
-    iget-object v4, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
+    iget-object v4, p0, Landroid/accounts/AccountManagerService$Session;->mAccounts:Landroid/accounts/AccountManagerService$UserAccounts;
 
-    invoke-virtual {v3, v4}, Landroid/accounts/AccountManagerService;->removeAccountInternal(Landroid/accounts/Account;)V
+    iget-object v5, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
 
-    .line 583
+    #calls: Landroid/accounts/AccountManagerService;->removeAccountInternal(Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/Account;)V
+    invoke-static {v3, v4, v5}, Landroid/accounts/AccountManagerService;->access$900(Landroid/accounts/AccountManagerService;Landroid/accounts/AccountManagerService$UserAccounts;Landroid/accounts/Account;)V
+
+    .line 689
     :cond_0
     invoke-virtual {p0}, Landroid/accounts/AccountManagerService$RemoveAccountSession;->getResponseAndClose()Landroid/accounts/IAccountManagerResponse;
 
     move-result-object v1
 
-    .line 584
+    .line 690
     .local v1, response:Landroid/accounts/IAccountManagerResponse;
     if-eqz v1, :cond_2
 
-    .line 585
+    .line 691
     const-string v3, "AccountManagerService"
 
     const/4 v4, 0x2
@@ -118,7 +124,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 586
+    .line 692
     const-string v3, "AccountManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -153,25 +159,25 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 589
+    .line 695
     :cond_1
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 590
+    .line 696
     .local v2, result2:Landroid/os/Bundle;
     const-string v3, "booleanResult"
 
     invoke-virtual {v2, v3, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 592
+    .line 698
     :try_start_0
     invoke-interface {v1, v2}, Landroid/accounts/IAccountManagerResponse;->onResult(Landroid/os/Bundle;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 598
+    .line 704
     .end local v0           #removalAllowed:Z
     .end local v1           #response:Landroid/accounts/IAccountManagerResponse;
     .end local v2           #result2:Landroid/os/Bundle;
@@ -179,10 +185,10 @@
     :goto_0
     invoke-super {p0, p1}, Landroid/accounts/AccountManagerService$Session;->onResult(Landroid/os/Bundle;)V
 
-    .line 599
+    .line 705
     return-void
 
-    .line 593
+    .line 699
     .restart local v0       #removalAllowed:Z
     .restart local v1       #response:Landroid/accounts/IAccountManagerResponse;
     .restart local v2       #result2:Landroid/os/Bundle;
@@ -201,14 +207,14 @@
     .end annotation
 
     .prologue
-    .line 573
+    .line 679
     iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$RemoveAccountSession;->mAccount:Landroid/accounts/Account;
 
     invoke-interface {v0, p0, v1}, Landroid/accounts/IAccountAuthenticator;->getAccountRemovalAllowed(Landroid/accounts/IAccountAuthenticatorResponse;Landroid/accounts/Account;)V
 
-    .line 574
+    .line 680
     return-void
 .end method
 
@@ -217,7 +223,7 @@
     .parameter "now"
 
     .prologue
-    .line 568
+    .line 674
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

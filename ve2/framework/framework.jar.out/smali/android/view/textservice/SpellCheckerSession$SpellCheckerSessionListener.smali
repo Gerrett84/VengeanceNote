@@ -15,5 +15,8 @@
 
 
 # virtual methods
+.method public abstract onGetSentenceSuggestions([Landroid/view/textservice/SentenceSuggestionsInfo;)V
+.end method
+
 .method public abstract onGetSuggestions([Landroid/view/textservice/SuggestionsInfo;)V
 .end method

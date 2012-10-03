@@ -27,14 +27,14 @@
     .parameter "value"
 
     .prologue
-    .line 201
+    .line 207
     const-string v0, "ring_mode"
 
     sget-object v1, Lmiui/app/screenelement/NotifierManager$NotifierType;->RingMode:Lmiui/app/screenelement/NotifierManager$NotifierType;
 
     invoke-direct {p0, p1, v0, v1}, Lmiui/app/screenelement/ActionCommand$NotificationReceiver;-><init>(Lmiui/app/screenelement/ScreenContext;Ljava/lang/String;Lmiui/app/screenelement/NotifierManager$NotifierType;)V
 
-    .line 198
+    .line 204
     new-instance v0, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     const/4 v1, 0x0
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
-    .line 202
+    .line 208
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     const-string v1, "normal"
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0, v1, v2}, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;->addMode(Ljava/lang/String;I)V
 
-    .line 203
+    .line 209
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     const-string v1, "silent"
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1, v2}, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;->addMode(Ljava/lang/String;I)V
 
-    .line 204
+    .line 210
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     const-string v1, "vibrate"
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v1, v2}, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;->addMode(Ljava/lang/String;I)V
 
-    .line 205
+    .line 211
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     invoke-virtual {v0, p2}, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;->build(Ljava/lang/String;)Z
@@ -79,7 +79,7 @@
 
     if-nez v0, :cond_0
 
-    .line 206
+    .line 212
     const-string v0, "ActionCommand"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -102,46 +102,46 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 209
+    .line 215
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public doPerform()V
+.method protected doPerform()V
     .locals 2
 
     .prologue
-    .line 213
+    .line 219
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mAudioManager:Landroid/media/AudioManager;
 
     if-nez v1, :cond_0
 
-    .line 220
+    .line 226
     :goto_0
     return-void
 
-    .line 216
+    .line 222
     :cond_0
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     invoke-virtual {v1}, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;->click()V
 
-    .line 217
+    .line 223
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mToggleHelper:Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;
 
     invoke-virtual {v1}, Lmiui/app/screenelement/ActionCommand$ModeToggleHelper;->getModeId()I
 
     move-result v0
 
-    .line 218
+    .line 224
     .local v0, mode:I
     iget-object v1, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1, v0}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 219
+    .line 225
     invoke-virtual {p0, v0}, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->updateState(I)V
 
     goto :goto_0
@@ -151,7 +151,7 @@
     .locals 2
 
     .prologue
-    .line 224
+    .line 230
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mAudioManager:Landroid/media/AudioManager;
 
     if-nez v0, :cond_0
@@ -160,7 +160,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 225
+    .line 231
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand;->mContext:Lmiui/app/screenelement/ScreenContext;
 
     iget-object v0, v0, Lmiui/app/screenelement/ScreenContext;->mContext:Landroid/content/Context;
@@ -175,17 +175,17 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 227
+    .line 233
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mAudioManager:Landroid/media/AudioManager;
 
     if-nez v0, :cond_1
 
-    .line 230
+    .line 236
     :goto_0
     return-void
 
-    .line 229
+    .line 235
     :cond_1
     iget-object v0, p0, Lmiui/app/screenelement/ActionCommand$RingModeCommand;->mAudioManager:Landroid/media/AudioManager;
 

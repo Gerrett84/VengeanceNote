@@ -12,7 +12,7 @@
     .locals 1
 
     .prologue
-    .line 32
+    .line 31
     new-instance v0, Landroid/webkit/MimeTypeMap;
 
     invoke-direct {v0}, Landroid/webkit/MimeTypeMap;-><init>()V
@@ -26,10 +26,10 @@
     .locals 0
 
     .prologue
-    .line 34
+    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
+    .line 34
     return-void
 .end method
 
@@ -40,30 +40,30 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 45
+    .line 44
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
-    .line 46
+    .line 45
     const/16 v5, 0x23
 
     invoke-virtual {p0, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v3
 
-    .line 47
+    .line 46
     .local v3, fragment:I
     if-lez v3, :cond_0
 
-    .line 48
+    .line 47
     invoke-virtual {p0, v6, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 51
+    .line 50
     :cond_0
     const/16 v5, 0x3f
 
@@ -71,16 +71,16 @@
 
     move-result v4
 
-    .line 52
+    .line 51
     .local v4, query:I
     if-lez v4, :cond_1
 
-    .line 53
+    .line 52
     invoke-virtual {p0, v6, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 56
+    .line 55
     :cond_1
     const/16 v5, 0x2f
 
@@ -88,7 +88,7 @@
 
     move-result v2
 
-    .line 57
+    .line 56
     .local v2, filenamePos:I
     if-ltz v2, :cond_2
 
@@ -98,7 +98,7 @@
 
     move-result-object v1
 
-    .line 62
+    .line 61
     .local v1, filename:Ljava/lang/String;
     :goto_0
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
@@ -115,25 +115,25 @@
 
     if-eqz v5, :cond_3
 
-    .line 64
+    .line 63
     const/16 v5, 0x2e
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v0
 
-    .line 65
+    .line 64
     .local v0, dotPos:I
     if-ltz v0, :cond_3
 
-    .line 66
+    .line 65
     add-int/lit8 v5, v0, 0x1
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 71
+    .line 70
     .end local v0           #dotPos:I
     .end local v1           #filename:Ljava/lang/String;
     .end local v2           #filenamePos:I
@@ -148,10 +148,10 @@
     :cond_2
     move-object v1, p0
 
-    .line 57
+    .line 56
     goto :goto_0
 
-    .line 71
+    .line 70
     .end local v2           #filenamePos:I
     .end local v3           #fragment:I
     .end local v4           #query:I
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 165
     sget-object v0, Landroid/webkit/MimeTypeMap;->sMimeTypeMap:Landroid/webkit/MimeTypeMap;
 
     return-object v0
@@ -176,7 +176,7 @@
     .parameter "extension"
 
     .prologue
-    .line 94
+    .line 93
     invoke-static {p0}, Llibcore/net/MimeUtils;->guessMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -191,7 +191,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 114
+    .line 113
     invoke-static {p1}, Llibcore/net/MimeUtils;->guessExtensionFromMimeType(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -204,7 +204,7 @@
     .parameter "extension"
 
     .prologue
-    .line 89
+    .line 88
     invoke-static {p1}, Llibcore/net/MimeUtils;->guessMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -217,7 +217,7 @@
     .parameter "extension"
 
     .prologue
-    .line 103
+    .line 102
     invoke-static {p1}, Llibcore/net/MimeUtils;->hasExtension(Ljava/lang/String;)Z
 
     move-result v0
@@ -230,7 +230,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 80
+    .line 79
     invoke-static {p1}, Llibcore/net/MimeUtils;->hasMimeType(Ljava/lang/String;)Z
 
     move-result v0
@@ -245,7 +245,7 @@
     .parameter "contentDisposition"
 
     .prologue
-    .line 131
+    .line 130
     const-string/jumbo v3, "text/plain"
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -262,46 +262,46 @@
 
     if-eqz v3, :cond_4
 
-    .line 136
+    .line 135
     :cond_0
     const/4 v1, 0x0
 
-    .line 137
+    .line 136
     .local v1, filename:Ljava/lang/String;
     if-eqz p3, :cond_1
 
-    .line 138
+    .line 137
     invoke-static {p3}, Landroid/webkit/URLUtil;->parseContentDisposition(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 140
+    .line 139
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 141
+    .line 140
     move-object p2, v1
 
-    .line 143
+    .line 142
     :cond_2
     invoke-static {p2}, Landroid/webkit/MimeTypeMap;->getFileExtensionFromUrl(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 144
+    .line 143
     .local v0, extension:Ljava/lang/String;
     invoke-virtual {p0, v0}, Landroid/webkit/MimeTypeMap;->getMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 145
+    .line 144
     .local v2, newMimeType:Ljava/lang/String;
     if-eqz v2, :cond_3
 
-    .line 146
+    .line 145
     move-object p1, v2
 
-    .line 158
+    .line 157
     .end local v0           #extension:Ljava/lang/String;
     .end local v1           #filename:Ljava/lang/String;
     .end local v2           #newMimeType:Ljava/lang/String;
@@ -309,7 +309,7 @@
     :goto_0
     return-object p1
 
-    .line 148
+    .line 147
     :cond_4
     const-string/jumbo v3, "text/vnd.wap.wml"
 
@@ -319,12 +319,12 @@
 
     if-eqz v3, :cond_5
 
-    .line 150
+    .line 149
     const-string/jumbo p1, "text/plain"
 
     goto :goto_0
 
-    .line 154
+    .line 153
     :cond_5
     const-string v3, "application/vnd.wap.xhtml+xml"
 
@@ -334,7 +334,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 155
+    .line 154
     const-string p1, "application/xhtml+xml"
 
     goto :goto_0

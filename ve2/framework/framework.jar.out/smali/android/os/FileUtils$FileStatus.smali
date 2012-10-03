@@ -13,6 +13,9 @@
     name = "FileStatus"
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # instance fields
 .field public atime:J
@@ -47,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 57
+    .line 61
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

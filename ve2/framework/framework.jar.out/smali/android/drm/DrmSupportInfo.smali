@@ -62,108 +62,148 @@
 
 # virtual methods
 .method public addFileSuffix(Ljava/lang/String;)V
-    .locals 1
+    .locals 2
     .parameter "fileSuffix"
 
     .prologue
-    .line 50
+    .line 60
+    const-string v0, ""
+
+    if-ne p1, v0, :cond_0
+
+    .line 61
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "fileSuffix is an empty string"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 64
+    :cond_0
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 51
+    .line 65
     return-void
 .end method
 
 .method public addMimeType(Ljava/lang/String;)V
-    .locals 1
+    .locals 2
     .parameter "mimeType"
 
     .prologue
-    .line 41
+    .line 42
+    if-nez p1, :cond_0
+
+    .line 43
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "mimeType is null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 45
+    :cond_0
+    const-string v0, ""
+
+    if-ne p1, v0, :cond_1
+
+    .line 46
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "mimeType is an empty string"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 49
+    :cond_1
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mMimeTypeList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 42
+    .line 50
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 4
     .parameter "object"
 
     .prologue
-    .line 109
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 111
-    .local v0, result:Z
-    instance-of v1, p1, Landroid/drm/DrmSupportInfo;
+    .line 145
+    instance-of v2, p1, Landroid/drm/DrmSupportInfo;
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    .line 112
+    move-object v0, p1
+
+    .line 146
+    check-cast v0, Landroid/drm/DrmSupportInfo;
+
+    .line 147
+    .local v0, info:Landroid/drm/DrmSupportInfo;
     iget-object v2, p0, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
 
-    move-object v1, p1
+    iget-object v3, v0, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
 
-    check-cast v1, Landroid/drm/DrmSupportInfo;
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
 
-    iget-object v1, v1, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
+    move-result v2
 
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_0
 
     iget-object v2, p0, Landroid/drm/DrmSupportInfo;->mMimeTypeList:Ljava/util/ArrayList;
 
-    move-object v1, p1
+    iget-object v3, v0, Landroid/drm/DrmSupportInfo;->mMimeTypeList:Ljava/util/ArrayList;
 
-    check-cast v1, Landroid/drm/DrmSupportInfo;
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
 
-    iget-object v1, v1, Landroid/drm/DrmSupportInfo;->mMimeTypeList:Ljava/util/ArrayList;
+    move-result v2
 
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
+    if-eqz v2, :cond_0
 
-    move-result v1
+    iget-object v2, p0, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    iget-object v3, v0, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
 
-    iget-object v1, p0, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    check-cast p1, Landroid/drm/DrmSupportInfo;
+    move-result v2
 
-    .end local p1
-    iget-object v2, p1, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v1, 0x1
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 v0, 0x1
-
-    .line 116
+    .line 151
+    .end local v0           #info:Landroid/drm/DrmSupportInfo;
     :cond_0
-    :goto_0
-    return v0
-
-    .line 112
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return v1
 .end method
 
 .method public getDescriprition()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 90
+    .line 112
+    iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getDescription()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 124
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
 
     return-object v0
@@ -182,7 +222,7 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 84
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -205,7 +245,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 74
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mMimeTypeList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -219,7 +259,7 @@
     .locals 2
 
     .prologue
-    .line 99
+    .line 133
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->hashCode()I
@@ -250,7 +290,7 @@
     .parameter "fileSuffix"
 
     .prologue
-    .line 144
+    .line 185
     iget-object v0, p0, Landroid/drm/DrmSupportInfo;->mFileSuffixList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -265,7 +305,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 126
+    .line 162
     if-eqz p1, :cond_1
 
     const-string v2, ""
@@ -276,7 +316,7 @@
 
     if-nez v2, :cond_1
 
-    .line 127
+    .line 163
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -289,7 +329,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 128
+    .line 164
     iget-object v2, p0, Landroid/drm/DrmSupportInfo;->mMimeTypeList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -298,7 +338,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 129
+    .line 170
     .local v0, completeMimeType:Ljava/lang/String;
     invoke-virtual {v0, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -306,16 +346,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 130
+    .line 171
     const/4 v2, 0x1
 
-    .line 134
+    .line 175
     .end local v0           #completeMimeType:Ljava/lang/String;
     .end local v1           #i:I
     :goto_1
     return v2
 
-    .line 127
+    .line 163
     .restart local v0       #completeMimeType:Ljava/lang/String;
     .restart local v1       #i:I
     :cond_0
@@ -323,7 +363,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 175
     .end local v0           #completeMimeType:Ljava/lang/String;
     .end local v1           #i:I
     :cond_1
@@ -333,17 +373,41 @@
 .end method
 
 .method public setDescription(Ljava/lang/String;)V
-    .locals 0
+    .locals 2
     .parameter "description"
 
     .prologue
-    .line 79
-    if-eqz p1, :cond_0
+    .line 94
+    if-nez p1, :cond_0
 
-    .line 80
+    .line 95
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "description is null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 97
+    :cond_0
+    const-string v0, ""
+
+    if-ne p1, v0, :cond_1
+
+    .line 98
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "description is an empty string"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 101
+    :cond_1
     iput-object p1, p0, Landroid/drm/DrmSupportInfo;->mDescription:Ljava/lang/String;
 
-    .line 82
-    :cond_0
+    .line 102
     return-void
 .end method

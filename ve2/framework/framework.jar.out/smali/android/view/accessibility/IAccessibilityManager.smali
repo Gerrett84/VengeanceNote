@@ -75,7 +75,7 @@
     .end annotation
 .end method
 
-.method public abstract registerEventListener(Landroid/accessibilityservice/IEventListener;)V
+.method public abstract registerUiTestAutomationService(Landroid/accessibilityservice/IAccessibilityServiceClient;Landroid/accessibilityservice/AccessibilityServiceInfo;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -92,6 +92,14 @@
 .end method
 
 .method public abstract sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract unregisterUiTestAutomationService(Landroid/accessibilityservice/IAccessibilityServiceClient;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

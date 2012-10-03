@@ -15,7 +15,17 @@
 
 
 # static fields
+.field public static final activate:I = 0x60c01ea
+
+.field public static final activate_fail_notification_title:I = 0x60c01ec
+
+.field public static final activating:I = 0x60c01dd
+
+.field public static final alarm_message_12_hour_formate:I = 0x60c01f6
+
 .field public static final all_resources:I = 0x60c0027
+
+.field public static final android_byteShort:I = 0x60c01de
 
 .field public static final android_common_last_name_prefixes:I = 0x60c019e
 
@@ -25,6 +35,10 @@
 
 .field public static final android_common_name_suffixes:I = 0x60c019d
 
+.field public static final android_config_defaultDreamComponent:I = 0x60c01f9
+
+.field public static final android_date_time_set:I = 0x60c01fa
+
 .field public static final android_dial_number_using:I = 0x60c01a0
 
 .field public static final android_ellipsis:I = 0x60c0190
@@ -32,6 +46,8 @@
 .field public static final android_factorytest_reboot:I = 0x60c018c
 
 .field public static final android_fast_scroll_alphabet:I = 0x60c0196
+
+.field public static final android_fileSizeSuffix:I = 0x60c01e1
 
 .field public static final android_find_on_page:I = 0x60c01ae
 
@@ -93,6 +109,8 @@
 
 .field public static final android_megabyteShort:I = 0x60c017c
 
+.field public static final android_petabyteShort:I = 0x60c01e0
+
 .field public static final android_phoneTypeMms:I = 0x60c016d
 
 .field public static final android_power_off:I = 0x60c0191
@@ -118,6 +136,10 @@
 .field public static final android_ssl_certificate:I = 0x60c0199
 
 .field public static final android_ssl_certificate_is_valid:I = 0x60c01ad
+
+.field public static final android_storage_usb:I = 0x60c01f8
+
+.field public static final android_terabyteShort:I = 0x60c01df
 
 .field public static final android_today:I = 0x60c01d1
 
@@ -153,11 +175,15 @@
 
 .field public static final caller_info_name_delimiter:I = 0x60c016c
 
+.field public static final check_phone_error_title:I = 0x60c01e6
+
+.field public static final check_phone_io_error:I = 0x60c01e7
+
 .field public static final childrens_day:I = 0x60c0066
 
 .field public static final chinese_youth_day:I = 0x60c0065
 
-.field public static final christmas_dad:I = 0x60c006b
+.field public static final christmas_day:I = 0x60c006b
 
 .field public static final clear_and_bright:I = 0x60c0072
 
@@ -635,15 +661,17 @@
 
 .field public static final description_download:I = 0x60c0011
 
+.field public static final description_downloadtime:I = 0x60c01fb
+
 .field public static final description_file:I = 0x60c0013
 
 .field public static final description_missed:I = 0x60c000c
 
-.field public static final description_modifiedtime:I = 0x60c0010
-
 .field public static final description_size:I = 0x60c000f
 
 .field public static final description_unknown:I = 0x60c000b
+
+.field public static final description_uploadtime:I = 0x60c0010
 
 .field public static final description_version:I = 0x60c0012
 
@@ -653,7 +681,17 @@
 
 .field public static final download_preview_failed:I = 0x60c0024
 
+.field public static final error_forbidden:I = 0x60c01f0
+
+.field public static final error_not_acceptable:I = 0x60c01f1
+
+.field public static final error_title:I = 0x60c01ee
+
+.field public static final error_unauthorized:I = 0x60c01ef
+
 .field public static final every_day:I = 0x60c01af
+
+.field public static final find_device_sim_change_instructions:I = 0x60c01e5
 
 .field public static final firewall_setting:I = 0x60c016a
 
@@ -664,6 +702,8 @@
 .field public static final fools_day:I = 0x60c0063
 
 .field public static final force_exit_message:I = 0x60c0170
+
+.field public static final format_time_in_12_hours:I = 0x60c01f7
 
 .field public static final global_action_privacy_mode_dialog_message:I = 0x60c0174
 
@@ -803,9 +843,13 @@
 
 .field public static final national_day:I = 0x60c006a
 
+.field public static final national_father_day:I = 0x60c01fd
+
 .field public static final never:I = 0x60c01b0
 
 .field public static final new_years_day:I = 0x60c005f
+
+.field public static final no_sim:I = 0x60c01dc
 
 .field public static final online_hottest:I = 0x60c001c
 
@@ -823,13 +867,23 @@
 
 .field public static final payphone:I = 0x60c003e
 
+.field public static final peace_day:I = 0x60c01fc
+
 .field public static final perm_activate_dspt:I = 0x60c01d0
 
 .field public static final perm_activate_lab:I = 0x60c01cf
 
+.field public static final perm_auto_backup:I = 0x60c01eb
+
 .field public static final perm_get_user_info_dspt:I = 0x60c01d3
 
 .field public static final perm_get_user_info_lab:I = 0x60c01d2
+
+.field public static final perm_tigger_toggle_dspt:I = 0x60c01e3
+
+.field public static final perm_tigger_toggle_lab:I = 0x60c01e2
+
+.field public static final perm_use_find_device:I = 0x60c01e4
 
 .field public static final private_num:I = 0x60c003d
 
@@ -891,6 +945,12 @@
 
 .field public static final safetylegal_activity_unreachable:I = 0x60c002f
 
+.field public static final screen_on_proximity_sensor_hint:I = 0x60c01f2
+
+.field public static final screen_on_proximity_sensor_summary:I = 0x60c01f3
+
+.field public static final screen_on_proximity_sensor_title:I = 0x60c01f4
+
 .field public static final sd_not_available:I = 0x60c0038
 
 .field public static final sd_not_available_low_internal_storage:I = 0x60c003a
@@ -907,7 +967,13 @@
 
 .field public static final select_all:I = 0x60c0177
 
+.field public static final send_sms_for_sync_notice:I = 0x60c01e9
+
+.field public static final send_sms_for_sync_title:I = 0x60c01e8
+
 .field public static final sim_account_name:I = 0x60c01a7
+
+.field public static final sim_changed_reactivate_notice:I = 0x60c01ed
 
 .field public static final slight_cold:I = 0x60c006c
 
@@ -922,6 +988,8 @@
 .field public static final summer_begins:I = 0x60c0074
 
 .field public static final summer_solstice:I = 0x60c0077
+
+.field public static final sync_one_time_sync:I = 0x60c01db
 
 .field public static final teachers_day:I = 0x60c0069
 
@@ -957,6 +1025,8 @@
 
 .field public static final vernal_equinox:I = 0x60c0071
 
+.field public static final wake_alarm_message:I = 0x60c01f5
+
 .field public static final white_dews:I = 0x60c007c
 
 .field public static final winter_begins:I = 0x60c0080
@@ -971,7 +1041,7 @@
     .locals 0
 
     .prologue
-    .line 1330
+    .line 1474
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

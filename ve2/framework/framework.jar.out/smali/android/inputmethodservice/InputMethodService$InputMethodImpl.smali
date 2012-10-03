@@ -162,7 +162,8 @@
     .line 405
     iget-object v2, p0, Landroid/inputmethodservice/InputMethodService$InputMethodImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
 
-    invoke-virtual {v2}, Landroid/inputmethodservice/InputMethodService;->hideWindow()V
+    #calls: Landroid/inputmethodservice/InputMethodService;->doHideWindow()V
+    invoke-static {v2}, Landroid/inputmethodservice/InputMethodService;->access$000(Landroid/inputmethodservice/InputMethodService;)V
 
     .line 406
     if-eqz p2, :cond_1

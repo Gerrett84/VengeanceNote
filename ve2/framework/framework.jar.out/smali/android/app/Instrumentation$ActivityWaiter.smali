@@ -26,12 +26,12 @@
     .parameter "_intent"
 
     .prologue
-    .line 1592
+    .line 1625
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1593
+    .line 1626
     iput-object p1, p0, Landroid/app/Instrumentation$ActivityWaiter;->intent:Landroid/content/Intent;
 
-    .line 1594
+    .line 1627
     return-void
 .end method

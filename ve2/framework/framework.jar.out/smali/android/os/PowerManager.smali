@@ -14,6 +14,14 @@
 # static fields
 .field public static final ACQUIRE_CAUSES_WAKEUP:I = 0x10000000
 
+.field public static final BRIGHTNESS_DIM:I = 0x14
+
+.field public static final BRIGHTNESS_LOW_BATTERY:I = 0xa
+
+.field public static final BRIGHTNESS_OFF:I = 0x0
+
+.field public static final BRIGHTNESS_ON:I = 0xff
+
 .field public static final FULL_WAKE_LOCK:I = 0x1a
 
 .field private static final LOCK_MASK:I = 0x3f
@@ -59,10 +67,10 @@
     .locals 0
 
     .prologue
-    .line 539
+    .line 563
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 540
+    .line 564
     return-void
 .end method
 
@@ -72,16 +80,16 @@
     .parameter "handler"
 
     .prologue
-    .line 546
+    .line 570
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 547
+    .line 571
     iput-object p1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
-    .line 548
+    .line 572
     iput-object p2, p0, Landroid/os/PowerManager;->mHandler:Landroid/os/Handler;
 
-    .line 549
+    .line 573
     return-void
 .end method
 
@@ -91,7 +99,7 @@
     .locals 2
 
     .prologue
-    .line 496
+    .line 520
     :try_start_0
     iget-object v1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -101,15 +109,15 @@
 
     move-result v1
 
-    .line 498
+    .line 522
     :goto_0
     return v1
 
-    .line 497
+    .line 521
     :catch_0
     move-exception v0
 
-    .line 498
+    .line 522
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -121,7 +129,7 @@
     .parameter "time"
 
     .prologue
-    .line 456
+    .line 480
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -129,11 +137,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 459
+    .line 483
     :goto_0
     return-void
 
-    .line 457
+    .line 481
     :catch_0
     move-exception v0
 
@@ -144,7 +152,7 @@
     .locals 2
 
     .prologue
-    .line 516
+    .line 540
     :try_start_0
     iget-object v1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -154,15 +162,15 @@
 
     move-result v1
 
-    .line 518
+    .line 542
     :goto_0
     return v1
 
-    .line 517
+    .line 541
     :catch_0
     move-exception v0
 
-    .line 518
+    .line 542
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -175,10 +183,10 @@
     .parameter "tag"
 
     .prologue
-    .line 416
+    .line 440
     if-nez p2, :cond_0
 
-    .line 417
+    .line 441
     new-instance v0, Ljava/lang/NullPointerException;
 
     const-string/jumbo v1, "tag is null in PowerManager.newWakeLock"
@@ -187,7 +195,7 @@
 
     throw v0
 
-    .line 419
+    .line 443
     :cond_0
     new-instance v0, Landroid/os/PowerManager$WakeLock;
 
@@ -201,7 +209,7 @@
     .parameter "reason"
 
     .prologue
-    .line 533
+    .line 557
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -209,11 +217,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 536
+    .line 560
     :goto_0
     return-void
 
-    .line 534
+    .line 558
     :catch_0
     move-exception v0
 
@@ -225,7 +233,7 @@
     .parameter "brightness"
 
     .prologue
-    .line 471
+    .line 495
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -233,11 +241,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 474
+    .line 498
     :goto_0
     return-void
 
-    .line 472
+    .line 496
     :catch_0
     move-exception v0
 
@@ -250,7 +258,7 @@
     .parameter "noChangeLights"
 
     .prologue
-    .line 440
+    .line 464
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -258,11 +266,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 443
+    .line 467
     :goto_0
     return-void
 
-    .line 441
+    .line 465
     :catch_0
     move-exception v0
 

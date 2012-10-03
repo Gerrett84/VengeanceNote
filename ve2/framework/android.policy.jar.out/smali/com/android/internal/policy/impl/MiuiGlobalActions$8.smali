@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 698
+    .line 701
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$8;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,37 +39,37 @@
     .parameter "msg"
 
     .prologue
-    .line 700
+    .line 703
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-nez v0, :cond_1
 
-    .line 701
+    .line 704
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$8;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mDialog:Landroid/app/AlertDialog;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$1200(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/app/AlertDialog;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$1300(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/app/AlertDialog;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 702
+    .line 705
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$8;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mDialog:Landroid/app/AlertDialog;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$1200(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/app/AlertDialog;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$1300(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 707
+    .line 710
     :cond_0
     :goto_0
     return-void
 
-    .line 704
+    .line 707
     :cond_1
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -77,11 +77,11 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 705
+    .line 708
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$8;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mAdapter:Lcom/android/internal/policy/impl/MiuiGlobalActions$MyAdapter;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$1100(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Lcom/android/internal/policy/impl/MiuiGlobalActions$MyAdapter;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$1200(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Lcom/android/internal/policy/impl/MiuiGlobalActions$MyAdapter;
 
     move-result-object v0
 

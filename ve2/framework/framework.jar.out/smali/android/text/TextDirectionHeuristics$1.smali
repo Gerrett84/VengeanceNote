@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 103
+    .line 101
     invoke-static {}, Landroid/text/TextDirectionHeuristics$TriState;->values()[Landroid/text/TextDirectionHeuristics$TriState;
 
     move-result-object v0

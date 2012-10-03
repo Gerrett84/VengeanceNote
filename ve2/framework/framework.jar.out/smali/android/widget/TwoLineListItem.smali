@@ -15,14 +15,14 @@
     .parameter "context"
 
     .prologue
-    .line 50
+    .line 48
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Landroid/widget/TwoLineListItem;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 51
+    .line 49
     return-void
 .end method
 
@@ -32,12 +32,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 54
+    .line 52
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/TwoLineListItem;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 55
+    .line 53
     return-void
 .end method
 
@@ -48,10 +48,10 @@
     .parameter "defStyle"
 
     .prologue
-    .line 58
+    .line 56
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 60
+    .line 58
     sget-object v1, Lcom/android/internal/R$styleable;->TwoLineListItem:[I
 
     const/4 v2, 0x0
@@ -60,11 +60,11 @@
 
     move-result-object v0
 
-    .line 63
+    .line 61
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 64
+    .line 62
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 77
     iget-object v0, p0, Landroid/widget/TwoLineListItem;->mText1:Landroid/widget/TextView;
 
     return-object v0
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 85
     iget-object v0, p0, Landroid/widget/TwoLineListItem;->mText2:Landroid/widget/TextView;
 
     return-object v0
@@ -94,10 +94,10 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 66
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    .line 70
+    .line 68
     const v0, 0x1020014
 
     invoke-virtual {p0, v0}, Landroid/widget/TwoLineListItem;->findViewById(I)Landroid/view/View;
@@ -108,7 +108,7 @@
 
     iput-object v0, p0, Landroid/widget/TwoLineListItem;->mText1:Landroid/widget/TextView;
 
-    .line 71
+    .line 69
     const v0, 0x1020015
 
     invoke-virtual {p0, v0}, Landroid/widget/TwoLineListItem;->findViewById(I)Landroid/view/View;
@@ -119,6 +119,48 @@
 
     iput-object v0, p0, Landroid/widget/TwoLineListItem;->mText2:Landroid/widget/TextView;
 
-    .line 72
+    .line 70
+    return-void
+.end method
+
+.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 1
+    .parameter "event"
+
+    .prologue
+    .line 90
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    .line 91
+    const-class v0, Landroid/widget/TwoLineListItem;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 92
+    return-void
+.end method
+
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 96
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    .line 97
+    const-class v0, Landroid/widget/TwoLineListItem;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 98
     return-void
 .end method

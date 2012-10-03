@@ -85,12 +85,12 @@
 
     const/16 v3, 0x8
 
-    .line 187
+    .line 189
     and-int/lit8 v0, p0, 0x6
 
     packed-switch v0, :pswitch_data_0
 
-    .line 223
+    .line 225
     :pswitch_0
     iget v0, p3, Landroid/graphics/Rect;->left:I
 
@@ -98,40 +98,40 @@
 
     iput v0, p6, Landroid/graphics/Rect;->left:I
 
-    .line 224
+    .line 226
     iget v0, p3, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v0, p4
 
     iput v0, p6, Landroid/graphics/Rect;->right:I
 
-    .line 228
+    .line 230
     :cond_0
     :goto_0
     and-int/lit8 v0, p0, 0x60
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 264
+    .line 266
     iget v0, p3, Landroid/graphics/Rect;->top:I
 
     add-int/2addr v0, p5
 
     iput v0, p6, Landroid/graphics/Rect;->top:I
 
-    .line 265
+    .line 267
     iget v0, p3, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v0, p5
 
     iput v0, p6, Landroid/graphics/Rect;->bottom:I
 
-    .line 268
+    .line 270
     :cond_1
     :goto_1
     return-void
 
-    .line 189
+    .line 191
     :pswitch_1
     iget v0, p3, Landroid/graphics/Rect;->left:I
 
@@ -151,31 +151,31 @@
 
     iput v0, p6, Landroid/graphics/Rect;->left:I
 
-    .line 191
+    .line 193
     iget v0, p6, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v0, p1
 
     iput v0, p6, Landroid/graphics/Rect;->right:I
 
-    .line 192
+    .line 194
     and-int/lit8 v0, p0, 0x8
 
     if-ne v0, v3, :cond_0
 
-    .line 194
+    .line 196
     iget v0, p6, Landroid/graphics/Rect;->left:I
 
     iget v1, p3, Landroid/graphics/Rect;->left:I
 
     if-ge v0, v1, :cond_2
 
-    .line 195
+    .line 197
     iget v0, p3, Landroid/graphics/Rect;->left:I
 
     iput v0, p6, Landroid/graphics/Rect;->left:I
 
-    .line 197
+    .line 199
     :cond_2
     iget v0, p6, Landroid/graphics/Rect;->right:I
 
@@ -183,14 +183,14 @@
 
     if-le v0, v1, :cond_0
 
-    .line 198
+    .line 200
     iget v0, p3, Landroid/graphics/Rect;->right:I
 
     iput v0, p6, Landroid/graphics/Rect;->right:I
 
     goto :goto_0
 
-    .line 203
+    .line 205
     :pswitch_2
     iget v0, p3, Landroid/graphics/Rect;->left:I
 
@@ -198,33 +198,33 @@
 
     iput v0, p6, Landroid/graphics/Rect;->left:I
 
-    .line 204
+    .line 206
     iget v0, p6, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v0, p1
 
     iput v0, p6, Landroid/graphics/Rect;->right:I
 
-    .line 205
+    .line 207
     and-int/lit8 v0, p0, 0x8
 
     if-ne v0, v3, :cond_0
 
-    .line 207
+    .line 209
     iget v0, p6, Landroid/graphics/Rect;->right:I
 
     iget v1, p3, Landroid/graphics/Rect;->right:I
 
     if-le v0, v1, :cond_0
 
-    .line 208
+    .line 210
     iget v0, p3, Landroid/graphics/Rect;->right:I
 
     iput v0, p6, Landroid/graphics/Rect;->right:I
 
     goto :goto_0
 
-    .line 213
+    .line 215
     :pswitch_3
     iget v0, p3, Landroid/graphics/Rect;->right:I
 
@@ -232,33 +232,33 @@
 
     iput v0, p6, Landroid/graphics/Rect;->right:I
 
-    .line 214
+    .line 216
     iget v0, p6, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v0, p1
 
     iput v0, p6, Landroid/graphics/Rect;->left:I
 
-    .line 215
+    .line 217
     and-int/lit8 v0, p0, 0x8
 
     if-ne v0, v3, :cond_0
 
-    .line 217
+    .line 219
     iget v0, p6, Landroid/graphics/Rect;->left:I
 
     iget v1, p3, Landroid/graphics/Rect;->left:I
 
     if-ge v0, v1, :cond_0
 
-    .line 218
+    .line 220
     iget v0, p3, Landroid/graphics/Rect;->left:I
 
     iput v0, p6, Landroid/graphics/Rect;->left:I
 
     goto :goto_0
 
-    .line 230
+    .line 232
     :sswitch_0
     iget v0, p3, Landroid/graphics/Rect;->top:I
 
@@ -278,31 +278,31 @@
 
     iput v0, p6, Landroid/graphics/Rect;->top:I
 
-    .line 232
+    .line 234
     iget v0, p6, Landroid/graphics/Rect;->top:I
 
     add-int/2addr v0, p2
 
     iput v0, p6, Landroid/graphics/Rect;->bottom:I
 
-    .line 233
+    .line 235
     and-int/lit16 v0, p0, 0x80
 
     if-ne v0, v4, :cond_1
 
-    .line 235
+    .line 237
     iget v0, p6, Landroid/graphics/Rect;->top:I
 
     iget v1, p3, Landroid/graphics/Rect;->top:I
 
     if-ge v0, v1, :cond_3
 
-    .line 236
+    .line 238
     iget v0, p3, Landroid/graphics/Rect;->top:I
 
     iput v0, p6, Landroid/graphics/Rect;->top:I
 
-    .line 238
+    .line 240
     :cond_3
     iget v0, p6, Landroid/graphics/Rect;->bottom:I
 
@@ -310,14 +310,14 @@
 
     if-le v0, v1, :cond_1
 
-    .line 239
+    .line 241
     iget v0, p3, Landroid/graphics/Rect;->bottom:I
 
     iput v0, p6, Landroid/graphics/Rect;->bottom:I
 
     goto/16 :goto_1
 
-    .line 244
+    .line 246
     :sswitch_1
     iget v0, p3, Landroid/graphics/Rect;->top:I
 
@@ -325,33 +325,33 @@
 
     iput v0, p6, Landroid/graphics/Rect;->top:I
 
-    .line 245
+    .line 247
     iget v0, p6, Landroid/graphics/Rect;->top:I
 
     add-int/2addr v0, p2
 
     iput v0, p6, Landroid/graphics/Rect;->bottom:I
 
-    .line 246
+    .line 248
     and-int/lit16 v0, p0, 0x80
 
     if-ne v0, v4, :cond_1
 
-    .line 248
+    .line 250
     iget v0, p6, Landroid/graphics/Rect;->bottom:I
 
     iget v1, p3, Landroid/graphics/Rect;->bottom:I
 
     if-le v0, v1, :cond_1
 
-    .line 249
+    .line 251
     iget v0, p3, Landroid/graphics/Rect;->bottom:I
 
     iput v0, p6, Landroid/graphics/Rect;->bottom:I
 
     goto/16 :goto_1
 
-    .line 254
+    .line 256
     :sswitch_2
     iget v0, p3, Landroid/graphics/Rect;->bottom:I
 
@@ -359,33 +359,33 @@
 
     iput v0, p6, Landroid/graphics/Rect;->bottom:I
 
-    .line 255
+    .line 257
     iget v0, p6, Landroid/graphics/Rect;->bottom:I
 
     sub-int/2addr v0, p2
 
     iput v0, p6, Landroid/graphics/Rect;->top:I
 
-    .line 256
+    .line 258
     and-int/lit16 v0, p0, 0x80
 
     if-ne v0, v4, :cond_1
 
-    .line 258
+    .line 260
     iget v0, p6, Landroid/graphics/Rect;->top:I
 
     iget v1, p3, Landroid/graphics/Rect;->top:I
 
     if-ge v0, v1, :cond_1
 
-    .line 259
+    .line 261
     iget v0, p3, Landroid/graphics/Rect;->top:I
 
     iput v0, p6, Landroid/graphics/Rect;->top:I
 
     goto/16 :goto_1
 
-    .line 187
+    .line 189
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -395,13 +395,50 @@
         :pswitch_3
     .end packed-switch
 
-    .line 228
+    .line 230
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
         0x20 -> :sswitch_1
         0x40 -> :sswitch_2
     .end sparse-switch
+.end method
+
+.method public static apply(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V
+    .locals 7
+    .parameter "gravity"
+    .parameter "w"
+    .parameter "h"
+    .parameter "container"
+    .parameter "xAdj"
+    .parameter "yAdj"
+    .parameter "outRect"
+    .parameter "layoutDirection"
+
+    .prologue
+    .line 300
+    invoke-static {p0, p7}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
+
+    move-result v0
+
+    .local v0, absGravity:I
+    move v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    move-object v6, p6
+
+    .line 301
+    invoke-static/range {v0 .. v6}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;)V
+
+    .line 302
+    return-void
 .end method
 
 .method public static apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V
@@ -446,7 +483,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 160
+    .line 162
     invoke-static {p0, p5}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
     move-result v0
@@ -462,10 +499,10 @@
 
     move-object v6, p4
 
-    .line 161
+    .line 163
     invoke-static/range {v0 .. v6}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;)V
 
-    .line 162
+    .line 164
     return-void
 .end method
 
@@ -476,14 +513,14 @@
     .parameter "inoutObj"
 
     .prologue
-    .line 287
+    .line 321
     const/high16 v1, 0x1000
 
     and-int/2addr v1, p0
 
     if-eqz v1, :cond_4
 
-    .line 288
+    .line 322
     iget v1, p2, Landroid/graphics/Rect;->top:I
 
     iget v2, p1, Landroid/graphics/Rect;->top:I
@@ -494,7 +531,7 @@
 
     iput v1, p2, Landroid/graphics/Rect;->top:I
 
-    .line 289
+    .line 323
     :cond_0
     iget v1, p2, Landroid/graphics/Rect;->bottom:I
 
@@ -506,7 +543,7 @@
 
     iput v1, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 305
+    .line 339
     :cond_1
     :goto_0
     const/high16 v1, 0x100
@@ -515,7 +552,7 @@
 
     if-eqz v1, :cond_8
 
-    .line 306
+    .line 340
     iget v1, p2, Landroid/graphics/Rect;->left:I
 
     iget v2, p1, Landroid/graphics/Rect;->left:I
@@ -526,7 +563,7 @@
 
     iput v1, p2, Landroid/graphics/Rect;->left:I
 
-    .line 307
+    .line 341
     :cond_2
     iget v1, p2, Landroid/graphics/Rect;->right:I
 
@@ -538,16 +575,16 @@
 
     iput v1, p2, Landroid/graphics/Rect;->right:I
 
-    .line 322
+    .line 356
     :cond_3
     :goto_1
     return-void
 
-    .line 291
+    .line 325
     :cond_4
     const/4 v0, 0x0
 
-    .line 292
+    .line 326
     .local v0, off:I
     iget v1, p2, Landroid/graphics/Rect;->top:I
 
@@ -561,12 +598,12 @@
 
     sub-int v0, v1, v2
 
-    .line 294
+    .line 328
     :cond_5
     :goto_2
     if-eqz v0, :cond_1
 
-    .line 295
+    .line 329
     invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
 
     move-result v1
@@ -579,19 +616,19 @@
 
     if-le v1, v2, :cond_7
 
-    .line 296
+    .line 330
     iget v1, p1, Landroid/graphics/Rect;->top:I
 
     iput v1, p2, Landroid/graphics/Rect;->top:I
 
-    .line 297
+    .line 331
     iget v1, p1, Landroid/graphics/Rect;->bottom:I
 
     iput v1, p2, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_0
 
-    .line 293
+    .line 327
     :cond_6
     iget v1, p2, Landroid/graphics/Rect;->bottom:I
 
@@ -607,7 +644,7 @@
 
     goto :goto_2
 
-    .line 299
+    .line 333
     :cond_7
     iget v1, p2, Landroid/graphics/Rect;->top:I
 
@@ -615,7 +652,7 @@
 
     iput v1, p2, Landroid/graphics/Rect;->top:I
 
-    .line 300
+    .line 334
     iget v1, p2, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v1, v0
@@ -624,12 +661,12 @@
 
     goto :goto_0
 
-    .line 309
+    .line 343
     .end local v0           #off:I
     :cond_8
     const/4 v0, 0x0
 
-    .line 310
+    .line 344
     .restart local v0       #off:I
     iget v1, p2, Landroid/graphics/Rect;->left:I
 
@@ -643,12 +680,12 @@
 
     sub-int v0, v1, v2
 
-    .line 312
+    .line 346
     :cond_9
     :goto_3
     if-eqz v0, :cond_3
 
-    .line 313
+    .line 347
     invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -661,19 +698,19 @@
 
     if-le v1, v2, :cond_b
 
-    .line 314
+    .line 348
     iget v1, p1, Landroid/graphics/Rect;->left:I
 
     iput v1, p2, Landroid/graphics/Rect;->left:I
 
-    .line 315
+    .line 349
     iget v1, p1, Landroid/graphics/Rect;->right:I
 
     iput v1, p2, Landroid/graphics/Rect;->right:I
 
     goto :goto_1
 
-    .line 311
+    .line 345
     :cond_a
     iget v1, p2, Landroid/graphics/Rect;->right:I
 
@@ -689,7 +726,7 @@
 
     goto :goto_3
 
-    .line 317
+    .line 351
     :cond_b
     iget v1, p2, Landroid/graphics/Rect;->left:I
 
@@ -697,7 +734,7 @@
 
     iput v1, p2, Landroid/graphics/Rect;->left:I
 
-    .line 318
+    .line 352
     iget v1, p2, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v1, v0
@@ -707,22 +744,43 @@
     goto :goto_1
 .end method
 
+.method public static applyDisplay(ILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+    .locals 1
+    .parameter "gravity"
+    .parameter "display"
+    .parameter "inoutObj"
+    .parameter "layoutDirection"
+
+    .prologue
+    .line 380
+    invoke-static {p0, p3}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
+
+    move-result v0
+
+    .line 381
+    .local v0, absGravity:I
+    invoke-static {v0, p1, p2}, Landroid/view/Gravity;->applyDisplay(ILandroid/graphics/Rect;Landroid/graphics/Rect;)V
+
+    .line 382
+    return-void
+.end method
+
 .method public static getAbsoluteGravity(II)I
     .locals 5
     .parameter "gravity"
     .parameter "layoutDirection"
 
     .prologue
-    const/high16 v4, 0x4000
+    const v4, 0x800005
 
-    const v3, 0x800005
+    const v3, 0x800003
 
-    const v2, 0x800003
+    const/4 v2, 0x1
 
-    .line 356
+    .line 417
     move v0, p0
 
-    .line 358
+    .line 419
     .local v0, result:I
     const/high16 v1, 0x80
 
@@ -730,59 +788,59 @@
 
     if-lez v1, :cond_1
 
-    .line 359
-    and-int v1, v0, v2
+    .line 420
+    and-int v1, v0, v3
 
-    if-ne v1, v2, :cond_3
+    if-ne v1, v3, :cond_3
 
-    .line 361
+    .line 422
     const v1, -0x800004
 
     and-int/2addr v0, v1
 
-    .line 362
-    if-ne p1, v4, :cond_2
+    .line 423
+    if-ne p1, v2, :cond_2
 
-    .line 364
+    .line 425
     or-int/lit8 v0, v0, 0x5
 
-    .line 382
+    .line 443
     :cond_0
     :goto_0
     const v1, -0x800001
 
     and-int/2addr v0, v1
 
-    .line 384
+    .line 445
     :cond_1
     return v0
 
-    .line 367
+    .line 428
     :cond_2
     or-int/lit8 v0, v0, 0x3
 
     goto :goto_0
 
-    .line 369
+    .line 430
     :cond_3
-    and-int v1, v0, v3
+    and-int v1, v0, v4
 
-    if-ne v1, v3, :cond_0
+    if-ne v1, v4, :cond_0
 
-    .line 371
+    .line 432
     const v1, -0x800006
 
     and-int/2addr v0, v1
 
-    .line 372
-    if-ne p1, v4, :cond_4
+    .line 433
+    if-ne p1, v2, :cond_4
 
-    .line 374
+    .line 435
     or-int/lit8 v0, v0, 0x3
 
     goto :goto_0
 
-    .line 377
+    .line 438
     :cond_4
     or-int/lit8 v0, v0, 0x5
 
@@ -794,7 +852,7 @@
     .parameter "gravity"
 
     .prologue
-    .line 341
+    .line 401
     if-lez p0, :cond_0
 
     const v0, 0x800007
@@ -819,7 +877,7 @@
     .parameter "gravity"
 
     .prologue
-    .line 331
+    .line 391
     if-lez p0, :cond_0
 
     and-int/lit8 v0, p0, 0x70

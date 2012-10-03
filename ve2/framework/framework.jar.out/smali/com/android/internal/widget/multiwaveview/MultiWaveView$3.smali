@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 147
+    .line 177
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView$3;->this$0:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,20 +42,23 @@
     .parameter "animation"
 
     .prologue
-    .line 149
+    .line 179
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView$3;->this$0:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView$3;->this$0:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
-    iget-object v1, v1, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    #getter for: Lcom/android/internal/widget/multiwaveview/MultiWaveView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    invoke-static {v1}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->access$500(Lcom/android/internal/widget/multiwaveview/MultiWaveView;)Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->invalidateGlobalRegion(Lcom/android/internal/widget/multiwaveview/TargetDrawable;)V
 
-    .line 150
+    .line 180
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MultiWaveView$3;->this$0:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->invalidate()V
 
-    .line 151
+    .line 181
     return-void
 .end method

@@ -21,6 +21,8 @@
 
 .field public static final ACCESS_COARSE_LOCATION:Ljava/lang/String; = "android.permission.ACCESS_COARSE_LOCATION"
 
+.field public static final ACCESS_CONTENT_PROVIDERS_EXTERNALLY:Ljava/lang/String; = "android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY"
+
 .field public static final ACCESS_FINE_LOCATION:Ljava/lang/String; = "android.permission.ACCESS_FINE_LOCATION"
 
 .field public static final ACCESS_LOCATION_EXTRA_COMMANDS:Ljava/lang/String; = "android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"
@@ -58,6 +60,8 @@
 .field public static final BACKUP:Ljava/lang/String; = "android.permission.BACKUP"
 
 .field public static final BATTERY_STATS:Ljava/lang/String; = "android.permission.BATTERY_STATS"
+
+.field public static final BIND_ACCESSIBILITY_SERVICE:Ljava/lang/String; = "android.permission.BIND_ACCESSIBILITY_SERVICE"
 
 .field public static final BIND_APPWIDGET:Ljava/lang/String; = "android.permission.BIND_APPWIDGET"
 
@@ -149,6 +153,8 @@
 
 .field public static final GET_ACCOUNTS:Ljava/lang/String; = "android.permission.GET_ACCOUNTS"
 
+.field public static final GET_DETAILED_TASKS:Ljava/lang/String; = "android.permission.GET_DETAILED_TASKS"
+
 .field public static final GET_PACKAGE_SIZE:Ljava/lang/String; = "android.permission.GET_PACKAGE_SIZE"
 
 .field public static final GET_TASKS:Ljava/lang/String; = "android.permission.GET_TASKS"
@@ -156,6 +162,8 @@
 .field public static final GLOBAL_SEARCH:Ljava/lang/String; = "android.permission.GLOBAL_SEARCH"
 
 .field public static final GLOBAL_SEARCH_CONTROL:Ljava/lang/String; = "android.permission.GLOBAL_SEARCH_CONTROL"
+
+.field public static final GRANT_REVOKE_PERMISSIONS:Ljava/lang/String; = "android.permission.GRANT_REVOKE_PERMISSIONS"
 
 .field public static final HARDWARE_TEST:Ljava/lang/String; = "android.permission.HARDWARE_TEST"
 
@@ -180,6 +188,8 @@
 .field public static final MANAGE_USB:Ljava/lang/String; = "android.permission.MANAGE_USB"
 
 .field public static final MASTER_CLEAR:Ljava/lang/String; = "android.permission.MASTER_CLEAR"
+
+.field public static final MODIFY_APPWIDGET_BIND_PERMISSIONS:Ljava/lang/String; = "android.permission.MODIFY_APPWIDGET_BIND_PERMISSIONS"
 
 .field public static final MODIFY_AUDIO_SETTINGS:Ljava/lang/String; = "android.permission.MODIFY_AUDIO_SETTINGS"
 
@@ -212,13 +222,22 @@
 
 .field public static final READ_CALENDAR:Ljava/lang/String; = "android.permission.READ_CALENDAR"
 
+.field public static final READ_CALL_LOG:Ljava/lang/String; = "android.permission.READ_CALL_LOG"
+
+.field public static final READ_CELL_BROADCASTS:Ljava/lang/String; = "android.permission.READ_CELL_BROADCASTS"
+
 .field public static final READ_CONTACTS:Ljava/lang/String; = "android.permission.READ_CONTACTS"
+
+.field public static final READ_EXTERNAL_STORAGE:Ljava/lang/String; = "android.permission.READ_EXTERNAL_STORAGE"
 
 .field public static final READ_FRAME_BUFFER:Ljava/lang/String; = "android.permission.READ_FRAME_BUFFER"
 
 .field public static final READ_HISTORY_BOOKMARKS:Ljava/lang/String; = "com.android.browser.permission.READ_HISTORY_BOOKMARKS"
 
 .field public static final READ_INPUT_STATE:Ljava/lang/String; = "android.permission.READ_INPUT_STATE"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final READ_LOGS:Ljava/lang/String; = "android.permission.READ_LOGS"
 
@@ -254,6 +273,8 @@
 
 .field public static final RECORD_AUDIO:Ljava/lang/String; = "android.permission.RECORD_AUDIO"
 
+.field public static final REMOTE_AUDIO_PLAYBACK:Ljava/lang/String; = "android.permission.REMOTE_AUDIO_PLAYBACK"
+
 .field public static final REMOVE_TASKS:Ljava/lang/String; = "android.permission.REMOVE_TASKS"
 
 .field public static final REORDER_TASKS:Ljava/lang/String; = "android.permission.REORDER_TASKS"
@@ -269,6 +290,8 @@
 
 .field public static final SEND_SMS_NO_CONFIRMATION:Ljava/lang/String; = "android.permission.SEND_SMS_NO_CONFIRMATION"
 
+.field public static final SERIAL_PORT:Ljava/lang/String; = "android.permission.SERIAL_PORT"
+
 .field public static final SET_ACTIVITY_WATCHER:Ljava/lang/String; = "android.permission.SET_ACTIVITY_WATCHER"
 
 .field public static final SET_ALARM:Ljava/lang/String; = "com.android.alarm.permission.SET_ALARM"
@@ -278,6 +301,8 @@
 .field public static final SET_ANIMATION_SCALE:Ljava/lang/String; = "android.permission.SET_ANIMATION_SCALE"
 
 .field public static final SET_DEBUG_APP:Ljava/lang/String; = "android.permission.SET_DEBUG_APP"
+
+.field public static final SET_KEYBOARD_LAYOUT:Ljava/lang/String; = "android.permission.SET_KEYBOARD_LAYOUT"
 
 .field public static final SET_ORIENTATION:Ljava/lang/String; = "android.permission.SET_ORIENTATION"
 
@@ -289,6 +314,8 @@
 .end field
 
 .field public static final SET_PROCESS_LIMIT:Ljava/lang/String; = "android.permission.SET_PROCESS_LIMIT"
+
+.field public static final SET_SCREEN_COMPATIBILITY:Ljava/lang/String; = "android.permission.SET_SCREEN_COMPATIBILITY"
 
 .field public static final SET_TIME:Ljava/lang/String; = "android.permission.SET_TIME"
 
@@ -304,6 +331,8 @@
 
 .field public static final SIGNAL_PERSISTENT_PROCESSES:Ljava/lang/String; = "android.permission.SIGNAL_PERSISTENT_PROCESSES"
 
+.field public static final START_ANY_ACTIVITY:Ljava/lang/String; = "android.permission.START_ANY_ACTIVITY"
+
 .field public static final STATUS_BAR:Ljava/lang/String; = "android.permission.STATUS_BAR"
 
 .field public static final STATUS_BAR_SERVICE:Ljava/lang/String; = "android.permission.STATUS_BAR_SERVICE"
@@ -318,6 +347,8 @@
 
 .field public static final UPDATE_DEVICE_STATS:Ljava/lang/String; = "android.permission.UPDATE_DEVICE_STATS"
 
+.field public static final UPDATE_LOCK:Ljava/lang/String; = "android.permission.UPDATE_LOCK"
+
 .field public static final USE_CREDENTIALS:Ljava/lang/String; = "android.permission.USE_CREDENTIALS"
 
 .field public static final USE_SIP:Ljava/lang/String; = "android.permission.USE_SIP"
@@ -329,6 +360,8 @@
 .field public static final WRITE_APN_SETTINGS:Ljava/lang/String; = "android.permission.WRITE_APN_SETTINGS"
 
 .field public static final WRITE_CALENDAR:Ljava/lang/String; = "android.permission.WRITE_CALENDAR"
+
+.field public static final WRITE_CALL_LOG:Ljava/lang/String; = "android.permission.WRITE_CALL_LOG"
 
 .field public static final WRITE_CONTACTS:Ljava/lang/String; = "android.permission.WRITE_CONTACTS"
 

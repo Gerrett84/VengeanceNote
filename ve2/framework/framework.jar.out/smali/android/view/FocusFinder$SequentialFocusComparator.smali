@@ -40,17 +40,17 @@
     .locals 1
 
     .prologue
-    .line 532
+    .line 641
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 533
+    .line 642
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
-    .line 534
+    .line 643
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
@@ -65,7 +65,7 @@
     .parameter "x0"
 
     .prologue
-    .line 532
+    .line 641
     invoke-direct {p0}, Landroid/view/FocusFinder$SequentialFocusComparator;-><init>()V
 
     return-void
@@ -77,15 +77,15 @@
     .parameter "rect"
 
     .prologue
-    .line 578
+    .line 687
     invoke-virtual {p1, p2}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 579
+    .line 688
     iget-object v0, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 580
+    .line 689
     return-void
 .end method
 
@@ -103,26 +103,26 @@
 
     const/4 v1, -0x1
 
-    .line 546
+    .line 655
     if-ne p1, p2, :cond_1
 
-    .line 573
+    .line 682
     :cond_0
     :goto_0
     return v0
 
-    .line 550
+    .line 659
     :cond_1
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, p1, v3}, Landroid/view/FocusFinder$SequentialFocusComparator;->getRect(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 551
+    .line 660
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mSecondRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, p2, v3}, Landroid/view/FocusFinder$SequentialFocusComparator;->getRect(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 553
+    .line 662
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->top:I
@@ -135,10 +135,10 @@
 
     move v0, v1
 
-    .line 554
+    .line 663
     goto :goto_0
 
-    .line 555
+    .line 664
     :cond_2
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -152,10 +152,10 @@
 
     move v0, v2
 
-    .line 556
+    .line 665
     goto :goto_0
 
-    .line 557
+    .line 666
     :cond_3
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -169,10 +169,10 @@
 
     move v0, v1
 
-    .line 558
+    .line 667
     goto :goto_0
 
-    .line 559
+    .line 668
     :cond_4
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -186,10 +186,10 @@
 
     move v0, v2
 
-    .line 560
+    .line 669
     goto :goto_0
 
-    .line 561
+    .line 670
     :cond_5
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -203,10 +203,10 @@
 
     move v0, v1
 
-    .line 562
+    .line 671
     goto :goto_0
 
-    .line 563
+    .line 672
     :cond_6
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -220,10 +220,10 @@
 
     move v0, v2
 
-    .line 564
+    .line 673
     goto :goto_0
 
-    .line 565
+    .line 674
     :cond_7
     iget-object v3, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -237,10 +237,10 @@
 
     move v0, v1
 
-    .line 566
+    .line 675
     goto :goto_0
 
-    .line 567
+    .line 676
     :cond_8
     iget-object v1, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mFirstRect:Landroid/graphics/Rect;
 
@@ -254,7 +254,7 @@
 
     move v0, v2
 
-    .line 568
+    .line 677
     goto :goto_0
 .end method
 
@@ -264,7 +264,7 @@
     .parameter "x1"
 
     .prologue
-    .line 532
+    .line 641
     check-cast p1, Landroid/view/View;
 
     .end local p1
@@ -282,12 +282,12 @@
     .locals 1
 
     .prologue
-    .line 538
+    .line 647
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mRoot:Landroid/view/ViewGroup;
 
-    .line 539
+    .line 648
     return-void
 .end method
 
@@ -296,9 +296,9 @@
     .parameter "root"
 
     .prologue
-    .line 542
+    .line 651
     iput-object p1, p0, Landroid/view/FocusFinder$SequentialFocusComparator;->mRoot:Landroid/view/ViewGroup;
 
-    .line 543
+    .line 652
     return-void
 .end method

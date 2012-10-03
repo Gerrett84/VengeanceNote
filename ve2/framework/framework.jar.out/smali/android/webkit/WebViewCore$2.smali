@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 398
+    .line 475
     iput-object p1, p0, Landroid/webkit/WebViewCore$2;->this$0:Landroid/webkit/WebViewCore;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -38,16 +38,23 @@
 
 # virtual methods
 .method public updateQuota(J)V
-    .locals 1
-    .parameter "quota"
+    .locals 2
+    .parameter "newQuota"
 
     .prologue
-    .line 400
+    .line 478
     iget-object v0, p0, Landroid/webkit/WebViewCore$2;->this$0:Landroid/webkit/WebViewCore;
 
-    #calls: Landroid/webkit/WebViewCore;->nativeSetNewStorageLimit(J)V
-    invoke-static {v0, p1, p2}, Landroid/webkit/WebViewCore;->access$300(Landroid/webkit/WebViewCore;J)V
+    iget-object v1, p0, Landroid/webkit/WebViewCore$2;->this$0:Landroid/webkit/WebViewCore;
 
-    .line 401
+    #getter for: Landroid/webkit/WebViewCore;->mNativeClass:I
+    invoke-static {v1}, Landroid/webkit/WebViewCore;->access$300(Landroid/webkit/WebViewCore;)I
+
+    move-result v1
+
+    #calls: Landroid/webkit/WebViewCore;->nativeSetNewStorageLimit(IJ)V
+    invoke-static {v0, v1, p1, p2}, Landroid/webkit/WebViewCore;->access$400(Landroid/webkit/WebViewCore;IJ)V
+
+    .line 479
     return-void
 .end method

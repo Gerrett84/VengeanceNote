@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 23
+    .line 24
     invoke-direct {p0}, Landroid/database/Observable;-><init>()V
 
     return-void
@@ -31,12 +31,12 @@
     .locals 3
 
     .prologue
-    .line 29
+    .line 31
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 34
+    .line 36
     :try_start_0
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -50,7 +50,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 35
+    .line 37
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -61,19 +61,19 @@
 
     invoke-virtual {v1}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 34
+    .line 36
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 37
+    .line 39
     :cond_0
     monitor-exit v2
 
-    .line 38
+    .line 40
     return-void
 
-    .line 37
+    .line 39
     .end local v0           #i:I
     :catchall_0
     move-exception v1
@@ -89,12 +89,12 @@
     .locals 3
 
     .prologue
-    .line 45
+    .line 48
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 46
+    .line 49
     :try_start_0
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -108,7 +108,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 47
+    .line 50
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -119,19 +119,19 @@
 
     invoke-virtual {v1}, Landroid/database/DataSetObserver;->onInvalidated()V
 
-    .line 46
+    .line 49
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 49
+    .line 52
     :cond_0
     monitor-exit v2
 
-    .line 50
+    .line 53
     return-void
 
-    .line 49
+    .line 52
     .end local v0           #i:I
     :catchall_0
     move-exception v1

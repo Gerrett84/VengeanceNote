@@ -30,17 +30,17 @@
     .parameter "i"
 
     .prologue
-    .line 114
+    .line 117
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager$TransientTextManager$Data;->this$1:Lcom/android/internal/policy/impl/KeyguardStatusViewManager$TransientTextManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 115
+    .line 118
     iput-object p2, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager$TransientTextManager$Data;->text:Ljava/lang/CharSequence;
 
-    .line 116
+    .line 119
     iput p3, p0, Lcom/android/internal/policy/impl/KeyguardStatusViewManager$TransientTextManager$Data;->icon:I
 
-    .line 117
+    .line 120
     return-void
 .end method

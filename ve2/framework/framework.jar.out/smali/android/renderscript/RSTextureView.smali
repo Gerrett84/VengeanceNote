@@ -18,13 +18,13 @@
     .parameter "context"
 
     .prologue
-    .line 46
+    .line 48
     invoke-direct {p0, p1}, Landroid/view/TextureView;-><init>(Landroid/content/Context;)V
 
-    .line 47
+    .line 49
     invoke-direct {p0}, Landroid/renderscript/RSTextureView;->init()V
 
-    .line 49
+    .line 51
     return-void
 .end method
 
@@ -34,13 +34,13 @@
     .parameter "attrs"
 
     .prologue
-    .line 57
+    .line 60
     invoke-direct {p0, p1, p2}, Landroid/view/TextureView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 58
+    .line 61
     invoke-direct {p0}, Landroid/renderscript/RSTextureView;->init()V
 
-    .line 60
+    .line 63
     return-void
 .end method
 
@@ -48,10 +48,10 @@
     .locals 0
 
     .prologue
-    .line 63
+    .line 66
     invoke-virtual {p0, p0}, Landroid/renderscript/RSTextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
 
-    .line 65
+    .line 68
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .parameter "sc"
 
     .prologue
-    .line 140
+    .line 158
     new-instance v0, Landroid/renderscript/RenderScriptGL;
 
     invoke-virtual {p0}, Landroid/renderscript/RSTextureView;->getContext()Landroid/content/Context;
@@ -71,16 +71,16 @@
 
     invoke-direct {v0, v1, p1}, Landroid/renderscript/RenderScriptGL;-><init>(Landroid/content/Context;Landroid/renderscript/RenderScriptGL$SurfaceConfig;)V
 
-    .line 141
+    .line 159
     .local v0, rs:Landroid/renderscript/RenderScriptGL;
     invoke-virtual {p0, v0}, Landroid/renderscript/RSTextureView;->setRenderScriptGL(Landroid/renderscript/RenderScriptGL;)V
 
-    .line 142
+    .line 160
     iget-object v1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v1, :cond_0
 
-    .line 143
+    .line 161
     iget-object v1, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     iget-object v2, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -95,7 +95,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/renderscript/RenderScriptGL;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;II)V
 
-    .line 145
+    .line 163
     :cond_0
     return-object v0
 .end method
@@ -104,17 +104,17 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 172
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScriptGL;->destroy()V
 
-    .line 154
+    .line 173
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
-    .line 155
+    .line 174
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 197
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     return-object v0
@@ -135,22 +135,22 @@
     .parameter "height"
 
     .prologue
-    .line 70
+    .line 76
     iput-object p1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 72
+    .line 78
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     if-eqz v0, :cond_0
 
-    .line 73
+    .line 79
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     iget-object v1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/renderscript/RenderScriptGL;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;II)V
 
-    .line 75
+    .line 81
     :cond_0
     return-void
 .end method
@@ -162,22 +162,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 90
+    .line 102
     iput-object p1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 92
+    .line 104
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 105
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v2, v2}, Landroid/renderscript/RenderScriptGL;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;II)V
 
-    .line 96
+    .line 108
     :cond_0
     const/4 v0, 0x1
 
@@ -191,22 +191,22 @@
     .parameter "height"
 
     .prologue
-    .line 80
+    .line 89
     iput-object p1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 82
+    .line 91
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     if-eqz v0, :cond_0
 
-    .line 83
+    .line 92
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     iget-object v1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0, v1, p2, p3}, Landroid/renderscript/RenderScriptGL;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;II)V
 
-    .line 85
+    .line 94
     :cond_0
     return-void
 .end method
@@ -216,10 +216,10 @@
     .parameter "surface"
 
     .prologue
-    .line 102
+    .line 117
     iput-object p1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 103
+    .line 118
     return-void
 .end method
 
@@ -227,17 +227,17 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 128
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     if-eqz v0, :cond_0
 
-    .line 113
+    .line 129
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScriptGL;->pause()V
 
-    .line 115
+    .line 131
     :cond_0
     return-void
 .end method
@@ -246,17 +246,17 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 142
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     if-eqz v0, :cond_0
 
-    .line 126
+    .line 143
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     invoke-virtual {v0}, Landroid/renderscript/RenderScriptGL;->resume()V
 
-    .line 128
+    .line 145
     :cond_0
     return-void
 .end method
@@ -266,15 +266,15 @@
     .parameter "rs"
 
     .prologue
-    .line 164
+    .line 184
     iput-object p1, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
-    .line 165
+    .line 185
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 186
     iget-object v0, p0, Landroid/renderscript/RSTextureView;->mRS:Landroid/renderscript/RenderScriptGL;
 
     iget-object v1, p0, Landroid/renderscript/RSTextureView;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
@@ -289,7 +289,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/renderscript/RenderScriptGL;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;II)V
 
-    .line 168
+    .line 188
     :cond_0
     return-void
 .end method

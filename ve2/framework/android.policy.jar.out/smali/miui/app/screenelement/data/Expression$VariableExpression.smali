@@ -24,16 +24,16 @@
     .parameter "exp"
 
     .prologue
-    .line 143
+    .line 144
     invoke-direct {p0}, Lmiui/app/screenelement/data/Expression;-><init>()V
 
-    .line 144
+    .line 145
     new-instance v0, Lmiui/app/screenelement/util/Variable;
 
     invoke-direct {v0, p1}, Lmiui/app/screenelement/util/Variable;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lmiui/app/screenelement/data/Expression$VariableExpression;->mVar:Lmiui/app/screenelement/util/Variable;
 
-    .line 148
+    .line 149
     return-void
 .end method

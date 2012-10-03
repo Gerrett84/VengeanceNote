@@ -3,7 +3,7 @@
 .source "ViewRootImpl.java"
 
 # interfaces
-.implements Landroid/view/InputHandler;
+.implements Landroid/view/SurfaceHolder;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3810
+    .line 5024
     iput-object p1, p0, Landroid/view/ViewRootImpl$2;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,50 +37,130 @@
 
 
 # virtual methods
-.method public handleKey(Landroid/view/KeyEvent;Landroid/view/InputQueue$FinishedCallback;)V
-    .locals 2
-    .parameter "event"
-    .parameter "finishedCallback"
+.method public addCallback(Landroid/view/SurfaceHolder$Callback;)V
+    .locals 0
+    .parameter "callback"
 
     .prologue
-    .line 3812
-    iget-object v0, p0, Landroid/view/ViewRootImpl$2;->this$0:Landroid/view/ViewRootImpl;
-
-    #calls: Landroid/view/ViewRootImpl;->startInputEvent(Landroid/view/InputQueue$FinishedCallback;)V
-    invoke-static {v0, p2}, Landroid/view/ViewRootImpl;->access$100(Landroid/view/ViewRootImpl;Landroid/view/InputQueue$FinishedCallback;)V
-
-    .line 3813
-    iget-object v0, p0, Landroid/view/ViewRootImpl$2;->this$0:Landroid/view/ViewRootImpl;
-
-    const/4 v1, 0x1
-
-    #calls: Landroid/view/ViewRootImpl;->dispatchKey(Landroid/view/KeyEvent;Z)V
-    invoke-static {v0, p1, v1}, Landroid/view/ViewRootImpl;->access$200(Landroid/view/ViewRootImpl;Landroid/view/KeyEvent;Z)V
-
-    .line 3814
+    .line 5038
     return-void
 .end method
 
-.method public handleMotion(Landroid/view/MotionEvent;Landroid/view/InputQueue$FinishedCallback;)V
-    .locals 2
-    .parameter "event"
-    .parameter "finishedCallback"
+.method public getSurface()Landroid/view/Surface;
+    .locals 1
 
     .prologue
-    .line 3817
+    .line 5030
     iget-object v0, p0, Landroid/view/ViewRootImpl$2;->this$0:Landroid/view/ViewRootImpl;
 
-    #calls: Landroid/view/ViewRootImpl;->startInputEvent(Landroid/view/InputQueue$FinishedCallback;)V
-    invoke-static {v0, p2}, Landroid/view/ViewRootImpl;->access$100(Landroid/view/ViewRootImpl;Landroid/view/InputQueue$FinishedCallback;)V
+    #getter for: Landroid/view/ViewRootImpl;->mSurface:Landroid/view/Surface;
+    invoke-static {v0}, Landroid/view/ViewRootImpl;->access$500(Landroid/view/ViewRootImpl;)Landroid/view/Surface;
 
-    .line 3818
-    iget-object v0, p0, Landroid/view/ViewRootImpl$2;->this$0:Landroid/view/ViewRootImpl;
+    move-result-object v0
 
-    const/4 v1, 0x1
+    return-object v0
+.end method
 
-    #calls: Landroid/view/ViewRootImpl;->dispatchMotion(Landroid/view/MotionEvent;Z)V
-    invoke-static {v0, p1, v1}, Landroid/view/ViewRootImpl;->access$300(Landroid/view/ViewRootImpl;Landroid/view/MotionEvent;Z)V
+.method public getSurfaceFrame()Landroid/graphics/Rect;
+    .locals 1
 
-    .line 3819
+    .prologue
+    .line 5069
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public isCreating()Z
+    .locals 1
+
+    .prologue
+    .line 5034
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public lockCanvas()Landroid/graphics/Canvas;
+    .locals 1
+
+    .prologue
+    .line 5059
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public lockCanvas(Landroid/graphics/Rect;)Landroid/graphics/Canvas;
+    .locals 1
+    .parameter "dirty"
+
+    .prologue
+    .line 5063
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public removeCallback(Landroid/view/SurfaceHolder$Callback;)V
+    .locals 0
+    .parameter "callback"
+
+    .prologue
+    .line 5041
+    return-void
+.end method
+
+.method public setFixedSize(II)V
+    .locals 0
+    .parameter "width"
+    .parameter "height"
+
+    .prologue
+    .line 5044
+    return-void
+.end method
+
+.method public setFormat(I)V
+    .locals 0
+    .parameter "format"
+
+    .prologue
+    .line 5050
+    return-void
+.end method
+
+.method public setKeepScreenOn(Z)V
+    .locals 0
+    .parameter "screenOn"
+
+    .prologue
+    .line 5056
+    return-void
+.end method
+
+.method public setSizeFromLayout()V
+    .locals 0
+
+    .prologue
+    .line 5047
+    return-void
+.end method
+
+.method public setType(I)V
+    .locals 0
+    .parameter "type"
+
+    .prologue
+    .line 5053
+    return-void
+.end method
+
+.method public unlockCanvasAndPost(Landroid/graphics/Canvas;)V
+    .locals 0
+    .parameter "canvas"
+
+    .prologue
+    .line 5067
     return-void
 .end method

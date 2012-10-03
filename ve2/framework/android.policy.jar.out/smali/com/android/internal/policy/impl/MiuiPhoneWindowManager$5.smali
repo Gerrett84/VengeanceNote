@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 531
+    .line 650
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,41 +35,62 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 3
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 533
+    .line 652
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    const/4 v1, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShowMagnifier:Z
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$502(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Z)Z
+
+    .line 653
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mIsTouchDown:Z
+    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$400(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 654
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->getMagnifier()Lcom/android/internal/policy/impl/MagnifierPopupWindow;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->updateCache()V
+
+    .line 655
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->getMagnifier()Lcom/android/internal/policy/impl/MagnifierPopupWindow;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordLongPress:Ljava/lang/Runnable;
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDownX:I
+    invoke-static {v1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$200(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)I
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    move-result v1
 
-    .line 534
-    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDownY:I
+    invoke-static {v2}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$300(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)I
 
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    move-result v2
 
-    iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordLongPress:Ljava/lang/Runnable;
+    invoke-virtual {v0, v1, v2}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->showMagnifier(II)V
 
-    const-string v2, "capture_delay"
-
-    const-wide/16 v3, 0x3e8
-
-    invoke-virtual {p2, v2, v3, v4}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 537
+    .line 657
+    :cond_0
     return-void
 .end method

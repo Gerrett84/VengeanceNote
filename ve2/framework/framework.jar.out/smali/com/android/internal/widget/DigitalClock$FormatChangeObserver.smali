@@ -82,11 +82,10 @@
 
     .line 145
     #calls: Lcom/android/internal/widget/DigitalClock;->setDateFormat()V
-    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$300(Lcom/android/internal/widget/DigitalClock;)V
+    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$200(Lcom/android/internal/widget/DigitalClock;)V
 
     .line 146
-    #calls: Lcom/android/internal/widget/DigitalClock;->updateTime()V
-    invoke-static {v0}, Lcom/android/internal/widget/DigitalClock;->access$100(Lcom/android/internal/widget/DigitalClock;)V
+    invoke-virtual {v0}, Lcom/android/internal/widget/DigitalClock;->updateTime()V
 
     .line 154
     :goto_0

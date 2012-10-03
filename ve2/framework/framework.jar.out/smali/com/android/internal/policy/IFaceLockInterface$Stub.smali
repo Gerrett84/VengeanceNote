@@ -109,7 +109,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 7
+    .locals 8
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -121,18 +121,18 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v7, 0x1
 
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 89
+    .line 91
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result v0
+    move-result v7
 
     :goto_0
-    return v0
+    return v7
 
     .line 43
     :sswitch_0
@@ -140,9 +140,6 @@
 
     invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    move v0, v6
-
-    .line 44
     goto :goto_0
 
     .line 48
@@ -180,21 +177,36 @@
 
     move-result v5
 
+    .line 60
     .local v5, _arg4:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    move v6, v7
+
+    .local v6, _arg5:Z
+    :goto_1
     move-object v0, p0
 
-    .line 59
-    invoke-virtual/range {v0 .. v5}, Lcom/android/internal/policy/IFaceLockInterface$Stub;->startUi(Landroid/os/IBinder;IIII)V
+    .line 61
+    invoke-virtual/range {v0 .. v6}, Lcom/android/internal/policy/IFaceLockInterface$Stub;->startUi(Landroid/os/IBinder;IIIIZ)V
 
-    .line 60
+    .line 62
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move v0, v6
-
-    .line 61
     goto :goto_0
 
-    .line 65
+    .line 60
+    .end local v6           #_arg5:Z
+    :cond_0
+    const/4 v6, 0x0
+
+    goto :goto_1
+
+    .line 67
     .end local v1           #_arg0:Landroid/os/IBinder;
     .end local v2           #_arg1:I
     .end local v3           #_arg2:I
@@ -205,24 +217,21 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 66
+    .line 68
     invoke-virtual {p0}, Lcom/android/internal/policy/IFaceLockInterface$Stub;->stopUi()V
 
-    .line 67
+    .line 69
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move v0, v6
-
-    .line 68
     goto :goto_0
 
-    .line 72
+    .line 74
     :sswitch_3
     const-string v0, "com.android.internal.policy.IFaceLockInterface"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 74
+    .line 76
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -231,26 +240,23 @@
 
     move-result-object v1
 
-    .line 75
+    .line 77
     .local v1, _arg0:Lcom/android/internal/policy/IFaceLockCallback;
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IFaceLockInterface$Stub;->registerCallback(Lcom/android/internal/policy/IFaceLockCallback;)V
 
-    .line 76
+    .line 78
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move v0, v6
-
-    .line 77
     goto :goto_0
 
-    .line 81
+    .line 83
     .end local v1           #_arg0:Lcom/android/internal/policy/IFaceLockCallback;
     :sswitch_4
     const-string v0, "com.android.internal.policy.IFaceLockInterface"
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 83
+    .line 85
     invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -259,16 +265,13 @@
 
     move-result-object v1
 
-    .line 84
+    .line 86
     .restart local v1       #_arg0:Lcom/android/internal/policy/IFaceLockCallback;
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/IFaceLockInterface$Stub;->unregisterCallback(Lcom/android/internal/policy/IFaceLockCallback;)V
 
-    .line 85
+    .line 87
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    move v0, v6
-
-    .line 86
     goto :goto_0
 
     .line 39

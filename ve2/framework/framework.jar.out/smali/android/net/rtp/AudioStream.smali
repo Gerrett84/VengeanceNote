@@ -87,7 +87,7 @@
 .end method
 
 .method public join(Landroid/net/rtp/AudioGroup;)V
-    .locals 2
+    .locals 1
     .parameter "group"
 
     .prologue
@@ -128,11 +128,7 @@
     if-eqz p1, :cond_2
 
     .line 97
-    iget-object v0, p0, Landroid/net/rtp/AudioStream;->mCodec:Landroid/net/rtp/AudioCodec;
-
-    iget v1, p0, Landroid/net/rtp/AudioStream;->mDtmfType:I
-
-    invoke-virtual {p1, p0, v0, v1}, Landroid/net/rtp/AudioGroup;->add(Landroid/net/rtp/AudioStream;Landroid/net/rtp/AudioCodec;I)V
+    invoke-virtual {p1, p0}, Landroid/net/rtp/AudioGroup;->add(Landroid/net/rtp/AudioStream;)V
 
     .line 98
     iput-object p1, p0, Landroid/net/rtp/AudioStream;->mGroup:Landroid/net/rtp/AudioGroup;
@@ -247,6 +243,10 @@
 
     .line 161
     :cond_2
+    iget-object v0, p0, Landroid/net/rtp/AudioStream;->mCodec:Landroid/net/rtp/AudioCodec;
+
+    if-eqz v0, :cond_3
+
     iget-object v0, p0, Landroid/net/rtp/AudioStream;->mCodec:Landroid/net/rtp/AudioCodec;
 
     iget v0, v0, Landroid/net/rtp/AudioCodec;->type:I

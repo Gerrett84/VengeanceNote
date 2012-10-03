@@ -17,7 +17,7 @@
     .locals 1
 
     .prologue
-    .line 327
+    .line 325
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -63,19 +63,19 @@
     .locals 1
 
     .prologue
-    .line 320
+    .line 318
     sget-object v0, Landroid/text/method/ArrowKeyMovementMethod;->sInstance:Landroid/text/method/ArrowKeyMovementMethod;
 
     if-nez v0, :cond_0
 
-    .line 321
+    .line 319
     new-instance v0, Landroid/text/method/ArrowKeyMovementMethod;
 
     invoke-direct {v0}, Landroid/text/method/ArrowKeyMovementMethod;-><init>()V
 
     sput-object v0, Landroid/text/method/ArrowKeyMovementMethod;->sInstance:Landroid/text/method/ArrowKeyMovementMethod;
 
-    .line 324
+    .line 322
     :cond_0
     sget-object v0, Landroid/text/method/ArrowKeyMovementMethod;->sInstance:Landroid/text/method/ArrowKeyMovementMethod;
 
@@ -188,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 297
     const/4 v0, 0x1
 
     return v0
@@ -330,12 +330,12 @@
     .parameter "text"
 
     .prologue
-    .line 304
+    .line 302
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 305
+    .line 303
     return-void
 .end method
 
@@ -487,31 +487,31 @@
     .parameter "dir"
 
     .prologue
-    .line 309
+    .line 307
     and-int/lit16 v0, p3, 0x82
 
     if-eqz v0, :cond_1
 
-    .line 310
+    .line 308
     invoke-virtual {p1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 312
+    .line 310
     invoke-interface {p2}, Landroid/text/Spannable;->length()I
 
     move-result v0
 
     invoke-static {p2, v0}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 317
+    .line 315
     :cond_0
     :goto_0
     return-void
 
-    .line 315
+    .line 313
     :cond_1
     invoke-interface {p2}, Landroid/text/Spannable;->length()I
 
@@ -616,7 +616,7 @@
 
     invoke-interface {v6, v5}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 294
+    .line 292
     .end local v1           #handled:Z
     .end local v4           #offset:I
     :cond_1
@@ -716,7 +716,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_7
 
     .line 281
     sget-object v6, Landroid/text/method/ArrowKeyMovementMethod;->LAST_TAP_DOWN:Ljava/lang/Object;
@@ -726,31 +726,17 @@
     .line 282
     invoke-static {p2, v4}, Landroid/text/Selection;->extendSelection(Landroid/text/Spannable;I)V
 
-    .line 287
+    .line 285
     :cond_7
-    :goto_1
     invoke-static {p2}, Landroid/text/method/MetaKeyKeyListener;->adjustMetaAfterKeypress(Landroid/text/Spannable;)V
 
-    .line 288
+    .line 286
     invoke-static {p2}, Landroid/text/method/MetaKeyKeyListener;->resetLockedMeta(Landroid/text/Spannable;)V
 
     move v1, v5
 
-    .line 290
+    .line 288
     goto :goto_0
-
-    .line 283
-    :cond_8
-    invoke-virtual {p1}, Landroid/widget/TextView;->shouldIgnoreActionUpEvent()Z
-
-    move-result v6
-
-    if-nez v6, :cond_7
-
-    .line 284
-    invoke-static {p2, v4}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
-
-    goto :goto_1
 .end method
 
 .method protected pageDown(Landroid/widget/TextView;Landroid/text/Spannable;)Z

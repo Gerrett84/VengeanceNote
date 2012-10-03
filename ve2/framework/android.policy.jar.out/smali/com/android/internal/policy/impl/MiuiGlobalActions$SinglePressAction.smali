@@ -70,16 +70,16 @@
     .parameter "messageResId"
 
     .prologue
-    .line 417
+    .line 420
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 418
+    .line 421
     iput p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconResId:I
 
-    .line 419
+    .line 422
     iput p2, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mMessageResId:I
 
-    .line 420
+    .line 423
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .parameter "inflater"
 
     .prologue
-    .line 444
+    .line 447
     const v1, 0x6030021
 
     const/4 v2, 0x0
@@ -102,9 +102,9 @@
 
     move-result-object v0
 
-    .line 446
+    .line 449
     .local v0, v:Landroid/view/View;
-    const v1, 0x60b0040
+    const v1, 0x60b0027
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -114,8 +114,8 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconView:Landroid/widget/ImageView;
 
-    .line 447
-    const v1, 0x60b0041
+    .line 450
+    const v1, 0x60b0028
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -125,8 +125,8 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mTextview:Landroid/widget/TextView;
 
-    .line 449
-    const v1, 0x60b0032
+    .line 452
+    const v1, 0x60b0026
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -136,21 +136,21 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 451
+    .line 454
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconView:Landroid/widget/ImageView;
 
     iget v2, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconResId:I
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 452
+    .line 455
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mTextview:Landroid/widget/TextView;
 
     iget v2, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mMessageResId:I
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 454
+    .line 457
     return-object v0
 .end method
 
@@ -158,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 423
+    .line 426
     const/4 v0, 0x1
 
     return v0
@@ -172,22 +172,22 @@
     .parameter "iconResId"
 
     .prologue
-    .line 427
+    .line 430
     iput p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconResId:I
 
-    .line 428
+    .line 431
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_0
 
-    .line 429
+    .line 432
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconView:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mIconResId:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 431
+    .line 434
     :cond_0
     return-void
 .end method
@@ -197,22 +197,22 @@
     .parameter "messageResId"
 
     .prologue
-    .line 434
+    .line 437
     iput p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mMessageResId:I
 
-    .line 435
+    .line 438
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mTextview:Landroid/widget/TextView;
 
     if-eqz v0, :cond_0
 
-    .line 436
+    .line 439
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mTextview:Landroid/widget/TextView;
 
     iget v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->mMessageResId:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 438
+    .line 441
     :cond_0
     return-void
 .end method

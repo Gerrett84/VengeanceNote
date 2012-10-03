@@ -56,13 +56,19 @@
 
 .field public static final INPUT_METHOD_SERVICE:Ljava/lang/String; = "input_method"
 
+.field public static final INPUT_SERVICE:Ljava/lang/String; = "input"
+
 .field public static final KEYGUARD_SERVICE:Ljava/lang/String; = "keyguard"
 
 .field public static final LAYOUT_INFLATER_SERVICE:Ljava/lang/String; = "layout_inflater"
 
 .field public static final LOCATION_SERVICE:Ljava/lang/String; = "location"
 
+.field public static final MEDIA_ROUTER_SERVICE:Ljava/lang/String; = "media_router"
+
 .field public static final MODE_APPEND:I = 0x8000
+
+.field public static final MODE_ENABLE_WRITE_AHEAD_LOGGING:I = 0x8
 
 .field public static final MODE_MULTI_PROCESS:I = 0x4
 
@@ -82,11 +88,17 @@
 
 .field public static final NOTIFICATION_SERVICE:Ljava/lang/String; = "notification"
 
+.field public static final NSD_SERVICE:Ljava/lang/String; = "servicediscovery"
+
 .field public static final POWER_SERVICE:Ljava/lang/String; = "power"
+
+.field public static final SCHEDULING_POLICY_SERVICE:Ljava/lang/String; = "scheduling_policy"
 
 .field public static final SEARCH_SERVICE:Ljava/lang/String; = "search"
 
 .field public static final SENSOR_SERVICE:Ljava/lang/String; = "sensor"
+
+.field public static final SERIAL_SERVICE:Ljava/lang/String; = "serial"
 
 .field public static final SIP_SERVICE:Ljava/lang/String; = "sip"
 
@@ -101,6 +113,8 @@
 .field public static final THROTTLE_SERVICE:Ljava/lang/String; = "throttle"
 
 .field public static final UI_MODE_SERVICE:Ljava/lang/String; = "uimode"
+
+.field public static final UPDATE_LOCK_SERVICE:Ljava/lang/String; = "updatelock"
 
 .field public static final USB_SERVICE:Ljava/lang/String; = "usb"
 
@@ -129,6 +143,24 @@
 
 # virtual methods
 .method public abstract bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+.end method
+
+.method public bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;II)Z
+    .locals 2
+    .parameter "service"
+    .parameter "conn"
+    .parameter "flags"
+    .parameter "userId"
+
+    .prologue
+    .line 1408
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Not implemented. Must override in a subclass."
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public abstract checkCallingOrSelfPermission(Ljava/lang/String;)I
@@ -272,7 +304,7 @@
     .parameter "resId"
 
     .prologue
-    .line 282
+    .line 292
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -290,7 +322,7 @@
     .parameter "formatArgs"
 
     .prologue
-    .line 295
+    .line 305
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -310,7 +342,7 @@
     .parameter "resId"
 
     .prologue
-    .line 272
+    .line 282
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -329,7 +361,7 @@
     .locals 1
 
     .prologue
-    .line 311
+    .line 321
     const/4 v0, 0x0
 
     return v0
@@ -357,7 +389,7 @@
     .locals 1
 
     .prologue
-    .line 2201
+    .line 2367
     const/4 v0, 0x0
 
     return v0
@@ -374,7 +406,7 @@
     .end annotation
 
     .prologue
-    .line 340
+    .line 350
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -394,7 +426,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 352
+    .line 362
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -414,7 +446,7 @@
     .parameter "defStyleRes"
 
     .prologue
-    .line 364
+    .line 374
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -431,7 +463,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 328
+    .line 338
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -475,14 +507,14 @@
     .parameter "callback"
 
     .prologue
-    .line 254
+    .line 264
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 255
+    .line 265
     return-void
 .end method
 
@@ -499,6 +531,22 @@
 .end method
 
 .method public abstract sendBroadcast(Landroid/content/Intent;)V
+.end method
+
+.method public sendBroadcast(Landroid/content/Intent;I)V
+    .locals 2
+    .parameter "intent"
+    .parameter "userId"
+
+    .prologue
+    .line 997
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Not implemented. Must override in a subclass."
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public abstract sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
@@ -544,13 +592,27 @@
 .method public abstract startActivities([Landroid/content/Intent;)V
 .end method
 
+.method public abstract startActivities([Landroid/content/Intent;Landroid/os/Bundle;)V
+.end method
+
 .method public abstract startActivity(Landroid/content/Intent;)V
+.end method
+
+.method public abstract startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
 .end method
 
 .method public abstract startInstrumentation(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)Z
 .end method
 
 .method public abstract startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;III)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/IntentSender$SendIntentException;
+        }
+    .end annotation
+.end method
+
+.method public abstract startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/IntentSender$SendIntentException;
@@ -572,14 +634,14 @@
     .parameter "callback"
 
     .prologue
-    .line 262
+    .line 272
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 263
+    .line 273
     return-void
 .end method
 

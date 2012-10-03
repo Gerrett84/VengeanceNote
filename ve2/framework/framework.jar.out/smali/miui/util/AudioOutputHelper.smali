@@ -71,11 +71,11 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 90
     .local p1, sessions:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     const/4 v0, 0x0
 
-    .line 89
+    .line 91
     .local v0, content:Ljava/lang/String;
     :goto_0
     invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
@@ -84,14 +84,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 92
     sget-object v4, Lmiui/util/AudioOutputHelper$DUMP_TAG;->SESSIONS_CONTENT_FINDER:Ljava/util/regex/Pattern;
 
     invoke-virtual {v4, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 91
+    .line 93
     .local v1, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
@@ -99,12 +99,12 @@
 
     if-nez v4, :cond_1
 
-    .line 100
+    .line 102
     .end local v1           #matcher:Ljava/util/regex/Matcher;
     :cond_0
     return-object v0
 
-    .line 95
+    .line 97
     .restart local v1       #matcher:Ljava/util/regex/Matcher;
     :cond_1
     const/4 v4, 0x1
@@ -121,7 +121,7 @@
 
     move-result v3
 
-    .line 96
+    .line 98
     .local v3, sessionId:I
     const/4 v4, 0x2
 
@@ -137,7 +137,7 @@
 
     move-result v2
 
-    .line 97
+    .line 99
     .local v2, pid:I
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -183,12 +183,12 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 108
     .local p1, clients:Ljava/util/List;,"Ljava/util/List<Lmiui/util/AudioOutputHelper$AudioOutputClient;>;"
     .local p2, sessions:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     const/4 v1, 0x0
 
-    .line 107
+    .line 109
     .local v1, content:Ljava/lang/String;
     :cond_0
     :goto_0
@@ -198,14 +198,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 108
+    .line 110
     sget-object v9, Lmiui/util/AudioOutputHelper$DUMP_TAG;->TRACK_CONTENT_FINDER:Ljava/util/regex/Pattern;
 
     invoke-virtual {v9, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
 
-    .line 109
+    .line 111
     .local v4, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->find()Z
 
@@ -213,15 +213,15 @@
 
     if-nez v9, :cond_2
 
-    .line 136
+    .line 138
     .end local v4           #matcher:Ljava/util/regex/Matcher;
     :cond_1
     return-object v1
 
-    .line 113
+    .line 115
     .restart local v4       #matcher:Ljava/util/regex/Matcher;
     :cond_2
-    const/4 v9, 0x2
+    const/4 v9, 0x3
 
     invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -235,7 +235,7 @@
 
     move-result v7
 
-    .line 114
+    .line 116
     .local v7, sessionId:I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -247,18 +247,18 @@
 
     check-cast v6, Ljava/lang/Integer;
 
-    .line 115
+    .line 117
     .local v6, proc:Ljava/lang/Integer;
     if-eqz v6, :cond_0
 
-    .line 116
+    .line 118
     invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
     move-result v5
 
-    .line 117
+    .line 119
     .local v5, pid:I
-    const/4 v9, 0x1
+    const/4 v9, 0x2
 
     invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -272,15 +272,15 @@
 
     move-result v8
 
-    .line 118
+    .line 120
     .local v8, streamType:I
     const/4 v2, 0x0
 
-    .line 121
+    .line 123
     .local v2, found:Z
     if-eqz p3, :cond_4
 
-    .line 122
+    .line 124
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -300,27 +300,27 @@
 
     check-cast v0, Lmiui/util/AudioOutputHelper$AudioOutputClient;
 
-    .line 123
+    .line 125
     .local v0, c:Lmiui/util/AudioOutputHelper$AudioOutputClient;
     iget v9, v0, Lmiui/util/AudioOutputHelper$AudioOutputClient;->mSessionId:I
 
     if-ne v9, v7, :cond_3
 
-    .line 124
+    .line 126
     iput-boolean p3, v0, Lmiui/util/AudioOutputHelper$AudioOutputClient;->mActive:Z
 
-    .line 125
+    .line 127
     const/4 v2, 0x1
 
     goto :goto_1
 
-    .line 130
+    .line 132
     .end local v0           #c:Lmiui/util/AudioOutputHelper$AudioOutputClient;
     .end local v3           #i$:Ljava/util/Iterator;
     :cond_4
     if-nez v2, :cond_0
 
-    .line 131
+    .line 133
     new-instance v9, Lmiui/util/AudioOutputHelper$AudioOutputClient;
 
     invoke-direct {v9, v7, v5, v8, p3}, Lmiui/util/AudioOutputHelper$AudioOutputClient;-><init>(IIIZ)V
@@ -355,30 +355,30 @@
     .local p0, procs:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
     const/4 v5, 0x0
 
-    .line 274
+    .line 276
     if-nez p0, :cond_1
 
-    .line 302
+    .line 304
     :cond_0
     :goto_0
     return-object v5
 
-    .line 278
+    .line 280
     :cond_1
     invoke-static {p1}, Lmiui/util/AudioOutputHelper;->parseAudioFlingerDump(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 279
+    .line 281
     .local v1, clients:Ljava/util/List;,"Ljava/util/List<Lmiui/util/AudioOutputHelper$AudioOutputClient;>;"
     if-eqz v1, :cond_0
 
-    .line 283
+    .line 285
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 284
+    .line 286
     .local v5, names:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -397,16 +397,16 @@
 
     check-cast v0, Lmiui/util/AudioOutputHelper$AudioOutputClient;
 
-    .line 285
+    .line 287
     .local v0, c:Lmiui/util/AudioOutputHelper$AudioOutputClient;
     iget-boolean v8, v0, Lmiui/util/AudioOutputHelper$AudioOutputClient;->mActive:Z
 
     if-eqz v8, :cond_2
 
-    .line 286
+    .line 288
     iget v6, v0, Lmiui/util/AudioOutputHelper$AudioOutputClient;->mProcessId:I
 
-    .line 287
+    .line 289
     .local v6, pid:I
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -427,20 +427,20 @@
 
     check-cast v7, Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-    .line 288
+    .line 290
     .local v7, proc:Landroid/app/ActivityManager$RunningAppProcessInfo;
     iget v8, v7, Landroid/app/ActivityManager$RunningAppProcessInfo;->pid:I
 
     if-ne v8, v6, :cond_3
 
-    .line 289
+    .line 291
     iget-object v8, v7, Landroid/app/ActivityManager$RunningAppProcessInfo;->processName:Ljava/lang/String;
 
     invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 295
+    .line 297
     .end local v0           #c:Lmiui/util/AudioOutputHelper$AudioOutputClient;
     .end local v3           #i$:Ljava/util/Iterator;
     .end local v6           #pid:I
@@ -448,12 +448,12 @@
     :cond_4
     if-eqz p2, :cond_0
 
-    .line 298
+    .line 300
     invoke-static {v5}, Lmiui/util/AudioOutputHelper;->getMainProcessNames(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v4
 
-    .line 299
+    .line 301
     .local v4, mainProc:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
@@ -461,7 +461,7 @@
 .end method
 
 .method public static getActiveReceiverNameList(Landroid/content/Context;)Ljava/util/List;
-    .locals 12
+    .locals 13
     .parameter "context"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -478,7 +478,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 312
+    .line 314
     :try_start_0
     new-instance v3, Landroid/content/Intent;
 
@@ -486,7 +486,7 @@
 
     invoke-direct {v3, v9}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 313
+    .line 315
     .local v3, intent:Landroid/content/Intent;
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -496,11 +496,13 @@
 
     const/4 v11, 0x0
 
-    invoke-interface {v9, v3, v10, v11}, Landroid/content/pm/IPackageManager;->queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;I)Ljava/util/List;
+    const/4 v12, 0x0
+
+    invoke-interface {v9, v3, v10, v11, v12}, Landroid/content/pm/IPackageManager;->queryIntentReceivers(Landroid/content/Intent;Ljava/lang/String;II)Ljava/util/List;
 
     move-result-object v6
 
-    .line 315
+    .line 317
     .local v6, receivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-eqz v6, :cond_0
 
@@ -513,14 +515,14 @@
     :cond_0
     move-object v7, v8
 
-    .line 340
+    .line 342
     .end local v3           #intent:Landroid/content/Intent;
     .end local v6           #receivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :cond_1
     :goto_0
     return-object v7
 
-    .line 319
+    .line 321
     .restart local v3       #intent:Landroid/content/Intent;
     .restart local v6       #receivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     :cond_2
@@ -538,7 +540,7 @@
 
     move-result-object v5
 
-    .line 321
+    .line 323
     .local v5, processes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v5, :cond_3
 
@@ -551,16 +553,16 @@
     :cond_3
     move-object v7, v8
 
-    .line 322
+    .line 324
     goto :goto_0
 
-    .line 325
+    .line 327
     :cond_4
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 326
+    .line 328
     .local v7, result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -580,7 +582,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 327
+    .line 329
     .local v4, p:Ljava/lang/String;
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -600,7 +602,7 @@
 
     check-cast v2, Landroid/content/pm/ResolveInfo;
 
-    .line 328
+    .line 330
     .local v2, info:Landroid/content/pm/ResolveInfo;
     iget-object v9, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -616,14 +618,14 @@
 
     if-eqz v9, :cond_6
 
-    .line 330
+    .line 332
     invoke-interface {v7, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
-    .line 337
+    .line 339
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #info:Landroid/content/pm/ResolveInfo;
     .end local v3           #intent:Landroid/content/Intent;
@@ -636,7 +638,7 @@
 
     move-object v7, v8
 
-    .line 340
+    .line 342
     goto :goto_0
 .end method
 
@@ -658,13 +660,13 @@
     .end annotation
 
     .prologue
-    .line 354
+    .line 356
     .local p0, names:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 355
+    .line 357
     .local v2, mainProcs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -685,7 +687,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 356
+    .line 358
     .local v3, name:Ljava/lang/String;
     const-string v4, ":"
 
@@ -693,11 +695,11 @@
 
     move-result v0
 
-    .line 357
+    .line 359
     .local v0, colonIndex:I
     if-lez v0, :cond_0
 
-    .line 358
+    .line 360
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -708,7 +710,7 @@
 
     goto :goto_0
 
-    .line 362
+    .line 364
     .end local v0           #colonIndex:I
     .end local v3           #name:Ljava/lang/String;
     :cond_1
@@ -720,12 +722,12 @@
     .parameter "context"
 
     .prologue
-    .line 349
+    .line 351
     invoke-static {p0}, Lmiui/util/AudioOutputHelper;->getActiveReceiverNameList(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 350
+    .line 352
     .local v0, processes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v0, :cond_0
 
@@ -770,10 +772,10 @@
 
     const/4 v11, 0x0
 
-    .line 146
+    .line 148
     const/4 v0, 0x0
 
-    .line 148
+    .line 150
     .local v0, dir:Ljava/io/File;
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
@@ -782,11 +784,11 @@
 
     move-result-object v0
 
-    .line 152
+    .line 154
     :goto_0
     if-nez v0, :cond_0
 
-    .line 153
+    .line 155
     new-instance v0, Ljava/io/File;
 
     .end local v0           #dir:Ljava/io/File;
@@ -794,14 +796,14 @@
 
     invoke-direct {v0, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 156
+    .line 158
     .restart local v0       #dir:Ljava/io/File;
     :cond_0
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v4
 
-    .line 157
+    .line 159
     .local v4, pid:I
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -811,11 +813,11 @@
 
     move-result-wide v6
 
-    .line 158
+    .line 160
     .local v6, tid:J
     const/4 v2, 0x0
 
-    .line 159
+    .line 161
     .local v2, i:I
     new-instance v1, Ljava/io/File;
 
@@ -854,7 +856,7 @@
     .local v1, dumpFile:Ljava/io/File;
     move v2, v3
 
-    .line 160
+    .line 162
     .end local v3           #i:I
     .restart local v2       #i:I
     :goto_1
@@ -864,7 +866,7 @@
 
     if-eqz v8, :cond_1
 
-    .line 161
+    .line 163
     new-instance v1, Ljava/io/File;
 
     .end local v1           #dumpFile:Ljava/io/File;
@@ -907,20 +909,20 @@
     .restart local v2       #i:I
     goto :goto_1
 
-    .line 164
+    .line 166
     :cond_1
     invoke-static {v1}, Lmiui/util/AudioOutputHelper;->parseAudioFlingerDumpInternal(Ljava/io/File;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 165
+    .line 167
     .local v5, result:Ljava/util/List;,"Ljava/util/List<Lmiui/util/AudioOutputHelper$AudioOutputClient;>;"
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 167
+    .line 169
     return-object v5
 
-    .line 149
+    .line 151
     .end local v1           #dumpFile:Ljava/io/File;
     .end local v2           #i:I
     .end local v4           #pid:I
@@ -948,10 +950,10 @@
     .end annotation
 
     .prologue
-    .line 171
+    .line 173
     const/4 v7, 0x0
 
-    .line 173
+    .line 175
     .local v7, os:Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v8, Ljava/io/FileOutputStream;
@@ -961,11 +963,11 @@
     invoke-direct {v8, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 174
+    .line 176
     .end local v7           #os:Ljava/io/FileOutputStream;
     .local v8, os:Ljava/io/FileOutputStream;
     :try_start_1
@@ -984,29 +986,31 @@
     invoke-interface/range {v15 .. v17}, Landroid/os/IBinder;->dump(Ljava/io/FileDescriptor;[Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_f
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_e
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_d
-
-    .line 182
-    if-eqz v8, :cond_a
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_d
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_c
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_b
 
     .line 184
+    if-eqz v8, :cond_0
+
+    .line 186
     :try_start_2
     invoke-virtual {v8}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_9
 
-    move-object v7, v8
-
-    .line 190
-    .end local v8           #os:Ljava/io/FileOutputStream;
-    .restart local v7       #os:Ljava/io/FileOutputStream;
     :cond_0
     :goto_0
-    const/4 v5, 0x0
+    move-object v7, v8
 
     .line 192
+    .end local v8           #os:Ljava/io/FileOutputStream;
+    .restart local v7       #os:Ljava/io/FileOutputStream;
+    :cond_1
+    :goto_1
+    const/4 v5, 0x0
+
+    .line 194
     .local v5, in:Ljava/io/InputStream;
     :try_start_3
     new-instance v6, Ljava/io/FileInputStream;
@@ -1015,46 +1019,33 @@
 
     invoke-direct {v6, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_3
-    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_c
+    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_a
 
     .end local v5           #in:Ljava/io/InputStream;
     .local v6, in:Ljava/io/InputStream;
     move-object v5, v6
 
-    .line 196
+    .line 198
     .end local v6           #in:Ljava/io/InputStream;
     .restart local v5       #in:Ljava/io/InputStream;
-    :goto_1
-    if-nez v5, :cond_2
+    :goto_2
+    if-nez v5, :cond_3
 
-    .line 197
+    .line 199
     const/4 v2, 0x0
 
-    .line 264
-    :goto_2
+    .line 266
+    :goto_3
     return-object v2
 
-    .line 185
+    .line 177
     .end local v5           #in:Ljava/io/InputStream;
-    .end local v7           #os:Ljava/io/FileOutputStream;
-    .restart local v8       #os:Ljava/io/FileOutputStream;
     :catch_0
-    move-exception v15
-
-    move-object v7, v8
-
-    .line 186
-    .end local v8           #os:Ljava/io/FileOutputStream;
-    .restart local v7       #os:Ljava/io/FileOutputStream;
-    goto :goto_0
-
-    .line 175
-    :catch_1
     move-exception v4
 
-    .line 176
+    .line 178
     .local v4, e:Ljava/io/FileNotFoundException;
-    :goto_3
+    :goto_4
     :try_start_4
     sget-object v15, Lmiui/util/AudioOutputHelper;->TAG:Ljava/lang/String;
 
@@ -1066,31 +1057,31 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 182
-    if-eqz v7, :cond_0
-
     .line 184
+    if-eqz v7, :cond_1
+
+    .line 186
     :try_start_5
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 185
-    :catch_2
+    .line 187
+    .end local v4           #e:Ljava/io/FileNotFoundException;
+    :catch_1
     move-exception v15
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 177
-    .end local v4           #e:Ljava/io/FileNotFoundException;
-    :catch_3
+    .line 179
+    :catch_2
     move-exception v4
 
-    .line 178
+    .line 180
     .local v4, e:Landroid/os/RemoteException;
-    :goto_4
+    :goto_5
     :try_start_6
     sget-object v15, Lmiui/util/AudioOutputHelper;->TAG:Ljava/lang/String;
 
@@ -1102,31 +1093,25 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 182
-    if-eqz v7, :cond_0
-
     .line 184
+    if-eqz v7, :cond_1
+
+    .line 186
     :try_start_7
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 185
-    :catch_4
-    move-exception v15
-
-    goto :goto_0
-
-    .line 179
+    .line 181
     .end local v4           #e:Landroid/os/RemoteException;
-    :catch_5
+    :catch_3
     move-exception v4
 
-    .line 180
+    .line 182
     .local v4, e:Ljava/io/IOException;
-    :goto_5
+    :goto_6
     :try_start_8
     sget-object v15, Lmiui/util/AudioOutputHelper;->TAG:Ljava/lang/String;
 
@@ -1138,45 +1123,39 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    .line 182
-    if-eqz v7, :cond_0
-
     .line 184
+    if-eqz v7, :cond_1
+
+    .line 186
     :try_start_9
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_6
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 185
-    :catch_6
-    move-exception v15
-
-    goto :goto_0
-
-    .line 182
+    .line 184
     .end local v4           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v15
 
-    :goto_6
-    if-eqz v7, :cond_1
+    :goto_7
+    if-eqz v7, :cond_2
 
-    .line 184
+    .line 186
     :try_start_a
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_9
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_6
 
-    .line 186
-    :cond_1
-    :goto_7
+    .line 184
+    :cond_2
+    :goto_8
     throw v15
 
-    .line 201
+    .line 203
     .restart local v5       #in:Ljava/io/InputStream;
-    :cond_2
+    :cond_3
     :try_start_b
     new-instance v9, Ljava/io/BufferedReader;
 
@@ -1186,42 +1165,42 @@
 
     invoke-direct {v9, v15}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 202
+    .line 204
     .local v9, reader:Ljava/io/BufferedReader;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 203
+    .line 205
     .local v2, clients:Ljava/util/List;,"Ljava/util/List<Lmiui/util/AudioOutputHelper$AudioOutputClient;>;"
     const/4 v10, 0x0
 
-    .line 204
+    .line 206
     .local v10, sessions:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     const/4 v12, 0x0
 
-    .line 206
+    .line 208
     .local v12, standby:Z
     const/4 v3, 0x0
 
-    .line 207
+    .line 209
     .local v3, content:Ljava/lang/String;
     const/4 v11, 0x0
 
-    .line 209
+    .line 211
     .local v11, skipped:Ljava/lang/String;
-    :cond_3
-    :goto_8
-    if-eqz v11, :cond_6
+    :cond_4
+    :goto_9
+    if-eqz v11, :cond_7
 
-    .line 210
+    .line 212
     move-object v3, v11
 
-    .line 211
+    .line 213
     const/4 v11, 0x0
 
-    .line 219
-    :cond_4
+    .line 221
+    :cond_5
     sget-object v15, Lmiui/util/AudioOutputHelper$DUMP_TAG;->SESSIONS_HEAD_FINDER:Ljava/util/regex/Pattern;
 
     invoke-virtual {v15, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1232,55 +1211,55 @@
 
     move-result v15
 
-    if-eqz v15, :cond_7
+    if-eqz v15, :cond_8
 
-    .line 220
-    if-nez v10, :cond_5
+    .line 222
+    if-nez v10, :cond_6
 
-    .line 221
+    .line 223
     new-instance v10, Ljava/util/HashMap;
 
     .end local v10           #sessions:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     invoke-direct {v10}, Ljava/util/HashMap;-><init>()V
 
-    .line 223
+    .line 225
     .restart local v10       #sessions:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/Integer;>;"
-    :cond_5
+    :cond_6
     invoke-static {v9, v10}, Lmiui/util/AudioOutputHelper;->collectSessions(Ljava/io/BufferedReader;Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 224
-    goto :goto_8
+    .line 226
+    goto :goto_9
 
-    .line 213
-    :cond_6
+    .line 215
+    :cond_7
     invoke-virtual {v9}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_8
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_5
 
     move-result-object v3
 
-    .line 214
-    if-nez v3, :cond_4
+    .line 216
+    if-nez v3, :cond_5
 
-    .line 259
+    .line 261
     :try_start_c
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_7
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_4
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 260
-    :catch_7
+    .line 262
+    :catch_4
     move-exception v15
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 227
-    :cond_7
+    .line 229
+    :cond_8
     :try_start_d
     sget-object v15, Lmiui/util/AudioOutputHelper$DUMP_TAG;->STANDBY_FINDER:Ljava/util/regex/Pattern;
 
@@ -1288,15 +1267,15 @@
 
     move-result-object v13
 
-    .line 228
+    .line 230
     .local v13, standbyMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v13}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v15
 
-    if-eqz v15, :cond_8
+    if-eqz v15, :cond_9
 
-    .line 229
+    .line 231
     const/4 v15, 0x1
 
     invoke-virtual {v13, v15}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
@@ -1311,74 +1290,74 @@
 
     move-result v12
 
-    .line 230
-    goto :goto_8
+    .line 232
+    goto :goto_9
 
-    .line 233
-    :cond_8
-    if-nez v12, :cond_3
+    .line 235
+    :cond_9
+    if-nez v12, :cond_4
 
-    .line 234
+    .line 236
     sget-object v15, Lmiui/util/AudioOutputHelper$DUMP_TAG;->TRACKS_FINDER:Ljava/util/regex/Pattern;
 
     invoke-virtual {v15, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v14
 
-    .line 235
+    .line 237
     .local v14, trackMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v14}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v15
 
-    if-eqz v15, :cond_9
-
-    .line 237
-    invoke-virtual {v9}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    if-eqz v15, :cond_a
 
     .line 239
+    invoke-virtual {v9}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    .line 241
     const/4 v15, 0x0
 
     invoke-static {v9, v2, v10, v15}, Lmiui/util/AudioOutputHelper;->collectTracks(Ljava/io/BufferedReader;Ljava/util/List;Ljava/util/Map;Z)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 240
-    goto :goto_8
+    .line 242
+    goto :goto_9
 
-    .line 243
-    :cond_9
+    .line 245
+    :cond_a
     sget-object v15, Lmiui/util/AudioOutputHelper$DUMP_TAG;->ACTIVE_TRACKS_FINDER:Ljava/util/regex/Pattern;
 
     invoke-virtual {v15, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 244
+    .line 246
     .local v1, activeTrackMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v15
 
-    if-eqz v15, :cond_3
-
-    .line 246
-    invoke-virtual {v9}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    if-eqz v15, :cond_4
 
     .line 248
+    invoke-virtual {v9}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    .line 250
     const/4 v15, 0x1
 
     invoke-static {v9, v2, v10, v15}, Lmiui/util/AudioOutputHelper;->collectTracks(Ljava/io/BufferedReader;Ljava/util/List;Ljava/util/Map;Z)Ljava/lang/String;
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_8
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_5
 
     move-result-object v11
 
-    .line 249
-    goto :goto_8
+    .line 251
+    goto :goto_9
 
-    .line 255
+    .line 257
     .end local v1           #activeTrackMatcher:Ljava/util/regex/Matcher;
     .end local v2           #clients:Ljava/util/List;,"Ljava/util/List<Lmiui/util/AudioOutputHelper$AudioOutputClient;>;"
     .end local v3           #content:Ljava/lang/String;
@@ -1388,10 +1367,10 @@
     .end local v12           #standby:Z
     .end local v13           #standbyMatcher:Ljava/util/regex/Matcher;
     .end local v14           #trackMatcher:Ljava/util/regex/Matcher;
-    :catch_8
+    :catch_5
     move-exception v4
 
-    .line 256
+    .line 258
     .local v4, e:Ljava/lang/Exception;
     :try_start_e
     sget-object v15, Lmiui/util/AudioOutputHelper;->TAG:Ljava/lang/String;
@@ -1404,61 +1383,73 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_1
 
-    .line 259
+    .line 261
     :try_start_f
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_f
-    .catch Ljava/io/IOException; {:try_start_f .. :try_end_f} :catch_a
+    .catch Ljava/io/IOException; {:try_start_f .. :try_end_f} :catch_8
 
-    .line 264
-    :goto_9
+    .line 266
+    :goto_a
     const/4 v2, 0x0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
-    .line 258
+    .line 260
     .end local v4           #e:Ljava/lang/Exception;
     :catchall_1
     move-exception v15
 
-    .line 259
+    .line 261
     :try_start_10
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_10
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_b
-
-    .line 261
-    :goto_a
-    throw v15
-
-    .line 185
-    .end local v5           #in:Ljava/io/InputStream;
-    :catch_9
-    move-exception v16
-
-    goto/16 :goto_7
+    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_10} :catch_7
 
     .line 260
-    .restart local v4       #e:Ljava/lang/Exception;
-    .restart local v5       #in:Ljava/io/InputStream;
-    :catch_a
-    move-exception v15
+    :goto_b
+    throw v15
 
-    goto :goto_9
-
-    .end local v4           #e:Ljava/lang/Exception;
-    :catch_b
+    .line 187
+    .end local v5           #in:Ljava/io/InputStream;
+    :catch_6
     move-exception v16
+
+    goto/16 :goto_8
+
+    .line 262
+    .restart local v5       #in:Ljava/io/InputStream;
+    :catch_7
+    move-exception v16
+
+    goto :goto_b
+
+    .restart local v4       #e:Ljava/lang/Exception;
+    :catch_8
+    move-exception v15
 
     goto :goto_a
 
-    .line 193
-    :catch_c
+    .line 187
+    .end local v4           #e:Ljava/lang/Exception;
+    .end local v5           #in:Ljava/io/InputStream;
+    .end local v7           #os:Ljava/io/FileOutputStream;
+    .restart local v8       #os:Ljava/io/FileOutputStream;
+    :catch_9
     move-exception v15
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
-    .line 182
+    .line 195
+    .end local v8           #os:Ljava/io/FileOutputStream;
+    .restart local v5       #in:Ljava/io/InputStream;
+    .restart local v7       #os:Ljava/io/FileOutputStream;
+    :catch_a
+    move-exception v15
+
+    goto/16 :goto_2
+
+    .line 184
     .end local v5           #in:Ljava/io/InputStream;
     .end local v7           #os:Ljava/io/FileOutputStream;
     .restart local v8       #os:Ljava/io/FileOutputStream;
@@ -1469,12 +1460,24 @@
 
     .end local v8           #os:Ljava/io/FileOutputStream;
     .restart local v7       #os:Ljava/io/FileOutputStream;
+    goto/16 :goto_7
+
+    .line 181
+    .end local v7           #os:Ljava/io/FileOutputStream;
+    .restart local v8       #os:Ljava/io/FileOutputStream;
+    :catch_b
+    move-exception v4
+
+    move-object v7, v8
+
+    .end local v8           #os:Ljava/io/FileOutputStream;
+    .restart local v7       #os:Ljava/io/FileOutputStream;
     goto/16 :goto_6
 
     .line 179
     .end local v7           #os:Ljava/io/FileOutputStream;
     .restart local v8       #os:Ljava/io/FileOutputStream;
-    :catch_d
+    :catch_c
     move-exception v4
 
     move-object v7, v8
@@ -1486,7 +1489,7 @@
     .line 177
     .end local v7           #os:Ljava/io/FileOutputStream;
     .restart local v8       #os:Ljava/io/FileOutputStream;
-    :catch_e
+    :catch_d
     move-exception v4
 
     move-object v7, v8
@@ -1494,25 +1497,4 @@
     .end local v8           #os:Ljava/io/FileOutputStream;
     .restart local v7       #os:Ljava/io/FileOutputStream;
     goto/16 :goto_4
-
-    .line 175
-    .end local v7           #os:Ljava/io/FileOutputStream;
-    .restart local v8       #os:Ljava/io/FileOutputStream;
-    :catch_f
-    move-exception v4
-
-    move-object v7, v8
-
-    .end local v8           #os:Ljava/io/FileOutputStream;
-    .restart local v7       #os:Ljava/io/FileOutputStream;
-    goto/16 :goto_3
-
-    .end local v7           #os:Ljava/io/FileOutputStream;
-    .restart local v8       #os:Ljava/io/FileOutputStream;
-    :cond_a
-    move-object v7, v8
-
-    .end local v8           #os:Ljava/io/FileOutputStream;
-    .restart local v7       #os:Ljava/io/FileOutputStream;
-    goto/16 :goto_0
 .end method

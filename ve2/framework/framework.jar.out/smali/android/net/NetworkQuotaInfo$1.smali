@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 74
+    .line 75
     new-instance v0, Landroid/net/NetworkQuotaInfo;
 
     invoke-direct {v0, p1}, Landroid/net/NetworkQuotaInfo;-><init>(Landroid/os/Parcel;)V
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 78
+    .line 80
     new-array v0, p1, [Landroid/net/NetworkQuotaInfo;
 
     return-object v0

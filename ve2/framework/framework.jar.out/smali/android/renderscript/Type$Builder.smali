@@ -151,7 +151,9 @@
 
     iget-object v1, p0, Landroid/renderscript/Type$Builder;->mElement:Landroid/renderscript/Element;
 
-    invoke-virtual {v1}, Landroid/renderscript/Element;->getID()I
+    iget-object v2, p0, Landroid/renderscript/Type$Builder;->mRS:Landroid/renderscript/RenderScript;
+
+    invoke-virtual {v1, v2}, Landroid/renderscript/Element;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v1
 
@@ -169,7 +171,7 @@
 
     move-result v7
 
-    .line 284
+    .line 285
     .local v7, id:I
     new-instance v8, Landroid/renderscript/Type;
 
@@ -177,41 +179,41 @@
 
     invoke-direct {v8, v7, v0}, Landroid/renderscript/Type;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 285
+    .line 286
     .local v8, t:Landroid/renderscript/Type;
     iget-object v0, p0, Landroid/renderscript/Type$Builder;->mElement:Landroid/renderscript/Element;
 
     iput-object v0, v8, Landroid/renderscript/Type;->mElement:Landroid/renderscript/Element;
 
-    .line 286
+    .line 287
     iget v0, p0, Landroid/renderscript/Type$Builder;->mDimX:I
 
     iput v0, v8, Landroid/renderscript/Type;->mDimX:I
 
-    .line 287
+    .line 288
     iget v0, p0, Landroid/renderscript/Type$Builder;->mDimY:I
 
     iput v0, v8, Landroid/renderscript/Type;->mDimY:I
 
-    .line 288
+    .line 289
     iget v0, p0, Landroid/renderscript/Type$Builder;->mDimZ:I
 
     iput v0, v8, Landroid/renderscript/Type;->mDimZ:I
 
-    .line 289
+    .line 290
     iget-boolean v0, p0, Landroid/renderscript/Type$Builder;->mDimMipmaps:Z
 
     iput-boolean v0, v8, Landroid/renderscript/Type;->mDimMipmaps:Z
 
-    .line 290
+    .line 291
     iget-boolean v0, p0, Landroid/renderscript/Type$Builder;->mDimFaces:Z
 
     iput-boolean v0, v8, Landroid/renderscript/Type;->mDimFaces:Z
 
-    .line 292
+    .line 293
     invoke-virtual {v8}, Landroid/renderscript/Type;->calcElementCount()V
 
-    .line 293
+    .line 294
     return-object v8
 .end method
 

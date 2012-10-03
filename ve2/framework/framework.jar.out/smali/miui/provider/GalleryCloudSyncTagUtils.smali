@@ -80,13 +80,14 @@
     :try_start_1
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
+    .line 35
     :cond_0
     monitor-exit v3
 
+    .line 38
     :goto_0
     return-wide v1
 
-    .line 38
     :cond_1
     const-wide/16 v1, 0x1
 
@@ -96,6 +97,7 @@
     .line 42
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
+    .line 38
     :cond_2
     monitor-exit v3
 
@@ -121,6 +123,7 @@
     :try_start_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
+    .line 41
     :cond_3
     throw v1
     :try_end_2
@@ -321,11 +324,11 @@
     if-eqz v0, :cond_2
 
     .line 92
+    :goto_1
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     .line 95
     :cond_2
-    :goto_1
     return-void
 
     .line 83
@@ -334,8 +337,6 @@
     const-string/jumbo v2, "syncTag"
 
     invoke-virtual {p2, v2}, Landroid/content/ContentValues;->containsKey(Ljava/lang/String;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result v2
 
@@ -344,16 +345,12 @@
     .line 91
     if-eqz v0, :cond_2
 
-    .line 92
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
     goto :goto_1
 
     .line 86
     :cond_4
     const/4 v2, 0x0
 
-    :try_start_2
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v2
@@ -380,8 +377,8 @@
     const/4 v4, 0x0
 
     invoke-virtual {v1, v2, p2, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
@@ -394,6 +391,7 @@
     .line 92
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
+    .line 91
     :cond_5
     throw v2
 .end method

@@ -168,57 +168,57 @@
     return-void
 .end method
 
-.method private final getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
+.method private static getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
     .locals 1
     .parameter "r"
 
     .prologue
-    .line 592
+    .line 602
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 593
+    .line 603
     .local v0, m:Landroid/os/Message;
-    iput-object p1, v0, Landroid/os/Message;->callback:Ljava/lang/Runnable;
+    iput-object p0, v0, Landroid/os/Message;->callback:Ljava/lang/Runnable;
 
-    .line 594
+    .line 604
     return-object v0
 .end method
 
-.method private final getPostMessage(Ljava/lang/Runnable;Ljava/lang/Object;)Landroid/os/Message;
+.method private static getPostMessage(Ljava/lang/Runnable;Ljava/lang/Object;)Landroid/os/Message;
     .locals 1
     .parameter "r"
     .parameter "token"
 
     .prologue
-    .line 598
+    .line 608
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 599
+    .line 609
     .local v0, m:Landroid/os/Message;
-    iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 600
-    iput-object p1, v0, Landroid/os/Message;->callback:Ljava/lang/Runnable;
+    .line 610
+    iput-object p0, v0, Landroid/os/Message;->callback:Ljava/lang/Runnable;
 
-    .line 601
+    .line 611
     return-object v0
 .end method
 
-.method private final handleCallback(Landroid/os/Message;)V
+.method private static handleCallback(Landroid/os/Message;)V
     .locals 1
     .parameter "message"
 
     .prologue
-    .line 605
-    iget-object v0, p1, Landroid/os/Message;->callback:Ljava/lang/Runnable;
+    .line 615
+    iget-object v0, p0, Landroid/os/Message;->callback:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 606
+    .line 616
     return-void
 .end method
 
@@ -235,7 +235,7 @@
     if-eqz v0, :cond_1
 
     .line 92
-    invoke-direct {p0, p1}, Landroid/os/Handler;->handleCallback(Landroid/os/Message;)V
+    invoke-static {p1}, Landroid/os/Handler;->handleCallback(Landroid/os/Message;)V
 
     .line 101
     :cond_0
@@ -270,7 +270,7 @@
     .parameter "prefix"
 
     .prologue
-    .line 560
+    .line 570
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -303,12 +303,12 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 561
+    .line 571
     iget-object v0, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;
 
     if-nez v0, :cond_0
 
-    .line 562
+    .line 572
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -329,11 +329,11 @@
 
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 566
+    .line 576
     :goto_0
     return-void
 
-    .line 564
+    .line 574
     :cond_0
     iget-object v0, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;
 
@@ -364,27 +364,27 @@
     .locals 3
 
     .prologue
-    .line 576
+    .line 586
     iget-object v1, p0, Landroid/os/Handler;->mQueue:Landroid/os/MessageQueue;
 
     monitor-enter v1
 
-    .line 577
+    .line 587
     :try_start_0
     iget-object v0, p0, Landroid/os/Handler;->mMessenger:Landroid/os/IMessenger;
 
     if-eqz v0, :cond_0
 
-    .line 578
+    .line 588
     iget-object v0, p0, Landroid/os/Handler;->mMessenger:Landroid/os/IMessenger;
 
     monitor-exit v1
 
-    .line 581
+    .line 591
     :goto_0
     return-object v0
 
-    .line 580
+    .line 590
     :cond_0
     new-instance v0, Landroid/os/Handler$MessengerImpl;
 
@@ -394,14 +394,14 @@
 
     iput-object v0, p0, Landroid/os/Handler;->mMessenger:Landroid/os/IMessenger;
 
-    .line 581
+    .line 591
     iget-object v0, p0, Landroid/os/Handler;->mMessenger:Landroid/os/IMessenger;
 
     monitor-exit v1
 
     goto :goto_0
 
-    .line 582
+    .line 592
     :catchall_0
     move-exception v0
 
@@ -416,7 +416,7 @@
     .locals 1
 
     .prologue
-    .line 556
+    .line 566
     iget-object v0, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;
 
     return-object v0
@@ -484,8 +484,25 @@
     return-void
 .end method
 
+.method public final hasCallbacks(Ljava/lang/Runnable;)Z
+    .locals 2
+    .parameter "r"
+
+    .prologue
+    .line 560
+    iget-object v0, p0, Landroid/os/Handler;->mQueue:Landroid/os/MessageQueue;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, p1, v1}, Landroid/os/MessageQueue;->hasMessages(Landroid/os/Handler;Ljava/lang/Runnable;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public final hasMessages(I)Z
-    .locals 3
+    .locals 2
     .parameter "what"
 
     .prologue
@@ -494,9 +511,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, p0, p1, v1, v2}, Landroid/os/MessageQueue;->removeMessages(Landroid/os/Handler;ILjava/lang/Object;Z)Z
+    invoke-virtual {v0, p0, p1, v1}, Landroid/os/MessageQueue;->hasMessages(Landroid/os/Handler;ILjava/lang/Object;)Z
 
     move-result v0
 
@@ -504,7 +519,7 @@
 .end method
 
 .method public final hasMessages(ILjava/lang/Object;)Z
-    .locals 2
+    .locals 1
     .parameter "what"
     .parameter "object"
 
@@ -512,9 +527,7 @@
     .line 550
     iget-object v0, p0, Landroid/os/Handler;->mQueue:Landroid/os/MessageQueue;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p0, p1, p2, v1}, Landroid/os/MessageQueue;->removeMessages(Landroid/os/Handler;ILjava/lang/Object;Z)Z
+    invoke-virtual {v0, p0, p1, p2}, Landroid/os/MessageQueue;->hasMessages(Landroid/os/Handler;ILjava/lang/Object;)Z
 
     move-result v0
 
@@ -597,7 +610,7 @@
 
     .prologue
     .line 263
-    invoke-direct {p0, p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
+    invoke-static {p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -616,7 +629,7 @@
 
     .prologue
     .line 351
-    invoke-direct {p0, p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
+    invoke-static {p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -634,7 +647,7 @@
 
     .prologue
     .line 285
-    invoke-direct {p0, p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
+    invoke-static {p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -653,7 +666,7 @@
 
     .prologue
     .line 309
-    invoke-direct {p0, p1, p2}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;Ljava/lang/Object;)Landroid/os/Message;
+    invoke-static {p1, p2}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;Ljava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -671,7 +684,7 @@
 
     .prologue
     .line 331
-    invoke-direct {p0, p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
+    invoke-static {p1}, Landroid/os/Handler;->getPostMessage(Ljava/lang/Runnable;)Landroid/os/Message;
 
     move-result-object v0
 
@@ -728,7 +741,7 @@
 .end method
 
 .method public final removeMessages(I)V
-    .locals 3
+    .locals 2
     .parameter "what"
 
     .prologue
@@ -737,16 +750,14 @@
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, p0, p1, v1, v2}, Landroid/os/MessageQueue;->removeMessages(Landroid/os/Handler;ILjava/lang/Object;Z)Z
+    invoke-virtual {v0, p0, p1, v1}, Landroid/os/MessageQueue;->removeMessages(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 517
     return-void
 .end method
 
 .method public final removeMessages(ILjava/lang/Object;)V
-    .locals 2
+    .locals 1
     .parameter "what"
     .parameter "object"
 
@@ -754,9 +765,7 @@
     .line 525
     iget-object v0, p0, Landroid/os/Handler;->mQueue:Landroid/os/MessageQueue;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p0, p1, p2, v1}, Landroid/os/MessageQueue;->removeMessages(Landroid/os/Handler;ILjava/lang/Object;Z)Z
+    invoke-virtual {v0, p0, p1, p2}, Landroid/os/MessageQueue;->removeMessages(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 526
     return-void
@@ -1006,7 +1015,7 @@
     .locals 2
 
     .prologue
-    .line 570
+    .line 580
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

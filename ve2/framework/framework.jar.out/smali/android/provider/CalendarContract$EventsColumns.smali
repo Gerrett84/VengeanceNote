@@ -39,7 +39,13 @@
 
 .field public static final CAN_INVITE_OTHERS:Ljava/lang/String; = "canInviteOthers"
 
+.field public static final CUSTOM_APP_PACKAGE:Ljava/lang/String; = "customAppPackage"
+
+.field public static final CUSTOM_APP_URI:Ljava/lang/String; = "customAppUri"
+
 .field public static final DESCRIPTION:Ljava/lang/String; = "description"
+
+.field public static final DISPLAY_COLOR:Ljava/lang/String; = "displayColor"
 
 .field public static final DTEND:Ljava/lang/String; = "dtend"
 

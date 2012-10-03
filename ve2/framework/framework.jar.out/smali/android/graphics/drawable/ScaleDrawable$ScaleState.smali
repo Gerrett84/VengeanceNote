@@ -40,16 +40,16 @@
     .parameter "res"
 
     .prologue
-    .line 272
+    .line 271
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 273
+    .line 272
     if-eqz p1, :cond_0
 
-    .line 274
+    .line 273
     if-eqz p3, :cond_1
 
-    .line 275
+    .line 274
     iget-object v0, p1, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
@@ -62,44 +62,44 @@
 
     iput-object v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 279
+    .line 278
     :goto_0
     iget-object v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 280
+    .line 279
     iget v0, p1, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mScaleWidth:F
 
     iput v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mScaleWidth:F
 
-    .line 281
+    .line 280
     iget v0, p1, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mScaleHeight:F
 
     iput v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mScaleHeight:F
 
-    .line 282
+    .line 281
     iget v0, p1, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mGravity:I
 
     iput v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mGravity:I
 
-    .line 283
+    .line 282
     iget-boolean v0, p1, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mUseIntrinsicSizeAsMin:Z
 
     iput-boolean v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mUseIntrinsicSizeAsMin:Z
 
-    .line 284
+    .line 283
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mCanConstantState:Z
 
     iput-boolean v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mCheckedConstantState:Z
 
-    .line 286
+    .line 285
     :cond_0
     return-void
 
-    .line 277
+    .line 276
     :cond_1
     iget-object v0, p1, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -124,12 +124,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 304
+    .line 303
     iget-boolean v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mCheckedConstantState:Z
 
     if-nez v0, :cond_0
 
-    .line 305
+    .line 304
     iget-object v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
@@ -143,16 +143,16 @@
     :goto_0
     iput-boolean v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mCanConstantState:Z
 
-    .line 306
+    .line 305
     iput-boolean v1, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mCheckedConstantState:Z
 
-    .line 309
+    .line 308
     :cond_0
     iget-boolean v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mCanConstantState:Z
 
     return v0
 
-    .line 305
+    .line 304
     :cond_1
     const/4 v0, 0x0
 
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 299
     iget v0, p0, Landroid/graphics/drawable/ScaleDrawable$ScaleState;->mChangingConfigurations:I
 
     return v0
@@ -175,7 +175,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 290
+    .line 289
     new-instance v0, Landroid/graphics/drawable/ScaleDrawable;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/graphics/drawable/ScaleDrawable;-><init>(Landroid/graphics/drawable/ScaleDrawable$ScaleState;Landroid/content/res/Resources;Landroid/graphics/drawable/ScaleDrawable$1;)V
@@ -188,7 +188,7 @@
     .parameter "res"
 
     .prologue
-    .line 295
+    .line 294
     new-instance v0, Landroid/graphics/drawable/ScaleDrawable;
 
     const/4 v1, 0x0

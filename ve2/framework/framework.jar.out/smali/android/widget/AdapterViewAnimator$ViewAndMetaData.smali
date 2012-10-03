@@ -36,23 +36,23 @@
     .parameter "itemId"
 
     .prologue
-    .line 217
+    .line 219
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->this$0:Landroid/widget/AdapterViewAnimator;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 218
+    .line 220
     iput-object p2, p0, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->view:Landroid/view/View;
 
-    .line 219
+    .line 221
     iput p3, p0, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->relativeIndex:I
 
-    .line 220
+    .line 222
     iput p4, p0, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->adapterPosition:I
 
-    .line 221
+    .line 223
     iput-wide p5, p0, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->itemId:J
 
-    .line 222
+    .line 224
     return-void
 .end method

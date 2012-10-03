@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 84
+    .line 85
     iput-object p1, p0, Lmiui/util/HapticFeedbackUtil$SettingsObserver;->this$0:Lmiui/util/HapticFeedbackUtil;
 
-    .line 85
+    .line 86
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 86
+    .line 87
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 89
+    .line 90
     iget-object v1, p0, Lmiui/util/HapticFeedbackUtil$SettingsObserver;->this$0:Lmiui/util/HapticFeedbackUtil;
 
     #getter for: Lmiui/util/HapticFeedbackUtil;->mContext:Landroid/content/Context;
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    .line 90
+    .line 91
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v1, "haptic_feedback_level"
 
@@ -65,12 +65,12 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 92
+    .line 93
     iget-object v1, p0, Lmiui/util/HapticFeedbackUtil$SettingsObserver;->this$0:Lmiui/util/HapticFeedbackUtil;
 
     invoke-virtual {v1}, Lmiui/util/HapticFeedbackUtil;->updateSettings()V
 
-    .line 93
+    .line 94
     return-void
 .end method
 
@@ -79,11 +79,11 @@
     .parameter "selfChange"
 
     .prologue
-    .line 97
+    .line 98
     iget-object v0, p0, Lmiui/util/HapticFeedbackUtil$SettingsObserver;->this$0:Lmiui/util/HapticFeedbackUtil;
 
     invoke-virtual {v0}, Lmiui/util/HapticFeedbackUtil;->updateSettings()V
 
-    .line 98
+    .line 99
     return-void
 .end method

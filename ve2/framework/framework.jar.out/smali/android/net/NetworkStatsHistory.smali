@@ -64,6 +64,8 @@
 
 .field private rxPackets:[J
 
+.field private totalBytes:J
+
 .field private txBytes:[J
 
 .field private txPackets:[J
@@ -74,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 561
+    .line 601
     new-instance v0, Landroid/net/NetworkStatsHistory$1;
 
     invoke-direct {v0}, Landroid/net/NetworkStatsHistory$1;-><init>()V
@@ -89,14 +91,14 @@
     .parameter "bucketDuration"
 
     .prologue
-    .line 93
+    .line 96
     const/16 v0, 0xa
 
     const/4 v1, -0x1
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroid/net/NetworkStatsHistory;-><init>(JII)V
 
-    .line 94
+    .line 97
     return-void
 .end method
 
@@ -106,34 +108,34 @@
     .parameter "initialSize"
 
     .prologue
-    .line 97
+    .line 100
     const/4 v0, -0x1
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/net/NetworkStatsHistory;-><init>(JII)V
 
-    .line 98
+    .line 101
     return-void
 .end method
 
 .method public constructor <init>(JII)V
-    .locals 1
+    .locals 2
     .parameter "bucketDuration"
     .parameter "initialSize"
     .parameter "fields"
 
     .prologue
-    .line 100
+    .line 103
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 104
     iput-wide p1, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    .line 102
+    .line 105
     new-array v0, p3, [J
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    .line 103
+    .line 106
     and-int/lit8 v0, p4, 0x1
 
     if-eqz v0, :cond_0
@@ -142,7 +144,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
-    .line 104
+    .line 107
     :cond_0
     and-int/lit8 v0, p4, 0x2
 
@@ -152,7 +154,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    .line 105
+    .line 108
     :cond_1
     and-int/lit8 v0, p4, 0x4
 
@@ -162,7 +164,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    .line 106
+    .line 109
     :cond_2
     and-int/lit8 v0, p4, 0x8
 
@@ -172,7 +174,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    .line 107
+    .line 110
     :cond_3
     and-int/lit8 v0, p4, 0x10
 
@@ -182,7 +184,7 @@
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    .line 108
+    .line 111
     :cond_4
     and-int/lit8 v0, p4, 0x20
 
@@ -192,13 +194,38 @@
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    .line 109
+    .line 112
     :cond_5
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
-    .line 110
+    .line 113
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Landroid/net/NetworkStatsHistory;->totalBytes:J
+
+    .line 114
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/net/NetworkStatsHistory;J)V
+    .locals 1
+    .parameter "existing"
+    .parameter "bucketDuration"
+
+    .prologue
+    .line 117
+    invoke-virtual {p1, p2, p3}, Landroid/net/NetworkStatsHistory;->estimateResizeBuckets(J)I
+
+    move-result v0
+
+    invoke-direct {p0, p2, p3, v0}, Landroid/net/NetworkStatsHistory;-><init>(JI)V
+
+    .line 118
+    invoke-virtual {p0, p1}, Landroid/net/NetworkStatsHistory;->recordEntireHistory(Landroid/net/NetworkStatsHistory;)V
+
+    .line 119
     return-void
 .end method
 
@@ -207,78 +234,85 @@
     .parameter "in"
 
     .prologue
-    .line 112
+    .line 121
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
+    .line 122
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    .line 114
+    .line 123
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    .line 115
+    .line 124
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
-    .line 116
+    .line 125
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    .line 117
+    .line 126
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    .line 118
+    .line 127
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    .line 119
+    .line 128
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    .line 120
+    .line 129
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->readLongArray(Landroid/os/Parcel;)[J
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    .line 121
+    .line 130
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v0, v0
 
     iput v0, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
-    .line 122
+    .line 131
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Landroid/net/NetworkStatsHistory;->totalBytes:J
+
+    .line 132
     return-void
 .end method
 
 .method public constructor <init>(Ljava/io/DataInputStream;)V
-    .locals 4
+    .locals 5
     .parameter "in"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -287,19 +321,19 @@
     .end annotation
 
     .prologue
-    .line 136
+    .line 147
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 137
+    .line 148
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v0
 
-    .line 138
+    .line 149
     .local v0, version:I
     packed-switch v0, :pswitch_data_0
 
-    .line 165
+    .line 178
     new-instance v1, Ljava/net/ProtocolException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -324,7 +358,7 @@
 
     throw v1
 
-    .line 140
+    .line 151
     :pswitch_0
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
 
@@ -332,21 +366,21 @@
 
     iput-wide v1, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    .line 141
+    .line 152
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readFullLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    .line 142
+    .line 153
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readFullLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    .line 143
+    .line 154
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v1, v1
@@ -355,14 +389,14 @@
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    .line 144
+    .line 155
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readFullLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    .line 145
+    .line 156
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v1, v1
@@ -371,7 +405,7 @@
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    .line 146
+    .line 157
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v1, v1
@@ -380,18 +414,35 @@
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    .line 147
+    .line 158
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v1, v1
 
     iput v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
-    .line 168
+    .line 159
+    iget-object v1, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
+
+    invoke-static {v1}, Lcom/android/internal/util/ArrayUtils;->total([J)J
+
+    move-result-wide v1
+
+    iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
+
+    invoke-static {v3}, Lcom/android/internal/util/ArrayUtils;->total([J)J
+
+    move-result-wide v3
+
+    add-long/2addr v1, v3
+
+    iput-wide v1, p0, Landroid/net/NetworkStatsHistory;->totalBytes:J
+
+    .line 181
     :goto_0
     return-void
 
-    .line 152
+    .line 164
     :pswitch_1
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
 
@@ -399,14 +450,14 @@
 
     iput-wide v1, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    .line 153
+    .line 165
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    .line 154
+    .line 166
     const/4 v1, 0x3
 
     if-lt v0, v1, :cond_0
@@ -418,51 +469,68 @@
     :goto_1
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
-    .line 156
+    .line 168
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    .line 157
+    .line 169
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    .line 158
+    .line 170
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    .line 159
+    .line 171
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    .line 160
+    .line 172
     invoke-static {p1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->readVarLongArray(Ljava/io/DataInputStream;)[J
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    .line 161
+    .line 173
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v1, v1
 
     iput v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
+    .line 174
+    iget-object v1, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
+
+    invoke-static {v1}, Lcom/android/internal/util/ArrayUtils;->total([J)J
+
+    move-result-wide v1
+
+    iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
+
+    invoke-static {v3}, Lcom/android/internal/util/ArrayUtils;->total([J)J
+
+    move-result-wide v3
+
+    add-long/2addr v1, v3
+
+    iput-wide v1, p0, Landroid/net/NetworkStatsHistory;->totalBytes:J
+
     goto :goto_0
 
-    .line 154
+    .line 166
     :cond_0
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
@@ -472,7 +540,7 @@
 
     goto :goto_1
 
-    .line 138
+    .line 149
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -488,7 +556,7 @@
     .parameter "value"
 
     .prologue
-    .line 580
+    .line 622
     if-eqz p0, :cond_0
 
     aget-wide v0, p0, p1
@@ -497,7 +565,7 @@
 
     aput-wide v0, p0, p1
 
-    .line 581
+    .line 623
     :cond_0
     return-void
 .end method
@@ -508,14 +576,14 @@
     .parameter "end"
 
     .prologue
-    .line 342
+    .line 379
     iget-wide v3, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     rem-long v3, p1, v3
 
     sub-long/2addr p1, v3
 
-    .line 343
+    .line 380
     iget-wide v3, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     iget-wide v5, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
@@ -530,7 +598,7 @@
 
     add-long/2addr p3, v3
 
-    .line 345
+    .line 382
     move-wide v1, p1
 
     .local v1, now:J
@@ -539,7 +607,7 @@
 
     if-gez v3, :cond_1
 
-    .line 347
+    .line 384
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     const/4 v4, 0x0
@@ -550,16 +618,16 @@
 
     move-result v0
 
-    .line 348
+    .line 385
     .local v0, index:I
     if-gez v0, :cond_0
 
-    .line 350
+    .line 387
     xor-int/lit8 v3, v0, -0x1
 
     invoke-direct {p0, v3, v1, v2}, Landroid/net/NetworkStatsHistory;->insertBucket(IJ)V
 
-    .line 345
+    .line 382
     :cond_0
     iget-wide v3, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
@@ -567,7 +635,7 @@
 
     goto :goto_0
 
-    .line 353
+    .line 390
     .end local v0           #index:I
     :cond_1
     return-void
@@ -580,7 +648,7 @@
     .parameter "value"
 
     .prologue
-    .line 572
+    .line 614
     if-eqz p0, :cond_0
 
     aget-wide p2, p0, p1
@@ -598,7 +666,7 @@
     .prologue
     const-wide/16 v5, 0x0
 
-    .line 360
+    .line 397
     iget v3, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     iget-object v4, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
@@ -607,7 +675,7 @@
 
     if-lt v3, v4, :cond_5
 
-    .line 361
+    .line 398
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v3, v3
@@ -622,7 +690,7 @@
 
     div-int/lit8 v2, v3, 0x2
 
-    .line 362
+    .line 399
     .local v2, newLength:I
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
@@ -632,7 +700,7 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    .line 363
+    .line 400
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     if-eqz v3, :cond_0
@@ -645,7 +713,7 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
-    .line 364
+    .line 401
     :cond_0
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
@@ -659,7 +727,7 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    .line 365
+    .line 402
     :cond_1
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
@@ -673,7 +741,7 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    .line 366
+    .line 403
     :cond_2
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
@@ -687,7 +755,7 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    .line 367
+    .line 404
     :cond_3
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
@@ -701,7 +769,7 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    .line 368
+    .line 405
     :cond_4
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
@@ -715,23 +783,23 @@
 
     iput-object v3, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    .line 372
+    .line 409
     .end local v2           #newLength:I
     :cond_5
     iget v3, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     if-ge p1, v3, :cond_b
 
-    .line 373
+    .line 410
     add-int/lit8 v0, p1, 0x1
 
-    .line 374
+    .line 411
     .local v0, dstPos:I
     iget v3, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     sub-int v1, v3, p1
 
-    .line 376
+    .line 413
     .local v1, length:I
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
@@ -739,7 +807,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 377
+    .line 414
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     if-eqz v3, :cond_6
@@ -750,7 +818,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 378
+    .line 415
     :cond_6
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
@@ -762,7 +830,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 379
+    .line 416
     :cond_7
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
@@ -774,7 +842,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 380
+    .line 417
     :cond_8
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
@@ -786,7 +854,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 381
+    .line 418
     :cond_9
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
@@ -798,7 +866,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 382
+    .line 419
     :cond_a
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
@@ -810,7 +878,7 @@
 
     invoke-static {v3, p1, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 385
+    .line 422
     .end local v0           #dstPos:I
     .end local v1           #length:I
     :cond_b
@@ -818,44 +886,44 @@
 
     aput-wide p2, v3, p1
 
-    .line 386
+    .line 423
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     invoke-static {v3, p1, v5, v6}, Landroid/net/NetworkStatsHistory;->setLong([JIJ)V
 
-    .line 387
+    .line 424
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
     invoke-static {v3, p1, v5, v6}, Landroid/net/NetworkStatsHistory;->setLong([JIJ)V
 
-    .line 388
+    .line 425
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
     invoke-static {v3, p1, v5, v6}, Landroid/net/NetworkStatsHistory;->setLong([JIJ)V
 
-    .line 389
+    .line 426
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
     invoke-static {v3, p1, v5, v6}, Landroid/net/NetworkStatsHistory;->setLong([JIJ)V
 
-    .line 390
+    .line 427
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
     invoke-static {v3, p1, v5, v6}, Landroid/net/NetworkStatsHistory;->setLong([JIJ)V
 
-    .line 391
+    .line 428
     iget-object v3, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
     invoke-static {v3, p1, v5, v6}, Landroid/net/NetworkStatsHistory;->setLong([JIJ)V
 
-    .line 392
+    .line 429
     iget v3, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     add-int/lit8 v3, v3, 0x1
 
     iput v3, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
-    .line 393
+    .line 430
     return-void
 .end method
 
@@ -866,7 +934,7 @@
     .parameter "end"
 
     .prologue
-    .line 528
+    .line 568
     long-to-float v0, p1
 
     invoke-virtual {p0}, Ljava/util/Random;->nextFloat()F
@@ -893,12 +961,12 @@
     .parameter "value"
 
     .prologue
-    .line 576
+    .line 618
     if-eqz p0, :cond_0
 
     aput-wide p2, p0, p1
 
-    .line 577
+    .line 619
     :cond_0
     return-void
 .end method
@@ -909,56 +977,52 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 197
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public dump(Ljava/lang/String;Ljava/io/PrintWriter;Z)V
+.method public dump(Lcom/android/internal/util/IndentingPrintWriter;Z)V
     .locals 4
-    .parameter "prefix"
     .parameter "pw"
     .parameter "fullHistory"
 
     .prologue
     const/4 v1, 0x0
 
-    .line 532
-    invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    .line 533
+    .line 572
     const-string v2, "NetworkStatsHistory: bucketDuration="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-wide v2, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->println(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->println(J)V
 
-    .line 535
-    if-eqz p3, :cond_7
+    .line 573
+    invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()V
 
-    .line 536
+    .line 575
+    if-eqz p2, :cond_7
+
+    .line 576
     .local v1, start:I
     :goto_0
     if-lez v1, :cond_0
 
-    .line 537
-    invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    .line 577
+    const-string v2, "(omitting "
 
-    .line 538
-    const-string v2, "  (omitting "
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->print(I)V
+    invoke-virtual {p1, v1}, Lcom/android/internal/util/IndentingPrintWriter;->print(I)V
 
     const-string v2, " buckets)"
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 541
+    .line 580
     :cond_0
     move v0, v1
 
@@ -968,36 +1032,33 @@
 
     if-ge v0, v2, :cond_8
 
-    .line 542
-    invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    .line 581
+    const-string v2, "bucketStart="
 
-    .line 543
-    const-string v2, "  bucketStart="
-
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 544
+    .line 582
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     if-eqz v2, :cond_1
 
     const-string v2, " activeTime="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 545
+    .line 583
     :cond_1
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
@@ -1005,15 +1066,15 @@
 
     const-string v2, " rxBytes="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 546
+    .line 584
     :cond_2
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
@@ -1021,15 +1082,15 @@
 
     const-string v2, " rxPackets="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 547
+    .line 585
     :cond_3
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
@@ -1037,15 +1098,15 @@
 
     const-string v2, " txBytes="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 548
+    .line 586
     :cond_4
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
@@ -1053,15 +1114,15 @@
 
     const-string v2, " txPackets="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 549
+    .line 587
     :cond_5
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
@@ -1069,24 +1130,24 @@
 
     const-string v2, " operations="
 
-    invoke-virtual {p2, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Lcom/android/internal/util/IndentingPrintWriter;->print(Ljava/lang/String;)V
 
     iget-object v2, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
     aget-wide v2, v2, v0
 
-    invoke-virtual {p2, v2, v3}, Ljava/io/PrintWriter;->print(J)V
+    invoke-virtual {p1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;->print(J)V
 
-    .line 550
+    .line 588
     :cond_6
-    invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
+    invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
 
-    .line 541
+    .line 580
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 535
+    .line 575
     .end local v0           #i:I
     .end local v1           #start:I
     :cond_7
@@ -1100,11 +1161,39 @@
 
     goto/16 :goto_0
 
-    .line 552
+    .line 591
     .restart local v0       #i:I
     .restart local v1       #start:I
     :cond_8
+    invoke-virtual {p1}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()V
+
+    .line 592
     return-void
+.end method
+
+.method public estimateResizeBuckets(J)I
+    .locals 4
+    .parameter "newBucketDuration"
+
+    .prologue
+    .line 626
+    invoke-virtual {p0}, Landroid/net/NetworkStatsHistory;->size()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    invoke-virtual {p0}, Landroid/net/NetworkStatsHistory;->getBucketDuration()J
+
+    move-result-wide v2
+
+    mul-long/2addr v0, v2
+
+    div-long/2addr v0, p1
+
+    long-to-int v0, v0
+
+    return v0
 .end method
 
 .method public generateRandom(JJJ)V
@@ -1116,18 +1205,18 @@
     .end annotation
 
     .prologue
-    .line 483
+    .line 523
     new-instance v17, Ljava/util/Random;
 
     invoke-direct/range {v17 .. v17}, Ljava/util/Random;-><init>()V
 
-    .line 485
+    .line 525
     .local v17, r:Ljava/util/Random;
     invoke-virtual/range {v17 .. v17}, Ljava/util/Random;->nextFloat()F
 
     move-result v18
 
-    .line 486
+    .line 526
     .local v18, fractionRx:F
     move-wide/from16 v0, p5
 
@@ -1137,7 +1226,7 @@
 
     float-to-long v7, v2
 
-    .line 487
+    .line 527
     .local v7, rxBytes:J
     move-wide/from16 v0, p5
 
@@ -1151,19 +1240,19 @@
 
     float-to-long v11, v2
 
-    .line 489
+    .line 529
     .local v11, txBytes:J
     const-wide/16 v2, 0x400
 
     div-long v9, v7, v2
 
-    .line 490
+    .line 530
     .local v9, rxPackets:J
     const-wide/16 v2, 0x400
 
     div-long v13, v11, v2
 
-    .line 491
+    .line 531
     .local v13, txPackets:J
     const-wide/16 v2, 0x800
 
@@ -1176,10 +1265,10 @@
 
     move-wide/from16 v5, p3
 
-    .line 493
+    .line 533
     invoke-virtual/range {v2 .. v17}, Landroid/net/NetworkStatsHistory;->generateRandom(JJJJJJJLjava/util/Random;)V
 
-    .line 494
+    .line 534
     return-void
 .end method
 
@@ -1197,10 +1286,10 @@
     .end annotation
 
     .prologue
-    .line 502
+    .line 542
     invoke-direct/range {p0 .. p4}, Landroid/net/NetworkStatsHistory;->ensureBuckets(JJ)V
 
-    .line 504
+    .line 544
     new-instance v5, Landroid/net/NetworkStats$Entry;
 
     sget-object v6, Landroid/net/NetworkStats;->IFACE_ALL:Ljava/lang/String;
@@ -1223,7 +1312,7 @@
 
     invoke-direct/range {v5 .. v19}, Landroid/net/NetworkStats$Entry;-><init>(Ljava/lang/String;IIIJJJJJ)V
 
-    .line 507
+    .line 547
     .local v5, entry:Landroid/net/NetworkStats$Entry;
     :goto_0
     const-wide/16 v11, 0x400
@@ -1256,7 +1345,7 @@
 
     if-lez v6, :cond_1
 
-    .line 508
+    .line 548
     :cond_0
     move-object/from16 v0, p15
 
@@ -1268,7 +1357,7 @@
 
     move-result-wide v7
 
-    .line 509
+    .line 549
     .local v7, curStart:J
     const-wide/16 v11, 0x0
 
@@ -1286,7 +1375,7 @@
 
     add-long v9, v7, v11
 
-    .line 511
+    .line 551
     .local v9, curEnd:J
     const-wide/16 v11, 0x0
 
@@ -1300,7 +1389,7 @@
 
     iput-wide v11, v5, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
-    .line 512
+    .line 552
     const-wide/16 v11, 0x0
 
     move-object/from16 v0, p15
@@ -1313,7 +1402,7 @@
 
     iput-wide v11, v5, Landroid/net/NetworkStats$Entry;->rxPackets:J
 
-    .line 513
+    .line 553
     const-wide/16 v11, 0x0
 
     move-object/from16 v0, p15
@@ -1326,7 +1415,7 @@
 
     iput-wide v11, v5, Landroid/net/NetworkStats$Entry;->txBytes:J
 
-    .line 514
+    .line 554
     const-wide/16 v11, 0x0
 
     move-object/from16 v0, p15
@@ -1339,7 +1428,7 @@
 
     iput-wide v11, v5, Landroid/net/NetworkStats$Entry;->txPackets:J
 
-    .line 515
+    .line 555
     const-wide/16 v11, 0x0
 
     move-object/from16 v0, p15
@@ -1352,27 +1441,27 @@
 
     iput-wide v11, v5, Landroid/net/NetworkStats$Entry;->operations:J
 
-    .line 517
+    .line 557
     iget-wide v11, v5, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
     sub-long p5, p5, v11
 
-    .line 518
+    .line 558
     iget-wide v11, v5, Landroid/net/NetworkStats$Entry;->rxPackets:J
 
     sub-long p7, p7, v11
 
-    .line 519
+    .line 559
     iget-wide v11, v5, Landroid/net/NetworkStats$Entry;->txBytes:J
 
     sub-long p9, p9, v11
 
-    .line 520
+    .line 560
     iget-wide v11, v5, Landroid/net/NetworkStats$Entry;->txPackets:J
 
     sub-long p11, p11, v11
 
-    .line 521
+    .line 561
     iget-wide v11, v5, Landroid/net/NetworkStats$Entry;->operations:J
 
     sub-long p13, p13, v11
@@ -1381,12 +1470,12 @@
 
     move-object v11, v5
 
-    .line 523
+    .line 563
     invoke-virtual/range {v6 .. v11}, Landroid/net/NetworkStatsHistory;->recordData(JJLandroid/net/NetworkStats$Entry;)V
 
     goto/16 :goto_0
 
-    .line 525
+    .line 565
     .end local v7           #curStart:J
     .end local v9           #curEnd:J
     :cond_1
@@ -1397,7 +1486,7 @@
     .locals 2
 
     .prologue
-    .line 192
+    .line 205
     iget-wide v0, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     return-wide v0
@@ -1407,12 +1496,12 @@
     .locals 4
 
     .prologue
-    .line 204
+    .line 217
     iget v0, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     if-lez v0, :cond_0
 
-    .line 205
+    .line 218
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
@@ -1425,7 +1514,7 @@
 
     add-long/2addr v0, v2
 
-    .line 207
+    .line 220
     :goto_0
     return-wide v0
 
@@ -1442,7 +1531,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 230
+    .line 250
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     iget v2, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
@@ -1451,14 +1540,14 @@
 
     move-result v0
 
-    .line 231
+    .line 251
     .local v0, index:I
     if-gez v0, :cond_0
 
-    .line 232
+    .line 252
     xor-int/lit8 v0, v0, -0x1
 
-    .line 236
+    .line 256
     :goto_0
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
@@ -1470,7 +1559,7 @@
 
     return v1
 
-    .line 234
+    .line 254
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -1484,7 +1573,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 216
+    .line 236
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     iget v2, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
@@ -1493,16 +1582,16 @@
 
     move-result v0
 
-    .line 217
+    .line 237
     .local v0, index:I
     if-gez v0, :cond_0
 
-    .line 218
+    .line 238
     xor-int/lit8 v1, v0, -0x1
 
     add-int/lit8 v0, v1, -0x1
 
-    .line 222
+    .line 242
     :goto_0
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
@@ -1514,7 +1603,7 @@
 
     return v1
 
-    .line 220
+    .line 240
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
@@ -1525,19 +1614,19 @@
     .locals 2
 
     .prologue
-    .line 196
+    .line 209
     iget v0, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     if-lez v0, :cond_0
 
-    .line 197
+    .line 210
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     const/4 v1, 0x0
 
     aget-wide v0, v0, v1
 
-    .line 199
+    .line 212
     :goto_0
     return-wide v0
 
@@ -1545,6 +1634,16 @@
     const-wide v0, 0x7fffffffffffffffL
 
     goto :goto_0
+.end method
+
+.method public getTotalBytes()J
+    .locals 2
+
+    .prologue
+    .line 228
+    iget-wide v0, p0, Landroid/net/NetworkStatsHistory;->totalBytes:J
+
+    return-wide v0
 .end method
 
 .method public getValues(ILandroid/net/NetworkStatsHistory$Entry;)Landroid/net/NetworkStatsHistory$Entry;
@@ -1555,12 +1654,12 @@
     .prologue
     const-wide/16 v3, -0x1
 
-    .line 243
+    .line 263
     if-eqz p2, :cond_0
 
     move-object v0, p2
 
-    .line 244
+    .line 264
     .local v0, entry:Landroid/net/NetworkStatsHistory$Entry;
     :goto_0
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
@@ -1569,12 +1668,12 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->bucketStart:J
 
-    .line 245
+    .line 265
     iget-wide v1, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->bucketDuration:J
 
-    .line 246
+    .line 266
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     invoke-static {v1, p1, v3, v4}, Landroid/net/NetworkStatsHistory;->getLong([JIJ)J
@@ -1583,7 +1682,7 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->activeTime:J
 
-    .line 247
+    .line 267
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
     invoke-static {v1, p1, v3, v4}, Landroid/net/NetworkStatsHistory;->getLong([JIJ)J
@@ -1592,7 +1691,7 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->rxBytes:J
 
-    .line 248
+    .line 268
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
     invoke-static {v1, p1, v3, v4}, Landroid/net/NetworkStatsHistory;->getLong([JIJ)J
@@ -1601,7 +1700,7 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->rxPackets:J
 
-    .line 249
+    .line 269
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
     invoke-static {v1, p1, v3, v4}, Landroid/net/NetworkStatsHistory;->getLong([JIJ)J
@@ -1610,7 +1709,7 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->txBytes:J
 
-    .line 250
+    .line 270
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
     invoke-static {v1, p1, v3, v4}, Landroid/net/NetworkStatsHistory;->getLong([JIJ)J
@@ -1619,7 +1718,7 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->txPackets:J
 
-    .line 251
+    .line 271
     iget-object v1, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
     invoke-static {v1, p1, v3, v4}, Landroid/net/NetworkStatsHistory;->getLong([JIJ)J
@@ -1628,10 +1727,10 @@
 
     iput-wide v1, v0, Landroid/net/NetworkStatsHistory$Entry;->operations:J
 
-    .line 252
+    .line 272
     return-object v0
 
-    .line 243
+    .line 263
     .end local v0           #entry:Landroid/net/NetworkStatsHistory$Entry;
     :cond_0
     new-instance v0, Landroid/net/NetworkStatsHistory$Entry;
@@ -1649,12 +1748,12 @@
     .parameter "recycle"
 
     .prologue
-    .line 435
+    .line 475
     if-eqz p7, :cond_1
 
     move-object/from16 v8, p7
 
-    .line 436
+    .line 476
     .local v8, entry:Landroid/net/NetworkStatsHistory$Entry;
     :goto_0
     sub-long v17, p3, p1
@@ -1663,12 +1762,12 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->bucketDuration:J
 
-    .line 437
+    .line 477
     move-wide/from16 v0, p1
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->bucketStart:J
 
-    .line 438
+    .line 478
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->activeTime:[J
@@ -1684,7 +1783,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->activeTime:J
 
-    .line 439
+    .line 479
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
@@ -1700,7 +1799,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->rxBytes:J
 
-    .line 440
+    .line 480
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
@@ -1716,7 +1815,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->rxPackets:J
 
-    .line 441
+    .line 481
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->txBytes:[J
@@ -1732,7 +1831,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->txBytes:J
 
-    .line 442
+    .line 482
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->txPackets:[J
@@ -1748,7 +1847,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->txPackets:J
 
-    .line 443
+    .line 483
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->operations:[J
@@ -1764,7 +1863,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->operations:J
 
-    .line 445
+    .line 485
     move-object/from16 v0, p0
 
     move-wide/from16 v1, p3
@@ -1773,7 +1872,7 @@
 
     move-result v16
 
-    .line 446
+    .line 486
     .local v16, startIndex:I
     move/from16 v9, v16
 
@@ -1781,7 +1880,7 @@
     :goto_7
     if-ltz v9, :cond_0
 
-    .line 447
+    .line 487
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
@@ -1790,7 +1889,7 @@
 
     aget-wide v6, v17, v9
 
-    .line 448
+    .line 488
     .local v6, curStart:J
     move-object/from16 v0, p0
 
@@ -1800,19 +1899,19 @@
 
     add-long v4, v6, v17
 
-    .line 451
+    .line 491
     .local v4, curEnd:J
     cmp-long v17, v4, p1
 
     if-gtz v17, :cond_8
 
-    .line 475
+    .line 515
     .end local v4           #curEnd:J
     .end local v6           #curStart:J
     :cond_0
     return-object v8
 
-    .line 435
+    .line 475
     .end local v8           #entry:Landroid/net/NetworkStatsHistory$Entry;
     .end local v9           #i:I
     .end local v16           #startIndex:I
@@ -1823,44 +1922,44 @@
 
     goto/16 :goto_0
 
-    .line 438
+    .line 478
     .restart local v8       #entry:Landroid/net/NetworkStatsHistory$Entry;
     :cond_2
     const-wide/16 v17, -0x1
 
     goto :goto_1
 
-    .line 439
+    .line 479
     :cond_3
     const-wide/16 v17, -0x1
 
     goto :goto_2
 
-    .line 440
+    .line 480
     :cond_4
     const-wide/16 v17, -0x1
 
     goto :goto_3
 
-    .line 441
+    .line 481
     :cond_5
     const-wide/16 v17, -0x1
 
     goto :goto_4
 
-    .line 442
+    .line 482
     :cond_6
     const-wide/16 v17, -0x1
 
     goto :goto_5
 
-    .line 443
+    .line 483
     :cond_7
     const-wide/16 v17, -0x1
 
     goto :goto_6
 
-    .line 453
+    .line 493
     .restart local v4       #curEnd:J
     .restart local v6       #curStart:J
     .restart local v9       #i:I
@@ -1870,14 +1969,14 @@
 
     if-ltz v17, :cond_a
 
-    .line 446
+    .line 486
     :cond_9
     :goto_8
     add-int/lit8 v9, v9, -0x1
 
     goto :goto_7
 
-    .line 456
+    .line 496
     :cond_a
     cmp-long v17, v6, p5
 
@@ -1889,17 +1988,17 @@
 
     const/4 v3, 0x1
 
-    .line 458
+    .line 498
     .local v3, activeBucket:Z
     :goto_9
     if-eqz v3, :cond_11
 
-    .line 459
+    .line 499
     move-object/from16 v0, p0
 
     iget-wide v10, v0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    .line 465
+    .line 505
     .local v10, overlap:J
     :goto_a
     const-wide/16 v17, 0x0
@@ -1908,7 +2007,7 @@
 
     if-lez v17, :cond_9
 
-    .line 468
+    .line 508
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->activeTime:[J
@@ -1945,7 +2044,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->activeTime:J
 
-    .line 469
+    .line 509
     :cond_b
     move-object/from16 v0, p0
 
@@ -1983,7 +2082,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->rxBytes:J
 
-    .line 470
+    .line 510
     :cond_c
     move-object/from16 v0, p0
 
@@ -2021,7 +2120,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->rxPackets:J
 
-    .line 471
+    .line 511
     :cond_d
     move-object/from16 v0, p0
 
@@ -2059,7 +2158,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->txBytes:J
 
-    .line 472
+    .line 512
     :cond_e
     move-object/from16 v0, p0
 
@@ -2097,7 +2196,7 @@
 
     iput-wide v0, v8, Landroid/net/NetworkStatsHistory$Entry;->txPackets:J
 
-    .line 473
+    .line 513
     :cond_f
     move-object/from16 v0, p0
 
@@ -2137,7 +2236,7 @@
 
     goto/16 :goto_8
 
-    .line 456
+    .line 496
     .end local v3           #activeBucket:Z
     .end local v10           #overlap:J
     :cond_10
@@ -2145,7 +2244,7 @@
 
     goto/16 :goto_9
 
-    .line 461
+    .line 501
     .restart local v3       #activeBucket:Z
     :cond_11
     cmp-long v17, v4, p3
@@ -2154,7 +2253,7 @@
 
     move-wide v12, v4
 
-    .line 462
+    .line 502
     .local v12, overlapEnd:J
     :goto_b
     cmp-long v17, v6, p1
@@ -2163,7 +2262,7 @@
 
     move-wide v14, v6
 
-    .line 463
+    .line 503
     .local v14, overlapStart:J
     :goto_c
     sub-long v10, v12, v14
@@ -2177,14 +2276,14 @@
     :cond_12
     move-wide/from16 v12, p3
 
-    .line 461
+    .line 501
     goto :goto_b
 
     .restart local v12       #overlapEnd:J
     :cond_13
     move-wide/from16 v14, p1
 
-    .line 462
+    .line 502
     goto :goto_c
 .end method
 
@@ -2195,7 +2294,7 @@
     .parameter "recycle"
 
     .prologue
-    .line 427
+    .line 467
     const-wide v5, 0x7fffffffffffffffL
 
     move-object v0, p0
@@ -2223,7 +2322,7 @@
     .end annotation
 
     .prologue
-    .line 261
+    .line 281
     new-instance v0, Landroid/net/NetworkStats$Entry;
 
     sget-object v1, Landroid/net/NetworkStats;->IFACE_ALL:Ljava/lang/String;
@@ -2256,162 +2355,93 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/net/NetworkStatsHistory;->recordData(JJLandroid/net/NetworkStats$Entry;)V
 
-    .line 263
+    .line 283
     return-void
 .end method
 
 .method public recordData(JJLandroid/net/NetworkStats$Entry;)V
-    .locals 28
+    .locals 40
     .parameter "start"
     .parameter "end"
     .parameter "entry"
 
     .prologue
-    .line 270
+    .line 290
     move-object/from16 v0, p5
 
     iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
-    move-wide/from16 v24, v0
+    move-wide/from16 v25, v0
 
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-ltz v24, :cond_0
-
+    .line 291
+    .local v25, rxBytes:J
     move-object/from16 v0, p5
 
     iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxPackets:J
 
-    move-wide/from16 v24, v0
+    move-wide/from16 v27, v0
 
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-ltz v24, :cond_0
-
+    .line 292
+    .local v27, rxPackets:J
     move-object/from16 v0, p5
 
     iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txBytes:J
 
-    move-wide/from16 v24, v0
+    move-wide/from16 v30, v0
 
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-ltz v24, :cond_0
-
+    .line 293
+    .local v30, txBytes:J
     move-object/from16 v0, p5
 
     iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txPackets:J
 
-    move-wide/from16 v24, v0
+    move-wide/from16 v32, v0
 
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-ltz v24, :cond_0
-
+    .line 294
+    .local v32, txPackets:J
     move-object/from16 v0, p5
 
     iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->operations:J
 
-    move-wide/from16 v24, v0
+    move-wide/from16 v21, v0
 
-    const-wide/16 v26, 0x0
+    .line 296
+    .local v21, operations:J
+    invoke-virtual/range {p5 .. p5}, Landroid/net/NetworkStats$Entry;->isNegative()Z
 
-    cmp-long v24, v24, v26
+    move-result v34
 
-    if-gez v24, :cond_1
+    if-eqz v34, :cond_0
 
-    .line 272
+    .line 297
+    new-instance v34, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v35, "tried recording negative data"
+
+    invoke-direct/range {v34 .. v35}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v34
+
+    .line 299
     :cond_0
-    new-instance v24, Ljava/lang/IllegalArgumentException;
+    invoke-virtual/range {p5 .. p5}, Landroid/net/NetworkStats$Entry;->isEmpty()Z
 
-    const-string/jumbo v25, "tried recording negative data"
+    move-result v34
 
-    invoke-direct/range {v24 .. v25}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    if-eqz v34, :cond_1
 
-    throw v24
-
-    .line 274
-    :cond_1
-    move-object/from16 v0, p5
-
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxBytes:J
-
-    move-wide/from16 v24, v0
-
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-nez v24, :cond_3
-
-    move-object/from16 v0, p5
-
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxPackets:J
-
-    move-wide/from16 v24, v0
-
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-nez v24, :cond_3
-
-    move-object/from16 v0, p5
-
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txBytes:J
-
-    move-wide/from16 v24, v0
-
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-nez v24, :cond_3
-
-    move-object/from16 v0, p5
-
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txPackets:J
-
-    move-wide/from16 v24, v0
-
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-nez v24, :cond_3
-
-    move-object/from16 v0, p5
-
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->operations:J
-
-    move-wide/from16 v24, v0
-
-    const-wide/16 v26, 0x0
-
-    cmp-long v24, v24, v26
-
-    if-nez v24, :cond_3
-
-    .line 314
-    :cond_2
+    .line 339
+    :goto_0
     return-void
 
-    .line 281
-    :cond_3
+    .line 304
+    :cond_1
     invoke-direct/range {p0 .. p4}, Landroid/net/NetworkStatsHistory;->ensureBuckets(JJ)V
 
-    .line 284
+    .line 307
     sub-long v8, p3, p1
 
-    .line 285
+    .line 308
     .local v8, duration:J
     move-object/from16 v0, p0
 
@@ -2419,214 +2449,197 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/NetworkStatsHistory;->getIndexAfter(J)I
 
-    move-result v23
+    move-result v29
 
-    .line 286
-    .local v23, startIndex:I
-    move/from16 v20, v23
+    .line 309
+    .local v29, startIndex:I
+    move/from16 v20, v29
 
     .local v20, i:I
-    :goto_0
+    :goto_1
     if-ltz v20, :cond_2
 
-    .line 287
+    .line 310
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    aget-wide v6, v24, v20
+    aget-wide v6, v34, v20
 
-    .line 288
+    .line 311
     .local v6, curStart:J
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
-    move-wide/from16 v24, v0
+    move-wide/from16 v34, v0
 
-    add-long v4, v6, v24
+    add-long v4, v6, v34
 
-    .line 291
+    .line 314
     .local v4, curEnd:J
-    cmp-long v24, v4, p1
+    cmp-long v34, v4, p1
 
-    if-ltz v24, :cond_2
+    if-gez v34, :cond_3
 
-    .line 293
-    cmp-long v24, v6, p3
+    .line 338
+    .end local v4           #curEnd:J
+    .end local v6           #curStart:J
+    :cond_2
+    move-object/from16 v0, p0
 
-    if-lez v24, :cond_5
+    iget-wide v0, v0, Landroid/net/NetworkStatsHistory;->totalBytes:J
 
-    .line 286
-    :cond_4
-    :goto_1
-    add-int/lit8 v20, v20, -0x1
+    move-wide/from16 v34, v0
+
+    move-object/from16 v0, p5
+
+    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxBytes:J
+
+    move-wide/from16 v36, v0
+
+    move-object/from16 v0, p5
+
+    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txBytes:J
+
+    move-wide/from16 v38, v0
+
+    add-long v36, v36, v38
+
+    add-long v34, v34, v36
+
+    move-wide/from16 v0, v34
+
+    move-object/from16 v2, p0
+
+    iput-wide v0, v2, Landroid/net/NetworkStatsHistory;->totalBytes:J
 
     goto :goto_0
 
-    .line 295
+    .line 316
+    .restart local v4       #curEnd:J
+    .restart local v6       #curStart:J
+    :cond_3
+    cmp-long v34, v6, p3
+
+    if-lez v34, :cond_5
+
+    .line 309
+    :cond_4
+    :goto_2
+    add-int/lit8 v20, v20, -0x1
+
+    goto :goto_1
+
+    .line 318
     :cond_5
     move-wide/from16 v0, p3
 
     invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v24
+    move-result-wide v34
 
     move-wide/from16 v0, p1
 
     invoke-static {v6, v7, v0, v1}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v26
+    move-result-wide v36
 
-    sub-long v21, v24, v26
+    sub-long v23, v34, v36
 
-    .line 296
-    .local v21, overlap:J
-    const-wide/16 v24, 0x0
+    .line 319
+    .local v23, overlap:J
+    const-wide/16 v34, 0x0
 
-    cmp-long v24, v21, v24
+    cmp-long v34, v23, v34
 
-    if-lez v24, :cond_4
+    if-lez v34, :cond_4
 
-    .line 299
-    move-object/from16 v0, p5
+    .line 322
+    mul-long v34, v25, v23
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxBytes:J
+    div-long v12, v34, v8
 
-    move-wide/from16 v24, v0
-
-    mul-long v24, v24, v21
-
-    div-long v12, v24, v8
-
-    .line 300
+    .line 323
     .local v12, fracRxBytes:J
-    move-object/from16 v0, p5
+    mul-long v34, v27, v23
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxPackets:J
+    div-long v14, v34, v8
 
-    move-wide/from16 v24, v0
-
-    mul-long v24, v24, v21
-
-    div-long v14, v24, v8
-
-    .line 301
+    .line 324
     .local v14, fracRxPackets:J
-    move-object/from16 v0, p5
+    mul-long v34, v30, v23
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txBytes:J
+    div-long v16, v34, v8
 
-    move-wide/from16 v24, v0
-
-    mul-long v24, v24, v21
-
-    div-long v16, v24, v8
-
-    .line 302
+    .line 325
     .local v16, fracTxBytes:J
-    move-object/from16 v0, p5
+    mul-long v34, v32, v23
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txPackets:J
+    div-long v18, v34, v8
 
-    move-wide/from16 v24, v0
-
-    mul-long v24, v24, v21
-
-    div-long v18, v24, v8
-
-    .line 303
+    .line 326
     .local v18, fracTxPackets:J
-    move-object/from16 v0, p5
+    mul-long v34, v21, v23
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->operations:J
+    div-long v10, v34, v8
 
-    move-wide/from16 v24, v0
-
-    mul-long v24, v24, v21
-
-    div-long v10, v24, v8
-
-    .line 305
+    .line 328
     .local v10, fracOperations:J
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v34
 
     move/from16 v1, v20
 
-    move-wide/from16 v2, v21
+    move-wide/from16 v2, v23
 
     invoke-static {v0, v1, v2, v3}, Landroid/net/NetworkStatsHistory;->addLong([JIJ)V
 
-    .line 306
+    .line 329
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v34
 
     move/from16 v1, v20
 
     invoke-static {v0, v1, v12, v13}, Landroid/net/NetworkStatsHistory;->addLong([JIJ)V
 
-    move-object/from16 v0, p5
+    sub-long v25, v25, v12
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxBytes:J
-
-    move-wide/from16 v24, v0
-
-    sub-long v24, v24, v12
-
-    move-wide/from16 v0, v24
-
-    move-object/from16 v2, p5
-
-    iput-wide v0, v2, Landroid/net/NetworkStats$Entry;->rxBytes:J
-
-    .line 307
+    .line 330
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v34
 
     move/from16 v1, v20
 
     invoke-static {v0, v1, v14, v15}, Landroid/net/NetworkStatsHistory;->addLong([JIJ)V
 
-    move-object/from16 v0, p5
+    sub-long v27, v27, v14
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->rxPackets:J
-
-    move-wide/from16 v24, v0
-
-    sub-long v24, v24, v14
-
-    move-wide/from16 v0, v24
-
-    move-object/from16 v2, p5
-
-    iput-wide v0, v2, Landroid/net/NetworkStats$Entry;->rxPackets:J
-
-    .line 308
+    .line 331
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v34
 
     move/from16 v1, v20
 
@@ -2634,28 +2647,16 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/net/NetworkStatsHistory;->addLong([JIJ)V
 
-    move-object/from16 v0, p5
+    sub-long v30, v30, v16
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txBytes:J
-
-    move-wide/from16 v24, v0
-
-    sub-long v24, v24, v16
-
-    move-wide/from16 v0, v24
-
-    move-object/from16 v2, p5
-
-    iput-wide v0, v2, Landroid/net/NetworkStats$Entry;->txBytes:J
-
-    .line 309
+    .line 332
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v34
 
     move/from16 v1, v20
 
@@ -2663,59 +2664,57 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/net/NetworkStatsHistory;->addLong([JIJ)V
 
-    move-object/from16 v0, p5
+    sub-long v32, v32, v18
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->txPackets:J
-
-    move-wide/from16 v24, v0
-
-    sub-long v24, v24, v18
-
-    move-wide/from16 v0, v24
-
-    move-object/from16 v2, p5
-
-    iput-wide v0, v2, Landroid/net/NetworkStats$Entry;->txPackets:J
-
-    .line 310
+    .line 333
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    move-object/from16 v24, v0
+    move-object/from16 v34, v0
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v34
 
     move/from16 v1, v20
 
     invoke-static {v0, v1, v10, v11}, Landroid/net/NetworkStatsHistory;->addLong([JIJ)V
 
-    move-object/from16 v0, p5
+    sub-long v21, v21, v10
 
-    iget-wide v0, v0, Landroid/net/NetworkStats$Entry;->operations:J
+    .line 335
+    sub-long v8, v8, v23
 
-    move-wide/from16 v24, v0
-
-    sub-long v24, v24, v10
-
-    move-wide/from16 v0, v24
-
-    move-object/from16 v2, p5
-
-    iput-wide v0, v2, Landroid/net/NetworkStats$Entry;->operations:J
-
-    .line 312
-    sub-long v8, v8, v21
-
-    goto/16 :goto_1
+    goto/16 :goto_2
 .end method
 
 .method public recordEntireHistory(Landroid/net/NetworkStatsHistory;)V
-    .locals 17
+    .locals 6
     .parameter "input"
 
     .prologue
-    .line 321
+    .line 346
+    const-wide/high16 v2, -0x8000
+
+    const-wide v4, 0x7fffffffffffffffL
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/net/NetworkStatsHistory;->recordHistory(Landroid/net/NetworkStatsHistory;JJ)V
+
+    .line 347
+    return-void
+.end method
+
+.method public recordHistory(Landroid/net/NetworkStatsHistory;JJ)V
+    .locals 17
+    .parameter "input"
+    .parameter "start"
+    .parameter "end"
+
+    .prologue
+    .line 355
     new-instance v1, Landroid/net/NetworkStats$Entry;
 
     sget-object v2, Landroid/net/NetworkStats;->IFACE_ALL:Ljava/lang/String;
@@ -2738,7 +2737,7 @@
 
     invoke-direct/range {v1 .. v15}, Landroid/net/NetworkStats$Entry;-><init>(Ljava/lang/String;IIIJJJJJ)V
 
-    .line 323
+    .line 357
     .local v1, entry:Landroid/net/NetworkStats$Entry;
     const/16 v16, 0x0
 
@@ -2750,25 +2749,42 @@
 
     move/from16 v0, v16
 
-    if-ge v0, v2, :cond_0
+    if-ge v0, v2, :cond_2
 
-    .line 324
+    .line 358
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     aget-wide v3, v2, v16
 
-    .line 325
-    .local v3, start:J
+    .line 359
+    .local v3, bucketStart:J
     move-object/from16 v0, p1
 
     iget-wide v7, v0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     add-long v5, v3, v7
 
-    .line 327
-    .local v5, end:J
+    .line 362
+    .local v5, bucketEnd:J
+    cmp-long v2, v3, p2
+
+    if-ltz v2, :cond_0
+
+    cmp-long v2, v5, p4
+
+    if-lez v2, :cond_1
+
+    .line 357
+    :cond_0
+    :goto_1
+    add-int/lit8 v16, v16, 0x1
+
+    goto :goto_0
+
+    .line 364
+    :cond_1
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
@@ -2783,7 +2799,7 @@
 
     iput-wide v7, v1, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
-    .line 328
+    .line 365
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
@@ -2798,7 +2814,7 @@
 
     iput-wide v7, v1, Landroid/net/NetworkStats$Entry;->rxPackets:J
 
-    .line 329
+    .line 366
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/net/NetworkStatsHistory;->txBytes:[J
@@ -2813,7 +2829,7 @@
 
     iput-wide v7, v1, Landroid/net/NetworkStats$Entry;->txBytes:J
 
-    .line 330
+    .line 367
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/net/NetworkStatsHistory;->txPackets:[J
@@ -2828,7 +2844,7 @@
 
     iput-wide v7, v1, Landroid/net/NetworkStats$Entry;->txPackets:J
 
-    .line 331
+    .line 368
     move-object/from16 v0, p1
 
     iget-object v2, v0, Landroid/net/NetworkStatsHistory;->operations:[J
@@ -2847,27 +2863,26 @@
 
     move-object v7, v1
 
-    .line 333
+    .line 370
     invoke-virtual/range {v2 .. v7}, Landroid/net/NetworkStatsHistory;->recordData(JJLandroid/net/NetworkStats$Entry;)V
 
-    .line 323
-    add-int/lit8 v16, v16, 0x1
+    goto :goto_1
 
-    goto :goto_0
-
-    .line 335
-    .end local v3           #start:J
-    .end local v5           #end:J
-    :cond_0
+    .line 372
+    .end local v3           #bucketStart:J
+    .end local v5           #bucketEnd:J
+    :cond_2
     return-void
 .end method
 
 .method public removeBucketsBefore(J)V
     .locals 8
     .parameter "cutoff"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 400
+    .line 438
     const/4 v4, 0x0
 
     .local v4, i:I
@@ -2876,35 +2891,35 @@
 
     if-ge v4, v6, :cond_0
 
-    .line 401
+    .line 439
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     aget-wide v2, v6, v4
 
-    .line 402
+    .line 440
     .local v2, curStart:J
     iget-wide v6, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     add-long v0, v2, v6
 
-    .line 406
+    .line 444
     .local v0, curEnd:J
     cmp-long v6, v0, p1
 
     if-lez v6, :cond_8
 
-    .line 409
+    .line 447
     .end local v0           #curEnd:J
     .end local v2           #curStart:J
     :cond_0
     if-lez v4, :cond_7
 
-    .line 410
+    .line 448
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     array-length v5, v6
 
-    .line 411
+    .line 449
     .local v5, length:I
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
@@ -2914,7 +2929,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
-    .line 412
+    .line 450
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     if-eqz v6, :cond_1
@@ -2927,7 +2942,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
-    .line 413
+    .line 451
     :cond_1
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
@@ -2941,7 +2956,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
-    .line 414
+    .line 452
     :cond_2
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
@@ -2955,7 +2970,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
-    .line 415
+    .line 453
     :cond_3
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
@@ -2969,7 +2984,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
-    .line 416
+    .line 454
     :cond_4
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
@@ -2983,7 +2998,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
-    .line 417
+    .line 455
     :cond_5
     iget-object v6, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
@@ -2997,7 +3012,7 @@
 
     iput-object v6, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
-    .line 418
+    .line 456
     :cond_6
     iget v6, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
@@ -3005,12 +3020,12 @@
 
     iput v6, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
-    .line 420
+    .line 460
     .end local v5           #length:I
     :cond_7
     return-void
 
-    .line 400
+    .line 438
     .restart local v0       #curEnd:J
     .restart local v2       #curStart:J
     :cond_8
@@ -3023,34 +3038,34 @@
     .locals 1
 
     .prologue
-    .line 188
+    .line 201
     iget v0, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 556
+    .line 596
     new-instance v0, Ljava/io/CharArrayWriter;
 
     invoke-direct {v0}, Ljava/io/CharArrayWriter;-><init>()V
 
-    .line 557
+    .line 597
     .local v0, writer:Ljava/io/CharArrayWriter;
-    const-string v1, ""
+    new-instance v1, Lcom/android/internal/util/IndentingPrintWriter;
 
-    new-instance v2, Ljava/io/PrintWriter;
+    const-string v2, "  "
 
-    invoke-direct {v2, v0}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+    invoke-direct {v1, v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;-><init>(Ljava/io/Writer;Ljava/lang/String;)V
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v1, v2, v3}, Landroid/net/NetworkStatsHistory;->dump(Ljava/lang/String;Ljava/io/PrintWriter;Z)V
+    invoke-virtual {p0, v1, v2}, Landroid/net/NetworkStatsHistory;->dump(Lcom/android/internal/util/IndentingPrintWriter;Z)V
 
-    .line 558
+    .line 598
     invoke-virtual {v0}, Ljava/io/CharArrayWriter;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3064,61 +3079,66 @@
     .parameter "flags"
 
     .prologue
-    .line 126
+    .line 136
     iget-wide v0, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 127
+    .line 137
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 128
+    .line 138
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 129
+    .line 139
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 130
+    .line 140
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 131
+    .line 141
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 132
+    .line 142
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 133
+    .line 143
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$ParcelUtils;->writeLongArray(Landroid/os/Parcel;[JI)V
 
-    .line 134
+    .line 144
+    iget-wide v0, p0, Landroid/net/NetworkStatsHistory;->totalBytes:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 145
     return-void
 .end method
 
@@ -3132,65 +3152,65 @@
     .end annotation
 
     .prologue
-    .line 171
+    .line 184
     const/4 v0, 0x3
 
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 172
+    .line 185
     iget-wide v0, p0, Landroid/net/NetworkStatsHistory;->bucketDuration:J
 
     invoke-virtual {p1, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
 
-    .line 173
+    .line 186
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->bucketStart:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 174
+    .line 187
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->activeTime:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 175
+    .line 188
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->rxBytes:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 176
+    .line 189
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->rxPackets:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 177
+    .line 190
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->txBytes:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 178
+    .line 191
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->txPackets:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 179
+    .line 192
     iget-object v0, p0, Landroid/net/NetworkStatsHistory;->operations:[J
 
     iget v1, p0, Landroid/net/NetworkStatsHistory;->bucketCount:I
 
     invoke-static {p1, v0, v1}, Landroid/net/NetworkStatsHistory$DataStreamUtils;->writeVarLongArray(Ljava/io/DataOutputStream;[JI)V
 
-    .line 180
+    .line 193
     return-void
 .end method

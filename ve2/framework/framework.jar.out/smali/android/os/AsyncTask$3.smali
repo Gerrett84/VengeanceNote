@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 268
+    .line 291
     .local p0, this:Landroid/os/AsyncTask$3;,"Landroid/os/AsyncTask.3;"
     .local p2, x0:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<TResult;>;"
     iput-object p1, p0, Landroid/os/AsyncTask$3;->this$0:Landroid/os/AsyncTask;
@@ -45,92 +45,73 @@
 
 # virtual methods
 .method protected done()V
-    .locals 6
+    .locals 4
 
     .prologue
-    .line 272
+    .line 295
     .local p0, this:Landroid/os/AsyncTask$3;,"Landroid/os/AsyncTask.3;"
     :try_start_0
+    iget-object v1, p0, Landroid/os/AsyncTask$3;->this$0:Landroid/os/AsyncTask;
+
     invoke-virtual {p0}, Landroid/os/AsyncTask$3;->get()Ljava/lang/Object;
 
-    move-result-object v1
-
-    .line 274
-    .local v1, result:Ljava/lang/Object;,"TResult;"
-    iget-object v3, p0, Landroid/os/AsyncTask$3;->this$0:Landroid/os/AsyncTask;
+    move-result-object v2
 
     #calls: Landroid/os/AsyncTask;->postResultIfNotInvoked(Ljava/lang/Object;)V
-    invoke-static {v3, v1}, Landroid/os/AsyncTask;->access$500(Landroid/os/AsyncTask;Ljava/lang/Object;)V
+    invoke-static {v1, v2}, Landroid/os/AsyncTask;->access$500(Landroid/os/AsyncTask;Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 286
-    .end local v1           #result:Ljava/lang/Object;,"TResult;"
+    .line 304
     :goto_0
     return-void
 
-    .line 275
+    .line 296
     :catch_0
     move-exception v0
 
-    .line 276
+    .line 297
     .local v0, e:Ljava/lang/InterruptedException;
-    const-string v3, "AsyncTask"
+    const-string v1, "AsyncTask"
 
-    invoke-static {v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 
-    .line 277
+    .line 298
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catch_1
     move-exception v0
 
-    .line 278
+    .line 299
     .local v0, e:Ljava/util/concurrent/ExecutionException;
-    new-instance v3, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string v4, "An error occured while executing doInBackground()"
+    const-string v2, "An error occured while executing doInBackground()"
 
     invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-direct {v3, v4, v5}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 
-    .line 280
+    .line 301
     .end local v0           #e:Ljava/util/concurrent/ExecutionException;
     :catch_2
     move-exception v0
 
-    .line 281
+    .line 302
     .local v0, e:Ljava/util/concurrent/CancellationException;
-    iget-object v3, p0, Landroid/os/AsyncTask$3;->this$0:Landroid/os/AsyncTask;
+    iget-object v1, p0, Landroid/os/AsyncTask$3;->this$0:Landroid/os/AsyncTask;
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     #calls: Landroid/os/AsyncTask;->postResultIfNotInvoked(Ljava/lang/Object;)V
-    invoke-static {v3, v4}, Landroid/os/AsyncTask;->access$500(Landroid/os/AsyncTask;Ljava/lang/Object;)V
+    invoke-static {v1, v2}, Landroid/os/AsyncTask;->access$500(Landroid/os/AsyncTask;Ljava/lang/Object;)V
 
     goto :goto_0
-
-    .line 282
-    .end local v0           #e:Ljava/util/concurrent/CancellationException;
-    :catch_3
-    move-exception v2
-
-    .line 283
-    .local v2, t:Ljava/lang/Throwable;
-    new-instance v3, Ljava/lang/RuntimeException;
-
-    const-string v4, "An error occured while executing doInBackground()"
-
-    invoke-direct {v3, v4, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v3
 .end method

@@ -151,7 +151,15 @@
     .end annotation
 .end method
 
-.method public abstract getNetworkStatsSummary()Landroid/net/NetworkStats;
+.method public abstract getNetworkStatsSummaryDev()Landroid/net/NetworkStats;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getNetworkStatsSummaryXt()Landroid/net/NetworkStats;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

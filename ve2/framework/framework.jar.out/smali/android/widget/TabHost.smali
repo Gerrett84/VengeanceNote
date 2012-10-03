@@ -152,7 +152,7 @@
     if-nez v1, :cond_0
 
     .line 88
-    const v1, 0x109009e
+    const v1, 0x10900b2
 
     iput v1, p0, Landroid/widget/TabHost;->mTabLayoutId:I
 
@@ -229,12 +229,12 @@
     .locals 2
 
     .prologue
-    .line 378
+    .line 390
     iget-object v0, p0, Landroid/widget/TabHost;->mOnTabChangeListener:Landroid/widget/TabHost$OnTabChangeListener;
 
     if-eqz v0, :cond_0
 
-    .line 379
+    .line 391
     iget-object v0, p0, Landroid/widget/TabHost;->mOnTabChangeListener:Landroid/widget/TabHost$OnTabChangeListener;
 
     invoke-virtual {p0}, Landroid/widget/TabHost;->getCurrentTabTag()Ljava/lang/String;
@@ -243,7 +243,7 @@
 
     invoke-interface {v0, v1}, Landroid/widget/TabHost$OnTabChangeListener;->onTabChanged(Ljava/lang/String;)V
 
-    .line 381
+    .line 393
     :cond_0
     return-void
 .end method
@@ -666,6 +666,48 @@
     return-void
 .end method
 
+.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 1
+    .parameter "event"
+
+    .prologue
+    .line 326
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    .line 327
+    const-class v0, Landroid/widget/TabHost;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 328
+    return-void
+.end method
+
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 332
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    .line 333
+    const-class v0, Landroid/widget/TabHost;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 334
+    return-void
+.end method
+
 .method public onTouchModeChanged(Z)V
     .locals 2
     .parameter "isInTouchMode"
@@ -728,7 +770,7 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 325
+    .line 337
     if-ltz p1, :cond_0
 
     iget-object v1, p0, Landroid/widget/TabHost;->mTabSpecs:Ljava/util/List;
@@ -739,23 +781,23 @@
 
     if-lt p1, v1, :cond_1
 
-    .line 365
+    .line 377
     :cond_0
     :goto_0
     return-void
 
-    .line 329
+    .line 341
     :cond_1
     iget v1, p0, Landroid/widget/TabHost;->mCurrentTab:I
 
     if-eq p1, v1, :cond_0
 
-    .line 334
+    .line 346
     iget v1, p0, Landroid/widget/TabHost;->mCurrentTab:I
 
     if-eq v1, v4, :cond_2
 
-    .line 335
+    .line 347
     iget-object v1, p0, Landroid/widget/TabHost;->mTabSpecs:Ljava/util/List;
 
     iget v2, p0, Landroid/widget/TabHost;->mCurrentTab:I
@@ -773,11 +815,11 @@
 
     invoke-interface {v1}, Landroid/widget/TabHost$ContentStrategy;->tabClosed()V
 
-    .line 338
+    .line 350
     :cond_2
     iput p1, p0, Landroid/widget/TabHost;->mCurrentTab:I
 
-    .line 339
+    .line 351
     iget-object v1, p0, Landroid/widget/TabHost;->mTabSpecs:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -786,7 +828,7 @@
 
     check-cast v0, Landroid/widget/TabHost$TabSpec;
 
-    .line 343
+    .line 355
     .local v0, spec:Landroid/widget/TabHost$TabSpec;
     iget-object v1, p0, Landroid/widget/TabHost;->mTabWidget:Landroid/widget/TabWidget;
 
@@ -794,7 +836,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TabWidget;->focusCurrentTab(I)V
 
-    .line 346
+    .line 358
     #getter for: Landroid/widget/TabHost$TabSpec;->mContentStrategy:Landroid/widget/TabHost$ContentStrategy;
     invoke-static {v0}, Landroid/widget/TabHost$TabSpec;->access$300(Landroid/widget/TabHost$TabSpec;)Landroid/widget/TabHost$ContentStrategy;
 
@@ -806,7 +848,7 @@
 
     iput-object v1, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
 
-    .line 348
+    .line 360
     iget-object v1, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -815,7 +857,7 @@
 
     if-nez v1, :cond_3
 
-    .line 349
+    .line 361
     iget-object v1, p0, Landroid/widget/TabHost;->mTabContent:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
@@ -826,7 +868,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 357
+    .line 369
     :cond_3
     iget-object v1, p0, Landroid/widget/TabHost;->mTabWidget:Landroid/widget/TabWidget;
 
@@ -836,12 +878,12 @@
 
     if-nez v1, :cond_4
 
-    .line 360
+    .line 372
     iget-object v1, p0, Landroid/widget/TabHost;->mCurrentView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
 
-    .line 364
+    .line 376
     :cond_4
     invoke-direct {p0}, Landroid/widget/TabHost;->invokeOnTabChangeListener()V
 
@@ -904,10 +946,10 @@
     .parameter "l"
 
     .prologue
-    .line 374
+    .line 386
     iput-object p1, p0, Landroid/widget/TabHost;->mOnTabChangeListener:Landroid/widget/TabHost$OnTabChangeListener;
 
-    .line 375
+    .line 387
     return-void
 .end method
 

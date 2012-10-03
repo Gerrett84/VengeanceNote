@@ -39,7 +39,7 @@
 
     sput-object v0, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
-    .line 138
+    .line 140
     new-instance v0, Lcom/android/internal/widget/multiwaveview/Tweener$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/multiwaveview/Tweener$1;-><init>()V
@@ -145,7 +145,7 @@
     .end annotation
 
     .prologue
-    .line 162
+    .line 164
     .local p0, props:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/PropertyValuesHolder;>;"
     move-object v0, p1
 
@@ -161,7 +161,7 @@
 
     aget-object v2, v0, v1
 
-    .line 163
+    .line 165
     .local v2, killobject:Ljava/lang/Object;
     sget-object v5, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
@@ -171,19 +171,19 @@
 
     check-cast v4, Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    .line 164
+    .line 166
     .local v4, tween:Lcom/android/internal/widget/multiwaveview/Tweener;
     if-eqz v4, :cond_0
 
-    .line 165
+    .line 167
     iget-object v5, v4, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v5}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 166
+    .line 168
     if-eqz p0, :cond_1
 
-    .line 167
+    .line 169
     iget-object v6, v4, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
@@ -200,14 +200,14 @@
 
     invoke-virtual {v6, v5}, Landroid/animation/ObjectAnimator;->setValues([Landroid/animation/PropertyValuesHolder;)V
 
-    .line 162
+    .line 164
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 170
+    .line 172
     :cond_1
     sget-object v5, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
@@ -215,7 +215,7 @@
 
     goto :goto_1
 
-    .line 174
+    .line 176
     .end local v2           #killobject:Ljava/lang/Object;
     .end local v4           #tween:Lcom/android/internal/widget/multiwaveview/Tweener;
     :cond_2
@@ -226,12 +226,12 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 160
     sget-object v0, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 159
+    .line 161
     return-void
 .end method
 
@@ -279,7 +279,7 @@
 
     array-length v14, v0
 
-    if-ge v6, v14, :cond_b
+    if-ge v6, v14, :cond_c
 
     .line 66
     aget-object v14, p3, v6
@@ -494,11 +494,58 @@
     .line 86
     .restart local v13       #value:Ljava/lang/Object;
     :cond_9
-    instance-of v14, v13, Ljava/lang/Number;
+    instance-of v14, v13, [I
 
     if-eqz v14, :cond_a
 
     .line 87
+    const/4 v14, 0x2
+
+    new-array v15, v14, [I
+
+    const/16 v16, 0x0
+
+    move-object v14, v13
+
+    check-cast v14, [I
+
+    check-cast v14, [I
+
+    const/16 v17, 0x0
+
+    aget v14, v14, v17
+
+    aput v14, v15, v16
+
+    const/4 v14, 0x1
+
+    check-cast v13, [I
+
+    .end local v13           #value:Ljava/lang/Object;
+    check-cast v13, [I
+
+    const/16 v16, 0x1
+
+    aget v16, v13, v16
+
+    aput v16, v15, v14
+
+    invoke-static {v8, v15}, Landroid/animation/PropertyValuesHolder;->ofInt(Ljava/lang/String;[I)Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v14
+
+    invoke-virtual {v10, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    .line 89
+    .restart local v13       #value:Ljava/lang/Object;
+    :cond_a
+    instance-of v14, v13, Ljava/lang/Number;
+
+    if-eqz v14, :cond_b
+
+    .line 90
     check-cast v13, Ljava/lang/Number;
 
     .end local v13           #value:Ljava/lang/Object;
@@ -506,7 +553,7 @@
 
     move-result v5
 
-    .line 88
+    .line 91
     .local v5, floatValue:F
     const/4 v14, 0x1
 
@@ -524,10 +571,10 @@
 
     goto/16 :goto_1
 
-    .line 90
+    .line 93
     .end local v5           #floatValue:F
     .restart local v13       #value:Ljava/lang/Object;
-    :cond_a
+    :cond_b
     new-instance v14, Ljava/lang/IllegalArgumentException;
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -566,10 +613,10 @@
 
     throw v14
 
-    .line 96
+    .line 99
     .end local v8           #key:Ljava/lang/String;
     .end local v13           #value:Ljava/lang/Object;
-    :cond_b
+    :cond_c
     sget-object v14, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
     move-object/from16 v0, p0
@@ -580,15 +627,15 @@
 
     check-cast v11, Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    .line 97
+    .line 100
     .local v11, tween:Lcom/android/internal/widget/multiwaveview/Tweener;
     const/4 v2, 0x0
 
-    .line 98
+    .line 101
     .local v2, anim:Landroid/animation/ObjectAnimator;
-    if-nez v11, :cond_f
+    if-nez v11, :cond_10
 
-    .line 99
+    .line 102
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v14
@@ -607,13 +654,13 @@
 
     move-result-object v2
 
-    .line 101
+    .line 104
     new-instance v11, Lcom/android/internal/widget/multiwaveview/Tweener;
 
     .end local v11           #tween:Lcom/android/internal/widget/multiwaveview/Tweener;
     invoke-direct {v11, v2}, Lcom/android/internal/widget/multiwaveview/Tweener;-><init>(Landroid/animation/ObjectAnimator;)V
 
-    .line 102
+    .line 105
     .restart local v11       #tween:Lcom/android/internal/widget/multiwaveview/Tweener;
     sget-object v14, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
@@ -621,55 +668,52 @@
 
     invoke-virtual {v14, v0, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 109
+    .line 112
     :goto_2
-    if-eqz v7, :cond_c
+    if-eqz v7, :cond_d
 
-    .line 110
+    .line 113
     invoke-virtual {v2, v7}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 114
-    :cond_c
+    .line 117
+    :cond_d
     invoke-virtual {v2, v3, v4}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 115
+    .line 118
     move-wide/from16 v0, p1
 
     invoke-virtual {v2, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 116
-    if-eqz v12, :cond_d
-
-    .line 117
-    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->removeAllUpdateListeners()V
-
-    .line 118
-    invoke-virtual {v2, v12}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    .line 119
+    if-eqz v12, :cond_e
 
     .line 120
-    :cond_d
-    if-eqz v9, :cond_e
+    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->removeAllUpdateListeners()V
 
     .line 121
-    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
+    invoke-virtual {v2, v12}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 122
-    invoke-virtual {v2, v9}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    .line 123
+    :cond_e
+    if-eqz v9, :cond_f
 
     .line 124
-    :cond_e
+    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
+
+    .line 125
+    invoke-virtual {v2, v9}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 127
+    :cond_f
     sget-object v14, Lcom/android/internal/widget/multiwaveview/Tweener;->mCleanupListener:Landroid/animation/Animator$AnimatorListener;
 
     invoke-virtual {v2, v14}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 125
-    invoke-virtual {v2}, Landroid/animation/ObjectAnimator;->start()V
-
-    .line 127
+    .line 129
     return-object v11
 
-    .line 105
-    :cond_f
+    .line 108
+    :cond_10
     sget-object v14, Lcom/android/internal/widget/multiwaveview/Tweener;->sTweens:Ljava/util/HashMap;
 
     move-object/from16 v0, p0
@@ -682,7 +726,7 @@
 
     iget-object v2, v14, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
-    .line 106
+    .line 109
     const/4 v14, 0x1
 
     new-array v14, v14, [Ljava/lang/Object;
@@ -705,7 +749,7 @@
     .parameter "vars"
 
     .prologue
-    .line 134
+    .line 136
     invoke-static {p1, p2, p3, p4}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
 
     move-result-object v0

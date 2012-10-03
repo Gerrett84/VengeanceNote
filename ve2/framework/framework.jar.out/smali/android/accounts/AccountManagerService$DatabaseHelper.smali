@@ -9,28 +9,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x8
     name = "DatabaseHelper"
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroid/accounts/AccountManagerService;
-
-
 # direct methods
-.method public constructor <init>(Landroid/accounts/AccountManagerService;Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;I)V
     .locals 3
-    .parameter
     .parameter "context"
+    .parameter "userId"
 
     .prologue
-    .line 1708
-    iput-object p1, p0, Landroid/accounts/AccountManagerService$DatabaseHelper;->this$0:Landroid/accounts/AccountManagerService;
-
-    .line 1709
-    #calls: Landroid/accounts/AccountManagerService;->getDatabaseName()Ljava/lang/String;
-    invoke-static {}, Landroid/accounts/AccountManagerService;->access$1000()Ljava/lang/String;
+    .line 1901
+    #calls: Landroid/accounts/AccountManagerService;->getDatabaseName(I)Ljava/lang/String;
+    invoke-static {p2}, Landroid/accounts/AccountManagerService;->access$1900(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -38,9 +31,9 @@
 
     const/4 v2, 0x4
 
-    invoke-direct {p0, p2, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+    invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 1710
+    .line 1902
     return-void
 .end method
 
@@ -49,12 +42,12 @@
     .parameter "db"
 
     .prologue
-    .line 1750
+    .line 1942
     const-string v0, " CREATE TRIGGER accountsDelete DELETE ON accounts BEGIN   DELETE FROM authtokens     WHERE accounts_id=OLD._id ;   DELETE FROM extras     WHERE accounts_id=OLD._id ;   DELETE FROM grants     WHERE accounts_id=OLD._id ; END"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1760
+    .line 1952
     return-void
 .end method
 
@@ -63,12 +56,12 @@
     .parameter "db"
 
     .prologue
-    .line 1763
+    .line 1955
     const-string v0, "CREATE TABLE grants (  accounts_id INTEGER NOT NULL, auth_token_type STRING NOT NULL,  uid INTEGER NOT NULL,  UNIQUE (accounts_id,auth_token_type,uid))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1769
+    .line 1961
     return-void
 .end method
 
@@ -79,33 +72,33 @@
     .parameter "db"
 
     .prologue
-    .line 1719
+    .line 1911
     const-string v0, "CREATE TABLE accounts ( _id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, type TEXT NOT NULL, password TEXT, UNIQUE(name,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1726
+    .line 1918
     const-string v0, "CREATE TABLE authtokens (  _id INTEGER PRIMARY KEY AUTOINCREMENT,  accounts_id INTEGER NOT NULL, type TEXT NOT NULL,  authtoken TEXT,  UNIQUE (accounts_id,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1733
+    .line 1925
     invoke-direct {p0, p1}, Landroid/accounts/AccountManagerService$DatabaseHelper;->createGrantsTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1735
+    .line 1927
     const-string v0, "CREATE TABLE extras ( _id INTEGER PRIMARY KEY AUTOINCREMENT, accounts_id INTEGER, key TEXT NOT NULL, value TEXT, UNIQUE(accounts_id,key))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1742
+    .line 1934
     const-string v0, "CREATE TABLE meta ( key TEXT PRIMARY KEY NOT NULL, value TEXT)"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1746
+    .line 1938
     invoke-direct {p0, p1}, Landroid/accounts/AccountManagerService$DatabaseHelper;->createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1747
+    .line 1939
     return-void
 .end method
 
@@ -114,7 +107,7 @@
     .parameter "db"
 
     .prologue
-    .line 1797
+    .line 1989
     const-string v0, "AccountManagerService"
 
     const/4 v1, 0x2
@@ -131,7 +124,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1798
+    .line 1990
     :cond_0
     return-void
 .end method
@@ -143,7 +136,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 1773
+    .line 1965
     const-string v0, "AccountManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -176,49 +169,49 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1775
+    .line 1967
     const/4 v0, 0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 1778
+    .line 1970
     add-int/lit8 p2, p2, 0x1
 
-    .line 1781
+    .line 1973
     :cond_0
     const/4 v0, 0x2
 
     if-ne p2, v0, :cond_1
 
-    .line 1782
+    .line 1974
     invoke-direct {p0, p1}, Landroid/accounts/AccountManagerService$DatabaseHelper;->createGrantsTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1783
+    .line 1975
     const-string v0, "DROP TRIGGER accountsDelete"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1784
+    .line 1976
     invoke-direct {p0, p1}, Landroid/accounts/AccountManagerService$DatabaseHelper;->createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1785
+    .line 1977
     add-int/lit8 p2, p2, 0x1
 
-    .line 1788
+    .line 1980
     :cond_1
     const/4 v0, 0x3
 
     if-ne p2, v0, :cond_2
 
-    .line 1789
+    .line 1981
     const-string v0, "UPDATE accounts SET type = \'com.google\' WHERE type == \'com.google.GAIA\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1791
+    .line 1983
     add-int/lit8 p2, p2, 0x1
 
-    .line 1793
+    .line 1985
     :cond_2
     return-void
 .end method

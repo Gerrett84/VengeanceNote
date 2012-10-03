@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract getBitmapInfo(Ljava/lang/String;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
+.method public abstract getBitmapInfo(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
 .end method
 
 .method public abstract getFile(Ljava/lang/String;)Landroid/os/MemoryFile;

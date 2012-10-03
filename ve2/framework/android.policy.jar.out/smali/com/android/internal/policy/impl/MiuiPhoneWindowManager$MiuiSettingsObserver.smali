@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 728
+    .line 784
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    .line 729
+    .line 785
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 730
+    .line 786
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 733
+    .line 789
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    .line 734
+    .line 790
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v1, "trackball_wake_screen"
 
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 736
+    .line 792
     const-string v1, "camera_key_preferred_action_type"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 738
+    .line 794
     const-string v1, "camera_key_preferred_action_shortcut_id"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 740
+    .line 796
     const-string v1, "volumekey_wake_screen"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 742
+    .line 798
     const-string v1, "screen_buttons_state"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -98,10 +98,10 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 745
+    .line 801
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->onChange(Z)V
 
-    .line 746
+    .line 802
     return-void
 .end method
 
@@ -114,14 +114,14 @@
 
     const/4 v3, 0x0
 
-    .line 749
+    .line 805
     iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     iget-object v5, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 750
+    .line 806
     :try_start_0
     iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
@@ -131,7 +131,7 @@
 
     move-result-object v1
 
-    .line 751
+    .line 807
     .local v1, resolver:Landroid/content/ContentResolver;
     iget-object v6, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
@@ -150,7 +150,7 @@
     :goto_0
     iput-boolean v4, v6, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenButtonsDisabled:Z
 
-    .line 754
+    .line 810
     iget-object v6, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     const-string v4, "trackball_wake_screen"
@@ -168,7 +168,7 @@
     :goto_1
     iput-boolean v4, v6, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTrackballWakeScreen:Z
 
-    .line 756
+    .line 812
     iget-object v6, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     const-string v4, "volumekey_wake_screen"
@@ -186,7 +186,7 @@
     :goto_2
     iput-boolean v4, v6, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeKeyWakeScreen:Z
 
-    .line 759
+    .line 815
     const-string v4, "camera_key_preferred_action_type"
 
     const/4 v6, 0x0
@@ -195,11 +195,11 @@
 
     move-result v0
 
-    .line 762
+    .line 818
     .local v0, cameraKeyActionType:I
     if-ne v2, v0, :cond_4
 
-    .line 763
+    .line 819
     iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     const/4 v6, 0x4
@@ -217,40 +217,40 @@
     :goto_3
     iput-boolean v2, v4, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mCameraKeyWakeScreen:Z
 
-    .line 772
+    .line 828
     :goto_4
     monitor-exit v5
 
-    .line 773
+    .line 829
     return-void
 
     .end local v0           #cameraKeyActionType:I
     :cond_0
     move v4, v3
 
-    .line 751
+    .line 807
     goto :goto_0
 
     :cond_1
     move v4, v3
 
-    .line 754
+    .line 810
     goto :goto_1
 
     :cond_2
     move v4, v3
 
-    .line 756
+    .line 812
     goto :goto_2
 
     .restart local v0       #cameraKeyActionType:I
     :cond_3
     move v2, v3
 
-    .line 763
+    .line 819
     goto :goto_3
 
-    .line 770
+    .line 826
     :cond_4
     iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
@@ -260,7 +260,7 @@
 
     goto :goto_4
 
-    .line 772
+    .line 828
     .end local v0           #cameraKeyActionType:I
     .end local v1           #resolver:Landroid/content/ContentResolver;
     :catchall_0

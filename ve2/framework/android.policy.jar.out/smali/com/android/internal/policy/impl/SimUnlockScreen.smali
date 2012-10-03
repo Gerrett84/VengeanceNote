@@ -145,13 +145,13 @@
     if-ne v0, v7, :cond_0
 
     .line 84
-    const v0, 0x1090050
+    const v0, 0x1090052
 
     invoke-virtual {v6, v0, p0, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 90
     :goto_0
-    const v0, 0x10202a0
+    const v0, 0x10202b6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +162,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     .line 91
-    const v0, 0x10202a2
+    const v0, 0x10202b8
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     .line 92
-    const v0, 0x10202a3
+    const v0, 0x10202b9
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 95
-    const v0, 0x1020286
+    const v0, 0x102029a
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
     .line 97
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10402d0
+    const v1, 0x10402ec
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -237,7 +237,7 @@
 
     .line 86
     :cond_0
-    const v0, 0x1090051
+    const v0, 0x1090053
 
     invoke-virtual {v6, v0, p0, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -357,7 +357,7 @@
     .line 208
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10400ce
+    const v1, 0x10400d2
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -433,7 +433,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mContext:Landroid/content/Context;
 
-    const v2, 0x10402f7
+    const v2, 0x1040315
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -571,13 +571,13 @@
     .locals 0
 
     .prologue
-    .line 294
+    .line 290
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 295
+    .line 291
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->updateConfiguration()V
 
-    .line 296
+    .line 292
     return-void
 .end method
 
@@ -650,13 +650,13 @@
     .parameter "newConfig"
 
     .prologue
-    .line 301
+    .line 297
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 302
+    .line 298
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->updateConfiguration()V
 
-    .line 303
+    .line 299
     return-void
 .end method
 
@@ -765,7 +765,7 @@
     .line 121
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x10402d0
+    const v1, 0x10402ec
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -791,80 +791,48 @@
 .end method
 
 .method updateConfiguration()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v0, 0x1
-
     .line 280
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/SimUnlockScreen;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
     move-result-object v1
 
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
     .line 281
-    .local v1, newConfig:Landroid/content/res/Configuration;
-    iget v2, v1, Landroid/content/res/Configuration;->orientation:I
+    .local v0, newConfig:Landroid/content/res/Configuration;
+    iget v1, v0, Landroid/content/res/Configuration;->orientation:I
 
-    iget v3, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCreationOrientation:I
+    iget v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCreationOrientation:I
 
-    if-eq v2, v3, :cond_1
+    if-eq v1, v2, :cond_1
 
     .line 282
-    iget-object v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    invoke-interface {v2, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->recreateMe(Landroid/content/res/Configuration;)V
+    invoke-interface {v1, v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->recreateMe(Landroid/content/res/Configuration;)V
 
-    .line 290
+    .line 286
     :cond_0
     :goto_0
     return-void
 
     .line 283
     :cond_1
-    iget v2, v1, Landroid/content/res/Configuration;->hardKeyboardHidden:I
+    iget v1, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
-    iget v3, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mKeyboardHidden:I
-
-    if-eq v2, v3, :cond_0
-
-    .line 284
-    iget v2, v1, Landroid/content/res/Configuration;->hardKeyboardHidden:I
-
-    iput v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mKeyboardHidden:I
-
-    .line 285
     iget v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mKeyboardHidden:I
 
-    if-ne v2, v0, :cond_2
+    if-eq v1, v2, :cond_0
 
-    .line 286
-    .local v0, isKeyboardOpen:Z
-    :goto_1
-    iget-object v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+    .line 284
+    iget v1, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
 
-    invoke-virtual {v2}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->isKeyguardBypassEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    if-eqz v0, :cond_0
-
-    .line 287
-    iget-object v2, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-
-    invoke-interface {v2}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+    iput v1, p0, Lcom/android/internal/policy/impl/SimUnlockScreen;->mKeyboardHidden:I
 
     goto :goto_0
-
-    .line 285
-    .end local v0           #isKeyboardOpen:Z
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
 .end method

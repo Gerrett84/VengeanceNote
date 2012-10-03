@@ -34,7 +34,7 @@
     .parameter "token"
 
     .prologue
-    .line 307
+    .line 320
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -53,10 +53,10 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/content/BroadcastReceiver$PendingResult;-><init>(ILjava/lang/String;Landroid/os/Bundle;IZZLandroid/os/IBinder;)V
 
-    .line 308
+    .line 321
     iput-object p1, p0, Landroid/app/ActivityThread$ReceiverData;->intent:Landroid/content/Intent;
 
-    .line 309
+    .line 322
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 2
 
     .prologue
-    .line 315
+    .line 328
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

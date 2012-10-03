@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 465
+    .line 468
     new-instance v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
     const-string v1, "Off"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
-    .line 466
+    .line 469
     new-instance v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
     const-string v1, "TurningOn"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
-    .line 467
+    .line 470
     new-instance v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
     const-string v1, "TurningOff"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->TurningOff:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
-    .line 468
+    .line 471
     new-instance v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
     const-string v1, "On"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->On:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
-    .line 464
+    .line 467
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
@@ -126,13 +126,13 @@
     .end annotation
 
     .prologue
-    .line 472
+    .line 475
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 473
+    .line 476
     iput-boolean p3, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->inTransition:Z
 
-    .line 474
+    .line 477
     return-void
 .end method
 
@@ -141,7 +141,7 @@
     .parameter "name"
 
     .prologue
-    .line 464
+    .line 467
     const-class v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -157,7 +157,7 @@
     .locals 1
 
     .prologue
-    .line 464
+    .line 467
     sget-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->$VALUES:[Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
     invoke-virtual {v0}, [Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->clone()Ljava/lang/Object;
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 477
+    .line 480
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->inTransition:Z
 
     return v0

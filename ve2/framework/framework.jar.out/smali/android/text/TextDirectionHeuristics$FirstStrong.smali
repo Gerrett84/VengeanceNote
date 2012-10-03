@@ -1,4 +1,4 @@
-.class public Landroid/text/TextDirectionHeuristics$FirstStrong;
+.class Landroid/text/TextDirectionHeuristics$FirstStrong;
 .super Ljava/lang/Object;
 .source "TextDirectionHeuristics.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0xa
     name = "FirstStrong"
 .end annotation
 
@@ -26,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 191
+    .line 186
     new-instance v0, Landroid/text/TextDirectionHeuristics$FirstStrong;
 
     invoke-direct {v0}, Landroid/text/TextDirectionHeuristics$FirstStrong;-><init>()V
@@ -40,10 +40,10 @@
     .locals 0
 
     .prologue
-    .line 188
+    .line 183
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 189
+    .line 184
     return-void
 .end method
 
@@ -56,10 +56,10 @@
     .parameter "count"
 
     .prologue
-    .line 181
+    .line 176
     sget-object v2, Landroid/text/TextDirectionHeuristics$TriState;->UNKNOWN:Landroid/text/TextDirectionHeuristics$TriState;
 
-    .line 182
+    .line 177
     .local v2, result:Landroid/text/TextDirectionHeuristics$TriState;
     move v1, p2
 
@@ -74,7 +74,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 183
+    .line 178
     aget-char v3, p1, v1
 
     invoke-static {v3}, Ljava/lang/Character;->getDirectionality(C)B
@@ -86,12 +86,12 @@
 
     move-result-object v2
 
-    .line 182
+    .line 177
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 185
+    .line 180
     :cond_0
     return-object v2
 .end method

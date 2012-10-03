@@ -18,7 +18,19 @@
     .end annotation
 .end field
 
+.field public static final DESCRIPTION_STRING:I = 0x2
+
+.field public static final MANUFACTURER_STRING:I = 0x0
+
+.field public static final MODEL_STRING:I = 0x1
+
+.field public static final SERIAL_STRING:I = 0x5
+
 .field private static final TAG:Ljava/lang/String; = "UsbAccessory"
+
+.field public static final URI_STRING:I = 0x4
+
+.field public static final VERSION_STRING:I = 0x3
 
 
 # instance fields
@@ -40,7 +52,7 @@
     .locals 1
 
     .prologue
-    .line 182
+    .line 195
     new-instance v0, Landroid/hardware/usb/UsbAccessory$1;
 
     invoke-direct {v0}, Landroid/hardware/usb/UsbAccessory$1;-><init>()V
@@ -60,28 +72,28 @@
     .parameter "serial"
 
     .prologue
-    .line 63
+    .line 76
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
+    .line 77
     iput-object p1, p0, Landroid/hardware/usb/UsbAccessory;->mManufacturer:Ljava/lang/String;
 
-    .line 65
+    .line 78
     iput-object p2, p0, Landroid/hardware/usb/UsbAccessory;->mModel:Ljava/lang/String;
 
-    .line 66
+    .line 79
     iput-object p3, p0, Landroid/hardware/usb/UsbAccessory;->mDescription:Ljava/lang/String;
 
-    .line 67
+    .line 80
     iput-object p4, p0, Landroid/hardware/usb/UsbAccessory;->mVersion:Ljava/lang/String;
 
-    .line 68
+    .line 81
     iput-object p5, p0, Landroid/hardware/usb/UsbAccessory;->mUri:Ljava/lang/String;
 
-    .line 69
+    .line 82
     iput-object p6, p0, Landroid/hardware/usb/UsbAccessory;->mSerial:Ljava/lang/String;
 
-    .line 70
+    .line 83
     return-void
 .end method
 
@@ -90,52 +102,52 @@
     .parameter "strings"
 
     .prologue
-    .line 76
+    .line 89
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
+    .line 90
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mManufacturer:Ljava/lang/String;
 
-    .line 78
+    .line 91
     const/4 v0, 0x1
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mModel:Ljava/lang/String;
 
-    .line 79
+    .line 92
     const/4 v0, 0x2
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mDescription:Ljava/lang/String;
 
-    .line 80
+    .line 93
     const/4 v0, 0x3
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mVersion:Ljava/lang/String;
 
-    .line 81
+    .line 94
     const/4 v0, 0x4
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mUri:Ljava/lang/String;
 
-    .line 82
+    .line 95
     const/4 v0, 0x5
 
     aget-object v0, p1, v0
 
     iput-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mSerial:Ljava/lang/String;
 
-    .line 83
+    .line 96
     return-void
 .end method
 
@@ -145,24 +157,24 @@
     .parameter "s2"
 
     .prologue
-    .line 144
+    .line 157
     if-nez p0, :cond_1
 
     if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
-    .line 145
+    .line 158
     :goto_0
     return v0
 
-    .line 144
+    .line 157
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 145
+    .line 158
     :cond_1
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -177,7 +189,7 @@
     .locals 1
 
     .prologue
-    .line 200
+    .line 213
     const/4 v0, 0x0
 
     return v0
@@ -190,17 +202,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 150
+    .line 163
     instance-of v2, p1, Landroid/hardware/usb/UsbAccessory;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 151
+    .line 164
     check-cast v0, Landroid/hardware/usb/UsbAccessory;
 
-    .line 152
+    .line 165
     .local v0, accessory:Landroid/hardware/usb/UsbAccessory;
     iget-object v2, p0, Landroid/hardware/usb/UsbAccessory;->mManufacturer:Ljava/lang/String;
 
@@ -276,7 +288,7 @@
 
     const/4 v1, 0x1
 
-    .line 159
+    .line 172
     .end local v0           #accessory:Landroid/hardware/usb/UsbAccessory;
     :cond_0
     return v1
@@ -286,7 +298,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 122
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mDescription:Ljava/lang/String;
 
     return-object v0
@@ -296,7 +308,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 104
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mManufacturer:Ljava/lang/String;
 
     return-object v0
@@ -306,7 +318,7 @@
     .locals 1
 
     .prologue
-    .line 100
+    .line 113
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mModel:Ljava/lang/String;
 
     return-object v0
@@ -316,7 +328,7 @@
     .locals 1
 
     .prologue
-    .line 140
+    .line 153
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mSerial:Ljava/lang/String;
 
     return-object v0
@@ -326,7 +338,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 142
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mUri:Ljava/lang/String;
 
     return-object v0
@@ -336,7 +348,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 131
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mVersion:Ljava/lang/String;
 
     return-object v0
@@ -348,7 +360,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 164
+    .line 177
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mManufacturer:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -460,7 +472,7 @@
     .locals 2
 
     .prologue
-    .line 174
+    .line 187
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -556,36 +568,36 @@
     .parameter "flags"
 
     .prologue
-    .line 204
+    .line 217
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mManufacturer:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 205
+    .line 218
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mModel:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 206
+    .line 219
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mDescription:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 207
+    .line 220
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mVersion:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 208
+    .line 221
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mUri:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 209
+    .line 222
     iget-object v0, p0, Landroid/hardware/usb/UsbAccessory;->mSerial:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 210
+    .line 223
     return-void
 .end method

@@ -36,33 +36,75 @@
 
 .field public static final DEVICE_IN_WIRED_HEADSET:I = 0x400000
 
+.field public static final DEVICE_OUT_ALL:I = 0xffff
+
+.field public static final DEVICE_OUT_ALL_A2DP:I = 0x380
+
+.field public static final DEVICE_OUT_ALL_SCO:I = 0x70
+
+.field public static final DEVICE_OUT_ALL_USB:I = 0x6000
+
 .field public static final DEVICE_OUT_ANLG_DOCK_HEADSET:I = 0x800
 
+.field public static final DEVICE_OUT_ANLG_DOCK_HEADSET_NAME:Ljava/lang/String; = "analog_dock"
+
 .field public static final DEVICE_OUT_AUX_DIGITAL:I = 0x400
+
+.field public static final DEVICE_OUT_AUX_DIGITAL_NAME:Ljava/lang/String; = "aux_digital"
 
 .field public static final DEVICE_OUT_BLUETOOTH_A2DP:I = 0x80
 
 .field public static final DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES:I = 0x100
 
+.field public static final DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES_NAME:Ljava/lang/String; = "bt_a2dp_hp"
+
+.field public static final DEVICE_OUT_BLUETOOTH_A2DP_NAME:Ljava/lang/String; = "bt_a2dp"
+
 .field public static final DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER:I = 0x200
+
+.field public static final DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER_NAME:Ljava/lang/String; = "bt_a2dp_spk"
 
 .field public static final DEVICE_OUT_BLUETOOTH_SCO:I = 0x10
 
 .field public static final DEVICE_OUT_BLUETOOTH_SCO_CARKIT:I = 0x40
 
+.field public static final DEVICE_OUT_BLUETOOTH_SCO_CARKIT_NAME:Ljava/lang/String; = "bt_sco_carkit"
+
 .field public static final DEVICE_OUT_BLUETOOTH_SCO_HEADSET:I = 0x20
+
+.field public static final DEVICE_OUT_BLUETOOTH_SCO_HEADSET_NAME:Ljava/lang/String; = "bt_sco_hs"
+
+.field public static final DEVICE_OUT_BLUETOOTH_SCO_NAME:Ljava/lang/String; = "bt_sco"
 
 .field public static final DEVICE_OUT_DEFAULT:I = 0x8000
 
 .field public static final DEVICE_OUT_DGTL_DOCK_HEADSET:I = 0x1000
 
+.field public static final DEVICE_OUT_DGTL_DOCK_HEADSET_NAME:Ljava/lang/String; = "digital_dock"
+
 .field public static final DEVICE_OUT_EARPIECE:I = 0x1
+
+.field public static final DEVICE_OUT_EARPIECE_NAME:Ljava/lang/String; = "earpiece"
 
 .field public static final DEVICE_OUT_SPEAKER:I = 0x2
 
+.field public static final DEVICE_OUT_SPEAKER_NAME:Ljava/lang/String; = "speaker"
+
+.field public static final DEVICE_OUT_USB_ACCESSORY:I = 0x2000
+
+.field public static final DEVICE_OUT_USB_ACCESSORY_NAME:Ljava/lang/String; = "usb_accessory"
+
+.field public static final DEVICE_OUT_USB_DEVICE:I = 0x4000
+
+.field public static final DEVICE_OUT_USB_DEVICE_NAME:Ljava/lang/String; = "usb_device"
+
 .field public static final DEVICE_OUT_WIRED_HEADPHONE:I = 0x8
 
+.field public static final DEVICE_OUT_WIRED_HEADPHONE_NAME:Ljava/lang/String; = "headphone"
+
 .field public static final DEVICE_OUT_WIRED_HEADSET:I = 0x4
+
+.field public static final DEVICE_OUT_WIRED_HEADSET_NAME:Ljava/lang/String; = "headset"
 
 .field public static final DEVICE_STATE_AVAILABLE:I = 0x1
 
@@ -85,6 +127,8 @@
 .field public static final FORCE_HEADPHONES:I = 0x2
 
 .field public static final FORCE_NONE:I = 0x0
+
+.field public static final FORCE_NO_BT_A2DP:I = 0xa
 
 .field public static final FORCE_SPEAKER:I = 0x1
 
@@ -112,7 +156,7 @@
 
 .field private static final NUM_DEVICE_STATES:I = 0x1
 
-.field private static final NUM_FORCE_CONFIG:I = 0xa
+.field private static final NUM_FORCE_CONFIG:I = 0xb
 
 .field private static final NUM_FORCE_USE:I = 0x4
 
@@ -181,7 +225,11 @@
 
 .field public static final STREAM_TTS:I = 0x9
 
-.field public static final STREAM_VOICE_CALL:I
+.field public static final STREAM_VOICE_CALL:I = 0x0
+
+.field public static final SYNC_EVENT_NONE:I = 0x0
+
+.field public static final SYNC_EVENT_PRESENTATION_COMPLETE:I = 0x1
 
 .field private static mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
@@ -251,10 +299,141 @@
 .method public static native getDeviceConnectionState(ILjava/lang/String;)I
 .end method
 
+.method public static getDeviceName(I)Ljava/lang/String;
+    .locals 1
+    .parameter "device"
+
+    .prologue
+    .line 268
+    sparse-switch p0, :sswitch_data_0
+
+    .line 301
+    const-string v0, ""
+
+    :goto_0
+    return-object v0
+
+    .line 270
+    :sswitch_0
+    const-string v0, "earpiece"
+
+    goto :goto_0
+
+    .line 272
+    :sswitch_1
+    const-string/jumbo v0, "speaker"
+
+    goto :goto_0
+
+    .line 274
+    :sswitch_2
+    const-string v0, "headset"
+
+    goto :goto_0
+
+    .line 276
+    :sswitch_3
+    const-string v0, "headphone"
+
+    goto :goto_0
+
+    .line 278
+    :sswitch_4
+    const-string v0, "bt_sco"
+
+    goto :goto_0
+
+    .line 280
+    :sswitch_5
+    const-string v0, "bt_sco_hs"
+
+    goto :goto_0
+
+    .line 282
+    :sswitch_6
+    const-string v0, "bt_sco_carkit"
+
+    goto :goto_0
+
+    .line 284
+    :sswitch_7
+    const-string v0, "bt_a2dp"
+
+    goto :goto_0
+
+    .line 286
+    :sswitch_8
+    const-string v0, "bt_a2dp_hp"
+
+    goto :goto_0
+
+    .line 288
+    :sswitch_9
+    const-string v0, "bt_a2dp_spk"
+
+    goto :goto_0
+
+    .line 290
+    :sswitch_a
+    const-string v0, "aux_digital"
+
+    goto :goto_0
+
+    .line 292
+    :sswitch_b
+    const-string v0, "analog_dock"
+
+    goto :goto_0
+
+    .line 294
+    :sswitch_c
+    const-string v0, "digital_dock"
+
+    goto :goto_0
+
+    .line 296
+    :sswitch_d
+    const-string/jumbo v0, "usb_accessory"
+
+    goto :goto_0
+
+    .line 298
+    :sswitch_e
+    const-string/jumbo v0, "usb_device"
+
+    goto :goto_0
+
+    .line 268
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x2 -> :sswitch_1
+        0x4 -> :sswitch_2
+        0x8 -> :sswitch_3
+        0x10 -> :sswitch_4
+        0x20 -> :sswitch_5
+        0x40 -> :sswitch_6
+        0x80 -> :sswitch_7
+        0x100 -> :sswitch_8
+        0x200 -> :sswitch_9
+        0x400 -> :sswitch_a
+        0x800 -> :sswitch_b
+        0x1000 -> :sswitch_c
+        0x2000 -> :sswitch_d
+        0x4000 -> :sswitch_e
+    .end sparse-switch
+.end method
+
 .method public static native getDevicesForStream(I)I
 .end method
 
 .method public static native getForceUse(I)I
+.end method
+
+.method public static native getMasterMute()Z
+.end method
+
+.method public static native getMasterVolume()F
 .end method
 
 .method public static final getNumStreamTypes()I
@@ -270,7 +449,7 @@
 .method public static native getParameters(Ljava/lang/String;)Ljava/lang/String;
 .end method
 
-.method public static native getStreamVolumeIndex(I)I
+.method public static native getStreamVolumeIndex(II)I
 .end method
 
 .method public static native initStreamVolume(III)I
@@ -328,14 +507,17 @@
 .method public static native setForceUse(II)I
 .end method
 
+.method public static native setMasterMute(Z)I
+.end method
+
+.method public static native setMasterVolume(F)I
+.end method
+
 .method public static native setParameters(Ljava/lang/String;)I
 .end method
 
 .method public static native setPhoneState(I)I
 .end method
 
-.method public static native setRingerMode(II)I
-.end method
-
-.method public static native setStreamVolumeIndex(II)I
+.method public static native setStreamVolumeIndex(III)I
 .end method

@@ -26,6 +26,17 @@
     return-void
 .end method
 
+.method public static enableTracing()V
+    .locals 0
+
+    .prologue
+    .line 277
+    invoke-static {}, Landroid/opengl/GLUtils;->native_enableTracing()V
+
+    .line 278
+    return-void
+.end method
+
 .method public static getEGLErrorString(I)Ljava/lang/String;
     .locals 2
     .parameter "error"
@@ -288,6 +299,9 @@
 .end method
 
 .method private static native nativeClassInit()V
+.end method
+
+.method private static native native_enableTracing()V
 .end method
 
 .method private static native native_getInternalFormat(Landroid/graphics/Bitmap;)I

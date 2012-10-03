@@ -16,10 +16,10 @@
     .locals 0
 
     .prologue
-    .line 58
+    .line 59
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
+    .line 63
     return-void
 .end method
 
@@ -28,10 +28,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 196
+    .line 197
     sput-boolean p0, Landroid/app/LoaderManagerImpl;->DEBUG:Z
 
-    .line 197
+    .line 198
     return-void
 .end method
 

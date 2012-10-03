@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 279
+    .line 292
     iput-object p1, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v12, 0x0
 
-    .line 282
+    .line 295
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 285
+    .line 298
     .local v0, action:Ljava/lang/String;
     const-string v7, "android.intent.action.TIME_TICK"
 
@@ -75,7 +75,7 @@
 
     if-eqz v7, :cond_2
 
-    .line 288
+    .line 301
     :cond_0
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -99,12 +99,12 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 311
+    .line 334
     :cond_1
     :goto_0
     return-void
 
-    .line 289
+    .line 302
     :cond_2
     const-string v7, "android.provider.Telephony.SPN_STRINGS_UPDATED"
 
@@ -114,7 +114,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 290
+    .line 303
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v8, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -127,7 +127,7 @@
     #setter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mTelephonyPlmn:Ljava/lang/CharSequence;
     invoke-static {v7, v8}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$802(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 291
+    .line 304
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     iget-object v8, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -140,7 +140,7 @@
     #setter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mTelephonySpn:Ljava/lang/CharSequence;
     invoke-static {v7, v8}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$1002(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 292
+    .line 305
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 293
+    .line 306
     :cond_3
     const-string v7, "android.intent.action.BATTERY_CHANGED"
 
@@ -175,14 +175,14 @@
 
     if-eqz v7, :cond_4
 
-    .line 294
+    .line 307
     const-string v7, "status"
 
     invoke-virtual {p2, v7, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v6
 
-    .line 295
+    .line 308
     .local v6, status:I
     const-string v7, "plugged"
 
@@ -190,7 +190,7 @@
 
     move-result v4
 
-    .line 296
+    .line 309
     .local v4, plugged:I
     const-string v7, "level"
 
@@ -198,7 +198,7 @@
 
     move-result v2
 
-    .line 297
+    .line 310
     .local v2, level:I
     const-string v7, "health"
 
@@ -206,7 +206,7 @@
 
     move-result v1
 
-    .line 298
+    .line 311
     .local v1, health:I
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -225,7 +225,7 @@
 
     move-result-object v3
 
-    .line 300
+    .line 313
     .local v3, msg:Landroid/os/Message;
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -238,7 +238,7 @@
 
     goto :goto_0
 
-    .line 301
+    .line 314
     .end local v1           #health:I
     .end local v2           #level:I
     .end local v3           #msg:Landroid/os/Message;
@@ -253,7 +253,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 302
+    .line 319
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -282,7 +282,7 @@
 
     goto/16 :goto_0
 
-    .line 304
+    .line 321
     :cond_5
     const-string v7, "android.media.RINGER_MODE_CHANGED"
 
@@ -292,7 +292,7 @@
 
     if-eqz v7, :cond_6
 
-    .line 305
+    .line 322
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
     #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
@@ -325,7 +325,7 @@
 
     goto/16 :goto_0
 
-    .line 307
+    .line 324
     :cond_6
     const-string v7, "android.intent.action.PHONE_STATE"
 
@@ -333,16 +333,16 @@
 
     move-result v7
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_7
 
-    .line 308
+    .line 325
     const-string v7, "state"
 
     invoke-virtual {p2, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 309
+    .line 326
     .local v5, state:Ljava/lang/String;
     iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
 
@@ -361,6 +361,83 @@
     const/16 v9, 0x132
 
     invoke-virtual {v8, v9, v5}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto/16 :goto_0
+
+    .line 327
+    .end local v5           #state:Ljava/lang/String;
+    :cond_7
+    const-string v7, "android.app.action.DEVICE_POLICY_MANAGER_STATE_CHANGED"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_8
+
+    .line 329
+    iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
+    #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$700(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
+    #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+    invoke-static {v8}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$700(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/os/Handler;
+
+    move-result-object v8
+
+    const/16 v9, 0x135
+
+    invoke-virtual {v8, v9}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto/16 :goto_0
+
+    .line 330
+    :cond_8
+    const-string v7, "android.intent.action.USER_SWITCHED"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 331
+    iget-object v7, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
+    #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$700(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$3;->this$0:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
+
+    #getter for: Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->mHandler:Landroid/os/Handler;
+    invoke-static {v8}, Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;->access$700(Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;)Landroid/os/Handler;
+
+    move-result-object v8
+
+    const/16 v9, 0x136
+
+    const-string v10, "android.intent.extra.user_id"
+
+    invoke-virtual {p2, v10, v12}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v10
+
+    invoke-virtual {v8, v9, v10, v12}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v8
 

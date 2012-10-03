@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/RemoteViewsAdapter;->updateRemoteViews(IZ)V
+    value = Landroid/widget/RemoteViewsAdapter;->updateRemoteViews(IZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 867
+    .line 873
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$3;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     iput p2, p0, Landroid/widget/RemoteViewsAdapter$3;->val$position:I
@@ -56,7 +56,7 @@
     .locals 4
 
     .prologue
-    .line 870
+    .line 876
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$3;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     #getter for: Landroid/widget/RemoteViewsAdapter;->mRequestedViews:Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;
@@ -72,6 +72,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->notifyOnRemoteViewsLoaded(ILandroid/widget/RemoteViews;I)V
 
-    .line 871
+    .line 877
     return-void
 .end method

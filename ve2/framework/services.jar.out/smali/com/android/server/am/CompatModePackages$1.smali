@@ -63,7 +63,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x12c
         :pswitch_0
     .end packed-switch
 .end method

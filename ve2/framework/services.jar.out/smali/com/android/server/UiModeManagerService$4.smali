@@ -70,7 +70,10 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/server/UiModeManagerService$4;->this$0:Lcom/android/server/UiModeManagerService;
 
-    iget-boolean v0, v0, Lcom/android/server/UiModeManagerService;->mSystemReady:Z
+    #getter for: Lcom/android/server/UiModeManagerService;->mSystemReady:Z
+    invoke-static {v0}, Lcom/android/server/UiModeManagerService;->access$600(Lcom/android/server/UiModeManagerService;)Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 

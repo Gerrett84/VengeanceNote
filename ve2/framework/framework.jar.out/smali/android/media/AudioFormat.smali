@@ -112,7 +112,17 @@
 
 .field public static final CHANNEL_OUT_TOP_FRONT_RIGHT:I = 0x10000
 
+.field public static final ENCODING_AMRNB:I = 0x64
+
+.field public static final ENCODING_AMRWB:I = 0x65
+
 .field public static final ENCODING_DEFAULT:I = 0x1
+
+.field public static final ENCODING_EVRC:I = 0x66
+
+.field public static final ENCODING_EVRCB:I = 0x67
+
+.field public static final ENCODING_EVRCWB:I = 0x68
 
 .field public static final ENCODING_INVALID:I = 0x0
 

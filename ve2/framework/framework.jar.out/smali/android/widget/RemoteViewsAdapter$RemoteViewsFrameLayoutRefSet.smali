@@ -38,19 +38,19 @@
     .parameter
 
     .prologue
-    .line 275
+    .line 277
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 276
+    .line 278
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
-    .line 277
+    .line 279
     return-void
 .end method
 
@@ -62,12 +62,12 @@
     .parameter "layout"
 
     .prologue
-    .line 283
+    .line 285
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 287
+    .line 289
     .local v0, pos:Ljava/lang/Integer;
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
@@ -77,7 +77,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 288
+    .line 290
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -86,22 +86,22 @@
 
     check-cast v1, Ljava/util/LinkedList;
 
-    .line 295
+    .line 297
     .local v1, refs:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;>;"
     :goto_0
     invoke-virtual {v1, p2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 296
+    .line 298
     return-void
 
-    .line 290
+    .line 292
     .end local v1           #refs:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;>;"
     :cond_0
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
-    .line 291
+    .line 293
     .restart local v1       #refs:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;>;"
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
@@ -114,12 +114,12 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 327
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 326
+    .line 328
     return-void
 .end method
 
@@ -130,21 +130,21 @@
     .parameter "typeId"
 
     .prologue
-    .line 303
+    .line 305
     if-nez p2, :cond_1
 
-    .line 317
+    .line 319
     :cond_0
     :goto_0
     return-void
 
-    .line 305
+    .line 307
     :cond_1
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 306
+    .line 308
     .local v1, pos:Ljava/lang/Integer;
     iget-object v4, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
@@ -154,7 +154,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 308
+    .line 310
     iget-object v4, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -163,7 +163,7 @@
 
     check-cast v3, Ljava/util/LinkedList;
 
-    .line 309
+    .line 311
     .local v3, refs:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;>;"
     invoke-virtual {v3}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
@@ -183,18 +183,18 @@
 
     check-cast v2, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
 
-    .line 310
+    .line 312
     .local v2, ref:Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
     invoke-virtual {v2, p2}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->onRemoteViewsLoaded(Landroid/widget/RemoteViews;)V
 
     goto :goto_1
 
-    .line 312
+    .line 314
     .end local v2           #ref:Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;
     :cond_2
     invoke-virtual {v3}, Ljava/util/LinkedList;->clear()V
 
-    .line 315
+    .line 317
     iget-object v4, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayoutRefSet;->mReferences:Ljava/util/HashMap;
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;

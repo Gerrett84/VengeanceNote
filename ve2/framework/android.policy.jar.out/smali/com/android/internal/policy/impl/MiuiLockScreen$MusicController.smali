@@ -1045,7 +1045,7 @@
     .line 1585
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b0061
+    const v1, 0x60b0041
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1058,7 +1058,7 @@
     .line 1587
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b0060
+    const v1, 0x60b0044
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1084,7 +1084,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b0063
+    const v1, 0x60b0042
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1095,7 +1095,7 @@
     .line 1593
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b0065
+    const v1, 0x60b0043
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1106,7 +1106,7 @@
     .line 1595
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b0064
+    const v1, 0x60b003d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1124,7 +1124,7 @@
     .line 1598
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b0066
+    const v1, 0x60b0040
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1137,7 +1137,7 @@
     .line 1599
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b005e
+    const v1, 0x60b003e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1150,7 +1150,7 @@
     .line 1600
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiLockScreen$MusicController;->mMusicControl:Landroid/view/View;
 
-    const v1, 0x60b005f
+    const v1, 0x60b003f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2049,7 +2049,6 @@
 
     .line 1629
     :goto_0
-    :pswitch_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
@@ -2083,14 +2082,14 @@
 
     .line 1621
     .end local v0           #action:I
-    :pswitch_1
+    :pswitch_0
     const/16 v1, 0x58
 
     .line 1622
     goto :goto_0
 
     .line 1625
-    :pswitch_2
+    :pswitch_1
     const/16 v1, 0x57
 
     goto :goto_0
@@ -2168,10 +2167,9 @@
 
     .line 1619
     :pswitch_data_0
-    .packed-switch 0x60b0063
-        :pswitch_1
+    .packed-switch 0x60b0042
         :pswitch_0
-        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 

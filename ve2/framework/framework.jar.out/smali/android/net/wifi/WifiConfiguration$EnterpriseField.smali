@@ -29,20 +29,20 @@
     .parameter "varName"
 
     .prologue
-    .line 54
+    .line 89
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->this$0:Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 90
     iput-object p2, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->varName:Ljava/lang/String;
 
-    .line 56
+    .line 91
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->value:Ljava/lang/String;
 
-    .line 57
+    .line 92
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .parameter "x2"
 
     .prologue
-    .line 50
+    .line 85
     invoke-direct {p0, p1, p2}, Landroid/net/wifi/WifiConfiguration$EnterpriseField;-><init>(Landroid/net/wifi/WifiConfiguration;Ljava/lang/String;)V
 
     return-void
@@ -66,10 +66,10 @@
     .parameter "value"
 
     .prologue
-    .line 60
+    .line 95
     iput-object p1, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->value:Ljava/lang/String;
 
-    .line 61
+    .line 96
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 103
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->value:Ljava/lang/String;
 
     return-object v0
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 99
     iget-object v0, p0, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->varName:Ljava/lang/String;
 
     return-object v0

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/MiuiCursorController$InsertionPointCursorController;-><init>(Landroid/widget/TextView;Landroid/content/Context;)V
+    value = Landroid/widget/MiuiCursorController$InsertionPointCursorController;-><init>(Landroid/widget/Editor;Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 351
+    .line 353
     iput-object p1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,16 +42,16 @@
     .parameter "v"
 
     .prologue
-    .line 354
+    .line 356
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
-    iget-object v0, v0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/TextView;
+    iget-object v0, v0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
     iget-object v1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
-    invoke-virtual {v0, p1, v1}, Landroid/widget/TextView;->handleFloatPanelClick(Landroid/view/View;Landroid/widget/MiuiCursorController;)V
+    invoke-virtual {v0, p1, v1}, Landroid/widget/Editor;->handleFloatPanelClick(Landroid/view/View;Landroid/widget/MiuiCursorController;)V
 
-    .line 355
+    .line 357
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
     #getter for: Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 356
+    .line 358
     return-void
 .end method

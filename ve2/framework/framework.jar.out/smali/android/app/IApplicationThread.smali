@@ -29,11 +29,15 @@
 
 .field public static final DUMP_ACTIVITY_TRANSACTION:I = 0x25
 
+.field public static final DUMP_DB_INFO_TRANSACTION:I = 0x2e
+
 .field public static final DUMP_GFX_INFO_TRANSACTION:I = 0x2c
 
 .field public static final DUMP_HEAP_TRANSACTION:I = 0x24
 
 .field public static final DUMP_MEM_INFO_TRANSACTION:I = 0x2b
+
+.field public static final DUMP_PROVIDER_TRANSACTION:I = 0x2d
 
 .field public static final DUMP_SERVICE_TRANSACTION:I = 0x16
 
@@ -107,6 +111,8 @@
 
 .field public static final SET_SCHEDULING_GROUP_TRANSACTION:I = 0x1d
 
+.field public static final UNSTABLE_PROVIDER_DIED_TRANSACTION:I = 0x2f
+
 .field public static final UPDATE_PACKAGE_COMPATIBILITY_INFO_TRANSACTION:I = 0x29
 
 .field public static final UPDATE_TIME_ZONE_TRANSACTION:I = 0x12
@@ -115,7 +121,7 @@
 
 
 # virtual methods
-.method public abstract bindApplication(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;Ljava/util/List;Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/ParcelFileDescriptor;ZLandroid/os/Bundle;Landroid/app/IInstrumentationWatcher;IZZLandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Ljava/util/Map;Landroid/os/Bundle;)V
+.method public abstract bindApplication(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;Ljava/util/List;Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/ParcelFileDescriptor;ZLandroid/os/Bundle;Landroid/app/IInstrumentationWatcher;IZZZLandroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;Ljava/util/Map;Landroid/os/Bundle;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,7 +137,7 @@
             "Z",
             "Landroid/os/Bundle;",
             "Landroid/app/IInstrumentationWatcher;",
-            "IZZ",
+            "IZZZ",
             "Landroid/content/res/Configuration;",
             "Landroid/content/res/CompatibilityInfo;",
             "Ljava/util/Map",
@@ -175,6 +181,14 @@
     .end annotation
 .end method
 
+.method public abstract dumpDbInfo(Ljava/io/FileDescriptor;[Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract dumpGfxInfo(Ljava/io/FileDescriptor;[Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -192,6 +206,14 @@
 .end method
 
 .method public abstract dumpMemInfo(Ljava/io/FileDescriptor;ZZ[Ljava/lang/String;)Landroid/os/Debug$MemoryInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract dumpProvider(Ljava/io/FileDescriptor;Landroid/os/IBinder;[Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -528,6 +550,14 @@
 .end method
 
 .method public abstract setSchedulingGroup(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract unstableProviderDied(Landroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -958,7 +958,9 @@
     if-eqz p1, :cond_0
 
     .line 146
-    invoke-virtual {p1}, Landroid/renderscript/BaseObj;->getID()I
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/renderscript/BaseObj;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v0
 

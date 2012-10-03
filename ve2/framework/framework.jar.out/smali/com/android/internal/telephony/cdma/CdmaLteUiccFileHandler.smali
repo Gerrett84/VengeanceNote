@@ -8,15 +8,17 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/telephony/cdma/CDMALTEPhone;)V
+.method public constructor <init>(Lcom/android/internal/telephony/IccCard;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
     .locals 0
-    .parameter "phone"
+    .parameter "card"
+    .parameter "aid"
+    .parameter "ci"
 
     .prologue
-    .line 31
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
+    .line 34
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/IccCard;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 32
+    .line 35
     return-void
 .end method
 
@@ -27,10 +29,10 @@
     .parameter "efid"
 
     .prologue
-    .line 35
+    .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 50
+    .line 53
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaLteUiccFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
@@ -38,25 +40,25 @@
     :goto_0
     return-object v0
 
-    .line 42
+    .line 45
     :sswitch_0
     const-string v0, "3F007F25"
 
     goto :goto_0
 
-    .line 44
+    .line 47
     :sswitch_1
     const-string v0, "3F007F20"
 
     goto :goto_0
 
-    .line 48
+    .line 51
     :sswitch_2
     const-string v0, "3F007FFF"
 
     goto :goto_0
 
-    .line 35
+    .line 38
     nop
 
     :sswitch_data_0
@@ -75,7 +77,7 @@
 .end method
 
 .method public loadEFTransparent(ILandroid/os/Message;)V
-    .locals 10
+    .locals 11
     .parameter "fileid"
     .parameter "onLoaded"
 
@@ -84,15 +86,13 @@
 
     const/4 v4, 0x0
 
-    .line 55
+    .line 58
     const/16 v0, 0x6f5a
 
     if-ne p1, v0, :cond_0
 
-    .line 58
-    iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    .line 61
+    iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xb0
 
@@ -102,11 +102,13 @@
 
     const/4 v6, 0x4
 
+    iget-object v9, p0, Lcom/android/internal/telephony/IccFileHandler;->mAid:Ljava/lang/String;
+
     const/4 v2, 0x5
 
     invoke-virtual {p0, v2, p1, v4, p2}, Lcom/android/internal/telephony/cdma/CdmaLteUiccFileHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
-    move-result-object v9
+    move-result-object v10
 
     move v2, p1
 
@@ -114,13 +116,13 @@
 
     move-object v8, v7
 
-    invoke-interface/range {v0 .. v9}, Lcom/android/internal/telephony/CommandsInterface;->iccIO(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    invoke-interface/range {v0 .. v10}, Lcom/android/internal/telephony/CommandsInterface;->iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 65
+    .line 68
     :goto_0
     return-void
 
-    .line 63
+    .line 66
     :cond_0
     invoke-super {p0, p1, p2}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
@@ -132,7 +134,7 @@
     .parameter "msg"
 
     .prologue
-    .line 69
+    .line 72
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -155,7 +157,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
+    .line 73
     return-void
 .end method
 
@@ -164,7 +166,7 @@
     .parameter "msg"
 
     .prologue
-    .line 73
+    .line 76
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -187,6 +189,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 74
+    .line 77
     return-void
 .end method

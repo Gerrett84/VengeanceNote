@@ -1,4 +1,4 @@
-.class public Landroid/media/TimedText$Font;
+.class public final Landroid/media/TimedText$Font;
 .super Ljava/lang/Object;
 .source "TimedText.java"
 
@@ -9,35 +9,33 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
+    accessFlags = 0x19
     name = "Font"
 .end annotation
 
 
 # instance fields
-.field public ID:I
+.field public final ID:I
 
-.field public name:Ljava/lang/String;
-
-.field final synthetic this$0:Landroid/media/TimedText;
+.field public final name:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/media/TimedText;)V
-    .locals 1
-    .parameter
+.method public constructor <init>(ILjava/lang/String;)V
+    .locals 0
+    .parameter "id"
+    .parameter "name"
 
     .prologue
-    .line 242
-    iput-object p1, p0, Landroid/media/TimedText$Font;->this$0:Landroid/media/TimedText;
-
+    .line 260
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 235
-    const/4 v0, -0x1
+    .line 261
+    iput p1, p0, Landroid/media/TimedText$Font;->ID:I
 
-    iput v0, p0, Landroid/media/TimedText$Font;->ID:I
+    .line 262
+    iput-object p2, p0, Landroid/media/TimedText$Font;->name:Ljava/lang/String;
 
-    .line 242
+    .line 263
     return-void
 .end method

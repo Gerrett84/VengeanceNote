@@ -269,27 +269,17 @@
     .restart local v0       #devPasswdId:I
     goto :goto_0
 
-    .line 90
+    .line 91
     .end local v1           #e:Ljava/lang/NumberFormatException;
     :pswitch_1
     iget-object v4, p0, Landroid/net/wifi/p2p/WifiP2pConfig;->wps:Landroid/net/wifi/WpsInfo;
 
-    const/4 v5, 0x3
-
-    iput v5, v4, Landroid/net/wifi/WpsInfo;->setup:I
+    iput v8, v4, Landroid/net/wifi/WpsInfo;->setup:I
 
     goto :goto_1
 
-    .line 93
+    .line 95
     :pswitch_2
-    iget-object v4, p0, Landroid/net/wifi/p2p/WifiP2pConfig;->wps:Landroid/net/wifi/WpsInfo;
-
-    iput v6, v4, Landroid/net/wifi/WpsInfo;->setup:I
-
-    goto :goto_1
-
-    .line 96
-    :pswitch_3
     iget-object v4, p0, Landroid/net/wifi/p2p/WifiP2pConfig;->wps:Landroid/net/wifi/WpsInfo;
 
     iput v7, v4, Landroid/net/wifi/WpsInfo;->setup:I
@@ -297,10 +287,10 @@
     goto :goto_1
 
     .line 99
-    :pswitch_4
+    :pswitch_3
     iget-object v4, p0, Landroid/net/wifi/p2p/WifiP2pConfig;->wps:Landroid/net/wifi/WpsInfo;
 
-    iput v8, v4, Landroid/net/wifi/WpsInfo;->setup:I
+    iput v6, v4, Landroid/net/wifi/WpsInfo;->setup:I
 
     goto :goto_1
 
@@ -308,13 +298,12 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x1
         :pswitch_1
+        :pswitch_0
+        :pswitch_0
         :pswitch_2
-        :pswitch_0
-        :pswitch_0
         :pswitch_3
-        :pswitch_4
     .end packed-switch
 .end method
 

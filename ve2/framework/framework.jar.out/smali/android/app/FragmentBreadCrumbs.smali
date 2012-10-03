@@ -467,7 +467,7 @@
     .line 92
     iget-object v0, p0, Landroid/app/FragmentBreadCrumbs;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x109003f
+    const v1, 0x1090040
 
     const/4 v2, 0x0
 
@@ -737,7 +737,7 @@
 
     move-object/from16 v18, v0
 
-    const v19, 0x109003e
+    const v19, 0x109003f
 
     const/16 v20, 0x0
 
@@ -782,7 +782,7 @@
     if-nez v7, :cond_3
 
     .line 262
-    const v18, 0x102021d
+    const v18, 0x1020232
 
     move/from16 v0, v18
 
@@ -939,7 +939,7 @@
     invoke-virtual {v5, v0}, Landroid/view/View;->setVisibility(I)V
 
     .line 282
-    const v18, 0x102021d
+    const v18, 0x1020232
 
     move/from16 v0, v18
 

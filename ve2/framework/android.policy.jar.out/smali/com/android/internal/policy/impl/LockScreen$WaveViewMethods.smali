@@ -31,25 +31,51 @@
     .parameter "waveView"
 
     .prologue
-    .line 150
+    .line 213
     iput-object p1, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 214
     iput-object p2, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->mWaveView:Lcom/android/internal/widget/WaveView;
 
-    .line 152
+    .line 215
     return-void
 .end method
 
 
 # virtual methods
+.method public cleanUp()V
+    .locals 2
+
+    .prologue
+    .line 251
+    iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->mWaveView:Lcom/android/internal/widget/WaveView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/widget/WaveView;->setOnTriggerListener(Lcom/android/internal/widget/WaveView$OnTriggerListener;)V
+
+    .line 252
+    return-void
+.end method
+
+.method public getTargetPosition(I)I
+    .locals 1
+    .parameter "resourceId"
+
+    .prologue
+    .line 248
+    const/4 v0, -0x1
+
+    return v0
+.end method
+
 .method public getView()Landroid/view/View;
     .locals 1
 
     .prologue
-    .line 174
+    .line 237
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->mWaveView:Lcom/android/internal/widget/WaveView;
 
     return-object v0
@@ -61,16 +87,16 @@
     .parameter "grabbedState"
 
     .prologue
-    .line 165
+    .line 228
     const/16 v0, 0xa
 
     if-ne p2, v0, :cond_0
 
-    .line 166
+    .line 229
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$200(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
     move-result-object v0
 
@@ -78,7 +104,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock(I)V
 
-    .line 168
+    .line 231
     :cond_0
     return-void
 .end method
@@ -89,18 +115,18 @@
     .parameter "whichHandle"
 
     .prologue
-    .line 155
+    .line 218
     const/16 v0, 0xa
 
     if-ne p2, v0, :cond_0
 
-    .line 156
+    .line 219
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #calls: Lcom/android/internal/policy/impl/LockScreen;->requestUnlockScreen()V
-    invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$500(Lcom/android/internal/policy/impl/LockScreen;)V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$700(Lcom/android/internal/policy/impl/LockScreen;)V
 
-    .line 158
+    .line 221
     :cond_0
     return-void
 .end method
@@ -109,7 +135,7 @@
     .locals 0
 
     .prologue
-    .line 180
+    .line 243
     return-void
 .end method
 
@@ -118,12 +144,22 @@
     .parameter "animate"
 
     .prologue
-    .line 177
+    .line 240
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$WaveViewMethods;->mWaveView:Lcom/android/internal/widget/WaveView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/WaveView;->reset()V
 
-    .line 178
+    .line 241
+    return-void
+.end method
+
+.method public setEnabled(IZ)V
+    .locals 0
+    .parameter "resourceId"
+    .parameter "enabled"
+
+    .prologue
+    .line 246
     return-void
 .end method
 
@@ -131,6 +167,6 @@
     .locals 0
 
     .prologue
-    .line 171
+    .line 234
     return-void
 .end method

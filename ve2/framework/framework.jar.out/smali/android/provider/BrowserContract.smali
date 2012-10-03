@@ -8,12 +8,14 @@
     value = {
         Landroid/provider/BrowserContract$Settings;,
         Landroid/provider/BrowserContract$Combined;,
+        Landroid/provider/BrowserContract$ImageMappings;,
         Landroid/provider/BrowserContract$Images;,
         Landroid/provider/BrowserContract$SyncState;,
         Landroid/provider/BrowserContract$Searches;,
         Landroid/provider/BrowserContract$History;,
         Landroid/provider/BrowserContract$Accounts;,
         Landroid/provider/BrowserContract$Bookmarks;,
+        Landroid/provider/BrowserContract$ImageMappingColumns;,
         Landroid/provider/BrowserContract$HistoryColumns;,
         Landroid/provider/BrowserContract$ImageColumns;,
         Landroid/provider/BrowserContract$CommonColumns;,
@@ -39,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 40
+    .line 49
     const-string v0, "content://com.android.browser"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -55,9 +57,9 @@
     .locals 0
 
     .prologue
-    .line 35
+    .line 44
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 509
+    .line 690
     return-void
 .end method

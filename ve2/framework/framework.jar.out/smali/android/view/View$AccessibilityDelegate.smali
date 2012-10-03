@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 14873
+    .line 17790
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,12 +33,23 @@
     .parameter "event"
 
     .prologue
-    .line 14933
+    .line 17870
     invoke-virtual {p1, p2}, Landroid/view/View;->dispatchPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public getAccessibilityNodeProvider(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeProvider;
+    .locals 1
+    .parameter "host"
+
+    .prologue
+    .line 17971
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
@@ -47,10 +58,10 @@
     .parameter "event"
 
     .prologue
-    .line 14973
+    .line 17910
     invoke-virtual {p1, p2}, Landroid/view/View;->onInitializeAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 14974
+    .line 17911
     return-void
 .end method
 
@@ -60,10 +71,10 @@
     .parameter "info"
 
     .prologue
-    .line 14992
+    .line 17929
     invoke-virtual {p1, p2}, Landroid/view/View;->onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 14993
+    .line 17930
     return-void
 .end method
 
@@ -73,10 +84,10 @@
     .parameter "event"
 
     .prologue
-    .line 14953
+    .line 17890
     invoke-virtual {p1, p2}, Landroid/view/View;->onPopulateAccessibilityEventInternal(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 14954
+    .line 17891
     return-void
 .end method
 
@@ -87,8 +98,23 @@
     .parameter "event"
 
     .prologue
-    .line 15016
+    .line 17953
     invoke-virtual {p1, p2, p3}, Landroid/view/ViewGroup;->onRequestSendAccessibilityEventInternal(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+    .locals 1
+    .parameter "host"
+    .parameter "action"
+    .parameter "args"
+
+    .prologue
+    .line 17827
+    invoke-virtual {p1, p2, p3}, Landroid/view/View;->performAccessibilityActionInternal(ILandroid/os/Bundle;)Z
 
     move-result v0
 
@@ -101,10 +127,10 @@
     .parameter "eventType"
 
     .prologue
-    .line 14890
+    .line 17807
     invoke-virtual {p1, p2}, Landroid/view/View;->sendAccessibilityEventInternal(I)V
 
-    .line 14891
+    .line 17808
     return-void
 .end method
 
@@ -114,9 +140,9 @@
     .parameter "event"
 
     .prologue
-    .line 14912
+    .line 17849
     invoke-virtual {p1, p2}, Landroid/view/View;->sendAccessibilityEventUncheckedInternal(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 14913
+    .line 17850
     return-void
 .end method

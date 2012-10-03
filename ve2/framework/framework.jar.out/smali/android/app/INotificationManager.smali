@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract areNotificationsEnabledForPackage(Ljava/lang/String;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract cancelAllNotifications(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -63,7 +71,7 @@
     .end annotation
 .end method
 
-.method public abstract enqueueNotificationWithTagPriority(Ljava/lang/String;Ljava/lang/String;IILandroid/app/Notification;[I)V
+.method public abstract enqueueToast(Ljava/lang/String;Landroid/app/ITransientNotification;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -71,7 +79,7 @@
     .end annotation
 .end method
 
-.method public abstract enqueueToast(Ljava/lang/String;Landroid/app/ITransientNotification;I)V
+.method public abstract setNotificationsEnabledForPackage(Ljava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

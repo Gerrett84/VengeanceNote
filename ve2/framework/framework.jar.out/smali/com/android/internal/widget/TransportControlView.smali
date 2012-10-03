@@ -492,7 +492,7 @@
     invoke-static {v4, v0, v5}, Lcom/android/internal/widget/TransportControlView;->setVisibilityBasedOnFlag(Landroid/view/View;II)V
 
     .line 317
-    iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPrev:Landroid/widget/ImageView;
+    iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     const/16 v5, 0x3c
 
@@ -789,7 +789,7 @@
 
     .line 366
     .local v1, imageResId:I
-    const v0, 0x10402f0
+    const v0, 0x104030e
 
     .line 367
     .local v0, imageDescId:I
@@ -848,7 +848,7 @@
 
     .line 348
     .restart local v1       #imageResId:I
-    const v0, 0x10402f0
+    const v0, 0x104030e
 
     .line 349
     .restart local v0       #imageDescId:I
@@ -862,7 +862,7 @@
 
     .line 353
     .restart local v1       #imageResId:I
-    const v0, 0x10402ef
+    const v0, 0x104030d
 
     .line 354
     .restart local v0       #imageDescId:I
@@ -875,11 +875,11 @@
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_2
-    const v1, 0x1080307
+    const v1, 0x1080317
 
     .line 359
     .restart local v1       #imageResId:I
-    const v0, 0x10402f1
+    const v0, 0x104030f
 
     .line 360
     .restart local v0       #imageDescId:I
@@ -1167,7 +1167,7 @@
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 211
-    const v5, 0x10202b1
+    const v5, 0x10202c7
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1178,7 +1178,7 @@
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mAlbumArt:Landroid/widget/ImageView;
 
     .line 212
-    const v5, 0x10202b2
+    const v5, 0x10202c8
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1189,7 +1189,7 @@
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
     .line 213
-    const v5, 0x10202b3
+    const v5, 0x10202c9
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1200,7 +1200,7 @@
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     .line 214
-    const v5, 0x10202b4
+    const v5, 0x10202ca
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
 

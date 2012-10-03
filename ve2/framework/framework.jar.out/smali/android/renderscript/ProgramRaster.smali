@@ -25,20 +25,20 @@
     .parameter "rs"
 
     .prologue
-    .line 44
+    .line 57
     invoke-direct {p0, p1, p2}, Landroid/renderscript/BaseObj;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 46
+    .line 59
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/renderscript/ProgramRaster;->mPointSprite:Z
 
-    .line 47
+    .line 60
     sget-object v0, Landroid/renderscript/ProgramRaster$CullMode;->BACK:Landroid/renderscript/ProgramRaster$CullMode;
 
     iput-object v0, p0, Landroid/renderscript/ProgramRaster;->mCullMode:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 48
+    .line 61
     return-void
 .end method
 
@@ -47,30 +47,30 @@
     .parameter "rs"
 
     .prologue
-    .line 67
+    .line 86
     iget-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_BACK:Landroid/renderscript/ProgramRaster;
 
     if-nez v1, :cond_0
 
-    .line 68
+    .line 87
     new-instance v0, Landroid/renderscript/ProgramRaster$Builder;
 
     invoke-direct {v0, p0}, Landroid/renderscript/ProgramRaster$Builder;-><init>(Landroid/renderscript/RenderScript;)V
 
-    .line 69
+    .line 88
     .local v0, builder:Landroid/renderscript/ProgramRaster$Builder;
     sget-object v1, Landroid/renderscript/ProgramRaster$CullMode;->BACK:Landroid/renderscript/ProgramRaster$CullMode;
 
     invoke-virtual {v0, v1}, Landroid/renderscript/ProgramRaster$Builder;->setCullMode(Landroid/renderscript/ProgramRaster$CullMode;)Landroid/renderscript/ProgramRaster$Builder;
 
-    .line 70
+    .line 89
     invoke-virtual {v0}, Landroid/renderscript/ProgramRaster$Builder;->create()Landroid/renderscript/ProgramRaster;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_BACK:Landroid/renderscript/ProgramRaster;
 
-    .line 72
+    .line 91
     .end local v0           #builder:Landroid/renderscript/ProgramRaster$Builder;
     :cond_0
     iget-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_BACK:Landroid/renderscript/ProgramRaster;
@@ -83,30 +83,30 @@
     .parameter "rs"
 
     .prologue
-    .line 76
+    .line 98
     iget-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_FRONT:Landroid/renderscript/ProgramRaster;
 
     if-nez v1, :cond_0
 
-    .line 77
+    .line 99
     new-instance v0, Landroid/renderscript/ProgramRaster$Builder;
 
     invoke-direct {v0, p0}, Landroid/renderscript/ProgramRaster$Builder;-><init>(Landroid/renderscript/RenderScript;)V
 
-    .line 78
+    .line 100
     .local v0, builder:Landroid/renderscript/ProgramRaster$Builder;
     sget-object v1, Landroid/renderscript/ProgramRaster$CullMode;->FRONT:Landroid/renderscript/ProgramRaster$CullMode;
 
     invoke-virtual {v0, v1}, Landroid/renderscript/ProgramRaster$Builder;->setCullMode(Landroid/renderscript/ProgramRaster$CullMode;)Landroid/renderscript/ProgramRaster$Builder;
 
-    .line 79
+    .line 101
     invoke-virtual {v0}, Landroid/renderscript/ProgramRaster$Builder;->create()Landroid/renderscript/ProgramRaster;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_FRONT:Landroid/renderscript/ProgramRaster;
 
-    .line 81
+    .line 103
     .end local v0           #builder:Landroid/renderscript/ProgramRaster$Builder;
     :cond_0
     iget-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_FRONT:Landroid/renderscript/ProgramRaster;
@@ -119,30 +119,30 @@
     .parameter "rs"
 
     .prologue
-    .line 85
+    .line 110
     iget-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_NONE:Landroid/renderscript/ProgramRaster;
 
     if-nez v1, :cond_0
 
-    .line 86
+    .line 111
     new-instance v0, Landroid/renderscript/ProgramRaster$Builder;
 
     invoke-direct {v0, p0}, Landroid/renderscript/ProgramRaster$Builder;-><init>(Landroid/renderscript/RenderScript;)V
 
-    .line 87
+    .line 112
     .local v0, builder:Landroid/renderscript/ProgramRaster$Builder;
     sget-object v1, Landroid/renderscript/ProgramRaster$CullMode;->NONE:Landroid/renderscript/ProgramRaster$CullMode;
 
     invoke-virtual {v0, v1}, Landroid/renderscript/ProgramRaster$Builder;->setCullMode(Landroid/renderscript/ProgramRaster$CullMode;)Landroid/renderscript/ProgramRaster$Builder;
 
-    .line 88
+    .line 113
     invoke-virtual {v0}, Landroid/renderscript/ProgramRaster$Builder;->create()Landroid/renderscript/ProgramRaster;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_NONE:Landroid/renderscript/ProgramRaster;
 
-    .line 90
+    .line 115
     .end local v0           #builder:Landroid/renderscript/ProgramRaster$Builder;
     :cond_0
     iget-object v1, p0, Landroid/renderscript/RenderScript;->mProgramRaster_CULL_NONE:Landroid/renderscript/ProgramRaster;
@@ -156,17 +156,17 @@
     .locals 1
 
     .prologue
-    .line 63
+    .line 79
     iget-object v0, p0, Landroid/renderscript/ProgramRaster;->mCullMode:Landroid/renderscript/ProgramRaster$CullMode;
 
     return-object v0
 .end method
 
-.method public getPointSpriteEnabled()Z
+.method public isPointSpriteEnabled()Z
     .locals 1
 
     .prologue
-    .line 55
+    .line 70
     iget-boolean v0, p0, Landroid/renderscript/ProgramRaster;->mPointSprite:Z
 
     return v0

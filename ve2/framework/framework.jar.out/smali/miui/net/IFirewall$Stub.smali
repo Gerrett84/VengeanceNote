@@ -28,9 +28,11 @@
 
 .field static final TRANSACTION_addAccessControlPass:I = 0x5
 
+.field static final TRANSACTION_addOneShotFlag:I = 0x8
+
 .field static final TRANSACTION_checkAccessControlPass:I = 0x7
 
-.field static final TRANSACTION_getAlarmBootCompleted:I = 0x9
+.field static final TRANSACTION_getOneShotFlag:I = 0x9
 
 .field static final TRANSACTION_onDataConnected:I = 0x3
 
@@ -41,8 +43,6 @@
 .field static final TRANSACTION_onStopUsingNetworkFeature:I = 0x2
 
 .field static final TRANSACTION_removeAccessControlPass:I = 0x6
-
-.field static final TRANSACTION_setAlarmBootCompleted:I = 0x8
 
 
 # direct methods
@@ -138,7 +138,7 @@
     .line 41
     sparse-switch p1, :sswitch_data_0
 
-    .line 142
+    .line 146
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v5
@@ -368,30 +368,43 @@
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 129
-    invoke-virtual {p0}, Lmiui/net/IFirewall$Stub;->setAlarmBootCompleted()V
-
     .line 130
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 131
+    .local v0, _arg0:I
+    invoke-virtual {p0, v0}, Lmiui/net/IFirewall$Stub;->addOneShotFlag(I)V
+
+    .line 132
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
-    .line 135
+    .line 137
+    .end local v0           #_arg0:I
     :sswitch_9
     const-string/jumbo v6, "miui.net.IFirewall"
 
     invoke-virtual {p2, v6}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 136
-    invoke-virtual {p0}, Lmiui/net/IFirewall$Stub;->getAlarmBootCompleted()Z
+    .line 139
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 140
+    .restart local v0       #_arg0:I
+    invoke-virtual {p0, v0}, Lmiui/net/IFirewall$Stub;->getOneShotFlag(I)Z
 
     move-result v3
 
-    .line 137
+    .line 141
     .restart local v3       #_result:Z
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 138
+    .line 142
     if-eqz v3, :cond_1
 
     move v4, v5

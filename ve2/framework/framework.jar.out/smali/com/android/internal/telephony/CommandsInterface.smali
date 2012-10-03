@@ -94,12 +94,6 @@
 
 .field public static final SERVICE_CLASS_VOICE:I = 0x1
 
-.field public static final SIM_REFRESH_FILE_UPDATED:I = 0x0
-
-.field public static final SIM_REFRESH_INIT:I = 0x1
-
-.field public static final SIM_REFRESH_RESET:I = 0x2
-
 .field public static final USSD_MODE_NOTIFY:I = 0x0
 
 .field public static final USSD_MODE_REQUEST:I = 0x1
@@ -202,6 +196,9 @@
 .method public abstract getIMSI(Landroid/os/Message;)V
 .end method
 
+.method public abstract getIMSIForApp(Ljava/lang/String;Landroid/os/Message;)V
+.end method
+
 .method public abstract getIccCardStatus(Landroid/os/Message;)V
 .end method
 
@@ -228,9 +225,6 @@
 .method public abstract getNetworkSelectionMode(Landroid/os/Message;)V
 .end method
 
-.method public abstract getNvState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
-.end method
-
 .method public abstract getOperator(Landroid/os/Message;)V
 .end method
 
@@ -248,16 +242,13 @@
 .method public abstract getRadioState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
 .end method
 
-.method public abstract getRuimState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
-.end method
-
 .method public abstract getSignalStrength(Landroid/os/Message;)V
 .end method
 
-.method public abstract getSimState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
+.method public abstract getSmscAddress(Landroid/os/Message;)V
 .end method
 
-.method public abstract getSmscAddress(Landroid/os/Message;)V
+.method public abstract getVoiceRadioTechnology(Landroid/os/Message;)V
 .end method
 
 .method public abstract getVoiceRegistrationState(Landroid/os/Message;)V
@@ -276,6 +267,9 @@
 .end method
 
 .method public abstract iccIO(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.end method
+
+.method public abstract iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract invokeOemRilRequestRaw([BLandroid/os/Message;)V
@@ -353,9 +347,6 @@
 .method public abstract registerForLineControlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForNVReady(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForNotAvailable(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -368,16 +359,7 @@
 .method public abstract registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForRUIMLockedOrAbsent(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForRUIMReady(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForRadioStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForRadioTechnologyChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract registerForRedirectedNumberInfo(Landroid/os/Handler;ILjava/lang/Object;)V
@@ -392,12 +374,6 @@
 .method public abstract registerForRingbackTone(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
-.method public abstract registerForSIMLockedOrAbsent(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
-.method public abstract registerForSIMReady(Landroid/os/Handler;ILjava/lang/Object;)V
-.end method
-
 .method public abstract registerForSignalInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
@@ -405,6 +381,9 @@
 .end method
 
 .method public abstract registerForVoiceNetworkStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+.end method
+
+.method public abstract registerForVoiceRadioTechChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 .end method
 
 .method public abstract rejectCall(Landroid/os/Message;)V
@@ -617,6 +596,9 @@
 .method public abstract switchWaitingOrHoldingAndActive(Landroid/os/Message;)V
 .end method
 
+.method public abstract testingEmergencyCall()V
+.end method
+
 .method public abstract unSetOnCallRing(Landroid/os/Handler;)V
 .end method
 
@@ -707,9 +689,6 @@
 .method public abstract unregisterForLineControlInfo(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForNVReady(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForNotAvailable(Landroid/os/Handler;)V
 .end method
 
@@ -722,16 +701,7 @@
 .method public abstract unregisterForOn(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForRUIMLockedOrAbsent(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForRUIMReady(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForRadioStateChanged(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForRadioTechnologyChanged(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unregisterForRedirectedNumberInfo(Landroid/os/Handler;)V
@@ -746,12 +716,6 @@
 .method public abstract unregisterForRingbackTone(Landroid/os/Handler;)V
 .end method
 
-.method public abstract unregisterForSIMLockedOrAbsent(Landroid/os/Handler;)V
-.end method
-
-.method public abstract unregisterForSIMReady(Landroid/os/Handler;)V
-.end method
-
 .method public abstract unregisterForSignalInfo(Landroid/os/Handler;)V
 .end method
 
@@ -762,6 +726,9 @@
 .end method
 
 .method public abstract unregisterForVoiceNetworkStateChanged(Landroid/os/Handler;)V
+.end method
+
+.method public abstract unregisterForVoiceRadioTechChanged(Landroid/os/Handler;)V
 .end method
 
 .method public abstract unsetOnIccRefresh(Landroid/os/Handler;)V

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/StatusBarManagerService;->updateUiVisibilityLocked(I)V
+    value = Lcom/android/server/StatusBarManagerService;->updateUiVisibilityLocked(II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,12 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/StatusBarManagerService;
 
+.field final synthetic val$mask:I
+
 .field final synthetic val$vis:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/StatusBarManagerService;I)V
+.method constructor <init>(Lcom/android/server/StatusBarManagerService;II)V
     .locals 0
+    .parameter
     .parameter
     .parameter
 
@@ -35,6 +38,8 @@
 
     iput p2, p0, Lcom/android/server/StatusBarManagerService$4;->val$vis:I
 
+    iput p3, p0, Lcom/android/server/StatusBarManagerService$4;->val$mask:I
+
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +48,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
     .line 313
@@ -61,7 +66,9 @@
 
     iget v1, p0, Lcom/android/server/StatusBarManagerService$4;->val$vis:I
 
-    invoke-interface {v0, v1}, Lcom/android/internal/statusbar/IStatusBar;->setSystemUiVisibility(I)V
+    iget v2, p0, Lcom/android/server/StatusBarManagerService$4;->val$mask:I
+
+    invoke-interface {v0, v1, v2}, Lcom/android/internal/statusbar/IStatusBar;->setSystemUiVisibility(II)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field coveredInsets:Landroid/graphics/Rect;
+.field contentInsets:Landroid/graphics/Rect;
 
 .field newConfig:Landroid/content/res/Configuration;
 
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 250
+    .line 273
     iput-object p1, p0, Landroid/view/ViewRootImpl$ResizedInfo;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

@@ -17,13 +17,21 @@
 # static fields
 .field public static final config_full_screen_expand_status_bar_height_ratio:I = 0x6110000
 
+.field public static final resource_thumbnail_double_flat_icon_height_vs_width_ratio:I = 0x6110004
+
+.field public static final resource_thumbnail_double_height_vs_width_ratio:I = 0x6110001
+
+.field public static final resource_thumbnail_triple_flat_height_vs_width_ratio:I = 0x6110003
+
+.field public static final resource_thumbnail_triple_height_vs_width_ratio:I = 0x6110002
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 1008
+    .line 962
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

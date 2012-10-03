@@ -8,28 +8,22 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/telephony/cdma/CDMAPhone;)V
+.method public constructor <init>(Lcom/android/internal/telephony/IccCard;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
     .locals 0
-    .parameter "phone"
+    .parameter "card"
+    .parameter "aid"
+    .parameter "ci"
 
     .prologue
-    .line 42
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
+    .line 45
+    invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/IccCard;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 43
+    .line 46
     return-void
 .end method
 
 
 # virtual methods
-.method public dispose()V
-    .locals 0
-
-    .prologue
-    .line 46
-    return-void
-.end method
-
 .method protected finalize()V
     .locals 2
 
@@ -50,10 +44,10 @@
     .parameter "efid"
 
     .prologue
-    .line 71
+    .line 72
     sparse-switch p1, :sswitch_data_0
 
-    .line 77
+    .line 78
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
@@ -61,13 +55,13 @@
     :goto_0
     return-object v0
 
-    .line 75
+    .line 76
     :sswitch_0
     const-string v0, "3F007F25"
 
     goto :goto_0
 
-    .line 71
+    .line 72
     nop
 
     :sswitch_data_0
@@ -83,15 +77,15 @@
     .parameter "msg"
 
     .prologue
-    .line 67
+    .line 68
     invoke-super {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;->handleMessage(Landroid/os/Message;)V
 
-    .line 68
+    .line 69
     return-void
 .end method
 
 .method public loadEFImgTransparent(IIIILandroid/os/Message;)V
-    .locals 10
+    .locals 12
     .parameter "fileid"
     .parameter "highOffset"
     .parameter "lowOffset"
@@ -99,36 +93,42 @@
     .parameter "onLoaded"
 
     .prologue
-    const/4 v7, 0x0
-
-    const/16 v6, 0xa
-
-    const/4 v4, 0x0
-
     .line 57
-    invoke-virtual {p0, v6, p1, v4, p5}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    const/16 v1, 0xa
 
-    move-result-object v9
+    const/4 v2, 0x0
+
+    move-object/from16 v0, p5
+
+    invoke-virtual {p0, v1, p1, v2, v0}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v11
 
     .line 60
-    .local v9, response:Landroid/os/Message;
-    iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler;->phone:Lcom/android/internal/telephony/PhoneBase;
+    .local v11, response:Landroid/os/Message;
+    iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    const/16 v2, 0xc0
 
-    const/16 v1, 0xc0
+    const-string v4, "img"
 
-    const-string v3, "img"
+    const/4 v5, 0x0
 
-    move v2, p1
+    const/4 v6, 0x0
 
-    move v5, v4
+    const/16 v7, 0xa
 
-    move-object v8, v7
+    const/4 v8, 0x0
 
-    invoke-interface/range {v0 .. v9}, Lcom/android/internal/telephony/CommandsInterface;->iccIO(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    const/4 v9, 0x0
 
-    .line 62
+    iget-object v10, p0, Lcom/android/internal/telephony/IccFileHandler;->mAid:Ljava/lang/String;
+
+    move v3, p1
+
+    invoke-interface/range {v1 .. v11}, Lcom/android/internal/telephony/CommandsInterface;->iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+
+    .line 63
     return-void
 .end method
 
@@ -137,7 +137,7 @@
     .parameter "msg"
 
     .prologue
-    .line 81
+    .line 82
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,7 +160,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 82
+    .line 83
     return-void
 .end method
 
@@ -169,7 +169,7 @@
     .parameter "msg"
 
     .prologue
-    .line 85
+    .line 86
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -192,6 +192,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
+    .line 87
     return-void
 .end method

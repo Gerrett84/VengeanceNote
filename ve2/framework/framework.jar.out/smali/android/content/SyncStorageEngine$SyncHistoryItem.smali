@@ -27,6 +27,8 @@
 
 .field historyId:I
 
+.field initialization:Z
+
 .field mesg:Ljava/lang/String;
 
 .field source:I
@@ -39,7 +41,7 @@
     .locals 0
 
     .prologue
-    .line 198
+    .line 237
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

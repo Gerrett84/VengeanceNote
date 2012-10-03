@@ -16,25 +16,26 @@
     .parameter "unlockerListener"
 
     .prologue
-    .line 16
+    .line 17
     invoke-direct {p0}, Lmiui/app/screenelement/elements/ScreenElementFactory;-><init>()V
 
-    .line 17
+    .line 18
     iput-object p1, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementFactory;->mUnlockerCallback:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;
 
-    .line 18
+    .line 19
     iput-object p2, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementFactory;->mUnlockerListener:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerListener;
 
-    .line 19
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public createInstance(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)Lmiui/app/screenelement/elements/ScreenElement;
-    .locals 4
+.method public createInstance(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)Lmiui/app/screenelement/elements/ScreenElement;
+    .locals 7
     .parameter "ele"
     .parameter "context"
+    .parameter "root"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lmiui/app/screenelement/ScreenElementLoadException;
@@ -42,56 +43,62 @@
     .end annotation
 
     .prologue
-    .line 23
+    .line 24
     invoke-interface {p1}, Lorg/w3c/dom/Element;->getTagName()Ljava/lang/String;
 
-    move-result-object v0
-
-    .line 24
-    .local v0, tag:Ljava/lang/String;
-    const-string v1, "Unlocker"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    move-result-object v6
 
     .line 25
-    new-instance v1, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerScreenElement;
+    .local v6, tag:Ljava/lang/String;
+    const-string v0, "Unlocker"
 
-    iget-object v2, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementFactory;->mUnlockerCallback:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;
+    invoke-virtual {v6, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    iget-object v3, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementFactory;->mUnlockerListener:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerListener;
+    move-result v0
 
-    invoke-direct {v1, p1, p2, v2, v3}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerListener;)V
-
-    .line 29
-    :goto_0
-    return-object v1
+    if-eqz v0, :cond_0
 
     .line 26
-    :cond_0
-    const-string v1, "Wallpaper"
+    new-instance v0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerScreenElement;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    iget-object v4, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementFactory;->mUnlockerCallback:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;
 
-    move-result v1
+    iget-object v5, p0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenElementFactory;->mUnlockerListener:Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerListener;
 
-    if-eqz v1, :cond_1
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v5}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/LockScreenRoot$UnlockerCallback;Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/UnlockerListener;)V
+
+    .line 30
+    :goto_0
+    return-object v0
 
     .line 27
-    new-instance v1, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/WallpaperScreenElement;
+    :cond_0
+    const-string v0, "Wallpaper"
 
-    invoke-direct {v1, p1, p2}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/WallpaperScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    invoke-virtual {v6, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 28
+    new-instance v0, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/WallpaperScreenElement;
+
+    invoke-direct {v0, p1, p2, p3}, Lcom/miui/internal/policy/impl/AwesomeLockScreenImp/WallpaperScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     goto :goto_0
 
-    .line 29
+    .line 30
     :cond_1
-    invoke-super {p0, p1, p2}, Lmiui/app/screenelement/elements/ScreenElementFactory;->createInstance(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)Lmiui/app/screenelement/elements/ScreenElement;
+    invoke-super {p0, p1, p2, p3}, Lmiui/app/screenelement/elements/ScreenElementFactory;->createInstance(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)Lmiui/app/screenelement/elements/ScreenElement;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 .end method

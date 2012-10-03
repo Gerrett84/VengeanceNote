@@ -91,6 +91,25 @@
     return-void
 .end method
 
+.method flush()V
+    .locals 1
+
+    .prologue
+    .line 66
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
+
+    if-eqz v0, :cond_0
+
+    .line 67
+    iget v0, p0, Landroid/view/GLES20Layer;->mLayer:I
+
+    invoke-static {v0}, Landroid/view/GLES20Canvas;->nFlushLayer(I)V
+
+    .line 69
+    :cond_0
+    return-void
+.end method
+
 .method public getLayer()I
     .locals 1
 

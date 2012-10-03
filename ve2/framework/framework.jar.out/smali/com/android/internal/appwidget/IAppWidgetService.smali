@@ -31,6 +31,14 @@
     .end annotation
 .end method
 
+.method public abstract bindAppWidgetIdIfAllowed(Ljava/lang/String;ILandroid/content/ComponentName;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract bindRemoteViewsService(ILandroid/content/Intent;Landroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -79,6 +87,14 @@
     .end annotation
 .end method
 
+.method public abstract getAppWidgetOptions(I)Landroid/os/Bundle;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getAppWidgetViews(I)Landroid/widget/RemoteViews;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -105,6 +121,14 @@
     .end annotation
 .end method
 
+.method public abstract hasBindAppWidgetPermission(Ljava/lang/String;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract notifyAppWidgetViewDataChanged([II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -114,6 +138,14 @@
 .end method
 
 .method public abstract partiallyUpdateAppWidgetIds([ILandroid/widget/RemoteViews;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setBindAppWidgetPermission(Ljava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -159,6 +191,14 @@
 .end method
 
 .method public abstract updateAppWidgetIds([ILandroid/widget/RemoteViews;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract updateAppWidgetOptions(ILandroid/os/Bundle;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

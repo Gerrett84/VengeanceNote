@@ -3,12 +3,12 @@
 .source "SyncManager.java"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Landroid/content/pm/RegisteredServicesCacheListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/content/SyncManager;->dumpRecentHistory(Ljava/io/PrintWriter;)V
+    value = Landroid/content/SyncManager;-><init>(Landroid/content/Context;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,9 +19,9 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
+        "Landroid/content/pm/RegisteredServicesCacheListener",
         "<",
-        "Landroid/content/SyncManager$AuthoritySyncStats;",
+        "Landroid/content/SyncAdapterType;",
         ">;"
     }
 .end annotation
@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 1281
+    .line 366
     iput-object p1, p0, Landroid/content/SyncManager$8;->this$0:Landroid/content/SyncManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -47,55 +47,48 @@
 
 
 # virtual methods
-.method public compare(Landroid/content/SyncManager$AuthoritySyncStats;Landroid/content/SyncManager$AuthoritySyncStats;)I
-    .locals 5
-    .parameter "lhs"
-    .parameter "rhs"
+.method public onServiceChanged(Landroid/content/SyncAdapterType;Z)V
+    .locals 8
+    .parameter "type"
+    .parameter "removed"
 
     .prologue
-    .line 1285
-    iget v1, p2, Landroid/content/SyncManager$AuthoritySyncStats;->times:I
+    const/4 v1, 0x0
 
-    iget v2, p1, Landroid/content/SyncManager$AuthoritySyncStats;->times:I
+    .line 368
+    if-nez p2, :cond_0
 
-    invoke-static {v1, v2}, Ljava/lang/Integer;->compare(II)I
+    .line 369
+    iget-object v0, p0, Landroid/content/SyncManager$8;->this$0:Landroid/content/SyncManager;
 
-    move-result v0
+    const/4 v2, -0x1
 
-    .line 1286
-    .local v0, compare:I
-    if-nez v0, :cond_0
+    iget-object v3, p1, Landroid/content/SyncAdapterType;->authority:Ljava/lang/String;
 
-    .line 1287
-    iget-wide v1, p2, Landroid/content/SyncManager$AuthoritySyncStats;->elapsedTime:J
+    const-wide/16 v5, 0x0
 
-    iget-wide v3, p1, Landroid/content/SyncManager$AuthoritySyncStats;->elapsedTime:J
+    const/4 v7, 0x0
 
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Long;->compare(JJ)I
+    move-object v4, v1
 
-    move-result v0
+    invoke-virtual/range {v0 .. v7}, Landroid/content/SyncManager;->scheduleSync(Landroid/accounts/Account;ILjava/lang/String;Landroid/os/Bundle;JZ)V
 
-    .line 1289
+    .line 372
     :cond_0
-    return v0
+    return-void
 .end method
 
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public bridge synthetic onServiceChanged(Ljava/lang/Object;Z)V
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 1281
-    check-cast p1, Landroid/content/SyncManager$AuthoritySyncStats;
+    .line 366
+    check-cast p1, Landroid/content/SyncAdapterType;
 
     .end local p1
-    check-cast p2, Landroid/content/SyncManager$AuthoritySyncStats;
+    invoke-virtual {p0, p1, p2}, Landroid/content/SyncManager$8;->onServiceChanged(Landroid/content/SyncAdapterType;Z)V
 
-    .end local p2
-    invoke-virtual {p0, p1, p2}, Landroid/content/SyncManager$8;->compare(Landroid/content/SyncManager$AuthoritySyncStats;Landroid/content/SyncManager$AuthoritySyncStats;)I
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

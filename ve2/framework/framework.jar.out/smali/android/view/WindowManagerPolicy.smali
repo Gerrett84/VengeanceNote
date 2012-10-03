@@ -74,6 +74,10 @@
 
 .field public static final OFF_BECAUSE_OF_USER:I = 0x2
 
+.field public static final PRESENCE_EXTERNAL:I = 0x2
+
+.field public static final PRESENCE_INTERNAL:I = 0x1
+
 .field public static final TRANSIT_ACTIVITY_CLOSE:I = 0x2007
 
 .field public static final TRANSIT_ACTIVITY_OPEN:I = 0x1006
@@ -123,7 +127,7 @@
 .method public abstract addStartingWindow(Landroid/os/IBinder;Ljava/lang/String;ILandroid/content/res/CompatibilityInfo;Ljava/lang/CharSequence;III)Landroid/view/View;
 .end method
 
-.method public abstract adjustConfigurationLw(Landroid/content/res/Configuration;)V
+.method public abstract adjustConfigurationLw(Landroid/content/res/Configuration;II)V
 .end method
 
 .method public abstract adjustSystemUiVisibilityLw(I)I
@@ -150,16 +154,10 @@
 .method public abstract canBeForceHidden(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)Z
 .end method
 
-.method public abstract canStatusBarHide()Z
-.end method
-
 .method public abstract checkAddPermission(Landroid/view/WindowManager$LayoutParams;)I
 .end method
 
-.method public abstract createForceHideEnterAnimation()Landroid/view/animation/Animation;
-.end method
-
-.method public abstract detectSafeMode()Z
+.method public abstract createForceHideEnterAnimation(Z)Landroid/view/animation/Animation;
 .end method
 
 .method public abstract dismissKeyguardLw()V
@@ -171,7 +169,7 @@
 .method public abstract doesForceHide(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)Z
 .end method
 
-.method public abstract dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+.method public abstract dump(Ljava/lang/String;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 .end method
 
 .method public abstract enableKeyguard(Z)V
@@ -186,7 +184,7 @@
 .method public abstract finishAnimationLw()I
 .end method
 
-.method public abstract finishLayoutLw()I
+.method public abstract finishLayoutLw()V
 .end method
 
 .method public abstract focusChangedLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManagerPolicy$WindowState;)I
@@ -210,7 +208,13 @@
 .method public abstract getNonDecorDisplayWidth(III)I
 .end method
 
+.method public abstract getSystemDecorRectLw(Landroid/graphics/Rect;)I
+.end method
+
 .method public abstract hasNavigationBar()Z
+.end method
+
+.method public abstract hasSystemNavBar()Z
 .end method
 
 .method public abstract hideBootMessages()V
@@ -241,6 +245,9 @@
 .end method
 
 .method public abstract isScreenOnFully()Z
+.end method
+
+.method public abstract isScreenSaverEnabled()Z
 .end method
 
 .method public abstract layoutWindowLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;Landroid/view/WindowManagerPolicy$WindowState;)V
@@ -288,16 +295,28 @@
 .method public abstract setCurrentOrientationLw(I)V
 .end method
 
-.method public abstract setInitialDisplaySize(II)V
+.method public abstract setInitialDisplaySize(Landroid/view/Display;II)V
+.end method
+
+.method public abstract setLastInputMethodWindowLw(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManagerPolicy$WindowState;)V
 .end method
 
 .method public abstract setRotationLw(I)V
+.end method
+
+.method public abstract setSafeMode(Z)V
 .end method
 
 .method public abstract setUserRotationMode(II)V
 .end method
 
 .method public abstract showBootMessage(Ljava/lang/CharSequence;Z)V
+.end method
+
+.method public abstract startScreenSaver()Z
+.end method
+
+.method public abstract stopScreenSaver()V
 .end method
 
 .method public abstract subWindowTypeToLayerLw(I)I

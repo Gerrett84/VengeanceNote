@@ -3,7 +3,7 @@
 .source "LockScreen.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimStateCallback;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 443
+    .line 107
     iput-object p1, p0, Lcom/android/internal/policy/impl/LockScreen$2;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,20 +37,17 @@
 
 
 # virtual methods
-.method public run()V
+.method public onSimStateChanged(Lcom/android/internal/telephony/IccCard$State;)V
     .locals 1
+    .parameter "simState"
 
     .prologue
-    .line 445
+    .line 109
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$2;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
-    #getter for: Lcom/android/internal/policy/impl/LockScreen;->mUnlockWidgetMethods:Lcom/android/internal/policy/impl/LockScreen$UnlockWidgetCommonMethods;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$800(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/LockScreen$UnlockWidgetCommonMethods;
+    #calls: Lcom/android/internal/policy/impl/LockScreen;->updateTargets()V
+    invoke-static {v0}, Lcom/android/internal/policy/impl/LockScreen;->access$200(Lcom/android/internal/policy/impl/LockScreen;)V
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/android/internal/policy/impl/LockScreen$UnlockWidgetCommonMethods;->ping()V
-
-    .line 446
+    .line 110
     return-void
 .end method
