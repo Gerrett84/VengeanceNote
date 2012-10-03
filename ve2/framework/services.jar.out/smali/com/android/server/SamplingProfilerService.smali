@@ -20,6 +20,8 @@
 
 
 # instance fields
+.field private final mContext:Landroid/content/Context;
+
 .field private snapshotObserver:Landroid/os/FileObserver;
 
 
@@ -29,16 +31,19 @@
     .parameter "context"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 45
-    invoke-direct {p0, p1}, Lcom/android/server/SamplingProfilerService;->registerSettingObserver(Landroid/content/Context;)V
-
     .line 46
-    invoke-direct {p0, p1}, Lcom/android/server/SamplingProfilerService;->startWorking(Landroid/content/Context;)V
+    iput-object p1, p0, Lcom/android/server/SamplingProfilerService;->mContext:Landroid/content/Context;
 
     .line 47
+    invoke-direct {p0, p1}, Lcom/android/server/SamplingProfilerService;->registerSettingObserver(Landroid/content/Context;)V
+
+    .line 48
+    invoke-direct {p0, p1}, Lcom/android/server/SamplingProfilerService;->startWorking(Landroid/content/Context;)V
+
+    .line 49
     return-void
 .end method
 
@@ -61,7 +66,7 @@
     .parameter "dropbox"
 
     .prologue
-    .line 79
+    .line 81
     :try_start_0
     const-string v1, "SamplingProfilerService"
 
@@ -72,18 +77,18 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 84
+    .line 86
     :goto_0
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 86
+    .line 88
     return-void
 
-    .line 81
+    .line 83
     :catch_0
     move-exception v0
 
-    .line 82
+    .line 84
     .local v0, e:Ljava/io/IOException;
     :try_start_1
     const-string v1, "SamplingProfilerService"
@@ -122,7 +127,7 @@
 
     goto :goto_0
 
-    .line 84
+    .line 86
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v1
@@ -137,12 +142,12 @@
     .parameter "context"
 
     .prologue
-    .line 89
+    .line 91
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 90
+    .line 92
     .local v0, contentResolver:Landroid/content/ContentResolver;
     const-string v1, "sampling_profiler_ms"
 
@@ -158,7 +163,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 93
+    .line 95
     return-void
 .end method
 
@@ -167,7 +172,7 @@
     .parameter "context"
 
     .prologue
-    .line 52
+    .line 54
     const-string v3, "dropbox"
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -176,7 +181,7 @@
 
     check-cast v0, Landroid/os/DropBoxManager;
 
-    .line 57
+    .line 59
     .local v0, dropbox:Landroid/os/DropBoxManager;
     new-instance v3, Ljava/io/File;
 
@@ -188,7 +193,7 @@
 
     move-result-object v2
 
-    .line 58
+    .line 60
     .local v2, snapshotFiles:[Ljava/io/File;
     const/4 v1, 0x0
 
@@ -200,17 +205,17 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 59
+    .line 61
     aget-object v3, v2, v1
 
     invoke-direct {p0, v3, v0}, Lcom/android/server/SamplingProfilerService;->handleSnapshotFile(Ljava/io/File;Landroid/os/DropBoxManager;)V
 
-    .line 58
+    .line 60
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 66
+    .line 68
     :cond_0
     new-instance v3, Lcom/android/server/SamplingProfilerService$1;
 
@@ -222,34 +227,43 @@
 
     iput-object v3, p0, Lcom/android/server/SamplingProfilerService;->snapshotObserver:Landroid/os/FileObserver;
 
-    .line 72
+    .line 74
     iget-object v3, p0, Lcom/android/server/SamplingProfilerService;->snapshotObserver:Landroid/os/FileObserver;
 
     invoke-virtual {v3}, Landroid/os/FileObserver;->startWatching()V
 
-    .line 75
+    .line 77
     return-void
 .end method
 
 
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 1
+    .locals 3
     .parameter "fd"
     .parameter "pw"
     .parameter "args"
 
     .prologue
-    .line 97
+    .line 99
+    iget-object v0, p0, Lcom/android/server/SamplingProfilerService;->mContext:Landroid/content/Context;
+
+    const-string v1, "android.permission.DUMP"
+
+    const-string v2, "SamplingProfilerService"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 101
     const-string v0, "SamplingProfilerService:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 98
+    .line 102
     const-string v0, "Watching directory: /data/snapshots"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 99
+    .line 103
     return-void
 .end method

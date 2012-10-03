@@ -1,9 +1,6 @@
 .class Lcom/android/internal/telephony/SMSDispatcher$1;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "SMSDispatcher.java"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
@@ -27,77 +24,54 @@
     .parameter
 
     .prologue
-    .line 1069
+    .line 1159
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
-    .parameter "dialog"
-    .parameter "which"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 1072
-    const/4 v0, -0x1
+    const/4 v1, 0x1
 
-    if-ne p2, v0, :cond_1
+    .line 1164
+    invoke-virtual {p0}, Lcom/android/internal/telephony/SMSDispatcher$1;->getResultCode()I
 
-    .line 1073
-    const-string v0, "SMS"
+    move-result v0
 
-    const-string v1, "click YES to send out sms"
+    .line 1165
+    .local v0, rc:I
+    const/4 v2, -0x1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    if-eq v0, v2, :cond_0
 
-    .line 1074
-    iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
+    if-ne v0, v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/SMSDispatcher;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/SMSDispatcher;->sendMessage(Landroid/os/Message;)Z
-
-    .line 1079
+    .line 1170
+    .local v1, success:Z
     :cond_0
     :goto_0
+    iget-object v2, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v1, v0, v3}, Lcom/android/internal/telephony/SMSDispatcher;->acknowledgeLastIncomingSms(ZILandroid/os/Message;)V
+
+    .line 1171
     return-void
 
-    .line 1075
+    .line 1165
+    .end local v1           #success:Z
     :cond_1
-    const/4 v0, -0x2
-
-    if-ne p2, v0, :cond_0
-
-    .line 1076
-    const-string v0, "SMS"
-
-    const-string v1, "click NO to stop sending"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1077
-    iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
-
-    iget-object v1, p0, Lcom/android/internal/telephony/SMSDispatcher$1;->this$0:Lcom/android/internal/telephony/SMSDispatcher;
-
-    const/4 v2, 0x7
-
-    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/SMSDispatcher;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/SMSDispatcher;->sendMessage(Landroid/os/Message;)Z
+    const/4 v1, 0x0
 
     goto :goto_0
 .end method

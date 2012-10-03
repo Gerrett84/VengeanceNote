@@ -104,7 +104,7 @@
     :try_start_1
     invoke-interface {p5, p4}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 505
     :goto_0
@@ -175,9 +175,9 @@
     :try_start_3
     invoke-interface {p5, p4}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_3
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 503
+    .line 498
     :goto_1
     throw v4
 
@@ -234,14 +234,14 @@
     .line 501
     .end local v0           #ex:Ljava/lang/RuntimeException;
     :catch_2
-    move-exception v4
-
-    goto :goto_0
-
-    :catch_3
     move-exception v5
 
     goto :goto_1
+
+    :catch_3
+    move-exception v4
+
+    goto :goto_0
 .end method
 
 .method public doFullBackup(Landroid/os/ParcelFileDescriptor;ILandroid/app/backup/IBackupManager;)V
@@ -275,8 +275,8 @@
     invoke-virtual {v6, v7}, Landroid/app/backup/BackupAgent;->onFullBackup(Landroid/app/backup/FullBackupDataOutput;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 554
     :try_start_1
@@ -298,7 +298,7 @@
     .local v0, buf:[B
     invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 561
     .end local v0           #buf:[B
@@ -310,29 +310,14 @@
     :try_start_2
     invoke-interface {p3, p2}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_5
 
     .line 568
     :goto_1
     return-void
 
-    .line 557
-    :catch_0
-    move-exception v1
-
-    .line 558
-    .local v1, e:Ljava/io/IOException;
-    const-string v6, "BackupServiceBinder"
-
-    const-string v7, "Unable to finalize backup stream!"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
     .line 544
-    .end local v1           #e:Ljava/io/IOException;
-    :catch_1
+    :catch_0
     move-exception v2
 
     .line 545
@@ -410,7 +395,7 @@
     .restart local v0       #buf:[B
     invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
     .line 561
     .end local v0           #buf:[B
@@ -422,14 +407,14 @@
     :try_start_5
     invoke-interface {p3, p2}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_5
-    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_5
+    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 566
+    .line 553
     :goto_3
     throw v6
 
     .line 547
-    :catch_2
+    :catch_1
     move-exception v2
 
     .line 548
@@ -480,11 +465,11 @@
 
     .line 557
     .end local v2           #ex:Ljava/lang/RuntimeException;
-    :catch_3
+    :catch_2
     move-exception v1
 
     .line 558
-    .restart local v1       #e:Ljava/io/IOException;
+    .local v1, e:Ljava/io/IOException;
     const-string v7, "BackupServiceBinder"
 
     const-string v8, "Unable to finalize backup stream!"
@@ -495,15 +480,31 @@
 
     .line 564
     .end local v1           #e:Ljava/io/IOException;
-    :catch_4
-    move-exception v6
-
-    goto/16 :goto_1
-
-    :catch_5
+    :catch_3
     move-exception v7
 
     goto :goto_3
+
+    .line 557
+    :catch_4
+    move-exception v1
+
+    .line 558
+    .restart local v1       #e:Ljava/io/IOException;
+    const-string v6, "BackupServiceBinder"
+
+    const-string v7, "Unable to finalize backup stream!"
+
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    .line 564
+    .end local v1           #e:Ljava/io/IOException;
+    :catch_5
+    move-exception v6
+
+    goto/16 :goto_1
 .end method
 
 .method public doRestore(Landroid/os/ParcelFileDescriptor;ILandroid/os/ParcelFileDescriptor;ILandroid/app/backup/IBackupManager;)V
@@ -560,7 +561,7 @@
     :try_start_1
     invoke-interface {p5, p4}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 532
     :goto_0
@@ -631,9 +632,9 @@
     :try_start_3
     invoke-interface {p5, p4}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_3
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_3
+    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 530
+    .line 525
     :goto_1
     throw v4
 
@@ -690,14 +691,14 @@
     .line 528
     .end local v0           #ex:Ljava/lang/RuntimeException;
     :catch_2
-    move-exception v4
-
-    goto :goto_0
-
-    :catch_3
     move-exception v5
 
     goto :goto_1
+
+    :catch_3
+    move-exception v4
+
+    goto :goto_0
 .end method
 
 .method public doRestoreFile(Landroid/os/ParcelFileDescriptor;JILjava/lang/String;Ljava/lang/String;JJILandroid/app/backup/IBackupManager;)V
@@ -760,7 +761,7 @@
 
     invoke-interface {v0, v1}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
 
     .line 587
     :goto_0
@@ -796,20 +797,20 @@
 
     invoke-interface {v0, v1}, Landroid/app/backup/IBackupManager;->opComplete(I)V
     :try_end_3
-    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 585
+    .line 580
     :goto_1
     throw v2
 
     .line 583
     :catch_1
-    move-exception v2
-
-    goto :goto_0
-
-    :catch_2
     move-exception v3
 
     goto :goto_1
+
+    :catch_2
+    move-exception v2
+
+    goto :goto_0
 .end method

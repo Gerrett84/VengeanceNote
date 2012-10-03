@@ -27,13 +27,13 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 113
+    .line 109
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 114
+    .line 110
     iput v0, p0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;->statsTag:I
 
-    .line 115
+    .line 111
     iput v0, p0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;->statsUid:I
 
     return-void

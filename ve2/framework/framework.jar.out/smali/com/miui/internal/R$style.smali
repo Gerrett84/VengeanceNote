@@ -17,8 +17,6 @@
 # static fields
 .field public static final AlphabetFastIndexerStyle:I = 0x60d002b
 
-.field public static final Animation_Magnifier:I = 0x60d002c
-
 .field public static final Animation_VolumePanel:I = 0x60d0026
 
 .field public static final Animation_ZoomButtons:I = 0x60d0021
@@ -40,6 +38,8 @@
 .field public static final ResourceBrowser_ListItem:I = 0x60d000b
 
 .field public static final ResourceBrowser_ResourceDescription:I = 0x60d000e
+
+.field public static final ResourceBrowser_ResourceDescription_Font:I = 0x60d002d
 
 .field public static final ResourceBrowser_ResourceDescription_Horizontal:I = 0x60d0010
 
@@ -105,7 +105,9 @@
 
 .field public static final Widget_TabWidget_Secondary:I = 0x60d0001
 
-.field public static final resource_circle_progressbar:I = 0x60d002d
+.field public static final android_Animation_RecentApplications:I = 0x60d002e
+
+.field public static final resource_circle_progressbar:I = 0x60d002c
 
 
 # direct methods
@@ -113,7 +115,7 @@
     .locals 0
 
     .prologue
-    .line 1876
+    .line 2095
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

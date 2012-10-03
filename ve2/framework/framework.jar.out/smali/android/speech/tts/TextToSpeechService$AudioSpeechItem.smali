@@ -15,40 +15,50 @@
 
 
 # instance fields
-.field private final mPlayer:Landroid/speech/tts/BlockingMediaPlayer;
-
-.field private mToken:Landroid/speech/tts/AudioMessageParams;
+.field private final mItem:Landroid/speech/tts/AudioPlaybackQueueItem;
 
 .field final synthetic this$0:Landroid/speech/tts/TextToSpeechService;
 
 
 # direct methods
-.method public constructor <init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/String;Landroid/os/Bundle;Landroid/net/Uri;)V
-    .locals 2
+.method public constructor <init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;IILandroid/os/Bundle;Landroid/net/Uri;)V
+    .locals 6
     .parameter
-    .parameter "callingApp"
+    .parameter "callerIdentity"
+    .parameter "callerUid"
+    .parameter "callerPid"
     .parameter "params"
     .parameter "uri"
 
     .prologue
-    .line 685
+    .line 699
     iput-object p1, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
-    .line 686
-    invoke-direct {p0, p1, p2, p3}, Landroid/speech/tts/TextToSpeechService$SpeechItem;-><init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/String;Landroid/os/Bundle;)V
+    .line 700
+    invoke-direct/range {p0 .. p5}, Landroid/speech/tts/TextToSpeechService$SpeechItem;-><init>(Landroid/speech/tts/TextToSpeechService;Ljava/lang/Object;IILandroid/os/Bundle;)V
 
-    .line 687
-    new-instance v0, Landroid/speech/tts/BlockingMediaPlayer;
+    .line 701
+    new-instance v0, Landroid/speech/tts/AudioPlaybackQueueItem;
+
+    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getCallerIdentity()Ljava/lang/Object;
+
+    move-result-object v2
 
     invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getStreamType()I
 
-    move-result v1
+    move-result v5
 
-    invoke-direct {v0, p1, p4, v1}, Landroid/speech/tts/BlockingMediaPlayer;-><init>(Landroid/content/Context;Landroid/net/Uri;I)V
+    move-object v1, p0
 
-    iput-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mPlayer:Landroid/speech/tts/BlockingMediaPlayer;
+    move-object v3, p1
 
-    .line 688
+    move-object v4, p6
+
+    invoke-direct/range {v0 .. v5}, Landroid/speech/tts/AudioPlaybackQueueItem;-><init>(Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;Ljava/lang/Object;Landroid/content/Context;Landroid/net/Uri;I)V
+
+    iput-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mItem:Landroid/speech/tts/AudioPlaybackQueueItem;
+
+    .line 703
     return-void
 .end method
 
@@ -58,30 +68,17 @@
     .locals 1
 
     .prologue
-    .line 692
+    .line 707
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method protected playImpl()I
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 697
-    new-instance v0, Landroid/speech/tts/AudioMessageParams;
-
-    invoke-virtual {p0}, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->getCallingApp()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mPlayer:Landroid/speech/tts/BlockingMediaPlayer;
-
-    invoke-direct {v0, p0, v1, v2}, Landroid/speech/tts/AudioMessageParams;-><init>(Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;Ljava/lang/String;Landroid/speech/tts/BlockingMediaPlayer;)V
-
-    iput-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mToken:Landroid/speech/tts/AudioMessageParams;
-
-    .line 698
+    .line 712
     iget-object v0, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->this$0:Landroid/speech/tts/TextToSpeechService;
 
     #getter for: Landroid/speech/tts/TextToSpeechService;->mAudioPlaybackHandler:Landroid/speech/tts/AudioPlaybackHandler;
@@ -89,11 +86,11 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mToken:Landroid/speech/tts/AudioMessageParams;
+    iget-object v1, p0, Landroid/speech/tts/TextToSpeechService$AudioSpeechItem;->mItem:Landroid/speech/tts/AudioPlaybackQueueItem;
 
-    invoke-virtual {v0, v1}, Landroid/speech/tts/AudioPlaybackHandler;->enqueueAudio(Landroid/speech/tts/AudioMessageParams;)V
+    invoke-virtual {v0, v1}, Landroid/speech/tts/AudioPlaybackHandler;->enqueue(Landroid/speech/tts/PlaybackQueueItem;)V
 
-    .line 699
+    .line 713
     const/4 v0, 0x0
 
     return v0
@@ -103,6 +100,6 @@
     .locals 0
 
     .prologue
-    .line 705
+    .line 719
     return-void
 .end method

@@ -31,23 +31,25 @@
 
 .field public serverAddress:Ljava/lang/String;
 
+.field public vendorInfo:Ljava/lang/String;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
     .prologue
-    .line 47
+    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 52
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
-    .line 49
+    .line 53
     return-void
 .end method
 
@@ -56,38 +58,38 @@
     .parameter "addr"
 
     .prologue
-    .line 60
+    .line 64
     if-eqz p1, :cond_0
 
-    .line 62
+    .line 66
     :try_start_0
     invoke-static {p1}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v0
 
-    .line 63
+    .line 67
     .local v0, inetAddress:Ljava/net/InetAddress;
     instance-of v1, v0, Ljava/net/Inet4Address;
 
     if-eqz v1, :cond_0
 
-    .line 64
+    .line 68
     invoke-static {v0}, Landroid/net/NetworkUtils;->inetAddressToInt(Ljava/net/InetAddress;)I
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v1
 
-    .line 68
+    .line 72
     .end local v0           #inetAddress:Ljava/net/InetAddress;
     :goto_0
     return v1
 
-    .line 66
+    .line 70
     :catch_0
     move-exception v1
 
-    .line 68
+    .line 72
     :cond_0
     const/4 v1, 0x0
 
@@ -101,12 +103,12 @@
     .parameter "routeInfo"
 
     .prologue
-    .line 52
+    .line 56
     iget-object v0, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
     invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    .line 53
+    .line 57
     return-void
 .end method
 
@@ -123,7 +125,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 60
     iget-object v0, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
@@ -133,16 +135,44 @@
     return-object v0
 .end method
 
+.method public hasMeteredHint()Z
+    .locals 2
+
+    .prologue
+    .line 150
+    iget-object v0, p0, Landroid/net/DhcpInfoInternal;->vendorInfo:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    .line 151
+    iget-object v0, p0, Landroid/net/DhcpInfoInternal;->vendorInfo:Ljava/lang/String;
+
+    const-string v1, "ANDROID_METERED"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    .line 153
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public makeDhcpInfo()Landroid/net/DhcpInfo;
     .locals 5
 
     .prologue
-    .line 72
+    .line 76
     new-instance v2, Landroid/net/DhcpInfo;
 
     invoke-direct {v2}, Landroid/net/DhcpInfo;-><init>()V
 
-    .line 73
+    .line 77
     .local v2, info:Landroid/net/DhcpInfo;
     iget-object v4, p0, Landroid/net/DhcpInfoInternal;->ipAddress:Ljava/lang/String;
 
@@ -152,7 +182,7 @@
 
     iput v4, v2, Landroid/net/DhcpInfo;->ipAddress:I
 
-    .line 74
+    .line 78
     iget-object v4, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
     invoke-interface {v4}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -173,7 +203,7 @@
 
     check-cast v3, Landroid/net/RouteInfo;
 
-    .line 75
+    .line 79
     .local v3, route:Landroid/net/RouteInfo;
     invoke-virtual {v3}, Landroid/net/RouteInfo;->isDefaultRoute()Z
 
@@ -181,7 +211,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 76
+    .line 80
     invoke-virtual {v3}, Landroid/net/RouteInfo;->getGateway()Ljava/net/InetAddress;
 
     move-result-object v4
@@ -196,7 +226,7 @@
 
     iput v4, v2, Landroid/net/DhcpInfo;->gateway:I
 
-    .line 81
+    .line 85
     .end local v3           #route:Landroid/net/RouteInfo;
     :cond_1
     :try_start_0
@@ -206,7 +236,7 @@
 
     move-result-object v1
 
-    .line 82
+    .line 86
     .local v1, inetAddress:Ljava/net/InetAddress;
     iget v4, p0, Landroid/net/DhcpInfoInternal;->prefixLength:I
 
@@ -218,7 +248,7 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 84
+    .line 88
     .end local v1           #inetAddress:Ljava/net/InetAddress;
     :goto_0
     iget-object v4, p0, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
@@ -229,7 +259,7 @@
 
     iput v4, v2, Landroid/net/DhcpInfo;->dns1:I
 
-    .line 85
+    .line 89
     iget-object v4, p0, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
 
     invoke-direct {p0, v4}, Landroid/net/DhcpInfoInternal;->convertToInt(Ljava/lang/String;)I
@@ -238,7 +268,7 @@
 
     iput v4, v2, Landroid/net/DhcpInfo;->dns2:I
 
-    .line 86
+    .line 90
     iget-object v4, p0, Landroid/net/DhcpInfoInternal;->serverAddress:Ljava/lang/String;
 
     invoke-direct {p0, v4}, Landroid/net/DhcpInfoInternal;->convertToInt(Ljava/lang/String;)I
@@ -247,15 +277,15 @@
 
     iput v4, v2, Landroid/net/DhcpInfo;->serverAddress:I
 
-    .line 87
+    .line 91
     iget v4, p0, Landroid/net/DhcpInfoInternal;->leaseDuration:I
 
     iput v4, v2, Landroid/net/DhcpInfo;->leaseDuration:I
 
-    .line 88
+    .line 92
     return-object v2
 
-    .line 83
+    .line 87
     :catch_0
     move-exception v4
 
@@ -266,7 +296,7 @@
     .locals 3
 
     .prologue
-    .line 92
+    .line 96
     iget-object v0, p0, Landroid/net/DhcpInfoInternal;->ipAddress:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -275,17 +305,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 97
     const-string v0, "DhcpInfoInternal"
 
     const-string/jumbo v1, "makeLinkAddress with empty ipAddress"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
+    .line 98
     const/4 v0, 0x0
 
-    .line 96
+    .line 100
     :goto_0
     return-object v0
 
@@ -309,12 +339,12 @@
     .locals 5
 
     .prologue
-    .line 100
+    .line 104
     new-instance v1, Landroid/net/LinkProperties;
 
     invoke-direct {v1}, Landroid/net/LinkProperties;-><init>()V
 
-    .line 101
+    .line 105
     .local v1, p:Landroid/net/LinkProperties;
     invoke-virtual {p0}, Landroid/net/DhcpInfoInternal;->makeLinkAddress()Landroid/net/LinkAddress;
 
@@ -322,7 +352,7 @@
 
     invoke-virtual {v1, v3}, Landroid/net/LinkProperties;->addLinkAddress(Landroid/net/LinkAddress;)V
 
-    .line 102
+    .line 106
     iget-object v3, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
     invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -343,13 +373,13 @@
 
     check-cast v2, Landroid/net/RouteInfo;
 
-    .line 103
+    .line 107
     .local v2, route:Landroid/net/RouteInfo;
     invoke-virtual {v1, v2}, Landroid/net/LinkProperties;->addRoute(Landroid/net/RouteInfo;)V
 
     goto :goto_0
 
-    .line 106
+    .line 110
     .end local v2           #route:Landroid/net/RouteInfo;
     :cond_0
     iget-object v3, p0, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
@@ -360,7 +390,7 @@
 
     if-nez v3, :cond_1
 
-    .line 107
+    .line 111
     iget-object v3, p0, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
@@ -369,7 +399,7 @@
 
     invoke-virtual {v1, v3}, Landroid/net/LinkProperties;->addDns(Ljava/net/InetAddress;)V
 
-    .line 111
+    .line 115
     :goto_1
     iget-object v3, p0, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
 
@@ -379,7 +409,7 @@
 
     if-nez v3, :cond_2
 
-    .line 112
+    .line 116
     iget-object v3, p0, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
@@ -388,11 +418,11 @@
 
     invoke-virtual {v1, v3}, Landroid/net/LinkProperties;->addDns(Ljava/net/InetAddress;)V
 
-    .line 116
+    .line 120
     :goto_2
     return-object v1
 
-    .line 109
+    .line 113
     :cond_1
     const-string v3, "DhcpInfoInternal"
 
@@ -402,7 +432,7 @@
 
     goto :goto_1
 
-    .line 114
+    .line 118
     :cond_2
     const-string v3, "DhcpInfoInternal"
 
@@ -417,10 +447,10 @@
     .locals 5
 
     .prologue
-    .line 142
+    .line 158
     const-string v2, ""
 
-    .line 143
+    .line 159
     .local v2, routeString:Ljava/lang/String;
     iget-object v3, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
@@ -471,7 +501,7 @@
 
     goto :goto_0
 
-    .line 144
+    .line 160
     .end local v1           #route:Landroid/net/RouteInfo;
     :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
@@ -572,14 +602,14 @@
     .parameter "orig"
 
     .prologue
-    .line 124
+    .line 128
     if-nez p1, :cond_1
 
-    .line 139
+    .line 143
     :cond_0
     return-void
 
-    .line 126
+    .line 130
     :cond_1
     iget-object v2, p0, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
 
@@ -589,12 +619,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 127
+    .line 131
     iget-object v2, p1, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
 
     iput-object v2, p0, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
 
-    .line 130
+    .line 134
     :cond_2
     iget-object v2, p0, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
 
@@ -604,12 +634,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 131
+    .line 135
     iget-object v2, p1, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
 
     iput-object v2, p0, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
 
-    .line 134
+    .line 138
     :cond_3
     iget-object v2, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
 
@@ -619,7 +649,7 @@
 
     if-nez v2, :cond_0
 
-    .line 135
+    .line 139
     invoke-virtual {p1}, Landroid/net/DhcpInfoInternal;->getRoutes()Ljava/util/Collection;
 
     move-result-object v2
@@ -642,7 +672,7 @@
 
     check-cast v1, Landroid/net/RouteInfo;
 
-    .line 136
+    .line 140
     .local v1, route:Landroid/net/RouteInfo;
     invoke-virtual {p0, v1}, Landroid/net/DhcpInfoInternal;->addRoute(Landroid/net/RouteInfo;)V
 

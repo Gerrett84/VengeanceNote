@@ -3,7 +3,7 @@
 .source "PhoneWindowManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/InputEventReceiver$Factory;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1834
+    .line 2265
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$7;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +37,18 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 0
+.method public createInputEventReceiver(Landroid/view/InputChannel;Landroid/os/Looper;)Landroid/view/InputEventReceiver;
+    .locals 2
+    .parameter "inputChannel"
+    .parameter "looper"
 
     .prologue
-    .line 1836
-    return-void
+    .line 2269
+    new-instance v0, Lcom/android/internal/policy/impl/PhoneWindowManager$HideNavInputEventReceiver;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$7;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+
+    invoke-direct {v0, v1, p1, p2}, Lcom/android/internal/policy/impl/PhoneWindowManager$HideNavInputEventReceiver;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/InputChannel;Landroid/os/Looper;)V
+
+    return-object v0
 .end method

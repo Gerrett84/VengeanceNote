@@ -39,6 +39,14 @@
     .end annotation
 .end method
 
+.method public abstract notifyCellInfo(Landroid/telephony/CellInfo;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract notifyCellLocation(Landroid/os/Bundle;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

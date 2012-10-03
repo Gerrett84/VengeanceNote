@@ -1200,7 +1200,7 @@
 
     .prologue
     .line 327
-    const v4, 0x1090028
+    const v4, 0x1090029
 
     const/4 v5, 0x0
 
@@ -1210,7 +1210,7 @@
 
     .line 329
     .local v3, permView:Landroid/view/View;
-    const v4, 0x102024b
+    const v4, 0x102025e
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1220,7 +1220,7 @@
 
     .line 330
     .local v2, permGrpView:Landroid/widget/TextView;
-    const v4, 0x102024c
+    const v4, 0x102025f
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1230,7 +1230,7 @@
 
     .line 332
     .local v1, permDescView:Landroid/widget/TextView;
-    const v4, 0x102024a
+    const v4, 0x102025d
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1276,7 +1276,7 @@
 
     .prologue
     .line 154
-    const-string v0, "layout_inflater"
+    const-string/jumbo v0, "layout_inflater"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1292,7 +1292,7 @@
 
     if-eqz p3, :cond_0
 
-    const v0, 0x10802ab
+    const v0, 0x10802b3
 
     :goto_0
     invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -1318,7 +1318,7 @@
     .line 156
     .end local v5           #icon:Landroid/graphics/drawable/Drawable;
     :cond_0
-    const v0, 0x108034b
+    const v0, 0x108035c
 
     goto :goto_0
 .end method
@@ -1967,7 +1967,7 @@
     .line 364
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mShowMoreText:Landroid/widget/TextView;
 
-    const v1, 0x10403f7
+    const v1, 0x1040427
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1995,7 +1995,7 @@
     .line 368
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mShowMoreText:Landroid/widget/TextView;
 
-    const v1, 0x10403f8
+    const v1, 0x1040428
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -2045,7 +2045,7 @@
     .line 208
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mContext:Landroid/content/Context;
 
-    const-string v1, "layout_inflater"
+    const-string/jumbo v1, "layout_inflater"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -2058,7 +2058,7 @@
     .line 209
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x1090029
+    const v1, 0x109002b
 
     const/4 v2, 0x0
 
@@ -2073,7 +2073,7 @@
     .line 210
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mPermsView:Landroid/widget/LinearLayout;
 
-    const v1, 0x102024f
+    const v1, 0x1020262
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2084,7 +2084,7 @@
     .line 211
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mShowMore:Landroid/view/View;
 
-    const v1, 0x1020251
+    const v1, 0x1020264
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2097,7 +2097,7 @@
     .line 212
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mShowMore:Landroid/view/View;
 
-    const v1, 0x1020250
+    const v1, 0x1020263
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2110,7 +2110,7 @@
     .line 213
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mPermsView:Landroid/widget/LinearLayout;
 
-    const v1, 0x102024e
+    const v1, 0x1020261
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2123,7 +2123,7 @@
     .line 214
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mPermsView:Landroid/widget/LinearLayout;
 
-    const v1, 0x1020252
+    const v1, 0x1020265
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2136,7 +2136,7 @@
     .line 215
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mPermsView:Landroid/widget/LinearLayout;
 
-    const v1, 0x102024d
+    const v1, 0x1020260
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2162,7 +2162,7 @@
     .line 223
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mContext:Landroid/content/Context;
 
-    const v1, 0x10403f4
+    const v1, 0x1040424
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2173,7 +2173,7 @@
     .line 224
     iget-object v0, p0, Landroid/widget/AppSecurityPermissions;->mContext:Landroid/content/Context;
 
-    const v1, 0x10403f5
+    const v1, 0x1040425
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2188,7 +2188,7 @@
 
     move-result-object v0
 
-    const v1, 0x108034b
+    const v1, 0x108035c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2203,7 +2203,7 @@
 
     move-result-object v0
 
-    const v1, 0x10802ab
+    const v1, 0x10802b3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2218,7 +2218,7 @@
 
     move-result-object v0
 
-    const v1, 0x108026b
+    const v1, 0x108026f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -2233,7 +2233,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080272
+    const v1, 0x1080276
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

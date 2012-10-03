@@ -206,7 +206,7 @@
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
     .line 159
     :cond_0
@@ -226,31 +226,27 @@
     :try_start_3
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 156
+    .line 151
     :cond_1
     :goto_2
     throw v3
 
     .line 154
-    .end local v1           #stream:Ljava/io/InputStream;
-    .restart local v2       #stream:Ljava/io/InputStream;
     :catch_0
-    move-exception v3
-
-    goto :goto_0
-
-    .end local v2           #stream:Ljava/io/InputStream;
-    .restart local v1       #stream:Ljava/io/InputStream;
-    :catch_1
     move-exception v4
 
     goto :goto_2
 
-    .line 151
     .end local v1           #stream:Ljava/io/InputStream;
     .restart local v2       #stream:Ljava/io/InputStream;
+    :catch_1
+    move-exception v3
+
+    goto :goto_0
+
+    .line 151
     :catchall_1
     move-exception v3
 
@@ -316,35 +312,35 @@
     invoke-direct {p0, v0}, Landroid/graphics/BitmapRegionDecoder;->checkRecycled(Ljava/lang/String;)V
 
     .line 183
-    iget v0, p1, Landroid/graphics/Rect;->left:I
-
-    if-ltz v0, :cond_0
-
-    iget v0, p1, Landroid/graphics/Rect;->top:I
-
-    if-ltz v0, :cond_0
-
     iget v0, p1, Landroid/graphics/Rect;->right:I
+
+    if-lez v0, :cond_0
+
+    iget v0, p1, Landroid/graphics/Rect;->bottom:I
+
+    if-lez v0, :cond_0
+
+    iget v0, p1, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p0}, Landroid/graphics/BitmapRegionDecoder;->getWidth()I
 
     move-result v1
 
-    if-gt v0, v1, :cond_0
+    if-ge v0, v1, :cond_0
 
-    iget v0, p1, Landroid/graphics/Rect;->bottom:I
+    iget v0, p1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p0}, Landroid/graphics/BitmapRegionDecoder;->getHeight()I
 
     move-result v1
 
-    if-le v0, v1, :cond_1
+    if-lt v0, v1, :cond_1
 
     .line 185
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "rectangle is not inside the image"
+    const-string/jumbo v1, "rectangle is outside the image"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

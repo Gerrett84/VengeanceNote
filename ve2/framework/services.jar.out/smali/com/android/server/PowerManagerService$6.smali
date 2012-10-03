@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1501
+    .line 1582
     iput-object p1, p0, Lcom/android/server/PowerManagerService$6;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 1503
+    .line 1584
     iget-object v0, p0, Lcom/android/server/PowerManagerService$6;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
@@ -50,7 +50,7 @@
 
     monitor-enter v1
 
-    .line 1504
+    .line 1585
     const/16 v0, 0xaa6
 
     const/4 v2, 0x3
@@ -60,7 +60,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -76,7 +76,7 @@
 
     iget-object v6, p0, Lcom/android/server/PowerManagerService$6;->this$0:Lcom/android/server/PowerManagerService;
 
-    iget-wide v6, v6, Lcom/android/server/PowerManagerService;->mScreenOnStart:J
+    iget-wide v6, v6, Lcom/android/server/PowerManagerService;->mScreenOffStart:J
 
     sub-long/2addr v4, v6
 
@@ -105,7 +105,7 @@
 
     invoke-static {v0, v2}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 1506
+    .line 1587
     iget-object v0, p0, Lcom/android/server/PowerManagerService$6;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mBroadcastWakeLock:Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;
@@ -115,13 +115,13 @@
 
     invoke-virtual {v0}, Lcom/android/server/PowerManagerService$UnsynchronizedWakeLock;->release()V
 
-    .line 1507
+    .line 1588
     monitor-exit v1
 
-    .line 1508
+    .line 1589
     return-void
 
-    .line 1507
+    .line 1588
     :catchall_0
     move-exception v0
 

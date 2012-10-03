@@ -39,35 +39,35 @@
     .parameter "usage"
 
     .prologue
-    .line 199
+    .line 214
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 200
+    .line 215
     iput-object p1, p0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 201
+    .line 216
     iput p2, p0, Landroid/renderscript/Mesh$Builder;->mUsage:I
 
-    .line 202
+    .line 217
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
-    .line 203
+    .line 218
     const/16 v0, 0x10
 
     new-array v0, v0, [Landroid/renderscript/Mesh$Builder$Entry;
 
     iput-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
-    .line 204
+    .line 219
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     iput-object v0, p0, Landroid/renderscript/Mesh$Builder;->mIndexTypes:Ljava/util/Vector;
 
-    .line 205
+    .line 220
     return-void
 .end method
 
@@ -80,32 +80,32 @@
     .parameter "p"
 
     .prologue
-    .line 308
+    .line 330
     new-instance v0, Landroid/renderscript/Mesh$Builder$Entry;
 
     invoke-direct {v0, p0}, Landroid/renderscript/Mesh$Builder$Entry;-><init>(Landroid/renderscript/Mesh$Builder;)V
 
-    .line 309
+    .line 331
     .local v0, indexType:Landroid/renderscript/Mesh$Builder$Entry;
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
-    .line 310
+    .line 332
     iput-object p1, v0, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
-    .line 311
+    .line 333
     iput p2, v0, Landroid/renderscript/Mesh$Builder$Entry;->size:I
 
-    .line 312
+    .line 334
     iput-object p3, v0, Landroid/renderscript/Mesh$Builder$Entry;->prim:Landroid/renderscript/Mesh$Primitive;
 
-    .line 313
+    .line 335
     iget-object v1, p0, Landroid/renderscript/Mesh$Builder;->mIndexTypes:Ljava/util/Vector;
 
     invoke-virtual {v1, v0}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 314
+    .line 336
     return-object p0
 .end method
 
@@ -116,32 +116,32 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 289
+    .line 310
     new-instance v0, Landroid/renderscript/Mesh$Builder$Entry;
 
     invoke-direct {v0, p0}, Landroid/renderscript/Mesh$Builder$Entry;-><init>(Landroid/renderscript/Mesh$Builder;)V
 
-    .line 290
+    .line 311
     .local v0, indexType:Landroid/renderscript/Mesh$Builder$Entry;
     iput-object v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
-    .line 291
+    .line 312
     iput-object v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
-    .line 292
+    .line 313
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->size:I
 
-    .line 293
+    .line 314
     iput-object p1, v0, Landroid/renderscript/Mesh$Builder$Entry;->prim:Landroid/renderscript/Mesh$Primitive;
 
-    .line 294
+    .line 315
     iget-object v1, p0, Landroid/renderscript/Mesh$Builder;->mIndexTypes:Ljava/util/Vector;
 
     invoke-virtual {v1, v0}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 295
+    .line 316
     return-object p0
 .end method
 
@@ -151,34 +151,34 @@
     .parameter "p"
 
     .prologue
-    .line 272
+    .line 292
     new-instance v0, Landroid/renderscript/Mesh$Builder$Entry;
 
     invoke-direct {v0, p0}, Landroid/renderscript/Mesh$Builder$Entry;-><init>(Landroid/renderscript/Mesh$Builder;)V
 
-    .line 273
+    .line 293
     .local v0, indexType:Landroid/renderscript/Mesh$Builder$Entry;
     iput-object p1, v0, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
-    .line 274
+    .line 294
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
-    .line 275
+    .line 295
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->size:I
 
-    .line 276
+    .line 296
     iput-object p2, v0, Landroid/renderscript/Mesh$Builder$Entry;->prim:Landroid/renderscript/Mesh$Primitive;
 
-    .line 277
+    .line 297
     iget-object v1, p0, Landroid/renderscript/Mesh$Builder;->mIndexTypes:Ljava/util/Vector;
 
     invoke-virtual {v1, v0}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
 
-    .line 278
+    .line 298
     return-object p0
 .end method
 
@@ -193,7 +193,7 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 270
     iget v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
     iget-object v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
@@ -202,7 +202,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 252
+    .line 271
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Max vertex types exceeded."
@@ -211,7 +211,7 @@
 
     throw v0
 
-    .line 255
+    .line 274
     :cond_0
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
@@ -223,7 +223,7 @@
 
     aput-object v2, v0, v1
 
-    .line 256
+    .line 275
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
     iget v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
@@ -234,7 +234,7 @@
 
     iput-object v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
-    .line 257
+    .line 276
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
     iget v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
@@ -243,7 +243,7 @@
 
     iput-object p1, v0, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
-    .line 258
+    .line 277
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
     iget v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
@@ -252,14 +252,14 @@
 
     iput p2, v0, Landroid/renderscript/Mesh$Builder$Entry;->size:I
 
-    .line 259
+    .line 278
     iget v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
-    .line 260
+    .line 279
     return-object p0
 .end method
 
@@ -273,7 +273,7 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 249
     iget v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
     iget-object v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
@@ -282,7 +282,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 232
+    .line 250
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Max vertex types exceeded."
@@ -291,7 +291,7 @@
 
     throw v0
 
-    .line 235
+    .line 253
     :cond_0
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
@@ -303,7 +303,7 @@
 
     aput-object v2, v0, v1
 
-    .line 236
+    .line 254
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
     iget v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
@@ -312,7 +312,7 @@
 
     iput-object p1, v0, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
-    .line 237
+    .line 255
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypes:[Landroid/renderscript/Mesh$Builder$Entry;
 
     iget v1, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
@@ -323,14 +323,14 @@
 
     iput-object v1, v0, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
-    .line 238
+    .line 256
     iget v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
-    .line 239
+    .line 257
     return-object p0
 .end method
 
@@ -338,21 +338,21 @@
     .locals 17
 
     .prologue
-    .line 328
+    .line 351
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v13}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 329
+    .line 352
     move-object/from16 v0, p0
 
     iget v13, v0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
     new-array v12, v13, [I
 
-    .line 330
+    .line 353
     .local v12, vtx:[I
     move-object/from16 v0, p0
 
@@ -364,7 +364,7 @@
 
     new-array v6, v13, [I
 
-    .line 331
+    .line 354
     .local v6, idx:[I
     move-object/from16 v0, p0
 
@@ -376,7 +376,7 @@
 
     new-array v9, v13, [I
 
-    .line 333
+    .line 356
     .local v9, prim:[I
     move-object/from16 v0, p0
 
@@ -384,7 +384,7 @@
 
     new-array v11, v13, [Landroid/renderscript/Allocation;
 
-    .line 334
+    .line 357
     .local v11, vertexBuffers:[Landroid/renderscript/Allocation;
     move-object/from16 v0, p0
 
@@ -396,7 +396,7 @@
 
     new-array v7, v13, [Landroid/renderscript/Allocation;
 
-    .line 335
+    .line 358
     .local v7, indexBuffers:[Landroid/renderscript/Allocation;
     move-object/from16 v0, p0
 
@@ -408,7 +408,7 @@
 
     new-array v10, v13, [Landroid/renderscript/Mesh$Primitive;
 
-    .line 337
+    .line 360
     .local v10, primitives:[Landroid/renderscript/Mesh$Primitive;
     const/4 v3, 0x0
 
@@ -420,10 +420,10 @@
 
     if-ge v3, v13, :cond_2
 
-    .line 338
+    .line 361
     const/4 v1, 0x0
 
-    .line 339
+    .line 362
     .local v1, alloc:Landroid/renderscript/Allocation;
     move-object/from16 v0, p0
 
@@ -431,13 +431,13 @@
 
     aget-object v4, v13, v3
 
-    .line 340
+    .line 363
     .local v4, entry:Landroid/renderscript/Mesh$Builder$Entry;
     iget-object v13, v4, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
     if-eqz v13, :cond_1
 
-    .line 341
+    .line 364
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
@@ -452,30 +452,34 @@
 
     move-result-object v1
 
-    .line 345
+    .line 368
     :cond_0
     :goto_1
     aput-object v1, v11, v3
 
-    .line 346
-    invoke-virtual {v1}, Landroid/renderscript/Allocation;->getID()I
+    .line 369
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
+
+    invoke-virtual {v1, v13}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v13
 
     aput v13, v12, v3
 
-    .line 337
+    .line 360
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 342
+    .line 365
     :cond_1
     iget-object v13, v4, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
     if-eqz v13, :cond_0
 
-    .line 343
+    .line 366
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
@@ -496,7 +500,7 @@
 
     goto :goto_1
 
-    .line 349
+    .line 372
     .end local v1           #alloc:Landroid/renderscript/Allocation;
     .end local v4           #entry:Landroid/renderscript/Mesh$Builder$Entry;
     :cond_2
@@ -513,10 +517,10 @@
 
     if-ge v3, v13, :cond_6
 
-    .line 350
+    .line 373
     const/4 v1, 0x0
 
-    .line 351
+    .line 374
     .restart local v1       #alloc:Landroid/renderscript/Allocation;
     move-object/from16 v0, p0
 
@@ -528,13 +532,13 @@
 
     check-cast v4, Landroid/renderscript/Mesh$Builder$Entry;
 
-    .line 352
+    .line 375
     .restart local v4       #entry:Landroid/renderscript/Mesh$Builder$Entry;
     iget-object v13, v4, Landroid/renderscript/Mesh$Builder$Entry;->t:Landroid/renderscript/Type;
 
     if-eqz v13, :cond_4
 
-    .line 353
+    .line 376
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
@@ -549,46 +553,46 @@
 
     move-result-object v1
 
-    .line 357
+    .line 380
     :cond_3
     :goto_3
     if-nez v1, :cond_5
 
     const/4 v2, 0x0
 
-    .line 358
+    .line 381
     .local v2, allocID:I
     :goto_4
     aput-object v1, v7, v3
 
-    .line 359
+    .line 382
     iget-object v13, v4, Landroid/renderscript/Mesh$Builder$Entry;->prim:Landroid/renderscript/Mesh$Primitive;
 
     aput-object v13, v10, v3
 
-    .line 361
+    .line 384
     aput v2, v6, v3
 
-    .line 362
+    .line 385
     iget-object v13, v4, Landroid/renderscript/Mesh$Builder$Entry;->prim:Landroid/renderscript/Mesh$Primitive;
 
     iget v13, v13, Landroid/renderscript/Mesh$Primitive;->mID:I
 
     aput v13, v9, v3
 
-    .line 349
+    .line 372
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 354
+    .line 377
     .end local v2           #allocID:I
     :cond_4
     iget-object v13, v4, Landroid/renderscript/Mesh$Builder$Entry;->e:Landroid/renderscript/Element;
 
     if-eqz v13, :cond_3
 
-    .line 355
+    .line 378
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
@@ -609,15 +613,19 @@
 
     goto :goto_3
 
-    .line 357
+    .line 380
     :cond_5
-    invoke-virtual {v1}, Landroid/renderscript/Allocation;->getID()I
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
+
+    invoke-virtual {v1, v13}, Landroid/renderscript/Allocation;->getID(Landroid/renderscript/RenderScript;)I
 
     move-result v2
 
     goto :goto_4
 
-    .line 365
+    .line 388
     .end local v1           #alloc:Landroid/renderscript/Allocation;
     .end local v4           #entry:Landroid/renderscript/Mesh$Builder$Entry;
     :cond_6
@@ -629,7 +637,7 @@
 
     move-result v5
 
-    .line 366
+    .line 389
     .local v5, id:I
     new-instance v8, Landroid/renderscript/Mesh;
 
@@ -639,17 +647,17 @@
 
     invoke-direct {v8, v5, v13}, Landroid/renderscript/Mesh;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 367
+    .line 390
     .local v8, newMesh:Landroid/renderscript/Mesh;
     iput-object v11, v8, Landroid/renderscript/Mesh;->mVertexBuffers:[Landroid/renderscript/Allocation;
 
-    .line 368
+    .line 391
     iput-object v7, v8, Landroid/renderscript/Mesh;->mIndexBuffers:[Landroid/renderscript/Allocation;
 
-    .line 369
+    .line 392
     iput-object v10, v8, Landroid/renderscript/Mesh;->mPrimitives:[Landroid/renderscript/Mesh$Primitive;
 
-    .line 371
+    .line 394
     return-object v8
 .end method
 
@@ -657,7 +665,7 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 237
     iget-object v0, p0, Landroid/renderscript/Mesh$Builder;->mIndexTypes:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->size()I
@@ -673,7 +681,7 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 228
     iget v0, p0, Landroid/renderscript/Mesh$Builder;->mVertexTypeCount:I
 
     add-int/lit8 v0, v0, -0x1
@@ -687,18 +695,18 @@
     .parameter "size"
 
     .prologue
-    .line 318
+    .line 340
     new-instance v0, Landroid/renderscript/Type$Builder;
 
     iget-object v1, p0, Landroid/renderscript/Mesh$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-direct {v0, v1, p1}, Landroid/renderscript/Type$Builder;-><init>(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V
 
-    .line 319
+    .line 341
     .local v0, tb:Landroid/renderscript/Type$Builder;
     invoke-virtual {v0, p2}, Landroid/renderscript/Type$Builder;->setX(I)Landroid/renderscript/Type$Builder;
 
-    .line 320
+    .line 342
     invoke-virtual {v0}, Landroid/renderscript/Type$Builder;->create()Landroid/renderscript/Type;
 
     move-result-object v1

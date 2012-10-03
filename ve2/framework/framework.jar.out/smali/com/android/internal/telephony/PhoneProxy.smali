@@ -7,7 +7,13 @@
 
 
 # static fields
-.field private static final EVENT_RADIO_TECHNOLOGY_CHANGED:I = 0x1
+.field private static final EVENT_RADIO_ON:I = 0x2
+
+.field private static final EVENT_REQUEST_VOICE_RADIO_TECH_DONE:I = 0x3
+
+.field private static final EVENT_RIL_CONNECTED:I = 0x4
+
+.field private static final EVENT_VOICE_RADIO_TECH_CHANGED:I = 0x1
 
 .field private static final LOG_TAG:Ljava/lang/String; = "PHONE"
 
@@ -23,11 +29,11 @@
 
 .field private mIccSmsInterfaceManagerProxy:Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
 
-.field private mOutgoingPhone:Ljava/lang/String;
-
 .field private mPhoneSubInfoProxy:Lcom/android/internal/telephony/PhoneSubInfoProxy;
 
 .field private mResetModemOnRadioTechnologyChange:Z
+
+.field private mRilVersion:I
 
 
 # direct methods
@@ -35,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 44
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -52,16 +58,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 57
+    const/4 v2, 0x0
+
+    .line 64
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 51
+    .line 52
     iput-boolean v1, p0, Lcom/android/internal/telephony/PhoneProxy;->mResetModemOnRadioTechnologyChange:Z
 
-    .line 58
+    .line 65
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
-    .line 59
+    .line 66
     const-string/jumbo v0, "persist.radio.reset_on_switch"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -70,7 +78,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mResetModemOnRadioTechnologyChange:Z
 
-    .line 61
+    .line 68
     new-instance v0, Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
 
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getIccSmsInterfaceManager()Lcom/android/internal/telephony/IccSmsInterfaceManager;
@@ -81,7 +89,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccSmsInterfaceManagerProxy:Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
 
-    .line 63
+    .line 70
     new-instance v0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
@@ -92,7 +100,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccPhoneBookInterfaceManagerProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
 
-    .line 65
+    .line 72
     new-instance v0, Lcom/android/internal/telephony/PhoneSubInfoProxy;
 
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getPhoneSubInfo()Lcom/android/internal/telephony/PhoneSubInfo;
@@ -103,7 +111,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mPhoneSubInfoProxy:Lcom/android/internal/telephony/PhoneSubInfoProxy;
 
-    .line 66
+    .line 73
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     check-cast v0, Lcom/android/internal/telephony/PhoneBase;
@@ -112,17 +120,182 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
-    .line 67
+    .line 75
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    const/4 v1, 0x4
+
+    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForRilConnected(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    .line 76
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    const/4 v1, 0x2
+
+    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForOn(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    .line 77
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForVoiceRadioTechChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    invoke-interface {v0, p0, v1, v2}, Lcom/android/internal/telephony/CommandsInterface;->registerForRadioTechnologyChanged(Landroid/os/Handler;ILjava/lang/Object;)V
-
-    .line 69
+    .line 79
     return-void
+.end method
+
+.method private deleteAndCreatePhone(I)V
+    .locals 4
+    .parameter "newVoiceRadioTech"
+
+    .prologue
+    .line 211
+    const-string v1, "Unknown"
+
+    .line 212
+    .local v1, outgoingPhoneName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    .line 214
+    .local v0, oldPhone:Lcom/android/internal/telephony/Phone;
+    if-eqz v0, :cond_0
+
+    move-object v2, v0
+
+    .line 215
+    check-cast v2, Lcom/android/internal/telephony/PhoneBase;
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getPhoneName()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 218
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Switching Voice Phone : "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " >>> "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-static {p1}, Landroid/telephony/ServiceState;->isGsm(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    const-string v2, "GSM"
+
+    :goto_0
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    .line 221
+    if-eqz v0, :cond_1
+
+    .line 222
+    invoke-static {}, Lcom/android/internal/telephony/CallManager;->getInstance()Lcom/android/internal/telephony/CallManager;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/android/internal/telephony/CallManager;->unregisterPhone(Lcom/android/internal/telephony/Phone;)V
+
+    .line 223
+    const-string v2, "Disposing old phone.."
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    .line 224
+    invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->dispose()V
+
+    .line 234
+    :cond_1
+    invoke-static {p1}, Landroid/telephony/ServiceState;->isCdma(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    .line 235
+    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getCdmaPhone()Lcom/android/internal/telephony/Phone;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    .line 240
+    :cond_2
+    :goto_1
+    if-eqz v0, :cond_3
+
+    .line 241
+    invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->removeReferences()V
+
+    .line 244
+    :cond_3
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    if-eqz v2, :cond_4
+
+    .line 245
+    invoke-static {}, Lcom/android/internal/telephony/CallManager;->getInstance()Lcom/android/internal/telephony/CallManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-virtual {v2, v3}, Lcom/android/internal/telephony/CallManager;->registerPhone(Lcom/android/internal/telephony/Phone;)Z
+
+    .line 248
+    :cond_4
+    const/4 v0, 0x0
+
+    .line 249
+    return-void
+
+    .line 218
+    :cond_5
+    const-string v2, "CDMA"
+
+    goto :goto_0
+
+    .line 236
+    :cond_6
+    invoke-static {p1}, Landroid/telephony/ServiceState;->isGsm(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 237
+    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getGsmPhone()Lcom/android/internal/telephony/Phone;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    goto :goto_1
 .end method
 
 .method private static logd(Ljava/lang/String;)V
@@ -130,7 +303,7 @@
     .parameter "msg"
 
     .prologue
-    .line 149
+    .line 124
     const-string v0, "PHONE"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -153,8 +326,428 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 150
+    .line 125
     return-void
+.end method
+
+.method private loge(Ljava/lang/String;)V
+    .locals 3
+    .parameter "msg"
+
+    .prologue
+    .line 132
+    const-string v0, "PHONE"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[PhoneProxy] "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 133
+    return-void
+.end method
+
+.method private logw(Ljava/lang/String;)V
+    .locals 3
+    .parameter "msg"
+
+    .prologue
+    .line 128
+    const-string v0, "PHONE"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[PhoneProxy] "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 129
+    return-void
+.end method
+
+.method private updatePhoneObject(I)V
+    .locals 7
+    .parameter "newVoiceRadioTech"
+
+    .prologue
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 137
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    if-eqz v2, :cond_1
+
+    .line 138
+    iget v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mRilVersion:I
+
+    const/4 v3, 0x6
+
+    if-ne v2, v3, :cond_2
+
+    invoke-virtual {p0}, Lcom/android/internal/telephony/PhoneProxy;->getLteOnCdmaMode()I
+
+    move-result v2
+
+    if-ne v2, v5, :cond_2
+
+    .line 143
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+
+    move-result v2
+
+    if-ne v2, v6, :cond_0
+
+    .line 144
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "LTE ON CDMA property is set. Use CDMA Phone newVoiceRadioTech = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " Active Phone = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    .line 207
+    :goto_0
+    return-void
+
+    .line 149
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "LTE ON CDMA property is set. Switch to CDMALTEPhone newVoiceRadioTech = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " Active Phone = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    .line 152
+    const/4 p1, 0x6
+
+    .line 168
+    :cond_1
+    if-nez p1, :cond_5
+
+    .line 171
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Ignoring voice radio technology changed message. newVoiceRadioTech = Unknown. Active Phone = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 155
+    :cond_2
+    invoke-static {p1}, Landroid/telephony/ServiceState;->isCdma(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+
+    move-result v2
+
+    if-eq v2, v6, :cond_4
+
+    :cond_3
+    invoke-static {p1}, Landroid/telephony/ServiceState;->isGsm(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
+
+    move-result v2
+
+    if-ne v2, v5, :cond_1
+
+    .line 160
+    :cond_4
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Ignoring voice radio technology changed message. newVoiceRadioTech = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " Active Phone = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    .line 176
+    :cond_5
+    const/4 v1, 0x0
+
+    .line 177
+    .local v1, oldPowerState:Z
+    iget-boolean v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mResetModemOnRadioTechnologyChange:Z
+
+    if-eqz v2, :cond_6
+
+    .line 178
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/CommandsInterface;->getRadioState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->isOn()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    .line 179
+    const/4 v1, 0x1
+
+    .line 180
+    const-string v2, "Setting Radio Power to Off"
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    .line 181
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v3, v4}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
+
+    .line 185
+    :cond_6
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/PhoneProxy;->deleteAndCreatePhone(I)V
+
+    .line 187
+    iget-boolean v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mResetModemOnRadioTechnologyChange:Z
+
+    if-eqz v2, :cond_7
+
+    if-eqz v1, :cond_7
+
+    .line 188
+    const-string v2, "Resetting Radio"
+
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+
+    .line 189
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v2, v1, v4}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
+
+    .line 193
+    :cond_7
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccSmsInterfaceManagerProxy:Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getIccSmsInterfaceManager()Lcom/android/internal/telephony/IccSmsInterfaceManager;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;->setmIccSmsInterfaceManager(Lcom/android/internal/telephony/IccSmsInterfaceManager;)V
+
+    .line 195
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccPhoneBookInterfaceManagerProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->setmIccPhoneBookInterfaceManager(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;)V
+
+    .line 197
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mPhoneSubInfoProxy:Lcom/android/internal/telephony/PhoneSubInfoProxy;
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneSubInfo()Lcom/android/internal/telephony/PhoneSubInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/android/internal/telephony/PhoneSubInfoProxy;->setmPhoneSubInfo(Lcom/android/internal/telephony/PhoneSubInfo;)V
+
+    .line 199
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    check-cast v2, Lcom/android/internal/telephony/PhoneBase;
+
+    iget-object v2, v2, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+
+    iput-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    .line 202
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.RADIO_TECHNOLOGY"
+
+    invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 203
+    .local v0, intent:Landroid/content/Intent;
+    const/high16 v2, 0x2000
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 204
+    const-string/jumbo v2, "phoneName"
+
+    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 205
+    invoke-static {v0, v4}, Landroid/app/ActivityManagerNative;->broadcastStickyIntent(Landroid/content/Intent;Ljava/lang/String;)V
+
+    goto/16 :goto_0
 .end method
 
 
@@ -168,12 +761,12 @@
     .end annotation
 
     .prologue
-    .line 369
+    .line 468
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->acceptCall()V
 
-    .line 370
+    .line 469
     return-void
 .end method
 
@@ -183,12 +776,12 @@
     .parameter "response"
 
     .prologue
-    .line 706
+    .line 805
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->activateCellBroadcastSms(ILandroid/os/Message;)V
 
-    .line 707
+    .line 806
     return-void
 .end method
 
@@ -196,7 +789,7 @@
     .locals 1
 
     .prologue
-    .line 381
+    .line 480
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->canConference()Z
@@ -210,7 +803,7 @@
     .locals 1
 
     .prologue
-    .line 397
+    .line 496
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->canTransfer()Z
@@ -224,12 +817,12 @@
     .locals 1
 
     .prologue
-    .line 405
+    .line 504
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->clearDisconnected()V
 
-    .line 406
+    .line 505
     return-void
 .end method
 
@@ -242,12 +835,12 @@
     .end annotation
 
     .prologue
-    .line 385
+    .line 484
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->conference()V
 
-    .line 386
+    .line 485
     return-void
 .end method
 
@@ -261,7 +854,7 @@
     .end annotation
 
     .prologue
-    .line 421
+    .line 520
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->dial(Ljava/lang/String;)Lcom/android/internal/telephony/Connection;
@@ -282,7 +875,7 @@
     .end annotation
 
     .prologue
-    .line 425
+    .line 524
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->dial(Ljava/lang/String;Lcom/android/internal/telephony/UUSInfo;)Lcom/android/internal/telephony/Connection;
@@ -297,7 +890,7 @@
     .parameter "type"
 
     .prologue
-    .line 642
+    .line 741
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->disableApnType(Ljava/lang/String;)I
@@ -312,12 +905,12 @@
     .parameter "b"
 
     .prologue
-    .line 177
+    .line 276
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->disableDnsCheck(Z)V
 
-    .line 178
+    .line 277
     return-void
 .end method
 
@@ -325,12 +918,35 @@
     .locals 1
 
     .prologue
-    .line 594
+    .line 693
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->disableLocationUpdates()V
 
-    .line 595
+    .line 694
+    return-void
+.end method
+
+.method public dispose()V
+    .locals 1
+
+    .prologue
+    .line 963
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForOn(Landroid/os/Handler;)V
+
+    .line 964
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForVoiceRadioTechChanged(Landroid/os/Handler;)V
+
+    .line 965
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForRilConnected(Landroid/os/Handler;)V
+
+    .line 966
     return-void
 .end method
 
@@ -339,7 +955,7 @@
     .parameter "type"
 
     .prologue
-    .line 638
+    .line 737
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->enableApnType(Ljava/lang/String;)I
@@ -355,12 +971,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 389
+    .line 488
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->enableEnhancedVoicePrivacy(ZLandroid/os/Message;)V
 
-    .line 390
+    .line 489
     return-void
 .end method
 
@@ -368,12 +984,12 @@
     .locals 1
 
     .prologue
-    .line 590
+    .line 689
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->enableLocationUpdates()V
 
-    .line 591
+    .line 690
     return-void
 .end method
 
@@ -381,12 +997,12 @@
     .locals 1
 
     .prologue
-    .line 750
+    .line 849
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->exitEmergencyCallbackMode()V
 
-    .line 751
+    .line 850
     return-void
 .end method
 
@@ -399,12 +1015,12 @@
     .end annotation
 
     .prologue
-    .line 401
+    .line 500
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->explicitCallTransfer()V
 
-    .line 402
+    .line 501
     return-void
 .end method
 
@@ -413,7 +1029,7 @@
     .parameter "apnType"
 
     .prologue
-    .line 201
+    .line 300
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getActiveApnHost(Ljava/lang/String;)Ljava/lang/String;
@@ -427,7 +1043,7 @@
     .locals 1
 
     .prologue
-    .line 197
+    .line 296
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getActiveApnTypes()[Ljava/lang/String;
@@ -441,7 +1057,7 @@
     .locals 1
 
     .prologue
-    .line 742
+    .line 841
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     return-object v0
@@ -452,12 +1068,12 @@
     .parameter "response"
 
     .prologue
-    .line 534
+    .line 633
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getAvailableNetworks(Landroid/os/Message;)V
 
-    .line 535
+    .line 634
     return-void
 .end method
 
@@ -465,7 +1081,7 @@
     .locals 1
 
     .prologue
-    .line 413
+    .line 512
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getBackgroundCall()Lcom/android/internal/telephony/Call;
@@ -479,7 +1095,7 @@
     .locals 1
 
     .prologue
-    .line 457
+    .line 556
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCallForwardingIndicator()Z
@@ -495,12 +1111,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 504
+    .line 603
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->getCallForwardingOption(ILandroid/os/Message;)V
 
-    .line 506
+    .line 605
     return-void
 .end method
 
@@ -509,12 +1125,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 526
+    .line 625
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getCallWaiting(Landroid/os/Message;)V
 
-    .line 527
+    .line 626
     return-void
 .end method
 
@@ -522,7 +1138,7 @@
     .locals 1
 
     .prologue
-    .line 730
+    .line 829
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCdmaEriIconIndex()I
@@ -536,7 +1152,7 @@
     .locals 1
 
     .prologue
-    .line 738
+    .line 837
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCdmaEriIconMode()I
@@ -550,7 +1166,7 @@
     .locals 1
 
     .prologue
-    .line 734
+    .line 833
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCdmaEriText()Ljava/lang/String;
@@ -564,7 +1180,7 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 564
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCdmaMin()Ljava/lang/String;
@@ -578,7 +1194,7 @@
     .locals 1
 
     .prologue
-    .line 473
+    .line 572
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCdmaPrlVersion()Ljava/lang/String;
@@ -593,12 +1209,12 @@
     .parameter "response"
 
     .prologue
-    .line 710
+    .line 809
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getCellBroadcastSmsConfig(Landroid/os/Message;)V
 
-    .line 711
+    .line 810
     return-void
 .end method
 
@@ -606,7 +1222,7 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 256
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getCellLocation()Landroid/telephony/CellLocation;
@@ -620,7 +1236,7 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 272
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
@@ -634,7 +1250,7 @@
     .locals 1
 
     .prologue
-    .line 169
+    .line 268
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDataActivityState()Lcom/android/internal/telephony/Phone$DataActivityState;
@@ -649,12 +1265,12 @@
     .parameter "response"
 
     .prologue
-    .line 582
+    .line 681
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getDataCallList(Landroid/os/Message;)V
 
-    .line 583
+    .line 682
     return-void
 .end method
 
@@ -662,7 +1278,7 @@
     .locals 2
 
     .prologue
-    .line 161
+    .line 260
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     const-string v1, "default"
@@ -679,7 +1295,7 @@
     .parameter "apnType"
 
     .prologue
-    .line 165
+    .line 264
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getDataConnectionState(Ljava/lang/String;)Lcom/android/internal/telephony/Phone$DataState;
@@ -693,7 +1309,7 @@
     .locals 1
 
     .prologue
-    .line 614
+    .line 713
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDataRoamingEnabled()Z
@@ -707,7 +1323,7 @@
     .locals 1
 
     .prologue
-    .line 654
+    .line 753
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDeviceId()Ljava/lang/String;
@@ -721,7 +1337,7 @@
     .locals 1
 
     .prologue
-    .line 658
+    .line 757
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDeviceSvn()Ljava/lang/String;
@@ -736,12 +1352,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 393
+    .line 492
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getEnhancedVoicePrivacy(Landroid/os/Message;)V
 
-    .line 394
+    .line 493
     return-void
 .end method
 
@@ -749,7 +1365,7 @@
     .locals 1
 
     .prologue
-    .line 670
+    .line 769
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getEsn()Ljava/lang/String;
@@ -763,7 +1379,7 @@
     .locals 1
 
     .prologue
-    .line 409
+    .line 508
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getForegroundCall()Lcom/android/internal/telephony/Call;
@@ -777,7 +1393,7 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 464
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIccCard()Lcom/android/internal/telephony/IccCard;
@@ -791,7 +1407,7 @@
     .locals 1
 
     .prologue
-    .line 694
+    .line 793
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
@@ -805,7 +1421,7 @@
     .locals 1
 
     .prologue
-    .line 361
+    .line 460
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIccRecordsLoaded()Z
@@ -819,7 +1435,7 @@
     .locals 1
 
     .prologue
-    .line 666
+    .line 765
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIccSerialNumber()Ljava/lang/String;
@@ -833,7 +1449,7 @@
     .locals 1
 
     .prologue
-    .line 690
+    .line 789
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIccSmsInterfaceManager()Lcom/android/internal/telephony/IccSmsInterfaceManager;
@@ -847,7 +1463,7 @@
     .locals 1
 
     .prologue
-    .line 682
+    .line 781
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getImei()Ljava/lang/String;
@@ -861,7 +1477,7 @@
     .locals 1
 
     .prologue
-    .line 838
+    .line 937
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIsimRecords()Lcom/android/internal/telephony/ims/IsimRecords;
@@ -875,7 +1491,7 @@
     .locals 1
 
     .prologue
-    .line 477
+    .line 576
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLine1AlphaTag()Ljava/lang/String;
@@ -889,7 +1505,7 @@
     .locals 1
 
     .prologue
-    .line 461
+    .line 560
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLine1Number()Ljava/lang/String;
@@ -904,7 +1520,7 @@
     .parameter "apnType"
 
     .prologue
-    .line 209
+    .line 308
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getLinkCapabilities(Ljava/lang/String;)Landroid/net/LinkCapabilities;
@@ -919,7 +1535,7 @@
     .parameter "apnType"
 
     .prologue
-    .line 205
+    .line 304
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getLinkProperties(Ljava/lang/String;)Landroid/net/LinkProperties;
@@ -933,7 +1549,7 @@
     .locals 1
 
     .prologue
-    .line 850
+    .line 949
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLteOnCdmaMode()I
@@ -947,7 +1563,7 @@
     .locals 1
 
     .prologue
-    .line 674
+    .line 773
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getMeid()Ljava/lang/String;
@@ -961,7 +1577,7 @@
     .locals 1
 
     .prologue
-    .line 453
+    .line 552
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getMessageWaitingIndicator()Z
@@ -975,7 +1591,7 @@
     .locals 1
 
     .prologue
-    .line 678
+    .line 777
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getMsisdn()Ljava/lang/String;
@@ -989,7 +1605,7 @@
     .locals 1
 
     .prologue
-    .line 566
+    .line 665
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getMute()Z
@@ -1004,12 +1620,12 @@
     .parameter "response"
 
     .prologue
-    .line 554
+    .line 653
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getNeighboringCids(Landroid/os/Message;)V
 
-    .line 555
+    .line 654
     return-void
 .end method
 
@@ -1018,12 +1634,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 516
+    .line 615
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getOutgoingCallerIdDisplay(Landroid/os/Message;)V
 
-    .line 517
+    .line 616
     return-void
 .end method
 
@@ -1040,7 +1656,7 @@
     .end annotation
 
     .prologue
-    .line 273
+    .line 372
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getPendingMmiCodes()Ljava/util/List;
@@ -1054,7 +1670,7 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 288
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
@@ -1068,7 +1684,7 @@
     .locals 1
 
     .prologue
-    .line 686
+    .line 785
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getPhoneSubInfo()Lcom/android/internal/telephony/PhoneSubInfo;
@@ -1082,7 +1698,7 @@
     .locals 1
 
     .prologue
-    .line 193
+    .line 292
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
@@ -1097,12 +1713,12 @@
     .parameter "response"
 
     .prologue
-    .line 550
+    .line 649
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getPreferredNetworkType(Landroid/os/Message;)V
 
-    .line 551
+    .line 650
     return-void
 .end method
 
@@ -1110,7 +1726,7 @@
     .locals 1
 
     .prologue
-    .line 417
+    .line 516
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getRingingCall()Lcom/android/internal/telephony/Call;
@@ -1124,7 +1740,7 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 252
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getServiceState()Landroid/telephony/ServiceState;
@@ -1138,7 +1754,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 312
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getSignalStrength()Landroid/telephony/SignalStrength;
@@ -1152,7 +1768,7 @@
     .locals 1
 
     .prologue
-    .line 634
+    .line 733
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getSimulatedRadioControl()Lcom/android/internal/telephony/test/SimulatedRadioControl;
@@ -1167,12 +1783,12 @@
     .parameter "result"
 
     .prologue
-    .line 722
+    .line 821
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->getSmscAddress(Landroid/os/Message;)V
 
-    .line 723
+    .line 822
     return-void
 .end method
 
@@ -1180,7 +1796,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 284
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getState()Lcom/android/internal/telephony/Phone$State;
@@ -1194,7 +1810,7 @@
     .locals 1
 
     .prologue
-    .line 662
+    .line 761
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getSubscriberId()Ljava/lang/String;
@@ -1208,7 +1824,7 @@
     .locals 1
 
     .prologue
-    .line 602
+    .line 701
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getUnitTestMode()Z
@@ -1222,7 +1838,7 @@
     .locals 1
 
     .prologue
-    .line 860
+    .line 959
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getUsimServiceTable()Lcom/android/internal/telephony/gsm/UsimServiceTable;
@@ -1236,7 +1852,7 @@
     .locals 1
 
     .prologue
-    .line 494
+    .line 593
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getVoiceMailAlphaTag()Ljava/lang/String;
@@ -1250,7 +1866,7 @@
     .locals 1
 
     .prologue
-    .line 485
+    .line 584
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getVoiceMailNumber()Ljava/lang/String;
@@ -1264,7 +1880,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 589
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getVoiceMessageCount()I
@@ -1284,7 +1900,7 @@
     .end annotation
 
     .prologue
-    .line 433
+    .line 532
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->handleInCallMmiCommands(Ljava/lang/String;)Z
@@ -1295,316 +1911,219 @@
 .end method
 
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 7
+    .locals 4
     .parameter "msg"
 
     .prologue
-    const/4 v6, 0x0
+    .line 83
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 73
+    check-cast v0, Landroid/os/AsyncResult;
+
+    .line 84
+    .local v0, ar:Landroid/os/AsyncResult;
+    iget v2, p1, Landroid/os/Message;->what:I
+
+    packed-switch v2, :pswitch_data_0
+
+    .line 116
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Error! This handler was not registered for this message type. Message: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
     iget v3, p1, Landroid/os/Message;->what:I
 
-    packed-switch v3, :pswitch_data_0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 141
-    const-string v3, "PHONE"
+    move-result-object v2
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    const-string v5, "Error! This handler was not registered for this message type. Message: "
+    invoke-direct {p0, v2}, Lcom/android/internal/telephony/PhoneProxy;->loge(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p1, Landroid/os/Message;->what:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 145
+    .line 120
     :goto_0
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 146
+    .line 121
     return-void
 
-    .line 76
+    .line 87
     :pswitch_0
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    iget-object v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
-    invoke-interface {v3}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+    const/4 v3, 0x3
 
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mOutgoingPhone:Ljava/lang/String;
-
-    .line 77
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Switching phone from "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/PhoneProxy;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/android/internal/telephony/PhoneProxy;->mOutgoingPhone:Ljava/lang/String;
+    invoke-interface {v2, v3}, Lcom/android/internal/telephony/CommandsInterface;->getVoiceRadioTechnology(Landroid/os/Message;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "Phone to "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mOutgoingPhone:Ljava/lang/String;
-
-    const-string v5, "GSM"
-
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const-string v3, "CDMAPhone"
-
-    :goto_1
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
-
-    .line 79
-    const/4 v2, 0x0
-
-    .line 80
-    .local v2, oldPowerState:Z
-    iget-boolean v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mResetModemOnRadioTechnologyChange:Z
-
-    if-eqz v3, :cond_0
-
-    .line 81
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-interface {v3}, Lcom/android/internal/telephony/CommandsInterface;->getRadioState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->isOn()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 82
-    const/4 v2, 0x1
-
-    .line 83
-    const-string v3, "Setting Radio Power to Off"
-
-    invoke-static {v3}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
-
-    .line 84
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
-
-    const/4 v4, 0x0
-
-    invoke-interface {v3, v4, v6}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
-
-    .line 88
-    :cond_0
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mOutgoingPhone:Ljava/lang/String;
-
-    const-string v4, "GSM"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    .line 89
-    const-string v3, "Make a new CDMAPhone and destroy the old GSMPhone."
-
-    invoke-static {v3}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
-
-    .line 91
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
-
-    check-cast v3, Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    invoke-virtual {v3}, Lcom/android/internal/telephony/gsm/GSMPhone;->dispose()V
+    goto :goto_0
 
     .line 92
-    iget-object v1, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    :pswitch_1
+    iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    .line 100
-    .local v1, oldPhone:Lcom/android/internal/telephony/Phone;
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getCdmaPhone()Lcom/android/internal/telephony/Phone;
+    if-nez v2, :cond_0
 
-    move-result-object v3
+    iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    iput-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    if-eqz v2, :cond_0
 
-    .line 101
-    check-cast v1, Lcom/android/internal/telephony/gsm/GSMPhone;
+    .line 93
+    iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    .end local v1           #oldPhone:Lcom/android/internal/telephony/Phone;
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/GSMPhone;->removeReferences()V
+    check-cast v2, Ljava/lang/Integer;
 
-    .line 121
-    :goto_2
-    iget-boolean v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mResetModemOnRadioTechnologyChange:Z
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    if-eqz v3, :cond_1
+    move-result v2
 
-    .line 122
-    const-string v3, "Resetting Radio"
+    iput v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mRilVersion:I
 
-    invoke-static {v3}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
+    goto :goto_0
 
-    .line 123
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+    .line 95
+    :cond_0
+    const-string v2, "Unexpected exception on EVENT_RIL_CONNECTED"
 
-    invoke-interface {v3, v2, v6}, Lcom/android/internal/telephony/CommandsInterface;->setRadioPower(ZLandroid/os/Message;)V
+    invoke-static {v2}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
 
-    .line 127
+    .line 96
+    const/4 v2, -0x1
+
+    iput v2, p0, Lcom/android/internal/telephony/PhoneProxy;->mRilVersion:I
+
+    goto :goto_0
+
+    .line 103
+    :pswitch_2
+    iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
+
+    if-nez v2, :cond_2
+
+    .line 104
+    iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    check-cast v2, [I
+
+    check-cast v2, [I
+
+    array-length v2, v2
+
+    if-eqz v2, :cond_1
+
+    .line 105
+    iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
+
+    check-cast v2, [I
+
+    check-cast v2, [I
+
+    const/4 v3, 0x0
+
+    aget v1, v2, v3
+
+    .line 106
+    .local v1, newVoiceTech:I
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/PhoneProxy;->updatePhoneObject(I)V
+
+    goto :goto_0
+
+    .line 108
+    .end local v1           #newVoiceTech:I
     :cond_1
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccSmsInterfaceManagerProxy:Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {v4}, Lcom/android/internal/telephony/Phone;->getIccSmsInterfaceManager()Lcom/android/internal/telephony/IccSmsInterfaceManager;
+    const-string v3, "Voice Radio Technology event "
 
-    move-result-object v4
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;->setmIccSmsInterfaceManager(Lcom/android/internal/telephony/IccSmsInterfaceManager;)V
+    move-result-object v2
 
-    .line 129
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccPhoneBookInterfaceManagerProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
+    iget v3, p1, Landroid/os/Message;->what:I
 
-    iget-object v4, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {v4}, Lcom/android/internal/telephony/Phone;->getIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+    move-result-object v2
 
-    move-result-object v4
+    const-string v3, " has no tech!"
 
-    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;->setmIccPhoneBookInterfaceManager(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 131
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mPhoneSubInfoProxy:Lcom/android/internal/telephony/PhoneSubInfoProxy;
+    move-result-object v2
 
-    iget-object v4, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-interface {v4}, Lcom/android/internal/telephony/Phone;->getPhoneSubInfo()Lcom/android/internal/telephony/PhoneSubInfo;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-direct {p0, v2}, Lcom/android/internal/telephony/PhoneProxy;->loge(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/PhoneSubInfoProxy;->setmPhoneSubInfo(Lcom/android/internal/telephony/PhoneSubInfo;)V
+    goto :goto_0
 
-    .line 132
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    .line 111
+    :cond_2
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    check-cast v3, Lcom/android/internal/telephony/PhoneBase;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v3, v3, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    const-string v3, "Voice Radio Technology event "
 
-    iput-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 135
-    new-instance v0, Landroid/content/Intent;
+    move-result-object v2
 
-    const-string v3, "android.intent.action.RADIO_TECHNOLOGY"
+    iget v3, p1, Landroid/os/Message;->what:I
 
-    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 136
-    .local v0, intent:Landroid/content/Intent;
-    const/high16 v3, 0x2000
+    move-result-object v2
 
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    const-string v3, " exception!"
 
-    .line 137
-    const-string/jumbo v3, "phoneName"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+    move-result-object v2
 
-    invoke-interface {v4}, Lcom/android/internal/telephony/Phone;->getPhoneName()Ljava/lang/String;
+    iget-object v3, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    move-result-object v4
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    move-result-object v2
 
-    .line 138
-    invoke-static {v0, v6}, Landroid/app/ActivityManagerNative;->broadcastStickyIntent(Landroid/content/Intent;Ljava/lang/String;)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {p0, v2}, Lcom/android/internal/telephony/PhoneProxy;->loge(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 77
-    .end local v0           #intent:Landroid/content/Intent;
-    .end local v2           #oldPowerState:Z
-    :cond_2
-    const-string v3, "GSMPhone"
+    .line 84
+    nop
 
-    goto/16 :goto_1
-
-    .line 104
-    .restart local v2       #oldPowerState:Z
-    :cond_3
-    const-string v3, "Make a new GSMPhone and destroy the old CDMAPhone."
-
-    invoke-static {v3}, Lcom/android/internal/telephony/PhoneProxy;->logd(Ljava/lang/String;)V
-
-    .line 106
-    iget-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
-
-    check-cast v3, Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->dispose()V
-
-    .line 108
-    iget-object v1, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
-
-    .line 116
-    .restart local v1       #oldPhone:Lcom/android/internal/telephony/Phone;
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->getGsmPhone()Lcom/android/internal/telephony/Phone;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
-
-    .line 117
-    check-cast v1, Lcom/android/internal/telephony/cdma/CDMAPhone;
-
-    .end local v1           #oldPhone:Lcom/android/internal/telephony/Phone;
-    invoke-virtual {v1}, Lcom/android/internal/telephony/cdma/CDMAPhone;->removeReferences()V
-
-    goto :goto_2
-
-    .line 73
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_2
         :pswitch_0
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
@@ -1613,7 +2132,7 @@
     .parameter "dialString"
 
     .prologue
-    .line 429
+    .line 528
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->handlePinMmi(Ljava/lang/String;)Z
@@ -1629,12 +2148,12 @@
     .parameter "response"
 
     .prologue
-    .line 574
+    .line 673
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->invokeOemRilRequestRaw([BLandroid/os/Message;)V
 
-    .line 575
+    .line 674
     return-void
 .end method
 
@@ -1644,12 +2163,12 @@
     .parameter "response"
 
     .prologue
-    .line 578
+    .line 677
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->invokeOemRilRequestStrings([Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 579
+    .line 678
     return-void
 .end method
 
@@ -1657,7 +2176,7 @@
     .locals 1
 
     .prologue
-    .line 834
+    .line 933
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->isCspPlmnEnabled()Z
@@ -1671,7 +2190,7 @@
     .locals 2
 
     .prologue
-    .line 646
+    .line 745
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     const-string v1, "default"
@@ -1688,7 +2207,7 @@
     .parameter "apnType"
 
     .prologue
-    .line 650
+    .line 749
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->isDataConnectivityPossible(Ljava/lang/String;)Z
@@ -1702,7 +2221,7 @@
     .locals 1
 
     .prologue
-    .line 181
+    .line 280
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->isDnsCheckDisabled()Z
@@ -1716,7 +2235,7 @@
     .locals 1
 
     .prologue
-    .line 469
+    .line 568
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->isMinInfoReady()Z
@@ -1731,7 +2250,7 @@
     .parameter "dialStr"
 
     .prologue
-    .line 758
+    .line 857
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->isOtaSpNumber(Ljava/lang/String;)Z
@@ -1745,7 +2264,7 @@
     .locals 1
 
     .prologue
-    .line 754
+    .line 853
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->needsOtaServiceProvisioning()Z
@@ -1759,12 +2278,12 @@
     .locals 1
 
     .prologue
-    .line 718
+    .line 817
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->notifyDataActivity()V
 
-    .line 719
+    .line 818
     return-void
 .end method
 
@@ -1773,12 +2292,12 @@
     .parameter "response"
 
     .prologue
-    .line 610
+    .line 709
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->queryAvailableBandMode(Landroid/os/Message;)V
 
-    .line 611
+    .line 710
     return-void
 .end method
 
@@ -1787,12 +2306,12 @@
     .parameter "response"
 
     .prologue
-    .line 622
+    .line 721
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->queryCdmaRoamingPreference(Landroid/os/Message;)V
 
-    .line 623
+    .line 722
     return-void
 .end method
 
@@ -1801,12 +2320,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 702
+    .line 801
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->queryTTYMode(Landroid/os/Message;)V
 
-    .line 703
+    .line 802
     return-void
 .end method
 
@@ -1817,12 +2336,12 @@
     .parameter "obj"
 
     .prologue
-    .line 810
+    .line 909
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerFoT53ClirlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 811
+    .line 910
     return-void
 .end method
 
@@ -1833,12 +2352,12 @@
     .parameter "obj"
 
     .prologue
-    .line 762
+    .line 861
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForCallWaiting(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 763
+    .line 862
     return-void
 .end method
 
@@ -1849,12 +2368,12 @@
     .parameter "obj"
 
     .prologue
-    .line 321
+    .line 420
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForCdmaOtaStatusChange(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 322
+    .line 421
     return-void
 .end method
 
@@ -1865,12 +2384,12 @@
     .parameter "obj"
 
     .prologue
-    .line 249
+    .line 348
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForDisconnect(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 250
+    .line 349
     return-void
 .end method
 
@@ -1881,12 +2400,12 @@
     .parameter "obj"
 
     .prologue
-    .line 778
+    .line 877
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForDisplayInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 779
+    .line 878
     return-void
 .end method
 
@@ -1897,12 +2416,12 @@
     .parameter "obj"
 
     .prologue
-    .line 337
+    .line 436
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForEcmTimerReset(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 338
+    .line 437
     return-void
 .end method
 
@@ -1913,12 +2432,12 @@
     .parameter "obj"
 
     .prologue
-    .line 313
+    .line 412
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForInCallVoicePrivacyOff(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 314
+    .line 413
     return-void
 .end method
 
@@ -1929,12 +2448,12 @@
     .parameter "obj"
 
     .prologue
-    .line 305
+    .line 404
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForInCallVoicePrivacyOn(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 306
+    .line 405
     return-void
 .end method
 
@@ -1945,12 +2464,12 @@
     .parameter "obj"
 
     .prologue
-    .line 241
+    .line 340
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForIncomingRing(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 242
+    .line 341
     return-void
 .end method
 
@@ -1961,12 +2480,12 @@
     .parameter "obj"
 
     .prologue
-    .line 802
+    .line 901
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForLineControlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 803
+    .line 902
     return-void
 .end method
 
@@ -1977,12 +2496,12 @@
     .parameter "obj"
 
     .prologue
-    .line 265
+    .line 364
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForMmiComplete(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 266
+    .line 365
     return-void
 .end method
 
@@ -1993,12 +2512,12 @@
     .parameter "obj"
 
     .prologue
-    .line 257
+    .line 356
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForMmiInitiate(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 258
+    .line 357
     return-void
 .end method
 
@@ -2009,12 +2528,12 @@
     .parameter "obj"
 
     .prologue
-    .line 233
+    .line 332
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForNewRingingConnection(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 234
+    .line 333
     return-void
 .end method
 
@@ -2025,12 +2544,12 @@
     .parameter "obj"
 
     .prologue
-    .line 786
+    .line 885
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForNumberInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 787
+    .line 886
     return-void
 .end method
 
@@ -2041,12 +2560,12 @@
     .parameter "obj"
 
     .prologue
-    .line 225
+    .line 324
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForPreciseCallStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 226
+    .line 325
     return-void
 .end method
 
@@ -2057,12 +2576,12 @@
     .parameter "obj"
 
     .prologue
-    .line 794
+    .line 893
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForRedirectedNumberInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 795
+    .line 894
     return-void
 .end method
 
@@ -2073,12 +2592,12 @@
     .parameter "obj"
 
     .prologue
-    .line 353
+    .line 452
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForResendIncallMute(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 354
+    .line 453
     return-void
 .end method
 
@@ -2089,12 +2608,12 @@
     .parameter "obj"
 
     .prologue
-    .line 345
+    .line 444
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForRingbackTone(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 346
+    .line 445
     return-void
 .end method
 
@@ -2105,12 +2624,12 @@
     .parameter "obj"
 
     .prologue
-    .line 281
+    .line 380
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForServiceStateChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 282
+    .line 381
     return-void
 .end method
 
@@ -2121,12 +2640,12 @@
     .parameter "obj"
 
     .prologue
-    .line 770
+    .line 869
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForSignalInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 771
+    .line 870
     return-void
 .end method
 
@@ -2137,12 +2656,12 @@
     .parameter "obj"
 
     .prologue
-    .line 329
+    .line 428
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForSubscriptionInfoReady(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 330
+    .line 429
     return-void
 .end method
 
@@ -2153,12 +2672,12 @@
     .parameter "obj"
 
     .prologue
-    .line 297
+    .line 396
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForSuppServiceFailed(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 298
+    .line 397
     return-void
 .end method
 
@@ -2169,12 +2688,12 @@
     .parameter "obj"
 
     .prologue
-    .line 289
+    .line 388
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForSuppServiceNotification(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 290
+    .line 389
     return-void
 .end method
 
@@ -2185,12 +2704,12 @@
     .parameter "obj"
 
     .prologue
-    .line 818
+    .line 917
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForT53AudioControlInfo(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 819
+    .line 918
     return-void
 .end method
 
@@ -2201,12 +2720,12 @@
     .parameter "obj"
 
     .prologue
-    .line 217
+    .line 316
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->registerForUnknownConnection(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 218
+    .line 317
     return-void
 .end method
 
@@ -2219,12 +2738,28 @@
     .end annotation
 
     .prologue
-    .line 373
+    .line 472
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->rejectCall()V
 
-    .line 374
+    .line 473
+    return-void
+.end method
+
+.method public removeReferences()V
+    .locals 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 969
+    iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
+
+    .line 970
+    iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
+
+    .line 971
     return-void
 .end method
 
@@ -2234,12 +2769,12 @@
     .parameter "response"
 
     .prologue
-    .line 842
+    .line 941
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->requestIsimAuthentication(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 843
+    .line 942
     return-void
 .end method
 
@@ -2249,12 +2784,12 @@
     .parameter "response"
 
     .prologue
-    .line 542
+    .line 641
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->selectNetworkManually(Lcom/android/internal/telephony/OperatorInfo;Landroid/os/Message;)V
 
-    .line 543
+    .line 642
     return-void
 .end method
 
@@ -2266,12 +2801,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 746
+    .line 845
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3, p4}, Lcom/android/internal/telephony/Phone;->sendBurstDtmf(Ljava/lang/String;IILandroid/os/Message;)V
 
-    .line 747
+    .line 846
     return-void
 .end method
 
@@ -2280,12 +2815,12 @@
     .parameter "c"
 
     .prologue
-    .line 437
+    .line 536
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->sendDtmf(C)V
 
-    .line 438
+    .line 537
     return-void
 .end method
 
@@ -2294,12 +2829,12 @@
     .parameter "ussdMessge"
 
     .prologue
-    .line 277
+    .line 376
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->sendUssdResponse(Ljava/lang/String;)V
 
-    .line 278
+    .line 377
     return-void
 .end method
 
@@ -2309,12 +2844,12 @@
     .parameter "response"
 
     .prologue
-    .line 606
+    .line 705
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setBandMode(ILandroid/os/Message;)V
 
-    .line 607
+    .line 706
     return-void
 .end method
 
@@ -2327,7 +2862,7 @@
     .parameter "onComplete"
 
     .prologue
-    .line 511
+    .line 610
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     move v1, p1
@@ -2342,7 +2877,7 @@
 
     invoke-interface/range {v0 .. v5}, Lcom/android/internal/telephony/Phone;->setCallForwardingOption(IILjava/lang/String;ILandroid/os/Message;)V
 
-    .line 513
+    .line 612
     return-void
 .end method
 
@@ -2352,12 +2887,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 530
+    .line 629
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setCallWaiting(ZLandroid/os/Message;)V
 
-    .line 531
+    .line 630
     return-void
 .end method
 
@@ -2367,12 +2902,12 @@
     .parameter "response"
 
     .prologue
-    .line 626
+    .line 725
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setCdmaRoamingPreference(ILandroid/os/Message;)V
 
-    .line 627
+    .line 726
     return-void
 .end method
 
@@ -2382,12 +2917,12 @@
     .parameter "response"
 
     .prologue
-    .line 630
+    .line 729
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setCdmaSubscription(ILandroid/os/Message;)V
 
-    .line 631
+    .line 730
     return-void
 .end method
 
@@ -2397,12 +2932,12 @@
     .parameter "response"
 
     .prologue
-    .line 714
+    .line 813
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setCellBroadcastSmsConfig([ILandroid/os/Message;)V
 
-    .line 715
+    .line 814
     return-void
 .end method
 
@@ -2411,12 +2946,12 @@
     .parameter "enable"
 
     .prologue
-    .line 618
+    .line 717
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setDataRoamingEnabled(Z)V
 
-    .line 619
+    .line 718
     return-void
 .end method
 
@@ -2425,12 +2960,12 @@
     .parameter "enabled"
 
     .prologue
-    .line 570
+    .line 669
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setEchoSuppressionEnabled(Z)V
 
-    .line 571
+    .line 670
     return-void
 .end method
 
@@ -2441,12 +2976,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 481
+    .line 580
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->setLine1Number(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 482
+    .line 581
     return-void
 .end method
 
@@ -2455,12 +2990,12 @@
     .parameter "muted"
 
     .prologue
-    .line 562
+    .line 661
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setMute(Z)V
 
-    .line 563
+    .line 662
     return-void
 .end method
 
@@ -2469,12 +3004,12 @@
     .parameter "response"
 
     .prologue
-    .line 538
+    .line 637
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setNetworkSelectionModeAutomatic(Landroid/os/Message;)V
 
-    .line 539
+    .line 638
     return-void
 .end method
 
@@ -2485,12 +3020,12 @@
     .parameter "obj"
 
     .prologue
-    .line 826
+    .line 925
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->setOnEcbModeExitResponse(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 827
+    .line 926
     return-void
 .end method
 
@@ -2501,12 +3036,12 @@
     .parameter "obj"
 
     .prologue
-    .line 558
+    .line 657
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->setOnPostDialCharacter(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 559
+    .line 658
     return-void
 .end method
 
@@ -2516,12 +3051,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 521
+    .line 620
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setOutgoingCallerIdDisplay(ILandroid/os/Message;)V
 
-    .line 523
+    .line 622
     return-void
 .end method
 
@@ -2531,12 +3066,12 @@
     .parameter "response"
 
     .prologue
-    .line 546
+    .line 645
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setPreferredNetworkType(ILandroid/os/Message;)V
 
-    .line 547
+    .line 646
     return-void
 .end method
 
@@ -2545,12 +3080,12 @@
     .parameter "power"
 
     .prologue
-    .line 449
+    .line 548
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setRadioPower(Z)V
 
-    .line 450
+    .line 549
     return-void
 .end method
 
@@ -2560,12 +3095,12 @@
     .parameter "result"
 
     .prologue
-    .line 726
+    .line 825
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setSmscAddress(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 727
+    .line 826
     return-void
 .end method
 
@@ -2575,12 +3110,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 698
+    .line 797
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setTTYMode(ILandroid/os/Message;)V
 
-    .line 699
+    .line 798
     return-void
 .end method
 
@@ -2589,12 +3124,12 @@
     .parameter "f"
 
     .prologue
-    .line 598
+    .line 697
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->setUnitTestMode(Z)V
 
-    .line 599
+    .line 698
     return-void
 .end method
 
@@ -2605,12 +3140,12 @@
     .parameter "onComplete"
 
     .prologue
-    .line 499
+    .line 598
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/internal/telephony/Phone;->setVoiceMailNumber(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 500
+    .line 599
     return-void
 .end method
 
@@ -2620,12 +3155,12 @@
     .parameter "countWaiting"
 
     .prologue
-    .line 855
+    .line 954
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setVoiceMessageWaiting(II)V
 
-    .line 856
+    .line 955
     return-void
 .end method
 
@@ -2634,12 +3169,12 @@
     .parameter "c"
 
     .prologue
-    .line 441
+    .line 540
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->startDtmf(C)V
 
-    .line 442
+    .line 541
     return-void
 .end method
 
@@ -2647,12 +3182,12 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 544
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->stopDtmf()V
 
-    .line 446
+    .line 545
     return-void
 .end method
 
@@ -2665,12 +3200,12 @@
     .end annotation
 
     .prologue
-    .line 377
+    .line 476
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->switchHoldingAndActive()V
 
-    .line 378
+    .line 477
     return-void
 .end method
 
@@ -2679,12 +3214,12 @@
     .parameter "h"
 
     .prologue
-    .line 766
+    .line 865
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForCallWaiting(Landroid/os/Handler;)V
 
-    .line 767
+    .line 866
     return-void
 .end method
 
@@ -2693,12 +3228,12 @@
     .parameter "h"
 
     .prologue
-    .line 325
+    .line 424
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForCdmaOtaStatusChange(Landroid/os/Handler;)V
 
-    .line 326
+    .line 425
     return-void
 .end method
 
@@ -2707,12 +3242,12 @@
     .parameter "h"
 
     .prologue
-    .line 253
+    .line 352
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForDisconnect(Landroid/os/Handler;)V
 
-    .line 254
+    .line 353
     return-void
 .end method
 
@@ -2721,12 +3256,12 @@
     .parameter "h"
 
     .prologue
-    .line 782
+    .line 881
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForDisplayInfo(Landroid/os/Handler;)V
 
-    .line 783
+    .line 882
     return-void
 .end method
 
@@ -2735,12 +3270,12 @@
     .parameter "h"
 
     .prologue
-    .line 341
+    .line 440
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForEcmTimerReset(Landroid/os/Handler;)V
 
-    .line 342
+    .line 441
     return-void
 .end method
 
@@ -2749,12 +3284,12 @@
     .parameter "h"
 
     .prologue
-    .line 317
+    .line 416
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForInCallVoicePrivacyOff(Landroid/os/Handler;)V
 
-    .line 318
+    .line 417
     return-void
 .end method
 
@@ -2763,12 +3298,12 @@
     .parameter "h"
 
     .prologue
-    .line 309
+    .line 408
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForInCallVoicePrivacyOn(Landroid/os/Handler;)V
 
-    .line 310
+    .line 409
     return-void
 .end method
 
@@ -2777,12 +3312,12 @@
     .parameter "h"
 
     .prologue
-    .line 245
+    .line 344
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForIncomingRing(Landroid/os/Handler;)V
 
-    .line 246
+    .line 345
     return-void
 .end method
 
@@ -2791,12 +3326,12 @@
     .parameter "h"
 
     .prologue
-    .line 806
+    .line 905
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForLineControlInfo(Landroid/os/Handler;)V
 
-    .line 807
+    .line 906
     return-void
 .end method
 
@@ -2805,12 +3340,12 @@
     .parameter "h"
 
     .prologue
-    .line 269
+    .line 368
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForMmiComplete(Landroid/os/Handler;)V
 
-    .line 270
+    .line 369
     return-void
 .end method
 
@@ -2819,12 +3354,12 @@
     .parameter "h"
 
     .prologue
-    .line 261
+    .line 360
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForMmiInitiate(Landroid/os/Handler;)V
 
-    .line 262
+    .line 361
     return-void
 .end method
 
@@ -2833,12 +3368,12 @@
     .parameter "h"
 
     .prologue
-    .line 237
+    .line 336
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForNewRingingConnection(Landroid/os/Handler;)V
 
-    .line 238
+    .line 337
     return-void
 .end method
 
@@ -2847,12 +3382,12 @@
     .parameter "h"
 
     .prologue
-    .line 790
+    .line 889
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForNumberInfo(Landroid/os/Handler;)V
 
-    .line 791
+    .line 890
     return-void
 .end method
 
@@ -2861,12 +3396,12 @@
     .parameter "h"
 
     .prologue
-    .line 229
+    .line 328
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForPreciseCallStateChanged(Landroid/os/Handler;)V
 
-    .line 230
+    .line 329
     return-void
 .end method
 
@@ -2875,12 +3410,12 @@
     .parameter "h"
 
     .prologue
-    .line 798
+    .line 897
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForRedirectedNumberInfo(Landroid/os/Handler;)V
 
-    .line 799
+    .line 898
     return-void
 .end method
 
@@ -2889,12 +3424,12 @@
     .parameter "h"
 
     .prologue
-    .line 357
+    .line 456
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForResendIncallMute(Landroid/os/Handler;)V
 
-    .line 358
+    .line 457
     return-void
 .end method
 
@@ -2903,12 +3438,12 @@
     .parameter "h"
 
     .prologue
-    .line 349
+    .line 448
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForRingbackTone(Landroid/os/Handler;)V
 
-    .line 350
+    .line 449
     return-void
 .end method
 
@@ -2917,12 +3452,12 @@
     .parameter "h"
 
     .prologue
-    .line 285
+    .line 384
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForServiceStateChanged(Landroid/os/Handler;)V
 
-    .line 286
+    .line 385
     return-void
 .end method
 
@@ -2931,12 +3466,12 @@
     .parameter "h"
 
     .prologue
-    .line 774
+    .line 873
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForSignalInfo(Landroid/os/Handler;)V
 
-    .line 775
+    .line 874
     return-void
 .end method
 
@@ -2945,12 +3480,12 @@
     .parameter "h"
 
     .prologue
-    .line 333
+    .line 432
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForSubscriptionInfoReady(Landroid/os/Handler;)V
 
-    .line 334
+    .line 433
     return-void
 .end method
 
@@ -2959,12 +3494,12 @@
     .parameter "h"
 
     .prologue
-    .line 301
+    .line 400
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForSuppServiceFailed(Landroid/os/Handler;)V
 
-    .line 302
+    .line 401
     return-void
 .end method
 
@@ -2973,12 +3508,12 @@
     .parameter "h"
 
     .prologue
-    .line 293
+    .line 392
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForSuppServiceNotification(Landroid/os/Handler;)V
 
-    .line 294
+    .line 393
     return-void
 .end method
 
@@ -2987,12 +3522,12 @@
     .parameter "h"
 
     .prologue
-    .line 822
+    .line 921
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForT53AudioControlInfo(Landroid/os/Handler;)V
 
-    .line 823
+    .line 922
     return-void
 .end method
 
@@ -3001,12 +3536,12 @@
     .parameter "h"
 
     .prologue
-    .line 814
+    .line 913
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForT53ClirInfo(Landroid/os/Handler;)V
 
-    .line 815
+    .line 914
     return-void
 .end method
 
@@ -3015,12 +3550,12 @@
     .parameter "h"
 
     .prologue
-    .line 221
+    .line 320
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unregisterForUnknownConnection(Landroid/os/Handler;)V
 
-    .line 222
+    .line 321
     return-void
 .end method
 
@@ -3029,12 +3564,12 @@
     .parameter "h"
 
     .prologue
-    .line 830
+    .line 929
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1}, Lcom/android/internal/telephony/Phone;->unsetOnEcbModeExitResponse(Landroid/os/Handler;)V
 
-    .line 831
+    .line 930
     return-void
 .end method
 
@@ -3042,11 +3577,11 @@
     .locals 1
 
     .prologue
-    .line 586
+    .line 685
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->updateServiceLocation()V
 
-    .line 587
+    .line 686
     return-void
 .end method

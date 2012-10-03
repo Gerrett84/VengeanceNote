@@ -14,9 +14,21 @@
 
 .field public static final EXTENSION_PFX:Ljava/lang/String; = ".pfx"
 
+.field public static final EXTRA_CA_CERTIFICATES_DATA:Ljava/lang/String; = "ca_certificates_data"
+
+.field public static final EXTRA_CA_CERTIFICATES_NAME:Ljava/lang/String; = "ca_certificates_name"
+
 .field public static final EXTRA_PRIVATE_KEY:Ljava/lang/String; = "PKEY"
 
 .field public static final EXTRA_PUBLIC_KEY:Ljava/lang/String; = "KEY"
+
+.field public static final EXTRA_USER_CERTIFICATE_DATA:Ljava/lang/String; = "user_certificate_data"
+
+.field public static final EXTRA_USER_CERTIFICATE_NAME:Ljava/lang/String; = "user_certificate_name"
+
+.field public static final EXTRA_USER_PRIVATE_KEY_DATA:Ljava/lang/String; = "user_private_key_data"
+
+.field public static final EXTRA_USER_PRIVATE_KEY_NAME:Ljava/lang/String; = "user_private_key_name"
 
 .field public static final INSTALL_ACTION:Ljava/lang/String; = "android.credentials.INSTALL"
 
@@ -40,7 +52,7 @@
     .locals 0
 
     .prologue
-    .line 40
+    .line 42
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -66,12 +78,12 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 128
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v0, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    .line 97
+    .line 129
     .local v0, bai:Ljava/io/ByteArrayInputStream;
     new-instance v3, Ljava/io/InputStreamReader;
 
@@ -79,19 +91,19 @@
 
     invoke-direct {v3, v0, v5}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    .line 98
+    .line 130
     .local v3, reader:Ljava/io/Reader;
     new-instance v2, Lcom/android/org/bouncycastle/openssl/PEMReader;
 
     invoke-direct {v2, v3}, Lcom/android/org/bouncycastle/openssl/PEMReader;-><init>(Ljava/io/Reader;)V
 
-    .line 100
+    .line 132
     .local v2, pr:Lcom/android/org/bouncycastle/openssl/PEMReader;
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 102
+    .line 134
     .local v4, result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Object;>;"
     :goto_0
     invoke-virtual {v2}, Lcom/android/org/bouncycastle/openssl/PEMReader;->readObject()Ljava/lang/Object;
@@ -101,16 +113,16 @@
     .local v1, o:Ljava/lang/Object;
     if-eqz v1, :cond_0
 
-    .line 103
+    .line 135
     invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 105
+    .line 137
     :cond_0
     invoke-virtual {v2}, Lcom/android/org/bouncycastle/openssl/PEMReader;->close()V
 
-    .line 106
+    .line 138
     return-object v4
 .end method
 
@@ -124,12 +136,12 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 113
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 82
+    .line 114
     .local v1, bao:Ljava/io/ByteArrayOutputStream;
     new-instance v6, Ljava/io/OutputStreamWriter;
 
@@ -137,13 +149,13 @@
 
     invoke-direct {v6, v1, v7}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
 
-    .line 83
+    .line 115
     .local v6, writer:Ljava/io/Writer;
     new-instance v5, Lcom/android/org/bouncycastle/openssl/PEMWriter;
 
     invoke-direct {v5, v6}, Lcom/android/org/bouncycastle/openssl/PEMWriter;-><init>(Ljava/io/Writer;)V
 
-    .line 84
+    .line 116
     .local v5, pw:Lcom/android/org/bouncycastle/openssl/PEMWriter;
     move-object v0, p0
 
@@ -159,21 +171,21 @@
 
     aget-object v4, v0, v2
 
-    .line 85
+    .line 117
     .local v4, o:Ljava/lang/Object;
     invoke-virtual {v5, v4}, Lcom/android/org/bouncycastle/openssl/PEMWriter;->writeObject(Ljava/lang/Object;)V
 
-    .line 84
+    .line 116
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 87
+    .line 119
     .end local v4           #o:Ljava/lang/Object;
     :cond_0
     invoke-virtual {v5}, Lcom/android/org/bouncycastle/openssl/PEMWriter;->close()V
 
-    .line 88
+    .line 120
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v7
@@ -185,19 +197,19 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 144
     sget-object v0, Landroid/security/Credentials;->singleton:Landroid/security/Credentials;
 
     if-nez v0, :cond_0
 
-    .line 113
+    .line 145
     new-instance v0, Landroid/security/Credentials;
 
     invoke-direct {v0}, Landroid/security/Credentials;-><init>()V
 
     sput-object v0, Landroid/security/Credentials;->singleton:Landroid/security/Credentials;
 
-    .line 115
+    .line 147
     :cond_0
     sget-object v0, Landroid/security/Credentials;->singleton:Landroid/security/Credentials;
 
@@ -211,28 +223,28 @@
     .parameter "context"
 
     .prologue
-    .line 129
+    .line 161
     :try_start_0
     invoke-static {}, Landroid/security/KeyChain;->createInstallIntent()Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 130
+    .line 162
     .local v1, intent:Landroid/content/Intent;
     invoke-virtual {p1, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 134
+    .line 166
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 131
+    .line 163
     :catch_0
     move-exception v0
 
-    .line 132
+    .line 164
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
@@ -252,31 +264,31 @@
     .parameter "value"
 
     .prologue
-    .line 149
+    .line 181
     :try_start_0
     invoke-static {}, Landroid/security/KeyChain;->createInstallIntent()Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 150
+    .line 182
     .local v1, intent:Landroid/content/Intent;
     invoke-virtual {v1, p2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 151
+    .line 183
     invoke-virtual {p1, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 155
+    .line 187
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 152
+    .line 184
     :catch_0
     move-exception v0
 
-    .line 153
+    .line 185
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
@@ -295,13 +307,13 @@
     .parameter "pair"
 
     .prologue
-    .line 138
+    .line 170
     :try_start_0
     invoke-static {}, Landroid/security/KeyChain;->createInstallIntent()Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 139
+    .line 171
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "PKEY"
 
@@ -315,7 +327,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 140
+    .line 172
     const-string v2, "KEY"
 
     invoke-virtual {p2}, Ljava/security/KeyPair;->getPublic()Ljava/security/PublicKey;
@@ -328,21 +340,21 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 141
+    .line 173
     invoke-virtual {p1, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 145
+    .line 177
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 142
+    .line 174
     :catch_0
     move-exception v0
 
-    .line 143
+    .line 175
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 
@@ -360,7 +372,7 @@
     .parameter "context"
 
     .prologue
-    .line 120
+    .line 152
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
@@ -368,22 +380,22 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 121
+    .line 153
     .local v1, intent:Landroid/content/Intent;
     invoke-virtual {p1, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 125
+    .line 157
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 122
+    .line 154
     :catch_0
     move-exception v0
 
-    .line 123
+    .line 155
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v2, "Credentials"
 

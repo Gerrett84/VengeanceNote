@@ -29,7 +29,7 @@
     .parameter "x4"
 
     .prologue
-    .line 137
+    .line 140
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$1;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     move-object v0, p0
@@ -56,7 +56,7 @@
     .parameter "buttonOn"
 
     .prologue
-    .line 156
+    .line 159
     const-string v0, "ril.cdma.inecmmode"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -69,7 +69,7 @@
 
     if-nez v0, :cond_0
 
-    .line 158
+    .line 161
     if-eqz p1, :cond_1
 
     sget-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->TurningOn:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
@@ -77,7 +77,7 @@
     :goto_0
     iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
-    .line 159
+    .line 162
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$1;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction;->mState:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
@@ -85,11 +85,11 @@
     #setter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mAirplaneState:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$302(Lcom/android/internal/policy/impl/MiuiGlobalActions;Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
-    .line 161
+    .line 164
     :cond_0
     return-void
 
-    .line 158
+    .line 161
     :cond_1
     sget-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;->TurningOff:Lcom/android/internal/policy/impl/MiuiGlobalActions$ToggleAction$State;
 
@@ -101,7 +101,7 @@
     .parameter "on"
 
     .prologue
-    .line 140
+    .line 143
     const-string v1, "ril.cdma.inecmmode"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -114,7 +114,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 142
+    .line 145
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$1;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     const/4 v2, 0x1
@@ -122,7 +122,7 @@
     #setter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mIsWaitingForEcmExit:Z
     invoke-static {v1, v2}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$002(Lcom/android/internal/policy/impl/MiuiGlobalActions;Z)Z
 
-    .line 144
+    .line 147
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS"
@@ -131,13 +131,13 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 146
+    .line 149
     .local v0, ecmDialogIntent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 147
+    .line 150
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$1;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mContext:Landroid/content/Context;
@@ -147,12 +147,12 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 151
+    .line 154
     .end local v0           #ecmDialogIntent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 149
+    .line 152
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$1;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 171
     const/4 v0, 0x0
 
     return v0
@@ -176,7 +176,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 167
     const/4 v0, 0x1
 
     return v0

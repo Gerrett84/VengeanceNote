@@ -1,4 +1,4 @@
-.class Landroid/net/http/CertificateChainValidator;
+.class public Landroid/net/http/CertificateChainValidator;
 .super Ljava/lang/Object;
 .source "CertificateChainValidator.java"
 
@@ -6,18 +6,27 @@
 # static fields
 .field private static final sInstance:Landroid/net/http/CertificateChainValidator;
 
+.field private static final sVerifier:Ljavax/net/ssl/DefaultHostnameVerifier;
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
     .prologue
-    .line 53
+    .line 45
     new-instance v0, Landroid/net/http/CertificateChainValidator;
 
     invoke-direct {v0}, Landroid/net/http/CertificateChainValidator;-><init>()V
 
     sput-object v0, Landroid/net/http/CertificateChainValidator;->sInstance:Landroid/net/http/CertificateChainValidator;
+
+    .line 48
+    new-instance v0, Ljavax/net/ssl/DefaultHostnameVerifier;
+
+    invoke-direct {v0}, Ljavax/net/ssl/DefaultHostnameVerifier;-><init>()V
+
+    sput-object v0, Landroid/net/http/CertificateChainValidator;->sVerifier:Ljavax/net/ssl/DefaultHostnameVerifier;
 
     return-void
 .end method
@@ -26,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 62
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,26 +52,26 @@
     .end annotation
 
     .prologue
-    .line 183
+    .line 196
     if-eqz p1, :cond_1
 
-    .line 184
+    .line 197
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;
 
     move-result-object v0
 
-    .line 185
+    .line 198
     .local v0, session:Ljavax/net/ssl/SSLSession;
     if-eqz v0, :cond_0
 
-    .line 186
+    .line 199
     invoke-interface {v0}, Ljavax/net/ssl/SSLSession;->invalidate()V
 
-    .line 189
+    .line 202
     :cond_0
     invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->close()V
 
-    .line 192
+    .line 205
     .end local v0           #session:Ljavax/net/ssl/SSLSession;
     :cond_1
     new-instance v1, Ljavax/net/ssl/SSLHandshakeException;
@@ -84,21 +93,21 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 186
     if-eqz p2, :cond_0
 
     .end local p2
     :goto_0
     invoke-direct {p0, p1, p2}, Landroid/net/http/CertificateChainValidator;->closeSocketThrowException(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;)V
 
-    .line 175
+    .line 188
     return-void
 
     .restart local p2
     :cond_0
     move-object p2, p3
 
-    .line 173
+    .line 186
     goto :goto_0
 .end method
 
@@ -106,10 +115,52 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 55
     sget-object v0, Landroid/net/http/CertificateChainValidator;->sInstance:Landroid/net/http/CertificateChainValidator;
 
     return-object v0
+.end method
+
+.method public static handleTrustStorageUpdate()V
+    .locals 4
+
+    .prologue
+    .line 134
+    :try_start_0
+    invoke-static {}, Lorg/apache/harmony/xnet/provider/jsse/SSLParametersImpl;->getDefaultTrustManager()Ljavax/net/ssl/X509TrustManager;
+
+    move-result-object v2
+
+    .line 135
+    .local v2, x509TrustManager:Ljavax/net/ssl/X509TrustManager;
+    instance-of v3, v2, Lorg/apache/harmony/xnet/provider/jsse/TrustManagerImpl;
+
+    if-eqz v3, :cond_0
+
+    .line 136
+    move-object v0, v2
+
+    check-cast v0, Lorg/apache/harmony/xnet/provider/jsse/TrustManagerImpl;
+
+    move-object v1, v0
+
+    .line 137
+    .local v1, trustManager:Lorg/apache/harmony/xnet/provider/jsse/TrustManagerImpl;
+    invoke-virtual {v1}, Lorg/apache/harmony/xnet/provider/jsse/TrustManagerImpl;->handleTrustStorageUpdate()V
+    :try_end_0
+    .catch Ljava/security/KeyManagementException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 141
+    .end local v1           #trustManager:Lorg/apache/harmony/xnet/provider/jsse/TrustManagerImpl;
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 139
+    :catch_0
+    move-exception v3
+
+    goto :goto_0
 .end method
 
 .method public static verifyServerCertificates([[BLjava/lang/String;Ljava/lang/String;)Landroid/net/http/SslError;
@@ -124,14 +175,14 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 115
     if-eqz p0, :cond_0
 
     array-length v2, p0
 
     if-nez v2, :cond_1
 
-    .line 121
+    .line 116
     :cond_0
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -141,13 +192,13 @@
 
     throw v2
 
-    .line 124
+    .line 119
     :cond_1
     array-length v2, p0
 
     new-array v1, v2, [Ljava/security/cert/X509Certificate;
 
-    .line 126
+    .line 121
     .local v1, serverCertificates:[Ljava/security/cert/X509Certificate;
     const/4 v0, 0x0
 
@@ -157,7 +208,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 127
+    .line 122
     new-instance v2, Lorg/apache/harmony/security/provider/cert/X509CertImpl;
 
     aget-object v3, p0, v0
@@ -166,12 +217,12 @@
 
     aput-object v2, v1, v0
 
-    .line 126
+    .line 121
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 130
+    .line 125
     :cond_2
     invoke-static {v1, p1, p2}, Landroid/net/http/CertificateChainValidator;->verifyServerDomainAndCertificates([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Landroid/net/http/SslError;
 
@@ -181,7 +232,7 @@
 .end method
 
 .method private static verifyServerDomainAndCertificates([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Landroid/net/http/SslError;
-    .locals 4
+    .locals 5
     .parameter "chain"
     .parameter "domain"
     .parameter "authType"
@@ -192,70 +243,87 @@
     .end annotation
 
     .prologue
-    .line 145
     const/4 v2, 0x0
 
+    .line 155
     aget-object v0, p0, v2
 
-    .line 146
+    .line 156
     .local v0, currCertificate:Ljava/security/cert/X509Certificate;
     if-nez v0, :cond_0
 
-    .line 147
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    .line 157
+    new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "certificate for this site is null"
+    const-string v4, "certificate for this site is null"
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v3
 
-    .line 150
+    .line 160
     :cond_0
-    invoke-static {v0, p1}, Lcom/android/internal/net/DomainNameValidator;->match(Ljava/security/cert/X509Certificate;Ljava/lang/String;)Z
+    if-eqz p1, :cond_1
 
-    move-result v2
+    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
-    if-nez v2, :cond_1
+    move-result v3
 
-    .line 154
-    new-instance v2, Landroid/net/http/SslError;
+    if-nez v3, :cond_1
 
-    const/4 v3, 0x2
+    sget-object v3, Landroid/net/http/CertificateChainValidator;->sVerifier:Ljavax/net/ssl/DefaultHostnameVerifier;
 
-    invoke-direct {v2, v3, v0}, Landroid/net/http/SslError;-><init>(ILjava/security/cert/X509Certificate;)V
+    invoke-virtual {v3, p1, v0}, Ljavax/net/ssl/DefaultHostnameVerifier;->verify(Ljava/lang/String;Ljava/security/cert/X509Certificate;)Z
 
-    .line 165
-    :goto_0
-    return-object v2
+    move-result v3
 
-    .line 158
+    if-eqz v3, :cond_1
+
+    const/4 v2, 0x1
+
+    .line 163
+    .local v2, valid:Z
     :cond_1
+    if-nez v2, :cond_2
+
+    .line 167
+    new-instance v3, Landroid/net/http/SslError;
+
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v4, v0}, Landroid/net/http/SslError;-><init>(ILjava/security/cert/X509Certificate;)V
+
+    .line 178
+    :goto_0
+    return-object v3
+
+    .line 171
+    :cond_2
     :try_start_0
     invoke-static {}, Lorg/apache/harmony/xnet/provider/jsse/SSLParametersImpl;->getDefaultTrustManager()Ljavax/net/ssl/X509TrustManager;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-interface {v2, p0, p2}, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
+    invoke-interface {v3, p0, p2}, Ljavax/net/ssl/X509TrustManager;->checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 159
-    const/4 v2, 0x0
+    .line 172
+    const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 160
+    .line 173
     :catch_0
     move-exception v1
 
-    .line 165
-    .local v1, e:Ljava/security/cert/CertificateException;
-    new-instance v2, Landroid/net/http/SslError;
+    .line 178
+    .local v1, e:Ljava/security/GeneralSecurityException;
+    new-instance v3, Landroid/net/http/SslError;
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    invoke-direct {v2, v3, v0}, Landroid/net/http/SslError;-><init>(ILjava/security/cert/X509Certificate;)V
+    invoke-direct {v3, v4, v0}, Landroid/net/http/SslError;-><init>(ILjava/security/cert/X509Certificate;)V
 
     goto :goto_0
 .end method
@@ -276,12 +344,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 83
+    .line 78
     invoke-virtual {p2}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;
 
     move-result-object v1
 
-    .line 84
+    .line 79
     .local v1, sslSession:Ljavax/net/ssl/SSLSession;
     invoke-interface {v1}, Ljavax/net/ssl/SSLSession;->isValid()Z
 
@@ -289,12 +357,12 @@
 
     if-nez v2, :cond_0
 
-    .line 85
+    .line 80
     const-string v2, "failed to perform SSL handshake"
 
     invoke-direct {p0, p2, v2}, Landroid/net/http/CertificateChainValidator;->closeSocketThrowException(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;)V
 
-    .line 89
+    .line 84
     :cond_0
     invoke-virtual {p2}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;
 
@@ -304,7 +372,7 @@
 
     move-result-object v0
 
-    .line 92
+    .line 87
     .local v0, peerCertificates:[Ljava/security/cert/Certificate;
     if-eqz v0, :cond_1
 
@@ -312,13 +380,13 @@
 
     if-nez v2, :cond_3
 
-    .line 93
+    .line 88
     :cond_1
     const-string v2, "failed to retrieve peer certificates"
 
     invoke-direct {p0, p2, v2}, Landroid/net/http/CertificateChainValidator;->closeSocketThrowException(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;)V
 
-    .line 105
+    .line 100
     :cond_2
     :goto_0
     check-cast v0, [Ljava/security/cert/X509Certificate;
@@ -334,17 +402,17 @@
 
     return-object v2
 
-    .line 97
+    .line 92
     .restart local v0       #peerCertificates:[Ljava/security/cert/Certificate;
     :cond_3
     if-eqz p1, :cond_2
 
-    .line 98
+    .line 93
     aget-object v2, v0, v4
 
     if-eqz v2, :cond_2
 
-    .line 99
+    .line 94
     new-instance v3, Landroid/net/http/SslCertificate;
 
     aget-object v2, v0, v4

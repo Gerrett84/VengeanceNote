@@ -18,7 +18,7 @@
     const/4 v8, 0x1
 
     .line 31
-    const v3, 0x10302f9
+    const v3, 0x10302f4
 
     invoke-direct {p0, p1, v3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -44,12 +44,12 @@
     invoke-virtual {v3, v4}, Landroid/view/Window;->addFlags(I)V
 
     .line 38
-    const v3, 0x109005b
+    const v3, 0x109005d
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->setContentView(I)V
 
     .line 39
-    const v3, 0x10403b0
+    const v3, 0x10403db
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -86,7 +86,7 @@
     invoke-virtual {v3, v5, v4}, Landroid/view/Window;->setFeatureDrawableResource(II)V
 
     .line 45
-    const v3, 0x10202b5
+    const v3, 0x10202cb
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -111,7 +111,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 47
-    const v3, 0x10202b6
+    const v3, 0x10202cc
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -125,7 +125,7 @@
 
     move-result-object v3
 
-    const v4, 0x10403b1
+    const v4, 0x10403dc
 
     new-array v5, v8, [Ljava/lang/Object;
 
@@ -154,7 +154,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 50
-    const v3, 0x10202b7
+    const v3, 0x10202cd
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 52
-    const v3, 0x10202b8
+    const v3, 0x10202ce
 
     invoke-virtual {p0, v3}, Lcom/android/server/am/LaunchWarningWindow;->findViewById(I)Landroid/view/View;
 
@@ -195,7 +195,7 @@
 
     move-result-object v3
 
-    const v4, 0x10403b2
+    const v4, 0x10403dd
 
     new-array v5, v8, [Ljava/lang/Object;
 

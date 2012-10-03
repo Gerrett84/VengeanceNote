@@ -13,7 +13,7 @@
 
 
 # static fields
-.field static final CARD_MAX_APPS:I = 0x8
+.field public static final CARD_MAX_APPS:I = 0x8
 
 
 # instance fields
@@ -47,7 +47,7 @@
 
     .prologue
     .line 26
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 67
     new-instance v0, Ljava/util/ArrayList;

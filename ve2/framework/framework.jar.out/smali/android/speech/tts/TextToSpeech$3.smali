@@ -46,7 +46,7 @@
     .parameter
 
     .prologue
-    .line 832
+    .line 849
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$3;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeech$3;->val$earcon:Ljava/lang/String;
@@ -72,7 +72,7 @@
     .end annotation
 
     .prologue
-    .line 835
+    .line 852
     iget-object v1, p0, Landroid/speech/tts/TextToSpeech$3;->this$0:Landroid/speech/tts/TextToSpeech;
 
     #getter for: Landroid/speech/tts/TextToSpeech;->mEarcons:Ljava/util/Map;
@@ -88,26 +88,26 @@
 
     check-cast v0, Landroid/net/Uri;
 
-    .line 836
+    .line 853
     .local v0, earconUri:Landroid/net/Uri;
     if-nez v0, :cond_0
 
-    .line 837
+    .line 854
     const/4 v1, -0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 839
+    .line 856
     :goto_0
     return-object v1
 
     :cond_0
     iget-object v1, p0, Landroid/speech/tts/TextToSpeech$3;->this$0:Landroid/speech/tts/TextToSpeech;
 
-    #calls: Landroid/speech/tts/TextToSpeech;->getPackageName()Ljava/lang/String;
-    invoke-static {v1}, Landroid/speech/tts/TextToSpeech;->access$100(Landroid/speech/tts/TextToSpeech;)Ljava/lang/String;
+    #calls: Landroid/speech/tts/TextToSpeech;->getCallerIdentity()Landroid/os/IBinder;
+    invoke-static {v1}, Landroid/speech/tts/TextToSpeech;->access$100(Landroid/speech/tts/TextToSpeech;)Landroid/os/IBinder;
 
     move-result-object v1
 
@@ -122,7 +122,7 @@
 
     move-result-object v3
 
-    invoke-interface {p1, v1, v0, v2, v3}, Landroid/speech/tts/ITextToSpeechService;->playAudio(Ljava/lang/String;Landroid/net/Uri;ILandroid/os/Bundle;)I
+    invoke-interface {p1, v1, v0, v2, v3}, Landroid/speech/tts/ITextToSpeechService;->playAudio(Landroid/os/IBinder;Landroid/net/Uri;ILandroid/os/Bundle;)I
 
     move-result v1
 
@@ -143,7 +143,7 @@
     .end annotation
 
     .prologue
-    .line 832
+    .line 849
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$3;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
 
     move-result-object v0

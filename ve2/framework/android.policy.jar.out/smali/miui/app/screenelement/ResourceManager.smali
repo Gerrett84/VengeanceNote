@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lmiui/app/screenelement/ResourceManager$ResourceLoader;,
         Lmiui/app/screenelement/ResourceManager$BitmapInfo;
     }
 .end annotation
@@ -78,13 +77,13 @@
 
 .field private mResourceDensity:I
 
-.field private final mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
+.field private final mResourceLoader:Lmiui/app/screenelement/ResourceLoader;
 
 .field private mTargetDensity:I
 
 
 # direct methods
-.method public constructor <init>(Lmiui/app/screenelement/ResourceManager$ResourceLoader;)V
+.method public constructor <init>(Lmiui/app/screenelement/ResourceLoader;)V
     .locals 1
     .parameter "resourceLoader"
 
@@ -114,242 +113,259 @@
     iput-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mFailedBitmaps:Ljava/util/HashSet;
 
     .line 58
-    iput-object p1, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
+    iput-object p1, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceLoader;
 
     .line 59
     return-void
 .end method
 
 .method private getBitmapInfo(Ljava/lang/String;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
-    .locals 5
+    .locals 6
     .parameter "src"
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    .line 162
+    .line 157
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
-    move-object v0, v2
+    move-object v0, v3
 
     .line 203
     :goto_0
     return-object v0
 
-    .line 166
+    .line 161
     :cond_0
-    iget-object v3, p0, Lmiui/app/screenelement/ResourceManager;->mBitmaps:Ljava/util/HashMap;
+    iget-object v4, p0, Lmiui/app/screenelement/ResourceManager;->mBitmaps:Ljava/util/HashMap;
 
-    invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;
 
-    .line 167
+    .line 162
     .local v0, info:Lmiui/app/screenelement/ResourceManager$BitmapInfo;
     if-eqz v0, :cond_1
 
-    .line 168
+    .line 163
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    iput-wide v2, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mLastVisitTime:J
+    iput-wide v3, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mLastVisitTime:J
 
     goto :goto_0
 
-    .line 172
+    .line 167
     :cond_1
-    iget-object v3, p0, Lmiui/app/screenelement/ResourceManager;->mFailedBitmaps:Ljava/util/HashSet;
+    iget-object v4, p0, Lmiui/app/screenelement/ResourceManager;->mFailedBitmaps:Ljava/util/HashSet;
 
-    invoke-virtual {v3, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v4, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
-    move-object v0, v2
+    move-object v0, v3
+
+    .line 168
+    goto :goto_0
+
+    .line 171
+    :cond_2
+    const-string v3, "ResourceManager"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "load image "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 173
-    goto :goto_0
+    const/4 v2, 0x1
+
+    .line 174
+    .local v2, useDefaultResource:Z
+    new-instance v1, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 175
+    .local v1, opts:Landroid/graphics/BitmapFactory$Options;
+    const/4 v3, 0x1
+
+    iput-boolean v3, v1, Landroid/graphics/BitmapFactory$Options;->inScaled:Z
 
     .line 176
-    :cond_2
-    const-string v2, "ResourceManager"
+    iget v3, p0, Lmiui/app/screenelement/ResourceManager;->mTargetDensity:I
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iput v3, v1, Landroid/graphics/BitmapFactory$Options;->inTargetDensity:I
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 177
+    iget v3, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceScreenWidth:I
 
-    const-string v4, "load image "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    if-eqz v3, :cond_3
 
     .line 178
-    const/4 v1, 0x1
+    iget v3, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceDensity:I
+
+    iput v3, v1, Landroid/graphics/BitmapFactory$Options;->inDensity:I
 
     .line 179
-    .local v1, useDefaultResource:Z
-    iget v2, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceScreenWidth:I
+    iget-object v3, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceLoader;
 
-    if-eqz v2, :cond_3
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 180
-    iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v5, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceFolder:Ljava/lang/String;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceFolder:Ljava/lang/String;
+    move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, "/"
 
-    move-result-object v3
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "/"
+    move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Lmiui/app/screenelement/ResourceManager$ResourceLoader;->getBitmapInfo(Ljava/lang/String;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
+    invoke-virtual {v3, v4, v1}, Lmiui/app/screenelement/ResourceLoader;->getBitmapInfo(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
 
     move-result-object v0
 
-    .line 181
+    .line 180
     if-eqz v0, :cond_3
 
-    .line 182
-    const/4 v1, 0x0
+    .line 181
+    const/4 v2, 0x0
 
-    .line 186
+    .line 185
     :cond_3
     if-nez v0, :cond_4
 
-    .line 187
-    iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
+    .line 186
+    iget v3, p0, Lmiui/app/screenelement/ResourceManager;->mResourceDensity:I
 
-    invoke-interface {v2, p1}, Lmiui/app/screenelement/ResourceManager$ResourceLoader;->getBitmapInfo(Ljava/lang/String;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
+    iput v3, v1, Landroid/graphics/BitmapFactory$Options;->inDensity:I
+
+    .line 187
+    iget-object v3, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceLoader;
+
+    invoke-virtual {v3, p1, v1}, Lmiui/app/screenelement/ResourceLoader;->getBitmapInfo(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Lmiui/app/screenelement/ResourceManager$BitmapInfo;
 
     move-result-object v0
 
     .line 190
     :cond_4
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
     .line 191
-    if-nez v1, :cond_5
+    if-nez v2, :cond_5
 
     .line 192
-    const-string v2, "ResourceManager"
+    const-string v3, "ResourceManager"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "load image from extra resource: "
+    const-string v5, "load image from extra resource: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget-object v4, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceFolder:Ljava/lang/String;
+    iget-object v5, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceFolder:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 195
     :cond_5
     iget-object v3, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v1, :cond_6
+    iget v4, p0, Lmiui/app/screenelement/ResourceManager;->mTargetDensity:I
 
-    iget v2, p0, Lmiui/app/screenelement/ResourceManager;->mResourceDensity:I
-
-    :goto_1
-    invoke-virtual {v3, v2}, Landroid/graphics/Bitmap;->setDensity(I)V
+    invoke-virtual {v3, v4}, Landroid/graphics/Bitmap;->setDensity(I)V
 
     .line 196
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    iput-wide v2, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mLastVisitTime:J
+    iput-wide v3, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mLastVisitTime:J
 
     .line 197
-    iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mBitmaps:Ljava/util/HashMap;
+    iget-object v3, p0, Lmiui/app/screenelement/ResourceManager;->mBitmaps:Ljava/util/HashMap;
 
-    invoke-virtual {v2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto/16 :goto_0
 
-    .line 195
-    :cond_6
-    iget v2, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceDensity:I
-
-    goto :goto_1
-
     .line 199
-    :cond_7
-    iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mFailedBitmaps:Ljava/util/HashSet;
+    :cond_6
+    iget-object v3, p0, Lmiui/app/screenelement/ResourceManager;->mFailedBitmaps:Ljava/util/HashSet;
 
-    invoke-virtual {v2, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 200
-    const-string v2, "ResourceManager"
+    const-string v3, "ResourceManager"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "fail to load image: "
+    const-string v5, "fail to load image: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 .end method
@@ -360,7 +376,7 @@
     .locals 3
 
     .prologue
-    .line 141
+    .line 136
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -386,27 +402,27 @@
 
     check-cast v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;
 
-    .line 142
+    .line 137
     .local v0, bi:Lmiui/app/screenelement/ResourceManager$BitmapInfo;
     iget-object v2, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_0
 
-    .line 143
+    .line 138
     iget-object v2, v0, Lmiui/app/screenelement/ResourceManager$BitmapInfo;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_0
 
-    .line 146
+    .line 141
     .end local v0           #bi:Lmiui/app/screenelement/ResourceManager$BitmapInfo;
     :cond_1
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mMaskBitmaps:Ljava/util/HashMap;
 
     if-eqz v2, :cond_3
 
-    .line 147
+    .line 142
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mMaskBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -431,7 +447,7 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 148
+    .line 143
     .local v0, bi:Landroid/graphics/Bitmap;
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -439,12 +455,12 @@
 
     if-nez v2, :cond_2
 
-    .line 149
+    .line 144
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_1
 
-    .line 152
+    .line 147
     .end local v0           #bi:Landroid/graphics/Bitmap;
     :cond_3
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mMaskBitmap:Landroid/graphics/Bitmap;
@@ -459,28 +475,28 @@
 
     if-nez v2, :cond_4
 
-    .line 153
+    .line 148
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mMaskBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 154
+    .line 149
     const/4 v2, 0x0
 
     iput-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mMaskBitmap:Landroid/graphics/Bitmap;
 
-    .line 157
+    .line 152
     :cond_4
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mBitmaps:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
-    .line 158
+    .line 153
     iget-object v2, p0, Lmiui/app/screenelement/ResourceManager;->mNinePatches:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
-    .line 159
+    .line 154
     return-void
 .end method
 
@@ -591,9 +607,9 @@
 
     .prologue
     .line 91
-    iget-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
+    iget-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceLoader;
 
-    invoke-interface {v0, p1}, Lmiui/app/screenelement/ResourceManager$ResourceLoader;->getFile(Ljava/lang/String;)Landroid/os/MemoryFile;
+    invoke-virtual {v0, p1}, Lmiui/app/screenelement/ResourceLoader;->getFile(Ljava/lang/String;)Landroid/os/MemoryFile;
 
     move-result-object v0
 
@@ -605,24 +621,9 @@
 
     .prologue
     .line 132
-    iget-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
+    iget-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceLoader;
 
-    invoke-interface {v0}, Lmiui/app/screenelement/ResourceManager$ResourceLoader;->getManifestRoot()Lorg/w3c/dom/Element;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getManifestRoot(Ljava/lang/String;)Lorg/w3c/dom/Element;
-    .locals 1
-    .parameter "language"
-
-    .prologue
-    .line 137
-    iget-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mResourceLoader:Lmiui/app/screenelement/ResourceManager$ResourceLoader;
-
-    invoke-interface {v0, p1}, Lmiui/app/screenelement/ResourceManager$ResourceLoader;->getManifestRoot(Ljava/lang/String;)Lorg/w3c/dom/Element;
+    invoke-virtual {v0}, Lmiui/app/screenelement/ResourceLoader;->getManifestRoot()Lorg/w3c/dom/Element;
 
     move-result-object v0
 
@@ -823,10 +824,10 @@
     .parameter "sw"
 
     .prologue
-    .line 225
+    .line 215
     iput p1, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceScreenWidth:I
 
-    .line 226
+    .line 216
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -847,14 +848,14 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceFolder:Ljava/lang/String;
 
-    .line 227
+    .line 217
     mul-int/lit16 v0, p1, 0xf0
 
     div-int/lit16 v0, v0, 0x1e0
 
     iput v0, p0, Lmiui/app/screenelement/ResourceManager;->mExtraResourceDensity:I
 
-    .line 228
+    .line 218
     return-void
 .end method
 
@@ -863,10 +864,10 @@
     .parameter "density"
 
     .prologue
-    .line 217
+    .line 207
     iput p1, p0, Lmiui/app/screenelement/ResourceManager;->mResourceDensity:I
 
-    .line 218
+    .line 208
     return-void
 .end method
 
@@ -875,9 +876,9 @@
     .parameter "density"
 
     .prologue
-    .line 221
+    .line 211
     iput p1, p0, Lmiui/app/screenelement/ResourceManager;->mTargetDensity:I
 
-    .line 222
+    .line 212
     return-void
 .end method

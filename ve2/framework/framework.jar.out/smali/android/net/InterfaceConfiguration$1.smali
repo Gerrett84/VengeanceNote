@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 140
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,53 +41,79 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/net/InterfaceConfiguration;
-    .locals 3
+    .locals 5
     .parameter "in"
 
     .prologue
-    .line 90
-    new-instance v0, Landroid/net/InterfaceConfiguration;
+    .line 142
+    new-instance v1, Landroid/net/InterfaceConfiguration;
 
-    invoke-direct {v0}, Landroid/net/InterfaceConfiguration;-><init>()V
+    invoke-direct {v1}, Landroid/net/InterfaceConfiguration;-><init>()V
 
-    .line 91
-    .local v0, info:Landroid/net/InterfaceConfiguration;
+    .line 143
+    .local v1, info:Landroid/net/InterfaceConfiguration;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    iput-object v1, v0, Landroid/net/InterfaceConfiguration;->hwAddr:Ljava/lang/String;
+    #setter for: Landroid/net/InterfaceConfiguration;->mHwAddr:Ljava/lang/String;
+    invoke-static {v1, v3}, Landroid/net/InterfaceConfiguration;->access$002(Landroid/net/InterfaceConfiguration;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 92
+    .line 144
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
-    move-result v1
+    move-result v3
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    if-ne v1, v2, :cond_0
+    if-ne v3, v4, :cond_0
 
-    .line 93
-    const/4 v1, 0x0
+    .line 145
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
-    move-result-object v1
+    move-result-object v3
 
-    check-cast v1, Landroid/net/LinkAddress;
+    check-cast v3, Landroid/net/LinkAddress;
 
-    iput-object v1, v0, Landroid/net/InterfaceConfiguration;->addr:Landroid/net/LinkAddress;
+    #setter for: Landroid/net/InterfaceConfiguration;->mAddr:Landroid/net/LinkAddress;
+    invoke-static {v1, v3}, Landroid/net/InterfaceConfiguration;->access$102(Landroid/net/InterfaceConfiguration;Landroid/net/LinkAddress;)Landroid/net/LinkAddress;
 
-    .line 95
+    .line 147
     :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    .line 148
+    .local v2, size:I
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    if-ge v0, v2, :cond_1
+
+    .line 149
+    #getter for: Landroid/net/InterfaceConfiguration;->mFlags:Ljava/util/HashSet;
+    invoke-static {v1}, Landroid/net/InterfaceConfiguration;->access$200(Landroid/net/InterfaceConfiguration;)Ljava/util/HashSet;
+
+    move-result-object v3
+
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    iput-object v1, v0, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
+    invoke-virtual {v3, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 96
-    return-object v0
+    .line 148
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 151
+    :cond_1
+    return-object v1
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -95,7 +121,7 @@
     .parameter "x0"
 
     .prologue
-    .line 88
+    .line 140
     invoke-virtual {p0, p1}, Landroid/net/InterfaceConfiguration$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/InterfaceConfiguration;
 
     move-result-object v0
@@ -108,7 +134,7 @@
     .parameter "size"
 
     .prologue
-    .line 100
+    .line 155
     new-array v0, p1, [Landroid/net/InterfaceConfiguration;
 
     return-object v0
@@ -119,7 +145,7 @@
     .parameter "x0"
 
     .prologue
-    .line 88
+    .line 140
     invoke-virtual {p0, p1}, Landroid/net/InterfaceConfiguration$1;->newArray(I)[Landroid/net/InterfaceConfiguration;
 
     move-result-object v0

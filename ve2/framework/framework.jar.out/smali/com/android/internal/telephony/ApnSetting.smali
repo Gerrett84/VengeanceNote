@@ -460,7 +460,7 @@
 
     .line 184
     .local v3, t:Ljava/lang/String;
-    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -468,7 +468,7 @@
 
     const-string v4, "*"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -476,7 +476,7 @@
 
     const-string v4, "default"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -484,17 +484,17 @@
 
     const-string v4, "hipri"
 
-    invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 187
+    .line 188
     :cond_0
     const/4 v4, 0x1
 
-    .line 190
+    .line 191
     .end local v3           #t:Ljava/lang/String;
     :goto_1
     return v4
@@ -506,7 +506,7 @@
 
     goto :goto_0
 
-    .line 190
+    .line 191
     .end local v3           #t:Ljava/lang/String;
     :cond_2
     const/4 v4, 0x0
@@ -519,14 +519,14 @@
     .parameter "o"
 
     .prologue
-    .line 196
+    .line 197
     instance-of v0, p1, Lcom/android/internal/telephony/ApnSetting;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 197
+    .line 198
     :goto_0
     return v0
 

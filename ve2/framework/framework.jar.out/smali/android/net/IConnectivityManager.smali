@@ -191,6 +191,14 @@
     .end annotation
 .end method
 
+.method public abstract isActiveNetworkMetered()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isNetworkSupported(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

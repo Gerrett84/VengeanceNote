@@ -48,6 +48,8 @@
 
 .field public static final enum SUSPENDED:Landroid/net/NetworkInfo$DetailedState;
 
+.field public static final enum VERIFYING_POOR_LINK:Landroid/net/NetworkInfo$DetailedState;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -64,7 +66,7 @@
 
     const/4 v3, 0x0
 
-    .line 59
+    .line 60
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "IDLE"
@@ -73,7 +75,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->IDLE:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 61
+    .line 62
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "SCANNING"
@@ -82,7 +84,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->SCANNING:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 63
+    .line 64
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "CONNECTING"
@@ -91,7 +93,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->CONNECTING:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 65
+    .line 66
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "AUTHENTICATING"
@@ -100,7 +102,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->AUTHENTICATING:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 67
+    .line 68
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "OBTAINING_IPADDR"
@@ -109,7 +111,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->OBTAINING_IPADDR:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 69
+    .line 70
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "CONNECTED"
@@ -120,7 +122,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 71
+    .line 72
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "SUSPENDED"
@@ -131,7 +133,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->SUSPENDED:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 73
+    .line 74
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "DISCONNECTING"
@@ -142,7 +144,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->DISCONNECTING:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 75
+    .line 76
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "DISCONNECTED"
@@ -153,7 +155,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->DISCONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 77
+    .line 78
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "FAILED"
@@ -164,7 +166,7 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->FAILED:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 79
+    .line 80
     new-instance v0, Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "BLOCKED"
@@ -175,8 +177,19 @@
 
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->BLOCKED:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 57
-    const/16 v0, 0xb
+    .line 82
+    new-instance v0, Landroid/net/NetworkInfo$DetailedState;
+
+    const-string v1, "VERIFYING_POOR_LINK"
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Landroid/net/NetworkInfo$DetailedState;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Landroid/net/NetworkInfo$DetailedState;->VERIFYING_POOR_LINK:Landroid/net/NetworkInfo$DetailedState;
+
+    .line 58
+    const/16 v0, 0xc
 
     new-array v0, v0, [Landroid/net/NetworkInfo$DetailedState;
 
@@ -236,6 +249,12 @@
 
     aput-object v2, v0, v1
 
+    const/16 v1, 0xb
+
+    sget-object v2, Landroid/net/NetworkInfo$DetailedState;->VERIFYING_POOR_LINK:Landroid/net/NetworkInfo$DetailedState;
+
+    aput-object v2, v0, v1
+
     sput-object v0, Landroid/net/NetworkInfo$DetailedState;->$VALUES:[Landroid/net/NetworkInfo$DetailedState;
 
     return-void
@@ -252,7 +271,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 58
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -263,7 +282,7 @@
     .parameter "name"
 
     .prologue
-    .line 57
+    .line 58
     const-class v0, Landroid/net/NetworkInfo$DetailedState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -279,7 +298,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 58
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->$VALUES:[Landroid/net/NetworkInfo$DetailedState;
 
     invoke-virtual {v0}, [Landroid/net/NetworkInfo$DetailedState;->clone()Ljava/lang/Object;

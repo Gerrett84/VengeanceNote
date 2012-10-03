@@ -8,7 +8,7 @@
 
 .field public static final COMPAT_FLAG_ENABLED:I = 0x2
 
-.field private static final MSG_WRITE:I = 0x1
+.field private static final MSG_WRITE:I = 0x12c
 
 
 # instance fields
@@ -593,14 +593,14 @@
     .line 295
     iget-object v10, p0, Lcom/android/server/am/CompatModePackages;->mHandler:Landroid/os/Handler;
 
-    const/4 v11, 0x1
+    const/16 v11, 0x12c
 
     invoke-virtual {v10, v11}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 296
     iget-object v10, p0, Lcom/android/server/am/CompatModePackages;->mHandler:Landroid/os/Handler;
 
-    const/4 v11, 0x1
+    const/16 v11, 0x12c
 
     invoke-virtual {v10, v11}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
@@ -1088,7 +1088,7 @@
 .end method
 
 .method public getPackageScreenCompatModeLocked(Ljava/lang/String;)I
-    .locals 3
+    .locals 4
     .parameter "packageName"
 
     .prologue
@@ -1104,7 +1104,9 @@
 
     const/4 v2, 0x0
 
-    invoke-interface {v1, p1, v2}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    const/4 v3, 0x0
+
+    invoke-interface {v1, p1, v2, v3}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1156,14 +1158,14 @@
 .end method
 
 .method public handlePackageAddedLocked(Ljava/lang/String;Z)V
-    .locals 7
+    .locals 8
     .parameter "packageName"
     .parameter "updated"
 
     .prologue
-    const/4 v2, 0x0
+    const/16 v7, 0x12c
 
-    const/4 v4, 0x1
+    const/4 v2, 0x0
 
     .line 122
     const/4 v0, 0x0
@@ -1173,11 +1175,13 @@
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
-    move-result-object v5
+    move-result-object v4
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    invoke-interface {v5, p1, v6}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-interface {v4, p1, v5, v6}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1202,17 +1206,17 @@
     .local v1, ci:Landroid/content/res/CompatibilityInfo;
     invoke-virtual {v1}, Landroid/content/res/CompatibilityInfo;->alwaysSupportsScreen()Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_2
+    if-nez v4, :cond_2
 
     invoke-virtual {v1}, Landroid/content/res/CompatibilityInfo;->neverSupportsScreen()Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_2
+    if-nez v4, :cond_2
 
-    move v2, v4
+    const/4 v2, 0x1
 
     .line 134
     .local v2, mayCompat:Z
@@ -1222,28 +1226,28 @@
     .line 137
     if-nez v2, :cond_0
 
-    iget-object v5, p0, Lcom/android/server/am/CompatModePackages;->mPackages:Ljava/util/HashMap;
+    iget-object v4, p0, Lcom/android/server/am/CompatModePackages;->mPackages:Ljava/util/HashMap;
 
-    invoke-virtual {v5, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v4, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_0
+    if-eqz v4, :cond_0
 
     .line 138
-    iget-object v5, p0, Lcom/android/server/am/CompatModePackages;->mPackages:Ljava/util/HashMap;
+    iget-object v4, p0, Lcom/android/server/am/CompatModePackages;->mPackages:Ljava/util/HashMap;
 
-    invoke-virtual {v5, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 139
-    iget-object v5, p0, Lcom/android/server/am/CompatModePackages;->mHandler:Landroid/os/Handler;
+    iget-object v4, p0, Lcom/android/server/am/CompatModePackages;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v5, v4}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v4, v7}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 140
-    iget-object v5, p0, Lcom/android/server/am/CompatModePackages;->mHandler:Landroid/os/Handler;
+    iget-object v4, p0, Lcom/android/server/am/CompatModePackages;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {v5, v4}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v4, v7}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v3
 
@@ -1262,7 +1266,7 @@
     .end local v2           #mayCompat:Z
     .end local v3           #msg:Landroid/os/Message;
     :catch_0
-    move-exception v5
+    move-exception v4
 
     goto :goto_0
 .end method
@@ -1429,8 +1433,10 @@
     .local v1, ai:Landroid/content/pm/ApplicationInfo;
     const/4 v14, 0x0
 
+    const/4 v15, 0x0
+
     :try_start_2
-    invoke-interface {v11, v9, v14}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-interface {v11, v9, v14, v15}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
@@ -1672,7 +1678,7 @@
     .parameter "ask"
 
     .prologue
-    const/4 v5, 0x1
+    const/16 v5, 0x12c
 
     .line 189
     invoke-direct {p0, p1}, Lcom/android/server/am/CompatModePackages;->getPackageFlags(Ljava/lang/String;)I
@@ -1763,7 +1769,9 @@
 
     const/4 v2, 0x0
 
-    invoke-interface {v1, p1, v2}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    const/4 v3, 0x0
+
+    invoke-interface {v1, p1, v2, v3}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

@@ -279,7 +279,7 @@
     :pswitch_3
     iget-object v7, p0, Landroid/net/MobileDataStateTracker$MobileDataStateReceiver;->this$0:Landroid/net/MobileDataStateTracker;
 
-    const-string v6, "linkProperties"
+    const-string/jumbo v6, "linkProperties"
 
     invoke-virtual {p2, v6}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -322,7 +322,7 @@
     :cond_4
     iget-object v7, p0, Landroid/net/MobileDataStateTracker$MobileDataStateReceiver;->this$0:Landroid/net/MobileDataStateTracker;
 
-    const-string v6, "linkCapabilities"
+    const-string/jumbo v6, "linkCapabilities"
 
     invoke-virtual {p2, v6}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -374,7 +374,7 @@
 
     .line 251
     :cond_6
-    const-string v6, "linkPropertiesChanged"
+    const-string/jumbo v6, "linkPropertiesChanged"
 
     invoke-static {v4, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -385,7 +385,7 @@
     .line 252
     iget-object v7, p0, Landroid/net/MobileDataStateTracker$MobileDataStateReceiver;->this$0:Landroid/net/MobileDataStateTracker;
 
-    const-string v6, "linkProperties"
+    const-string/jumbo v6, "linkProperties"
 
     invoke-virtual {p2, v6}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 

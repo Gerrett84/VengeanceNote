@@ -33,13 +33,13 @@
     .parameter "service"
 
     .prologue
-    .line 90
+    .line 88
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
+    .line 89
     iput-object p1, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
-    .line 92
+    .line 90
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .parameter "operation"
 
     .prologue
-    .line 276
+    .line 275
     :try_start_0
     iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
@@ -58,11 +58,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 279
+    .line 278
     :goto_0
     return-void
 
-    .line 277
+    .line 276
     :catch_0
     move-exception v0
 
@@ -72,11 +72,11 @@
 .method public set(IJLandroid/app/PendingIntent;)V
     .locals 1
     .parameter "type"
-    .parameter "triggerAtTime"
+    .parameter "triggerAtMillis"
     .parameter "operation"
 
     .prologue
-    .line 139
+    .line 137
     :try_start_0
     iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
@@ -84,11 +84,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
+    .line 140
     :goto_0
     return-void
 
-    .line 140
+    .line 138
     :catch_0
     move-exception v0
 
@@ -98,12 +98,12 @@
 .method public setInexactRepeating(IJJLandroid/app/PendingIntent;)V
     .locals 7
     .parameter "type"
-    .parameter "triggerAtTime"
-    .parameter "interval"
+    .parameter "triggerAtMillis"
+    .parameter "intervalMillis"
     .parameter "operation"
 
     .prologue
-    .line 259
+    .line 258
     :try_start_0
     iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
@@ -119,11 +119,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 262
+    .line 261
     :goto_0
     return-void
 
-    .line 260
+    .line 259
     :catch_0
     move-exception v0
 
@@ -133,12 +133,12 @@
 .method public setRepeating(IJJLandroid/app/PendingIntent;)V
     .locals 7
     .parameter "type"
-    .parameter "triggerAtTime"
-    .parameter "interval"
+    .parameter "triggerAtMillis"
+    .parameter "intervalMillis"
     .parameter "operation"
 
     .prologue
-    .line 193
+    .line 192
     :try_start_0
     iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
@@ -154,11 +154,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
+    .line 195
     :goto_0
     return-void
 
-    .line 194
+    .line 193
     :catch_0
     move-exception v0
 
@@ -170,7 +170,7 @@
     .parameter "millis"
 
     .prologue
-    .line 289
+    .line 288
     :try_start_0
     iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
@@ -178,11 +178,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 292
+    .line 291
     :goto_0
     return-void
 
-    .line 290
+    .line 289
     :catch_0
     move-exception v0
 
@@ -194,7 +194,7 @@
     .parameter "timeZone"
 
     .prologue
-    .line 302
+    .line 301
     :try_start_0
     iget-object v0, p0, Landroid/app/AlarmManager;->mService:Landroid/app/IAlarmManager;
 
@@ -202,11 +202,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 305
+    .line 304
     :goto_0
     return-void
 
-    .line 303
+    .line 302
     :catch_0
     move-exception v0
 

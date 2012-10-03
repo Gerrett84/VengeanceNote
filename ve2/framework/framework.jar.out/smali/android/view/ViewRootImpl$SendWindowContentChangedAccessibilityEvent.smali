@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field public volatile mIsPending:Z
+.field public mSource:Landroid/view/View;
 
 .field final synthetic this$0:Landroid/view/ViewRootImpl;
 
@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 5002
+    .line 5337
     iput-object p1, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 5002
+    .line 5337
     invoke-direct {p0, p1}, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;-><init>(Landroid/view/ViewRootImpl;)V
 
     return-void
@@ -55,28 +55,29 @@
     .locals 2
 
     .prologue
-    .line 5006
-    iget-object v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v0, v0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
+    .line 5341
+    iget-object v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 5007
-    iget-object v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->this$0:Landroid/view/ViewRootImpl;
-
-    iget-object v0, v0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
+    .line 5342
+    iget-object v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
     const/16 v1, 0x800
 
     invoke-virtual {v0, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
-    .line 5008
+    .line 5343
+    iget-object v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->resetAccessibilityStateChanged()V
+
+    .line 5344
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mIsPending:Z
+    iput-object v0, p0, Landroid/view/ViewRootImpl$SendWindowContentChangedAccessibilityEvent;->mSource:Landroid/view/View;
 
-    .line 5010
+    .line 5346
     :cond_0
     return-void
 .end method

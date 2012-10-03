@@ -42,8 +42,6 @@
 # instance fields
 .field private mHandle:I
 
-.field private mLegacyType:I
-
 .field private mMaxRange:F
 
 .field private mMinDelay:I
@@ -66,10 +64,10 @@
     .locals 0
 
     .prologue
-    .line 137
+    .line 136
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 138
+    .line 137
     return-void
 .end method
 
@@ -79,18 +77,8 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 198
     iget v0, p0, Landroid/hardware/Sensor;->mHandle:I
-
-    return v0
-.end method
-
-.method getLegacyType()I
-    .locals 1
-
-    .prologue
-    .line 212
-    iget v0, p0, Landroid/hardware/Sensor;->mLegacyType:I
 
     return v0
 .end method
@@ -99,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 172
+    .line 171
     iget v0, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
     return v0
@@ -109,7 +97,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 194
     iget v0, p0, Landroid/hardware/Sensor;->mMinDelay:I
 
     return v0
@@ -119,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 143
     iget-object v0, p0, Landroid/hardware/Sensor;->mName:Ljava/lang/String;
 
     return-object v0
@@ -129,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 185
     iget v0, p0, Landroid/hardware/Sensor;->mPower:F
 
     return v0
@@ -139,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 179
+    .line 178
     iget v0, p0, Landroid/hardware/Sensor;->mResolution:F
 
     return v0
@@ -149,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 157
     iget v0, p0, Landroid/hardware/Sensor;->mType:I
 
     return v0
@@ -159,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 151
+    .line 150
     iget-object v0, p0, Landroid/hardware/Sensor;->mVendor:Ljava/lang/String;
 
     return-object v0
@@ -169,22 +157,10 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 164
     iget v0, p0, Landroid/hardware/Sensor;->mVersion:I
 
     return v0
-.end method
-
-.method setLegacyType(I)V
-    .locals 0
-    .parameter "legacyType"
-
-    .prologue
-    .line 208
-    iput p1, p0, Landroid/hardware/Sensor;->mLegacyType:I
-
-    .line 209
-    return-void
 .end method
 
 .method setRange(FF)V
@@ -193,12 +169,12 @@
     .parameter "res"
 
     .prologue
-    .line 203
+    .line 202
     iput p1, p0, Landroid/hardware/Sensor;->mMaxRange:F
 
-    .line 204
+    .line 203
     iput p2, p0, Landroid/hardware/Sensor;->mResolution:F
 
-    .line 205
+    .line 204
     return-void
 .end method

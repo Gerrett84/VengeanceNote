@@ -25,10 +25,11 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+.method public constructor <init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
     .locals 1
     .parameter "node"
     .parameter "c"
+    .parameter "root"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lmiui/app/screenelement/ScreenElementLoadException;
@@ -53,16 +54,17 @@
     if-eqz p1, :cond_0
 
     .line 33
-    invoke-direct {p0, p1}, Lmiui/app/screenelement/ExternalCommandManager;->load(Lorg/w3c/dom/Element;)V
+    invoke-direct {p0, p1, p3}, Lmiui/app/screenelement/ExternalCommandManager;->load(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     .line 34
     :cond_0
     return-void
 .end method
 
-.method private load(Lorg/w3c/dom/Element;)V
+.method private load(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenElementRoot;)V
     .locals 6
     .parameter "node"
+    .parameter "root"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lmiui/app/screenelement/ScreenElementLoadException;
@@ -158,7 +160,7 @@
 
     iget-object v5, p0, Lmiui/app/screenelement/ExternalCommandManager;->mContext:Lmiui/app/screenelement/ScreenContext;
 
-    invoke-direct {v4, v5, v2}, Lmiui/app/screenelement/CommandTrigger;-><init>(Lmiui/app/screenelement/ScreenContext;Lorg/w3c/dom/Element;)V
+    invoke-direct {v4, v5, v2, p2}, Lmiui/app/screenelement/CommandTrigger;-><init>(Lmiui/app/screenelement/ScreenContext;Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenElementRoot;)V
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

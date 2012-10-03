@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/accounts/AccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/OnAccountsUpdateListener;[Landroid/accounts/Account;)V
+    value = Landroid/accounts/AccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;Landroid/accounts/AccountManagerFuture;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,25 +20,25 @@
 # instance fields
 .field final synthetic this$0:Landroid/accounts/AccountManager;
 
-.field final synthetic val$accountsCopy:[Landroid/accounts/Account;
+.field final synthetic val$callback:Landroid/accounts/AccountManagerCallback;
 
-.field final synthetic val$listener:Landroid/accounts/OnAccountsUpdateListener;
+.field final synthetic val$future:Landroid/accounts/AccountManagerFuture;
 
 
 # direct methods
-.method constructor <init>(Landroid/accounts/AccountManager;Landroid/accounts/OnAccountsUpdateListener;[Landroid/accounts/Account;)V
+.method constructor <init>(Landroid/accounts/AccountManager;Landroid/accounts/AccountManagerCallback;Landroid/accounts/AccountManagerFuture;)V
     .locals 0
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 1276
+    .line 1311
     iput-object p1, p0, Landroid/accounts/AccountManager$11;->this$0:Landroid/accounts/AccountManager;
 
-    iput-object p2, p0, Landroid/accounts/AccountManager$11;->val$listener:Landroid/accounts/OnAccountsUpdateListener;
+    iput-object p2, p0, Landroid/accounts/AccountManager$11;->val$callback:Landroid/accounts/AccountManagerCallback;
 
-    iput-object p3, p0, Landroid/accounts/AccountManager$11;->val$accountsCopy:[Landroid/accounts/Account;
+    iput-object p3, p0, Landroid/accounts/AccountManager$11;->val$future:Landroid/accounts/AccountManagerFuture;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,34 +48,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 1279
-    :try_start_0
-    iget-object v1, p0, Landroid/accounts/AccountManager$11;->val$listener:Landroid/accounts/OnAccountsUpdateListener;
+    .line 1313
+    iget-object v0, p0, Landroid/accounts/AccountManager$11;->val$callback:Landroid/accounts/AccountManagerCallback;
 
-    iget-object v2, p0, Landroid/accounts/AccountManager$11;->val$accountsCopy:[Landroid/accounts/Account;
+    iget-object v1, p0, Landroid/accounts/AccountManager$11;->val$future:Landroid/accounts/AccountManagerFuture;
 
-    invoke-interface {v1, v2}, Landroid/accounts/OnAccountsUpdateListener;->onAccountsUpdated([Landroid/accounts/Account;)V
-    :try_end_0
-    .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-interface {v0, v1}, Landroid/accounts/AccountManagerCallback;->run(Landroid/accounts/AccountManagerFuture;)V
 
-    .line 1285
-    :goto_0
+    .line 1314
     return-void
-
-    .line 1280
-    :catch_0
-    move-exception v0
-
-    .line 1283
-    .local v0, e:Landroid/database/SQLException;
-    const-string v1, "AccountManager"
-
-    const-string v2, "Can\'t update accounts"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
 .end method

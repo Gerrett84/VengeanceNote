@@ -9,12 +9,12 @@
     .parameter "context"
 
     .prologue
-    .line 54
+    .line 55
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/RadioButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 55
+    .line 56
     return-void
 .end method
 
@@ -24,12 +24,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 58
+    .line 59
     const v0, 0x101007e
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/RadioButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 59
+    .line 60
     return-void
 .end method
 
@@ -40,83 +40,72 @@
     .parameter "defStyle"
 
     .prologue
-    .line 62
+    .line 63
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/CompoundButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 63
+    .line 64
     return-void
 .end method
 
 
 # virtual methods
-.method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 3
+.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 1
     .parameter "event"
 
     .prologue
-    .line 81
-    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
-
     .line 82
-    invoke-virtual {p0}, Landroid/widget/RadioButton;->isChecked()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     .line 83
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+    const-class v0, Landroid/widget/RadioButton;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    const v2, 0x1040484
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 87
-    :goto_0
+    .line 84
     return-void
+.end method
 
-    .line 85
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 88
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    .line 89
+    const-class v0, Landroid/widget/RadioButton;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    const v2, 0x1040485
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    .line 90
+    return-void
 .end method
 
 .method public toggle()V
     .locals 1
 
     .prologue
-    .line 74
+    .line 75
     invoke-virtual {p0}, Landroid/widget/RadioButton;->isChecked()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 75
+    .line 76
     invoke-super {p0}, Landroid/widget/CompoundButton;->toggle()V
 
-    .line 77
+    .line 78
     :cond_0
     return-void
 .end method

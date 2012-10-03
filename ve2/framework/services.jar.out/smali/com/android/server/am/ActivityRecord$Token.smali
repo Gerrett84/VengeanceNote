@@ -33,17 +33,17 @@
     .parameter "activity"
 
     .prologue
-    .line 215
+    .line 253
     invoke-direct {p0}, Landroid/view/IApplicationToken$Stub;-><init>()V
 
-    .line 216
+    .line 254
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
-    .line 217
+    .line 255
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 249
+    .line 287
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -67,16 +67,16 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 250
+    .line 288
     .local v0, activity:Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 251
+    .line 289
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->getKeyDispatchingTimeout()J
 
     move-result-wide v1
 
-    .line 253
+    .line 291
     :goto_0
     return-wide v1
 
@@ -95,7 +95,7 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 279
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -104,16 +104,16 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 242
+    .line 280
     .local v0, activity:Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 243
+    .line 281
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->keyDispatchingTimedOut()Z
 
     move-result v1
 
-    .line 245
+    .line 283
     :goto_0
     return v1
 
@@ -127,20 +127,20 @@
     .locals 2
 
     .prologue
-    .line 257
+    .line 295
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x80
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 258
+    .line 296
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "Token{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 259
+    .line 297
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -151,12 +151,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 260
+    .line 298
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 261
+    .line 299
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -165,12 +165,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 262
+    .line 300
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 263
+    .line 301
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -187,7 +187,7 @@
     .end annotation
 
     .prologue
-    .line 220
+    .line 258
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -196,14 +196,14 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 221
+    .line 259
     .local v0, activity:Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 222
+    .line 260
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->windowsDrawn()V
 
-    .line 224
+    .line 262
     :cond_0
     return-void
 .end method
@@ -217,7 +217,7 @@
     .end annotation
 
     .prologue
-    .line 234
+    .line 272
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -226,14 +226,14 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 235
+    .line 273
     .local v0, activity:Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 236
+    .line 274
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->windowsGone()V
 
-    .line 238
+    .line 276
     :cond_0
     return-void
 .end method
@@ -247,7 +247,7 @@
     .end annotation
 
     .prologue
-    .line 227
+    .line 265
     iget-object v1, p0, Lcom/android/server/am/ActivityRecord$Token;->weakActivity:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -256,14 +256,14 @@
 
     check-cast v0, Lcom/android/server/am/ActivityRecord;
 
-    .line 228
+    .line 266
     .local v0, activity:Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 229
+    .line 267
     invoke-virtual {v0}, Lcom/android/server/am/ActivityRecord;->windowsVisible()V
 
-    .line 231
+    .line 269
     :cond_0
     return-void
 .end method

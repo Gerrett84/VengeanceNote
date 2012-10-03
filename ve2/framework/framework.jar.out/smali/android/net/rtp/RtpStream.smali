@@ -20,11 +20,11 @@
 
 .field private mMode:I
 
-.field private mNative:I
-
 .field private mRemoteAddress:Ljava/net/InetAddress;
 
 .field private mRemotePort:I
+
+.field private mSocket:I
 
 
 # direct methods
@@ -42,7 +42,7 @@
 .end method
 
 .method constructor <init>(Ljava/net/InetAddress;)V
-    .locals 1
+    .locals 2
     .parameter "address"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -51,18 +51,21 @@
     .end annotation
 
     .prologue
+    const/4 v1, -0x1
+
     .line 70
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
-    const/4 v0, -0x1
-
-    iput v0, p0, Landroid/net/rtp/RtpStream;->mRemotePort:I
+    iput v1, p0, Landroid/net/rtp/RtpStream;->mRemotePort:I
 
     .line 55
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/rtp/RtpStream;->mMode:I
+
+    .line 57
+    iput v1, p0, Landroid/net/rtp/RtpStream;->mSocket:I
 
     .line 71
     invoke-virtual {p1}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
@@ -82,7 +85,7 @@
     return-void
 .end method
 
-.method private synchronized native declared-synchronized close()V
+.method private native close()V
 .end method
 
 .method private native create(Ljava/lang/String;)I
@@ -179,9 +182,6 @@
     return-void
 .end method
 
-.method synchronized native declared-synchronized dup()I
-.end method
-
 .method protected finalize()V
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
@@ -191,13 +191,13 @@
     .end annotation
 
     .prologue
-    .line 188
+    .line 192
     invoke-direct {p0}, Landroid/net/rtp/RtpStream;->close()V
 
-    .line 189
+    .line 193
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 190
+    .line 194
     return-void
 .end method
 
@@ -251,6 +251,16 @@
     return v0
 .end method
 
+.method getSocket()I
+    .locals 1
+
+    .prologue
+    .line 169
+    iget v0, p0, Landroid/net/rtp/RtpStream;->mSocket:I
+
+    return v0
+.end method
+
 .method public isBusy()Z
     .locals 1
 
@@ -265,14 +275,18 @@
     .locals 2
 
     .prologue
-    .line 178
+    .line 180
+    monitor-enter p0
+
+    .line 181
+    :try_start_0
     invoke-virtual {p0}, Landroid/net/rtp/RtpStream;->isBusy()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 182
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Busy"
@@ -281,11 +295,27 @@
 
     throw v0
 
-    .line 181
+    .line 185
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 184
     :cond_0
+    :try_start_1
     invoke-direct {p0}, Landroid/net/rtp/RtpStream;->close()V
 
-    .line 182
+    .line 185
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 186
     return-void
 .end method
 

@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 761
+    .line 941
     iput-object p1, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
     iput-object p2, p0, Landroid/animation/LayoutTransition$4;->val$parent:Landroid/view/ViewGroup;
@@ -59,14 +59,14 @@
     .parameter "animator"
 
     .prologue
-    .line 776
+    .line 959
     iget-object v0, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
 
     iget-object v1, p0, Landroid/animation/LayoutTransition$4;->val$listener:Landroid/view/View$OnLayoutChangeListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 777
+    .line 960
     iget-object v0, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
     #getter for: Landroid/animation/LayoutTransition;->layoutChangeListenerMap:Ljava/util/HashMap;
@@ -78,45 +78,53 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 778
+    .line 961
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 7
+    .locals 8
     .parameter "animator"
 
     .prologue
-    .line 782
-    iget-object v2, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+    .line 965
+    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
     #getter for: Landroid/animation/LayoutTransition;->currentChangingAnimations:Ljava/util/LinkedHashMap;
-    invoke-static {v2}, Landroid/animation/LayoutTransition;->access$700(Landroid/animation/LayoutTransition;)Ljava/util/LinkedHashMap;
+    invoke-static {v3}, Landroid/animation/LayoutTransition;->access$900(Landroid/animation/LayoutTransition;)Ljava/util/LinkedHashMap;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
+    iget-object v4, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
 
-    invoke-virtual {v2, v3}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 783
-    iget-object v2, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+    .line 966
+    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+
+    #calls: Landroid/animation/LayoutTransition;->hasListeners()Z
+    invoke-static {v3}, Landroid/animation/LayoutTransition;->access$1000(Landroid/animation/LayoutTransition;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 967
+    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
     #getter for: Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
-    invoke-static {v2}, Landroid/animation/LayoutTransition;->access$800(Landroid/animation/LayoutTransition;)Ljava/util/ArrayList;
+    invoke-static {v3}, Landroid/animation/LayoutTransition;->access$1100(Landroid/animation/LayoutTransition;)Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-eqz v2, :cond_1
+    check-cast v2, Ljava/util/ArrayList;
 
-    .line 784
-    iget-object v2, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
-
-    #getter for: Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
-    invoke-static {v2}, Landroid/animation/LayoutTransition;->access$800(Landroid/animation/LayoutTransition;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
+    .line 969
+    .local v2, listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -125,9 +133,9 @@
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -135,62 +143,82 @@
 
     check-cast v1, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 785
+    .line 970
     .local v1, listener:Landroid/animation/LayoutTransition$TransitionListener;
-    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+    iget-object v4, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
-    iget-object v4, p0, Landroid/animation/LayoutTransition$4;->val$parent:Landroid/view/ViewGroup;
+    iget-object v5, p0, Landroid/animation/LayoutTransition$4;->val$parent:Landroid/view/ViewGroup;
 
-    iget-object v5, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
+    iget-object v6, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
 
-    iget v2, p0, Landroid/animation/LayoutTransition$4;->val$changeReason:I
+    iget v3, p0, Landroid/animation/LayoutTransition$4;->val$changeReason:I
 
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
-    if-ne v2, v6, :cond_0
+    if-ne v3, v7, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_1
-    invoke-interface {v1, v3, v4, v5, v2}, Landroid/animation/LayoutTransition$TransitionListener;->endTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
+    invoke-interface {v1, v4, v5, v6, v3}, Landroid/animation/LayoutTransition$TransitionListener;->endTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x1
+    iget v3, p0, Landroid/animation/LayoutTransition$4;->val$changeReason:I
+
+    const/4 v7, 0x3
+
+    if-ne v3, v7, :cond_1
+
+    const/4 v3, 0x1
 
     goto :goto_1
 
-    .line 790
+    :cond_1
+    const/4 v3, 0x4
+
+    goto :goto_1
+
+    .line 976
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Landroid/animation/LayoutTransition$TransitionListener;
-    :cond_1
+    .end local v2           #listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
+    :cond_2
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 7
+    .locals 8
     .parameter "animator"
 
     .prologue
-    .line 765
-    iget-object v2, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+    .line 945
+    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+
+    #calls: Landroid/animation/LayoutTransition;->hasListeners()Z
+    invoke-static {v3}, Landroid/animation/LayoutTransition;->access$1000(Landroid/animation/LayoutTransition;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 946
+    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
     #getter for: Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
-    invoke-static {v2}, Landroid/animation/LayoutTransition;->access$800(Landroid/animation/LayoutTransition;)Ljava/util/ArrayList;
+    invoke-static {v3}, Landroid/animation/LayoutTransition;->access$1100(Landroid/animation/LayoutTransition;)Ljava/util/ArrayList;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clone()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-eqz v2, :cond_1
+    check-cast v2, Ljava/util/ArrayList;
 
-    .line 766
-    iget-object v2, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
-
-    #getter for: Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
-    invoke-static {v2}, Landroid/animation/LayoutTransition;->access$800(Landroid/animation/LayoutTransition;)Ljava/util/ArrayList;
-
-    move-result-object v2
-
+    .line 948
+    .local v2, listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -199,9 +227,9 @@
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_1
+    if-eqz v3, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -209,35 +237,47 @@
 
     check-cast v1, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 767
+    .line 949
     .local v1, listener:Landroid/animation/LayoutTransition$TransitionListener;
-    iget-object v3, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
+    iget-object v4, p0, Landroid/animation/LayoutTransition$4;->this$0:Landroid/animation/LayoutTransition;
 
-    iget-object v4, p0, Landroid/animation/LayoutTransition$4;->val$parent:Landroid/view/ViewGroup;
+    iget-object v5, p0, Landroid/animation/LayoutTransition$4;->val$parent:Landroid/view/ViewGroup;
 
-    iget-object v5, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
+    iget-object v6, p0, Landroid/animation/LayoutTransition$4;->val$child:Landroid/view/View;
 
-    iget v2, p0, Landroid/animation/LayoutTransition$4;->val$changeReason:I
+    iget v3, p0, Landroid/animation/LayoutTransition$4;->val$changeReason:I
 
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
-    if-ne v2, v6, :cond_0
+    if-ne v3, v7, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_1
-    invoke-interface {v1, v3, v4, v5, v2}, Landroid/animation/LayoutTransition$TransitionListener;->startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
+    invoke-interface {v1, v4, v5, v6, v3}, Landroid/animation/LayoutTransition$TransitionListener;->startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x1
+    iget v3, p0, Landroid/animation/LayoutTransition$4;->val$changeReason:I
+
+    const/4 v7, 0x3
+
+    if-ne v3, v7, :cond_1
+
+    const/4 v3, 0x1
 
     goto :goto_1
 
-    .line 772
+    :cond_1
+    const/4 v3, 0x4
+
+    goto :goto_1
+
+    .line 955
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Landroid/animation/LayoutTransition$TransitionListener;
-    :cond_1
+    .end local v2           #listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
+    :cond_2
     return-void
 .end method

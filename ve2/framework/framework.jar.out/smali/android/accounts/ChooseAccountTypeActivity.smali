@@ -621,7 +621,7 @@
 
     .line 100
     :cond_6
-    const v10, 0x1090031
+    const v10, 0x1090033
 
     invoke-virtual {p0, v10}, Landroid/accounts/ChooseAccountTypeActivity;->setContentView(I)V
 

@@ -61,45 +61,38 @@
     .parameter "name"
 
     .prologue
-    .line 62
+    .line 65
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 66
     iput-object p2, p0, Landroid/webkit/WebSyncManager;->mThreadName:Ljava/lang/String;
 
-    .line 64
+    .line 67
     if-eqz p1, :cond_0
 
-    .line 65
-    invoke-static {p1}, Landroid/webkit/WebViewDatabase;->getInstance(Landroid/content/Context;)Landroid/webkit/WebViewDatabase;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/webkit/WebSyncManager;->mDataBase:Landroid/webkit/WebViewDatabase;
-
-    .line 66
+    .line 68
     new-instance v0, Ljava/lang/Thread;
 
     invoke-direct {v0, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
     iput-object v0, p0, Landroid/webkit/WebSyncManager;->mSyncThread:Ljava/lang/Thread;
 
-    .line 67
+    .line 69
     iget-object v0, p0, Landroid/webkit/WebSyncManager;->mSyncThread:Ljava/lang/Thread;
 
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mThreadName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    .line 68
+    .line 70
     iget-object v0, p0, Landroid/webkit/WebSyncManager;->mSyncThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 73
+    .line 75
     return-void
 
-    .line 70
+    .line 72
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -131,7 +124,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 78
     new-instance v0, Ljava/lang/CloneNotSupportedException;
 
     const-string v1, "doesn\'t implement Cloneable"
@@ -145,7 +138,7 @@
     .locals 0
 
     .prologue
-    .line 158
+    .line 160
     return-void
 .end method
 
@@ -155,29 +148,29 @@
     .prologue
     const/16 v2, 0x65
 
-    .line 115
+    .line 117
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_0
 
-    .line 121
+    .line 123
     :goto_0
     return-void
 
-    .line 118
+    .line 120
     :cond_0
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 119
+    .line 121
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 120
+    .line 122
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
@@ -194,10 +187,10 @@
     .locals 4
 
     .prologue
-    .line 81
+    .line 83
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 82
+    .line 84
     new-instance v1, Landroid/webkit/WebSyncManager$SyncHandler;
 
     const/4 v2, 0x0
@@ -206,15 +199,15 @@
 
     iput-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
-    .line 83
+    .line 85
     invoke-virtual {p0}, Landroid/webkit/WebSyncManager;->onSyncInit()V
 
-    .line 85
+    .line 87
     const/16 v1, 0xa
 
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 87
+    .line 89
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     const/16 v2, 0x65
@@ -223,7 +216,7 @@
 
     move-result-object v0
 
-    .line 88
+    .line 90
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
@@ -233,10 +226,10 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 90
+    .line 92
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 91
+    .line 93
     return-void
 .end method
 
@@ -244,17 +237,17 @@
     .locals 4
 
     .prologue
-    .line 131
+    .line 133
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_1
 
-    .line 138
+    .line 140
     :cond_0
     :goto_0
     return-void
 
-    .line 134
+    .line 136
     :cond_1
     iget v1, p0, Landroid/webkit/WebSyncManager;->mStartSyncRefCount:I
 
@@ -266,7 +259,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 135
+    .line 137
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     const/16 v2, 0x65
@@ -275,7 +268,7 @@
 
     move-result-object v0
 
-    .line 136
+    .line 138
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
@@ -292,17 +285,17 @@
     .locals 2
 
     .prologue
-    .line 149
+    .line 151
     iget-object v0, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_1
 
-    .line 155
+    .line 157
     :cond_0
     :goto_0
     return-void
 
-    .line 152
+    .line 154
     :cond_1
     iget v0, p0, Landroid/webkit/WebSyncManager;->mStartSyncRefCount:I
 
@@ -312,7 +305,7 @@
 
     if-nez v0, :cond_0
 
-    .line 153
+    .line 155
     iget-object v0, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x65
@@ -328,29 +321,29 @@
     .prologue
     const/16 v2, 0x65
 
-    .line 100
+    .line 102
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_0
 
-    .line 106
+    .line 108
     :goto_0
     return-void
 
-    .line 103
+    .line 105
     :cond_0
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 104
+    .line 106
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 105
+    .line 107
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Landroid/webkit/WebSyncManager;->mHandler:Landroid/os/Handler;
 

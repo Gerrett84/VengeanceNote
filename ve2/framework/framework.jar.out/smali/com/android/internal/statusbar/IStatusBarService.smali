@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract cancelPreloadRecentApps()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract collapse()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -72,6 +80,14 @@
 .end method
 
 .method public abstract onPanelRevealed()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract preloadRecentApps()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -147,7 +163,7 @@
     .end annotation
 .end method
 
-.method public abstract setSystemUiVisibility(I)V
+.method public abstract setSystemUiVisibility(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -33,16 +33,16 @@
     .parameter "decoded"
 
     .prologue
-    .line 2010
+    .line 1947
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2011
+    .line 1948
     iput-object p1, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;
 
-    .line 2012
+    .line 1949
     iput-object p2, p0, Landroid/net/Uri$AbstractPart;->decoded:Ljava/lang/String;
 
-    .line 2013
+    .line 1950
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .locals 3
 
     .prologue
-    .line 2019
+    .line 1956
     iget-object v1, p0, Landroid/net/Uri$AbstractPart;->decoded:Ljava/lang/String;
 
     invoke-static {}, Landroid/net/Uri;->access$300()Ljava/lang/String;
@@ -63,7 +63,7 @@
 
     const/4 v0, 0x1
 
-    .line 2020
+    .line 1957
     .local v0, hasDecoded:Z
     :goto_0
     if-eqz v0, :cond_1
@@ -73,14 +73,14 @@
     :goto_1
     return-object v1
 
-    .line 2019
+    .line 1956
     .end local v0           #hasDecoded:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 2020
+    .line 1957
     .restart local v0       #hasDecoded:Z
     :cond_1
     iget-object v1, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;
@@ -106,7 +106,7 @@
 
     const/4 v3, 0x0
 
-    .line 2025
+    .line 1962
     iget-object v4, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;
 
     invoke-static {}, Landroid/net/Uri;->access$300()Ljava/lang/String;
@@ -117,7 +117,7 @@
 
     move v1, v2
 
-    .line 2028
+    .line 1965
     .local v1, hasEncoded:Z
     :goto_0
     iget-object v4, p0, Landroid/net/Uri$AbstractPart;->decoded:Ljava/lang/String;
@@ -130,27 +130,27 @@
 
     move v0, v2
 
-    .line 2030
+    .line 1967
     .local v0, hasDecoded:Z
     :goto_1
     if-eqz v1, :cond_2
 
     if-eqz v0, :cond_2
 
-    .line 2031
+    .line 1968
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2032
+    .line 1969
     iget-object v2, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 2033
+    .line 1970
     iget-object v2, p0, Landroid/net/Uri$AbstractPart;->decoded:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 2043
+    .line 1980
     :goto_2
     return-void
 
@@ -159,48 +159,48 @@
     :cond_0
     move v1, v3
 
-    .line 2025
+    .line 1962
     goto :goto_0
 
     .restart local v1       #hasEncoded:Z
     :cond_1
     move v0, v3
 
-    .line 2028
+    .line 1965
     goto :goto_1
 
-    .line 2034
+    .line 1971
     .restart local v0       #hasDecoded:Z
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 2035
+    .line 1972
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2036
+    .line 1973
     iget-object v2, p0, Landroid/net/Uri$AbstractPart;->encoded:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 2037
+    .line 1974
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 2038
+    .line 1975
     const/4 v2, 0x2
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2039
+    .line 1976
     iget-object v2, p0, Landroid/net/Uri$AbstractPart;->decoded:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 2041
+    .line 1978
     :cond_4
     new-instance v2, Ljava/lang/IllegalArgumentException;
 

@@ -68,7 +68,11 @@
 
 .field public static final MEDIA_SCANNER_VOLUME:Ljava/lang/String; = "volume"
 
+.field public static final PARAM_DELETE_DATA:Ljava/lang/String; = "deletedata"
+
 .field private static final TAG:Ljava/lang/String; = "MediaStore"
+
+.field public static final UNHIDE_CALL:Ljava/lang/String; = "unhide"
 
 .field public static final UNKNOWN_STRING:Ljava/lang/String; = "<unknown>"
 
@@ -81,7 +85,7 @@
     .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1748
+    .line 1766
     return-void
 .end method
 
@@ -89,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 2040
+    .line 2058
     const-string v0, "content://media/none/media_scanner"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -106,7 +110,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2065
+    .line 2083
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -127,11 +131,11 @@
 
     move-result-object v6
 
-    .line 2068
+    .line 2086
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_0
 
-    .line 2070
+    .line 2088
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -139,7 +143,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2071
+    .line 2089
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -148,15 +152,15 @@
 
     move-result-object v2
 
-    .line 2074
+    .line 2092
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2077
+    .line 2095
     :cond_0
     :goto_0
     return-object v2
 
-    .line 2074
+    .line 2092
     :cond_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 

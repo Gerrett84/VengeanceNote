@@ -36,25 +36,25 @@
     .parameter "manifestDigest"
 
     .prologue
-    .line 5785
+    .line 6288
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5786
+    .line 6289
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->packageURI:Landroid/net/Uri;
 
-    .line 5787
+    .line 6290
     iput p3, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->flags:I
 
-    .line 5788
+    .line 6291
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->observer:Landroid/content/pm/IPackageInstallObserver;
 
-    .line 5789
+    .line 6292
     iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->installerPackageName:Ljava/lang/String;
 
-    .line 5790
+    .line 6293
     iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->manifestDigest:Landroid/content/pm/ManifestDigest;
 
-    .line 5791
+    .line 6294
     return-void
 .end method
 
@@ -82,10 +82,31 @@
 .method abstract createCopyFile()V
 .end method
 
+.method doPostCopy(I)I
+    .locals 1
+    .parameter "uid"
+
+    .prologue
+    .line 6327
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method abstract doPostDeleteLI(Z)Z
 .end method
 
-.method abstract doPostInstall(I)I
+.method abstract doPostInstall(II)I
+.end method
+
+.method doPreCopy()I
+    .locals 1
+
+    .prologue
+    .line 6316
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method abstract doPreInstall(I)I
@@ -101,4 +122,26 @@
 .end method
 
 .method abstract getResourcePath()Ljava/lang/String;
+.end method
+
+.method protected isFwdLocked()Z
+    .locals 1
+
+    .prologue
+    .line 6331
+    iget v0, p0, Lcom/android/server/pm/PackageManagerService$InstallArgs;->flags:I
+
+    and-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

@@ -20,10 +20,11 @@
     return-void
 .end method
 
-.method public static writeTtsSpeakFailure(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;II)V
+.method public static writeTtsSpeakFailure(Ljava/lang/String;IIILjava/lang/String;II)V
     .locals 4
     .parameter "engine"
-    .parameter "caller"
+    .parameter "callerUid"
+    .parameter "callerPid"
     .parameter "length"
     .parameter "locale"
     .parameter "rate"
@@ -33,7 +34,7 @@
     .line 24
     const v0, 0x128e2
 
-    const/4 v1, 0x6
+    const/4 v1, 0x7
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -43,7 +44,11 @@
 
     const/4 v2, 0x1
 
-    aput-object p1, v1, v2
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
 
     const/4 v2, 0x2
 
@@ -55,19 +60,27 @@
 
     const/4 v2, 0x3
 
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
+    const/4 v2, 0x4
+
+    aput-object p4, v1, v2
+
     const/4 v2, 0x5
 
     invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x6
+
+    invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -79,10 +92,11 @@
     return-void
 .end method
 
-.method public static writeTtsSpeakSuccess(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IIJJJ)V
+.method public static writeTtsSpeakSuccess(Ljava/lang/String;IIILjava/lang/String;IIJJJ)V
     .locals 4
     .parameter "engine"
-    .parameter "caller"
+    .parameter "callerUid"
+    .parameter "callerPid"
     .parameter "length"
     .parameter "locale"
     .parameter "rate"
@@ -95,7 +109,7 @@
     .line 20
     const v0, 0x128e1
 
-    const/16 v1, 0x9
+    const/16 v1, 0xa
 
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -105,7 +119,11 @@
 
     const/4 v2, 0x1
 
-    aput-object p1, v1, v2
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
 
     const/4 v2, 0x2
 
@@ -117,15 +135,15 @@
 
     const/4 v2, 0x3
 
-    aput-object p3, v1, v2
-
-    const/4 v2, 0x4
-
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     aput-object v3, v1, v2
+
+    const/4 v2, 0x4
+
+    aput-object p4, v1, v2
 
     const/4 v2, 0x5
 
@@ -137,7 +155,7 @@
 
     const/4 v2, 0x6
 
-    invoke-static {p6, p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
@@ -145,7 +163,7 @@
 
     const/4 v2, 0x7
 
-    invoke-static {p8, p9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {p7, p8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
@@ -153,7 +171,15 @@
 
     const/16 v2, 0x8
 
-    invoke-static {p10, p11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {p9, p10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x9
+
+    invoke-static/range {p11 .. p12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 

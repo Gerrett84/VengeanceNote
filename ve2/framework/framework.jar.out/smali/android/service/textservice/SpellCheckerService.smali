@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter;,
         Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;,
         Landroid/service/textservice/SpellCheckerService$InternalISpellCheckerSession;,
         Landroid/service/textservice/SpellCheckerService$Session;
@@ -30,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 63
+    .line 70
     const-class v0, Landroid/service/textservice/SpellCheckerService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -46,17 +47,17 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 69
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 68
+    .line 75
     new-instance v0, Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;
 
     invoke-direct {v0, p0}, Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;-><init>(Landroid/service/textservice/SpellCheckerService;)V
 
     iput-object v0, p0, Landroid/service/textservice/SpellCheckerService;->mBinder:Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;
 
-    .line 235
+    .line 333
     return-void
 .end method
 
@@ -70,7 +71,7 @@
     .parameter "intent"
 
     .prologue
-    .line 80
+    .line 87
     iget-object v0, p0, Landroid/service/textservice/SpellCheckerService;->mBinder:Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;
 
     return-object v0

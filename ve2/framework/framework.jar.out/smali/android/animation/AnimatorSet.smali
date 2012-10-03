@@ -143,7 +143,7 @@
 
     iput-wide v0, p0, Landroid/animation/AnimatorSet;->mDuration:J
 
-    .line 1017
+    .line 1021
     return-void
 .end method
 
@@ -209,22 +209,22 @@
     .prologue
     const/4 v13, 0x0
 
-    .line 790
+    .line 794
     iget-boolean v11, p0, Landroid/animation/AnimatorSet;->mNeedsSort:Z
 
     if-eqz v11, :cond_7
 
-    .line 791
+    .line 795
     iget-object v11, p0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v11}, Ljava/util/ArrayList;->clear()V
 
-    .line 792
+    .line 796
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 793
+    .line 797
     .local v9, roots:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/AnimatorSet$Node;>;"
     iget-object v11, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
@@ -232,7 +232,7 @@
 
     move-result v6
 
-    .line 794
+    .line 798
     .local v6, numNodes:I
     const/4 v1, 0x0
 
@@ -240,7 +240,7 @@
     :goto_0
     if-ge v1, v6, :cond_2
 
-    .line 795
+    .line 799
     iget-object v11, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -249,7 +249,7 @@
 
     check-cast v3, Landroid/animation/AnimatorSet$Node;
 
-    .line 796
+    .line 800
     .local v3, node:Landroid/animation/AnimatorSet$Node;
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
@@ -263,24 +263,24 @@
 
     if-nez v11, :cond_1
 
-    .line 797
+    .line 801
     :cond_0
     invoke-virtual {v9, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 794
+    .line 798
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 800
+    .line 804
     .end local v3           #node:Landroid/animation/AnimatorSet$Node;
     :cond_2
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 801
+    .line 805
     .local v10, tmpRoots:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/AnimatorSet$Node;>;"
     :goto_1
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
@@ -289,44 +289,44 @@
 
     if-lez v11, :cond_6
 
-    .line 802
+    .line 806
     invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    .line 803
+    .line 807
     .local v7, numRoots:I
     const/4 v1, 0x0
 
     :goto_2
     if-ge v1, v7, :cond_5
 
-    .line 804
+    .line 808
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/animation/AnimatorSet$Node;
 
-    .line 805
+    .line 809
     .local v8, root:Landroid/animation/AnimatorSet$Node;
     iget-object v11, p0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 806
+    .line 810
     iget-object v11, v8, Landroid/animation/AnimatorSet$Node;->nodeDependents:Ljava/util/ArrayList;
 
     if-eqz v11, :cond_4
 
-    .line 807
+    .line 811
     iget-object v11, v8, Landroid/animation/AnimatorSet$Node;->nodeDependents:Ljava/util/ArrayList;
 
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    .line 808
+    .line 812
     .local v5, numDependents:I
     const/4 v2, 0x0
 
@@ -334,7 +334,7 @@
     :goto_3
     if-ge v2, v5, :cond_4
 
-    .line 809
+    .line 813
     iget-object v11, v8, Landroid/animation/AnimatorSet$Node;->nodeDependents:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -343,13 +343,13 @@
 
     check-cast v3, Landroid/animation/AnimatorSet$Node;
 
-    .line 810
+    .line 814
     .restart local v3       #node:Landroid/animation/AnimatorSet$Node;
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v8}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 811
+    .line 815
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
@@ -358,16 +358,16 @@
 
     if-nez v11, :cond_3
 
-    .line 812
+    .line 816
     invoke-virtual {v10, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 808
+    .line 812
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 803
+    .line 807
     .end local v2           #j:I
     .end local v3           #node:Landroid/animation/AnimatorSet$Node;
     .end local v5           #numDependents:I
@@ -376,25 +376,25 @@
 
     goto :goto_2
 
-    .line 817
+    .line 821
     .end local v8           #root:Landroid/animation/AnimatorSet$Node;
     :cond_5
     invoke-virtual {v9}, Ljava/util/ArrayList;->clear()V
 
-    .line 818
+    .line 822
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 819
+    .line 823
     invoke-virtual {v10}, Ljava/util/ArrayList;->clear()V
 
     goto :goto_1
 
-    .line 821
+    .line 825
     .end local v7           #numRoots:I
     :cond_6
     iput-boolean v13, p0, Landroid/animation/AnimatorSet;->mNeedsSort:Z
 
-    .line 822
+    .line 826
     iget-object v11, p0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
@@ -409,7 +409,7 @@
 
     if-eq v11, v12, :cond_b
 
-    .line 823
+    .line 827
     new-instance v11, Ljava/lang/IllegalStateException;
 
     const-string v12, "Circular dependencies cannot exist in AnimatorSet"
@@ -418,7 +418,7 @@
 
     throw v11
 
-    .line 830
+    .line 834
     .end local v1           #i:I
     .end local v6           #numNodes:I
     .end local v9           #roots:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/AnimatorSet$Node;>;"
@@ -430,7 +430,7 @@
 
     move-result v6
 
-    .line 831
+    .line 835
     .restart local v6       #numNodes:I
     const/4 v1, 0x0
 
@@ -438,7 +438,7 @@
     :goto_4
     if-ge v1, v6, :cond_b
 
-    .line 832
+    .line 836
     iget-object v11, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -447,7 +447,7 @@
 
     check-cast v3, Landroid/animation/AnimatorSet$Node;
 
-    .line 833
+    .line 837
     .restart local v3       #node:Landroid/animation/AnimatorSet$Node;
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
@@ -461,14 +461,14 @@
 
     if-lez v11, :cond_a
 
-    .line 834
+    .line 838
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 835
+    .line 839
     .local v4, numDependencies:I
     const/4 v2, 0x0
 
@@ -476,7 +476,7 @@
     :goto_5
     if-ge v2, v4, :cond_a
 
-    .line 836
+    .line 840
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     invoke-virtual {v11, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -485,20 +485,20 @@
 
     check-cast v0, Landroid/animation/AnimatorSet$Dependency;
 
-    .line 837
+    .line 841
     .local v0, dependency:Landroid/animation/AnimatorSet$Dependency;
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
     if-nez v11, :cond_8
 
-    .line 838
+    .line 842
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v11, v3, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
-    .line 840
+    .line 844
     :cond_8
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
@@ -510,32 +510,32 @@
 
     if-nez v11, :cond_9
 
-    .line 841
+    .line 845
     iget-object v11, v3, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
     iget-object v12, v0, Landroid/animation/AnimatorSet$Dependency;->node:Landroid/animation/AnimatorSet$Node;
 
     invoke-virtual {v11, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 835
+    .line 839
     :cond_9
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 847
+    .line 851
     .end local v0           #dependency:Landroid/animation/AnimatorSet$Dependency;
     .end local v2           #j:I
     .end local v4           #numDependencies:I
     :cond_a
     iput-boolean v13, v3, Landroid/animation/AnimatorSet$Node;->done:Z
 
-    .line 831
+    .line 835
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 850
+    .line 854
     .end local v3           #node:Landroid/animation/AnimatorSet$Node;
     :cond_b
     return-void
@@ -729,59 +729,59 @@
 
     const/4 v14, 0x0
 
-    .line 556
+    .line 560
     invoke-super {p0}, Landroid/animation/Animator;->clone()Landroid/animation/Animator;
 
     move-result-object v0
 
     check-cast v0, Landroid/animation/AnimatorSet;
 
-    .line 565
+    .line 569
     .local v0, anim:Landroid/animation/AnimatorSet;
     const/4 v12, 0x1
 
     iput-boolean v12, v0, Landroid/animation/AnimatorSet;->mNeedsSort:Z
 
-    .line 566
+    .line 570
     iput-boolean v13, v0, Landroid/animation/AnimatorSet;->mTerminated:Z
 
-    .line 567
+    .line 571
     iput-boolean v13, v0, Landroid/animation/AnimatorSet;->mStarted:Z
 
-    .line 568
+    .line 572
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v12, v0, Landroid/animation/AnimatorSet;->mPlayingSet:Ljava/util/ArrayList;
 
-    .line 569
+    .line 573
     new-instance v12, Ljava/util/HashMap;
 
     invoke-direct {v12}, Ljava/util/HashMap;-><init>()V
 
     iput-object v12, v0, Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
 
-    .line 570
+    .line 574
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v12, v0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
-    .line 571
+    .line 575
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v12, v0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
 
-    .line 576
+    .line 580
     new-instance v11, Ljava/util/HashMap;
 
     invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
 
-    .line 577
+    .line 581
     .local v11, nodeCloneMap:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/animation/AnimatorSet$Node;Landroid/animation/AnimatorSet$Node;>;"
     iget-object v12, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
@@ -802,55 +802,55 @@
 
     check-cast v9, Landroid/animation/AnimatorSet$Node;
 
-    .line 578
+    .line 582
     .local v9, node:Landroid/animation/AnimatorSet$Node;
     invoke-virtual {v9}, Landroid/animation/AnimatorSet$Node;->clone()Landroid/animation/AnimatorSet$Node;
 
     move-result-object v10
 
-    .line 579
+    .line 583
     .local v10, nodeClone:Landroid/animation/AnimatorSet$Node;
     invoke-virtual {v11, v9, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 580
+    .line 584
     iget-object v12, v0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 581
+    .line 585
     iget-object v12, v0, Landroid/animation/AnimatorSet;->mNodeMap:Ljava/util/HashMap;
 
     iget-object v13, v10, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
     invoke-virtual {v12, v13, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 583
+    .line 587
     iput-object v14, v10, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
-    .line 584
+    .line 588
     iput-object v14, v10, Landroid/animation/AnimatorSet$Node;->tmpDependencies:Ljava/util/ArrayList;
 
-    .line 585
+    .line 589
     iput-object v14, v10, Landroid/animation/AnimatorSet$Node;->nodeDependents:Ljava/util/ArrayList;
 
-    .line 586
+    .line 590
     iput-object v14, v10, Landroid/animation/AnimatorSet$Node;->nodeDependencies:Ljava/util/ArrayList;
 
-    .line 589
+    .line 593
     iget-object v12, v10, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
     invoke-virtual {v12}, Landroid/animation/Animator;->getListeners()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 590
+    .line 594
     .local v2, cloneListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     if-eqz v2, :cond_0
 
-    .line 591
+    .line 595
     const/4 v8, 0x0
 
-    .line 592
+    .line 596
     .local v8, listenersToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -871,34 +871,34 @@
 
     check-cast v7, Landroid/animation/Animator$AnimatorListener;
 
-    .line 593
+    .line 597
     .local v7, listener:Landroid/animation/Animator$AnimatorListener;
     instance-of v12, v7, Landroid/animation/AnimatorSet$AnimatorSetListener;
 
     if-eqz v12, :cond_1
 
-    .line 594
+    .line 598
     if-nez v8, :cond_2
 
-    .line 595
+    .line 599
     new-instance v8, Ljava/util/ArrayList;
 
     .end local v8           #listenersToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 597
+    .line 601
     .restart local v8       #listenersToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     :cond_2
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 600
+    .line 604
     .end local v7           #listener:Landroid/animation/Animator$AnimatorListener;
     :cond_3
     if-eqz v8, :cond_0
 
-    .line 601
+    .line 605
     invoke-virtual {v8}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -916,13 +916,13 @@
 
     check-cast v7, Landroid/animation/Animator$AnimatorListener;
 
-    .line 602
+    .line 606
     .restart local v7       #listener:Landroid/animation/Animator$AnimatorListener;
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 609
+    .line 613
     .end local v2           #cloneListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     .end local v6           #i$:Ljava/util/Iterator;
     .end local v7           #listener:Landroid/animation/Animator$AnimatorListener;
@@ -949,7 +949,7 @@
 
     check-cast v9, Landroid/animation/AnimatorSet$Node;
 
-    .line 610
+    .line 614
     .restart local v9       #node:Landroid/animation/AnimatorSet$Node;
     invoke-virtual {v11, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -957,13 +957,13 @@
 
     check-cast v10, Landroid/animation/AnimatorSet$Node;
 
-    .line 611
+    .line 615
     .restart local v10       #nodeClone:Landroid/animation/AnimatorSet$Node;
     iget-object v12, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     if-eqz v12, :cond_5
 
-    .line 612
+    .line 616
     iget-object v12, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     invoke-virtual {v12}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -984,7 +984,7 @@
 
     check-cast v4, Landroid/animation/AnimatorSet$Dependency;
 
-    .line 613
+    .line 617
     .local v4, dependency:Landroid/animation/AnimatorSet$Dependency;
     iget-object v12, v4, Landroid/animation/AnimatorSet$Dependency;->node:Landroid/animation/AnimatorSet$Node;
 
@@ -994,7 +994,7 @@
 
     check-cast v3, Landroid/animation/AnimatorSet$Node;
 
-    .line 614
+    .line 618
     .local v3, clonedDependencyNode:Landroid/animation/AnimatorSet$Node;
     new-instance v1, Landroid/animation/AnimatorSet$Dependency;
 
@@ -1002,13 +1002,13 @@
 
     invoke-direct {v1, v3, v12}, Landroid/animation/AnimatorSet$Dependency;-><init>(Landroid/animation/AnimatorSet$Node;I)V
 
-    .line 616
+    .line 620
     .local v1, cloneDependency:Landroid/animation/AnimatorSet$Dependency;
     invoke-virtual {v10, v1}, Landroid/animation/AnimatorSet$Node;->addDependency(Landroid/animation/AnimatorSet$Dependency;)V
 
     goto :goto_2
 
-    .line 621
+    .line 625
     .end local v1           #cloneDependency:Landroid/animation/AnimatorSet$Dependency;
     .end local v3           #clonedDependencyNode:Landroid/animation/AnimatorSet$Node;
     .end local v4           #dependency:Landroid/animation/AnimatorSet$Dependency;
@@ -1676,62 +1676,31 @@
 .end method
 
 .method public setDuration(J)Landroid/animation/AnimatorSet;
-    .locals 4
+    .locals 2
     .parameter "duration"
 
     .prologue
     .line 420
-    const-wide/16 v2, 0x0
+    const-wide/16 v0, 0x0
 
-    cmp-long v2, p1, v2
+    cmp-long v0, p1, v0
 
-    if-gez v2, :cond_0
+    if-gez v0, :cond_0
 
     .line 421
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "duration must be a value of zero or greater"
+    const-string v1, "duration must be a value of zero or greater"
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
-    .line 423
+    .line 424
     :cond_0
-    iget-object v2, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/animation/AnimatorSet$Node;
-
-    .line 426
-    .local v1, node:Landroid/animation/AnimatorSet$Node;
-    iget-object v2, v1, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
-
-    invoke-virtual {v2, p1, p2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
-
-    goto :goto_0
-
-    .line 428
-    .end local v1           #node:Landroid/animation/AnimatorSet$Node;
-    :cond_1
     iput-wide p1, p0, Landroid/animation/AnimatorSet;->mDuration:J
 
-    .line 429
+    .line 425
     return-object p0
 .end method
 
@@ -1857,7 +1826,7 @@
     .locals 3
 
     .prologue
-    .line 441
+    .line 437
     iget-object v2, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1878,7 +1847,7 @@
 
     check-cast v1, Landroid/animation/AnimatorSet$Node;
 
-    .line 442
+    .line 438
     .local v1, node:Landroid/animation/AnimatorSet$Node;
     iget-object v2, v1, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
@@ -1886,7 +1855,7 @@
 
     goto :goto_0
 
-    .line 444
+    .line 440
     .end local v1           #node:Landroid/animation/AnimatorSet$Node;
     :cond_0
     return-void
@@ -1896,7 +1865,7 @@
     .locals 3
 
     .prologue
-    .line 434
+    .line 430
     iget-object v2, p0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1917,7 +1886,7 @@
 
     check-cast v1, Landroid/animation/AnimatorSet$Node;
 
-    .line 435
+    .line 431
     .local v1, node:Landroid/animation/AnimatorSet$Node;
     iget-object v2, v1, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
@@ -1925,7 +1894,7 @@
 
     goto :goto_0
 
-    .line 437
+    .line 433
     .end local v1           #node:Landroid/animation/AnimatorSet$Node;
     :cond_0
     return-void
@@ -1935,7 +1904,7 @@
     .locals 20
 
     .prologue
-    .line 456
+    .line 452
     const/16 v16, 0x0
 
     move/from16 v0, v16
@@ -1944,7 +1913,7 @@
 
     iput-boolean v0, v1, Landroid/animation/AnimatorSet;->mTerminated:Z
 
-    .line 457
+    .line 453
     const/16 v16, 0x1
 
     move/from16 v0, v16
@@ -1953,10 +1922,67 @@
 
     iput-boolean v0, v1, Landroid/animation/AnimatorSet;->mStarted:Z
 
-    .line 461
+    .line 455
+    move-object/from16 v0, p0
+
+    iget-wide v0, v0, Landroid/animation/AnimatorSet;->mDuration:J
+
+    move-wide/from16 v16, v0
+
+    const-wide/16 v18, 0x0
+
+    cmp-long v16, v16, v18
+
+    if-ltz v16, :cond_0
+
+    .line 457
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
+
+    move-object/from16 v16, v0
+
+    invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    .local v6, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v16
+
+    if-eqz v16, :cond_0
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/animation/AnimatorSet$Node;
+
+    .line 460
+    .local v9, node:Landroid/animation/AnimatorSet$Node;
+    iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, p0
+
+    iget-wide v0, v0, Landroid/animation/AnimatorSet;->mDuration:J
+
+    move-wide/from16 v17, v0
+
+    invoke-virtual/range {v16 .. v18}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    goto :goto_0
+
+    .line 465
+    .end local v6           #i$:Ljava/util/Iterator;
+    .end local v9           #node:Landroid/animation/AnimatorSet$Node;
+    :cond_0
     invoke-direct/range {p0 .. p0}, Landroid/animation/AnimatorSet;->sortNodes()V
 
-    .line 463
+    .line 467
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
@@ -1967,15 +1993,15 @@
 
     move-result v13
 
-    .line 464
+    .line 468
     .local v13, numSortedNodes:I
     const/4 v5, 0x0
 
     .local v5, i:I
-    :goto_0
-    if-ge v5, v13, :cond_3
+    :goto_1
+    if-ge v5, v13, :cond_4
 
-    .line 465
+    .line 469
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
@@ -1990,8 +2016,8 @@
 
     check-cast v9, Landroid/animation/AnimatorSet$Node;
 
-    .line 467
-    .local v9, node:Landroid/animation/AnimatorSet$Node;
+    .line 471
+    .restart local v9       #node:Landroid/animation/AnimatorSet$Node;
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
     move-object/from16 v16, v0
@@ -2000,35 +2026,35 @@
 
     move-result-object v14
 
-    .line 468
+    .line 472
     .local v14, oldListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
-    if-eqz v14, :cond_2
+    if-eqz v14, :cond_3
 
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
     move-result v16
 
-    if-lez v16, :cond_2
+    if-lez v16, :cond_3
 
-    .line 469
+    .line 473
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v14}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 472
+    .line 476
     .local v3, clonedListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    .local v6, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_1
+    .restart local v6       #i$:Ljava/util/Iterator;
+    :cond_1
+    :goto_2
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v16
 
-    if-eqz v16, :cond_2
+    if-eqz v16, :cond_3
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2036,22 +2062,22 @@
 
     check-cast v8, Landroid/animation/Animator$AnimatorListener;
 
-    .line 473
+    .line 477
     .local v8, listener:Landroid/animation/Animator$AnimatorListener;
     instance-of v0, v8, Landroid/animation/AnimatorSet$DependencyListener;
 
     move/from16 v16, v0
 
-    if-nez v16, :cond_1
+    if-nez v16, :cond_2
 
     instance-of v0, v8, Landroid/animation/AnimatorSet$AnimatorSetListener;
 
     move/from16 v16, v0
 
-    if-eqz v16, :cond_0
+    if-eqz v16, :cond_1
 
-    .line 475
-    :cond_1
+    .line 479
+    :cond_2
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
     move-object/from16 v16, v0
@@ -2060,33 +2086,33 @@
 
     invoke-virtual {v0, v8}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 464
+    .line 468
     .end local v3           #clonedListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     .end local v6           #i$:Ljava/util/Iterator;
     .end local v8           #listener:Landroid/animation/Animator$AnimatorListener;
-    :cond_2
+    :cond_3
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 485
+    .line 489
     .end local v9           #node:Landroid/animation/AnimatorSet$Node;
     .end local v14           #oldListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
-    :cond_3
+    :cond_4
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 486
+    .line 490
     .local v10, nodesToStart:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/AnimatorSet$Node;>;"
     const/4 v5, 0x0
 
-    :goto_2
-    if-ge v5, v13, :cond_8
+    :goto_3
+    if-ge v5, v13, :cond_9
 
-    .line 487
+    .line 491
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mSortedNodes:Ljava/util/ArrayList;
@@ -2101,7 +2127,7 @@
 
     check-cast v9, Landroid/animation/AnimatorSet$Node;
 
-    .line 488
+    .line 492
     .restart local v9       #node:Landroid/animation/AnimatorSet$Node;
     move-object/from16 v0, p0
 
@@ -2109,9 +2135,9 @@
 
     move-object/from16 v16, v0
 
-    if-nez v16, :cond_4
+    if-nez v16, :cond_5
 
-    .line 489
+    .line 493
     new-instance v16, Landroid/animation/AnimatorSet$AnimatorSetListener;
 
     move-object/from16 v0, v16
@@ -2128,13 +2154,13 @@
 
     iput-object v0, v1, Landroid/animation/AnimatorSet;->mSetListener:Landroid/animation/AnimatorSet$AnimatorSetListener;
 
-    .line 491
-    :cond_4
+    .line 495
+    :cond_5
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
-    if-eqz v16, :cond_5
+    if-eqz v16, :cond_6
 
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
@@ -2144,14 +2170,14 @@
 
     move-result v16
 
-    if-nez v16, :cond_6
+    if-nez v16, :cond_7
 
-    .line 492
-    :cond_5
+    .line 496
+    :cond_6
     invoke-virtual {v10, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 502
-    :goto_3
+    .line 506
+    :goto_4
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
     move-object/from16 v16, v0
@@ -2164,13 +2190,13 @@
 
     invoke-virtual/range {v16 .. v17}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 486
+    .line 490
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 494
-    :cond_6
+    .line 498
+    :cond_7
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -2179,15 +2205,15 @@
 
     move-result v11
 
-    .line 495
+    .line 499
     .local v11, numDependencies:I
     const/4 v7, 0x0
 
     .local v7, j:I
-    :goto_4
-    if-ge v7, v11, :cond_7
+    :goto_5
+    if-ge v7, v11, :cond_8
 
-    .line 496
+    .line 500
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -2200,7 +2226,7 @@
 
     check-cast v4, Landroid/animation/AnimatorSet$Dependency;
 
-    .line 497
+    .line 501
     .local v4, dependency:Landroid/animation/AnimatorSet$Dependency;
     iget-object v0, v4, Landroid/animation/AnimatorSet$Dependency;->node:Landroid/animation/AnimatorSet$Node;
 
@@ -2228,14 +2254,14 @@
 
     invoke-virtual/range {v16 .. v17}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 495
+    .line 499
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
-    .line 500
+    .line 504
     .end local v4           #dependency:Landroid/animation/AnimatorSet$Dependency;
-    :cond_7
+    :cond_8
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->dependencies:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
@@ -2250,13 +2276,13 @@
 
     iput-object v0, v9, Landroid/animation/AnimatorSet$Node;->tmpDependencies:Ljava/util/ArrayList;
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 505
+    .line 509
     .end local v7           #j:I
     .end local v9           #node:Landroid/animation/AnimatorSet$Node;
     .end local v11           #numDependencies:I
-    :cond_8
+    :cond_9
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Landroid/animation/AnimatorSet;->mStartDelay:J
@@ -2267,20 +2293,20 @@
 
     cmp-long v16, v16, v18
 
-    if-gtz v16, :cond_9
+    if-gtz v16, :cond_a
 
-    .line 506
+    .line 510
     invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
     .restart local v6       #i$:Ljava/util/Iterator;
-    :goto_5
+    :goto_6
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v16
 
-    if-eqz v16, :cond_a
+    if-eqz v16, :cond_b
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2288,7 +2314,7 @@
 
     check-cast v9, Landroid/animation/AnimatorSet$Node;
 
-    .line 507
+    .line 511
     .restart local v9       #node:Landroid/animation/AnimatorSet$Node;
     iget-object v0, v9, Landroid/animation/AnimatorSet$Node;->animation:Landroid/animation/Animator;
 
@@ -2296,7 +2322,7 @@
 
     invoke-virtual/range {v16 .. v16}, Landroid/animation/Animator;->start()V
 
-    .line 508
+    .line 512
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mPlayingSet:Ljava/util/ArrayList;
@@ -2309,12 +2335,12 @@
 
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_5
+    goto :goto_6
 
-    .line 511
+    .line 515
     .end local v6           #i$:Ljava/util/Iterator;
     .end local v9           #node:Landroid/animation/AnimatorSet$Node;
-    :cond_9
+    :cond_a
     const/16 v16, 0x2
 
     move/from16 v0, v16
@@ -2335,7 +2361,7 @@
 
     iput-object v0, v1, Landroid/animation/AnimatorSet;->mDelayAnim:Landroid/animation/ValueAnimator;
 
-    .line 512
+    .line 516
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mDelayAnim:Landroid/animation/ValueAnimator;
@@ -2350,7 +2376,7 @@
 
     invoke-virtual/range {v16 .. v18}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 513
+    .line 517
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mDelayAnim:Landroid/animation/ValueAnimator;
@@ -2367,7 +2393,7 @@
 
     invoke-virtual/range {v16 .. v17}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 529
+    .line 533
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mDelayAnim:Landroid/animation/ValueAnimator;
@@ -2376,17 +2402,17 @@
 
     invoke-virtual/range {v16 .. v16}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 531
-    :cond_a
+    .line 535
+    :cond_b
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
-    if-eqz v16, :cond_b
+    if-eqz v16, :cond_c
 
-    .line 532
+    .line 536
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
@@ -2399,20 +2425,20 @@
 
     check-cast v15, Ljava/util/ArrayList;
 
-    .line 534
+    .line 538
     .local v15, tmpListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v12
 
-    .line 535
+    .line 539
     .local v12, numListeners:I
     const/4 v5, 0x0
 
-    :goto_6
-    if-ge v5, v12, :cond_b
+    :goto_7
+    if-ge v5, v12, :cond_c
 
-    .line 536
+    .line 540
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
@@ -2425,15 +2451,15 @@
 
     invoke-interface {v0, v1}, Landroid/animation/Animator$AnimatorListener;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 535
+    .line 539
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_6
+    goto :goto_7
 
-    .line 539
+    .line 543
     .end local v12           #numListeners:I
     .end local v15           #tmpListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
-    :cond_b
+    :cond_c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/AnimatorSet;->mNodes:Ljava/util/ArrayList;
@@ -2444,7 +2470,7 @@
 
     move-result v16
 
-    if-nez v16, :cond_c
+    if-nez v16, :cond_d
 
     move-object/from16 v0, p0
 
@@ -2456,9 +2482,9 @@
 
     cmp-long v16, v16, v18
 
-    if-nez v16, :cond_c
+    if-nez v16, :cond_d
 
-    .line 542
+    .line 546
     const/16 v16, 0x0
 
     move/from16 v0, v16
@@ -2467,16 +2493,16 @@
 
     iput-boolean v0, v1, Landroid/animation/AnimatorSet;->mStarted:Z
 
-    .line 543
+    .line 547
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
 
     move-object/from16 v16, v0
 
-    if-eqz v16, :cond_c
+    if-eqz v16, :cond_d
 
-    .line 544
+    .line 548
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/animation/Animator;->mListeners:Ljava/util/ArrayList;
@@ -2489,20 +2515,20 @@
 
     check-cast v15, Ljava/util/ArrayList;
 
-    .line 546
+    .line 550
     .restart local v15       #tmpListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
     invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v12
 
-    .line 547
+    .line 551
     .restart local v12       #numListeners:I
     const/4 v5, 0x0
 
-    :goto_7
-    if-ge v5, v12, :cond_c
+    :goto_8
+    if-ge v5, v12, :cond_d
 
-    .line 548
+    .line 552
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v16
@@ -2515,18 +2541,18 @@
 
     invoke-interface {v0, v1}, Landroid/animation/Animator$AnimatorListener;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 547
+    .line 551
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
-    .line 552
+    .line 556
     .end local v12           #numListeners:I
     .end local v15           #tmpListeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator$AnimatorListener;>;"
-    :cond_c
+    :cond_d
     return-void
 
-    .line 511
+    .line 515
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t

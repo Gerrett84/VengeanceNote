@@ -179,7 +179,7 @@
 
     aput-object v1, v0, v8
 
-    const-string v1, "l"
+    const-string/jumbo v1, "l"
 
     aput-object v1, v0, v9
 
@@ -210,7 +210,7 @@
 
     aput-object v1, v0, v10
 
-    const-string v1, "light"
+    const-string/jumbo v1, "light"
 
     aput-object v1, v0, v11
 
@@ -2489,7 +2489,7 @@
     .line 1313
     const/4 v5, 0x0
 
-    const-string v8, "kwl"
+    const-string/jumbo v8, "kwl"
 
     const/4 v9, 0x2
 
@@ -7148,7 +7148,7 @@
 
     invoke-static {v5, v0, v1}, Landroid/os/BatteryStats;->formatTime(Ljava/lang/StringBuilder;J)V
 
-    const-string v6, "krn"
+    const-string/jumbo v6, "krn"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

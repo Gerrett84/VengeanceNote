@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final android_config_alwaysUseCdmaRssi:I = 0x6090012
+
 .field public static final android_config_automatic_brightness_available:I = 0x6090007
 
 .field public static final android_config_built_in_sip_phone:I = 0x609000a
@@ -23,11 +25,15 @@
 
 .field public static final android_config_intrusiveNotificationLed:I = 0x609000b
 
+.field public static final android_config_useMasterVolume:I = 0x6090011
+
 .field public static final android_config_use_strict_phone_number_comparation:I = 0x609000c
 
 .field public static final android_config_voice_capable:I = 0x6090009
 
 .field public static final android_config_wimaxEnabled:I = 0x6090008
+
+.field public static final android_preferences_prefer_dual_pane:I = 0x6090013
 
 .field public static final config_enableUsbModeSelection:I = 0x6090000
 

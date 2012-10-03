@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 43
+    .line 44
     iput-object p1, p0, Lcom/android/server/ShutdownActivity$1;->this$0:Lcom/android/server/ShutdownActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 45
+    .line 46
     iget-object v0, p0, Lcom/android/server/ShutdownActivity$1;->this$0:Lcom/android/server/ShutdownActivity;
 
     #getter for: Lcom/android/server/ShutdownActivity;->mReboot:Z
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/android/server/ShutdownActivity$1;->this$0:Lcom/android/server/ShutdownActivity;
 
     const/4 v1, 0x0
@@ -63,13 +63,13 @@
 
     move-result v2
 
-    invoke-static {v0, v1, v2}, Lcom/android/internal/app/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/pm/ShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 50
+    .line 51
     :goto_0
     return-void
 
-    .line 48
+    .line 49
     :cond_0
     iget-object v0, p0, Lcom/android/server/ShutdownActivity$1;->this$0:Lcom/android/server/ShutdownActivity;
 
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
+    invoke-static {v0, v1}, Lcom/android/server/pm/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
 
     goto :goto_0
 .end method

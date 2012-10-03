@@ -247,6 +247,14 @@
     .end annotation
 .end method
 
+.method public abstract switchToNextInputMethod(Landroid/os/IBinder;Z)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract updateStatusIcon(Landroid/os/IBinder;Ljava/lang/String;I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

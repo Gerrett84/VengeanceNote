@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;
-.super Lcom/android/internal/view/BaseInputHandler;
+.super Ljava/lang/Object;
 .source "MiuiPhoneWindowManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->showBootMessage(Ljava/lang/CharSequence;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,224 +17,283 @@
 .end annotation
 
 
-# static fields
-.field static final TYPE_LAYER_MULTIPLIER:I = 0x2710
-
-.field static final TYPE_LAYER_OFFSET:I = 0x3e8
-
-
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
+.field final synthetic val$msg:Ljava/lang/CharSequence;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Ljava/lang/CharSequence;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 540
+    .line 838
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    invoke-direct {p0}, Lcom/android/internal/view/BaseInputHandler;-><init>()V
+    iput-object p2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->val$msg:Ljava/lang/CharSequence;
+
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMotion(Landroid/view/MotionEvent;Landroid/view/InputQueue$FinishedCallback;)V
-    .locals 5
-    .parameter "event"
-    .parameter "finishedCallback"
+.method public run()V
+    .locals 8
 
     .prologue
-    .line 553
-    const/4 v0, 0x0
-
-    .line 554
-    .local v0, handled:Z
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result v2
-
-    float-to-int v2, v2
-
-    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDownX:I
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$202(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;I)I
-
-    .line 555
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v2
-
-    float-to-int v2, v2
-
-    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDownY:I
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$302(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;I)I
-
-    .line 558
-    :try_start_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    move-result v1
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-nez v1, :cond_0
-
-    .line 579
-    invoke-virtual {p2, v0}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
-
-    .line 581
-    :goto_0
-    return-void
-
-    .line 560
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 561
-    :try_start_1
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    iget-object v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
-
-    monitor-enter v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 562
-    :try_start_2
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v1
-
-    packed-switch v1, :pswitch_data_0
-
-    .line 577
-    :cond_1
-    :goto_1
-    monitor-exit v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 579
-    invoke-virtual {p2, v0}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
-
-    goto :goto_0
-
-    .line 565
-    :pswitch_0
-    :try_start_3
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    const/4 v3, 0x1
-
-    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mIsTouchDown:Z
-    invoke-static {v1, v3}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$402(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Z)Z
-
-    .line 566
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShowMagnifier:Z
-    invoke-static {v1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$500(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 567
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->getMagnifier()Lcom/android/internal/policy/impl/MagnifierPopupWindow;
-
-    move-result-object v1
-
-    iget-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
-
-    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDownX:I
-    invoke-static {v3}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$200(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)I
-
-    move-result v3
-
+    .line 840
     iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDownY:I
-    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$300(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)I
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
 
-    move-result v4
+    move-result-object v4
 
-    invoke-virtual {v1, v3, v4}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->showMagnifier(II)V
+    if-nez v4, :cond_0
 
-    goto :goto_1
+    .line 841
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    .line 577
-    :catchall_0
-    move-exception v1
+    new-instance v5, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6$1;
 
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    iget-object v6, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    :try_start_4
-    throw v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    iget-object v6, v6, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
-    .line 579
-    :catchall_1
-    move-exception v1
+    const v7, 0x10300f0
 
-    invoke-virtual {p2, v0}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
+    invoke-direct {v5, p0, v6, v7}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6$1;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;Landroid/content/Context;I)V
 
-    throw v1
+    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4, v5}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$702(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 572
-    :pswitch_1
-    :try_start_5
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    .line 865
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->getMagnifier()Lcom/android/internal/policy/impl/MagnifierPopupWindow;
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/MagnifierPopupWindow;->hide()V
+    .line 866
+    .local v1, layoutInflater:Landroid/view/LayoutInflater;
+    const v4, 0x603002e
 
-    .line 573
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    const/4 v5, 0x0
 
-    const/4 v3, 0x0
+    invoke-virtual {v1, v4, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mIsTouchDown:Z
-    invoke-static {v1, v3}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$402(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Z)Z
+    move-result-object v3
 
-    .line 574
-    iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+    .line 867
+    .local v3, view:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
-    const/4 v3, 0x0
+    const v4, 0x60b0021
 
-    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShowMagnifier:Z
-    invoke-static {v1, v3}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$502(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Z)Z
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    goto :goto_1
+    move-result-object v4
 
-    .line 562
-    nop
+    check-cast v4, Landroid/widget/TextView;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMsgText:Landroid/widget/TextView;
+    invoke-static {v5, v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$802(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/widget/TextView;)Landroid/widget/TextView;
+
+    .line 868
+    const v4, 0x60b0022
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    .line 869
+    .local v0, animationView:Landroid/widget/ImageView;
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
+
+    .line 871
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    const/16 v5, 0x7e5
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setType(I)V
+
+    .line 873
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    const/16 v5, 0x102
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->addFlags(I)V
+
+    .line 876
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    const/high16 v5, 0x3f80
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setDimAmount(F)V
+
+    .line 877
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v2
+
+    .line 878
+    .local v2, lp:Landroid/view/WindowManager$LayoutParams;
+    const/4 v4, 0x5
+
+    iput v4, v2, Landroid/view/WindowManager$LayoutParams;->screenOrientation:I
+
+    .line 879
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 880
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    const v5, 0x6020034
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
+
+    .line 881
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, v5}, Landroid/app/Dialog;->setCancelable(Z)V
+
+    .line 882
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMiuiBootMsgDialog:Landroid/app/Dialog;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$700(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/app/Dialog;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/app/Dialog;->show()V
+
+    .line 884
+    iget-object v5, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/graphics/drawable/AnimationDrawable;
+
+    #setter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mAnimationDrawable:Landroid/graphics/drawable/AnimationDrawable;
+    invoke-static {v5, v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$902(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/graphics/drawable/AnimationDrawable;)Landroid/graphics/drawable/AnimationDrawable;
+
+    .line 885
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mAnimationDrawable:Landroid/graphics/drawable/AnimationDrawable;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$900(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/graphics/drawable/AnimationDrawable;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/graphics/drawable/AnimationDrawable;->start()V
+
+    .line 888
+    .end local v0           #animationView:Landroid/widget/ImageView;
+    .end local v1           #layoutInflater:Landroid/view/LayoutInflater;
+    .end local v2           #lp:Landroid/view/WindowManager$LayoutParams;
+    .end local v3           #view:Landroid/view/View;
+    :cond_0
+    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
+
+    #getter for: Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMsgText:Landroid/widget/TextView;
+    invoke-static {v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->access$800(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)Landroid/widget/TextView;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;->val$msg:Ljava/lang/CharSequence;
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 889
+    return-void
 .end method

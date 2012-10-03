@@ -41,34 +41,34 @@
     .parameter "message"
 
     .prologue
-    .line 79
+    .line 83
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 50
     const-string v0, ""
 
     iput-object v0, p0, Landroid/drm/DrmEvent;->mMessage:Ljava/lang/String;
 
-    .line 48
+    .line 52
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/drm/DrmEvent;->mAttributes:Ljava/util/HashMap;
 
-    .line 80
+    .line 84
     iput p1, p0, Landroid/drm/DrmEvent;->mUniqueId:I
 
-    .line 81
+    .line 85
     iput p2, p0, Landroid/drm/DrmEvent;->mType:I
 
-    .line 83
+    .line 87
     if-eqz p3, :cond_0
 
-    .line 84
+    .line 88
     iput-object p3, p0, Landroid/drm/DrmEvent;->mMessage:Ljava/lang/String;
 
-    .line 86
+    .line 90
     :cond_0
     return-void
 .end method
@@ -92,42 +92,42 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 63
     .local p4, attributes:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 50
     const-string v0, ""
 
     iput-object v0, p0, Landroid/drm/DrmEvent;->mMessage:Ljava/lang/String;
 
-    .line 48
+    .line 52
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/drm/DrmEvent;->mAttributes:Ljava/util/HashMap;
 
-    .line 60
+    .line 64
     iput p1, p0, Landroid/drm/DrmEvent;->mUniqueId:I
 
-    .line 61
+    .line 65
     iput p2, p0, Landroid/drm/DrmEvent;->mType:I
 
-    .line 63
+    .line 67
     if-eqz p3, :cond_0
 
-    .line 64
+    .line 68
     iput-object p3, p0, Landroid/drm/DrmEvent;->mMessage:Ljava/lang/String;
 
-    .line 67
+    .line 71
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 68
+    .line 72
     iput-object p4, p0, Landroid/drm/DrmEvent;->mAttributes:Ljava/util/HashMap;
 
-    .line 70
+    .line 74
     :cond_1
     return-void
 .end method
@@ -139,7 +139,7 @@
     .parameter "key"
 
     .prologue
-    .line 122
+    .line 126
     iget-object v0, p0, Landroid/drm/DrmEvent;->mAttributes:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -153,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 116
     iget-object v0, p0, Landroid/drm/DrmEvent;->mMessage:Ljava/lang/String;
 
     return-object v0
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 107
     iget v0, p0, Landroid/drm/DrmEvent;->mType:I
 
     return v0
@@ -173,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 98
     iget v0, p0, Landroid/drm/DrmEvent;->mUniqueId:I
 
     return v0

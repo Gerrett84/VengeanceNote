@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 275
+    .line 284
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -31,20 +31,20 @@
     .locals 3
 
     .prologue
-    .line 277
+    .line 286
     const-string v2, "alarm"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 278
+    .line 287
     .local v0, b:Landroid/os/IBinder;
     invoke-static {v0}, Landroid/app/IAlarmManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/IAlarmManager;
 
     move-result-object v1
 
-    .line 279
+    .line 288
     .local v1, service:Landroid/app/IAlarmManager;
     new-instance v2, Landroid/app/AlarmManager;
 

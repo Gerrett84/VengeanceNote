@@ -90,10 +90,6 @@
 
 .field public mScanPath:Ljava/lang/String;
 
-.field public mSetEnabled:I
-
-.field public mSetStopped:Z
-
 .field public mSharedUserId:Ljava/lang/String;
 
 .field public mSharedUserLabel:I
@@ -185,6 +181,17 @@
     .end annotation
 .end field
 
+.field public final requestedPermissionsRequired:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public final services:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -231,147 +238,368 @@
 
     const/4 v1, 0x0
 
-    .line 3041
+    .line 3196
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2956
+    .line 3110
     new-instance v0, Landroid/content/pm/ApplicationInfo;
 
     invoke-direct {v0}, Landroid/content/pm/ApplicationInfo;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 2958
+    .line 3112
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->permissions:Ljava/util/ArrayList;
 
-    .line 2959
+    .line 3113
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->permissionGroups:Ljava/util/ArrayList;
 
-    .line 2960
+    .line 3114
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->activities:Ljava/util/ArrayList;
 
-    .line 2961
+    .line 3115
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->receivers:Ljava/util/ArrayList;
 
-    .line 2962
+    .line 3116
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->providers:Ljava/util/ArrayList;
 
-    .line 2963
+    .line 3117
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->services:Ljava/util/ArrayList;
 
-    .line 2964
+    .line 3118
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->instrumentation:Ljava/util/ArrayList;
 
-    .line 2966
+    .line 3120
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->requestedPermissions:Ljava/util/ArrayList;
 
-    .line 2970
+    .line 3121
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->requestedPermissionsRequired:Ljava/util/ArrayList;
+
+    .line 3125
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->usesLibraries:Ljava/util/ArrayList;
 
-    .line 2971
+    .line 3126
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->usesOptionalLibraries:Ljava/util/ArrayList;
 
-    .line 2972
+    .line 3127
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->usesLibraryFiles:[Ljava/lang/String;
 
-    .line 2974
+    .line 3129
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->mOriginalPackages:Ljava/util/ArrayList;
 
-    .line 2975
+    .line 3130
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->mRealPackage:Ljava/lang/String;
 
-    .line 2976
+    .line 3131
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->mAdoptPermissions:Ljava/util/ArrayList;
 
-    .line 2979
+    .line 3134
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->mAppMetaData:Landroid/os/Bundle;
 
-    .line 3001
+    .line 3156
     iput v1, p0, Landroid/content/pm/PackageParser$Package;->mPreferredOrder:I
 
-    .line 3011
-    iput v1, p0, Landroid/content/pm/PackageParser$Package;->mSetEnabled:I
-
-    .line 3014
-    iput-boolean v1, p0, Landroid/content/pm/PackageParser$Package;->mSetStopped:Z
-
-    .line 3025
+    .line 3180
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Package;->configPreferences:Ljava/util/ArrayList;
 
-    .line 3031
+    .line 3186
     iput-object v2, p0, Landroid/content/pm/PackageParser$Package;->reqFeatures:Ljava/util/ArrayList;
 
-    .line 3042
+    .line 3197
     iput-object p1, p0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    .line 3043
+    .line 3198
     iget-object v0, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iput-object p1, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    .line 3044
+    .line 3199
     iget-object v0, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     const/4 v1, -0x1
 
     iput v1, v0, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    .line 3045
+    .line 3200
     return-void
 .end method
 
 
 # virtual methods
+.method public hasComponentClassName(Ljava/lang/String;)Z
+    .locals 3
+    .parameter "name"
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 3229
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->activities:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v0, v1, -0x1
+
+    .local v0, i:I
+    :goto_0
+    if-ltz v0, :cond_1
+
+    .line 3230
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->activities:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/PackageParser$Activity;
+
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    move v1, v2
+
+    .line 3254
+    :goto_1
+    return v1
+
+    .line 3229
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    .line 3234
+    :cond_1
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->receivers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v0, v1, -0x1
+
+    :goto_2
+    if-ltz v0, :cond_3
+
+    .line 3235
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->receivers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/PackageParser$Activity;
+
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    move v1, v2
+
+    .line 3236
+    goto :goto_1
+
+    .line 3234
+    :cond_2
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_2
+
+    .line 3239
+    :cond_3
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->providers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v0, v1, -0x1
+
+    :goto_3
+    if-ltz v0, :cond_5
+
+    .line 3240
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->providers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/PackageParser$Provider;
+
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    move v1, v2
+
+    .line 3241
+    goto :goto_1
+
+    .line 3239
+    :cond_4
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_3
+
+    .line 3244
+    :cond_5
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->services:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v0, v1, -0x1
+
+    :goto_4
+    if-ltz v0, :cond_7
+
+    .line 3245
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->services:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/PackageParser$Service;
+
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    move v1, v2
+
+    .line 3246
+    goto :goto_1
+
+    .line 3244
+    :cond_6
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_4
+
+    .line 3249
+    :cond_7
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->instrumentation:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v0, v1, -0x1
+
+    :goto_5
+    if-ltz v0, :cond_9
+
+    .line 3250
+    iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->instrumentation:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/pm/PackageParser$Instrumentation;
+
+    iget-object v1, v1, Landroid/content/pm/PackageParser$Component;->className:Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    move v1, v2
+
+    .line 3251
+    goto :goto_1
+
+    .line 3249
+    :cond_8
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_5
+
+    .line 3254
+    :cond_9
+    const/4 v1, 0x0
+
+    goto/16 :goto_1
+.end method
+
 .method public setPackageName(Ljava/lang/String;)V
     .locals 2
     .parameter "newName"
 
     .prologue
-    .line 3048
+    .line 3203
     iput-object p1, p0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    .line 3049
+    .line 3204
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iput-object p1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    .line 3050
+    .line 3205
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->permissions:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -384,7 +612,7 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 3051
+    .line 3206
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->permissions:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -395,12 +623,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$Permission;->setPackageName(Ljava/lang/String;)V
 
-    .line 3050
+    .line 3205
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 3053
+    .line 3208
     :cond_0
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->permissionGroups:Ljava/util/ArrayList;
 
@@ -413,7 +641,7 @@
     :goto_1
     if-ltz v0, :cond_1
 
-    .line 3054
+    .line 3209
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->permissionGroups:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -424,12 +652,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$PermissionGroup;->setPackageName(Ljava/lang/String;)V
 
-    .line 3053
+    .line 3208
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 3056
+    .line 3211
     :cond_1
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->activities:Ljava/util/ArrayList;
 
@@ -442,7 +670,7 @@
     :goto_2
     if-ltz v0, :cond_2
 
-    .line 3057
+    .line 3212
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->activities:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -453,12 +681,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$Activity;->setPackageName(Ljava/lang/String;)V
 
-    .line 3056
+    .line 3211
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_2
 
-    .line 3059
+    .line 3214
     :cond_2
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->receivers:Ljava/util/ArrayList;
 
@@ -471,7 +699,7 @@
     :goto_3
     if-ltz v0, :cond_3
 
-    .line 3060
+    .line 3215
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->receivers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -482,12 +710,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$Activity;->setPackageName(Ljava/lang/String;)V
 
-    .line 3059
+    .line 3214
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_3
 
-    .line 3062
+    .line 3217
     :cond_3
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->providers:Ljava/util/ArrayList;
 
@@ -500,7 +728,7 @@
     :goto_4
     if-ltz v0, :cond_4
 
-    .line 3063
+    .line 3218
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->providers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -511,12 +739,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$Provider;->setPackageName(Ljava/lang/String;)V
 
-    .line 3062
+    .line 3217
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_4
 
-    .line 3065
+    .line 3220
     :cond_4
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->services:Ljava/util/ArrayList;
 
@@ -529,7 +757,7 @@
     :goto_5
     if-ltz v0, :cond_5
 
-    .line 3066
+    .line 3221
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->services:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -540,12 +768,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$Service;->setPackageName(Ljava/lang/String;)V
 
-    .line 3065
+    .line 3220
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_5
 
-    .line 3068
+    .line 3223
     :cond_5
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->instrumentation:Ljava/util/ArrayList;
 
@@ -558,7 +786,7 @@
     :goto_6
     if-ltz v0, :cond_6
 
-    .line 3069
+    .line 3224
     iget-object v1, p0, Landroid/content/pm/PackageParser$Package;->instrumentation:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -569,12 +797,12 @@
 
     invoke-virtual {v1, p1}, Landroid/content/pm/PackageParser$Instrumentation;->setPackageName(Ljava/lang/String;)V
 
-    .line 3068
+    .line 3223
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_6
 
-    .line 3071
+    .line 3226
     :cond_6
     return-void
 .end method
@@ -583,7 +811,7 @@
     .locals 2
 
     .prologue
-    .line 3074
+    .line 3258
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

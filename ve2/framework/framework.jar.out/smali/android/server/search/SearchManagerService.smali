@@ -97,7 +97,7 @@
 .end method
 
 .method private declared-synchronized getSearchables()Landroid/server/search/Searchables;
-    .locals 3
+    .locals 4
 
     .prologue
     .line 70
@@ -122,9 +122,11 @@
 
     iget-object v1, p0, Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->register(Landroid/content/Context;Z)V
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
     .line 73
     new-instance v0, Landroid/server/search/Searchables;

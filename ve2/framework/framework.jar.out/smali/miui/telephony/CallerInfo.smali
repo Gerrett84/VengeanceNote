@@ -290,7 +290,7 @@
 
     .line 117
     :cond_3
-    const-string v3, "label"
+    const-string/jumbo v3, "label"
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

@@ -122,7 +122,7 @@
 
     sput-object v0, Landroid/text/format/Time;->DAYS_PER_MONTH:[I
 
-    .line 659
+    .line 662
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -150,7 +150,7 @@
         0x1ft 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 659
+    .line 662
     :array_1
     .array-data 0x4
         0xfdt 0xfft 0xfft 0xfft
@@ -287,7 +287,7 @@
     .locals 1
 
     .prologue
-    .line 497
+    .line 500
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v0
@@ -305,12 +305,12 @@
     .parameter "gmtoff"
 
     .prologue
-    .line 753
+    .line 756
     const-wide/16 v4, 0x3e8
 
     mul-long v2, p2, v4
 
-    .line 754
+    .line 757
     .local v2, offsetMillis:J
     add-long v4, p0, v2
 
@@ -318,7 +318,7 @@
 
     div-long v0, v4, v6
 
-    .line 755
+    .line 758
     .local v0, julianDay:J
     long-to-int v4, v0
 
@@ -334,7 +334,7 @@
     .parameter "week"
 
     .prologue
-    .line 831
+    .line 834
     const v0, 0x253d89
 
     mul-int/lit8 v1, p0, 0x7
@@ -350,23 +350,23 @@
     .parameter "firstDayOfWeek"
 
     .prologue
-    .line 812
+    .line 815
     rsub-int/lit8 v0, p1, 0x4
 
-    .line 813
+    .line 816
     .local v0, diff:I
     if-gez v0, :cond_0
 
-    .line 814
+    .line 817
     add-int/lit8 v0, v0, 0x7
 
-    .line 816
+    .line 819
     :cond_0
     const v2, 0x253d8c
 
     sub-int v1, v2, v0
 
-    .line 817
+    .line 820
     .local v1, refDay:I
     sub-int v2, p0, v1
 
@@ -382,12 +382,12 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 732
+    .line 735
     invoke-virtual {p0, v2}, Landroid/text/format/Time;->toMillis(Z)J
 
     move-result-wide v0
 
-    .line 733
+    .line 736
     .local v0, millis:J
     const-wide/16 v3, 0x0
 
@@ -424,7 +424,7 @@
     .parameter "that"
 
     .prologue
-    .line 651
+    .line 654
     invoke-static {p0, p1}, Landroid/text/format/Time;->compare(Landroid/text/format/Time;Landroid/text/format/Time;)I
 
     move-result v0
@@ -447,7 +447,7 @@
     .parameter "that"
 
     .prologue
-    .line 639
+    .line 642
     invoke-static {p0, p1}, Landroid/text/format/Time;->compare(Landroid/text/format/Time;Landroid/text/format/Time;)I
 
     move-result v0
@@ -575,7 +575,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x1040041
+    const v5, 0x1040045
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -585,7 +585,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x1040042
+    const v5, 0x1040046
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -595,7 +595,7 @@
 
     const/4 v4, 0x2
 
-    const v5, 0x1040043
+    const v5, 0x1040047
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -605,7 +605,7 @@
 
     const/4 v4, 0x3
 
-    const v5, 0x1040044
+    const v5, 0x1040048
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -615,7 +615,7 @@
 
     const/4 v4, 0x4
 
-    const v5, 0x1040045
+    const v5, 0x1040049
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -625,7 +625,7 @@
 
     const/4 v4, 0x5
 
-    const v5, 0x1040046
+    const v5, 0x104004a
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -635,7 +635,7 @@
 
     const/4 v4, 0x6
 
-    const v5, 0x1040047
+    const v5, 0x104004b
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -645,7 +645,7 @@
 
     const/4 v4, 0x7
 
-    const v5, 0x1040048
+    const v5, 0x104004c
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -655,7 +655,7 @@
 
     const/16 v4, 0x8
 
-    const v5, 0x1040049
+    const v5, 0x104004d
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -665,7 +665,7 @@
 
     const/16 v4, 0x9
 
-    const v5, 0x104004a
+    const v5, 0x104004e
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -675,7 +675,7 @@
 
     const/16 v4, 0xa
 
-    const v5, 0x104004b
+    const v5, 0x104004f
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -685,7 +685,7 @@
 
     const/16 v4, 0xb
 
-    const v5, 0x104004c
+    const v5, 0x1040050
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -702,7 +702,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x1040035
+    const v5, 0x1040039
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -712,7 +712,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x1040036
+    const v5, 0x104003a
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -722,7 +722,7 @@
 
     const/4 v4, 0x2
 
-    const v5, 0x1040037
+    const v5, 0x104003b
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -732,7 +732,7 @@
 
     const/4 v4, 0x3
 
-    const v5, 0x1040038
+    const v5, 0x104003c
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -742,7 +742,7 @@
 
     const/4 v4, 0x4
 
-    const v5, 0x1040039
+    const v5, 0x104003d
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -752,7 +752,7 @@
 
     const/4 v4, 0x5
 
-    const v5, 0x104003a
+    const v5, 0x104003e
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -762,7 +762,7 @@
 
     const/4 v4, 0x6
 
-    const v5, 0x104003b
+    const v5, 0x104003f
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -772,7 +772,7 @@
 
     const/4 v4, 0x7
 
-    const v5, 0x104003c
+    const v5, 0x1040040
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -782,7 +782,7 @@
 
     const/16 v4, 0x8
 
-    const v5, 0x104003d
+    const v5, 0x1040041
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -792,7 +792,7 @@
 
     const/16 v4, 0x9
 
-    const v5, 0x104003e
+    const v5, 0x1040042
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -802,7 +802,7 @@
 
     const/16 v4, 0xa
 
-    const v5, 0x104003f
+    const v5, 0x1040043
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -812,7 +812,7 @@
 
     const/16 v4, 0xb
 
-    const v5, 0x1040040
+    const v5, 0x1040044
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -829,7 +829,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x1040029
+    const v5, 0x104002d
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -839,7 +839,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x104002a
+    const v5, 0x104002e
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -849,7 +849,7 @@
 
     const/4 v4, 0x2
 
-    const v5, 0x104002b
+    const v5, 0x104002f
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -859,7 +859,7 @@
 
     const/4 v4, 0x3
 
-    const v5, 0x104002c
+    const v5, 0x1040030
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -869,7 +869,7 @@
 
     const/4 v4, 0x4
 
-    const v5, 0x104002d
+    const v5, 0x1040031
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -879,7 +879,7 @@
 
     const/4 v4, 0x5
 
-    const v5, 0x104002e
+    const v5, 0x1040032
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -889,7 +889,7 @@
 
     const/4 v4, 0x6
 
-    const v5, 0x104002f
+    const v5, 0x1040033
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -899,7 +899,7 @@
 
     const/4 v4, 0x7
 
-    const v5, 0x1040030
+    const v5, 0x1040034
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -909,7 +909,7 @@
 
     const/16 v4, 0x8
 
-    const v5, 0x1040031
+    const v5, 0x1040035
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -919,7 +919,7 @@
 
     const/16 v4, 0x9
 
-    const v5, 0x1040032
+    const v5, 0x1040036
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -929,7 +929,7 @@
 
     const/16 v4, 0xa
 
-    const v5, 0x1040033
+    const v5, 0x1040037
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -939,7 +939,7 @@
 
     const/16 v4, 0xb
 
-    const v5, 0x1040034
+    const v5, 0x1040038
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -956,7 +956,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x1040060
+    const v5, 0x1040064
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -966,7 +966,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x1040061
+    const v5, 0x1040065
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -976,7 +976,7 @@
 
     const/4 v4, 0x2
 
-    const v5, 0x1040062
+    const v5, 0x1040066
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -986,7 +986,7 @@
 
     const/4 v4, 0x3
 
-    const v5, 0x1040063
+    const v5, 0x1040067
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -996,7 +996,7 @@
 
     const/4 v4, 0x4
 
-    const v5, 0x1040064
+    const v5, 0x1040068
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1006,7 +1006,7 @@
 
     const/4 v4, 0x5
 
-    const v5, 0x1040065
+    const v5, 0x1040069
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1016,7 +1016,7 @@
 
     const/4 v4, 0x6
 
-    const v5, 0x1040066
+    const v5, 0x104006a
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1033,7 +1033,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x1040059
+    const v5, 0x104005d
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1043,7 +1043,7 @@
 
     const/4 v4, 0x1
 
-    const v5, 0x104005a
+    const v5, 0x104005e
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1053,7 +1053,7 @@
 
     const/4 v4, 0x2
 
-    const v5, 0x104005b
+    const v5, 0x104005f
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1063,7 +1063,7 @@
 
     const/4 v4, 0x3
 
-    const v5, 0x104005c
+    const v5, 0x1040060
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1073,7 +1073,7 @@
 
     const/4 v4, 0x4
 
-    const v5, 0x104005d
+    const v5, 0x1040061
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1083,7 +1083,7 @@
 
     const/4 v4, 0x5
 
-    const v5, 0x104005e
+    const v5, 0x1040062
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1093,7 +1093,7 @@
 
     const/4 v4, 0x6
 
-    const v5, 0x104005f
+    const v5, 0x1040063
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1104,7 +1104,7 @@
     sput-object v2, Landroid/text/format/Time;->sLongWeekdays:[Ljava/lang/String;
 
     .line 382
-    const v2, 0x1040083
+    const v2, 0x1040087
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1113,7 +1113,7 @@
     sput-object v2, Landroid/text/format/Time;->sTimeOnlyFormat:Ljava/lang/String;
 
     .line 383
-    const v2, 0x1040082
+    const v2, 0x1040086
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1122,7 +1122,7 @@
     sput-object v2, Landroid/text/format/Time;->sDateOnlyFormat:Ljava/lang/String;
 
     .line 384
-    const v2, 0x1040084
+    const v2, 0x1040088
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1131,7 +1131,7 @@
     sput-object v2, Landroid/text/format/Time;->sDateTimeFormat:Ljava/lang/String;
 
     .line 385
-    const v2, 0x1040075
+    const v2, 0x1040079
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1140,7 +1140,7 @@
     sput-object v2, Landroid/text/format/Time;->sAm:Ljava/lang/String;
 
     .line 386
-    const v2, 0x1040076
+    const v2, 0x104007a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1182,21 +1182,21 @@
     .parameter "allDay"
 
     .prologue
-    .line 709
+    .line 712
     if-eqz p1, :cond_0
 
-    .line 710
+    .line 713
     const-string v5, "%Y-%m-%d"
 
     invoke-virtual {p0, v5}, Landroid/text/format/Time;->format(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 720
+    .line 723
     :goto_0
     return-object v5
 
-    .line 711
+    .line 714
     :cond_0
     const-string v5, "UTC"
 
@@ -1208,7 +1208,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 712
+    .line 715
     const-string v5, "%Y-%m-%dT%H:%M:%S.000Z"
 
     invoke-virtual {p0, v5}, Landroid/text/format/Time;->format(Ljava/lang/String;)Ljava/lang/String;
@@ -1217,7 +1217,7 @@
 
     goto :goto_0
 
-    .line 714
+    .line 717
     :cond_1
     const-string v5, "%Y-%m-%dT%H:%M:%S.000"
 
@@ -1225,7 +1225,7 @@
 
     move-result-object v0
 
-    .line 715
+    .line 718
     .local v0, base:Ljava/lang/String;
     iget-wide v5, p0, Landroid/text/format/Time;->gmtoff:J
 
@@ -1237,7 +1237,7 @@
 
     const-string v4, "-"
 
-    .line 716
+    .line 719
     .local v4, sign:Ljava/lang/String;
     :goto_1
     iget-wide v5, p0, Landroid/text/format/Time;->gmtoff:J
@@ -1248,17 +1248,17 @@
 
     long-to-int v3, v5
 
-    .line 717
+    .line 720
     .local v3, offset:I
     rem-int/lit16 v5, v3, 0xe10
 
     div-int/lit8 v2, v5, 0x3c
 
-    .line 718
+    .line 721
     .local v2, minutes:I
     div-int/lit16 v1, v3, 0xe10
 
-    .line 720
+    .line 723
     .local v1, hours:I
     const-string v5, "%s%s%02d:%02d"
 
@@ -1296,7 +1296,7 @@
 
     goto :goto_0
 
-    .line 715
+    .line 718
     .end local v1           #hours:I
     .end local v2           #minutes:I
     .end local v3           #offset:I
@@ -1482,7 +1482,7 @@
     .locals 5
 
     .prologue
-    .line 683
+    .line 686
     iget v2, p0, Landroid/text/format/Time;->yearDay:I
 
     sget-object v3, Landroid/text/format/Time;->sThursdayOffset:[I
@@ -1493,7 +1493,7 @@
 
     add-int v0, v2, v3
 
-    .line 686
+    .line 689
     .local v0, closestThursday:I
     if-ltz v0, :cond_0
 
@@ -1501,22 +1501,22 @@
 
     if-gt v0, v2, :cond_0
 
-    .line 687
+    .line 690
     div-int/lit8 v2, v0, 0x7
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 694
+    .line 697
     :goto_0
     return v2
 
-    .line 691
+    .line 694
     :cond_0
     new-instance v1, Landroid/text/format/Time;
 
     invoke-direct {v1, p0}, Landroid/text/format/Time;-><init>(Landroid/text/format/Time;)V
 
-    .line 692
+    .line 695
     .local v1, temp:Landroid/text/format/Time;
     iget v2, v1, Landroid/text/format/Time;->monthDay:I
 
@@ -1530,12 +1530,12 @@
 
     iput v2, v1, Landroid/text/format/Time;->monthDay:I
 
-    .line 693
+    .line 696
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/text/format/Time;->normalize(Z)J
 
-    .line 694
+    .line 697
     iget v2, v1, Landroid/text/format/Time;->yearDay:I
 
     div-int/lit8 v2, v2, 0x7
@@ -1579,30 +1579,43 @@
 .end method
 
 .method public parse3339(Ljava/lang/String;)Z
-    .locals 1
+    .locals 2
     .parameter "s"
 
     .prologue
     .line 484
+    if-nez p1, :cond_0
+
+    .line 485
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string/jumbo v1, "time string is null"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 487
+    :cond_0
     invoke-direct {p0, p1}, Landroid/text/format/Time;->nativeParse3339(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 485
+    .line 488
     const-string v0, "UTC"
 
     iput-object v0, p0, Landroid/text/format/Time;->timezone:Ljava/lang/String;
 
-    .line 486
+    .line 489
     const/4 v0, 0x1
 
-    .line 488
+    .line 491
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
@@ -1617,46 +1630,46 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 618
+    .line 621
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/text/format/Time;->allDay:Z
 
-    .line 619
+    .line 622
     iput v1, p0, Landroid/text/format/Time;->second:I
 
-    .line 620
+    .line 623
     iput v1, p0, Landroid/text/format/Time;->minute:I
 
-    .line 621
+    .line 624
     iput v1, p0, Landroid/text/format/Time;->hour:I
 
-    .line 622
+    .line 625
     iput p1, p0, Landroid/text/format/Time;->monthDay:I
 
-    .line 623
+    .line 626
     iput p2, p0, Landroid/text/format/Time;->month:I
 
-    .line 624
+    .line 627
     iput p3, p0, Landroid/text/format/Time;->year:I
 
-    .line 625
+    .line 628
     iput v1, p0, Landroid/text/format/Time;->weekDay:I
 
-    .line 626
+    .line 629
     iput v1, p0, Landroid/text/format/Time;->yearDay:I
 
-    .line 627
+    .line 630
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/text/format/Time;->isDst:I
 
-    .line 628
+    .line 631
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/text/format/Time;->gmtoff:J
 
-    .line 629
+    .line 632
     return-void
 .end method
 
@@ -1672,44 +1685,44 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 595
+    .line 598
     iput-boolean v0, p0, Landroid/text/format/Time;->allDay:Z
 
-    .line 596
+    .line 599
     iput p1, p0, Landroid/text/format/Time;->second:I
 
-    .line 597
+    .line 600
     iput p2, p0, Landroid/text/format/Time;->minute:I
 
-    .line 598
+    .line 601
     iput p3, p0, Landroid/text/format/Time;->hour:I
 
-    .line 599
+    .line 602
     iput p4, p0, Landroid/text/format/Time;->monthDay:I
 
-    .line 600
+    .line 603
     iput p5, p0, Landroid/text/format/Time;->month:I
 
-    .line 601
+    .line 604
     iput p6, p0, Landroid/text/format/Time;->year:I
 
-    .line 602
+    .line 605
     iput v0, p0, Landroid/text/format/Time;->weekDay:I
 
-    .line 603
+    .line 606
     iput v0, p0, Landroid/text/format/Time;->yearDay:I
 
-    .line 604
+    .line 607
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/text/format/Time;->isDst:I
 
-    .line 605
+    .line 608
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/text/format/Time;->gmtoff:J
 
-    .line 606
+    .line 609
     return-void
 .end method
 
@@ -1721,67 +1734,67 @@
     .parameter "that"
 
     .prologue
-    .line 576
+    .line 579
     iget-object v0, p1, Landroid/text/format/Time;->timezone:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/text/format/Time;->timezone:Ljava/lang/String;
 
-    .line 577
+    .line 580
     iget-boolean v0, p1, Landroid/text/format/Time;->allDay:Z
 
     iput-boolean v0, p0, Landroid/text/format/Time;->allDay:Z
 
-    .line 578
+    .line 581
     iget v0, p1, Landroid/text/format/Time;->second:I
 
     iput v0, p0, Landroid/text/format/Time;->second:I
 
-    .line 579
+    .line 582
     iget v0, p1, Landroid/text/format/Time;->minute:I
 
     iput v0, p0, Landroid/text/format/Time;->minute:I
 
-    .line 580
+    .line 583
     iget v0, p1, Landroid/text/format/Time;->hour:I
 
     iput v0, p0, Landroid/text/format/Time;->hour:I
 
-    .line 581
+    .line 584
     iget v0, p1, Landroid/text/format/Time;->monthDay:I
 
     iput v0, p0, Landroid/text/format/Time;->monthDay:I
 
-    .line 582
+    .line 585
     iget v0, p1, Landroid/text/format/Time;->month:I
 
     iput v0, p0, Landroid/text/format/Time;->month:I
 
-    .line 583
+    .line 586
     iget v0, p1, Landroid/text/format/Time;->year:I
 
     iput v0, p0, Landroid/text/format/Time;->year:I
 
-    .line 584
+    .line 587
     iget v0, p1, Landroid/text/format/Time;->weekDay:I
 
     iput v0, p0, Landroid/text/format/Time;->weekDay:I
 
-    .line 585
+    .line 588
     iget v0, p1, Landroid/text/format/Time;->yearDay:I
 
     iput v0, p0, Landroid/text/format/Time;->yearDay:I
 
-    .line 586
+    .line 589
     iget v0, p1, Landroid/text/format/Time;->isDst:I
 
     iput v0, p0, Landroid/text/format/Time;->isDst:I
 
-    .line 587
+    .line 590
     iget-wide v0, p1, Landroid/text/format/Time;->gmtoff:J
 
     iput-wide v0, p0, Landroid/text/format/Time;->gmtoff:J
 
-    .line 588
+    .line 591
     return-void
 .end method
 
@@ -1792,7 +1805,7 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 782
+    .line 785
     const v4, 0x253d8c
 
     sub-int v4, p1, v4
@@ -1803,22 +1816,22 @@
 
     mul-long v2, v4, v6
 
-    .line 783
+    .line 786
     .local v2, millis:J
     invoke-virtual {p0, v2, v3}, Landroid/text/format/Time;->set(J)V
 
-    .line 787
+    .line 790
     iget-wide v4, p0, Landroid/text/format/Time;->gmtoff:J
 
     invoke-static {v2, v3, v4, v5}, Landroid/text/format/Time;->getJulianDay(JJ)I
 
     move-result v0
 
-    .line 788
+    .line 791
     .local v0, approximateDay:I
     sub-int v1, p1, v0
 
-    .line 789
+    .line 792
     .local v1, diff:I
     iget v4, p0, Landroid/text/format/Time;->monthDay:I
 
@@ -1826,23 +1839,23 @@
 
     iput v4, p0, Landroid/text/format/Time;->monthDay:I
 
-    .line 792
+    .line 795
     iput v8, p0, Landroid/text/format/Time;->hour:I
 
-    .line 793
+    .line 796
     iput v8, p0, Landroid/text/format/Time;->minute:I
 
-    .line 794
+    .line 797
     iput v8, p0, Landroid/text/format/Time;->second:I
 
-    .line 795
+    .line 798
     const/4 v4, 0x1
 
     invoke-virtual {p0, v4}, Landroid/text/format/Time;->normalize(Z)J
 
     move-result-wide v2
 
-    .line 796
+    .line 799
     return-wide v2
 .end method
 

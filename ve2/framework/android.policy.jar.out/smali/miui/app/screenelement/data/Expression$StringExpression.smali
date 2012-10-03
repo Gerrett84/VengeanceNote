@@ -24,13 +24,13 @@
     .parameter "str"
 
     .prologue
-    .line 254
+    .line 255
     invoke-direct {p0}, Lmiui/app/screenelement/data/Expression;-><init>()V
 
-    .line 255
+    .line 256
     iput-object p1, p0, Lmiui/app/screenelement/data/Expression$StringExpression;->mValue:Ljava/lang/String;
 
-    .line 256
+    .line 257
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .parameter "var"
 
     .prologue
-    .line 261
+    .line 262
     :try_start_0
     iget-object v1, p0, Lmiui/app/screenelement/data/Expression$StringExpression;->mValue:Ljava/lang/String;
 
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    .line 262
+    .line 263
     .local v0, value:Ljava/lang/Double;
     invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
     :try_end_0
@@ -61,16 +61,16 @@
 
     move-result-wide v1
 
-    .line 265
+    .line 266
     .end local v0           #value:Ljava/lang/Double;
     :goto_0
     return-wide v1
 
-    .line 263
+    .line 264
     :catch_0
     move-exception v1
 
-    .line 265
+    .line 266
     const-wide/16 v1, 0x0
 
     goto :goto_0
@@ -81,7 +81,7 @@
     .parameter "var"
 
     .prologue
-    .line 270
+    .line 271
     iget-object v0, p0, Lmiui/app/screenelement/data/Expression$StringExpression;->mValue:Ljava/lang/String;
 
     return-object v0

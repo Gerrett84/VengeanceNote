@@ -1280,62 +1280,92 @@
 .end method
 
 .method public mutate()Landroid/graphics/drawable/Drawable;
-    .locals 4
+    .locals 6
 
     .prologue
     .line 577
     iget-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable;->mMutated:Z
 
-    if-nez v3, :cond_1
+    if-nez v3, :cond_2
 
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
-    if-ne v3, p0, :cond_1
+    if-ne v3, p0, :cond_2
 
     .line 578
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
-    iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
+    invoke-virtual {v3}, Landroid/graphics/drawable/LayerDrawable$LayerState;->canConstantState()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
 
     .line 579
+    new-instance v3, Ljava/lang/IllegalStateException;
+
+    const-string v4, "One or more children of this LayerDrawable does not have constant state; this drawable cannot be mutated."
+
+    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 582
+    :cond_0
+    new-instance v3, Landroid/graphics/drawable/LayerDrawable$LayerState;
+
+    iget-object v4, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
+
+    const/4 v5, 0x0
+
+    invoke-direct {v3, v4, p0, v5}, Landroid/graphics/drawable/LayerDrawable$LayerState;-><init>(Landroid/graphics/drawable/LayerDrawable$LayerState;Landroid/graphics/drawable/LayerDrawable;Landroid/content/res/Resources;)V
+
+    iput-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
+
+    .line 583
+    iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
+
+    iget-object v1, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mChildren:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
+
+    .line 584
     .local v1, array:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     iget-object v3, p0, Landroid/graphics/drawable/LayerDrawable;->mLayerState:Landroid/graphics/drawable/LayerDrawable$LayerState;
 
     iget v0, v3, Landroid/graphics/drawable/LayerDrawable$LayerState;->mNum:I
 
-    .line 580
+    .line 585
     .local v0, N:I
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_0
-    if-ge v2, v0, :cond_0
+    if-ge v2, v0, :cond_1
 
-    .line 581
+    .line 586
     aget-object v3, v1, v2
 
     iget-object v3, v3, Landroid/graphics/drawable/LayerDrawable$ChildDrawable;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 580
+    .line 585
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 583
-    :cond_0
+    .line 588
+    :cond_1
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Landroid/graphics/drawable/LayerDrawable;->mMutated:Z
 
-    .line 585
+    .line 590
     .end local v0           #N:I
     .end local v1           #array:[Landroid/graphics/drawable/LayerDrawable$ChildDrawable;
     .end local v2           #i:I
-    :cond_1
+    :cond_2
     return-object p0
 .end method
 

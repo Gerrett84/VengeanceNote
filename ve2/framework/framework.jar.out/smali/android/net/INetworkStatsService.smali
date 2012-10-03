@@ -15,6 +15,14 @@
 
 
 # virtual methods
+.method public abstract advisePersistThreshold(J)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract forceUpdate()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -31,7 +39,7 @@
     .end annotation
 .end method
 
-.method public abstract getHistoryForNetwork(Landroid/net/NetworkTemplate;I)Landroid/net/NetworkStatsHistory;
+.method public abstract getMobileIfaces()[Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -39,23 +47,7 @@
     .end annotation
 .end method
 
-.method public abstract getHistoryForUid(Landroid/net/NetworkTemplate;IIII)Landroid/net/NetworkStatsHistory;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getSummaryForAllUid(Landroid/net/NetworkTemplate;JJZ)Landroid/net/NetworkStats;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getSummaryForNetwork(Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
+.method public abstract getNetworkTotalBytes(Landroid/net/NetworkTemplate;JJ)J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -64,6 +56,14 @@
 .end method
 
 .method public abstract incrementOperationCount(III)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract openSession()Landroid/net/INetworkStatsSession;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

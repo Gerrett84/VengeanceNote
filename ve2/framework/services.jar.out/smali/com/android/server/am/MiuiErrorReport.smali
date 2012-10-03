@@ -18,12 +18,12 @@
     .locals 10
 
     .prologue
-    .line 151
+    .line 161
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 152
+    .line 162
     .local v4, stackTrack:Ljava/lang/StringBuilder;
     const-string v8, "dalvik.vm.stack-trace-file"
 
@@ -33,7 +33,7 @@
 
     move-result-object v7
 
-    .line 153
+    .line 163
     .local v7, tracesPath:Ljava/lang/String;
     if-eqz v7, :cond_0
 
@@ -43,25 +43,25 @@
 
     if-nez v8, :cond_1
 
-    .line 154
+    .line 164
     :cond_0
     const-string v8, ""
 
-    .line 189
+    .line 199
     :goto_0
     return-object v8
 
-    .line 157
+    .line 167
     :cond_1
     new-instance v6, Ljava/io/File;
 
     invoke-direct {v6, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 158
+    .line 168
     .local v6, tracesFile:Ljava/io/File;
     const/4 v2, 0x0
 
-    .line 160
+    .line 170
     .local v2, reader:Ljava/io/BufferedReader;
     :try_start_0
     new-instance v3, Ljava/io/BufferedReader;
@@ -75,16 +75,16 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 162
+    .line 172
     .end local v2           #reader:Ljava/io/BufferedReader;
     .local v3, reader:Ljava/io/BufferedReader;
     const/4 v5, 0x0
 
-    .line 163
+    .line 173
     .local v5, start:Z
     const/4 v0, 0x0
 
-    .line 164
+    .line 174
     .local v0, count:I
     :cond_2
     :try_start_1
@@ -95,7 +95,7 @@
     .local v1, line:Ljava/lang/String;
     if-eqz v1, :cond_5
 
-    .line 165
+    .line 175
     const-string v8, "DALVIK THREADS:"
 
     invoke-virtual {v1, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -104,17 +104,17 @@
 
     if-eqz v8, :cond_8
 
-    .line 166
+    .line 176
     const/4 v5, 0x1
 
-    .line 170
+    .line 180
     :cond_3
     if-eqz v5, :cond_4
 
-    .line 171
+    .line 181
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 172
+    .line 182
     const-string v8, "\n"
 
     invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -122,21 +122,21 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 173
+    .line 183
     add-int/lit8 v0, v0, 0x1
 
-    .line 175
+    .line 185
     :cond_4
     const/16 v8, 0x12c
 
     if-le v0, v8, :cond_2
 
-    .line 182
+    .line 192
     :cond_5
     :goto_1
     if-eqz v3, :cond_6
 
-    .line 183
+    .line 193
     :try_start_2
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_2
@@ -146,7 +146,7 @@
     :goto_2
     move-object v2, v3
 
-    .line 189
+    .line 199
     .end local v0           #count:I
     .end local v1           #line:Ljava/lang/String;
     .end local v3           #reader:Ljava/io/BufferedReader;
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 167
+    .line 177
     .end local v2           #reader:Ljava/io/BufferedReader;
     .restart local v0       #count:I
     .restart local v1       #line:Ljava/lang/String;
@@ -183,7 +183,7 @@
 
     goto :goto_1
 
-    .line 181
+    .line 191
     .end local v0           #count:I
     .end local v1           #line:Ljava/lang/String;
     .end local v3           #reader:Ljava/io/BufferedReader;
@@ -192,30 +192,30 @@
     :catchall_0
     move-exception v8
 
-    .line 182
+    .line 192
     :goto_4
     if-eqz v2, :cond_9
 
-    .line 183
+    .line 193
     :try_start_4
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 181
+    .line 191
     :cond_9
     :goto_5
     throw v8
 
-    .line 179
+    .line 189
     :catch_0
     move-exception v8
 
-    .line 182
+    .line 192
     :goto_6
     if-eqz v2, :cond_7
 
-    .line 183
+    .line 193
     :try_start_5
     invoke-virtual {v2}, Ljava/io/BufferedReader;->close()V
     :try_end_5
@@ -223,7 +223,7 @@
 
     goto :goto_3
 
-    .line 185
+    .line 195
     :catch_1
     move-exception v8
 
@@ -244,7 +244,7 @@
 
     goto :goto_2
 
-    .line 181
+    .line 191
     .end local v1           #line:Ljava/lang/String;
     :catchall_1
     move-exception v8
@@ -255,7 +255,7 @@
     .restart local v2       #reader:Ljava/io/BufferedReader;
     goto :goto_4
 
-    .line 179
+    .line 189
     .end local v2           #reader:Ljava/io/BufferedReader;
     .restart local v3       #reader:Ljava/io/BufferedReader;
     :catch_4
@@ -272,7 +272,7 @@
     .locals 3
 
     .prologue
-    .line 127
+    .line 128
     const-string v1, "ro.product.mod_device"
 
     const/4 v2, 0x0
@@ -281,7 +281,7 @@
 
     move-result-object v0
 
-    .line 128
+    .line 129
     .local v0, modDevice:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -296,12 +296,42 @@
     return-object v0
 .end method
 
+.method private static getIMEI()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 133
+    invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 134
+    .local v0, imei:Ljava/lang/String;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 135
+    const-string v0, ""
+
+    .line 138
+    .end local v0           #imei:Ljava/lang/String;
+    :cond_0
+    return-object v0
+.end method
+
 .method private static getNetworkName(Landroid/content/Context;)Ljava/lang/String;
     .locals 2
     .parameter "context"
 
     .prologue
-    .line 122
+    .line 123
     const-string v1, "phone"
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -310,7 +340,7 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 123
+    .line 124
     .local v0, tm:Landroid/telephony/TelephonyManager;
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName()Ljava/lang/String;
 
@@ -325,12 +355,12 @@
     .parameter "packageName"
 
     .prologue
-    .line 132
+    .line 142
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 135
+    .line 145
     .local v2, pm:Landroid/content/pm/PackageManager;
     const/4 v3, 0x0
 
@@ -341,7 +371,7 @@
 
     move-result-object v1
 
-    .line 141
+    .line 151
     .local v1, info:Landroid/content/pm/PackageInfo;
     iget-object v3, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -359,29 +389,29 @@
 
     if-eqz v3, :cond_1
 
-    .line 144
+    .line 154
     :cond_0
     sget-object v3, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
 
-    .line 146
+    .line 156
     .end local v1           #info:Landroid/content/pm/PackageInfo;
     :goto_0
     return-object v3
 
-    .line 136
+    .line 146
     :catch_0
     move-exception v0
 
-    .line 137
+    .line 147
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {v0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
-    .line 138
+    .line 148
     const-string v3, ""
 
     goto :goto_0
 
-    .line 146
+    .line 156
     .end local v0           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v1       #info:Landroid/content/pm/PackageInfo;
     :cond_1
@@ -426,7 +456,7 @@
     .parameter "proc"
 
     .prologue
-    .line 111
+    .line 112
     :try_start_0
     const-string v1, "error_type"
 
@@ -434,7 +464,7 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 112
+    .line 113
     const-string v1, "anr_cause"
 
     iget-object v2, p1, Lcom/android/server/am/ProcessRecord;->notRespondingReport:Landroid/app/ActivityManager$ProcessErrorStateInfo;
@@ -443,7 +473,7 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 113
+    .line 114
     const-string v2, "anr_activity"
 
     iget-object v1, p1, Lcom/android/server/am/ProcessRecord;->notRespondingReport:Landroid/app/ActivityManager$ProcessErrorStateInfo;
@@ -457,7 +487,7 @@
     :goto_0
     invoke-virtual {p0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 115
+    .line 116
     const-string v1, "stack_track"
 
     invoke-static {}, Lcom/android/server/am/MiuiErrorReport;->getAnrStackTrack()Ljava/lang/String;
@@ -466,11 +496,11 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 119
+    .line 120
     :goto_1
     return-void
 
-    .line 113
+    .line 114
     :cond_0
     iget-object v1, p1, Lcom/android/server/am/ProcessRecord;->notRespondingReport:Landroid/app/ActivityManager$ProcessErrorStateInfo;
 
@@ -480,11 +510,11 @@
 
     goto :goto_0
 
-    .line 116
+    .line 117
     :catch_0
     move-exception v0
 
-    .line 117
+    .line 118
     .local v0, e:Lorg/json/JSONException;
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
@@ -518,20 +548,29 @@
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     .line 83
+    const-string v1, "imei"
+
+    invoke-static {}, Lcom/android/server/am/MiuiErrorReport;->getIMEI()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    .line 84
     const-string v1, "platform"
 
     sget-object v2, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 84
+    .line 85
     const-string v1, "build_version"
 
     sget-object v2, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 85
+    .line 86
     const-string v1, "package_name"
 
     iget-object v2, p2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -540,7 +579,7 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 86
+    .line 87
     const-string v1, "app_version"
 
     iget-object v2, p2, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -555,15 +594,15 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 90
+    .line 91
     :goto_0
     return-void
 
-    .line 87
+    .line 88
     :catch_0
     move-exception v0
 
-    .line 88
+    .line 89
     .local v0, e:Lorg/json/JSONException;
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
@@ -576,14 +615,14 @@
     .parameter "crashInfo"
 
     .prologue
-    .line 94
+    .line 95
     if-nez p1, :cond_0
 
-    .line 107
+    .line 108
     :goto_0
     return-void
 
-    .line 99
+    .line 100
     :cond_0
     :try_start_0
     const-string v1, "error_type"
@@ -592,14 +631,14 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 100
+    .line 101
     const-string v1, "exception_class"
 
     iget-object v2, p1, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 101
+    .line 102
     const-string v1, "exception_source_method"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -630,7 +669,7 @@
 
     invoke-virtual {p0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 103
+    .line 104
     const-string v1, "stack_track"
 
     iget-object v2, p1, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
@@ -641,11 +680,11 @@
 
     goto :goto_0
 
-    .line 104
+    .line 105
     :catch_0
     move-exception v0
 
-    .line 105
+    .line 106
     .local v0, e:Lorg/json/JSONException;
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 

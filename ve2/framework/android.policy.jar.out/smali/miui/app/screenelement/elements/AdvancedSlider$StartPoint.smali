@@ -34,15 +34,15 @@
     .end annotation
 
     .prologue
-    .line 538
+    .line 546
     iput-object p1, p0, Lmiui/app/screenelement/elements/AdvancedSlider$StartPoint;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
-    .line 539
+    .line 547
     const-string v0, "StartPoint"
 
     invoke-direct {p0, p1, p2, v0}, Lmiui/app/screenelement/elements/AdvancedSlider$SliderPoint;-><init>(Lmiui/app/screenelement/elements/AdvancedSlider;Lorg/w3c/dom/Element;Ljava/lang/String;)V
 
-    .line 540
+    .line 548
     return-void
 .end method
 
@@ -54,17 +54,17 @@
     .parameter "s"
 
     .prologue
-    .line 544
+    .line 552
     sget-object v0, Lmiui/app/screenelement/elements/AdvancedSlider$State;->Invalid:Lmiui/app/screenelement/elements/AdvancedSlider$State;
 
     if-ne p1, v0, :cond_1
 
-    .line 557
+    .line 565
     :cond_0
     :goto_0
     return-void
 
-    .line 548
+    .line 556
     :cond_1
     sget-object v0, Lmiui/app/screenelement/elements/AdvancedSlider$1;->$SwitchMap$miui$app$screenelement$elements$AdvancedSlider$State:[I
 
@@ -78,13 +78,11 @@
 
     goto :goto_0
 
-    .line 550
+    .line 558
     :pswitch_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$StartPoint;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
-    iget-object v0, v0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
-
-    iget-object v0, v0, Lmiui/app/screenelement/ScreenContext;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
+    iget-object v0, v0, Lmiui/app/screenelement/elements/ScreenElement;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/AdvancedSlider$SliderPoint;->mNormalSound:Ljava/lang/String;
 
@@ -92,7 +90,7 @@
 
     goto :goto_0
 
-    .line 553
+    .line 561
     :pswitch_1
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$StartPoint;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
@@ -103,12 +101,10 @@
 
     if-nez v0, :cond_0
 
-    .line 554
+    .line 562
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$StartPoint;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
-    iget-object v0, v0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
-
-    iget-object v0, v0, Lmiui/app/screenelement/ScreenContext;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
+    iget-object v0, v0, Lmiui/app/screenelement/elements/ScreenElement;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/AdvancedSlider$SliderPoint;->mPressedSound:Ljava/lang/String;
 
@@ -116,7 +112,7 @@
 
     goto :goto_0
 
-    .line 548
+    .line 556
     nop
 
     :pswitch_data_0

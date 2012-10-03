@@ -24,13 +24,13 @@
     .parameter "layerId"
 
     .prologue
-    .line 67
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 74
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
+    .line 75
     iput p1, p0, Landroid/view/GLES20Layer$Finalizer;->mLayerId:I
 
-    .line 69
+    .line 76
     return-void
 .end method
 
@@ -40,17 +40,17 @@
     .locals 1
 
     .prologue
-    .line 83
+    .line 90
     iget v0, p0, Landroid/view/GLES20Layer$Finalizer;->mLayerId:I
 
     invoke-static {v0}, Landroid/view/GLES20Canvas;->nDestroyLayer(I)V
 
-    .line 84
+    .line 91
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/GLES20Layer$Finalizer;->mLayerId:I
 
-    .line 85
+    .line 92
     return-void
 .end method
 
@@ -63,27 +63,27 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 81
     :try_start_0
     iget v0, p0, Landroid/view/GLES20Layer$Finalizer;->mLayerId:I
 
     if-eqz v0, :cond_0
 
-    .line 75
+    .line 82
     iget v0, p0, Landroid/view/GLES20Layer$Finalizer;->mLayerId:I
 
     invoke-static {v0}, Landroid/view/GLES20Canvas;->nDestroyLayerDeferred(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 78
+    .line 85
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 80
+    .line 87
     return-void
 
-    .line 78
+    .line 85
     :catchall_0
     move-exception v0
 

@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 926
+    .line 943
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$7;->this$0:Landroid/speech/tts/TextToSpeech;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -57,15 +57,15 @@
     .end annotation
 
     .prologue
-    .line 929
+    .line 946
     iget-object v0, p0, Landroid/speech/tts/TextToSpeech$7;->this$0:Landroid/speech/tts/TextToSpeech;
 
-    #calls: Landroid/speech/tts/TextToSpeech;->getPackageName()Ljava/lang/String;
-    invoke-static {v0}, Landroid/speech/tts/TextToSpeech;->access$100(Landroid/speech/tts/TextToSpeech;)Ljava/lang/String;
+    #calls: Landroid/speech/tts/TextToSpeech;->getCallerIdentity()Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/speech/tts/TextToSpeech;->access$100(Landroid/speech/tts/TextToSpeech;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Landroid/speech/tts/ITextToSpeechService;->stop(Ljava/lang/String;)I
+    invoke-interface {p1, v0}, Landroid/speech/tts/ITextToSpeechService;->stop(Landroid/os/IBinder;)I
 
     move-result v0
 
@@ -86,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 926
+    .line 943
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$7;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/lang/Integer;
 
     move-result-object v0

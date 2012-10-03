@@ -38,54 +38,66 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>()V
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
-    .line 543
+    .line 567
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 535
+    .line 559
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
-    .line 536
+    .line 560
     const/16 v0, 0x14
 
     iput v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMaxSize:I
 
-    .line 537
+    .line 561
     iput v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mOldestIndex:I
 
-    .line 538
+    .line 562
     iput v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mCount:I
 
-    .line 544
+    .line 568
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/android/internal/util/StateMachine$1;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 555
+    invoke-direct {p0}, Lcom/android/internal/util/StateMachine$ProcessedMessages;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method add(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+.method add(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
     .locals 3
-    .parameter "message"
+    .parameter "msg"
+    .parameter "messageInfo"
     .parameter "state"
     .parameter "orgState"
 
     .prologue
-    .line 604
+    .line 629
     iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mCount:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mCount:I
 
-    .line 605
+    .line 630
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
     invoke-virtual {v1}, Ljava/util/Vector;->size()I
@@ -96,20 +108,20 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 606
+    .line 631
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
     new-instance v2, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
 
-    invoke-direct {v2, p1, p2, p3}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;-><init>(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+    invoke-direct {v2, p1, p2, p3, p4}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;-><init>(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
 
     invoke-virtual {v1, v2}, Ljava/util/Vector;->add(Ljava/lang/Object;)Z
 
-    .line 615
+    .line 640
     :goto_0
     return-void
 
-    .line 608
+    .line 633
     :cond_0
     iget-object v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
@@ -121,7 +133,7 @@
 
     check-cast v0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
 
-    .line 609
+    .line 634
     .local v0, pmi:Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;
     iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mOldestIndex:I
 
@@ -129,21 +141,21 @@
 
     iput v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mOldestIndex:I
 
-    .line 610
+    .line 635
     iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mOldestIndex:I
 
     iget v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMaxSize:I
 
     if-lt v1, v2, :cond_1
 
-    .line 611
+    .line 636
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mOldestIndex:I
 
-    .line 613
+    .line 638
     :cond_1
-    invoke-virtual {v0, p1, p2, p3}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->update(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->update(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
 
     goto :goto_0
 .end method
@@ -152,12 +164,12 @@
     .locals 1
 
     .prologue
-    .line 575
+    .line 599
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->clear()V
 
-    .line 576
+    .line 600
     return-void
 .end method
 
@@ -165,7 +177,7 @@
     .locals 1
 
     .prologue
-    .line 568
+    .line 592
     iget v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mCount:I
 
     return v0
@@ -176,23 +188,23 @@
     .parameter "index"
 
     .prologue
-    .line 584
+    .line 608
     iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mOldestIndex:I
 
     add-int v0, v1, p1
 
-    .line 585
+    .line 609
     .local v0, nextIndex:I
     iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMaxSize:I
 
     if-lt v0, v1, :cond_0
 
-    .line 586
+    .line 610
     iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMaxSize:I
 
     sub-int/2addr v0, v1
 
-    .line 588
+    .line 612
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/util/StateMachine$ProcessedMessages;->size()I
 
@@ -200,10 +212,10 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 589
+    .line 613
     const/4 v1, 0x0
 
-    .line 591
+    .line 615
     :goto_0
     return-object v1
 
@@ -224,20 +236,20 @@
     .parameter "maxSize"
 
     .prologue
-    .line 552
+    .line 576
     iput p1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMaxSize:I
 
-    .line 553
+    .line 577
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mCount:I
 
-    .line 554
+    .line 578
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->clear()V
 
-    .line 555
+    .line 579
     return-void
 .end method
 
@@ -245,7 +257,7 @@
     .locals 1
 
     .prologue
-    .line 561
+    .line 585
     iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessages;->mMessages:Ljava/util/Vector;
 
     invoke-virtual {v0}, Ljava/util/Vector;->size()I

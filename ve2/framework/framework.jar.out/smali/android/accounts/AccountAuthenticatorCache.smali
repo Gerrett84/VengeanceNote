@@ -174,12 +174,12 @@
     const/4 v0, 0x0
 
     .line 75
+    :goto_0
     invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
 
-    :goto_0
+    .line 72
     return-object v0
 
-    .line 72
     :cond_0
     :try_start_1
     new-instance v0, Landroid/accounts/AuthenticatorDescription;
@@ -190,11 +190,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 75
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
-
     goto :goto_0
 
+    .line 75
     .end local v1           #accountType:Ljava/lang/String;
     .end local v3           #labelId:I
     .end local v4           #iconId:I

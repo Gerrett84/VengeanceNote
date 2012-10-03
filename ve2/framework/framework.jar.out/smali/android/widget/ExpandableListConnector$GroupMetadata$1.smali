@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 925
+    .line 931
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 928
+    .line 934
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -66,7 +66,7 @@
 
     move-result-object v0
 
-    .line 933
+    .line 939
     .local v0, gm:Landroid/widget/ExpandableListConnector$GroupMetadata;
     return-object v0
 .end method
@@ -76,7 +76,7 @@
     .parameter "x0"
 
     .prologue
-    .line 925
+    .line 931
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector$GroupMetadata$1;->createFromParcel(Landroid/os/Parcel;)Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     move-result-object v0
@@ -89,7 +89,7 @@
     .parameter "size"
 
     .prologue
-    .line 937
+    .line 943
     new-array v0, p1, [Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     return-object v0
@@ -100,7 +100,7 @@
     .parameter "x0"
 
     .prologue
-    .line 925
+    .line 931
     invoke-virtual {p0, p1}, Landroid/widget/ExpandableListConnector$GroupMetadata$1;->newArray(I)[Landroid/widget/ExpandableListConnector$GroupMetadata;
 
     move-result-object v0

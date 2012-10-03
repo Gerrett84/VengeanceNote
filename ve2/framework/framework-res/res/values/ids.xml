@@ -64,8 +64,6 @@
     <item type="id" name="popup_submenu_presenter" />
     <item type="id" name="action_bar_title">false</item>
     <item type="id" name="action_bar_subtitle">false</item>
-    <item type="id" name="imageButton">false</item>
-    <item type="id" name="textButton">false</item>
     <item type="id" name="action_mode_close_button">false</item>
     <item type="id" name="activity_chooser_view_content">false</item>
     <item type="id" name="expand_activities_button">false</item>
@@ -106,9 +104,8 @@
     <item type="id" name="cancel">false</item>
     <item type="id" name="account_row_icon">false</item>
     <item type="id" name="account_row_text">false</item>
-    <item type="id" name="account_row_checkmark">false</item>
     <item type="id" name="description">false</item>
-    <item type="id" name="addAccount">false</item>
+    <item type="id" name="button_bar">false</item>
     <item type="id" name="pickers">false</item>
     <item type="id" name="month">false</item>
     <item type="id" name="day">false</item>
@@ -143,6 +140,8 @@
     <item type="id" name="inputExtractAccessories">false</item>
     <item type="id" name="inputExtractAction">false</item>
     <item type="id" name="inputExtractEditButton">false</item>
+    <item type="id" name="hard_keyboard_section">false</item>
+    <item type="id" name="hard_keyboard_switch">false</item>
     <item type="id" name="value">false</item>
     <item type="id" name="label">false</item>
     <item type="id" name="emergencyCallButton">false</item>
@@ -176,6 +175,8 @@
     <item type="id" name="switch_ime_button">false</item>
     <item type="id" name="transport">false</item>
     <item type="id" name="faceLockAreaView">false</item>
+    <item type="id" name="spotlightMask">false</item>
+    <item type="id" name="cancel_button">false</item>
     <item type="id" name="transport_bg_protect">false</item>
     <item type="id" name="headerText">false</item>
     <item type="id" name="pinDisplayGroup">false</item>
@@ -214,8 +215,38 @@
     <item type="id" name="next">false</item>
     <item type="id" name="time_current">false</item>
     <item type="id" name="mediacontroller_progress">false</item>
-    <item type="id" name="index">false</item>
+    <item type="id" name="volume_icon">false</item>
+    <item type="id" name="volume_slider">false</item>
+    <item type="id" name="extended_settings">false</item>
+    <item type="id" name="expand_button">false</item>
     <item type="id" name="check">false</item>
+    <item type="id" name="index">false</item>
+    <item type="id" name="action0">false</item>
+    <item type="id" name="actions">false</item>
+    <item type="id" name="action1">false</item>
+    <item type="id" name="action2">false</item>
+    <item type="id" name="status_bar_latest_event_content">false</item>
+    <item type="id" name="line1">false</item>
+    <item type="id" name="chronometer">false</item>
+    <item type="id" name="line3">false</item>
+    <item type="id" name="info">false</item>
+    <item type="id" name="big_base_content">false</item>
+    <item type="id" name="big_text">false</item>
+    <item type="id" name="action_divider">false</item>
+    <item type="id" name="big_picture">false</item>
+    <item type="id" name="big_picture_shadow">false</item>
+    <item type="id" name="big_picture_content">false</item>
+    <item type="id" name="big_text_content">false</item>
+    <item type="id" name="overflow_divider">false</item>
+    <item type="id" name="inbox">false</item>
+    <item type="id" name="inbox_text0">false</item>
+    <item type="id" name="inbox_text1">false</item>
+    <item type="id" name="inbox_text2">false</item>
+    <item type="id" name="inbox_text3">false</item>
+    <item type="id" name="inbox_text4">false</item>
+    <item type="id" name="inbox_text5">false</item>
+    <item type="id" name="inbox_text6">false</item>
+    <item type="id" name="inbox_more">false</item>
     <item type="id" name="increment">false</item>
     <item type="id" name="numberpicker_input">false</item>
     <item type="id" name="decrement">false</item>
@@ -230,7 +261,6 @@
     <item type="id" name="list_footer">false</item>
     <item type="id" name="prefs_frame">false</item>
     <item type="id" name="prefs">false</item>
-    <item type="id" name="button_bar">false</item>
     <item type="id" name="back_button">false</item>
     <item type="id" name="skip_button">false</item>
     <item type="id" name="next_button">false</item>
@@ -244,6 +274,9 @@
     <item type="id" name="button6">false</item>
     <item type="id" name="button7">false</item>
     <item type="id" name="default_loading_view">false</item>
+    <item type="id" name="resolver_grid">false</item>
+    <item type="id" name="button_always">false</item>
+    <item type="id" name="button_once">false</item>
     <item type="id" name="action_mode_bar_stub">false</item>
     <item type="id" name="action_mode_bar">false</item>
     <item type="id" name="right_container">false</item>
@@ -253,6 +286,8 @@
     <item type="id" name="action_bar">false</item>
     <item type="id" name="action_context_bar">false</item>
     <item type="id" name="split_action_bar">false</item>
+    <item type="id" name="action_bar_overlay_layout">false</item>
+    <item type="id" name="top_action_bar">false</item>
     <item type="id" name="search_bar">false</item>
     <item type="id" name="search_app_icon">false</item>
     <item type="id" name="search_view">false</item>
@@ -295,10 +330,6 @@
     <item type="id" name="sha256_fingerprint">false</item>
     <item type="id" name="sha1_fingerprint_header">false</item>
     <item type="id" name="sha1_fingerprint">false</item>
-    <item type="id" name="status_bar_latest_event_content">false</item>
-    <item type="id" name="status_bar_latest_event_content_large_icon">false</item>
-    <item type="id" name="line3">false</item>
-    <item type="id" name="info">false</item>
     <item type="id" name="hour">false</item>
     <item type="id" name="minute">false</item>
     <item type="id" name="amPm">false</item>
@@ -321,12 +352,13 @@
     <item type="id" name="visible_panel">false</item>
     <item type="id" name="slider_group">false</item>
     <item type="id" name="expand_button_divider">false</item>
-    <item type="id" name="expand_button">false</item>
     <item type="id" name="stream_icon">false</item>
     <item type="id" name="webview">false</item>
     <item type="id" name="splashscreen">false</item>
     <item type="id" name="matches">false</item>
+    <item type="id" name="enter_pin_section">false</item>
     <item type="id" name="wifi_p2p_wps_pin">false</item>
+    <item type="id" name="name">false</item>
     <item type="id" name="zoom_fit_page">false</item>
     <item type="id" name="zoom_page_overview">false</item>
     <item type="id" name="zoomControls">false</item>

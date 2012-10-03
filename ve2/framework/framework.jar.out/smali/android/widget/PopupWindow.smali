@@ -349,7 +349,7 @@
 
     .line 188
     .local v2, animStyle:I
-    const v7, 0x10301e6
+    const v7, 0x10301ea
 
     if-ne v2, v7, :cond_0
 
@@ -750,7 +750,7 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x10301e0
+    const v0, 0x10301e4
 
     .line 1076
     :goto_0
@@ -758,7 +758,7 @@
 
     .line 1070
     :cond_0
-    const v0, 0x10301df
+    const v0, 0x10301e3
 
     goto :goto_0
 
@@ -2037,7 +2037,7 @@
 
     iget-object v1, p0, Landroid/widget/PopupWindow;->mPopupView:Landroid/view/View;
 
-    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2122,6 +2122,7 @@
 
     invoke-interface {v0}, Landroid/widget/PopupWindow$OnDismissListener;->onDismiss()V
 
+    .line 1258
     :cond_3
     throw v1
 .end method

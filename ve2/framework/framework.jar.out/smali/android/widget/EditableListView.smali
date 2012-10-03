@@ -128,6 +128,17 @@
     return-object v0
 .end method
 
+.method static synthetic access$500(Landroid/widget/EditableListView;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 30
+    invoke-direct {p0}, Landroid/widget/EditableListView;->updateOnScreenCheckedViews()V
+
+    return-void
+.end method
+
 .method private enterEditModeInner()V
     .locals 1
 
@@ -209,12 +220,12 @@
     .parameter "position"
 
     .prologue
-    .line 197
+    .line 191
     invoke-virtual {p0}, Landroid/widget/EditableListView;->getHeaderViewsCount()I
 
     move-result v1
 
-    .line 198
+    .line 192
     .local v1, numHeaders:I
     iget-object v2, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
@@ -228,7 +239,7 @@
 
     sub-int v0, v2, v3
 
-    .line 199
+    .line 193
     .local v0, count:I
     if-lt p1, v1, :cond_0
 
@@ -246,13 +257,13 @@
 .end method
 
 .method private updateBatchChecked(Z)V
-    .locals 10
+    .locals 9
     .parameter "checked"
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v1, 0x1
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
     .line 133
     iget-object v4, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
@@ -265,18 +276,18 @@
 
     iget v4, p0, Landroid/widget/AbsListView;->mChoiceMode:I
 
-    const/4 v7, 0x3
+    const/4 v6, 0x3
 
-    if-eq v4, v7, :cond_1
+    if-eq v4, v6, :cond_1
 
-    .line 179
+    .line 173
     :cond_0
     :goto_0
     return-void
 
     .line 137
     :cond_1
-    iput-boolean v5, p0, Landroid/widget/EditableListView;->mIsUpdateBatchChecked:Z
+    iput-boolean v1, p0, Landroid/widget/EditableListView;->mIsUpdateBatchChecked:Z
 
     .line 138
     invoke-virtual {p0}, Landroid/widget/EditableListView;->getHeaderViewsCount()I
@@ -293,9 +304,9 @@
 
     invoke-virtual {p0}, Landroid/widget/EditableListView;->getFooterViewsCount()I
 
-    move-result v7
+    move-result v6
 
-    sub-int v0, v4, v7
+    sub-int v0, v4, v6
 
     .line 140
     .local v0, count:I
@@ -310,8 +321,6 @@
     move-result v4
 
     if-eqz v4, :cond_3
-
-    move v1, v5
 
     .line 142
     .local v1, hasStableIds:Z
@@ -341,7 +350,7 @@
     .end local v1           #hasStableIds:Z
     .end local v2           #i:I
     :cond_3
-    move v1, v6
+    move v1, v5
 
     .line 140
     goto :goto_1
@@ -383,17 +392,17 @@
     .line 161
     iget-object v4, p0, Landroid/widget/AbsListView;->mCheckedIdStates:Landroid/util/LongSparseArray;
 
-    iget-object v7, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v6, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    invoke-interface {v7, v2}, Landroid/widget/ListAdapter;->getItemId(I)J
+    invoke-interface {v6, v2}, Landroid/widget/ListAdapter;->getItemId(I)J
 
-    move-result-wide v7
+    move-result-wide v6
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v4, v7, v8, v9}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {v4, v6, v7, v8}, Landroid/util/LongSparseArray;->put(JLjava/lang/Object;)V
 
     goto :goto_3
 
@@ -420,13 +429,13 @@
     :cond_6
     iget-object v4, p0, Landroid/widget/AbsListView;->mCheckedIdStates:Landroid/util/LongSparseArray;
 
-    iget-object v7, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v6, p0, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
-    invoke-interface {v7, v2}, Landroid/widget/ListAdapter;->getItemId(I)J
+    invoke-interface {v6, v2}, Landroid/widget/ListAdapter;->getItemId(I)J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    invoke-virtual {v4, v7, v8}, Landroid/util/LongSparseArray;->delete(J)V
+    invoke-virtual {v4, v6, v7}, Landroid/util/LongSparseArray;->delete(J)V
 
     goto :goto_3
 
@@ -436,33 +445,126 @@
 
     check-cast v4, Landroid/widget/EditableListView$EditableModeWrapper;
 
-    iget-object v7, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
+    iget-object v6, p0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
 
-    invoke-virtual {v4, v7, p1}, Landroid/widget/EditableListView$EditableModeWrapper;->onBatchCheckedStateChanged(Landroid/view/ActionMode;Z)V
+    invoke-virtual {v4, v6, p1}, Landroid/widget/EditableListView$EditableModeWrapper;->onBatchCheckedStateChanged(Landroid/view/ActionMode;Z)V
+
+    .line 171
+    invoke-direct {p0}, Landroid/widget/EditableListView;->updateOnScreenCheckedViews()V
 
     .line 172
-    iget-boolean v4, p0, Landroid/widget/AdapterView;->mInLayout:Z
-
-    if-nez v4, :cond_8
-
-    iget-boolean v4, p0, Landroid/widget/AdapterView;->mBlockLayoutRequests:Z
-
-    if-nez v4, :cond_8
-
-    .line 173
-    iput-boolean v5, p0, Landroid/widget/AdapterView;->mDataChanged:Z
-
-    .line 174
-    invoke-virtual {p0}, Landroid/widget/EditableListView;->rememberSyncState()V
-
-    .line 175
-    invoke-virtual {p0}, Landroid/widget/EditableListView;->requestLayout()V
-
-    .line 178
-    :cond_8
-    iput-boolean v6, p0, Landroid/widget/EditableListView;->mIsUpdateBatchChecked:Z
+    iput-boolean v5, p0, Landroid/widget/EditableListView;->mIsUpdateBatchChecked:Z
 
     goto/16 :goto_0
+.end method
+
+.method private updateCheckBoxState(Landroid/widget/CheckBox;I)V
+    .locals 1
+    .parameter "checkBox"
+    .parameter "position"
+
+    .prologue
+    .line 227
+    if-eqz p1, :cond_1
+
+    invoke-direct {p0, p2}, Landroid/widget/EditableListView;->isValidPos(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 228
+    invoke-virtual {p0}, Landroid/widget/EditableListView;->isEditMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p0, Landroid/widget/EditableListView;->mShowCheckBoxInNoneEditMode:Z
+
+    if-eqz v0, :cond_2
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/widget/CheckBox;->setVisibility(I)V
+
+    .line 230
+    iget-object v0, p0, Landroid/widget/AbsListView;->mCheckStates:Landroid/util/SparseBooleanArray;
+
+    invoke-virtual {v0, p2}, Landroid/util/SparseBooleanArray;->get(I)Z
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
+
+    .line 232
+    :cond_1
+    return-void
+
+    .line 228
+    :cond_2
+    const/16 v0, 0x8
+
+    goto :goto_0
+.end method
+
+.method private updateOnScreenCheckedViews()V
+    .locals 7
+
+    .prologue
+    .line 216
+    iget v3, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+
+    .line 217
+    .local v3, firstPos:I
+    invoke-virtual {p0}, Landroid/widget/EditableListView;->getChildCount()I
+
+    move-result v2
+
+    .line 218
+    .local v2, count:I
+    const/4 v4, 0x0
+
+    .local v4, i:I
+    :goto_0
+    if-ge v4, v2, :cond_0
+
+    .line 219
+    invoke-virtual {p0, v4}, Landroid/widget/EditableListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v1
+
+    .line 220
+    .local v1, child:Landroid/view/View;
+    add-int v5, v3, v4
+
+    .line 221
+    .local v5, position:I
+    const v6, 0x1020001
+
+    invoke-virtual {v1, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/CheckBox;
+
+    .line 222
+    .local v0, checkBox:Landroid/widget/CheckBox;
+    invoke-direct {p0, v0, v5}, Landroid/widget/EditableListView;->updateCheckBoxState(Landroid/widget/CheckBox;I)V
+
+    .line 218
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    .line 224
+    .end local v0           #checkBox:Landroid/widget/CheckBox;
+    .end local v1           #child:Landroid/view/View;
+    .end local v5           #position:I
+    :cond_0
+    return-void
 .end method
 
 
@@ -471,12 +573,12 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 183
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/widget/EditableListView;->updateBatchChecked(Z)V
 
-    .line 190
+    .line 184
     return-void
 .end method
 
@@ -484,12 +586,12 @@
     .locals 1
 
     .prologue
-    .line 193
+    .line 187
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/EditableListView;->updateBatchChecked(Z)V
 
-    .line 194
+    .line 188
     return-void
 .end method
 
@@ -662,12 +764,12 @@
     .parameter "isScrap"
 
     .prologue
-    .line 215
+    .line 209
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->obtainView(I[Z)Landroid/view/View;
 
     move-result-object v1
 
-    .line 216
+    .line 210
     .local v1, view:Landroid/view/View;
     const v2, 0x1020001
 
@@ -677,51 +779,12 @@
 
     check-cast v0, Landroid/widget/CheckBox;
 
-    .line 217
+    .line 211
     .local v0, checkBox:Landroid/widget/CheckBox;
-    if-eqz v0, :cond_1
+    invoke-direct {p0, v0, p1}, Landroid/widget/EditableListView;->updateCheckBoxState(Landroid/widget/CheckBox;I)V
 
-    invoke-direct {p0, p1}, Landroid/widget/EditableListView;->isValidPos(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 218
-    invoke-virtual {p0}, Landroid/widget/EditableListView;->isEditMode()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    iget-boolean v2, p0, Landroid/widget/EditableListView;->mShowCheckBoxInNoneEditMode:Z
-
-    if-eqz v2, :cond_2
-
-    :cond_0
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setVisibility(I)V
-
-    .line 220
-    iget-object v2, p0, Landroid/widget/AbsListView;->mCheckStates:Landroid/util/SparseBooleanArray;
-
-    invoke-virtual {v2, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
-
-    .line 222
-    :cond_1
+    .line 212
     return-object v1
-
-    .line 218
-    :cond_2
-    const/16 v2, 0x8
-
-    goto :goto_0
 .end method
 
 .method public setCheckBoxVisiableInNoneEditMode(Z)V
@@ -742,17 +805,17 @@
     .parameter "value"
 
     .prologue
-    .line 183
+    .line 177
     invoke-direct {p0, p1}, Landroid/widget/EditableListView;->isValidPos(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 184
+    .line 178
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
-    .line 186
+    .line 180
     :cond_0
     return-void
 .end method

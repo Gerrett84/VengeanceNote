@@ -375,7 +375,7 @@
 
     move-result-object v0
 
-    const-string v1, "last_audible_ring_volume"
+    const-string/jumbo v1, "last_audible_ring_volume"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
@@ -423,7 +423,7 @@
 
     move-result-object v3
 
-    const-string v4, "last_audible_ring_volume"
+    const-string/jumbo v4, "last_audible_ring_volume"
 
     invoke-static {v3, v4, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 

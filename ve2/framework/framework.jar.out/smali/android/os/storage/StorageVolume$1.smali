@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 182
+    .line 187
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,54 +49,54 @@
 
     const/4 v7, 0x1
 
-    .line 184
+    .line 189
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 185
+    .line 190
     .local v1, path:Ljava/lang/String;
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v2
+    move-result v2
 
-    .line 186
-    .local v2, description:Ljava/lang/String;
+    .line 191
+    .local v2, descriptionId:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v13
 
-    .line 187
+    .line 192
     .local v13, removable:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v12
 
-    .line 188
+    .line 193
     .local v12, emulated:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 189
+    .line 194
     .local v6, storageId:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 190
+    .line 195
     .local v5, mtpReserveSpace:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v11
 
-    .line 191
+    .line 196
     .local v11, allowMassStorage:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v8
 
-    .line 192
+    .line 197
     .local v8, maxFileSize:J
     new-instance v0, Landroid/os/storage/StorageVolume;
 
@@ -115,7 +115,7 @@
     :goto_2
     const/4 v10, 0x0
 
-    invoke-direct/range {v0 .. v10}, Landroid/os/storage/StorageVolume;-><init>(Ljava/lang/String;Ljava/lang/String;ZZIIZJLandroid/os/storage/StorageVolume$1;)V
+    invoke-direct/range {v0 .. v10}, Landroid/os/storage/StorageVolume;-><init>(Ljava/lang/String;IZZIIZJLandroid/os/storage/StorageVolume$1;)V
 
     return-object v0
 
@@ -140,7 +140,7 @@
     .parameter "x0"
 
     .prologue
-    .line 182
+    .line 187
     invoke-virtual {p0, p1}, Landroid/os/storage/StorageVolume$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/storage/StorageVolume;
 
     move-result-object v0
@@ -153,7 +153,7 @@
     .parameter "size"
 
     .prologue
-    .line 198
+    .line 203
     new-array v0, p1, [Landroid/os/storage/StorageVolume;
 
     return-object v0
@@ -164,7 +164,7 @@
     .parameter "x0"
 
     .prologue
-    .line 182
+    .line 187
     invoke-virtual {p0, p1}, Landroid/os/storage/StorageVolume$1;->newArray(I)[Landroid/os/storage/StorageVolume;
 
     move-result-object v0

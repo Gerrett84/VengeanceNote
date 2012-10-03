@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public final mAppPackage:Ljava/lang/String;
+
 .field public final mData:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -29,6 +31,8 @@
 
 .field public final mDeliveryIntent:Landroid/app/PendingIntent;
 
+.field public final mDestAddress:Ljava/lang/String;
+
 .field public mMessageRef:I
 
 .field public mRetryCount:I
@@ -37,11 +41,13 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/HashMap;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+.method public constructor <init>(Ljava/util/HashMap;Landroid/app/PendingIntent;Landroid/app/PendingIntent;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
     .parameter
     .parameter "sentIntent"
     .parameter "deliveryIntent"
+    .parameter "appPackage"
+    .parameter "destAddr"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,30 +58,38 @@
             ">;",
             "Landroid/app/PendingIntent;",
             "Landroid/app/PendingIntent;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
             ")V"
         }
     .end annotation
 
     .prologue
-    .line 1051
+    .line 1110
     .local p1, data:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1052
+    .line 1111
     iput-object p1, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mData:Ljava/util/HashMap;
 
-    .line 1053
+    .line 1112
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mSentIntent:Landroid/app/PendingIntent;
 
-    .line 1054
+    .line 1113
     iput-object p3, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mDeliveryIntent:Landroid/app/PendingIntent;
 
-    .line 1055
+    .line 1114
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mRetryCount:I
 
-    .line 1056
+    .line 1115
+    iput-object p4, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mAppPackage:Ljava/lang/String;
+
+    .line 1116
+    iput-object p5, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mDestAddress:Ljava/lang/String;
+
+    .line 1117
     return-void
 .end method
 
@@ -85,10 +99,10 @@
     .locals 2
 
     .prologue
-    .line 1063
+    .line 1124
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SmsTracker;->mData:Ljava/util/HashMap;
 
-    .line 1064
+    .line 1125
     .local v0, map:Ljava/util/HashMap;
     const-string/jumbo v1, "parts"
 

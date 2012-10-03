@@ -359,7 +359,7 @@
 
     .line 1266
     .local v1, views:Lcom/android/internal/policy/impl/MiuiLockScreen$CallLogPreviewListAdapter$ListItemViews;
-    const v2, 0x60b005a
+    const v2, 0x60b0033
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
     iput-object v2, v1, Lcom/android/internal/policy/impl/MiuiLockScreen$CallLogPreviewListAdapter$ListItemViews;->line1View:Landroid/widget/TextView;
 
     .line 1267
-    const v2, 0x60b005b
+    const v2, 0x60b0034
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
     iput-object v2, v1, Lcom/android/internal/policy/impl/MiuiLockScreen$CallLogPreviewListAdapter$ListItemViews;->numberView:Landroid/widget/TextView;
 
     .line 1268
-    const v2, 0x60b0036
+    const v2, 0x60b0035
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -392,7 +392,7 @@
     iput-object v2, v1, Lcom/android/internal/policy/impl/MiuiLockScreen$CallLogPreviewListAdapter$ListItemViews;->dateView:Landroid/widget/TextView;
 
     .line 1269
-    const v2, 0x60b005c
+    const v2, 0x60b0036
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

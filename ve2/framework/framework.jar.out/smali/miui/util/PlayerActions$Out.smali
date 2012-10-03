@@ -39,6 +39,8 @@
 
 .field public static final KEY_CALLBACK_WRAP:Ljava/lang/String; = "callback_wrap"
 
+.field public static final KEY_CHANNEL_NAME:Ljava/lang/String; = "channel_name"
+
 .field public static final KEY_DURATION:Ljava/lang/String; = "duration"
 
 .field public static final KEY_FAVORITE:Ljava/lang/String; = "favorite"

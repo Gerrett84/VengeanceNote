@@ -34,10 +34,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 57
+    .line 56
     invoke-direct {p0, v0, v0}, Landroid/graphics/drawable/ClipDrawable;-><init>(Landroid/graphics/drawable/ClipDrawable$ClipState;Landroid/content/res/Resources;)V
 
-    .line 58
+    .line 57
     return-void
 .end method
 
@@ -47,24 +47,24 @@
     .parameter "res"
 
     .prologue
-    .line 293
+    .line 292
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 51
+    .line 50
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 294
+    .line 293
     new-instance v0, Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/ClipDrawable$ClipState;-><init>(Landroid/graphics/drawable/ClipDrawable$ClipState;Landroid/graphics/drawable/ClipDrawable;Landroid/content/res/Resources;)V
 
     iput-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
-    .line 295
+    .line 294
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .parameter "x2"
 
     .prologue
-    .line 49
+    .line 48
     invoke-direct {p0, p1, p2}, Landroid/graphics/drawable/ClipDrawable;-><init>(Landroid/graphics/drawable/ClipDrawable$ClipState;Landroid/content/res/Resources;)V
 
     return-void
@@ -90,31 +90,31 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 64
+    .line 63
     invoke-direct {p0, v0, v0}, Landroid/graphics/drawable/ClipDrawable;-><init>(Landroid/graphics/drawable/ClipDrawable$ClipState;Landroid/content/res/Resources;)V
 
-    .line 66
+    .line 65
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iput-object p1, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 67
+    .line 66
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iput p2, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mGravity:I
 
-    .line 68
+    .line 67
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iput p3, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mOrientation:I
 
-    .line 70
+    .line 69
     if-eqz p1, :cond_0
 
-    .line 71
+    .line 70
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 73
+    .line 72
     :cond_0
     return-void
 .end method
@@ -126,7 +126,7 @@
     .parameter "canvas"
 
     .prologue
-    .line 196
+    .line 195
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -137,38 +137,38 @@
 
     if-nez v0, :cond_1
 
-    .line 222
+    .line 221
     :cond_0
     :goto_0
     return-void
 
-    .line 200
+    .line 199
     :cond_1
     iget-object v4, p0, Landroid/graphics/drawable/ClipDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 201
+    .line 200
     .local v4, r:Landroid/graphics/Rect;
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    .line 202
+    .line 201
     .local v3, bounds:Landroid/graphics/Rect;
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getLevel()I
 
     move-result v8
 
-    .line 203
+    .line 202
     .local v8, level:I
     invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
 
     move-result v1
 
-    .line 204
+    .line 203
     .local v1, w:I
     const/4 v7, 0x0
 
-    .line 205
+    .line 204
     .local v7, iw:I
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
@@ -178,7 +178,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 206
+    .line 205
     add-int/lit8 v0, v1, 0x0
 
     rsub-int v9, v8, 0x2710
@@ -189,17 +189,17 @@
 
     sub-int/2addr v1, v0
 
-    .line 208
+    .line 207
     :cond_2
     invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
 
     move-result v2
 
-    .line 209
+    .line 208
     .local v2, h:I
     const/4 v6, 0x0
 
-    .line 210
+    .line 209
     .local v6, ih:I
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
@@ -209,7 +209,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 211
+    .line 210
     add-int/lit8 v0, v2, 0x0
 
     rsub-int v9, v8, 0x2710
@@ -220,13 +220,13 @@
 
     sub-int/2addr v2, v0
 
-    .line 213
+    .line 212
     :cond_3
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getResolvedLayoutDirectionSelf()I
 
     move-result v5
 
-    .line 214
+    .line 213
     .local v5, layoutDirection:I
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
@@ -234,25 +234,25 @@
 
     invoke-static/range {v0 .. v5}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
-    .line 216
+    .line 215
     if-lez v1, :cond_0
 
     if-lez v2, :cond_0
 
-    .line 217
+    .line 216
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 218
+    .line 217
     invoke-virtual {p1, v4}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 219
+    .line 218
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 220
+    .line 219
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
@@ -262,7 +262,7 @@
     .locals 2
 
     .prologue
-    .line 139
+    .line 138
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->getChangingConfigurations()I
 
     move-result v0
@@ -290,7 +290,7 @@
     .locals 2
 
     .prologue
-    .line 236
+    .line 235
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/ClipDrawable$ClipState;->canConstantState()Z
@@ -299,7 +299,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 237
+    .line 236
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getChangingConfigurations()I
@@ -308,10 +308,10 @@
 
     iput v1, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mChangingConfigurations:I
 
-    .line 238
+    .line 237
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
-    .line 240
+    .line 239
     :goto_0
     return-object v0
 
@@ -325,7 +325,7 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 230
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -341,7 +341,7 @@
     .locals 1
 
     .prologue
-    .line 226
+    .line 225
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -357,7 +357,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 167
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -374,7 +374,7 @@
     .parameter "padding"
 
     .prologue
-    .line 147
+    .line 146
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -405,23 +405,23 @@
 
     const/4 v7, 0x1
 
-    .line 78
+    .line 77
     invoke-super {p0, p1, p2, p3}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)V
 
-    .line 82
+    .line 81
     sget-object v6, Lcom/android/internal/R$styleable;->ClipDrawable:[I
 
     invoke-virtual {p1, p3, v6}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 84
+    .line 83
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v8, v7}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v3
 
-    .line 87
+    .line 86
     .local v3, orientation:I
     const/4 v6, 0x0
 
@@ -429,22 +429,22 @@
 
     move-result v2
 
-    .line 88
+    .line 87
     .local v2, g:I
     invoke-virtual {v0, v7}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 90
+    .line 89
     .local v1, dr:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 92
+    .line 91
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v4
 
-    .line 94
+    .line 93
     .local v4, outerDepth:I
     :cond_0
     :goto_0
@@ -463,22 +463,22 @@
 
     if-le v6, v4, :cond_2
 
-    .line 95
+    .line 94
     :cond_1
     if-ne v5, v8, :cond_0
 
-    .line 98
+    .line 97
     invoke-static {p1, p2, p3}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 101
+    .line 100
     :cond_2
     if-nez v1, :cond_3
 
-    .line 102
+    .line 101
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     const-string v7, "No drawable specified for <clip>"
@@ -487,26 +487,26 @@
 
     throw v6
 
-    .line 105
+    .line 104
     :cond_3
     iget-object v6, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iput-object v1, v6, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 106
+    .line 105
     iget-object v6, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iput v3, v6, Landroid/graphics/drawable/ClipDrawable$ClipState;->mOrientation:I
 
-    .line 107
+    .line 106
     iget-object v6, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iput v2, v6, Landroid/graphics/drawable/ClipDrawable$ClipState;->mGravity:I
 
-    .line 109
+    .line 108
     invoke-virtual {v1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 110
+    .line 109
     return-void
 .end method
 
@@ -515,19 +515,19 @@
     .parameter "who"
 
     .prologue
-    .line 115
+    .line 114
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
-    .line 116
+    .line 115
     .local v0, callback:Landroid/graphics/drawable/Drawable$Callback;
     if-eqz v0, :cond_0
 
-    .line 117
+    .line 116
     invoke-interface {v0, p0}, Landroid/graphics/drawable/Drawable$Callback;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 119
+    .line 118
     :cond_0
     return-void
 .end method
@@ -536,7 +536,7 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 172
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -553,14 +553,14 @@
     .parameter "bounds"
 
     .prologue
-    .line 190
+    .line 189
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 191
+    .line 190
     return-void
 .end method
 
@@ -569,17 +569,17 @@
     .parameter "level"
 
     .prologue
-    .line 183
+    .line 182
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
-    .line 184
+    .line 183
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->invalidateSelf()V
 
-    .line 185
+    .line 184
     const/4 v0, 0x1
 
     return v0
@@ -590,7 +590,7 @@
     .parameter "state"
 
     .prologue
-    .line 178
+    .line 177
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
@@ -609,19 +609,19 @@
     .parameter "when"
 
     .prologue
-    .line 122
+    .line 121
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
-    .line 123
+    .line 122
     .local v0, callback:Landroid/graphics/drawable/Drawable$Callback;
     if-eqz v0, :cond_0
 
-    .line 124
+    .line 123
     invoke-interface {v0, p0, p2, p3, p4}, Landroid/graphics/drawable/Drawable$Callback;->scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
 
-    .line 126
+    .line 125
     :cond_0
     return-void
 .end method
@@ -631,14 +631,14 @@
     .parameter "alpha"
 
     .prologue
-    .line 158
+    .line 157
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 159
+    .line 158
     return-void
 .end method
 
@@ -647,14 +647,14 @@
     .parameter "cf"
 
     .prologue
-    .line 163
+    .line 162
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 164
+    .line 163
     return-void
 .end method
 
@@ -664,14 +664,14 @@
     .parameter "restart"
 
     .prologue
-    .line 152
+    .line 151
     iget-object v0, p0, Landroid/graphics/drawable/ClipDrawable;->mClipState:Landroid/graphics/drawable/ClipDrawable$ClipState;
 
     iget-object v0, v0, Landroid/graphics/drawable/ClipDrawable$ClipState;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
-    .line 153
+    .line 152
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     move-result v0
@@ -685,19 +685,19 @@
     .parameter "what"
 
     .prologue
-    .line 129
+    .line 128
     invoke-virtual {p0}, Landroid/graphics/drawable/ClipDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
     move-result-object v0
 
-    .line 130
+    .line 129
     .local v0, callback:Landroid/graphics/drawable/Drawable$Callback;
     if-eqz v0, :cond_0
 
-    .line 131
+    .line 130
     invoke-interface {v0, p0, p2}, Landroid/graphics/drawable/Drawable$Callback;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
 
-    .line 133
+    .line 132
     :cond_0
     return-void
 .end method

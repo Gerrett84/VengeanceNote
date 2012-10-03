@@ -31,7 +31,7 @@
     .end annotation
 .end method
 
-.method public abstract pokeWakelock()V
+.method public abstract pokeWakelock(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

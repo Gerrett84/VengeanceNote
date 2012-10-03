@@ -32,7 +32,7 @@
     .locals 2
 
     .prologue
-    .line 356
+    .line 447
     sget-object v0, Landroid/provider/BrowserContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "history"
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 351
+    .line 442
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

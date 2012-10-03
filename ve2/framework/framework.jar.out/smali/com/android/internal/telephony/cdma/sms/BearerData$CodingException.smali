@@ -20,9 +20,9 @@
     .parameter "s"
 
     .prologue
-    .line 344
+    .line 365
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 345
+    .line 366
     return-void
 .end method

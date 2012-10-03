@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract disable()Z
+.method public abstract disable(Z)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -24,6 +24,14 @@
 .end method
 
 .method public abstract disableNdefPush()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract dispatch(Landroid/nfc/Tag;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -87,7 +95,15 @@
     .end annotation
 .end method
 
-.method public abstract setForegroundNdefPush(Landroid/nfc/NdefMessage;Landroid/nfc/INdefPushCallback;)V
+.method public abstract setNdefPushCallback(Landroid/nfc/INdefPushCallback;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract setP2pModes(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

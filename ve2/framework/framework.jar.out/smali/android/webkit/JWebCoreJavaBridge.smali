@@ -17,7 +17,7 @@
         value = {
             "Ljava/lang/ref/WeakReference",
             "<",
-            "Landroid/webkit/WebView;",
+            "Landroid/webkit/WebViewClassic;",
             ">;"
         }
     .end annotation
@@ -191,14 +191,14 @@
 
     move-result-object v0
 
-    check-cast v0, Landroid/webkit/WebView;
+    check-cast v0, Landroid/webkit/WebViewClassic;
 
     .line 263
-    .local v0, current:Landroid/webkit/WebView;
+    .local v0, current:Landroid/webkit/WebViewClassic;
     if-eqz v0, :cond_0
 
     .line 266
-    invoke-virtual {v0}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -231,7 +231,7 @@
     goto :goto_0
 
     .line 262
-    .end local v0           #current:Landroid/webkit/WebView;
+    .end local v0           #current:Landroid/webkit/WebViewClassic;
     :catchall_0
     move-exception v1
 
@@ -252,7 +252,7 @@
 .method private native nativeUpdatePluginDirectories([Ljava/lang/String;Z)V
 .end method
 
-.method static declared-synchronized removeActiveWebView(Landroid/webkit/WebView;)V
+.method static declared-synchronized removeActiveWebView(Landroid/webkit/WebViewClassic;)V
     .locals 2
     .parameter "webview"
 
@@ -342,7 +342,7 @@
     goto :goto_0
 .end method
 
-.method static declared-synchronized setActiveWebView(Landroid/webkit/WebView;)V
+.method static declared-synchronized setActiveWebView(Landroid/webkit/WebViewClassic;)V
     .locals 2
     .parameter "webview"
 

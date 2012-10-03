@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4913
+    .line 5030
     iput-object p1, p0, Landroid/view/ViewGroup$3;->this$0:Landroid/view/ViewGroup;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     .parameter "transitionType"
 
     .prologue
-    .line 4927
+    .line 5044
     iget-object v0, p0, Landroid/view/ViewGroup$3;->this$0:Landroid/view/ViewGroup;
 
     #getter for: Landroid/view/ViewGroup;->mLayoutSuppressed:Z
@@ -61,12 +61,12 @@
 
     if-nez v0, :cond_0
 
-    .line 4928
+    .line 5045
     iget-object v0, p0, Landroid/view/ViewGroup$3;->this$0:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->requestLayout()V
 
-    .line 4929
+    .line 5046
     iget-object v0, p0, Landroid/view/ViewGroup$3;->this$0:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
@@ -74,7 +74,7 @@
     #setter for: Landroid/view/ViewGroup;->mLayoutSuppressed:Z
     invoke-static {v0, v1}, Landroid/view/ViewGroup;->access$302(Landroid/view/ViewGroup;Z)Z
 
-    .line 4931
+    .line 5048
     :cond_0
     const/4 v0, 0x3
 
@@ -89,12 +89,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 4932
+    .line 5049
     iget-object v0, p0, Landroid/view/ViewGroup$3;->this$0:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p3}, Landroid/view/ViewGroup;->endViewTransition(Landroid/view/View;)V
 
-    .line 4934
+    .line 5051
     :cond_1
     return-void
 .end method
@@ -107,17 +107,17 @@
     .parameter "transitionType"
 
     .prologue
-    .line 4919
+    .line 5036
     const/4 v0, 0x3
 
     if-ne p4, v0, :cond_0
 
-    .line 4920
+    .line 5037
     iget-object v0, p0, Landroid/view/ViewGroup$3;->this$0:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, p3}, Landroid/view/ViewGroup;->startViewTransition(Landroid/view/View;)V
 
-    .line 4922
+    .line 5039
     :cond_0
     return-void
 .end method

@@ -24,13 +24,13 @@
     .parameter "activityManagerService"
 
     .prologue
-    .line 4531
+    .line 4730
     invoke-direct {p0}, Landroid/os/IPermissionController$Stub;-><init>()V
 
-    .line 4532
+    .line 4731
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 4533
+    .line 4732
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "uid"
 
     .prologue
-    .line 4536
+    .line 4735
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/am/ActivityManagerService;->checkPermission(Ljava/lang/String;II)I

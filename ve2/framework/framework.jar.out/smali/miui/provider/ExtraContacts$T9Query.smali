@@ -136,7 +136,7 @@
 
     const/16 v1, 0xb
 
-    const-string v2, "key_type"
+    const-string/jumbo v2, "key_type"
 
     aput-object v2, v0, v1
 

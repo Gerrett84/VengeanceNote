@@ -24,13 +24,13 @@
     .parameter "level"
 
     .prologue
-    .line 817
+    .line 841
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 818
+    .line 842
     iput p1, p0, Landroid/text/HtmlToSpannedConverter$Header;->mLevel:I
 
-    .line 819
+    .line 843
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .parameter "x0"
 
     .prologue
-    .line 814
+    .line 838
     iget v0, p0, Landroid/text/HtmlToSpannedConverter$Header;->mLevel:I
 
     return v0

@@ -44,7 +44,7 @@
 
     if-nez v0, :cond_0
 
-    .line 39
+    .line 42
     :try_start_0
     new-instance v0, Landroid/view/Surface;
 
@@ -68,7 +68,7 @@
 
     iput-object v0, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
-    .line 43
+    .line 50
     iget-object v0, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     const/4 v1, 0x0
@@ -77,16 +77,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 48
+    .line 55
     :cond_0
     :goto_0
     return-void
 
-    .line 44
+    .line 51
     :catch_0
     move-exception v9
 
-    .line 45
+    .line 52
     .local v9, e:Ljava/lang/Exception;
     const-string v0, "WindowManager"
 
@@ -103,17 +103,17 @@
     .locals 3
 
     .prologue
-    .line 83
+    .line 90
     iget-boolean v1, p0, Lcom/android/server/wm/DimSurface;->mDimShown:Z
 
     if-eqz v1, :cond_0
 
-    .line 84
+    .line 91
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/wm/DimSurface;->mDimShown:Z
 
-    .line 87
+    .line 94
     :try_start_0
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
@@ -121,16 +121,16 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 92
+    .line 99
     :cond_0
     :goto_0
     return-void
 
-    .line 88
+    .line 95
     :catch_0
     move-exception v0
 
-    .line 89
+    .line 96
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v1, "WindowManager"
 
@@ -147,7 +147,7 @@
     .parameter "pw"
 
     .prologue
-    .line 95
+    .line 102
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "mDimSurface="
@@ -158,7 +158,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 96
+    .line 103
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "mDimShown="
@@ -169,7 +169,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 97
+    .line 104
     const-string v0, " mLayer="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -178,7 +178,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 98
+    .line 105
     const-string v0, " mDimColor=0x"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -191,7 +191,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 99
+    .line 106
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "mLastDimWidth="
@@ -202,7 +202,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 100
+    .line 107
     const-string v0, " mLastDimWidth="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -211,7 +211,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 101
+    .line 108
     return-void
 .end method
 
@@ -223,24 +223,24 @@
     .parameter "color"
 
     .prologue
-    .line 54
+    .line 61
     iget-boolean v1, p0, Lcom/android/server/wm/DimSurface;->mDimShown:Z
 
     if-nez v1, :cond_1
 
-    .line 57
+    .line 64
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/wm/DimSurface;->mDimShown:Z
 
-    .line 59
+    .line 66
     :try_start_0
     iput p1, p0, Lcom/android/server/wm/DimSurface;->mLastDimWidth:I
 
-    .line 60
+    .line 67
     iput p2, p0, Lcom/android/server/wm/DimSurface;->mLastDimHeight:I
 
-    .line 61
+    .line 68
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     const/4 v2, 0x0
@@ -249,33 +249,33 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setPosition(II)V
 
-    .line 62
+    .line 69
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     invoke-virtual {v1, p1, p2}, Landroid/view/Surface;->setSize(II)V
 
-    .line 63
+    .line 70
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     invoke-virtual {v1, p3}, Landroid/view/Surface;->setLayer(I)V
 
-    .line 64
+    .line 71
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     invoke-virtual {v1}, Landroid/view/Surface;->show()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 80
+    .line 87
     :cond_0
     :goto_0
     return-void
 
-    .line 65
+    .line 72
     :catch_0
     move-exception v0
 
-    .line 66
+    .line 73
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v1, "WindowManager"
 
@@ -285,7 +285,7 @@
 
     goto :goto_0
 
-    .line 68
+    .line 75
     .end local v0           #e:Ljava/lang/RuntimeException;
     :cond_1
     iget v1, p0, Lcom/android/server/wm/DimSurface;->mLastDimWidth:I
@@ -304,30 +304,30 @@
 
     if-eq v1, p3, :cond_0
 
-    .line 72
+    .line 79
     :cond_2
     iput p1, p0, Lcom/android/server/wm/DimSurface;->mLastDimWidth:I
 
-    .line 73
+    .line 80
     iput p2, p0, Lcom/android/server/wm/DimSurface;->mLastDimHeight:I
 
-    .line 74
+    .line 81
     iput p3, p0, Lcom/android/server/wm/DimSurface;->mLayer:I
 
-    .line 75
+    .line 82
     iput p4, p0, Lcom/android/server/wm/DimSurface;->mDimColor:I
 
-    .line 76
+    .line 83
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     invoke-virtual {v1, p1, p2}, Landroid/view/Surface;->setSize(II)V
 
-    .line 77
+    .line 84
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     invoke-virtual {v1, p3}, Landroid/view/Surface;->setLayer(I)V
 
-    .line 78
+    .line 85
     iget-object v1, p0, Lcom/android/server/wm/DimSurface;->mDimSurface:Landroid/view/Surface;
 
     shr-int/lit8 v2, p4, 0x18

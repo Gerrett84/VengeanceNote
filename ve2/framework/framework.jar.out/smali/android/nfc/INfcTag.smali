@@ -47,7 +47,7 @@
     .end annotation
 .end method
 
-.method public abstract getLastError(I)I
+.method public abstract getExtendedLengthApdusSupported()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -72,14 +72,6 @@
 .end method
 
 .method public abstract getTimeout(I)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract getUid(I)[B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

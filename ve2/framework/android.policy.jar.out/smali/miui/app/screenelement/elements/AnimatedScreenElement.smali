@@ -12,10 +12,11 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+.method public constructor <init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
     .locals 4
     .parameter "node"
     .parameter "c"
+    .parameter "root"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lmiui/app/screenelement/ScreenElementLoadException;
@@ -23,10 +24,10 @@
     .end annotation
 
     .prologue
-    .line 20
-    invoke-direct {p0, p1, p2}, Lmiui/app/screenelement/elements/ScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
-
     .line 21
+    invoke-direct {p0, p1, p2, p3}, Lmiui/app/screenelement/elements/ScreenElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
+
+    .line 22
     new-instance v0, Lmiui/app/screenelement/animation/AnimatedElement;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
@@ -35,12 +36,12 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
-    .line 22
+    .line 23
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mHasName:Z
 
     if-eqz v0, :cond_0
 
-    .line 23
+    .line 24
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mName:Ljava/lang/String;
@@ -53,7 +54,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mActualXVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
-    .line 24
+    .line 25
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mName:Ljava/lang/String;
@@ -66,7 +67,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mActualYVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
-    .line 26
+    .line 27
     :cond_0
     return-void
 .end method
@@ -77,14 +78,14 @@
     .locals 2
 
     .prologue
-    .line 93
+    .line 94
     iget-object v1, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v1}, Lmiui/app/screenelement/animation/AnimatedElement;->getAlpha()I
 
     move-result v0
 
-    .line 94
+    .line 95
     .local v0, a:I
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mParent:Lmiui/app/screenelement/elements/ElementGroup;
 
@@ -113,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 90
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getRotationAngle()F
@@ -127,7 +128,7 @@
     .locals 2
 
     .prologue
-    .line 81
+    .line 82
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getCenterX()F
@@ -147,7 +148,7 @@
     .locals 2
 
     .prologue
-    .line 85
+    .line 86
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getCenterY()F
@@ -167,7 +168,7 @@
     .locals 2
 
     .prologue
-    .line 69
+    .line 70
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getHeight()F
@@ -187,7 +188,7 @@
     .locals 2
 
     .prologue
-    .line 77
+    .line 78
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getMaxHeight()F
@@ -207,7 +208,7 @@
     .locals 2
 
     .prologue
-    .line 73
+    .line 74
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getMaxWidth()F
@@ -227,7 +228,7 @@
     .locals 2
 
     .prologue
-    .line 65
+    .line 66
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getWidth()F
@@ -247,7 +248,7 @@
     .locals 2
 
     .prologue
-    .line 57
+    .line 58
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getX()F
@@ -267,7 +268,7 @@
     .locals 2
 
     .prologue
-    .line 61
+    .line 62
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->getY()F
@@ -287,15 +288,15 @@
     .locals 1
 
     .prologue
-    .line 30
+    .line 31
     invoke-super {p0}, Lmiui/app/screenelement/elements/ScreenElement;->init()V
 
-    .line 31
+    .line 32
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->init()V
 
-    .line 32
+    .line 33
     return-void
 .end method
 
@@ -303,7 +304,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 54
     invoke-super {p0}, Lmiui/app/screenelement/elements/ScreenElement;->isVisibleInner()Z
 
     move-result v0
@@ -327,19 +328,20 @@
     goto :goto_0
 .end method
 
-.method public reset()V
+.method public reset(J)V
     .locals 1
+    .parameter "time"
 
     .prologue
-    .line 36
-    invoke-super {p0}, Lmiui/app/screenelement/elements/ScreenElement;->reset()V
-
     .line 37
-    iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
-
-    invoke-virtual {v0}, Lmiui/app/screenelement/animation/AnimatedElement;->reset()V
+    invoke-super {p0, p1, p2}, Lmiui/app/screenelement/elements/ScreenElement;->reset(J)V
 
     .line 38
+    iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
+
+    invoke-virtual {v0, p1, p2}, Lmiui/app/screenelement/animation/AnimatedElement;->reset(J)V
+
+    .line 39
     return-void
 .end method
 
@@ -348,20 +350,20 @@
     .parameter "currentTime"
 
     .prologue
-    .line 42
+    .line 43
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
 
     invoke-virtual {v0, p1, p2}, Lmiui/app/screenelement/animation/AnimatedElement;->tick(J)V
 
-    .line 44
+    .line 45
     invoke-virtual {p0}, Lmiui/app/screenelement/elements/AnimatedScreenElement;->updateVisibility()V
 
-    .line 45
+    .line 46
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mHasName:Z
 
     if-eqz v0, :cond_0
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mActualXVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
@@ -374,7 +376,7 @@
 
     invoke-virtual {v0, v1, v2}, Lmiui/app/screenelement/util/IndexedNumberVariable;->set(D)V
 
-    .line 47
+    .line 48
     iget-object v0, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mActualYVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/AnimatedScreenElement;->mAni:Lmiui/app/screenelement/animation/AnimatedElement;
@@ -387,7 +389,7 @@
 
     invoke-virtual {v0, v1, v2}, Lmiui/app/screenelement/util/IndexedNumberVariable;->set(D)V
 
-    .line 49
+    .line 50
     :cond_0
     return-void
 .end method

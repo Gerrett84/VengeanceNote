@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 459
+    .line 479
     iput-object p1, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v2, 0x0
 
-    .line 462
+    .line 482
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 464
+    .line 484
     .local v0, action:Ljava/lang/String;
     const-string v3, "android.intent.action.BOOT_COMPLETED"
 
@@ -59,13 +59,13 @@
 
     if-eqz v3, :cond_2
 
-    .line 465
+    .line 485
     iget-object v3, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     #setter for: Lcom/android/server/MountService;->mBooted:Z
     invoke-static {v3, v1}, Lcom/android/server/MountService;->access$502(Lcom/android/server/MountService;Z)Z
 
-    .line 471
+    .line 491
     const-string v3, "simulator"
 
     const-string v4, "ro.product.device"
@@ -80,7 +80,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 472
+    .line 492
     iget-object v3, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
 
     const/4 v4, 0x0
@@ -92,12 +92,12 @@
     #calls: Lcom/android/server/MountService;->notifyVolumeStateChange(Ljava/lang/String;Ljava/lang/String;II)V
     invoke-static {v3, v4, v5, v2, v6}, Lcom/android/server/MountService;->access$600(Lcom/android/server/MountService;Ljava/lang/String;Ljava/lang/String;II)V
 
-    .line 541
+    .line 561
     :cond_0
     :goto_0
     return-void
 
-    .line 476
+    .line 496
     :cond_1
     new-instance v2, Lcom/android/server/MountService$1$1;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 536
+    .line 556
     :cond_2
     const-string v3, "android.hardware.usb.action.USB_STATE"
 
@@ -117,7 +117,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 537
+    .line 557
     const-string v3, "connected"
 
     invoke-virtual {p2, v3, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -134,7 +134,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 539
+    .line 559
     .local v1, available:Z
     :goto_1
     iget-object v2, p0, Lcom/android/server/MountService$1;->this$0:Lcom/android/server/MountService;
@@ -148,6 +148,6 @@
     :cond_3
     move v1, v2
 
-    .line 537
+    .line 557
     goto :goto_1
 .end method

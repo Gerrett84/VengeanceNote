@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private final mWebView:Landroid/webkit/WebView;
+.field private final mWebView:Landroid/webkit/WebViewClassic;
 
 .field private mZoomButtonsController:Landroid/widget/ZoomButtonsController;
 
@@ -24,7 +24,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/webkit/ZoomManager;Landroid/webkit/WebView;)V
+.method public constructor <init>(Landroid/webkit/ZoomManager;Landroid/webkit/WebViewClassic;)V
     .locals 0
     .parameter "zoomManager"
     .parameter "webView"
@@ -37,19 +37,19 @@
     iput-object p1, p0, Landroid/webkit/ZoomControlEmbedded;->mZoomManager:Landroid/webkit/ZoomManager;
 
     .line 35
-    iput-object p2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    iput-object p2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
 
     .line 36
     return-void
 .end method
 
-.method static synthetic access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebView;
+.method static synthetic access$100(Landroid/webkit/ZoomControlEmbedded;)Landroid/webkit/WebViewClassic;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 25
-    iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
 
     return-object v0
 .end method
@@ -77,7 +77,11 @@
     .line 85
     new-instance v2, Landroid/widget/ZoomButtonsController;
 
-    iget-object v3, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    iget-object v3, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
+
+    invoke-virtual {v3}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
+
+    move-result-object v3
 
     invoke-direct {v2, v3}, Landroid/widget/ZoomButtonsController;-><init>(Landroid/view/View;)V
 
@@ -220,15 +224,15 @@
     if-eqz v2, :cond_0
 
     .line 44
-    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getSettings()Landroid/webkit/WebSettingsClassic;
 
     move-result-object v1
 
     .line 45
-    .local v1, settings:Landroid/webkit/WebSettings;
-    invoke-virtual {v1}, Landroid/webkit/WebSettings;->getDoubleTapToastCount()I
+    .local v1, settings:Landroid/webkit/WebSettingsClassic;
+    invoke-virtual {v1}, Landroid/webkit/WebSettingsClassic;->getDoubleTapToastCount()I
 
     move-result v0
 
@@ -247,16 +251,16 @@
     .line 47
     add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v1, v0}, Landroid/webkit/WebSettings;->setDoubleTapToastCount(I)V
+    invoke-virtual {v1, v0}, Landroid/webkit/WebSettingsClassic;->setDoubleTapToastCount(I)V
 
     .line 48
-    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebView;
+    iget-object v2, p0, Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v2}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/webkit/WebViewClassic;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    const v3, 0x104031f
+    const v3, 0x1040341
 
     invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -266,7 +270,7 @@
 
     .line 54
     .end local v0           #count:I
-    .end local v1           #settings:Landroid/webkit/WebSettings;
+    .end local v1           #settings:Landroid/webkit/WebSettingsClassic;
     :cond_0
     return-void
 .end method

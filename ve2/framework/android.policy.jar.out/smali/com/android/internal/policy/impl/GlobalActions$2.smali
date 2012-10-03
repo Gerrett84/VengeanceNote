@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 166
+    .line 206
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(II)V
@@ -36,23 +36,41 @@
 
 
 # virtual methods
-.method public onPress()V
-    .locals 2
+.method public onLongPress()Z
+    .locals 1
 
     .prologue
-    .line 170
+    .line 214
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$100(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$500(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->rebootSafeMode()V
 
-    invoke-static {v0, v1}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
+    .line 215
+    const/4 v0, 0x1
 
-    .line 171
+    return v0
+.end method
+
+.method public onPress()V
+    .locals 1
+
+    .prologue
+    .line 210
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$500(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->shutdown()V
+
+    .line 211
     return-void
 .end method
 
@@ -60,7 +78,7 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 223
     const/4 v0, 0x1
 
     return v0
@@ -70,7 +88,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 219
     const/4 v0, 0x1
 
     return v0

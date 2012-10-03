@@ -33,16 +33,16 @@
     .parameter "str"
 
     .prologue
-    .line 55
+    .line 56
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
+    .line 57
     iput-object p1, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mString:Ljava/lang/String;
 
-    .line 57
+    .line 58
     invoke-virtual {p0}, Lmiui/app/screenelement/data/Expression$Tokenizer;->reset()V
 
-    .line 58
+    .line 59
     return-void
 .end method
 
@@ -58,14 +58,14 @@
 
     const/16 v10, 0x23
 
-    .line 65
+    .line 66
     const/4 v0, 0x0
 
-    .line 66
+    .line 67
     .local v0, bracketCount:I
     const/4 v1, -0x1
 
-    .line 67
+    .line 68
     .local v1, bracketStart:I
     iget v4, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
@@ -79,25 +79,25 @@
 
     if-ge v4, v8, :cond_15
 
-    .line 68
+    .line 69
     iget-object v8, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mString:Ljava/lang/String;
 
     invoke-virtual {v8, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
-    .line 70
+    .line 71
     .local v2, c:C
     if-nez v0, :cond_11
 
-    .line 71
+    .line 72
     if-eq v2, v10, :cond_0
 
     const/16 v8, 0x40
 
     if-ne v2, v8, :cond_6
 
-    .line 74
+    .line 75
     :cond_0
     add-int/lit8 v5, v4, 0x1
 
@@ -111,7 +111,7 @@
 
     if-ge v5, v8, :cond_1
 
-    .line 75
+    .line 76
     iget-object v8, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mString:Ljava/lang/String;
 
     invoke-virtual {v8, v5}, Ljava/lang/String;->charAt(I)C
@@ -125,13 +125,13 @@
 
     if-nez v8, :cond_3
 
-    .line 78
+    .line 79
     :cond_1
     add-int/lit8 v8, v4, 0x1
 
     if-ne v5, v8, :cond_4
 
-    .line 79
+    .line 80
     const-string v8, "Expression"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -156,14 +156,14 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
+    .line 137
     .end local v2           #c:C
     .end local v5           #j:I
     :cond_2
     :goto_2
     return-object v7
 
-    .line 74
+    .line 75
     .restart local v2       #c:C
     .restart local v5       #j:I
     :cond_3
@@ -171,11 +171,11 @@
 
     goto :goto_1
 
-    .line 82
+    .line 83
     :cond_4
     iput v5, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 83
+    .line 84
     new-instance v8, Lmiui/app/screenelement/data/Expression$Tokenizer$Token;
 
     if-ne v2, v10, :cond_5
@@ -202,7 +202,7 @@
 
     goto :goto_3
 
-    .line 84
+    .line 85
     .end local v5           #j:I
     :cond_6
     #calls: Lmiui/app/screenelement/data/Expression;->isDigitChar(C)Z
@@ -212,7 +212,7 @@
 
     if-eqz v8, :cond_9
 
-    .line 87
+    .line 88
     add-int/lit8 v5, v4, 0x1
 
     .restart local v5       #j:I
@@ -225,7 +225,7 @@
 
     if-ge v5, v7, :cond_7
 
-    .line 88
+    .line 89
     iget-object v7, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mString:Ljava/lang/String;
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
@@ -239,11 +239,11 @@
 
     if-nez v7, :cond_8
 
-    .line 91
+    .line 92
     :cond_7
     iput v5, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 92
+    .line 93
     new-instance v7, Lmiui/app/screenelement/data/Expression$Tokenizer$Token;
 
     sget-object v8, Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;->NUM:Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;
@@ -258,13 +258,13 @@
 
     goto :goto_2
 
-    .line 87
+    .line 88
     :cond_8
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_4
 
-    .line 93
+    .line 94
     .end local v5           #j:I
     :cond_9
     #calls: Lmiui/app/screenelement/data/Expression;->isFunctionChar(C)Z
@@ -274,7 +274,7 @@
 
     if-eqz v8, :cond_c
 
-    .line 96
+    .line 97
     add-int/lit8 v5, v4, 0x1
 
     .restart local v5       #j:I
@@ -287,7 +287,7 @@
 
     if-ge v5, v7, :cond_a
 
-    .line 97
+    .line 98
     iget-object v7, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mString:Ljava/lang/String;
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
@@ -301,11 +301,11 @@
 
     if-nez v7, :cond_b
 
-    .line 100
+    .line 101
     :cond_a
     iput v5, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 101
+    .line 102
     new-instance v7, Lmiui/app/screenelement/data/Expression$Tokenizer$Token;
 
     sget-object v8, Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;->FUN:Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;
@@ -320,13 +320,13 @@
 
     goto :goto_2
 
-    .line 96
+    .line 97
     :cond_b
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_5
 
-    .line 102
+    .line 103
     .end local v5           #j:I
     :cond_c
     invoke-static {v2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
@@ -341,12 +341,12 @@
 
     if-eq v8, v9, :cond_d
 
-    .line 104
+    .line 105
     add-int/lit8 v7, v4, 0x1
 
     iput v7, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 105
+    .line 106
     new-instance v7, Lmiui/app/screenelement/data/Expression$Tokenizer$Token;
 
     sget-object v8, Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;->OPE:Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;
@@ -359,14 +359,14 @@
 
     goto/16 :goto_2
 
-    .line 106
+    .line 107
     :cond_d
     if-ne v2, v11, :cond_11
 
-    .line 109
+    .line 110
     const/4 v6, 0x0
 
-    .line 110
+    .line 111
     .local v6, slash:Z
     add-int/lit8 v5, v4, 0x1
 
@@ -380,27 +380,27 @@
 
     if-ge v5, v7, :cond_e
 
-    .line 111
+    .line 112
     iget-object v7, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mString:Ljava/lang/String;
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
 
-    .line 112
+    .line 113
     .local v3, cc:C
     if-nez v6, :cond_f
 
     if-ne v3, v11, :cond_f
 
-    .line 116
+    .line 117
     .end local v3           #cc:C
     :cond_e
     add-int/lit8 v7, v5, 0x1
 
     iput v7, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 117
+    .line 118
     new-instance v7, Lmiui/app/screenelement/data/Expression$Tokenizer$Token;
 
     sget-object v8, Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;->STR:Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;
@@ -425,7 +425,7 @@
 
     goto/16 :goto_2
 
-    .line 114
+    .line 115
     .restart local v3       #cc:C
     :cond_f
     const/16 v7, 0x5c
@@ -434,19 +434,19 @@
 
     const/4 v6, 0x1
 
-    .line 110
+    .line 111
     :goto_7
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_6
 
-    .line 114
+    .line 115
     :cond_10
     const/4 v6, 0x0
 
     goto :goto_7
 
-    .line 121
+    .line 122
     .end local v3           #cc:C
     .end local v5           #j:I
     .end local v6           #slash:Z
@@ -455,39 +455,39 @@
 
     if-ne v2, v8, :cond_14
 
-    .line 122
+    .line 123
     if-nez v0, :cond_12
 
-    .line 123
+    .line 124
     add-int/lit8 v1, v4, 0x1
 
-    .line 124
+    .line 125
     :cond_12
     add-int/lit8 v0, v0, 0x1
 
-    .line 67
+    .line 68
     :cond_13
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_0
 
-    .line 125
+    .line 126
     :cond_14
     const/16 v8, 0x29
 
     if-ne v2, v8, :cond_13
 
-    .line 126
+    .line 127
     add-int/lit8 v0, v0, -0x1
 
     if-nez v0, :cond_13
 
-    .line 127
+    .line 128
     add-int/lit8 v7, v4, 0x1
 
     iput v7, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 128
+    .line 129
     new-instance v7, Lmiui/app/screenelement/data/Expression$Tokenizer$Token;
 
     sget-object v8, Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;->BRACKET:Lmiui/app/screenelement/data/Expression$Tokenizer$TokenType;
@@ -502,12 +502,12 @@
 
     goto/16 :goto_2
 
-    .line 133
+    .line 134
     .end local v2           #c:C
     :cond_15
     if-eqz v0, :cond_2
 
-    .line 134
+    .line 135
     const-string v8, "Expression"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -539,11 +539,11 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 62
     const/4 v0, 0x0
 
     iput v0, p0, Lmiui/app/screenelement/data/Expression$Tokenizer;->mPos:I
 
-    .line 62
+    .line 63
     return-void
 .end method

@@ -13,6 +13,10 @@
 
 
 # static fields
+.field public static final DEFAULT_PLAYBACK_VOLUME:I = 0xf
+
+.field public static final DEFAULT_PLAYBACK_VOLUME_HANDLING:I = 0x1
+
 .field public static final FLAGS_KEY_MEDIA_NONE:I = 0x0
 
 .field public static final FLAG_INFORMATION_REQUEST_ALBUM_ART:I = 0x8
@@ -59,6 +63,32 @@
 
 .field private static final MSG_UNPLUG_DISPLAY:I = 0x8
 
+.field public static final PLAYBACKINFO_INVALID_VALUE:I = -0x80000000
+
+.field public static final PLAYBACKINFO_PLAYBACK_TYPE:I = 0x1
+
+.field public static final PLAYBACKINFO_PLAYSTATE:I = 0xff
+
+.field public static final PLAYBACKINFO_USES_STREAM:I = 0x5
+
+.field public static final PLAYBACKINFO_VOLUME:I = 0x2
+
+.field public static final PLAYBACKINFO_VOLUME_HANDLING:I = 0x4
+
+.field public static final PLAYBACKINFO_VOLUME_MAX:I = 0x3
+
+.field public static final PLAYBACK_TYPE_LOCAL:I = 0x0
+
+.field private static final PLAYBACK_TYPE_MAX:I = 0x1
+
+.field private static final PLAYBACK_TYPE_MIN:I = 0x0
+
+.field public static final PLAYBACK_TYPE_REMOTE:I = 0x1
+
+.field public static final PLAYBACK_VOLUME_FIXED:I = 0x0
+
+.field public static final PLAYBACK_VOLUME_VARIABLE:I = 0x1
+
 .field public static final PLAYSTATE_BUFFERING:I = 0x8
 
 .field public static final PLAYSTATE_ERROR:I = 0x9
@@ -79,7 +109,11 @@
 
 .field public static final PLAYSTATE_STOPPED:I = 0x1
 
+.field public static final RCSE_ID_UNREGISTERED:I = -0x1
+
 .field private static final TAG:Ljava/lang/String; = "RemoteControlClient"
+
+.field private static sService:Landroid/media/IAudioService;
 
 
 # instance fields
@@ -99,7 +133,7 @@
 
 .field private mEventHandler:Landroid/media/RemoteControlClient$EventHandler;
 
-.field private mIRCC:Landroid/media/IRemoteControlClient;
+.field private final mIRCC:Landroid/media/IRemoteControlClient;
 
 .field private mInternalClientGenId:I
 
@@ -109,9 +143,21 @@
 
 .field private mPlaybackStateChangeTimeMs:J
 
+.field private mPlaybackStream:I
+
+.field private mPlaybackType:I
+
+.field private mPlaybackVolume:I
+
+.field private mPlaybackVolumeHandling:I
+
+.field private mPlaybackVolumeMax:I
+
 .field private mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
 .field private final mRcMediaIntent:Landroid/app/PendingIntent;
+
+.field private mRcseId:I
 
 .field private mTransportControlFlags:I
 
@@ -121,7 +167,7 @@
     .locals 1
 
     .prologue
-    .line 270
+    .line 355
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -130,7 +176,7 @@
 
     sput-object v0, Landroid/media/RemoteControlClient;->METADATA_KEYS_TYPE_STRING:[I
 
-    .line 282
+    .line 367
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -141,7 +187,7 @@
 
     return-void
 
-    .line 270
+    .line 355
     :array_0
     .array-data 0x4
         0x1t 0x0t 0x0t 0x0t
@@ -157,7 +203,7 @@
         0xbt 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 282
+    .line 367
     :array_1
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -171,71 +217,95 @@
     .parameter "mediaButtonIntent"
 
     .prologue
-    const/4 v5, 0x0
+    const/16 v1, 0xf
 
-    const/4 v4, -0x1
+    const/16 v5, 0x100
 
-    const/16 v3, 0x100
+    const/4 v4, 0x0
 
-    .line 235
+    const/4 v3, -0x1
+
+    .line 320
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 548
+    .line 638
+    iput v4, p0, Landroid/media/RemoteControlClient;->mPlaybackType:I
+
+    .line 639
+    iput v1, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeMax:I
+
+    .line 640
+    iput v1, p0, Landroid/media/RemoteControlClient;->mPlaybackVolume:I
+
+    .line 641
+    const/4 v1, 0x1
+
+    iput v1, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeHandling:I
+
+    .line 642
+    const/4 v1, 0x3
+
+    iput v1, p0, Landroid/media/RemoteControlClient;->mPlaybackStream:I
+
+    .line 751
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
-    .line 553
-    iput v5, p0, Landroid/media/RemoteControlClient;->mPlaybackState:I
+    .line 756
+    iput v4, p0, Landroid/media/RemoteControlClient;->mPlaybackState:I
 
-    .line 558
+    .line 761
     const-wide/16 v1, 0x0
 
     iput-wide v1, p0, Landroid/media/RemoteControlClient;->mPlaybackStateChangeTimeMs:J
 
-    .line 567
-    iput v3, p0, Landroid/media/RemoteControlClient;->ARTWORK_DEFAULT_SIZE:I
+    .line 770
+    iput v5, p0, Landroid/media/RemoteControlClient;->ARTWORK_DEFAULT_SIZE:I
 
-    .line 568
-    iput v4, p0, Landroid/media/RemoteControlClient;->ARTWORK_INVALID_SIZE:I
+    .line 771
+    iput v3, p0, Landroid/media/RemoteControlClient;->ARTWORK_INVALID_SIZE:I
 
-    .line 569
-    iput v3, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
+    .line 772
+    iput v5, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
 
-    .line 570
-    iput v3, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
+    .line 773
+    iput v5, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
 
-    .line 575
-    iput v5, p0, Landroid/media/RemoteControlClient;->mTransportControlFlags:I
+    .line 778
+    iput v4, p0, Landroid/media/RemoteControlClient;->mTransportControlFlags:I
 
-    .line 580
+    .line 784
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mMetadata:Landroid/os/Bundle;
 
-    .line 585
-    iput v4, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
+    .line 789
+    iput v3, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
-    .line 592
+    .line 796
     const/4 v1, -0x2
 
     iput v1, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
 
-    .line 624
+    .line 828
     new-instance v1, Landroid/media/RemoteControlClient$1;
 
     invoke-direct {v1, p0}, Landroid/media/RemoteControlClient$1;-><init>(Landroid/media/RemoteControlClient;)V
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mIRCC:Landroid/media/IRemoteControlClient;
 
-    .line 236
+    .line 890
+    iput v3, p0, Landroid/media/RemoteControlClient;->mRcseId:I
+
+    .line 321
     iput-object p1, p0, Landroid/media/RemoteControlClient;->mRcMediaIntent:Landroid/app/PendingIntent;
 
-    .line 239
+    .line 324
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -243,18 +313,18 @@
     .local v0, looper:Landroid/os/Looper;
     if-eqz v0, :cond_0
 
-    .line 240
+    .line 325
     new-instance v1, Landroid/media/RemoteControlClient$EventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/RemoteControlClient$EventHandler;-><init>(Landroid/media/RemoteControlClient;Landroid/media/RemoteControlClient;Landroid/os/Looper;)V
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mEventHandler:Landroid/media/RemoteControlClient$EventHandler;
 
-    .line 247
+    .line 332
     :goto_0
     return-void
 
-    .line 241
+    .line 326
     :cond_0
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -262,7 +332,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 242
+    .line 327
     new-instance v1, Landroid/media/RemoteControlClient$EventHandler;
 
     invoke-direct {v1, p0, p0, v0}, Landroid/media/RemoteControlClient$EventHandler;-><init>(Landroid/media/RemoteControlClient;Landroid/media/RemoteControlClient;Landroid/os/Looper;)V
@@ -271,13 +341,13 @@
 
     goto :goto_0
 
-    .line 244
+    .line 329
     :cond_1
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mEventHandler:Landroid/media/RemoteControlClient$EventHandler;
 
-    .line 245
+    .line 330
     const-string v1, "RemoteControlClient"
 
     const-string v2, "RemoteControlClient() couldn\'t find main application thread"
@@ -293,78 +363,102 @@
     .parameter "looper"
 
     .prologue
-    const/4 v4, 0x0
+    const/16 v0, 0xf
 
-    const/4 v3, -0x1
+    const/16 v4, 0x100
 
-    const/16 v2, 0x100
+    const/4 v3, 0x0
 
-    .line 264
+    const/4 v2, -0x1
+
+    .line 349
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 548
+    .line 638
+    iput v3, p0, Landroid/media/RemoteControlClient;->mPlaybackType:I
+
+    .line 639
+    iput v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeMax:I
+
+    .line 640
+    iput v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolume:I
+
+    .line 641
+    const/4 v0, 0x1
+
+    iput v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeHandling:I
+
+    .line 642
+    const/4 v0, 0x3
+
+    iput v0, p0, Landroid/media/RemoteControlClient;->mPlaybackStream:I
+
+    .line 751
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
-    .line 553
-    iput v4, p0, Landroid/media/RemoteControlClient;->mPlaybackState:I
+    .line 756
+    iput v3, p0, Landroid/media/RemoteControlClient;->mPlaybackState:I
 
-    .line 558
+    .line 761
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/media/RemoteControlClient;->mPlaybackStateChangeTimeMs:J
 
-    .line 567
-    iput v2, p0, Landroid/media/RemoteControlClient;->ARTWORK_DEFAULT_SIZE:I
+    .line 770
+    iput v4, p0, Landroid/media/RemoteControlClient;->ARTWORK_DEFAULT_SIZE:I
 
-    .line 568
-    iput v3, p0, Landroid/media/RemoteControlClient;->ARTWORK_INVALID_SIZE:I
+    .line 771
+    iput v2, p0, Landroid/media/RemoteControlClient;->ARTWORK_INVALID_SIZE:I
 
-    .line 569
-    iput v2, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
+    .line 772
+    iput v4, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
 
-    .line 570
-    iput v2, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
+    .line 773
+    iput v4, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
 
-    .line 575
-    iput v4, p0, Landroid/media/RemoteControlClient;->mTransportControlFlags:I
+    .line 778
+    iput v3, p0, Landroid/media/RemoteControlClient;->mTransportControlFlags:I
 
-    .line 580
+    .line 784
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/media/RemoteControlClient;->mMetadata:Landroid/os/Bundle;
 
-    .line 585
-    iput v3, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
+    .line 789
+    iput v2, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
-    .line 592
+    .line 796
     const/4 v0, -0x2
 
     iput v0, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
 
-    .line 624
+    .line 828
     new-instance v0, Landroid/media/RemoteControlClient$1;
 
     invoke-direct {v0, p0}, Landroid/media/RemoteControlClient$1;-><init>(Landroid/media/RemoteControlClient;)V
 
     iput-object v0, p0, Landroid/media/RemoteControlClient;->mIRCC:Landroid/media/IRemoteControlClient;
 
-    .line 265
+    .line 890
+    iput v2, p0, Landroid/media/RemoteControlClient;->mRcseId:I
+
+    .line 350
     iput-object p1, p0, Landroid/media/RemoteControlClient;->mRcMediaIntent:Landroid/app/PendingIntent;
 
-    .line 267
+    .line 352
     new-instance v0, Landroid/media/RemoteControlClient$EventHandler;
 
     invoke-direct {v0, p0, p0, p2}, Landroid/media/RemoteControlClient$EventHandler;-><init>(Landroid/media/RemoteControlClient;Landroid/media/RemoteControlClient;Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/media/RemoteControlClient;->mEventHandler:Landroid/media/RemoteControlClient$EventHandler;
 
-    .line 268
+    .line 353
     return-void
 .end method
 
@@ -372,7 +466,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 63
     sget-object v0, Landroid/media/RemoteControlClient;->METADATA_KEYS_TYPE_STRING:[I
 
     return-object v0
@@ -384,7 +478,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 63
     invoke-static {p0, p1}, Landroid/media/RemoteControlClient;->validTypeForKey(I[I)Z
 
     move-result v0
@@ -397,7 +491,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendMetadata_syncCacheLock()V
 
     return-void
@@ -408,7 +502,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendArtwork_syncCacheLock()V
 
     return-void
@@ -419,7 +513,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     iget-object v0, p0, Landroid/media/RemoteControlClient;->mEventHandler:Landroid/media/RemoteControlClient$EventHandler;
 
     return-object v0
@@ -430,7 +524,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendPlaybackState_syncCacheLock()V
 
     return-void
@@ -441,7 +535,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendTransportControlFlags_syncCacheLock()V
 
     return-void
@@ -455,7 +549,7 @@
     .parameter "x3"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0, p1, p2, p3}, Landroid/media/RemoteControlClient;->onNewInternalClientGen(Ljava/lang/Integer;II)V
 
     return-void
@@ -467,7 +561,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0, p1}, Landroid/media/RemoteControlClient;->onNewCurrentClientGen(I)V
 
     return-void
@@ -479,7 +573,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0, p1}, Landroid/media/RemoteControlClient;->onPlugDisplay(Landroid/media/IRemoteControlDisplay;)V
 
     return-void
@@ -491,7 +585,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0, p1}, Landroid/media/RemoteControlClient;->onUnplugDisplay(Landroid/media/IRemoteControlDisplay;)V
 
     return-void
@@ -501,7 +595,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 63
     sget-object v0, Landroid/media/RemoteControlClient;->METADATA_KEYS_TYPE_LONG:[I
 
     return-object v0
@@ -512,7 +606,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     iget v0, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
 
     return v0
@@ -523,7 +617,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     iget v0, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
 
     return v0
@@ -537,7 +631,7 @@
     .parameter "x3"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0, p1, p2, p3}, Landroid/media/RemoteControlClient;->scaleBitmapIfTooBig(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -550,7 +644,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     iget-object v0, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     return-object v0
@@ -562,7 +656,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 63
     iput-object p1, p0, Landroid/media/RemoteControlClient;->mMetadata:Landroid/os/Bundle;
 
     return-object p1
@@ -573,7 +667,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     iget-object v0, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -585,7 +679,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 63
     iput-object p1, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
     return-object p1
@@ -596,7 +690,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 63
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendMetadataWithArtwork_syncCacheLock()V
 
     return-void
@@ -608,19 +702,59 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 734
+    .line 969
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
-    .line 735
+    .line 970
     iput v1, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
 
-    .line 736
+    .line 971
     iput v1, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
 
-    .line 737
+    .line 972
     return-void
+.end method
+
+.method private static getService()Landroid/media/IAudioService;
+    .locals 2
+
+    .prologue
+    .line 1046
+    sget-object v1, Landroid/media/RemoteControlClient;->sService:Landroid/media/IAudioService;
+
+    if-eqz v1, :cond_0
+
+    .line 1047
+    sget-object v1, Landroid/media/RemoteControlClient;->sService:Landroid/media/IAudioService;
+
+    .line 1051
+    .local v0, b:Landroid/os/IBinder;
+    :goto_0
+    return-object v1
+
+    .line 1049
+    .end local v0           #b:Landroid/os/IBinder;
+    :cond_0
+    const-string v1, "audio"
+
+    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 1050
+    .restart local v0       #b:Landroid/os/IBinder;
+    invoke-static {v0}, Landroid/media/IAudioService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/IAudioService;
+
+    move-result-object v1
+
+    sput-object v1, Landroid/media/RemoteControlClient;->sService:Landroid/media/IAudioService;
+
+    .line 1051
+    sget-object v1, Landroid/media/RemoteControlClient;->sService:Landroid/media/IAudioService;
+
+    goto :goto_0
 .end method
 
 .method private onNewCurrentClientGen(I)V
@@ -628,22 +762,22 @@
     .parameter "clientGeneration"
 
     .prologue
-    .line 817
+    .line 1083
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 818
+    .line 1084
     :try_start_0
     iput p1, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
-    .line 819
+    .line 1085
     monitor-exit v1
 
-    .line 820
+    .line 1086
     return-void
 
-    .line 819
+    .line 1085
     :catchall_0
     move-exception v0
 
@@ -661,12 +795,12 @@
     .parameter "artHeight"
 
     .prologue
-    .line 805
+    .line 1071
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 808
+    .line 1074
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -674,23 +808,23 @@
 
     iput v0, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
 
-    .line 809
+    .line 1075
     if-lez p2, :cond_0
 
-    .line 810
+    .line 1076
     iput p2, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
 
-    .line 811
+    .line 1077
     iput p3, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
 
-    .line 813
+    .line 1079
     :cond_0
     monitor-exit v1
 
-    .line 814
+    .line 1080
     return-void
 
-    .line 813
+    .line 1079
     :catchall_0
     move-exception v0
 
@@ -706,22 +840,22 @@
     .parameter "rcd"
 
     .prologue
-    .line 823
+    .line 1089
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 824
+    .line 1090
     :try_start_0
     iput-object p1, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
-    .line 825
+    .line 1091
     monitor-exit v1
 
-    .line 826
+    .line 1092
     return-void
 
-    .line 825
+    .line 1091
     :catchall_0
     move-exception v0
 
@@ -737,12 +871,12 @@
     .parameter "rcd"
 
     .prologue
-    .line 829
+    .line 1095
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 830
+    .line 1096
     :try_start_0
     iget-object v0, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
@@ -764,29 +898,29 @@
 
     if-eqz v0, :cond_0
 
-    .line 831
+    .line 1097
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
-    .line 832
+    .line 1098
     const/16 v0, 0x100
 
     iput v0, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
 
-    .line 833
+    .line 1099
     const/16 v0, 0x100
 
     iput v0, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedHeight:I
 
-    .line 835
+    .line 1101
     :cond_0
     monitor-exit v1
 
-    .line 836
+    .line 1102
     return-void
 
-    .line 835
+    .line 1101
     :catchall_0
     move-exception v0
 
@@ -798,151 +932,161 @@
 .end method
 
 .method private scaleBitmapIfTooBig(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
-    .locals 15
+    .locals 16
     .parameter "bitmap"
     .parameter "maxWidth"
     .parameter "maxHeight"
 
     .prologue
-    .line 849
-    if-eqz p1, :cond_1
+    .line 1118
+    if-eqz p1, :cond_2
 
-    .line 850
+    .line 1119
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v8
+    move-result v9
 
-    .line 851
-    .local v8, width:I
+    .line 1120
+    .local v9, width:I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
 
-    .line 852
+    .line 1121
     .local v2, height:I
     move/from16 v0, p2
 
-    if-gt v8, v0, :cond_0
+    if-gt v9, v0, :cond_0
 
     move/from16 v0, p3
 
-    if-le v2, v0, :cond_1
+    if-le v2, v0, :cond_2
 
-    .line 853
+    .line 1122
     :cond_0
     move/from16 v0, p2
 
-    int-to-float v9, v0
-
-    int-to-float v10, v8
-
-    div-float/2addr v9, v10
-
-    move/from16 v0, p3
-
     int-to-float v10, v0
 
-    int-to-float v11, v2
+    int-to-float v11, v9
 
     div-float/2addr v10, v11
 
-    invoke-static {v9, v10}, Ljava/lang/Math;->min(FF)F
+    move/from16 v0, p3
 
-    move-result v7
+    int-to-float v11, v0
 
-    .line 854
-    .local v7, scale:F
-    int-to-float v9, v8
+    int-to-float v12, v2
 
-    mul-float/2addr v9, v7
+    div-float/2addr v11, v12
 
-    invoke-static {v9}, Ljava/lang/Math;->round(F)I
+    invoke-static {v10, v11}, Ljava/lang/Math;->min(FF)F
+
+    move-result v8
+
+    .line 1123
+    .local v8, scale:F
+    int-to-float v10, v9
+
+    mul-float/2addr v10, v8
+
+    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+
+    move-result v5
+
+    .line 1124
+    .local v5, newWidth:I
+    int-to-float v10, v2
+
+    mul-float/2addr v10, v8
+
+    invoke-static {v10}, Ljava/lang/Math;->round(F)I
 
     move-result v4
 
-    .line 855
-    .local v4, newWidth:I
-    int-to-float v9, v2
-
-    mul-float/2addr v9, v7
-
-    invoke-static {v9}, Ljava/lang/Math;->round(F)I
-
-    move-result v3
-
-    .line 856
-    .local v3, newHeight:I
+    .line 1125
+    .local v4, newHeight:I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-static {v4, v3, v9}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .line 1126
+    .local v3, newConfig:Landroid/graphics/Bitmap$Config;
+    if-nez v3, :cond_1
 
-    move-result-object v5
+    .line 1127
+    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 857
-    .local v5, outBitmap:Landroid/graphics/Bitmap;
+    .line 1129
+    :cond_1
+    invoke-static {v5, v4, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v6
+
+    .line 1130
+    .local v6, outBitmap:Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
-    invoke-direct {v1, v5}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v1, v6}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 858
+    .line 1131
     .local v1, canvas:Landroid/graphics/Canvas;
-    new-instance v6, Landroid/graphics/Paint;
+    new-instance v7, Landroid/graphics/Paint;
 
-    invoke-direct {v6}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v7}, Landroid/graphics/Paint;-><init>()V
 
-    .line 859
-    .local v6, paint:Landroid/graphics/Paint;
-    const/4 v9, 0x1
+    .line 1132
+    .local v7, paint:Landroid/graphics/Paint;
+    const/4 v10, 0x1
 
-    invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v7, v10}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 860
-    const/4 v9, 0x1
+    .line 1133
+    const/4 v10, 0x1
 
-    invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
+    invoke-virtual {v7, v10}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 861
-    const/4 v9, 0x0
+    .line 1134
+    const/4 v10, 0x0
 
-    new-instance v10, Landroid/graphics/RectF;
-
-    const/4 v11, 0x0
+    new-instance v11, Landroid/graphics/RectF;
 
     const/4 v12, 0x0
 
-    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
+    const/4 v13, 0x0
 
-    move-result v13
-
-    int-to-float v13, v13
-
-    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-virtual {v6}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v14
 
     int-to-float v14, v14
 
-    invoke-direct {v10, v11, v12, v13, v14}, Landroid/graphics/RectF;-><init>(FFFF)V
+    invoke-virtual {v6}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v15
+
+    int-to-float v15, v15
+
+    invoke-direct {v11, v12, v13, v14, v15}, Landroid/graphics/RectF;-><init>(FFFF)V
 
     move-object/from16 v0, p1
 
-    invoke-virtual {v1, v0, v9, v10, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    invoke-virtual {v1, v0, v10, v11, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 863
-    move-object/from16 p1, v5
+    .line 1136
+    move-object/from16 p1, v6
 
-    .line 866
+    .line 1139
     .end local v1           #canvas:Landroid/graphics/Canvas;
     .end local v2           #height:I
-    .end local v3           #newHeight:I
-    .end local v4           #newWidth:I
-    .end local v5           #outBitmap:Landroid/graphics/Bitmap;
-    .end local v6           #paint:Landroid/graphics/Paint;
-    .end local v7           #scale:F
-    .end local v8           #width:I
-    :cond_1
+    .end local v3           #newConfig:Landroid/graphics/Bitmap$Config;
+    .end local v4           #newHeight:I
+    .end local v5           #newWidth:I
+    .end local v6           #outBitmap:Landroid/graphics/Bitmap;
+    .end local v7           #paint:Landroid/graphics/Paint;
+    .end local v8           #scale:F
+    .end local v9           #width:I
+    :cond_2
     return-object p1
 .end method
 
@@ -950,7 +1094,7 @@
     .locals 4
 
     .prologue
-    .line 775
+    .line 1010
     iget v1, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
@@ -961,7 +1105,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 779
+    .line 1014
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
@@ -974,7 +1118,7 @@
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
-    .line 781
+    .line 1016
     :try_start_0
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
@@ -986,16 +1130,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 787
+    .line 1022
     :cond_0
     :goto_0
     return-void
 
-    .line 782
+    .line 1017
     :catch_0
     move-exception v0
 
-    .line 783
+    .line 1018
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "RemoteControlClient"
 
@@ -1019,8 +1163,57 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 784
+    .line 1019
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->detachFromDisplay_syncCacheLock()V
+
+    goto :goto_0
+.end method
+
+.method private sendAudioServiceNewPlaybackInfo_syncCacheLock(II)V
+    .locals 4
+    .parameter "what"
+    .parameter "value"
+
+    .prologue
+    .line 1055
+    iget v2, p0, Landroid/media/RemoteControlClient;->mRcseId:I
+
+    const/4 v3, -0x1
+
+    if-ne v2, v3, :cond_0
+
+    .line 1065
+    :goto_0
+    return-void
+
+    .line 1059
+    :cond_0
+    invoke-static {}, Landroid/media/RemoteControlClient;->getService()Landroid/media/IAudioService;
+
+    move-result-object v1
+
+    .line 1061
+    .local v1, service:Landroid/media/IAudioService;
+    :try_start_0
+    iget v2, p0, Landroid/media/RemoteControlClient;->mRcseId:I
+
+    invoke-interface {v1, v2, p1, p2}, Landroid/media/IAudioService;->setPlaybackInfoForRcc(III)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .line 1062
+    :catch_0
+    move-exception v0
+
+    .line 1063
+    .local v0, e:Landroid/os/RemoteException;
+    const-string v2, "RemoteControlClient"
+
+    const-string v3, "Dead object in sendAudioServiceNewPlaybackInfo_syncCacheLock"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -1029,7 +1222,7 @@
     .locals 5
 
     .prologue
-    .line 790
+    .line 1025
     iget v1, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
@@ -1040,7 +1233,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 794
+    .line 1029
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mArtworkExpectedWidth:I
@@ -1053,7 +1246,7 @@
 
     iput-object v1, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
-    .line 796
+    .line 1031
     :try_start_0
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
@@ -1067,16 +1260,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 802
+    .line 1037
     :cond_0
     :goto_0
     return-void
 
-    .line 797
+    .line 1032
     :catch_0
     move-exception v0
 
-    .line 798
+    .line 1033
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "RemoteControlClient"
 
@@ -1100,7 +1293,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 799
+    .line 1034
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->detachFromDisplay_syncCacheLock()V
 
     goto :goto_0
@@ -1110,7 +1303,7 @@
     .locals 4
 
     .prologue
-    .line 752
+    .line 987
     iget v1, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
@@ -1121,7 +1314,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 754
+    .line 989
     :try_start_0
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
@@ -1133,16 +1326,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 760
+    .line 995
     :cond_0
     :goto_0
     return-void
 
-    .line 755
+    .line 990
     :catch_0
     move-exception v0
 
-    .line 756
+    .line 991
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "RemoteControlClient"
 
@@ -1166,7 +1359,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 757
+    .line 992
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->detachFromDisplay_syncCacheLock()V
 
     goto :goto_0
@@ -1176,7 +1369,7 @@
     .locals 6
 
     .prologue
-    .line 740
+    .line 975
     iget v1, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
@@ -1187,7 +1380,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 742
+    .line 977
     :try_start_0
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
@@ -1201,16 +1394,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 749
+    .line 984
     :cond_0
     :goto_0
     return-void
 
-    .line 744
+    .line 979
     :catch_0
     move-exception v0
 
-    .line 745
+    .line 980
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "RemoteControlClient"
 
@@ -1234,7 +1427,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 746
+    .line 981
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->detachFromDisplay_syncCacheLock()V
 
     goto :goto_0
@@ -1244,7 +1437,7 @@
     .locals 4
 
     .prologue
-    .line 763
+    .line 998
     iget v1, p0, Landroid/media/RemoteControlClient;->mCurrentClientGenId:I
 
     iget v2, p0, Landroid/media/RemoteControlClient;->mInternalClientGenId:I
@@ -1255,7 +1448,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 765
+    .line 1000
     :try_start_0
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
 
@@ -1267,16 +1460,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 772
+    .line 1007
     :cond_0
     :goto_0
     return-void
 
-    .line 767
+    .line 1002
     :catch_0
     move-exception v0
 
-    .line 768
+    .line 1003
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "RemoteControlClient"
 
@@ -1300,7 +1493,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 769
+    .line 1004
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->detachFromDisplay_syncCacheLock()V
 
     goto :goto_0
@@ -1312,10 +1505,10 @@
     .parameter "validKeys"
 
     .prologue
-    .line 878
+    .line 1151
     const/4 v1, 0x0
 
-    .line 879
+    .line 1152
     .local v1, i:I
     :goto_0
     :try_start_0
@@ -1325,24 +1518,24 @@
 
     if-ne p0, v2, :cond_0
 
-    .line 880
+    .line 1153
     const/4 v2, 0x1
 
-    .line 884
+    .line 1157
     :goto_1
     return v2
 
-    .line 878
+    .line 1151
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 883
+    .line 1156
     :catch_0
     move-exception v0
 
-    .line 884
+    .line 1157
     .local v0, e:Ljava/lang/ArrayIndexOutOfBoundsException;
     const/4 v2, 0x0
 
@@ -1362,36 +1555,36 @@
 
     const/4 v3, 0x0
 
-    .line 481
+    .line 566
     new-instance v0, Landroid/media/RemoteControlClient$MetadataEditor;
 
     invoke-direct {v0, p0, v4}, Landroid/media/RemoteControlClient$MetadataEditor;-><init>(Landroid/media/RemoteControlClient;Landroid/media/RemoteControlClient$1;)V
 
-    .line 482
+    .line 567
     .local v0, editor:Landroid/media/RemoteControlClient$MetadataEditor;
     if-eqz p1, :cond_0
 
-    .line 483
+    .line 568
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
     iput-object v1, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
-    .line 484
+    .line 569
     iput-object v4, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
-    .line 485
+    .line 570
     iput-boolean v2, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mMetadataChanged:Z
 
-    .line 486
+    .line 571
     iput-boolean v2, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mArtworkChanged:Z
 
-    .line 493
+    .line 578
     :goto_0
     return-object v0
 
-    .line 488
+    .line 573
     :cond_0
     new-instance v1, Landroid/os/Bundle;
 
@@ -1401,15 +1594,15 @@
 
     iput-object v1, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorMetadata:Landroid/os/Bundle;
 
-    .line 489
+    .line 574
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mArtwork:Landroid/graphics/Bitmap;
 
     iput-object v1, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mEditorArtwork:Landroid/graphics/Bitmap;
 
-    .line 490
+    .line 575
     iput-boolean v3, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mMetadataChanged:Z
 
-    .line 491
+    .line 576
     iput-boolean v3, v0, Landroid/media/RemoteControlClient$MetadataEditor;->mArtworkChanged:Z
 
     goto :goto_0
@@ -1419,20 +1612,356 @@
     .locals 1
 
     .prologue
-    .line 618
+    .line 822
     iget-object v0, p0, Landroid/media/RemoteControlClient;->mIRCC:Landroid/media/IRemoteControlClient;
 
     return-object v0
+.end method
+
+.method public getIntPlaybackInformation(I)I
+    .locals 4
+    .parameter "what"
+
+    .prologue
+    .line 729
+    iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 730
+    packed-switch p1, :pswitch_data_0
+
+    .line 742
+    :try_start_0
+    const-string v0, "RemoteControlClient"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "getIntPlaybackInformation() unknown key "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 743
+    const/high16 v0, -0x8000
+
+    monitor-exit v1
+
+    :goto_0
+    return v0
+
+    .line 732
+    :pswitch_0
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackType:I
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    .line 745
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 734
+    :pswitch_1
+    :try_start_1
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolume:I
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    .line 736
+    :pswitch_2
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeMax:I
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    .line 738
+    :pswitch_3
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackStream:I
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    .line 740
+    :pswitch_4
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeHandling:I
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 730
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_4
+        :pswitch_3
+    .end packed-switch
 .end method
 
 .method public getRcMediaIntent()Landroid/app/PendingIntent;
     .locals 1
 
     .prologue
-    .line 611
+    .line 815
     iget-object v0, p0, Landroid/media/RemoteControlClient;->mRcMediaIntent:Landroid/app/PendingIntent;
 
     return-object v0
+.end method
+
+.method public getRcseId()I
+    .locals 1
+
+    .prologue
+    .line 906
+    iget v0, p0, Landroid/media/RemoteControlClient;->mRcseId:I
+
+    return v0
+.end method
+
+.method public setPlaybackInformation(II)V
+    .locals 4
+    .parameter "what"
+    .parameter "value"
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 657
+    iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 658
+    packed-switch p1, :pswitch_data_0
+
+    .line 709
+    :try_start_0
+    const-string v0, "RemoteControlClient"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "setPlaybackInformation() ignoring unknown key "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 712
+    :cond_0
+    :goto_0
+    monitor-exit v1
+
+    .line 713
+    return-void
+
+    .line 660
+    :pswitch_0
+    if-ltz p2, :cond_1
+
+    if-gt p2, v0, :cond_1
+
+    .line 661
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackType:I
+
+    if-eq v0, p2, :cond_0
+
+    .line 662
+    iput p2, p0, Landroid/media/RemoteControlClient;->mPlaybackType:I
+
+    .line 663
+    invoke-direct {p0, p1, p2}, Landroid/media/RemoteControlClient;->sendAudioServiceNewPlaybackInfo_syncCacheLock(II)V
+
+    goto :goto_0
+
+    .line 712
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    .line 666
+    :cond_1
+    :try_start_1
+    const-string v0, "RemoteControlClient"
+
+    const-string/jumbo v2, "using invalid value for PLAYBACKINFO_PLAYBACK_TYPE"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 670
+    :pswitch_1
+    const/4 v0, -0x1
+
+    if-le p2, v0, :cond_2
+
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeMax:I
+
+    if-gt p2, v0, :cond_2
+
+    .line 671
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolume:I
+
+    if-eq v0, p2, :cond_0
+
+    .line 672
+    iput p2, p0, Landroid/media/RemoteControlClient;->mPlaybackVolume:I
+
+    .line 673
+    invoke-direct {p0, p1, p2}, Landroid/media/RemoteControlClient;->sendAudioServiceNewPlaybackInfo_syncCacheLock(II)V
+
+    goto :goto_0
+
+    .line 676
+    :cond_2
+    const-string v0, "RemoteControlClient"
+
+    const-string/jumbo v2, "using invalid value for PLAYBACKINFO_VOLUME"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 680
+    :pswitch_2
+    if-lez p2, :cond_3
+
+    .line 681
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeMax:I
+
+    if-eq v0, p2, :cond_0
+
+    .line 682
+    iput p2, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeMax:I
+
+    .line 683
+    invoke-direct {p0, p1, p2}, Landroid/media/RemoteControlClient;->sendAudioServiceNewPlaybackInfo_syncCacheLock(II)V
+
+    goto :goto_0
+
+    .line 686
+    :cond_3
+    const-string v0, "RemoteControlClient"
+
+    const-string/jumbo v2, "using invalid value for PLAYBACKINFO_VOLUME_MAX"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 690
+    :pswitch_3
+    if-ltz p2, :cond_4
+
+    invoke-static {}, Landroid/media/AudioSystem;->getNumStreamTypes()I
+
+    move-result v0
+
+    if-ge p2, v0, :cond_4
+
+    .line 691
+    iput p2, p0, Landroid/media/RemoteControlClient;->mPlaybackStream:I
+
+    goto :goto_0
+
+    .line 693
+    :cond_4
+    const-string v0, "RemoteControlClient"
+
+    const-string/jumbo v2, "using invalid value for PLAYBACKINFO_USES_STREAM"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 697
+    :pswitch_4
+    if-ltz p2, :cond_5
+
+    if-gt p2, v0, :cond_5
+
+    .line 698
+    iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeHandling:I
+
+    if-eq v0, p2, :cond_0
+
+    .line 699
+    iput p2, p0, Landroid/media/RemoteControlClient;->mPlaybackVolumeHandling:I
+
+    .line 700
+    invoke-direct {p0, p1, p2}, Landroid/media/RemoteControlClient;->sendAudioServiceNewPlaybackInfo_syncCacheLock(II)V
+
+    goto :goto_0
+
+    .line 703
+    :cond_5
+    const-string v0, "RemoteControlClient"
+
+    const-string/jumbo v2, "using invalid value for PLAYBACKINFO_VOLUME_HANDLING"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 658
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_4
+        :pswitch_3
+    .end packed-switch
 .end method
 
 .method public setPlaybackState(I)V
@@ -1440,38 +1969,43 @@
     .parameter "state"
 
     .prologue
-    .line 510
+    .line 595
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 511
+    .line 596
     :try_start_0
     iget v0, p0, Landroid/media/RemoteControlClient;->mPlaybackState:I
 
     if-eq v0, p1, :cond_0
 
-    .line 513
+    .line 598
     iput p1, p0, Landroid/media/RemoteControlClient;->mPlaybackState:I
 
-    .line 515
+    .line 600
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Landroid/media/RemoteControlClient;->mPlaybackStateChangeTimeMs:J
 
-    .line 518
+    .line 603
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendPlaybackState_syncCacheLock()V
 
-    .line 520
+    .line 605
+    const/16 v0, 0xff
+
+    invoke-direct {p0, v0, p1}, Landroid/media/RemoteControlClient;->sendAudioServiceNewPlaybackInfo_syncCacheLock(II)V
+
+    .line 607
     :cond_0
     monitor-exit v1
 
-    .line 521
+    .line 608
     return-void
 
-    .line 520
+    .line 607
     :catchall_0
     move-exception v0
 
@@ -1482,30 +2016,42 @@
     throw v0
 .end method
 
+.method public setRcseId(I)V
+    .locals 0
+    .parameter "id"
+
+    .prologue
+    .line 899
+    iput p1, p0, Landroid/media/RemoteControlClient;->mRcseId:I
+
+    .line 900
+    return-void
+.end method
+
 .method public setTransportControlFlags(I)V
     .locals 2
     .parameter "transportControlFlags"
 
     .prologue
-    .line 536
+    .line 623
     iget-object v1, p0, Landroid/media/RemoteControlClient;->mCacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 538
+    .line 625
     :try_start_0
     iput p1, p0, Landroid/media/RemoteControlClient;->mTransportControlFlags:I
 
-    .line 541
+    .line 628
     invoke-direct {p0}, Landroid/media/RemoteControlClient;->sendTransportControlFlags_syncCacheLock()V
 
-    .line 542
+    .line 629
     monitor-exit v1
 
-    .line 543
+    .line 630
     return-void
 
-    .line 542
+    .line 629
     :catchall_0
     move-exception v0
 

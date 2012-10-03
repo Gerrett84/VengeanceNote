@@ -33,9 +33,9 @@
 
 .field public static final TRACK_CONTENT_FINDER:Ljava/util/regex/Pattern; = null
 
-.field public static final TRACK_SESSION_GRP_IDX:I = 0x2
+.field public static final TRACK_SESSION_GRP_IDX:I = 0x3
 
-.field public static final TRACK_STREAM_TYPE_GRP_IDX:I = 0x1
+.field public static final TRACK_STREAM_TYPE_GRP_IDX:I = 0x2
 
 
 # direct methods
@@ -44,7 +44,7 @@
 
     .prologue
     .line 56
-    const-string v0, "^ session pid cnt"
+    const-string v0, "^ session pid (cnt|count)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
@@ -88,8 +88,8 @@
 
     sput-object v0, Lmiui/util/AudioOutputHelper$DUMP_TAG;->ACTIVE_TRACKS_FINDER:Ljava/util/regex/Pattern;
 
-    .line 79
-    const-string v0, "^   \\d+\\s+\\d+\\s+(\\d+)\\s+\\d+\\s+\\w+\\s(\\d+)\\s.+"
+    .line 81
+    const-string v0, "^(\\s|F)+\\d+\\s+\\d+\\s+(\\d+)\\s+\\d+\\s+\\w+\\s+(\\d+)\\s.+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 

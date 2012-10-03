@@ -278,6 +278,9 @@
 .method public abstract disableLocationUpdates()V
 .end method
 
+.method public abstract dispose()V
+.end method
+
 .method public abstract enableApnType(Ljava/lang/String;)I
 .end method
 
@@ -618,6 +621,9 @@
             Lcom/android/internal/telephony/CallStateException;
         }
     .end annotation
+.end method
+
+.method public abstract removeReferences()V
 .end method
 
 .method public abstract requestIsimAuthentication(Ljava/lang/String;Landroid/os/Message;)V

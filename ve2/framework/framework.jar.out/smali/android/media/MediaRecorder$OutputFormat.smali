@@ -37,8 +37,6 @@
 
 .field public static final THREE_GPP:I = 0x1
 
-.field public static final THREE_GPP2:I = 0xa
-
 
 # instance fields
 .field final synthetic this$0:Landroid/media/MediaRecorder;
@@ -50,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 204
+    .line 207
     iput-object p1, p0, Landroid/media/MediaRecorder$OutputFormat;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

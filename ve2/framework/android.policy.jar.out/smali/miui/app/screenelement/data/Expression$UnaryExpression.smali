@@ -33,32 +33,32 @@
     .parameter "op"
 
     .prologue
-    .line 284
+    .line 285
     invoke-direct {p0}, Lmiui/app/screenelement/data/Expression;-><init>()V
 
-    .line 277
+    .line 278
     sget-object v0, Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;->INVALID:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
     iput-object v0, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mOpe:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
-    .line 285
+    .line 286
     iput-object p1, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mExp:Lmiui/app/screenelement/data/Expression;
 
-    .line 286
+    .line 287
     invoke-static {p2}, Lmiui/app/screenelement/data/Expression$UnaryExpression;->parseOperator(Ljava/lang/String;)Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mOpe:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
-    .line 287
+    .line 288
     iget-object v0, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mOpe:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
     sget-object v1, Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;->INVALID:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
     if-ne v0, v1, :cond_0
 
-    .line 288
+    .line 289
     const-string v0, "Expression"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 290
+    .line 291
     :cond_0
     return-void
 .end method
@@ -91,7 +91,7 @@
     .parameter "op"
 
     .prologue
-    .line 293
+    .line 294
     const-string v0, "-"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -100,10 +100,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 294
+    .line 295
     sget-object v0, Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;->MIN:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
 
-    .line 297
+    .line 298
     :goto_0
     return-object v0
 
@@ -120,7 +120,7 @@
     .parameter "var"
 
     .prologue
-    .line 302
+    .line 303
     sget-object v0, Lmiui/app/screenelement/data/Expression$1;->$SwitchMap$miui$app$screenelement$data$Expression$UnaryExpression$Ope:[I
 
     iget-object v1, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mOpe:Lmiui/app/screenelement/data/Expression$UnaryExpression$Ope;
@@ -133,14 +133,14 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 307
+    .line 308
     const-string v0, "Expression"
 
     const-string v1, "fail to evalute UnaryExpression, invalid operator"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 308
+    .line 309
     iget-object v0, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mExp:Lmiui/app/screenelement/data/Expression;
 
     invoke-virtual {v0, p1}, Lmiui/app/screenelement/data/Expression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
@@ -150,7 +150,7 @@
     :goto_0
     return-wide v0
 
-    .line 304
+    .line 305
     :pswitch_0
     const-wide/16 v0, 0x0
 
@@ -164,7 +164,7 @@
 
     goto :goto_0
 
-    .line 302
+    .line 303
     nop
 
     :pswitch_data_0
@@ -178,7 +178,7 @@
     .parameter "var"
 
     .prologue
-    .line 318
+    .line 319
     invoke-virtual {p0, p1}, Lmiui/app/screenelement/data/Expression$UnaryExpression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
 
     move-result-wide v0
@@ -195,7 +195,7 @@
     .parameter "var"
 
     .prologue
-    .line 313
+    .line 314
     iget-object v0, p0, Lmiui/app/screenelement/data/Expression$UnaryExpression;->mExp:Lmiui/app/screenelement/data/Expression;
 
     invoke-virtual {v0, p1}, Lmiui/app/screenelement/data/Expression;->isNull(Lmiui/app/screenelement/data/Variables;)Z

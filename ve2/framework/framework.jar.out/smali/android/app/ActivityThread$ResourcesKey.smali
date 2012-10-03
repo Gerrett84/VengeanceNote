@@ -29,16 +29,16 @@
     .parameter "scale"
 
     .prologue
-    .line 1363
+    .line 1476
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1364
+    .line 1477
     iput-object p1, p0, Landroid/app/ActivityThread$ResourcesKey;->mResDir:Ljava/lang/String;
 
-    .line 1365
+    .line 1478
     iput p2, p0, Landroid/app/ActivityThread$ResourcesKey;->mScale:F
 
-    .line 1366
+    .line 1479
     iget-object v0, p0, Landroid/app/ActivityThread$ResourcesKey;->mResDir:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -59,7 +59,7 @@
 
     iput v0, p0, Landroid/app/ActivityThread$ResourcesKey;->mHash:I
 
-    .line 1367
+    .line 1480
     return-void
 .end method
 
@@ -72,12 +72,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1376
+    .line 1489
     instance-of v2, p1, Landroid/app/ActivityThread$ResourcesKey;
 
     if-nez v2, :cond_1
 
-    .line 1380
+    .line 1493
     :cond_0
     :goto_0
     return v1
@@ -85,10 +85,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 1379
+    .line 1492
     check-cast v0, Landroid/app/ActivityThread$ResourcesKey;
 
-    .line 1380
+    .line 1493
     .local v0, peer:Landroid/app/ActivityThread$ResourcesKey;
     iget-object v2, p0, Landroid/app/ActivityThread$ResourcesKey;->mResDir:Ljava/lang/String;
 
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 1371
+    .line 1484
     iget v0, p0, Landroid/app/ActivityThread$ResourcesKey;->mHash:I
 
     return v0

@@ -8,9 +8,23 @@
 
 .field public static final EXTRA_BUNDLE:Ljava/lang/String; = "extra_bundle"
 
+.field public static final EXTRA_CLEAR_WHEN_RESET:Ljava/lang/String; = "extra_clear_when_reset"
+
+.field public static final EXTRA_DISABLE_BACK_KEY:Ljava/lang/String; = "extra_disable_back_key"
+
+.field public static final EXTRA_SHOW_FIND_DEVICE:Ljava/lang/String; = "extra_show_find_device"
+
+.field public static final EXTRA_SHOW_SKIP_LOGIN:Ljava/lang/String; = "extra_show_skip_login"
+
+.field public static final EXTRA_SHOW_SYNC_SETTINGS:Ljava/lang/String; = "show_detail"
+
 .field public static final EXTRA_UPDATE_TYPE:Ljava/lang/String; = "extra_update_type"
 
 .field public static final EXTRA_WIPE_DATA:Ljava/lang/String; = "extra_wipe_data"
+
+.field public static final KEY_SKIPPED:Ljava/lang/String; = "key_skipped"
+
+.field public static final LOGIN_ACCOUNTS_POST_CHANGED_ACTION:Ljava/lang/String; = "android.accounts.LOGIN_ACCOUNTS_POST_CHANGED"
 
 .field public static final LOGIN_ACCOUNTS_PRE_CHANGED_ACTION:Ljava/lang/String; = "android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED"
 
@@ -51,27 +65,27 @@
     .parameter "context"
 
     .prologue
-    .line 53
+    .line 69
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 66
     invoke-static {}, Lcom/google/android/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
-    .line 154
+    .line 176
     new-instance v0, Lmiui/accounts/ExtraAccountManager$3;
 
     invoke-direct {v0, p0}, Lmiui/accounts/ExtraAccountManager$3;-><init>(Lmiui/accounts/ExtraAccountManager;)V
 
     iput-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mAccountsChangedBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 54
+    .line 70
     iput-object p1, p0, Lmiui/accounts/ExtraAccountManager;->mContext:Landroid/content/Context;
 
-    .line 55
+    .line 71
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/accounts/AccountManager;->get(Landroid/content/Context;)Landroid/accounts/AccountManager;
@@ -80,7 +94,7 @@
 
     iput-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mAccountManager:Landroid/accounts/AccountManager;
 
-    .line 56
+    .line 72
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lmiui/accounts/ExtraAccountManager;->mContext:Landroid/content/Context;
@@ -93,7 +107,7 @@
 
     iput-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mMainHandler:Landroid/os/Handler;
 
-    .line 57
+    .line 73
     return-void
 .end method
 
@@ -108,7 +122,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lmiui/accounts/ExtraAccountManager;Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
+.method static synthetic access$100(Lmiui/accounts/ExtraAccountManager;Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -116,10 +130,11 @@
     .parameter "x3"
     .parameter "x4"
     .parameter "x5"
+    .parameter "x6"
 
     .prologue
     .line 20
-    invoke-direct/range {p0 .. p5}, Lmiui/accounts/ExtraAccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
+    invoke-direct/range {p0 .. p6}, Lmiui/accounts/ExtraAccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;Z)V
 
     return-void
 .end method
@@ -154,58 +169,61 @@
     .parameter "context"
 
     .prologue
-    .line 60
+    .line 76
     sget-object v0, Lmiui/accounts/ExtraAccountManager;->mInstance:Lmiui/accounts/ExtraAccountManager;
 
     if-nez v0, :cond_0
 
-    .line 61
+    .line 77
     new-instance v0, Lmiui/accounts/ExtraAccountManager;
 
     invoke-direct {v0, p0}, Lmiui/accounts/ExtraAccountManager;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lmiui/accounts/ExtraAccountManager;->mInstance:Lmiui/accounts/ExtraAccountManager;
 
-    .line 63
+    .line 79
     :cond_0
     sget-object v0, Lmiui/accounts/ExtraAccountManager;->mInstance:Lmiui/accounts/ExtraAccountManager;
 
     return-object v0
 .end method
 
-.method private postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
-    .locals 6
+.method private postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;Z)V
+    .locals 7
     .parameter "handler"
     .parameter "listener"
     .parameter "account"
     .parameter "type"
     .parameter "extra"
+    .parameter "preAdd"
 
     .prologue
-    .line 140
+    .line 158
     if-nez p1, :cond_0
 
     iget-object p1, p0, Lmiui/accounts/ExtraAccountManager;->mMainHandler:Landroid/os/Handler;
 
-    .line 141
+    .line 159
     :cond_0
     new-instance v0, Lmiui/accounts/ExtraAccountManager$2;
 
     move-object v1, p0
 
-    move-object v2, p2
+    move v2, p6
 
-    move-object v3, p3
+    move-object v3, p2
 
-    move v4, p4
+    move-object v4, p3
 
-    move-object v5, p5
+    move v5, p4
 
-    invoke-direct/range {v0 .. v5}, Lmiui/accounts/ExtraAccountManager$2;-><init>(Lmiui/accounts/ExtraAccountManager;Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
+    move-object v6, p5
+
+    invoke-direct/range {v0 .. v6}, Lmiui/accounts/ExtraAccountManager$2;-><init>(Lmiui/accounts/ExtraAccountManager;ZLandroid/accounts/MiuiOnAccountsUpdateListener;Landroid/accounts/Account;ILandroid/os/Bundle;)V
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 152
+    .line 174
     return-void
 .end method
 
@@ -218,23 +236,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 119
+    .line 136
     array-length v1, p3
 
     new-array v0, v1, [Landroid/accounts/Account;
 
-    .line 122
+    .line 139
     .local v0, accountsCopy:[Landroid/accounts/Account;
     array-length v1, v0
 
     invoke-static {p3, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 123
+    .line 140
     if-nez p1, :cond_0
 
     iget-object p1, p0, Lmiui/accounts/ExtraAccountManager;->mMainHandler:Landroid/os/Handler;
 
-    .line 124
+    .line 141
     :cond_0
     new-instance v1, Lmiui/accounts/ExtraAccountManager$1;
 
@@ -242,7 +260,7 @@
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 135
+    .line 152
     return-void
 .end method
 
@@ -255,10 +273,10 @@
     .parameter "updateImmediately"
 
     .prologue
-    .line 69
+    .line 85
     if-nez p1, :cond_0
 
-    .line 70
+    .line 86
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v3, "the listener is null"
@@ -267,13 +285,13 @@
 
     throw v2
 
-    .line 72
+    .line 88
     :cond_0
     iget-object v3, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
     monitor-enter v3
 
-    .line 73
+    .line 89
     :try_start_0
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
@@ -283,7 +301,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 74
+    .line 90
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v4, "this listener is already added"
@@ -292,7 +310,7 @@
 
     throw v2
 
-    .line 92
+    .line 109
     :catchall_0
     move-exception v2
 
@@ -302,7 +320,7 @@
 
     throw v2
 
-    .line 77
+    .line 93
     :cond_1
     :try_start_1
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
@@ -311,54 +329,59 @@
 
     move-result v1
 
-    .line 79
+    .line 95
     .local v1, wasEmpty:Z
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
+    .line 97
     if-eqz v1, :cond_2
 
-    .line 83
+    .line 99
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 84
+    .line 100
     .local v0, intentFilter:Landroid/content/IntentFilter;
     const-string v2, "android.accounts.LOGIN_ACCOUNTS_CHANGED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 86
+    .line 102
     const-string v2, "android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 88
+    .line 103
+    const-string v2, "android.accounts.LOGIN_ACCOUNTS_POST_CHANGED"
+
+    invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 105
     const-string v2, "android.intent.action.DEVICE_STORAGE_OK"
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 89
+    .line 106
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Lmiui/accounts/ExtraAccountManager;->mAccountsChangedBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v2, v4, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 92
+    .line 109
     .end local v0           #intentFilter:Landroid/content/IntentFilter;
     :cond_2
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 94
+    .line 111
     if-eqz p3, :cond_3
 
-    .line 95
+    .line 112
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager;->mAccountManager:Landroid/accounts/AccountManager;
 
     invoke-virtual {v2}, Landroid/accounts/AccountManager;->getAccounts()[Landroid/accounts/Account;
@@ -367,7 +390,7 @@
 
     invoke-direct {p0, p2, p1, v2}, Lmiui/accounts/ExtraAccountManager;->postToHandler(Landroid/os/Handler;Landroid/accounts/MiuiOnAccountsUpdateListener;[Landroid/accounts/Account;)V
 
-    .line 97
+    .line 114
     :cond_3
     return-void
 .end method
@@ -377,25 +400,25 @@
     .parameter "listener"
 
     .prologue
-    .line 101
+    .line 118
     if-nez p1, :cond_0
 
-    .line 102
+    .line 119
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "listener is null"
+    const-string/jumbo v1, "listener is null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 104
+    .line 121
     :cond_0
     iget-object v1, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 105
+    .line 122
     :try_start_0
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
@@ -405,27 +428,27 @@
 
     if-nez v0, :cond_1
 
-    .line 106
+    .line 123
     const-string v0, "ExtraAccountManager"
 
     const-string v2, "Listener was not previously added"
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
+    .line 124
     monitor-exit v1
 
-    .line 114
+    .line 131
     :goto_0
     return-void
 
-    .line 109
+    .line 126
     :cond_1
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 110
+    .line 127
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -434,14 +457,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 111
+    .line 128
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager;->mAccountsChangedBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 113
+    .line 130
     :cond_2
     monitor-exit v1
 

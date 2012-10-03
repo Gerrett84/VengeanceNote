@@ -3,6 +3,14 @@
 .source "ThemeZipFile.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    }
+.end annotation
+
+
 # static fields
 .field private static final ALTERNATIVE_THEME_VALUE_FILE:Ljava/lang/String; = "theme_values%s.xml"
 
@@ -11,6 +19,8 @@
 .field private static final ATTR_PACKAGE:Ljava/lang/String; = "package"
 
 .field static DBG:Z = false
+
+.field private static final FUZZY_SEARCH_ICON_SUFFIX:Ljava/lang/String; = "#*.png"
 
 .field static TAG:Ljava/lang/String; = null
 
@@ -23,8 +33,6 @@
 .field private static final TAG_DRAWABLE:Ljava/lang/String; = "drawable"
 
 .field private static final TAG_INTEGER:Ljava/lang/String; = "integer"
-
-.field private static final TAG_ROOT:Ljava/lang/String; = "MIUI_Theme_Values"
 
 .field private static final TAG_STRING:Ljava/lang/String; = "string"
 
@@ -88,22 +96,22 @@
     .locals 1
 
     .prologue
-    .line 49
+    .line 50
     sget-boolean v0, Lmiui/content/res/ThemeResources;->DBG:Z
 
     sput-boolean v0, Lmiui/content/res/ThemeZipFile;->DBG:Z
 
-    .line 50
+    .line 51
     const-string v0, "ThemeZipFile"
 
     sput-object v0, Lmiui/content/res/ThemeZipFile;->TAG:Ljava/lang/String;
 
-    .line 52
+    .line 53
     sget v0, Landroid/util/DisplayMetrics;->DENSITY_DEVICE:I
 
     sput v0, Lmiui/content/res/ThemeZipFile;->sDensity:I
 
-    .line 53
+    .line 54
     sget v0, Lmiui/content/res/ThemeZipFile;->sDensity:I
 
     invoke-static {v0}, Lmiui/util/DisplayUtils;->getBestDensityOrder(I)[I
@@ -112,7 +120,7 @@
 
     sput-object v0, Lmiui/content/res/ThemeZipFile;->sDensities:[I
 
-    .line 73
+    .line 84
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -129,29 +137,29 @@
     .parameter "packageName"
 
     .prologue
-    .line 107
+    .line 118
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 113
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lmiui/content/res/ThemeZipFile;->mLastModifyTime:J
 
-    .line 104
+    .line 115
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
-    .line 105
+    .line 116
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lmiui/content/res/ThemeZipFile;->mCharSequences:Landroid/util/SparseArray;
 
-    .line 108
+    .line 119
     sget-boolean v0, Lmiui/content/res/ThemeZipFile;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -178,17 +186,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
+    .line 120
     :cond_0
     iput-object p3, p0, Lmiui/content/res/ThemeZipFile;->mPackageName:Ljava/lang/String;
 
-    .line 110
+    .line 121
     iput-object p1, p0, Lmiui/content/res/ThemeZipFile;->mPath:Ljava/lang/String;
 
-    .line 111
+    .line 122
     iput-object p2, p0, Lmiui/content/res/ThemeZipFile;->mMetaData:Lmiui/content/res/ThemeResources$MetaData;
 
-    .line 112
+    .line 123
     return-void
 .end method
 
@@ -196,7 +204,7 @@
     .locals 3
 
     .prologue
-    .line 279
+    .line 313
     sget-boolean v0, Lmiui/content/res/ThemeZipFile;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -225,13 +233,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 281
+    .line 315
     :cond_0
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
 
     if-eqz v0, :cond_1
 
-    .line 283
+    .line 317
     :try_start_0
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
 
@@ -239,77 +247,79 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 286
+    .line 320
     :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
 
-    .line 289
+    .line 323
     :cond_1
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 290
+    .line 324
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mCharSequences:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 291
+    .line 325
     return-void
 
-    .line 284
+    .line 318
     :catch_0
     move-exception v0
 
     goto :goto_0
 .end method
 
-.method private getInputStreamInner(Ljava/lang/String;[I)Ljava/io/InputStream;
+.method private getInputStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     .locals 11
     .parameter "relativeFilePath"
-    .parameter "size"
 
     .prologue
     const/4 v10, 0x0
 
-    .line 149
-    invoke-direct {p0, p1, p2}, Lmiui/content/res/ThemeZipFile;->getZipInputStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    .line 160
+    invoke-direct {p0, p1}, Lmiui/content/res/ThemeZipFile;->getZipInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v3
 
-    .line 150
-    .local v3, result:Ljava/io/InputStream;
+    .line 161
+    .local v3, result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    if-eqz v3, :cond_0
+
+    move-object v4, v3
+
+    .line 179
+    .end local v3           #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .local v4, result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    :goto_0
+    return-object v4
+
+    .line 163
+    .end local v4           #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .restart local v3       #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    :cond_0
     const-string v6, "dpi/"
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 151
-    .local v1, index:I
-    if-gez v1, :cond_0
-
-    move-object v4, v3
-
     .line 164
-    .end local v3           #result:Ljava/io/InputStream;
-    .local v4, result:Ljava/io/InputStream;
-    :goto_0
-    return-object v4
+    .local v1, index:I
+    if-lez v1, :cond_3
 
-    .line 153
-    .end local v4           #result:Ljava/io/InputStream;
-    .restart local v3       #result:Ljava/io/InputStream;
-    :cond_0
+    .line 165
     add-int/lit8 v6, v1, 0x3
 
     invoke-virtual {p1, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 154
+    .line 166
     .local v5, suffix:Ljava/lang/String;
     :goto_1
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
@@ -324,27 +334,24 @@
 
     goto :goto_1
 
-    .line 155
+    .line 167
     :cond_1
     invoke-virtual {p1, v10, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 157
+    .line 169
     .local v2, prefix:Ljava/lang/String;
+    const/4 v1, 0x0
+
+    :goto_2
     sget-object v6, Lmiui/content/res/ThemeZipFile;->sDensities:[I
 
     array-length v6, v6
 
-    add-int/lit8 v1, v6, -0x1
+    if-ge v1, v6, :cond_3
 
-    .line 158
-    :goto_2
-    if-nez v3, :cond_2
-
-    if-ltz v1, :cond_2
-
-    .line 159
+    .line 170
     const-string v6, "%s%s%s"
 
     const/4 v7, 0x3
@@ -373,25 +380,46 @@
 
     move-result-object v0
 
-    .line 161
+    .line 172
     .local v0, fallbackPath:Ljava/lang/String;
-    invoke-direct {p0, v0, p2}, Lmiui/content/res/ThemeZipFile;->getZipInputStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-direct {p0, v0}, Lmiui/content/res/ThemeZipFile;->getZipInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v3
 
-    .line 162
-    add-int/lit8 v1, v1, -0x1
+    .line 173
+    if-eqz v3, :cond_2
 
-    .line 163
+    .line 174
+    sget-object v6, Lmiui/content/res/ThemeZipFile;->sDensities:[I
+
+    aget v6, v6, v1
+
+    iput v6, v3, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;->mDensity:I
+
+    move-object v4, v3
+
+    .line 175
+    .end local v3           #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .restart local v4       #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    goto :goto_0
+
+    .line 169
+    .end local v4           #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .restart local v3       #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    :cond_2
+    add-int/lit8 v1, v1, 0x1
+
     goto :goto_2
 
     .end local v0           #fallbackPath:Ljava/lang/String;
-    :cond_2
+    .end local v2           #prefix:Ljava/lang/String;
+    .end local v5           #suffix:Ljava/lang/String;
+    :cond_3
     move-object v4, v3
 
-    .line 164
-    .end local v3           #result:Ljava/io/InputStream;
-    .restart local v4       #result:Ljava/io/InputStream;
+    .line 179
+    .end local v3           #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .restart local v4       #result:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     goto :goto_0
 .end method
 
@@ -400,7 +428,7 @@
     .parameter "componentName"
 
     .prologue
-    .line 87
+    .line 98
     const-string v0, "framework-res"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -417,17 +445,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 89
+    .line 100
     :cond_0
     const-string p0, "android"
 
-    .line 95
+    .line 106
     .end local p0
     :cond_1
     :goto_0
     return-object p0
 
-    .line 91
+    .line 102
     .restart local p0
     :cond_2
     const-string v0, "framework-miui-res"
@@ -438,7 +466,7 @@
 
     if-nez v0, :cond_3
 
-    const-string v0, "lockscreen"
+    const-string/jumbo v0, "lockscreen"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -446,7 +474,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 93
+    .line 104
     :cond_3
     const-string/jumbo p0, "miui"
 
@@ -459,7 +487,7 @@
     .parameter "componentName"
 
     .prologue
-    .line 75
+    .line 86
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -478,7 +506,7 @@
 
     move-result-object v0
 
-    .line 76
+    .line 87
     .local v0, path:Ljava/lang/String;
     sget-object v1, Lmiui/content/res/ThemeZipFile;->sThemeZipFiles:Ljava/util/Map;
 
@@ -488,12 +516,12 @@
 
     if-nez v1, :cond_1
 
-    .line 77
+    .line 88
     sget-object v2, Lmiui/content/res/ThemeZipFile;->sThemeZipFiles:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 78
+    .line 89
     :try_start_0
     sget-object v1, Lmiui/content/res/ThemeZipFile;->sThemeZipFiles:Ljava/util/Map;
 
@@ -503,7 +531,7 @@
 
     if-nez v1, :cond_0
 
-    .line 79
+    .line 90
     sget-object v1, Lmiui/content/res/ThemeZipFile;->sThemeZipFiles:Ljava/util/Map;
 
     new-instance v3, Lmiui/content/res/ThemeZipFile;
@@ -516,13 +544,13 @@
 
     invoke-interface {v1, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
+    .line 92
     :cond_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 83
+    .line 94
     :cond_1
     sget-object v1, Lmiui/content/res/ThemeZipFile;->sThemeZipFiles:Ljava/util/Map;
 
@@ -534,7 +562,7 @@
 
     return-object v1
 
-    .line 81
+    .line 92
     :catchall_0
     move-exception v1
 
@@ -546,73 +574,153 @@
     throw v1
 .end method
 
-.method private getZipInputStream(Ljava/lang/String;[I)Ljava/io/InputStream;
-    .locals 5
+.method private getZipInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .locals 9
     .parameter "relativeFilePath"
-    .parameter "size"
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v5, 0x0
 
-    .line 168
+    .line 184
     invoke-direct {p0}, Lmiui/content/res/ThemeZipFile;->isValid()Z
 
-    move-result v2
+    move-result v6
 
-    if-nez v2, :cond_1
+    if-nez v6, :cond_1
 
-    .line 179
+    .line 212
     :cond_0
     :goto_0
-    return-object v1
+    return-object v5
 
-    .line 170
+    .line 186
     :cond_1
-    :try_start_0
-    iget-object v2, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
+    const/4 v1, 0x0
 
-    invoke-virtual {v2, p1}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+    .line 187
+    .local v1, entry:Ljava/util/zip/ZipEntry;
+    :try_start_0
+    const-string v6, "#*.png"
+
+    invoke-virtual {p1, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    .line 188
+    const/4 v6, 0x0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    const-string v8, "#*.png"
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    sub-int/2addr v7, v8
+
+    invoke-virtual {p1, v6, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 190
+    .local v3, fuzzyIconName:Ljava/lang/String;
+    iget-object v6, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
+
+    invoke-virtual {v6}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
 
     move-result-object v0
 
-    .line 171
-    .local v0, entry:Ljava/util/zip/ZipEntry;
-    if-eqz v0, :cond_0
-
-    .line 172
-    if-eqz p2, :cond_2
-
-    array-length v2, p2
-
-    if-lez v2, :cond_2
-
-    .line 173
-    const/4 v2, 0x0
-
-    invoke-virtual {v0}, Ljava/util/zip/ZipEntry;->getSize()J
-
-    move-result-wide v3
-
-    long-to-int v3, v3
-
-    aput v3, p2, v2
-
-    .line 175
+    .line 191
+    .local v0, entries:Ljava/util/Enumeration;,"Ljava/util/Enumeration<*>;"
     :cond_2
-    iget-object v2, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
+    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
-    invoke-virtual {v2, v0}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    .line 192
+    invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/zip/ZipEntry;
+
+    .line 193
+    .local v2, enumEntry:Ljava/util/zip/ZipEntry;
+    invoke-virtual {v2}, Ljava/util/zip/ZipEntry;->isDirectory()Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    .line 196
+    invoke-virtual {v2}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    .line 197
+    move-object v1, v2
+
+    .line 204
+    .end local v0           #entries:Ljava/util/Enumeration;,"Ljava/util/Enumeration<*>;"
+    .end local v2           #enumEntry:Ljava/util/zip/ZipEntry;
+    .end local v3           #fuzzyIconName:Ljava/lang/String;
+    :cond_3
+    :goto_1
+    if-eqz v1, :cond_0
+
+    .line 205
+    iget-object v6, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
+
+    invoke-virtual {v6, v1}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+
+    move-result-object v4
+
+    .line 206
+    .local v4, input:Ljava/io/InputStream;
+    if-eqz v4, :cond_0
+
+    .line 207
+    new-instance v6, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+
+    invoke-virtual {v1}, Ljava/util/zip/ZipEntry;->getSize()J
+
+    move-result-wide v7
+
+    invoke-direct {v6, p0, v4, v7, v8}, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;-><init>(Lmiui/content/res/ThemeZipFile;Ljava/io/InputStream;J)V
+
+    move-object v5, v6
+
+    goto :goto_0
+
+    .line 202
+    .end local v4           #input:Ljava/io/InputStream;
+    :cond_4
+    iget-object v6, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
+
+    invoke-virtual {v6, p1}, Ljava/util/zip/ZipFile;->getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 177
-    .end local v0           #entry:Ljava/util/zip/ZipEntry;
+    .line 210
     :catch_0
-    move-exception v2
+    move-exception v6
 
     goto :goto_0
 .end method
@@ -621,7 +729,7 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 144
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mZipFile:Ljava/util/zip/ZipFile;
 
     if-eqz v0, :cond_0
@@ -642,235 +750,228 @@
     .parameter "resources"
 
     .prologue
-    const/4 v10, 0x0
+    .line 228
+    sget-boolean v7, Lmiui/content/res/ThemeZipFile;->DBG:Z
 
-    .line 195
-    sget-boolean v6, Lmiui/content/res/ThemeZipFile;->DBG:Z
+    if-eqz v7, :cond_0
 
-    if-eqz v6, :cond_0
+    sget-object v7, Lmiui/content/res/ThemeZipFile;->TAG:Ljava/lang/String;
 
-    sget-object v6, Lmiui/content/res/ThemeZipFile;->TAG:Ljava/lang/String;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v9, "loadThemeValues for "
 
-    const-string v8, "loadThemeValues for "
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    move-result-object v7
+    iget-object v9, p0, Lmiui/content/res/ThemeZipFile;->mPath:Ljava/lang/String;
 
-    iget-object v8, p0, Lmiui/content/res/ThemeZipFile;->mPath:Ljava/lang/String;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v8
 
-    move-result-object v7
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v8
 
-    move-result-object v7
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 197
+    .line 230
     :cond_0
-    const/4 v2, 0x0
+    sget-object v7, Lmiui/content/res/ThemeZipFile;->sDensities:[I
+
+    array-length v7, v7
+
+    add-int/lit8 v2, v7, -0x1
 
     .local v2, i:I
     :goto_0
-    sget-object v6, Lmiui/content/res/ThemeZipFile;->sDensities:[I
+    if-ltz v2, :cond_2
 
-    array-length v6, v6
+    .line 231
+    const-string/jumbo v7, "theme_values%s.xml"
 
-    if-ge v2, v6, :cond_2
+    const/4 v8, 0x1
 
-    .line 198
-    const-string/jumbo v6, "theme_values%s.xml"
+    new-array v8, v8, [Ljava/lang/Object;
 
-    const/4 v7, 0x1
+    const/4 v9, 0x0
 
-    new-array v7, v7, [Ljava/lang/Object;
+    sget-object v10, Lmiui/content/res/ThemeZipFile;->sDensities:[I
 
-    const/4 v8, 0x0
+    aget v10, v10, v2
 
-    sget-object v9, Lmiui/content/res/ThemeZipFile;->sDensities:[I
+    invoke-static {v10}, Lmiui/util/DisplayUtils;->getDensitySuffix(I)Ljava/lang/String;
 
-    aget v9, v9, v2
+    move-result-object v10
 
-    invoke-static {v9}, Lmiui/util/DisplayUtils;->getDensitySuffix(I)Ljava/lang/String;
+    aput-object v10, v8, v9
 
-    move-result-object v9
-
-    aput-object v9, v7, v8
-
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v7, v8}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 199
+    .line 232
     .local v1, file:Ljava/lang/String;
-    invoke-direct {p0, v1, v10}, Lmiui/content/res/ThemeZipFile;->getZipInputStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-direct {p0, v1}, Lmiui/content/res/ThemeZipFile;->getZipInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v3
 
-    .line 200
-    .local v3, is:Ljava/io/InputStream;
+    .line 233
+    .local v3, info:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     if-eqz v3, :cond_1
 
-    .line 202
+    .line 234
+    iget-object v4, v3, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;->mInput:Ljava/io/InputStream;
+
+    .line 236
+    .local v4, is:Ljava/io/InputStream;
     :try_start_0
     invoke-static {}, Lorg/xmlpull/v1/XmlPullParserFactory;->newInstance()Lorg/xmlpull/v1/XmlPullParserFactory;
 
+    move-result-object v7
+
+    invoke-virtual {v7}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
+
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/xmlpull/v1/XmlPullParserFactory;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
+    .line 237
+    .local v6, parser:Lorg/xmlpull/v1/XmlPullParser;
+    new-instance v5, Ljava/io/BufferedInputStream;
 
-    move-result-object v5
+    const/16 v7, 0x2000
 
-    .line 203
-    .local v5, parser:Lorg/xmlpull/v1/XmlPullParser;
-    new-instance v4, Ljava/io/BufferedInputStream;
-
-    const/16 v6, 0x2000
-
-    invoke-direct {v4, v3, v6}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
+    invoke-direct {v5, v4, v7}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 204
-    .end local v3           #is:Ljava/io/InputStream;
-    .local v4, is:Ljava/io/InputStream;
-    const/4 v6, 0x0
+    .line 238
+    .end local v4           #is:Ljava/io/InputStream;
+    .local v5, is:Ljava/io/InputStream;
+    const/4 v7, 0x0
 
     :try_start_1
-    invoke-interface {v5, v4, v6}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
+    invoke-interface {v6, v5, v7}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 205
-    invoke-direct {p0, p1, v5}, Lmiui/content/res/ThemeZipFile;->mergeThemeValues(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)V
+    .line 239
+    invoke-direct {p0, p1, v6}, Lmiui/content/res/ThemeZipFile;->mergeThemeValues(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 209
+    .line 243
     :try_start_2
-    invoke-virtual {v4}, Ljava/io/BufferedInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/BufferedInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
-    move-object v3, v4
-
-    .line 197
-    .end local v4           #is:Ljava/io/InputStream;
-    .end local v5           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v3       #is:Ljava/io/InputStream;
+    .line 230
+    .end local v5           #is:Ljava/io/InputStream;
+    .end local v6           #parser:Lorg/xmlpull/v1/XmlPullParser;
     :cond_1
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 210
-    .end local v3           #is:Ljava/io/InputStream;
+    .line 242
     .restart local v4       #is:Ljava/io/InputStream;
-    .restart local v5       #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :catch_0
-    move-exception v0
+    :catchall_0
+    move-exception v7
 
-    .line 211
-    .local v0, e:Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    move-object v3, v4
-
-    .line 213
-    .end local v4           #is:Ljava/io/InputStream;
-    .restart local v3       #is:Ljava/io/InputStream;
-    goto :goto_1
-
-    .line 206
-    .end local v0           #e:Ljava/io/IOException;
-    .end local v5           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :catch_1
-    move-exception v6
-
-    .line 209
+    .line 243
     :goto_2
     :try_start_3
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_1
-
-    .line 210
-    :catch_2
-    move-exception v0
-
-    .line 211
-    .restart local v0       #e:Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_1
-
-    .line 208
-    .end local v0           #e:Ljava/io/IOException;
-    :catchall_0
-    move-exception v6
-
-    .line 209
+    .line 242
     :goto_3
-    :try_start_4
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+    throw v7
 
-    .line 212
-    :goto_4
-    throw v6
-
-    .line 210
-    :catch_3
-    move-exception v0
-
-    .line 211
-    .restart local v0       #e:Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_4
-
-    .line 216
-    .end local v0           #e:Ljava/io/IOException;
+    .line 250
     .end local v1           #file:Ljava/lang/String;
-    .end local v3           #is:Ljava/io/InputStream;
+    .end local v3           #info:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .end local v4           #is:Ljava/io/InputStream;
     :cond_2
     return-void
 
-    .line 208
+    .line 240
     .restart local v1       #file:Ljava/lang/String;
+    .restart local v3       #info:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     .restart local v4       #is:Ljava/io/InputStream;
-    .restart local v5       #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :catchall_1
-    move-exception v6
+    :catch_0
+    move-exception v7
 
-    move-object v3, v4
+    .line 243
+    :goto_4
+    :try_start_4
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
+    goto :goto_1
+
+    .line 244
+    :catch_1
+    move-exception v0
+
+    .line 245
     .end local v4           #is:Ljava/io/InputStream;
-    .restart local v3       #is:Ljava/io/InputStream;
+    .local v0, e:Ljava/io/IOException;
+    :goto_5
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
+    goto :goto_1
+
+    .line 244
+    .end local v0           #e:Ljava/io/IOException;
+    .restart local v4       #is:Ljava/io/InputStream;
+    :catch_2
+    move-exception v0
+
+    .line 245
+    .restart local v0       #e:Ljava/io/IOException;
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+
     goto :goto_3
 
-    .line 206
-    .end local v3           #is:Ljava/io/InputStream;
-    .restart local v4       #is:Ljava/io/InputStream;
-    :catch_4
-    move-exception v6
-
-    move-object v3, v4
-
+    .line 244
+    .end local v0           #e:Ljava/io/IOException;
     .end local v4           #is:Ljava/io/InputStream;
-    .restart local v3       #is:Ljava/io/InputStream;
+    .restart local v5       #is:Ljava/io/InputStream;
+    .restart local v6       #parser:Lorg/xmlpull/v1/XmlPullParser;
+    :catch_3
+    move-exception v0
+
+    goto :goto_5
+
+    .line 242
+    :catchall_1
+    move-exception v7
+
+    move-object v4, v5
+
+    .end local v5           #is:Ljava/io/InputStream;
+    .restart local v4       #is:Ljava/io/InputStream;
     goto :goto_2
+
+    .line 240
+    .end local v4           #is:Ljava/io/InputStream;
+    .restart local v5       #is:Ljava/io/InputStream;
+    :catch_4
+    move-exception v7
+
+    move-object v4, v5
+
+    .end local v5           #is:Ljava/io/InputStream;
+    .restart local v4       #is:Ljava/io/InputStream;
+    goto :goto_4
 .end method
 
 .method private mergeThemeValues(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;)V
@@ -879,7 +980,7 @@
     .parameter "parser"
 
     .prologue
-    .line 221
+    .line 255
     :cond_0
     :try_start_0
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -895,13 +996,13 @@
 
     if-ne v7, v10, :cond_0
 
-    .line 224
+    .line 258
     :cond_1
     const/4 v10, 0x2
 
     if-eq v7, v10, :cond_3
 
-    .line 225
+    .line 259
     new-instance v10, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v11, "No start tag found"
@@ -912,21 +1013,21 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 273
+    .line 307
     .end local v7           #tagtype:I
     :catch_0
     move-exception v2
 
-    .line 274
+    .line 308
     .local v2, e:Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 276
+    .line 310
     .end local v2           #e:Ljava/lang/Exception;
     :cond_2
     return-void
 
-    .line 229
+    .line 263
     .restart local v7       #tagtype:I
     :cond_3
     :goto_0
@@ -943,13 +1044,13 @@
 
     if-ne v7, v10, :cond_3
 
-    .line 231
+    .line 265
     :cond_4
     const/4 v10, 0x1
 
     if-eq v7, v10, :cond_2
 
-    .line 233
+    .line 267
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v10
@@ -958,18 +1059,18 @@
 
     move-result-object v8
 
-    .line 234
+    .line 268
     .local v8, type:Ljava/lang/String;
     if-eqz v8, :cond_2
 
-    .line 236
+    .line 270
     const/4 v5, 0x0
 
-    .line 237
+    .line 271
     .local v5, name:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 238
+    .line 272
     .local v6, pkg:Ljava/lang/String;
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeCount()I
 
@@ -981,7 +1082,7 @@
     :goto_1
     if-ltz v3, :cond_7
 
-    .line 239
+    .line 273
     invoke-interface {p2, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
 
     move-result-object v10
@@ -990,7 +1091,7 @@
 
     move-result-object v0
 
-    .line 240
+    .line 274
     .local v0, attrName:Ljava/lang/String;
     const-string/jumbo v10, "name"
 
@@ -1000,19 +1101,19 @@
 
     if-eqz v10, :cond_6
 
-    .line 241
+    .line 275
     invoke-interface {p2, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 238
+    .line 272
     :cond_5
     :goto_2
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_1
 
-    .line 242
+    .line 276
     :cond_6
     const-string/jumbo v10, "package"
 
@@ -1022,21 +1123,21 @@
 
     if-eqz v10, :cond_5
 
-    .line 243
+    .line 277
     invoke-interface {p2, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v6
 
     goto :goto_2
 
-    .line 246
+    .line 280
     .end local v0           #attrName:Ljava/lang/String;
     :cond_7
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->nextText()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 247
+    .line 281
     .local v9, value:Ljava/lang/String;
     if-eqz v5, :cond_3
 
@@ -1048,7 +1149,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 249
+    .line 283
     if-nez v6, :cond_8
 
     iget-object v6, p0, Lmiui/content/res/ThemeZipFile;->mPackageName:Ljava/lang/String;
@@ -1059,11 +1160,11 @@
 
     move-result v4
 
-    .line 250
+    .line 284
     .local v4, id:I
     if-lez v4, :cond_3
 
-    .line 251
+    .line 285
     const-string v10, "bool"
 
     invoke-virtual {v8, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1072,7 +1173,7 @@
 
     if-eqz v10, :cond_a
 
-    .line 252
+    .line 286
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mMetaData:Lmiui/content/res/ThemeResources$MetaData;
 
     iget-boolean v10, v10, Lmiui/content/res/ThemeResources$MetaData;->supportInt:Z
@@ -1087,7 +1188,7 @@
 
     if-gez v10, :cond_3
 
-    .line 253
+    .line 287
     iget-object v11, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
     const-string/jumbo v10, "true"
@@ -1118,7 +1219,7 @@
 
     goto :goto_3
 
-    .line 255
+    .line 289
     :cond_a
     const-string v10, "color"
 
@@ -1144,7 +1245,7 @@
 
     if-eqz v10, :cond_c
 
-    .line 256
+    .line 290
     :cond_b
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mMetaData:Lmiui/content/res/ThemeResources$MetaData;
 
@@ -1160,7 +1261,7 @@
 
     if-gez v10, :cond_3
 
-    .line 257
+    .line 291
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
     invoke-virtual {v9}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1181,7 +1282,7 @@
 
     goto/16 :goto_0
 
-    .line 259
+    .line 293
     :cond_c
     const-string/jumbo v10, "string"
 
@@ -1191,7 +1292,7 @@
 
     if-eqz v10, :cond_d
 
-    .line 260
+    .line 294
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mMetaData:Lmiui/content/res/ThemeResources$MetaData;
 
     iget-boolean v10, v10, Lmiui/content/res/ThemeResources$MetaData;->supportCharSequence:Z
@@ -1206,14 +1307,14 @@
 
     if-gez v10, :cond_3
 
-    .line 261
+    .line 295
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mCharSequences:Landroid/util/SparseArray;
 
     invoke-virtual {v10, v4, v9}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     goto/16 :goto_0
 
-    .line 263
+    .line 297
     :cond_d
     const-string v10, "dimen"
 
@@ -1223,7 +1324,7 @@
 
     if-eqz v10, :cond_3
 
-    .line 264
+    .line 298
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mMetaData:Lmiui/content/res/ThemeResources$MetaData;
 
     iget-boolean v10, v10, Lmiui/content/res/ThemeResources$MetaData;->supportInt:Z
@@ -1238,7 +1339,7 @@
 
     if-gez v10, :cond_3
 
-    .line 265
+    .line 299
     invoke-virtual {v9}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v10
@@ -1247,11 +1348,11 @@
 
     move-result-object v1
 
-    .line 266
+    .line 300
     .local v1, dimen:Ljava/lang/Integer;
     if-eqz v1, :cond_3
 
-    .line 267
+    .line 301
     iget-object v10, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
     invoke-virtual {v10, v4, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
@@ -1265,7 +1366,7 @@
     .locals 6
 
     .prologue
-    .line 294
+    .line 328
     sget-boolean v2, Lmiui/content/res/ThemeZipFile;->DBG:Z
 
     if-eqz v2, :cond_0
@@ -1294,7 +1395,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 296
+    .line 330
     :cond_0
     new-instance v1, Ljava/io/File;
 
@@ -1302,7 +1403,7 @@
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 297
+    .line 331
     .local v1, file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->lastModified()J
 
@@ -1310,7 +1411,7 @@
 
     iput-wide v2, p0, Lmiui/content/res/ThemeZipFile;->mLastModifyTime:J
 
-    .line 298
+    .line 332
     iget-wide v2, p0, Lmiui/content/res/ThemeZipFile;->mLastModifyTime:J
 
     const-wide/16 v4, 0x0
@@ -1319,11 +1420,11 @@
 
     if-nez v2, :cond_1
 
-    .line 305
+    .line 339
     :goto_0
     return-void
 
-    .line 301
+    .line 335
     :cond_1
     :try_start_0
     new-instance v2, Ljava/util/zip/ZipFile;
@@ -1336,11 +1437,11 @@
 
     goto :goto_0
 
-    .line 302
+    .line 336
     :catch_0
     move-exception v0
 
-    .line 303
+    .line 337
     .local v0, e:Ljava/lang/Exception;
     const/4 v2, 0x0
 
@@ -1356,7 +1457,7 @@
     .parameter "resources"
 
     .prologue
-    .line 115
+    .line 126
     sget-boolean v2, Lmiui/content/res/ThemeZipFile;->DBG:Z
 
     if-eqz v2, :cond_0
@@ -1385,7 +1486,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
+    .line 128
     :cond_0
     new-instance v2, Ljava/io/File;
 
@@ -1397,7 +1498,7 @@
 
     move-result-wide v0
 
-    .line 118
+    .line 129
     .local v0, lastModified:J
     iget-wide v2, p0, Lmiui/content/res/ThemeZipFile;->mLastModifyTime:J
 
@@ -1405,10 +1506,10 @@
 
     if-eqz v2, :cond_2
 
-    .line 119
+    .line 130
     monitor-enter p0
 
-    .line 120
+    .line 131
     :try_start_0
     iget-wide v2, p0, Lmiui/content/res/ThemeZipFile;->mLastModifyTime:J
 
@@ -1416,35 +1517,35 @@
 
     if-eqz v2, :cond_1
 
-    .line 121
+    .line 132
     invoke-direct {p0}, Lmiui/content/res/ThemeZipFile;->clean()V
 
-    .line 122
+    .line 133
     invoke-direct {p0}, Lmiui/content/res/ThemeZipFile;->openZipFile()V
 
-    .line 123
+    .line 134
     invoke-direct {p0, p1}, Lmiui/content/res/ThemeZipFile;->loadThemeValues(Landroid/content/res/Resources;)V
 
-    .line 124
+    .line 135
     const/4 v2, 0x1
 
     monitor-exit p0
 
-    .line 129
+    .line 140
     :goto_0
     return v2
 
-    .line 126
+    .line 137
     :cond_1
     monitor-exit p0
 
-    .line 129
+    .line 140
     :cond_2
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 126
+    .line 137
     :catchall_0
     move-exception v2
 
@@ -1460,7 +1561,7 @@
     .parameter "relativePath"
 
     .prologue
-    .line 141
+    .line 152
     invoke-direct {p0}, Lmiui/content/res/ThemeZipFile;->isValid()Z
 
     move-result v0
@@ -1490,7 +1591,7 @@
     .locals 2
 
     .prologue
-    .line 137
+    .line 148
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lmiui/content/res/ThemeZipFile;->mPath:Ljava/lang/String;
@@ -1504,20 +1605,19 @@
     return v0
 .end method
 
-.method public getInputStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+.method public getInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     .locals 1
     .parameter "relativeFilePath"
-    .parameter "size"
 
     .prologue
-    .line 145
+    .line 156
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mMetaData:Lmiui/content/res/ThemeResources$MetaData;
 
     iget-boolean v0, v0, Lmiui/content/res/ThemeResources$MetaData;->supportFile:Z
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0, p1, p2}, Lmiui/content/res/ThemeZipFile;->getInputStreamInner(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-direct {p0, p1}, Lmiui/content/res/ThemeZipFile;->getInputStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -1535,7 +1635,7 @@
     .parameter "id"
 
     .prologue
-    .line 191
+    .line 224
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mCharSequences:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1552,7 +1652,7 @@
     .parameter "id"
 
     .prologue
-    .line 187
+    .line 220
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1568,7 +1668,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 216
     iget-object v0, p0, Lmiui/content/res/ThemeZipFile;->mIntegers:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I

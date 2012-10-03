@@ -30,19 +30,19 @@
     .parameter "weight"
 
     .prologue
-    .line 801
+    .line 805
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 802
+    .line 806
     iput-object p1, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
-    .line 803
+    .line 807
     iput-wide p2, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    .line 804
+    .line 808
     iput p4, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->weight:F
 
-    .line 805
+    .line 809
     return-void
 .end method
 
@@ -53,14 +53,14 @@
     .parameter "weight"
 
     .prologue
-    .line 791
+    .line 795
     invoke-static {p1}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p2, p3, p4}, Landroid/widget/ActivityChooserModel$HistoricalRecord;-><init>(Landroid/content/ComponentName;JF)V
 
-    .line 792
+    .line 796
     return-void
 .end method
 
@@ -75,24 +75,24 @@
 
     const/4 v2, 0x0
 
-    .line 819
+    .line 823
     if-ne p0, p1, :cond_1
 
-    .line 842
+    .line 846
     :cond_0
     :goto_0
     return v1
 
-    .line 822
+    .line 826
     :cond_1
     if-nez p1, :cond_2
 
     move v1, v2
 
-    .line 823
+    .line 827
     goto :goto_0
 
-    .line 825
+    .line 829
     :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -106,32 +106,32 @@
 
     move v1, v2
 
-    .line 826
+    .line 830
     goto :goto_0
 
     :cond_3
     move-object v0, p1
 
-    .line 828
+    .line 832
     check-cast v0, Landroid/widget/ActivityChooserModel$HistoricalRecord;
 
-    .line 829
+    .line 833
     .local v0, other:Landroid/widget/ActivityChooserModel$HistoricalRecord;
     iget-object v3, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
     if-nez v3, :cond_4
 
-    .line 830
+    .line 834
     iget-object v3, v0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
     if-eqz v3, :cond_5
 
     move v1, v2
 
-    .line 831
+    .line 835
     goto :goto_0
 
-    .line 833
+    .line 837
     :cond_4
     iget-object v3, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
@@ -145,10 +145,10 @@
 
     move v1, v2
 
-    .line 834
+    .line 838
     goto :goto_0
 
-    .line 836
+    .line 840
     :cond_5
     iget-wide v3, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
@@ -160,10 +160,10 @@
 
     move v1, v2
 
-    .line 837
+    .line 841
     goto :goto_0
 
-    .line 839
+    .line 843
     :cond_6
     iget v3, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->weight:F
 
@@ -181,7 +181,7 @@
 
     move v1, v2
 
-    .line 840
+    .line 844
     goto :goto_0
 .end method
 
@@ -189,14 +189,14 @@
     .locals 8
 
     .prologue
-    .line 809
+    .line 813
     const/16 v0, 0x1f
 
-    .line 810
+    .line 814
     .local v0, prime:I
     const/4 v1, 0x1
 
-    .line 811
+    .line 815
     .local v1, result:I
     iget-object v2, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
@@ -207,7 +207,7 @@
     :goto_0
     add-int/lit8 v1, v2, 0x1f
 
-    .line 812
+    .line 816
     mul-int/lit8 v2, v1, 0x1f
 
     iget-wide v3, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->time:J
@@ -224,7 +224,7 @@
 
     add-int v1, v2, v3
 
-    .line 813
+    .line 817
     mul-int/lit8 v2, v1, 0x1f
 
     iget v3, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->weight:F
@@ -235,10 +235,10 @@
 
     add-int v1, v2, v3
 
-    .line 814
+    .line 818
     return v1
 
-    .line 811
+    .line 815
     :cond_0
     iget-object v2, p0, Landroid/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
@@ -253,18 +253,18 @@
     .locals 5
 
     .prologue
-    .line 847
+    .line 851
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 848
+    .line 852
     .local v0, builder:Ljava/lang/StringBuilder;
     const-string v1, "["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 849
+    .line 853
     const-string v1, "; activity:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -275,7 +275,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 850
+    .line 854
     const-string v1, "; time:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -286,7 +286,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 851
+    .line 855
     const-string v1, "; weight:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -303,12 +303,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 852
+    .line 856
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 853
+    .line 857
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

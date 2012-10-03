@@ -14,6 +14,8 @@
 # instance fields
 .field private mTag:Ljava/lang/Object;
 
+.field private mTitleOptionalHint:Z
+
 
 # direct methods
 .method public constructor <init>()V
@@ -23,7 +25,7 @@
     .line 31
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 190
+    .line 229
     return-void
 .end method
 
@@ -48,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 60
     iget-object v0, p0, Landroid/view/ActionMode;->mTag:Ljava/lang/Object;
 
     return-object v0
@@ -57,14 +59,34 @@
 .method public abstract getTitle()Ljava/lang/CharSequence;
 .end method
 
+.method public getTitleOptionalHint()Z
+    .locals 1
+
+    .prologue
+    .line 134
+    iget-boolean v0, p0, Landroid/view/ActionMode;->mTitleOptionalHint:Z
+
+    return v0
+.end method
+
 .method public abstract invalidate()V
+.end method
+
+.method public isTitleOptional()Z
+    .locals 1
+
+    .prologue
+    .line 142
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public isUiFocusable()Z
     .locals 1
 
     .prologue
-    .line 170
+    .line 209
     const/4 v0, 0x1
 
     return v0
@@ -84,10 +106,10 @@
     .parameter "tag"
 
     .prologue
-    .line 45
+    .line 46
     iput-object p1, p0, Landroid/view/ActionMode;->mTag:Ljava/lang/Object;
 
-    .line 46
+    .line 47
     return-void
 .end method
 
@@ -95,4 +117,16 @@
 .end method
 
 .method public abstract setTitle(Ljava/lang/CharSequence;)V
+.end method
+
+.method public setTitleOptionalHint(Z)V
+    .locals 0
+    .parameter "titleOptional"
+
+    .prologue
+    .line 123
+    iput-boolean p1, p0, Landroid/view/ActionMode;->mTitleOptionalHint:Z
+
+    .line 124
+    return-void
 .end method

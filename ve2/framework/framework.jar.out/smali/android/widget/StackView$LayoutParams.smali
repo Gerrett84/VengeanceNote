@@ -42,53 +42,53 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1237
+    .line 1286
     iput-object p1, p0, Landroid/widget/StackView$LayoutParams;->this$0:Landroid/widget/StackView;
 
-    .line 1238
+    .line 1287
     invoke-direct {p0, p2, p3}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1223
+    .line 1272
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->parentRect:Landroid/graphics/Rect;
 
-    .line 1224
+    .line 1273
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->invalidateRect:Landroid/graphics/Rect;
 
-    .line 1225
+    .line 1274
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
-    .line 1226
+    .line 1275
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
-    .line 1239
+    .line 1288
     iput v1, p0, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I
 
-    .line 1240
+    .line 1289
     iput v1, p0, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
-    .line 1241
+    .line 1290
     iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1242
+    .line 1291
     iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1243
+    .line 1292
     return-void
 .end method
 
@@ -100,56 +100,56 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1228
+    .line 1277
     iput-object p1, p0, Landroid/widget/StackView$LayoutParams;->this$0:Landroid/widget/StackView;
 
-    .line 1229
+    .line 1278
     invoke-direct {p0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 1223
+    .line 1272
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->parentRect:Landroid/graphics/Rect;
 
-    .line 1224
+    .line 1273
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->invalidateRect:Landroid/graphics/Rect;
 
-    .line 1225
+    .line 1274
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
-    .line 1226
+    .line 1275
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
-    .line 1230
+    .line 1279
     iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1231
+    .line 1280
     iput v1, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1232
+    .line 1281
     iput v1, p0, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I
 
-    .line 1233
+    .line 1282
     iput v1, p0, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
-    .line 1234
+    .line 1283
     iput-object p2, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
-    .line 1235
+    .line 1284
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .locals 1
 
     .prologue
-    .line 1273
+    .line 1322
     iget-object v0, p0, Landroid/widget/StackView$LayoutParams;->invalidateRect:Landroid/graphics/Rect;
 
     return-object v0
@@ -173,12 +173,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1247
+    .line 1296
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 1248
+    .line 1297
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
     iget-object v3, p0, Landroid/widget/StackView$LayoutParams;->this$0:Landroid/widget/StackView;
@@ -195,10 +195,10 @@
 
     invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/Rect;->union(IIII)V
 
-    .line 1249
+    .line 1298
     move-object v1, p1
 
-    .line 1250
+    .line 1299
     .local v1, p:Landroid/view/View;
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -214,22 +214,22 @@
 
     if-nez v2, :cond_1
 
-    .line 1270
+    .line 1319
     :cond_0
     :goto_0
     return-void
 
-    .line 1252
+    .line 1301
     :cond_1
     const/4 v0, 0x1
 
-    .line 1253
+    .line 1302
     .local v0, firstPass:Z
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->parentRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v5, v5, v5, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1255
+    .line 1304
     :goto_1
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -255,10 +255,10 @@
 
     if-nez v2, :cond_3
 
-    .line 1256
+    .line 1305
     if-nez v0, :cond_2
 
-    .line 1257
+    .line 1306
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/view/View;->getLeft()I
@@ -283,11 +283,11 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1260
+    .line 1309
     :cond_2
     const/4 v0, 0x0
 
-    .line 1261
+    .line 1310
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -295,7 +295,7 @@
     .end local v1           #p:Landroid/view/View;
     check-cast v1, Landroid/view/View;
 
-    .line 1262
+    .line 1311
     .restart local v1       #p:Landroid/view/View;
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->parentRect:Landroid/graphics/Rect;
 
@@ -329,7 +329,7 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1264
+    .line 1313
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->left:I
@@ -350,7 +350,7 @@
 
     goto :goto_1
 
-    .line 1268
+    .line 1317
     :cond_3
     iget-object v2, p0, Landroid/widget/StackView$LayoutParams;->globalInvalidateRect:Landroid/graphics/Rect;
 
@@ -379,12 +379,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1277
+    .line 1326
     iget-object v0, p0, Landroid/widget/StackView$LayoutParams;->invalidateRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1278
+    .line 1327
     return-void
 .end method
 
@@ -393,12 +393,12 @@
     .parameter "newHorizontalOffset"
 
     .prologue
-    .line 1286
+    .line 1335
     iget v0, p0, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/StackView$LayoutParams;->setOffsets(II)V
 
-    .line 1287
+    .line 1336
     return-void
 .end method
 
@@ -408,39 +408,39 @@
     .parameter "newVerticalOffset"
 
     .prologue
-    .line 1290
+    .line 1339
     iget v9, p0, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I
 
     sub-int v2, p1, v9
 
-    .line 1291
+    .line 1340
     .local v2, horizontalOffsetDelta:I
     move/from16 v0, p1
 
     iput v0, p0, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I
 
-    .line 1292
+    .line 1341
     iget v9, p0, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
     sub-int v6, p2, v9
 
-    .line 1293
+    .line 1342
     .local v6, verticalOffsetDelta:I
     move/from16 v0, p2
 
     iput v0, p0, Landroid/widget/StackView$LayoutParams;->verticalOffset:I
 
-    .line 1295
+    .line 1344
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
     if-eqz v9, :cond_0
 
-    .line 1296
+    .line 1345
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->requestLayout()V
 
-    .line 1297
+    .line 1346
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getLeft()I
@@ -459,7 +459,7 @@
 
     move-result v3
 
-    .line 1298
+    .line 1347
     .local v3, left:I
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
@@ -479,7 +479,7 @@
 
     move-result v4
 
-    .line 1299
+    .line 1348
     .local v4, right:I
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
@@ -499,7 +499,7 @@
 
     move-result v5
 
-    .line 1300
+    .line 1349
     .local v5, top:I
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
@@ -519,7 +519,7 @@
 
     move-result v1
 
-    .line 1302
+    .line 1351
     .local v1, bottom:I
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
@@ -533,14 +533,14 @@
 
     invoke-virtual {v9, v10, v11, v12, v13}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1304
+    .line 1353
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
     iget v9, v9, Landroid/graphics/RectF;->left:F
 
     neg-float v7, v9
 
-    .line 1305
+    .line 1354
     .local v7, xoffset:F
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
@@ -548,13 +548,13 @@
 
     neg-float v8, v9
 
-    .line 1306
+    .line 1355
     .local v8, yoffset:F
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
     invoke-virtual {v9, v7, v8}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 1307
+    .line 1356
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
     invoke-virtual {v9}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
@@ -565,7 +565,7 @@
 
     invoke-virtual {v9, v10}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 1308
+    .line 1357
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
 
     neg-float v10, v7
@@ -574,7 +574,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 1310
+    .line 1359
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->invalidateRect:Landroid/graphics/Rect;
 
     iget-object v10, p0, Landroid/widget/StackView$LayoutParams;->invalidateRectf:Landroid/graphics/RectF;
@@ -627,14 +627,14 @@
 
     invoke-virtual {v9, v10, v11, v12, v13}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1315
+    .line 1364
     iget-object v9, p0, Landroid/widget/StackView$LayoutParams;->mView:Landroid/view/View;
 
     iget-object v10, p0, Landroid/widget/StackView$LayoutParams;->invalidateRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v9, v10}, Landroid/widget/StackView$LayoutParams;->invalidateGlobalRegion(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 1317
+    .line 1366
     .end local v1           #bottom:I
     .end local v3           #left:I
     .end local v4           #right:I
@@ -650,11 +650,11 @@
     .parameter "newVerticalOffset"
 
     .prologue
-    .line 1282
+    .line 1331
     iget v0, p0, Landroid/widget/StackView$LayoutParams;->horizontalOffset:I
 
     invoke-virtual {p0, v0, p1}, Landroid/widget/StackView$LayoutParams;->setOffsets(II)V
 
-    .line 1283
+    .line 1332
     return-void
 .end method

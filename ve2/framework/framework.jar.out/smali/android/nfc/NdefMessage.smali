@@ -7,7 +7,7 @@
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator",
@@ -17,10 +17,6 @@
         }
     .end annotation
 .end field
-
-.field private static final FLAG_MB:B = -0x80t
-
-.field private static final FLAG_ME:B = 0x40t
 
 
 # instance fields
@@ -32,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 216
     new-instance v0, Landroid/nfc/NdefMessage$1;
 
     invoke-direct {v0}, Landroid/nfc/NdefMessage$1;-><init>()V
@@ -42,8 +38,94 @@
     return-void
 .end method
 
+.method public varargs constructor <init>(Landroid/nfc/NdefRecord;[Landroid/nfc/NdefRecord;)V
+    .locals 8
+    .parameter "record"
+    .parameter "records"
+
+    .prologue
+    const/4 v7, 0x0
+
+    .line 111
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    .line 113
+    if-nez p1, :cond_0
+
+    new-instance v4, Ljava/lang/NullPointerException;
+
+    const-string/jumbo v5, "record cannot be null"
+
+    invoke-direct {v4, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 115
+    :cond_0
+    move-object v0, p2
+
+    .local v0, arr$:[Landroid/nfc/NdefRecord;
+    array-length v2, v0
+
+    .local v2, len$:I
+    const/4 v1, 0x0
+
+    .local v1, i$:I
+    :goto_0
+    if-ge v1, v2, :cond_2
+
+    aget-object v3, v0, v1
+
+    .line 116
+    .local v3, r:Landroid/nfc/NdefRecord;
+    if-nez v3, :cond_1
+
+    .line 117
+    new-instance v4, Ljava/lang/NullPointerException;
+
+    const-string/jumbo v5, "record cannot be null"
+
+    invoke-direct {v4, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 115
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 121
+    .end local v3           #r:Landroid/nfc/NdefRecord;
+    :cond_2
+    array-length v4, p2
+
+    add-int/lit8 v4, v4, 0x1
+
+    new-array v4, v4, [Landroid/nfc/NdefRecord;
+
+    iput-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    .line 122
+    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    aput-object p1, v4, v7
+
+    .line 123
+    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    const/4 v5, 0x1
+
+    array-length v6, p2
+
+    invoke-static {p2, v7, v4, v5, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 124
+    return-void
+.end method
+
 .method public constructor <init>([B)V
-    .locals 2
+    .locals 3
     .parameter "data"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -52,66 +134,123 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 94
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
-    const/4 v0, 0x0
+    .line 95
+    if-nez p1, :cond_0
 
-    iput-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    new-instance v1, Ljava/lang/NullPointerException;
 
-    .line 45
-    invoke-direct {p0, p1}, Landroid/nfc/NdefMessage;->parseNdefMessage([B)I
+    const-string v2, "data is null"
 
-    move-result v0
+    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    const/4 v1, -0x1
+    throw v1
 
-    if-ne v0, v1, :cond_0
-
-    .line 46
-    new-instance v0, Landroid/nfc/FormatException;
-
-    const-string v1, "Error while parsing NDEF message"
-
-    invoke-direct {v0, v1}, Landroid/nfc/FormatException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 48
+    .line 96
     :cond_0
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    .line 98
+    .local v0, buffer:Ljava/nio/ByteBuffer;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/nfc/NdefRecord;->parse(Ljava/nio/ByteBuffer;Z)[Landroid/nfc/NdefRecord;
+
+    move-result-object v1
+
+    iput-object v1, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    .line 100
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v1
+
+    if-lez v1, :cond_1
+
+    .line 101
+    new-instance v1, Landroid/nfc/FormatException;
+
+    const-string/jumbo v2, "trailing data"
+
+    invoke-direct {v1, v2}, Landroid/nfc/FormatException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 103
+    :cond_1
     return-void
 .end method
 
 .method public constructor <init>([Landroid/nfc/NdefRecord;)V
-    .locals 3
+    .locals 6
     .parameter "records"
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 53
+    .line 131
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
-    array-length v0, p1
+    .line 133
+    array-length v4, p1
 
-    new-array v0, v0, [Landroid/nfc/NdefRecord;
+    const/4 v5, 0x1
 
-    iput-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    if-ge v4, v5, :cond_0
 
-    .line 55
-    iget-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    .line 134
+    new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    array-length v1, p1
+    const-string/jumbo v5, "must have at least one record"
 
-    invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    .line 56
+    throw v4
+
+    .line 136
+    :cond_0
+    move-object v0, p1
+
+    .local v0, arr$:[Landroid/nfc/NdefRecord;
+    array-length v2, v0
+
+    .local v2, len$:I
+    const/4 v1, 0x0
+
+    .local v1, i$:I
+    :goto_0
+    if-ge v1, v2, :cond_2
+
+    aget-object v3, v0, v1
+
+    .line 137
+    .local v3, r:Landroid/nfc/NdefRecord;
+    if-nez v3, :cond_1
+
+    .line 138
+    new-instance v4, Ljava/lang/NullPointerException;
+
+    const-string/jumbo v5, "records cannot contain null"
+
+    invoke-direct {v4, v5}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 136
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 142
+    .end local v3           #r:Landroid/nfc/NdefRecord;
+    :cond_2
+    iput-object p1, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    .line 143
     return-void
-.end method
-
-.method private native parseNdefMessage([B)I
 .end method
 
 
@@ -120,164 +259,246 @@
     .locals 1
 
     .prologue
-    .line 107
+    .line 207
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+    .parameter "obj"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 242
+    if-ne p0, p1, :cond_1
+
+    const/4 v1, 0x1
+
+    .line 246
+    :cond_0
+    :goto_0
+    return v1
+
+    .line 243
+    :cond_1
+    if-eqz p1, :cond_0
+
+    .line 244
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-ne v2, v3, :cond_0
+
+    move-object v0, p1
+
+    .line 245
+    check-cast v0, Landroid/nfc/NdefMessage;
+
+    .line 246
+    .local v0, other:Landroid/nfc/NdefMessage;
+    iget-object v1, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    iget-object v2, v0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    invoke-static {v1, v2}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result v1
+
+    goto :goto_0
+.end method
+
+.method public getByteArrayLength()I
+    .locals 6
+
+    .prologue
+    .line 174
+    const/4 v3, 0x0
+
+    .line 175
+    .local v3, length:I
+    iget-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    .local v0, arr$:[Landroid/nfc/NdefRecord;
+    array-length v2, v0
+
+    .local v2, len$:I
+    const/4 v1, 0x0
+
+    .local v1, i$:I
+    :goto_0
+    if-ge v1, v2, :cond_0
+
+    aget-object v4, v0, v1
+
+    .line 176
+    .local v4, r:Landroid/nfc/NdefRecord;
+    invoke-virtual {v4}, Landroid/nfc/NdefRecord;->getByteLength()I
+
+    move-result v5
+
+    add-int/2addr v3, v5
+
+    .line 175
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 178
+    .end local v4           #r:Landroid/nfc/NdefRecord;
+    :cond_0
+    return v3
 .end method
 
 .method public getRecords()[Landroid/nfc/NdefRecord;
     .locals 1
 
     .prologue
-    .line 64
+    .line 157
     iget-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
-
-    invoke-virtual {v0}, [Landroid/nfc/NdefRecord;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Landroid/nfc/NdefRecord;
 
     return-object v0
 .end method
 
-.method public toByteArray()[B
-    .locals 7
+.method public hashCode()I
+    .locals 1
 
     .prologue
+    .line 233
+    iget-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toByteArray()[B
+    .locals 8
+
+    .prologue
+    const/4 v5, 0x1
+
     const/4 v6, 0x0
 
-    .line 73
-    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    .line 193
+    invoke-virtual {p0}, Landroid/nfc/NdefMessage;->getByteArrayLength()I
 
-    if-eqz v4, :cond_0
+    move-result v2
 
-    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    .line 194
+    .local v2, length:I
+    invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
-    array-length v4, v4
+    move-result-object v0
 
-    if-nez v4, :cond_2
+    .line 196
+    .local v0, buffer:Ljava/nio/ByteBuffer;
+    const/4 v1, 0x0
 
-    .line 74
-    :cond_0
-    new-array v1, v6, [B
-
-    .line 102
-    :cond_1
-    return-object v1
-
-    .line 76
-    :cond_2
-    new-array v1, v6, [B
-
-    .line 78
-    .local v1, msg:[B
-    const/4 v0, 0x0
-
-    .local v0, i:I
+    .local v1, i:I
     :goto_0
-    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    iget-object v7, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
 
-    array-length v4, v4
+    array-length v7, v7
 
-    if-ge v0, v4, :cond_1
+    if-ge v1, v7, :cond_2
 
-    .line 79
-    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    .line 197
+    if-nez v1, :cond_0
 
-    aget-object v4, v4, v0
+    move v3, v5
 
-    invoke-virtual {v4}, Landroid/nfc/NdefRecord;->toByteArray()[B
-
-    move-result-object v2
-
-    .line 80
-    .local v2, record:[B
-    array-length v4, v1
-
-    array-length v5, v2
-
-    add-int/2addr v4, v5
-
-    new-array v3, v4, [B
-
-    .line 83
-    .local v3, tmp:[B
-    if-nez v0, :cond_3
-
-    .line 84
-    aget-byte v4, v2, v6
-
-    or-int/lit8 v4, v4, -0x80
-
-    int-to-byte v4, v4
-
-    aput-byte v4, v2, v6
-
-    .line 90
+    .line 198
+    .local v3, mb:Z
     :goto_1
-    iget-object v4, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+    iget-object v7, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
 
-    array-length v4, v4
+    array-length v7, v7
 
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v7, v7, -0x1
 
-    if-ne v0, v4, :cond_4
+    if-ne v1, v7, :cond_1
 
-    .line 91
-    aget-byte v4, v2, v6
+    move v4, v5
 
-    or-int/lit8 v4, v4, 0x40
-
-    int-to-byte v4, v4
-
-    aput-byte v4, v2, v6
-
-    .line 96
+    .line 199
+    .local v4, me:Z
     :goto_2
-    array-length v4, v1
+    iget-object v7, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
 
-    invoke-static {v1, v6, v3, v6, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    aget-object v7, v7, v1
 
-    .line 97
-    array-length v4, v1
+    invoke-virtual {v7, v0, v3, v4}, Landroid/nfc/NdefRecord;->writeToByteBuffer(Ljava/nio/ByteBuffer;ZZ)V
 
-    array-length v5, v2
-
-    invoke-static {v2, v6, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 99
-    move-object v1, v3
-
-    .line 78
-    add-int/lit8 v0, v0, 0x1
+    .line 196
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 86
-    :cond_3
-    aget-byte v4, v2, v6
+    .end local v3           #mb:Z
+    .end local v4           #me:Z
+    :cond_0
+    move v3, v6
 
-    and-int/lit8 v4, v4, 0x7f
-
-    int-to-byte v4, v4
-
-    aput-byte v4, v2, v6
-
+    .line 197
     goto :goto_1
 
-    .line 93
-    :cond_4
-    aget-byte v4, v2, v6
+    .restart local v3       #mb:Z
+    :cond_1
+    move v4, v6
 
-    and-int/lit8 v4, v4, -0x41
-
-    int-to-byte v4, v4
-
-    aput-byte v4, v2, v6
-
+    .line 198
     goto :goto_2
+
+    .line 202
+    .end local v3           #mb:Z
+    :cond_2
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v5
+
+    return-object v5
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 251
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "NdefMessage "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
+
+    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
@@ -286,18 +507,18 @@
     .parameter "flags"
 
     .prologue
-    .line 112
+    .line 212
     iget-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
 
     array-length v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 113
+    .line 213
     iget-object v0, p0, Landroid/nfc/NdefMessage;->mRecords:[Landroid/nfc/NdefRecord;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 114
+    .line 214
     return-void
 .end method

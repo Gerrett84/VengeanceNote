@@ -103,6 +103,14 @@
     .end annotation
 .end method
 
+.method public abstract setAutoBrightnessAdjustment(F)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setBacklightBrightness(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

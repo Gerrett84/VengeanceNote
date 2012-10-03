@@ -181,45 +181,50 @@
 
 # virtual methods
 .method public canMakeReadOnly()Z
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 337
-    iget-object v2, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
+    const/4 v2, 0x0
 
-    invoke-virtual {v2}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
+    .line 343
+    iget-object v3, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
+
+    invoke-virtual {v3}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
     move-result-object v1
 
-    .line 339
+    .line 344
     .local v1, tagService:Landroid/nfc/INfcTag;
-    :try_start_0
-    iget v2, p0, Landroid/nfc/tech/Ndef;->mNdefType:I
+    if-nez v1, :cond_0
 
-    invoke-interface {v1, v2}, Landroid/nfc/INfcTag;->canMakeReadOnly(I)Z
+    .line 351
+    :goto_0
+    return v2
+
+    .line 348
+    :cond_0
+    :try_start_0
+    iget v3, p0, Landroid/nfc/tech/Ndef;->mNdefType:I
+
+    invoke-interface {v1, v3}, Landroid/nfc/INfcTag;->canMakeReadOnly(I)Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result v2
 
-    .line 342
-    :goto_0
-    return v2
+    goto :goto_0
 
-    .line 340
+    .line 349
     :catch_0
     move-exception v0
 
-    .line 341
+    .line 350
     .local v0, e:Landroid/os/RemoteException;
-    const-string v2, "NFC"
+    const-string v3, "NFC"
 
-    const-string v3, "NFC service dead"
+    const-string v4, "NFC service dead"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 342
-    const/4 v2, 0x0
+    invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -258,7 +263,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 186
     iget-object v0, p0, Landroid/nfc/tech/Ndef;->mNdefMsg:Landroid/nfc/NdefMessage;
 
     return-object v0
@@ -268,14 +273,14 @@
     .locals 1
 
     .prologue
-    .line 225
+    .line 228
     iget v0, p0, Landroid/nfc/tech/Ndef;->mMaxNdefSize:I
 
     return v0
 .end method
 
 .method public getNdefMessage()Landroid/nfc/NdefMessage;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -284,125 +289,103 @@
     .end annotation
 
     .prologue
-    const/4 v5, 0x0
-
-    .line 258
-    invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
-
-    .line 261
-    :try_start_0
-    iget-object v6, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
-
-    invoke-virtual {v6}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
-
-    move-result-object v4
-
-    .line 262
-    .local v4, tagService:Landroid/nfc/INfcTag;
-    iget-object v6, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
-
-    invoke-virtual {v6}, Landroid/nfc/Tag;->getServiceHandle()I
-
-    move-result v3
-
-    .line 263
-    .local v3, serviceHandle:I
-    invoke-interface {v4, v3}, Landroid/nfc/INfcTag;->isNdef(I)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    .line 264
-    invoke-interface {v4, v3}, Landroid/nfc/INfcTag;->ndefRead(I)Landroid/nfc/NdefMessage;
-
-    move-result-object v2
-
-    .line 265
-    .local v2, msg:Landroid/nfc/NdefMessage;
-    if-nez v2, :cond_0
-
-    .line 266
-    invoke-interface {v4, v3}, Landroid/nfc/INfcTag;->getLastError(I)I
-
-    move-result v1
+    const/4 v4, 0x0
 
     .line 267
-    .local v1, errorCode:I
-    sparse-switch v1, :sswitch_data_0
+    invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
 
-    .line 274
-    new-instance v6, Ljava/io/IOException;
+    .line 270
+    :try_start_0
+    iget-object v5, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
-    invoke-direct {v6}, Ljava/io/IOException;-><init>()V
+    invoke-virtual {v5}, Landroid/nfc/Tag;->getTagService()Landroid/nfc/INfcTag;
 
-    throw v6
+    move-result-object v3
+
+    .line 271
+    .local v3, tagService:Landroid/nfc/INfcTag;
+    if-nez v3, :cond_1
+
+    .line 272
+    new-instance v5, Ljava/io/IOException;
+
+    const-string v6, "Mock tags don\'t support this operation."
+
+    invoke-direct {v5, v6}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v5
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 281
-    .end local v1           #errorCode:I
-    .end local v2           #msg:Landroid/nfc/NdefMessage;
-    .end local v3           #serviceHandle:I
-    .end local v4           #tagService:Landroid/nfc/INfcTag;
+    .line 284
+    .end local v3           #tagService:Landroid/nfc/INfcTag;
     :catch_0
     move-exception v0
 
-    .line 282
+    .line 285
     .local v0, e:Landroid/os/RemoteException;
-    const-string v6, "NFC"
+    const-string v5, "NFC"
 
-    const-string v7, "NFC service dead"
+    const-string v6, "NFC service dead"
 
-    invoke-static {v6, v7, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v5, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-object v2, v5
+    move-object v1, v4
 
-    .line 283
+    .line 286
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_0
     :goto_0
-    return-object v2
+    return-object v1
 
-    .line 269
-    .restart local v1       #errorCode:I
-    .restart local v2       #msg:Landroid/nfc/NdefMessage;
-    .restart local v3       #serviceHandle:I
-    .restart local v4       #tagService:Landroid/nfc/INfcTag;
-    :sswitch_0
+    .line 274
+    .restart local v3       #tagService:Landroid/nfc/INfcTag;
+    :cond_1
     :try_start_1
-    new-instance v6, Ljava/io/IOException;
+    iget-object v5, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
-    invoke-direct {v6}, Ljava/io/IOException;-><init>()V
+    invoke-virtual {v5}, Landroid/nfc/Tag;->getServiceHandle()I
 
-    throw v6
+    move-result v2
 
-    .line 271
-    :sswitch_1
-    new-instance v6, Landroid/nfc/FormatException;
+    .line 275
+    .local v2, serviceHandle:I
+    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->isNdef(I)Z
 
-    invoke-direct {v6}, Landroid/nfc/FormatException;-><init>()V
+    move-result v5
 
-    throw v6
+    if-eqz v5, :cond_2
+
+    .line 276
+    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->ndefRead(I)Landroid/nfc/NdefMessage;
+
+    move-result-object v1
+
+    .line 277
+    .local v1, msg:Landroid/nfc/NdefMessage;
+    if-nez v1, :cond_0
+
+    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->isPresent(I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    .line 278
+    new-instance v5, Landroid/nfc/TagLostException;
+
+    invoke-direct {v5}, Landroid/nfc/TagLostException;-><init>()V
+
+    throw v5
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .end local v1           #errorCode:I
-    .end local v2           #msg:Landroid/nfc/NdefMessage;
-    :cond_1
-    move-object v2, v5
+    .end local v1           #msg:Landroid/nfc/NdefMessage;
+    :cond_2
+    move-object v1, v4
 
-    .line 279
+    .line 282
     goto :goto_0
-
-    .line 267
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x8 -> :sswitch_1
-        -0x1 -> :sswitch_0
-    .end sparse-switch
 .end method
 
 .method public bridge synthetic getTag()Landroid/nfc/Tag;
@@ -421,54 +404,54 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 202
     iget v0, p0, Landroid/nfc/tech/Ndef;->mNdefType:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 213
+    .line 216
     const-string v0, "android.ndef.unknown"
 
     :goto_0
     return-object v0
 
-    .line 201
+    .line 204
     :sswitch_0
     const-string/jumbo v0, "org.nfcforum.ndef.type1"
 
     goto :goto_0
 
-    .line 203
+    .line 206
     :sswitch_1
     const-string/jumbo v0, "org.nfcforum.ndef.type2"
 
     goto :goto_0
 
-    .line 205
+    .line 208
     :sswitch_2
     const-string/jumbo v0, "org.nfcforum.ndef.type3"
 
     goto :goto_0
 
-    .line 207
+    .line 210
     :sswitch_3
     const-string/jumbo v0, "org.nfcforum.ndef.type4"
 
     goto :goto_0
 
-    .line 209
+    .line 212
     :sswitch_4
     const-string v0, "com.nxp.ndef.mifareclassic"
 
     goto :goto_0
 
-    .line 211
+    .line 214
     :sswitch_5
     const-string v0, "com.nxp.ndef.icodesli"
 
     goto :goto_0
 
-    .line 199
+    .line 202
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -496,7 +479,7 @@
     .locals 2
 
     .prologue
-    .line 240
+    .line 243
     iget v0, p0, Landroid/nfc/tech/Ndef;->mCardState:I
 
     const/4 v1, 0x2
@@ -525,10 +508,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 365
+    .line 374
     invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
 
-    .line 368
+    .line 377
     :try_start_0
     iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
@@ -536,8 +519,19 @@
 
     move-result-object v2
 
-    .line 369
+    .line 378
     .local v2, tagService:Landroid/nfc/INfcTag;
+    if-nez v2, :cond_0
+
+    .line 400
+    .end local v2           #tagService:Landroid/nfc/INfcTag;
+    :goto_0
+    :sswitch_0
+    return v3
+
+    .line 381
+    .restart local v2       #tagService:Landroid/nfc/INfcTag;
+    :cond_0
     iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
@@ -548,9 +542,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
-    .line 370
+    .line 382
     iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
     invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
@@ -561,11 +555,11 @@
 
     move-result v1
 
-    .line 371
+    .line 383
     .local v1, errorCode:I
     sparse-switch v1, :sswitch_data_0
 
-    .line 380
+    .line 392
     new-instance v4, Ljava/io/IOException;
 
     invoke-direct {v4}, Ljava/io/IOException;-><init>()V
@@ -574,13 +568,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 386
+    .line 398
     .end local v1           #errorCode:I
     .end local v2           #tagService:Landroid/nfc/INfcTag;
     :catch_0
     move-exception v0
 
-    .line 387
+    .line 399
     .local v0, e:Landroid/os/RemoteException;
     const-string v4, "NFC"
 
@@ -588,13 +582,10 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 388
-    .end local v0           #e:Landroid/os/RemoteException;
-    :goto_0
-    :sswitch_0
-    return v3
+    goto :goto_0
 
-    .line 373
+    .line 385
+    .end local v0           #e:Landroid/os/RemoteException;
     .restart local v1       #errorCode:I
     .restart local v2       #tagService:Landroid/nfc/INfcTag;
     :sswitch_1
@@ -602,7 +593,7 @@
 
     goto :goto_0
 
-    .line 375
+    .line 387
     :sswitch_2
     :try_start_1
     new-instance v4, Ljava/io/IOException;
@@ -611,9 +602,9 @@
 
     throw v4
 
-    .line 384
+    .line 396
     .end local v1           #errorCode:I
-    :cond_0
+    :cond_1
     new-instance v4, Ljava/io/IOException;
 
     const-string v5, "Tag is not ndef"
@@ -624,7 +615,9 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 371
+    .line 383
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x8 -> :sswitch_0
@@ -659,10 +652,10 @@
     .end annotation
 
     .prologue
-    .line 302
+    .line 305
     invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->checkConnected()V
 
-    .line 305
+    .line 308
     :try_start_0
     iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
@@ -670,48 +663,27 @@
 
     move-result-object v3
 
-    .line 306
-    .local v3, tagService:Landroid/nfc/INfcTag;
-    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
-
-    invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
-
-    move-result v2
-
-    .line 307
-    .local v2, serviceHandle:I
-    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->isNdef(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 308
-    invoke-interface {v3, v2, p1}, Landroid/nfc/INfcTag;->ndefWrite(ILandroid/nfc/NdefMessage;)I
-
-    move-result v1
-
     .line 309
-    .local v1, errorCode:I
-    sparse-switch v1, :sswitch_data_0
+    .local v3, tagService:Landroid/nfc/INfcTag;
+    if-nez v3, :cond_0
 
-    .line 318
+    .line 310
     new-instance v4, Ljava/io/IOException;
 
-    invoke-direct {v4}, Ljava/io/IOException;-><init>()V
+    const-string v5, "Mock tags don\'t support this operation."
+
+    invoke-direct {v4, v5}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v4
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 324
-    .end local v1           #errorCode:I
-    .end local v2           #serviceHandle:I
+    .line 330
     .end local v3           #tagService:Landroid/nfc/INfcTag;
     :catch_0
     move-exception v0
 
-    .line 325
+    .line 331
     .local v0, e:Landroid/os/RemoteException;
     const-string v4, "NFC"
 
@@ -719,24 +691,54 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 327
+    .line 333
     .end local v0           #e:Landroid/os/RemoteException;
     :sswitch_0
     return-void
 
-    .line 313
-    .restart local v1       #errorCode:I
-    .restart local v2       #serviceHandle:I
+    .line 312
     .restart local v3       #tagService:Landroid/nfc/INfcTag;
-    :sswitch_1
+    :cond_0
     :try_start_1
+    iget-object v4, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
+
+    invoke-virtual {v4}, Landroid/nfc/Tag;->getServiceHandle()I
+
+    move-result v2
+
+    .line 313
+    .local v2, serviceHandle:I
+    invoke-interface {v3, v2}, Landroid/nfc/INfcTag;->isNdef(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .line 314
+    invoke-interface {v3, v2, p1}, Landroid/nfc/INfcTag;->ndefWrite(ILandroid/nfc/NdefMessage;)I
+
+    move-result v1
+
+    .line 315
+    .local v1, errorCode:I
+    sparse-switch v1, :sswitch_data_0
+
+    .line 324
     new-instance v4, Ljava/io/IOException;
 
     invoke-direct {v4}, Ljava/io/IOException;-><init>()V
 
     throw v4
 
-    .line 315
+    .line 319
+    :sswitch_1
+    new-instance v4, Ljava/io/IOException;
+
+    invoke-direct {v4}, Ljava/io/IOException;-><init>()V
+
+    throw v4
+
+    .line 321
     :sswitch_2
     new-instance v4, Landroid/nfc/FormatException;
 
@@ -744,9 +746,9 @@
 
     throw v4
 
-    .line 322
+    .line 328
     .end local v1           #errorCode:I
-    :cond_0
+    :cond_1
     new-instance v4, Ljava/io/IOException;
 
     const-string v5, "Tag is not ndef"
@@ -757,7 +759,7 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 309
+    .line 315
     nop
 
     :sswitch_data_0

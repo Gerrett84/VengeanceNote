@@ -39,7 +39,23 @@
     .end annotation
 .end method
 
+.method public abstract cancelPreloadRecentApps()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract disable(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract preloadRecentApps()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -87,7 +103,7 @@
     .end annotation
 .end method
 
-.method public abstract setSystemUiVisibility(I)V
+.method public abstract setSystemUiVisibility(II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

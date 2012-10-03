@@ -125,13 +125,11 @@
 
     .prologue
     .line 215
-    invoke-static {}, Landroid/os/Process;->myUid()I
+    iget-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine$2;->this$1:Landroid/service/wallpaper/WallpaperService$Engine;
 
-    move-result v0
+    iget-boolean v0, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mFixedSizeAllowed:Z
 
-    const/16 v1, 0x3e8
-
-    if-eq v0, v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 219
     new-instance v0, Ljava/lang/UnsupportedOperationException;

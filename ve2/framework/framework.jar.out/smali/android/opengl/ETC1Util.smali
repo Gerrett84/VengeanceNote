@@ -51,18 +51,18 @@
 
     move-result-object v5
 
-    .line 196
     .local v5, compressedImage:Ljava/nio/ByteBuffer;
-    const/4 v3, 0x3
-
     move-object v0, p0
 
     move v1, p1
 
     move v2, p2
 
+    move v3, p3
+
     move v4, p4
 
+    .line 196
     invoke-static/range {v0 .. v5}, Landroid/opengl/ETC1;->encodeImage(Ljava/nio/Buffer;IIIILjava/nio/Buffer;)V
 
     .line 197
@@ -643,13 +643,6 @@
 
     .line 225
     .end local v0           #chunkSize:I
-    :cond_0
-    invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 227
-    return-void
-
-    .line 225
     .end local v2           #encodedSize:I
     .end local v3           #header:Ljava/nio/ByteBuffer;
     .end local v4           #height:I
@@ -662,4 +655,16 @@
     invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     throw v9
+
+    .restart local v2       #encodedSize:I
+    .restart local v3       #header:Ljava/nio/ByteBuffer;
+    .restart local v4       #height:I
+    .restart local v5       #i:I
+    .restart local v6       #ioBuffer:[B
+    .restart local v8       #width:I
+    :cond_0
+    invoke-virtual {v1, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 227
+    return-void
 .end method

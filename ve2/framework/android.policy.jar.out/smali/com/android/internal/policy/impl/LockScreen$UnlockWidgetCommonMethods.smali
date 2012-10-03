@@ -15,6 +15,12 @@
 
 
 # virtual methods
+.method public abstract cleanUp()V
+.end method
+
+.method public abstract getTargetPosition(I)I
+.end method
+
 .method public abstract getView()Landroid/view/View;
 .end method
 
@@ -22,6 +28,9 @@
 .end method
 
 .method public abstract reset(Z)V
+.end method
+
+.method public abstract setEnabled(IZ)V
 .end method
 
 .method public abstract updateResources()V

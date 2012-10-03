@@ -7,7 +7,9 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;,
-        Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
+        Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;,
+        Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MagnifierInputEventReceiver;,
+        Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$StatusBarInputEventReceiver;
     }
 .end annotation
 
@@ -38,9 +40,13 @@
 
 .field mBackLongPressed:Z
 
+.field private mBackPressed:Z
+
 .field private mBinder:Landroid/os/Binder;
 
 .field mCameraKeyWakeScreen:Z
+
+.field private mDisableProximitor:Z
 
 .field private mDownX:I
 
@@ -60,7 +66,7 @@
 
 .field private mMagnifierInputChannel:Landroid/view/InputChannel;
 
-.field private final mMagnifierInputHandler:Landroid/view/InputHandler;
+.field private mMagnifierInputEventReceiver:Landroid/view/InputEventReceiver;
 
 .field private mMenuPressed:Z
 
@@ -70,13 +76,15 @@
 
 .field mPowerLongPressOriginal:Ljava/lang/Runnable;
 
+.field private mProximitySensor:Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;
+
 .field mScreenButtonsDisabled:Z
 
 .field private mScreenOffReason:I
 
 .field mScreenshotReceiver:Landroid/content/BroadcastReceiver;
 
-.field private mScreenshotTrigger:Z
+.field private mShortcutTriggered:Z
 
 .field private mShowMagnifier:Z
 
@@ -86,7 +94,7 @@
 
 .field private mStatusBarInputChannel:Landroid/view/InputChannel;
 
-.field private final mStatusBarInputHandler:Landroid/view/InputHandler;
+.field private mStatusBarInputEventReceiver:Landroid/view/InputEventReceiver;
 
 .field private mTorchEnabled:Z
 
@@ -104,56 +112,56 @@
     .locals 2
 
     .prologue
-    .line 621
+    .line 677
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
-    .line 623
+    .line 679
     sget-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
     const-string v1, "com.android.systemui"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 624
+    .line 680
     sget-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
     const-string v1, "com.android.phone"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 625
+    .line 681
     sget-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
     const-string v1, "com.android.mms"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 626
+    .line 682
     sget-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
     const-string v1, "com.android.contacts"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 627
+    .line 683
     sget-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
     const-string v1, "com.miui.home"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 628
+    .line 684
     sget-object v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
 
     const-string v1, "com.miui.fmradio"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 629
+    .line 685
     return-void
 .end method
 
@@ -171,55 +179,41 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mPowerLongPressOriginal:Ljava/lang/Runnable;
 
-    .line 458
+    .line 500
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBinder:Landroid/os/Binder;
 
-    .line 460
+    .line 502
     new-instance v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$3;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$3;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarExitFullscreenReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 488
+    .line 586
     new-instance v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$4;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputHandler:Landroid/view/InputHandler;
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 531
+    .line 650
     new-instance v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$5;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
 
-    iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotReceiver:Landroid/content/BroadcastReceiver;
-
-    .line 540
-    new-instance v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;
-
-    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
-
-    iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifierInputHandler:Landroid/view/InputHandler;
-
-    .line 594
-    new-instance v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$7;
-
-    invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$7;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
-
     iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShowMagnifierReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 608
+    .line 664
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHasCameraFlash:Z
 
-    .line 609
+    .line 665
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
 
-    .line 620
+    .line 676
     new-instance v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
 
     const/4 v1, 0x0
@@ -228,7 +222,7 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
 
-    .line 727
+    .line 783
     return-void
 .end method
 
@@ -420,7 +414,7 @@
     .locals 3
 
     .prologue
-    .line 851
+    .line 907
     const-string v1, "statusbar"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -431,18 +425,18 @@
 
     move-result-object v0
 
-    .line 853
+    .line 909
     .local v0, service:Lcom/android/internal/statusbar/IStatusBarService;
     if-nez v0, :cond_0
 
-    .line 854
+    .line 910
     const-string v1, "WindowManager"
 
     const-string v2, "Unable to find IStatusBarService interface."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 856
+    .line 912
     :cond_0
     return-object v0
 .end method
@@ -451,7 +445,7 @@
     .locals 3
 
     .prologue
-    .line 860
+    .line 916
     const-string v1, "window"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -462,18 +456,18 @@
 
     move-result-object v0
 
-    .line 862
+    .line 918
     .local v0, service:Landroid/view/IWindowManager;
     if-nez v0, :cond_0
 
-    .line 863
+    .line 919
     const-string v1, "WindowManager"
 
     const-string v2, "Unable to find IPowerManager interface."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 865
+    .line 921
     :cond_0
     return-object v0
 .end method
@@ -482,7 +476,7 @@
     .locals 1
 
     .prologue
-    .line 605
+    .line 661
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHasCameraFlash:Z
 
     if-eqz v0, :cond_0
@@ -506,11 +500,40 @@
     goto :goto_0
 .end method
 
+.method private releaseScreenOnProximitySensor()Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 180
+    iget-boolean v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSystemReady:Z
+
+    if-nez v1, :cond_0
+
+    .line 182
+    :goto_0
+    return v0
+
+    .line 181
+    :cond_0
+    iput-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDisableProximitor:Z
+
+    .line 182
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mProximitySensor:Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;->release()Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
 .method private setMaxBacklightBrightness()V
     .locals 2
 
     .prologue
-    .line 419
+    .line 461
     const-string v1, "power"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -521,7 +544,7 @@
 
     move-result-object v0
 
-    .line 421
+    .line 463
     .local v0, power:Landroid/os/IPowerManager;
     const/16 v1, 0xff
 
@@ -530,11 +553,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 424
+    .line 466
     :goto_0
     return-void
 
-    .line 422
+    .line 464
     :catch_0
     move-exception v1
 
@@ -548,10 +571,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 467
+    .line 509
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mIsStatusBarVisibleInFullscreen:Z
 
-    .line 469
+    .line 511
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -568,21 +591,21 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 477
+    .line 519
     :goto_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v1, :cond_0
 
-    .line 478
+    .line 520
     if-eqz p1, :cond_2
 
-    .line 479
+    .line 521
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
     invoke-interface {v1, v2}, Landroid/view/WindowManagerPolicy$WindowState;->showLw(Z)Z
 
-    .line 485
+    .line 527
     :cond_0
     :goto_2
     return-void
@@ -590,20 +613,20 @@
     :cond_1
     move v1, v2
 
-    .line 469
+    .line 511
     goto :goto_0
 
-    .line 473
+    .line 515
     :catch_0
     move-exception v0
 
-    .line 474
+    .line 516
     .local v0, e:Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 482
+    .line 524
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_2
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
@@ -620,28 +643,28 @@
     .parameter "enable"
 
     .prologue
-    .line 613
+    .line 669
     iput-boolean p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
 
-    .line 614
+    .line 670
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "miui.intent.action.TOGGLE_TORCH"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 615
+    .line 671
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "miui.intent.extra.IS_ENABLE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 616
+    .line 672
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 617
+    .line 673
     return-void
 .end method
 
@@ -653,7 +676,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 880
+    .line 936
     iget v0, p2, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
     const/high16 v1, 0x4000
@@ -662,10 +685,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 881
+    .line 937
     const/4 v0, 0x0
 
-    .line 883
+    .line 939
     :goto_0
     return v0
 
@@ -683,7 +706,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 871
+    .line 927
     iget v0, p2, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
     const/high16 v1, 0x4000
@@ -692,10 +715,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 872
+    .line 928
     const/4 v0, 0x0
 
-    .line 874
+    .line 930
     :goto_0
     return v0
 
@@ -713,29 +736,29 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 427
+    .line 469
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
-    .line 428
+    .line 470
     .local v1, statusBar:Landroid/view/WindowManagerPolicy$WindowState;
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mIsStatusBarVisibleInFullscreen:Z
 
     if-eqz v2, :cond_0
 
-    .line 429
+    .line 471
     iput-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
-    .line 431
+    .line 473
     :cond_0
     invoke-super {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->finishAnimationLw()I
 
     move-result v0
 
-    .line 432
+    .line 474
     .local v0, result:I
     iput-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
-    .line 434
+    .line 476
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lmiui/app/ExtraStatusBarManager;->isExpandableUnderFullscreen(Landroid/content/Context;)Z
@@ -752,7 +775,7 @@
 
     if-nez v2, :cond_1
 
-    .line 436
+    .line 478
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mTopIsFullscreen:Z
 
     if-eqz v2, :cond_2
@@ -765,27 +788,26 @@
 
     if-nez v2, :cond_2
 
-    .line 437
+    .line 479
     iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
 
     if-nez v2, :cond_1
 
-    .line 439
-    :try_start_0
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManager:Landroid/view/IWindowManager;
+    .line 480
+    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     const-string v3, "StatusBarView"
 
-    invoke-interface {v2, v3}, Landroid/view/IWindowManager;->monitorInput(Ljava/lang/String;)Landroid/view/InputChannel;
+    invoke-interface {v2, v3}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->monitorInput(Ljava/lang/String;)Landroid/view/InputChannel;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
 
-    .line 440
-    iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
+    .line 481
+    new-instance v2, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$StatusBarInputEventReceiver;
 
-    iget-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputHandler:Landroid/view/InputHandler;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
 
     iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
@@ -793,43 +815,42 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/os/Looper;->getQueue()Landroid/os/MessageQueue;
+    invoke-direct {v2, p0, v3, v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$StatusBarInputEventReceiver;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    move-result-object v4
+    iput-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputEventReceiver:Landroid/view/InputEventReceiver;
 
-    invoke-static {v2, v3, v4}, Landroid/view/InputQueue;->registerInputChannel(Landroid/view/InputChannel;Landroid/view/InputHandler;Landroid/os/MessageQueue;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 454
+    .line 496
     :cond_1
     :goto_0
     return v0
 
-    .line 447
+    .line 486
     :cond_2
     iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
-    .line 448
-    iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
-
-    invoke-static {v2}, Landroid/view/InputQueue;->unregisterInputChannel(Landroid/view/InputChannel;)V
-
-    .line 449
+    .line 487
     iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
 
     invoke-virtual {v2}, Landroid/view/InputChannel;->dispose()V
 
-    .line 450
+    .line 488
     iput-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputChannel:Landroid/view/InputChannel;
 
-    goto :goto_0
+    .line 490
+    :cond_3
+    iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputEventReceiver:Landroid/view/InputEventReceiver;
 
-    .line 442
-    :catch_0
-    move-exception v2
+    if-eqz v2, :cond_1
+
+    .line 491
+    iget-object v2, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputEventReceiver:Landroid/view/InputEventReceiver;
+
+    invoke-virtual {v2}, Landroid/view/InputEventReceiver;->dispose()V
+
+    .line 492
+    iput-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarInputEventReceiver:Landroid/view/InputEventReceiver;
 
     goto :goto_0
 .end method
@@ -838,16 +859,16 @@
     .locals 3
 
     .prologue
-    .line 585
+    .line 641
     monitor-enter p0
 
-    .line 586
+    .line 642
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifier:Lcom/android/internal/policy/impl/MagnifierPopupWindow;
 
     if-nez v1, :cond_0
 
-    .line 587
+    .line 643
     const/16 v1, 0x7d0
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->windowTypeToLayerLw(I)I
@@ -858,7 +879,7 @@
 
     add-int/lit16 v0, v1, 0x3e8
 
-    .line 588
+    .line 644
     .local v0, maxLayer:I
     new-instance v1, Lcom/android/internal/policy/impl/MagnifierPopupWindow;
 
@@ -868,7 +889,7 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifier:Lcom/android/internal/policy/impl/MagnifierPopupWindow;
 
-    .line 590
+    .line 646
     .end local v0           #maxLayer:I
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifier:Lcom/android/internal/policy/impl/MagnifierPopupWindow;
@@ -877,7 +898,7 @@
 
     return-object v1
 
-    .line 591
+    .line 647
     :catchall_0
     move-exception v1
 
@@ -892,614 +913,702 @@
     .locals 2
 
     .prologue
-    .line 839
+    .line 895
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$9;
+    new-instance v1, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$7;
 
-    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$9;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
+    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$7;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 848
+    .line 904
     return-void
 .end method
 
 .method public init(Landroid/content/Context;Landroid/view/IWindowManager;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;Landroid/os/LocalPowerManager;)V
-    .locals 7
+    .locals 6
     .parameter "context"
     .parameter "windowManager"
     .parameter "windowManagerFuncs"
     .parameter "powerManager"
 
     .prologue
-    .line 97
+    .line 99
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->init(Landroid/content/Context;Landroid/view/IWindowManager;Landroid/view/WindowManagerPolicy$WindowManagerFuncs;Landroid/os/LocalPowerManager;)V
 
-    .line 99
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 101
+    new-instance v2, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;
 
-    move-result-object v4
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    const-string v5, "device_provisioned"
-
-    const/4 v6, 0x1
-
-    invoke-static {v4, v5, v6}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-direct {v2, p0, v3}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/os/Handler;)V
 
     .line 102
-    new-instance v3, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;
+    .local v2, settingsObserver:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;
+    invoke-virtual {v2}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->observe()V
 
-    iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    .line 104
+    new-instance v3, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;
 
-    invoke-direct {v3, p0, v4}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/os/Handler;)V
+    invoke-direct {v3, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
 
-    .line 103
-    .local v3, settingsObserver:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;
-    invoke-virtual {v3}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MiuiSettingsObserver;->observe()V
+    iput-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerLongPress:Ljava/lang/Runnable;
 
-    .line 105
-    new-instance v4, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;
+    .line 118
+    new-instance v0, Landroid/content/IntentFilter;
 
-    invoke-direct {v4, p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;)V
-
-    iput-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerLongPress:Ljava/lang/Runnable;
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     .line 119
-    new-instance v1, Landroid/content/IntentFilter;
+    .local v0, filter:Landroid/content/IntentFilter;
+    const-string v3, "android.intent.action.CAPTURE_SCREENSHOT"
 
-    invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 120
-    .local v1, filter:Landroid/content/IntentFilter;
-    const-string v4, "android.intent.action.CAPTURE_SCREENSHOT"
+    iget-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {p1, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 121
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotReceiver:Landroid/content/BroadcastReceiver;
+    .line 122
+    new-instance v0, Landroid/content/IntentFilter;
 
-    invoke-virtual {p1, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    .end local v0           #filter:Landroid/content/IntentFilter;
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     .line 123
-    new-instance v1, Landroid/content/IntentFilter;
+    .restart local v0       #filter:Landroid/content/IntentFilter;
+    const-string v3, "com.miui.app.ExtraStatusBarManager.EXIT_FULLSCREEN"
 
-    .end local v1           #filter:Landroid/content/IntentFilter;
-    invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
+    invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 124
-    .restart local v1       #filter:Landroid/content/IntentFilter;
-    const-string v4, "com.miui.app.ExtraStatusBarManager.EXIT_FULLSCREEN"
+    iget-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarExitFullscreenReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {p1, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 125
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mStatusBarExitFullscreenReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p1, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    .line 127
+    .line 126
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v2
+    move-result-object v1
+
+    .line 127
+    .local v1, pm:Landroid/content/pm/PackageManager;
+    const-string v3, "android.hardware.camera.flash"
+
+    invoke-virtual {v1, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v3
+
+    iput-boolean v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHasCameraFlash:Z
 
     .line 128
-    .local v2, pm:Landroid/content/pm/PackageManager;
-    const-string v4, "android.hardware.camera.flash"
+    new-instance v3, Lmiui/util/HapticFeedbackUtil;
 
-    invoke-virtual {v2, v4}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    const/4 v4, 0x0
 
-    move-result v4
+    invoke-direct {v3, p1, v4}, Lmiui/util/HapticFeedbackUtil;-><init>(Landroid/content/Context;Z)V
 
-    iput-boolean v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHasCameraFlash:Z
+    iput-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHapticFeedbackUtil:Lmiui/util/HapticFeedbackUtil;
 
-    .line 129
-    new-instance v4, Lmiui/util/HapticFeedbackUtil;
+    .line 131
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
-    const/4 v5, 0x0
+    const-string v4, "Magnifier"
 
-    invoke-direct {v4, p1, v5}, Lmiui/util/HapticFeedbackUtil;-><init>(Landroid/content/Context;Z)V
+    invoke-interface {v3, v4}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->monitorInput(Ljava/lang/String;)Landroid/view/InputChannel;
 
-    iput-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHapticFeedbackUtil:Lmiui/util/HapticFeedbackUtil;
+    move-result-object v3
 
-    .line 133
-    :try_start_0
-    iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManager:Landroid/view/IWindowManager;
+    iput-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifierInputChannel:Landroid/view/InputChannel;
 
-    const-string v5, "Magnifier"
+    .line 132
+    new-instance v3, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MagnifierInputEventReceiver;
 
-    invoke-interface {v4, v5}, Landroid/view/IWindowManager;->monitorInput(Ljava/lang/String;)Landroid/view/InputChannel;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifierInputChannel:Landroid/view/InputChannel;
-
-    .line 134
     iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifierInputChannel:Landroid/view/InputChannel;
 
-    iget-object v5, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifierInputHandler:Landroid/view/InputHandler;
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
-    iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    move-result-object v5
 
-    invoke-virtual {v6}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+    invoke-direct {v3, p0, v4, v5}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$MagnifierInputEventReceiver;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    move-result-object v6
+    iput-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMagnifierInputEventReceiver:Landroid/view/InputEventReceiver;
 
-    invoke-virtual {v6}, Landroid/os/Looper;->getQueue()Landroid/os/MessageQueue;
+    .line 134
+    new-instance v0, Landroid/content/IntentFilter;
 
-    move-result-object v6
-
-    invoke-static {v4, v5, v6}, Landroid/view/InputQueue;->registerInputChannel(Landroid/view/InputChannel;Landroid/view/InputHandler;Landroid/os/MessageQueue;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 138
-    :goto_0
-    new-instance v1, Landroid/content/IntentFilter;
-
-    .end local v1           #filter:Landroid/content/IntentFilter;
-    invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
-
-    .line 139
-    .restart local v1       #filter:Landroid/content/IntentFilter;
-    const-string v4, "android.intent.action.SHOW_MAGNIFIER"
-
-    invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 140
-    iget-object v4, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShowMagnifierReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p1, v4, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    .line 141
-    return-void
+    .end local v0           #filter:Landroid/content/IntentFilter;
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     .line 135
-    :catch_0
-    move-exception v0
+    .restart local v0       #filter:Landroid/content/IntentFilter;
+    const-string v3, "android.intent.action.SHOW_MAGNIFIER"
+
+    invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     .line 136
-    .local v0, ex:Landroid/os/RemoteException;
-    const-string v4, "WindowManager"
+    iget-object v3, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShowMagnifierReceiver:Landroid/content/BroadcastReceiver;
 
-    const-string v5, "Can\'t monitor input for showing magnifier"
+    invoke-virtual {p1, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    .line 137
+    return-void
 .end method
 
 .method public interceptKeyBeforeDispatching(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/KeyEvent;I)J
-    .locals 13
+    .locals 15
     .parameter "win"
     .parameter "event"
     .parameter "policyFlags"
 
     .prologue
-    .line 163
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v4
-
-    .line 164
-    .local v4, keyCode:I
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getRepeatCount()I
+    .line 187
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v6
 
-    .line 165
-    .local v6, repeatCount:I
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
+    .line 188
+    .local v6, keyCode:I
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->getRepeatCount()I
 
-    move-result v9
+    move-result v8
 
-    if-nez v9, :cond_2
+    .line 189
+    .local v8, repeatCount:I
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->getAction()I
 
-    const/4 v1, 0x1
+    move-result v11
 
-    .line 171
-    .local v1, down:Z
+    if-nez v11, :cond_1
+
+    const/4 v3, 0x1
+
+    .line 191
+    .local v3, down:Z
     :goto_0
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenButtonsDisabled:Z
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
 
-    if-eqz v9, :cond_0
+    if-nez v11, :cond_0
 
-    .line 172
-    sparse-switch v4, :sswitch_data_0
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSystemReady:Z
 
-    .line 181
+    if-eqz v11, :cond_2
+
+    iget-object v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mProximitySensor:Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v11, v0}, Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;->shouldBeBlocked(Landroid/view/KeyEvent;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_2
+
+    .line 192
     :cond_0
-    const/4 v9, 0x3
+    const-wide/16 v11, -0x1
 
-    if-ne v4, v9, :cond_7
-
-    .line 182
-    if-eqz v1, :cond_5
-
-    invoke-direct {p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->isEnableKeyguardTorch()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_5
-
-    .line 183
-    if-nez v6, :cond_3
-
-    .line 184
-    const/4 v9, 0x0
-
-    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
-
-    .line 185
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenOnFully:Z
-
-    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHomeDownWhileScreenOn:Z
-
-    .line 195
-    :cond_1
+    .line 314
     :goto_1
-    const-wide/16 v9, -0x1
+    return-wide v11
 
-    .line 268
-    :goto_2
-    return-wide v9
-
-    .line 165
-    .end local v1           #down:Z
-    :cond_2
-    const/4 v1, 0x0
+    .line 189
+    .end local v3           #down:Z
+    :cond_1
+    const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 177
-    .restart local v1       #down:Z
-    :sswitch_0
-    const-wide/16 v9, -0x1
+    .line 199
+    .restart local v3       #down:Z
+    :cond_2
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenButtonsDisabled:Z
 
-    goto :goto_2
+    if-eqz v11, :cond_3
 
-    .line 187
+    .line 200
+    sparse-switch v6, :sswitch_data_0
+
+    .line 209
     :cond_3
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
+    const/4 v11, 0x3
 
-    if-eqz v9, :cond_4
-
-    .line 188
-    rem-int/lit8 v9, v6, 0xa
-
-    const/4 v10, 0x6
-
-    if-ne v9, v10, :cond_1
-
-    .line 189
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
-
-    invoke-virtual {v9}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->pokeWakelock()V
-
-    goto :goto_1
-
-    .line 192
-    :cond_4
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHomeDownWhileScreenOn:Z
-
-    if-eqz v9, :cond_1
-
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I
-
-    move-result v9
-
-    and-int/lit16 v9, v9, 0x80
-
-    if-eqz v9, :cond_1
-
-    .line 193
-    const/4 v9, 0x1
-
-    invoke-direct {p0, v9}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->setTorch(Z)V
-
-    goto :goto_1
-
-    .line 197
-    :cond_5
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
-
-    if-eqz v9, :cond_6
-
-    .line 198
-    const/4 v9, 0x0
-
-    invoke-direct {p0, v9}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->setTorch(Z)V
-
-    .line 268
-    :cond_6
-    invoke-super/range {p0 .. p3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptKeyBeforeDispatching(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/KeyEvent;I)J
-
-    move-result-wide v9
-
-    goto :goto_2
-
-    .line 201
-    :cond_7
-    const/4 v9, 0x4
-
-    if-ne v4, v9, :cond_6
-
-    .line 202
-    if-eqz v1, :cond_e
-
-    .line 203
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
-
-    invoke-virtual {v9}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isShowingAndNotHidden()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_9
-
-    .line 204
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v9
-
-    const-string v10, "enable_snapshot_screenlock"
-
-    const/4 v11, 0x0
-
-    invoke-static {v9, v10, v11}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v7
-
-    .line 208
-    .local v7, snapshotFlag:I
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getFlags()I
-
-    move-result v9
-
-    and-int/lit16 v9, v9, 0x80
-
-    if-eqz v9, :cond_c
-
-    if-eqz v7, :cond_c
-
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
-
-    invoke-virtual {v9}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isSecure()Z
-
-    move-result v9
-
-    if-nez v9, :cond_c
+    if-ne v6, v11, :cond_9
 
     .line 210
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+    if-eqz v3, :cond_7
 
-    invoke-virtual {v9}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->isEnableKeyguardTorch()Z
 
-    move-result-object v5
+    move-result v11
+
+    if-eqz v11, :cond_7
+
+    .line 211
+    if-nez v8, :cond_5
 
     .line 212
-    .local v5, packageManager:Landroid/content/pm/PackageManager;
-    new-instance v3, Landroid/content/Intent;
+    const/4 v11, 0x0
 
-    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
+    iput-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
 
     .line 213
-    .local v3, intent:Landroid/content/Intent;
-    const/high16 v9, 0x1000
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenOnFully:Z
 
-    invoke-virtual {v3, v9}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 214
-    const/high16 v9, 0x800
-
-    invoke-virtual {v3, v9}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    .line 216
-    const-string v9, "android.media.action.STILL_IMAGE_CAMERA"
-
-    invoke-virtual {v3, v9}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 217
-    const-string v9, "captureAfterLaunch"
-
-    const/4 v10, 0x1
-
-    invoke-virtual {v3, v9, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 219
-    const-string v9, "android.intent.extras.CAMERA_FACING"
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v3, v9, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 221
-    const/4 v9, 0x0
-
-    invoke-virtual {v5, v3, v9}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
-
-    move-result-object v9
-
-    invoke-interface {v9}, Ljava/util/List;->size()I
-
-    move-result v9
-
-    if-lez v9, :cond_8
-
-    .line 222
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
-
-    const/4 v10, 0x1
-
-    invoke-virtual {v9, v10}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->keyguardDone(Z)V
+    iput-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHomeDownWhileScreenOn:Z
 
     .line 223
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+    :cond_4
+    :goto_2
+    const-wide/16 v11, -0x1
 
-    invoke-virtual {v9, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    goto :goto_1
+
+    .line 205
+    :sswitch_0
+    const-wide/16 v11, -0x1
+
+    goto :goto_1
+
+    .line 215
+    :cond_5
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
+
+    if-eqz v11, :cond_6
+
+    .line 216
+    rem-int/lit8 v11, v8, 0xa
+
+    const/4 v12, 0x6
+
+    if-ne v11, v12, :cond_4
+
+    .line 217
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->pokeWakelock()V
+
+    goto :goto_2
+
+    .line 220
+    :cond_6
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHomeDownWhileScreenOn:Z
+
+    if-eqz v11, :cond_4
+
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->isLongPress()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_4
+
+    .line 221
+    const/4 v11, 0x1
+
+    invoke-direct {p0, v11}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->setTorch(Z)V
+
+    goto :goto_2
+
+    .line 225
+    :cond_7
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTorchEnabled:Z
+
+    if-eqz v11, :cond_8
 
     .line 226
+    const/4 v11, 0x0
+
+    invoke-direct {p0, v11}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->setTorch(Z)V
+
+    .line 314
     :cond_8
-    const-wide/16 v9, -0x1
+    :goto_3
+    invoke-super/range {p0 .. p3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptKeyBeforeDispatching(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/KeyEvent;I)J
 
-    goto/16 :goto_2
+    move-result-wide v11
 
-    .line 228
-    .end local v3           #intent:Landroid/content/Intent;
-    .end local v5           #packageManager:Landroid/content/pm/PackageManager;
-    .end local v7           #snapshotFlag:I
-    :cond_9
-    if-nez v6, :cond_c
+    goto :goto_1
 
     .line 229
-    const/4 v9, 0x0
+    :cond_9
+    const/16 v11, 0x52
 
-    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPressed:Z
+    if-ne v6, v11, :cond_b
+
+    .line 230
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    if-nez v11, :cond_8
+
+    if-eqz v3, :cond_8
+
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->isLongPress()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_8
+
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isSecure()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_a
+
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isShowing()Z
+
+    move-result v11
+
+    if-nez v11, :cond_8
 
     .line 232
-    if-eqz p1, :cond_d
-
-    invoke-interface {p1}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v0
-
-    .line 233
-    .local v0, attrs:Landroid/view/WindowManager$LayoutParams;
-    :goto_3
-    if-eqz v0, :cond_c
-
-    sget-object v9, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
-
-    iget-object v10, v0, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v9, v10}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-nez v9, :cond_c
-
-    iget v9, v0, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/4 v10, 0x1
-
-    if-lt v9, v10, :cond_a
-
-    iget v9, v0, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    const/16 v10, 0x63
-
-    if-le v9, v10, :cond_b
-
     :cond_a
-    iget v9, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
-    const/16 v10, 0x3e8
+    invoke-virtual {v11}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    if-lt v9, v10, :cond_c
+    move-result-object v11
 
-    iget v9, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+    const-string v12, "enable_assist_menu_key_long_press"
 
-    const/16 v10, 0x7cf
+    const/4 v13, 0x1
 
-    if-gt v9, v10, :cond_c
+    invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    .line 242
-    :cond_b
+    move-result v1
+
+    .line 235
+    .local v1, assistFlag:I
+    if-eqz v1, :cond_8
+
+    .line 236
+    const/4 v11, 0x1
+
+    iput-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    .line 238
     :try_start_0
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+    new-instance v5, Landroid/content/Intent;
 
-    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const-string v11, "android.intent.action.MAIN"
 
-    move-result-object v9
+    invoke-direct {v5, v11}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v10, "back_key_long_press_timeout"
+    .line 239
+    .local v5, intent:Landroid/content/Intent;
+    const-string v11, "android.intent.action.ASSIST"
 
-    invoke-static {v9, v10}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+    invoke-virtual {v5, v11}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result v8
+    .line 240
+    const/high16 v11, 0x1000
 
-    .line 245
-    .local v8, timeout:I
-    iget-object v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
+    invoke-virtual {v5, v11}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    invoke-virtual {v9, p1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;->setTarget(Landroid/view/WindowManagerPolicy$WindowState;)V
+    .line 241
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v11, v5}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
-    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 256
-    :goto_4
-    if-lez v8, :cond_c
-
-    .line 257
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
-
-    iget-object v10, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
-
-    int-to-long v11, v8
-
-    invoke-virtual {v9, v10, v11, v12}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 265
-    .end local v0           #attrs:Landroid/view/WindowManager$LayoutParams;
-    .end local v8           #timeout:I
-    :cond_c
-    :goto_5
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPressed:Z
-
-    if-eqz v9, :cond_6
-
-    const-wide/16 v9, -0x1
-
-    goto/16 :goto_2
-
-    .line 232
-    :cond_d
-    const/4 v0, 0x0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_3
 
-    .line 246
-    .restart local v0       #attrs:Landroid/view/WindowManager$LayoutParams;
+    .line 243
+    .end local v5           #intent:Landroid/content/Intent;
     :catch_0
-    move-exception v2
+    move-exception v11
+
+    goto :goto_3
 
     .line 248
-    .local v2, e:Landroid/provider/Settings$SettingNotFoundException;
-    invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
+    .end local v1           #assistFlag:I
+    :cond_b
+    const/4 v11, 0x4
 
-    move-result v8
+    if-ne v6, v11, :cond_8
 
     .line 249
-    .restart local v8       #timeout:I
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+    if-eqz v3, :cond_12
 
-    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    .line 250
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
-    move-result-object v9
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isShowingAndNotHidden()Z
 
-    const-string v10, "back_key_long_press_timeout"
+    move-result v11
 
+    if-eqz v11, :cond_d
+
+    .line 251
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v11}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v11
+
+    const-string v12, "enable_snapshot_screenlock"
+
+    const/4 v13, 0x0
+
+    invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v9
+
+    .line 255
+    .local v9, snapshotFlag:I
+    invoke-virtual/range {p2 .. p2}, Landroid/view/KeyEvent;->isLongPress()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_10
+
+    if-eqz v9, :cond_10
+
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+
+    invoke-virtual {v11}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isSecure()Z
+
+    move-result v11
+
+    if-nez v11, :cond_10
+
+    .line 256
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v11}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v7
+
+    .line 258
+    .local v7, packageManager:Landroid/content/pm/PackageManager;
+    new-instance v5, Landroid/content/Intent;
+
+    invoke-direct {v5}, Landroid/content/Intent;-><init>()V
+
+    .line 259
+    .restart local v5       #intent:Landroid/content/Intent;
+    const/high16 v11, 0x1000
+
+    invoke-virtual {v5, v11}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 260
+    const/high16 v11, 0x800
+
+    invoke-virtual {v5, v11}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 262
+    const-string v11, "android.media.action.STILL_IMAGE_CAMERA"
+
+    invoke-virtual {v5, v11}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 263
+    const-string v11, "captureAfterLaunch"
+
+    const/4 v12, 0x1
+
+    invoke-virtual {v5, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 265
+    const-string v11, "android.intent.extras.CAMERA_FACING"
+
+    const/4 v12, 0x0
+
+    invoke-virtual {v5, v11, v12}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 267
     const/4 v11, 0x0
 
-    invoke-static {v9, v10, v11}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    invoke-virtual {v7, v5, v11}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v11
+
+    invoke-interface {v11}, Ljava/util/List;->size()I
+
+    move-result v11
+
+    if-lez v11, :cond_c
+
+    .line 268
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+
+    const/4 v12, 0x1
+
+    invoke-virtual {v11, v12}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->keyguardDone(Z)V
+
+    .line 269
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v11, v5}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    .line 272
+    :cond_c
+    const-wide/16 v11, -0x1
+
+    goto/16 :goto_1
+
+    .line 274
+    .end local v5           #intent:Landroid/content/Intent;
+    .end local v7           #packageManager:Landroid/content/pm/PackageManager;
+    .end local v9           #snapshotFlag:I
+    :cond_d
+    if-nez v8, :cond_10
+
+    .line 275
+    const/4 v11, 0x0
+
+    iput-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPressed:Z
+
+    .line 278
+    if-eqz p1, :cond_11
+
+    invoke-interface/range {p1 .. p1}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v2
+
+    .line 279
+    .local v2, attrs:Landroid/view/WindowManager$LayoutParams;
+    :goto_4
+    if-eqz v2, :cond_10
+
+    sget-object v11, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->sBackLongPressWhiteList:Ljava/util/HashSet;
+
+    iget-object v12, v2, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
+
+    invoke-virtual {v11, v12}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_10
+
+    iget v11, v2, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/4 v12, 0x1
+
+    if-lt v11, v12, :cond_e
+
+    iget v11, v2, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v12, 0x63
+
+    if-le v11, v12, :cond_f
+
+    :cond_e
+    iget v11, v2, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v12, 0x3e8
+
+    if-lt v11, v12, :cond_10
+
+    iget v11, v2, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    const/16 v12, 0x7cf
+
+    if-gt v11, v12, :cond_10
+
+    .line 288
+    :cond_f
+    :try_start_1
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v11}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v11
+
+    const-string v12, "back_key_long_press_timeout"
+
+    invoke-static {v11, v12}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+
+    move-result v10
+
+    .line 291
+    .local v10, timeout:I
+    iget-object v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v11, v0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;->setTarget(Landroid/view/WindowManagerPolicy$WindowState;)V
+    :try_end_1
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 302
+    :goto_5
+    if-lez v10, :cond_10
+
+    .line 303
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+
+    iget-object v12, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
+
+    int-to-long v13, v10
+
+    invoke-virtual {v11, v12, v13, v14}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 311
+    .end local v2           #attrs:Landroid/view/WindowManager$LayoutParams;
+    .end local v10           #timeout:I
+    :cond_10
+    :goto_6
+    iget-boolean v11, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPressed:Z
+
+    if-eqz v11, :cond_8
+
+    const-wide/16 v11, -0x1
+
+    goto/16 :goto_1
+
+    .line 278
+    :cond_11
+    const/4 v2, 0x0
 
     goto :goto_4
 
-    .line 262
-    .end local v0           #attrs:Landroid/view/WindowManager$LayoutParams;
-    .end local v2           #e:Landroid/provider/Settings$SettingNotFoundException;
-    .end local v8           #timeout:I
-    :cond_e
-    iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+    .line 292
+    .restart local v2       #attrs:Landroid/view/WindowManager$LayoutParams;
+    :catch_1
+    move-exception v4
 
-    iget-object v10, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
+    .line 294
+    .local v4, e:Landroid/provider/Settings$SettingNotFoundException;
+    invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
-    invoke-virtual {v9, v10}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    move-result v10
+
+    .line 295
+    .restart local v10       #timeout:I
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v11}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v11
+
+    const-string v12, "back_key_long_press_timeout"
+
+    const/4 v13, 0x0
+
+    invoke-static {v11, v12, v13}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     goto :goto_5
 
-    .line 172
+    .line 308
+    .end local v2           #attrs:Landroid/view/WindowManager$LayoutParams;
+    .end local v4           #e:Landroid/provider/Settings$SettingNotFoundException;
+    .end local v10           #timeout:I
+    :cond_12
+    iget-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+
+    iget-object v12, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackLongPress:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$BackLongPressRunnable;
+
+    invoke-virtual {v11, v12}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    goto :goto_6
+
+    .line 200
     :sswitch_data_0
     .sparse-switch
         0x3 -> :sswitch_0
@@ -1516,55 +1625,103 @@
     .parameter "isScreenOn"
 
     .prologue
-    .line 273
+    .line 319
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v4
 
-    .line 274
+    .line 320
     .local v4, keyCode:I
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v9
 
-    if-nez v9, :cond_3
+    if-nez v9, :cond_5
 
     const/4 v1, 0x1
 
-    .line 275
+    .line 321
     .local v1, down:Z
     :goto_0
     const/high16 v9, 0x100
 
     and-int/2addr v9, p2
 
-    if-eqz v9, :cond_4
+    if-eqz v9, :cond_6
 
     const/4 v2, 0x1
 
-    .line 277
+    .line 323
     .local v2, isInjected:Z
     :goto_1
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenButtonsDisabled:Z
 
     if-eqz v9, :cond_0
 
-    .line 278
+    .line 324
     sparse-switch v4, :sswitch_data_0
 
-    .line 299
+    .line 345
     :cond_0
     const/16 v9, 0x52
 
-    if-ne v4, v9, :cond_6
+    if-ne v4, v9, :cond_8
 
-    .line 300
+    .line 346
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMenuPressed:Z
 
-    .line 307
+    .line 358
     :cond_1
     :goto_2
-    if-eqz p3, :cond_8
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMenuPressed:Z
+
+    if-nez v9, :cond_2
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackPressed:Z
+
+    if-nez v9, :cond_2
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeUpPressed:Z
+
+    if-nez v9, :cond_2
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeDownPressed:Z
+
+    if-nez v9, :cond_2
+
+    .line 359
+    const/4 v9, 0x0
+
+    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    .line 362
+    :cond_2
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    if-nez v9, :cond_3
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSystemReady:Z
+
+    if-eqz v9, :cond_3
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackPressed:Z
+
+    if-eqz v9, :cond_3
+
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeUpPressed:Z
+
+    if-eqz v9, :cond_3
+
+    .line 363
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->releaseScreenOnProximitySensor()Z
+
+    move-result v9
+
+    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    .line 366
+    :cond_3
+    if-eqz p3, :cond_b
 
     iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
@@ -1572,81 +1729,81 @@
 
     move-result v5
 
-    .line 310
+    .line 369
     .local v5, keyguardActive:Z
     :goto_3
-    if-nez p3, :cond_2
+    if-nez p3, :cond_4
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_c
 
-    .line 312
-    :cond_2
+    .line 371
+    :cond_4
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mCameraKeyWakeScreen:Z
 
-    if-eqz v9, :cond_e
+    if-eqz v9, :cond_11
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_11
 
     const/16 v9, 0x1b
 
-    if-ne v4, v9, :cond_e
+    if-ne v4, v9, :cond_11
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_11
 
-    .line 313
+    .line 372
     const/4 v9, 0x4
 
-    .line 408
+    .line 457
     .end local v5           #keyguardActive:Z
     :goto_4
     return v9
 
-    .line 274
+    .line 320
     .end local v1           #down:Z
     .end local v2           #isInjected:Z
-    :cond_3
+    :cond_5
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 275
+    .line 321
     .restart local v1       #down:Z
-    :cond_4
+    :cond_6
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 280
+    .line 326
     .restart local v2       #isInjected:Z
     :sswitch_0
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHomePressed:Z
 
-    .line 284
+    .line 330
     :sswitch_1
     const/4 v9, 0x0
 
     goto :goto_4
 
-    .line 287
+    .line 333
     :sswitch_2
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHomePressed:Z
 
     if-eqz v9, :cond_0
 
-    .line 288
-    if-nez v1, :cond_5
+    .line 334
+    if-nez v1, :cond_7
 
-    .line 289
+    .line 335
     const/4 v9, 0x0
 
     iput-boolean v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHomePressed:Z
 
-    .line 290
+    .line 336
     const/4 v9, 0x0
 
     invoke-virtual {p0, v9}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->interceptPowerKeyUp(Z)Z
 
-    .line 291
+    .line 337
     iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     new-instance v10, Landroid/content/Intent;
@@ -1657,36 +1814,47 @@
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 293
-    :cond_5
+    .line 339
+    :cond_7
     const/4 v9, 0x0
 
     goto :goto_4
 
-    .line 301
-    :cond_6
+    .line 348
+    :cond_8
+    const/4 v9, 0x4
+
+    if-ne v4, v9, :cond_9
+
+    .line 349
+    iput-boolean v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mBackPressed:Z
+
+    goto :goto_2
+
+    .line 351
+    :cond_9
     const/16 v9, 0x18
 
-    if-ne v4, v9, :cond_7
+    if-ne v4, v9, :cond_a
 
-    .line 302
+    .line 352
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeUpPressed:Z
 
     goto :goto_2
 
-    .line 303
-    :cond_7
+    .line 354
+    :cond_a
     const/16 v9, 0x19
 
     if-ne v4, v9, :cond_1
 
-    .line 304
+    .line 355
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeDownPressed:Z
 
     goto :goto_2
 
-    .line 307
-    :cond_8
+    .line 366
+    :cond_b
     iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     invoke-virtual {v9}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->isShowing()Z
@@ -1695,73 +1863,73 @@
 
     goto :goto_3
 
-    .line 316
+    .line 375
     .restart local v5       #keyguardActive:Z
-    :cond_9
+    :cond_c
     const/4 v3, 0x1
 
-    .line 317
+    .line 376
     .local v3, isWakeKey:Z
     const/4 v0, 0x0
 
-    .line 320
+    .line 379
     .local v0, allowToWake:Z
     sparse-switch v4, :sswitch_data_1
 
-    .line 341
+    .line 400
     const/4 v3, 0x0
 
-    .line 344
-    :cond_a
+    .line 403
+    :cond_d
     :goto_5
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_11
 
-    .line 345
-    if-eqz v0, :cond_d
+    .line 404
+    if-eqz v0, :cond_10
 
-    .line 346
-    if-eqz v1, :cond_b
+    .line 405
+    if-eqz v1, :cond_e
 
-    .line 348
+    .line 407
     const/4 v9, 0x0
 
     goto :goto_4
 
-    .line 322
+    .line 381
     :sswitch_3
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mTrackballWakeScreen:Z
 
-    .line 323
+    .line 382
     goto :goto_5
 
-    .line 326
+    .line 385
     :sswitch_4
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mCameraKeyWakeScreen:Z
 
-    .line 327
+    .line 386
     goto :goto_5
 
-    .line 331
+    .line 390
     :sswitch_5
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeKeyWakeScreen:Z
 
-    .line 335
+    .line 394
     iget v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenOffReason:I
 
     const/4 v10, 0x4
 
-    if-ne v9, v10, :cond_a
+    if-ne v9, v10, :cond_d
 
-    .line 336
+    .line 395
     const/4 v0, 0x0
 
     goto :goto_5
 
-    .line 350
-    :cond_b
-    if-eqz v5, :cond_c
+    .line 409
+    :cond_e
+    if-eqz v5, :cond_f
 
-    .line 351
+    .line 410
     iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     const/16 v10, 0x1a
@@ -1770,63 +1938,72 @@
 
     invoke-virtual {v9, v10, v11}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->onWakeKeyWhenKeyguardShowingTq(IZ)Z
 
-    .line 352
+    .line 411
     const/4 v9, 0x0
 
     goto :goto_4
 
-    .line 356
-    :cond_c
+    .line 415
+    :cond_f
     const/4 v9, 0x2
 
     goto :goto_4
 
-    .line 359
-    :cond_d
+    .line 418
+    :cond_10
     and-int/lit8 p2, p2, -0x4
 
-    .line 363
+    .line 422
     .end local v0           #allowToWake:Z
     .end local v3           #isWakeKey:Z
-    :cond_e
+    :cond_11
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    if-nez v9, :cond_12
+
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMenuPressed:Z
 
-    if-eqz v9, :cond_f
+    if-eqz v9, :cond_12
 
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeUpPressed:Z
 
-    if-eqz v9, :cond_f
+    if-eqz v9, :cond_12
 
-    .line 364
+    .line 423
+    const/4 v9, 0x1
+
+    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    .line 424
     invoke-direct {p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->setMaxBacklightBrightness()V
 
-    .line 367
-    :cond_f
+    .line 427
+    :cond_12
+    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
+
+    if-nez v9, :cond_13
+
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMenuPressed:Z
 
-    if-eqz v9, :cond_10
+    if-eqz v9, :cond_13
 
     iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeDownPressed:Z
 
-    if-eqz v9, :cond_10
+    if-eqz v9, :cond_13
 
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotTrigger:Z
-
-    if-nez v9, :cond_10
-
-    .line 368
+    .line 428
     const/4 v9, 0x1
 
-    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotTrigger:Z
+    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mShortcutTriggered:Z
 
-    .line 369
+    .line 429
     iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
     iget-object v10, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordLongPress:Ljava/lang/Runnable;
 
     invoke-virtual {v9, v10}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 370
+    .line 430
     iget-object v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
     iget-object v10, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotChordLongPress:Ljava/lang/Runnable;
@@ -1835,104 +2012,78 @@
 
     invoke-virtual {v9, v10, v11, v12}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 373
-    :cond_10
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotTrigger:Z
+    .line 433
+    :cond_13
+    if-eqz v1, :cond_16
 
-    if-eqz v9, :cond_12
-
-    .line 374
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMenuPressed:Z
-
-    if-eqz v9, :cond_11
-
-    iget-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeDownPressed:Z
-
-    if-nez v9, :cond_16
-
-    .line 375
-    :cond_11
-    const/4 v9, 0x0
-
-    iput-boolean v9, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenshotTrigger:Z
-
-    .line 376
-    const/4 v9, 0x1
-
-    iput-boolean v9, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mVolumeDownKeyConsumedByScreenshotChord:Z
-
-    .line 384
-    :cond_12
-    if-eqz v1, :cond_15
-
-    .line 386
+    .line 435
     const/16 v9, 0x1a
 
     if-ne v4, v9, :cond_17
 
     const/4 v7, 0x1
 
-    .line 387
+    .line 436
     .local v7, stopNotification:Z
     :goto_6
-    if-nez v7, :cond_14
+    if-nez v7, :cond_15
 
-    .line 388
+    .line 437
     :try_start_0
     invoke-static {}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->getWindownManagerService()Landroid/view/IWindowManager;
 
     move-result-object v8
 
-    .line 389
+    .line 438
     .local v8, wm:Landroid/view/IWindowManager;
-    if-eqz v8, :cond_14
+    if-eqz v8, :cond_15
 
     invoke-interface {v8}, Landroid/view/IWindowManager;->isKeyguardLocked()Z
 
     move-result v9
 
-    if-eqz v9, :cond_14
+    if-eqz v9, :cond_15
 
-    .line 390
+    .line 439
     const/16 v9, 0x19
 
-    if-eq v4, v9, :cond_13
+    if-eq v4, v9, :cond_14
 
     const/16 v9, 0x18
 
-    if-eq v4, v9, :cond_13
+    if-eq v4, v9, :cond_14
 
     const/16 v9, 0xa4
 
-    if-ne v4, v9, :cond_14
+    if-ne v4, v9, :cond_15
 
-    .line 393
-    :cond_13
+    .line 442
+    :cond_14
     const/4 v7, 0x1
 
-    .line 398
+    .line 447
     .end local v8           #wm:Landroid/view/IWindowManager;
-    :cond_14
-    if-eqz v7, :cond_15
+    :cond_15
+    if-eqz v7, :cond_16
 
-    .line 399
+    .line 448
     invoke-static {}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->getStatusBarManagerService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v6
 
-    .line 400
+    .line 449
     .local v6, statusBarService:Lcom/android/internal/statusbar/IStatusBarService;
-    if-eqz v6, :cond_15
+    if-eqz v6, :cond_16
 
-    .line 401
+    .line 450
     invoke-interface {v6}, Lcom/android/internal/statusbar/IStatusBarService;->onPanelRevealed()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 408
+    .line 457
     .end local v6           #statusBarService:Lcom/android/internal/statusbar/IStatusBarService;
     .end local v7           #stopNotification:Z
-    :cond_15
+    :cond_16
     :goto_7
     invoke-super/range {p0 .. p3}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptKeyBeforeQueueing(Landroid/view/KeyEvent;IZ)I
 
@@ -1940,28 +2091,20 @@
 
     goto/16 :goto_4
 
-    .line 380
-    :cond_16
-    const/4 v9, 0x0
-
-    goto/16 :goto_4
-
-    .line 386
+    .line 435
     :cond_17
     const/4 v7, 0x0
 
     goto :goto_6
 
-    .line 404
+    .line 453
     .restart local v7       #stopNotification:Z
     :catch_0
     move-exception v9
 
     goto :goto_7
 
-    .line 278
-    nop
-
+    .line 324
     :sswitch_data_0
     .sparse-switch
         0x3 -> :sswitch_0
@@ -1971,7 +2114,7 @@
         0x54 -> :sswitch_1
     .end sparse-switch
 
-    .line 320
+    .line 379
     :sswitch_data_1
     .sparse-switch
         0x18 -> :sswitch_5
@@ -1988,7 +2131,7 @@
     .parameter "always"
 
     .prologue
-    .line 720
+    .line 776
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHapticFeedbackUtil:Lmiui/util/HapticFeedbackUtil;
 
     invoke-virtual {v0, p2}, Lmiui/util/HapticFeedbackUtil;->isSupportedEffect(I)Z
@@ -1997,14 +2140,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 721
+    .line 777
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mHapticFeedbackUtil:Lmiui/util/HapticFeedbackUtil;
 
     invoke-virtual {v0, p2, p3}, Lmiui/util/HapticFeedbackUtil;->performHapticFeedback(IZ)Z
 
     move-result v0
 
-    .line 724
+    .line 780
     :goto_0
     return v0
 
@@ -2021,12 +2164,12 @@
     .parameter "win"
 
     .prologue
-    .line 145
+    .line 141
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-ne v0, p1, :cond_0
 
-    .line 146
+    .line 142
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
@@ -2037,11 +2180,11 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 148
+    .line 144
     :cond_0
     invoke-super {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->removeWindowLw(Landroid/view/WindowManagerPolicy$WindowState;)V
 
-    .line 149
+    .line 145
     return-void
 .end method
 
@@ -2050,7 +2193,7 @@
     .parameter "why"
 
     .prologue
-    .line 413
+    .line 173
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mVolumeUpPressed:Z
@@ -2059,28 +2202,31 @@
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mMenuPressed:Z
 
-    .line 414
+    .line 174
     iput p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mScreenOffReason:I
 
-    .line 415
+    .line 175
+    invoke-direct {p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->releaseScreenOnProximitySensor()Z
+
+    .line 176
     invoke-super {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->screenTurnedOff(I)V
 
-    .line 416
+    .line 177
     return-void
 .end method
 
 .method public screenTurningOn(Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
-    .locals 2
+    .locals 3
     .parameter "screenOnListener"
 
     .prologue
-    .line 153
+    .line 155
     invoke-super {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->screenTurningOn(Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
 
-    .line 154
+    .line 156
     if-nez p1, :cond_0
 
-    .line 155
+    .line 157
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
 
     new-instance v1, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$2;
@@ -2089,8 +2235,45 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->onScreenTurnedOn(Lcom/android/internal/policy/impl/KeyguardViewManager$ShowListener;)V
 
-    .line 159
+    .line 162
     :cond_0
+    iget-boolean v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSystemReady:Z
+
+    if-eqz v0, :cond_1
+
+    iget-boolean v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mDisableProximitor:Z
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->isDeviceProvisioned()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "enable_screen_on_proximity_sensor"
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lmiui/provider/ExtraSettings$System;->getBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 167
+    iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mProximitySensor:Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;
+
+    invoke-virtual {v0}, Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;->aquire()V
+
+    .line 169
+    :cond_1
     return-void
 .end method
 
@@ -2100,15 +2283,37 @@
     .parameter "always"
 
     .prologue
-    .line 782
+    .line 838
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$8;
+    new-instance v1, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;
 
-    invoke-direct {v1, p0, p1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$8;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Ljava/lang/CharSequence;)V
+    invoke-direct {v1, p0, p1}, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$6;-><init>(Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 835
+    .line 891
+    return-void
+.end method
+
+.method public systemReady()V
+    .locals 3
+
+    .prologue
+    .line 149
+    invoke-super {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager;->systemReady()V
+
+    .line 150
+    new-instance v0, Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
+
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;-><init>(Landroid/content/Context;Lcom/android/internal/policy/impl/KeyguardViewMediator;)V
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mProximitySensor:Lcom/android/internal/policy/impl/MiuiScreenOnProximityLock;
+
+    .line 151
     return-void
 .end method

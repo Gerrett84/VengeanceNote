@@ -19,19 +19,25 @@
 
 .field public static final android_list_menu_item_layout:I = 0x603002b
 
+.field public static final android_notification_template_base:I = 0x603001d
+
+.field public static final android_notification_template_big_base:I = 0x603003e
+
+.field public static final android_notification_template_big_picture:I = 0x603003f
+
+.field public static final android_notification_template_big_text:I = 0x6030040
+
+.field public static final android_notification_template_inbox:I = 0x6030041
+
 .field public static final android_preference_header_item:I = 0x6030027
 
 .field public static final android_preference_list_fragment:I = 0x6030026
-
-.field public static final android_status_bar_latest_event_content:I = 0x603001d
 
 .field public static final android_transient_notification:I = 0x6030023
 
 .field public static final android_usb_storage_activity:I = 0x6030025
 
 .field public static final boot_msg:I = 0x603002e
-
-.field public static final contact_header:I = 0x6030000
 
 .field public static final datetime_picker:I = 0x603001f
 
@@ -79,6 +85,10 @@
 
 .field public static final lock_screen_tab_unlock_time:I = 0x6030017
 
+.field public static final micloud_preference_widget_sync_toggle:I = 0x603003c
+
+.field public static final micloud_settings_preference:I = 0x603003d
+
 .field public static final multi_select_action_mode_menu:I = 0x603001e
 
 .field public static final preference_widget_radiobutton:I = 0x6030019
@@ -107,6 +117,10 @@
 
 .field public static final resource_item_vertical_flat_big:I = 0x6030007
 
+.field public static final resource_item_vertical_flat_big_font:I = 0x603003b
+
+.field public static final resource_item_vertical_flat_big_icon:I = 0x603003a
+
 .field public static final resource_item_vertical_text:I = 0x6030008
 
 .field public static final resource_list:I = 0x603001c
@@ -116,6 +130,8 @@
 .field public static final resource_online_list:I = 0x6030018
 
 .field public static final resource_operation_view:I = 0x603002a
+
+.field public static final screen_on_proximity_sensor_guide:I = 0x6030000
 
 .field public static final text_copy_float_panel:I = 0x6030037
 
@@ -137,7 +153,7 @@
     .locals 0
 
     .prologue
-    .line 1242
+    .line 1378
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -98,10 +98,12 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .locals 3
     .parameter "context"
 
     .prologue
+    const/4 v2, 0x0
+
     .line 367
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -143,9 +145,7 @@
     .line 365
     new-instance v0, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;-><init>(Lcom/android/server/usb/UsbSettingsManager;Lcom/android/server/usb/UsbSettingsManager$1;)V
+    invoke-direct {v0, p0, v2}, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;-><init>(Lcom/android/server/usb/UsbSettingsManager;Lcom/android/server/usb/UsbSettingsManager$1;)V
 
     iput-object v0, p0, Lcom/android/server/usb/UsbSettingsManager;->mPackageMonitor:Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;
 
@@ -178,7 +178,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, p1, v1}, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;->register(Landroid/content/Context;Z)V
+    invoke-virtual {v0, p1, v2, v1}, Lcom/android/server/usb/UsbSettingsManager$MyPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
     .line 374
     return-void

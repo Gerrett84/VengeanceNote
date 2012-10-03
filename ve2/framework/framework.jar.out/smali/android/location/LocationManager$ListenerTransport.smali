@@ -194,15 +194,13 @@
     .local v1, e:Landroid/os/RemoteException;
     const-string v6, "LocationManager"
 
-    const-string v7, "locationCallbackFinished: RemoteException"
+    const-string/jumbo v7, "locationCallbackFinished: RemoteException"
 
     invoke-static {v6, v7, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1
 
     .line 231
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

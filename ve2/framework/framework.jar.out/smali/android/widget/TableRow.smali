@@ -31,18 +31,18 @@
     .parameter "context"
 
     .prologue
-    .line 59
+    .line 61
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 46
+    .line 48
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/TableRow;->mNumColumns:I
 
-    .line 60
+    .line 62
     invoke-direct {p0}, Landroid/widget/TableRow;->initTableRow()V
 
-    .line 61
+    .line 63
     return-void
 .end method
 
@@ -52,18 +52,18 @@
     .parameter "attrs"
 
     .prologue
-    .line 71
+    .line 73
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 46
+    .line 48
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/TableRow;->mNumColumns:I
 
-    .line 72
+    .line 74
     invoke-direct {p0}, Landroid/widget/TableRow;->initTableRow()V
 
-    .line 73
+    .line 75
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 47
     iput-object p1, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
     return-object p1
@@ -83,10 +83,10 @@
     .locals 3
 
     .prologue
-    .line 76
+    .line 78
     iget-object v0, p0, Landroid/view/ViewGroup;->mOnHierarchyChangeListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
-    .line 77
+    .line 79
     .local v0, oldListener:Landroid/view/ViewGroup$OnHierarchyChangeListener;
     new-instance v1, Landroid/widget/TableRow$ChildrenTracker;
 
@@ -96,22 +96,22 @@
 
     iput-object v1, p0, Landroid/widget/TableRow;->mChildrenTracker:Landroid/widget/TableRow$ChildrenTracker;
 
-    .line 78
+    .line 80
     if-eqz v0, :cond_0
 
-    .line 79
+    .line 81
     iget-object v1, p0, Landroid/widget/TableRow;->mChildrenTracker:Landroid/widget/TableRow$ChildrenTracker;
 
     #calls: Landroid/widget/TableRow$ChildrenTracker;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
     invoke-static {v1, v0}, Landroid/widget/TableRow$ChildrenTracker;->access$100(Landroid/widget/TableRow$ChildrenTracker;Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
-    .line 81
+    .line 83
     :cond_0
     iget-object v1, p0, Landroid/widget/TableRow;->mChildrenTracker:Landroid/widget/TableRow$ChildrenTracker;
 
     invoke-super {p0, v1}, Landroid/widget/LinearLayout;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
-    .line 82
+    .line 84
     return-void
 .end method
 
@@ -119,21 +119,21 @@
     .locals 9
 
     .prologue
-    .line 153
+    .line 155
     iget-object v8, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
     if-nez v8, :cond_3
 
-    .line 154
+    .line 156
     const/4 v6, 0x0
 
-    .line 155
+    .line 157
     .local v6, virtualCount:I
     invoke-virtual {p0}, Landroid/widget/TableRow;->getChildCount()I
 
     move-result v2
 
-    .line 157
+    .line 159
     .local v2, count:I
     new-instance v8, Landroid/util/SparseIntArray;
 
@@ -141,10 +141,10 @@
 
     iput-object v8, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
-    .line 158
+    .line 160
     iget-object v1, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
-    .line 160
+    .line 162
     .local v1, columnToChild:Landroid/util/SparseIntArray;
     const/4 v3, 0x0
 
@@ -152,12 +152,12 @@
     :goto_0
     if-ge v3, v2, :cond_2
 
-    .line 161
+    .line 163
     invoke-virtual {p0, v3}, Landroid/widget/TableRow;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 162
+    .line 164
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -165,16 +165,16 @@
 
     check-cast v5, Landroid/widget/TableRow$LayoutParams;
 
-    .line 164
+    .line 166
     .local v5, layoutParams:Landroid/widget/TableRow$LayoutParams;
     iget v8, v5, Landroid/widget/TableRow$LayoutParams;->column:I
 
     if-lt v8, v6, :cond_0
 
-    .line 165
+    .line 167
     iget v6, v5, Landroid/widget/TableRow$LayoutParams;->column:I
 
-    .line 168
+    .line 170
     :cond_0
     const/4 v4, 0x0
 
@@ -184,14 +184,14 @@
 
     if-ge v4, v8, :cond_1
 
-    .line 169
+    .line 171
     add-int/lit8 v7, v6, 0x1
 
     .end local v6           #virtualCount:I
     .local v7, virtualCount:I
     invoke-virtual {v1, v6, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 168
+    .line 170
     add-int/lit8 v4, v4, 0x1
 
     move v6, v7
@@ -200,20 +200,20 @@
     .restart local v6       #virtualCount:I
     goto :goto_1
 
-    .line 160
+    .line 162
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 173
+    .line 175
     .end local v0           #child:Landroid/view/View;
     .end local v4           #j:I
     .end local v5           #layoutParams:Landroid/widget/TableRow$LayoutParams;
     :cond_2
     iput v6, p0, Landroid/widget/TableRow;->mNumColumns:I
 
-    .line 175
+    .line 177
     .end local v1           #columnToChild:Landroid/util/SparseIntArray;
     .end local v2           #count:I
     .end local v3           #i:I
@@ -229,7 +229,7 @@
     .parameter "p"
 
     .prologue
-    .line 369
+    .line 371
     instance-of v0, p1, Landroid/widget/TableRow$LayoutParams;
 
     return v0
@@ -239,7 +239,7 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 47
     invoke-virtual {p0}, Landroid/widget/TableRow;->generateDefaultLayoutParams()Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -251,7 +251,7 @@
     .locals 1
 
     .prologue
-    .line 361
+    .line 363
     new-instance v0, Landroid/widget/TableRow$LayoutParams;
 
     invoke-direct {v0}, Landroid/widget/TableRow$LayoutParams;-><init>()V
@@ -264,7 +264,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 47
     invoke-virtual {p0, p1}, Landroid/widget/TableRow;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/TableRow$LayoutParams;
 
     move-result-object v0
@@ -277,7 +277,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 47
     invoke-virtual {p0, p1}, Landroid/widget/TableRow;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -290,7 +290,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 47
     invoke-virtual {p0, p1}, Landroid/widget/TableRow;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/TableRow$LayoutParams;
 
     move-result-object v0
@@ -303,7 +303,7 @@
     .parameter "p"
 
     .prologue
-    .line 377
+    .line 379
     new-instance v0, Landroid/widget/TableRow$LayoutParams;
 
     invoke-direct {v0, p1}, Landroid/widget/TableRow$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -316,7 +316,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 351
+    .line 353
     new-instance v0, Landroid/widget/TableRow$LayoutParams;
 
     invoke-virtual {p0}, Landroid/widget/TableRow;->getContext()Landroid/content/Context;
@@ -334,14 +334,14 @@
     .parameter "index"
 
     .prologue
-    .line 255
+    .line 257
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TableRow$LayoutParams;
 
-    .line 258
+    .line 260
     .local v0, layoutParams:Landroid/widget/TableRow$LayoutParams;
     iget v1, v0, Landroid/widget/TableRow$LayoutParams;->span:I
 
@@ -357,12 +357,12 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 287
+    .line 289
     invoke-virtual {p0}, Landroid/widget/TableRow;->getVirtualChildCount()I
 
     move-result v4
 
-    .line 288
+    .line 290
     .local v4, numColumns:I
     iget-object v7, p0, Landroid/widget/TableRow;->mColumnWidths:[I
 
@@ -374,17 +374,17 @@
 
     if-eq v4, v7, :cond_1
 
-    .line 289
+    .line 291
     :cond_0
     new-array v7, v4, [I
 
     iput-object v7, p0, Landroid/widget/TableRow;->mColumnWidths:[I
 
-    .line 292
+    .line 294
     :cond_1
     iget-object v1, p0, Landroid/widget/TableRow;->mColumnWidths:[I
 
-    .line 294
+    .line 296
     .local v1, columnWidths:[I
     const/4 v2, 0x0
 
@@ -392,12 +392,12 @@
     :goto_0
     if-ge v2, v4, :cond_4
 
-    .line 295
+    .line 297
     invoke-virtual {p0, v2}, Landroid/widget/TableRow;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 296
+    .line 298
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_3
 
@@ -409,14 +409,14 @@
 
     if-eq v7, v8, :cond_3
 
-    .line 297
+    .line 299
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/TableRow$LayoutParams;
 
-    .line 298
+    .line 300
     .local v3, layoutParams:Landroid/widget/TableRow$LayoutParams;
     iget v7, v3, Landroid/widget/TableRow$LayoutParams;->span:I
 
@@ -424,12 +424,12 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 300
+    .line 302
     iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     packed-switch v7, :pswitch_data_0
 
-    .line 308
+    .line 310
     iget v7, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     const/high16 v8, 0x4000
@@ -438,12 +438,12 @@
 
     move-result v5
 
-    .line 310
+    .line 312
     .local v5, spec:I
     :goto_1
     invoke-virtual {v0, v5, v5}, Landroid/view/View;->measure(II)V
 
-    .line 312
+    .line 314
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
@@ -456,11 +456,11 @@
 
     add-int v6, v7, v8
 
-    .line 314
+    .line 316
     .local v6, width:I
     aput v6, v1, v2
 
-    .line 294
+    .line 296
     .end local v3           #layoutParams:Landroid/widget/TableRow$LayoutParams;
     .end local v5           #spec:I
     .end local v6           #width:I
@@ -469,7 +469,7 @@
 
     goto :goto_0
 
-    .line 302
+    .line 304
     .restart local v3       #layoutParams:Landroid/widget/TableRow$LayoutParams;
     :pswitch_0
     const/4 v7, -0x2
@@ -478,41 +478,41 @@
 
     move-result v5
 
-    .line 303
+    .line 305
     .restart local v5       #spec:I
     goto :goto_1
 
-    .line 305
+    .line 307
     .end local v5           #spec:I
     :pswitch_1
     invoke-static {v9, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
 
-    .line 306
+    .line 308
     .restart local v5       #spec:I
     goto :goto_1
 
-    .line 316
+    .line 318
     .end local v5           #spec:I
     :cond_2
     aput v9, v1, v2
 
     goto :goto_2
 
-    .line 319
+    .line 321
     .end local v3           #layoutParams:Landroid/widget/TableRow$LayoutParams;
     :cond_3
     aput v9, v1, v2
 
     goto :goto_2
 
-    .line 323
+    .line 325
     .end local v0           #child:Landroid/view/View;
     :cond_4
     return-object v1
 
-    .line 300
+    .line 302
     :pswitch_data_0
     .packed-switch -0x2
         :pswitch_0
@@ -525,7 +525,7 @@
     .parameter "child"
 
     .prologue
-    .line 266
+    .line 268
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -549,7 +549,7 @@
     .parameter "child"
 
     .prologue
-    .line 274
+    .line 276
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -575,15 +575,15 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 129
+    .line 131
     iget-object v1, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
     if-nez v1, :cond_0
 
-    .line 130
+    .line 132
     invoke-direct {p0}, Landroid/widget/TableRow;->mapIndexAndColumns()V
 
-    .line 133
+    .line 135
     :cond_0
     iget-object v1, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
@@ -591,16 +591,16 @@
 
     move-result v0
 
-    .line 134
+    .line 136
     .local v0, deflectedIndex:I
     if-eq v0, v2, :cond_1
 
-    .line 135
+    .line 137
     invoke-virtual {p0, v0}, Landroid/widget/TableRow;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 138
+    .line 140
     :goto_0
     return-object v1
 
@@ -614,15 +614,15 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 148
     iget-object v0, p0, Landroid/widget/TableRow;->mColumnToChildIndex:Landroid/util/SparseIntArray;
 
     if-nez v0, :cond_0
 
-    .line 147
+    .line 149
     invoke-direct {p0}, Landroid/widget/TableRow;->mapIndexAndColumns()V
 
-    .line 149
+    .line 151
     :cond_0
     iget v0, p0, Landroid/widget/TableRow;->mNumColumns:I
 
@@ -639,39 +639,39 @@
     .parameter "totalHeight"
 
     .prologue
-    .line 192
+    .line 194
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/widget/TableRow;->mConstrainedColumnWidths:[I
 
     if-eqz v14, :cond_3
 
-    .line 193
+    .line 195
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v11
 
     check-cast v11, Landroid/widget/TableRow$LayoutParams;
 
-    .line 195
+    .line 197
     .local v11, lp:Landroid/widget/TableRow$LayoutParams;
     const/high16 v12, 0x4000
 
-    .line 196
+    .line 198
     .local v12, measureMode:I
     const/4 v5, 0x0
 
-    .line 198
+    .line 200
     .local v5, columnWidth:I
     iget v13, v11, Landroid/widget/TableRow$LayoutParams;->span:I
 
-    .line 199
+    .line 201
     .local v13, span:I
     move-object/from16 v0, p0
 
     iget-object v6, v0, Landroid/widget/TableRow;->mConstrainedColumnWidths:[I
 
-    .line 200
+    .line 202
     .local v6, constrainedColumnWidths:[I
     const/4 v8, 0x0
 
@@ -679,36 +679,36 @@
     :goto_0
     if-ge v8, v13, :cond_0
 
-    .line 201
+    .line 203
     add-int v14, p2, v8
 
     aget v14, v6, v14
 
     add-int/2addr v5, v14
 
-    .line 200
+    .line 202
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    .line 204
+    .line 206
     :cond_0
     iget v7, v11, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
-    .line 205
+    .line 207
     .local v7, gravity:I
     invoke-static {v7}, Landroid/view/Gravity;->isHorizontal(I)Z
 
     move-result v9
 
-    .line 207
+    .line 209
     .local v9, isHorizontalGravity:Z
     if-eqz v9, :cond_1
 
-    .line 208
+    .line 210
     const/high16 v12, -0x8000
 
-    .line 214
+    .line 216
     :cond_1
     const/4 v14, 0x0
 
@@ -730,7 +730,7 @@
 
     move-result v4
 
-    .line 217
+    .line 219
     .local v4, childWidthMeasureSpec:I
     move-object/from16 v0, p0
 
@@ -760,21 +760,21 @@
 
     move-result v2
 
-    .line 221
+    .line 223
     .local v2, childHeightMeasureSpec:I
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v4, v2}, Landroid/view/View;->measure(II)V
 
-    .line 223
+    .line 225
     if-eqz v9, :cond_2
 
-    .line 224
+    .line 226
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
 
-    .line 225
+    .line 227
     .local v3, childWidth:I
     #getter for: Landroid/widget/TableRow$LayoutParams;->mOffset:[I
     invoke-static {v11}, Landroid/widget/TableRow$LayoutParams;->access$200(Landroid/widget/TableRow$LayoutParams;)[I
@@ -787,24 +787,24 @@
 
     aput v16, v14, v15
 
-    .line 227
+    .line 229
     invoke-virtual/range {p0 .. p0}, Landroid/widget/TableRow;->getResolvedLayoutDirection()I
 
     move-result v10
 
-    .line 228
+    .line 230
     .local v10, layoutDirection:I
     invoke-static {v7, v10}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
     move-result v1
 
-    .line 229
+    .line 231
     .local v1, absoluteGravity:I
     and-int/lit8 v14, v1, 0x7
 
     packed-switch v14, :pswitch_data_0
 
-    .line 248
+    .line 250
     .end local v1           #absoluteGravity:I
     .end local v2           #childHeightMeasureSpec:I
     .end local v3           #childWidth:I
@@ -822,7 +822,7 @@
     :pswitch_0
     return-void
 
-    .line 234
+    .line 236
     .restart local v1       #absoluteGravity:I
     .restart local v2       #childHeightMeasureSpec:I
     .restart local v3       #childWidth:I
@@ -857,7 +857,7 @@
 
     goto :goto_1
 
-    .line 237
+    .line 239
     :pswitch_2
     #getter for: Landroid/widget/TableRow$LayoutParams;->mOffset:[I
     invoke-static {v11}, Landroid/widget/TableRow$LayoutParams;->access$200(Landroid/widget/TableRow$LayoutParams;)[I
@@ -881,7 +881,7 @@
 
     goto :goto_1
 
-    .line 241
+    .line 243
     .end local v1           #absoluteGravity:I
     .end local v3           #childWidth:I
     .end local v10           #layoutDirection:I
@@ -908,7 +908,7 @@
 
     goto :goto_1
 
-    .line 245
+    .line 247
     .end local v2           #childHeightMeasureSpec:I
     .end local v4           #childWidthMeasureSpec:I
     .end local v5           #columnWidth:I
@@ -924,7 +924,7 @@
 
     goto :goto_1
 
-    .line 229
+    .line 231
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
@@ -940,12 +940,54 @@
     .parameter "childIndex"
 
     .prologue
-    .line 182
+    .line 184
     iget-object v0, p0, Landroid/widget/TableRow;->mConstrainedColumnWidths:[I
 
     aget v0, v0, p1
 
     return v0
+.end method
+
+.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 1
+    .parameter "event"
+
+    .prologue
+    .line 384
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    .line 385
+    const-class v0, Landroid/widget/TableRow;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 386
+    return-void
+.end method
+
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 390
+    invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    .line 391
+    const-class v0, Landroid/widget/TableRow;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 392
+    return-void
 .end method
 
 .method protected onLayout(ZIIII)V
@@ -957,10 +999,10 @@
     .parameter "b"
 
     .prologue
-    .line 121
+    .line 123
     invoke-virtual {p0}, Landroid/widget/TableRow;->layoutHorizontal()V
 
-    .line 122
+    .line 124
     return-void
 .end method
 
@@ -970,10 +1012,10 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 112
+    .line 114
     invoke-virtual {p0, p1, p2}, Landroid/widget/TableRow;->measureHorizontal(II)V
 
-    .line 113
+    .line 115
     return-void
 .end method
 
@@ -983,16 +1025,16 @@
     .parameter "collapsed"
 
     .prologue
-    .line 100
+    .line 102
     invoke-virtual {p0, p1}, Landroid/widget/TableRow;->getVirtualChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 101
+    .line 103
     .local v0, child:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 102
+    .line 104
     if-eqz p2, :cond_1
 
     const/16 v1, 0x8
@@ -1000,11 +1042,11 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 104
+    .line 106
     :cond_0
     return-void
 
-    .line 102
+    .line 104
     :cond_1
     const/4 v1, 0x0
 
@@ -1016,7 +1058,7 @@
     .parameter "columnWidths"
 
     .prologue
-    .line 338
+    .line 340
     if-eqz p1, :cond_0
 
     array-length v0, p1
@@ -1027,7 +1069,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 339
+    .line 341
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1037,11 +1079,11 @@
 
     throw v0
 
-    .line 343
+    .line 345
     :cond_1
     iput-object p1, p0, Landroid/widget/TableRow;->mConstrainedColumnWidths:[I
 
-    .line 344
+    .line 346
     return-void
 .end method
 
@@ -1050,12 +1092,12 @@
     .parameter "listener"
 
     .prologue
-    .line 89
+    .line 91
     iget-object v0, p0, Landroid/widget/TableRow;->mChildrenTracker:Landroid/widget/TableRow$ChildrenTracker;
 
     #calls: Landroid/widget/TableRow$ChildrenTracker;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
     invoke-static {v0, p1}, Landroid/widget/TableRow$ChildrenTracker;->access$100(Landroid/widget/TableRow$ChildrenTracker;Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
-    .line 90
+    .line 92
     return-void
 .end method

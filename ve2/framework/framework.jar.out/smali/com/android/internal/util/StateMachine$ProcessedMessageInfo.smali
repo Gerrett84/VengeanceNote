@@ -15,83 +15,54 @@
 
 
 # instance fields
-.field private orgState:Lcom/android/internal/util/State;
+.field private mInfo:Ljava/lang/String;
 
-.field private state:Lcom/android/internal/util/State;
+.field private mOrgState:Lcom/android/internal/util/State;
 
-.field private what:I
+.field private mState:Lcom/android/internal/util/State;
+
+.field private mTime:J
+
+.field private mWhat:I
 
 
 # direct methods
-.method constructor <init>(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+.method constructor <init>(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
     .locals 0
-    .parameter "message"
+    .parameter "msg"
+    .parameter "info"
     .parameter "state"
     .parameter "orgState"
 
     .prologue
-    .line 454
+    .line 464
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 455
-    invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->update(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+    .line 465
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->update(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
 
-    .line 456
+    .line 466
     return-void
-.end method
-
-.method private cn(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 3
-    .parameter "n"
-
-    .prologue
-    .line 510
-    if-nez p1, :cond_0
-
-    .line 511
-    const-string/jumbo v2, "null"
-
-    .line 515
-    :goto_0
-    return-object v2
-
-    .line 513
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 514
-    .local v1, name:Ljava/lang/String;
-    const/16 v2, 0x24
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v0
-
-    .line 515
-    .local v0, lastDollar:I
-    add-int/lit8 v2, v0, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
+.method public getInfo()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 500
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mInfo:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public getOriginalState()Lcom/android/internal/util/State;
     .locals 1
 
     .prologue
-    .line 488
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->orgState:Lcom/android/internal/util/State;
+    .line 514
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mOrgState:Lcom/android/internal/util/State;
 
     return-object v0
 .end method
@@ -100,96 +71,233 @@
     .locals 1
 
     .prologue
-    .line 481
-    iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->state:Lcom/android/internal/util/State;
+    .line 507
+    iget-object v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mState:Lcom/android/internal/util/State;
 
     return-object v0
 .end method
 
-.method public getWhat()I
-    .locals 1
-
-    .prologue
-    .line 474
-    iget v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->what:I
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
+.method public getTime()J
     .locals 2
 
     .prologue
-    .line 496
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 486
+    iget-wide v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mTime:J
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 497
-    .local v0, sb:Ljava/lang/StringBuilder;
-    const-string/jumbo v1, "what="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 498
-    iget v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->what:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 499
-    const-string v1, " state="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 500
-    iget-object v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->state:Lcom/android/internal/util/State;
-
-    invoke-direct {p0, v1}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->cn(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 501
-    const-string v1, " orgState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 502
-    iget-object v1, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->orgState:Lcom/android/internal/util/State;
-
-    invoke-direct {p0, v1}, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->cn(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 503
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    return-object v1
+    return-wide v0
 .end method
 
-.method public update(Landroid/os/Message;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
-    .locals 1
-    .parameter "message"
+.method public getWhat()J
+    .locals 2
+
+    .prologue
+    .line 493
+    iget v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mWhat:I
+
+    int-to-long v0, v0
+
+    return-wide v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 5
+
+    .prologue
+    .line 522
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 523
+    .local v1, sb:Ljava/lang/StringBuilder;
+    const-string/jumbo v2, "time="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 524
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 525
+    .local v0, c:Ljava/util/Calendar;
+    iget-wide v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mTime:J
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    .line 526
+    const-string v2, "%tm-%td %tH:%tM:%tS.%tL"
+
+    const/4 v3, 0x6
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object v0, v3, v4
+
+    const/4 v4, 0x1
+
+    aput-object v0, v3, v4
+
+    const/4 v4, 0x2
+
+    aput-object v0, v3, v4
+
+    const/4 v4, 0x3
+
+    aput-object v0, v3, v4
+
+    const/4 v4, 0x4
+
+    aput-object v0, v3, v4
+
+    const/4 v4, 0x5
+
+    aput-object v0, v3, v4
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 527
+    const-string v2, " state="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 528
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mState:Lcom/android/internal/util/State;
+
+    if-nez v2, :cond_1
+
+    const-string v2, "<null>"
+
+    :goto_0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 529
+    const-string v2, " orgState="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 530
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mOrgState:Lcom/android/internal/util/State;
+
+    if-nez v2, :cond_2
+
+    const-string v2, "<null>"
+
+    :goto_1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 531
+    const-string v2, " what="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 532
+    iget v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mWhat:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 533
+    const-string v2, "(0x"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 534
+    iget v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mWhat:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 535
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 536
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mInfo:Ljava/lang/String;
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 537
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 538
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mInfo:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 540
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    return-object v2
+
+    .line 528
+    :cond_1
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mState:Lcom/android/internal/util/State;
+
+    invoke-virtual {v2}, Lcom/android/internal/util/State;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 530
+    :cond_2
+    iget-object v2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mOrgState:Lcom/android/internal/util/State;
+
+    invoke-virtual {v2}, Lcom/android/internal/util/State;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_1
+.end method
+
+.method public update(Landroid/os/Message;Ljava/lang/String;Lcom/android/internal/util/State;Lcom/android/internal/util/State;)V
+    .locals 2
+    .parameter "msg"
+    .parameter "info"
     .parameter "state"
     .parameter "orgState"
 
     .prologue
-    .line 465
+    .line 475
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mTime:J
+
+    .line 476
     iget v0, p1, Landroid/os/Message;->what:I
 
-    iput v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->what:I
+    iput v0, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mWhat:I
 
-    .line 466
-    iput-object p2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->state:Lcom/android/internal/util/State;
+    .line 477
+    iput-object p2, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mInfo:Ljava/lang/String;
 
-    .line 467
-    iput-object p3, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->orgState:Lcom/android/internal/util/State;
+    .line 478
+    iput-object p3, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mState:Lcom/android/internal/util/State;
 
-    .line 468
+    .line 479
+    iput-object p4, p0, Lcom/android/internal/util/StateMachine$ProcessedMessageInfo;->mOrgState:Lcom/android/internal/util/State;
+
+    .line 480
     return-void
 .end method

@@ -138,8 +138,7 @@
     :goto_0
     invoke-super {p0, p1}, Lmiui/app/screenelement/MiAdvancedView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 47
-    const/4 v5, 0x1
+    move-result v5
 
     return v5
 

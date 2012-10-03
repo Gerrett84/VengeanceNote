@@ -15,7 +15,31 @@
 
 
 # virtual methods
+.method public abstract cancelNotification(ILmiui/net/ICloudManagerResponse;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getActivatedPhone(Lmiui/net/ICloudManagerResponse;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getActivatedStatus(Lmiui/net/ICloudManagerResponse;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract getFindDeviceToken(Lmiui/net/ICloudManagerResponse;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

@@ -31,11 +31,11 @@
 
 .field public static final android_default_app_widget_padding_top:I = 0x60a0022
 
-.field public static final android_multiwaveview_hit_radius:I = 0x60a0017
+.field public static final android_dummy_dimen_dont_use:I = 0x60a0026
 
-.field public static final android_multiwaveview_snap_margin:I = 0x60a0018
+.field public static final android_glowpadview_glow_radius:I = 0x60a0025
 
-.field public static final android_multiwaveview_target_placement_radius:I = 0x60a0019
+.field public static final android_glowpadview_inner_radius:I = 0x60a0024
 
 .field public static final android_navigation_bar_height:I = 0x60a0011
 
@@ -45,7 +45,7 @@
 
 .field public static final android_preference_fragment_padding_side:I = 0x60a001a
 
-.field public static final android_preference_icon_minWidth:I = 0x60a0025
+.field public static final android_preference_icon_minWidth:I = 0x60a0018
 
 .field public static final android_preference_item_padding_inner:I = 0x60a001c
 
@@ -65,6 +65,10 @@
 
 .field public static final button_bar_text_size:I = 0x60a0009
 
+.field public static final float_panel_arrow_bottom_offset:I = 0x60a0028
+
+.field public static final float_panel_arrow_top_offset:I = 0x60a0027
+
 .field public static final list_primary_text_size:I = 0x60a0002
 
 .field public static final list_secondary_text_size:I = 0x60a0003
@@ -73,9 +77,11 @@
 
 .field public static final lock_screen_default_control_view_height:I = 0x60a0005
 
-.field public static final magnifier_finger_offset:I = 0x60a0026
+.field public static final magnifier_finger_offset:I = 0x60a0019
 
 .field public static final notification_icon_size:I = 0x60a0001
+
+.field public static final resource_perview_font_padding:I = 0x60a0029
 
 .field public static final resource_thumbnail_gap:I = 0x60a000b
 
@@ -91,7 +97,7 @@
 
 .field public static final text_handle_visible_height:I = 0x60a0004
 
-.field public static final two_floors_action_bar_height:I = 0x60a0024
+.field public static final two_floors_action_bar_height:I = 0x60a0017
 
 
 # direct methods
@@ -99,7 +105,7 @@
     .locals 0
 
     .prologue
-    .line 446
+    .line 450
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

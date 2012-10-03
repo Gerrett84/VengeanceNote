@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 69
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .parameter "clazz"
 
     .prologue
-    .line 69
+    .line 71
     const-class v0, Landroid/widget/RemoteViews$RemoteView;
 
     invoke-virtual {p1, v0}, Ljava/lang/Class;->isAnnotationPresent(Ljava/lang/Class;)Z

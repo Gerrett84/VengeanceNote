@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 753
+    .line 1067
     iput-object p1, p0, Landroid/widget/CalendarView$2;->this$0:Landroid/widget/CalendarView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,13 +45,13 @@
     .parameter "totalItemCount"
 
     .prologue
-    .line 761
+    .line 1075
     iget-object v0, p0, Landroid/widget/CalendarView$2;->this$0:Landroid/widget/CalendarView;
 
     #calls: Landroid/widget/CalendarView;->onScroll(Landroid/widget/AbsListView;III)V
-    invoke-static {v0, p1, p2, p3, p4}, Landroid/widget/CalendarView;->access$600(Landroid/widget/CalendarView;Landroid/widget/AbsListView;III)V
+    invoke-static {v0, p1, p2, p3, p4}, Landroid/widget/CalendarView;->access$900(Landroid/widget/CalendarView;Landroid/widget/AbsListView;III)V
 
-    .line 763
+    .line 1077
     return-void
 .end method
 
@@ -61,12 +61,12 @@
     .parameter "scrollState"
 
     .prologue
-    .line 755
+    .line 1069
     iget-object v0, p0, Landroid/widget/CalendarView$2;->this$0:Landroid/widget/CalendarView;
 
     #calls: Landroid/widget/CalendarView;->onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    invoke-static {v0, p1, p2}, Landroid/widget/CalendarView;->access$500(Landroid/widget/CalendarView;Landroid/widget/AbsListView;I)V
+    invoke-static {v0, p1, p2}, Landroid/widget/CalendarView;->access$800(Landroid/widget/CalendarView;Landroid/widget/AbsListView;I)V
 
-    .line 756
+    .line 1070
     return-void
 .end method

@@ -102,6 +102,8 @@
 
 .field public static final FEATURE_TELEPHONY_GSM:Ljava/lang/String; = "android.hardware.telephony.gsm"
 
+.field public static final FEATURE_TELEVISION:Ljava/lang/String; = "android.hardware.type.television"
+
 .field public static final FEATURE_TOUCHSCREEN:Ljava/lang/String; = "android.hardware.touchscreen"
 
 .field public static final FEATURE_TOUCHSCREEN_MULTITOUCH:Ljava/lang/String; = "android.hardware.touchscreen.multitouch"
@@ -208,6 +210,8 @@
 
 .field public static final INSTALL_FAILED_TEST_ONLY:I = -0xf
 
+.field public static final INSTALL_FAILED_UID_CHANGED:I = -0x18
+
 .field public static final INSTALL_FAILED_UPDATE_INCOMPATIBLE:I = -0x7
 
 .field public static final INSTALL_FAILED_VERIFICATION_FAILURE:I = -0x16
@@ -270,8 +274,6 @@
 
 .field public static final PERMISSION_GRANTED:I = 0x0
 
-.field public static final PER_USER_RANGE:I = 0x186a0
-
 .field public static final SIGNATURE_FIRST_NOT_SIGNED:I = -0x1
 
 .field public static final SIGNATURE_MATCH:I = 0x0
@@ -303,76 +305,54 @@
     return-void
 .end method
 
-.method public static getAppId(I)I
-    .locals 1
-    .parameter "uid"
-
-    .prologue
-    .line 2672
-    const v0, 0x186a0
-
-    rem-int v0, p0, v0
-
-    return v0
-.end method
-
-.method public static getUid(II)I
+.method public static getDataDirForUser(ILjava/lang/String;)Ljava/lang/String;
     .locals 2
     .parameter "userId"
-    .parameter "appId"
+    .parameter "packageName"
 
     .prologue
-    const v1, 0x186a0
+    .line 2711
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 2664
-    mul-int v0, p0, v1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    rem-int v1, p1, v1
+    invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
-    add-int/2addr v0, v1
+    move-result-object v1
 
-    return v0
-.end method
+    invoke-virtual {v1}, Ljava/io/File;->toString()Ljava/lang/String;
 
-.method public static getUserId(I)I
-    .locals 1
-    .parameter "uid"
+    move-result-object v1
 
-    .prologue
-    .line 2656
-    const v0, 0x186a0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    div-int v0, p0, v0
+    move-result-object v0
 
-    return v0
-.end method
+    const-string v1, "/user/"
 
-.method public static isSameUser(II)Z
-    .locals 2
-    .parameter "uid1"
-    .parameter "uid2"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .prologue
-    .line 2648
-    invoke-static {p0}, Landroid/content/pm/PackageManager;->getUserId(I)I
+    move-result-object v0
 
-    move-result v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {p1}, Landroid/content/pm/PackageManager;->getUserId(I)I
+    move-result-object v0
 
-    move-result v1
+    const-string v1, "/"
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :goto_0
-    return v0
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    const/4 v0, 0x0
+    move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
@@ -568,7 +548,7 @@
 .end method
 
 .method public getPackageArchiveInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    .locals 10
+    .locals 13
     .parameter "archiveFilePath"
     .parameter "flags"
 
@@ -577,58 +557,62 @@
 
     const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    const/4 v8, 0x0
 
-    .line 2147
-    new-instance v8, Landroid/content/pm/PackageParser;
+    .line 2182
+    new-instance v11, Landroid/content/pm/PackageParser;
 
-    invoke-direct {v8, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
+    invoke-direct {v11, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
 
-    .line 2148
-    .local v8, packageParser:Landroid/content/pm/PackageParser;
-    new-instance v7, Landroid/util/DisplayMetrics;
+    .line 2183
+    .local v11, packageParser:Landroid/content/pm/PackageParser;
+    new-instance v10, Landroid/util/DisplayMetrics;
 
-    invoke-direct {v7}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-direct {v10}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 2149
-    .local v7, metrics:Landroid/util/DisplayMetrics;
-    invoke-virtual {v7}, Landroid/util/DisplayMetrics;->setToDefaults()V
+    .line 2184
+    .local v10, metrics:Landroid/util/DisplayMetrics;
+    invoke-virtual {v10}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
-    .line 2150
-    new-instance v9, Ljava/io/File;
+    .line 2185
+    new-instance v12, Ljava/io/File;
 
-    invoke-direct {v9, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v12, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2151
-    .local v9, sourceFile:Ljava/io/File;
-    invoke-virtual {v8, v9, p1, v7, v5}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
+    .line 2186
+    .local v12, sourceFile:Ljava/io/File;
+    invoke-virtual {v11, v12, p1, v10, v8}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
 
     move-result-object v0
 
-    .line 2153
+    .line 2188
     .local v0, pkg:Landroid/content/pm/PackageParser$Package;
     if-nez v0, :cond_0
 
-    .line 2159
+    .line 2194
     :goto_0
     return-object v1
 
-    .line 2156
+    .line 2191
     :cond_0
     and-int/lit8 v2, p2, 0x40
 
     if-eqz v2, :cond_1
 
-    .line 2157
-    invoke-virtual {v8, v0, v5}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
+    .line 2192
+    invoke-virtual {v11, v0, v8}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
 
     :cond_1
     move v2, p2
 
     move-wide v5, v3
 
-    .line 2159
-    invoke-static/range {v0 .. v6}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJ)Landroid/content/pm/PackageInfo;
+    move-object v7, v1
+
+    move v9, v8
+
+    .line 2194
+    invoke-static/range {v0 .. v9}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJLjava/util/HashSet;ZI)Landroid/content/pm/PackageInfo;
 
     move-result-object v1
 
@@ -768,6 +752,9 @@
     .end annotation
 .end method
 
+.method public abstract getUser(I)Landroid/content/pm/UserInfo;
+.end method
+
 .method public abstract getUsers()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -786,13 +773,16 @@
 .method public abstract getXml(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/content/res/XmlResourceParser;
 .end method
 
+.method public abstract grantPermission(Ljava/lang/String;Ljava/lang/String;)V
+.end method
+
 .method public abstract hasSystemFeature(Ljava/lang/String;)Z
 .end method
 
 .method public abstract installPackage(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;)V
 .end method
 
-.method public abstract installPackageWithVerification(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/net/Uri;Landroid/content/pm/ManifestDigest;)V
+.method public abstract installPackageWithVerification(Landroid/net/Uri;Landroid/content/pm/IPackageInstallObserver;ILjava/lang/String;Landroid/net/Uri;Landroid/content/pm/ManifestDigest;Landroid/content/pm/ContainerEncryptionParams;)V
 .end method
 
 .method public abstract isSafeMode()Z
@@ -931,6 +921,9 @@
 .end method
 
 .method public abstract resolveService(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+.end method
+
+.method public abstract revokePermission(Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
 .method public abstract setApplicationEnabledSetting(Ljava/lang/String;II)V

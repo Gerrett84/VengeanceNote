@@ -343,7 +343,7 @@
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
     .line 271
-    const v7, 0x1080113
+    const v7, 0x1080117
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -352,7 +352,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapBtnDefault:Landroid/graphics/Bitmap;
 
     .line 272
-    const v7, 0x1080115
+    const v7, 0x1080119
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -361,7 +361,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapBtnTouched:Landroid/graphics/Bitmap;
 
     .line 273
-    const v7, 0x108035e
+    const v7, 0x108036f
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -370,7 +370,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleDefault:Landroid/graphics/Bitmap;
 
     .line 274
-    const v7, 0x1080360
+    const v7, 0x1080371
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -379,7 +379,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleGreen:Landroid/graphics/Bitmap;
 
     .line 275
-    const v7, 0x1080362
+    const v7, 0x1080373
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -388,7 +388,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleRed:Landroid/graphics/Bitmap;
 
     .line 277
-    const v7, 0x108035b
+    const v7, 0x108036c
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -397,7 +397,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapArrowGreenUp:Landroid/graphics/Bitmap;
 
     .line 278
-    const v7, 0x108035c
+    const v7, 0x108036d
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -495,7 +495,7 @@
     .end local v5           #i$:I
     .end local v6           #len$:I
     :cond_0
-    const-string v7, "lock_width"
+    const-string/jumbo v7, "lock_width"
 
     invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -512,7 +512,7 @@
 
     .line 254
     :cond_1
-    const-string v7, "lock_height"
+    const-string/jumbo v7, "lock_height"
 
     invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2763,7 +2763,7 @@
 
     .line 381
     :cond_0
-    const v0, 0x104030e
+    const v0, 0x104032c
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2787,7 +2787,7 @@
 
     .line 402
     :cond_0
-    const v0, 0x104030d
+    const v0, 0x104032b
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2813,7 +2813,7 @@
 
     .line 395
     :cond_0
-    const v0, 0x104030f
+    const v0, 0x104032d
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2837,7 +2837,7 @@
 
     .line 388
     :cond_0
-    const v0, 0x104030c
+    const v0, 0x104032a
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 

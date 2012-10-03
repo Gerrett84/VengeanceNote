@@ -511,7 +511,7 @@
 
     .line 1381
     .local v1, views:Lcom/android/internal/policy/impl/MiuiLockScreen$SmsPreviewListAdapter$ListItemViews;
-    const v2, 0x60b005a
+    const v2, 0x60b0033
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -522,7 +522,7 @@
     iput-object v2, v1, Lcom/android/internal/policy/impl/MiuiLockScreen$SmsPreviewListAdapter$ListItemViews;->line1View:Landroid/widget/TextView;
 
     .line 1382
-    const v2, 0x60b0068
+    const v2, 0x60b0037
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -533,7 +533,7 @@
     iput-object v2, v1, Lcom/android/internal/policy/impl/MiuiLockScreen$SmsPreviewListAdapter$ListItemViews;->textView:Landroid/widget/TextView;
 
     .line 1383
-    const v2, 0x60b0036
+    const v2, 0x60b0035
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

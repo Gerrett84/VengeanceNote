@@ -3,7 +3,7 @@
 .source "ScrollingTabContainerView.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemSelectedListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # annotations
@@ -34,6 +34,8 @@
 
 .field private mSelectedTabIndex:I
 
+.field mStackedTabMaxWidth:I
+
 .field private mTabClickListener:Lcom/android/internal/widget/ScrollingTabContainerView$TabClickListener;
 
 .field private mTabLayout:Landroid/widget/LinearLayout;
@@ -63,12 +65,10 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 6
+    .locals 5
     .parameter "context"
 
     .prologue
-    const/4 v5, 0x0
-
     .line 71
     invoke-direct {p0, p1}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;)V
 
@@ -80,44 +80,38 @@
     iput-object v1, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mVisAnimListener:Lcom/android/internal/widget/ScrollingTabContainerView$VisibilityAnimListener;
 
     .line 72
-    invoke-virtual {p0, v5}, Lcom/android/internal/widget/ScrollingTabContainerView;->setHorizontalScrollBarEnabled(Z)V
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setHorizontalScrollBarEnabled(Z)V
 
     .line 74
-    invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    sget-object v3, Lcom/android/internal/R$styleable;->ActionBar:[I
-
-    const v4, 0x10102ce
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-static {p1}, Lcom/android/internal/view/ActionBarPolicy;->get(Landroid/content/Context;)Lcom/android/internal/view/ActionBarPolicy;
 
     move-result-object v0
 
-    .line 76
-    .local v0, a:Landroid/content/res/TypedArray;
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
+    .line 75
+    .local v0, abp:Lcom/android/internal/view/ActionBarPolicy;
+    invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->getTabContainerHeight()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setContentHeight(I)V
 
-    .line 77
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    .line 76
+    invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->getStackedTabMaxWidth()I
 
-    .line 79
+    move-result v1
+
+    iput v1, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mStackedTabMaxWidth:I
+
+    .line 78
     invoke-direct {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabLayout()Landroid/widget/LinearLayout;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
 
-    .line 80
+    .line 79
     iget-object v1, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
 
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
@@ -130,7 +124,7 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 82
+    .line 81
     return-void
 .end method
 
@@ -139,7 +133,7 @@
     .parameter "x0"
 
     .prologue
-    .line 49
+    .line 48
     iget-object v0, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
 
     return-object v0
@@ -152,7 +146,7 @@
     .parameter "x2"
 
     .prologue
-    .line 49
+    .line 48
     invoke-direct {p0, p1, p2}, Lcom/android/internal/widget/ScrollingTabContainerView;->createTabView(Landroid/app/ActionBar$Tab;Z)Lcom/android/internal/widget/ScrollingTabContainerView$TabView;
 
     move-result-object v0
@@ -164,7 +158,7 @@
     .locals 4
 
     .prologue
-    .line 199
+    .line 200
     new-instance v0, Landroid/widget/Spinner;
 
     invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->getContext()Landroid/content/Context;
@@ -177,7 +171,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 201
+    .line 202
     .local v0, spinner:Landroid/widget/Spinner;
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
@@ -189,10 +183,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 203
-    invoke-virtual {v0, p0}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
-
     .line 204
+    invoke-virtual {v0, p0}, Landroid/widget/Spinner;->setOnItemClickListenerInt(Landroid/widget/AdapterView$OnItemClickListener;)V
+
+    .line 205
     return-object v0
 .end method
 
@@ -223,6 +217,11 @@
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setMeasureWithLargestChildEnabled(Z)V
 
     .line 193
+    const/16 v1, 0x11
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
+
+    .line 194
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v2, -0x2
@@ -233,7 +232,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 195
+    .line 196
     return-object v0
 .end method
 
@@ -782,42 +781,36 @@
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 6
+    .locals 2
     .parameter "newConfig"
 
     .prologue
-    const/4 v5, 0x0
-
-    .line 209
+    .line 210
     invoke-super {p0, p1}, Landroid/widget/HorizontalScrollView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 213
+    .line 212
     invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const/4 v2, 0x0
-
-    sget-object v3, Lcom/android/internal/R$styleable;->ActionBar:[I
-
-    const v4, 0x10102ce
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-static {v1}, Lcom/android/internal/view/ActionBarPolicy;->get(Landroid/content/Context;)Lcom/android/internal/view/ActionBarPolicy;
 
     move-result-object v0
 
     .line 215
-    .local v0, a:Landroid/content/res/TypedArray;
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
+    .local v0, abp:Lcom/android/internal/view/ActionBarPolicy;
+    invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->getTabContainerHeight()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/ScrollingTabContainerView;->setContentHeight(I)V
 
     .line 216
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Lcom/android/internal/view/ActionBarPolicy;->getStackedTabMaxWidth()I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mStackedTabMaxWidth:I
 
     .line 217
     return-void
@@ -845,7 +838,7 @@
     return-void
 .end method
 
-.method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
     .parameter
     .parameter "view"
@@ -892,30 +885,30 @@
 
     const/4 v7, 0x0
 
-    .line 86
+    .line 85
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v5
 
-    .line 87
+    .line 86
     .local v5, widthMode:I
     if-ne v5, v10, :cond_2
 
     move v2, v6
 
-    .line 88
+    .line 87
     .local v2, lockedExpanded:Z
     :goto_0
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/ScrollingTabContainerView;->setFillViewport(Z)V
 
-    .line 90
+    .line 89
     iget-object v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v8}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v1
 
-    .line 91
+    .line 90
     .local v1, childCount:I
     if-le v1, v6, :cond_4
 
@@ -925,13 +918,13 @@
 
     if-ne v5, v8, :cond_4
 
-    .line 93
+    .line 92
     :cond_0
     const/4 v8, 0x2
 
     if-le v1, v8, :cond_3
 
-    .line 94
+    .line 93
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v8
@@ -946,8 +939,20 @@
 
     iput v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mMaxTabWidth:I
 
-    .line 102
+    .line 97
     :goto_1
+    iget v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mMaxTabWidth:I
+
+    iget v9, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mStackedTabMaxWidth:I
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
+
+    move-result v8
+
+    iput v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mMaxTabWidth:I
+
+    .line 102
+    :goto_2
     iget v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mContentHeight:I
 
     invoke-static {v8, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -965,7 +970,7 @@
 
     .line 106
     .local v0, canCollapse:Z
-    :goto_2
+    :goto_3
     if-eqz v0, :cond_7
 
     .line 108
@@ -990,7 +995,7 @@
     invoke-direct {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->performCollapse()V
 
     .line 118
-    :goto_3
+    :goto_4
     invoke-virtual {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->getMeasuredWidth()I
 
     move-result v4
@@ -1027,10 +1032,10 @@
     :cond_2
     move v2, v7
 
-    .line 87
+    .line 86
     goto :goto_0
 
-    .line 96
+    .line 95
     .restart local v1       #childCount:I
     .restart local v2       #lockedExpanded:Z
     :cond_3
@@ -1050,43 +1055,26 @@
 
     iput v8, p0, Lcom/android/internal/widget/ScrollingTabContainerView;->mMaxTabWidth:I
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     move v0, v7
 
     .line 104
-    goto :goto_2
+    goto :goto_3
 
     .line 112
     .restart local v0       #canCollapse:Z
     :cond_6
     invoke-direct {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->performExpand()Z
 
-    goto :goto_3
+    goto :goto_4
 
     .line 115
     :cond_7
     invoke-direct {p0}, Lcom/android/internal/widget/ScrollingTabContainerView;->performExpand()Z
 
-    goto :goto_3
-.end method
-
-.method public onNothingSelected(Landroid/widget/AdapterView;)V
-    .locals 0
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/widget/AdapterView",
-            "<*>;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 360
-    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
-    return-void
+    goto :goto_4
 .end method
 
 .method public removeAllTabs()V

@@ -24,15 +24,15 @@
     .parameter
 
     .prologue
-    .line 282
+    .line 286
     iput-object p1, p0, Lmiui/app/screenelement/data/WebServiceBinder$QueryThread;->this$0:Lmiui/app/screenelement/data/WebServiceBinder;
 
-    .line 283
+    .line 287
     const-string v0, "WebServiceBinder QueryThread"
 
     invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
-    .line 284
+    .line 288
     return-void
 .end method
 
@@ -42,14 +42,14 @@
     .locals 18
 
     .prologue
-    .line 288
+    .line 292
     const-string v15, "WebServiceBinder"
 
     const-string v16, "QueryThread start"
 
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 289
+    .line 293
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lmiui/app/screenelement/data/WebServiceBinder$QueryThread;->this$0:Lmiui/app/screenelement/data/WebServiceBinder;
@@ -81,7 +81,7 @@
 
     move-result-object v14
 
-    .line 290
+    .line 294
     .local v14, uri:Landroid/net/Uri;
     new-instance v11, Lorg/apache/http/client/methods/HttpPost;
 
@@ -91,7 +91,7 @@
 
     invoke-direct {v11, v15}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
 
-    .line 291
+    .line 295
     .local v11, request:Lorg/apache/http/client/methods/HttpPost;
     move-object/from16 v0, p0
 
@@ -123,11 +123,11 @@
 
     move-result-object v10
 
-    .line 292
+    .line 296
     .local v10, paramsStr:Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 293
+    .line 297
     .local v9, paramsList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/http/message/BasicNameValuePair;>;"
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -135,13 +135,13 @@
 
     if-nez v15, :cond_1
 
-    .line 294
+    .line 298
     new-instance v9, Ljava/util/ArrayList;
 
     .end local v9           #paramsList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/http/message/BasicNameValuePair;>;"
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 295
+    .line 299
     .restart local v9       #paramsList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lorg/apache/http/message/BasicNameValuePair;>;"
     const-string v15, ","
 
@@ -149,7 +149,7 @@
 
     move-result-object v8
 
-    .line 296
+    .line 300
     .local v8, params:[Ljava/lang/String;
     move-object v1, v8
 
@@ -165,7 +165,7 @@
 
     aget-object v6, v1, v4
 
-    .line 297
+    .line 301
     .local v6, pa:Ljava/lang/String;
     const-string v15, ":"
 
@@ -173,7 +173,7 @@
 
     move-result-object v7
 
-    .line 298
+    .line 302
     .local v7, param:[Ljava/lang/String;
     array-length v15, v7
 
@@ -183,13 +183,13 @@
 
     if-eq v15, v0, :cond_0
 
-    .line 296
+    .line 300
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 300
+    .line 304
     :cond_0
     new-instance v15, Lorg/apache/http/message/BasicNameValuePair;
 
@@ -207,7 +207,7 @@
 
     goto :goto_1
 
-    .line 305
+    .line 309
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v4           #i$:I
     .end local v5           #len$:I
@@ -226,7 +226,7 @@
 
     invoke-virtual {v11, v15}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    .line 307
+    .line 311
     new-instance v15, Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-direct {v15}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
@@ -235,11 +235,11 @@
 
     move-result-object v3
 
-    .line 308
+    .line 312
     .local v3, httpResponse:Lorg/apache/http/HttpResponse;
     const/4 v12, 0x0
 
-    .line 309
+    .line 313
     .local v12, result:Ljava/lang/String;
     invoke-interface {v3}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
@@ -249,13 +249,13 @@
 
     move-result v13
 
-    .line 310
+    .line 314
     .local v13, statusCode:I
     const/16 v15, 0xc8
 
     if-ne v13, v15, :cond_2
 
-    .line 311
+    .line 315
     invoke-interface {v3}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v15
@@ -264,7 +264,7 @@
 
     move-result-object v12
 
-    .line 313
+    .line 317
     :cond_2
     const-string v15, "WebServiceBinder"
 
@@ -302,7 +302,7 @@
 
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 314
+    .line 318
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lmiui/app/screenelement/data/WebServiceBinder$QueryThread;->this$0:Lmiui/app/screenelement/data/WebServiceBinder;
@@ -310,7 +310,7 @@
     #calls: Lmiui/app/screenelement/data/WebServiceBinder;->onQueryComplete(Ljava/lang/String;)V
     invoke-static {v15, v12}, Lmiui/app/screenelement/data/WebServiceBinder;->access$200(Lmiui/app/screenelement/data/WebServiceBinder;Ljava/lang/String;)V
 
-    .line 315
+    .line 319
     move-object/from16 v0, p0
 
     iget-object v15, v0, Lmiui/app/screenelement/data/WebServiceBinder$QueryThread;->this$0:Lmiui/app/screenelement/data/WebServiceBinder;
@@ -326,7 +326,7 @@
     .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 323
+    .line 327
     .end local v3           #httpResponse:Lorg/apache/http/HttpResponse;
     .end local v12           #result:Ljava/lang/String;
     .end local v13           #statusCode:I
@@ -340,21 +340,21 @@
     #setter for: Lmiui/app/screenelement/data/WebServiceBinder;->mQueryInProgress:Z
     invoke-static/range {v15 .. v16}, Lmiui/app/screenelement/data/WebServiceBinder;->access$402(Lmiui/app/screenelement/data/WebServiceBinder;Z)Z
 
-    .line 324
+    .line 328
     const-string v15, "WebServiceBinder"
 
     const-string v16, "QueryThread end"
 
     invoke-static/range {v15 .. v16}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 325
+    .line 329
     return-void
 
-    .line 316
+    .line 320
     :catch_0
     move-exception v2
 
-    .line 317
+    .line 321
     .local v2, e:Ljava/io/UnsupportedEncodingException;
     const-string v15, "WebServiceBinder"
 
@@ -384,12 +384,12 @@
 
     goto :goto_2
 
-    .line 318
+    .line 322
     .end local v2           #e:Ljava/io/UnsupportedEncodingException;
     :catch_1
     move-exception v2
 
-    .line 319
+    .line 323
     .local v2, e:Lorg/apache/http/client/ClientProtocolException;
     const-string v15, "WebServiceBinder"
 
@@ -419,12 +419,12 @@
 
     goto :goto_2
 
-    .line 320
+    .line 324
     .end local v2           #e:Lorg/apache/http/client/ClientProtocolException;
     :catch_2
     move-exception v2
 
-    .line 321
+    .line 325
     .local v2, e:Ljava/io/IOException;
     const-string v15, "WebServiceBinder"
 

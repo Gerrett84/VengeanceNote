@@ -33,7 +33,7 @@
     .end annotation
 .end method
 
-.method public abstract createSecureContainer(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)I
+.method public abstract createSecureContainer(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZ)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -74,6 +74,14 @@
 .end method
 
 .method public abstract finishMediaUpdate()V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract fixPermissionsSecureContainer(Ljava/lang/String;ILjava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

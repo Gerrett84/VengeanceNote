@@ -24,10 +24,10 @@
     .parameter "exp"
 
     .prologue
-    .line 155
+    .line 156
     invoke-direct {p0, p1}, Lmiui/app/screenelement/data/Expression$VariableExpression;-><init>(Ljava/lang/String;)V
 
-    .line 156
+    .line 157
     return-void
 .end method
 
@@ -36,12 +36,12 @@
     .parameter "var"
 
     .prologue
-    .line 166
+    .line 167
     iget-object v0, p0, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->mIndexedVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     if-nez v0, :cond_0
 
-    .line 167
+    .line 168
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/data/Expression$VariableExpression;->mVar:Lmiui/app/screenelement/util/Variable;
@@ -60,7 +60,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->mIndexedVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
-    .line 169
+    .line 170
     :cond_0
     return-void
 .end method
@@ -72,17 +72,17 @@
     .parameter "var"
 
     .prologue
-    .line 160
+    .line 161
     invoke-direct {p0, p1}, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->ensureVar(Lmiui/app/screenelement/data/Variables;)V
 
-    .line 161
+    .line 162
     iget-object v1, p0, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->mIndexedVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     invoke-virtual {v1}, Lmiui/app/screenelement/util/IndexedNumberVariable;->get()Ljava/lang/Double;
 
     move-result-object v0
 
-    .line 162
+    .line 163
     .local v0, value:Ljava/lang/Double;
     if-nez v0, :cond_0
 
@@ -104,7 +104,7 @@
     .parameter "var"
 
     .prologue
-    .line 179
+    .line 180
     invoke-virtual {p0, p1}, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
 
     move-result-wide v0
@@ -121,10 +121,10 @@
     .parameter "var"
 
     .prologue
-    .line 173
+    .line 174
     invoke-direct {p0, p1}, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->ensureVar(Lmiui/app/screenelement/data/Variables;)V
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lmiui/app/screenelement/data/Expression$NumberVariableExpression;->mIndexedVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/util/IndexedNumberVariable;->get()Ljava/lang/Double;

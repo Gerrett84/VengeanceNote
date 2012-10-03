@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 228
+    .line 231
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$4;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
     invoke-direct {p0, p2, p3}, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;-><init>(II)V
@@ -37,22 +37,20 @@
 
 # virtual methods
 .method public onPress()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 232
+    .line 235
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiGlobalActions$4;->this$0:Lcom/android/internal/policy/impl/MiuiGlobalActions;
 
-    #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$100(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/content/Context;
+    #getter for: Lcom/android/internal/policy/impl/MiuiGlobalActions;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/MiuiGlobalActions;->access$500(Lcom/android/internal/policy/impl/MiuiGlobalActions;)Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->shutdown()V
 
-    invoke-static {v0, v1}, Lcom/android/internal/app/ShutdownThread;->shutdown(Landroid/content/Context;Z)V
-
-    .line 233
+    .line 236
     return-void
 .end method
 
@@ -60,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 243
     const/4 v0, 0x1
 
     return v0
@@ -70,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 239
     const/4 v0, 0x1
 
     return v0

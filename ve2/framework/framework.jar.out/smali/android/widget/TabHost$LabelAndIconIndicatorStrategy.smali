@@ -33,18 +33,18 @@
     .parameter "icon"
 
     .prologue
-    .line 556
+    .line 568
     iput-object p1, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 557
+    .line 569
     iput-object p2, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->mLabel:Ljava/lang/CharSequence;
 
-    .line 558
+    .line 570
     iput-object p3, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->mIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 559
+    .line 571
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "x3"
 
     .prologue
-    .line 551
+    .line 563
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;-><init>(Landroid/widget/TabHost;Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
     return-void
@@ -72,16 +72,16 @@
 
     const/4 v7, 0x0
 
-    .line 562
+    .line 574
     iget-object v8, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
     invoke-virtual {v8}, Landroid/widget/TabHost;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 563
+    .line 575
     .local v1, context:Landroid/content/Context;
-    const-string v8, "layout_inflater"
+    const-string/jumbo v8, "layout_inflater"
 
     invoke-virtual {v1, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -89,7 +89,7 @@
 
     check-cast v4, Landroid/view/LayoutInflater;
 
-    .line 565
+    .line 577
     .local v4, inflater:Landroid/view/LayoutInflater;
     iget-object v8, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
@@ -109,7 +109,7 @@
 
     move-result-object v5
 
-    .line 569
+    .line 581
     .local v5, tabIndicator:Landroid/view/View;
     const v8, 0x1020016
 
@@ -119,7 +119,7 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 570
+    .line 582
     .local v6, tv:Landroid/widget/TextView;
     const v8, 0x1020006
 
@@ -129,7 +129,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 573
+    .line 585
     .local v3, iconView:Landroid/widget/ImageView;
     invoke-virtual {v3}, Landroid/widget/ImageView;->getVisibility()I
 
@@ -141,7 +141,7 @@
 
     move v2, v0
 
-    .line 574
+    .line 586
     .local v2, exclusive:Z
     :goto_0
     if-eqz v2, :cond_0
@@ -154,7 +154,7 @@
 
     if-eqz v8, :cond_4
 
-    .line 576
+    .line 588
     .local v0, bindIcon:Z
     :cond_0
     :goto_1
@@ -162,22 +162,22 @@
 
     invoke-virtual {v6, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 578
+    .line 590
     if-eqz v0, :cond_1
 
     iget-object v8, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->mIcon:Landroid/graphics/drawable/Drawable;
 
     if-eqz v8, :cond_1
 
-    .line 579
+    .line 591
     iget-object v8, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->mIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3, v8}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 580
+    .line 592
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 583
+    .line 595
     :cond_1
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -189,12 +189,12 @@
 
     if-gt v7, v8, :cond_2
 
-    .line 585
-    const v7, 0x1080582
+    .line 597
+    const v7, 0x10805a2
 
     invoke-virtual {v5, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 586
+    .line 598
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
@@ -207,7 +207,7 @@
 
     invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
-    .line 589
+    .line 601
     :cond_2
     return-object v5
 
@@ -216,13 +216,13 @@
     :cond_3
     move v2, v7
 
-    .line 573
+    .line 585
     goto :goto_0
 
     .restart local v2       #exclusive:Z
     :cond_4
     move v0, v7
 
-    .line 574
+    .line 586
     goto :goto_1
 .end method

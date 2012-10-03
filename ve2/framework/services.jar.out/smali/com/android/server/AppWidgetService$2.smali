@@ -1,14 +1,11 @@
 .class Lcom/android/server/AppWidgetService$2;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "AppWidgetService.java"
-
-# interfaces
-.implements Landroid/content/ServiceConnection;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/AppWidgetService;->notifyAppWidgetViewDataChangedInstanceLocked(Lcom/android/server/AppWidgetService$AppWidgetId;I)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/AppWidgetService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,73 +24,169 @@
     .parameter
 
     .prologue
-    .line 829
+    .line 356
     iput-object p1, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 3
-    .parameter "name"
-    .parameter "service"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
+    .parameter "context"
+    .parameter "intent"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 832
-    invoke-static {p2}, Lcom/android/internal/widget/IRemoteViewsFactory$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/widget/IRemoteViewsFactory;
+    .line 359
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 835
-    .local v0, cb:Lcom/android/internal/widget/IRemoteViewsFactory;
-    :try_start_0
-    invoke-interface {v0}, Lcom/android/internal/widget/IRemoteViewsFactory;->onDataSetChangedAsync()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .line 361
+    .local v0, action:Ljava/lang/String;
+    const-string v3, "android.intent.action.BOOT_COMPLETED"
 
-    .line 841
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 362
+    iget-object v3, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
+
+    #calls: Lcom/android/server/AppWidgetService;->getImplForUser()Lcom/android/server/AppWidgetServiceImpl;
+    invoke-static {v3}, Lcom/android/server/AppWidgetService;->access$000(Lcom/android/server/AppWidgetService;)Lcom/android/server/AppWidgetServiceImpl;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/server/AppWidgetServiceImpl;->sendInitialBroadcasts()V
+
+    .line 376
+    :cond_0
     :goto_0
-    iget-object v2, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
-
-    iget-object v2, v2, Lcom/android/server/AppWidgetService;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2, p0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-
-    .line 842
     return-void
 
-    .line 836
-    :catch_0
-    move-exception v1
+    .line 363
+    :cond_1
+    const-string v3, "android.intent.action.RESTORE_FINISH"
 
-    .line 837
-    .local v1, e:Landroid/os/RemoteException;
-    invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 364
+    iget-object v3, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
+
+    #calls: Lcom/android/server/AppWidgetService;->getImplForUser()Lcom/android/server/AppWidgetServiceImpl;
+    invoke-static {v3}, Lcom/android/server/AppWidgetService;->access$000(Lcom/android/server/AppWidgetService;)Lcom/android/server/AppWidgetServiceImpl;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/server/AppWidgetServiceImpl;->sendInitialBroadcasts()V
 
     goto :goto_0
 
-    .line 838
-    .end local v1           #e:Landroid/os/RemoteException;
-    :catch_1
-    move-exception v1
+    .line 365
+    :cond_2
+    const-string v3, "android.intent.action.CONFIGURATION_CHANGED"
 
-    .line 839
-    .local v1, e:Ljava/lang/RuntimeException;
-    invoke-virtual {v1}, Ljava/lang/RuntimeException;->printStackTrace()V
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_0
-.end method
+    move-result v3
 
-.method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 0
-    .parameter "name"
+    if-eqz v3, :cond_3
 
-    .prologue
-    .line 846
-    return-void
+    .line 366
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    :goto_1
+    iget-object v3, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
+
+    #getter for: Lcom/android/server/AppWidgetService;->mAppWidgetServices:Landroid/util/SparseArray;
+    invoke-static {v3}, Lcom/android/server/AppWidgetService;->access$100(Lcom/android/server/AppWidgetService;)Landroid/util/SparseArray;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_0
+
+    .line 367
+    iget-object v3, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
+
+    #getter for: Lcom/android/server/AppWidgetService;->mAppWidgetServices:Landroid/util/SparseArray;
+    invoke-static {v3}, Lcom/android/server/AppWidgetService;->access$100(Lcom/android/server/AppWidgetService;)Landroid/util/SparseArray;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/AppWidgetServiceImpl;
+
+    .line 368
+    .local v2, service:Lcom/android/server/AppWidgetServiceImpl;
+    invoke-virtual {v2}, Lcom/android/server/AppWidgetServiceImpl;->onConfigurationChanged()V
+
+    .line 366
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    .line 371
+    .end local v1           #i:I
+    .end local v2           #service:Lcom/android/server/AppWidgetServiceImpl;
+    :cond_3
+    const/4 v1, 0x0
+
+    .restart local v1       #i:I
+    :goto_2
+    iget-object v3, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
+
+    #getter for: Lcom/android/server/AppWidgetService;->mAppWidgetServices:Landroid/util/SparseArray;
+    invoke-static {v3}, Lcom/android/server/AppWidgetService;->access$100(Lcom/android/server/AppWidgetService;)Landroid/util/SparseArray;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/util/SparseArray;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_0
+
+    .line 372
+    iget-object v3, p0, Lcom/android/server/AppWidgetService$2;->this$0:Lcom/android/server/AppWidgetService;
+
+    #getter for: Lcom/android/server/AppWidgetService;->mAppWidgetServices:Landroid/util/SparseArray;
+    invoke-static {v3}, Lcom/android/server/AppWidgetService;->access$100(Lcom/android/server/AppWidgetService;)Landroid/util/SparseArray;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/AppWidgetServiceImpl;
+
+    .line 373
+    .restart local v2       #service:Lcom/android/server/AppWidgetServiceImpl;
+    invoke-virtual {v2, p2}, Lcom/android/server/AppWidgetServiceImpl;->onBroadcastReceived(Landroid/content/Intent;)V
+
+    .line 371
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
 .end method

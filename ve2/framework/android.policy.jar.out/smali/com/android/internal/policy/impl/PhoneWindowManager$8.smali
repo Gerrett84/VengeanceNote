@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$8;
-.super Lcom/android/internal/view/BaseInputHandler;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/PhoneWindowManager;->finishAnimationLw()I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,165 +27,54 @@
     .parameter
 
     .prologue
-    .line 1844
+    .line 2943
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Lcom/android/internal/view/BaseInputHandler;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMotion(Landroid/view/MotionEvent;Landroid/view/InputQueue$FinishedCallback;)V
-    .locals 8
-    .parameter "event"
-    .parameter "finishedCallback"
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 1847
-    const/4 v1, 0x0
-
-    .line 1849
-    .local v1, handled:Z
+    .line 2945
     :try_start_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
+    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    move-result v3
+    invoke-virtual {v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
 
-    and-int/lit8 v3, v3, 0x2
+    move-result-object v1
 
-    if-eqz v3, :cond_2
+    .line 2946
+    .local v1, statusbar:Lcom/android/internal/statusbar/IStatusBarService;
+    if-eqz v1, :cond_0
 
-    .line 1850
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v3
-
-    if-nez v3, :cond_2
-
-    .line 1852
-    const/4 v0, 0x0
-
-    .line 1853
-    .local v0, changed:Z
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v4, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
-
-    monitor-enter v4
+    .line 2947
+    invoke-interface {v1}, Lcom/android/internal/statusbar/IStatusBarService;->collapse()V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1856
-    :try_start_1
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mResettingSystemUiFlags:I
-
-    or-int/lit8 v2, v3, 0x2
-
-    .line 1858
-    .local v2, newVal:I
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mResettingSystemUiFlags:I
-
-    if-eq v3, v2, :cond_0
-
-    .line 1859
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iput v2, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mResettingSystemUiFlags:I
-
-    .line 1860
-    const/4 v0, 0x1
-
-    .line 1865
+    .line 2953
+    .end local v1           #statusbar:Lcom/android/internal/statusbar/IStatusBarService;
     :cond_0
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-
-    or-int/lit8 v2, v3, 0x2
-
-    .line 1867
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-
-    if-eq v3, v2, :cond_1
-
-    .line 1868
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iput v2, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mForceClearedSystemUiFlags:I
-
-    .line 1869
-    const/4 v0, 0x1
-
-    .line 1870
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
-
-    new-instance v5, Lcom/android/internal/policy/impl/PhoneWindowManager$8$1;
-
-    invoke-direct {v5, p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$8$1;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager$8;)V
-
-    const-wide/16 v6, 0x3e8
-
-    invoke-virtual {v3, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 1880
-    :cond_1
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 1881
-    if-eqz v0, :cond_2
-
-    .line 1882
-    :try_start_2
-    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWindowManagerFuncs:Landroid/view/WindowManagerPolicy$WindowManagerFuncs;
-
-    invoke-interface {v3}, Landroid/view/WindowManagerPolicy$WindowManagerFuncs;->reevaluateStatusBarVisibility()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 1887
-    .end local v0           #changed:Z
-    .end local v2           #newVal:I
-    :cond_2
-    invoke-virtual {p2, v1}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
-
-    .line 1889
+    :goto_0
     return-void
 
-    .line 1880
-    .restart local v0       #changed:Z
-    :catchall_0
-    move-exception v3
+    .line 2949
+    :catch_0
+    move-exception v0
 
-    :try_start_3
-    monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .line 2951
+    .local v0, ex:Landroid/os/RemoteException;
+    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$8;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    :try_start_4
-    throw v3
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    const/4 v3, 0x0
 
-    .line 1887
-    .end local v0           #changed:Z
-    :catchall_1
-    move-exception v3
+    iput-object v3, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    invoke-virtual {p2, v1}, Landroid/view/InputQueue$FinishedCallback;->finished(Z)V
-
-    throw v3
+    goto :goto_0
 .end method

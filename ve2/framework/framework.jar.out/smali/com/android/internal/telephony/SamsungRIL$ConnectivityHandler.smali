@@ -43,12 +43,12 @@
     .parameter "context"
 
     .prologue
-    .line 1103
+    .line 899
     iput-object p1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->this$0:Lcom/android/internal/telephony/SamsungRIL;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 1100
+    .line 896
     new-instance v0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler$ConnectivityBroadcastReceiver;
 
     const/4 v1, 0x0
@@ -57,10 +57,10 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mConnectivityReceiver:Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler$ConnectivityBroadcastReceiver;
 
-    .line 1104
+    .line 900
     iput-object p2, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mContext:Landroid/content/Context;
 
-    .line 1105
+    .line 901
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1093
+    .line 889
     invoke-direct {p0}, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->stopListening()V
 
     return-void
@@ -80,7 +80,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1093
+    .line 889
     iget v0, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mDesiredNetworkType:I
 
     return v0
@@ -92,7 +92,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1093
+    .line 889
     iput p1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mDesiredNetworkType:I
 
     return p1
@@ -102,25 +102,25 @@
     .locals 3
 
     .prologue
-    .line 1108
+    .line 904
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 1109
+    .line 905
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1110
+    .line 906
     iget-object v1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mConnectivityReceiver:Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler$ConnectivityBroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1111
+    .line 907
     return-void
 .end method
 
@@ -128,7 +128,7 @@
     .locals 2
 
     .prologue
-    .line 1114
+    .line 910
     monitor-enter p0
 
     :try_start_0
@@ -140,12 +140,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1115
+    .line 911
     monitor-exit p0
 
     return-void
 
-    .line 1114
+    .line 910
     :catchall_0
     move-exception v0
 
@@ -163,12 +163,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 1131
+    .line 927
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 1146
+    .line 942
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string/jumbo v2, "unexpected event not handled"
@@ -177,7 +177,7 @@
 
     throw v1
 
-    .line 1134
+    .line 930
     :pswitch_0
     iget-object v1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mContext:Landroid/content/Context;
 
@@ -189,7 +189,7 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 1137
+    .line 933
     .local v0, cm:Landroid/net/ConnectivityManager;
     const-string v1, "RILJ"
 
@@ -197,28 +197,28 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1139
+    .line 935
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->setMobileDataEnabled(Z)V
 
-    .line 1141
+    .line 937
     iget-object v1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mNetworktypeResponse:Landroid/os/Message;
 
     invoke-static {v1, v3, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1142
+    .line 938
     iget-object v1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mNetworktypeResponse:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1143
+    .line 939
     iput-object v3, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mNetworktypeResponse:Landroid/os/Message;
 
-    .line 1148
+    .line 944
     return-void
 
-    .line 1131
+    .line 927
     :pswitch_data_0
     .packed-switch 0x1e
         :pswitch_0
@@ -231,20 +231,20 @@
     .parameter "response"
 
     .prologue
-    .line 1119
+    .line 915
     const-string v1, "RILJ"
 
     const-string v2, "Mobile Dataconnection is online setting it down"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1120
+    .line 916
     iput p1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mDesiredNetworkType:I
 
-    .line 1121
+    .line 917
     iput-object p2, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mNetworktypeResponse:Landroid/os/Message;
 
-    .line 1122
+    .line 918
     iget-object v1, p0, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->mContext:Landroid/content/Context;
 
     const-string v2, "connectivity"
@@ -255,15 +255,15 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 1125
+    .line 921
     .local v0, cm:Landroid/net/ConnectivityManager;
     invoke-direct {p0}, Lcom/android/internal/telephony/SamsungRIL$ConnectivityHandler;->startListening()V
 
-    .line 1126
+    .line 922
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/net/ConnectivityManager;->setMobileDataEnabled(Z)V
 
-    .line 1127
+    .line 923
     return-void
 .end method

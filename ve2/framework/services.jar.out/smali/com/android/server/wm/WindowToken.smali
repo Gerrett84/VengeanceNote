@@ -16,8 +16,6 @@
 
 .field sendingToBottom:Z
 
-.field sendingToTop:Z
-
 .field final service:Lcom/android/server/wm/WindowManagerService;
 
 .field stringName:Ljava/lang/String;
@@ -51,7 +49,7 @@
     .parameter "_explicit"
 
     .prologue
-    .line 78
+    .line 74
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
@@ -66,19 +64,19 @@
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowToken;->paused:Z
 
-    .line 79
+    .line 75
     iput-object p1, p0, Lcom/android/server/wm/WindowToken;->service:Lcom/android/server/wm/WindowManagerService;
 
-    .line 80
+    .line 76
     iput-object p2, p0, Lcom/android/server/wm/WindowToken;->token:Landroid/os/IBinder;
 
-    .line 81
+    .line 77
     iput p3, p0, Lcom/android/server/wm/WindowToken;->windowType:I
 
-    .line 82
+    .line 78
     iput-boolean p4, p0, Lcom/android/server/wm/WindowToken;->explicit:Z
 
-    .line 83
+    .line 79
     return-void
 .end method
 
@@ -90,7 +88,7 @@
     .parameter "prefix"
 
     .prologue
-    .line 86
+    .line 82
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "token="
@@ -101,7 +99,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 87
+    .line 83
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "windows="
@@ -112,7 +110,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 88
+    .line 84
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "windowType="
@@ -123,7 +121,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 89
+    .line 85
     const-string v0, " hidden="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -132,7 +130,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 90
+    .line 86
     const-string v0, " hasVisible="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -141,7 +139,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 91
+    .line 87
     iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->waitingToShow:Z
 
     if-nez v0, :cond_0
@@ -152,13 +150,9 @@
 
     iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->sendingToBottom:Z
 
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->sendingToTop:Z
-
     if-eqz v0, :cond_1
 
-    .line 92
+    .line 88
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -170,7 +164,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 93
+    .line 89
     const-string v0, " waitingToHide="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -179,7 +173,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 94
+    .line 90
     const-string v0, " sendingToBottom="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -188,16 +182,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 95
-    const-string v0, " sendingToTop="
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget-boolean v0, p0, Lcom/android/server/wm/WindowToken;->sendingToTop:Z
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
-
-    .line 97
+    .line 92
     :cond_1
     return-void
 .end method
@@ -206,23 +191,23 @@
     .locals 2
 
     .prologue
-    .line 101
+    .line 96
     iget-object v1, p0, Lcom/android/server/wm/WindowToken;->stringName:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 102
+    .line 97
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 103
+    .line 98
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "WindowToken{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 104
+    .line 99
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -233,7 +218,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 105
+    .line 100
     const-string v1, " token="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -246,14 +231,14 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 106
+    .line 101
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/wm/WindowToken;->stringName:Ljava/lang/String;
 
-    .line 108
+    .line 103
     .end local v0           #sb:Ljava/lang/StringBuilder;
     :cond_0
     iget-object v1, p0, Lcom/android/server/wm/WindowToken;->stringName:Ljava/lang/String;

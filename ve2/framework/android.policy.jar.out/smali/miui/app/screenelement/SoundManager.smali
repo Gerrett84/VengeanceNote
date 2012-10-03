@@ -93,7 +93,7 @@
 
     const/4 v1, 0x4
 
-    const/4 v2, 0x3
+    const/4 v2, 0x1
 
     const/16 v3, 0x64
 
@@ -127,7 +127,7 @@
     .parameter "stopCur"
 
     .prologue
-    .line 75
+    .line 80
     monitor-enter p0
 
     :try_start_0
@@ -137,13 +137,13 @@
 
     if-nez v0, :cond_0
 
-    .line 87
+    .line 92
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 78
+    .line 83
     :cond_0
     if-eqz p2, :cond_2
 
@@ -156,7 +156,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 79
+    .line 84
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mPlayingSoundMap:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -177,7 +177,7 @@
 
     check-cast v9, Ljava/lang/Integer;
 
-    .line 80
+    .line 85
     .local v9, sd:Ljava/lang/Integer;
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPool:Landroid/media/SoundPool;
 
@@ -191,7 +191,7 @@
 
     goto :goto_1
 
-    .line 75
+    .line 80
     .end local v8           #i$:Ljava/util/Iterator;
     .end local v9           #sd:Ljava/lang/Integer;
     :catchall_0
@@ -201,7 +201,7 @@
 
     throw v0
 
-    .line 82
+    .line 87
     .restart local v8       #i$:Ljava/util/Iterator;
     :cond_1
     :try_start_2
@@ -209,7 +209,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 85
+    .line 90
     .end local v8           #i$:Ljava/util/Iterator;
     :cond_2
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPool:Landroid/media/SoundPool;
@@ -230,7 +230,7 @@
 
     move-result v7
 
-    .line 86
+    .line 91
     .local v7, cur:I
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mPlayingSoundMap:Ljava/util/ArrayList;
 
@@ -254,10 +254,10 @@
     .parameter "status"
 
     .prologue
-    .line 91
+    .line 96
     if-nez p3, :cond_0
 
-    .line 92
+    .line 97
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mPendingSoundMap:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -276,7 +276,7 @@
 
     invoke-direct {p0, p2, v0}, Lmiui/app/screenelement/SoundManager;->playSoundImp(IZ)V
 
-    .line 94
+    .line 99
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mPendingSoundMap:Ljava/util/HashMap;
 
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 95
+    .line 100
     return-void
 .end method
 
@@ -310,7 +310,7 @@
 
     if-nez v0, :cond_1
 
-    .line 63
+    .line 68
     :cond_0
     :goto_0
     monitor-exit p0
@@ -339,19 +339,60 @@
 
     .line 48
     .local v9, sd:Ljava/lang/Integer;
-    if-nez v9, :cond_2
+    if-nez v9, :cond_3
 
     .line 49
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mResourceManager:Lmiui/app/screenelement/ResourceManager;
 
     invoke-virtual {v0, p1}, Lmiui/app/screenelement/ResourceManager;->getFile(Ljava/lang/String;)Landroid/os/MemoryFile;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v8
 
-    .line 51
+    .line 50
     .local v8, file:Landroid/os/MemoryFile;
+    if-nez v8, :cond_2
+
+    .line 51
+    const-string v0, "Lockscreen_SoundManager"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "the sound does not exist: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 41
+    .end local v8           #file:Landroid/os/MemoryFile;
+    .end local v9           #sd:Ljava/lang/Integer;
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 56
+    .restart local v8       #file:Landroid/os/MemoryFile;
+    .restart local v9       #sd:Ljava/lang/Integer;
+    :cond_2
     :try_start_2
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPool:Landroid/media/SoundPool;
 
@@ -377,18 +418,18 @@
 
     move-result-object v9
 
-    .line 52
+    .line 57
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPoolMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 53
+    .line 58
     invoke-virtual {v8}, Landroid/os/MemoryFile;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 58
+    .line 63
     :goto_1
     :try_start_3
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mPendingSoundMap:Ljava/util/HashMap;
@@ -398,30 +439,15 @@
     move-result-object v1
 
     invoke-virtual {v0, v9, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_0
 
-    .line 41
-    .end local v8           #file:Landroid/os/MemoryFile;
-    .end local v9           #sd:Ljava/lang/Integer;
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    .line 54
-    .restart local v8       #file:Landroid/os/MemoryFile;
-    .restart local v9       #sd:Ljava/lang/Integer;
+    .line 59
     :catch_0
     move-exception v7
 
-    .line 55
+    .line 60
     .local v7, e:Ljava/io/IOException;
-    :try_start_4
     const-string v0, "Lockscreen_SoundManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -450,26 +476,26 @@
 
     goto :goto_1
 
-    .line 62
+    .line 67
     .end local v7           #e:Ljava/io/IOException;
     .end local v8           #file:Landroid/os/MemoryFile;
-    :cond_2
+    :cond_3
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     invoke-direct {p0, v0, p2}, Lmiui/app/screenelement/SoundManager;->playSoundImp(IZ)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public declared-synchronized release()V
     .locals 2
 
     .prologue
-    .line 66
+    .line 71
     monitor-enter p0
 
     :try_start_0
@@ -477,37 +503,37 @@
 
     if-eqz v0, :cond_0
 
-    .line 67
+    .line 72
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPoolMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 68
+    .line 73
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPool:Landroid/media/SoundPool;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/media/SoundPool;->setOnLoadCompleteListener(Landroid/media/SoundPool$OnLoadCompleteListener;)V
 
-    .line 69
+    .line 74
     iget-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v0}, Landroid/media/SoundPool;->release()V
 
-    .line 70
+    .line 75
     const/4 v0, 0x0
 
     iput-object v0, p0, Lmiui/app/screenelement/SoundManager;->mSoundPool:Landroid/media/SoundPool;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 72
+    .line 77
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 66
+    .line 71
     :catchall_0
     move-exception v0
 

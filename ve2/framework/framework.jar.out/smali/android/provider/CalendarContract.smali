@@ -43,11 +43,15 @@
 
 .field public static final ACTION_EVENT_REMINDER:Ljava/lang/String; = "android.intent.action.EVENT_REMINDER"
 
+.field public static final ACTION_HANDLE_CUSTOM_EVENT:Ljava/lang/String; = "android.provider.calendar.action.HANDLE_CUSTOM_EVENT"
+
 .field public static final AUTHORITY:Ljava/lang/String; = "com.android.calendar"
 
 .field public static final CALLER_IS_SYNCADAPTER:Ljava/lang/String; = "caller_is_syncadapter"
 
 .field public static final CONTENT_URI:Landroid/net/Uri; = null
+
+.field public static final EXTRA_CUSTOM_APP_URI:Ljava/lang/String; = "customAppUri"
 
 .field public static final EXTRA_EVENT_ALL_DAY:Ljava/lang/String; = "allDay"
 
@@ -63,7 +67,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 166
     const-string v0, "content://com.android.calendar"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -79,7 +83,7 @@
     .locals 0
 
     .prologue
-    .line 158
+    .line 196
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

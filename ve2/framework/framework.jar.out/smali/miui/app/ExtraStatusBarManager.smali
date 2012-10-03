@@ -10,6 +10,8 @@
 
 .field public static final ACTION_EXPAND_TOGGLES_TAB:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.EXPAND_TOGGLE_TAB"
 
+.field public static final ACTION_PICK_TOGGLE_INTENT:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.action_PICK_TOGGLE_INTENT"
+
 .field public static final ACTION_REQUEST_RESTART:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.REQUEST_RESTART"
 
 .field public static final ACTION_STATUSBAR_LOADED:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.LOADED"
@@ -17,6 +19,8 @@
 .field public static final ACTION_STATUSBAR_UNLOADED:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.UNLOADED"
 
 .field public static final ACTION_TRIGGER_CAMERA_KEY:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.TRIGGER_CAMERA_KEY"
+
+.field public static final ACTION_TRIGGER_TOGGLE:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE"
 
 .field public static final ACTION_TRIGGER_TOGGLE_LOCK:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.TRIGGER_TOGGLE_LOCK"
 
@@ -27,6 +31,10 @@
 .field public static final DISABLE_FOR_KEYGUARD:I = -0x80000000
 
 .field public static final DISABLE_FULLSCREEN:I = 0x20000000
+
+.field public static final DISABLE_SIMPLE_STATUS_BAR:I = 0x10000000
+
+.field public static final EXTRA_TOGGLE_ID:Ljava/lang/String; = "com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID"
 
 
 # direct methods
@@ -46,7 +54,7 @@
     .parameter "enable"
 
     .prologue
-    .line 54
+    .line 66
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -60,10 +68,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 58
+    .line 70
     return-void
 
-    .line 54
+    .line 66
     :cond_0
     const/4 v0, 0x0
 
@@ -77,7 +85,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 89
+    .line 101
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -106,7 +114,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 75
+    .line 87
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -132,7 +140,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 61
+    .line 73
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -161,7 +169,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 117
+    .line 129
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -187,7 +195,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 103
+    .line 115
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -212,7 +220,7 @@
     .parameter "enable"
 
     .prologue
-    .line 82
+    .line 94
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -226,10 +234,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 86
+    .line 98
     return-void
 
-    .line 82
+    .line 94
     :cond_0
     const/4 v0, 0x0
 
@@ -242,7 +250,7 @@
     .parameter "enable"
 
     .prologue
-    .line 68
+    .line 80
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -256,10 +264,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 72
+    .line 84
     return-void
 
-    .line 68
+    .line 80
     :cond_0
     const/4 v0, 0x0
 
@@ -272,7 +280,7 @@
     .parameter "enable"
 
     .prologue
-    .line 110
+    .line 122
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -286,10 +294,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 114
+    .line 126
     return-void
 
-    .line 110
+    .line 122
     :cond_0
     const/4 v0, 0x0
 
@@ -302,7 +310,7 @@
     .parameter "enable"
 
     .prologue
-    .line 96
+    .line 108
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -316,10 +324,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 100
+    .line 112
     return-void
 
-    .line 96
+    .line 108
     :cond_0
     const/4 v0, 0x0
 

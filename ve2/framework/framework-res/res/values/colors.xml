@@ -57,7 +57,7 @@
     <color name="lockscreen_clock_foreground">#ffffffff</color>
     <color name="lockscreen_clock_am_pm">#ffffffff</color>
     <color name="lockscreen_owner_info">#ff9a9a9a</color>
-    <color name="facelock_color_background">#ff000000</color>
+    <color name="facelock_spotlight_mask">#cc000000</color>
     <color name="background_holo_dark">#ff000000</color>
     <color name="background_holo_light">#fff9f9f9</color>
     <color name="bright_foreground_holo_dark">@color/background_holo_light</color>

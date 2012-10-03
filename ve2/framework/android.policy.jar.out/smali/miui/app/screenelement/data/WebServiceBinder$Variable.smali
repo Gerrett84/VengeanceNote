@@ -43,10 +43,10 @@
     .locals 0
 
     .prologue
-    .line 102
+    .line 101
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 103
+    .line 102
     return-void
 .end method
 
@@ -61,16 +61,16 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 104
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 106
+    .line 105
     iput-object p2, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mVar:Lmiui/app/screenelement/data/Variables;
 
-    .line 107
+    .line 106
     invoke-direct {p0, p1}, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->load(Lorg/w3c/dom/Element;)V
 
-    .line 108
+    .line 107
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 3
 
     .prologue
-    .line 123
+    .line 122
     const-string v0, "string"
 
     iget-object v1, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mType:Ljava/lang/String;
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 124
+    .line 123
     new-instance v0, Lmiui/app/screenelement/util/IndexedStringVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mName:Ljava/lang/String;
@@ -100,12 +100,12 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mStringVar:Lmiui/app/screenelement/util/IndexedStringVariable;
 
-    .line 128
+    .line 127
     :cond_0
     :goto_0
     return-void
 
-    .line 125
+    .line 124
     :cond_1
     const-string v0, "number"
 
@@ -117,7 +117,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 126
+    .line 125
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mName:Ljava/lang/String;
@@ -141,17 +141,17 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 110
     if-nez p1, :cond_0
 
-    .line 112
+    .line 111
     const-string v0, "WebServiceBinder"
 
     const-string v1, "Variable node is null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
+    .line 112
     new-instance v0, Lmiui/app/screenelement/ScreenElementLoadException;
 
     const-string v1, "node is null"
@@ -160,7 +160,7 @@
 
     throw v0
 
-    .line 115
+    .line 114
     :cond_0
     const-string v0, "name"
 
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mName:Ljava/lang/String;
 
-    .line 116
+    .line 115
     const-string v0, "type"
 
     invoke-interface {p1, v0}, Lorg/w3c/dom/Element;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
@@ -179,7 +179,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mType:Ljava/lang/String;
 
-    .line 117
+    .line 116
     const-string v0, "xpath"
 
     invoke-interface {p1, v0}, Lorg/w3c/dom/Element;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
@@ -188,7 +188,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mXPath:Ljava/lang/String;
 
-    .line 118
+    .line 117
     const-string v0, "persist"
 
     invoke-interface {p1, v0}, Lorg/w3c/dom/Element;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
@@ -201,9 +201,9 @@
 
     iput-boolean v0, p0, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->mPersist:Z
 
-    .line 119
+    .line 118
     invoke-direct {p0}, Lmiui/app/screenelement/data/WebServiceBinder$Variable;->createVar()V
 
-    .line 120
+    .line 119
     return-void
 .end method

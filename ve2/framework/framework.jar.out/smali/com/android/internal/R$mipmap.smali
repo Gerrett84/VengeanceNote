@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final sym_app_on_sd_unavailable_icon:I = 0x10d0001
-
 .field public static final sym_def_app_icon:I = 0x10d0000
 
 
@@ -25,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 14854
+    .line 12227
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

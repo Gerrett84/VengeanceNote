@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 4545
+    .line 5133
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 4545
+    .line 5133
     invoke-direct {p0}, Landroid/view/ViewRootImpl$RunQueue$HandlerAction;-><init>()V
 
     return-void
@@ -53,15 +53,15 @@
 
     const/4 v2, 0x0
 
-    .line 4551
+    .line 5139
     if-ne p0, p1, :cond_1
 
-    .line 4555
+    .line 5143
     :cond_0
     :goto_0
     return v1
 
-    .line 4552
+    .line 5140
     :cond_1
     if-eqz p1, :cond_2
 
@@ -83,10 +83,10 @@
     :cond_3
     move-object v0, p1
 
-    .line 4554
+    .line 5142
     check-cast v0, Landroid/view/ViewRootImpl$RunQueue$HandlerAction;
 
-    .line 4555
+    .line 5143
     .local v0, that:Landroid/view/ViewRootImpl$RunQueue$HandlerAction;
     iget-object v3, p0, Landroid/view/ViewRootImpl$RunQueue$HandlerAction;->action:Ljava/lang/Runnable;
 
@@ -119,7 +119,7 @@
     .locals 7
 
     .prologue
-    .line 4561
+    .line 5149
     iget-object v1, p0, Landroid/view/ViewRootImpl$RunQueue$HandlerAction;->action:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_0
@@ -130,7 +130,7 @@
 
     move-result v0
 
-    .line 4562
+    .line 5150
     .local v0, result:I
     :goto_0
     mul-int/lit8 v1, v0, 0x1f
@@ -149,10 +149,10 @@
 
     add-int v0, v1, v2
 
-    .line 4563
+    .line 5151
     return v0
 
-    .line 4561
+    .line 5149
     .end local v0           #result:I
     :cond_0
     const/4 v0, 0x0

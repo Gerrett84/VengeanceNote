@@ -31,6 +31,8 @@
 
 .field public static final ACTION_PREVIOUS:Ljava/lang/String; = "com.miui.player.musicservicecommand.previous"
 
+.field public static final ACTION_REMOVE:Ljava/lang/String; = "com.miui.player.remove"
+
 .field public static final ACTION_REQUEST_PREGRESS:Ljava/lang/String; = "com.miui.player.requestprogress"
 
 .field public static final ACTION_REQUEST_STATUS:Ljava/lang/String; = "com.miui.player.requeststatus"
@@ -56,5 +58,7 @@
 .field public static final KEY_ONLINE_ID:Ljava/lang/String; = "online_id"
 
 .field public static final KEY_ONLINE_SEARCH:Ljava/lang/String; = "search_key"
+
+.field public static final KEY_REMOVE_ID:Ljava/lang/String; = "remove_id"
 
 .field public static final KEY_SEEK_POSITION:Ljava/lang/String; = "seek_position"

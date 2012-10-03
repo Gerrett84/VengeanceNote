@@ -252,7 +252,7 @@
 .end method
 
 .method private static getFormatTime(Landroid/content/Context;Landroid/text/format/Time;IZLjava/nio/CharBuffer;)V
-    .locals 8
+    .locals 11
     .parameter "context"
     .parameter "tTime"
     .parameter "flags"
@@ -260,10 +260,12 @@
     .parameter "result"
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v10, 0x0
+
+    const/4 v9, 0x1
 
     .line 196
-    invoke-virtual {p1, v7}, Landroid/text/format/Time;->toMillis(Z)J
+    invoke-virtual {p1, v9}, Landroid/text/format/Time;->toMillis(Z)J
 
     move-result-wide v1
 
@@ -273,10 +275,10 @@
 
     if-eqz v0, :cond_0
 
-    move v6, v7
+    move v8, v9
 
     .line 198
-    .local v6, showTime:Z
+    .local v8, showTime:Z
     :goto_0
     if-eqz p3, :cond_1
 
@@ -297,17 +299,17 @@
     :goto_1
     return-void
 
-    .line 197
-    .end local v6           #showTime:Z
+    .end local v8           #showTime:Z
     :cond_0
-    const/4 v6, 0x0
+    move v8, v10
 
+    .line 197
     goto :goto_0
 
     .line 201
-    .restart local v6       #showTime:Z
+    .restart local v8       #showTime:Z
     :cond_1
-    if-eqz v6, :cond_4
+    if-eqz v8, :cond_4
 
     .line 202
     xor-int/lit8 v0, p2, 0x1
@@ -338,36 +340,30 @@
 
     invoke-static {v0}, Lmiui/util/MiuiDateUtils;->getDetailedAmPm(I)Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-virtual {p4, v0}, Ljava/nio/CharBuffer;->append(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
+    move-result-object v6
 
     .line 207
-    const-string v0, " "
-
-    invoke-virtual {p4, v0}, Ljava/nio/CharBuffer;->append(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
-
-    .line 208
+    .local v6, amPm:Ljava/lang/String;
     iget v0, p1, Landroid/text/format/Time;->hour:I
 
     const/16 v3, 0xc
 
     if-le v0, v3, :cond_3
 
-    .line 209
+    .line 208
     iget v0, p1, Landroid/text/format/Time;->hour:I
 
     add-int/lit8 v0, v0, -0xc
 
     iput v0, p1, Landroid/text/format/Time;->hour:I
 
-    .line 211
+    .line 210
     :cond_3
-    invoke-virtual {p1, v7}, Landroid/text/format/Time;->toMillis(Z)J
+    invoke-virtual {p1, v9}, Landroid/text/format/Time;->toMillis(Z)J
 
     move-result-wide v1
 
-    .line 212
+    .line 211
     const/16 v5, 0x81
 
     move-object v0, p0
@@ -376,12 +372,34 @@
 
     invoke-static/range {v0 .. v5}, Landroid/text/format/DateUtils;->formatDateRange(Landroid/content/Context;JJI)Ljava/lang/String;
 
+    move-result-object v7
+
+    .line 213
+    .local v7, formatTime:Ljava/lang/String;
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v3, 0x60c01f7
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    aput-object v7, v4, v10
+
+    aput-object v6, v4, v9
+
+    invoke-virtual {v0, v3, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
     move-result-object v0
 
     invoke-virtual {p4, v0}, Ljava/nio/CharBuffer;->append(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
 
     goto :goto_1
 
+    .end local v6           #amPm:Ljava/lang/String;
+    .end local v7           #formatTime:Ljava/lang/String;
     :cond_4
     move-object v0, p0
 

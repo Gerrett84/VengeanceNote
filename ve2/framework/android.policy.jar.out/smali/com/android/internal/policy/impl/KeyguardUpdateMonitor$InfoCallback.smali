@@ -18,6 +18,9 @@
 .method public abstract onClockVisibilityChanged()V
 .end method
 
+.method public abstract onDevicePolicyManagerStateChanged()V
+.end method
+
 .method public abstract onDeviceProvisioned()V
 .end method
 
@@ -34,4 +37,7 @@
 .end method
 
 .method public abstract onTimeChanged()V
+.end method
+
+.method public abstract onUserChanged(I)V
 .end method

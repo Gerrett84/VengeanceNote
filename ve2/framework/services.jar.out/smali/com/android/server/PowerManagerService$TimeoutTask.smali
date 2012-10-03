@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 1293
+    .line 1363
     iput-object p1, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1293
+    .line 1363
     invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService$TimeoutTask;-><init>(Lcom/android/server/PowerManagerService;)V
 
     return-void
@@ -57,7 +57,7 @@
     .locals 7
 
     .prologue
-    .line 1299
+    .line 1369
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mLocks:Lcom/android/server/PowerManagerService$LockList;
@@ -67,7 +67,7 @@
 
     monitor-enter v6
 
-    .line 1304
+    .line 1374
     :try_start_0
     iget v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->nextState:I
 
@@ -75,14 +75,14 @@
 
     if-ne v0, v3, :cond_0
 
-    .line 1305
+    .line 1375
     monitor-exit v6
 
-    .line 1325
+    .line 1395
     :goto_0
     return-void
 
-    .line 1308
+    .line 1378
     :cond_0
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
@@ -91,7 +91,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->mUserState:I
     invoke-static {v0, v3}, Lcom/android/server/PowerManagerService;->access$2602(Lcom/android/server/PowerManagerService;I)I
 
-    .line 1309
+    .line 1379
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     iget v3, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->nextState:I
@@ -108,18 +108,18 @@
     #calls: Lcom/android/server/PowerManagerService;->setPowerState(I)V
     invoke-static {v0, v3}, Lcom/android/server/PowerManagerService;->access$2800(Lcom/android/server/PowerManagerService;I)V
 
-    .line 1311
+    .line 1381
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 1313
+    .line 1383
     .local v1, now:J
     iget v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->nextState:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1324
+    .line 1394
     :goto_1
     :pswitch_0
     monitor-exit v6
@@ -136,7 +136,7 @@
 
     throw v0
 
-    .line 1316
+    .line 1386
     .restart local v1       #now:J
     :pswitch_1
     :try_start_1
@@ -149,7 +149,7 @@
 
     if-ltz v0, :cond_1
 
-    .line 1317
+    .line 1387
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-wide v3, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->remainingTimeoutOverride:J
@@ -161,7 +161,7 @@
 
     goto :goto_1
 
-    .line 1321
+    .line 1391
     :cond_1
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/PowerManagerService$TimeoutTask;->this$0:Lcom/android/server/PowerManagerService;
@@ -177,7 +177,7 @@
 
     goto :goto_1
 
-    .line 1313
+    .line 1383
     nop
 
     :pswitch_data_0

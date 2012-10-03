@@ -129,7 +129,7 @@
 
     const/4 v1, 0x2
 
-    .line 1857
+    .line 2202
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -138,14 +138,14 @@
 
     sput-object v0, Lmiui/R$styleable;->AlphabetFastIndexer:[I
 
-    .line 2017
+    .line 2362
     new-array v0, v1, [I
 
     fill-array-data v0, :array_1
 
     sput-object v0, Lmiui/R$styleable;->GradientTextView:[I
 
-    .line 2084
+    .line 2429
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -154,14 +154,14 @@
 
     sput-object v0, Lmiui/R$styleable;->LockPatternView:[I
 
-    .line 2243
+    .line 2588
     new-array v0, v1, [I
 
     fill-array-data v0, :array_3
 
     sput-object v0, Lmiui/R$styleable;->MiuiInCallAnswerWidgetHorizontal:[I
 
-    .line 2290
+    .line 2635
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -170,14 +170,14 @@
 
     sput-object v0, Lmiui/R$styleable;->PhotoFrameView:[I
 
-    .line 2401
+    .line 2746
     new-array v0, v2, [I
 
     fill-array-data v0, :array_5
 
     sput-object v0, Lmiui/R$styleable;->SlidingButton:[I
 
-    .line 2499
+    .line 2844
     new-array v0, v2, [I
 
     fill-array-data v0, :array_6
@@ -186,7 +186,7 @@
 
     return-void
 
-    .line 1857
+    .line 2202
     nop
 
     :array_0
@@ -203,14 +203,14 @@
         0x1bt 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2017
+    .line 2362
     :array_1
     .array-data 0x4
         0x10t 0x0t 0x1t 0x6t
         0x11t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2084
+    .line 2429
     :array_2
     .array-data 0x4
         0x21t 0x0t 0x1t 0x6t
@@ -227,14 +227,14 @@
         0x2ct 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2243
+    .line 2588
     :array_3
     .array-data 0x4
         0x7t 0x0t 0x1t 0x6t
         0xft 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2290
+    .line 2635
     :array_4
     .array-data 0x4
         0x1ct 0x0t 0x1t 0x6t
@@ -244,7 +244,7 @@
         0x20t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2401
+    .line 2746
     :array_5
     .array-data 0x4
         0x8t 0x0t 0x1t 0x6t
@@ -256,7 +256,7 @@
         0xet 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2499
+    .line 2844
     :array_6
     .array-data 0x4
         0x0t 0x0t 0x1t 0x6t
@@ -273,7 +273,7 @@
     .locals 0
 
     .prologue
-    .line 1826
+    .line 2171
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

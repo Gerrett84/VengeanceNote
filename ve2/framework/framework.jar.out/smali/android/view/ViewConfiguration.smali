@@ -14,6 +14,8 @@
 
 .field private static final DOUBLE_TAP_TIMEOUT:I = 0x12c
 
+.field private static final DOUBLE_TAP_TOUCH_SLOP:I = 0x8
+
 .field private static final EDGE_SLOP:I = 0xc
 
 .field private static final FADING_EDGE_LENGTH:I = 0xc
@@ -45,7 +47,7 @@
 
 .field public static final PANEL_BIT_DEPTH:F = 24.0f
 
-.field private static final PRESSED_STATE_DURATION:I = 0x7d
+.field private static final PRESSED_STATE_DURATION:I = 0x40
 
 .field private static final SCROLL_BAR_DEFAULT_DELAY:I = 0x12c
 
@@ -55,11 +57,9 @@
 
 .field private static final SCROLL_FRICTION:F = 0.015f
 
-.field private static final SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS:J = 0x190L
+.field private static final SEND_RECURRING_ACCESSIBILITY_EVENTS_INTERVAL_MILLIS:J = 0x64L
 
 .field private static final TAP_TIMEOUT:I = 0xb4
-
-.field private static final TOUCH_EXPLORATION_TAP_SLOP:I = 0x50
 
 .field private static final TOUCH_SLOP:I = 0x8
 
@@ -82,6 +82,8 @@
 # instance fields
 .field private final mDoubleTapSlop:I
 
+.field private final mDoubleTapTouchSlop:I
+
 .field private final mEdgeSlop:I
 
 .field private final mFadingEdgeLength:I
@@ -100,8 +102,6 @@
 
 .field private final mPagingTouchSlop:I
 
-.field private final mScaledTouchExplorationTapSlop:I
-
 .field private final mScrollbarSize:I
 
 .field private final mTouchSlop:I
@@ -118,7 +118,7 @@
     .locals 2
 
     .prologue
-    .line 244
+    .line 243
     new-instance v0, Landroid/util/SparseArray;
 
     const/4 v1, 0x2
@@ -131,46 +131,49 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 2
+    .locals 3
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
-    const/16 v1, 0x10
+    const/16 v2, 0x10
 
     const/16 v0, 0xc
 
-    .line 251
+    const/16 v1, 0x8
+
+    .line 250
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 252
+    .line 251
     iput v0, p0, Landroid/view/ViewConfiguration;->mEdgeSlop:I
 
-    .line 253
+    .line 252
     iput v0, p0, Landroid/view/ViewConfiguration;->mFadingEdgeLength:I
 
-    .line 254
+    .line 253
     const/16 v0, 0x32
 
     iput v0, p0, Landroid/view/ViewConfiguration;->mMinimumFlingVelocity:I
 
-    .line 255
+    .line 254
     const/16 v0, 0x1f40
 
     iput v0, p0, Landroid/view/ViewConfiguration;->mMaximumFlingVelocity:I
 
-    .line 256
+    .line 255
     const/16 v0, 0xa
 
     iput v0, p0, Landroid/view/ViewConfiguration;->mScrollbarSize:I
 
-    .line 257
-    const/16 v0, 0x8
+    .line 256
+    iput v1, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
 
-    iput v0, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
+    .line 257
+    iput v1, p0, Landroid/view/ViewConfiguration;->mDoubleTapTouchSlop:I
 
     .line 258
-    iput v1, p0, Landroid/view/ViewConfiguration;->mPagingTouchSlop:I
+    iput v2, p0, Landroid/view/ViewConfiguration;->mPagingTouchSlop:I
 
     .line 259
     const/16 v0, 0x64
@@ -178,296 +181,301 @@
     iput v0, p0, Landroid/view/ViewConfiguration;->mDoubleTapSlop:I
 
     .line 260
-    const/16 v0, 0x50
+    iput v2, p0, Landroid/view/ViewConfiguration;->mWindowTouchSlop:I
 
-    iput v0, p0, Landroid/view/ViewConfiguration;->mScaledTouchExplorationTapSlop:I
-
-    .line 261
-    iput v1, p0, Landroid/view/ViewConfiguration;->mWindowTouchSlop:I
-
-    .line 263
+    .line 262
     const v0, 0x177000
 
     iput v0, p0, Landroid/view/ViewConfiguration;->mMaximumDrawingCacheSize:I
 
-    .line 264
+    .line 263
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewConfiguration;->mOverscrollDistance:I
 
-    .line 265
+    .line 264
     const/4 v0, 0x6
 
     iput v0, p0, Landroid/view/ViewConfiguration;->mOverflingDistance:I
 
-    .line 266
+    .line 265
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/ViewConfiguration;->mFadingMarqueeEnabled:Z
 
-    .line 267
+    .line 266
     return-void
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 12
+    .locals 13
     .parameter "context"
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/high16 v10, 0x4140
+    const/high16 v11, 0x4140
 
-    const/high16 v11, 0x3f00
+    const/high16 v12, 0x3f00
 
-    .line 279
+    .line 278
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 280
+    .line 279
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    .line 280
+    .local v5, res:Landroid/content/res/Resources;
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v4
 
     .line 281
-    .local v4, res:Landroid/content/res/Resources;
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    .line 282
-    .local v3, metrics:Landroid/util/DisplayMetrics;
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    .local v4, metrics:Landroid/util/DisplayMetrics;
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v0
 
-    .line 283
+    .line 282
     .local v0, config:Landroid/content/res/Configuration;
-    iget v1, v3, Landroid/util/DisplayMetrics;->density:F
+    iget v1, v4, Landroid/util/DisplayMetrics;->density:F
+
+    .line 284
+    .local v1, density:F
+    const/4 v10, 0x4
+
+    invoke-virtual {v0, v10}, Landroid/content/res/Configuration;->isLayoutSizeAtLeast(I)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_1
 
     .line 285
-    .local v1, density:F
-    const/4 v9, 0x4
+    const/high16 v10, 0x3fc0
 
-    invoke-virtual {v0, v9}, Landroid/content/res/Configuration;->isLayoutSizeAtLeast(I)Z
+    mul-float v6, v1, v10
 
-    move-result v9
+    .line 290
+    .local v6, sizeAndDensity:F
+    :goto_0
+    mul-float v10, v6, v11
 
-    if-eqz v9, :cond_1
+    add-float/2addr v10, v12
 
-    .line 286
-    const/high16 v9, 0x3fc0
+    float-to-int v10, v10
 
-    mul-float v5, v1, v9
+    iput v10, p0, Landroid/view/ViewConfiguration;->mEdgeSlop:I
 
     .line 291
-    .local v5, sizeAndDensity:F
-    :goto_0
-    mul-float v9, v5, v10
+    mul-float v10, v6, v11
 
-    add-float/2addr v9, v11
+    add-float/2addr v10, v12
 
-    float-to-int v9, v9
+    float-to-int v10, v10
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mEdgeSlop:I
+    iput v10, p0, Landroid/view/ViewConfiguration;->mFadingEdgeLength:I
 
     .line 292
-    mul-float v9, v5, v10
+    const/high16 v10, 0x4248
 
-    add-float/2addr v9, v11
+    mul-float/2addr v10, v1
 
-    float-to-int v9, v9
+    add-float/2addr v10, v12
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mFadingEdgeLength:I
+    float-to-int v10, v10
+
+    iput v10, p0, Landroid/view/ViewConfiguration;->mMinimumFlingVelocity:I
 
     .line 293
-    const/high16 v9, 0x4248
+    const/high16 v10, 0x45fa
 
-    mul-float/2addr v9, v1
+    mul-float/2addr v10, v1
 
-    add-float/2addr v9, v11
+    add-float/2addr v10, v12
 
-    float-to-int v9, v9
+    float-to-int v10, v10
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mMinimumFlingVelocity:I
+    iput v10, p0, Landroid/view/ViewConfiguration;->mMaximumFlingVelocity:I
 
     .line 294
-    const/high16 v9, 0x45fa
+    const/high16 v10, 0x4120
 
-    mul-float/2addr v9, v1
+    mul-float/2addr v10, v1
 
-    add-float/2addr v9, v11
+    add-float/2addr v10, v12
 
-    float-to-int v9, v9
+    float-to-int v10, v10
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mMaximumFlingVelocity:I
+    iput v10, p0, Landroid/view/ViewConfiguration;->mScrollbarSize:I
 
     .line 295
-    const/high16 v9, 0x4120
+    const/high16 v10, 0x42c8
 
-    mul-float/2addr v9, v1
+    mul-float/2addr v10, v6
 
-    add-float/2addr v9, v11
+    add-float/2addr v10, v12
 
-    float-to-int v9, v9
+    float-to-int v10, v10
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mScrollbarSize:I
+    iput v10, p0, Landroid/view/ViewConfiguration;->mDoubleTapSlop:I
 
     .line 296
-    const/high16 v9, 0x42c8
+    const/high16 v10, 0x4180
 
-    mul-float/2addr v9, v5
+    mul-float/2addr v10, v6
 
-    add-float/2addr v9, v11
+    add-float/2addr v10, v12
 
-    float-to-int v9, v9
+    float-to-int v10, v10
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mDoubleTapSlop:I
-
-    .line 297
-    const/high16 v9, 0x42a0
-
-    mul-float/2addr v9, v1
-
-    add-float/2addr v9, v11
-
-    float-to-int v9, v9
-
-    iput v9, p0, Landroid/view/ViewConfiguration;->mScaledTouchExplorationTapSlop:I
+    iput v10, p0, Landroid/view/ViewConfiguration;->mWindowTouchSlop:I
 
     .line 298
-    const/high16 v9, 0x4180
+    invoke-static {}, Landroid/view/WindowManagerImpl;->getDefault()Landroid/view/WindowManagerImpl;
 
-    mul-float/2addr v9, v5
+    move-result-object v10
 
-    add-float/2addr v9, v11
+    invoke-virtual {v10}, Landroid/view/WindowManagerImpl;->getDefaultDisplay()Landroid/view/Display;
 
-    float-to-int v9, v9
+    move-result-object v2
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mWindowTouchSlop:I
+    .line 300
+    .local v2, display:Landroid/view/Display;
+    invoke-virtual {v2}, Landroid/view/Display;->getRawWidth()I
 
-    .line 301
-    iget v9, v3, Landroid/util/DisplayMetrics;->widthPixels:I
+    move-result v10
 
-    mul-int/lit8 v9, v9, 0x4
+    mul-int/lit8 v10, v10, 0x4
 
-    iget v10, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+    invoke-virtual {v2}, Landroid/view/Display;->getRawHeight()I
 
-    mul-int/2addr v9, v10
+    move-result v11
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mMaximumDrawingCacheSize:I
+    mul-int/2addr v10, v11
+
+    iput v10, p0, Landroid/view/ViewConfiguration;->mMaximumDrawingCacheSize:I
+
+    .line 302
+    const/4 v10, 0x0
+
+    mul-float/2addr v10, v6
+
+    add-float/2addr v10, v12
+
+    float-to-int v10, v10
+
+    iput v10, p0, Landroid/view/ViewConfiguration;->mOverscrollDistance:I
 
     .line 303
-    const/4 v9, 0x0
+    const/high16 v10, 0x40c0
 
-    mul-float/2addr v9, v5
+    mul-float/2addr v10, v6
 
-    add-float/2addr v9, v11
+    add-float/2addr v10, v12
 
-    float-to-int v9, v9
+    float-to-int v10, v10
 
-    iput v9, p0, Landroid/view/ViewConfiguration;->mOverscrollDistance:I
+    iput v10, p0, Landroid/view/ViewConfiguration;->mOverflingDistance:I
 
-    .line 304
-    const/high16 v9, 0x40c0
+    .line 305
+    iget-boolean v10, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKeySet:Z
 
-    mul-float/2addr v9, v5
-
-    add-float/2addr v9, v11
-
-    float-to-int v9, v9
-
-    iput v9, p0, Landroid/view/ViewConfiguration;->mOverflingDistance:I
+    if-nez v10, :cond_0
 
     .line 306
-    iget-boolean v9, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKeySet:Z
-
-    if-nez v9, :cond_0
-
-    .line 307
     invoke-static {}, Landroid/view/Display;->getWindowManager()Landroid/view/IWindowManager;
 
-    move-result-object v6
+    move-result-object v7
 
-    .line 309
-    .local v6, wm:Landroid/view/IWindowManager;
+    .line 308
+    .local v7, wm:Landroid/view/IWindowManager;
     :try_start_0
-    invoke-interface {v6}, Landroid/view/IWindowManager;->canStatusBarHide()Z
+    invoke-interface {v7}, Landroid/view/IWindowManager;->hasSystemNavBar()Z
 
-    move-result v9
+    move-result v10
 
-    if-eqz v9, :cond_2
+    if-nez v10, :cond_2
 
-    invoke-interface {v6}, Landroid/view/IWindowManager;->hasNavigationBar()Z
+    invoke-interface {v7}, Landroid/view/IWindowManager;->hasNavigationBar()Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_2
+    if-nez v10, :cond_2
 
     :goto_1
-    iput-boolean v7, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKey:Z
+    iput-boolean v8, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKey:Z
 
-    .line 310
-    const/4 v7, 0x1
+    .line 309
+    const/4 v8, 0x1
 
-    iput-boolean v7, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKeySet:Z
+    iput-boolean v8, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKeySet:Z
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 316
-    .end local v6           #wm:Landroid/view/IWindowManager;
+    .line 315
+    .end local v7           #wm:Landroid/view/IWindowManager;
     :cond_0
     :goto_2
-    const v7, 0x1110009
+    const v8, 0x111000c
 
-    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getBoolean(I)Z
+    invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    move-result v7
+    move-result v8
 
-    iput-boolean v7, p0, Landroid/view/ViewConfiguration;->mFadingMarqueeEnabled:Z
+    iput-boolean v8, p0, Landroid/view/ViewConfiguration;->mFadingMarqueeEnabled:Z
 
-    .line 318
-    const v7, 0x1050008
+    .line 317
+    const v8, 0x1050008
 
-    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v7
+    move-result v8
 
-    iput v7, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
+    iput v8, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
 
-    .line 320
-    iget v7, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
+    .line 319
+    iget v8, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
 
-    mul-int/lit8 v7, v7, 0x2
+    mul-int/lit8 v8, v8, 0x2
 
-    iput v7, p0, Landroid/view/ViewConfiguration;->mPagingTouchSlop:I
+    iput v8, p0, Landroid/view/ViewConfiguration;->mPagingTouchSlop:I
 
     .line 321
+    iget v8, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
+
+    iput v8, p0, Landroid/view/ViewConfiguration;->mDoubleTapTouchSlop:I
+
+    .line 322
     return-void
 
-    .line 288
-    .end local v5           #sizeAndDensity:F
+    .line 287
+    .end local v2           #display:Landroid/view/Display;
+    .end local v6           #sizeAndDensity:F
     :cond_1
-    move v5, v1
+    move v6, v1
 
-    .restart local v5       #sizeAndDensity:F
-    goto :goto_0
+    .restart local v6       #sizeAndDensity:F
+    goto/16 :goto_0
 
-    .restart local v6       #wm:Landroid/view/IWindowManager;
+    .restart local v2       #display:Landroid/view/Display;
+    .restart local v7       #wm:Landroid/view/IWindowManager;
     :cond_2
-    move v7, v8
+    move v8, v9
 
-    .line 309
+    .line 308
     goto :goto_1
 
-    .line 311
+    .line 310
     :catch_0
-    move-exception v2
+    move-exception v3
 
-    .line 312
-    .local v2, ex:Landroid/os/RemoteException;
-    iput-boolean v8, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKey:Z
+    .line 311
+    .local v3, ex:Landroid/os/RemoteException;
+    iput-boolean v9, p0, Landroid/view/ViewConfiguration;->sHasPermanentMenuKey:Z
 
     goto :goto_2
 .end method
@@ -477,7 +485,7 @@
     .parameter "context"
 
     .prologue
-    .line 331
+    .line 332
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -486,7 +494,7 @@
 
     move-result-object v2
 
-    .line 332
+    .line 333
     .local v2, metrics:Landroid/util/DisplayMetrics;
     const/high16 v3, 0x42c8
 
@@ -496,7 +504,7 @@
 
     float-to-int v1, v3
 
-    .line 334
+    .line 335
     .local v1, density:I
     sget-object v3, Landroid/view/ViewConfiguration;->sConfigurations:Landroid/util/SparseArray;
 
@@ -506,23 +514,23 @@
 
     check-cast v0, Landroid/view/ViewConfiguration;
 
-    .line 335
+    .line 336
     .local v0, configuration:Landroid/view/ViewConfiguration;
     if-nez v0, :cond_0
 
-    .line 336
+    .line 337
     new-instance v0, Landroid/view/ViewConfiguration;
 
     .end local v0           #configuration:Landroid/view/ViewConfiguration;
     invoke-direct {v0, p0}, Landroid/view/ViewConfiguration;-><init>(Landroid/content/Context;)V
 
-    .line 337
+    .line 338
     .restart local v0       #configuration:Landroid/view/ViewConfiguration;
     sget-object v3, Landroid/view/ViewConfiguration;->sConfigurations:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 340
+    .line 341
     :cond_0
     return-object v0
 .end method
@@ -533,7 +541,7 @@
     .end annotation
 
     .prologue
-    .line 524
+    .line 534
     const/16 v0, 0x64
 
     return v0
@@ -543,7 +551,7 @@
     .locals 1
 
     .prologue
-    .line 448
+    .line 449
     const/16 v0, 0x12c
 
     return v0
@@ -555,7 +563,7 @@
     .end annotation
 
     .prologue
-    .line 479
+    .line 480
     const/16 v0, 0xc
 
     return v0
@@ -567,7 +575,7 @@
     .end annotation
 
     .prologue
-    .line 383
+    .line 384
     const/16 v0, 0xc
 
     return v0
@@ -587,7 +595,7 @@
     .locals 1
 
     .prologue
-    .line 468
+    .line 469
     const/16 v0, 0x14
 
     return v0
@@ -597,7 +605,7 @@
     .locals 1
 
     .prologue
-    .line 458
+    .line 459
     const/16 v0, 0x96
 
     return v0
@@ -607,7 +615,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     const/16 v0, 0x1f4
 
     return v0
@@ -617,7 +625,7 @@
     .locals 1
 
     .prologue
-    .line 421
+    .line 422
     const/16 v0, 0x32
 
     return v0
@@ -627,7 +635,7 @@
     .locals 1
 
     .prologue
-    .line 414
+    .line 415
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v0
@@ -639,7 +647,7 @@
     .locals 2
 
     .prologue
-    .line 406
+    .line 407
     const-string/jumbo v0, "long_press_timeout"
 
     const/16 v1, 0x1f4
@@ -657,7 +665,7 @@
     .end annotation
 
     .prologue
-    .line 624
+    .line 622
     const v0, 0x177000
 
     return v0
@@ -669,7 +677,7 @@
     .end annotation
 
     .prologue
-    .line 604
+    .line 602
     const/16 v0, 0x1f40
 
     return v0
@@ -681,7 +689,7 @@
     .end annotation
 
     .prologue
-    .line 587
+    .line 585
     const/16 v0, 0x32
 
     return v0
@@ -691,8 +699,8 @@
     .locals 1
 
     .prologue
-    .line 398
-    const/16 v0, 0x7d
+    .line 399
+    const/16 v0, 0x40
 
     return v0
 .end method
@@ -701,7 +709,7 @@
     .locals 1
 
     .prologue
-    .line 366
+    .line 367
     const/16 v0, 0xfa
 
     return v0
@@ -713,7 +721,7 @@
     .end annotation
 
     .prologue
-    .line 351
+    .line 352
     const/16 v0, 0xa
 
     return v0
@@ -723,7 +731,7 @@
     .locals 1
 
     .prologue
-    .line 373
+    .line 374
     const/16 v0, 0x12c
 
     return v0
@@ -743,8 +751,8 @@
     .locals 2
 
     .prologue
-    .line 556
-    const-wide/16 v0, 0x190
+    .line 555
+    const-wide/16 v0, 0x64
 
     return-wide v0
 .end method
@@ -753,7 +761,7 @@
     .locals 1
 
     .prologue
-    .line 430
+    .line 431
     const/16 v0, 0xb4
 
     return v0
@@ -765,7 +773,7 @@
     .end annotation
 
     .prologue
-    .line 497
+    .line 498
     const/16 v0, 0x8
 
     return v0
@@ -777,7 +785,7 @@
     .end annotation
 
     .prologue
-    .line 568
+    .line 567
     const/16 v0, 0x10
 
     return v0
@@ -799,8 +807,18 @@
     .locals 1
 
     .prologue
-    .line 532
+    .line 542
     iget v0, p0, Landroid/view/ViewConfiguration;->mDoubleTapSlop:I
+
+    return v0
+.end method
+
+.method public getScaledDoubleTapTouchSlop()I
+    .locals 1
+
+    .prologue
+    .line 514
+    iget v0, p0, Landroid/view/ViewConfiguration;->mDoubleTapTouchSlop:I
 
     return v0
 .end method
@@ -809,7 +827,7 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 488
     iget v0, p0, Landroid/view/ViewConfiguration;->mEdgeSlop:I
 
     return v0
@@ -819,7 +837,7 @@
     .locals 1
 
     .prologue
-    .line 390
+    .line 391
     iget v0, p0, Landroid/view/ViewConfiguration;->mFadingEdgeLength:I
 
     return v0
@@ -829,7 +847,7 @@
     .locals 1
 
     .prologue
-    .line 633
+    .line 631
     iget v0, p0, Landroid/view/ViewConfiguration;->mMaximumDrawingCacheSize:I
 
     return v0
@@ -839,7 +857,7 @@
     .locals 1
 
     .prologue
-    .line 611
+    .line 609
     iget v0, p0, Landroid/view/ViewConfiguration;->mMaximumFlingVelocity:I
 
     return v0
@@ -849,7 +867,7 @@
     .locals 1
 
     .prologue
-    .line 594
+    .line 592
     iget v0, p0, Landroid/view/ViewConfiguration;->mMinimumFlingVelocity:I
 
     return v0
@@ -869,7 +887,7 @@
     .locals 1
 
     .prologue
-    .line 640
+    .line 639
     iget v0, p0, Landroid/view/ViewConfiguration;->mOverscrollDistance:I
 
     return v0
@@ -879,7 +897,7 @@
     .locals 1
 
     .prologue
-    .line 512
+    .line 522
     iget v0, p0, Landroid/view/ViewConfiguration;->mPagingTouchSlop:I
 
     return v0
@@ -889,18 +907,8 @@
     .locals 1
 
     .prologue
-    .line 359
+    .line 360
     iget v0, p0, Landroid/view/ViewConfiguration;->mScrollbarSize:I
-
-    return v0
-.end method
-
-.method public getScaledTouchExplorationTapSlop()I
-    .locals 1
-
-    .prologue
-    .line 543
-    iget v0, p0, Landroid/view/ViewConfiguration;->mScaledTouchExplorationTapSlop:I
 
     return v0
 .end method
@@ -909,7 +917,7 @@
     .locals 1
 
     .prologue
-    .line 504
+    .line 505
     iget v0, p0, Landroid/view/ViewConfiguration;->mTouchSlop:I
 
     return v0
@@ -919,7 +927,7 @@
     .locals 1
 
     .prologue
-    .line 577
+    .line 575
     iget v0, p0, Landroid/view/ViewConfiguration;->mWindowTouchSlop:I
 
     return v0

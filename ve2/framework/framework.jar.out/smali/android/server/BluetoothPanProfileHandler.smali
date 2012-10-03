@@ -110,7 +110,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0008
+    const v2, 0x10e000a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -440,39 +440,39 @@
 .end method
 
 .method private enableTethering(Ljava/lang/String;)Ljava/lang/String;
-    .locals 19
+    .locals 20
     .parameter "iface"
 
     .prologue
     .line 346
-    new-instance v16, Ljava/lang/StringBuilder;
+    new-instance v17, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v17, "updateTetherState:"
+    const-string/jumbo v18, "updateTetherState:"
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v16
+    move-result-object v17
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v16
+    move-result-object v17
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v17
 
-    invoke-static/range {v16 .. v16}, Landroid/server/BluetoothPanProfileHandler;->debugLog(Ljava/lang/String;)V
+    invoke-static/range {v17 .. v17}, Landroid/server/BluetoothPanProfileHandler;->debugLog(Ljava/lang/String;)V
 
     .line 348
-    const-string/jumbo v16, "network_management"
+    const-string/jumbo v17, "network_management"
 
-    invoke-static/range {v16 .. v16}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static/range {v17 .. v17}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v5
 
@@ -480,19 +480,19 @@
     .local v5, b:Landroid/os/IBinder;
     invoke-static {v5}, Landroid/os/INetworkManagementService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/INetworkManagementService;
 
-    move-result-object v15
+    move-result-object v16
 
     .line 350
-    .local v15, service:Landroid/os/INetworkManagementService;
+    .local v16, service:Landroid/os/INetworkManagementService;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/server/BluetoothPanProfileHandler;->mContext:Landroid/content/Context;
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v0
 
-    const-string v17, "connectivity"
+    const-string v18, "connectivity"
 
-    invoke-virtual/range {v16 .. v17}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual/range {v17 .. v18}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v7
 
@@ -506,16 +506,16 @@
 
     .line 355
     .local v6, bluetoothRegexs:[Ljava/lang/String;
-    const/16 v16, 0x0
+    const/16 v17, 0x0
 
-    move/from16 v0, v16
+    move/from16 v0, v17
 
     new-array v9, v0, [Ljava/lang/String;
 
     .line 357
     .local v9, currentIfaces:[Ljava/lang/String;
     :try_start_0
-    invoke-interface {v15}, Landroid/os/INetworkManagementService;->listInterfaces()[Ljava/lang/String;
+    invoke-interface/range {v16 .. v16}, Landroid/os/INetworkManagementService;->listInterfaces()[Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -546,9 +546,9 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v16
+    move-result v17
 
-    if-eqz v16, :cond_2
+    if-eqz v17, :cond_2
 
     .line 366
     const/4 v11, 0x1
@@ -575,29 +575,29 @@
 
     .line 359
     .local v10, e:Ljava/lang/Exception;
-    const-string v16, "BluetoothPanProfileHandler"
+    const-string v17, "BluetoothPanProfileHandler"
 
-    new-instance v17, Ljava/lang/StringBuilder;
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v18, "Error listing Interfaces :"
+    const-string v19, "Error listing Interfaces :"
 
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 360
     const/4 v3, 0x0
@@ -638,9 +638,11 @@
     .line 378
     .local v13, ifcg:Landroid/net/InterfaceConfiguration;
     :try_start_1
-    move-object/from16 v0, p1
+    move-object/from16 v0, v16
 
-    invoke-interface {v15, v0}, Landroid/os/INetworkManagementService;->getInterfaceConfig(Ljava/lang/String;)Landroid/net/InterfaceConfiguration;
+    move-object/from16 v1, p1
+
+    invoke-interface {v0, v1}, Landroid/os/INetworkManagementService;->getInterfaceConfig(Ljava/lang/String;)Landroid/net/InterfaceConfiguration;
 
     move-result-object v13
 
@@ -648,167 +650,126 @@
     if-eqz v13, :cond_1
 
     .line 380
-    const/4 v2, 0x0
+    invoke-virtual {v13}, Landroid/net/InterfaceConfiguration;->getLinkAddress()Landroid/net/LinkAddress;
+
+    move-result-object v15
 
     .line 381
+    .local v15, linkAddr:Landroid/net/LinkAddress;
+    const/4 v2, 0x0
+
+    .line 382
     .local v2, addr:Ljava/net/InetAddress;
-    iget-object v0, v13, Landroid/net/InterfaceConfiguration;->addr:Landroid/net/LinkAddress;
+    if-eqz v15, :cond_5
 
-    move-object/from16 v16, v0
-
-    if-eqz v16, :cond_5
-
-    iget-object v0, v13, Landroid/net/InterfaceConfiguration;->addr:Landroid/net/LinkAddress;
-
-    move-object/from16 v16, v0
-
-    invoke-virtual/range {v16 .. v16}, Landroid/net/LinkAddress;->getAddress()Ljava/net/InetAddress;
+    invoke-virtual {v15}, Landroid/net/LinkAddress;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v2
 
     if-eqz v2, :cond_5
 
-    const-string v16, "0.0.0.0"
+    const-string v17, "0.0.0.0"
 
-    invoke-static/range {v16 .. v16}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
+    invoke-static/range {v17 .. v17}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
-    move-result-object v16
+    move-result-object v17
 
-    move-object/from16 v0, v16
-
-    invoke-virtual {v2, v0}, Ljava/net/InetAddress;->equals(Ljava/lang/Object;)Z
-
-    move-result v16
-
-    if-nez v16, :cond_5
-
-    const-string v16, "::0"
-
-    invoke-static/range {v16 .. v16}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
     invoke-virtual {v2, v0}, Ljava/net/InetAddress;->equals(Ljava/lang/Object;)Z
 
-    move-result v16
+    move-result v17
 
-    if-eqz v16, :cond_6
+    if-nez v17, :cond_5
 
-    .line 384
+    const-string v17, "::0"
+
+    invoke-static/range {v17 .. v17}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
+
+    move-result-object v17
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v2, v0}, Ljava/net/InetAddress;->equals(Ljava/lang/Object;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_6
+
+    .line 385
     :cond_5
     invoke-static {v3}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v2
 
-    .line 386
-    :cond_6
-    iget-object v0, v13, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    const-string v17, "down"
-
-    const-string/jumbo v18, "up"
-
-    invoke-virtual/range {v16 .. v18}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    iput-object v0, v13, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
-
     .line 387
-    new-instance v16, Landroid/net/LinkAddress;
+    :cond_6
+    invoke-virtual {v13}, Landroid/net/InterfaceConfiguration;->setInterfaceUp()V
 
-    const/16 v17, 0x18
+    .line 388
+    const-string/jumbo v17, "running"
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
-    move/from16 v1, v17
+    invoke-virtual {v13, v0}, Landroid/net/InterfaceConfiguration;->clearFlag(Ljava/lang/String;)V
+
+    .line 389
+    new-instance v17, Landroid/net/LinkAddress;
+
+    const/16 v18, 0x18
+
+    move-object/from16 v0, v17
+
+    move/from16 v1, v18
 
     invoke-direct {v0, v2, v1}, Landroid/net/LinkAddress;-><init>(Ljava/net/InetAddress;I)V
 
-    move-object/from16 v0, v16
+    move-object/from16 v0, v17
 
-    iput-object v0, v13, Landroid/net/InterfaceConfiguration;->addr:Landroid/net/LinkAddress;
-
-    .line 388
-    iget-object v0, v13, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    const-string/jumbo v17, "running"
-
-    const-string v18, ""
-
-    invoke-virtual/range {v16 .. v18}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    iput-object v0, v13, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
-
-    .line 389
-    iget-object v0, v13, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
-
-    move-object/from16 v16, v0
-
-    const-string v17, "  "
-
-    const-string v18, " "
-
-    invoke-virtual/range {v16 .. v18}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v16
-
-    move-object/from16 v0, v16
-
-    iput-object v0, v13, Landroid/net/InterfaceConfiguration;->interfaceFlags:Ljava/lang/String;
+    invoke-virtual {v13, v0}, Landroid/net/InterfaceConfiguration;->setLinkAddress(Landroid/net/LinkAddress;)V
 
     .line 390
-    move-object/from16 v0, p1
+    move-object/from16 v0, v16
 
-    invoke-interface {v15, v0, v13}, Landroid/os/INetworkManagementService;->setInterfaceConfig(Ljava/lang/String;Landroid/net/InterfaceConfiguration;)V
+    move-object/from16 v1, p1
+
+    invoke-interface {v0, v1, v13}, Landroid/os/INetworkManagementService;->setInterfaceConfig(Ljava/lang/String;Landroid/net/InterfaceConfiguration;)V
 
     .line 391
     move-object/from16 v0, p1
 
     invoke-virtual {v7, v0}, Landroid/net/ConnectivityManager;->tether(Ljava/lang/String;)I
 
-    move-result v16
+    move-result v17
 
-    if-eqz v16, :cond_1
+    if-eqz v17, :cond_1
 
     .line 392
-    const-string v16, "BluetoothPanProfileHandler"
+    const-string v17, "BluetoothPanProfileHandler"
 
-    new-instance v17, Ljava/lang/StringBuilder;
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v18, "Error tethering "
+    const-string v19, "Error tethering "
 
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -816,48 +777,49 @@
 
     .line 395
     .end local v2           #addr:Ljava/net/InetAddress;
+    .end local v15           #linkAddr:Landroid/net/LinkAddress;
     :catch_1
     move-exception v10
 
     .line 396
     .restart local v10       #e:Ljava/lang/Exception;
-    const-string v16, "BluetoothPanProfileHandler"
+    const-string v17, "BluetoothPanProfileHandler"
 
-    new-instance v17, Ljava/lang/StringBuilder;
+    new-instance v18, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v18, "Error configuring interface "
+    const-string v19, "Error configuring interface "
 
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    const-string v18, ", :"
+    const-string v19, ", :"
 
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    move-object/from16 v0, v17
+    move-object/from16 v0, v18
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-virtual/range {v17 .. v17}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v18
 
-    invoke-static/range {v16 .. v17}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static/range {v17 .. v18}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 397
     const/4 v3, 0x0

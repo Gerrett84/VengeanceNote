@@ -236,19 +236,17 @@
     return-object v0
 .end method
 
-.method public getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
-    .locals 4
+.method public getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .locals 3
     .parameter "cookieType"
     .parameter "fileName"
 
     .prologue
-    const/4 v3, 0x0
-
     .line 77
     const/4 v0, 0x0
 
     .line 78
-    .local v0, ret:Ljava/io/InputStream;
+    .local v0, info:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     const/4 v1, 0x1
 
     if-ne v1, p1, :cond_1
@@ -272,7 +270,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v3}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, v1}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -284,7 +282,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -318,7 +316,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v3}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, v1}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -330,7 +328,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
@@ -338,7 +336,7 @@
 
     .line 91
     :cond_2
-    invoke-virtual {p0, p2, v3}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, p2}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 

@@ -47,6 +47,14 @@
     .end annotation
 .end method
 
+.method public abstract dispatchScreenState(Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract dispatchSystemUiVisibilityChanged(IIII)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -64,6 +72,14 @@
 .end method
 
 .method public abstract dispatchWallpaperOffsets(FFFFZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract doneAnimating()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

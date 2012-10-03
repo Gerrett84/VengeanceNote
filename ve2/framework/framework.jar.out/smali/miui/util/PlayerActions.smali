@@ -13,4 +13,4 @@
 
 
 # static fields
-.field public static final BROADCAST_PREVFIX:Ljava/lang/String; = "com.miui.player"
+.field public static final BROADCAST_PREFIX:Ljava/lang/String; = "com.miui.player"

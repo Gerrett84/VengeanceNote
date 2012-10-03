@@ -6,6 +6,8 @@
 # instance fields
 .field ipChanged:Z
 
+.field isNewNetwork:Z
+
 .field netId:I
 
 .field proxyChanged:Z
@@ -19,19 +21,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 26
+    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
-    iput p1, p0, Landroid/net/wifi/NetworkUpdateResult;->netId:I
+    .line 25
+    iput-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->isNewNetwork:Z
 
     .line 28
-    iput-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->ipChanged:Z
+    iput p1, p0, Landroid/net/wifi/NetworkUpdateResult;->netId:I
 
     .line 29
-    iput-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->proxyChanged:Z
+    iput-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->ipChanged:Z
 
     .line 30
+    iput-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->proxyChanged:Z
+
+    .line 31
     return-void
 .end method
 
@@ -41,21 +46,26 @@
     .parameter "proxy"
 
     .prologue
-    .line 32
+    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 25
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->isNewNetwork:Z
+
+    .line 34
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/net/wifi/NetworkUpdateResult;->netId:I
 
-    .line 34
+    .line 35
     iput-boolean p1, p0, Landroid/net/wifi/NetworkUpdateResult;->ipChanged:Z
 
-    .line 35
+    .line 36
     iput-boolean p2, p0, Landroid/net/wifi/NetworkUpdateResult;->proxyChanged:Z
 
-    .line 36
+    .line 37
     return-void
 .end method
 
@@ -65,7 +75,7 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 44
     iget v0, p0, Landroid/net/wifi/NetworkUpdateResult;->netId:I
 
     return v0
@@ -75,7 +85,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 52
     iget-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->ipChanged:Z
 
     return v0
@@ -85,8 +95,18 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 60
     iget-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->proxyChanged:Z
+
+    return v0
+.end method
+
+.method public isNewNetwork()Z
+    .locals 1
+
+    .prologue
+    .line 64
+    iget-boolean v0, p0, Landroid/net/wifi/NetworkUpdateResult;->isNewNetwork:Z
 
     return v0
 .end method
@@ -96,10 +116,22 @@
     .parameter "ip"
 
     .prologue
-    .line 47
+    .line 48
     iput-boolean p1, p0, Landroid/net/wifi/NetworkUpdateResult;->ipChanged:Z
 
-    .line 48
+    .line 49
+    return-void
+.end method
+
+.method public setIsNewNetwork(Z)V
+    .locals 0
+    .parameter "isNew"
+
+    .prologue
+    .line 68
+    iput-boolean p1, p0, Landroid/net/wifi/NetworkUpdateResult;->isNewNetwork:Z
+
+    .line 69
     return-void
 .end method
 
@@ -108,10 +140,10 @@
     .parameter "id"
 
     .prologue
-    .line 39
+    .line 40
     iput p1, p0, Landroid/net/wifi/NetworkUpdateResult;->netId:I
 
-    .line 40
+    .line 41
     return-void
 .end method
 
@@ -120,9 +152,9 @@
     .parameter "proxy"
 
     .prologue
-    .line 55
+    .line 56
     iput-boolean p1, p0, Landroid/net/wifi/NetworkUpdateResult;->proxyChanged:Z
 
-    .line 56
+    .line 57
     return-void
 .end method

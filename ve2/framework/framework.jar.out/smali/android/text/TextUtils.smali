@@ -104,31 +104,31 @@
 
     sput-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1667
+    .line 1697
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/text/TextUtils;->sLock:Ljava/lang/Object;
 
-    .line 1668
+    .line 1698
     const/4 v0, 0x0
 
     sput-object v0, Landroid/text/TextUtils;->sTemp:[C
 
-    .line 1670
+    .line 1700
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/String;
 
     sput-object v0, Landroid/text/TextUtils;->EMPTY_STRING_ARRAY:[Ljava/lang/String;
 
-    .line 1674
+    .line 1704
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x10400c0
+    const v1, 0x10400c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -136,12 +136,12 @@
 
     sput-object v0, Landroid/text/TextUtils;->ELLIPSIS_NORMAL:Ljava/lang/String;
 
-    .line 1676
+    .line 1706
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x10400c1
+    const v1, 0x10400c5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1438,11 +1438,9 @@
     .line 1094
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
-
     move/from16 v0, p2
 
-    invoke-virtual {v3, v5, v15, v6, v0}, Landroid/text/MeasuredText;->breakText(IIZF)I
+    invoke-virtual {v3, v15, v5, v0}, Landroid/text/MeasuredText;->breakText(IZF)I
 
     move-result v5
 
@@ -1472,13 +1470,11 @@
 
     .line 1096
     :cond_5
-    const/4 v5, 0x0
-
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
     move/from16 v0, p2
 
-    invoke-virtual {v3, v5, v15, v6, v0}, Landroid/text/MeasuredText;->breakText(IIZF)I
+    invoke-virtual {v3, v15, v5, v0}, Landroid/text/MeasuredText;->breakText(IZF)I
 
     move-result v13
 
@@ -1494,13 +1490,11 @@
     :cond_6
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    const/high16 v6, 0x4000
 
-    const/high16 v7, 0x4000
+    div-float v6, p2, v6
 
-    div-float v7, p2, v7
-
-    invoke-virtual {v3, v5, v15, v6, v7}, Landroid/text/MeasuredText;->breakText(IIZF)I
+    invoke-virtual {v3, v15, v5, v6}, Landroid/text/MeasuredText;->breakText(IZF)I
 
     move-result v5
 
@@ -1516,15 +1510,13 @@
     sub-float p2, p2, v5
 
     .line 1100
-    const/4 v5, 0x0
-
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
     move/from16 v0, v17
 
     move/from16 v1, p2
 
-    invoke-virtual {v3, v5, v0, v6, v1}, Landroid/text/MeasuredText;->breakText(IIZF)I
+    invoke-virtual {v3, v0, v5, v1}, Landroid/text/MeasuredText;->breakText(IZF)I
 
     move-result v13
 
@@ -3538,7 +3530,7 @@
 
     move-result-object v1
 
-    const v2, 0x10404c7
+    const v2, 0x10404f7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -3968,6 +3960,26 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
+.end method
+
+.method public static packRangeInLong(II)J
+    .locals 4
+    .parameter "start"
+    .parameter "end"
+
+    .prologue
+    .line 1674
+    int-to-long v0, p0
+
+    const/16 v2, 0x20
+
+    shl-long/2addr v0, v2
+
+    int-to-long v2, p1
+
+    or-long/2addr v0, v2
+
+    return-wide v0
 .end method
 
 .method private static readSpan(Landroid/os/Parcel;Landroid/text/Spannable;Ljava/lang/Object;)V
@@ -4642,6 +4654,36 @@
     invoke-static {v1}, Landroid/text/TextUtils;->recycle([C)V
 
     goto :goto_0
+.end method
+
+.method public static unpackRangeEndFromLong(J)I
+    .locals 2
+    .parameter "range"
+
+    .prologue
+    .line 1694
+    const-wide v0, 0xffffffffL
+
+    and-long/2addr v0, p0
+
+    long-to-int v0, v0
+
+    return v0
+.end method
+
+.method public static unpackRangeStartFromLong(J)I
+    .locals 2
+    .parameter "range"
+
+    .prologue
+    .line 1684
+    const/16 v0, 0x20
+
+    ushr-long v0, p0, v0
+
+    long-to-int v0, v0
+
+    return v0
 .end method
 
 .method public static writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V

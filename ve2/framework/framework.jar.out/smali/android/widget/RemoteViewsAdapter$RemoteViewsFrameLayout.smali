@@ -25,13 +25,13 @@
     .parameter "context"
 
     .prologue
-    .line 248
+    .line 250
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->this$0:Landroid/widget/RemoteViewsAdapter;
 
-    .line 249
+    .line 251
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 250
+    .line 252
     return-void
 .end method
 
@@ -42,11 +42,11 @@
     .parameter "view"
 
     .prologue
-    .line 260
+    .line 262
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->removeAllViews()V
 
-    .line 261
+    .line 263
     invoke-virtual {p0}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -59,15 +59,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 265
+    .line 267
     :goto_0
     return-void
 
-    .line 262
+    .line 264
     :catch_0
     move-exception v0
 
-    .line 263
+    .line 265
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "RemoteViewsAdapter"
 

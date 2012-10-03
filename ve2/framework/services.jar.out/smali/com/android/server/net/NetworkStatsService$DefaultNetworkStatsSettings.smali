@@ -27,10 +27,10 @@
     .parameter "context"
 
     .prologue
-    .line 1692
+    .line 1214
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1693
+    .line 1215
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
-    .line 1695
+    .line 1217
     return-void
 .end method
 
@@ -57,12 +57,12 @@
 
     const/4 v2, 0x0
 
-    .line 1701
+    .line 1223
     if-eqz p2, :cond_0
 
     move v0, v1
 
-    .line 1702
+    .line 1224
     .local v0, defInt:I
     :goto_0
     iget-object v3, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
@@ -80,14 +80,14 @@
     :cond_0
     move v0, v2
 
-    .line 1701
+    .line 1223
     goto :goto_0
 
     .restart local v0       #defInt:I
     :cond_1
     move v1, v2
 
-    .line 1702
+    .line 1224
     goto :goto_1
 .end method
 
@@ -97,7 +97,7 @@
     .parameter "def"
 
     .prologue
-    .line 1698
+    .line 1220
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->mResolver:Landroid/content/ContentResolver;
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Secure;->getLong(Landroid/content/ContentResolver;Ljava/lang/String;J)J
@@ -109,48 +109,66 @@
 
 
 # virtual methods
-.method public getNetworkBucketDuration()J
-    .locals 3
+.method public getDevConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+    .locals 8
 
     .prologue
-    .line 1712
-    const-string v0, "netstats_network_bucket_duration"
+    .line 1249
+    new-instance v0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
-    const-wide/32 v1, 0x36ee80
+    const-string v1, "netstats_dev_bucket_duration"
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+    const-wide/32 v2, 0x36ee80
+
+    invoke-direct {p0, v1, v2, v3}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    const-string v3, "netstats_dev_rotate_age"
+
+    const-wide/32 v4, 0x4d3f6400
+
+    invoke-direct {p0, v3, v4, v5}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v3
+
+    const-string v5, "netstats_dev_delete_age"
+
+    const-wide v6, 0x1cf7c5800L
+
+    invoke-direct {p0, v5, v6, v7}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v5
+
+    invoke-direct/range {v0 .. v6}, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;-><init>(JJJ)V
+
+    return-object v0
+.end method
+
+.method public getDevPersistBytes(J)J
+    .locals 2
+    .parameter "def"
+
+    .prologue
+    .line 1271
+    const-string v0, "netstats_dev_persist_bytes"
+
+    invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public getNetworkMaxHistory()J
-    .locals 3
+.method public getGlobalAlertBytes(J)J
+    .locals 2
+    .parameter "def"
 
     .prologue
-    .line 1715
-    const-string v0, "netstats_network_max_history"
+    .line 1237
+    const-string v0, "netstats_global_alert_bytes"
 
-    const-wide v1, 0x1cf7c5800L
-
-    invoke-direct {p0, v0, v1, v2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getPersistThreshold()J
-    .locals 3
-
-    .prologue
-    .line 1709
-    const-string v0, "netstats_persist_threshold"
-
-    const-wide/32 v1, 0x200000
-
-    invoke-direct {p0, v0, v1, v2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+    invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
@@ -161,7 +179,7 @@
     .locals 3
 
     .prologue
-    .line 1706
+    .line 1229
     const-string v0, "netstats_poll_interval"
 
     const-wide/32 v1, 0x1b7740
@@ -173,40 +191,46 @@
     return-wide v0
 .end method
 
-.method public getTagMaxHistory()J
-    .locals 3
-
-    .prologue
-    .line 1724
-    const-string v0, "netstats_tag_max_history"
-
-    const-wide v1, 0x9a7ec800L
-
-    invoke-direct {p0, v0, v1, v2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public getTimeCacheMaxAge()J
+.method public getReportXtOverDev()Z
     .locals 2
 
     .prologue
-    .line 1727
-    const-wide/32 v0, 0x5265c00
+    .line 1245
+    const-string v0, "netstats_report_xt_over_dev"
 
-    return-wide v0
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, v1}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public getUidBucketDuration()J
+.method public getSampleEnabled()Z
+    .locals 2
+
+    .prologue
+    .line 1241
+    const-string v0, "netstats_sample_enabled"
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, v1}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getTimeCacheMaxAge()J
     .locals 3
 
     .prologue
-    .line 1718
-    const-string v0, "netstats_uid_bucket_duration"
+    .line 1233
+    const-string v0, "netstats_time_cache_max_age"
 
-    const-wide/32 v1, 0x6ddd00
+    const-wide/32 v1, 0x5265c00
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
 
@@ -215,16 +239,127 @@
     return-wide v0
 .end method
 
-.method public getUidMaxHistory()J
-    .locals 3
+.method public getUidConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+    .locals 8
 
     .prologue
-    .line 1721
-    const-string v0, "netstats_uid_max_history"
+    .line 1259
+    new-instance v0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
 
-    const-wide v1, 0x1cf7c5800L
+    const-string v1, "netstats_uid_bucket_duration"
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+    const-wide/32 v2, 0x6ddd00
+
+    invoke-direct {p0, v1, v2, v3}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    const-string v3, "netstats_uid_rotate_age"
+
+    const-wide/32 v4, 0x4d3f6400
+
+    invoke-direct {p0, v3, v4, v5}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v3
+
+    const-string v5, "netstats_uid_delete_age"
+
+    const-wide v6, 0x1cf7c5800L
+
+    invoke-direct {p0, v5, v6, v7}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v5
+
+    invoke-direct/range {v0 .. v6}, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;-><init>(JJJ)V
+
+    return-object v0
+.end method
+
+.method public getUidPersistBytes(J)J
+    .locals 2
+    .parameter "def"
+
+    .prologue
+    .line 1279
+    const-string v0, "netstats_uid_persist_bytes"
+
+    invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getUidTagConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+    .locals 8
+
+    .prologue
+    .line 1265
+    new-instance v0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+
+    const-string v1, "netstats_uid_tag_bucket_duration"
+
+    const-wide/32 v2, 0x6ddd00
+
+    invoke-direct {p0, v1, v2, v3}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    const-string v3, "netstats_uid_tag_rotate_age"
+
+    const-wide/32 v4, 0x19bfcc00
+
+    invoke-direct {p0, v3, v4, v5}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v3
+
+    const-string v5, "netstats_uid_tag_delete_age"
+
+    const-wide/32 v6, 0x4d3f6400
+
+    invoke-direct {p0, v5, v6, v7}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v5
+
+    invoke-direct/range {v0 .. v6}, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;-><init>(JJJ)V
+
+    return-object v0
+.end method
+
+.method public getUidTagPersistBytes(J)J
+    .locals 2
+    .parameter "def"
+
+    .prologue
+    .line 1283
+    const-string v0, "netstats_uid_tag_persist_bytes"
+
+    invoke-direct {p0, v0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getSecureLong(Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public getXtConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+    .locals 1
+
+    .prologue
+    .line 1255
+    invoke-virtual {p0}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getDevConfig()Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getXtPersistBytes(J)J
+    .locals 2
+    .parameter "def"
+
+    .prologue
+    .line 1275
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/net/NetworkStatsService$DefaultNetworkStatsSettings;->getDevPersistBytes(J)J
 
     move-result-wide v0
 

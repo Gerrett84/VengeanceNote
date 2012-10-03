@@ -120,12 +120,12 @@
     .parameter "context"
 
     .prologue
-    .line 165
+    .line 167
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/AdapterViewAnimator;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 166
+    .line 168
     return-void
 .end method
 
@@ -135,12 +135,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 169
+    .line 171
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/AdapterViewAnimator;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 170
+    .line 172
     return-void
 .end method
 
@@ -157,91 +157,91 @@
 
     const/4 v4, 0x0
 
-    .line 173
+    .line 175
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 53
+    .line 55
     iput v4, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
-    .line 59
+    .line 61
     iput v6, p0, Landroid/widget/AdapterViewAnimator;->mRestoreWhichChild:I
 
-    .line 64
+    .line 66
     iput-boolean v5, p0, Landroid/widget/AdapterViewAnimator;->mAnimateFirstTime:Z
 
-    .line 70
+    .line 72
     iput v4, p0, Landroid/widget/AdapterViewAnimator;->mActiveOffset:I
 
-    .line 76
+    .line 78
     iput v5, p0, Landroid/widget/AdapterViewAnimator;->mMaxNumActiveViews:I
 
-    .line 81
+    .line 83
     new-instance v3, Ljava/util/HashMap;
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     iput-object v3, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    .line 91
+    .line 93
     iput v4, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
 
-    .line 96
+    .line 98
     iput v6, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowEnd:I
 
-    .line 102
+    .line 104
     iput v4, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStartUnbounded:I
 
-    .line 122
+    .line 124
     iput-boolean v4, p0, Landroid/widget/AdapterViewAnimator;->mDeferNotifyDataSetChanged:Z
 
-    .line 127
+    .line 129
     iput-boolean v5, p0, Landroid/widget/AdapterViewAnimator;->mFirstTime:Z
 
-    .line 133
+    .line 135
     iput-boolean v5, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
 
-    .line 139
+    .line 141
     iput v6, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
-    .line 140
+    .line 142
     iput v6, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
 
-    .line 151
+    .line 153
     iput v4, p0, Landroid/widget/AdapterViewAnimator;->mTouchMode:I
 
-    .line 175
+    .line 177
     sget-object v3, Lcom/android/internal/R$styleable;->AdapterViewAnimator:[I
 
     invoke-virtual {p1, p2, v3, p3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 177
+    .line 179
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v4, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    .line 179
+    .line 181
     .local v2, resource:I
     if-lez v2, :cond_0
 
-    .line 180
+    .line 182
     invoke-virtual {p0, p1, v2}, Landroid/widget/AdapterViewAnimator;->setInAnimation(Landroid/content/Context;I)V
 
-    .line 185
+    .line 187
     :goto_0
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    .line 186
+    .line 188
     if-lez v2, :cond_1
 
-    .line 187
+    .line 189
     invoke-virtual {p0, p1, v2}, Landroid/widget/AdapterViewAnimator;->setOutAnimation(Landroid/content/Context;I)V
 
-    .line 192
+    .line 194
     :goto_1
     const/4 v3, 0x2
 
@@ -249,11 +249,11 @@
 
     move-result v1
 
-    .line 194
+    .line 196
     .local v1, flag:Z
     invoke-virtual {p0, v1}, Landroid/widget/AdapterViewAnimator;->setAnimateFirstView(Z)V
 
-    .line 196
+    .line 198
     const/4 v3, 0x3
 
     invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
@@ -262,16 +262,16 @@
 
     iput-boolean v3, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
 
-    .line 199
+    .line 201
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 201
+    .line 203
     invoke-direct {p0}, Landroid/widget/AdapterViewAnimator;->initViewAnimator()V
 
-    .line 202
+    .line 204
     return-void
 
-    .line 182
+    .line 184
     .end local v1           #flag:Z
     :cond_0
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getDefaultInAnimation()Landroid/animation/ObjectAnimator;
@@ -282,7 +282,7 @@
 
     goto :goto_0
 
-    .line 189
+    .line 191
     :cond_1
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getDefaultOutAnimation()Landroid/animation/ObjectAnimator;
 
@@ -298,7 +298,7 @@
     .parameter "x0"
 
     .prologue
-    .line 45
+    .line 47
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mTouchMode:I
 
     return v0
@@ -313,14 +313,14 @@
 
     const/4 v2, -0x1
 
-    .line 564
+    .line 575
     invoke-virtual {p0, p1}, Landroid/widget/AdapterViewAnimator;->createOrReuseLayoutParams(Landroid/view/View;)Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, p1, v2, v1}, Landroid/widget/AdapterViewAnimator;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)Z
 
-    .line 569
+    .line 580
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
     if-eq v1, v2, :cond_0
@@ -329,31 +329,31 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 570
+    .line 581
     :cond_0
     invoke-static {v3, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    .line 571
+    .line 582
     .local v0, measureSpec:I
     invoke-virtual {p1, v0, v0}, Landroid/view/View;->measure(II)V
 
-    .line 572
+    .line 583
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
-    .line 573
+    .line 584
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
 
-    .line 575
+    .line 586
     .end local v0           #measureSpec:I
     :cond_1
     return-void
@@ -364,7 +364,7 @@
     .parameter "child"
 
     .prologue
-    .line 389
+    .line 391
     iget-object v2, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -389,13 +389,13 @@
 
     check-cast v1, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
 
-    .line 390
+    .line 392
     .local v1, vm:Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
     iget-object v2, v1, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->view:Landroid/view/View;
 
     if-ne v2, p1, :cond_0
 
-    .line 394
+    .line 396
     .end local v1           #vm:Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
     :goto_0
     return-object v1
@@ -410,14 +410,14 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 210
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/AdapterViewAnimator;->mPreviousViews:Ljava/util/ArrayList;
 
-    .line 209
+    .line 211
     return-void
 .end method
 
@@ -427,12 +427,12 @@
     .prologue
     const/high16 v7, 0x4000
 
-    .line 667
+    .line 678
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getChildCount()I
 
     move-result v3
 
-    .line 668
+    .line 679
     .local v3, count:I
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getMeasuredWidth()I
 
@@ -446,7 +446,7 @@
 
     sub-int v2, v5, v6
 
-    .line 669
+    .line 680
     .local v2, childWidth:I
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getMeasuredHeight()I
 
@@ -460,7 +460,7 @@
 
     sub-int v1, v5, v6
 
-    .line 671
+    .line 682
     .local v1, childHeight:I
     const/4 v4, 0x0
 
@@ -468,12 +468,12 @@
     :goto_0
     if-ge v4, v3, :cond_0
 
-    .line 672
+    .line 683
     invoke-virtual {p0, v4}, Landroid/widget/AdapterViewAnimator;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 673
+    .line 684
     .local v0, child:Landroid/view/View;
     invoke-static {v2, v7}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -485,12 +485,12 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/view/View;->measure(II)V
 
-    .line 671
+    .line 682
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 676
+    .line 687
     .end local v0           #child:Landroid/view/View;
     :cond_0
     return-void
@@ -504,22 +504,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 294
+    .line 296
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eqz v1, :cond_1
 
-    .line 295
+    .line 297
     iput p1, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
-    .line 296
+    .line 298
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
 
     move-result v1
 
     if-lt p1, v1, :cond_3
 
-    .line 297
+    .line 299
     iget-boolean v1, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
 
     if-eqz v1, :cond_2
@@ -529,7 +529,7 @@
     :goto_0
     iput v1, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
-    .line 302
+    .line 304
     :cond_0
     :goto_1
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getFocusedChild()Landroid/view/View;
@@ -540,27 +540,27 @@
 
     const/4 v0, 0x1
 
-    .line 304
+    .line 306
     .local v0, hasFocus:Z
     :goto_2
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     invoke-virtual {p0, v1, p2}, Landroid/widget/AdapterViewAnimator;->showOnly(IZ)V
 
-    .line 305
+    .line 307
     if-eqz v0, :cond_1
 
-    .line 307
+    .line 309
     const/4 v1, 0x2
 
     invoke-virtual {p0, v1}, Landroid/widget/AdapterViewAnimator;->requestFocus(I)Z
 
-    .line 310
+    .line 312
     .end local v0           #hasFocus:Z
     :cond_1
     return-void
 
-    .line 297
+    .line 299
     :cond_2
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
 
@@ -570,11 +570,11 @@
 
     goto :goto_0
 
-    .line 298
+    .line 300
     :cond_3
     if-gez p1, :cond_0
 
-    .line 299
+    .line 301
     iget-boolean v1, p0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
 
     if-eqz v1, :cond_4
@@ -598,7 +598,7 @@
     :cond_5
     move v0, v2
 
-    .line 302
+    .line 304
     goto :goto_2
 .end method
 
@@ -608,10 +608,10 @@
     .locals 0
 
     .prologue
-    .line 1037
+    .line 1048
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->showNext()V
 
-    .line 1038
+    .line 1049
     return-void
 .end method
 
@@ -621,7 +621,7 @@
     .parameter "relativeIndex"
 
     .prologue
-    .line 320
+    .line 322
     return-void
 .end method
 
@@ -629,25 +629,25 @@
     .locals 2
 
     .prologue
-    .line 586
+    .line 597
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 587
+    .line 598
     .local v0, v:Landroid/view/View;
     if-eqz v0, :cond_0
 
-    .line 588
+    .line 599
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->hideTapFeedback(Landroid/view/View;)V
 
-    .line 590
+    .line 601
     :cond_0
     const/4 v1, 0x0
 
     iput v1, p0, Landroid/widget/AdapterViewAnimator;->mTouchMode:I
 
-    .line 591
+    .line 602
     return-void
 .end method
 
@@ -655,27 +655,27 @@
     .locals 2
 
     .prologue
-    .line 723
+    .line 734
     iget-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
-    .line 724
+    .line 735
     .local v0, dataChanged:Z
     if-eqz v0, :cond_0
 
-    .line 725
+    .line 736
     new-instance v1, Landroid/widget/AdapterViewAnimator$2;
 
     invoke-direct {v1, p0}, Landroid/widget/AdapterViewAnimator$2;-><init>(Landroid/widget/AdapterViewAnimator;)V
 
     invoke-virtual {p0, v1}, Landroid/widget/AdapterViewAnimator;->post(Ljava/lang/Runnable;)Z
 
-    .line 742
+    .line 753
     :cond_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
-    .line 743
+    .line 754
     return-void
 .end method
 
@@ -685,42 +685,42 @@
     .parameter "activeOffset"
 
     .prologue
-    .line 239
+    .line 241
     add-int/lit8 v0, p1, -0x1
 
     if-le p2, v0, :cond_0
 
-    .line 242
+    .line 244
     :cond_0
     iput p1, p0, Landroid/widget/AdapterViewAnimator;->mMaxNumActiveViews:I
 
-    .line 243
+    .line 245
     iput p2, p0, Landroid/widget/AdapterViewAnimator;->mActiveOffset:I
 
-    .line 244
+    .line 246
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mPreviousViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 245
+    .line 247
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 246
+    .line 248
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->removeAllViewsInLayout()V
 
-    .line 247
+    .line 249
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
 
-    .line 248
+    .line 250
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowEnd:I
 
-    .line 249
+    .line 251
     return-void
 .end method
 
@@ -731,21 +731,21 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 398
+    .line 400
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 399
+    .line 401
     .local v0, currentLp:Landroid/view/ViewGroup$LayoutParams;
     instance-of v2, v0, Landroid/view/ViewGroup$LayoutParams;
 
     if-eqz v2, :cond_0
 
-    .line 400
+    .line 402
     move-object v1, v0
 
-    .line 403
+    .line 405
     :goto_0
     return-object v1
 
@@ -761,12 +761,12 @@
     .locals 1
 
     .prologue
-    .line 993
+    .line 1004
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/AdapterViewAnimator;->mDeferNotifyDataSetChanged:Z
 
-    .line 994
+    .line 1005
     return-void
 .end method
 
@@ -774,7 +774,7 @@
     .locals 0
 
     .prologue
-    .line 1047
+    .line 1058
     return-void
 .end method
 
@@ -782,7 +782,7 @@
     .locals 1
 
     .prologue
-    .line 932
+    .line 943
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     return-object v0
@@ -792,7 +792,7 @@
     .locals 1
 
     .prologue
-    .line 927
+    .line 938
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v0
@@ -822,7 +822,7 @@
     .locals 1
 
     .prologue
-    .line 837
+    .line 848
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mActiveOffset:I
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->getViewAtRelativeIndex(I)Landroid/view/View;
@@ -836,7 +836,7 @@
     .locals 4
 
     .prologue
-    .line 272
+    .line 274
     const/4 v1, 0x0
 
     const-string v2, "alpha"
@@ -851,16 +851,16 @@
 
     move-result-object v0
 
-    .line 273
+    .line 275
     .local v0, anim:Landroid/animation/ObjectAnimator;
     const-wide/16 v1, 0xc8
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 274
+    .line 276
     return-object v0
 
-    .line 272
+    .line 274
     nop
 
     :array_0
@@ -874,7 +874,7 @@
     .locals 4
 
     .prologue
-    .line 278
+    .line 280
     const/4 v1, 0x0
 
     const-string v2, "alpha"
@@ -889,16 +889,16 @@
 
     move-result-object v0
 
-    .line 279
+    .line 281
     .local v0, anim:Landroid/animation/ObjectAnimator;
     const-wide/16 v1, 0xc8
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 280
+    .line 282
     return-object v0
 
-    .line 278
+    .line 280
     nop
 
     :array_0
@@ -912,7 +912,7 @@
     .locals 1
 
     .prologue
-    .line 326
+    .line 328
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     return v0
@@ -922,7 +922,7 @@
     .locals 2
 
     .prologue
-    .line 435
+    .line 441
     new-instance v0, Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
@@ -936,7 +936,7 @@
     .locals 1
 
     .prologue
-    .line 849
+    .line 860
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mInAnimation:Landroid/animation/ObjectAnimator;
 
     return-object v0
@@ -946,12 +946,12 @@
     .locals 2
 
     .prologue
-    .line 368
+    .line 370
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eqz v0, :cond_0
 
-    .line 369
+    .line 371
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCount()I
 
     move-result v0
@@ -964,7 +964,7 @@
 
     move-result v0
 
-    .line 371
+    .line 373
     :goto_0
     return v0
 
@@ -978,7 +978,7 @@
     .locals 1
 
     .prologue
-    .line 873
+    .line 884
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mOutAnimation:Landroid/animation/ObjectAnimator;
 
     return-object v0
@@ -988,7 +988,7 @@
     .locals 1
 
     .prologue
-    .line 985
+    .line 996
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mActiveOffset:I
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->getViewAtRelativeIndex(I)Landroid/view/View;
@@ -1003,7 +1003,7 @@
     .parameter "relativeIndex"
 
     .prologue
-    .line 358
+    .line 360
     if-ltz p1, :cond_0
 
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getNumActiveViews()I
@@ -1018,7 +1018,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 359
+    .line 361
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStartUnbounded:I
 
     add-int/2addr v1, p1
@@ -1031,7 +1031,7 @@
 
     move-result v0
 
-    .line 360
+    .line 362
     .local v0, i:I
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
@@ -1045,7 +1045,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 361
+    .line 363
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1060,7 +1060,7 @@
 
     iget-object v1, v1, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->view:Landroid/view/View;
 
-    .line 364
+    .line 366
     .end local v0           #i:I
     :goto_0
     return-object v1
@@ -1075,17 +1075,17 @@
     .locals 2
 
     .prologue
-    .line 376
+    .line 378
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eqz v1, :cond_1
 
-    .line 377
+    .line 379
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCount()I
 
     move-result v0
 
-    .line 378
+    .line 380
     .local v0, adapterCount:I
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getNumActiveViews()I
 
@@ -1097,12 +1097,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 379
+    .line 381
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mMaxNumActiveViews:I
 
     mul-int/2addr v0, v1
 
-    .line 384
+    .line 386
     .end local v0           #adapterCount:I
     :cond_0
     :goto_0
@@ -1119,12 +1119,12 @@
     .parameter "v"
 
     .prologue
-    .line 582
+    .line 593
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
 
-    .line 583
+    .line 594
     return-void
 .end method
 
@@ -1134,17 +1134,17 @@
     .parameter "size"
 
     .prologue
-    .line 344
+    .line 346
     if-lez p2, :cond_0
 
-    .line 345
+    .line 347
     rem-int v0, p1, p2
 
     add-int/2addr v0, p2
 
     rem-int/2addr v0, p2
 
-    .line 347
+    .line 349
     :goto_0
     return v0
 
@@ -1152,6 +1152,48 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 1
+    .parameter "event"
+
+    .prologue
+    .line 1062
+    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    .line 1063
+    const-class v0, Landroid/widget/AdapterViewAnimator;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 1064
+    return-void
+.end method
+
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 1068
+    invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    .line 1069
+    const-class v0, Landroid/widget/AdapterViewAnimator;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    .line 1070
+    return-void
 .end method
 
 .method protected onLayout(ZIIII)V
@@ -1163,15 +1205,15 @@
     .parameter "bottom"
 
     .prologue
-    .line 747
+    .line 758
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->checkForAndHandleDataChanged()V
 
-    .line 749
+    .line 760
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getChildCount()I
 
     move-result v2
 
-    .line 750
+    .line 761
     .local v2, childCount:I
     const/4 v4, 0x0
 
@@ -1179,12 +1221,12 @@
     :goto_0
     if-ge v4, v2, :cond_0
 
-    .line 751
+    .line 762
     invoke-virtual {p0, v4}, Landroid/widget/AdapterViewAnimator;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 753
+    .line 764
     .local v0, child:Landroid/view/View;
     iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
@@ -1194,7 +1236,7 @@
 
     add-int v3, v5, v6
 
-    .line 754
+    .line 765
     .local v3, childRight:I
     iget v5, p0, Landroid/view/View;->mPaddingTop:I
 
@@ -1204,7 +1246,7 @@
 
     add-int v1, v5, v6
 
-    .line 756
+    .line 767
     .local v1, childBottom:I
     iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
@@ -1212,12 +1254,12 @@
 
     invoke-virtual {v0, v5, v6, v3, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 750
+    .line 761
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 758
+    .line 769
     .end local v0           #child:Landroid/view/View;
     .end local v1           #childBottom:I
     .end local v3           #childRight:I
@@ -1239,30 +1281,30 @@
 
     const/4 v7, 0x0
 
-    .line 680
+    .line 691
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v6
 
-    .line 681
+    .line 692
     .local v6, widthSpecSize:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v3
 
-    .line 682
+    .line 693
     .local v3, heightSpecSize:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v5
 
-    .line 683
+    .line 694
     .local v5, widthSpecMode:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
 
-    .line 685
+    .line 696
     .local v2, heightSpecMode:I
     iget v8, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
@@ -1274,12 +1316,12 @@
 
     const/4 v0, 0x1
 
-    .line 690
+    .line 701
     .local v0, haveChildRefSize:Z
     :goto_0
     if-nez v2, :cond_4
 
-    .line 691
+    .line 702
     if-eqz v0, :cond_3
 
     iget v8, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
@@ -1292,12 +1334,12 @@
 
     add-int v3, v8, v9
 
-    .line 704
+    .line 715
     :cond_0
     :goto_1
     if-nez v5, :cond_7
 
-    .line 705
+    .line 716
     if-eqz v0, :cond_6
 
     iget v7, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
@@ -1310,39 +1352,39 @@
 
     add-int v6, v7, v8
 
-    .line 718
+    .line 729
     :cond_1
     :goto_2
     invoke-virtual {p0, v6, v3}, Landroid/widget/AdapterViewAnimator;->setMeasuredDimension(II)V
 
-    .line 719
+    .line 730
     invoke-direct {p0}, Landroid/widget/AdapterViewAnimator;->measureChildren()V
 
-    .line 720
+    .line 731
     return-void
 
     .end local v0           #haveChildRefSize:Z
     :cond_2
     move v0, v7
 
-    .line 685
+    .line 696
     goto :goto_0
 
     .restart local v0       #haveChildRefSize:Z
     :cond_3
     move v3, v7
 
-    .line 691
+    .line 702
     goto :goto_1
 
-    .line 693
+    .line 704
     :cond_4
     if-ne v2, v10, :cond_0
 
-    .line 694
+    .line 705
     if-eqz v0, :cond_0
 
-    .line 695
+    .line 706
     iget v8, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
 
     iget v9, p0, Landroid/view/View;->mPaddingTop:I
@@ -1353,16 +1395,16 @@
 
     add-int v1, v8, v9
 
-    .line 696
+    .line 707
     .local v1, height:I
     if-le v1, v3, :cond_5
 
-    .line 697
+    .line 708
     or-int/2addr v3, v11
 
     goto :goto_1
 
-    .line 699
+    .line 710
     :cond_5
     move v3, v1
 
@@ -1372,17 +1414,17 @@
     :cond_6
     move v6, v7
 
-    .line 705
+    .line 716
     goto :goto_2
 
-    .line 707
+    .line 718
     :cond_7
     if-ne v2, v10, :cond_1
 
-    .line 708
+    .line 719
     if-eqz v0, :cond_1
 
-    .line 709
+    .line 720
     iget v7, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
     iget v8, p0, Landroid/view/View;->mPaddingLeft:I
@@ -1393,16 +1435,16 @@
 
     add-int v4, v7, v8
 
-    .line 710
+    .line 721
     .local v4, width:I
     if-le v4, v6, :cond_8
 
-    .line 711
+    .line 722
     or-int/2addr v6, v11
 
     goto :goto_2
 
-    .line 713
+    .line 724
     :cond_8
     move v6, v4
 
@@ -1417,62 +1459,62 @@
 
     const/4 v0, 0x0
 
-    .line 1000
+    .line 1011
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     iget-object v2, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eq v1, v2, :cond_2
 
-    .line 1001
+    .line 1012
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     invoke-virtual {p0, v1}, Landroid/widget/AdapterViewAnimator;->setAdapter(Landroid/widget/Adapter;)V
 
-    .line 1003
+    .line 1014
     iget-boolean v1, p0, Landroid/widget/AdapterViewAnimator;->mDeferNotifyDataSetChanged:Z
 
     if-eqz v1, :cond_0
 
-    .line 1004
+    .line 1015
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     invoke-virtual {v1}, Landroid/widget/RemoteViewsAdapter;->notifyDataSetChanged()V
 
-    .line 1005
+    .line 1016
     iput-boolean v0, p0, Landroid/widget/AdapterViewAnimator;->mDeferNotifyDataSetChanged:Z
 
-    .line 1009
+    .line 1020
     :cond_0
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mRestoreWhichChild:I
 
     if-le v1, v3, :cond_1
 
-    .line 1010
+    .line 1021
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mRestoreWhichChild:I
 
     invoke-direct {p0, v1, v0}, Landroid/widget/AdapterViewAnimator;->setDisplayedChild(IZ)V
 
-    .line 1011
+    .line 1022
     iput v3, p0, Landroid/widget/AdapterViewAnimator;->mRestoreWhichChild:I
 
-    .line 1018
+    .line 1029
     :cond_1
     :goto_0
     return v0
 
-    .line 1014
+    .line 1025
     :cond_2
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     if-eqz v1, :cond_1
 
-    .line 1015
+    .line 1026
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     invoke-virtual {v0}, Landroid/widget/RemoteViewsAdapter;->superNotifyDataSetChanged()V
 
-    .line 1016
+    .line 1027
     const/4 v0, 0x1
 
     goto :goto_0
@@ -1482,7 +1524,7 @@
     .locals 0
 
     .prologue
-    .line 1030
+    .line 1041
     return-void
 .end method
 
@@ -1491,12 +1533,12 @@
     .parameter "state"
 
     .prologue
-    .line 810
+    .line 821
     move-object v0, p1
 
     check-cast v0, Landroid/widget/AdapterViewAnimator$SavedState;
 
-    .line 811
+    .line 822
     .local v0, ss:Landroid/widget/AdapterViewAnimator$SavedState;
     invoke-virtual {v0}, Landroid/widget/AdapterViewAnimator$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -1504,12 +1546,12 @@
 
     invoke-super {p0, v1}, Landroid/widget/AdapterView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 816
+    .line 827
     iget v1, v0, Landroid/widget/AdapterViewAnimator$SavedState;->whichChild:I
 
     iput v1, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
-    .line 822
+    .line 833
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     if-eqz v1, :cond_0
@@ -1518,16 +1560,16 @@
 
     if-nez v1, :cond_0
 
-    .line 823
+    .line 834
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     iput v1, p0, Landroid/widget/AdapterViewAnimator;->mRestoreWhichChild:I
 
-    .line 827
+    .line 838
     :goto_0
     return-void
 
-    .line 825
+    .line 836
     :cond_0
     iget v1, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
@@ -1542,12 +1584,12 @@
     .locals 3
 
     .prologue
-    .line 804
+    .line 815
     invoke-super {p0}, Landroid/widget/AdapterView;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v0
 
-    .line 805
+    .line 816
     .local v0, superState:Landroid/os/Parcelable;
     new-instance v1, Landroid/widget/AdapterViewAnimator$SavedState;
 
@@ -1569,36 +1611,36 @@
 
     const/4 v8, 0x0
 
-    .line 604
+    .line 615
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 605
+    .line 616
     .local v0, action:I
     const/4 v1, 0x0
 
-    .line 606
+    .line 617
     .local v1, handled:Z
     packed-switch v0, :pswitch_data_0
 
-    .line 663
+    .line 674
     :cond_0
     :goto_0
     :pswitch_0
     return v1
 
-    .line 608
+    .line 619
     :pswitch_1
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v3
 
-    .line 609
+    .line 620
     .local v3, v:Landroid/view/View;
     if-eqz v3, :cond_0
 
-    .line 610
+    .line 621
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
@@ -1613,23 +1655,23 @@
 
     if-eqz v5, :cond_0
 
-    .line 611
+    .line 622
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mPendingCheckForTap:Ljava/lang/Runnable;
 
     if-nez v5, :cond_1
 
-    .line 612
+    .line 623
     new-instance v5, Landroid/widget/AdapterViewAnimator$CheckForTap;
 
     invoke-direct {v5, p0}, Landroid/widget/AdapterViewAnimator$CheckForTap;-><init>(Landroid/widget/AdapterViewAnimator;)V
 
     iput-object v5, p0, Landroid/widget/AdapterViewAnimator;->mPendingCheckForTap:Ljava/lang/Runnable;
 
-    .line 614
+    .line 625
     :cond_1
     iput v7, p0, Landroid/widget/AdapterViewAnimator;->mTouchMode:I
 
-    .line 615
+    .line 626
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mPendingCheckForTap:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
@@ -1642,29 +1684,29 @@
 
     goto :goto_0
 
-    .line 623
+    .line 634
     .end local v3           #v:Landroid/view/View;
     :pswitch_2
     iget v5, p0, Landroid/widget/AdapterViewAnimator;->mTouchMode:I
 
     if-ne v5, v7, :cond_3
 
-    .line 624
+    .line 635
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v3
 
-    .line 625
+    .line 636
     .restart local v3       #v:Landroid/view/View;
     invoke-direct {p0, v3}, Landroid/widget/AdapterViewAnimator;->getMetaDataForChild(Landroid/view/View;)Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
 
     move-result-object v4
 
-    .line 626
+    .line 637
     .local v4, viewData:Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
     if-eqz v3, :cond_3
 
-    .line 627
+    .line 638
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
@@ -1679,25 +1721,25 @@
 
     if-eqz v5, :cond_3
 
-    .line 628
+    .line 639
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getHandler()Landroid/os/Handler;
 
     move-result-object v2
 
-    .line 629
+    .line 640
     .local v2, handler:Landroid/os/Handler;
     if-eqz v2, :cond_2
 
-    .line 630
+    .line 641
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mPendingCheckForTap:Ljava/lang/Runnable;
 
     invoke-virtual {v2, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 632
+    .line 643
     :cond_2
     invoke-virtual {p0, v3}, Landroid/widget/AdapterViewAnimator;->showTapFeedback(Landroid/view/View;)V
 
-    .line 633
+    .line 644
     new-instance v5, Landroid/widget/AdapterViewAnimator$1;
 
     invoke-direct {v5, p0, v3, v4}, Landroid/widget/AdapterViewAnimator$1;-><init>(Landroid/widget/AdapterViewAnimator;Landroid/view/View;Landroid/widget/AdapterViewAnimator$ViewAndMetaData;)V
@@ -1710,10 +1752,10 @@
 
     invoke-virtual {p0, v5, v6, v7}, Landroid/widget/AdapterViewAnimator;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 648
+    .line 659
     const/4 v1, 0x1
 
-    .line 652
+    .line 663
     .end local v2           #handler:Landroid/os/Handler;
     .end local v3           #v:Landroid/view/View;
     .end local v4           #viewData:Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
@@ -1722,26 +1764,26 @@
 
     goto :goto_0
 
-    .line 656
+    .line 667
     :pswitch_3
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object v3
 
-    .line 657
+    .line 668
     .restart local v3       #v:Landroid/view/View;
     if-eqz v3, :cond_4
 
-    .line 658
+    .line 669
     invoke-virtual {p0, v3}, Landroid/widget/AdapterViewAnimator;->hideTapFeedback(Landroid/view/View;)V
 
-    .line 660
+    .line 671
     :cond_4
     iput v8, p0, Landroid/widget/AdapterViewAnimator;->mTouchMode:I
 
     goto :goto_0
 
-    .line 606
+    .line 617
     nop
 
     :pswitch_data_0
@@ -1760,16 +1802,16 @@
     .locals 8
 
     .prologue
-    .line 407
+    .line 409
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-nez v5, :cond_1
 
-    .line 425
+    .line 431
     :cond_0
     return-void
 
-    .line 408
+    .line 410
     :cond_1
     iget v2, p0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
 
@@ -1779,7 +1821,7 @@
 
     if-gt v2, v5, :cond_0
 
-    .line 409
+    .line 411
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
 
     move-result v5
@@ -1788,13 +1830,13 @@
 
     move-result v3
 
-    .line 411
+    .line 413
     .local v3, index:I
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getCount()I
 
     move-result v0
 
-    .line 413
+    .line 415
     .local v0, adapterCount:I
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
@@ -1808,8 +1850,21 @@
 
     move-result-object v4
 
-    .line 415
+    .line 417
     .local v4, updatedChild:Landroid/view/View;
+    invoke-virtual {v4}, Landroid/view/View;->getImportantForAccessibility()I
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    .line 418
+    const/4 v5, 0x1
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setImportantForAccessibility(I)V
+
+    .line 421
+    :cond_2
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1820,9 +1875,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_3
 
-    .line 416
+    .line 422
     iget-object v5, p0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1839,19 +1894,19 @@
 
     check-cast v1, Landroid/widget/FrameLayout;
 
-    .line 418
+    .line 424
     .local v1, fl:Landroid/widget/FrameLayout;
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
-    .line 420
+    .line 426
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->removeAllViewsInLayout()V
 
-    .line 421
+    .line 427
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 408
+    .line 410
     .end local v1           #fl:Landroid/widget/FrameLayout;
-    :cond_2
+    :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
@@ -1864,7 +1919,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 937
+    .line 948
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eqz v0, :cond_0
@@ -1873,40 +1928,40 @@
 
     if-eqz v0, :cond_0
 
-    .line 938
+    .line 949
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mDataSetObserver:Landroid/widget/AdapterView$AdapterDataSetObserver;
 
     invoke-interface {v0, v1}, Landroid/widget/Adapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 941
+    .line 952
     :cond_0
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
-    .line 942
+    .line 953
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->checkFocus()V
 
-    .line 944
+    .line 955
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-eqz v0, :cond_1
 
-    .line 945
+    .line 956
     new-instance v0, Landroid/widget/AdapterView$AdapterDataSetObserver;
 
     invoke-direct {v0, p0}, Landroid/widget/AdapterView$AdapterDataSetObserver;-><init>(Landroid/widget/AdapterView;)V
 
     iput-object v0, p0, Landroid/widget/AdapterViewAnimator;->mDataSetObserver:Landroid/widget/AdapterView$AdapterDataSetObserver;
 
-    .line 946
+    .line 957
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mDataSetObserver:Landroid/widget/AdapterView$AdapterDataSetObserver;
 
     invoke-interface {v0, v1}, Landroid/widget/Adapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 947
+    .line 958
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     invoke-interface {v0}, Landroid/widget/Adapter;->getCount()I
@@ -1915,21 +1970,21 @@
 
     iput v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
-    .line 949
+    .line 960
     :cond_1
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->setFocusable(Z)V
 
-    .line 950
+    .line 961
     iput v2, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
-    .line 951
+    .line 962
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/AdapterViewAnimator;->showOnly(IZ)V
 
-    .line 952
+    .line 963
     return-void
 .end method
 
@@ -1938,10 +1993,10 @@
     .parameter "animate"
 
     .prologue
-    .line 922
+    .line 933
     iput-boolean p1, p0, Landroid/widget/AdapterViewAnimator;->mAnimateFirstTime:Z
 
-    .line 923
+    .line 934
     return-void
 .end method
 
@@ -1952,12 +2007,12 @@
     .end annotation
 
     .prologue
-    .line 290
+    .line 292
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Landroid/widget/AdapterViewAnimator;->setDisplayedChild(IZ)V
 
-    .line 291
+    .line 293
     return-void
 .end method
 
@@ -1966,10 +2021,10 @@
     .parameter "inAnimation"
 
     .prologue
-    .line 861
+    .line 872
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator;->mInAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 862
+    .line 873
     return-void
 .end method
 
@@ -1979,7 +2034,7 @@
     .parameter "resourceID"
 
     .prologue
-    .line 898
+    .line 909
     invoke-static {p1, p2}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
 
     move-result-object v0
@@ -1988,7 +2043,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->setInAnimation(Landroid/animation/ObjectAnimator;)V
 
-    .line 899
+    .line 910
     return-void
 .end method
 
@@ -1997,10 +2052,10 @@
     .parameter "outAnimation"
 
     .prologue
-    .line 885
+    .line 896
     iput-object p1, p0, Landroid/widget/AdapterViewAnimator;->mOutAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 886
+    .line 897
     return-void
 .end method
 
@@ -2010,7 +2065,7 @@
     .parameter "resourceID"
 
     .prologue
-    .line 911
+    .line 922
     invoke-static {p1, p2}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
 
     move-result-object v0
@@ -2019,7 +2074,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->setOutAnimation(Landroid/animation/ObjectAnimator;)V
 
-    .line 912
+    .line 923
     return-void
 .end method
 
@@ -2030,17 +2085,17 @@
     .end annotation
 
     .prologue
-    .line 965
+    .line 976
     iget-object v2, p0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
 
     if-eqz v2, :cond_0
 
-    .line 966
+    .line 977
     new-instance v0, Landroid/content/Intent$FilterComparison;
 
     invoke-direct {v0, p1}, Landroid/content/Intent$FilterComparison;-><init>(Landroid/content/Intent;)V
 
-    .line 967
+    .line 978
     .local v0, fcNew:Landroid/content/Intent$FilterComparison;
     new-instance v1, Landroid/content/Intent$FilterComparison;
 
@@ -2052,7 +2107,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent$FilterComparison;-><init>(Landroid/content/Intent;)V
 
-    .line 969
+    .line 980
     .local v1, fcOld:Landroid/content/Intent$FilterComparison;
     invoke-virtual {v0, v1}, Landroid/content/Intent$FilterComparison;->equals(Ljava/lang/Object;)Z
 
@@ -2060,19 +2115,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 976
+    .line 987
     .end local v0           #fcNew:Landroid/content/Intent$FilterComparison;
     .end local v1           #fcOld:Landroid/content/Intent$FilterComparison;
     :goto_0
     return-void
 
-    .line 973
+    .line 984
     :cond_0
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Landroid/widget/AdapterViewAnimator;->mDeferNotifyDataSetChanged:Z
 
-    .line 975
+    .line 986
     new-instance v2, Landroid/widget/RemoteViewsAdapter;
 
     invoke-virtual {p0}, Landroid/widget/AdapterViewAnimator;->getContext()Landroid/content/Context;
@@ -2091,10 +2146,10 @@
     .parameter "position"
 
     .prologue
-    .line 980
+    .line 991
     invoke-virtual {p0, p1}, Landroid/widget/AdapterViewAnimator;->setDisplayedChild(I)V
 
-    .line 981
+    .line 992
     return-void
 .end method
 
@@ -2102,49 +2157,49 @@
     .locals 1
 
     .prologue
-    .line 333
+    .line 335
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     add-int/lit8 v0, v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->setDisplayedChild(I)V
 
-    .line 334
+    .line 336
     return-void
 .end method
 
 .method showOnly(IZ)V
-    .locals 32
+    .locals 34
     .parameter "childIndex"
     .parameter "animate"
 
     .prologue
-    .line 449
+    .line 455
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
 
     if-nez v4, :cond_1
 
-    .line 561
+    .line 572
     :cond_0
     :goto_0
     return-void
 
-    .line 450
+    .line 456
     :cond_1
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getCount()I
 
     move-result v11
 
-    .line 451
+    .line 457
     .local v11, adapterCount:I
     if-eqz v11, :cond_0
 
-    .line 453
-    const/4 v12, 0x0
+    .line 459
+    const/4 v14, 0x0
 
-    .local v12, i:I
+    .local v14, i:I
     :goto_1
     move-object/from16 v0, p0
 
@@ -2154,9 +2209,9 @@
 
     move-result v4
 
-    if-ge v12, v4, :cond_3
+    if-ge v14, v4, :cond_3
 
-    .line 454
+    .line 460
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
@@ -2165,7 +2220,7 @@
 
     iget-object v5, v0, Landroid/widget/AdapterViewAnimator;->mPreviousViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -2177,10 +2232,10 @@
 
     iget-object v0, v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->view:Landroid/view/View;
 
-    move-object/from16 v28, v0
+    move-object/from16 v30, v0
 
-    .line 455
-    .local v28, viewToRemove:Landroid/view/View;
+    .line 461
+    .local v30, viewToRemove:Landroid/view/View;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
@@ -2189,56 +2244,56 @@
 
     iget-object v5, v0, Landroid/widget/AdapterViewAnimator;->mPreviousViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v5, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 456
-    invoke-virtual/range {v28 .. v28}, Landroid/view/View;->clearAnimation()V
+    .line 462
+    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->clearAnimation()V
 
-    .line 457
-    move-object/from16 v0, v28
+    .line 463
+    move-object/from16 v0, v30
 
     instance-of v4, v0, Landroid/view/ViewGroup;
 
     if-eqz v4, :cond_2
 
-    move-object/from16 v26, v28
+    move-object/from16 v28, v30
 
-    .line 458
-    check-cast v26, Landroid/view/ViewGroup;
+    .line 464
+    check-cast v28, Landroid/view/ViewGroup;
 
-    .line 459
-    .local v26, vg:Landroid/view/ViewGroup;
-    invoke-virtual/range {v26 .. v26}, Landroid/view/ViewGroup;->removeAllViewsInLayout()V
+    .line 465
+    .local v28, vg:Landroid/view/ViewGroup;
+    invoke-virtual/range {v28 .. v28}, Landroid/view/ViewGroup;->removeAllViewsInLayout()V
 
-    .line 463
-    .end local v26           #vg:Landroid/view/ViewGroup;
+    .line 469
+    .end local v28           #vg:Landroid/view/ViewGroup;
     :cond_2
     const/4 v4, -0x1
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/AdapterViewAnimator;->applyTransformForChildAtIndex(Landroid/view/View;I)V
 
-    .line 465
+    .line 471
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v28
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1}, Landroid/widget/AdapterViewAnimator;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 453
-    add-int/lit8 v12, v12, 0x1
+    .line 459
+    add-int/lit8 v14, v14, 0x1
 
     goto :goto_1
 
-    .line 467
-    .end local v28           #viewToRemove:Landroid/view/View;
+    .line 473
+    .end local v30           #viewToRemove:Landroid/view/View;
     :cond_3
     move-object/from16 v0, p0
 
@@ -2246,59 +2301,73 @@
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 468
+    .line 474
     move-object/from16 v0, p0
 
     iget v4, v0, Landroid/widget/AdapterViewAnimator;->mActiveOffset:I
 
-    sub-int v20, p1, v4
+    sub-int v22, p1, v4
 
-    .line 469
-    .local v20, newWindowStartUnbounded:I
+    .line 475
+    .local v22, newWindowStartUnbounded:I
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getNumActiveViews()I
 
     move-result v4
 
-    add-int v4, v4, v20
+    add-int v4, v4, v22
 
-    add-int/lit8 v18, v4, -0x1
+    add-int/lit8 v20, v4, -0x1
 
-    .line 470
-    .local v18, newWindowEndUnbounded:I
+    .line 476
+    .local v20, newWindowEndUnbounded:I
     const/4 v4, 0x0
 
-    move/from16 v0, v20
+    move/from16 v0, v22
 
     invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v19
+    move-result v21
 
-    .line 471
-    .local v19, newWindowStart:I
+    .line 477
+    .local v21, newWindowStart:I
     add-int/lit8 v4, v11, -0x1
 
-    move/from16 v0, v18
+    move/from16 v0, v20
 
     invoke-static {v4, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result v17
+    move-result v19
 
-    .line 473
-    .local v17, newWindowEnd:I
+    .line 479
+    .local v19, newWindowEnd:I
     move-object/from16 v0, p0
 
     iget-boolean v4, v0, Landroid/widget/AdapterViewAnimator;->mLoopViews:Z
 
     if-eqz v4, :cond_4
 
-    .line 474
+    .line 480
+    move/from16 v21, v22
+
+    .line 481
     move/from16 v19, v20
 
-    .line 475
-    move/from16 v17, v18
-
-    .line 477
+    .line 483
     :cond_4
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
+
+    move-result v4
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v21
+
+    invoke-virtual {v0, v1, v4}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
+
+    move-result v26
+
+    .line 484
+    .local v26, rangeStart:I
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
 
     move-result v4
@@ -2309,38 +2378,24 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
 
-    move-result v24
+    move-result v25
 
-    .line 478
-    .local v24, rangeStart:I
-    invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
+    .line 486
+    .local v25, rangeEnd:I
+    const/16 v31, 0x0
 
-    move-result v4
+    .line 487
+    .local v31, wrap:Z
+    move/from16 v0, v26
 
-    move-object/from16 v0, p0
-
-    move/from16 v1, v17
-
-    invoke-virtual {v0, v1, v4}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
-
-    move-result v23
-
-    .line 480
-    .local v23, rangeEnd:I
-    const/16 v29, 0x0
-
-    .line 481
-    .local v29, wrap:Z
-    move/from16 v0, v24
-
-    move/from16 v1, v23
+    move/from16 v1, v25
 
     if-le v0, v1, :cond_5
 
-    .line 482
-    const/16 v29, 0x1
+    .line 488
+    const/16 v31, 0x1
 
-    .line 489
+    .line 495
     :cond_5
     move-object/from16 v0, p0
 
@@ -2352,62 +2407,64 @@
 
     invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v13
+    move-result-object v15
 
-    .local v13, i$:Ljava/util/Iterator;
+    .local v15, i$:Ljava/util/Iterator;
     :cond_6
     :goto_2
-    invoke-interface {v13}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_a
 
-    invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v17
 
-    check-cast v15, Ljava/lang/Integer;
+    check-cast v17, Ljava/lang/Integer;
 
-    .line 490
-    .local v15, index:Ljava/lang/Integer;
-    const/16 v25, 0x0
+    .line 496
+    .local v17, index:Ljava/lang/Integer;
+    const/16 v27, 0x0
 
-    .line 491
-    .local v25, remove:Z
-    if-nez v29, :cond_9
+    .line 497
+    .local v27, remove:Z
+    if-nez v31, :cond_9
 
-    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
-    move/from16 v0, v24
+    move/from16 v0, v26
 
     if-lt v4, v0, :cond_7
 
-    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
-    move/from16 v0, v23
+    move/from16 v0, v25
 
     if-le v4, v0, :cond_9
 
-    .line 492
+    .line 498
     :cond_7
-    const/16 v25, 0x1
+    const/16 v27, 0x1
 
-    .line 497
+    .line 503
     :cond_8
     :goto_3
-    if-eqz v25, :cond_6
+    if-eqz v27, :cond_6
 
-    .line 498
+    .line 504
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-virtual {v4, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v17
+
+    invoke-virtual {v4, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -2415,15 +2472,17 @@
 
     iget-object v0, v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->view:Landroid/view/View;
 
-    move-object/from16 v22, v0
+    move-object/from16 v24, v0
 
-    .line 499
-    .local v22, previousView:Landroid/view/View;
+    .line 505
+    .local v24, previousView:Landroid/view/View;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-virtual {v4, v15}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, v17
+
+    invoke-virtual {v4, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -2431,24 +2490,26 @@
 
     iget v0, v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->relativeIndex:I
 
-    move/from16 v21, v0
+    move/from16 v23, v0
 
-    .line 501
-    .local v21, oldRelativeIndex:I
+    .line 507
+    .local v23, oldRelativeIndex:I
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mPreviousViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-object/from16 v0, v17
 
-    .line 502
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 508
     const/4 v4, -0x1
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v21
+    move/from16 v1, v23
 
-    move-object/from16 v2, v22
+    move-object/from16 v2, v24
 
     move/from16 v3, p2
 
@@ -2456,42 +2517,42 @@
 
     goto :goto_2
 
-    .line 493
-    .end local v21           #oldRelativeIndex:I
-    .end local v22           #previousView:Landroid/view/View;
+    .line 499
+    .end local v23           #oldRelativeIndex:I
+    .end local v24           #previousView:Landroid/view/View;
     :cond_9
-    if-eqz v29, :cond_8
+    if-eqz v31, :cond_8
 
-    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
-    move/from16 v0, v23
+    move/from16 v0, v25
 
     if-le v4, v0, :cond_8
 
-    invoke-virtual {v15}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
-    move/from16 v0, v24
+    move/from16 v0, v26
 
     if-ge v4, v0, :cond_8
 
-    .line 494
-    const/16 v25, 0x1
+    .line 500
+    const/16 v27, 0x1
 
     goto :goto_3
 
-    .line 507
-    .end local v15           #index:Ljava/lang/Integer;
-    .end local v25           #remove:Z
+    .line 513
+    .end local v17           #index:Ljava/lang/Integer;
+    .end local v27           #remove:Z
     :cond_a
     move-object/from16 v0, p0
 
     iget v4, v0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
 
-    move/from16 v0, v19
+    move/from16 v0, v21
 
     if-ne v0, v4, :cond_b
 
@@ -2499,7 +2560,7 @@
 
     iget v4, v0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowEnd:I
 
-    move/from16 v0, v17
+    move/from16 v0, v19
 
     if-ne v0, v4, :cond_b
 
@@ -2507,37 +2568,37 @@
 
     iget v4, v0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStartUnbounded:I
 
-    move/from16 v0, v20
+    move/from16 v0, v22
 
     if-eq v0, v4, :cond_11
 
-    .line 510
+    .line 516
     :cond_b
-    move/from16 v12, v19
+    move/from16 v14, v21
 
     :goto_4
-    move/from16 v0, v17
+    move/from16 v0, v19
 
-    if-gt v12, v0, :cond_10
+    if-gt v14, v0, :cond_10
 
-    .line 512
+    .line 518
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getWindowSize()I
 
     move-result v4
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12, v4}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
+    invoke-virtual {v0, v14, v4}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
 
-    move-result v15
+    move-result v17
 
-    .line 514
-    .local v15, index:I
+    .line 520
+    .local v17, index:I
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2547,12 +2608,12 @@
 
     if-eqz v4, :cond_c
 
-    .line 515
+    .line 521
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2564,20 +2625,20 @@
 
     iget v0, v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->relativeIndex:I
 
-    move/from16 v21, v0
+    move/from16 v23, v0
 
-    .line 519
-    .restart local v21       #oldRelativeIndex:I
+    .line 525
+    .restart local v23       #oldRelativeIndex:I
     :goto_5
-    sub-int v7, v12, v20
+    sub-int v7, v14, v22
 
-    .line 524
+    .line 530
     .local v7, newRelativeIndex:I
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2591,7 +2652,7 @@
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mPreviousViews:Ljava/util/ArrayList;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2601,19 +2662,19 @@
 
     if-nez v4, :cond_d
 
-    const/4 v14, 0x1
+    const/16 v16, 0x1
 
-    .line 526
-    .local v14, inOldRange:Z
+    .line 532
+    .local v16, inOldRange:Z
     :goto_6
-    if-eqz v14, :cond_e
+    if-eqz v16, :cond_e
 
-    .line 527
+    .line 533
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2625,15 +2686,15 @@
 
     iget-object v0, v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->view:Landroid/view/View;
 
-    move-object/from16 v27, v0
+    move-object/from16 v29, v0
 
-    .line 528
-    .local v27, view:Landroid/view/View;
+    .line 534
+    .local v29, view:Landroid/view/View;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2645,32 +2706,32 @@
 
     iput v7, v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;->relativeIndex:I
 
-    .line 529
+    .line 535
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
     invoke-virtual {v0, v1, v7}, Landroid/widget/AdapterViewAnimator;->applyTransformForChildAtIndex(Landroid/view/View;I)V
 
-    .line 530
+    .line 536
     move-object/from16 v0, p0
 
-    move/from16 v1, v21
+    move/from16 v1, v23
 
-    move-object/from16 v2, v27
+    move-object/from16 v2, v29
 
     move/from16 v3, p2
 
     invoke-virtual {v0, v1, v7, v2, v3}, Landroid/widget/AdapterViewAnimator;->transformViewForTransition(IILandroid/view/View;Z)V
 
-    .line 553
-    .end local v27           #view:Landroid/view/View;
+    .line 559
+    .end local v29           #view:Landroid/view/View;
     :goto_7
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -2684,38 +2745,38 @@
 
     invoke-virtual {v4}, Landroid/view/View;->bringToFront()V
 
-    .line 510
-    add-int/lit8 v12, v12, 0x1
+    .line 516
+    add-int/lit8 v14, v14, 0x1
 
     goto/16 :goto_4
 
-    .line 517
+    .line 523
     .end local v7           #newRelativeIndex:I
-    .end local v14           #inOldRange:Z
-    .end local v21           #oldRelativeIndex:I
+    .end local v16           #inOldRange:Z
+    .end local v23           #oldRelativeIndex:I
     :cond_c
-    const/16 v21, -0x1
+    const/16 v23, -0x1
 
-    .restart local v21       #oldRelativeIndex:I
+    .restart local v23       #oldRelativeIndex:I
     goto :goto_5
 
-    .line 524
+    .line 530
     .restart local v7       #newRelativeIndex:I
     :cond_d
-    const/4 v14, 0x0
+    const/16 v16, 0x0
 
     goto :goto_6
 
-    .line 535
-    .restart local v14       #inOldRange:Z
+    .line 541
+    .restart local v16       #inOldRange:Z
     :cond_e
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v12, v11}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
+    invoke-virtual {v0, v14, v11}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
 
     move-result v8
 
-    .line 536
+    .line 542
     .local v8, adapterPosition:I
     move-object/from16 v0, p0
 
@@ -2727,10 +2788,10 @@
 
     invoke-interface {v4, v8, v5, v0}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v16
+    move-result-object v18
 
-    .line 537
-    .local v16, newView:Landroid/view/View;
+    .line 543
+    .local v18, newView:Landroid/view/View;
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mAdapter:Landroid/widget/Adapter;
@@ -2739,32 +2800,32 @@
 
     move-result-wide v9
 
-    .line 541
+    .line 547
     .local v9, itemId:J
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->getFrameForChild()Landroid/widget/FrameLayout;
 
     move-result-object v6
 
-    .line 544
+    .line 550
     .local v6, fl:Landroid/widget/FrameLayout;
-    if-eqz v16, :cond_f
+    if-eqz v18, :cond_f
 
-    .line 545
-    move-object/from16 v0, v16
+    .line 551
+    move-object/from16 v0, v18
 
     invoke-virtual {v6, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 547
+    .line 553
     :cond_f
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/AdapterViewAnimator;->mViewsMap:Ljava/util/HashMap;
 
-    move-object/from16 v30, v0
+    move-object/from16 v32, v0
 
-    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v31
+    move-result-object v33
 
     new-instance v4, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;
 
@@ -2772,23 +2833,23 @@
 
     invoke-direct/range {v4 .. v10}, Landroid/widget/AdapterViewAnimator$ViewAndMetaData;-><init>(Landroid/widget/AdapterViewAnimator;Landroid/view/View;IIJ)V
 
-    move-object/from16 v0, v30
+    move-object/from16 v0, v32
 
-    move-object/from16 v1, v31
+    move-object/from16 v1, v33
 
     invoke-virtual {v0, v1, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 549
+    .line 555
     move-object/from16 v0, p0
 
     invoke-direct {v0, v6}, Landroid/widget/AdapterViewAnimator;->addChild(Landroid/view/View;)V
 
-    .line 550
+    .line 556
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v6, v7}, Landroid/widget/AdapterViewAnimator;->applyTransformForChildAtIndex(Landroid/view/View;I)V
 
-    .line 551
+    .line 557
     const/4 v4, -0x1
 
     move-object/from16 v0, p0
@@ -2799,41 +2860,81 @@
 
     goto :goto_7
 
-    .line 555
+    .line 561
     .end local v6           #fl:Landroid/widget/FrameLayout;
     .end local v7           #newRelativeIndex:I
     .end local v8           #adapterPosition:I
     .end local v9           #itemId:J
-    .end local v14           #inOldRange:Z
-    .end local v15           #index:I
-    .end local v16           #newView:Landroid/view/View;
-    .end local v21           #oldRelativeIndex:I
+    .end local v16           #inOldRange:Z
+    .end local v17           #index:I
+    .end local v18           #newView:Landroid/view/View;
+    .end local v23           #oldRelativeIndex:I
     :cond_10
-    move/from16 v0, v19
+    move/from16 v0, v21
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
 
-    .line 556
-    move/from16 v0, v17
+    .line 562
+    move/from16 v0, v19
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/AdapterViewAnimator;->mCurrentWindowEnd:I
 
-    .line 557
-    move/from16 v0, v20
+    .line 563
+    move/from16 v0, v22
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStartUnbounded:I
 
-    .line 559
+    .line 564
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
+
+    if-eqz v4, :cond_11
+
+    .line 565
+    move-object/from16 v0, p0
+
+    iget v4, v0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowStart:I
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4, v11}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
+
+    move-result v13
+
+    .line 566
+    .local v13, adapterStart:I
+    move-object/from16 v0, p0
+
+    iget v4, v0, Landroid/widget/AdapterViewAnimator;->mCurrentWindowEnd:I
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v4, v11}, Landroid/widget/AdapterViewAnimator;->modulo(II)I
+
+    move-result v12
+
+    .line 567
+    .local v12, adapterEnd:I
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Landroid/widget/AdapterViewAnimator;->mRemoteViewsAdapter:Landroid/widget/RemoteViewsAdapter;
+
+    invoke-virtual {v4, v13, v12}, Landroid/widget/RemoteViewsAdapter;->setVisibleRangeHint(II)V
+
+    .line 570
+    .end local v12           #adapterEnd:I
+    .end local v13           #adapterStart:I
     :cond_11
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->requestLayout()V
 
-    .line 560
+    .line 571
     invoke-virtual/range {p0 .. p0}, Landroid/widget/AdapterViewAnimator;->invalidate()V
 
     goto/16 :goto_0
@@ -2843,14 +2944,14 @@
     .locals 1
 
     .prologue
-    .line 340
+    .line 342
     iget v0, p0, Landroid/widget/AdapterViewAnimator;->mWhichChild:I
 
     add-int/lit8 v0, v0, -0x1
 
     invoke-virtual {p0, v0}, Landroid/widget/AdapterViewAnimator;->setDisplayedChild(I)V
 
-    .line 341
+    .line 343
     return-void
 .end method
 
@@ -2859,12 +2960,12 @@
     .parameter "v"
 
     .prologue
-    .line 578
+    .line 589
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
 
-    .line 579
+    .line 590
     return-void
 .end method
 
@@ -2878,34 +2979,34 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 262
+    .line 264
     if-ne p1, v0, :cond_1
 
-    .line 263
+    .line 265
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mInAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0, p3}, Landroid/animation/ObjectAnimator;->setTarget(Ljava/lang/Object;)V
 
-    .line 264
+    .line 266
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mInAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 269
+    .line 271
     :cond_0
     :goto_0
     return-void
 
-    .line 265
+    .line 267
     :cond_1
     if-ne p2, v0, :cond_0
 
-    .line 266
+    .line 268
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mOutAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0, p3}, Landroid/animation/ObjectAnimator;->setTarget(Ljava/lang/Object;)V
 
-    .line 267
+    .line 269
     iget-object v0, p0, Landroid/widget/AdapterViewAnimator;->mOutAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V

@@ -69,7 +69,7 @@
 .end method
 
 .method public static decode([B)Lcom/android/internal/telephony/cat/BerTlv;
-    .locals 10
+    .locals 12
     .parameter "data"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -131,19 +131,57 @@
     .line 79
     move v5, v7
 
-    .line 104
+    .line 112
     .end local v7           #temp:I
     :goto_0
     sub-int v8, v4, v1
 
     if-ge v8, v5, :cond_4
 
-    .line 105
+    .line 113
     new-instance v8, Lcom/android/internal/telephony/cat/ResultException;
 
     sget-object v9, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
 
-    invoke-direct {v8, v9}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;)V
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "Command had extra data endIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " curIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " length="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v8
 
@@ -172,14 +210,56 @@
 
     sget-object v9, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
 
-    invoke-direct {v8, v9}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;)V
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v11, "length < 0x80 length="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-static {v5}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " curIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " endIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v8
     :try_end_2
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Lcom/android/internal/telephony/cat/ResultException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 97
+    .line 103
     .end local v6           #tag:I
     .end local v7           #temp:I
     :catch_0
@@ -187,7 +267,7 @@
 
     move v1, v2
 
-    .line 98
+    .line 104
     .end local v2           #curIndex:I
     .restart local v1       #curIndex:I
     .local v3, e:Ljava/lang/IndexOutOfBoundsException;
@@ -196,11 +276,39 @@
 
     sget-object v9, Lcom/android/internal/telephony/cat/ResultCode;->REQUIRED_VALUES_MISSING:Lcom/android/internal/telephony/cat/ResultCode;
 
-    invoke-direct {v8, v9}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;)V
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "IndexOutOfBoundsException  curIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " endIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v8
 
-    .line 86
+    .line 89
     .end local v1           #curIndex:I
     .end local v3           #e:Ljava/lang/IndexOutOfBoundsException;
     .restart local v2       #curIndex:I
@@ -213,30 +321,72 @@
 
     .end local v2           #curIndex:I
     .restart local v1       #curIndex:I
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 88
+    .line 91
     :cond_2
     :try_start_3
     new-instance v8, Lcom/android/internal/telephony/cat/ResultException;
 
     sget-object v9, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
 
-    invoke-direct {v8, v9}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;)V
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "Expected first byte to be length or a length tag and < 0x81 byte= "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-static {v7}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " curIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, " endIndex="
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v8
     :try_end_3
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Lcom/android/internal/telephony/cat/ResultException; {:try_start_3 .. :try_end_3} :catch_3
 
-    .line 97
+    .line 103
     .end local v7           #temp:I
     :catch_1
     move-exception v3
 
     goto :goto_1
 
-    .line 92
+    .line 98
     .end local v1           #curIndex:I
     .restart local v2       #curIndex:I
     :cond_3
@@ -254,17 +404,17 @@
 
     if-ne v8, v9, :cond_5
 
-    .line 93
+    .line 99
     const/4 v6, 0x0
 
-    .line 94
+    .line 100
     const/4 v1, 0x0
 
     .end local v2           #curIndex:I
     .restart local v1       #curIndex:I
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 99
+    .line 107
     .end local v1           #curIndex:I
     .end local v6           #tag:I
     .restart local v2       #curIndex:I
@@ -273,7 +423,7 @@
 
     move v1, v2
 
-    .line 100
+    .line 108
     .end local v2           #curIndex:I
     .restart local v1       #curIndex:I
     .local v3, e:Lcom/android/internal/telephony/cat/ResultException;
@@ -282,11 +432,15 @@
 
     sget-object v9, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
 
-    invoke-direct {v8, v9}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;)V
+    invoke-virtual {v3}, Lcom/android/internal/telephony/cat/ResultException;->explanation()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v8
 
-    .line 108
+    .line 118
     .end local v3           #e:Lcom/android/internal/telephony/cat/ResultException;
     .restart local v6       #tag:I
     :cond_4
@@ -294,7 +448,7 @@
 
     move-result-object v0
 
-    .line 111
+    .line 121
     .local v0, ctlvs:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/cat/ComprehensionTlv;>;"
     new-instance v8, Lcom/android/internal/telephony/cat/BerTlv;
 
@@ -302,7 +456,7 @@
 
     return-object v8
 
-    .line 99
+    .line 107
     .end local v0           #ctlvs:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/telephony/cat/ComprehensionTlv;>;"
     :catch_3
     move-exception v3
@@ -316,7 +470,7 @@
 
     .end local v2           #curIndex:I
     .restart local v1       #curIndex:I
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 

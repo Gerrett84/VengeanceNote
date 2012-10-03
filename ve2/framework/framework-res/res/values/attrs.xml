@@ -10,10 +10,12 @@
     <attr name="readPermission" format="string" />
     <attr name="writePermission" format="string" />
     <attr name="protectionLevel">
-        <enum name="normal" value="0" />
-        <enum name="dangerous" value="1" />
-        <enum name="signature" value="2" />
-        <enum name="signatureOrSystem" value="3" />
+        <flag name="normal" value="0x00000000" />
+        <flag name="system" value="0x00000010" />
+        <flag name="dangerous" value="0x00000001" />
+        <flag name="signature" value="0x00000002" />
+        <flag name="signatureOrSystem" value="0x00000003" />
+        <flag name="development" value="0x00000020" />
     </attr>
     <attr name="permissionGroup" format="string" />
     <attr name="sharedUserId" format="string" />
@@ -41,17 +43,17 @@
         <enum name="singleInstance" value="3" />
     </attr>
     <attr name="screenOrientation">
+        <enum name="user" value="2" />
         <enum name="unspecified" value="-1" />
         <enum name="landscape" value="0" />
         <enum name="portrait" value="1" />
-        <enum name="user" value="2" />
         <enum name="behind" value="3" />
         <enum name="sensor" value="4" />
         <enum name="nosensor" value="5" />
         <enum name="sensorLandscape" value="6" />
-        <enum name="sensorPortait" value="7" />
+        <enum name="sensorPortrait" value="7" />
         <enum name="reverseLandscape" value="8" />
-        <enum name="reversePortait" value="9" />
+        <enum name="reversePortrait" value="9" />
         <enum name="fullSensor" value="10" />
     </attr>
     <attr name="configChanges">
@@ -506,6 +508,14 @@
         <enum name="KEYCODE_CALENDAR" value="208" />
         <enum name="KEYCODE_MUSIC" value="209" />
         <enum name="KEYCODE_CALCULATOR" value="210" />
+        <enum name="KEYCODE_ZENKAKU_HANKAKU" value="211" />
+        <enum name="KEYCODE_EISU" value="212" />
+        <enum name="KEYCODE_MUHENKAN" value="213" />
+        <enum name="KEYCODE_HENKAN" value="214" />
+        <enum name="KEYCODE_KATAKANA_HIRAGANA" value="215" />
+        <enum name="KEYCODE_YEN" value="216" />
+        <enum name="KEYCODE_RO" value="217" />
+        <enum name="KEYCODE_KANA" value="218" />
     </attr>
     <attr name="fullDark" format="reference|color" />
     <attr name="topDark" format="reference|color" />
@@ -1181,6 +1191,7 @@
         <flag name="flagNoExtractUi" value="0x10000000" />
         <flag name="flagNoAccessoryAction" value="0x20000000" />
         <flag name="flagNoEnterAction" value="0x40000000" />
+        <flag name="flagForceAscii" value="0x80000000" />
     </attr>
     <attr name="imeActionLabel" format="string" />
     <attr name="imeActionId" format="integer" />
@@ -1574,6 +1585,8 @@
     <attr name="notificationTimeout" format="integer" />
     <attr name="accessibilityFlags">
         <flag name="flagDefault" value="0x00000001" />
+        <flag name="flagIncludeNotImportantViews" value="0x00000002" />
+        <flag name="flagRequestTouchExplorationMode" value="0x00000004" />
     </attr>
     <attr name="canRetrieveWindowContent" format="boolean" />
     <attr name="listPreferredItemHeightLarge" format="dimension" />
@@ -1616,6 +1629,23 @@
         <flag name="vertical" value="0x00002000" />
     </attr>
     <attr name="publicKey" format="string" />
+    <attr name="parentActivityName" format="string" />
+    <attr name="permissionGroupFlags">
+        <flag name="personalInfo" value="0x00000001" />
+    </attr>
+    <attr name="isolatedProcess" format="boolean" />
+    <attr name="importantForAccessibility" format="integer">
+        <enum name="auto" value="0" />
+        <enum name="yes" value="1" />
+        <enum name="no" value="2" />
+    </attr>
+    <attr name="keyboardLayout" format="reference" />
+    <attr name="fontFamily" format="string" />
+    <attr name="mediaRouteButtonStyle" format="reference" />
+    <attr name="mediaRouteTypes" format="integer">
+        <enum name="liveAudio" value="1" />
+        <enum name="user" value="8388608" />
+    </attr>
     <attr name="searchWidgetCorpusItemBackground" format="reference|color" />
     <attr name="textAppearanceEasyCorrectSuggestion" format="reference" />
     <attr name="textAppearanceMisspelledSuggestion" format="reference" />
@@ -1636,9 +1666,6 @@
     <attr name="quickContactBadgeOverlay" format="reference" />
     <attr name="stackViewStyle" format="reference" />
     <attr name="numberPickerStyle" format="reference" />
-    <attr name="numberPickerUpButtonStyle" format="reference" />
-    <attr name="numberPickerDownButtonStyle" format="reference" />
-    <attr name="numberPickerInputTextStyle" format="reference" />
     <attr name="timePickerStyle" format="reference" />
     <attr name="activityChooserViewStyle" format="reference" />
     <attr name="actionModeShareDrawable" format="reference" />
@@ -1664,6 +1691,13 @@
     <attr name="preferenceFrameLayoutStyle" format="reference" />
     <attr name="switchStyle" format="reference" />
     <attr name="pointerStyle" format="reference" />
+    <attr name="accessibilityFocusedDrawable" format="reference" />
+    <attr name="findOnPageNextDrawable" format="reference" />
+    <attr name="findOnPagePreviousDrawable" format="reference" />
+    <attr name="windowFixedWidthMajor" format="dimension|fraction" />
+    <attr name="windowFixedHeightMinor" format="dimension|fraction" />
+    <attr name="windowFixedWidthMinor" format="dimension|fraction" />
+    <attr name="windowFixedHeightMajor" format="dimension|fraction" />
     <attr name="listLayout" format="reference" />
     <attr name="multiChoiceItemLayout" format="reference" />
     <attr name="singleChoiceItemLayout" format="reference" />
@@ -1679,12 +1713,26 @@
         <enum name="locale" value="3" />
     </attr>
     <attr name="textDirection" format="integer">
-        <enum name="ltr" value="4" />
-        <enum name="rtl" value="5" />
+        <enum name="ltr" value="3" />
+        <enum name="rtl" value="4" />
         <enum name="inherit" value="0" />
+        <enum name="locale" value="5" />
         <enum name="firstStrong" value="1" />
         <enum name="anyRtl" value="2" />
-        <enum name="charCount" value="3" />
+    </attr>
+    <attr name="textAlignment" format="integer">
+        <enum name="center" value="4" />
+        <enum name="inherit" value="0" />
+        <enum name="gravity" value="1" />
+        <enum name="textStart" value="2" />
+        <enum name="textEnd" value="3" />
+        <enum name="viewStart" value="5" />
+        <enum name="viewEnd" value="6" />
+    </attr>
+    <attr name="accessibilityFocusable" format="integer">
+        <enum name="auto" value="0" />
+        <enum name="yes" value="1" />
+        <enum name="no" value="2" />
     </attr>
     <attr name="layout_marginStart" format="dimension" />
     <attr name="layout_marginEnd" format="dimension" />
@@ -1702,6 +1750,7 @@
     <attr name="tabLayout" format="reference" />
     <attr name="popupPromptView" format="reference" />
     <attr name="disableChildrenWhenDisabled" format="boolean" />
+    <attr name="internalLayout" format="reference" />
     <attr name="quickContactWindowSize">
         <enum name="modeSmall" value="1" />
         <enum name="modeMedium" value="2" />
@@ -1711,28 +1760,36 @@
     <attr name="minorWeightMin" format="float" />
     <attr name="majorWeightMax" format="float" />
     <attr name="minorWeightMax" format="float" />
-    <attr name="flingable" format="boolean" />
     <attr name="selectionDivider" format="reference" />
     <attr name="selectionDividerHeight" format="dimension" />
+    <attr name="selectionDividersDistance" format="dimension" />
+    <attr name="internalMinHeight" format="dimension" />
+    <attr name="internalMaxHeight" format="dimension" />
+    <attr name="internalMinWidth" format="dimension" />
+    <attr name="internalMaxWidth" format="dimension" />
+    <attr name="virtualButtonPressedDrawable" format="reference" />
     <attr name="frameDuration" format="integer" />
     <attr name="framesCount" format="integer" />
+    <attr name="state_accessibility_focused" format="boolean" />
     <attr name="initialActivityCount" format="string" />
     <attr name="expandActivityOverflowButtonDrawable" format="reference" />
     <attr name="keyboardViewStyle" format="reference" />
+    <attr name="outerRingDrawable" format="reference" />
+    <attr name="pointDrawable" format="reference" />
+    <attr name="glowRadius" format="dimension" />
     <attr name="targetDrawables" format="reference" />
     <attr name="handleDrawable" format="reference" />
-    <attr name="leftChevronDrawable" format="reference" />
-    <attr name="rightChevronDrawable" format="reference" />
-    <attr name="topChevronDrawable" format="reference" />
-    <attr name="bottomChevronDrawable" format="reference" />
+    <attr name="chevronDrawables" format="reference" />
     <attr name="waveDrawable" format="reference" />
     <attr name="outerRadius" format="dimension" />
-    <attr name="hitRadius" format="dimension" />
     <attr name="vibrationDuration" format="integer" />
     <attr name="snapMargin" format="dimension" />
     <attr name="feedbackCount" format="integer" />
-    <attr name="verticalOffset" format="dimension" />
-    <attr name="horizontalOffset" format="dimension" />
+    <attr name="alwaysTrackFinger" format="boolean" />
+    <attr name="layout_maxHeight" format="dimension">
+        <enum name="unbounded" value="-1" />
+    </attr>
+    <attr name="layout_minHeight" format="dimension" />
     <attr name="aspect" format="string" />
     <attr name="pointerIconArrow" format="reference" />
     <attr name="pointerIconSpotHover" format="reference" />
@@ -1749,6 +1806,8 @@
     <attr name="mtpReserve" format="integer" />
     <attr name="allowMassStorage" format="boolean" />
     <attr name="maxFileSize" format="integer" />
+    <attr name="externalRouteEnabledDrawable" format="reference" />
     <attr name="neverEncrypt" format="boolean" />
     <attr name="cantSaveState" format="boolean" />
+    <attr name="supportsRtl" format="boolean" />
 </resources>

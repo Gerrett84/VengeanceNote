@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 324
+    .line 327
     new-instance v0, Landroid/content/res/AssetFileDescriptor$1;
 
     invoke-direct {v0}, Landroid/content/res/AssetFileDescriptor$1;-><init>()V
@@ -58,10 +58,10 @@
     .parameter "src"
 
     .prologue
-    .line 318
+    .line 321
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 319
+    .line 322
     sget-object v0, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -72,21 +72,21 @@
 
     iput-object v0, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
-    .line 320
+    .line 323
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mStartOffset:J
 
-    .line 321
+    .line 324
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
-    .line 322
+    .line 325
     return-void
 .end method
 
@@ -103,15 +103,28 @@
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
+    if-nez p1, :cond_0
+
+    .line 56
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "fd must not be null"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 58
+    :cond_0
     cmp-long v0, p4, v1
 
-    if-gez v0, :cond_0
+    if-gez v0, :cond_1
 
     cmp-long v0, p2, v1
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 56
+    .line 59
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "startOffset must be 0 when using UNKNOWN_LENGTH"
@@ -120,17 +133,17 @@
 
     throw v0
 
-    .line 59
-    :cond_0
+    .line 62
+    :cond_1
     iput-object p1, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
-    .line 60
+    .line 63
     iput-wide p2, p0, Landroid/content/res/AssetFileDescriptor;->mStartOffset:J
 
-    .line 61
+    .line 64
     iput-wide p4, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
-    .line 62
+    .line 65
     return-void
 .end method
 
@@ -145,12 +158,12 @@
     .end annotation
 
     .prologue
-    .line 123
+    .line 126
     iget-object v0, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 124
+    .line 127
     return-void
 .end method
 
@@ -163,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 138
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
     const-wide/16 v2, 0x0
@@ -172,14 +185,14 @@
 
     if-gez v0, :cond_0
 
-    .line 136
+    .line 139
     new-instance v0, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;
 
     iget-object v1, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-direct {v0, v1}, Landroid/os/ParcelFileDescriptor$AutoCloseInputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 138
+    .line 141
     :goto_0
     return-object v0
 
@@ -200,7 +213,7 @@
     .end annotation
 
     .prologue
-    .line 150
+    .line 153
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
     const-wide/16 v2, 0x0
@@ -209,14 +222,14 @@
 
     if-gez v0, :cond_0
 
-    .line 151
+    .line 154
     new-instance v0, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
 
     iget-object v1, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-direct {v0, v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
 
-    .line 153
+    .line 156
     :goto_0
     return-object v0
 
@@ -232,7 +245,7 @@
     .locals 1
 
     .prologue
-    .line 309
+    .line 312
     iget-object v0, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->describeContents()I
@@ -246,7 +259,7 @@
     .locals 2
 
     .prologue
-    .line 116
+    .line 119
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
     return-wide v0
@@ -256,7 +269,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 81
     iget-object v0, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -272,22 +285,22 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 100
+    .line 103
     iget-wide v2, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
     cmp-long v2, v2, v4
 
     if-ltz v2, :cond_1
 
-    .line 101
+    .line 104
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
-    .line 104
+    .line 107
     :cond_0
     :goto_0
     return-wide v0
 
-    .line 103
+    .line 106
     :cond_1
     iget-object v2, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
@@ -295,7 +308,7 @@
 
     move-result-wide v0
 
-    .line 104
+    .line 107
     .local v0, len:J
     cmp-long v2, v0, v4
 
@@ -310,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 73
     iget-object v0, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     return-object v0
@@ -320,7 +333,7 @@
     .locals 2
 
     .prologue
-    .line 85
+    .line 88
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mStartOffset:J
 
     return-wide v0
@@ -330,7 +343,7 @@
     .locals 3
 
     .prologue
-    .line 158
+    .line 161
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -390,21 +403,21 @@
     .parameter "flags"
 
     .prologue
-    .line 313
+    .line 316
     iget-object v0, p0, Landroid/content/res/AssetFileDescriptor;->mFd:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/ParcelFileDescriptor;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 314
+    .line 317
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mStartOffset:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 315
+    .line 318
     iget-wide v0, p0, Landroid/content/res/AssetFileDescriptor;->mLength:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 316
+    .line 319
     return-void
 .end method

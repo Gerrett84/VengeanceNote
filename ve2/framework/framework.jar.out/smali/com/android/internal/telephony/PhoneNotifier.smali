@@ -7,6 +7,9 @@
 .method public abstract notifyCallForwardingChanged(Lcom/android/internal/telephony/Phone;)V
 .end method
 
+.method public abstract notifyCellInfo(Lcom/android/internal/telephony/Phone;Landroid/telephony/CellInfo;)V
+.end method
+
 .method public abstract notifyCellLocation(Lcom/android/internal/telephony/Phone;)V
 .end method
 

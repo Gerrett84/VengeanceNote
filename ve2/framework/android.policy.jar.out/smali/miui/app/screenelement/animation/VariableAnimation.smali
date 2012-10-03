@@ -140,12 +140,13 @@
     goto :goto_1
 .end method
 
-.method public reset()V
+.method public reset(J)V
     .locals 2
+    .parameter "time"
 
     .prologue
     .line 37
-    invoke-super {p0}, Lmiui/app/screenelement/animation/BaseAnimation;->reset()V
+    invoke-super {p0, p1, p2}, Lmiui/app/screenelement/animation/BaseAnimation;->reset(J)V
 
     .line 38
     iget-wide v0, p0, Lmiui/app/screenelement/animation/VariableAnimation;->mDelayValue:D

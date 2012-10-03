@@ -3978,7 +3978,7 @@
 .end method
 
 .method public monitorPackages()V
-    .locals 3
+    .locals 4
 
     .prologue
     .line 651
@@ -3993,9 +3993,11 @@
 
     iget-object v1, p0, Lcom/android/server/am/UsageStatsService;->mContext:Landroid/content/Context;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Z)V
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
     .line 660
     invoke-direct {p0}, Lcom/android/server/am/UsageStatsService;->filterHistoryStats()V

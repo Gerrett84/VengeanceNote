@@ -140,6 +140,9 @@
 .field public static final animationOrder:I = 0x10101ce
 
 .field public static final animationResolution:I = 0x101031a
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final antialias:I = 0x101011a
 
@@ -479,13 +482,13 @@
 .field public static final ems:I = 0x1010158
 
 .field public static final enabled:I = 0x101000e
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final endColor:I = 0x101019e
 
 .field public static final endYear:I = 0x101017d
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final enterFadeDuration:I = 0x101030c
 
@@ -530,9 +533,6 @@
 .field public static final fadeScrollbars:I = 0x10102aa
 
 .field public static final fadingEdge:I = 0x10100df
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
 .field public static final fadingEdgeLength:I = 0x10100e0
 
@@ -579,6 +579,8 @@
 .field public static final focusableInTouchMode:I = 0x10100db
 
 .field public static final focusedMonthDateColor:I = 0x1010343
+
+.field public static final fontFamily:I = 0x10103ac
 
 .field public static final footerDividersEnabled:I = 0x101022f
 
@@ -720,6 +722,8 @@
 
 .field public static final immersive:I = 0x10102c0
 
+.field public static final importantForAccessibility:I = 0x10103aa
+
 .field public static final inAnimation:I = 0x1010177
 
 .field public static final includeFontPadding:I = 0x101015f
@@ -787,6 +791,8 @@
 
 .field public static final isSticky:I = 0x1010247
 
+.field public static final isolatedProcess:I = 0x10103a9
+
 .field public static final itemBackground:I = 0x1010130
 
 .field public static final itemIconDisabledAlpha:I = 0x1010131
@@ -822,6 +828,8 @@
 .field public static final keyTextSize:I = 0x1010234
 
 .field public static final keyWidth:I = 0x101023d
+
+.field public static final keyboardLayout:I = 0x10103ab
 
 .field public static final keyboardMode:I = 0x101024d
 
@@ -993,6 +1001,10 @@
 
 .field public static final measureWithLargestChild:I = 0x10102d4
 
+.field public static final mediaRouteButtonStyle:I = 0x10103ad
+
+.field public static final mediaRouteTypes:I = 0x10103ae
+
 .field public static final menuCategory:I = 0x10101de
 
 .field public static final mimeType:I = 0x1010026
@@ -1102,6 +1114,8 @@
 
 .field public static final panelTextAppearance:I = 0x1010062
 
+.field public static final parentActivityName:I = 0x10103a7
+
 .field public static final password:I = 0x101015c
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -1116,6 +1130,8 @@
 .field public static final permission:I = 0x1010006
 
 .field public static final permissionGroup:I = 0x101000a
+
+.field public static final permissionGroupFlags:I = 0x10103a8
 
 .field public static final persistent:I = 0x101000d
 
@@ -1448,6 +1464,9 @@
 .field public static final startOffset:I = 0x10101be
 
 .field public static final startYear:I = 0x101017c
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field public static final stateNotNeeded:I = 0x1010016
 

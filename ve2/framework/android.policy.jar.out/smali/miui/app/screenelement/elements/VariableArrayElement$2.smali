@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lmiui/app/screenelement/elements/VariableArrayElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;)V
+    value = Lmiui/app/screenelement/elements/VariableArrayElement;-><init>(Lorg/w3c/dom/Element;Lmiui/app/screenelement/ScreenContext;Lmiui/app/screenelement/ScreenElementRoot;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 164
+    .line 165
     iput-object p1, p0, Lmiui/app/screenelement/elements/VariableArrayElement$2;->this$0:Lmiui/app/screenelement/elements/VariableArrayElement;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "child"
 
     .prologue
-    .line 167
+    .line 168
     iget-object v0, p0, Lmiui/app/screenelement/elements/VariableArrayElement$2;->this$0:Lmiui/app/screenelement/elements/VariableArrayElement;
 
     #getter for: Lmiui/app/screenelement/elements/VariableArrayElement;->mArray:Ljava/util/ArrayList;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 168
+    .line 169
     return-void
 .end method

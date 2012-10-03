@@ -15,11 +15,6 @@
 
 
 # instance fields
-.field public databaseBytes:J
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
-
 .field public dbStats:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -35,22 +30,7 @@
 
 .field public memoryUsed:I
 
-.field public numPagers:I
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
-
-.field public pageCacheOverflo:I
-
-.field public referencedBytes:J
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
-
-.field public totalBytes:J
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field public pageCacheOverflow:I
 
 
 # direct methods
@@ -58,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 96
+    .line 91
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
