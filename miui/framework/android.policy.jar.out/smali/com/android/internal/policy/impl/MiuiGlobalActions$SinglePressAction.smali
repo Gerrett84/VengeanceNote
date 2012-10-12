@@ -17,12 +17,6 @@
 .end annotation
 
 
-# static fields
-.field protected static rebootMode:I
-
-.field protected static final rebootOptions:[Ljava/lang/String;
-
-
 # instance fields
 .field private mIconResId:I
 
@@ -34,36 +28,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "Normal"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const-string v2, "Recovery"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "Hot Boot"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/android/internal/policy/impl/MiuiGlobalActions$SinglePressAction;->rebootOptions:[Ljava/lang/String;
-
-    return-void
-.end method
-
 .method protected constructor <init>(II)V
     .locals 0
     .parameter "iconResId"
