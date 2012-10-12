@@ -1174,7 +1174,7 @@
     <string name="description_direction_left">เลื่อนไปทางซ้ายเพื่อ %s</string>
     <string name="description_direction_right">เลื่อนไปทางขวาเพื่อ %s</string>
     <string name="description_target_unlock">ปลดล็อก</string>
-    <string name="description_target_camera">กล้องถ่ายรูป</string>
+    <string name="description_target_camera">กล้อง</string>
     <string name="description_target_silent">ปิดเสียง</string>
     <string name="description_target_soundon">เปิดเสียง</string>
     <string name="description_target_search">ค้นหา</string>

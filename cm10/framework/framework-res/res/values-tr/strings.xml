@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">Uygulamaya, cihazınız tarafından alınan hücre yayını mesajlarını okuma izni verir. Hücre yayını uyarıları bazı yerlerde acil durumlar konusunda sizi uyarmak için gönderilir. Kötü amaçlı uygulamalar acil hücre yayını alındığında cihazınızın performansına ya da çalışmasına engel olabilir.</string>
     <string name="permlab_sendSms">SMS mesajları gönder</string>
     <string name="permdesc_sendSms">Uygulamaya SMS mesajları gönderme izni verir. Bu durum beklenmeyen ödemelere neden olabilir. Kötü amaçlı uygulamalar onayınız olmadan mesajlar göndererek sizi zarara uğratabilir.</string>
+    <string name="permlab_sendMockSms">Sahte SMS gönder</string>
+    <string name="permdesc_sendMockSms">Uygulamanın sahte SMS göndermesine izin verir. Bir uygulamanın güvenilir uygulamalara SMS göndermesine izin verir. Zararlı uygulamalar, aygıtın bildirim sistemini engelleyip kullanıcıyı rahatsız ederek sürekli mesaj gönderebilir.</string>
     <string name="permlab_sendSmsNoConfirmation">SMS mesajlarını onaysız gönder</string>
     <string name="permdesc_sendSmsNoConfirmation">Uygulamaya SMS mesajları gönderme izni verir. Bu durum beklenmeyen ödemelere neden olabilir. Kötü amaçlı uygulamalar onayınız olmadan mesajlar göndererek sizi zarara uğratabilir.</string>
     <string name="permlab_readSms">kısa mesajlarımı (SMS veya MMS) oku</string>

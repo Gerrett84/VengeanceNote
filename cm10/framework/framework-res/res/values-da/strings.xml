@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">Tillader, at appen læser mobiltransmissionsbeskeder, der modtages af din enhed. I nogle områder sendes mobiltransmissionsbeskeder for at advare om nødsituationer. Ondsindede apps kan forstyrre ydelsen eller driften af ​din ​enhed, når en mobiltransmission om en nødsituation modtages.</string>
     <string name="permlab_sendSms">send sms-beskeder</string>
     <string name="permdesc_sendSms">Tillader, at appen kan sende sms-beskeder. Dette kan resultere i uventede opkrævninger. Skadelige apps kan koste dig penge ved at sende beskeder uden din bekræftelse.</string>
+    <string name="permlab_sendMockSms">Send imiterede SMS-beskeder</string>
+    <string name="permdesc_sendMockSms">Tillader appen at sende imiterede SMS-beskeder. Dette tillader en app at sende beskeder til pålidelige apps. Ondsindede apps kan sende beskeder kontinuerligt, blokere enhedens notifikationssystem og forstyrre brugeren.</string>
     <string name="permlab_sendSmsNoConfirmation">sende sms-meddelelser uden bekræftelse</string>
     <string name="permdesc_sendSmsNoConfirmation">Tillader, at appen kan sende sms-beskeder. Dette kan resultere i uventede opkrævninger. Skadelige apps kan koste dig penge ved at sende beskeder uden din bekræftelse.</string>
     <string name="permlab_readSms">læse dine tekstbeskeder (SMS eller MMS)</string>
@@ -465,8 +467,8 @@
     <string name="permdesc_clearAppCache">Tillader, at appen kan frigøre plads på din telefon ved at slette filer i appens cachemappe. Adgangen er normalt begrænset til systemprocesser.</string>
     <string name="permlab_movePackage">flytte appressourcer</string>
     <string name="permdesc_movePackage">Tillader, at appen kan flytte appressourcer fra interne til eksterne medier og omvendt.</string>
-    <string name="permlab_preventpower">Undgå tænd/sluk-tasten</string>
-    <string name="permdesc_preventpower">Tillader et program at tilsidesætte tænd/sluk-tasten</string>
+    <string name="permlab_preventpower">Undgå tænd/sluk-knappen</string>
+    <string name="permdesc_preventpower">Tillader et program at tilsidesætte tænd/sluk-knappen</string>
     <string name="permlab_readLogs">læse følsomme logdata</string>
     <string name="permdesc_readLogs">Tillader, at appen kan læse i systemets forskellige logfiler. Dermed kan generelle oplysninger om, hvad du laver med telefonen registreres, også personlige eller private oplysninger.</string>
     <string name="permlab_anyCodecForPlayback">brug enhver mediedekoder til afspilning</string>

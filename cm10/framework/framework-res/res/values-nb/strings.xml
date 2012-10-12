@@ -277,7 +277,7 @@
     <string name="silent_mode_vibrate">Vibreringsmodus</string>
     <string name="silent_mode_ring">Ringelyd på</string>
     <string name="shutdown_progress">Avslutter…</string>
-    <string name="shutdown_confirm">Telefonen vil bli slått av.</string>
+    <string name="shutdown_confirm">Telefonen kommer til å slås av.</string>
     <string name="shutdown_confirm_question">Vil du slå av?</string>
     <string name="reboot_safemode_title">Start på nytt i sikker modus</string>
     <string name="reboot_safemode_confirm">Ønsker du å starte på nytt i sikker modus? Dette deaktiverer alle tredjepartsprogrammene du har installert. De gjenopprettes når du starter på nytt.</string>
@@ -572,7 +572,7 @@
     <string name="permdesc_authenticateAccounts">Lar appen bruke kontoadministratoren sine rettigheter til kontoautentisering, herunder oppretting av kontoer samt innhenting og angivelse av passord.</string>
     <string name="permlab_manageAccounts">legger til eller fjerner kontoer</string>
     <string name="permdesc_manageAccounts">Lar appen utføre handlinger som å legge til og fjerne kontoer samt slette passord.</string>
-    <string name="permlab_useCredentials">bruker kontoer på enheten</string>
+    <string name="permlab_useCredentials">bruke kontoer på enheten</string>
     <string name="permdesc_useCredentials">Lar appen be om autentiseringstokener.</string>
     <string name="permlab_accessNetworkState">ser nettverkstilkoblinger</string>
     <string name="permdesc_accessNetworkState">Lar appen se informasjon om nettverkstilkoblinger, slik som hvilke nettverk som finnes og er tilkoblet.</string>

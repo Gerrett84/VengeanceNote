@@ -447,7 +447,7 @@
     <string name="permlab_anyCodecForPlayback">menggunakan media pengawasandi apa pun untuk pemutaran</string>
     <string name="permdesc_anyCodecForPlayback">Mengizinkan apl menggunakan pengawasandi media apa pun yang terpasang guna mengawasandikan media untuk diputar.</string>
     <string name="permlab_diagnostic">baca/tulis ke sumber daya yang dimiliki oleh diag</string>
-    <string name="permdesc_diagnostic">Mengizinkan apl membaca dan menulis ke sumber daya apa pun yang dimiliki oleh grup diag; misalnya, file dalam /dev. Izin ini berpotensi memengaruhi kestabilan dan keamanan sistem. Sebaiknya ini HANYA digunakan untuk diagnostik khusus perangkat keras oleh pabrikan atau operator.</string>
+    <string name="permdesc_diagnostic">Mengizinkan apl membaca dan menulis ke sumber daya apa pun yang dimiliki oleh grup diag; misalnya, file dalam /dev. Izin ini berpotensi memengaruhi kestabilan dan keamanan sistem. Sebaiknya ini HANYA digunakan untuk diagnosis khusus perangkat keras oleh pabrikan atau operator.</string>
     <string name="permlab_changeComponentState">mengaktifkan atau menonaktifkan komponen apl</string>
     <string name="permdesc_changeComponentState">Mengizinkan apl mengubah apakah komponen apl lain diaktifkan atau tidak. Apl berbahaya dapat menggunakan izin ini untuk menonaktifkan kemampuan ponsel yang penting. Izin ini harus digunakan dengan hati-hati, karena mungkin saja menjadikan komponen apl tidak dapat digunakan, tidak konsisten, atau tidak stabil.</string>
     <string name="permlab_grantRevokePermissions">memberi atau mencabut izin</string>
@@ -540,8 +540,8 @@
     <string name="permdesc_performCdmaProvisioning">Mengizinkan apl memulai penyediaan CDMA. Apl berbahaya dapat memulai penyediaan CDMA yang tidak perlu.</string>
     <string name="permlab_locationUpdates">mengontrol pemberitahuan pembaruan lokasi</string>
     <string name="permdesc_locationUpdates">Mengizinkan apl mengaktifkan/menonaktifkan pemberitahuan pembaruan lokasi dari radio. Tidak untuk digunakan oleh apl normal.</string>
-    <string name="permlab_checkinProperties">akses properti lapor masuk</string>
-    <string name="permdesc_checkinProperties">Mengizinkan apl membaca/menulis akses ke properti yang diunggah oleh layanan lapor masuk. Tidak untuk digunakan oleh apl normal.</string>
+    <string name="permlab_checkinProperties">akses properti check in</string>
+    <string name="permdesc_checkinProperties">Mengizinkan apl membaca/menulis akses ke properti yang diunggah oleh layanan check in. Tidak untuk digunakan oleh apl normal.</string>
     <string name="permlab_bindGadget">pilih widget</string>
     <string name="permdesc_bindGadget">Mengizinkan apl memberi tahu sistem tentang widget mana yang dapat digunakan oleh suatu apl. Apl dengan izin ini dapat memberikan akses ke data pribadi untuk apl lain. Tidak untuk digunakan oleh apl normal.</string>
     <string name="permlab_modifyPhoneState">ubah kondisi ponsel</string>
