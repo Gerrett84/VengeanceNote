@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 7897
+    .line 7911
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$ClearStorageConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 7897
+    .line 7911
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService$ClearStorageConnection;-><init>(Lcom/android/server/pm/PackageManagerService;)V
 
     return-void
@@ -57,10 +57,10 @@
     .parameter "service"
 
     .prologue
-    .line 7902
+    .line 7916
     monitor-enter p0
 
-    .line 7903
+    .line 7917
     :try_start_0
     invoke-static {p2}, Lcom/android/internal/app/IMediaContainerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IMediaContainerService;
 
@@ -68,16 +68,16 @@
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$ClearStorageConnection;->mContainerService:Lcom/android/internal/app/IMediaContainerService;
 
-    .line 7904
+    .line 7918
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 7905
+    .line 7919
     monitor-exit p0
 
-    .line 7906
+    .line 7920
     return-void
 
-    .line 7905
+    .line 7919
     :catchall_0
     move-exception v0
 
@@ -93,6 +93,6 @@
     .parameter "name"
 
     .prologue
-    .line 7910
+    .line 7924
     return-void
 .end method

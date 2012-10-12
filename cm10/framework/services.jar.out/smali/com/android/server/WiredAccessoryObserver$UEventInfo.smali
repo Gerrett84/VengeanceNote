@@ -17,8 +17,6 @@
 # instance fields
 .field private final mDevName:Ljava/lang/String;
 
-.field private mDockNames:[Ljava/lang/String;
-
 .field private final mState1Bits:I
 
 .field private final mState2Bits:I
@@ -28,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;II)V
-    .locals 2
+    .locals 0
     .parameter "devName"
     .parameter "state1Bits"
     .parameter "state2Bits"
@@ -36,19 +34,6 @@
     .prologue
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 62
-    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x1070038
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/server/WiredAccessoryObserver$UEventInfo;->mDockNames:[Ljava/lang/String;
 
     .line 65
     iput-object p1, p0, Lcom/android/server/WiredAccessoryObserver$UEventInfo;->mDevName:Ljava/lang/String;
@@ -219,9 +204,7 @@
 
     .line 92
     :cond_2
-    iget-object v4, p0, Lcom/android/server/WiredAccessoryObserver$UEventInfo;->mDockNames:[Ljava/lang/String;
-
-    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->access$200()Ljava/util/List;
 
     move-result-object v4
 

@@ -37,24 +37,24 @@
 
     const/4 v0, -0x1
 
-    .line 7656
+    .line 7670
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7658
+    .line 7672
     iput v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->uid:I
 
-    .line 7659
+    .line 7673
     iput v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->removedUid:I
 
-    .line 7660
+    .line 7674
     iput-boolean v1, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->isRemovedPackageSystemUpdate:Z
 
-    .line 7662
+    .line 7676
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->args:Lcom/android/server/pm/PackageManagerService$InstallArgs;
 
-    .line 7663
+    .line 7677
     iput-boolean v1, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->isThemeApk:Z
 
     return-void
@@ -75,12 +75,12 @@
 
     const/4 v4, 0x0
 
-    .line 7667
+    .line 7681
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3, v5}, Landroid/os/Bundle;-><init>(I)V
 
-    .line 7668
+    .line 7682
     .local v3, extras:Landroid/os/Bundle;
     const-string v1, "android.intent.extra.UID"
 
@@ -93,38 +93,38 @@
     :goto_0
     invoke-virtual {v3, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 7669
+    .line 7683
     const-string v0, "android.intent.extra.DATA_REMOVED"
 
     invoke-virtual {v3, v0, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 7670
+    .line 7684
     if-eqz p2, :cond_0
 
-    .line 7671
+    .line 7685
     const-string v0, "android.intent.extra.REPLACING"
 
     invoke-virtual {v3, v0, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 7673
+    .line 7687
     :cond_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->removedPackage:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 7674
+    .line 7688
     const/4 v2, 0x0
 
-    .line 7675
+    .line 7689
     .local v2, category:Ljava/lang/String;
     iget-boolean v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->isThemeApk:Z
 
     if-eqz v0, :cond_1
 
-    .line 7676
+    .line 7690
     const-string v2, "com.tmobile.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE"
 
-    .line 7678
+    .line 7692
     :cond_1
     const-string v0, "android.intent.action.PACKAGE_REMOVED"
 
@@ -134,12 +134,12 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;I)V
 
-    .line 7680
+    .line 7694
     if-eqz p1, :cond_2
 
     if-nez p2, :cond_2
 
-    .line 7681
+    .line 7695
     const-string v0, "android.intent.action.PACKAGE_FULLY_REMOVED"
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->removedPackage:Ljava/lang/String;
@@ -148,14 +148,14 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;I)V
 
-    .line 7685
+    .line 7699
     .end local v2           #category:Ljava/lang/String;
     :cond_2
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->removedUid:I
 
     if-ltz v0, :cond_3
 
-    .line 7686
+    .line 7700
     const-string v5, "android.intent.action.UID_REMOVED"
 
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->removedUid:I
@@ -176,11 +176,11 @@
 
     invoke-static/range {v5 .. v11}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;I)V
 
-    .line 7689
+    .line 7703
     :cond_3
     return-void
 
-    .line 7668
+    .line 7682
     :cond_4
     iget v0, p0, Lcom/android/server/pm/PackageManagerService$PackageRemovedInfo;->uid:I
 

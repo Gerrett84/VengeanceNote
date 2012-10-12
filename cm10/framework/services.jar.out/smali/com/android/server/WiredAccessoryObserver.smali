@@ -34,6 +34,17 @@
 
 .field private static mHeadsetState:I
 
+.field private static sDockNames:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private static uEventInfo:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -64,7 +75,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 45
@@ -75,6 +86,23 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/server/WiredAccessoryObserver;->TAG:Ljava/lang/String;
+
+    .line 56
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x1070038
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
 
     .line 173
     invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->makeObservedUEventList()Ljava/util/List;
@@ -216,7 +244,17 @@
     return v0
 .end method
 
-.method static synthetic access$402(Lcom/android/server/WiredAccessoryObserver;Z)Z
+.method static synthetic access$200()Ljava/util/List;
+    .locals 1
+
+    .prologue
+    .line 44
+    sget-object v0, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method static synthetic access$502(Lcom/android/server/WiredAccessoryObserver;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -228,7 +266,7 @@
     return p1
 .end method
 
-.method static synthetic access$500(Lcom/android/server/WiredAccessoryObserver;)V
+.method static synthetic access$600(Lcom/android/server/WiredAccessoryObserver;)V
     .locals 0
     .parameter "x0"
 
@@ -239,7 +277,7 @@
     return-void
 .end method
 
-.method static synthetic access$600()Ljava/util/List;
+.method static synthetic access$700()Ljava/util/List;
     .locals 1
 
     .prologue
@@ -249,7 +287,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/server/WiredAccessoryObserver;IILjava/lang/String;)V
+.method static synthetic access$800(Lcom/android/server/WiredAccessoryObserver;IILjava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -263,7 +301,7 @@
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/android/server/WiredAccessoryObserver;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$900(Lcom/android/server/WiredAccessoryObserver;)Landroid/os/PowerManager$WakeLock;
     .locals 1
     .parameter "x0"
 
@@ -1229,9 +1267,9 @@
 
     .line 240
     .local v2, name:Ljava/lang/String;
-    const-string v4, "dock"
+    sget-object v4, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
 
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 

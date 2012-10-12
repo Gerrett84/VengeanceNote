@@ -51,13 +51,13 @@
     check-cast v0, Ljava/lang/String;
 
     #calls: Lcom/android/server/WiredAccessoryObserver;->setDevicesState(IILjava/lang/String;)V
-    invoke-static {v1, v2, v3, v0}, Lcom/android/server/WiredAccessoryObserver;->access$700(Lcom/android/server/WiredAccessoryObserver;IILjava/lang/String;)V
+    invoke-static {v1, v2, v3, v0}, Lcom/android/server/WiredAccessoryObserver;->access$800(Lcom/android/server/WiredAccessoryObserver;IILjava/lang/String;)V
 
     .line 388
     iget-object v0, p0, Lcom/android/server/WiredAccessoryObserver$1;->this$0:Lcom/android/server/WiredAccessoryObserver;
 
     #getter for: Lcom/android/server/WiredAccessoryObserver;->mWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v0}, Lcom/android/server/WiredAccessoryObserver;->access$800(Lcom/android/server/WiredAccessoryObserver;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Lcom/android/server/WiredAccessoryObserver;->access$900(Lcom/android/server/WiredAccessoryObserver;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 

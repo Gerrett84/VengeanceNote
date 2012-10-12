@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 818
+    .line 832
     iput-object p1, p0, Lcom/android/server/LocationManagerService$LpPowerComparator;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .parameter "x1"
 
     .prologue
-    .line 818
+    .line 832
     invoke-direct {p0, p1}, Lcom/android/server/LocationManagerService$LpPowerComparator;-><init>(Lcom/android/server/LocationManagerService;)V
 
     return-void
@@ -65,7 +65,7 @@
     .parameter "l2"
 
     .prologue
-    .line 821
+    .line 835
     invoke-interface {p1}, Lcom/android/server/location/LocationProviderInterface;->getPowerRequirement()I
 
     move-result v0
@@ -85,7 +85,7 @@
     .parameter "x1"
 
     .prologue
-    .line 818
+    .line 832
     check-cast p1, Lcom/android/server/location/LocationProviderInterface;
 
     .end local p1
@@ -105,7 +105,7 @@
     .parameter "l2"
 
     .prologue
-    .line 825
+    .line 839
     invoke-interface {p1}, Lcom/android/server/location/LocationProviderInterface;->getPowerRequirement()I
 
     move-result v0
