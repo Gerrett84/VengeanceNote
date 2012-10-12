@@ -12,14 +12,14 @@
     <bool name="config_sf_slowBlur">true</bool>
     <bool name="config_useMasterVolume">false</bool>
     <bool name="config_sendAudioBecomingNoisy">true</bool>
-    <bool name="config_ui_enableFadingMarquee">true</bool>
+    <bool name="config_ui_enableFadingMarquee">false</bool>
     <bool name="config_closeDialogWhenTouchOutside">true</bool>
     <bool name="config_wifi_dual_band_support">true</bool>
     <bool name="config_wifi_p2p_support">false</bool>
     <bool name="config_wifi_background_scan_support">true</bool>
     <bool name="config_automatic_brightness_available">true</bool>
     <bool name="config_annoy_dianne">true</bool>
-    <bool name="config_unplugTurnsOnScreen">false</bool>
+    <bool name="config_unplugTurnsOnScreen">true</bool>
     <bool name="config_animateScreenLights">false</bool>
     <bool name="config_enableScreenshotChord">true</bool>
     <bool name="config_allowAllRotations">true</bool>
@@ -52,7 +52,7 @@
     <bool name="config_mms_content_disposition_support">true</bool>
     <bool name="config_alwaysUseCdmaRssi">false</bool>
     <bool name="config_duplicate_port_omadm_wappush">false</bool>
-    <bool name="config_showNavigationBar">false</bool>
+    <bool name="config_showNavigationBar">true</bool>
     <bool name="config_actionMenuItemAllCaps">true</bool>
     <bool name="config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="config_wimaxEnabled">false</bool>
