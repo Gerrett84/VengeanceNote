@@ -1258,7 +1258,7 @@
     .line 3626
     .end local v13           #j:I
     :cond_5
-    const-string/jumbo v19, "launchFlags("
+    const-string v19, "launchFlags("
 
     const/16 v20, 0x0
 
@@ -1982,8 +1982,6 @@
     goto/16 :goto_3
 
     .line 3678
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x42 -> :sswitch_1
@@ -2769,7 +2767,7 @@
 
     .line 3500
     :cond_9
-    const-string/jumbo v11, "launchFlags="
+    const-string v11, "launchFlags="
 
     invoke-virtual {p0, v11, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;I)Z
 
@@ -3035,7 +3033,7 @@
 
     .line 3543
     :cond_17
-    const-string/jumbo v11, "l."
+    const-string v11, "l."
 
     invoke-virtual {p0, v11, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;I)Z
 
@@ -3316,7 +3314,7 @@
     if-eqz v5, :cond_4
 
     .line 6387
-    const-string/jumbo v5, "launchFlags=0x"
+    const-string v5, "launchFlags=0x"
 
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

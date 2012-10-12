@@ -973,7 +973,7 @@
     .line 740
     const/16 v4, 0x101
 
-    const-string/jumbo v5, "keyboard"
+    const-string v5, "keyboard"
 
     invoke-direct {p0, v0, v4, v5}, Landroid/view/InputDevice;->appendSourceDescriptionIfApplicable(Ljava/lang/StringBuilder;ILjava/lang/String;)V
 
@@ -1209,8 +1209,6 @@
     return-object v4
 
     .line 724
-    nop
-
     nop
 
     :pswitch_data_0

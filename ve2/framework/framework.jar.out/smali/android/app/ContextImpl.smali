@@ -283,7 +283,7 @@
     invoke-static {v0, v1}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
 
     .line 355
-    const-string/jumbo v0, "keyguard"
+    const-string v0, "keyguard"
 
     new-instance v1, Landroid/app/ContextImpl$18;
 
@@ -292,7 +292,7 @@
     invoke-static {v0, v1}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
 
     .line 364
-    const-string/jumbo v0, "layout_inflater"
+    const-string v0, "layout_inflater"
 
     new-instance v1, Landroid/app/ContextImpl$19;
 

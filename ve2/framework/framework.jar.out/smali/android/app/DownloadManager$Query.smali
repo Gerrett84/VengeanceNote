@@ -57,7 +57,7 @@
     iput-object v0, p0, Landroid/app/DownloadManager$Query;->mStatusFlags:Ljava/lang/Integer;
 
     .line 738
-    const-string/jumbo v0, "lastmod"
+    const-string v0, "lastmod"
 
     iput-object v0, p0, Landroid/app/DownloadManager$Query;->mOrderByColumn:Ljava/lang/String;
 
@@ -258,7 +258,7 @@
 
     .line 791
     :cond_0
-    const-string/jumbo v0, "last_modified_timestamp"
+    const-string v0, "last_modified_timestamp"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -267,7 +267,7 @@
     if-eqz v0, :cond_1
 
     .line 792
-    const-string/jumbo v0, "lastmod"
+    const-string v0, "lastmod"
 
     iput-object v0, p0, Landroid/app/DownloadManager$Query;->mOrderByColumn:Ljava/lang/String;
 

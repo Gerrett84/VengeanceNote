@@ -2379,7 +2379,7 @@
 
     .prologue
     .line 856
-    const-string/jumbo v0, "layout"
+    const-string v0, "layout"
 
     invoke-virtual {p0, p1, v0}, Landroid/content/res/Resources;->loadXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
 

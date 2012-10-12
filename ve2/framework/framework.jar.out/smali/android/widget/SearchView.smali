@@ -224,7 +224,7 @@
     iput-object v7, p0, Landroid/widget/SearchView;->mTextWatcher:Landroid/text/TextWatcher;
 
     .line 247
-    const-string/jumbo v7, "layout_inflater"
+    const-string v7, "layout_inflater"
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

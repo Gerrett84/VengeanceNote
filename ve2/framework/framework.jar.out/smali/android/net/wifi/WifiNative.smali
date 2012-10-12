@@ -847,7 +847,7 @@
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 541
-    const-string/jumbo v6, "keypad"
+    const-string v6, "keypad"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -860,7 +860,7 @@
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 545
-    const-string/jumbo v6, "label"
+    const-string v6, "label"
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -904,7 +904,7 @@
 
     invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 570
     .end local v2           #groupOwnerIntent:I
@@ -918,8 +918,6 @@
     goto/16 :goto_0
 
     .line 527
-    nop
-
     nop
 
     :pswitch_data_0
