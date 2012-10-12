@@ -4,7 +4,9 @@
 
 
 # static fields
-.field private static final DENSITIES:[I
+.field private static final DENSITIES:[I = null
+
+.field public static final DENSITY_NONE:I = 0x1
 
 
 # direct methods
@@ -12,7 +14,7 @@
     .locals 1
 
     .prologue
-    .line 10
+    .line 11
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -31,8 +33,8 @@
         0xf0t 0x0t 0x0t 0x0t
         0xa0t 0x0t 0x0t 0x0t
         0x78t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
         0x0t 0x0t 0x0t 0x0t
-        0xfft 0xfft 0xfft 0xfft
     .end array-data
 .end method
 
@@ -40,10 +42,10 @@
     .locals 0
 
     .prologue
-    .line 19
+    .line 20
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
+    .line 21
     return-void
 .end method
 
@@ -52,10 +54,10 @@
     .parameter "currentDensity"
 
     .prologue
-    .line 63
+    .line 64
     const/4 v4, 0x1
 
-    .line 64
+    .line 65
     .local v4, newDensity:I
     const/4 v1, 0x0
 
@@ -67,17 +69,17 @@
 
     if-ge v1, v5, :cond_0
 
-    .line 65
+    .line 66
     sget-object v5, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     aget v5, v5, v1
 
     if-ne p0, v5, :cond_2
 
-    .line 66
+    .line 67
     const/4 v4, 0x0
 
-    .line 70
+    .line 71
     :cond_0
     sget-object v5, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
@@ -87,13 +89,13 @@
 
     new-array v0, v5, [I
 
-    .line 71
+    .line 72
     .local v0, densities:[I
     const/4 v5, 0x0
 
     aput p0, v0, v5
 
-    .line 72
+    .line 73
     move v1, v4
 
     const/4 v2, 0x1
@@ -106,14 +108,14 @@
 
     if-ge v1, v5, :cond_3
 
-    .line 73
+    .line 74
     sget-object v5, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     aget v5, v5, v1
 
     if-eq p0, v5, :cond_1
 
-    .line 74
+    .line 75
     add-int/lit8 v3, v2, 0x1
 
     .end local v2           #j:I
@@ -126,7 +128,7 @@
 
     move v2, v3
 
-    .line 72
+    .line 73
     .end local v3           #j:I
     .restart local v2       #j:I
     :cond_1
@@ -134,7 +136,7 @@
 
     goto :goto_1
 
-    .line 64
+    .line 65
     .end local v0           #densities:[I
     .end local v2           #j:I
     :cond_2
@@ -142,7 +144,7 @@
 
     goto :goto_0
 
-    .line 77
+    .line 78
     .restart local v0       #densities:[I
     .restart local v2       #j:I
     :cond_3
@@ -154,17 +156,17 @@
     .parameter "density"
 
     .prologue
-    .line 23
+    .line 24
     sparse-switch p0, :sswitch_data_0
 
-    .line 37
+    .line 38
     sget-object v2, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     array-length v2, v2
 
     add-int/lit8 v1, v2, -0x1
 
-    .line 38
+    .line 39
     .local v1, min:I
     add-int/lit8 v0, v1, -0x1
 
@@ -172,7 +174,7 @@
     :goto_0
     if-lez v0, :cond_1
 
-    .line 39
+    .line 40
     sget-object v2, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     aget v2, v2, v0
@@ -195,56 +197,56 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 40
+    .line 41
     move v1, v0
 
-    .line 38
+    .line 39
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 25
+    .line 26
     .end local v0           #j:I
     .end local v1           #min:I
     :sswitch_0
     const-string v2, "ldpi"
 
-    .line 43
+    .line 44
     :goto_1
     return-object v2
 
-    .line 27
+    .line 28
     :sswitch_1
     const-string/jumbo v2, "mdpi"
 
     goto :goto_1
 
-    .line 29
+    .line 30
     :sswitch_2
     const-string v2, "hdpi"
 
     goto :goto_1
 
-    .line 31
+    .line 32
     :sswitch_3
     const-string/jumbo v2, "xhdpi"
 
     goto :goto_1
 
-    .line 33
+    .line 34
     :sswitch_4
     const-string/jumbo v2, "nodpi"
 
     goto :goto_1
 
-    .line 35
+    .line 36
     :sswitch_5
     const-string v2, ""
 
     goto :goto_1
 
-    .line 43
+    .line 44
     .restart local v0       #j:I
     .restart local v1       #min:I
     :cond_1
@@ -258,11 +260,11 @@
 
     goto :goto_1
 
-    .line 23
+    .line 24
     :sswitch_data_0
     .sparse-switch
-        -0x1 -> :sswitch_5
-        0x0 -> :sswitch_4
+        0x0 -> :sswitch_5
+        0x1 -> :sswitch_4
         0x78 -> :sswitch_0
         0xa0 -> :sswitch_1
         0xf0 -> :sswitch_2
@@ -275,12 +277,12 @@
     .parameter "density"
 
     .prologue
-    .line 47
+    .line 48
     invoke-static {p0}, Lmiui/util/DisplayUtils;->getDensityName(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 48
+    .line 49
     .local v0, name:Ljava/lang/String;
     const-string v1, ""
 
@@ -290,7 +292,7 @@
 
     if-nez v1, :cond_0
 
-    .line 49
+    .line 50
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -309,7 +311,7 @@
 
     move-result-object v0
 
-    .line 51
+    .line 52
     .end local v0           #name:Ljava/lang/String;
     :cond_0
     return-object v0
@@ -320,7 +322,7 @@
     .parameter "density"
 
     .prologue
-    .line 59
+    .line 60
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -357,7 +359,7 @@
     .parameter "density"
 
     .prologue
-    .line 55
+    .line 56
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

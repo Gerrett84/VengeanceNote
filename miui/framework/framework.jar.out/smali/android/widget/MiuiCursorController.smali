@@ -216,21 +216,21 @@
     .parameter "cc"
 
     .prologue
-    .line 1291
+    .line 1353
     const/4 v0, 0x0
 
-    .line 1292
+    .line 1354
     .local v0, handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
     if-nez p2, :cond_2
 
-    .line 1293
+    .line 1355
     invoke-virtual {p1}, Landroid/widget/Editor;->hasMagnifierController()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1294
+    .line 1356
     new-instance v0, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;
 
     .end local v0           #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
@@ -242,24 +242,24 @@
 
     invoke-direct {v0, p0, p1, v3}, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;-><init>(Landroid/widget/MiuiCursorController;Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1313
+    .line 1375
     .restart local v0       #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
     :cond_0
     :goto_0
     if-nez v0, :cond_4
 
-    .line 1314
+    .line 1376
     const-string v3, "MiuiCursorController"
 
     const-string v4, "Failed to init handle view."
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1320
+    .line 1382
     :goto_1
     return-object v0
 
-    .line 1297
+    .line 1359
     :cond_1
     new-instance v0, Landroid/widget/MiuiCursorController$InsertionHandleView;
 
@@ -275,7 +275,7 @@
     .restart local v0       #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
     goto :goto_0
 
-    .line 1301
+    .line 1363
     :cond_2
     iget-object v3, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
@@ -283,7 +283,7 @@
 
     move-result-object v2
 
-    .line 1302
+    .line 1364
     .local v2, right:Landroid/graphics/drawable/Drawable;
     iget-object v3, p0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
 
@@ -291,26 +291,26 @@
 
     move-result-object v1
 
-    .line 1304
+    .line 1366
     .local v1, left:Landroid/graphics/drawable/Drawable;
     const/4 v3, 0x1
 
     if-ne p2, v3, :cond_3
 
-    .line 1305
+    .line 1367
     new-instance v0, Landroid/widget/MiuiCursorController$SelectionStartHandleView;
 
     .end local v0           #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
     invoke-direct {v0, p0, p1, v1, v2}, Landroid/widget/MiuiCursorController$SelectionStartHandleView;-><init>(Landroid/widget/MiuiCursorController;Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1308
+    .line 1370
     .restart local v0       #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
     :cond_3
     const/4 v3, 0x2
 
     if-ne p2, v3, :cond_0
 
-    .line 1309
+    .line 1371
     new-instance v0, Landroid/widget/MiuiCursorController$SelectionEndHandleView;
 
     .end local v0           #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
@@ -319,13 +319,13 @@
     .restart local v0       #handle:Landroid/widget/MiuiCursorController$MiuiHandleView;
     goto :goto_0
 
-    .line 1317
+    .line 1379
     .end local v1           #left:Landroid/graphics/drawable/Drawable;
     .end local v2           #right:Landroid/graphics/drawable/Drawable;
     :cond_4
     invoke-virtual {v0, p3}, Landroid/widget/MiuiCursorController$MiuiHandleView;->setCursorController(Landroid/widget/MiuiCursorController;)V
 
-    .line 1318
+    .line 1380
     invoke-virtual {v0, p2}, Landroid/widget/MiuiCursorController$MiuiHandleView;->setType(I)V
 
     goto :goto_1

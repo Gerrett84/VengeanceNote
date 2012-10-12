@@ -1078,13 +1078,13 @@
 
     const/16 v1, 0xae
 
-    const-string v2, "lei"
+    const-string/jumbo v2, "lei"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xaf
 
-    const-string v2, "leng"
+    const-string/jumbo v2, "leng"
 
     aput-object v2, v0, v1
 
@@ -3892,7 +3892,7 @@
 
     const/16 v1, 0x283
 
-    const-string v2, "leng,ling"
+    const-string/jumbo v2, "leng,ling"
 
     aput-object v2, v0, v1
 
@@ -6364,7 +6364,7 @@
 
     const/16 v1, 0x41f
 
-    const-string v2, "lei,le"
+    const-string/jumbo v2, "lei,le"
 
     aput-object v2, v0, v1
 

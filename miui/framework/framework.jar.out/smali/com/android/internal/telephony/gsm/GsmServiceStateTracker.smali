@@ -8881,23 +8881,23 @@
 
     move-result v6
 
-    if-nez v6, :cond_3
+    if-nez v6, :cond_4
 
     .line 528
     :cond_2
     iget-boolean v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mEmergencyOnly:Z
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_5
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_5
 
     and-int/lit8 v6, v2, 0x1
 
-    if-ne v6, v7, :cond_4
+    if-ne v6, v7, :cond_5
 
     move v4, v7
 
@@ -8908,12 +8908,17 @@
 
     move-result v6
 
-    if-nez v6, :cond_5
+    if-nez v6, :cond_6
+
+    iget-boolean v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mEmergencyOnly:Z
+
+    if-nez v6, :cond_3
 
     and-int/lit8 v6, v2, 0x2
 
-    if-ne v6, v11, :cond_5
+    if-ne v6, v11, :cond_6
 
+    :cond_3
     move v3, v7
 
     .line 534
@@ -9017,7 +9022,7 @@
     .end local v0           #intent:Landroid/content/Intent;
     .end local v3           #showPlmn:Z
     .end local v4           #showSpn:Z
-    :cond_3
+    :cond_4
     iput v2, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->curSpnRule:I
 
     .line 548
@@ -9029,14 +9034,14 @@
     .line 550
     return-void
 
-    :cond_4
+    :cond_5
     move v4, v8
 
     .line 528
     goto :goto_0
 
     .restart local v4       #showSpn:Z
-    :cond_5
+    :cond_6
     move v3, v8
 
     .line 530

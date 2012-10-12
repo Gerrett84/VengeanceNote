@@ -939,6 +939,8 @@
     .prologue
     const/4 v4, 0x0
 
+    const/4 v2, 0x1
+
     const/4 v10, 0x0
 
     .line 745
@@ -967,13 +969,13 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "number=\'"
+    const-string/jumbo v1, "normalized_number=\'"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v8, v10, v10}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getNormalizedNumber(ZZ)Ljava/lang/String;
+    invoke-virtual {v8, v10, v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getNormalizedNumber(ZZ)Ljava/lang/String;
 
     move-result-object v1
 
@@ -998,8 +1000,6 @@
     move-result-object v0
 
     sget-object v1, Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;
-
-    const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/String;
 

@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 2288
+    .line 2303
     iput-object p1, p0, Landroid/webkit/WebViewClassic$6;->this$0:Landroid/webkit/WebViewClassic;
 
     iput-object p2, p0, Landroid/webkit/WebViewClassic$6;->val$temp:Ljava/io/File;
@@ -56,10 +56,10 @@
     .locals 4
 
     .prologue
-    .line 2291
+    .line 2306
     const/4 v0, 0x0
 
-    .line 2293
+    .line 2308
     .local v0, out:Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v1, Ljava/io/FileOutputStream;
@@ -71,7 +71,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2294
+    .line 2309
     .end local v0           #out:Ljava/io/FileOutputStream;
     .local v1, out:Ljava/io/FileOutputStream;
     :try_start_1
@@ -79,7 +79,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Picture;->writeToStream(Ljava/io/OutputStream;)V
 
-    .line 2297
+    .line 2312
     iget-object v2, p0, Landroid/webkit/WebViewClassic$6;->val$temp:Ljava/io/File;
 
     iget-object v3, p0, Landroid/webkit/WebViewClassic$6;->val$dest:Ljava/io/File;
@@ -89,16 +89,16 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 2301
+    .line 2316
     if-eqz v1, :cond_0
 
-    .line 2303
+    .line 2318
     :try_start_2
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 2308
+    .line 2323
     :cond_0
     :goto_0
     iget-object v2, p0, Landroid/webkit/WebViewClassic$6;->val$temp:Ljava/io/File;
@@ -107,50 +107,50 @@
 
     move-object v0, v1
 
-    .line 2310
+    .line 2325
     .end local v1           #out:Ljava/io/FileOutputStream;
     .restart local v0       #out:Ljava/io/FileOutputStream;
     :goto_1
     return-void
 
-    .line 2301
+    .line 2316
     :catchall_0
     move-exception v2
 
     :goto_2
     if-eqz v0, :cond_1
 
-    .line 2303
+    .line 2318
     :try_start_3
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 2308
+    .line 2323
     :cond_1
     :goto_3
     iget-object v3, p0, Landroid/webkit/WebViewClassic$6;->val$temp:Ljava/io/File;
 
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 2301
+    .line 2316
     throw v2
 
-    .line 2298
+    .line 2313
     :catch_0
     move-exception v2
 
-    .line 2301
+    .line 2316
     :goto_4
     if-eqz v0, :cond_2
 
-    .line 2303
+    .line 2318
     :try_start_4
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 2308
+    .line 2323
     :cond_2
     :goto_5
     iget-object v2, p0, Landroid/webkit/WebViewClassic$6;->val$temp:Ljava/io/File;
@@ -159,7 +159,7 @@
 
     goto :goto_1
 
-    .line 2304
+    .line 2319
     :catch_1
     move-exception v2
 
@@ -177,7 +177,7 @@
 
     goto :goto_0
 
-    .line 2301
+    .line 2316
     :catchall_1
     move-exception v2
 
@@ -187,7 +187,7 @@
     .restart local v0       #out:Ljava/io/FileOutputStream;
     goto :goto_2
 
-    .line 2298
+    .line 2313
     .end local v0           #out:Ljava/io/FileOutputStream;
     .restart local v1       #out:Ljava/io/FileOutputStream;
     :catch_4

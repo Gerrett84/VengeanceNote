@@ -28,18 +28,18 @@
     .parameter "drawable"
 
     .prologue
-    .line 1184
+    .line 1246
     iput-object p1, p0, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->this$0:Landroid/widget/MiuiCursorController;
 
-    .line 1185
+    .line 1247
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/MiuiCursorController$InsertionHandleView;-><init>(Landroid/widget/MiuiCursorController;Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1186
+    .line 1248
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->canHide:Z
 
-    .line 1187
+    .line 1249
     return-void
 .end method
 
@@ -49,21 +49,21 @@
     .locals 2
 
     .prologue
-    .line 1197
+    .line 1259
     iget-boolean v0, p0, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->canHide:Z
 
     if-eqz v0, :cond_0
 
-    .line 1198
+    .line 1260
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0, p0}, Landroid/widget/Editor;->removePositionListenerSubscriber(Landroid/widget/Editor$TextViewPositionListener;)V
 
-    .line 1207
+    .line 1269
     :goto_0
     return-void
 
-    .line 1202
+    .line 1264
     :cond_0
     const-string v0, "MiuiHandleView"
 
@@ -71,15 +71,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1203
+    .line 1265
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->canHide:Z
 
-    .line 1204
+    .line 1266
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->dismiss()V
 
-    .line 1205
+    .line 1267
     const/16 v0, 0xc8
 
     invoke-virtual {p0, v0}, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->hideAfterDelay(I)V
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 1210
+    .line 1272
     const/4 v0, 0x0
 
     return v0
@@ -101,15 +101,15 @@
     .locals 2
 
     .prologue
-    .line 1190
+    .line 1252
     invoke-super {p0}, Landroid/widget/MiuiCursorController$InsertionHandleView;->show()V
 
-    .line 1191
+    .line 1253
     const/16 v0, 0xbb8
 
     invoke-virtual {p0, v0}, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->hideAfterDelay(I)V
 
-    .line 1193
+    .line 1255
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->getCurrentCursorOffset()I
 
     move-result v0
@@ -118,6 +118,6 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/MiuiCursorController$MagnifierInsertionHandleView;->updatePositionXY(IZ)V
 
-    .line 1194
+    .line 1256
     return-void
 .end method
