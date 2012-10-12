@@ -1,4 +1,4 @@
-.class Landroid/widget/RemoteViewsAdapter$3;
+.class Landroid/widget/RemoteViewsAdapter$6;
 .super Ljava/lang/Object;
 .source "RemoteViewsAdapter.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/RemoteViewsAdapter;->processException(Ljava/lang/String;Ljava/lang/Exception;)V
+    value = Landroid/widget/RemoteViewsAdapter;->notifyDataSetChanged()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,8 +27,8 @@
     .parameter
 
     .prologue
-    .line 897
-    iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$3;->this$0:Landroid/widget/RemoteViewsAdapter;
+    .line 1273
+    iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$6;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,11 +41,12 @@
     .locals 1
 
     .prologue
-    .line 900
-    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$3;->this$0:Landroid/widget/RemoteViewsAdapter;
+    .line 1276
+    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$6;->this$0:Landroid/widget/RemoteViewsAdapter;
 
-    invoke-virtual {v0}, Landroid/widget/RemoteViewsAdapter;->superNotifyDataSetChanged()V
+    #calls: Landroid/widget/RemoteViewsAdapter;->onNotifyDataSetChanged()V
+    invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->access$100(Landroid/widget/RemoteViewsAdapter;)V
 
-    .line 901
+    .line 1277
     return-void
 .end method

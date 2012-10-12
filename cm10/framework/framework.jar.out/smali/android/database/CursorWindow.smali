@@ -816,8 +816,10 @@
     .line 259
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 257
     return v0
 
+    .line 259
     :catchall_0
     move-exception v0
 
@@ -1018,8 +1020,10 @@
     .line 401
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 399
     return-object v0
 
+    .line 401
     :catchall_0
     move-exception v0
 
@@ -1054,8 +1058,10 @@
     .line 541
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 539
     return-wide v0
 
+    .line 541
     :catchall_0
     move-exception v0
 
@@ -1122,8 +1128,10 @@
     .line 509
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 507
     return-wide v0
 
+    .line 509
     :catchall_0
     move-exception v0
 
@@ -1162,8 +1170,10 @@
     .line 225
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 223
     return v0
 
+    .line 225
     :catchall_0
     move-exception v0
 
@@ -1226,8 +1236,10 @@
     .line 436
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 434
     return-object v0
 
+    .line 436
     :catchall_0
     move-exception v0
 
@@ -1262,8 +1274,10 @@
     .line 371
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 369
     return v0
 
+    .line 371
     :catchall_0
     move-exception v0
 
@@ -1456,8 +1470,10 @@
     .line 606
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 604
     return v0
 
+    .line 606
     :catchall_0
     move-exception v0
 
@@ -1493,8 +1509,10 @@
     .line 658
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 656
     return v0
 
+    .line 658
     :catchall_0
     move-exception v0
 
@@ -1530,8 +1548,10 @@
     .line 640
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 638
     return v0
 
+    .line 640
     :catchall_0
     move-exception v0
 
@@ -1566,8 +1586,10 @@
     .line 674
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 672
     return v0
 
+    .line 674
     :catchall_0
     move-exception v0
 
@@ -1603,8 +1625,10 @@
     .line 623
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 621
     return v0
 
+    .line 623
     :catchall_0
     move-exception v0
 
@@ -1634,8 +1658,10 @@
     .line 245
     invoke-virtual {p0}, Landroid/database/CursorWindow;->releaseReference()V
 
+    .line 243
     return v0
 
+    .line 245
     :catchall_0
     move-exception v0
 

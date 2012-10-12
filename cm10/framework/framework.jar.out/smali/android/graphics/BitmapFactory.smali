@@ -137,7 +137,7 @@
     invoke-direct {v2, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 301
     .end local v1           #stream:Ljava/io/InputStream;
@@ -153,43 +153,31 @@
     move-result-object v0
 
     .line 307
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_0
 
     .line 309
     :try_start_2
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
+    :cond_0
+    :goto_0
     move-object v1, v2
 
     .line 315
     .end local v2           #stream:Ljava/io/InputStream;
     .restart local v1       #stream:Ljava/io/InputStream;
-    :cond_0
-    :goto_0
+    :cond_1
+    :goto_1
     return-object v0
 
-    .line 310
-    .end local v1           #stream:Ljava/io/InputStream;
-    .restart local v2       #stream:Ljava/io/InputStream;
-    :catch_0
-    move-exception v3
-
-    move-object v1, v2
-
-    .line 312
-    .end local v2           #stream:Ljava/io/InputStream;
-    .restart local v1       #stream:Ljava/io/InputStream;
-    goto :goto_0
-
-    .line 302
-    :catch_1
-    move-exception v3
-
     .line 307
-    :goto_1
-    if-eqz v1, :cond_0
+    :catchall_0
+    move-exception v3
+
+    :goto_2
+    if-eqz v1, :cond_2
 
     .line 309
     :try_start_3
@@ -197,41 +185,46 @@
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_0
+    .line 307
+    :cond_2
+    :goto_3
+    throw v3
 
-    .line 310
-    :catch_2
+    .line 302
+    :catch_0
     move-exception v3
-
-    goto :goto_0
 
     .line 307
-    :catchall_0
-    move-exception v3
-
-    :goto_2
+    :goto_4
     if-eqz v1, :cond_1
 
     .line 309
     :try_start_4
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 312
-    :cond_1
-    :goto_3
-    throw v3
+    goto :goto_1
 
     .line 310
-    :catch_3
+    :catch_1
+    move-exception v3
+
+    goto :goto_1
+
+    :catch_2
     move-exception v4
 
     goto :goto_3
 
-    .line 307
     .end local v1           #stream:Ljava/io/InputStream;
     .restart local v2       #stream:Ljava/io/InputStream;
+    :catch_3
+    move-exception v3
+
+    goto :goto_0
+
+    .line 307
     :catchall_1
     move-exception v3
 
@@ -251,16 +244,7 @@
 
     .end local v2           #stream:Ljava/io/InputStream;
     .restart local v1       #stream:Ljava/io/InputStream;
-    goto :goto_1
-
-    .end local v1           #stream:Ljava/io/InputStream;
-    .restart local v2       #stream:Ljava/io/InputStream;
-    :cond_2
-    move-object v1, v2
-
-    .end local v2           #stream:Ljava/io/InputStream;
-    .restart local v1       #stream:Ljava/io/InputStream;
-    goto :goto_0
+    goto :goto_4
 .end method
 
 .method public static decodeFileDescriptor(Ljava/io/FileDescriptor;)Landroid/graphics/Bitmap;
@@ -322,7 +306,7 @@
 
     move-result-object v2
 
-    .line 630
+    .line 626
     .end local v0           #bm:Landroid/graphics/Bitmap;
     :goto_0
     return-object v2
@@ -366,10 +350,11 @@
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 630
+    .line 628
     :goto_1
     throw v2
 
+    .line 630
     :catch_1
     move-exception v3
 
@@ -435,7 +420,7 @@
     :try_start_1
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 390
     .end local v2           #value:Landroid/util/TypedValue;
@@ -458,6 +443,27 @@
 
     throw v3
 
+    .line 383
+    :catchall_0
+    move-exception v3
+
+    .line 384
+    if-eqz v1, :cond_1
+
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 383
+    :cond_1
+    :goto_1
+    throw v3
+
+    .line 394
+    :cond_2
+    return-object v0
+
     .line 377
     :catch_0
     move-exception v3
@@ -465,10 +471,10 @@
     .line 384
     if-eqz v1, :cond_0
 
-    :try_start_2
+    :try_start_3
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     goto :goto_0
 
@@ -478,39 +484,10 @@
 
     goto :goto_0
 
-    .line 383
-    :catchall_0
-    move-exception v3
-
-    .line 384
-    if-eqz v1, :cond_1
-
-    :try_start_3
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
-
-    .line 387
-    :cond_1
-    :goto_1
-    throw v3
-
-    .line 385
-    .restart local v2       #value:Landroid/util/TypedValue;
     :catch_2
-    move-exception v3
-
-    goto :goto_0
-
-    .end local v2           #value:Landroid/util/TypedValue;
-    :catch_3
     move-exception v4
 
     goto :goto_1
-
-    .line 394
-    :cond_2
-    return-object v0
 .end method
 
 .method public static decodeResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;

@@ -664,6 +664,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1332
+    :goto_4
     #calls: Landroid/os/StrictMode;->setThreadPolicyMask(I)V
     invoke-static {v13}, Landroid/os/StrictMode;->access$1200(I)V
 
@@ -672,7 +673,6 @@
     .end local v13           #savedPolicyMask:I
     .end local v16           #violationBit:I
     :cond_11
-    :goto_4
     move-object/from16 v0, p1
 
     iget v0, v0, Landroid/os/StrictMode$ViolationInfo;->policy:I
@@ -711,12 +711,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1332
-    #calls: Landroid/os/StrictMode;->setThreadPolicyMask(I)V
-    invoke-static {v13}, Landroid/os/StrictMode;->access$1200(I)V
-
     goto :goto_4
 
+    .line 1332
     .end local v5           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v19

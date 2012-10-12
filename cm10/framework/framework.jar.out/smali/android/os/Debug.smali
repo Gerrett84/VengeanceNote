@@ -1699,49 +1699,51 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 370
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_0
 
     .line 371
     invoke-virtual {v2}, Ljava/io/PrintWriter;->close()V
 
+    :cond_0
     move-object v1, v2
 
     .line 374
     .end local v0           #fos:Ljava/io/FileOutputStream;
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
-    :cond_0
+    :cond_1
     :goto_0
     invoke-static {}, Ldalvik/system/VMDebug;->startEmulatorTracing()V
 
     .line 375
     return-void
 
+    .line 370
+    :catchall_0
+    move-exception v3
+
+    :goto_1
+    if-eqz v1, :cond_2
+
+    .line 371
+    invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
+
+    .line 370
+    :cond_2
+    throw v3
+
     .line 368
     :catch_0
     move-exception v3
 
     .line 370
-    :goto_1
-    if-eqz v1, :cond_0
-
-    .line 371
-    invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
-
-    goto :goto_0
-
-    .line 370
-    :catchall_0
-    move-exception v3
-
     :goto_2
     if-eqz v1, :cond_1
 
     .line 371
     invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
 
-    :cond_1
-    throw v3
+    goto :goto_0
 
     .line 370
     .end local v1           #outStream:Ljava/io/PrintWriter;
@@ -1754,7 +1756,7 @@
 
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
-    goto :goto_2
+    goto :goto_1
 
     .line 368
     .end local v1           #outStream:Ljava/io/PrintWriter;
@@ -1766,16 +1768,7 @@
 
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
-    goto :goto_1
-
-    .end local v1           #outStream:Ljava/io/PrintWriter;
-    .restart local v2       #outStream:Ljava/io/PrintWriter;
-    :cond_2
-    move-object v1, v2
-
-    .end local v2           #outStream:Ljava/io/PrintWriter;
-    .restart local v1       #outStream:Ljava/io/PrintWriter;
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method public static stopAllocCounting()V
@@ -1844,46 +1837,48 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 400
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_0
 
     .line 401
     invoke-virtual {v2}, Ljava/io/PrintWriter;->close()V
 
+    :cond_0
     move-object v1, v2
 
     .line 403
     .end local v0           #fos:Ljava/io/FileOutputStream;
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
-    :cond_0
+    :cond_1
     :goto_0
     return-void
+
+    .line 400
+    :catchall_0
+    move-exception v3
+
+    :goto_1
+    if-eqz v1, :cond_2
+
+    .line 401
+    invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
+
+    .line 400
+    :cond_2
+    throw v3
 
     .line 396
     :catch_0
     move-exception v3
 
     .line 400
-    :goto_1
-    if-eqz v1, :cond_0
-
-    .line 401
-    invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
-
-    goto :goto_0
-
-    .line 400
-    :catchall_0
-    move-exception v3
-
     :goto_2
     if-eqz v1, :cond_1
 
     .line 401
     invoke-virtual {v1}, Ljava/io/PrintWriter;->close()V
 
-    :cond_1
-    throw v3
+    goto :goto_0
 
     .line 400
     .end local v1           #outStream:Ljava/io/PrintWriter;
@@ -1896,7 +1891,7 @@
 
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
-    goto :goto_2
+    goto :goto_1
 
     .line 396
     .end local v1           #outStream:Ljava/io/PrintWriter;
@@ -1908,16 +1903,7 @@
 
     .end local v2           #outStream:Ljava/io/PrintWriter;
     .restart local v1       #outStream:Ljava/io/PrintWriter;
-    goto :goto_1
-
-    .end local v1           #outStream:Ljava/io/PrintWriter;
-    .restart local v2       #outStream:Ljava/io/PrintWriter;
-    :cond_2
-    move-object v1, v2
-
-    .end local v2           #outStream:Ljava/io/PrintWriter;
-    .restart local v1       #outStream:Ljava/io/PrintWriter;
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method public static threadCpuTimeNanos()J

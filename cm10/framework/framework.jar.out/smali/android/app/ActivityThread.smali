@@ -4651,6 +4651,7 @@
     .line 2588
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2587
     throw v3
 .end method
 
@@ -4676,7 +4677,7 @@
     invoke-static {v1, v2}, Landroid/os/Debug;->dumpHprofData(Ljava/lang/String;Ljava/io/FileDescriptor;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 3968
     :try_start_1
@@ -4684,33 +4685,18 @@
 
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 3976
     :goto_0
     return-void
 
-    .line 3969
+    .line 3963
     :catch_0
     move-exception v0
 
-    .line 3970
-    .local v0, e:Ljava/io/IOException;
-    const-string v1, "ActivityThread"
-
-    const-string v2, "Failure closing profile fd"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
-
-    .line 3963
-    .end local v0           #e:Ljava/io/IOException;
-    :catch_1
-    move-exception v0
-
     .line 3964
-    .restart local v0       #e:Ljava/io/IOException;
+    .local v0, e:Ljava/io/IOException;
     :try_start_2
     const-string v1, "ActivityThread"
 
@@ -4750,12 +4736,12 @@
 
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     goto :goto_0
 
     .line 3969
-    :catch_2
+    :catch_1
     move-exception v0
 
     .line 3970
@@ -4763,6 +4749,7 @@
 
     const-string v2, "Failure closing profile fd"
 
+    :goto_1
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
@@ -4778,28 +4765,13 @@
 
     invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 3971
-    :goto_1
+    .line 3967
+    :goto_2
     throw v1
 
-    .line 3969
-    :catch_3
-    move-exception v0
-
-    .line 3970
-    .restart local v0       #e:Ljava/io/IOException;
-    const-string v2, "ActivityThread"
-
-    const-string v3, "Failure closing profile fd"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_1
-
     .line 3974
-    .end local v0           #e:Ljava/io/IOException;
     :cond_0
     iget-object v1, p1, Landroid/app/ActivityThread$DumpHeapData;->fd:Landroid/os/ParcelFileDescriptor;
 
@@ -4810,6 +4782,33 @@
     invoke-static {v1}, Landroid/os/Debug;->dumpNativeHeap(Ljava/io/FileDescriptor;)V
 
     goto :goto_0
+
+    .line 3969
+    :catch_2
+    move-exception v0
+
+    .line 3970
+    .restart local v0       #e:Ljava/io/IOException;
+    const-string v2, "ActivityThread"
+
+    const-string v3, "Failure closing profile fd"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_2
+
+    .line 3969
+    .end local v0           #e:Ljava/io/IOException;
+    :catch_3
+    move-exception v0
+
+    .line 3970
+    .restart local v0       #e:Ljava/io/IOException;
+    const-string v1, "ActivityThread"
+
+    const-string v2, "Failure closing profile fd"
+
+    goto :goto_1
 .end method
 
 .method private handleDumpProvider(Landroid/app/ActivityThread$DumpComponentInfo;)V
@@ -4902,6 +4901,7 @@
     .line 2603
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2602
     throw v3
 .end method
 
@@ -4989,6 +4989,7 @@
     .line 2573
     invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 2572
     throw v3
 .end method
 
@@ -5471,12 +5472,12 @@
     .line 2367
     sget-object v8, Landroid/app/ActivityThread;->sCurrentBroadcastIntent:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {v8, v11}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
-
-    .line 2370
     .end local v0           #app:Landroid/app/Application;
     .end local v3           #context:Landroid/app/ContextImpl;
     :goto_0
+    invoke-virtual {v8, v11}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    .line 2370
     invoke-virtual {v7}, Landroid/content/BroadcastReceiver;->getPendingResult()Landroid/content/BroadcastReceiver$PendingResult;
 
     move-result-object v8
@@ -5615,8 +5616,6 @@
     .restart local v4       #e:Ljava/lang/Exception;
     :cond_1
     sget-object v8, Landroid/app/ActivityThread;->sCurrentBroadcastIntent:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v8, v11}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
@@ -13216,7 +13215,7 @@
     invoke-virtual {v1}, Landroid/app/ActivityThread$Profiler;->startProfiling()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 3945
     :try_start_1
@@ -13224,29 +13223,14 @@
 
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 3957
     :goto_0
     return-void
 
-    .line 3946
-    :catch_0
-    move-exception v0
-
-    .line 3947
-    .local v0, e:Ljava/io/IOException;
-    const-string v1, "ActivityThread"
-
-    const-string v2, "Failure closing profile fd"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
-
     .line 3940
-    .end local v0           #e:Ljava/io/IOException;
-    :catch_1
+    :catch_0
     move-exception v0
 
     .line 3941
@@ -13290,12 +13274,12 @@
 
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     goto :goto_0
 
     .line 3946
-    :catch_2
+    :catch_1
     move-exception v0
 
     .line 3947
@@ -13304,6 +13288,7 @@
 
     const-string v2, "Failure closing profile fd"
 
+    :goto_1
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
@@ -13319,14 +13304,22 @@
 
     invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 3948
-    :goto_1
+    .line 3944
+    :goto_2
     throw v1
 
+    .line 3953
+    :cond_0
+    iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
+
+    invoke-virtual {v1}, Landroid/app/ActivityThread$Profiler;->stopProfiling()V
+
+    goto :goto_0
+
     .line 3946
-    :catch_3
+    :catch_2
     move-exception v0
 
     .line 3947
@@ -13337,16 +13330,20 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 3953
+    .line 3946
     .end local v0           #e:Ljava/io/IOException;
-    :cond_0
-    iget-object v1, p0, Landroid/app/ActivityThread;->mProfiler:Landroid/app/ActivityThread$Profiler;
+    :catch_3
+    move-exception v0
 
-    invoke-virtual {v1}, Landroid/app/ActivityThread$Profiler;->stopProfiling()V
+    .line 3947
+    .restart local v0       #e:Ljava/io/IOException;
+    const-string v1, "ActivityThread"
 
-    goto :goto_0
+    const-string v2, "Failure closing profile fd"
+
+    goto :goto_1
 .end method
 
 .method final handleResumeActivity(Landroid/os/IBinder;ZZ)V

@@ -1932,7 +1932,7 @@
     .line 616
     monitor-exit v23
 
-    .line 702
+    .line 684
     :cond_3
     :goto_1
     return-object v13
@@ -2249,6 +2249,7 @@
 
     invoke-virtual {v0, v4}, Landroid/os/CancellationSignal;->setOnCancelListener(Landroid/os/CancellationSignal$OnCancelListener;)V
 
+    .line 701
     :cond_c
     throw v3
 
