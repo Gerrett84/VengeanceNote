@@ -1216,7 +1216,7 @@
     <string name="fingerprints">Αποτυπώματα</string>
     <string name="sha256_fingerprint">Αποτύπωμα SHA-256</string>
     <string name="sha1_fingerprint">Αποτύπωμα SHA-1</string>
-    <string name="activity_chooser_view_see_all"><b>Εμφάνιση όλων</b></string>
+    <string name="activity_chooser_view_see_all">Εμφάνιση όλων</string>
     <string name="activity_chooser_view_dialog_title_default">Επιλογή δραστηριότητας</string>
     <string name="share_action_provider_share_with">Κοινή χρήση με</string>
     <string name="status_bar_device_locked">Η συσκευή κλειδώθηκε.</string>

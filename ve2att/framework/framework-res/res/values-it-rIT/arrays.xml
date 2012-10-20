@@ -43,4 +43,5 @@
         <item>Altro</item>
         <item>Personalizzato</item>
     </string-array>
+    <array name="carrier_properties" />
 </resources>

@@ -1366,6 +1366,7 @@
         <item name="toastFrameBackground">@drawable/toast_frame_holo</item>
         <item name="searchDropdownBackground">@drawable/search_dropdown_light</item>
         <item name="searchDialogTheme">@style/Theme.Holo.Light.SearchBar</item>
+        <item name="preferenceFrameLayoutStyle">@style/Widget.Holo.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.Holo.Light.CompoundButton.Switch</item>
         <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_light</item>
         <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_light</item>
@@ -1942,8 +1943,7 @@
         <item name="textAllCaps">true</item>
     </style>
     <style name="Widget.Holo.ActionBar.TabBar" parent="@style/Widget.ActionBar.TabBar">
-        <item name="paddingLeft">14.0dip</item>
-        <item name="paddingRight">14.0dip</item>
+        <item name="background">@drawable/ab_tab_bg</item>
         <item name="divider">@drawable/ab_tab_divider</item>
         <item name="showDividers">middle</item>
         <item name="dividerPadding">0.0dip</item>

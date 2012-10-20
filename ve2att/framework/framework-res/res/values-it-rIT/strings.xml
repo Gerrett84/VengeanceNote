@@ -28,17 +28,23 @@
     <string name="config_tether_apndata" />
     <string name="config_wifi_p2p_device_type">10-0050F204-5</string>
     <string name="default_wallpaper_component">@null</string>
+    <string name="config_networkLocationProviderPackageName">com.google.android.location</string>
+    <string name="config_geocodeProviderPackageName">com.google.android.location</string>
     <string name="config_datause_iface">rmnet0</string>
     <string name="config_default_dns_server">8.8.8.8</string>
     <string name="gsm_alphabet_default_charset" />
+    <string name="db_default_journal_mode">PERSIST</string>
+    <string name="db_default_sync_mode">FULL</string>
+    <string name="db_wal_sync_mode">FULL</string>
     <string name="config_useragentprofile_url" />
     <string name="config_isoImagePath" />
-    <string name="config_ntpServer">pool.ntp.org</string>
+    <string name="config_ntpServer">2.android.pool.ntp.org</string>
     <string name="config_wimaxServiceJarLocation" />
     <string name="config_wimaxNativeLibLocation" />
     <string name="config_wimaxManagerClassname" />
     <string name="config_wimaxServiceClassname" />
     <string name="config_wimaxStateTrackerClassname" />
+    <string name="config_defaultDreamComponent">com.google.android.deskclock/com.android.deskclock.Screensaver</string>
     <string name="month_long_standalone_january">Gennaio</string>
     <string name="month_long_standalone_february">Febbraio</string>
     <string name="month_long_standalone_march">Marzo</string>
@@ -67,7 +73,7 @@
     <string name="month_medium_february">Feb</string>
     <string name="month_medium_march">Mar</string>
     <string name="month_medium_april">Apr</string>
-    <string name="month_medium_may">Mmag</string>
+    <string name="month_medium_may">Mag</string>
     <string name="month_medium_june">Giu</string>
     <string name="month_medium_july">Lug</string>
     <string name="month_medium_august">Ago</string>
@@ -126,7 +132,7 @@
     <string name="twelve_hour_time_format">h:mm a</string>
     <string name="twenty_four_hour_time_format">HH:mm</string>
     <string name="numeric_date" formatted="false">%d/%m/%Y</string>
-    <string name="numeric_date_format">dd/MM/yyyy</string>
+    <string name="numeric_date_format">d/M/yyyy</string>
     <string name="numeric_date_template" formatted="false">%s/%s/%s</string>
     <string name="month_day_year" formatted="false">%d %B %Y</string>
     <string name="time_of_day" formatted="false">%H:%M:%S</string>
@@ -208,6 +214,8 @@
     <string name="invalidPuk">Digita un PUK formato da almeno 8 numeri.</string>
     <string name="needPuk">La SIM è bloccata tramite PUK. Digita il codice PUK per sbloccarla.</string>
     <string name="needPuk2">Digita il PUK2 per sbloccare la SIM.</string>
+    <string name="imei">IMEI</string>
+    <string name="meid">MEID</string>
     <string name="ClipMmi">ID chiamante in entrata</string>
     <string name="ClirMmi">ID chiamante in uscita</string>
     <string name="CfMmi">Deviazione chiamate</string>
@@ -297,6 +305,8 @@
     <string name="shutdown_progress">Spegnimento...</string>
     <string name="shutdown_confirm">Il telefono verrà spento.</string>
     <string name="shutdown_confirm_question">Spegnere?</string>
+    <string name="reboot_safemode_title">Riavvia in modalità sicura</string>
+    <string name="reboot_safemode_confirm">Vuoi riavviare in modalità sicura? Questo disabiliterà tutte le applicazioni di terze parti installate. Verranno ripristinate al riavvio successivo.</string>
     <string name="recent_tasks_title">Recenti</string>
     <string name="no_recent_tasks">Nessuna applicazione recente.</string>
     <string name="global_actions">Opzioni telefono</string>
@@ -308,7 +318,7 @@
     <string name="global_actions_toggle_airplane_mode">Modalità aereo</string>
     <string name="global_actions_airplane_mode_on_status">Modalità aereo attiva</string>
     <string name="global_actions_airplane_mode_off_status">Modalità aereo non attiva</string>
-    <string name="safeMode">Modalità provvisoria</string>
+    <string name="safeMode">Modalità Provvisoria</string>
     <string name="android_system_label">Sistema Android</string>
     <string name="permgrouplab_costMoney">Servizi che prevedono un costo</string>
     <string name="permgroupdesc_costMoney">Consentono alle applicazioni di svolgere operazioni che possono comportare un costo.</string>
@@ -346,6 +356,8 @@
     <string name="permdesc_receiveMms">"Consente il ricevimento e l'elaborazione di MMS da parte dell'applicazione. Le applicazioni dannose potrebbero monitorare i messaggi o eliminarli senza visualizzarli."</string>
     <string name="permlab_receiveEmergencyBroadcast">ricezione di trasmissioni di emergenza</string>
     <string name="permdesc_receiveEmergencyBroadcast">"Consente all'applicazione di ricevere ed elaborare messaggi di trasmissioni di emergenza. Tale autorizzazione è disponibile solo per applicazioni di sistema."</string>
+    <string name="permlab_readCellBroadcasts">Leggi messaggi celle</string>
+    <string name="permdesc_readCellBroadcasts">"Permetti all'applicazione di leggere i messaggi delle celle ricevute dal terminale. In alcuni luoghi vengono inviati allarmi tramite le celle per avvisare in caso di situazioni di emergenza. Applicazioni pericolose potrebbero interferire con le prestazioni o le operazioni del terminale al ricevimento di una trasmissione di emergenza dalle celle."</string>
     <string name="permlab_sendSms">invio SMS</string>
     <string name="permdesc_sendSms">"Consente all'applicazione di inviare messaggi SMS. Le applicazioni dannose potrebbero inviare messaggi a tua insaputa facendoti sostenere dei costi."</string>
     <string name="permlab_sendSmsNoConfirmation">invio di messaggi SMS senza conferma</string>
@@ -358,10 +370,16 @@
     <string name="permdesc_receiveWapPush">"Consente il ricevimento e l'elaborazione di messaggi WAP da parte dell'applicazione. Le applicazioni dannose potrebbero monitorare i messaggi o eliminarli senza visualizzarli."</string>
     <string name="permlab_getTasks">recupero applicazioni in esecuzione</string>
     <string name="permdesc_getTasks">"Consente all'applicazione di recuperare informazioni sulle attività in esecuzione ed eseguite di recente. Le applicazioni dannose potrebbero essere in grado di scoprire informazioni riservate su altre applicazioni."</string>
+    <string name="permlab_getDetailedTasks">Recupera informazioni sulle applicazioni in esecuzione</string>
+    <string name="permdesc_getDetailedTasks">"Permetti all'applicazione di recuperare informazioni dettagliate sulle attività in corso e recenti. Applicazioni pericolose potrebbero scoprire informazioni private relative ad altre applicazioni."</string>
     <string name="permlab_reorderTasks">riordinamento applicazioni in esecuz.</string>
     <string name="permdesc_reorderTasks">"Consente a un'applicazione di spostare attività in primo e secondo piano. Le applicazioni dannose possono imporsi ponendosi automaticamente in primo piano."</string>
     <string name="permlab_removeTasks">"interruzione dell'esecuzione di applicazioni"</string>
     <string name="permdesc_removeTasks">"Consente a un'applicazione di rimuovere le attività e terminare le loro applicazioni. Le applicazioni dannose possono disturbare il comportamento di altre applicazioni."</string>
+    <string name="permlab_startAnyActivity">Avvia qualsiasi attività</string>
+    <string name="permdesc_startAnyActivity">"Permetti all'applicazione di avviare qualsiasi attività, relative alla protezione permessi o stato di esportazione."</string>
+    <string name="permlab_setScreenCompatibility">Imposta compatibilità schermo</string>
+    <string name="permdesc_setScreenCompatibility">"Permetti all'applicazione di controllare la modalità di compatibilità dello schermo di altre applicazioni. Applicazioni pericolose potrebbero alterare il comportamento di altre applicazioni."</string>
     <string name="permlab_setDebugApp">attivazione debug delle applicazioni</string>
     <string name="permdesc_setDebugApp">"Consente a un'applicazione di attivare il debug per un'altra applicazione. Le applicazioni dannose possono sfruttare questa possibilità per interrompere altre applicazioni."</string>
     <string name="permlab_changeConfiguration">modifica impostazioni UI</string>
@@ -414,6 +432,8 @@
     <string name="permdesc_readInputState">"Consente il rilevamento da parte delle applicazioni dei tasti premuti anche durante l'interazione con un'altra applicazione (come nel caso di inserimento di una password). Non dovrebbe essere mai necessario per le normali applicazioni."</string>
     <string name="permlab_bindInputMethod">associaz. a un metodo di inserimento</string>
     <string name="permdesc_bindInputMethod">"Consente l'associazione all'interfaccia principale di un metodo di inserimento. Non dovrebbe essere mai necessario per le normali applicazioni."</string>
+    <string name="permlab_bindAccessibilityService">bind to an accessibility service</string>
+    <string name="permdesc_bindAccessibilityService">Allows the holder to bind to the top-level interface of an accessibility service. Should never be needed for normal apps.</string>
     <string name="permlab_bindTextService">associazione a un servizio di testo</string>
     <string name="permdesc_bindTextService">"Consente al titolare di collegarsi all'interfaccia di primo livello di un servizio di testo (ad esempio SpellCheckerService). Non dovrebbe essere mai necessaria per le normali applicazioni."</string>
     <string name="permlab_bindVpnService">associazione a un servizio VPN</string>
@@ -428,6 +448,8 @@
     <string name="permdesc_setOrientation">"Consente a un'applicazione di cambiare la rotazione dello schermo in qualsiasi momento. Non dovrebbe essere mai necessario per le normali applicazioni."</string>
     <string name="permlab_setPointerSpeed">cambio velocità del puntatore</string>
     <string name="permdesc_setPointerSpeed">"Consente a un'applicazione di modificare la velocità del puntatore del mouse o del trackpad in qualsiasi momento. Non dovrebbe mai essere necessario per le normali applicazioni."</string>
+    <string name="permlab_setKeyboardLayout">change keyboard layout</string>
+    <string name="permdesc_setKeyboardLayout">Allows the app to change the keyboard layout. Should never be needed for normal apps.</string>
     <string name="permlab_signalPersistentProcesses">invio segnali Linuz alle applicazioni</string>
     <string name="permdesc_signalPersistentProcesses">"Consente all'applicazione di richiedere l'invio del segnale fornito a tutti i processi persistenti."</string>
     <string name="permlab_persistentActivity">esecuzione permanente delle applicazioni</string>
@@ -454,6 +476,8 @@
     <string name="permdesc_diagnostic">"Consente a un'applicazione di leggere le risorse del gruppo diag e scrivere a esse, per esempio i file in /dev. Questa capacità potrebbe influire sulla stabilità e sicurezza del sistema. Dovrebbe essere utilizzata SOLTANTO per diagnostiche specifiche dell'hardware effettuate dal produttore o dall'operatore."</string>
     <string name="permlab_changeComponentState">attivazione/disattivazione componenti applicazioni</string>
     <string name="permdesc_changeComponentState">"Consente a un'applicazione di attivare o disattivare un componente di un'altra applicazione. Le applicazioni dannose possono sfruttare questa possibilità per disattivare importanti funzionalità del telefono. Prestare attenzione con questa autorizzazione perché è possibile rendere inutilizzabili, incoerenti o instabili i componenti delle applicazioni."</string>
+    <string name="permlab_grantRevokePermissions">grant or revoke permissions</string>
+    <string name="permdesc_grantRevokePermissions">Allows an application to grant or revoke specific permissions for it or other applications. Malicious applications may use this to access features you have not granted them.</string>
     <string name="permlab_setPreferredApplications">impostazione applicazioni preferite</string>
     <string name="permdesc_setPreferredApplications">"Consente la modifica da parte di un'applicazione delle applicazioni preferite. Le applicazioni dannose potrebbero essere in grado di modificare automaticamente le applicazioni in esecuzione, effettuando lo spoofing delle applicazioni esistenti per raccogliere dati riservati."</string>
     <string name="permlab_writeSettings">modifica impostazioni di sistema globali</string>
@@ -470,6 +494,10 @@
     <string name="permdesc_readContacts">"Consente la lettura da parte di un'applicazione di tutti i dati (gli indirizzi) di contatto memorizzati sul telefono. Le applicazioni dannose possono sfruttare questa possibilità per inviare i dati ad altre persone."</string>
     <string name="permlab_writeContacts">scrittura dati di contatto</string>
     <string name="permdesc_writeContacts">"Consente a un'applicazione di modificare i dati (gli indirizzi) di contatto memorizzati sul telefono. Le applicazioni dannose possono sfruttare questa possibilità per cancellare o modificare i dati di contatto."</string>
+    <string name="permlab_readCallLog">read call log</string>
+    <string name="permdesc_readCallLog">"Allows the app to read your phone's call log, including data about incoming and outgoing calls. This permission allows apps to save your call log data, and malicious apps may share call log data without your knowledge."</string>
+    <string name="permlab_writeCallLog">write call log</string>
+    <string name="permdesc_writeCallLog">"Allows the app to modify your phone's call log, including data about incoming and outgoing calls. Malicious apps may use this to erase or modify your call log."</string>
     <string name="permlab_readProfile">lettura dei tuoi dati profilo</string>
     <string name="permdesc_readProfile">"Consente all'applicazione di leggere le informazioni del profilo personale memorizzato sul dispositivo, come il tuo nome e le tue informazioni di contatto. Ciò significa che l'applicazione è in grado di identificarti e di inviare le tue informazioni di profilo ad altri."</string>
     <string name="permlab_writeProfile">scrittura dati del profilo</string>
@@ -647,7 +675,7 @@
     <string name="policylab_encryptedStorage">Imposta crittografia archivio</string>
     <string name="policydesc_encryptedStorage">Richiede la crittografia dei dati applicazione memorizzati</string>
     <string name="policylab_disableCamera">Disattiva fotocamere</string>
-    <string name="policydesc_disableCamera">"Impedisci l'utilizzo di tutte le fotocamere del dispositivo"</string>
+    <string name="policydesc_disableCamera">"Impedisce l'utilizzo delle fotocamere"</string>
     <string name="phoneTypeCustom">Personalizzato</string>
     <string name="phoneTypeHome">Casa</string>
     <string name="phoneTypeMobile">Cellulare</string>
@@ -738,6 +766,7 @@
     <string name="lockscreen_pattern_correct">Corretta.</string>
     <string name="lockscreen_pattern_wrong">Riprova</string>
     <string name="lockscreen_password_wrong">Riprova</string>
+    <string name="faceunlock_multiple_failures">Tentativi esauriti per Sblocca con Sorriso</string>
     <string name="lockscreen_plugged_in">In carica (%d%%)</string>
     <string name="lockscreen_charged">Carico.</string>
     <string name="lockscreen_battery_short">%d%%</string>
@@ -746,7 +775,9 @@
     <string name="lockscreen_missing_sim_message">Nessuna SIM presente nel telefono.</string>
     <string name="lockscreen_missing_sim_instructions">Inserisci una SIM.</string>
     <string name="lockscreen_missing_sim_instructions_long">Scheda SIM mancante o non leggibile. Inserisci una scheda SIM.</string>
-    <string name="lockscreen_permanent_disabled_sim_instructions">"La scheda SIM è stata disattivata definitivamente. Contatta il fornitore del tuo servizio wireless per ricevere un'altra scheda SIM."</string>
+    <string name="lockscreen_permanent_disabled_sim_message_short">Unusable SIM card.</string>
+    <string name="lockscreen_permanent_disabled_sim_instructions">"La scheda SIM è stata disattivata definitivamente. 
+Contatta il fornitore del tuo servizio wireless per ricevere un'altra scheda SIM."</string>
     <string name="lockscreen_transport_prev_description">Pulsante traccia precedente</string>
     <string name="lockscreen_transport_next_description">Pulsante traccia successiva</string>
     <string name="lockscreen_transport_pause_description">Pulsante Pausa</string>
@@ -773,7 +804,7 @@
     <string name="lockscreen_glogin_password_hint">Password</string>
     <string name="lockscreen_glogin_submit_button">Accedi</string>
     <string name="lockscreen_glogin_invalid_input">Password o nome utente non valido.</string>
-    <string name="lockscreen_glogin_account_recovery_hint">"Hai dimenticato il nome utente o la password?
+    <string name="lockscreen_glogin_account_recovery_hint">"Hai dimenticato il nome utente o la password? 
 Visita "<b>google.com/accounts/recovery</b></string>
     <string name="lockscreen_glogin_checking_password">Controllo...</string>
     <string name="lockscreen_unlock_label">Sblocca</string>
@@ -786,6 +817,10 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="password_keyboard_label_symbol_key">\?123</string>
     <string name="password_keyboard_label_alpha_key">ABC</string>
     <string name="password_keyboard_label_alt_key">ALT</string>
+    <string name="granularity_label_character">character</string>
+    <string name="granularity_label_word">word</string>
+    <string name="granularity_label_link">link</string>
+    <string name="granularity_label_line">line</string>
     <string name="hour_ampm" formatted="false">%-l%P</string>
     <string name="hour_cap_ampm" formatted="false">%-l%p</string>
     <string name="factorytest_failed">Test di fabbrica non riuscito</string>
@@ -872,6 +907,12 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="permdesc_packageVerificationAgent">"Consente all'applicazione di verificare se un pacchetto è installabile."</string>
     <string name="permlab_bindPackageVerifier">associazione a verifica pacchetto</string>
     <string name="permdesc_bindPackageVerifier">Permette al proprietario di effettuare richieste relative alle verifiche dei pacchetti. Non dovrebbe mai essere necessario per le normali applicazioni.</string>
+    <string name="permlab_serialPort">access serial ports</string>
+    <string name="permdesc_serialPort">Allows the holder to access serial ports using the SerialManager API.</string>
+    <string name="permlab_accessContentProvidersExternally">access content providers externally</string>
+    <string name="permdesc_accessContentProvidersExternally">Allows the holder to access content providers from the shell. Should never be needed for normal apps.</string>
+    <string name="permlab_updateLock">discourage automatic device updates</string>
+    <string name="permdesc_updateLock">Allows the holder to offer information to the system about when would be a good time for a noninteractive reboot to upgrade the device.</string>
     <string name="save_password_message">Memorizzare la password nel browser?</string>
     <string name="save_password_notnow">Non ora</string>
     <string name="save_password_remember">Memorizza</string>
@@ -888,6 +929,8 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="searchview_description_clear">Cancella query</string>
     <string name="searchview_description_submit">Invia query</string>
     <string name="searchview_description_voice">Ricerca vocale</string>
+    <string name="enable_explore_by_touch_warning_title">Enable Explore by Touch?</string>
+    <string name="enable_explore_by_touch_warning_message">"%1$s wants to enable Explore by Touch. When Explore by Touch is turned on, you can hear or see descriptions of what's under your finger or perform gestures to interact with the phone."</string>
     <string name="oneMonthDurationPast">1 mese fa</string>
     <string name="beforeOneMonthDurationPast">Oltre 1 mese fa</string>
     <string name="last_month">Ultimo mese</string>
@@ -933,7 +976,7 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="chooseUsbActivity">"Seleziona un'applicazione per il dispositivo USB"</string>
     <string name="noApplications">Nessuna applicazione è in grado di svolgere questa azione.</string>
     <string name="aerr_title" />
-    <string name="aerr_application">"L'applicazione %1$s si è bloccata in modo anomalo."</string>
+    <string name="aerr_application">"L'applicazione %1$s si è interrotta."</string>
     <string name="aerr_process">Il processo %1$s si è interrotto.</string>
     <string name="anr_title" />
     <string name="anr_activity_application">%2$s non risponde. Vuoi chiuderla?</string>
@@ -991,9 +1034,17 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="wifi_p2p_dialog_title">Wi-Fi Direct</string>
     <string name="wifi_p2p_turnon_message">Avvia funzionamento Wi-Fi Direct. Verrà disattivato il funzionamento con hotspot/client Wi-Fi.</string>
     <string name="wifi_p2p_failed_message">Avvio di Wi-Fi Direct non riuscito</string>
-    <string name="wifi_p2p_enabled_notification_title">Wi-Fi Direct è attivo</string>
-    <string name="wifi_p2p_enabled_notification_message">Tocca per le impostazioni</string>
-    <string name="select_character">Inserisci carattere</string>
+    <string name="wifi_p2p_enabled_notification_title">WLAN Direct is on</string>
+    <string name="wifi_p2p_enabled_notification_message">Touch for settings</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="wifi_p2p_invitation_sent_title">Invitation sent</string>
+    <string name="wifi_p2p_invitation_to_connect_title">Invitation to connect</string>
+    <string name="wifi_p2p_from_message">From:</string>
+    <string name="wifi_p2p_to_message">To:</string>
+    <string name="wifi_p2p_enter_pin_message">Type the required PIN:</string>
+    <string name="wifi_p2p_show_pin_message">PIN:</string>
+    <string name="select_character">Insert character</string>
     <string name="sms_control_title">Invio SMS</string>
     <string name="sms_control_message">"È in corso l'invio di numerosi SMS. Seleziona \"OK\" per continuare, oppure \"Annulla\" per interrompere l'invio."</string>
     <string name="sms_control_yes">OK</string>
@@ -1007,11 +1058,14 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="time_picker_dialog_title">Imposta ora</string>
     <string name="date_picker_dialog_title">Imposta data</string>
     <string name="date_time_set">Imposta</string>
+    <string name="date_time_done">Fatto</string>
     <string name="default_permission_group">Predefinito</string>
     <string name="permissions_format">%1$s, %2$s</string>
     <string name="no_permissions">Nessuna autorizzazione richiesta</string>
     <string name="perms_hide" />
     <string name="perms_show_all" />
+    <string name="perms_new_perm_prefix"><font size="12" fgcolor="#ff900000">NUOVO: </font></string>
+    <string name="perms_description_app">Fornito da %1$s.</string>
     <string name="usb_storage_activity_title">Archivio di massa USB</string>
     <string name="usb_storage_title">USB collegata</string>
     <string name="usb_storage_message">"Ti sei collegato al computer tramite USB. Tocca il pulsante sotto se desideri copiare file tra il computer e l'archivio USB di Android."</string>
@@ -1042,6 +1096,10 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="locale_replacement" />
     <string name="select_input_method">Seleziona metodo di inserimento</string>
     <string name="configure_input_methods">Configura metodi di input</string>
+    <string name="use_physical_keyboard">Tastiera fisica</string>
+    <string name="hardware">Hardware</string>
+    <string name="select_keyboard_layout_notification_title">Seleziona layout tastiera</string>
+    <string name="select_keyboard_layout_notification_message">Tocca per selezioanre layout tastiera.</string>
     <string name="fast_scroll_alphabet">" ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="fast_scroll_numeric_alphabet">" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"</string>
     <string name="candidates_style" />
@@ -1062,6 +1120,8 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="permdesc_pkgUsageStats">Consente la modifica delle statistiche di utilizzo dei componenti raccolte. Da non usare per normali applicazioni.</string>
     <string name="permlab_copyProtectedData">Consente di invocare il servizio contenitore predefinito per la copia di contenuti. Da non usare per normali applicazioni.</string>
     <string name="permdesc_copyProtectedData">Consente di invocare il servizio contenitore predefinito per la copia di contenuti. Da non usare per normali applicazioni.</string>
+    <string name="permlab_route_media_output">Route media output</string>
+    <string name="permdesc_route_media_output">Allows an application to route media output to other external devices.</string>
     <string name="tutorial_double_tap_to_zoom_message_short">Tocca due volte per il comando dello zoom</string>
     <string name="gadget_host_error_inflating">"Errore durante l'ampliamento del widget"</string>
     <string name="ime_action_go">Vai</string>
@@ -1167,7 +1227,7 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="description_target_camera">Fotocamera</string>
     <string name="description_target_silent">Silenzioso</string>
     <string name="description_target_soundon">Audio attivato</string>
-    <string name="description_target_unlock_tablet">Fai scorrere per sbloccare.</string>
+    <string name="description_target_unlock_tablet">Scorreri per sbloccare</string>
     <string name="keyboard_headset_required_to_hear_password">Collega gli auricolari per ascoltare la pronuncia dei tasti premuti per la password.</string>
     <string name="keyboard_password_character_no_headset">Punto.</string>
     <string name="action_bar_home_description">Vai alla home page</string>
@@ -1213,19 +1273,13 @@ Visita "<b>google.com/accounts/recovery</b></string>
     <string name="sending">Invio...</string>
     <string name="launchBrowserDefault">"Avviare l'applicazione Browser?"</string>
     <string name="SetupCallDefault">Accettare la chiamata?</string>
-    <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
-    <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
-    <string name="sms_control_default_app_name">Applicazione sconosciuta</string>
-    <string name="checkbox_checked">selezionata</string>
-    <string name="checkbox_not_checked">non selezionato</string>
-    <string name="choose_account_text">Quale account desideri utilizzare?</string>
-    <string name="radiobutton_not_selected">non selezionato</string>
-    <string name="radiobutton_selected">selezionato</string>
-    <string name="switch_off">disattivo</string>
-    <string name="switch_on">attivo</string>
-    <string name="togglebutton_not_pressed">non premuto</string>
-    <string name="togglebutton_pressed">premuto</string>
-    <string name="wifi_p2p_pbc_go_negotiation_request_message">Richiesta di configurazione della connessione Wi-Fi Direct da %1$s. Fai clic su OK per accettare.</string>
-    <string name="wifi_p2p_pin_display_message">Per la continuazione della configurazione della connessione è necessario inserire un codice PIN WPS %1$s sul dispositivo peer %2$s.</string>
-    <string name="wifi_p2p_pin_go_negotiation_request_message">Richiesta di configurazione della connessione Wi-Fi Direct da %1$s. Inserisci il PIN per continuare.</string>
+    <string name="activity_resolver_use_always">Sempre</string>
+    <string name="activity_resolver_use_once">Solo una volta</string>
+    <string name="default_audio_route_name">Telefono</string>
+    <string name="default_audio_route_name_headphones">Cuffie</string>
+    <string name="default_audio_route_name_dock_speakers">Altoparlanti Dock</string>
+    <string name="default_audio_route_name_hdmi">Audio HDMI</string>
+    <string name="default_audio_route_category_name">Sistema</string>
+    <string name="bluetooth_a2dp_audio_route_name">Audio Bluetooth</string>
+    <string name="media_route_chooser_grouping_done">Fatto</string>
 </resources>

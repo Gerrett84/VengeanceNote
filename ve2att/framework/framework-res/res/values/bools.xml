@@ -12,11 +12,13 @@
     <bool name="config_sf_slowBlur">true</bool>
     <bool name="config_useMasterVolume">false</bool>
     <bool name="config_sendAudioBecomingNoisy">true</bool>
-    <bool name="config_ui_enableFadingMarquee">true</bool>
+    <bool name="config_ui_enableFadingMarquee">false</bool>
     <bool name="config_closeDialogWhenTouchOutside">true</bool>
+    <bool name="config_wifiApFirmwareReload">true</bool>
+    <bool name="config_wifiApStartInterface">false</bool>
     <bool name="config_wifi_dual_band_support">true</bool>
-    <bool name="config_wifi_p2p_support">false</bool>
-    <bool name="config_wifi_background_scan_support">true</bool>
+    <bool name="config_wifi_p2p_support">true</bool>
+    <bool name="config_wifi_background_scan_support">false</bool>
     <bool name="config_automatic_brightness_available">true</bool>
     <bool name="config_annoy_dianne">true</bool>
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -50,6 +52,7 @@
     <bool name="config_telephony_use_own_number_for_voicemail">false</bool>
     <bool name="config_sms_utf8_support">false</bool>
     <bool name="config_mms_content_disposition_support">true</bool>
+    <bool name="config_smsSamsungCdmaAlternateMessageIDEncoding">false</bool>
     <bool name="config_alwaysUseCdmaRssi">false</bool>
     <bool name="config_duplicate_port_omadm_wappush">false</bool>
     <bool name="config_showNavigationBar">false</bool>
@@ -59,5 +62,7 @@
     <bool name="config_enableDreams">false</bool>
     <bool name="config_cellBroadcastAppLinks">false</bool>
     <bool name="lockscreen_isPortrait">true</bool>
-    <bool name="config_noDelayInATnoDP">true</bool>
+    <bool name="config_forceDisableHardwareKeyboard">true</bool>
+    <bool name="config_samsung_stk">true</bool>
+    <bool name="config_noDelayInATwoDP">true</bool>
 </resources>

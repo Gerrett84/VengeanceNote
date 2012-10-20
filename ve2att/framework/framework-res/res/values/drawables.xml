@@ -18,7 +18,7 @@
     <drawable name="dialog_holo_light_frame">@drawable/dialog_full_holo_light</drawable>
     <item type="drawable" name="notification_bg">#00000000</item>
     <item type="drawable" name="notification_bg_low">#00000000</item>
-    <item type="drawable" name="APKTOOL_DUMMY_057f">false</item>
+    <item type="drawable" name="APKTOOL_DUMMY_0580">false</item>
     <item type="drawable" name="status_bar_closed_default_background">#ff000000</item>
     <item type="drawable" name="status_bar_opened_default_background">#ff000000</item>
     <item type="drawable" name="notification_item_background_color">#ff111111</item>

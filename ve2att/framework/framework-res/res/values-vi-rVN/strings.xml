@@ -1115,7 +1115,7 @@ Bạn có muốn đóng quá trình này không?"</string>
     <string name="submit">Gửi</string>
     <string name="car_mode_disable_notification_title">Chế độ ô tô được kích hoạt</string>
     <string name="car_mode_disable_notification_message">Chọn thoát khỏi chế độ ô tô.</string>
-    <string name="tethered_notification_title">Tính năng điểm truy cập Internet hoặc điểm phát sóng đang hoạt động</string>
+    <string name="tethered_notification_title">Tính năng phát sóng Internet đang hoạt động</string>
     <string name="tethered_notification_message">Chạm để cấu hình</string>
     <string name="back_button_label">Quay lại</string>
     <string name="next_button_label">Tiếp theo</string>

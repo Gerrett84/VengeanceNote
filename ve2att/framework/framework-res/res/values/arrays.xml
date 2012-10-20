@@ -444,7 +444,6 @@
         <item>mobile_dun,4,0,3,60000,true</item>
         <item>mobile_hipri,5,0,3,60000,true</item>
         <item>mobile_bluetooth,7,7,1,-1,true</item>
-        <item>ethernet,9,9,1,-1,true</item>
         <item>wifi_p2p,13,1,0,-1,true</item>
     </string-array>
     <integer-array name="config_protectedNetworks">
@@ -522,6 +521,10 @@
         <item>10</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLevels">
+        <item>6</item>
+        <item>9</item>
+        <item>14</item>
+        <item>20</item>
         <item>30</item>
         <item>150</item>
         <item>600</item>
@@ -529,6 +532,10 @@
         <item>15000</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>19</item>
+        <item>23</item>
+        <item>26</item>
+        <item>30</item>
         <item>34</item>
         <item>48</item>
         <item>84</item>
@@ -553,6 +560,7 @@
         <item>0</item>
     </integer-array>
     <array name="config_twoDigitNumberPattern" />
+    <array name="config_telephony_set_audioparameters" />
     <array name="config_sms_enabled_single_shift_tables" />
     <array name="config_sms_enabled_locking_shift_tables" />
     <array name="config_oemUsbModeOverride" />
