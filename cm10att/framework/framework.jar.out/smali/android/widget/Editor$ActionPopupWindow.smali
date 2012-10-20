@@ -383,7 +383,7 @@
     .line 2803
     iget-object v3, p0, Landroid/widget/Editor$ActionPopupWindow;->mReplaceTextView:Landroid/widget/TextView;
 
-    const v4, 0x10403e2
+    const v4, 0x10403e4
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

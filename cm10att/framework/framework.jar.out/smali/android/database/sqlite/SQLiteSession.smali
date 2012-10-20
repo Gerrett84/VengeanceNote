@@ -259,6 +259,7 @@
     .line 350
     invoke-direct {p0}, Landroid/database/sqlite/SQLiteSession;->releaseConnection()V
 
+    .line 349
     :cond_5
     throw v2
 
@@ -996,7 +997,7 @@
     .line 715
     const/4 v0, 0x0
 
-    .line 723
+    .line 720
     :goto_0
     return-object v0
 
@@ -1058,7 +1059,7 @@
     .line 749
     const/4 v0, 0x0
 
-    .line 757
+    .line 754
     :goto_0
     return v0
 
@@ -1144,7 +1145,7 @@
     .line 831
     const/4 v2, 0x0
 
-    .line 840
+    .line 836
     :goto_0
     return v2
 
@@ -1224,7 +1225,7 @@
     .line 783
     const-wide/16 v0, 0x0
 
-    .line 791
+    .line 788
     :goto_0
     return-wide v0
 
@@ -1286,7 +1287,7 @@
     .line 647
     const-wide/16 v0, 0x0
 
-    .line 654
+    .line 652
     :goto_0
     return-wide v0
 
@@ -1348,7 +1349,7 @@
     .line 680
     const/4 v0, 0x0
 
-    .line 687
+    .line 685
     :goto_0
     return-object v0
 

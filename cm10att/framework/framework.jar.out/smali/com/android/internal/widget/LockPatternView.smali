@@ -616,7 +616,7 @@
 
     move-result-object v7
 
-    const v8, 0x1040324
+    const v8, 0x1040326
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2926,7 +2926,7 @@
 
     .line 436
     :cond_0
-    const v0, 0x1040353
+    const v0, 0x1040355
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2950,7 +2950,7 @@
 
     .line 457
     :cond_0
-    const v0, 0x1040352
+    const v0, 0x1040354
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2976,7 +2976,7 @@
 
     .line 450
     :cond_0
-    const v0, 0x1040354
+    const v0, 0x1040356
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -3000,7 +3000,7 @@
 
     .line 443
     :cond_0
-    const v0, 0x1040351
+    const v0, 0x1040353
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 

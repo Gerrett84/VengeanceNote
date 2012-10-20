@@ -67,7 +67,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2041
+    .line 2042
     :cond_0
     :goto_0
     :sswitch_0
@@ -79,7 +79,7 @@
 
     sparse-switch v3, :sswitch_data_0
 
-    .line 2038
+    .line 2039
     const-string v3, "MediaPlayer"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -488,6 +488,9 @@
 
     .line 2029
     .local v2, text:Landroid/media/TimedText;
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 2030
     iget-object v3, p0, Landroid/media/MediaPlayer$EventHandler;->this$0:Landroid/media/MediaPlayer;
 
     #getter for: Landroid/media/MediaPlayer;->mOnTimedTextListener:Landroid/media/MediaPlayer$OnTimedTextListener;
@@ -502,6 +505,8 @@
     goto/16 :goto_0
 
     .line 1972
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

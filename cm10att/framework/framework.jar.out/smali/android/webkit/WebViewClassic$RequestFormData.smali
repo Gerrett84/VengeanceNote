@@ -44,38 +44,38 @@
     .parameter "autoComplete"
 
     .prologue
-    .line 4741
+    .line 4758
     iput-object p1, p0, Landroid/webkit/WebViewClassic$RequestFormData;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4742
+    .line 4759
     iput-object p2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mName:Ljava/lang/String;
 
-    .line 4743
+    .line 4760
     invoke-static {p3}, Landroid/webkit/WebTextView;->urlForAutoCompleteData(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mUrl:Ljava/lang/String;
 
-    .line 4744
+    .line 4761
     iput-object p4, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mUpdateMessage:Landroid/os/Message;
 
-    .line 4745
+    .line 4762
     iput-boolean p5, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mAutoFillable:Z
 
-    .line 4746
+    .line 4763
     iput-boolean p6, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mAutoComplete:Z
 
-    .line 4747
+    .line 4764
     invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getSettings()Landroid/webkit/WebSettingsClassic;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mWebSettings:Landroid/webkit/WebSettingsClassic;
 
-    .line 4748
+    .line 4765
     return-void
 .end method
 
@@ -85,18 +85,18 @@
     .locals 5
 
     .prologue
-    .line 4752
+    .line 4769
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4754
+    .line 4771
     .local v1, pastEntries:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-boolean v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mAutoFillable:Z
 
     if-eqz v2, :cond_0
 
-    .line 4758
+    .line 4775
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mWebSettings:Landroid/webkit/WebSettingsClassic;
 
     if-eqz v2, :cond_3
@@ -109,7 +109,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 4759
+    .line 4776
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -125,7 +125,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040369
+    const v4, 0x104036b
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -166,7 +166,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4763
+    .line 4780
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mAutoCompletePopup:Landroid/webkit/AutoCompletePopup;
@@ -178,14 +178,14 @@
 
     invoke-virtual {v2, v3}, Landroid/webkit/AutoCompletePopup;->setIsAutoFillProfileSet(Z)V
 
-    .line 4773
+    .line 4790
     :cond_0
     :goto_0
     iget-boolean v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mAutoComplete:Z
 
     if-eqz v2, :cond_1
 
-    .line 4774
+    .line 4791
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mDatabase:Landroid/webkit/WebViewDatabaseClassic;
@@ -203,7 +203,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 4777
+    .line 4794
     :cond_1
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -211,7 +211,7 @@
 
     if-lez v2, :cond_2
 
-    .line 4778
+    .line 4795
     new-instance v0, Landroid/widget/ArrayAdapter;
 
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->this$0:Landroid/webkit/WebViewClassic;
@@ -225,23 +225,23 @@
 
     invoke-direct {v0, v2, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    .line 4782
+    .line 4799
     .local v0, adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Ljava/lang/String;>;"
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mUpdateMessage:Landroid/os/Message;
 
     iput-object v0, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 4783
+    .line 4800
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->mUpdateMessage:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4785
+    .line 4802
     .end local v0           #adapter:Landroid/widget/ArrayAdapter;,"Landroid/widget/ArrayAdapter<Ljava/lang/String;>;"
     :cond_2
     return-void
 
-    .line 4767
+    .line 4784
     :cond_3
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -254,7 +254,7 @@
 
     move-result-object v2
 
-    const v3, 0x104036a
+    const v3, 0x104036c
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -266,7 +266,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4769
+    .line 4786
     iget-object v2, p0, Landroid/webkit/WebViewClassic$RequestFormData;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mAutoCompletePopup:Landroid/webkit/AutoCompletePopup;

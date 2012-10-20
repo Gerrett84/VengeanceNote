@@ -211,7 +211,7 @@
     .line 166
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mMatches:Landroid/widget/TextView;
 
-    const v1, 0x10404b3
+    const v1, 0x10404b5
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

@@ -1563,7 +1563,7 @@
     packed-switch v0, :pswitch_data_0
 
     .line 2160
-    const v0, 0x1040490
+    const v0, 0x1040492
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 
@@ -1580,7 +1580,7 @@
 
     .line 2148
     :pswitch_1
-    const v0, 0x104048a
+    const v0, 0x104048c
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 
@@ -1590,7 +1590,7 @@
 
     .line 2150
     :pswitch_2
-    const v0, 0x104048b
+    const v0, 0x104048d
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 
@@ -1600,7 +1600,7 @@
 
     .line 2152
     :pswitch_3
-    const v0, 0x104048c
+    const v0, 0x104048e
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 
@@ -1610,7 +1610,7 @@
 
     .line 2154
     :pswitch_4
-    const v0, 0x104048d
+    const v0, 0x104048f
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 
@@ -1620,7 +1620,7 @@
 
     .line 2156
     :pswitch_5
-    const v0, 0x104048e
+    const v0, 0x1040490
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 
@@ -1630,7 +1630,7 @@
 
     .line 2158
     :pswitch_6
-    const v0, 0x104048f
+    const v0, 0x1040491
 
     invoke-virtual {p0, v0}, Landroid/inputmethodservice/InputMethodService;->getText(I)Ljava/lang/CharSequence;
 

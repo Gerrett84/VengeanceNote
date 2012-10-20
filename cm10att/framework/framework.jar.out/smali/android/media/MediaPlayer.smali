@@ -611,7 +611,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2407
+    .line 2408
     if-eq p1, v0, :cond_0
 
     const/4 v1, 0x2
@@ -661,7 +661,7 @@
     .parameter "obj"
 
     .prologue
-    .line 2054
+    .line 2055
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0
@@ -671,16 +671,16 @@
 
     check-cast v1, Landroid/media/MediaPlayer;
 
-    .line 2055
+    .line 2056
     .local v1, mp:Landroid/media/MediaPlayer;
     if-nez v1, :cond_1
 
-    .line 2067
+    .line 2068
     :cond_0
     :goto_0
     return-void
 
-    .line 2059
+    .line 2060
     :cond_1
     const/16 v2, 0xc8
 
@@ -690,23 +690,23 @@
 
     if-ne p2, v2, :cond_2
 
-    .line 2061
+    .line 2062
     invoke-virtual {v1}, Landroid/media/MediaPlayer;->start()V
 
-    .line 2063
+    .line 2064
     :cond_2
     iget-object v2, v1, Landroid/media/MediaPlayer;->mEventHandler:Landroid/media/MediaPlayer$EventHandler;
 
     if-eqz v2, :cond_0
 
-    .line 2064
+    .line 2065
     iget-object v2, v1, Landroid/media/MediaPlayer;->mEventHandler:Landroid/media/MediaPlayer$EventHandler;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroid/media/MediaPlayer$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 2065
+    .line 2066
     .local v0, m:Landroid/os/Message;
     iget-object v2, v1, Landroid/media/MediaPlayer;->mEventHandler:Landroid/media/MediaPlayer$EventHandler;
 
@@ -2365,10 +2365,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2152
+    .line 2153
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnBufferingUpdateListener:Landroid/media/MediaPlayer$OnBufferingUpdateListener;
 
-    .line 2153
+    .line 2154
     return-void
 .end method
 
@@ -2377,10 +2377,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2118
+    .line 2119
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnCompletionListener:Landroid/media/MediaPlayer$OnCompletionListener;
 
-    .line 2119
+    .line 2120
     return-void
 .end method
 
@@ -2389,10 +2389,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2300
+    .line 2301
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnErrorListener:Landroid/media/MediaPlayer$OnErrorListener;
 
-    .line 2301
+    .line 2302
     return-void
 .end method
 
@@ -2401,10 +2401,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2398
+    .line 2399
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnInfoListener:Landroid/media/MediaPlayer$OnInfoListener;
 
-    .line 2399
+    .line 2400
     return-void
 .end method
 
@@ -2413,10 +2413,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2091
+    .line 2092
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnPreparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
 
-    .line 2092
+    .line 2093
     return-void
 .end method
 
@@ -2425,10 +2425,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2179
+    .line 2180
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnSeekCompleteListener:Landroid/media/MediaPlayer$OnSeekCompleteListener;
 
-    .line 2180
+    .line 2181
     return-void
 .end method
 
@@ -2437,10 +2437,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2240
+    .line 2241
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnTimedTextListener:Landroid/media/MediaPlayer$OnTimedTextListener;
 
-    .line 2241
+    .line 2242
     return-void
 .end method
 
@@ -2449,10 +2449,10 @@
     .parameter "listener"
 
     .prologue
-    .line 2211
+    .line 2212
     iput-object p1, p0, Landroid/media/MediaPlayer;->mOnVideoSizeChangedListener:Landroid/media/MediaPlayer$OnVideoSizeChangedListener;
 
-    .line 2212
+    .line 2213
     return-void
 .end method
 

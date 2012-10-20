@@ -55,7 +55,7 @@
 
 .field static final SMS_SEND_RETRY:I = 0x802a
 
-.field static final STK_DEFAULT:Ljava/lang/String; = "Defualt Message"
+.field static final STK_DEFAULT:Ljava/lang/String; = "Default Message"
 
 .field static final WAITING_SMS_RESULT:I = 0x2
 
@@ -269,17 +269,17 @@
     .locals 1
 
     .prologue
-    .line 855
+    .line 858
     const/16 v0, 0x9
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cat/CatService;->removeMessages(I)V
 
-    .line 856
+    .line 859
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/cat/CatService;->mTimeoutDest:I
 
-    .line 857
+    .line 860
     return-void
 .end method
 
@@ -291,18 +291,18 @@
     .parameter "buf"
 
     .prologue
-    .line 441
+    .line 444
     iget v1, p1, Lcom/android/internal/telephony/cat/CommandDetails;->typeOfCommand:I
 
     invoke-static {v1}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->fromInt(I)Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
     move-result-object v0
 
-    .line 442
+    .line 445
     .local v0, cmdType:Lcom/android/internal/telephony/cat/AppInterface$CommandType;
     if-eqz v0, :cond_1
 
-    .line 443
+    .line 446
     sget-object v1, Lcom/android/internal/telephony/cat/CatService$1;->$SwitchMap$com$android$internal$telephony$cat$AppInterface$CommandType:[I
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->ordinal()I
@@ -313,7 +313,7 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    .line 460
+    .line 463
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -334,12 +334,12 @@
 
     invoke-static {p0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 466
+    .line 469
     :cond_0
     :goto_0
     return-void
 
-    .line 448
+    .line 451
     :sswitch_0
     invoke-virtual {p2}, Lcom/android/internal/telephony/cat/ResultCode;->value()I
 
@@ -359,12 +359,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 450
+    .line 453
     invoke-direct {p0, p4, p3}, Lcom/android/internal/telephony/cat/CatService;->getInKeyResponse(Ljava/io/ByteArrayOutputStream;Lcom/android/internal/telephony/cat/Input;)V
 
     goto :goto_0
 
-    .line 454
+    .line 457
     :sswitch_1
     iget v1, p1, Lcom/android/internal/telephony/cat/CommandDetails;->commandQualifier:I
 
@@ -384,12 +384,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 456
+    .line 459
     invoke-direct {p0, p4}, Lcom/android/internal/telephony/cat/CatService;->getPliResponse(Ljava/io/ByteArrayOutputStream;)V
 
     goto :goto_0
 
-    .line 464
+    .line 467
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -413,7 +413,7 @@
 
     goto :goto_0
 
-    .line 443
+    .line 446
     :sswitch_data_0
     .sparse-switch
         0x5 -> :sswitch_1
@@ -430,25 +430,25 @@
     .parameter "oneShot"
 
     .prologue
-    .line 536
+    .line 539
     new-instance v2, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v2}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 539
+    .line 542
     .local v2, buf:Ljava/io/ByteArrayOutputStream;
     const/16 v8, 0xd6
 
-    .line 540
+    .line 543
     .local v8, tag:I
     invoke-virtual {v2, v8}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 543
+    .line 546
     const/4 v9, 0x0
 
     invoke-virtual {v2, v9}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 546
+    .line 549
     sget-object v9, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->EVENT_LIST:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v9}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
@@ -457,18 +457,18 @@
 
     or-int/lit16 v8, v9, 0x80
 
-    .line 547
+    .line 550
     invoke-virtual {v2, v8}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 548
+    .line 551
     const/4 v9, 0x1
 
     invoke-virtual {v2, v9}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 549
+    .line 552
     invoke-virtual {v2, p1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 552
+    .line 555
     sget-object v9, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->DEVICE_IDENTITIES:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v9}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
@@ -477,24 +477,24 @@
 
     or-int/lit16 v8, v9, 0x80
 
-    .line 553
+    .line 556
     invoke-virtual {v2, v8}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 554
+    .line 557
     const/4 v9, 0x2
 
     invoke-virtual {v2, v9}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 555
+    .line 558
     invoke-virtual {v2, p2}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 556
+    .line 559
     invoke-virtual {v2, p3}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 559
+    .line 562
     if-eqz p4, :cond_0
 
-    .line 560
+    .line 563
     move-object v0, p4
 
     .local v0, arr$:[B
@@ -509,16 +509,16 @@
 
     aget-byte v1, v0, v4
 
-    .line 561
+    .line 564
     .local v1, b:B
     invoke-virtual {v2, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 560
+    .line 563
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 565
+    .line 568
     .end local v0           #arr$:[B
     .end local v1           #b:B
     .end local v4           #i$:I
@@ -528,13 +528,13 @@
 
     move-result-object v7
 
-    .line 568
+    .line 571
     .local v7, rawData:[B
     array-length v9, v7
 
     add-int/lit8 v5, v9, -0x2
 
-    .line 569
+    .line 572
     .local v5, len:I
     const/4 v9, 0x1
 
@@ -542,12 +542,12 @@
 
     aput-byte v10, v7, v9
 
-    .line 571
+    .line 574
     invoke-static {v7}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 573
+    .line 576
     .local v3, hexString:Ljava/lang/String;
     iget-object v9, p0, Lcom/android/internal/telephony/cat/CatService;->mCmdIf:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -555,7 +555,7 @@
 
     invoke-interface {v9, v3, v10}, Lcom/android/internal/telephony/CommandsInterface;->sendEnvelope(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 574
+    .line 577
     return-void
 .end method
 
@@ -565,23 +565,23 @@
     .parameter "cmdInput"
 
     .prologue
-    .line 469
+    .line 472
     sget-object v1, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->DURATION:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v0
 
-    .line 471
+    .line 474
     .local v0, tag:I
     invoke-virtual {p1, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 472
+    .line 475
     const/4 v1, 0x2
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 473
+    .line 476
     iget-object v1, p2, Lcom/android/internal/telephony/cat/Input;->duration:Lcom/android/internal/telephony/cat/Duration;
 
     iget-object v1, v1, Lcom/android/internal/telephony/cat/Duration;->timeUnit:Lcom/android/internal/telephony/cat/Duration$TimeUnit;
@@ -594,14 +594,14 @@
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 474
+    .line 477
     iget-object v1, p2, Lcom/android/internal/telephony/cat/Input;->duration:Lcom/android/internal/telephony/cat/Duration;
 
     iget v1, v1, Lcom/android/internal/telephony/cat/Duration;->timeInterval:I
 
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 475
+    .line 478
     return-void
 .end method
 
@@ -621,7 +621,7 @@
 
     move-object v5, v0
 
-    .line 618
+    .line 621
     invoke-static/range {v0 .. v5}, Lcom/android/internal/telephony/cat/CatService;->getInstance(Lcom/android/internal/telephony/CommandsInterface;Lcom/android/internal/telephony/IccRecords;Landroid/content/Context;Lcom/android/internal/telephony/IccFileHandler;Lcom/android/internal/telephony/IccCard;Lcom/android/internal/telephony/IccSmsInterfaceManager;)Lcom/android/internal/telephony/cat/CatService;
 
     move-result-object v0
@@ -641,18 +641,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 588
+    .line 591
     sget-object v8, Lcom/android/internal/telephony/cat/CatService;->sInstanceLock:Ljava/lang/Object;
 
     monitor-enter v8
 
-    .line 589
+    .line 592
     :try_start_0
     sget-object v1, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
 
     if-nez v1, :cond_2
 
-    .line 590
+    .line 593
     if-eqz p0, :cond_0
 
     if-eqz p1, :cond_0
@@ -665,15 +665,15 @@
 
     if-nez p5, :cond_1
 
-    .line 592
+    .line 595
     :cond_0
     monitor-exit v8
 
-    .line 608
+    .line 611
     :goto_0
     return-object v0
 
-    .line 594
+    .line 597
     :cond_1
     new-instance v7, Landroid/os/HandlerThread;
 
@@ -681,11 +681,11 @@
 
     invoke-direct {v7, v0}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 595
+    .line 598
     .local v7, thread:Landroid/os/HandlerThread;
     invoke-virtual {v7}, Landroid/os/HandlerThread;->start()V
 
-    .line 596
+    .line 599
     new-instance v0, Lcom/android/internal/telephony/cat/CatService;
 
     move-object v1, p0
@@ -704,14 +704,14 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
 
-    .line 597
+    .line 600
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
 
     const-string v1, "NEW sInstance"
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 608
+    .line 611
     .end local v7           #thread:Landroid/os/HandlerThread;
     :goto_1
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
@@ -720,7 +720,7 @@
 
     goto :goto_0
 
-    .line 609
+    .line 612
     :catchall_0
     move-exception v0
 
@@ -730,7 +730,7 @@
 
     throw v0
 
-    .line 598
+    .line 601
     :cond_2
     if-eqz p1, :cond_3
 
@@ -739,17 +739,17 @@
 
     if-eq v0, p1, :cond_3
 
-    .line 599
+    .line 602
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
 
     const-string v1, "Reinitialize the Service with SIMRecords"
 
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 600
+    .line 603
     sput-object p1, Lcom/android/internal/telephony/cat/CatService;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
-    .line 603
+    .line 606
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     sget-object v1, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
@@ -760,7 +760,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/IccRecords;->registerForRecordsLoaded(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 604
+    .line 607
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
 
     const-string/jumbo v1, "sr changed reinitialize and return current sInstance"
@@ -769,7 +769,7 @@
 
     goto :goto_1
 
-    .line 606
+    .line 609
     :cond_3
     sget-object v0, Lcom/android/internal/telephony/cat/CatService;->sInstance:Lcom/android/internal/telephony/cat/CatService;
 
@@ -787,36 +787,36 @@
     .parameter "buf"
 
     .prologue
-    .line 480
+    .line 483
     const-string/jumbo v2, "persist.sys.language"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 482
+    .line 485
     .local v0, lang:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 484
+    .line 487
     sget-object v2, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->LANGUAGE:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v1
 
-    .line 485
+    .line 488
     .local v1, tag:I
     invoke-virtual {p1, v1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 486
+    .line 489
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v2
 
     invoke-static {p1, v2}, Lcom/android/internal/telephony/cat/ResponseData;->writeLength(Ljava/io/ByteArrayOutputStream;I)V
 
-    .line 487
+    .line 490
     invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v2
@@ -829,7 +829,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
-    .line 489
+    .line 492
     .end local v1           #tag:I
     :cond_0
     return-void
@@ -844,32 +844,32 @@
 
     const/4 v3, 0x0
 
-    .line 763
+    .line 766
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/CatService;->validateResponse(Lcom/android/internal/telephony/cat/CatResponseMessage;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 830
+    .line 833
     :goto_0
     return-void
 
-    .line 766
+    .line 769
     :cond_0
     const/4 v5, 0x0
 
-    .line 767
+    .line 770
     .local v5, resp:Lcom/android/internal/telephony/cat/ResponseData;
     const/4 v6, 0x0
 
-    .line 768
+    .line 771
     .local v6, helpRequired:Z
     invoke-virtual {p1}, Lcom/android/internal/telephony/cat/CatResponseMessage;->getCmdDetails()Lcom/android/internal/telephony/cat/CommandDetails;
 
     move-result-object v1
 
-    .line 770
+    .line 773
     .local v1, cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
     sget-object v0, Lcom/android/internal/telephony/cat/CatService$1;->$SwitchMap$com$android$internal$telephony$cat$ResultCode:[I
 
@@ -885,11 +885,11 @@
 
     goto :goto_0
 
-    .line 772
+    .line 775
     :pswitch_0
     const/4 v6, 0x1
 
-    .line 784
+    .line 787
     :pswitch_1
     sget-object v0, Lcom/android/internal/telephony/cat/CatService$1;->$SwitchMap$com$android$internal$telephony$cat$AppInterface$CommandType:[I
 
@@ -907,7 +907,7 @@
 
     packed-switch v0, :pswitch_data_1
 
-    .line 828
+    .line 831
     :cond_1
     :goto_1
     :pswitch_2
@@ -919,12 +919,12 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/cat/CatService;->sendTerminalResponse(Lcom/android/internal/telephony/cat/CommandDetails;Lcom/android/internal/telephony/cat/ResultCode;ZILcom/android/internal/telephony/cat/ResponseData;)V
 
-    .line 829
+    .line 832
     iput-object v8, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     goto :goto_0
 
-    .line 786
+    .line 789
     :pswitch_3
     iget-object v0, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->resCode:Lcom/android/internal/telephony/cat/ResultCode;
 
@@ -934,7 +934,7 @@
 
     const/4 v6, 0x1
 
-    .line 787
+    .line 790
     :goto_2
     iget v0, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->usersMenuSelection:I
 
@@ -945,10 +945,10 @@
     :cond_2
     move v6, v3
 
-    .line 786
+    .line 789
     goto :goto_2
 
-    .line 790
+    .line 793
     :pswitch_4
     new-instance v5, Lcom/android/internal/telephony/cat/SelectItemResponseData;
 
@@ -957,11 +957,11 @@
 
     invoke-direct {v5, v0}, Lcom/android/internal/telephony/cat/SelectItemResponseData;-><init>(I)V
 
-    .line 791
+    .line 794
     .restart local v5       #resp:Lcom/android/internal/telephony/cat/ResponseData;
     goto :goto_1
 
-    .line 794
+    .line 797
     :pswitch_5
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -969,16 +969,16 @@
 
     move-result-object v7
 
-    .line 795
+    .line 798
     .local v7, input:Lcom/android/internal/telephony/cat/Input;
     iget-boolean v0, v7, Lcom/android/internal/telephony/cat/Input;->yesNo:Z
 
     if-nez v0, :cond_3
 
-    .line 798
+    .line 801
     if-nez v6, :cond_1
 
-    .line 799
+    .line 802
     new-instance v5, Lcom/android/internal/telephony/cat/GetInkeyInputResponseData;
 
     .end local v5           #resp:Lcom/android/internal/telephony/cat/ResponseData;
@@ -993,7 +993,7 @@
     .restart local v5       #resp:Lcom/android/internal/telephony/cat/ResponseData;
     goto :goto_1
 
-    .line 803
+    .line 806
     :cond_3
     new-instance v5, Lcom/android/internal/telephony/cat/GetInkeyInputResponseData;
 
@@ -1002,11 +1002,11 @@
 
     invoke-direct {v5, v0}, Lcom/android/internal/telephony/cat/GetInkeyInputResponseData;-><init>(Z)V
 
-    .line 806
+    .line 809
     .restart local v5       #resp:Lcom/android/internal/telephony/cat/ResponseData;
     goto :goto_1
 
-    .line 811
+    .line 814
     .end local v7           #input:Lcom/android/internal/telephony/cat/Input;
     :pswitch_6
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCmdIf:Lcom/android/internal/telephony/CommandsInterface;
@@ -1015,19 +1015,19 @@
 
     invoke-interface {v0, v2, v8}, Lcom/android/internal/telephony/CommandsInterface;->handleCallSetupRequestFromSim(ZLandroid/os/Message;)V
 
-    .line 815
+    .line 818
     iput-object v8, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     goto :goto_0
 
-    .line 823
+    .line 826
     :pswitch_7
     const/4 v5, 0x0
 
-    .line 824
+    .line 827
     goto :goto_1
 
-    .line 770
+    .line 773
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1047,7 +1047,7 @@
         :pswitch_7
     .end packed-switch
 
-    .line 784
+    .line 787
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_3
@@ -1074,13 +1074,13 @@
     .parameter "isProactiveCmd"
 
     .prologue
-    const v2, 0x104051f
+    const v2, 0x1040521
 
     const/4 v5, 0x0
 
     const/4 v3, 0x0
 
-    .line 229
+    .line 232
     invoke-virtual {p1}, Lcom/android/internal/telephony/cat/CommandParams;->getCommandType()Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
     move-result-object v0
@@ -1091,12 +1091,12 @@
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 232
+    .line 235
     new-instance v7, Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     invoke-direct {v7, p1}, Lcom/android/internal/telephony/cat/CatCmdMessage;-><init>(Lcom/android/internal/telephony/cat/CommandParams;)V
 
-    .line 233
+    .line 236
     .local v7, cmdMsg:Lcom/android/internal/telephony/cat/CatCmdMessage;
     sget-object v0, Lcom/android/internal/telephony/cat/CatService$1;->$SwitchMap$com$android$internal$telephony$cat$AppInterface$CommandType:[I
 
@@ -1112,18 +1112,18 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 352
+    .line 355
     const-string v0, "Unsupported command"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 359
+    .line 362
     .end local p1
     :cond_0
     :goto_0
     return-void
 
-    .line 235
+    .line 238
     .restart local p1
     :pswitch_0
     invoke-virtual {v7}, Lcom/android/internal/telephony/cat/CatCmdMessage;->getMenu()Lcom/android/internal/telephony/cat/Menu;
@@ -1136,10 +1136,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 236
+    .line 239
     iput-object v5, p0, Lcom/android/internal/telephony/cat/CatService;->mMenuCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
-    .line 240
+    .line 243
     :goto_1
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1151,34 +1151,34 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/cat/CatService;->sendTerminalResponse(Lcom/android/internal/telephony/cat/CommandDetails;Lcom/android/internal/telephony/cat/ResultCode;ZILcom/android/internal/telephony/cat/ResponseData;)V
 
-    .line 355
+    .line 358
     .end local p1
     :cond_1
     :goto_2
     :pswitch_1
     iput-object v7, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
-    .line 356
+    .line 359
     new-instance v8, Landroid/content/Intent;
 
     const-string v0, "android.intent.action.stk.command"
 
     invoke-direct {v8, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 357
+    .line 360
     .local v8, intent:Landroid/content/Intent;
     const-string v0, "STK CMD"
 
     invoke-virtual {v8, v0, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 358
+    .line 361
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v8}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 238
+    .line 241
     .end local v8           #intent:Landroid/content/Intent;
     .restart local p1
     :cond_2
@@ -1186,7 +1186,7 @@
 
     goto :goto_1
 
-    .line 244
+    .line 247
     :pswitch_2
     invoke-virtual {v7}, Lcom/android/internal/telephony/cat/CatCmdMessage;->geTextMessage()Lcom/android/internal/telephony/cat/TextMessage;
 
@@ -1196,7 +1196,7 @@
 
     if-nez v0, :cond_1
 
-    .line 245
+    .line 248
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
     sget-object v2, Lcom/android/internal/telephony/cat/ResultCode;->OK:Lcom/android/internal/telephony/cat/ResultCode;
@@ -1209,7 +1209,7 @@
 
     goto :goto_2
 
-    .line 251
+    .line 254
     :pswitch_3
     iget-object v0, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1223,7 +1223,7 @@
 
     goto :goto_2
 
-    .line 254
+    .line 257
     :pswitch_4
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1237,7 +1237,7 @@
 
     goto :goto_2
 
-    .line 258
+    .line 261
     :pswitch_5
     iget-object v0, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1245,7 +1245,7 @@
 
     packed-switch v0, :pswitch_data_1
 
-    .line 268
+    .line 271
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
     sget-object v2, Lcom/android/internal/telephony/cat/ResultCode;->OK:Lcom/android/internal/telephony/cat/ResultCode;
@@ -1258,13 +1258,13 @@
 
     goto :goto_0
 
-    .line 260
+    .line 263
     :pswitch_6
     new-instance v10, Lcom/android/internal/telephony/cat/DTTZResponseData;
 
     invoke-direct {v10, v5}, Lcom/android/internal/telephony/cat/DTTZResponseData;-><init>(Ljava/util/Calendar;)V
 
-    .line 261
+    .line 264
     .local v10, resp:Lcom/android/internal/telephony/cat/ResponseData;
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1280,7 +1280,7 @@
 
     goto :goto_0
 
-    .line 264
+    .line 267
     .end local v10           #resp:Lcom/android/internal/telephony/cat/ResponseData;
     :pswitch_7
     new-instance v5, Lcom/android/internal/telephony/cat/LanguageResponseData;
@@ -1295,7 +1295,7 @@
 
     invoke-direct {v5, v0}, Lcom/android/internal/telephony/cat/LanguageResponseData;-><init>(Ljava/lang/String;)V
 
-    .line 265
+    .line 268
     .local v5, resp:Lcom/android/internal/telephony/cat/ResponseData;
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1313,7 +1313,7 @@
     :pswitch_8
     move-object v0, p1
 
-    .line 273
+    .line 276
     check-cast v0, Lcom/android/internal/telephony/cat/LaunchBrowserParams;
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/LaunchBrowserParams;->confirmMsg:Lcom/android/internal/telephony/cat/TextMessage;
@@ -1330,7 +1330,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1338,16 +1338,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 275
+    .line 278
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040520
+    const v1, 0x1040522
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v9
 
-    .line 276
+    .line 279
     .local v9, message:Ljava/lang/CharSequence;
     check-cast p1, Lcom/android/internal/telephony/cat/LaunchBrowserParams;
 
@@ -1362,7 +1362,7 @@
 
     goto/16 :goto_2
 
-    .line 285
+    .line 288
     .end local v9           #message:Ljava/lang/CharSequence;
     .restart local p1
     :pswitch_9
@@ -1380,27 +1380,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 287
+    .line 290
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/CatService;->handleProactiveCommandSendSMS(Lcom/android/internal/telephony/cat/CommandParams;)V
-
-    move-object v0, p1
-
-    .line 288
-    check-cast v0, Lcom/android/internal/telephony/cat/DisplayTextParams;
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
-
-    if-eqz v0, :cond_1
-
-    move-object v0, p1
-
-    check-cast v0, Lcom/android/internal/telephony/cat/DisplayTextParams;
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
-
-    iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
 
     move-object v0, p1
 
@@ -1409,9 +1390,28 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
 
+    if-eqz v0, :cond_1
+
+    move-object v0, p1
+
+    check-cast v0, Lcom/android/internal/telephony/cat/DisplayTextParams;
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
+
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    if-eqz v0, :cond_1
+
+    move-object v0, p1
+
+    .line 294
+    check-cast v0, Lcom/android/internal/telephony/cat/DisplayTextParams;
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
+
+    iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
+
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1419,7 +1419,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 292
+    .line 295
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -1429,7 +1429,7 @@
     .restart local v9       #message:Ljava/lang/CharSequence;
     move-object v0, p1
 
-    .line 293
+    .line 296
     check-cast v0, Lcom/android/internal/telephony/cat/DisplayTextParams;
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
@@ -1440,7 +1440,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    .line 294
+    .line 297
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
     check-cast p1, Lcom/android/internal/telephony/cat/DisplayTextParams;
@@ -1465,7 +1465,7 @@
     :pswitch_a
     move-object v0, p1
 
-    .line 300
+    .line 303
     check-cast v0, Lcom/android/internal/telephony/cat/DisplayTextParams;
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/DisplayTextParams;->textMsg:Lcom/android/internal/telephony/cat/TextMessage;
@@ -1482,7 +1482,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1490,14 +1490,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 302
+    .line 305
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v9
 
-    .line 303
+    .line 306
     .restart local v9       #message:Ljava/lang/CharSequence;
     check-cast p1, Lcom/android/internal/telephony/cat/DisplayTextParams;
 
@@ -1517,7 +1517,7 @@
     :pswitch_b
     move-object v0, p1
 
-    .line 309
+    .line 312
     check-cast v0, Lcom/android/internal/telephony/cat/CallSetupParams;
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/CallSetupParams;->confirmMsg:Lcom/android/internal/telephony/cat/TextMessage;
@@ -1534,7 +1534,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1542,16 +1542,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 311
+    .line 314
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040521
+    const v1, 0x1040523
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v9
 
-    .line 312
+    .line 315
     .restart local v9       #message:Ljava/lang/CharSequence;
     check-cast p1, Lcom/android/internal/telephony/cat/CallSetupParams;
 
@@ -1571,10 +1571,10 @@
     :pswitch_c
     move-object v6, p1
 
-    .line 319
+    .line 322
     check-cast v6, Lcom/android/internal/telephony/cat/BIPClientParams;
 
-    .line 320
+    .line 323
     .local v6, cmd:Lcom/android/internal/telephony/cat/BIPClientParams;
     iget-boolean v0, v6, Lcom/android/internal/telephony/cat/BIPClientParams;->bHasAlphaId:Z
 
@@ -1586,7 +1586,7 @@
 
     if-nez v0, :cond_3
 
-    .line 321
+    .line 324
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1617,10 +1617,10 @@
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 323
+    .line 326
     if-eqz p2, :cond_0
 
-    .line 324
+    .line 327
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
     sget-object v2, Lcom/android/internal/telephony/cat/ResultCode;->OK:Lcom/android/internal/telephony/cat/ResultCode;
@@ -1633,21 +1633,21 @@
 
     goto/16 :goto_0
 
-    .line 329
+    .line 332
     :cond_3
     iget-boolean v0, p0, Lcom/android/internal/telephony/cat/CatService;->mStkAppInstalled:Z
 
     if-nez v0, :cond_4
 
-    .line 330
+    .line 333
     const-string v0, "No STK application found."
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 331
+    .line 334
     if-eqz p2, :cond_4
 
-    .line 332
+    .line 335
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
     sget-object v2, Lcom/android/internal/telephony/cat/ResultCode;->BEYOND_TERMINAL_CAPABILITY:Lcom/android/internal/telephony/cat/ResultCode;
@@ -1660,7 +1660,7 @@
 
     goto/16 :goto_0
 
-    .line 344
+    .line 347
     :cond_4
     if-eqz p2, :cond_1
 
@@ -1688,7 +1688,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 348
+    .line 351
     :cond_5
     iget-object v1, p1, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
@@ -1702,7 +1702,7 @@
 
     goto/16 :goto_2
 
-    .line 233
+    .line 236
     nop
 
     :pswitch_data_0
@@ -1728,7 +1728,7 @@
         :pswitch_c
     .end packed-switch
 
-    .line 258
+    .line 261
     :pswitch_data_1
     .packed-switch 0x3
         :pswitch_6
@@ -1743,7 +1743,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 847
+    .line 850
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1770,7 +1770,7 @@
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 848
+    .line 851
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1797,7 +1797,7 @@
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 849
+    .line 852
     iget-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mIccSms:Lcom/android/internal/telephony/IccSmsInterfaceManager;
 
     move-object v0, p1
@@ -1821,14 +1821,14 @@
 
     invoke-virtual {v1, v0, v2, v3, v3}, Lcom/android/internal/telephony/IccSmsInterfaceManager;->sendRawPduSat([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
 
-    .line 851
+    .line 854
     const/4 v0, 0x2
 
     const v1, 0xea60
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/telephony/cat/CatService;->startTimeOut(II)V
 
-    .line 852
+    .line 855
     return-void
 .end method
 
@@ -1844,7 +1844,7 @@
     .line 168
     if-nez p1, :cond_1
 
-    .line 219
+    .line 222
     :cond_0
     :goto_0
     return-void
@@ -1862,7 +1862,7 @@
     :pswitch_0
     goto :goto_0
 
-    .line 212
+    .line 215
     :pswitch_1
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/CatService;->handleSessionEnd()V
 
@@ -1904,17 +1904,17 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 193
+    .line 196
     if-eqz v7, :cond_0
 
-    .line 194
+    .line 197
     iget-object v1, p1, Lcom/android/internal/telephony/cat/RilMessage;->mResCode:Lcom/android/internal/telephony/cat/ResultCode;
 
     sget-object v2, Lcom/android/internal/telephony/cat/ResultCode;->OK:Lcom/android/internal/telephony/cat/ResultCode;
 
     if-ne v1, v2, :cond_2
 
-    .line 195
+    .line 198
     const/4 v1, 0x1
 
     invoke-direct {p0, v7, v1}, Lcom/android/internal/telephony/cat/CatService;->handleCommand(Lcom/android/internal/telephony/cat/CommandParams;Z)V
@@ -1931,7 +1931,12 @@
 
     invoke-static {p0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 189
+    .line 190
+    iget-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
+
+    if-eqz v1, :cond_0
+
+    .line 191
     iget-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     iget-object v2, v1, Lcom/android/internal/telephony/cat/CatCmdMessage;->mCmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
@@ -1946,7 +1951,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 203
     .end local v8           #e:Ljava/lang/ClassCastException;
     :cond_2
     iget-object v2, v7, Lcom/android/internal/telephony/cat/CommandParams;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
@@ -1961,18 +1966,18 @@
 
     goto :goto_0
 
-    .line 206
+    .line 209
     :pswitch_4
     iget-object v7, p1, Lcom/android/internal/telephony/cat/RilMessage;->mData:Ljava/lang/Object;
 
     .end local v7           #cmdParams:Lcom/android/internal/telephony/cat/CommandParams;
     check-cast v7, Lcom/android/internal/telephony/cat/CommandParams;
 
-    .line 207
+    .line 210
     .restart local v7       #cmdParams:Lcom/android/internal/telephony/cat/CommandParams;
     if-eqz v7, :cond_0
 
-    .line 208
+    .line 211
     invoke-direct {p0, v7, v4}, Lcom/android/internal/telephony/cat/CatService;->handleCommand(Lcom/android/internal/telephony/cat/CommandParams;Z)V
 
     goto :goto_0
@@ -1994,30 +1999,30 @@
     .locals 2
 
     .prologue
-    .line 366
+    .line 369
     const-string v1, "SESSION END"
 
     invoke-static {p0, v1}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 368
+    .line 371
     iget-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mMenuCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     iput-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
-    .line 369
+    .line 372
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.stk.session_end"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 370
+    .line 373
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 371
+    .line 374
     return-void
 .end method
 
@@ -2027,14 +2032,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 833
+    .line 836
     new-instance v1, Landroid/content/Intent;
 
     const-string v5, "android.intent.action.stk.command"
 
     invoke-direct {v1, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 834
+    .line 837
     .local v1, intent:Landroid/content/Intent;
     iget-object v5, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
@@ -2042,7 +2047,7 @@
 
     move-result-object v3
 
-    .line 835
+    .line 838
     .local v3, pm:Landroid/content/pm/PackageManager;
     const/16 v5, 0x80
 
@@ -2050,13 +2055,13 @@
 
     move-result-object v0
 
-    .line 837
+    .line 840
     .local v0, broadcastReceivers:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-nez v0, :cond_1
 
     move v2, v4
 
-    .line 839
+    .line 842
     .local v2, numReceiver:I
     :goto_0
     if-lez v2, :cond_0
@@ -2066,7 +2071,7 @@
     :cond_0
     return v4
 
-    .line 837
+    .line 840
     .end local v2           #numReceiver:I
     :cond_1
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -2085,7 +2090,7 @@
 
     const/4 v1, 0x1
 
-    .line 742
+    .line 745
     :try_start_0
     iget-object v3, p1, Lcom/android/internal/telephony/cat/Menu;->items:Ljava/util/List;
 
@@ -2107,15 +2112,15 @@
 
     if-nez v3, :cond_0
 
-    .line 749
+    .line 752
     :goto_0
     return v1
 
-    .line 745
+    .line 748
     :catch_0
     move-exception v0
 
-    .line 746
+    .line 749
     .local v0, e:Ljava/lang/NullPointerException;
     const-string v2, "Unable to get Menu\'s items size"
 
@@ -2127,7 +2132,7 @@
     :cond_0
     move v1, v2
 
-    .line 749
+    .line 752
     goto :goto_0
 .end method
 
@@ -2141,23 +2146,23 @@
 
     const/4 v6, 0x1
 
-    .line 493
+    .line 496
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 496
+    .line 499
     .local v0, buf:Ljava/io/ByteArrayOutputStream;
     const/16 v4, 0xd3
 
-    .line 497
+    .line 500
     .local v4, tag:I
     invoke-virtual {v0, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 500
+    .line 503
     invoke-virtual {v0, v7}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 503
+    .line 506
     sget-object v5, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->DEVICE_IDENTITIES:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v5}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
@@ -2166,23 +2171,23 @@
 
     or-int/lit16 v4, v5, 0x80
 
-    .line 504
+    .line 507
     invoke-virtual {v0, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 505
+    .line 508
     const/4 v5, 0x2
 
     invoke-virtual {v0, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 506
+    .line 509
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 507
+    .line 510
     const/16 v5, 0x81
 
     invoke-virtual {v0, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 510
+    .line 513
     sget-object v5, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->ITEM_ID:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v5}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
@@ -2191,55 +2196,55 @@
 
     or-int/lit16 v4, v5, 0x80
 
-    .line 511
+    .line 514
     invoke-virtual {v0, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 512
+    .line 515
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 513
+    .line 516
     invoke-virtual {v0, p1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 516
+    .line 519
     if-eqz p2, :cond_0
 
-    .line 517
+    .line 520
     sget-object v5, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->HELP_REQUEST:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v5}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v4
 
-    .line 518
+    .line 521
     invoke-virtual {v0, v4}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 519
+    .line 522
     invoke-virtual {v0, v7}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 522
+    .line 525
     :cond_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v3
 
-    .line 525
+    .line 528
     .local v3, rawData:[B
     array-length v5, v3
 
     add-int/lit8 v2, v5, -0x2
 
-    .line 526
+    .line 529
     .local v2, len:I
     int-to-byte v5, v2
 
     aput-byte v5, v3, v6
 
-    .line 528
+    .line 531
     invoke-static {v3}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 530
+    .line 533
     .local v1, hexString:Ljava/lang/String;
     iget-object v5, p0, Lcom/android/internal/telephony/cat/CatService;->mCmdIf:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -2247,7 +2252,7 @@
 
     invoke-interface {v5, v1, v6}, Lcom/android/internal/telephony/CommandsInterface;->sendEnvelope(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 531
+    .line 534
     return-void
 .end method
 
@@ -2262,37 +2267,37 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 377
+    .line 380
     if-nez p1, :cond_0
 
-    .line 437
+    .line 440
     :goto_0
     return-void
 
-    .line 380
+    .line 383
     :cond_0
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 382
+    .line 385
     .local v0, buf:Ljava/io/ByteArrayOutputStream;
     const/4 v1, 0x0
 
-    .line 383
+    .line 386
     .local v1, cmdInput:Lcom/android/internal/telephony/cat/Input;
     iget-object v6, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     if-eqz v6, :cond_1
 
-    .line 384
+    .line 387
     iget-object v6, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/cat/CatCmdMessage;->geInput()Lcom/android/internal/telephony/cat/Input;
 
     move-result-object v1
 
-    .line 388
+    .line 391
     :cond_1
     sget-object v6, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->COMMAND_DETAILS:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
@@ -2300,63 +2305,63 @@
 
     move-result v5
 
-    .line 389
+    .line 392
     .local v5, tag:I
     iget-boolean v6, p1, Lcom/android/internal/telephony/cat/CommandDetails;->compRequired:Z
 
     if-eqz v6, :cond_2
 
-    .line 390
+    .line 393
     or-int/lit16 v5, v5, 0x80
 
-    .line 392
+    .line 395
     :cond_2
     invoke-virtual {v0, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 393
+    .line 396
     const/4 v6, 0x3
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 394
+    .line 397
     iget v6, p1, Lcom/android/internal/telephony/cat/CommandDetails;->commandNumber:I
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 395
+    .line 398
     iget v6, p1, Lcom/android/internal/telephony/cat/CommandDetails;->typeOfCommand:I
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 396
+    .line 399
     iget v6, p1, Lcom/android/internal/telephony/cat/CommandDetails;->commandQualifier:I
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 405
+    .line 408
     sget-object v6, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->DEVICE_IDENTITIES:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
 
     move-result v5
 
-    .line 406
+    .line 409
     invoke-virtual {v0, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 407
+    .line 410
     invoke-virtual {v0, v3}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 408
+    .line 411
     const/16 v6, 0x82
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 409
+    .line 412
     const/16 v6, 0x81
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 412
+    .line 415
     sget-object v6, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->RESULT:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->value()I
@@ -2365,50 +2370,50 @@
 
     or-int/lit16 v5, v6, 0x80
 
-    .line 413
+    .line 416
     invoke-virtual {v0, v5}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 414
+    .line 417
     if-eqz p3, :cond_4
 
-    .line 415
+    .line 418
     .local v3, length:I
     :goto_1
     invoke-virtual {v0, v3}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 416
+    .line 419
     invoke-virtual {p2}, Lcom/android/internal/telephony/cat/ResultCode;->value()I
 
     move-result v6
 
     invoke-virtual {v0, v6}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 419
+    .line 422
     if-eqz p3, :cond_3
 
-    .line 420
+    .line 423
     invoke-virtual {v0, p4}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 424
+    .line 427
     :cond_3
     if-eqz p5, :cond_5
 
-    .line 425
+    .line 428
     invoke-virtual {p5, v0}, Lcom/android/internal/telephony/cat/ResponseData;->format(Ljava/io/ByteArrayOutputStream;)V
 
-    .line 430
+    .line 433
     :goto_2
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v4
 
-    .line 431
+    .line 434
     .local v4, rawData:[B
     invoke-static {v4}, Lcom/android/internal/telephony/IccUtils;->bytesToHexString([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 436
+    .line 439
     .local v2, hexString:Ljava/lang/String;
     iget-object v6, p0, Lcom/android/internal/telephony/cat/CatService;->mCmdIf:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -2418,7 +2423,7 @@
 
     goto :goto_0
 
-    .line 414
+    .line 417
     .end local v2           #hexString:Ljava/lang/String;
     .end local v3           #length:I
     .end local v4           #rawData:[B
@@ -2427,7 +2432,7 @@
 
     goto :goto_1
 
-    .line 427
+    .line 430
     .restart local v3       #length:I
     :cond_5
     invoke-direct {p0, p1, p2, v1, v0}, Lcom/android/internal/telephony/cat/CatService;->encodeOptionalTags(Lcom/android/internal/telephony/cat/CommandDetails;Lcom/android/internal/telephony/cat/ResultCode;Lcom/android/internal/telephony/cat/Input;Ljava/io/ByteArrayOutputStream;)V
@@ -2441,13 +2446,13 @@
     .parameter "delay"
 
     .prologue
-    .line 860
+    .line 863
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/CatService;->cancelTimeOut()V
 
-    .line 861
+    .line 864
     iput p1, p0, Lcom/android/internal/telephony/cat/CatService;->mTimeoutDest:I
 
-    .line 862
+    .line 865
     const/16 v0, 0x9
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cat/CatService;->obtainMessage(I)Landroid/os/Message;
@@ -2458,7 +2463,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/telephony/cat/CatService;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 863
+    .line 866
     return-void
 .end method
 
@@ -2467,12 +2472,12 @@
     .parameter "resMsg"
 
     .prologue
-    .line 734
+    .line 737
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     if-eqz v0, :cond_0
 
-    .line 735
+    .line 738
     iget-object v0, p1, Lcom/android/internal/telephony/cat/CatResponseMessage;->cmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
 
     iget-object v1, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
@@ -2483,7 +2488,7 @@
 
     move-result v0
 
-    .line 737
+    .line 740
     :goto_0
     return v0
 
@@ -2562,12 +2567,12 @@
 
     const/4 v5, 0x0
 
-    .line 624
+    .line 627
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 720
+    .line 723
     :pswitch_0
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -2595,27 +2600,27 @@
 
     throw v0
 
-    .line 629
+    .line 632
     :pswitch_1
     const-string/jumbo v0, "ril message arrived"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 630
+    .line 633
     const/4 v7, 0x0
 
-    .line 631
+    .line 634
     .local v7, data:Ljava/lang/String;
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    .line 632
+    .line 635
     iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v6, Landroid/os/AsyncResult;
 
-    .line 633
+    .line 636
     .local v6, ar:Landroid/os/AsyncResult;
     if-eqz v6, :cond_0
 
@@ -2623,7 +2628,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 635
+    .line 638
     :try_start_0
     iget-object v7, v6, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -2632,7 +2637,7 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 641
+    .line 644
     .end local v6           #ar:Landroid/os/AsyncResult;
     .restart local v7       #data:Ljava/lang/String;
     :cond_0
@@ -2646,23 +2651,23 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cat/RilMessageDecoder;->sendStartDecodingMessageParams(Lcom/android/internal/telephony/cat/RilMessage;)V
 
-    .line 722
+    .line 725
     .end local v7           #data:Ljava/lang/String;
     :cond_1
     :goto_0
     :pswitch_2
     return-void
 
-    .line 636
+    .line 639
     .restart local v6       #ar:Landroid/os/AsyncResult;
     :catch_0
     move-exception v8
 
-    .line 637
+    .line 640
     .local v8, e:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 644
+    .line 647
     .end local v6           #ar:Landroid/os/AsyncResult;
     .end local v8           #e:Ljava/lang/ClassCastException;
     :pswitch_3
@@ -2678,7 +2683,7 @@
 
     goto :goto_0
 
-    .line 649
+    .line 652
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -2688,7 +2693,7 @@
 
     goto :goto_0
 
-    .line 652
+    .line 655
     :pswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -2698,20 +2703,20 @@
 
     goto :goto_0
 
-    .line 655
+    .line 658
     :pswitch_6
     const-string v0, "SIM ready. Reporting STK service running now..."
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 656
+    .line 659
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCmdIf:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, v5}, Lcom/android/internal/telephony/CommandsInterface;->reportStkServiceIsRunning(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 660
+    .line 663
     :pswitch_7
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
@@ -2727,15 +2732,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 664
+    .line 667
     const-string v0, "handleMsg : MSG_ID_SEND_SMS_RESULT"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 665
+    .line 668
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/CatService;->cancelTimeOut()V
 
-    .line 666
+    .line 669
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2758,17 +2763,17 @@
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 667
+    .line 670
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
-    .line 669
+    .line 672
     iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v6, Landroid/os/AsyncResult;
 
-    .line 670
+    .line 673
     .restart local v6       #ar:Landroid/os/AsyncResult;
     if-eqz v6, :cond_1
 
@@ -2786,7 +2791,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 672
+    .line 675
     iget-object v0, v6, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v0, [I
@@ -2795,18 +2800,18 @@
 
     check-cast v9, [I
 
-    .line 673
+    .line 676
     .local v9, sendResult:[I
     aget v0, v9, v10
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 675
+    .line 678
     const-string v0, "SMS SEND GENERIC FAIL"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 676
+    .line 679
     iget v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCallControlResultCode:I
 
     invoke-static {v0}, Lcom/android/internal/telephony/cat/CallControlResult;->fromInt(I)Lcom/android/internal/telephony/cat/CallControlResult;
@@ -2817,7 +2822,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 678
+    .line 681
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     iget-object v1, v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->mCmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
@@ -2832,7 +2837,7 @@
 
     goto/16 :goto_0
 
-    .line 681
+    .line 684
     :cond_2
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -2850,13 +2855,13 @@
 
     goto/16 :goto_0
 
-    .line 685
+    .line 688
     :sswitch_0
     const-string v0, "SMS SEND OK"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 686
+    .line 689
     iget v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCallControlResultCode:I
 
     invoke-static {v0}, Lcom/android/internal/telephony/cat/CallControlResult;->fromInt(I)Lcom/android/internal/telephony/cat/CallControlResult;
@@ -2867,7 +2872,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 688
+    .line 691
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     iget-object v1, v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->mCmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
@@ -2882,7 +2887,7 @@
 
     goto/16 :goto_0
 
-    .line 691
+    .line 694
     :cond_3
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -2900,13 +2905,13 @@
 
     goto/16 :goto_0
 
-    .line 694
+    .line 697
     :sswitch_1
     const-string v0, "SMS SEND FAIL - MEMORY NOT AVAILABLE"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 695
+    .line 698
     iget v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCallControlResultCode:I
 
     invoke-static {v0}, Lcom/android/internal/telephony/cat/CallControlResult;->fromInt(I)Lcom/android/internal/telephony/cat/CallControlResult;
@@ -2917,7 +2922,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 697
+    .line 700
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     iget-object v1, v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->mCmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
@@ -2932,7 +2937,7 @@
 
     goto/16 :goto_0
 
-    .line 700
+    .line 703
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -2950,13 +2955,13 @@
 
     goto/16 :goto_0
 
-    .line 704
+    .line 707
     :sswitch_2
     const-string v0, "SMS SEND FAIL RETRY"
 
     invoke-static {p0, v0}, Lcom/android/internal/telephony/cat/CatLog;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 705
+    .line 708
     iget v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCallControlResultCode:I
 
     invoke-static {v0}, Lcom/android/internal/telephony/cat/CallControlResult;->fromInt(I)Lcom/android/internal/telephony/cat/CallControlResult;
@@ -2967,7 +2972,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 707
+    .line 710
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     iget-object v1, v0, Lcom/android/internal/telephony/cat/CatCmdMessage;->mCmdDet:Lcom/android/internal/telephony/cat/CommandDetails;
@@ -2982,7 +2987,7 @@
 
     goto/16 :goto_0
 
-    .line 710
+    .line 713
     :cond_5
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mCurrntCmd:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
@@ -3000,7 +3005,7 @@
 
     goto/16 :goto_0
 
-    .line 717
+    .line 720
     .end local v6           #ar:Landroid/os/AsyncResult;
     .end local v9           #sendResult:[I
     :pswitch_8
@@ -3010,7 +3015,7 @@
 
     goto/16 :goto_0
 
-    .line 624
+    .line 627
     nop
 
     :pswitch_data_0
@@ -3037,7 +3042,7 @@
         :pswitch_2
     .end packed-switch
 
-    .line 673
+    .line 676
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -3051,18 +3056,18 @@
     .parameter "resMsg"
 
     .prologue
-    .line 725
+    .line 728
     monitor-enter p0
 
     if-nez p1, :cond_0
 
-    .line 731
+    .line 734
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 729
+    .line 732
     :cond_0
     const/4 v1, 0x6
 
@@ -3071,7 +3076,7 @@
 
     move-result-object v0
 
-    .line 730
+    .line 733
     .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
     :try_end_0
@@ -3079,7 +3084,7 @@
 
     goto :goto_0
 
-    .line 725
+    .line 728
     .end local v0           #msg:Landroid/os/Message;
     :catchall_0
     move-exception v1

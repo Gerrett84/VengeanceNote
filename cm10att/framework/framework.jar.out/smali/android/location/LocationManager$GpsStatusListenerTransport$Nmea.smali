@@ -30,17 +30,17 @@
     .parameter "nmea"
 
     .prologue
-    .line 1355
+    .line 1361
     iput-object p1, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$Nmea;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1356
+    .line 1362
     iput-wide p2, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$Nmea;->mTimestamp:J
 
-    .line 1357
+    .line 1363
     iput-object p4, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$Nmea;->mNmea:Ljava/lang/String;
 
-    .line 1358
+    .line 1364
     return-void
 .end method

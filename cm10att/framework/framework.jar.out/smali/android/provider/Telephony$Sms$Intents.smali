@@ -17,6 +17,8 @@
 # static fields
 .field public static final DATA_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.intent.action.DATA_SMS_RECEIVED"
 
+.field public static final MOCK_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.MOCK_SMS_RECEIVED"
+
 .field public static final RESULT_SMS_GENERIC_ERROR:I = 0x2
 
 .field public static final RESULT_SMS_HANDLED:I = 0x1
@@ -56,7 +58,7 @@
     .parameter "intent"
 
     .prologue
-    .line 688
+    .line 710
     const-string/jumbo v7, "pdus"
 
     invoke-virtual {p0, v7}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -69,7 +71,7 @@
 
     check-cast v2, [Ljava/lang/Object;
 
-    .line 689
+    .line 711
     .local v2, messages:[Ljava/lang/Object;
     const-string v7, "format"
 
@@ -77,13 +79,13 @@
 
     move-result-object v0
 
-    .line 690
+    .line 712
     .local v0, format:Ljava/lang/String;
     array-length v7, v2
 
     new-array v5, v7, [[B
 
-    .line 692
+    .line 714
     .local v5, pduObjs:[[B
     const/4 v1, 0x0
 
@@ -93,7 +95,7 @@
 
     if-ge v1, v7, :cond_0
 
-    .line 693
+    .line 715
     aget-object v7, v2, v1
 
     check-cast v7, [B
@@ -102,38 +104,38 @@
 
     aput-object v7, v5, v1
 
-    .line 692
+    .line 714
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 695
+    .line 717
     :cond_0
     array-length v7, v5
 
     new-array v6, v7, [[B
 
-    .line 696
+    .line 718
     .local v6, pdus:[[B
     array-length v4, v6
 
-    .line 697
+    .line 719
     .local v4, pduCount:I
     new-array v3, v4, [Landroid/telephony/SmsMessage;
 
-    .line 698
+    .line 720
     .local v3, msgs:[Landroid/telephony/SmsMessage;
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v4, :cond_1
 
-    .line 699
+    .line 721
     aget-object v7, v5, v1
 
     aput-object v7, v6, v1
 
-    .line 700
+    .line 722
     aget-object v7, v6, v1
 
     invoke-static {v7, v0}, Landroid/telephony/SmsMessage;->createFromPdu([BLjava/lang/String;)Landroid/telephony/SmsMessage;
@@ -142,12 +144,12 @@
 
     aput-object v7, v3, v1
 
-    .line 698
+    .line 720
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 702
+    .line 724
     :cond_1
     return-object v3
 .end method

@@ -439,7 +439,7 @@
     :try_start_1
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 262
     :cond_1
@@ -459,9 +459,9 @@
     :try_start_2
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 258
+    .line 254
     :goto_2
     throw v2
 
@@ -485,12 +485,12 @@
     :catch_0
     move-exception v3
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_1
     move-exception v3
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method public pingBinder()Z

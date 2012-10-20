@@ -188,7 +188,7 @@
     .line 917
     iget-object v2, p0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040365
+    const v3, 0x1040367
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -209,7 +209,7 @@
     .local v0, aUrl:Ljava/net/URL;
     iget-object v2, p0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v3, 0x1040364
+    const v3, 0x1040366
 
     const/4 v4, 0x1
 
@@ -2782,7 +2782,7 @@
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v9, 0x1040366
+    const v9, 0x1040368
 
     const/4 v10, 0x1
 

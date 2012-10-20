@@ -83,7 +83,7 @@
     .line 288
     .end local v0           #e:Ljava/lang/IndexOutOfBoundsException;
     :cond_0
-    const-string v4, "Defualt Message"
+    const-string v4, "Default Message"
 
     goto :goto_0
 
@@ -92,7 +92,7 @@
     .end local v2           #rawValue:[B
     .end local v3           #valueIndex:I
     :cond_1
-    const-string v4, "Defualt Message"
+    const-string v4, "Default Message"
 
     goto :goto_0
 .end method

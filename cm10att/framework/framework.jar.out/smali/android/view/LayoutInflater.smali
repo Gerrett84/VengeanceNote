@@ -742,6 +742,7 @@
 
     invoke-virtual {v0, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 824
     :cond_b
     throw v19
 
@@ -1667,8 +1668,10 @@
     .line 398
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->close()V
 
+    .line 396
     return-object v1
 
+    .line 398
     :catchall_0
     move-exception v1
 
@@ -1859,6 +1862,7 @@
 
     aput-object v16, v14, v15
 
+    .line 519
     throw v12
 
     .line 524

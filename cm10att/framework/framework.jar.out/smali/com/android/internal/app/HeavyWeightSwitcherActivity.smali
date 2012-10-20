@@ -163,9 +163,9 @@
 
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mCurApp:Ljava/lang/String;
 
-    const v5, 0x1040410
+    const v5, 0x1040412
 
-    const v6, 0x1040411
+    const v6, 0x1040413
 
     move-object v0, p0
 
@@ -180,9 +180,9 @@
 
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mNewApp:Ljava/lang/String;
 
-    const v5, 0x1040412
+    const v5, 0x1040414
 
-    const v6, 0x1040413
+    const v6, 0x1040415
 
     move-object v0, p0
 
