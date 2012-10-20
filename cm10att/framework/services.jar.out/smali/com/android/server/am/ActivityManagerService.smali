@@ -1347,7 +1347,7 @@
     iput-boolean v6, p0, Lcom/android/server/am/ActivityManagerService;->mBooted:Z
 
     .line 826
-    const/16 v2, 0xf
+    sget v2, Lcom/android/server/am/ProcessList;->MAX_HIDDEN_APPS:I
 
     iput v2, p0, Lcom/android/server/am/ActivityManagerService;->mProcessLimit:I
 
@@ -64373,10 +64373,10 @@
     .line 4615
     if-gez p1, :cond_0
 
-    const/16 v0, 0xf
+    :try_start_0
+    sget v0, Lcom/android/server/am/ProcessList;->MAX_HIDDEN_APPS:I
 
     :goto_0
-    :try_start_0
     iput v0, p0, Lcom/android/server/am/ActivityManagerService;->mProcessLimit:I
 
     .line 4616
@@ -69910,7 +69910,7 @@
 
     move-result-object v3
 
-    const v4, 0x104035f
+    const v4, 0x1040361
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -69930,7 +69930,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040360
+    const v4, 0x1040362
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -73614,7 +73614,9 @@
     iput v0, v1, Lcom/android/server/am/ActivityManagerService;->mNumServiceProcs:I
 
     .line 14822
-    const/16 v17, 0x7
+    sget v17, Lcom/android/server/am/ProcessList;->MAX_HIDDEN_APPS:I
+
+    div-int/lit8 v17, v17, 0x2
 
     move/from16 v0, v17
 
@@ -73673,7 +73675,9 @@
     const/16 v16, 0x0
 
     .line 14831
-    const/16 v17, 0x3
+    sget v17, Lcom/android/server/am/ProcessList;->MAX_HIDDEN_APPS:I
+
+    div-int/lit8 v17, v17, 0x5
 
     move/from16 v0, v17
 
@@ -73799,7 +73803,9 @@
     .end local v7           #curLevel:I
     .end local v9           #fgTrimLevel:I
     :cond_c
-    const/16 v17, 0x5
+    sget v17, Lcom/android/server/am/ProcessList;->MAX_HIDDEN_APPS:I
+
+    div-int/lit8 v17, v17, 0x3
 
     move/from16 v0, v17
 

@@ -179,7 +179,7 @@
     .locals 1
 
     .prologue
-    .line 286
+    .line 287
     monitor-enter p0
 
     :try_start_0
@@ -187,12 +187,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 287
+    .line 288
     monitor-exit p0
 
     return-void
 
-    .line 286
+    .line 287
     :catchall_0
     move-exception v0
 
@@ -274,9 +274,23 @@
 
     move-result-object v2
 
+    invoke-virtual {v2}, Landroid/bluetooth/BluetoothAdapter;->isDiscovering()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 271
+    iget-object v2, p0, Lcom/android/server/location/BTGPSService$ConnectThread;->this$0:Lcom/android/server/location/BTGPSService;
+
+    #getter for: Lcom/android/server/location/BTGPSService;->mAdapter:Landroid/bluetooth/BluetoothAdapter;
+    invoke-static {v2}, Lcom/android/server/location/BTGPSService;->access$100(Lcom/android/server/location/BTGPSService;)Landroid/bluetooth/BluetoothAdapter;
+
+    move-result-object v2
+
     invoke-virtual {v2}, Landroid/bluetooth/BluetoothAdapter;->cancelDiscovery()Z
 
-    .line 274
+    .line 275
     :cond_0
     :try_start_1
     const-string v2, "BTGPSService"
@@ -305,12 +319,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
+    .line 276
     iget-object v2, p0, Lcom/android/server/location/BTGPSService$ConnectThread;->mmSocket:Landroid/bluetooth/BluetoothSocket;
 
     invoke-virtual {v2}, Landroid/bluetooth/BluetoothSocket;->connect()V
 
-    .line 276
+    .line 277
     const-string v2, "BTGPSService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -355,7 +369,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 278
+    .line 279
     iget-object v2, p0, Lcom/android/server/location/BTGPSService$ConnectThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     iget-object v3, p0, Lcom/android/server/location/BTGPSService$ConnectThread;->mmSocket:Landroid/bluetooth/BluetoothSocket;
@@ -364,7 +378,7 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 283
+    .line 284
     :goto_0
     return-void
 
@@ -382,12 +396,12 @@
 
     goto :goto_0
 
-    .line 279
+    .line 280
     .end local v0           #e:Ljava/io/IOException;
     :catch_1
     move-exception v0
 
-    .line 280
+    .line 281
     .restart local v0       #e:Ljava/io/IOException;
     const-string v2, "BTGPSService"
 

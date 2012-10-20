@@ -1783,7 +1783,7 @@
     .line 674
     iget-object v0, p0, Lcom/android/server/input/InputManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v1, 0x1040470
+    const v1, 0x1040472
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -2185,7 +2185,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x1040470
+    const v5, 0x1040472
 
     const/4 v4, 0x0
 
@@ -2246,7 +2246,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040471
+    const v4, 0x1040473
 
     invoke-virtual {v2, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -296,7 +296,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a0
+    const v5, 0x10404a2
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -311,7 +311,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a2
+    const v5, 0x10404a4
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -386,7 +386,7 @@
     :cond_1
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a1
+    const v5, 0x10404a3
 
     new-array v6, v9, [Ljava/lang/Object;
 
@@ -403,7 +403,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a3
+    const v5, 0x10404a5
 
     new-array v6, v9, [Ljava/lang/Object;
 

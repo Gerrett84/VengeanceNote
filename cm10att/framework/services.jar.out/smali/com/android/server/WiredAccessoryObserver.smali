@@ -34,6 +34,17 @@
 
 .field private static mHeadsetState:I
 
+.field private static sDockNames:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private static uEventInfo:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -64,7 +75,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 45
@@ -75,6 +86,23 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/server/WiredAccessoryObserver;->TAG:Ljava/lang/String;
+
+    .line 56
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x1070038
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
 
     .line 173
     invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->makeObservedUEventList()Ljava/util/List;
@@ -216,7 +244,17 @@
     return v0
 .end method
 
-.method static synthetic access$402(Lcom/android/server/WiredAccessoryObserver;Z)Z
+.method static synthetic access$200()Ljava/util/List;
+    .locals 1
+
+    .prologue
+    .line 44
+    sget-object v0, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method static synthetic access$502(Lcom/android/server/WiredAccessoryObserver;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -228,7 +266,7 @@
     return p1
 .end method
 
-.method static synthetic access$500(Lcom/android/server/WiredAccessoryObserver;)V
+.method static synthetic access$600(Lcom/android/server/WiredAccessoryObserver;)V
     .locals 0
     .parameter "x0"
 
@@ -239,7 +277,7 @@
     return-void
 .end method
 
-.method static synthetic access$600()Ljava/util/List;
+.method static synthetic access$700()Ljava/util/List;
     .locals 1
 
     .prologue
@@ -249,7 +287,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/android/server/WiredAccessoryObserver;IILjava/lang/String;)V
+.method static synthetic access$800(Lcom/android/server/WiredAccessoryObserver;IILjava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -263,7 +301,7 @@
     return-void
 .end method
 
-.method static synthetic access$800(Lcom/android/server/WiredAccessoryObserver;)Landroid/os/PowerManager$WakeLock;
+.method static synthetic access$900(Lcom/android/server/WiredAccessoryObserver;)Landroid/os/PowerManager$WakeLock;
     .locals 1
     .parameter "x0"
 
@@ -1211,7 +1249,19 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 237
+    const-string v4, "SWITCH_STATE"
+
+    invoke-virtual {p1, v4}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 239
+    .local v3, state:I
     :try_start_0
     const-string v4, "DEVPATH"
 
@@ -1219,7 +1269,7 @@
 
     move-result-object v0
 
-    .line 239
+    .line 240
     .local v0, devPath:Ljava/lang/String;
     const-string v4, "SWITCH_NAME"
 
@@ -1227,22 +1277,26 @@
 
     move-result-object v2
 
-    .line 240
+    .line 241
     .local v2, name:Ljava/lang/String;
-    const-string v4, "dock"
+    sget-object v4, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
 
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 245
+    .line 246
     iget-boolean v4, p0, Lcom/android/server/WiredAccessoryObserver;->dockAudioEnabled:Z
 
     if-nez v4, :cond_0
 
-    .line 246
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_0
+
+    .line 247
     sget-object v4, Lcom/android/server/WiredAccessoryObserver;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1271,22 +1325,10 @@
     :goto_0
     return-void
 
-    .line 250
+    .line 251
     .restart local v0       #devPath:Ljava/lang/String;
     .restart local v2       #name:Ljava/lang/String;
     :cond_0
-    const-string v4, "SWITCH_STATE"
-
-    invoke-virtual {p1, v4}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    .line 251
-    .local v3, state:I
     invoke-direct {p0, v0, v2, v3}, Lcom/android/server/WiredAccessoryObserver;->updateState(Ljava/lang/String;Ljava/lang/String;I)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1296,7 +1338,6 @@
     .line 252
     .end local v0           #devPath:Ljava/lang/String;
     .end local v2           #name:Ljava/lang/String;
-    .end local v3           #state:I
     :catch_0
     move-exception v1
 

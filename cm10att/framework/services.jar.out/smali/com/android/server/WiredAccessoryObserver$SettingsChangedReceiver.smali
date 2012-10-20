@@ -142,7 +142,7 @@
     const/4 v3, 0x1
 
     #setter for: Lcom/android/server/WiredAccessoryObserver;->dockAudioEnabled:Z
-    invoke-static {v2, v3}, Lcom/android/server/WiredAccessoryObserver;->access$402(Lcom/android/server/WiredAccessoryObserver;Z)Z
+    invoke-static {v2, v3}, Lcom/android/server/WiredAccessoryObserver;->access$502(Lcom/android/server/WiredAccessoryObserver;Z)Z
 
     .line 216
     .end local v1           #data:Ljava/lang/String;
@@ -158,7 +158,7 @@
     const/4 v3, 0x0
 
     #setter for: Lcom/android/server/WiredAccessoryObserver;->dockAudioEnabled:Z
-    invoke-static {v2, v3}, Lcom/android/server/WiredAccessoryObserver;->access$402(Lcom/android/server/WiredAccessoryObserver;Z)Z
+    invoke-static {v2, v3}, Lcom/android/server/WiredAccessoryObserver;->access$502(Lcom/android/server/WiredAccessoryObserver;Z)Z
 
     goto :goto_0
 .end method

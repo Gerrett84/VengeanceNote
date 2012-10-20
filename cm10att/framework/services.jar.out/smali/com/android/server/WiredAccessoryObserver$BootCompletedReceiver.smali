@@ -56,14 +56,14 @@
     iget-object v2, p0, Lcom/android/server/WiredAccessoryObserver$BootCompletedReceiver;->this$0:Lcom/android/server/WiredAccessoryObserver;
 
     #calls: Lcom/android/server/WiredAccessoryObserver;->init()V
-    invoke-static {v2}, Lcom/android/server/WiredAccessoryObserver;->access$500(Lcom/android/server/WiredAccessoryObserver;)V
+    invoke-static {v2}, Lcom/android/server/WiredAccessoryObserver;->access$600(Lcom/android/server/WiredAccessoryObserver;)V
 
     .line 226
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
-    invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->access$600()Ljava/util/List;
+    invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->access$700()Ljava/util/List;
 
     move-result-object v2
 
@@ -74,7 +74,7 @@
     if-ge v0, v2, :cond_0
 
     .line 227
-    invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->access$600()Ljava/util/List;
+    invoke-static {}, Lcom/android/server/WiredAccessoryObserver;->access$700()Ljava/util/List;
 
     move-result-object v2
 

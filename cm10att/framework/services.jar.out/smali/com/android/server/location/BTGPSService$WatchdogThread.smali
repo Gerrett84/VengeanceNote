@@ -35,24 +35,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 416
+    .line 436
     iput-object p1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 412
+    .line 432
     iput v0, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->retries:I
 
-    .line 413
+    .line 433
     iput-boolean v0, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->sleep:Z
 
-    .line 414
+    .line 434
     iput-boolean v0, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->cancelled:Z
 
-    .line 417
+    .line 437
     iput-object p2, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->btdevice:Landroid/bluetooth/BluetoothDevice;
 
-    .line 418
+    .line 438
     return-void
 .end method
 
@@ -62,19 +62,19 @@
     .locals 1
 
     .prologue
-    .line 461
+    .line 481
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->cancelled:Z
 
-    .line 462
+    .line 482
     iget-boolean v0, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->sleep:Z
 
     if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/server/location/BTGPSService$WatchdogThread;->interrupt()V
 
-    .line 463
+    .line 483
     :cond_0
     return-void
 .end method
@@ -85,7 +85,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 421
+    .line 441
     :goto_0
     iget v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->retries:I
 
@@ -98,7 +98,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 422
+    .line 442
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #getter for: Lcom/android/server/location/BTGPSService;->mConnectThread:Lcom/android/server/location/BTGPSService$ConnectThread;
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 423
+    .line 443
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #getter for: Lcom/android/server/location/BTGPSService;->mConnectThread:Lcom/android/server/location/BTGPSService$ConnectThread;
@@ -118,13 +118,13 @@
 
     invoke-virtual {v1}, Lcom/android/server/location/BTGPSService$ConnectThread;->cancel()V
 
-    .line 424
+    .line 444
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #setter for: Lcom/android/server/location/BTGPSService;->mConnectThread:Lcom/android/server/location/BTGPSService$ConnectThread;
     invoke-static {v1, v5}, Lcom/android/server/location/BTGPSService;->access$902(Lcom/android/server/location/BTGPSService;Lcom/android/server/location/BTGPSService$ConnectThread;)Lcom/android/server/location/BTGPSService$ConnectThread;
 
-    .line 426
+    .line 446
     :cond_0
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
@@ -135,7 +135,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 427
+    .line 447
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #getter for: Lcom/android/server/location/BTGPSService;->mConnectedThread:Lcom/android/server/location/BTGPSService$ConnectedThread;
@@ -145,13 +145,13 @@
 
     invoke-virtual {v1}, Lcom/android/server/location/BTGPSService$ConnectedThread;->cancel()V
 
-    .line 428
+    .line 448
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #setter for: Lcom/android/server/location/BTGPSService;->mConnectedThread:Lcom/android/server/location/BTGPSService$ConnectedThread;
     invoke-static {v1, v5}, Lcom/android/server/location/BTGPSService;->access$1002(Lcom/android/server/location/BTGPSService;Lcom/android/server/location/BTGPSService$ConnectedThread;)Lcom/android/server/location/BTGPSService$ConnectedThread;
 
-    .line 431
+    .line 451
     :cond_1
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
@@ -166,7 +166,7 @@
     #setter for: Lcom/android/server/location/BTGPSService;->mConnectThread:Lcom/android/server/location/BTGPSService$ConnectThread;
     invoke-static {v1, v2}, Lcom/android/server/location/BTGPSService;->access$902(Lcom/android/server/location/BTGPSService;Lcom/android/server/location/BTGPSService$ConnectThread;)Lcom/android/server/location/BTGPSService$ConnectThread;
 
-    .line 432
+    .line 452
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #getter for: Lcom/android/server/location/BTGPSService;->mConnectThread:Lcom/android/server/location/BTGPSService$ConnectThread;
@@ -176,7 +176,7 @@
 
     invoke-virtual {v1}, Lcom/android/server/location/BTGPSService$ConnectThread;->start()V
 
-    .line 433
+    .line 453
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     const/4 v2, 0x2
@@ -184,7 +184,7 @@
     #calls: Lcom/android/server/location/BTGPSService;->setState(I)V
     invoke-static {v1, v2}, Lcom/android/server/location/BTGPSService;->access$1100(Lcom/android/server/location/BTGPSService;I)V
 
-    .line 435
+    .line 455
     const-string v1, "BTGPSService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -228,13 +228,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 438
+    .line 458
     const/4 v1, 0x1
 
     :try_start_0
     iput-boolean v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->sleep:Z
 
-    .line 439
+    .line 459
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     #getter for: Lcom/android/server/location/BTGPSService;->MAX_CONNECT_TIMEOUT:I
@@ -246,12 +246,12 @@
 
     invoke-static {v1, v2}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 440
+    .line 460
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->sleep:Z
 
-    .line 441
+    .line 461
     const-string v1, "BTGPSService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -280,7 +280,7 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 445
+    .line 465
     :goto_1
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
@@ -292,7 +292,7 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 446
+    .line 466
     const-string v1, "BTGPSService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -319,15 +319,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 458
+    .line 478
     :goto_2
     return-void
 
-    .line 442
+    .line 462
     :catch_0
     move-exception v0
 
-    .line 443
+    .line 463
     .local v0, e:Ljava/lang/InterruptedException;
     const-string v1, "BTGPSService"
 
@@ -357,14 +357,14 @@
 
     goto :goto_1
 
-    .line 449
+    .line 469
     .end local v0           #e:Ljava/lang/InterruptedException;
     :cond_2
     iget-boolean v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->cancelled:Z
 
     if-eqz v1, :cond_3
 
-    .line 450
+    .line 470
     const-string v1, "BTGPSService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -393,7 +393,7 @@
 
     goto :goto_2
 
-    .line 453
+    .line 473
     :cond_3
     iget v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->retries:I
 
@@ -403,7 +403,7 @@
 
     goto/16 :goto_0
 
-    .line 456
+    .line 476
     :cond_4
     const-string v1, "BTGPSService"
 
@@ -431,7 +431,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 457
+    .line 477
     iget-object v1, p0, Lcom/android/server/location/BTGPSService$WatchdogThread;->this$0:Lcom/android/server/location/BTGPSService;
 
     invoke-virtual {v1}, Lcom/android/server/location/BTGPSService;->stop()V

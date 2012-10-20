@@ -1460,7 +1460,7 @@
 
     .line 472
     .local v4, r:Landroid/content/res/Resources;
-    const v6, 0x10404aa
+    const v6, 0x10404ac
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1468,7 +1468,7 @@
 
     .line 473
     .local v5, title:Ljava/lang/CharSequence;
-    const v6, 0x10404ab
+    const v6, 0x10404ad
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
