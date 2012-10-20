@@ -115,7 +115,7 @@
     .line 227
     iget-object v2, p1, Landroid/widget/MiuiCursorController;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v3, "layout_inflater"
+    const-string v3, "layout_inflater"
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

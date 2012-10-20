@@ -491,7 +491,7 @@
     .local v3, lastIndex:I
     iget-object v7, p0, Landroid/widget/MiuiCursorController;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v8, "layout_inflater"
+    const-string v8, "layout_inflater"
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

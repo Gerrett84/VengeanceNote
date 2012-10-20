@@ -730,6 +730,12 @@
 
     if-lez v5, :cond_1
 
+    iget v5, p1, Landroid/util/TypedValue;->density:I
+
+    const v6, 0xffff
+
+    if-eq v5, v6, :cond_1
+
     .line 134
     new-instance v4, Landroid/graphics/BitmapFactory$Options;
 

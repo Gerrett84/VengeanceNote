@@ -85,7 +85,7 @@
     invoke-virtual {p0, v3}, Landroid/app/DatePickerDialog;->setIcon(I)V
 
     .line 106
-    const-string/jumbo v3, "layout_inflater"
+    const-string v3, "layout_inflater"
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

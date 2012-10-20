@@ -262,7 +262,7 @@
     .end local v0           #i:I
     .end local v3           #streamRes:Landroid/view/VolumePanel$StreamResources;
     :cond_1
-    const-string/jumbo v7, "layout_inflater"
+    const-string v7, "layout_inflater"
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -722,7 +722,7 @@
     .line 345
     iget-object v7, p0, Landroid/view/VolumePanel;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v8, "layout_inflater"
+    const-string v8, "layout_inflater"
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

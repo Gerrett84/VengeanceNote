@@ -947,7 +947,7 @@
 
     move-result-object v2
 
-    const-string/jumbo v4, "keyguard"
+    const-string v4, "keyguard"
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -1159,8 +1159,6 @@
     goto/16 :goto_1
 
     .line 3401
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

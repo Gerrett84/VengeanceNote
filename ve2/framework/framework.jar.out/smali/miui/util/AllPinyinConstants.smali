@@ -982,97 +982,97 @@
 
     const/16 v1, 0x9e
 
-    const-string/jumbo v2, "kong"
+    const-string v2, "kong"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9f
 
-    const-string/jumbo v2, "kou"
+    const-string v2, "kou"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa0
 
-    const-string/jumbo v2, "ku"
+    const-string v2, "ku"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa1
 
-    const-string/jumbo v2, "kua"
+    const-string v2, "kua"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa2
 
-    const-string/jumbo v2, "kuai"
+    const-string v2, "kuai"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa3
 
-    const-string/jumbo v2, "kuan"
+    const-string v2, "kuan"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa4
 
-    const-string/jumbo v2, "kuang"
+    const-string v2, "kuang"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa5
 
-    const-string/jumbo v2, "kui"
+    const-string v2, "kui"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa6
 
-    const-string/jumbo v2, "kun"
+    const-string v2, "kun"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa7
 
-    const-string/jumbo v2, "kuo"
+    const-string v2, "kuo"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa8
 
-    const-string/jumbo v2, "la"
+    const-string v2, "la"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa9
 
-    const-string/jumbo v2, "lai"
+    const-string v2, "lai"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xaa
 
-    const-string/jumbo v2, "lan"
+    const-string v2, "lan"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xab
 
-    const-string/jumbo v2, "lang"
+    const-string v2, "lang"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xac
 
-    const-string/jumbo v2, "lao"
+    const-string v2, "lao"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xad
 
-    const-string/jumbo v2, "le"
+    const-string v2, "le"
 
     aput-object v2, v0, v1
 
@@ -2590,7 +2590,7 @@
 
     const/16 v1, 0x1aa
 
-    const-string/jumbo v2, "le,yue"
+    const-string v2, "le,yue"
 
     aput-object v2, v0, v1
 
@@ -2626,7 +2626,7 @@
 
     const/16 v1, 0x1b0
 
-    const-string/jumbo v2, "le,liao"
+    const-string v2, "le,liao"
 
     aput-object v2, v0, v1
 
@@ -2926,7 +2926,7 @@
 
     const/16 v1, 0x1e2
 
-    const-string/jumbo v2, "kui,gui"
+    const-string v2, "kui,gui"
 
     aput-object v2, v0, v1
 
@@ -3124,7 +3124,7 @@
 
     const/16 v1, 0x203
 
-    const-string/jumbo v2, "le,lei"
+    const-string v2, "le,lei"
 
     aput-object v2, v0, v1
 
@@ -3868,7 +3868,7 @@
 
     const/16 v1, 0x27f
 
-    const-string/jumbo v2, "ku,jue"
+    const-string v2, "ku,jue"
 
     aput-object v2, v0, v1
 
@@ -4018,7 +4018,7 @@
 
     const/16 v1, 0x298
 
-    const-string/jumbo v2, "lao,mu"
+    const-string v2, "lao,mu"
 
     aput-object v2, v0, v1
 
@@ -4462,7 +4462,7 @@
 
     const/16 v1, 0x2e2
 
-    const-string/jumbo v2, "kui,li"
+    const-string v2, "kui,li"
 
     aput-object v2, v0, v1
 
@@ -4600,7 +4600,7 @@
 
     const/16 v1, 0x2f9
 
-    const-string/jumbo v2, "kuo,gua"
+    const-string v2, "kuo,gua"
 
     aput-object v2, v0, v1
 
@@ -5476,7 +5476,7 @@
 
     const/16 v1, 0x38b
 
-    const-string/jumbo v2, "kui,hui"
+    const-string v2, "kui,hui"
 
     aput-object v2, v0, v1
 
@@ -5524,7 +5524,7 @@
 
     const/16 v1, 0x393
 
-    const-string/jumbo v2, "kuo,huo"
+    const-string v2, "kuo,huo"
 
     aput-object v2, v0, v1
 
@@ -5560,7 +5560,7 @@
 
     const/16 v1, 0x399
 
-    const-string/jumbo v2, "kuai,hui"
+    const-string v2, "kuai,hui"
 
     aput-object v2, v0, v1
 
@@ -5956,7 +5956,7 @@
 
     const/16 v1, 0x3db
 
-    const-string/jumbo v2, "la,li"
+    const-string v2, "la,li"
 
     aput-object v2, v0, v1
 
@@ -5998,7 +5998,7 @@
 
     const/16 v1, 0x3e2
 
-    const-string/jumbo v2, "kuang,gong"
+    const-string v2, "kuang,gong"
 
     aput-object v2, v0, v1
 
@@ -6424,7 +6424,7 @@
 
     const/16 v1, 0x429
 
-    const-string/jumbo v2, "la,xi"
+    const-string v2, "la,xi"
 
     aput-object v2, v0, v1
 
@@ -6574,7 +6574,7 @@
 
     const/16 v1, 0x442
 
-    const-string/jumbo v2, "lao,pei"
+    const-string v2, "lao,pei"
 
     aput-object v2, v0, v1
 
@@ -6610,7 +6610,7 @@
 
     const/16 v1, 0x448
 
-    const-string/jumbo v2, "lang,liang"
+    const-string v2, "lang,liang"
 
     aput-object v2, v0, v1
 
@@ -6664,7 +6664,7 @@
 
     const/16 v1, 0x451
 
-    const-string/jumbo v2, "lan,la"
+    const-string v2, "lan,la"
 
     aput-object v2, v0, v1
 
@@ -6850,7 +6850,7 @@
 
     const/16 v1, 0x470
 
-    const-string/jumbo v2, "la,zha"
+    const-string v2, "la,zha"
 
     aput-object v2, v0, v1
 
@@ -6952,7 +6952,7 @@
 
     const/16 v1, 0x481
 
-    const-string/jumbo v2, "kun,hui"
+    const-string v2, "kun,hui"
 
     aput-object v2, v0, v1
 
@@ -7342,7 +7342,7 @@
 
     const/16 v1, 0x4c2
 
-    const-string/jumbo v2, "lao,luo"
+    const-string v2, "lao,luo"
 
     aput-object v2, v0, v1
 
@@ -7636,7 +7636,7 @@
 
     const/16 v1, 0x4f3
 
-    const-string/jumbo v2, "kuo,kui"
+    const-string v2, "kuo,kui"
 
     aput-object v2, v0, v1
 
@@ -7897,8 +7897,6 @@
     return-void
 
     .line 8
-    nop
-
     :array_0
     .array-data 0x1
         0x50t

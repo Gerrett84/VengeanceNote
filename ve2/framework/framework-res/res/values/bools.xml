@@ -14,7 +14,9 @@
     <bool name="config_sendAudioBecomingNoisy">true</bool>
     <bool name="config_ui_enableFadingMarquee">false</bool>
     <bool name="config_closeDialogWhenTouchOutside">true</bool>
-    <bool name="config_wifi_dual_band_support">false</bool>
+    <bool name="config_wifiApFirmwareReload">true</bool>
+    <bool name="config_wifiApStartInterface">false</bool>
+    <bool name="config_wifi_dual_band_support">true</bool>
     <bool name="config_wifi_p2p_support">true</bool>
     <bool name="config_wifi_background_scan_support">false</bool>
     <bool name="config_automatic_brightness_available">true</bool>
@@ -29,7 +31,7 @@
     <bool name="config_lidControlsSleep">false</bool>
     <bool name="config_batterySdCardAccessibility">false</bool>
     <bool name="config_use_strict_phone_number_comparation">false</bool>
-    <bool name="config_intrusiveNotificationLed">false</bool>
+    <bool name="config_intrusiveNotificationLed">true</bool>
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
     <bool name="config_enableLockBeforeUnlockScreen">true</bool>
     <bool name="config_enableLockScreenRotation">false</bool>

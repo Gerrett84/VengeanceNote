@@ -429,7 +429,7 @@
     .line 369
     iget-object v7, p0, Lmiui/view/VolumePanel;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v8, "layout_inflater"
+    const-string v8, "layout_inflater"
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -3443,7 +3443,7 @@
     :cond_3
     iget-object v9, p0, Lmiui/view/VolumePanel;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v10, "layout_inflater"
+    const-string v10, "layout_inflater"
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

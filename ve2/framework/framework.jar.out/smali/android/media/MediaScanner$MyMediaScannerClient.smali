@@ -957,7 +957,7 @@
     if-eqz v27, :cond_13
 
     .line 854
-    const-string/jumbo v27, "latitude"
+    const-string v27, "latitude"
 
     const/16 v28, 0x0
 
@@ -1586,8 +1586,6 @@
     goto/16 :goto_7
 
     .line 877
-    nop
-
     nop
 
     :pswitch_data_0

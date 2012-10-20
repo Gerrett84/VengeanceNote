@@ -606,7 +606,7 @@
 
     move-result-object v14
 
-    const-string/jumbo v15, "layout_inflater"
+    const-string v15, "layout_inflater"
 
     invoke-virtual {v14, v15}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

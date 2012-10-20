@@ -673,7 +673,7 @@
     <string name="phoneTypeMms">彩信</string>
     <string name="eventTypeCustom">自定义</string>
     <string name="eventTypeBirthday">生日</string>
-    <string name="eventTypeAnniversary">周年纪念</string>
+    <string name="eventTypeAnniversary">周年纪念日</string>
     <string name="eventTypeOther">其他</string>
     <string name="emailTypeCustom">自定义</string>
     <string name="emailTypeHome">家用</string>
