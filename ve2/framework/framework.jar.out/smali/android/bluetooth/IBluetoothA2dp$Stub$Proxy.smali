@@ -28,7 +28,7 @@
 
     .prologue
     .line 244
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 245
     iput-object p1, p0, Landroid/bluetooth/IBluetoothA2dp$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -147,6 +147,7 @@
     .line 556
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 555
     throw v3
 
     :cond_1
@@ -271,6 +272,7 @@
     .line 277
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 276
     throw v3
 
     :cond_1
@@ -379,6 +381,7 @@
     .line 507
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 506
     throw v3
 
     :cond_1
@@ -487,6 +490,7 @@
     .line 301
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 300
     throw v3
 
     :cond_1
@@ -595,6 +599,7 @@
     .line 531
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 530
     throw v3
 
     :cond_1
@@ -682,6 +687,7 @@
     .line 318
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 317
     throw v3
 .end method
 
@@ -777,6 +783,7 @@
     .line 360
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 359
     throw v3
 .end method
 
@@ -862,6 +869,7 @@
     .line 336
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 335
     throw v3
 .end method
 
@@ -967,6 +975,7 @@
     .line 409
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 408
     throw v3
 .end method
 
@@ -1069,6 +1078,7 @@
     .line 433
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 432
     throw v3
 
     :cond_1
@@ -1177,6 +1187,7 @@
     .line 483
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 482
     throw v3
 
     :cond_1
@@ -1289,6 +1300,7 @@
     .line 385
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 384
     throw v3
 
     :cond_1
@@ -1397,6 +1409,7 @@
     .line 459
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 458
     throw v3
 
     :cond_1

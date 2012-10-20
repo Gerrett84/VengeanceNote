@@ -628,7 +628,7 @@
     .line 460
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "keyboardLayoutDescriptor must not be null"
+    const-string v2, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1079,7 +1079,7 @@
     .line 360
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "keyboardLayoutDescriptor must not be null"
+    const-string v2, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1398,7 +1398,7 @@
     .line 488
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "keyboardLayoutDescriptor must not be null"
+    const-string v2, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1457,7 +1457,7 @@
     .line 410
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "keyboardLayoutDescriptor must not be null"
+    const-string v2, "keyboardLayoutDescriptor must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

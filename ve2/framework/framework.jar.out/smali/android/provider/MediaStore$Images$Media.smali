@@ -133,7 +133,7 @@
 
     .line 776
     .local v15, values:Landroid/content/ContentValues;
-    const-string/jumbo v2, "kind"
+    const-string v2, "kind"
 
     invoke-static/range {p6 .. p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

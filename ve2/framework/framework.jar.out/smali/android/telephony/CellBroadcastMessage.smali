@@ -216,7 +216,7 @@
 
     .line 113
     .local v17, category:I
-    const-string/jumbo v22, "language"
+    const-string v22, "language"
 
     move-object/from16 v0, p0
 
@@ -338,7 +338,7 @@
     .line 131
     .local v37, plmn:Ljava/lang/String;
     :goto_0
-    const-string/jumbo v22, "lac"
+    const-string v22, "lac"
 
     move-object/from16 v0, p0
 
@@ -1071,7 +1071,7 @@
     if-eq v5, v7, :cond_1
 
     .line 239
-    const-string/jumbo v5, "lac"
+    const-string v5, "lac"
 
     invoke-virtual {v3}, Landroid/telephony/SmsCbLocation;->getLac()I
 
@@ -1132,7 +1132,7 @@
     invoke-virtual {v1, v5, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 246
-    const-string/jumbo v5, "language"
+    const-string v5, "language"
 
     invoke-virtual {v4}, Landroid/telephony/SmsCbMessage;->getLanguageCode()Ljava/lang/String;
 

@@ -951,7 +951,7 @@
 
     .line 392
     .local v0, iteration:Landroid/os/Bundle;
-    const-string/jumbo v1, "label"
+    const-string v1, "label"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
