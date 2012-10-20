@@ -286,7 +286,7 @@
     <string name="power_off">关机</string>
     <string name="reboot_system">重启手机</string>
     <string name="global_action_screenshot">屏幕截图</string>
-    <string name="reboot_reboot">重启</string>
+    <string name="reboot_reboot">重新启动</string>
     <string name="reboot_recovery">恢复模式</string>
     <string name="reboot_bootloader">引导程序</string>
     <string name="reboot_bootmenu">引导菜单</string>
@@ -308,7 +308,7 @@
     <string name="global_action_lock">屏幕锁定</string>
     <string name="global_action_power_off">关机</string>
     <string name="global_action_reboot">重启</string>
-    <string name="global_action_choose_profile">场景模式</string>
+    <string name="global_action_choose_profile">情景模式</string>
     <string name="global_action_toggle_silent_mode">静音模式</string>
     <string name="global_action_silent_mode_on_status">声音已关闭</string>
     <string name="global_action_silent_mode_off_status">声音已开启</string>
@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">允许应用读取您的设备收到的小区广播消息。小区广播消息是在某些地区发送的、用于发布紧急情况警告的提醒信息。恶意应用可能会在您收到小区紧急广播时干扰您设备的性能或操作。</string>
     <string name="permlab_sendSms">发送短信</string>
     <string name="permdesc_sendSms">允许该应用发送短信。此权限可能会导致意外收费。恶意应用可能会未经您的确认而发送短信，由此产生相关费用。</string>
+    <string name="permlab_sendMockSms">发送模拟短信</string>
+    <string name="permdesc_sendMockSms">允许该应用发送模拟短信. 此权限将允许应用发送短信到信任的程序. 恶意应用可能会连续性的发送信息, 阻止设备的通知系统并打扰用户的使用.</string>
     <string name="permlab_sendSmsNoConfirmation">不经确认直接发送短信</string>
     <string name="permdesc_sendSmsNoConfirmation">允许该应用发送短信。此权限可能会导致意外收费。恶意应用可能会未经您的确认而发送短信，由此产生相关费用。</string>
     <string name="permlab_readSms">读取您的文字讯息（短信或彩信）</string>
@@ -770,7 +772,7 @@
     <string name="faceunlock_multiple_failures">已超过“人脸解锁”尝试次数上限</string>
     <string name="lockscreen_plugged_in">正在充电，%d%%</string>
     <string name="lockscreen_discharging">正在放电，%d%%</string>
-    <string name="lockscreen_charged">已充满。</string>
+    <string name="lockscreen_charged">已充满</string>
     <string name="lockscreen_battery_short">%d%%</string>
     <string name="lockscreen_low_battery">连接您的充电器，%d%%</string>
     <string name="lockscreen_missing_sim_message_short">没有 SIM 卡</string>
@@ -1066,8 +1068,8 @@
     <string name="extmedia_format_title">要格式化 SD 卡吗？</string>
     <string name="extmedia_format_message">您卡上的所有数据都会丢失。</string>
     <string name="extmedia_format_button_format">格式化</string>
-    <string name="adb_active_notification_title">已连接 USB 调试</string>
-    <string name="adb_active_notification_message">触摸可停用 USB 调试。</string>
+    <string name="adb_active_notification_title">Android 调试模式已启用</string>
+    <string name="adb_active_notification_message">选择即可停用调试模式.</string>
     <string name="select_input_method">选择输入法</string>
     <string name="configure_input_methods">设置输入法</string>
     <string name="use_physical_keyboard">物理键盘</string>
@@ -1155,6 +1157,7 @@
     <string name="share">分享</string>
     <string name="find">查找</string>
     <string name="websearch">网页搜索</string>
+    <string name="openurl">打开链接</string>
     <string name="gpsNotifTicker">来自%s的定位请求</string>
     <string name="gpsNotifTitle">定位请求</string>
     <string name="gpsNotifMessage">请求人：%1$s（%2$s）</string>
@@ -1251,7 +1254,7 @@
     <string name="sending">正在发送...</string>
     <string name="launchBrowserDefault">要启动浏览器吗？</string>
     <string name="SetupCallDefault">要接听电话吗？</string>
-    <string name="app_killed_message">应用程序已被杀死</string>
+    <string name="app_killed_message">应用程序已被终止</string>
     <string name="activity_resolver_use_always">始终</string>
     <string name="activity_resolver_use_once">仅此一次</string>
     <string name="default_audio_route_name">手机</string>
@@ -1321,7 +1324,7 @@
     <string name="weather_no_data">无数据</string>
     <string name="weather_tap_to_refresh">请点击刷新</string>
     <string name="weather_refreshing">正在刷新</string>
-    <string name="weather_last_sync_just_now">刚刚刷新</string>
+    <string name="weather_last_sync_just_now">刚刚</string>
     <string name="toast_rotation_unlocked">屏幕方向已解锁</string>
     <string name="toast_rotation_locked">屏幕方向已锁定</string>
 </resources>
