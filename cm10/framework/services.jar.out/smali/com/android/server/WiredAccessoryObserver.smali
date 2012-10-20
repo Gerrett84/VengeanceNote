@@ -1249,7 +1249,19 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 237
+    const-string v4, "SWITCH_STATE"
+
+    invoke-virtual {p1, v4}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 239
+    .local v3, state:I
     :try_start_0
     const-string v4, "DEVPATH"
 
@@ -1257,7 +1269,7 @@
 
     move-result-object v0
 
-    .line 239
+    .line 240
     .local v0, devPath:Ljava/lang/String;
     const-string v4, "SWITCH_NAME"
 
@@ -1265,7 +1277,7 @@
 
     move-result-object v2
 
-    .line 240
+    .line 241
     .local v2, name:Ljava/lang/String;
     sget-object v4, Lcom/android/server/WiredAccessoryObserver;->sDockNames:Ljava/util/List;
 
@@ -1275,12 +1287,16 @@
 
     if-eqz v4, :cond_0
 
-    .line 245
+    .line 246
     iget-boolean v4, p0, Lcom/android/server/WiredAccessoryObserver;->dockAudioEnabled:Z
 
     if-nez v4, :cond_0
 
-    .line 246
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_0
+
+    .line 247
     sget-object v4, Lcom/android/server/WiredAccessoryObserver;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1309,22 +1325,10 @@
     :goto_0
     return-void
 
-    .line 250
+    .line 251
     .restart local v0       #devPath:Ljava/lang/String;
     .restart local v2       #name:Ljava/lang/String;
     :cond_0
-    const-string v4, "SWITCH_STATE"
-
-    invoke-virtual {p1, v4}, Landroid/os/UEventObserver$UEvent;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    .line 251
-    .local v3, state:I
     invoke-direct {p0, v0, v2, v3}, Lcom/android/server/WiredAccessoryObserver;->updateState(Ljava/lang/String;Ljava/lang/String;I)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1334,7 +1338,6 @@
     .line 252
     .end local v0           #devPath:Ljava/lang/String;
     .end local v2           #name:Ljava/lang/String;
-    .end local v3           #state:I
     :catch_0
     move-exception v1
 
