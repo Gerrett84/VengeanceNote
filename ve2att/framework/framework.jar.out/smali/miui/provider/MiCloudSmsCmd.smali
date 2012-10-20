@@ -209,7 +209,7 @@
 
     .line 72
     .local v0, action:Ljava/lang/String;
-    const-string/jumbo v2, "l"
+    const-string v2, "l"
 
     invoke-virtual {v2, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

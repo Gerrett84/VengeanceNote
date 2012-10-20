@@ -2500,7 +2500,7 @@
 
     .prologue
     .line 3955
-    const-string/jumbo v0, "lensshade"
+    const-string v0, "lensshade"
 
     invoke-virtual {p0, v0}, Landroid/hardware/Camera$Parameters;->get(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3298,7 +3298,7 @@
 
     .prologue
     .line 3975
-    const-string/jumbo v1, "lensshade-values"
+    const-string v1, "lensshade-values"
 
     invoke-virtual {p0, v1}, Landroid/hardware/Camera$Parameters;->get(Ljava/lang/String;)Ljava/lang/String;
 
@@ -4988,7 +4988,7 @@
 
     .prologue
     .line 3964
-    const-string/jumbo v0, "lensshade"
+    const-string v0, "lensshade"
 
     invoke-virtual {p0, v0, p1}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 

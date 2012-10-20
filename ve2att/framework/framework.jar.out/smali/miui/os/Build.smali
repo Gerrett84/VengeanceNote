@@ -28,6 +28,9 @@
 .field public static final IS_GALAXYS_NEXUS:Z = false
 
 #the value of this static final field might be set in the static constructor
+.field public static final IS_HK_BUILD:Z = false
+
+#the value of this static final field might be set in the static constructor
 .field public static final IS_HTC_HD2:Z = false
 
 #the value of this static final field might be set in the static constructor
@@ -55,6 +58,12 @@
 .field public static final IS_MITWO:Z = false
 
 #the value of this static final field might be set in the static constructor
+.field private static final IS_MITWO_HK_BUILD:Z = false
+
+#the value of this static final field might be set in the static constructor
+.field private static final IS_MITWO_TW_BUILD:Z = false
+
+#the value of this static final field might be set in the static constructor
 .field public static final IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z = false
 
 #the value of this static final field might be set in the static constructor
@@ -77,6 +86,9 @@
 
 #the value of this static final field might be set in the static constructor
 .field public static final IS_T959:Z = false
+
+#the value of this static final field might be set in the static constructor
+.field public static final IS_TW_BUILD:Z = false
 
 #the value of this static final field might be set in the static constructor
 .field public static final IS_U8860:Z = false
@@ -544,6 +556,50 @@
     :goto_b
     sput-boolean v2, Lmiui/os/Build;->IS_STABLE_VERSION:Z
 
+    .line 62
+    const-string v0, "aries_tw"
+
+    const-string/jumbo v1, "ro.product.mod_device"
+
+    const-string v2, ""
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lmiui/os/Build;->IS_MITWO_TW_BUILD:Z
+
+    .line 64
+    const-string v0, "aries_hk"
+
+    const-string/jumbo v1, "ro.product.mod_device"
+
+    const-string v2, ""
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lmiui/os/Build;->IS_MITWO_HK_BUILD:Z
+
+    .line 67
+    sget-boolean v0, Lmiui/os/Build;->IS_MITWO_TW_BUILD:Z
+
+    sput-boolean v0, Lmiui/os/Build;->IS_TW_BUILD:Z
+
+    .line 68
+    sget-boolean v0, Lmiui/os/Build;->IS_MITWO_HK_BUILD:Z
+
+    sput-boolean v0, Lmiui/os/Build;->IS_HK_BUILD:Z
+
     return-void
 
     :cond_9
@@ -586,13 +642,13 @@
     move v0, v1
 
     .line 36
-    goto :goto_6
+    goto/16 :goto_6
 
     :cond_10
     move v0, v1
 
     .line 39
-    goto :goto_7
+    goto/16 :goto_7
 
     :cond_11
     move v0, v1
@@ -634,7 +690,7 @@
     .parameter "property"
 
     .prologue
-    .line 94
+    .line 103
     const-string/jumbo v0, "unknown"
 
     invoke-static {p0, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -648,7 +704,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 74
     sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
     return v0
@@ -658,14 +714,14 @@
     .locals 2
 
     .prologue
-    .line 80
+    .line 89
     const-string/jumbo v1, "ro.soc.name"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 81
+    .line 90
     .local v0, soc:Ljava/lang/String;
     const-string/jumbo v1, "msm8660"
 
@@ -699,7 +755,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 85
     sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
     if-nez v0, :cond_0
@@ -724,7 +780,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 81
     sget-boolean v0, Lmiui/os/Build;->IS_STABLE_VERSION:Z
 
     return v0

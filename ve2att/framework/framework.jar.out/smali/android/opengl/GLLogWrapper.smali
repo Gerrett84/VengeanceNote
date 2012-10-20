@@ -8318,7 +8318,7 @@
     invoke-direct {p0, v0}, Landroid/opengl/GLLogWrapper;->begin(Ljava/lang/String;)V
 
     .line 1669
-    const-string/jumbo v0, "left"
+    const-string v0, "left"
 
     invoke-direct {p0, v0, p1}, Landroid/opengl/GLLogWrapper;->arg(Ljava/lang/String;F)V
 
@@ -8390,7 +8390,7 @@
     invoke-direct {p0, v0}, Landroid/opengl/GLLogWrapper;->begin(Ljava/lang/String;)V
 
     .line 1684
-    const-string/jumbo v0, "left"
+    const-string v0, "left"
 
     invoke-direct {p0, v0, p1}, Landroid/opengl/GLLogWrapper;->arg(Ljava/lang/String;I)V
 
@@ -12953,7 +12953,7 @@
     invoke-direct {p0, v0}, Landroid/opengl/GLLogWrapper;->begin(Ljava/lang/String;)V
 
     .line 2161
-    const-string/jumbo v0, "left"
+    const-string v0, "left"
 
     invoke-direct {p0, v0, p1}, Landroid/opengl/GLLogWrapper;->arg(Ljava/lang/String;F)V
 
@@ -13025,7 +13025,7 @@
     invoke-direct {p0, v0}, Landroid/opengl/GLLogWrapper;->begin(Ljava/lang/String;)V
 
     .line 2176
-    const-string/jumbo v0, "left"
+    const-string v0, "left"
 
     invoke-direct {p0, v0, p1}, Landroid/opengl/GLLogWrapper;->arg(Ljava/lang/String;I)V
 

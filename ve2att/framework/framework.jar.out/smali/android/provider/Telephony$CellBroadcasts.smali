@@ -106,7 +106,7 @@
 
     const/4 v1, 0x3
 
-    const-string/jumbo v2, "lac"
+    const-string v2, "lac"
 
     aput-object v2, v0, v1
 
@@ -130,7 +130,7 @@
 
     const/4 v1, 0x7
 
-    const-string/jumbo v2, "language"
+    const-string v2, "language"
 
     aput-object v2, v0, v1
 

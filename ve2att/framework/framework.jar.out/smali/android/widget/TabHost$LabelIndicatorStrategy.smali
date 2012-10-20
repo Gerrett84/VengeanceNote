@@ -70,7 +70,7 @@
 
     .line 541
     .local v0, context:Landroid/content/Context;
-    const-string/jumbo v4, "layout_inflater"
+    const-string v4, "layout_inflater"
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -128,7 +128,7 @@
     if-gt v4, v5, :cond_0
 
     .line 552
-    const v4, 0x10805a1
+    const v4, 0x10805a2
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setBackgroundResource(I)V
 

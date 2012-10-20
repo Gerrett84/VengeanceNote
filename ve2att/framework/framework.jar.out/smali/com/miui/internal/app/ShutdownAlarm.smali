@@ -171,7 +171,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string/jumbo v0, "kk:mm"
+    const-string v0, "kk:mm"
 
     .line 118
     .local v0, format:Ljava/lang/String;

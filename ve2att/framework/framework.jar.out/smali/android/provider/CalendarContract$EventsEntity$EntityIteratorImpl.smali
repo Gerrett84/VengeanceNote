@@ -395,7 +395,7 @@
     invoke-static {v0, v8, v1}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
     .line 1362
-    const-string/jumbo v1, "lastDate"
+    const-string v1, "lastDate"
 
     move-object/from16 v0, p1
 
@@ -465,7 +465,7 @@
     invoke-static {v0, v8, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
     .line 1373
-    const-string/jumbo v1, "lastSynced"
+    const-string v1, "lastSynced"
 
     move-object/from16 v0, p1
 
@@ -885,30 +885,22 @@
 
     const/4 v2, 0x5
 
-    invoke-interface {v14, v2}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v14, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1446
     const-string v1, "attendeeIdNamespace"
 
     const/4 v2, 0x6
 
-    invoke-interface {v14, v2}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v14, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1448
     sget-object v1, Landroid/provider/CalendarContract$Attendees;->CONTENT_URI:Landroid/net/Uri;

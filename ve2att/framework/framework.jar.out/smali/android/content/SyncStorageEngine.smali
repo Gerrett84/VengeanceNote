@@ -3223,45 +3223,45 @@
     invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1879
-    const-string/jumbo v3, "lastSuccessSource"
+    const-string v3, "lastSuccessSource"
 
-    const-string/jumbo v4, "lastSuccessSource"
+    const-string v4, "lastSuccessSource"
 
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1880
-    const-string/jumbo v3, "lastSuccessTime"
+    const-string v3, "lastSuccessTime"
 
-    const-string/jumbo v4, "lastSuccessTime"
+    const-string v4, "lastSuccessTime"
 
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1881
-    const-string/jumbo v3, "lastFailureSource"
+    const-string v3, "lastFailureSource"
 
-    const-string/jumbo v4, "lastFailureSource"
+    const-string v4, "lastFailureSource"
 
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1882
-    const-string/jumbo v3, "lastFailureTime"
+    const-string v3, "lastFailureTime"
 
-    const-string/jumbo v4, "lastFailureTime"
+    const-string v4, "lastFailureTime"
 
     move-object/from16 v0, v23
 
     invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1883
-    const-string/jumbo v3, "lastFailureMesg"
+    const-string v3, "lastFailureMesg"
 
-    const-string/jumbo v4, "lastFailureMesg"
+    const-string v4, "lastFailureMesg"
 
     move-object/from16 v0, v23
 
@@ -3565,7 +3565,7 @@
     iput v3, v0, Landroid/content/SyncStatusInfo;->numSourcePeriodic:I
 
     .line 1922
-    const-string/jumbo v3, "lastSuccessSource"
+    const-string v3, "lastSuccessSource"
 
     move-object/from16 v0, v18
 
@@ -3578,7 +3578,7 @@
     iput v3, v0, Landroid/content/SyncStatusInfo;->lastSuccessSource:I
 
     .line 1923
-    const-string/jumbo v3, "lastSuccessTime"
+    const-string v3, "lastSuccessTime"
 
     move-object/from16 v0, v18
 
@@ -3591,7 +3591,7 @@
     iput-wide v3, v0, Landroid/content/SyncStatusInfo;->lastSuccessTime:J
 
     .line 1924
-    const-string/jumbo v3, "lastFailureSource"
+    const-string v3, "lastFailureSource"
 
     move-object/from16 v0, v18
 
@@ -3604,7 +3604,7 @@
     iput v3, v0, Landroid/content/SyncStatusInfo;->lastFailureSource:I
 
     .line 1925
-    const-string/jumbo v3, "lastFailureTime"
+    const-string v3, "lastFailureTime"
 
     move-object/from16 v0, v18
 
@@ -3617,7 +3617,7 @@
     iput-wide v3, v0, Landroid/content/SyncStatusInfo;->lastFailureTime:J
 
     .line 1926
-    const-string/jumbo v3, "lastFailureMesg"
+    const-string v3, "lastFailureMesg"
 
     move-object/from16 v0, v18
 

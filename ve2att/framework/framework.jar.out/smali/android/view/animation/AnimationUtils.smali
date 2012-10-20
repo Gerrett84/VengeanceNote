@@ -599,7 +599,7 @@
 
     .line 189
     .local v2, name:Ljava/lang/String;
-    const-string/jumbo v4, "layoutAnimation"
+    const-string v4, "layoutAnimation"
 
     invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

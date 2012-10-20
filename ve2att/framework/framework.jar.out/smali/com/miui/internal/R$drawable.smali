@@ -91,7 +91,7 @@
 
 .field public static final android_ic_lockscreen_chevron_right:I = 0x602014e
 
-.field public static final android_ic_lockscreen_glowdot:I = 0x60201c6
+.field public static final android_ic_lockscreen_glowdot:I = 0x60201c8
 
 .field public static final android_ic_lockscreen_handle_pressed:I = 0x6020150
 
@@ -117,6 +117,8 @@
 
 .field public static final android_list_divider_holo_light:I = 0x602012f
 
+.field public static final android_list_pressed_holo_light:I = 0x60201c6
+
 .field public static final android_list_section_divider_holo_light:I = 0x602012b
 
 .field public static final android_list_selector_background_disabled:I = 0x6020166
@@ -131,7 +133,7 @@
 
 .field public static final android_menu_selector:I = 0x602013b
 
-.field public static final android_notification_item_background_color:I = 0x60201c7
+.field public static final android_notification_item_background_color:I = 0x60201c9
 
 .field public static final android_notification_item_background_color_pressed:I = 0x602014b
 
@@ -927,13 +929,15 @@
 
 .field public static final textview_panel_separator:I = 0x6020111
 
+.field public static final word_photo_bg:I = 0x60201c7
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 504
+    .line 507
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

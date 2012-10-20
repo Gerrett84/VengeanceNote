@@ -30,8 +30,8 @@
     .locals 0
 
     .prologue
-    .line 755
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 778
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x0"
 
     .prologue
-    .line 755
+    .line 778
     invoke-direct {p0}, Landroid/webkit/WebViewCore$WebCoreThread;-><init>()V
 
     return-void
@@ -53,22 +53,22 @@
     .locals 2
 
     .prologue
-    .line 763
+    .line 786
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 764
+    .line 787
     invoke-static {}, Landroid/webkit/WebViewCore;->access$500()Landroid/os/Handler;
 
     move-result-object v0
 
     invoke-static {v0}, Ljunit/framework/Assert;->assertNull(Ljava/lang/Object;)V
 
-    .line 765
+    .line 788
     const-class v1, Landroid/webkit/WebViewCore;
 
     monitor-enter v1
 
-    .line 766
+    .line 789
     :try_start_0
     new-instance v0, Landroid/webkit/WebViewCore$WebCoreThread$1;
 
@@ -76,23 +76,23 @@
 
     invoke-static {v0}, Landroid/webkit/WebViewCore;->access$502(Landroid/os/Handler;)Landroid/os/Handler;
 
-    .line 825
+    .line 848
     const-class v0, Landroid/webkit/WebViewCore;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 826
+    .line 849
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 827
+    .line 850
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 828
+    .line 851
     return-void
 
-    .line 826
+    .line 849
     :catchall_0
     move-exception v0
 

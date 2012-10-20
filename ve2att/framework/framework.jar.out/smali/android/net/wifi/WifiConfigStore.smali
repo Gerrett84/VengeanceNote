@@ -2226,7 +2226,7 @@
     .line 1483
     iget-object v7, p1, Landroid/net/wifi/WifiConfiguration;->engine_id:Landroid/net/wifi/WifiConfiguration$EnterpriseField;
 
-    const-string/jumbo v8, "keystore"
+    const-string v8, "keystore"
 
     invoke-direct {p0, v8}, Landroid/net/wifi/WifiConfigStore;->convertToQuotedString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2235,7 +2235,7 @@
     invoke-virtual {v7, v8}, Landroid/net/wifi/WifiConfiguration$EnterpriseField;->setValue(Ljava/lang/String;)V
 
     .line 1490
-    const-string/jumbo v7, "keystore://"
+    const-string v7, "keystore://"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -2246,7 +2246,7 @@
     .line 1491
     new-instance v3, Ljava/lang/String;
 
-    const-string/jumbo v7, "keystore://"
+    const-string v7, "keystore://"
 
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 

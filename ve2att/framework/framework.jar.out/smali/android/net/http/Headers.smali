@@ -276,7 +276,7 @@
 
     const/16 v1, 0xd
 
-    const-string/jumbo v2, "last-modified"
+    const-string v2, "last-modified"
 
     aput-object v2, v0, v1
 
@@ -1202,7 +1202,7 @@
 
     .line 275
     :sswitch_d
-    const-string/jumbo v5, "last-modified"
+    const-string v5, "last-modified"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1320,8 +1320,6 @@
     goto/16 :goto_0
 
     .line 176
-    nop
-
     nop
 
     :sswitch_data_0

@@ -185,7 +185,7 @@
 
     const/16 v1, 0xb
 
-    const-string/jumbo v2, "lastmod AS last_modified_timestamp"
+    const-string v2, "lastmod AS last_modified_timestamp"
 
     aput-object v2, v0, v1
 

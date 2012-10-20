@@ -75,7 +75,7 @@
     sput-object v0, Landroid/os/RecoverySystem;->LOG_FILE:Ljava/io/File;
 
     .line 74
-    const-string/jumbo v0, "last_"
+    const-string v0, "last_"
 
     sput-object v0, Landroid/os/RecoverySystem;->LAST_PREFIX:Ljava/lang/String;
 

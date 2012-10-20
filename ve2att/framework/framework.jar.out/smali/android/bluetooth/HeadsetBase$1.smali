@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 157
+    .line 163
     iput-object p1, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
@@ -39,9 +39,10 @@
     .locals 5
 
     .prologue
-    .line 160
+    const/16 v3, 0x1f4
+
+    .line 166
     :cond_0
-    :goto_0
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     #getter for: Landroid/bluetooth/HeadsetBase;->mEventThreadInterrupted:Z
@@ -51,41 +52,48 @@
 
     if-nez v2, :cond_3
 
-    .line 161
+    .line 169
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
-    const/16 v3, 0x1f4
+    iget-object v2, v2, Landroid/bluetooth/HeadsetBase;->specialPDUInputHandler:Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;
+
+    if-nez v2, :cond_4
+
+    .line 170
+    iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     #calls: Landroid/bluetooth/HeadsetBase;->readNative(I)Ljava/lang/String;
     invoke-static {v2, v3}, Landroid/bluetooth/HeadsetBase;->access$100(Landroid/bluetooth/HeadsetBase;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 162
+    .line 171
     .local v0, input:Ljava/lang/String;
     if-eqz v0, :cond_1
 
-    .line 163
+    .line 172
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     invoke-virtual {v2, v0}, Landroid/bluetooth/HeadsetBase;->handleInput(Ljava/lang/String;)V
 
-    goto :goto_0
-
-    .line 165
+    .line 180
     :cond_1
+    :goto_0
+    if-nez v0, :cond_0
+
+    .line 181
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     #calls: Landroid/bluetooth/HeadsetBase;->getLastReadStatusNative()I
-    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$200(Landroid/bluetooth/HeadsetBase;)I
+    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$300(Landroid/bluetooth/HeadsetBase;)I
 
     move-result v1
 
-    .line 166
+    .line 182
     .local v1, last_read_error:I
     if-eqz v1, :cond_0
 
-    .line 167
+    .line 183
     const-string v2, "Bluetooth HeadsetBase"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -108,21 +116,21 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
+    .line 184
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     #getter for: Landroid/bluetooth/HeadsetBase;->mEventThreadHandler:Landroid/os/Handler;
-    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$300(Landroid/bluetooth/HeadsetBase;)Landroid/os/Handler;
+    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$400(Landroid/bluetooth/HeadsetBase;)Landroid/os/Handler;
 
     move-result-object v2
 
     if-eqz v2, :cond_2
 
-    .line 169
+    .line 185
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     #getter for: Landroid/bluetooth/HeadsetBase;->mEventThreadHandler:Landroid/os/Handler;
-    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$300(Landroid/bluetooth/HeadsetBase;)Landroid/os/Handler;
+    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$400(Landroid/bluetooth/HeadsetBase;)Landroid/os/Handler;
 
     move-result-object v2
 
@@ -134,16 +142,38 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 172
+    .line 188
     :cond_2
     iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
 
     #calls: Landroid/bluetooth/HeadsetBase;->disconnectNative()V
-    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$400(Landroid/bluetooth/HeadsetBase;)V
+    invoke-static {v2}, Landroid/bluetooth/HeadsetBase;->access$500(Landroid/bluetooth/HeadsetBase;)V
 
-    .line 177
+    .line 193
     .end local v0           #input:Ljava/lang/String;
     .end local v1           #last_read_error:I
     :cond_3
     return-void
+
+    .line 175
+    :cond_4
+    iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
+
+    #calls: Landroid/bluetooth/HeadsetBase;->readNativePDUStream(I)Ljava/lang/String;
+    invoke-static {v2, v3}, Landroid/bluetooth/HeadsetBase;->access$200(Landroid/bluetooth/HeadsetBase;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 176
+    .restart local v0       #input:Ljava/lang/String;
+    if-eqz v0, :cond_1
+
+    .line 177
+    iget-object v2, p0, Landroid/bluetooth/HeadsetBase$1;->this$0:Landroid/bluetooth/HeadsetBase;
+
+    iget-object v2, v2, Landroid/bluetooth/HeadsetBase;->specialPDUInputHandler:Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;
+
+    invoke-interface {v2, v0}, Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;->handleInput(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

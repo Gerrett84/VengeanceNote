@@ -194,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 182
+    .line 183
     const/4 v0, 0x3
 
     sput v0, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
@@ -218,236 +218,237 @@
 
     const/4 v3, 0x0
 
-    .line 279
+    .line 280
     invoke-direct {p0}, Landroid/webkit/WebSettings;-><init>()V
 
-    .line 46
+    .line 47
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mSyncPending:Z
 
-    .line 56
+    .line 57
     sget-object v1, Landroid/webkit/WebSettings$LayoutAlgorithm;->NARROW_COLUMNS:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mLayoutAlgorithm:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
-    .line 58
+    .line 59
     iput v6, p0, Landroid/webkit/WebSettingsClassic;->mTextSize:I
 
-    .line 59
+    .line 60
+    iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mNightReadMode:Z
+
+    .line 62
     const-string/jumbo v1, "sans-serif"
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mStandardFontFamily:Ljava/lang/String;
 
-    .line 60
+    .line 63
     const-string/jumbo v1, "monospace"
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mFixedFontFamily:Ljava/lang/String;
 
-    .line 61
+    .line 64
     const-string/jumbo v1, "sans-serif"
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mSansSerifFontFamily:Ljava/lang/String;
 
-    .line 62
+    .line 65
     const-string/jumbo v1, "serif"
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mSerifFontFamily:Ljava/lang/String;
 
-    .line 63
+    .line 66
     const-string v1, "cursive"
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mCursiveFontFamily:Ljava/lang/String;
 
-    .line 64
+    .line 67
     const-string v1, "fantasy"
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mFantasyFontFamily:Ljava/lang/String;
 
-    .line 69
+    .line 72
     iput v4, p0, Landroid/webkit/WebSettingsClassic;->mMinimumFontSize:I
 
-    .line 70
+    .line 73
     iput v4, p0, Landroid/webkit/WebSettingsClassic;->mMinimumLogicalFontSize:I
 
-    .line 71
+    .line 74
     iput v7, p0, Landroid/webkit/WebSettingsClassic;->mDefaultFontSize:I
 
-    .line 72
+    .line 75
     const/16 v1, 0xd
 
     iput v1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultFixedFontSize:I
 
-    .line 73
+    .line 76
     iput v3, p0, Landroid/webkit/WebSettingsClassic;->mPageCacheCapacity:I
 
-    .line 74
+    .line 77
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mLoadsImagesAutomatically:Z
 
-    .line 75
+    .line 78
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mBlockNetworkImage:Z
 
-    .line 77
+    .line 80
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mJavaScriptEnabled:Z
 
-    .line 78
+    .line 81
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mAllowUniversalAccessFromFileURLs:Z
 
-    .line 79
+    .line 82
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mAllowFileAccessFromFileURLs:Z
 
-    .line 80
+    .line 83
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mHardwareAccelSkia:Z
 
-    .line 81
+    .line 84
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mShowVisualIndicator:Z
 
-    .line 82
+    .line 85
     sget-object v1, Landroid/webkit/WebSettings$PluginState;->OFF:Landroid/webkit/WebSettings$PluginState;
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mPluginState:Landroid/webkit/WebSettings$PluginState;
 
-    .line 83
+    .line 86
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mJavaScriptCanOpenWindowsAutomatically:Z
 
-    .line 84
+    .line 87
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mUseDoubleTree:Z
 
-    .line 85
+    .line 88
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mUseWideViewport:Z
 
-    .line 86
+    .line 89
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mSupportMultipleWindows:Z
 
-    .line 87
+    .line 90
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mShrinksStandaloneImagesToFit:Z
 
-    .line 88
+    .line 91
     const-wide/16 v4, 0x0
 
     iput-wide v4, p0, Landroid/webkit/WebSettingsClassic;->mMaximumDecodedImageSize:J
 
-    .line 89
+    .line 92
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mPrivateBrowsingEnabled:Z
 
-    .line 90
+    .line 93
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mSyntheticLinksEnabled:Z
 
-    .line 91
+    .line 95
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mMediaPreloadEnabled:Z
 
-    .line 93
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mAppCacheEnabled:Z
 
-    .line 94
+    .line 96
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mDatabaseEnabled:Z
 
-    .line 95
+    .line 97
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mDomStorageEnabled:Z
 
-    .line 96
+    .line 98
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mWorkersEnabled:Z
 
-    .line 97
+    .line 99
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mGeolocationEnabled:Z
 
-    .line 98
+    .line 100
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mXSSAuditorEnabled:Z
 
-    .line 99
+    .line 101
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mLinkPrefetchEnabled:Z
 
-    .line 101
+    .line 103
     const-wide v4, 0x7fffffffffffffffL
 
     iput-wide v4, p0, Landroid/webkit/WebSettingsClassic;->mAppCacheMaxSize:J
 
-    .line 102
+    .line 104
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mAppCachePath:Ljava/lang/String;
 
-    .line 103
+    .line 105
     const-string v1, ""
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mDatabasePath:Ljava/lang/String;
 
-    .line 106
+    .line 108
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mDatabasePathHasBeenSet:Z
 
-    .line 107
+    .line 109
     const-string v1, ""
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mGeolocationDatabasePath:Ljava/lang/String;
 
-    .line 111
+    .line 113
     sget-object v1, Landroid/webkit/WebSettings$ZoomDensity;->MEDIUM:Landroid/webkit/WebSettings$ZoomDensity;
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultZoom:Landroid/webkit/WebSettings$ZoomDensity;
 
-    .line 112
+    .line 114
     sget-object v1, Landroid/webkit/WebSettings$RenderPriority;->NORMAL:Landroid/webkit/WebSettings$RenderPriority;
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mRenderPriority:Landroid/webkit/WebSettings$RenderPriority;
 
-    .line 113
+    .line 115
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/webkit/WebSettingsClassic;->mOverrideCacheMode:I
 
-    .line 114
+    .line 116
     iput v6, p0, Landroid/webkit/WebSettingsClassic;->mDoubleTapZoom:I
 
-    .line 115
+    .line 117
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mSaveFormData:Z
 
-    .line 116
+    .line 118
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mAutoFillEnabled:Z
 
-    .line 117
+    .line 119
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mSavePassword:Z
 
-    .line 118
+    .line 120
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mLightTouchEnabled:Z
 
-    .line 119
+    .line 121
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mNeedInitialFocus:Z
 
-    .line 120
+    .line 122
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mNavDump:Z
 
-    .line 121
+    .line 123
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mSupportZoom:Z
 
-    .line 122
+    .line 124
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mBuiltInZoomControls:Z
 
-    .line 123
+    .line 125
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mDisplayZoomControls:Z
 
-    .line 124
+    .line 126
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mAllowFileAccess:Z
 
-    .line 125
+    .line 127
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mAllowContentAccess:Z
 
-    .line 126
+    .line 128
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mLoadWithOverviewMode:Z
 
-    .line 127
+    .line 129
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mEnableSmoothTransition:Z
 
-    .line 128
+    .line 130
     iput-boolean v3, p0, Landroid/webkit/WebSettingsClassic;->mForceUserScalable:Z
 
-    .line 129
+    .line 131
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mPasswordEchoEnabled:Z
 
-    .line 130
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mWebGLEnabled:Z
 
-    .line 179
+    .line 180
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mUseWebViewBackgroundForOverscroll:Z
 
-    .line 280
+    .line 281
     new-instance v1, Landroid/webkit/WebSettingsClassic$EventHandler;
 
     const/4 v4, 0x0
@@ -456,14 +457,14 @@
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
-    .line 281
+    .line 282
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
-    .line 282
+    .line 283
     iput-object p2, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
-    .line 283
-    const v1, 0x10400c5
+    .line 284
+    const v1, 0x10400ba
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -471,26 +472,26 @@
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultTextEncoding:Ljava/lang/String;
 
-    .line 286
+    .line 287
     sget-object v1, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
 
     if-nez v1, :cond_0
 
-    .line 287
+    .line 288
     new-instance v1, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v1 .. v1}, Ljava/lang/Object;-><init>()V
 
     sput-object v1, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
 
-    .line 288
+    .line 289
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
 
     sput-object v1, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
-    .line 290
+    .line 291
     :cond_0
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentAcceptLanguage()Ljava/lang/String;
 
@@ -498,17 +499,17 @@
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mAcceptLanguage:Ljava/lang/String;
 
-    .line 291
+    .line 292
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentUserAgent()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mUserAgent:Ljava/lang/String;
 
-    .line 292
+    .line 293
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mUseDefaultUserAgent:Z
 
-    .line 294
+    .line 295
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     const-string v4, "android.permission.INTERNET"
@@ -532,7 +533,7 @@
     :goto_0
     iput-boolean v1, p0, Landroid/webkit/WebSettingsClassic;->mBlockNetworkLoads:Z
 
-    .line 299
+    .line 300
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -543,13 +544,13 @@
 
     if-ge v1, v7, :cond_1
 
-    .line 301
+    .line 302
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mAllowUniversalAccessFromFileURLs:Z
 
-    .line 302
+    .line 303
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mAllowFileAccessFromFileURLs:Z
 
-    .line 305
+    .line 306
     :cond_1
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -571,21 +572,21 @@
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 311
+    .line 312
     :goto_1
     return-void
 
     :cond_3
     move v1, v3
 
-    .line 294
+    .line 295
     goto :goto_0
 
-    .line 308
+    .line 309
     :catch_0
     move-exception v0
 
-    .line 309
+    .line 310
     .local v0, e:Landroid/provider/Settings$SettingNotFoundException;
     iput-boolean v2, p0, Landroid/webkit/WebSettingsClassic;->mPasswordEchoEnabled:Z
 
@@ -597,7 +598,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 38
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mBrowserFrame:Landroid/webkit/BrowserFrame;
 
     return-object v0
@@ -609,7 +610,7 @@
     .parameter "x1"
 
     .prologue
-    .line 37
+    .line 38
     invoke-direct {p0, p1}, Landroid/webkit/WebSettingsClassic;->nativeSync(I)V
 
     return-void
@@ -621,7 +622,7 @@
     .parameter "x1"
 
     .prologue
-    .line 37
+    .line 38
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mSyncPending:Z
 
     return p1
@@ -632,7 +633,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 38
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -642,7 +643,7 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 38
     sget v0, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
     return v0
@@ -653,7 +654,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37
+    .line 38
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mRenderPriority:Landroid/webkit/WebSettings$RenderPriority;
 
     return-object v0
@@ -665,7 +666,7 @@
     .parameter "locale"
 
     .prologue
-    .line 360
+    .line 361
     invoke-virtual {p1}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     move-result-object v2
@@ -674,31 +675,31 @@
 
     move-result-object v1
 
-    .line 361
+    .line 362
     .local v1, language:Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 362
+    .line 363
     invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 363
+    .line 364
     invoke-virtual {p1}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 364
+    .line 365
     .local v0, country:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 365
+    .line 366
     const-string v2, "-"
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 366
+    .line 367
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 369
+    .line 370
     .end local v0           #country:Ljava/lang/String;
     :cond_0
     return-void
@@ -709,19 +710,19 @@
     .parameter "langCode"
 
     .prologue
-    .line 342
+    .line 343
     if-nez p0, :cond_1
 
-    .line 343
+    .line 344
     const/4 p0, 0x0
 
-    .line 355
+    .line 356
     .end local p0
     :cond_0
     :goto_0
     return-object p0
 
-    .line 345
+    .line 346
     .restart local p0
     :cond_1
     const-string v0, "iw"
@@ -732,12 +733,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 347
+    .line 348
     const-string p0, "he"
 
     goto :goto_0
 
-    .line 348
+    .line 349
     :cond_2
     const-string v0, "in"
 
@@ -747,12 +748,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 350
+    .line 351
     const-string p0, "id"
 
     goto :goto_0
 
-    .line 351
+    .line 352
     :cond_3
     const-string v0, "ji"
 
@@ -762,7 +763,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 353
+    .line 354
     const-string/jumbo p0, "yi"
 
     goto :goto_0
@@ -772,31 +773,31 @@
     .locals 4
 
     .prologue
-    .line 321
+    .line 322
     sget-object v3, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 322
+    .line 323
     :try_start_0
     sget-object v1, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
-    .line 323
+    .line 324
     .local v1, locale:Ljava/util/Locale;
     monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 324
+    .line 325
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 325
+    .line 326
     .local v0, buffer:Ljava/lang/StringBuilder;
     invoke-static {v0, v1}, Landroid/webkit/WebSettingsClassic;->addLocaleToHttpAcceptLanguage(Ljava/lang/StringBuilder;Ljava/util/Locale;)V
 
-    .line 327
+    .line 328
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     invoke-virtual {v2, v1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
@@ -805,25 +806,25 @@
 
     if-nez v2, :cond_1
 
-    .line 328
+    .line 329
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
     if-lez v2, :cond_0
 
-    .line 329
+    .line 330
     const-string v2, ", "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 331
+    .line 332
     :cond_0
     const-string v2, "en-US"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 334
+    .line 335
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -831,7 +832,7 @@
 
     return-object v2
 
-    .line 323
+    .line 324
     .end local v0           #buffer:Ljava/lang/StringBuilder;
     .end local v1           #locale:Ljava/util/Locale;
     :catchall_0
@@ -846,332 +847,284 @@
 .end method
 
 .method private declared-synchronized getCurrentUserAgent()Ljava/lang/String;
-    .locals 13
+    .locals 11
 
     .prologue
-    .line 377
+    .line 378
     monitor-enter p0
 
     :try_start_0
-    sget-object v11, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
+    sget-object v10, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
 
-    monitor-enter v11
+    monitor-enter v10
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 378
-    :try_start_1
-    sget-object v6, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
-
     .line 379
-    .local v6, locale:Ljava/util/Locale;
-    monitor-exit v11
+    :try_start_1
+    sget-object v5, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
+
+    .line 380
+    .local v5, locale:Ljava/util/Locale;
+    monitor-exit v10
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 380
+    .line 381
     :try_start_2
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 382
-    .local v1, buffer:Ljava/lang/StringBuffer;
-    sget-object v9, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
-
     .line 383
-    .local v9, version:Ljava/lang/String;
-    invoke-virtual {v9}, Ljava/lang/String;->length()I
-
-    move-result v10
-
-    if-lez v10, :cond_5
+    .local v1, buffer:Ljava/lang/StringBuffer;
+    sget-object v8, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
     .line 384
-    const/4 v10, 0x0
-
-    invoke-virtual {v9, v10}, Ljava/lang/String;->charAt(I)C
-
-    move-result v10
-
-    invoke-static {v10}, Ljava/lang/Character;->isDigit(C)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_4
-
-    .line 386
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 396
-    :goto_0
-    const-string v10, "; "
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 397
-    invoke-virtual {v6}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 398
-    .local v5, language:Ljava/lang/String;
-    if-eqz v5, :cond_6
-
-    .line 399
-    invoke-static {v5}, Landroid/webkit/WebSettingsClassic;->convertObsoleteLanguageCodeToNew(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 400
-    invoke-virtual {v6}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 401
-    .local v3, country:Ljava/lang/String;
-    if-eqz v3, :cond_0
-
-    .line 402
-    const-string v10, "-"
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 403
-    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 409
-    .end local v3           #country:Ljava/lang/String;
-    :cond_0
-    :goto_1
-    const-string v10, ";"
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 411
-    const-string v10, "REL"
-
-    sget-object v11, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
-
-    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_1
-
-    .line 412
-    sget-object v8, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    .line 413
-    .local v8, model:Ljava/lang/String;
+    .local v8, version:Ljava/lang/String;
     invoke-virtual {v8}, Ljava/lang/String;->length()I
 
-    move-result v10
+    move-result v9
 
-    if-lez v10, :cond_1
+    if-lez v9, :cond_4
 
-    .line 414
-    const-string v10, " "
+    .line 385
+    const/4 v9, 0x0
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v8, v9}, Ljava/lang/String;->charAt(I)C
 
-    .line 415
+    move-result v9
+
+    invoke-static {v9}, Ljava/lang/Character;->isDigit(C)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3
+
+    .line 387
     invoke-virtual {v1, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 418
-    .end local v8           #model:Ljava/lang/String;
-    :cond_1
-    sget-object v4, Landroid/os/Build;->ID:Ljava/lang/String;
+    .line 397
+    :goto_0
+    const-string v9, "; "
 
-    .line 419
-    .local v4, id:Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    move-result v10
+    .line 398
+    invoke-virtual {v5}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
-    if-lez v10, :cond_2
+    move-result-object v4
 
-    .line 420
-    const-string v10, " Build/"
+    .line 399
+    .local v4, language:Ljava/lang/String;
+    if-eqz v4, :cond_5
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    .line 400
+    invoke-static {v4}, Landroid/webkit/WebSettingsClassic;->convertObsoleteLanguageCodeToNew(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 421
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    move-result-object v9
 
-    .line 423
-    :cond_2
-    const-string/jumbo v10, "ro.cm.version"
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-static {v10}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    .line 401
+    invoke-virtual {v5}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 402
+    .local v2, country:Ljava/lang/String;
+    if-eqz v2, :cond_0
+
+    .line 403
+    const-string v9, "-"
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 404
+    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 410
+    .end local v2           #country:Ljava/lang/String;
+    :cond_0
+    :goto_1
+    const-string v9, ";"
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 412
+    const-string v9, "REL"
+
+    sget-object v10, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
+
+    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    .line 413
+    sget-object v7, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    .line 414
+    .local v7, model:Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    if-lez v9, :cond_1
+
+    .line 415
+    const-string v9, " "
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 416
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 419
+    .end local v7           #model:Ljava/lang/String;
+    :cond_1
+    sget-object v3, Landroid/os/Build;->ID:Ljava/lang/String;
+
+    .line 420
+    .local v3, id:Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    if-lez v9, :cond_2
+
+    .line 421
+    const-string v9, " Build/"
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    .line 422
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
     .line 424
-    .local v2, cmversion:Ljava/lang/String;
-    if-eqz v2, :cond_3
+    :cond_2
+    iget-object v9, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result v10
+    move-result-object v9
 
-    if-lez v10, :cond_3
+    const v10, 0x104033c
 
-    .line 425
-    new-instance v10, Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v9
 
-    const-string v11, "; CyanogenMod-"
+    invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, "(.+?)-.*"
-
-    const-string v12, "$1"
-
-    invoke-virtual {v2, v11, v12}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    move-result-object v6
 
     .line 426
-    :cond_3
-    iget-object v10, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
+    .local v6, mobile:Ljava/lang/String;
+    iget-object v9, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v10
+    move-result-object v9
 
-    const v11, 0x1040363
+    const v10, 0x104033b
 
-    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
+    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 428
-    .local v7, mobile:Ljava/lang/String;
-    iget-object v10, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v10}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    const v11, 0x1040362
-
-    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 430
+    .line 428
     .local v0, base:Ljava/lang/String;
-    const/4 v10, 0x2
+    const/4 v9, 0x2
 
-    new-array v10, v10, [Ljava/lang/Object;
+    new-array v9, v9, [Ljava/lang/Object;
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    aput-object v1, v10, v11
+    aput-object v1, v9, v10
 
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
-    aput-object v7, v10, v11
+    aput-object v6, v9, v10
 
-    invoke-static {v0, v10}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    move-result-object v10
+    move-result-object v9
 
     monitor-exit p0
 
-    return-object v10
+    return-object v9
 
-    .line 379
+    .line 380
     .end local v0           #base:Ljava/lang/String;
     .end local v1           #buffer:Ljava/lang/StringBuffer;
-    .end local v2           #cmversion:Ljava/lang/String;
-    .end local v4           #id:Ljava/lang/String;
-    .end local v5           #language:Ljava/lang/String;
-    .end local v6           #locale:Ljava/util/Locale;
-    .end local v7           #mobile:Ljava/lang/String;
-    .end local v9           #version:Ljava/lang/String;
+    .end local v3           #id:Ljava/lang/String;
+    .end local v4           #language:Ljava/lang/String;
+    .end local v5           #locale:Ljava/util/Locale;
+    .end local v6           #mobile:Ljava/lang/String;
+    .end local v8           #version:Ljava/lang/String;
     :catchall_0
-    move-exception v10
+    move-exception v9
 
     :try_start_3
-    monitor-exit v11
+    monitor-exit v10
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
-    throw v10
+    throw v9
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 377
+    .line 378
     :catchall_1
-    move-exception v10
+    move-exception v9
 
     monitor-exit p0
 
-    throw v10
+    throw v9
 
-    .line 390
+    .line 391
     .restart local v1       #buffer:Ljava/lang/StringBuffer;
-    .restart local v6       #locale:Ljava/util/Locale;
-    .restart local v9       #version:Ljava/lang/String;
-    :cond_4
+    .restart local v5       #locale:Ljava/util/Locale;
+    .restart local v8       #version:Ljava/lang/String;
+    :cond_3
     :try_start_5
-    const-string v10, "4.0.4"
+    const-string v9, "4.0.4"
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     goto/16 :goto_0
 
-    .line 394
+    .line 395
+    :cond_4
+    const-string v9, "1.0"
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+
+    goto/16 :goto_0
+
+    .line 408
+    .restart local v4       #language:Ljava/lang/String;
     :cond_5
-    const-string v10, "1.0"
+    const-string v9, "en"
 
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    goto/16 :goto_0
-
-    .line 407
-    .restart local v5       #language:Ljava/lang/String;
-    :cond_6
-    const-string v10, "en"
-
-    invoke-virtual {v1, v10}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    goto/16 :goto_1
+    goto :goto_1
 .end method
 
 .method private native nativeIsWebGLAvailable()Z
@@ -1189,25 +1142,25 @@
 
     const/4 v0, 0x1
 
-    .line 1749
+    .line 1744
     if-ge p1, v0, :cond_1
 
     move p1, v0
 
-    .line 1754
+    .line 1749
     .end local p1
     :cond_0
     :goto_0
     return p1
 
-    .line 1751
+    .line 1746
     .restart local p1
     :cond_1
     if-le p1, v1, :cond_0
 
     move p1, v1
 
-    .line 1752
+    .line 1747
     goto :goto_0
 .end method
 
@@ -1215,7 +1168,7 @@
     .locals 3
 
     .prologue
-    .line 1760
+    .line 1755
     monitor-enter p0
 
     :try_start_0
@@ -1223,7 +1176,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1761
+    .line 1756
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
     const/4 v1, 0x0
@@ -1243,13 +1196,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1764
+    .line 1759
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1760
+    .line 1755
     :catchall_0
     move-exception v0
 
@@ -1262,12 +1215,12 @@
     .locals 4
 
     .prologue
-    .line 1106
+    .line 1121
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mBlockNetworkLoads:Z
 
     if-nez v0, :cond_0
 
-    .line 1107
+    .line 1122
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.INTERNET"
@@ -1286,7 +1239,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1110
+    .line 1125
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string v1, "Permission denied - application missing INTERNET permission"
@@ -1295,7 +1248,7 @@
 
     throw v0
 
-    .line 1115
+    .line 1130
     :cond_0
     return-void
 .end method
@@ -1306,7 +1259,7 @@
     .locals 1
 
     .prologue
-    .line 563
+    .line 561
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mEnableSmoothTransition:Z
 
     return v0
@@ -1316,7 +1269,7 @@
     .locals 1
 
     .prologue
-    .line 1628
+    .line 1643
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mForceUserScalable:Z
 
     return v0
@@ -1326,7 +1279,7 @@
     .locals 3
 
     .prologue
-    .line 1508
+    .line 1523
     monitor-enter p0
 
     :try_start_0
@@ -1336,13 +1289,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1509
+    .line 1524
     :try_start_1
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 1510
+    .line 1525
     .local v0, currentLocale:Ljava/util/Locale;
     sget-object v1, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
@@ -1352,23 +1305,23 @@
 
     if-nez v1, :cond_0
 
-    .line 1511
+    .line 1526
     sput-object v0, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
-    .line 1512
+    .line 1527
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentAcceptLanguage()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mAcceptLanguage:Ljava/lang/String;
 
-    .line 1514
+    .line 1529
     :cond_0
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1515
+    .line 1530
     :try_start_2
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mAcceptLanguage:Ljava/lang/String;
     :try_end_2
@@ -1378,7 +1331,7 @@
 
     return-object v1
 
-    .line 1514
+    .line 1529
     .end local v0           #currentLocale:Ljava/util/Locale;
     :catchall_0
     move-exception v1
@@ -1393,7 +1346,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 1508
+    .line 1523
     :catchall_1
     move-exception v1
 
@@ -1406,7 +1359,7 @@
     .locals 1
 
     .prologue
-    .line 531
+    .line 529
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mAllowContentAccess:Z
 
     return v0
@@ -1416,7 +1369,7 @@
     .locals 1
 
     .prologue
-    .line 515
+    .line 513
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mAllowFileAccess:Z
 
     return v0
@@ -1426,7 +1379,7 @@
     .locals 1
 
     .prologue
-    .line 1386
+    .line 1401
     monitor-enter p0
 
     :try_start_0
@@ -1450,7 +1403,7 @@
     .locals 1
 
     .prologue
-    .line 1378
+    .line 1393
     monitor-enter p0
 
     :try_start_0
@@ -1474,7 +1427,7 @@
     .locals 1
 
     .prologue
-    .line 1681
+    .line 1671
     monitor-enter p0
 
     :try_start_0
@@ -1498,7 +1451,7 @@
     .locals 1
 
     .prologue
-    .line 1692
+    .line 1682
     monitor-enter p0
 
     :try_start_0
@@ -1522,7 +1475,7 @@
     .locals 1
 
     .prologue
-    .line 1081
+    .line 1096
     monitor-enter p0
 
     :try_start_0
@@ -1546,7 +1499,7 @@
     .locals 1
 
     .prologue
-    .line 1101
+    .line 1116
     monitor-enter p0
 
     :try_start_0
@@ -1570,7 +1523,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 480
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mBuiltInZoomControls:Z
 
     return v0
@@ -1580,7 +1533,7 @@
     .locals 1
 
     .prologue
-    .line 1565
+    .line 1580
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mOverrideCacheMode:I
 
     return v0
@@ -1590,7 +1543,7 @@
     .locals 1
 
     .prologue
-    .line 931
+    .line 946
     monitor-enter p0
 
     :try_start_0
@@ -1614,7 +1567,7 @@
     .locals 1
 
     .prologue
-    .line 1316
+    .line 1331
     monitor-enter p0
 
     :try_start_0
@@ -1638,7 +1591,7 @@
     .locals 1
 
     .prologue
-    .line 1308
+    .line 1323
     monitor-enter p0
 
     :try_start_0
@@ -1662,7 +1615,7 @@
     .locals 1
 
     .prologue
-    .line 1030
+    .line 1045
     monitor-enter p0
 
     :try_start_0
@@ -1686,7 +1639,7 @@
     .locals 1
 
     .prologue
-    .line 1010
+    .line 1025
     monitor-enter p0
 
     :try_start_0
@@ -1710,7 +1663,7 @@
     .locals 1
 
     .prologue
-    .line 1451
+    .line 1466
     monitor-enter p0
 
     :try_start_0
@@ -1734,7 +1687,7 @@
     .locals 1
 
     .prologue
-    .line 702
+    .line 717
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mDefaultZoom:Landroid/webkit/WebSettings$ZoomDensity;
 
     return-object v0
@@ -1744,7 +1697,7 @@
     .locals 1
 
     .prologue
-    .line 499
+    .line 497
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mDisplayZoomControls:Z
 
     return v0
@@ -1754,7 +1707,7 @@
     .locals 1
 
     .prologue
-    .line 1300
+    .line 1315
     monitor-enter p0
 
     :try_start_0
@@ -1778,7 +1731,7 @@
     .locals 1
 
     .prologue
-    .line 1696
+    .line 1686
     sget v0, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
     return v0
@@ -1788,7 +1741,7 @@
     .locals 1
 
     .prologue
-    .line 683
+    .line 698
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mDoubleTapZoom:I
 
     return v0
@@ -1798,7 +1751,7 @@
     .locals 1
 
     .prologue
-    .line 950
+    .line 965
     monitor-enter p0
 
     :try_start_0
@@ -1822,7 +1775,7 @@
     .locals 1
 
     .prologue
-    .line 874
+    .line 889
     monitor-enter p0
 
     :try_start_0
@@ -1846,7 +1799,7 @@
     .locals 1
 
     .prologue
-    .line 1165
+    .line 1180
     monitor-enter p0
 
     :try_start_0
@@ -1870,7 +1823,7 @@
     .locals 1
 
     .prologue
-    .line 1432
+    .line 1447
     monitor-enter p0
 
     :try_start_0
@@ -1894,7 +1847,7 @@
     .locals 1
 
     .prologue
-    .line 1370
+    .line 1385
     monitor-enter p0
 
     :try_start_0
@@ -1918,7 +1871,7 @@
     .locals 1
 
     .prologue
-    .line 836
+    .line 851
     monitor-enter p0
 
     :try_start_0
@@ -1942,7 +1895,7 @@
     .locals 1
 
     .prologue
-    .line 718
+    .line 733
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mLightTouchEnabled:Z
 
     return v0
@@ -1952,7 +1905,7 @@
     .locals 1
 
     .prologue
-    .line 547
+    .line 545
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mLoadWithOverviewMode:Z
 
     return v0
@@ -1962,7 +1915,7 @@
     .locals 1
 
     .prologue
-    .line 1062
+    .line 1077
     monitor-enter p0
 
     :try_start_0
@@ -1986,7 +1939,7 @@
     .locals 1
 
     .prologue
-    .line 970
+    .line 985
     monitor-enter p0
 
     :try_start_0
@@ -2010,7 +1963,7 @@
     .locals 1
 
     .prologue
-    .line 990
+    .line 1005
     monitor-enter p0
 
     :try_start_0
@@ -2036,7 +1989,7 @@
     .end annotation
 
     .prologue
-    .line 448
+    .line 446
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mNavDump:Z
 
     return v0
@@ -2046,7 +1999,7 @@
     .locals 1
 
     .prologue
-    .line 1534
+    .line 1549
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mNeedInitialFocus:Z
 
     return v0
@@ -2083,7 +2036,7 @@
     .locals 1
 
     .prologue
-    .line 1403
+    .line 1418
     monitor-enter p0
 
     :try_start_0
@@ -2109,7 +2062,7 @@
     .end annotation
 
     .prologue
-    .line 1395
+    .line 1410
     monitor-enter p0
 
     :try_start_0
@@ -2147,7 +2100,7 @@
     .end annotation
 
     .prologue
-    .line 1412
+    .line 1427
     monitor-enter p0
 
     :try_start_0
@@ -2172,7 +2125,7 @@
     .parameter "key"
 
     .prologue
-    .line 1715
+    .line 1710
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebViewClassic;->nativeGetProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -2186,7 +2139,7 @@
     .locals 1
 
     .prologue
-    .line 893
+    .line 908
     monitor-enter p0
 
     :try_start_0
@@ -2210,7 +2163,7 @@
     .locals 1
 
     .prologue
-    .line 597
+    .line 595
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mSaveFormData:Z
 
     if-eqz v0, :cond_0
@@ -2234,7 +2187,7 @@
     .locals 1
 
     .prologue
-    .line 613
+    .line 611
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mSavePassword:Z
 
     return v0
@@ -2244,7 +2197,7 @@
     .locals 1
 
     .prologue
-    .line 912
+    .line 927
     monitor-enter p0
 
     :try_start_0
@@ -2268,7 +2221,7 @@
     .locals 1
 
     .prologue
-    .line 1183
+    .line 1198
     monitor-enter p0
 
     :try_start_0
@@ -2292,7 +2245,7 @@
     .locals 1
 
     .prologue
-    .line 855
+    .line 870
     monitor-enter p0
 
     :try_start_0
@@ -2316,16 +2269,16 @@
     .locals 9
 
     .prologue
-    .line 652
+    .line 650
     monitor-enter p0
 
     const/4 v1, 0x0
 
-    .line 653
+    .line 651
     .local v1, closestSize:Landroid/webkit/WebSettings$TextSize;
     const v6, 0x7fffffff
 
-    .line 654
+    .line 652
     .local v6, smallestDelta:I
     :try_start_0
     invoke-static {}, Landroid/webkit/WebSettings$TextSize;->values()[Landroid/webkit/WebSettings$TextSize;
@@ -2344,7 +2297,7 @@
 
     aget-object v5, v0, v3
 
-    .line 655
+    .line 653
     .local v5, size:Landroid/webkit/WebSettings$TextSize;
     iget v7, p0, Landroid/webkit/WebSettingsClassic;->mTextSize:I
 
@@ -2358,11 +2311,11 @@
 
     move-result v2
 
-    .line 656
+    .line 654
     .local v2, delta:I
     if-nez v2, :cond_0
 
-    .line 664
+    .line 662
     .end local v1           #closestSize:Landroid/webkit/WebSettings$TextSize;
     .end local v2           #delta:I
     .end local v5           #size:Landroid/webkit/WebSettings$TextSize;
@@ -2371,26 +2324,26 @@
 
     return-object v5
 
-    .line 659
+    .line 657
     .restart local v1       #closestSize:Landroid/webkit/WebSettings$TextSize;
     .restart local v2       #delta:I
     .restart local v5       #size:Landroid/webkit/WebSettings$TextSize;
     :cond_0
     if-ge v2, v6, :cond_1
 
-    .line 660
+    .line 658
     move v6, v2
 
-    .line 661
+    .line 659
     move-object v1, v5
 
-    .line 654
+    .line 652
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 664
+    .line 662
     .end local v2           #delta:I
     .end local v5           #size:Landroid/webkit/WebSettings$TextSize;
     :cond_2
@@ -2411,7 +2364,7 @@
 
     goto :goto_2
 
-    .line 652
+    .line 650
     .end local v0           #arr$:[Landroid/webkit/WebSettings$TextSize;
     .end local v3           #i$:I
     .end local v4           #len$:I
@@ -2427,7 +2380,7 @@
     .locals 1
 
     .prologue
-    .line 636
+    .line 634
     monitor-enter p0
 
     :try_start_0
@@ -2453,7 +2406,7 @@
     .end annotation
 
     .prologue
-    .line 736
+    .line 751
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -2467,7 +2420,7 @@
     .locals 1
 
     .prologue
-    .line 1598
+    .line 1613
     invoke-virtual {p0}, Landroid/webkit/WebSettingsClassic;->getUseWideViewPort()Z
 
     move-result v0
@@ -2481,7 +2434,7 @@
     .end annotation
 
     .prologue
-    .line 581
+    .line 579
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mUseWebViewBackgroundForOverscroll:Z
 
     return v0
@@ -2491,7 +2444,7 @@
     .locals 1
 
     .prologue
-    .line 796
+    .line 811
     monitor-enter p0
 
     :try_start_0
@@ -2517,7 +2470,7 @@
     .end annotation
 
     .prologue
-    .line 770
+    .line 785
     monitor-enter p0
 
     :try_start_0
@@ -2533,16 +2486,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 771
+    .line 786
     const/4 v0, 0x1
 
-    .line 777
+    .line 792
     :goto_0
     monitor-exit p0
 
     return v0
 
-    .line 772
+    .line 787
     :cond_0
     :try_start_1
     const-string v0, "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16"
@@ -2555,12 +2508,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 773
+    .line 788
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 774
+    .line 789
     :cond_1
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mUseDefaultUserAgent:Z
     :try_end_1
@@ -2568,18 +2521,18 @@
 
     if-eqz v0, :cond_2
 
-    .line 775
+    .line 790
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 777
+    .line 792
     :cond_2
     const/4 v0, -0x1
 
     goto :goto_0
 
-    .line 770
+    .line 785
     :catchall_0
     move-exception v0
 
@@ -2592,7 +2545,7 @@
     .locals 4
 
     .prologue
-    .line 1484
+    .line 1499
     monitor-enter p0
 
     :try_start_0
@@ -2620,23 +2573,23 @@
 
     if-nez v2, :cond_1
 
-    .line 1487
+    .line 1502
     :cond_0
     iget-object v2, p0, Landroid/webkit/WebSettingsClassic;->mUserAgent:Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1503
+    .line 1518
     :goto_0
     monitor-exit p0
 
     return-object v2
 
-    .line 1490
+    .line 1505
     :cond_1
     const/4 v1, 0x0
 
-    .line 1491
+    .line 1506
     .local v1, doPostSync:Z
     :try_start_1
     sget-object v3, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
@@ -2645,13 +2598,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 1492
+    .line 1507
     :try_start_2
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 1493
+    .line 1508
     .local v0, currentLocale:Ljava/util/Locale;
     sget-object v2, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
@@ -2661,40 +2614,40 @@
 
     if-nez v2, :cond_2
 
-    .line 1494
+    .line 1509
     sput-object v0, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
-    .line 1495
+    .line 1510
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentUserAgent()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/webkit/WebSettingsClassic;->mUserAgent:Ljava/lang/String;
 
-    .line 1496
+    .line 1511
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentAcceptLanguage()Ljava/lang/String;
 
     move-result-object v2
 
     iput-object v2, p0, Landroid/webkit/WebSettingsClassic;->mAcceptLanguage:Ljava/lang/String;
 
-    .line 1497
+    .line 1512
     const/4 v1, 0x1
 
-    .line 1499
+    .line 1514
     :cond_2
     monitor-exit v3
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1500
+    .line 1515
     if-eqz v1, :cond_3
 
-    .line 1501
+    .line 1516
     :try_start_3
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
 
-    .line 1503
+    .line 1518
     :cond_3
     iget-object v2, p0, Landroid/webkit/WebSettingsClassic;->mUserAgent:Ljava/lang/String;
     :try_end_3
@@ -2702,7 +2655,7 @@
 
     goto :goto_0
 
-    .line 1499
+    .line 1514
     .end local v0           #currentLocale:Ljava/util/Locale;
     :catchall_0
     move-exception v2
@@ -2717,7 +2670,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 1484
+    .line 1499
     .end local v1           #doPostSync:Z
     :catchall_1
     move-exception v2
@@ -2731,7 +2684,7 @@
     .locals 2
 
     .prologue
-    .line 1519
+    .line 1534
     invoke-virtual {p0}, Landroid/webkit/WebSettingsClassic;->getLayoutAlgorithm()Landroid/webkit/WebSettings$LayoutAlgorithm;
 
     move-result-object v0
@@ -2755,43 +2708,17 @@
     .locals 1
 
     .prologue
-    .line 1605
+    .line 1620
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mPrivateBrowsingEnabled:Z
 
     return v0
-.end method
-
-.method public declared-synchronized isWebGLAvailable()Z
-    .locals 1
-
-    .prologue
-    .line 1635
-    monitor-enter p0
-
-    :try_start_0
-    invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->nativeIsWebGLAvailable()Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method declared-synchronized onDestroyed()V
     .locals 0
 
     .prologue
-    .line 1745
+    .line 1740
     monitor-enter p0
 
     monitor-exit p0
@@ -2804,10 +2731,10 @@
     .parameter "allow"
 
     .prologue
-    .line 523
+    .line 521
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mAllowContentAccess:Z
 
-    .line 524
+    .line 522
     return-void
 .end method
 
@@ -2816,10 +2743,10 @@
     .parameter "allow"
 
     .prologue
-    .line 507
+    .line 505
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mAllowFileAccess:Z
 
-    .line 508
+    .line 506
     return-void
 .end method
 
@@ -2828,7 +2755,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1144
+    .line 1159
     monitor-enter p0
 
     :try_start_0
@@ -2836,21 +2763,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1145
+    .line 1160
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mAllowFileAccessFromFileURLs:Z
 
-    .line 1146
+    .line 1161
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1148
+    .line 1163
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1144
+    .line 1159
     :catchall_0
     move-exception v0
 
@@ -2864,7 +2791,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1133
+    .line 1148
     monitor-enter p0
 
     :try_start_0
@@ -2872,21 +2799,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1134
+    .line 1149
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mAllowUniversalAccessFromFileURLs:Z
 
-    .line 1135
+    .line 1150
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1137
+    .line 1152
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1133
+    .line 1148
     :catchall_0
     move-exception v0
 
@@ -2900,7 +2827,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1243
+    .line 1258
     monitor-enter p0
 
     :try_start_0
@@ -2908,21 +2835,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1244
+    .line 1259
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mAppCacheEnabled:Z
 
-    .line 1245
+    .line 1260
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1247
+    .line 1262
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1243
+    .line 1258
     :catchall_0
     move-exception v0
 
@@ -2936,7 +2863,7 @@
     .parameter "appCacheMaxSize"
 
     .prologue
-    .line 1267
+    .line 1282
     monitor-enter p0
 
     :try_start_0
@@ -2946,21 +2873,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 1268
+    .line 1283
     iput-wide p1, p0, Landroid/webkit/WebSettingsClassic;->mAppCacheMaxSize:J
 
-    .line 1269
+    .line 1284
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1271
+    .line 1286
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1267
+    .line 1282
     :catchall_0
     move-exception v0
 
@@ -2974,7 +2901,7 @@
     .parameter "path"
 
     .prologue
-    .line 1256
+    .line 1271
     monitor-enter p0
 
     :try_start_0
@@ -2990,21 +2917,21 @@
 
     if-nez v0, :cond_0
 
-    .line 1257
+    .line 1272
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mAppCachePath:Ljava/lang/String;
 
-    .line 1258
+    .line 1273
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1260
+    .line 1275
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1256
+    .line 1271
     :catchall_0
     move-exception v0
 
@@ -3018,7 +2945,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 1673
+    .line 1663
     monitor-enter p0
 
     if-eqz p1, :cond_1
@@ -3030,28 +2957,28 @@
 
     const/4 v0, 0x1
 
-    .line 1674
+    .line 1664
     .local v0, autoFillEnabled:Z
     :goto_0
     iget-boolean v1, p0, Landroid/webkit/WebSettingsClassic;->mAutoFillEnabled:Z
 
     if-eq v1, v0, :cond_0
 
-    .line 1675
+    .line 1665
     iput-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mAutoFillEnabled:Z
 
-    .line 1676
+    .line 1666
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1678
+    .line 1668
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1673
+    .line 1663
     .end local v0           #autoFillEnabled:Z
     :cond_1
     const/4 v0, 0x0
@@ -3071,7 +2998,7 @@
     .parameter "profile"
 
     .prologue
-    .line 1685
+    .line 1675
     monitor-enter p0
 
     :try_start_0
@@ -3079,21 +3006,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1686
+    .line 1676
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mAutoFillProfile:Landroid/webkit/WebSettingsClassic$AutoFillProfile;
 
-    .line 1687
+    .line 1677
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1689
+    .line 1679
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1685
+    .line 1675
     :catchall_0
     move-exception v0
 
@@ -3107,7 +3034,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1070
+    .line 1085
     monitor-enter p0
 
     :try_start_0
@@ -3115,21 +3042,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1071
+    .line 1086
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mBlockNetworkImage:Z
 
-    .line 1072
+    .line 1087
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1074
+    .line 1089
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1070
+    .line 1085
     :catchall_0
     move-exception v0
 
@@ -3143,7 +3070,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1089
+    .line 1104
     monitor-enter p0
 
     :try_start_0
@@ -3151,24 +3078,24 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1090
+    .line 1105
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mBlockNetworkLoads:Z
 
-    .line 1091
+    .line 1106
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->verifyNetworkAccess()V
 
-    .line 1092
+    .line 1107
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1094
+    .line 1109
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1089
+    .line 1104
     :catchall_0
     move-exception v0
 
@@ -3182,17 +3109,17 @@
     .parameter "enabled"
 
     .prologue
-    .line 473
+    .line 471
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mBuiltInZoomControls:Z
 
-    .line 474
+    .line 472
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebViewClassic;->updateMultiTouchSupport(Landroid/content/Context;)V
 
-    .line 475
+    .line 473
     return-void
 .end method
 
@@ -3201,18 +3128,18 @@
     .parameter "mode"
 
     .prologue
-    .line 1554
+    .line 1569
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mOverrideCacheMode:I
 
     if-eq p1, v0, :cond_0
 
-    .line 1555
+    .line 1570
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mOverrideCacheMode:I
 
-    .line 1556
+    .line 1571
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
 
-    .line 1558
+    .line 1573
     :cond_0
     return-void
 .end method
@@ -3222,7 +3149,7 @@
     .parameter "font"
 
     .prologue
-    .line 920
+    .line 935
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -3236,21 +3163,21 @@
 
     if-nez v0, :cond_0
 
-    .line 921
+    .line 936
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mCursiveFontFamily:Ljava/lang/String;
 
-    .line 922
+    .line 937
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 924
+    .line 939
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 920
+    .line 935
     :catchall_0
     move-exception v0
 
@@ -3264,7 +3191,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1278
+    .line 1293
     monitor-enter p0
 
     :try_start_0
@@ -3272,21 +3199,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1279
+    .line 1294
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mDatabaseEnabled:Z
 
-    .line 1280
+    .line 1295
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1282
+    .line 1297
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1278
+    .line 1293
     :catchall_0
     move-exception v0
 
@@ -3300,7 +3227,7 @@
     .parameter "databasePath"
 
     .prologue
-    .line 1219
+    .line 1234
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -3310,26 +3237,26 @@
 
     if-nez v0, :cond_0
 
-    .line 1220
+    .line 1235
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mDatabasePath:Ljava/lang/String;
 
-    .line 1221
+    .line 1236
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mDatabasePathHasBeenSet:Z
 
-    .line 1222
+    .line 1237
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1224
+    .line 1239
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1219
+    .line 1234
     :catchall_0
     move-exception v0
 
@@ -3343,7 +3270,7 @@
     .parameter "size"
 
     .prologue
-    .line 1018
+    .line 1033
     monitor-enter p0
 
     :try_start_0
@@ -3351,26 +3278,26 @@
 
     move-result p1
 
-    .line 1019
+    .line 1034
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mDefaultFixedFontSize:I
 
     if-eq v0, p1, :cond_0
 
-    .line 1020
+    .line 1035
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultFixedFontSize:I
 
-    .line 1021
+    .line 1036
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1023
+    .line 1038
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1018
+    .line 1033
     :catchall_0
     move-exception v0
 
@@ -3384,7 +3311,7 @@
     .parameter "size"
 
     .prologue
-    .line 998
+    .line 1013
     monitor-enter p0
 
     :try_start_0
@@ -3392,26 +3319,26 @@
 
     move-result p1
 
-    .line 999
+    .line 1014
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mDefaultFontSize:I
 
     if-eq v0, p1, :cond_0
 
-    .line 1000
+    .line 1015
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultFontSize:I
 
-    .line 1001
+    .line 1016
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1003
+    .line 1018
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 998
+    .line 1013
     :catchall_0
     move-exception v0
 
@@ -3425,7 +3352,7 @@
     .parameter "encoding"
 
     .prologue
-    .line 1440
+    .line 1455
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -3439,21 +3366,21 @@
 
     if-nez v0, :cond_0
 
-    .line 1441
+    .line 1456
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultTextEncoding:Ljava/lang/String;
 
-    .line 1442
+    .line 1457
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1444
+    .line 1459
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1440
+    .line 1455
     :catchall_0
     move-exception v0
 
@@ -3467,22 +3394,22 @@
     .parameter "zoom"
 
     .prologue
-    .line 691
+    .line 706
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mDefaultZoom:Landroid/webkit/WebSettings$ZoomDensity;
 
     if-eq v0, p1, :cond_0
 
-    .line 692
+    .line 707
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mDefaultZoom:Landroid/webkit/WebSettings$ZoomDensity;
 
-    .line 693
+    .line 708
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget v1, p1, Landroid/webkit/WebSettings$ZoomDensity;->value:I
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebViewClassic;->adjustDefaultZoomDensity(I)V
 
-    .line 695
+    .line 710
     :cond_0
     return-void
 .end method
@@ -3492,17 +3419,17 @@
     .parameter "enabled"
 
     .prologue
-    .line 490
+    .line 488
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mDisplayZoomControls:Z
 
-    .line 491
+    .line 489
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebViewClassic;->updateMultiTouchSupport(Landroid/content/Context;)V
 
-    .line 492
+    .line 490
     return-void
 .end method
 
@@ -3511,7 +3438,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1289
+    .line 1304
     monitor-enter p0
 
     :try_start_0
@@ -3519,21 +3446,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1290
+    .line 1305
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mDomStorageEnabled:Z
 
-    .line 1291
+    .line 1306
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1293
+    .line 1308
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1289
+    .line 1304
     :catchall_0
     move-exception v0
 
@@ -3547,15 +3474,15 @@
     .parameter "count"
 
     .prologue
-    .line 1700
+    .line 1690
     sget v0, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
     if-eq v0, p1, :cond_0
 
-    .line 1701
+    .line 1691
     sput p1, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
-    .line 1703
+    .line 1693
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
     const/4 v1, 0x0
@@ -3569,7 +3496,7 @@
     #calls: Landroid/webkit/WebSettingsClassic$EventHandler;->sendMessage(Landroid/os/Message;)Z
     invoke-static {v0, v1}, Landroid/webkit/WebSettingsClassic$EventHandler;->access$800(Landroid/webkit/WebSettingsClassic$EventHandler;Landroid/os/Message;)Z
 
-    .line 1706
+    .line 1696
     :cond_0
     return-void
 .end method
@@ -3579,20 +3506,20 @@
     .parameter "doubleTapZoom"
 
     .prologue
-    .line 672
+    .line 687
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mDoubleTapZoom:I
 
     if-eq v0, p1, :cond_0
 
-    .line 673
+    .line 688
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mDoubleTapZoom:I
 
-    .line 674
+    .line 689
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebViewClassic;->updateDoubleTapZoom(I)V
 
-    .line 676
+    .line 691
     :cond_0
     return-void
 .end method
@@ -3602,10 +3529,10 @@
     .parameter "enable"
 
     .prologue
-    .line 555
+    .line 553
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mEnableSmoothTransition:Z
 
-    .line 556
+    .line 554
     return-void
 .end method
 
@@ -3614,7 +3541,7 @@
     .parameter "font"
 
     .prologue
-    .line 939
+    .line 954
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -3628,21 +3555,21 @@
 
     if-nez v0, :cond_0
 
-    .line 940
+    .line 955
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mFantasyFontFamily:Ljava/lang/String;
 
-    .line 941
+    .line 956
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 943
+    .line 958
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 939
+    .line 954
     :catchall_0
     move-exception v0
 
@@ -3656,7 +3583,7 @@
     .parameter "font"
 
     .prologue
-    .line 863
+    .line 878
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -3670,21 +3597,21 @@
 
     if-nez v0, :cond_0
 
-    .line 864
+    .line 879
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mFixedFontFamily:Ljava/lang/String;
 
-    .line 865
+    .line 880
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 867
+    .line 882
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 863
+    .line 878
     :catchall_0
     move-exception v0
 
@@ -3698,7 +3625,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1654
+    .line 1651
     monitor-enter p0
 
     :try_start_0
@@ -3706,12 +3633,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1655
+    .line 1652
     monitor-exit p0
 
     return-void
 
-    .line 1654
+    .line 1651
     :catchall_0
     move-exception v0
 
@@ -3725,7 +3652,7 @@
     .parameter "databasePath"
 
     .prologue
-    .line 1231
+    .line 1246
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -3739,21 +3666,21 @@
 
     if-nez v0, :cond_0
 
-    .line 1233
+    .line 1248
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mGeolocationDatabasePath:Ljava/lang/String;
 
-    .line 1234
+    .line 1249
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1236
+    .line 1251
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1231
+    .line 1246
     :catchall_0
     move-exception v0
 
@@ -3767,7 +3694,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1337
+    .line 1352
     monitor-enter p0
 
     :try_start_0
@@ -3775,21 +3702,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1338
+    .line 1353
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mGeolocationEnabled:Z
 
-    .line 1339
+    .line 1354
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1341
+    .line 1356
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1337
+    .line 1352
     :catchall_0
     move-exception v0
 
@@ -3803,7 +3730,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1155
+    .line 1170
     monitor-enter p0
 
     :try_start_0
@@ -3811,21 +3738,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1156
+    .line 1171
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mHardwareAccelSkia:Z
 
-    .line 1157
+    .line 1172
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1159
+    .line 1174
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1155
+    .line 1170
     :catchall_0
     move-exception v0
 
@@ -3839,7 +3766,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1421
+    .line 1436
     monitor-enter p0
 
     :try_start_0
@@ -3847,21 +3774,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1422
+    .line 1437
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mJavaScriptCanOpenWindowsAutomatically:Z
 
-    .line 1423
+    .line 1438
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1425
+    .line 1440
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1421
+    .line 1436
     :catchall_0
     move-exception v0
 
@@ -3875,7 +3802,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1122
+    .line 1137
     monitor-enter p0
 
     :try_start_0
@@ -3883,21 +3810,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1123
+    .line 1138
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mJavaScriptEnabled:Z
 
-    .line 1124
+    .line 1139
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1126
+    .line 1141
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1122
+    .line 1137
     :catchall_0
     move-exception v0
 
@@ -3911,7 +3838,7 @@
     .parameter "l"
 
     .prologue
-    .line 825
+    .line 840
     monitor-enter p0
 
     :try_start_0
@@ -3919,21 +3846,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 826
+    .line 841
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mLayoutAlgorithm:Landroid/webkit/WebSettings$LayoutAlgorithm;
 
-    .line 827
+    .line 842
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 829
+    .line 844
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 825
+    .line 840
     :catchall_0
     move-exception v0
 
@@ -3947,10 +3874,10 @@
     .parameter "enabled"
 
     .prologue
-    .line 710
+    .line 725
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mLightTouchEnabled:Z
 
-    .line 711
+    .line 726
     return-void
 .end method
 
@@ -3959,7 +3886,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1359
+    .line 1374
     monitor-enter p0
 
     :try_start_0
@@ -3967,21 +3894,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1360
+    .line 1375
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mLinkPrefetchEnabled:Z
 
-    .line 1361
+    .line 1376
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1363
+    .line 1378
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1359
+    .line 1374
     :catchall_0
     move-exception v0
 
@@ -3995,10 +3922,10 @@
     .parameter "overview"
 
     .prologue
-    .line 539
+    .line 537
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mLoadWithOverviewMode:Z
 
-    .line 540
+    .line 538
     return-void
 .end method
 
@@ -4007,7 +3934,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1051
+    .line 1066
     monitor-enter p0
 
     :try_start_0
@@ -4015,21 +3942,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1052
+    .line 1067
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mLoadsImagesAutomatically:Z
 
-    .line 1053
+    .line 1068
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1055
+    .line 1070
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1051
+    .line 1066
     :catchall_0
     move-exception v0
 
@@ -4043,20 +3970,20 @@
     .parameter "size"
 
     .prologue
-    .line 1587
+    .line 1602
     iget-wide v0, p0, Landroid/webkit/WebSettingsClassic;->mMaximumDecodedImageSize:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 1588
+    .line 1603
     iput-wide p1, p0, Landroid/webkit/WebSettingsClassic;->mMaximumDecodedImageSize:J
 
-    .line 1589
+    .line 1604
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
 
-    .line 1591
+    .line 1606
     :cond_0
     return-void
 .end method
@@ -4066,7 +3993,6 @@
     .parameter "flag"
 
     .prologue
-    .line 1665
     monitor-enter p0
 
     :try_start_0
@@ -4074,21 +4000,17 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1666
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mMediaPreloadEnabled:Z
 
-    .line 1667
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1669
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1665
     :catchall_0
     move-exception v0
 
@@ -4102,7 +4024,7 @@
     .parameter "size"
 
     .prologue
-    .line 958
+    .line 973
     monitor-enter p0
 
     :try_start_0
@@ -4110,26 +4032,26 @@
 
     move-result p1
 
-    .line 959
+    .line 974
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mMinimumFontSize:I
 
     if-eq v0, p1, :cond_0
 
-    .line 960
+    .line 975
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mMinimumFontSize:I
 
-    .line 961
+    .line 976
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 963
+    .line 978
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 958
+    .line 973
     :catchall_0
     move-exception v0
 
@@ -4143,7 +4065,7 @@
     .parameter "size"
 
     .prologue
-    .line 978
+    .line 993
     monitor-enter p0
 
     :try_start_0
@@ -4151,26 +4073,26 @@
 
     move-result p1
 
-    .line 979
+    .line 994
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mMinimumLogicalFontSize:I
 
     if-eq v0, p1, :cond_0
 
-    .line 980
+    .line 995
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mMinimumLogicalFontSize:I
 
-    .line 981
+    .line 996
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 983
+    .line 998
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 978
+    .line 993
     :catchall_0
     move-exception v0
 
@@ -4186,10 +4108,10 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 437
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mNavDump:Z
 
-    .line 440
+    .line 438
     return-void
 .end method
 
@@ -4198,15 +4120,15 @@
     .parameter "flag"
 
     .prologue
-    .line 1527
+    .line 1542
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mNeedInitialFocus:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 1528
+    .line 1543
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mNeedInitialFocus:Z
 
-    .line 1530
+    .line 1545
     :cond_0
     return-void
 .end method
@@ -4249,14 +4171,14 @@
     .parameter "size"
 
     .prologue
-    .line 1038
+    .line 1053
     monitor-enter p0
 
     if-gez p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 1039
+    .line 1054
     :cond_0
     const/16 v0, 0x14
 
@@ -4264,28 +4186,28 @@
 
     const/16 p1, 0x14
 
-    .line 1040
+    .line 1055
     :cond_1
     :try_start_0
     iget v0, p0, Landroid/webkit/WebSettingsClassic;->mPageCacheCapacity:I
 
     if-eq v0, p1, :cond_2
 
-    .line 1041
+    .line 1056
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mPageCacheCapacity:I
 
-    .line 1042
+    .line 1057
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1044
+    .line 1059
     :cond_2
     monitor-exit p0
 
     return-void
 
-    .line 1038
+    .line 1053
     :catchall_0
     move-exception v0
 
@@ -4299,7 +4221,7 @@
     .parameter "state"
 
     .prologue
-    .line 1200
+    .line 1215
     monitor-enter p0
 
     :try_start_0
@@ -4307,21 +4229,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1201
+    .line 1216
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mPluginState:Landroid/webkit/WebSettings$PluginState;
 
-    .line 1202
+    .line 1217
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1204
+    .line 1219
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1200
+    .line 1215
     :catchall_0
     move-exception v0
 
@@ -4337,7 +4259,7 @@
     .end annotation
 
     .prologue
-    .line 1192
+    .line 1207
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -4350,12 +4272,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1193
+    .line 1208
     monitor-exit p0
 
     return-void
 
-    .line 1192
+    .line 1207
     :cond_0
     :try_start_1
     sget-object v0, Landroid/webkit/WebSettings$PluginState;->OFF:Landroid/webkit/WebSettings$PluginState;
@@ -4379,7 +4301,7 @@
     .end annotation
 
     .prologue
-    .line 1212
+    .line 1227
     monitor-enter p0
 
     monitor-exit p0
@@ -4392,7 +4314,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1613
+    .line 1628
     monitor-enter p0
 
     :try_start_0
@@ -4400,26 +4322,26 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1614
+    .line 1629
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mPrivateBrowsingEnabled:Z
 
-    .line 1618
+    .line 1633
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mAutoFillEnabled:Z
 
     invoke-virtual {p0, v0}, Landroid/webkit/WebSettingsClassic;->setAutoFillEnabled(Z)V
 
-    .line 1620
+    .line 1635
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1622
+    .line 1637
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1613
+    .line 1628
     :catchall_0
     move-exception v0
 
@@ -4432,9 +4354,12 @@
     .locals 1
     .parameter "key"
     .parameter "value"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 1709
+    .line 1700
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0, p1, p2}, Landroid/webkit/WebViewClassic;->nativeSetProperty(Ljava/lang/String;Ljava/lang/String;)Z
@@ -4443,12 +4368,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1710
+    .line 1705
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->invalidate()V
+    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->contentInvalidateAll()V
 
-    .line 1712
+    .line 1707
     :cond_0
     return-void
 .end method
@@ -4458,7 +4383,7 @@
     .parameter "priority"
 
     .prologue
-    .line 1542
+    .line 1557
     monitor-enter p0
 
     :try_start_0
@@ -4466,10 +4391,10 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1543
+    .line 1558
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mRenderPriority:Landroid/webkit/WebSettings$RenderPriority;
 
-    .line 1544
+    .line 1559
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
     const/4 v1, 0x0
@@ -4485,13 +4410,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1547
+    .line 1562
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1542
+    .line 1557
     :catchall_0
     move-exception v0
 
@@ -4505,7 +4430,7 @@
     .parameter "font"
 
     .prologue
-    .line 882
+    .line 897
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -4519,21 +4444,21 @@
 
     if-nez v0, :cond_0
 
-    .line 883
+    .line 898
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mSansSerifFontFamily:Ljava/lang/String;
 
-    .line 884
+    .line 899
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 886
+    .line 901
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 882
+    .line 897
     :catchall_0
     move-exception v0
 
@@ -4547,10 +4472,10 @@
     .parameter "save"
 
     .prologue
-    .line 589
+    .line 587
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mSaveFormData:Z
 
-    .line 590
+    .line 588
     return-void
 .end method
 
@@ -4559,10 +4484,10 @@
     .parameter "save"
 
     .prologue
-    .line 605
+    .line 603
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mSavePassword:Z
 
-    .line 606
+    .line 604
     return-void
 .end method
 
@@ -4571,7 +4496,7 @@
     .parameter "font"
 
     .prologue
-    .line 901
+    .line 916
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -4585,21 +4510,21 @@
 
     if-nez v0, :cond_0
 
-    .line 902
+    .line 917
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mSerifFontFamily:Ljava/lang/String;
 
-    .line 903
+    .line 918
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 905
+    .line 920
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 901
+    .line 916
     :catchall_0
     move-exception v0
 
@@ -4613,7 +4538,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1173
+    .line 1188
     monitor-enter p0
 
     :try_start_0
@@ -4621,21 +4546,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1174
+    .line 1189
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mShowVisualIndicator:Z
 
-    .line 1175
+    .line 1190
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1177
+    .line 1192
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1173
+    .line 1188
     :catchall_0
     move-exception v0
 
@@ -4649,18 +4574,18 @@
     .parameter "shrink"
 
     .prologue
-    .line 1575
+    .line 1590
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mShrinksStandaloneImagesToFit:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 1576
+    .line 1591
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mShrinksStandaloneImagesToFit:Z
 
-    .line 1577
+    .line 1592
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
 
-    .line 1579
+    .line 1594
     :cond_0
     return-void
 .end method
@@ -4670,7 +4595,7 @@
     .parameter "font"
 
     .prologue
-    .line 844
+    .line 859
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -4684,21 +4609,21 @@
 
     if-nez v0, :cond_0
 
-    .line 845
+    .line 860
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mStandardFontFamily:Ljava/lang/String;
 
-    .line 846
+    .line 861
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 848
+    .line 863
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 844
+    .line 859
     :catchall_0
     move-exception v0
 
@@ -4712,7 +4637,7 @@
     .parameter "support"
 
     .prologue
-    .line 804
+    .line 819
     monitor-enter p0
 
     :try_start_0
@@ -4720,21 +4645,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 805
+    .line 820
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mSupportMultipleWindows:Z
 
-    .line 806
+    .line 821
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 808
+    .line 823
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 804
+    .line 819
     :catchall_0
     move-exception v0
 
@@ -4748,17 +4673,17 @@
     .parameter "support"
 
     .prologue
-    .line 456
+    .line 454
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mSupportZoom:Z
 
-    .line 457
+    .line 455
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebViewClassic;->updateMultiTouchSupport(Landroid/content/Context;)V
 
-    .line 458
+    .line 456
     return-void
 .end method
 
@@ -4767,7 +4692,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1658
+    .line 1655
     monitor-enter p0
 
     :try_start_0
@@ -4775,21 +4700,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1659
+    .line 1656
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mSyntheticLinksEnabled:Z
 
-    .line 1660
+    .line 1657
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1662
+    .line 1659
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1658
+    .line 1655
     :catchall_0
     move-exception v0
 
@@ -4803,7 +4728,7 @@
     .parameter "t"
 
     .prologue
-    .line 644
+    .line 642
     monitor-enter p0
 
     :try_start_0
@@ -4813,12 +4738,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 645
+    .line 643
     monitor-exit p0
 
     return-void
 
-    .line 644
+    .line 642
     :catchall_0
     move-exception v0
 
@@ -4832,7 +4757,7 @@
     .parameter "textZoom"
 
     .prologue
-    .line 621
+    .line 619
     monitor-enter p0
 
     :try_start_0
@@ -4840,12 +4765,12 @@
 
     if-eq v0, p1, :cond_1
 
-    .line 622
+    .line 620
     sget-boolean v0, Landroid/webkit/WebViewClassic;->mLogEvent:Z
 
     if-eqz v0, :cond_0
 
-    .line 623
+    .line 621
     const v0, 0x11207
 
     const/4 v1, 0x2
@@ -4872,22 +4797,22 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 626
+    .line 624
     :cond_0
     iput p1, p0, Landroid/webkit/WebSettingsClassic;->mTextSize:I
 
-    .line 627
+    .line 625
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 629
+    .line 627
     :cond_1
     monitor-exit p0
 
     return-void
 
-    .line 621
+    .line 619
     :catchall_0
     move-exception v0
 
@@ -4903,7 +4828,7 @@
     .end annotation
 
     .prologue
-    .line 727
+    .line 742
     monitor-enter p0
 
     monitor-exit p0
@@ -4918,10 +4843,10 @@
     .end annotation
 
     .prologue
-    .line 572
+    .line 570
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mUseWebViewBackgroundForOverscroll:Z
 
-    .line 573
+    .line 571
     return-void
 .end method
 
@@ -4930,7 +4855,7 @@
     .parameter "use"
 
     .prologue
-    .line 785
+    .line 800
     monitor-enter p0
 
     :try_start_0
@@ -4938,21 +4863,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 786
+    .line 801
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mUseWideViewport:Z
 
-    .line 787
+    .line 802
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 789
+    .line 804
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 785
+    .line 800
     :catchall_0
     move-exception v0
 
@@ -4968,18 +4893,18 @@
     .end annotation
 
     .prologue
-    .line 745
+    .line 760
     monitor-enter p0
 
     const/4 v0, 0x0
 
-    .line 746
+    .line 761
     .local v0, uaString:Ljava/lang/String;
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_3
 
-    .line 747
+    .line 762
     :try_start_0
     const-string v1, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.34 Safari/534.24"
 
@@ -4993,19 +4918,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 762
+    .line 777
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 750
+    .line 765
     :cond_1
     :try_start_1
     const-string v0, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.34 Safari/534.24"
 
-    .line 761
+    .line 776
     :cond_2
     :goto_1
     invoke-virtual {p0, v0}, Landroid/webkit/WebSettingsClassic;->setUserAgentString(Ljava/lang/String;)V
@@ -5014,7 +4939,7 @@
 
     goto :goto_0
 
-    .line 745
+    .line 760
     :catchall_0
     move-exception v1
 
@@ -5022,13 +4947,13 @@
 
     throw v1
 
-    .line 752
+    .line 767
     :cond_3
     const/4 v1, 0x2
 
     if-ne p1, v1, :cond_4
 
-    .line 753
+    .line 768
     :try_start_2
     const-string v1, "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16"
 
@@ -5040,14 +4965,14 @@
 
     if-nez v1, :cond_0
 
-    .line 756
+    .line 771
     const-string v0, "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16"
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_1
 
-    .line 758
+    .line 773
     :cond_4
     if-eqz p1, :cond_2
 
@@ -5059,7 +4984,7 @@
     .parameter "ua"
 
     .prologue
-    .line 1459
+    .line 1474
     monitor-enter p0
 
     if-eqz p1, :cond_0
@@ -5071,7 +4996,7 @@
 
     if-nez v1, :cond_3
 
-    .line 1460
+    .line 1475
     :cond_0
     sget-object v2, Landroid/webkit/WebSettingsClassic;->sLockForLocaleSettings:Ljava/lang/Object;
 
@@ -5079,13 +5004,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1461
+    .line 1476
     :try_start_1
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 1462
+    .line 1477
     .local v0, currentLocale:Ljava/util/Locale;
     sget-object v1, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
@@ -5095,34 +5020,34 @@
 
     if-nez v1, :cond_1
 
-    .line 1463
+    .line 1478
     sput-object v0, Landroid/webkit/WebSettingsClassic;->sLocale:Ljava/util/Locale;
 
-    .line 1464
+    .line 1479
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentAcceptLanguage()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/webkit/WebSettingsClassic;->mAcceptLanguage:Ljava/lang/String;
 
-    .line 1466
+    .line 1481
     :cond_1
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1467
+    .line 1482
     :try_start_2
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->getCurrentUserAgent()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1468
+    .line 1483
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/webkit/WebSettingsClassic;->mUseDefaultUserAgent:Z
 
-    .line 1473
+    .line 1488
     .end local v0           #currentLocale:Ljava/util/Locale;
     :goto_0
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mUserAgent:Ljava/lang/String;
@@ -5133,21 +5058,21 @@
 
     if-nez v1, :cond_2
 
-    .line 1474
+    .line 1489
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mUserAgent:Ljava/lang/String;
 
-    .line 1475
+    .line 1490
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1477
+    .line 1492
     :cond_2
     monitor-exit p0
 
     return-void
 
-    .line 1466
+    .line 1481
     :catchall_0
     move-exception v1
 
@@ -5161,7 +5086,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 1459
+    .line 1474
     :catchall_1
     move-exception v1
 
@@ -5169,7 +5094,7 @@
 
     throw v1
 
-    .line 1470
+    .line 1485
     :cond_3
     const/4 v1, 0x0
 
@@ -5186,7 +5111,6 @@
     .parameter "flag"
 
     .prologue
-    .line 1643
     monitor-enter p0
 
     :try_start_0
@@ -5194,21 +5118,17 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1644
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mWebGLEnabled:Z
 
-    .line 1645
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1647
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1643
     :catchall_0
     move-exception v0
 
@@ -5222,7 +5142,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1326
+    .line 1341
     monitor-enter p0
 
     :try_start_0
@@ -5230,21 +5150,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1327
+    .line 1342
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mWorkersEnabled:Z
 
-    .line 1328
+    .line 1343
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1330
+    .line 1345
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1326
+    .line 1341
     :catchall_0
     move-exception v0
 
@@ -5258,7 +5178,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1349
+    .line 1364
     monitor-enter p0
 
     :try_start_0
@@ -5266,21 +5186,21 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 1350
+    .line 1365
     iput-boolean p1, p0, Landroid/webkit/WebSettingsClassic;->mXSSAuditorEnabled:Z
 
-    .line 1351
+    .line 1366
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic;->postSync()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1353
+    .line 1368
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 1349
+    .line 1364
     :catchall_0
     move-exception v0
 
@@ -5293,7 +5213,7 @@
     .locals 1
 
     .prologue
-    .line 815
+    .line 830
     monitor-enter p0
 
     :try_start_0
@@ -5317,7 +5237,7 @@
     .locals 1
 
     .prologue
-    .line 465
+    .line 463
     iget-boolean v0, p0, Landroid/webkit/WebSettingsClassic;->mSupportZoom:Z
 
     return v0
@@ -5328,13 +5248,13 @@
     .parameter "frame"
 
     .prologue
-    .line 1724
+    .line 1719
     monitor-enter p0
 
     :try_start_0
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mBrowserFrame:Landroid/webkit/BrowserFrame;
 
-    .line 1729
+    .line 1724
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     const-string v2, "WebViewSettings"
@@ -5345,13 +5265,13 @@
 
     move-result-object v0
 
-    .line 1731
+    .line 1726
     .local v0, sp:Landroid/content/SharedPreferences;
     sget v1, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
     if-lez v1, :cond_0
 
-    .line 1732
+    .line 1727
     const-string v1, "double_tap_toast_count"
 
     sget v2, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
@@ -5362,18 +5282,18 @@
 
     sput v1, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
-    .line 1735
+    .line 1730
     :cond_0
     iget v1, p1, Landroid/webkit/BrowserFrame;->mNativeFrame:I
 
     invoke-direct {p0, v1}, Landroid/webkit/WebSettingsClassic;->nativeSync(I)V
 
-    .line 1736
+    .line 1731
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/webkit/WebSettingsClassic;->mSyncPending:Z
 
-    .line 1737
+    .line 1732
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
     #calls: Landroid/webkit/WebSettingsClassic$EventHandler;->createHandler()V
@@ -5381,12 +5301,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1738
+    .line 1733
     monitor-exit p0
 
     return-void
 
-    .line 1724
+    .line 1719
     .end local v0           #sp:Landroid/content/SharedPreferences;
     :catchall_0
     move-exception v1

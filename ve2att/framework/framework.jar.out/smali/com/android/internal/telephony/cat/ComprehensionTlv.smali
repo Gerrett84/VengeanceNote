@@ -691,10 +691,6 @@
     goto/16 :goto_2
 
     .line 124
-    nop
-
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

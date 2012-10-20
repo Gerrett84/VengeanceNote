@@ -36,12 +36,12 @@
     .locals 1
 
     .prologue
-    .line 739
+    .line 743
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/content/AsyncQueryHandler;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 740
+    .line 744
     return-void
 .end method
 
@@ -49,42 +49,42 @@
     .locals 2
 
     .prologue
-    .line 677
+    .line 681
     sget-object v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->sInstance:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
     if-nez v0, :cond_1
 
-    .line 678
+    .line 682
     const-class v1, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
     monitor-enter v1
 
-    .line 679
+    .line 683
     :try_start_0
     sget-object v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->sInstance:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
     if-nez v0, :cond_0
 
-    .line 680
+    .line 684
     new-instance v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
     invoke-direct {v0}, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;-><init>()V
 
     sput-object v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->sInstance:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
-    .line 682
+    .line 686
     :cond_0
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 684
+    .line 688
     :cond_1
     sget-object v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->sInstance:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
     return-object v0
 
-    .line 682
+    .line 686
     :catchall_0
     move-exception v0
 
@@ -102,7 +102,7 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 696
+    .line 700
     invoke-static {p0, p1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getLocation(Landroid/content/Context;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
@@ -117,19 +117,19 @@
     .parameter "looper"
 
     .prologue
-    .line 744
+    .line 748
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->mWorkerHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
-    .line 745
+    .line 749
     new-instance v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerHandler;
 
     invoke-direct {v0, p0, p1}, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerHandler;-><init>(Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;Landroid/os/Looper;)V
 
     iput-object v0, p0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->mWorkerHandler:Landroid/os/Handler;
 
-    .line 747
+    .line 751
     :cond_0
     iget-object v0, p0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->mWorkerHandler:Landroid/os/Handler;
 
@@ -141,12 +141,12 @@
     .parameter "msg"
 
     .prologue
-    .line 784
+    .line 788
     iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v6, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;
 
-    .line 786
+    .line 790
     .local v6, args:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -154,12 +154,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 787
+    .line 791
     iget-object v0, v6, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->listener:Lmiui/telephony/PhoneNumberUtils$TelocationQueryListener;
 
     if-eqz v0, :cond_0
 
-    .line 788
+    .line 792
     iget-object v0, v6, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->listener:Lmiui/telephony/PhoneNumberUtils$TelocationQueryListener;
 
     iget-object v1, v6, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->cookie1:Ljava/lang/Object;
@@ -174,7 +174,7 @@
 
     invoke-interface/range {v0 .. v5}, Lmiui/telephony/PhoneNumberUtils$TelocationQueryListener;->onComplete(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 792
+    .line 796
     :cond_0
     return-void
 .end method
@@ -191,60 +191,60 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 765
+    .line 769
     new-instance v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;
 
     invoke-direct {v0}, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;-><init>()V
 
-    .line 766
+    .line 770
     .local v0, args:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;
     iput-object p0, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->handler:Landroid/os/Handler;
 
-    .line 767
+    .line 771
     iput-object p7, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->context:Landroid/content/Context;
 
-    .line 768
+    .line 772
     iput-object p8, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->phoneNumber:Ljava/lang/String;
 
-    .line 769
+    .line 773
     iput-object p2, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->cookie1:Ljava/lang/Object;
 
-    .line 770
+    .line 774
     iput-object p3, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->cookie2:Ljava/lang/Object;
 
-    .line 771
+    .line 775
     iput-object p4, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->cookie3:Ljava/lang/Object;
 
-    .line 772
+    .line 776
     iput-object p5, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->cookie4:Ljava/lang/Object;
 
-    .line 773
+    .line 777
     iput-object p6, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->listener:Lmiui/telephony/PhoneNumberUtils$TelocationQueryListener;
 
-    .line 774
+    .line 778
     const/4 v2, 0x0
 
     iput-object v2, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->location:Ljava/lang/String;
 
-    .line 776
+    .line 780
     iget-object v2, p0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;->mWorkerHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, p1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 777
+    .line 781
     .local v1, msg:Landroid/os/Message;
     const/16 v2, 0xa
 
     iput v2, v1, Landroid/os/Message;->arg1:I
 
-    .line 778
+    .line 782
     iput-object v0, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 779
+    .line 783
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 780
+    .line 784
     return-void
 .end method

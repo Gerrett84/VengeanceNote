@@ -271,7 +271,7 @@
     .line 597
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v1, "klass == null"
+    const-string v1, "klass == null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
