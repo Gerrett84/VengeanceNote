@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">Uygulamaya, cihazınız tarafından alınan hücre yayını mesajlarını okuma izni verir. Hücre yayını uyarıları bazı yerlerde acil durumlar konusunda sizi uyarmak için gönderilir. Kötü amaçlı uygulamalar acil hücre yayını alındığında cihazınızın performansına ya da çalışmasına engel olabilir.</string>
     <string name="permlab_sendSms">SMS mesajları gönder</string>
     <string name="permdesc_sendSms">Uygulamaya SMS mesajları gönderme izni verir. Bu durum beklenmeyen ödemelere neden olabilir. Kötü amaçlı uygulamalar onayınız olmadan mesajlar göndererek sizi zarara uğratabilir.</string>
+    <string name="permlab_sendMockSms">Sahte SMS gönder</string>
+    <string name="permdesc_sendMockSms">Uygulamanın sahte SMS göndermesine izin verir. Bir uygulamanın güvenilir uygulamalara SMS göndermesine izin verir. Zararlı uygulamalar, aygıtın bildirim sistemini engelleyip kullanıcıyı rahatsız ederek sürekli mesaj gönderebilir.</string>
     <string name="permlab_sendSmsNoConfirmation">SMS mesajlarını onaysız gönder</string>
     <string name="permdesc_sendSmsNoConfirmation">Uygulamaya SMS mesajları gönderme izni verir. Bu durum beklenmeyen ödemelere neden olabilir. Kötü amaçlı uygulamalar onayınız olmadan mesajlar göndererek sizi zarara uğratabilir.</string>
     <string name="permlab_readSms">kısa mesajlarımı (SMS veya MMS) oku</string>
@@ -936,8 +938,8 @@ Devam etmek için Tamam'ı, mevcut sayfada kalmak için İptal'i tıklayın."</s
     <string name="low_internal_storage_view_title">Depolama alanı bitiyor</string>
     <string name="low_internal_storage_view_text">Bazı sistem işlevleri çalışmayabilir</string>
     <string name="loading">Yükleniyor...</string>
-    <string name="capital_on">AÇIK</string>
-    <string name="capital_off">KAPALI</string>
+    <string name="capital_on">AÇK</string>
+    <string name="capital_off">KPL</string>
     <string name="whichApplication">İşlemi şunu kullanarak tamamla</string>
     <string name="alwaysUse">Varsayılan olarak bu işlem için kullan.</string>
     <string name="clearDefaultHintMsg">Sistem ayarları > Uygulamalar > İndirilen bölümünden varsayılanı temizleyin.</string>
@@ -1213,7 +1215,7 @@ izin isteğinde bulunuldu."</string>
     <string name="action_menu_overflow_description">Diğer seçenekler</string>
     <string name="storage_internal">Dahili depolama birimi</string>
     <string name="storage_sd_card">SD kart</string>
-    <string name="storage_sd_dock_card">SD Kard Kiti</string>
+    <string name="storage_sd_dock_card">SD Kart Kiti</string>
     <string name="storage_usb">USB bellek</string>
     <string name="extract_edit_menu_button">Düzenle</string>
     <string name="data_usage_warning_title">Veri kullanım uyarısı</string>

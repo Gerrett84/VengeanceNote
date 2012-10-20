@@ -290,8 +290,8 @@
     <string name="reboot_recovery">복구 모드</string>
     <string name="reboot_bootloader">부트로더</string>
     <string name="reboot_bootmenu">부트 메뉴</string>
-    <string name="reboot_fastboot">Fastboot</string>
-    <string name="reboot_download">Download</string>
+    <string name="reboot_fastboot">빠른 시작</string>
+    <string name="reboot_download">다운로드</string>
     <string name="reboot_progress">다시 시작하는 중…</string>
     <string name="reboot_confirm">휴대전화를 다시 시작합니다.</string>
     <string name="silent_mode_silent">벨소리가 무음입니다.</string>

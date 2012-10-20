@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">"Lehetővé teszi az alkalmazás számára az eszközre érkező cellán belüli üzenetek olvasását. Bizonyos helyeken figyelmeztető üzeneteket kaphat a cellán belül a vészhelyzetekről. A rosszindulatú alkalmazások befolyásolhatják az eszköz  teljesítményét vagy működését vészhelyzeti cellaüzenet érkezésekor."</string>
     <string name="permlab_sendSms">SMS-ek küldése</string>
     <string name="permdesc_sendSms">Lehetővé teszi az alkalmazás számára, hogy SMS-eket küldjön. Ennek eredményeként váratlan terhelésekkel találkozhat. A rosszindulatú alkalmazások az Ön jóváhagyása nélkül küldhetnek üzeneteket, így költségek merülhetnek fel.</string>
+    <string name="permlab_sendMockSms">SMS utánzatok küldése</string>
+    <string name="permdesc_sendMockSms">Lehetővé teszi az alkalmazás számára, hogy SMS utánzatokat hozzon létre. A rosszindulatú alkalmazások folyamatos üzenet létrehozással zavarhatják a felhasználót, és megbéníthatják az eszköz értesítési felületét.</string>
     <string name="permlab_sendSmsNoConfirmation">SMS üzenetek küldése megerősítés nélkül</string>
     <string name="permdesc_sendSmsNoConfirmation">Lehetővé teszi az alkalmazás számára, hogy SMS-eket küldjön. Ennek eredményeként váratlan terhelésekkel találkozhat. A rosszindulatú alkalmazások az Ön jóváhagyása nélkül küldhetnek üzeneteket, így költségek merülhetnek fel.</string>
     <string name="permlab_readSms">szöveges üzenetek (SMS vagy MMS) olvasása</string>

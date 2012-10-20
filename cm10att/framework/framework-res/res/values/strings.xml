@@ -396,6 +396,8 @@
     <string name="permdesc_readCellBroadcasts">Allows the app to read cell broadcast messages received by your device. Cell broadcast alerts are delivered in some locations to warn you of emergency situations. Malicious apps may interfere with the performance or operation of your device when an emergency cell broadcast is received.</string>
     <string name="permlab_sendSms">send SMS messages</string>
     <string name="permdesc_sendSms">Allows the app to send SMS messages. This may result in unexpected charges. Malicious apps may cost you money by sending messages without your confirmation.</string>
+    <string name="permlab_sendMockSms">Send mock SMS messages</string>
+    <string name="permdesc_sendMockSms">Allows the app to send mock SMS messages. This allows an app send SMS to trusted applications. Malicious apps could send messages continuously, blocking the device notification system and disrupting the user.</string>
     <string name="permlab_sendSmsNoConfirmation">send SMS messages with no confirmation</string>
     <string name="permdesc_sendSmsNoConfirmation">Allows the app to send SMS messages. This may result in unexpected charges. Malicious apps may cost you money by sending messages without your confirmation.</string>
     <string name="permlab_readSms">read your text messages (SMS or MMS)</string>

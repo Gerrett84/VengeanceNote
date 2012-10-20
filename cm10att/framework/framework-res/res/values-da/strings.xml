@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">Tillader, at appen læser mobiltransmissionsbeskeder, der modtages af din enhed. I nogle områder sendes mobiltransmissionsbeskeder for at advare om nødsituationer. Ondsindede apps kan forstyrre ydelsen eller driften af ​din ​enhed, når en mobiltransmission om en nødsituation modtages.</string>
     <string name="permlab_sendSms">send sms-beskeder</string>
     <string name="permdesc_sendSms">Tillader, at appen kan sende sms-beskeder. Dette kan resultere i uventede opkrævninger. Skadelige apps kan koste dig penge ved at sende beskeder uden din bekræftelse.</string>
+    <string name="permlab_sendMockSms">Send imiterede SMS-beskeder</string>
+    <string name="permdesc_sendMockSms">Tillader appen at sende imiterede SMS-beskeder. Dette tillader en app at sende beskeder til pålidelige apps. Ondsindede apps kan sende beskeder kontinuerligt, blokere enhedens notifikationssystem og forstyrre brugeren.</string>
     <string name="permlab_sendSmsNoConfirmation">sende sms-meddelelser uden bekræftelse</string>
     <string name="permdesc_sendSmsNoConfirmation">Tillader, at appen kan sende sms-beskeder. Dette kan resultere i uventede opkrævninger. Skadelige apps kan koste dig penge ved at sende beskeder uden din bekræftelse.</string>
     <string name="permlab_readSms">læse dine tekstbeskeder (SMS eller MMS)</string>
@@ -465,8 +467,8 @@
     <string name="permdesc_clearAppCache">Tillader, at appen kan frigøre plads på din telefon ved at slette filer i appens cachemappe. Adgangen er normalt begrænset til systemprocesser.</string>
     <string name="permlab_movePackage">flytte appressourcer</string>
     <string name="permdesc_movePackage">Tillader, at appen kan flytte appressourcer fra interne til eksterne medier og omvendt.</string>
-    <string name="permlab_preventpower">Undgå tænd/sluk-tasten</string>
-    <string name="permdesc_preventpower">Tillader et program at tilsidesætte tænd/sluk-tasten</string>
+    <string name="permlab_preventpower">Undgå tænd/sluk-knappen</string>
+    <string name="permdesc_preventpower">Tillader et program at tilsidesætte tænd/sluk-knappen</string>
     <string name="permlab_readLogs">læse følsomme logdata</string>
     <string name="permdesc_readLogs">Tillader, at appen kan læse i systemets forskellige logfiler. Dermed kan generelle oplysninger om, hvad du laver med telefonen registreres, også personlige eller private oplysninger.</string>
     <string name="permlab_anyCodecForPlayback">brug enhver mediedekoder til afspilning</string>
@@ -769,6 +771,7 @@
     <string name="lockscreen_password_wrong">Prøv igen</string>
     <string name="faceunlock_multiple_failures">Det maksimale antal forsøg på at bruge Ansigtslås er overskredet</string>
     <string name="lockscreen_plugged_in">Oplader, %d %%</string>
+    <string name="lockscreen_discharging">Aflader, %d%%</string>
     <string name="lockscreen_charged">Opladt.</string>
     <string name="lockscreen_battery_short">%d %%</string>
     <string name="lockscreen_low_battery">Tilslut din oplader.</string>
@@ -1155,6 +1158,7 @@ for kontoen %s."</string>
     <string name="share">Del</string>
     <string name="find">Find</string>
     <string name="websearch">Websøgning</string>
+    <string name="openurl">Åbn URL</string>
     <string name="gpsNotifTicker">Placeringsanmodning fra %s</string>
     <string name="gpsNotifTitle">Placeringsanmodning</string>
     <string name="gpsNotifMessage">Anmodet om af %1$s (%2$s)</string>
@@ -1212,6 +1216,7 @@ for kontoen %s."</string>
     <string name="action_menu_overflow_description">Flere valgmuligheder</string>
     <string name="storage_internal">Internt lager</string>
     <string name="storage_sd_card">SD-kort</string>
+    <string name="storage_sd_dock_card">Dockstationens SD-kort</string>
     <string name="storage_usb">USB-lager</string>
     <string name="extract_edit_menu_button">Rediger</string>
     <string name="data_usage_warning_title">Advarsel om dataforbrug</string>
@@ -1319,4 +1324,7 @@ for kontoen %s."</string>
     <string name="weather_no_data">Ingen data</string>
     <string name="weather_tap_to_refresh">Tryk for at opdatere</string>
     <string name="weather_refreshing">Opdaterer</string>
+    <string name="weather_last_sync_just_now">Lige nu</string>
+    <string name="toast_rotation_unlocked">Skærmrotation Ulåst</string>
+    <string name="toast_rotation_locked">Skærmrotation Låst</string>
 </resources>

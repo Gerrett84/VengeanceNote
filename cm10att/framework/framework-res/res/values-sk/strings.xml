@@ -910,8 +910,8 @@ Ak chcete pokračovať, dotknite sa tlačidla OK. Ak chcete zostať na stránke,
     <string name="low_internal_storage_view_title">Nedostatok ukladacieho priestoru</string>
     <string name="low_internal_storage_view_text">Niektoré systémové funkcie nemusia fungovať</string>
     <string name="loading">Prebieha načítavanie...</string>
-    <string name="capital_on">ZAPNUTÉ</string>
-    <string name="capital_off">VYPNUTÉ</string>
+    <string name="capital_on">I</string>
+    <string name="capital_off">O</string>
     <string name="whichApplication">Dokončiť akciu pomocou aplikácie</string>
     <string name="alwaysUse">Použiť ako predvolené nastavenie pre túto akciu.</string>
     <string name="clearDefaultHintMsg">Vymazať predvolené nastavenia v sekcii Nastavenia systému > Aplikácie > Prevzaté položky.</string>

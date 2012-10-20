@@ -1366,6 +1366,7 @@
         <item name="toastFrameBackground">@drawable/toast_frame_holo</item>
         <item name="searchDropdownBackground">@drawable/search_dropdown_light</item>
         <item name="searchDialogTheme">@style/Theme.Holo.Light.SearchBar</item>
+        <item name="preferenceFrameLayoutStyle">@style/Widget.Holo.PreferenceFrameLayout</item>
         <item name="switchStyle">@style/Widget.Holo.Light.CompoundButton.Switch</item>
         <item name="findOnPageNextDrawable">@drawable/ic_find_next_holo_light</item>
         <item name="findOnPagePreviousDrawable">@drawable/ic_find_previous_holo_light</item>

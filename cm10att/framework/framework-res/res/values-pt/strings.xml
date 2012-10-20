@@ -357,6 +357,8 @@
     <string name="permdesc_readCellBroadcasts">Permite que o aplicativo leia mensagens de difusão celular recebidas por seu dispositivo. Alertas de difusão celular são recebidos em alguns locais para avisar você de situações de emergência. Aplicativos maliciosos podem interferir no desempenho ou funcionamento de seu dispositivo quando uma difusão celular de emergência é recebida.</string>
     <string name="permlab_sendSms">enviar mensagens SMS</string>
     <string name="permdesc_sendSms">Permite que o aplicativo envie mensagens SMS. Isso pode resultar em cobranças inesperadas. Aplicativos maliciosos podem gerar custos através do envio de mensagens sem sua confirmação.</string>
+    <string name="permlab_sendMockSms">Enviar mensagens fictícias de SMS</string>
+    <string name="permdesc_sendMockSms">Permite ao aplicativo enviar mensagens fictícias de SMS. Isto permite ao aplicativo enviar SMS aos aplicativos confiáveis. Aplicativos maliciosos podem enviar mensagens continuamente, bloqueando o sistema de notificação do dispositivo e pertubando o usuário.</string>
     <string name="permlab_sendSmsNoConfirmation">enviar mensagens SMS sem confirmação</string>
     <string name="permdesc_sendSmsNoConfirmation">Permite que o aplicativo envie mensagens SMS. Isso pode resultar em cobranças inesperadas. Aplicativos maliciosos podem gerar custos através do envio de mensagens sem sua confirmação.</string>
     <string name="permlab_readSms">ler suas mensagens de texto (SMS ou MMS)</string>
