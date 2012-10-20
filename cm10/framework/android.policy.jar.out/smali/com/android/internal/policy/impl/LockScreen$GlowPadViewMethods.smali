@@ -243,59 +243,43 @@
     .parameter "intent"
 
     .prologue
-    .line 508
+    .line 503
     const/high16 v1, 0x3400
 
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 513
+    .line 508
     :try_start_0
-    invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/app/IActivityManager;->dismissKeyguardOnNextActivity()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 518
-    :goto_0
-    :try_start_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/LockScreen;->access$1800(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
+    invoke-static {v1}, Lcom/android/internal/policy/impl/LockScreen;->access$1700(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_1
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 522
-    :goto_1
+    .line 509
+    iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+
+    #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v1}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 513
+    :goto_0
     return-void
 
-    .line 514
+    .line 510
     :catch_0
     move-exception v0
 
-    .line 515
-    .local v0, e:Landroid/os/RemoteException;
-    const-string v1, "LockScreen"
-
-    const-string v2, "can\'t dismiss keyguard on launch"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 519
-    .end local v0           #e:Landroid/os/RemoteException;
-    :catch_1
-    move-exception v0
-
-    .line 520
+    .line 511
     .local v0, e:Landroid/content/ActivityNotFoundException;
     const-string v1, "LockScreen"
 
@@ -323,7 +307,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 
@@ -332,14 +316,14 @@
     .locals 2
 
     .prologue
-    .line 554
+    .line 545
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->setOnTriggerListener(Lcom/android/internal/widget/multiwaveview/GlowPadView$OnTriggerListener;)V
 
-    .line 555
+    .line 546
     return-void
 .end method
 
@@ -348,7 +332,7 @@
     .parameter "resourceId"
 
     .prologue
-    .line 550
+    .line 541
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->getTargetPosition(I)I
@@ -362,7 +346,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 525
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     return-object v0
@@ -442,7 +426,7 @@
     .locals 0
 
     .prologue
-    .line 559
+    .line 550
     return-void
 .end method
 
@@ -462,10 +446,10 @@
     .parameter "handle"
 
     .prologue
-    .line 528
+    .line 519
     if-eqz p2, :cond_0
 
-    .line 529
+    .line 520
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -475,7 +459,7 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    .line 531
+    .line 522
     :cond_0
     return-void
 .end method
@@ -491,24 +475,24 @@
 .end method
 
 .method public onTrigger(Landroid/view/View;I)V
-    .locals 6
+    .locals 5
     .parameter "v"
     .parameter "target"
 
     .prologue
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
     const/4 v1, 0x0
 
     .line 458
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
-    if-nez v4, :cond_2
+    if-nez v3, :cond_2
 
     .line 459
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    invoke-virtual {v4, p2}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->getResourceIdForTarget(I)I
+    invoke-virtual {v3, p2}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->getResourceIdForTarget(I)I
 
     move-result v2
 
@@ -516,7 +500,7 @@
     .local v2, resId:I
     sparse-switch v2, :sswitch_data_0
 
-    .line 505
+    .line 500
     .end local v2           #resId:I
     :cond_0
     :goto_0
@@ -525,14 +509,14 @@
     .line 462
     .restart local v2       #resId:I
     :sswitch_0
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1600(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$1600(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v4}, Landroid/app/SearchManager;->getAssistIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static {v3}, Landroid/app/SearchManager;->getAssistIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -545,93 +529,93 @@
 
     .line 468
     :goto_1
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+    invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     goto :goto_0
 
     .line 466
     :cond_1
-    const-string v4, "LockScreen"
+    const-string v3, "LockScreen"
 
-    const-string v5, "Failed to get intent for assist activity"
+    const-string v4, "Failed to get intent for assist activity"
 
-    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
     .line 472
     .end local v0           #assistIntent:Landroid/content/Intent;
     :sswitch_1
-    new-instance v4, Landroid/content/Intent;
+    new-instance v3, Landroid/content/Intent;
 
-    const-string v5, "android.media.action.STILL_IMAGE_CAMERA"
+    const-string v4, "android.media.action.STILL_IMAGE_CAMERA"
 
-    invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0, v4}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->launchActivity(Landroid/content/Intent;)V
+    invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->launchActivity(Landroid/content/Intent;)V
 
     .line 473
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+    invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     goto :goto_0
 
     .line 477
     :sswitch_2
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #calls: Lcom/android/internal/policy/impl/LockScreen;->toggleRingMode()V
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$500(Lcom/android/internal/policy/impl/LockScreen;)V
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$500(Lcom/android/internal/policy/impl/LockScreen;)V
 
     .line 478
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
+    invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
     goto :goto_0
 
     .line 483
     :sswitch_3
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+    invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     goto :goto_0
 
     .line 487
     .end local v2           #resId:I
     :cond_2
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCreationOrientation:I
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1400(Lcom/android/internal/policy/impl/LockScreen;)I
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$1400(Lcom/android/internal/policy/impl/LockScreen;)I
 
-    move-result v4
+    move-result v3
 
-    if-ne v4, v5, :cond_3
+    if-ne v3, v4, :cond_3
 
     const/4 v1, 0x1
 
@@ -640,114 +624,80 @@
     :cond_3
     if-nez p2, :cond_4
 
-    iget-boolean v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
 
-    if-nez v4, :cond_5
+    if-nez v3, :cond_5
 
     if-eqz v1, :cond_5
 
     :cond_4
-    if-ne p2, v5, :cond_6
+    if-ne p2, v4, :cond_6
 
-    iget-boolean v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
+    iget-boolean v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
 
-    if-nez v4, :cond_6
+    if-nez v3, :cond_6
 
     if-eqz v1, :cond_6
 
     .line 489
     :cond_5
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
+    invoke-static {v3}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-interface {v4}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+    invoke-interface {v3}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
     goto :goto_0
 
     .line 491
     :cond_6
-    iget v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
+    iget v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    sub-int/2addr p2, v4
+    sub-int/2addr p2, v3
 
     .line 492
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
-    array-length v4, v4
+    array-length v3, v3
 
-    if-ge p2, v4, :cond_0
+    if-ge p2, v3, :cond_0
 
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
-    aget-object v4, v4, p2
+    aget-object v3, v3, p2
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
     .line 494
     :try_start_0
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
-    aget-object v4, v4, p2
+    aget-object v3, v3, p2
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v4, v5}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-static {v3, v4}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 495
-    .local v3, tIntent:Landroid/content/Intent;
-    const/high16 v4, 0x1000
-
-    invoke-virtual {v3, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 496
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
-
-    #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1700(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    .line 497
-    iget-object v4, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
-
-    #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$400(Lcom/android/internal/policy/impl/LockScreen;)Lcom/android/internal/policy/impl/KeyguardScreenCallback;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
+    invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->launchActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
     goto/16 :goto_0
 
-    .line 499
-    .end local v3           #tIntent:Landroid/content/Intent;
+    .line 495
     :catch_0
-    move-exception v4
-
-    goto/16 :goto_0
-
-    .line 500
-    :catch_1
-    move-exception v4
+    move-exception v3
 
     goto/16 :goto_0
 
     .line 460
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x1080294 -> :sswitch_0
@@ -762,12 +712,12 @@
     .locals 1
 
     .prologue
-    .line 542
+    .line 533
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->ping()V
 
-    .line 543
+    .line 534
     return-void
 .end method
 
@@ -776,12 +726,12 @@
     .parameter "animate"
 
     .prologue
-    .line 538
+    .line 529
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->reset(Z)V
 
-    .line 539
+    .line 530
     return-void
 .end method
 
@@ -791,1084 +741,1087 @@
     .parameter "enabled"
 
     .prologue
-    .line 546
+    .line 537
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->setEnableTarget(IZ)V
 
-    .line 547
+    .line 538
     return-void
 .end method
 
 .method public updateResources()V
-    .locals 36
+    .locals 38
 
     .prologue
     .line 317
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$800(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$800(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v4
+    move-result-object v6
 
-    const-string v5, "lockscreen_targets"
+    const-string v7, "lockscreen_targets"
 
-    invoke-static {v4, v5}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v7}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v32
+    move-result-object v34
 
     .line 319
-    .local v32, storedVal:Ljava/lang/String;
-    if-nez v32, :cond_6
+    .local v34, storedVal:Ljava/lang/String;
+    if-nez v34, :cond_6
 
     .line 321
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCameraDisabled:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$900(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$900(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_3
+    if-eqz v6, :cond_3
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mEnableRingSilenceFallback:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1000(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1000(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_3
+    if-eqz v6, :cond_3
 
     .line 323
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mSilentMode:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$000(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$000(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_2
+    if-eqz v6, :cond_2
 
-    const v30, 0x1070009
+    const v32, 0x1070009
 
     .line 328
-    .local v30, resId:I
+    .local v32, resId:I
     :goto_0
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    invoke-virtual {v4}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->getTargetResourceId()I
+    invoke-virtual {v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->getTargetResourceId()I
 
-    move-result v4
+    move-result v6
 
-    move/from16 v0, v30
+    move/from16 v0, v32
 
-    if-eq v4, v0, :cond_0
+    if-eq v6, v0, :cond_0
 
     .line 329
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    move/from16 v0, v30
+    move/from16 v0, v32
 
-    invoke-virtual {v4, v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->setTargetResources(I)V
+    invoke-virtual {v6, v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->setTargetResources(I)V
 
     .line 332
     :cond_0
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mSearchDisabled:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1100(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1100(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_1
+    if-nez v6, :cond_1
 
     .line 333
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1200(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1200(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-static {v4}, Landroid/app/SearchManager;->getAssistIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static {v6}, Landroid/app/SearchManager;->getAssistIntent(Landroid/content/Context;)Landroid/content/Intent;
 
-    move-result-object v19
+    move-result-object v23
 
     .line 334
-    .local v19, intent:Landroid/content/Intent;
-    if-eqz v19, :cond_1
+    .local v23, intent:Landroid/content/Intent;
+    if-eqz v23, :cond_1
 
     .line 338
-    invoke-virtual/range {v19 .. v19}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-virtual/range {v23 .. v23}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v10
+    move-result-object v14
 
     .line 339
-    .local v10, component:Landroid/content/ComponentName;
+    .local v14, component:Landroid/content/ComponentName;
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    const-string v5, "com.android.systemui.action_assist_icon_google"
+    const-string v7, "com.android.systemui.action_assist_icon_google"
 
-    const v6, 0x1080294
+    const v8, 0x1080294
 
-    invoke-virtual {v4, v10, v5, v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->replaceTargetDrawablesIfPresent(Landroid/content/ComponentName;Ljava/lang/String;I)Z
+    invoke-virtual {v6, v14, v7, v8}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->replaceTargetDrawablesIfPresent(Landroid/content/ComponentName;Ljava/lang/String;I)Z
 
-    move-result v28
+    move-result v30
 
     .line 343
-    .local v28, replaced:Z
-    if-nez v28, :cond_1
+    .local v30, replaced:Z
+    if-nez v30, :cond_1
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    const-string v5, "com.android.systemui.action_assist_icon"
+    const-string v7, "com.android.systemui.action_assist_icon"
 
-    const v6, 0x1080294
+    const v8, 0x1080294
 
-    invoke-virtual {v4, v10, v5, v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->replaceTargetDrawablesIfPresent(Landroid/content/ComponentName;Ljava/lang/String;I)Z
+    invoke-virtual {v6, v14, v7, v8}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->replaceTargetDrawablesIfPresent(Landroid/content/ComponentName;Ljava/lang/String;I)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_1
+    if-nez v6, :cond_1
 
     .line 346
-    const-string v4, "LockScreen"
+    const-string v6, "LockScreen"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Couldn\'t grab icon from package "
+    const-string v8, "Couldn\'t grab icon from package "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 350
-    .end local v10           #component:Landroid/content/ComponentName;
-    .end local v19           #intent:Landroid/content/Intent;
-    .end local v28           #replaced:Z
+    .end local v14           #component:Landroid/content/ComponentName;
+    .end local v23           #intent:Landroid/content/Intent;
+    .end local v30           #replaced:Z
     :cond_1
-    const v5, 0x10802ea
+    const v7, 0x10802ea
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCameraDisabled:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$900(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$900(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_4
+    if-nez v6, :cond_4
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     :goto_1
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5, v4}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->setEnabled(IZ)V
+    invoke-virtual {v0, v7, v6}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->setEnabled(IZ)V
 
     .line 351
-    const v5, 0x1080294
+    const v7, 0x1080294
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mSearchDisabled:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1100(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1100(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_5
+    if-nez v6, :cond_5
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     :goto_2
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v5, v4}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->setEnabled(IZ)V
+    invoke-virtual {v0, v7, v6}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->setEnabled(IZ)V
 
     .line 447
-    .end local v30           #resId:I
+    .end local v32           #resId:I
     :goto_3
     return-void
 
     .line 323
     :cond_2
-    const v30, 0x107000c
+    const v32, 0x107000c
 
     goto/16 :goto_0
 
     .line 326
     :cond_3
-    const v30, 0x107000e
+    const v32, 0x107000e
 
-    .restart local v30       #resId:I
+    .restart local v32       #resId:I
     goto/16 :goto_0
 
     .line 350
     :cond_4
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     goto :goto_1
 
     .line 351
     :cond_5
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     goto :goto_2
 
     .line 353
-    .end local v30           #resId:I
+    .end local v32           #resId:I
     :cond_6
-    const-string v4, "\\|"
+    const-string v6, "\\|"
 
-    move-object/from16 v0, v32
+    move-object/from16 v0, v34
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v0, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
     move-object/from16 v0, p0
 
-    iput-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iput-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
     .line 354
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->isScreenLarge()Z
 
-    move-result v4
+    move-result v6
 
     move-object/from16 v0, p0
 
-    iput-boolean v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
+    iput-boolean v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
 
     .line 355
-    new-instance v31, Ljava/util/ArrayList;
+    new-instance v33, Ljava/util/ArrayList;
 
-    invoke-direct/range {v31 .. v31}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct/range {v33 .. v33}, Ljava/util/ArrayList;-><init>()V
 
     .line 356
-    .local v31, storedDraw:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/TargetDrawable;>;"
+    .local v33, storedDraw:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/TargetDrawable;>;"
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
-    invoke-virtual {v4}, Lcom/android/internal/policy/impl/LockScreen;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v6}, Lcom/android/internal/policy/impl/LockScreen;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v29
+    move-result-object v31
 
     .line 357
-    .local v29, res:Landroid/content/res/Resources;
-    const v4, 0x1050055
+    .local v31, res:Landroid/content/res/Resources;
+    const v6, 0x1050055
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v33
+    move-result v35
 
     .line 358
-    .local v33, targetInset:I
+    .local v35, targetInset:I
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1300(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1300(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v6}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v24
+    move-result-object v26
 
     .line 359
-    .local v24, packMan:Landroid/content/pm/PackageManager;
+    .local v26, packMan:Landroid/content/pm/PackageManager;
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCreationOrientation:I
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1400(Lcom/android/internal/policy/impl/LockScreen;)I
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1400(Lcom/android/internal/policy/impl/LockScreen;)I
 
-    move-result v4
+    move-result v6
 
-    const/4 v5, 0x2
+    const/4 v7, 0x2
 
-    if-ne v4, v5, :cond_c
+    if-ne v6, v7, :cond_c
 
-    const/16 v21, 0x1
+    const/16 v24, 0x1
 
     .line 360
-    .local v21, isLandscape:Z
+    .local v24, isLandscape:Z
     :goto_4
-    const v4, 0x108032e
+    const v6, 0x108032e
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v5
 
     .line 361
-    .local v3, blankActiveDrawable:Landroid/graphics/drawable/Drawable;
-    new-instance v2, Landroid/graphics/drawable/InsetDrawable;
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
+    .local v5, blankActiveDrawable:Landroid/graphics/drawable/Drawable;
+    new-instance v4, Landroid/graphics/drawable/InsetDrawable;
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    invoke-direct/range {v2 .. v7}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;IIII)V
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    invoke-direct/range {v4 .. v9}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;IIII)V
 
     .line 363
-    .local v2, activeBack:Landroid/graphics/drawable/InsetDrawable;
-    if-eqz v21, :cond_d
+    .local v4, activeBack:Landroid/graphics/drawable/InsetDrawable;
+    if-eqz v24, :cond_d
 
     move-object/from16 v0, p0
 
-    iget-boolean v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
+    iget-boolean v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mIsScreenLarge:Z
 
-    if-nez v4, :cond_d
+    if-nez v6, :cond_d
 
-    const/4 v4, 0x2
+    const/4 v6, 0x2
 
     :goto_5
     move-object/from16 v0, p0
 
-    iput v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
+    iput v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
 
     .line 364
     move-object/from16 v0, p0
 
-    iget v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
+    iget v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
 
-    const/4 v5, 0x2
+    const/4 v7, 0x2
 
-    if-ne v4, v5, :cond_7
+    if-ne v6, v7, :cond_7
 
     .line 365
-    new-instance v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    new-instance v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const/4 v5, 0x0
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v4, v0, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+    const/4 v7, 0x0
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v6, v0, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 366
-    new-instance v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    new-instance v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const/4 v5, 0x0
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v4, v0, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+    const/4 v7, 0x0
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v6, v0, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 369
     :cond_7
-    new-instance v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    new-instance v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const v5, 0x1080331
-
-    move-object/from16 v0, v29
-
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v4, v0, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+    const v7, 0x1080331
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v7
+
+    move-object/from16 v0, v31
+
+    invoke-direct {v6, v0, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 370
-    const/16 v16, 0x0
+    const/16 v20, 0x0
 
-    .local v16, i:I
+    .local v20, i:I
     :goto_6
     move-object/from16 v0, p0
 
-    iget v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
+    iget v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mTargetOffset:I
 
-    rsub-int/lit8 v4, v4, 0x8
+    rsub-int/lit8 v6, v6, 0x8
 
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v6, v6, -0x1
 
-    move/from16 v0, v16
+    move/from16 v0, v20
 
-    if-ge v0, v4, :cond_16
+    if-ge v0, v6, :cond_16
 
     .line 371
-    move/from16 v34, v33
+    move/from16 v36, v35
 
     .line 372
-    .local v34, tmpInset:I
+    .local v36, tmpInset:I
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
-    array-length v4, v4
+    array-length v6, v6
 
-    move/from16 v0, v16
+    move/from16 v0, v20
 
-    if-ge v0, v4, :cond_15
+    if-ge v0, v6, :cond_15
 
     .line 373
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mStoredTargets:[Ljava/lang/String;
 
-    aget-object v35, v4, v16
+    aget-object v37, v6, v20
 
     .line 374
-    .local v35, uri:Ljava/lang/String;
-    const-string v4, "empty"
+    .local v37, uri:Ljava/lang/String;
+    const-string v6, "empty"
 
-    move-object/from16 v0, v35
+    move-object/from16 v0, v37
 
-    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_14
+    if-nez v6, :cond_14
 
     .line 376
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     :try_start_0
-    move-object/from16 v0, v35
+    move-object/from16 v0, v37
 
-    invoke-static {v0, v4}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-static {v0, v6}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v18
+    move-result-object v22
 
     .line 377
-    .local v18, in:Landroid/content/Intent;
-    const/4 v14, 0x0
+    .local v22, in:Landroid/content/Intent;
+    const/16 v18, 0x0
 
     .line 378
-    .local v14, front:Landroid/graphics/drawable/Drawable;
-    move-object v9, v2
+    .local v18, front:Landroid/graphics/drawable/Drawable;
+    move-object v11, v4
 
     .line 379
-    .local v9, back:Landroid/graphics/drawable/Drawable;
-    const/4 v15, 0x0
+    .local v11, back:Landroid/graphics/drawable/Drawable;
+    const/16 v19, 0x0
 
     .line 380
-    .local v15, frontBlank:Z
-    const-string v4, "icon_file"
+    .local v19, frontBlank:Z
+    const-string v6, "icon_file"
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v22
 
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {v0, v6}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_e
+    if-eqz v6, :cond_e
 
     .line 381
-    const-string v4, "icon_file"
+    const-string v6, "icon_file"
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v17
+
+    .line 382
+    .local v17, fSource:Ljava/lang/String;
+    if-eqz v17, :cond_8
+
+    .line 383
+    new-instance v16, Ljava/io/File;
+
+    invoke-direct/range {v16 .. v17}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 384
+    .local v16, fPath:Ljava/io/File;
+    invoke-virtual/range {v16 .. v16}, Ljava/io/File;->exists()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_8
+
+    .line 385
+    new-instance v18, Landroid/graphics/drawable/BitmapDrawable;
+
+    .end local v18           #front:Landroid/graphics/drawable/Drawable;
+    invoke-static/range {v17 .. v17}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v6
 
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v1, v31
 
-    move-result-object v13
-
-    .line 382
-    .local v13, fSource:Ljava/lang/String;
-    if-eqz v13, :cond_8
-
-    .line 383
-    new-instance v12, Ljava/io/File;
-
-    invoke-direct {v12, v13}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 384
-    .local v12, fPath:Ljava/io/File;
-    invoke-virtual {v12}, Ljava/io/File;->exists()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_8
-
-    .line 385
-    new-instance v14, Landroid/graphics/drawable/BitmapDrawable;
-
-    .end local v14           #front:Landroid/graphics/drawable/Drawable;
-    invoke-static {v13}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v4
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v14, v0, v4}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+    invoke-direct {v0, v1, v6}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
     .line 416
-    .end local v12           #fPath:Ljava/io/File;
-    .end local v13           #fSource:Ljava/lang/String;
-    .restart local v14       #front:Landroid/graphics/drawable/Drawable;
+    .end local v16           #fPath:Ljava/io/File;
+    .end local v17           #fSource:Ljava/lang/String;
+    .restart local v18       #front:Landroid/graphics/drawable/Drawable;
     :cond_8
     :goto_7
-    if-eqz v14, :cond_9
+    if-eqz v18, :cond_9
 
-    if-nez v9, :cond_a
+    if-nez v11, :cond_a
 
     .line 417
     :cond_9
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v22
 
-    move-object/from16 v1, v24
+    move-object/from16 v1, v26
 
-    invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->resolveActivityInfo(Landroid/content/pm/PackageManager;I)Landroid/content/pm/ActivityInfo;
+    invoke-virtual {v0, v1, v6}, Landroid/content/Intent;->resolveActivityInfo(Landroid/content/pm/PackageManager;I)Landroid/content/pm/ActivityInfo;
 
-    move-result-object v8
+    move-result-object v10
 
     .line 418
-    .local v8, aInfo:Landroid/content/pm/ActivityInfo;
-    if-eqz v8, :cond_10
+    .local v10, aInfo:Landroid/content/pm/ActivityInfo;
+    if-eqz v10, :cond_10
 
     .line 419
-    move-object/from16 v0, v24
+    move-object/from16 v0, v26
 
-    invoke-virtual {v8, v0}, Landroid/content/pm/ActivityInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v10, v0}, Landroid/content/pm/ActivityInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v18
 
     .line 424
-    .end local v8           #aInfo:Landroid/content/pm/ActivityInfo;
+    .end local v10           #aInfo:Landroid/content/pm/ActivityInfo;
     :cond_a
     :goto_8
-    new-instance v23, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    new-instance v25, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v34
+    move-object/from16 v1, v18
 
-    invoke-direct {v0, v9, v14, v1, v15}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->getLayeredDrawable(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;IZ)Landroid/graphics/drawable/StateListDrawable;
+    move/from16 v2, v36
 
-    move-result-object v4
+    move/from16 v3, v19
 
-    move-object/from16 v0, v23
+    invoke-direct {v0, v11, v1, v2, v3}, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->getLayeredDrawable(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;IZ)Landroid/graphics/drawable/StateListDrawable;
 
-    move-object/from16 v1, v29
+    move-result-object v6
 
-    invoke-direct {v0, v1, v4}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
+    move-object/from16 v0, v25
+
+    move-object/from16 v1, v31
+
+    invoke-direct {v0, v1, v6}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;)V
 
     .line 425
-    .local v23, nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    invoke-virtual/range {v18 .. v18}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    .local v25, nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    invoke-virtual/range {v22 .. v22}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "com.android.camera.CameraLauncher"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v20
+    move-result-object v13
 
     .line 426
-    .local v20, isCamera:Z
-    if-eqz v20, :cond_12
+    .local v13, compName:Landroid/content/ComponentName;
+    if-eqz v13, :cond_b
 
     .line 427
+    invoke-virtual {v13}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v12
+
+    .line 428
+    .local v12, cls:Ljava/lang/String;
+    const-string v6, "com.android.camera.CameraLauncher"
+
+    invoke-virtual {v12, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_12
+
+    .line 429
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCameraDisabled:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$900(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$900(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_11
+    if-nez v6, :cond_11
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     :goto_9
-    move-object/from16 v0, v23
+    move-object/from16 v0, v25
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setEnabled(Z)V
+    invoke-virtual {v0, v6}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setEnabled(Z)V
 
     .line 434
+    .end local v12           #cls:Ljava/lang/String;
     :cond_b
     :goto_a
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v25
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 370
-    .end local v9           #back:Landroid/graphics/drawable/Drawable;
-    .end local v14           #front:Landroid/graphics/drawable/Drawable;
-    .end local v15           #frontBlank:Z
-    .end local v18           #in:Landroid/content/Intent;
-    .end local v20           #isCamera:Z
-    .end local v23           #nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    .end local v35           #uri:Ljava/lang/String;
+    .end local v11           #back:Landroid/graphics/drawable/Drawable;
+    .end local v13           #compName:Landroid/content/ComponentName;
+    .end local v18           #front:Landroid/graphics/drawable/Drawable;
+    .end local v19           #frontBlank:Z
+    .end local v22           #in:Landroid/content/Intent;
+    .end local v25           #nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .end local v37           #uri:Ljava/lang/String;
     :goto_b
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v20, v20, 0x1
 
     goto/16 :goto_6
 
     .line 359
-    .end local v2           #activeBack:Landroid/graphics/drawable/InsetDrawable;
-    .end local v3           #blankActiveDrawable:Landroid/graphics/drawable/Drawable;
-    .end local v16           #i:I
-    .end local v21           #isLandscape:Z
-    .end local v34           #tmpInset:I
+    .end local v4           #activeBack:Landroid/graphics/drawable/InsetDrawable;
+    .end local v5           #blankActiveDrawable:Landroid/graphics/drawable/Drawable;
+    .end local v20           #i:I
+    .end local v24           #isLandscape:Z
+    .end local v36           #tmpInset:I
     :cond_c
-    const/16 v21, 0x0
+    const/16 v24, 0x0
 
     goto/16 :goto_4
 
     .line 363
-    .restart local v2       #activeBack:Landroid/graphics/drawable/InsetDrawable;
-    .restart local v3       #blankActiveDrawable:Landroid/graphics/drawable/Drawable;
-    .restart local v21       #isLandscape:Z
+    .restart local v4       #activeBack:Landroid/graphics/drawable/InsetDrawable;
+    .restart local v5       #blankActiveDrawable:Landroid/graphics/drawable/Drawable;
+    .restart local v24       #isLandscape:Z
     :cond_d
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     goto/16 :goto_5
 
     .line 388
-    .restart local v9       #back:Landroid/graphics/drawable/Drawable;
-    .restart local v14       #front:Landroid/graphics/drawable/Drawable;
-    .restart local v15       #frontBlank:Z
-    .restart local v16       #i:I
-    .restart local v18       #in:Landroid/content/Intent;
-    .restart local v34       #tmpInset:I
-    .restart local v35       #uri:Ljava/lang/String;
+    .restart local v11       #back:Landroid/graphics/drawable/Drawable;
+    .restart local v18       #front:Landroid/graphics/drawable/Drawable;
+    .restart local v19       #frontBlank:Z
+    .restart local v20       #i:I
+    .restart local v22       #in:Landroid/content/Intent;
+    .restart local v36       #tmpInset:I
+    .restart local v37       #uri:Ljava/lang/String;
     :cond_e
-    const-string v4, "icon_resource"
+    const-string v6, "icon_resource"
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v22
 
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {v0, v6}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v6
 
-    if-eqz v4, :cond_8
+    if-eqz v6, :cond_8
 
     .line 389
-    const-string v4, "icon_resource"
+    const-string v6, "icon_resource"
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v22
 
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v27
+    move-result-object v29
 
     .line 390
-    .local v27, rSource:Ljava/lang/String;
-    const-string v4, "icon_package"
+    .local v29, rSource:Ljava/lang/String;
+    const-string v6, "icon_package"
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v22
 
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-result-object v26
+    move-result-object v28
 
     .line 391
-    .local v26, rPackage:Ljava/lang/String;
-    if-eqz v27, :cond_8
+    .local v28, rPackage:Ljava/lang/String;
+    if-eqz v29, :cond_8
 
     .line 392
-    if-eqz v26, :cond_f
+    if-eqz v28, :cond_f
 
     .line 394
     :try_start_1
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1500(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1500(Lcom/android/internal/policy/impl/LockScreen;)Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v6
 
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v28
 
-    invoke-virtual {v4, v0, v5}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+    invoke-virtual {v6, v0, v7}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
 
-    move-result-object v25
+    move-result-object v27
 
     .line 395
-    .local v25, rContext:Landroid/content/Context;
-    invoke-virtual/range {v25 .. v25}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .local v27, rContext:Landroid/content/Context;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v6
 
-    const-string v5, "drawable"
+    const-string v7, "drawable"
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    move-object/from16 v1, v26
+    move-object/from16 v1, v28
 
-    invoke-virtual {v4, v0, v5, v1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v6, v0, v7, v1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v17
+    move-result v21
 
     .line 396
-    .local v17, id:I
-    invoke-virtual/range {v25 .. v25}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .local v21, id:I
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v6
 
-    move/from16 v0, v17
+    move/from16 v0, v21
 
-    invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v18
 
     .line 397
-    invoke-virtual/range {v25 .. v25}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v6
 
-    const-string v5, "_normal"
+    const-string v7, "_normal"
 
-    const-string v6, "_activated"
+    const-string v8, "_activated"
 
-    move-object/from16 v0, v27
+    move-object/from16 v0, v29
 
-    invoke-virtual {v0, v5, v6}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v7, v8}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    const-string v6, "drawable"
+    const-string v8, "drawable"
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, v28
 
-    invoke-virtual {v4, v5, v6, v0}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v6, v7, v8, v0}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v17
+    move-result v21
 
     .line 399
-    invoke-virtual/range {v25 .. v25}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {v27 .. v27}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v6
 
-    move/from16 v0, v17
+    move/from16 v0, v21
 
-    invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-result-object v9
+    move-result-object v11
 
     .line 400
-    const/16 v34, 0x0
+    const/16 v36, 0x0
 
     .line 401
-    const/4 v15, 0x1
+    const/16 v19, 0x1
 
     goto/16 :goto_7
 
     .line 402
-    .end local v17           #id:I
-    .end local v25           #rContext:Landroid/content/Context;
+    .end local v21           #id:I
+    .end local v27           #rContext:Landroid/content/Context;
     :catch_0
-    move-exception v11
+    move-exception v15
 
     .line 403
-    .local v11, e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    .local v15, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :try_start_2
-    invoke-virtual {v11}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+    invoke-virtual {v15}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto/16 :goto_7
 
     .line 435
-    .end local v9           #back:Landroid/graphics/drawable/Drawable;
-    .end local v11           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    .end local v14           #front:Landroid/graphics/drawable/Drawable;
-    .end local v15           #frontBlank:Z
-    .end local v18           #in:Landroid/content/Intent;
-    .end local v26           #rPackage:Ljava/lang/String;
-    .end local v27           #rSource:Ljava/lang/String;
+    .end local v11           #back:Landroid/graphics/drawable/Drawable;
+    .end local v15           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
+    .end local v18           #front:Landroid/graphics/drawable/Drawable;
+    .end local v19           #frontBlank:Z
+    .end local v22           #in:Landroid/content/Intent;
+    .end local v28           #rPackage:Ljava/lang/String;
+    .end local v29           #rSource:Ljava/lang/String;
     :catch_1
-    move-exception v11
+    move-exception v15
 
     .line 436
-    .local v11, e:Ljava/lang/Exception;
-    new-instance v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .local v15, e:Ljava/lang/Exception;
+    new-instance v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const/4 v5, 0x0
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v4, v0, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;I)V
+    const/4 v7, 0x0
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v6, v0, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;I)V
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_b
 
     .line 404
-    .end local v11           #e:Ljava/lang/Exception;
-    .restart local v9       #back:Landroid/graphics/drawable/Drawable;
-    .restart local v14       #front:Landroid/graphics/drawable/Drawable;
-    .restart local v15       #frontBlank:Z
-    .restart local v18       #in:Landroid/content/Intent;
-    .restart local v26       #rPackage:Ljava/lang/String;
-    .restart local v27       #rSource:Ljava/lang/String;
+    .end local v15           #e:Ljava/lang/Exception;
+    .restart local v11       #back:Landroid/graphics/drawable/Drawable;
+    .restart local v18       #front:Landroid/graphics/drawable/Drawable;
+    .restart local v19       #frontBlank:Z
+    .restart local v22       #in:Landroid/content/Intent;
+    .restart local v28       #rPackage:Ljava/lang/String;
+    .restart local v29       #rSource:Ljava/lang/String;
     :catch_2
-    move-exception v11
+    move-exception v15
 
     .line 405
-    .local v11, e:Landroid/content/res/Resources$NotFoundException;
+    .local v15, e:Landroid/content/res/Resources$NotFoundException;
     :try_start_3
-    invoke-virtual {v11}, Landroid/content/res/Resources$NotFoundException;->printStackTrace()V
+    invoke-virtual {v15}, Landroid/content/res/Resources$NotFoundException;->printStackTrace()V
 
     goto/16 :goto_7
 
     .line 408
-    .end local v11           #e:Landroid/content/res/Resources$NotFoundException;
+    .end local v15           #e:Landroid/content/res/Resources$NotFoundException;
     :cond_f
-    const-string v4, "drawable"
+    const-string v6, "drawable"
 
-    const-string v5, "android"
+    const-string v7, "android"
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v31
 
-    move-object/from16 v1, v27
+    move-object/from16 v1, v29
 
-    invoke-virtual {v0, v1, v4, v5}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v1, v6, v7}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v4
+    move-result v6
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v18
 
     .line 409
-    const-string v4, "_normal"
+    const-string v6, "_normal"
 
-    const-string v5, "_activated"
-
-    move-object/from16 v0, v27
-
-    invoke-virtual {v0, v4, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "drawable"
-
-    const-string v6, "android"
+    const-string v7, "_activated"
 
     move-object/from16 v0, v29
 
-    invoke-virtual {v0, v4, v5, v6}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0, v6, v7}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v4
+    move-result-object v6
 
-    move-object/from16 v0, v29
+    const-string v7, "drawable"
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const-string v8, "android"
 
-    move-result-object v9
+    move-object/from16 v0, v31
+
+    invoke-virtual {v0, v6, v7, v8}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v6
+
+    move-object/from16 v0, v31
+
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v11
 
     .line 411
-    const/16 v34, 0x0
+    const/16 v36, 0x0
 
     .line 412
-    const/4 v15, 0x1
+    const/16 v19, 0x1
 
     goto/16 :goto_7
 
     .line 421
-    .end local v26           #rPackage:Ljava/lang/String;
-    .end local v27           #rSource:Ljava/lang/String;
-    .restart local v8       #aInfo:Landroid/content/pm/ActivityInfo;
+    .end local v28           #rPackage:Ljava/lang/String;
+    .end local v29           #rSource:Ljava/lang/String;
+    .restart local v10       #aInfo:Landroid/content/pm/ActivityInfo;
     :cond_10
-    const v4, 0x1080093
+    const v6, 0x1080093
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v18
 
     goto/16 :goto_8
 
-    .line 427
-    .end local v8           #aInfo:Landroid/content/pm/ActivityInfo;
-    .restart local v20       #isCamera:Z
-    .restart local v23       #nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 429
+    .end local v10           #aInfo:Landroid/content/pm/ActivityInfo;
+    .restart local v12       #cls:Ljava/lang/String;
+    .restart local v13       #compName:Landroid/content/ComponentName;
+    .restart local v25       #nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     :cond_11
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     goto/16 :goto_9
 
-    .line 429
-    :cond_12
-    invoke-virtual/range {v18 .. v18}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "SearchActivity"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v22
-
     .line 430
-    .local v22, isSearch:Z
-    if-eqz v22, :cond_b
+    :cond_12
+    const-string v6, "SearchActivity"
+
+    invoke-virtual {v12, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_b
 
     .line 431
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mSearchDisabled:Z
-    invoke-static {v4}, Lcom/android/internal/policy/impl/LockScreen;->access$1100(Lcom/android/internal/policy/impl/LockScreen;)Z
+    invoke-static {v6}, Lcom/android/internal/policy/impl/LockScreen;->access$1100(Lcom/android/internal/policy/impl/LockScreen;)Z
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_13
+    if-nez v6, :cond_13
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
     :goto_c
-    move-object/from16 v0, v23
+    move-object/from16 v0, v25
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setEnabled(Z)V
+    invoke-virtual {v0, v6}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setEnabled(Z)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     goto/16 :goto_a
 
     :cond_13
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     goto :goto_c
 
     .line 439
-    .end local v9           #back:Landroid/graphics/drawable/Drawable;
-    .end local v14           #front:Landroid/graphics/drawable/Drawable;
-    .end local v15           #frontBlank:Z
-    .end local v18           #in:Landroid/content/Intent;
-    .end local v20           #isCamera:Z
-    .end local v22           #isSearch:Z
-    .end local v23           #nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .end local v11           #back:Landroid/graphics/drawable/Drawable;
+    .end local v12           #cls:Ljava/lang/String;
+    .end local v13           #compName:Landroid/content/ComponentName;
+    .end local v18           #front:Landroid/graphics/drawable/Drawable;
+    .end local v19           #frontBlank:Z
+    .end local v22           #in:Landroid/content/Intent;
+    .end local v25           #nDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     :cond_14
-    new-instance v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    new-instance v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const/4 v5, 0x0
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v4, v0, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;I)V
+    const/4 v7, 0x0
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v6, v0, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;I)V
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_b
 
     .line 442
-    .end local v35           #uri:Ljava/lang/String;
+    .end local v37           #uri:Ljava/lang/String;
     :cond_15
-    new-instance v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    new-instance v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const/4 v5, 0x0
-
-    move-object/from16 v0, v29
-
-    invoke-direct {v4, v0, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;I)V
+    const/4 v7, 0x0
 
     move-object/from16 v0, v31
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v6, v0, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;-><init>(Landroid/content/res/Resources;I)V
+
+    move-object/from16 v0, v33
+
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_b
 
     .line 445
-    .end local v34           #tmpInset:I
+    .end local v36           #tmpInset:I
     :cond_16
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
+    iget-object v6, v0, Lcom/android/internal/policy/impl/LockScreen$GlowPadViewMethods;->mGlowPadView:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
-    move-object/from16 v0, v31
+    move-object/from16 v0, v33
 
-    invoke-virtual {v4, v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->setTargetResources(Ljava/util/ArrayList;)V
+    invoke-virtual {v6, v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->setTargetResources(Ljava/util/ArrayList;)V
 
     goto/16 :goto_3
 .end method
