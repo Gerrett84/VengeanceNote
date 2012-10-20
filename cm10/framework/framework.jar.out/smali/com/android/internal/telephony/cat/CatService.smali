@@ -55,7 +55,7 @@
 
 .field static final SMS_SEND_RETRY:I = 0x802a
 
-.field static final STK_DEFAULT:Ljava/lang/String; = "Defualt Message"
+.field static final STK_DEFAULT:Ljava/lang/String; = "Default Message"
 
 .field static final WAITING_SMS_RESULT:I = 0x2
 
@@ -1330,7 +1330,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1411,7 +1411,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1482,7 +1482,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1534,7 +1534,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cat/TextMessage;->text:Ljava/lang/String;
 
-    const-string v1, "Defualt Message"
+    const-string v1, "Default Message"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

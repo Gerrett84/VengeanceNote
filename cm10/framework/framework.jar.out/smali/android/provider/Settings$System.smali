@@ -241,6 +241,8 @@
 
 .field public static final LOCKSCREEN_DISABLED:Ljava/lang/String; = "lockscreen.disabled"
 
+.field public static final LOCKSCREEN_IF_CALL_ENDS_WITH_SCREENOFF:Ljava/lang/String; = "lockscreen_if_call_ends_with_screenoff"
+
 .field public static final LOCKSCREEN_QUICK_UNLOCK_CONTROL:Ljava/lang/String; = "lockscreen_quick_unlock_control"
 
 .field public static final LOCKSCREEN_ROTATION:Ljava/lang/String; = "lockscreen_rotation"
@@ -1043,7 +1045,7 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
-    .line 2809
+    .line 2817
     const/16 v0, 0x4b
 
     new-array v0, v0, [Ljava/lang/String;
