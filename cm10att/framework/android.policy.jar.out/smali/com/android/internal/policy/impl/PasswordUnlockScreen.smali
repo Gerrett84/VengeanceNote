@@ -791,7 +791,7 @@
     .locals 6
 
     .prologue
-    const v5, 0x1040325
+    const v5, 0x1040327
 
     .line 311
     iget-object v3, p0, Lcom/android/internal/policy/impl/PasswordUnlockScreen;->mPasswordEntry:Landroid/widget/EditText;

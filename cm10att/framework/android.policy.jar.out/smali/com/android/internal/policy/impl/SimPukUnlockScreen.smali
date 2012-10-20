@@ -219,7 +219,7 @@
     .line 106
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x1040313
+    const v1, 0x1040315
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -518,7 +518,7 @@
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mContext:Landroid/content/Context;
 
-    const v2, 0x104033c
+    const v2, 0x104033e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -906,7 +906,7 @@
     .line 137
     iget-object v0, p0, Lcom/android/internal/policy/impl/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
-    const v1, 0x1040313
+    const v1, 0x1040315
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
