@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 427
+    .line 432
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$9;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/GlobalActions$9;->val$profileManager:Landroid/app/ProfileManager;
@@ -48,7 +48,7 @@
     .parameter "which"
 
     .prologue
-    .line 429
+    .line 434
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$9;->val$profileManager:Landroid/app/ProfileManager;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$9;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
@@ -64,6 +64,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProfileManager;->setActiveProfile(Ljava/util/UUID;)V
 
-    .line 430
+    .line 435
     return-void
 .end method

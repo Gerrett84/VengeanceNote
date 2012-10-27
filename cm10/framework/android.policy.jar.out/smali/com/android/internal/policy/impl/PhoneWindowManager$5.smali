@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 901
+    .line 906
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 18
 
     .prologue
-    .line 904
+    .line 909
     :try_start_0
     new-instance v8, Landroid/content/Intent;
 
@@ -49,17 +49,17 @@
 
     invoke-direct {v8, v14}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 905
+    .line 910
     .local v8, intent:Landroid/content/Intent;
     const-string v5, "com.android.launcher"
 
-    .line 906
+    .line 911
     .local v5, defaultHomePackage:Ljava/lang/String;
     const-string v14, "android.intent.category.HOME"
 
     invoke-virtual {v8, v14}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 907
+    .line 912
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -76,7 +76,7 @@
 
     move-result-object v11
 
-    .line 908
+    .line 913
     .local v11, res:Landroid/content/pm/ResolveInfo;
     iget-object v14, v11, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -94,28 +94,28 @@
 
     if-nez v14, :cond_0
 
-    .line 909
+    .line 914
     iget-object v14, v11, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v5, v14, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 911
+    .line 916
     :cond_0
     const/4 v12, 0x0
 
-    .line 912
+    .line 917
     .local v12, targetKilled:Z
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v1
 
-    .line 913
+    .line 918
     .local v1, am:Landroid/app/IActivityManager;
     invoke-interface {v1}, Landroid/app/IActivityManager;->getRunningAppProcesses()Ljava/util/List;
 
     move-result-object v3
 
-    .line 914
+    .line 919
     .local v3, apps:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -134,11 +134,11 @@
 
     check-cast v2, Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-    .line 915
+    .line 920
     .local v2, appInfo:Landroid/app/ActivityManager$RunningAppProcessInfo;
     iget v13, v2, Landroid/app/ActivityManager$RunningAppProcessInfo;->uid:I
 
-    .line 918
+    .line 923
     .local v13, uid:I
     const/16 v14, 0x2710
 
@@ -154,7 +154,7 @@
 
     if-ne v14, v15, :cond_2
 
-    .line 920
+    .line 925
     iget-object v14, v2, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
 
     if-eqz v14, :cond_5
@@ -165,7 +165,7 @@
 
     if-lez v14, :cond_5
 
-    .line 921
+    .line 926
     iget-object v4, v2, Landroid/app/ActivityManager$RunningAppProcessInfo;->pkgList:[Ljava/lang/String;
 
     .local v4, arr$:[Ljava/lang/String;
@@ -180,7 +180,7 @@
 
     aget-object v10, v4, v7
 
-    .line 922
+    .line 927
     .local v10, pkg:Ljava/lang/String;
     const-string v14, "com.android.systemui"
 
@@ -196,13 +196,13 @@
 
     if-nez v14, :cond_4
 
-    .line 923
+    .line 928
     invoke-interface {v1, v10}, Landroid/app/IActivityManager;->forceStopPackage(Ljava/lang/String;)V
 
-    .line 924
+    .line 929
     const/4 v12, 0x1
 
-    .line 933
+    .line 938
     .end local v4           #arr$:[Ljava/lang/String;
     .end local v7           #i$:I
     .end local v9           #len$:I
@@ -211,7 +211,7 @@
     :goto_1
     if-eqz v12, :cond_1
 
-    .line 934
+    .line 939
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -224,7 +224,7 @@
 
     invoke-virtual/range {v14 .. v17}, Lcom/android/internal/policy/impl/PhoneWindowManager;->performHapticFeedbackLw(Landroid/view/WindowManagerPolicy$WindowState;IZ)Z
 
-    .line 935
+    .line 940
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/android/internal/policy/impl/PhoneWindowManager$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -241,7 +241,7 @@
 
     invoke-virtual {v14}, Landroid/widget/Toast;->show()V
 
-    .line 942
+    .line 947
     .end local v1           #am:Landroid/app/IActivityManager;
     .end local v2           #appInfo:Landroid/app/ActivityManager$RunningAppProcessInfo;
     .end local v3           #apps:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
@@ -254,7 +254,7 @@
     :goto_2
     return-void
 
-    .line 921
+    .line 926
     .restart local v1       #am:Landroid/app/IActivityManager;
     .restart local v2       #appInfo:Landroid/app/ActivityManager$RunningAppProcessInfo;
     .restart local v3       #apps:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"
@@ -272,7 +272,7 @@
 
     goto :goto_0
 
-    .line 929
+    .line 934
     .end local v4           #arr$:[Ljava/lang/String;
     .end local v7           #i$:I
     .end local v9           #len$:I
@@ -284,12 +284,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 930
+    .line 935
     const/4 v12, 0x1
 
     goto :goto_1
 
-    .line 939
+    .line 944
     .end local v1           #am:Landroid/app/IActivityManager;
     .end local v2           #appInfo:Landroid/app/ActivityManager$RunningAppProcessInfo;
     .end local v3           #apps:Ljava/util/List;,"Ljava/util/List<Landroid/app/ActivityManager$RunningAppProcessInfo;>;"

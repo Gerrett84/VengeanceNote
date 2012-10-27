@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 881
+    .line 886
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 
     const/4 v6, 0x0
 
-    .line 884
+    .line 889
     iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -60,13 +60,13 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 885
+    .line 890
     .local v0, am:Landroid/media/AudioManager;
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
 
     move-result v1
 
-    .line 886
+    .line 891
     .local v1, ringerMode:I
     new-instance v3, Landroid/view/VolumePanel;
 
@@ -86,11 +86,11 @@
 
     invoke-direct {v3, v7, v4}, Landroid/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
 
-    .line 888
+    .line 893
     .local v3, volumePanel:Landroid/view/VolumePanel;
     if-ne v1, v8, :cond_2
 
-    .line 889
+    .line 894
     iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -109,7 +109,7 @@
 
     move v2, v5
 
-    .line 891
+    .line 896
     .local v2, vibrateSetting:Z
     :goto_0
     if-eqz v2, :cond_1
@@ -119,30 +119,30 @@
     :goto_1
     invoke-virtual {v0, v4}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 896
+    .line 901
     .end local v2           #vibrateSetting:Z
     :goto_2
     const/16 v4, 0x11
 
     invoke-virtual {v3, v8, v4}, Landroid/view/VolumePanel;->postVolumeChanged(II)V
 
-    .line 898
+    .line 903
     return-void
 
     :cond_0
     move v2, v6
 
-    .line 889
+    .line 894
     goto :goto_0
 
     .restart local v2       #vibrateSetting:Z
     :cond_1
     move v4, v6
 
-    .line 891
+    .line 896
     goto :goto_1
 
-    .line 894
+    .line 899
     .end local v2           #vibrateSetting:Z
     :cond_2
     invoke-virtual {v0, v8}, Landroid/media/AudioManager;->setRingerMode(I)V

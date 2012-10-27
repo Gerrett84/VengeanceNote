@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1042
+    .line 1047
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$18;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 1044
+    .line 1049
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1058
+    .line 1063
     :cond_0
     :goto_0
     return-void
 
-    .line 1046
+    .line 1051
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$18;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1047
+    .line 1052
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$18;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mDialog:Landroid/app/AlertDialog;
@@ -72,14 +72,14 @@
 
     goto :goto_0
 
-    .line 1051
+    .line 1056
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$18;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #calls: Lcom/android/internal/policy/impl/GlobalActions;->refreshSilentMode()V
     invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$2200(Lcom/android/internal/policy/impl/GlobalActions;)V
 
-    .line 1052
+    .line 1057
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$18;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAdapter:Lcom/android/internal/policy/impl/GlobalActions$MyAdapter;
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 1055
+    .line 1060
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$18;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 1044
+    .line 1049
     nop
 
     :pswitch_data_0

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 964
+    .line 969
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iput p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$6;->val$keyCode:I
@@ -46,18 +46,18 @@
     .locals 15
 
     .prologue
-    .line 966
+    .line 971
     invoke-static {}, Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager;
 
     move-result-object v13
 
-    .line 967
+    .line 972
     .local v13, im:Landroid/hardware/input/InputManager;
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 969
+    .line 974
     .local v1, now:J
     new-instance v0, Landroid/view/KeyEvent;
 
@@ -81,7 +81,7 @@
 
     invoke-direct/range {v0 .. v12}, Landroid/view/KeyEvent;-><init>(JJIIIIIIII)V
 
-    .line 972
+    .line 977
     .local v0, downEvent:Landroid/view/KeyEvent;
     const/4 v3, 0x1
 
@@ -89,7 +89,7 @@
 
     move-result-object v14
 
-    .line 974
+    .line 979
     .local v14, upEvent:Landroid/view/KeyEvent;
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -98,17 +98,17 @@
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVirtualKeypress:Z
     invoke-static {v3, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$302(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 975
+    .line 980
     const/4 v3, 0x1
 
     invoke-virtual {v13, v0, v3}, Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z
 
-    .line 976
+    .line 981
     const/4 v3, 0x1
 
     invoke-virtual {v13, v14, v3}, Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z
 
-    .line 977
+    .line 982
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$6;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v4, 0x0
@@ -116,6 +116,6 @@
     #setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsVirtualKeypress:Z
     invoke-static {v3, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$302(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    .line 978
+    .line 983
     return-void
 .end method
