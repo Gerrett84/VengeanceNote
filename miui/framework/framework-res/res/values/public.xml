@@ -4217,27 +4217,28 @@
     <public type="color" name="tab_pressed_text_color" id="0x01060066" />
     <public type="color" name="edit_text_color" id="0x01060067" />
     <public type="color" name="list_separator_foreground_holo_light" id="0x01060068" />
-    <public type="color" name="listseparator_text_holo_light" id="0x01060069" />
-    <public type="color" name="primary_text_dark_disable_only" id="0x0106006a" />
-    <public type="color" name="primary_text_dark_focused" id="0x0106006b" />
-    <public type="color" name="primary_text_disable_only_holo_dark" id="0x0106006c" />
-    <public type="color" name="primary_text_disable_only_holo_light" id="0x0106006d" />
-    <public type="color" name="primary_text_focused_holo_dark" id="0x0106006e" />
-    <public type="color" name="primary_text_holo_dark" id="0x0106006f" />
-    <public type="color" name="primary_text_holo_light" id="0x01060070" />
-    <public type="color" name="primary_text_light_disable_only" id="0x01060071" />
-    <public type="color" name="primary_text_nodisable_holo_dark" id="0x01060072" />
-    <public type="color" name="primary_text_nodisable_holo_light" id="0x01060073" />
-    <public type="color" name="search_url_text" id="0x01060074" />
-    <public type="color" name="search_url_text_holo" id="0x01060075" />
-    <public type="color" name="secondary_text_holo_dark" id="0x01060076" />
-    <public type="color" name="secondary_text_holo_light" id="0x01060077" />
-    <public type="color" name="secondary_text_nodisable_holo_dark" id="0x01060078" />
-    <public type="color" name="secondary_text_nodisable_holo_light" id="0x01060079" />
-    <public type="color" name="secondary_text_nofocus" id="0x0106007a" />
-    <public type="color" name="tab_indicator_text_v4" id="0x0106007b" />
-    <public type="color" name="tertiary_text_holo_dark" id="0x0106007c" />
-    <public type="color" name="tertiary_text_holo_light" id="0x0106007d" />
+    <public type="color" name="notification_action_text_color" id="0x01060069" />
+    <public type="color" name="listseparator_text_holo_light" id="0x0106006a" />
+    <public type="color" name="primary_text_dark_disable_only" id="0x0106006b" />
+    <public type="color" name="primary_text_dark_focused" id="0x0106006c" />
+    <public type="color" name="primary_text_disable_only_holo_dark" id="0x0106006d" />
+    <public type="color" name="primary_text_disable_only_holo_light" id="0x0106006e" />
+    <public type="color" name="primary_text_focused_holo_dark" id="0x0106006f" />
+    <public type="color" name="primary_text_holo_dark" id="0x01060070" />
+    <public type="color" name="primary_text_holo_light" id="0x01060071" />
+    <public type="color" name="primary_text_light_disable_only" id="0x01060072" />
+    <public type="color" name="primary_text_nodisable_holo_dark" id="0x01060073" />
+    <public type="color" name="primary_text_nodisable_holo_light" id="0x01060074" />
+    <public type="color" name="search_url_text" id="0x01060075" />
+    <public type="color" name="search_url_text_holo" id="0x01060076" />
+    <public type="color" name="secondary_text_holo_dark" id="0x01060077" />
+    <public type="color" name="secondary_text_holo_light" id="0x01060078" />
+    <public type="color" name="secondary_text_nodisable_holo_dark" id="0x01060079" />
+    <public type="color" name="secondary_text_nodisable_holo_light" id="0x0106007a" />
+    <public type="color" name="secondary_text_nofocus" id="0x0106007b" />
+    <public type="color" name="tab_indicator_text_v4" id="0x0106007c" />
+    <public type="color" name="tertiary_text_holo_dark" id="0x0106007d" />
+    <public type="color" name="tertiary_text_holo_light" id="0x0106007e" />
     <public type="array" name="emailAddressTypes" id="0x01070000" />
     <public type="array" name="imProtocols" id="0x01070001" />
     <public type="array" name="organizationTypes" id="0x01070002" />

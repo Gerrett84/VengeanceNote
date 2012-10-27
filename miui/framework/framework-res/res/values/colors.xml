@@ -93,4 +93,5 @@
     <color name="tab_pressed_text_color">#ffffffff</color>
     <color name="edit_text_color">#ff000000</color>
     <color name="list_separator_foreground_holo_light">#ffff7e00</color>
+    <color name="notification_action_text_color">#ff000000</color>
 </resources>
