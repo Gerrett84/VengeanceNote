@@ -80,7 +80,7 @@
 
     .line 62
     .local v1, res:Landroid/content/res/Resources;
-    const v2, 0x111003b
+    const v2, 0x111003c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 

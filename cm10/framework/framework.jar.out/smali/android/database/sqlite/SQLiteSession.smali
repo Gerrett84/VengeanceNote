@@ -700,7 +700,7 @@
     .line 929
     iget-object v0, p0, Landroid/database/sqlite/SQLiteSession;->mTransactionStack:Landroid/database/sqlite/SQLiteSession$Transaction;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroid/database/sqlite/SQLiteSession;->mTransactionStack:Landroid/database/sqlite/SQLiteSession$Transaction;
 

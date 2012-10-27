@@ -4316,7 +4316,7 @@
 
     .line 590
     .local v0, R:Landroid/content/res/Resources;
-    const v3, 0x111002e
+    const v3, 0x111002f
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -4341,7 +4341,7 @@
 
     .line 596
     :cond_0
-    const v3, 0x111002c
+    const v3, 0x111002d
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -4376,7 +4376,7 @@
 
     .line 610
     :goto_0
-    const v3, 0x111002e
+    const v3, 0x111002f
 
     :try_start_2
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -9597,7 +9597,7 @@
 
     move-result-object v0
 
-    const v1, 0x111002b
+    const v1, 0x111002c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

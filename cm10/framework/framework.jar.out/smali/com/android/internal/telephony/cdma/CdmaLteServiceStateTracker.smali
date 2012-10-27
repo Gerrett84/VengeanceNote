@@ -1770,7 +1770,7 @@
 
     move-result-object v29
 
-    const-string v30, " hasDeegistered="
+    const-string v30, " hasDeregistered="
 
     invoke-virtual/range {v29 .. v30}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

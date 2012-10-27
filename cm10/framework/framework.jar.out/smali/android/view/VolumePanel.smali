@@ -486,7 +486,7 @@
 
     move-result-object v7
 
-    const v10, 0x111002c
+    const v10, 0x111002d
 
     invoke-virtual {v7, v10}, Landroid/content/res/Resources;->getBoolean(I)Z
 

@@ -160,6 +160,8 @@
 
 .field public static final HIDE_ROTATION_LOCK_TOGGLE_FOR_ACCESSIBILITY:Ljava/lang/String; = "hide_rotation_lock_toggle_for_accessibility"
 
+.field public static final HOME_UNLOCK_SCREEN:Ljava/lang/String; = "home_unlock_screen"
+
 .field public static final HTTP_PROXY:Ljava/lang/String; = "http_proxy"
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -372,11 +374,15 @@
 
 .field public static final POINTER_SPEED:Ljava/lang/String; = "pointer_speed"
 
+.field public static final POWER_MENU_AIRPLANE_ENABLED:Ljava/lang/String; = "power_menu_airplane_enabled"
+
 .field public static final POWER_MENU_PROFILES_ENABLED:Ljava/lang/String; = "power_menu_profiles_enabled"
 
 .field public static final POWER_MENU_REBOOT_ENABLED:Ljava/lang/String; = "power_menu_reboot_enabled"
 
 .field public static final POWER_MENU_SCREENSHOT_ENABLED:Ljava/lang/String; = "power_menu_screenshot_enabled"
+
+.field public static final POWER_MENU_SILENT_ENABLED:Ljava/lang/String; = "power_menu_silent_enabled"
 
 .field public static final POWER_SOUNDS_ENABLED:Ljava/lang/String; = "power_sounds_enabled"
 
@@ -1045,8 +1051,8 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
-    .line 2817
-    const/16 v0, 0x4b
+    .line 2835
+    const/16 v0, 0x4d
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -1485,6 +1491,18 @@
     aput-object v2, v0, v1
 
     const/16 v1, 0x4a
+
+    const-string/jumbo v2, "power_menu_airplane_enabled"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x4b
+
+    const-string/jumbo v2, "power_menu_silent_enabled"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x4c
 
     const-string v2, "lockscreen.vibrate_enabled"
 

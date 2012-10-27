@@ -10126,7 +10126,7 @@
 
     move-result-object v22
 
-    const v23, 0x1110047
+    const v23, 0x1110048
 
     invoke-virtual/range {v22 .. v23}, Landroid/content/res/Resources;->getBoolean(I)Z
 
