@@ -39109,6 +39109,10 @@
 
     iget-object v1, v12, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
+    invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
     move-object/from16 v0, p7
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

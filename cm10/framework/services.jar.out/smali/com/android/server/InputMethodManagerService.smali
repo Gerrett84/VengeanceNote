@@ -11941,7 +11941,7 @@
     .local v0, e:Landroid/provider/Settings$SettingNotFoundException;
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x1110040
+    const v3, 0x1110041
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getBoolean(I)Z
 

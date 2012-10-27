@@ -25,13 +25,13 @@
     .parameter "handler"
 
     .prologue
-    .line 2389
+    .line 2395
     iput-object p1, p0, Lcom/android/server/LocationManagerService$BlacklistObserver;->this$0:Lcom/android/server/LocationManagerService;
 
-    .line 2390
+    .line 2396
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2391
+    .line 2397
     return-void
 .end method
 
@@ -42,12 +42,12 @@
     .parameter "selfChange"
 
     .prologue
-    .line 2394
+    .line 2400
     iget-object v0, p0, Lcom/android/server/LocationManagerService$BlacklistObserver;->this$0:Lcom/android/server/LocationManagerService;
 
     #calls: Lcom/android/server/LocationManagerService;->reloadBlacklist()V
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$2700(Lcom/android/server/LocationManagerService;)V
 
-    .line 2395
+    .line 2401
     return-void
 .end method

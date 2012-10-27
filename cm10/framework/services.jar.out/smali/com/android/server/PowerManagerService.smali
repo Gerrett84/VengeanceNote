@@ -10785,7 +10785,7 @@
 
     if-eqz v1, :cond_1
 
-    const v1, 0x1110041
+    const v1, 0x1110042
 
     invoke-virtual {v7, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

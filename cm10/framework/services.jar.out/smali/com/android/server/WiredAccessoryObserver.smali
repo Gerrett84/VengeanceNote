@@ -1292,9 +1292,7 @@
 
     if-nez v4, :cond_0
 
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_0
+    if-lez v3, :cond_0
 
     .line 247
     sget-object v4, Lcom/android/server/WiredAccessoryObserver;->TAG:Ljava/lang/String;
