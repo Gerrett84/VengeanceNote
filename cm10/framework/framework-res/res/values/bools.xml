@@ -35,6 +35,7 @@
     <bool name="config_intrusiveBatteryLed">false</bool>
     <bool name="config_multiColorBatteryLed">false</bool>
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
+    <bool name="config_disableHomeUnlockSetting">true</bool>
     <bool name="config_enableLockBeforeUnlockScreen">false</bool>
     <bool name="config_enableLockScreenRotation">false</bool>
     <bool name="config_enable_puk_unlock_screen">true</bool>
