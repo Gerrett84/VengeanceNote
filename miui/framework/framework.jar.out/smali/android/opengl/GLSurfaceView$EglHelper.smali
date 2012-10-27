@@ -374,7 +374,7 @@
     .line 1063
     new-instance v2, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v3, "mEglConfig not initialized"
+    const-string v3, "mEglConfig not initialized"
 
     invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

@@ -1835,7 +1835,7 @@
     .line 1714
     .local v5, value2:Ljava/lang/String;
     :try_start_0
-    const-string/jumbo v6, "long"
+    const-string v6, "long"
 
     invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2285,7 +2285,7 @@
     .line 1488
     const/16 v18, 0x0
 
-    const-string/jumbo v19, "listen-for-tickles"
+    const-string v19, "listen-for-tickles"
 
     move-object/from16 v0, v18
 
@@ -2786,7 +2786,7 @@
     .restart local v13       #periodicSync:Landroid/util/Pair;,"Landroid/util/Pair<Landroid/os/Bundle;Ljava/lang/Long;>;"
     :cond_c
     :try_start_c
-    const-string/jumbo v18, "listenForTickles"
+    const-string v18, "listenForTickles"
 
     move-object/from16 v0, v18
 
@@ -2805,7 +2805,7 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_c .. :try_end_c} :catch_2
     .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_4
 
-    goto/16 :goto_7
+    goto :goto_7
 
     .line 1546
     .end local v3           #authority:Landroid/content/SyncStorageEngine$AuthorityInfo;
@@ -3784,7 +3784,7 @@
     if-eqz v24, :cond_c
 
     .line 1941
-    const-string/jumbo v3, "listen_for_tickles"
+    const-string v3, "listen_for_tickles"
 
     move-object/from16 v0, v24
 
@@ -5571,7 +5571,7 @@
     .local v13, listen:Ljava/lang/Boolean;
     const/16 v19, 0x0
 
-    const-string/jumbo v20, "listenForTickles"
+    const-string v20, "listenForTickles"
 
     move-object/from16 v0, v19
 
@@ -5620,7 +5620,7 @@
     .line 1763
     const/16 v19, 0x0
 
-    const-string/jumbo v20, "listenForTickles"
+    const-string v20, "listenForTickles"
 
     move-object/from16 v0, v19
 
@@ -5968,7 +5968,7 @@
 
     const-string/jumbo v20, "type"
 
-    const-string/jumbo v21, "long"
+    const-string v21, "long"
 
     move-object/from16 v0, v19
 

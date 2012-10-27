@@ -311,7 +311,7 @@
 
     .line 309
     .local v3, name:Ljava/lang/String;
-    const-string/jumbo v5, "linearInterpolator"
+    const-string v5, "linearInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

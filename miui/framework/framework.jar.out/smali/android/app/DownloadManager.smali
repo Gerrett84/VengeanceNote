@@ -933,7 +933,7 @@
 
     .line 1024
     :cond_3
-    const-string/jumbo v6, "local_filename"
+    const-string v6, "local_filename"
 
     invoke-interface {v0, v6}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 

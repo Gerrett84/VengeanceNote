@@ -375,7 +375,7 @@
     .line 185
     new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "load failed"
+    const-string v2, "load failed"
 
     iget-object v3, v8, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
@@ -476,7 +476,7 @@
     .line 217
     new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "load failed"
+    const-string v2, "load failed"
 
     iget-object v3, v8, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
@@ -590,7 +590,7 @@
     .line 237
     new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "load failed"
+    const-string v2, "load failed"
 
     iget-object v3, v8, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
@@ -691,6 +691,8 @@
     goto :goto_2
 
     .line 137
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2

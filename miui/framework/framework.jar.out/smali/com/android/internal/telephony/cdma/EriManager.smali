@@ -763,7 +763,7 @@
     :try_start_0
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: check for alternate file"
+    const-string v18, "loadEriFileFromXml: check for alternate file"
 
     move-object/from16 v0, v18
 
@@ -803,7 +803,7 @@
     .line 167
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: opened alternate file"
+    const-string v18, "loadEriFileFromXml: opened alternate file"
 
     move-object/from16 v0, v18
 
@@ -823,7 +823,7 @@
     .line 177
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: open normal file"
+    const-string v18, "loadEriFileFromXml: open normal file"
 
     move-object/from16 v0, v18
 
@@ -1004,7 +1004,7 @@
     :cond_2
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: eri parsing successful, file loaded"
+    const-string v18, "loadEriFileFromXml: eri parsing successful, file loaded"
 
     move-object/from16 v0, v18
 
@@ -1058,7 +1058,7 @@
     :goto_3
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: no alternate file"
+    const-string v18, "loadEriFileFromXml: no alternate file"
 
     move-object/from16 v0, v18
 
@@ -1080,7 +1080,7 @@
     :goto_4
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: no parser for alternate file"
+    const-string v18, "loadEriFileFromXml: no parser for alternate file"
 
     move-object/from16 v0, v18
 

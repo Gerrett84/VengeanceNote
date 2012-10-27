@@ -897,7 +897,7 @@
     :cond_1
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "mEnterAnim=#"
+    const-string v4, "mEnterAnim=#"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -979,7 +979,7 @@
     :cond_5
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "mBreadCrumbTitleRes=#"
+    const-string v4, "mBreadCrumbTitleRes=#"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1016,7 +1016,7 @@
     :cond_7
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "mBreadCrumbShortTitleRes=#"
+    const-string v4, "mBreadCrumbShortTitleRes=#"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

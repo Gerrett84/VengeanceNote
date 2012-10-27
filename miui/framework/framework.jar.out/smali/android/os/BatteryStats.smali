@@ -210,7 +210,7 @@
 
     aput-object v1, v0, v10
 
-    const-string/jumbo v1, "light"
+    const-string v1, "light"
 
     aput-object v1, v0, v11
 
@@ -295,7 +295,7 @@
 
     const/16 v1, 0xd
 
-    const-string/jumbo v2, "lte"
+    const-string v2, "lte"
 
     aput-object v2, v0, v1
 
@@ -1098,7 +1098,7 @@
     invoke-virtual {p0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 1047
-    const-string/jumbo v8, "m "
+    const-string v8, "m "
 
     invoke-virtual {p0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1892,7 +1892,7 @@
     :cond_4
     const/4 v5, 0x0
 
-    const-string/jumbo v8, "m"
+    const-string v8, "m"
 
     const/16 v9, 0xa
 
@@ -2306,7 +2306,7 @@
     .line 1291
     const/4 v5, 0x0
 
-    const-string/jumbo v8, "lv"
+    const-string v8, "lv"
 
     const/4 v9, 0x2
 

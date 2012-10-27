@@ -437,7 +437,7 @@
     .local v0, cdmaSubscription:I
     const-string v8, "PHONE"
 
-    const-string/jumbo v10, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION"
+    const-string v10, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION"
 
     invoke-static {v8, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -584,7 +584,7 @@
     :try_start_4
     const-string v8, "PHONE"
 
-    const-string/jumbo v10, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV"
+    const-string v10, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV"
 
     invoke-static {v8, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -599,7 +599,7 @@
     .restart local v0       #cdmaSubscription:I
     const-string v8, "PHONE"
 
-    const-string/jumbo v10, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM"
+    const-string v10, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM"
 
     invoke-static {v8, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -671,8 +671,6 @@
     goto :goto_3
 
     .line 117
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

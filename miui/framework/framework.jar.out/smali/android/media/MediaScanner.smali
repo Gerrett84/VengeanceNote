@@ -2522,7 +2522,7 @@
 
     move-result-object v3
 
-    const-string/jumbo v5, "limit"
+    const-string v5, "limit"
 
     const-string v8, "1000"
 

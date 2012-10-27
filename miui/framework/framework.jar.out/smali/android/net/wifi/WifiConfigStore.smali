@@ -2628,7 +2628,7 @@
 
     .line 864
     :cond_5
-    const-string/jumbo v19, "linkAddress"
+    const-string v19, "linkAddress"
 
     move-object/from16 v0, v19
 
@@ -3291,6 +3291,8 @@
     goto/16 :goto_4
 
     .line 914
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2
@@ -5041,7 +5043,7 @@
 
     .line 1576
     .local v3, sb:Ljava/lang/StringBuffer;
-    const-string/jumbo v4, "line.separator"
+    const-string v4, "line.separator"
 
     invoke-static {v4}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 

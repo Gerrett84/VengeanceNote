@@ -62,95 +62,95 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string/jumbo v1, "lockscreen.lockedoutpermanently"
+    const-string v1, "lockscreen.lockedoutpermanently"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "lockscreen.lockoutattemptdeadline"
+    const-string v1, "lockscreen.lockoutattemptdeadline"
 
     aput-object v1, v0, v3
 
     const/4 v1, 0x2
 
-    const-string/jumbo v2, "lockscreen.patterneverchosen"
+    const-string v2, "lockscreen.patterneverchosen"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x3
 
-    const-string/jumbo v2, "lockscreen.password_type"
+    const-string v2, "lockscreen.password_type"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x4
 
-    const-string/jumbo v2, "lockscreen.password_type_alternate"
+    const-string v2, "lockscreen.password_type_alternate"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x5
 
-    const-string/jumbo v2, "lockscreen.password_salt"
+    const-string v2, "lockscreen.password_salt"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    const-string/jumbo v2, "lockscreen.disabled"
+    const-string v2, "lockscreen.disabled"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    const-string/jumbo v2, "lockscreen.options"
+    const-string v2, "lockscreen.options"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    const-string/jumbo v2, "lockscreen.biometric_weak_fallback"
+    const-string v2, "lockscreen.biometric_weak_fallback"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    const-string/jumbo v2, "lockscreen.biometricweakeverchosen"
+    const-string v2, "lockscreen.biometricweakeverchosen"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    const-string/jumbo v2, "lockscreen.power_button_instantly_locks"
+    const-string v2, "lockscreen.power_button_instantly_locks"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    const-string/jumbo v2, "lockscreen.passwordhistory"
+    const-string v2, "lockscreen.passwordhistory"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    const-string/jumbo v2, "lock_pattern_autolock"
+    const-string v2, "lock_pattern_autolock"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string/jumbo v2, "lock_biometric_weak_flags"
+    const-string v2, "lock_biometric_weak_flags"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string/jumbo v2, "lock_pattern_visible_pattern"
+    const-string v2, "lock_pattern_visible_pattern"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    const-string/jumbo v2, "lock_pattern_tactile_feedback_enabled"
+    const-string v2, "lock_pattern_tactile_feedback_enabled"
 
     aput-object v2, v0, v1
 
@@ -750,7 +750,7 @@
 
     .line 364
     .local v0, db:Landroid/database/sqlite/SQLiteDatabase;
-    const-string/jumbo v1, "locksettings"
+    const-string v1, "locksettings"
 
     sget-object v2, Lcom/android/internal/widget/LockSettingsService;->COLUMNS_FOR_QUERY:[Ljava/lang/String;
 
@@ -1020,7 +1020,7 @@
 
     .line 351
     :try_start_0
-    const-string/jumbo v2, "locksettings"
+    const-string v2, "locksettings"
 
     const-string/jumbo v3, "name=? AND user=?"
 
@@ -1043,7 +1043,7 @@
     invoke-virtual {v1, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     .line 353
-    const-string/jumbo v2, "locksettings"
+    const-string v2, "locksettings"
 
     const/4 v3, 0x0
 
@@ -1625,7 +1625,7 @@
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 319
-    const-string/jumbo v2, "locksettings"
+    const-string v2, "locksettings"
 
     new-instance v3, Ljava/lang/StringBuilder;
 

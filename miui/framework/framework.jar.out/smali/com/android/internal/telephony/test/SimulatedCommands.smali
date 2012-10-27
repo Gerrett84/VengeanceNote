@@ -2048,7 +2048,7 @@
 
     .line 347
     :cond_2
-    const-string/jumbo v1, "locked"
+    const-string v1, "locked"
 
     goto :goto_1
 

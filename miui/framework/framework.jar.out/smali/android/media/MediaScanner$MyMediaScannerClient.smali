@@ -970,7 +970,7 @@
     invoke-virtual/range {v26 .. v28}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Float;)V
 
     .line 855
-    const-string/jumbo v27, "longitude"
+    const-string v27, "longitude"
 
     const/16 v28, 0x1
 
@@ -1586,8 +1586,6 @@
     goto/16 :goto_7
 
     .line 877
-    nop
-
     :pswitch_data_0
     .packed-switch 0x3
         :pswitch_2

@@ -1888,7 +1888,7 @@
     invoke-virtual {v5, v0, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 2564
-    const-string/jumbo v25, "locale"
+    const-string v25, "locale"
 
     move-object/from16 v0, p0
 

@@ -4611,7 +4611,7 @@
     :try_start_5
     const-string v4, "PduPersister"
 
-    const-string/jumbo v6, "load: "
+    const-string v6, "load: "
 
     invoke-static {v4, v6, v15}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
@@ -5698,8 +5698,6 @@
     goto :goto_c
 
     .line 614
-    nop
-
     :pswitch_data_0
     .packed-switch 0x80
         :pswitch_4

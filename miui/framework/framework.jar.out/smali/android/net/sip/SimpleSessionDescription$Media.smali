@@ -107,7 +107,7 @@
     const/16 v4, 0x20
 
     .line 368
-    const-string/jumbo v2, "m="
+    const-string v2, "m="
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

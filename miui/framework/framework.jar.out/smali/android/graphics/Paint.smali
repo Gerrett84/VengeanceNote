@@ -4289,7 +4289,7 @@
     .line 1093
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "locale cannot be null"
+    const-string v1, "locale cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

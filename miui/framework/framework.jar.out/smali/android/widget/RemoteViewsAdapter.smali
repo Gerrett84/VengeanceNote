@@ -2164,7 +2164,7 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "loading view instead"
+    const-string v5, "loading view instead"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

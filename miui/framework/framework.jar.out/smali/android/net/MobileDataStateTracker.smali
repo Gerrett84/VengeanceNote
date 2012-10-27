@@ -969,7 +969,7 @@
 
     .line 354
     :pswitch_c
-    const-string/jumbo v0, "lte"
+    const-string v0, "lte"
 
     .line 355
     goto :goto_0
@@ -982,8 +982,6 @@
     goto :goto_0
 
     .line 316
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

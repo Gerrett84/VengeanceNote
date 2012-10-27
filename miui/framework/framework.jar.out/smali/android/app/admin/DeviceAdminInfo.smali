@@ -156,7 +156,7 @@
 
     const/4 v4, 0x0
 
-    const-string/jumbo v5, "limit-password"
+    const-string v5, "limit-password"
 
     const v6, 0x1040294
 

@@ -588,7 +588,7 @@
     if-lez p3, :cond_3
 
     .line 817
-    const-string/jumbo v0, "limit"
+    const-string v0, "limit"
 
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 

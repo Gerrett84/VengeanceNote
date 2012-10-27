@@ -37,7 +37,7 @@
     .line 57
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "looper must not be null"
+    const-string v1, "looper must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

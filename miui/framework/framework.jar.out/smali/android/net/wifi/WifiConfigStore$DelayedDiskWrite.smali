@@ -347,7 +347,7 @@
 
     .line 733
     .local v7, linkAddr:Landroid/net/LinkAddress;
-    const-string/jumbo v14, "linkAddress"
+    const-string v14, "linkAddress"
 
     invoke-virtual {v10, v14}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
@@ -885,6 +885,8 @@
     goto/16 :goto_4
 
     .line 728
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_2

@@ -192,7 +192,7 @@
     invoke-virtual {v3, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 174
-    const-string/jumbo v5, "locale"
+    const-string v5, "locale"
 
     if-nez p4, :cond_3
 

@@ -184,7 +184,7 @@
 
     .prologue
     .line 1113
-    const-string/jumbo v1, "lockscreen.biometricweakeverchosen"
+    const-string v1, "lockscreen.biometricweakeverchosen"
 
     const/4 v2, 0x1
 
@@ -289,7 +289,7 @@
     if-nez v0, :cond_0
 
     .line 165
-    const-string/jumbo v0, "lock_settings"
+    const-string v0, "lock_settings"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -352,7 +352,7 @@
     const-wide/16 v4, 0x0
 
     .line 756
-    const-string/jumbo v3, "lockscreen.password_salt"
+    const-string v3, "lockscreen.password_salt"
 
     invoke-direct {p0, v3, v4, v5}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -377,7 +377,7 @@
     move-result-wide v1
 
     .line 760
-    const-string/jumbo v3, "lockscreen.password_salt"
+    const-string v3, "lockscreen.password_salt"
 
     invoke-direct {p0, v3, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
@@ -1112,7 +1112,7 @@
 
     .line 297
     .local v2, passwordHashString:Ljava/lang/String;
-    const-string/jumbo v6, "lockscreen.passwordhistory"
+    const-string v6, "lockscreen.passwordhistory"
 
     invoke-direct {p0, v6}, Lcom/android/internal/widget/LockPatternUtils;->getString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1253,12 +1253,12 @@
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPattern(Ljava/util/List;)V
 
     .line 413
-    const-string/jumbo v0, "lockscreen.password_type"
+    const-string v0, "lockscreen.password_type"
 
     invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
     .line 414
-    const-string/jumbo v0, "lockscreen.password_type_alternate"
+    const-string v0, "lockscreen.password_type_alternate"
 
     invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
@@ -1348,7 +1348,7 @@
 
     .line 367
     .local v0, activePasswordQuality:I
-    const-string/jumbo v2, "lockscreen.password_type"
+    const-string v2, "lockscreen.password_type"
 
     const-wide/32 v3, 0x10000
 
@@ -1446,8 +1446,6 @@
     goto :goto_0
 
     .line 369
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x8000 -> :sswitch_1
@@ -1542,7 +1540,7 @@
     const-wide/32 v3, 0x10000
 
     .line 671
-    const-string/jumbo v1, "lockscreen.password_type"
+    const-string v1, "lockscreen.password_type"
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -1557,7 +1555,7 @@
     if-ne v0, v1, :cond_0
 
     .line 676
-    const-string/jumbo v1, "lockscreen.password_type_alternate"
+    const-string v1, "lockscreen.password_type_alternate"
 
     invoke-direct {p0, v1, v3, v4}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -1577,7 +1575,7 @@
     const-wide/16 v4, 0x0
 
     .line 935
-    const-string/jumbo v6, "lockscreen.lockoutattemptdeadline"
+    const-string v6, "lockscreen.lockoutattemptdeadline"
 
     invoke-direct {p0, v6, v4, v5}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -1650,7 +1648,7 @@
 
     .prologue
     .line 1128
-    const-string/jumbo v0, "lockscreen.power_button_instantly_locks"
+    const-string v0, "lockscreen.power_button_instantly_locks"
 
     const/4 v1, 0x1
 
@@ -1828,7 +1826,7 @@
 
     .prologue
     .line 356
-    const-string/jumbo v0, "lockscreen.biometricweakeverchosen"
+    const-string v0, "lockscreen.biometricweakeverchosen"
 
     const/4 v1, 0x0
 
@@ -1915,7 +1913,7 @@
     const-wide/16 v4, 0x0
 
     .line 879
-    const-string/jumbo v2, "lock_biometric_weak_flags"
+    const-string v2, "lock_biometric_weak_flags"
 
     invoke-direct {p0, v2, v4, v5}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -1997,7 +1995,7 @@
     const/4 v6, 0x0
 
     .line 808
-    const-string/jumbo v8, "lockscreen.password_type"
+    const-string v8, "lockscreen.password_type"
 
     invoke-direct {p0, v8, v9, v10}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -2005,7 +2003,7 @@
 
     .line 809
     .local v3, mode:J
-    const-string/jumbo v8, "lockscreen.password_type_alternate"
+    const-string v8, "lockscreen.password_type_alternate"
 
     invoke-direct {p0, v8, v9, v10}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -2119,7 +2117,7 @@
     const-wide/32 v5, 0x10000
 
     .line 827
-    const-string/jumbo v3, "lockscreen.password_type_alternate"
+    const-string v3, "lockscreen.password_type_alternate"
 
     invoke-direct {p0, v3, v5, v6}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -2134,7 +2132,7 @@
     .line 831
     .local v0, backupEnabled:Z
     :goto_0
-    const-string/jumbo v3, "lock_pattern_autolock"
+    const-string v3, "lock_pattern_autolock"
 
     invoke-direct {p0, v3, v2}, Lcom/android/internal/widget/LockPatternUtils;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -2142,7 +2140,7 @@
 
     if-eqz v3, :cond_2
 
-    const-string/jumbo v3, "lockscreen.password_type"
+    const-string v3, "lockscreen.password_type"
 
     invoke-direct {p0, v3, v5, v6}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -2192,7 +2190,7 @@
 
     if-nez v0, :cond_0
 
-    const-string/jumbo v0, "lockscreen.disabled"
+    const-string v0, "lockscreen.disabled"
 
     invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->getLong(Ljava/lang/String;J)J
 
@@ -2218,7 +2216,7 @@
 
     .prologue
     .line 346
-    const-string/jumbo v0, "lockscreen.patterneverchosen"
+    const-string v0, "lockscreen.patterneverchosen"
 
     const/4 v1, 0x0
 
@@ -2234,7 +2232,7 @@
 
     .prologue
     .line 949
-    const-string/jumbo v0, "lockscreen.lockedoutpermanently"
+    const-string v0, "lockscreen.lockedoutpermanently"
 
     const/4 v1, 0x0
 
@@ -2381,7 +2379,7 @@
 
     .prologue
     .line 908
-    const-string/jumbo v0, "lock_pattern_tactile_feedback_enabled"
+    const-string v0, "lock_pattern_tactile_feedback_enabled"
 
     const/4 v1, 0x0
 
@@ -2397,7 +2395,7 @@
 
     .prologue
     .line 894
-    const-string/jumbo v0, "lock_pattern_visible_pattern"
+    const-string v0, "lock_pattern_visible_pattern"
 
     const/4 v1, 0x0
 
@@ -2766,7 +2764,7 @@
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/LockPatternUtils;->deleteGallery()V
 
     .line 589
-    const-string/jumbo v3, "lockscreen.password_type"
+    const-string v3, "lockscreen.password_type"
 
     move/from16 v0, p2
 
@@ -2936,7 +2934,7 @@
     .end local v10           #nonletter:I
     .end local v23           #i:I
     :goto_2
-    const-string/jumbo v3, "lockscreen.passwordhistory"
+    const-string v3, "lockscreen.passwordhistory"
 
     move-object/from16 v0, p0
 
@@ -2970,7 +2968,7 @@
 
     .line 648
     :goto_3
-    const-string/jumbo v3, "lockscreen.passwordhistory"
+    const-string v3, "lockscreen.passwordhistory"
 
     move-object/from16 v0, p0
 
@@ -3058,7 +3056,7 @@
     .restart local v24       #keyStore:Landroid/security/KeyStore;
     :cond_6
     :try_start_1
-    const-string/jumbo v3, "lockscreen.password_type"
+    const-string v3, "lockscreen.password_type"
 
     const-wide/32 v11, 0x8000
 
@@ -3067,7 +3065,7 @@
     invoke-direct {v0, v3, v11, v12}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
     .line 625
-    const-string/jumbo v3, "lockscreen.password_type_alternate"
+    const-string v3, "lockscreen.password_type_alternate"
 
     move/from16 v0, p2
 
@@ -3107,7 +3105,7 @@
 
     invoke-virtual/range {v11 .. v19}, Landroid/app/admin/DevicePolicyManager;->setActivePasswordState(IIIIIIII)V
 
-    goto/16 :goto_2
+    goto :goto_2
 
     .line 641
     .restart local v25       #passwordHistory:Ljava/lang/String;
@@ -3294,7 +3292,7 @@
     invoke-virtual {v10, v1}, Landroid/security/KeyStore;->password(Ljava/lang/String;)Z
 
     .line 479
-    const-string/jumbo v1, "lockscreen.patterneverchosen"
+    const-string v1, "lockscreen.patterneverchosen"
 
     const/4 v2, 0x1
 
@@ -3307,7 +3305,7 @@
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->deleteGallery()V
 
     .line 482
-    const-string/jumbo v1, "lockscreen.password_type"
+    const-string v1, "lockscreen.password_type"
 
     const-wide/32 v2, 0x10000
 
@@ -3344,14 +3342,14 @@
     .restart local v0       #dpm:Landroid/app/admin/DevicePolicyManager;
     .restart local v10       #keyStore:Landroid/security/KeyStore;
     :cond_0
-    const-string/jumbo v1, "lockscreen.password_type"
+    const-string v1, "lockscreen.password_type"
 
     const-wide/32 v2, 0x8000
 
     invoke-direct {p0, v1, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
     .line 487
-    const-string/jumbo v1, "lockscreen.password_type_alternate"
+    const-string v1, "lockscreen.password_type_alternate"
 
     const-wide/32 v2, 0x10000
 
@@ -3531,7 +3529,7 @@
 
     .prologue
     .line 865
-    const-string/jumbo v4, "lock_biometric_weak_flags"
+    const-string v4, "lock_biometric_weak_flags"
 
     const-wide/16 v5, 0x0
 
@@ -3551,7 +3549,7 @@
     .line 872
     .local v2, newFlag:J
     :goto_0
-    const-string/jumbo v4, "lock_biometric_weak_flags"
+    const-string v4, "lock_biometric_weak_flags"
 
     invoke-direct {p0, v4, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
@@ -3606,7 +3604,7 @@
 
     .prologue
     .line 887
-    const-string/jumbo v0, "lock_pattern_autolock"
+    const-string v0, "lock_pattern_autolock"
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
 
@@ -3620,7 +3618,7 @@
 
     .prologue
     .line 424
-    const-string/jumbo v2, "lockscreen.disabled"
+    const-string v2, "lockscreen.disabled"
 
     if-eqz p1, :cond_0
 
@@ -3654,7 +3652,7 @@
 
     .line 925
     .local v0, deadline:J
-    const-string/jumbo v2, "lockscreen.lockoutattemptdeadline"
+    const-string v2, "lockscreen.lockoutattemptdeadline"
 
     invoke-direct {p0, v2, v0, v1}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
@@ -3668,7 +3666,7 @@
 
     .prologue
     .line 961
-    const-string/jumbo v0, "lockscreen.lockedoutpermanently"
+    const-string v0, "lockscreen.lockedoutpermanently"
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
 
@@ -3682,7 +3680,7 @@
 
     .prologue
     .line 1124
-    const-string/jumbo v0, "lockscreen.power_button_instantly_locks"
+    const-string v0, "lockscreen.power_button_instantly_locks"
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
 
@@ -3696,7 +3694,7 @@
 
     .prologue
     .line 915
-    const-string/jumbo v0, "lock_pattern_tactile_feedback_enabled"
+    const-string v0, "lock_pattern_tactile_feedback_enabled"
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
 
@@ -3710,7 +3708,7 @@
 
     .prologue
     .line 901
-    const-string/jumbo v0, "lock_pattern_visible_pattern"
+    const-string v0, "lock_pattern_visible_pattern"
 
     invoke-direct {p0, v0, p1}, Lcom/android/internal/widget/LockPatternUtils;->setBoolean(Ljava/lang/String;Z)V
 
@@ -3793,7 +3791,7 @@
 
     .prologue
     .line 687
-    const-string/jumbo v1, "lockscreen.password_type"
+    const-string v1, "lockscreen.password_type"
 
     const-wide/32 v2, 0x10000
 

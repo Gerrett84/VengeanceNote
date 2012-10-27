@@ -218,7 +218,7 @@
     :pswitch_3
     iget-object v4, p0, Landroid/net/wifi/WifiWatchdogStateMachine$WatchdogEnabledState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
-    const-string/jumbo v2, "linkProperties"
+    const-string v2, "linkProperties"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -395,6 +395,8 @@
     goto/16 :goto_1
 
     .line 553
+    nop
+
     :pswitch_data_0
     .packed-switch 0x21001
         :pswitch_1

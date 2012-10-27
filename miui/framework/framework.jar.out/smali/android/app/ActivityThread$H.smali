@@ -895,7 +895,7 @@
 
     .line 1325
     :pswitch_19
-    const-string/jumbo v3, "lowMemory"
+    const-string v3, "lowMemory"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
@@ -1212,8 +1212,6 @@
     goto/16 :goto_0
 
     .line 1191
-    nop
-
     :pswitch_data_0
     .packed-switch 0x64
         :pswitch_0

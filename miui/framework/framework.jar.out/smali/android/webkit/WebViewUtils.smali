@@ -76,7 +76,7 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "m.baidu.com"
+    const-string v4, "m.baidu.com"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

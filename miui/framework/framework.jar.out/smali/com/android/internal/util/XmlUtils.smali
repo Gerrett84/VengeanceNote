@@ -1740,7 +1740,7 @@
     .line 805
     .end local v1           #res:Ljava/lang/Integer;
     :cond_8
-    const-string/jumbo v5, "long"
+    const-string v5, "long"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1894,7 +1894,7 @@
     .line 825
     .end local v1           #res:Ljava/util/HashMap;
     :cond_e
-    const-string/jumbo v5, "list"
+    const-string v5, "list"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1906,7 +1906,7 @@
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 827
-    const-string/jumbo v5, "list"
+    const-string v5, "list"
 
     invoke-static {p0, v5, p1}, Lcom/android/internal/util/XmlUtils;->readThisListXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -2629,7 +2629,7 @@
 
     .line 274
     :cond_0
-    const-string/jumbo v2, "list"
+    const-string v2, "list"
 
     invoke-interface {p2, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2670,7 +2670,7 @@
 
     .line 286
     :cond_2
-    const-string/jumbo v2, "list"
+    const-string v2, "list"
 
     invoke-interface {p2, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3028,7 +3028,7 @@
     if-eqz v1, :cond_6
 
     .line 431
-    const-string/jumbo v0, "long"
+    const-string v0, "long"
 
     .restart local v0       #typeStr:Ljava/lang/String;
     goto :goto_1

@@ -426,7 +426,7 @@
     .line 840
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     :cond_1
-    const-string/jumbo v2, "level-list"
+    const-string v2, "level-list"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

@@ -229,7 +229,7 @@
 
     .line 1290
     :cond_1
-    const-string/jumbo v5, "local_filename"
+    const-string v5, "local_filename"
 
     invoke-virtual {p0, v5}, Landroid/app/DownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
 
@@ -566,7 +566,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "local_uri"
+    const-string v1, "local_uri"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

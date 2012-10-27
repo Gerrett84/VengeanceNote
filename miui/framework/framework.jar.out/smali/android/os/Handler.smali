@@ -317,7 +317,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "looper uninitialized"
+    const-string v1, "looper uninitialized"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
