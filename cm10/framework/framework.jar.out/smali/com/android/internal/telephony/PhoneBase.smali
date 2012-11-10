@@ -308,7 +308,7 @@
 
     move-result-object v1
 
-    const v2, 0x111002d
+    const v2, 0x1110028
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -332,7 +332,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "mDoesRilSendMultipleCallRing="
+    const-string/jumbo v3, "mDoesRilSendMultipleCallRing="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -368,7 +368,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "mCallRingDelay="
+    const-string/jumbo v3, "mCallRingDelay="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -463,7 +463,7 @@
     .parameter "name"
 
     .prologue
-    .line 1100
+    .line 1095
     const-string v0, "PHONE"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -498,7 +498,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1102
+    .line 1097
     return-void
 .end method
 
@@ -507,7 +507,7 @@
     .parameter "name"
 
     .prologue
-    .line 1112
+    .line 1107
     const-string v0, "PHONE"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -542,7 +542,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1114
+    .line 1109
     return-void
 .end method
 
@@ -552,22 +552,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1049
+    .line 1044
     iget-boolean v1, p0, Lcom/android/internal/telephony/PhoneBase;->mIsVoiceCapable:Z
 
     if-nez v1, :cond_0
 
-    .line 1053
+    .line 1048
     :goto_0
     return-void
 
-    .line 1051
+    .line 1046
     :cond_0
     new-instance v0, Landroid/os/AsyncResult;
 
     invoke-direct {v0, v2, p0, v2}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 1052
+    .line 1047
     .local v0, ar:Landroid/os/AsyncResult;
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneBase;->mIncomingRingRegistrants:Landroid/os/RegistrantList;
 
@@ -581,7 +581,7 @@
     .parameter "token"
 
     .prologue
-    .line 1059
+    .line 1054
     iget-boolean v0, p0, Lcom/android/internal/telephony/PhoneBase;->mIsVoiceCapable:Z
 
     if-eqz v0, :cond_0
@@ -594,17 +594,17 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1061
+    .line 1056
     const-string v0, "PHONE"
 
     const-string v1, "Sending notifyIncomingRing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1062
+    .line 1057
     invoke-direct {p0}, Lcom/android/internal/telephony/PhoneBase;->notifyIncomingRing()V
 
-    .line 1063
+    .line 1058
     const/16 v0, 0xf
 
     const/4 v1, 0x0
@@ -619,11 +619,11 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 1072
+    .line 1067
     :goto_0
     return-void
 
-    .line 1066
+    .line 1061
     :cond_0
     const-string v0, "PHONE"
 
@@ -732,7 +732,7 @@
 
     move-result-object v9
 
-    const v10, 0x107003c
+    const v10, 0x1070033
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getTextArray(I)[Ljava/lang/CharSequence;
 
@@ -976,12 +976,12 @@
     .parameter "args"
 
     .prologue
-    .line 1164
+    .line 1151
     const-string v0, "PhoneBase:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1165
+    .line 1152
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1004,7 +1004,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1166
+    .line 1153
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1027,7 +1027,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1167
+    .line 1154
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1050,7 +1050,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1168
+    .line 1155
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1073,7 +1073,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1169
+    .line 1156
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1096,7 +1096,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1170
+    .line 1157
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1119,7 +1119,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1171
+    .line 1158
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1142,7 +1142,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1172
+    .line 1159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1165,7 +1165,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1173
+    .line 1160
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1188,7 +1188,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1174
+    .line 1161
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1215,7 +1215,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1175
+    .line 1162
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1238,7 +1238,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1176
+    .line 1163
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1261,7 +1261,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1177
+    .line 1164
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1284,10 +1284,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1178
+    .line 1165
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1179
+    .line 1166
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1310,7 +1310,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1180
+    .line 1167
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1333,7 +1333,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1181
+    .line 1168
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1356,7 +1356,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1182
+    .line 1169
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1379,7 +1379,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1183
+    .line 1170
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1402,7 +1402,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1184
+    .line 1171
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1427,7 +1427,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1185
+    .line 1172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1452,7 +1452,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1186
+    .line 1173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1477,7 +1477,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1187
+    .line 1174
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1502,7 +1502,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1188
+    .line 1175
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1527,7 +1527,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1189
+    .line 1176
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1552,7 +1552,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1190
+    .line 1177
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1577,7 +1577,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1191
+    .line 1178
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1602,10 +1602,10 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1192
+    .line 1179
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1193
+    .line 1180
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1630,7 +1630,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1194
+    .line 1181
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1655,7 +1655,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1195
+    .line 1182
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1680,7 +1680,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1196
+    .line 1183
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1705,7 +1705,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1197
+    .line 1184
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1730,7 +1730,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1198
+    .line 1185
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1755,7 +1755,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1199
+    .line 1186
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1780,7 +1780,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1200
+    .line 1187
     return-void
 .end method
 
@@ -1969,7 +1969,7 @@
     .locals 1
 
     .prologue
-    .line 1105
+    .line 1100
     const-string v0, "default"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/PhoneBase;->getDataConnectionState(Ljava/lang/String;)Lcom/android/internal/telephony/Phone$DataState;
@@ -2078,14 +2078,14 @@
     .locals 2
 
     .prologue
-    .line 1082
+    .line 1077
     const-string v0, "PHONE"
 
     const-string v1, "getIsimRecords() is only supported on LTE devices"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1083
+    .line 1078
     const/4 v0, 0x0
 
     return-object v0
@@ -2125,24 +2125,10 @@
     .locals 1
 
     .prologue
-    .line 1131
+    .line 1126
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/CommandsInterface;->getLteOnCdmaMode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getLteOnGsmMode()I
-    .locals 1
-
-    .prologue
-    .line 1139
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-interface {v0}, Lcom/android/internal/telephony/CommandsInterface;->getLteOnGsmMode()I
 
     move-result v0
 
@@ -2167,12 +2153,12 @@
     .locals 1
 
     .prologue
-    .line 1091
+    .line 1086
     const-string v0, "getMsisdn"
 
     invoke-static {v0}, Lcom/android/internal/telephony/PhoneBase;->logUnexpectedGsmMethodCall(Ljava/lang/String;)V
 
-    .line 1092
+    .line 1087
     const/4 v0, 0x0
 
     return-object v0
@@ -2249,7 +2235,7 @@
     .locals 1
 
     .prologue
-    .line 1160
+    .line 1147
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccRecords;->getUsimServiceTable()Lcom/android/internal/telephony/gsm/UsimServiceTable;
@@ -2462,12 +2448,12 @@
     .locals 1
 
     .prologue
-    .line 1077
+    .line 1072
     const-string v0, "isCspPlmnEnabled"
 
     invoke-static {v0}, Lcom/android/internal/telephony/PhoneBase;->logUnexpectedGsmMethodCall(Ljava/lang/String;)V
 
-    .line 1078
+    .line 1073
     const/4 v0, 0x0
 
     return v0
@@ -2586,14 +2572,14 @@
     .locals 2
 
     .prologue
-    .line 1119
+    .line 1114
     const-string v0, "PHONE"
 
     const-string v1, "Error! This function should never be executed, inactive CDMAPhone."
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1120
+    .line 1115
     return-void
 .end method
 
@@ -2698,12 +2684,12 @@
     .parameter "apnType"
 
     .prologue
-    .line 1123
+    .line 1118
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mNotifier:Lcom/android/internal/telephony/PhoneNotifier;
 
     invoke-interface {v0, p0, p1, p2}, Lcom/android/internal/telephony/PhoneNotifier;->notifyDataConnectionFailed(Lcom/android/internal/telephony/Phone;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1124
+    .line 1119
     return-void
 .end method
 
@@ -2752,7 +2738,7 @@
 .end method
 
 .method protected notifyNewRingingConnectionP(Lcom/android/internal/telephony/Connection;)V
-    .locals 4
+    .locals 3
     .parameter "cn"
 
     .prologue
@@ -2763,7 +2749,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1043
+    .line 1038
     :goto_0
     return-void
 
@@ -2775,35 +2761,6 @@
 
     .line 1037
     .local v0, ar:Landroid/os/AsyncResult;
-    const-string/jumbo v1, "ro.telephony.call_ring.absent"
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 1039
-    const/16 v1, 0xf
-
-    iget v2, p0, Lcom/android/internal/telephony/PhoneBase;->mCallRingContinueToken:I
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v1, v2, v3}, Lcom/android/internal/telephony/PhoneBase;->obtainMessage(III)Landroid/os/Message;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/internal/telephony/PhoneBase;->mCallRingDelay:I
-
-    int-to-long v2, v2
-
-    invoke-virtual {p0, v1, v2, v3}, Lcom/android/internal/telephony/PhoneBase;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    .line 1042
-    :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneBase;->mNewRingingConnectionRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v1, v0}, Landroid/os/RegistrantList;->notifyRegistrants(Landroid/os/AsyncResult;)V
@@ -3362,14 +3319,14 @@
     .parameter "result"
 
     .prologue
-    .line 1087
+    .line 1082
     const-string v0, "PHONE"
 
     const-string/jumbo v1, "requestIsimAuthentication() is only supported on LTE devices"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1088
+    .line 1083
     return-void
 .end method
 
@@ -3583,12 +3540,12 @@
     .parameter "countWaiting"
 
     .prologue
-    .line 1151
+    .line 1138
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneBase;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/telephony/IccRecords;->setVoiceMessageWaiting(II)V
 
-    .line 1152
+    .line 1139
     return-void
 .end method
 

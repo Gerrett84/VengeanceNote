@@ -126,7 +126,7 @@
     const/4 v1, -0x1
 
     .line 91
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
     const/16 v0, 0x63
@@ -195,7 +195,7 @@
 
     .prologue
     .line 116
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 117
     iput p1, p0, Landroid/telephony/SignalStrength;->mGsmSignalStrength:I
@@ -293,7 +293,7 @@
 
     .prologue
     .line 181
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 182
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -407,7 +407,7 @@
 
     .prologue
     .line 153
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 154
     invoke-virtual {p0, p1}, Landroid/telephony/SignalStrength;->copyFrom(Landroid/telephony/SignalStrength;)V

@@ -30,15 +30,15 @@
     .parameter "cb"
 
     .prologue
-    .line 897
+    .line 882
     iput-object p1, p0, Landroid/media/AudioService$ForceControlStreamClient;->this$0:Landroid/media/AudioService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 898
+    .line 883
     if-eqz p2, :cond_0
 
-    .line 900
+    .line 885
     const/4 v1, 0x0
 
     :try_start_0
@@ -46,19 +46,19 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 907
+    .line 892
     :cond_0
     :goto_0
     iput-object p2, p0, Landroid/media/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
-    .line 908
+    .line 893
     return-void
 
-    .line 901
+    .line 886
     :catch_0
     move-exception v0
 
-    .line 903
+    .line 888
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "AudioService"
 
@@ -88,7 +88,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 904
+    .line 889
     const/4 p2, 0x0
 
     goto :goto_0
@@ -100,17 +100,17 @@
     .locals 3
 
     .prologue
-    .line 911
+    .line 896
     iget-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mForceControlStreamLock:Ljava/lang/Object;
-    invoke-static {v0}, Landroid/media/AudioService;->access$900(Landroid/media/AudioService;)Ljava/lang/Object;
+    invoke-static {v0}, Landroid/media/AudioService;->access$800(Landroid/media/AudioService;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 912
+    .line 897
     :try_start_0
     const-string v0, "AudioService"
 
@@ -118,50 +118,50 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 913
+    .line 898
     iget-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mForceControlStreamClient:Landroid/media/AudioService$ForceControlStreamClient;
-    invoke-static {v0}, Landroid/media/AudioService;->access$1000(Landroid/media/AudioService;)Landroid/media/AudioService$ForceControlStreamClient;
+    invoke-static {v0}, Landroid/media/AudioService;->access$900(Landroid/media/AudioService;)Landroid/media/AudioService$ForceControlStreamClient;
 
     move-result-object v0
 
     if-eq v0, p0, :cond_0
 
-    .line 914
+    .line 899
     const-string v0, "AudioService"
 
     const-string/jumbo v2, "unregistered control stream client died"
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 919
+    .line 904
     :goto_0
     monitor-exit v1
 
-    .line 920
+    .line 905
     return-void
 
-    .line 916
+    .line 901
     :cond_0
     iget-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->this$0:Landroid/media/AudioService;
 
     const/4 v2, 0x0
 
     #setter for: Landroid/media/AudioService;->mForceControlStreamClient:Landroid/media/AudioService$ForceControlStreamClient;
-    invoke-static {v0, v2}, Landroid/media/AudioService;->access$1002(Landroid/media/AudioService;Landroid/media/AudioService$ForceControlStreamClient;)Landroid/media/AudioService$ForceControlStreamClient;
+    invoke-static {v0, v2}, Landroid/media/AudioService;->access$902(Landroid/media/AudioService;Landroid/media/AudioService$ForceControlStreamClient;)Landroid/media/AudioService$ForceControlStreamClient;
 
-    .line 917
+    .line 902
     iget-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->this$0:Landroid/media/AudioService;
 
     const/4 v2, -0x1
 
     #setter for: Landroid/media/AudioService;->mVolumeControlStream:I
-    invoke-static {v0, v2}, Landroid/media/AudioService;->access$1102(Landroid/media/AudioService;I)I
+    invoke-static {v0, v2}, Landroid/media/AudioService;->access$1002(Landroid/media/AudioService;I)I
 
     goto :goto_0
 
-    .line 919
+    .line 904
     :catchall_0
     move-exception v0
 
@@ -176,24 +176,24 @@
     .locals 2
 
     .prologue
-    .line 923
+    .line 908
     iget-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 924
+    .line 909
     iget-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 925
+    .line 910
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/AudioService$ForceControlStreamClient;->mCb:Landroid/os/IBinder;
 
-    .line 927
+    .line 912
     :cond_0
     return-void
 .end method

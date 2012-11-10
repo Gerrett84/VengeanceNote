@@ -86,7 +86,7 @@
 
     .prologue
     .line 147
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 148
     return-void
@@ -98,7 +98,7 @@
 
     .prologue
     .line 154
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 155
     invoke-virtual {p0, p1}, Landroid/app/ApplicationErrorReport;->readFromParcel(Landroid/os/Parcel;)V
@@ -259,7 +259,7 @@
 
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v2, p2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

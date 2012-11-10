@@ -26,10 +26,10 @@
     .parameter
 
     .prologue
-    .line 1277
+    .line 1287
     iput-object p1, p0, Landroid/widget/RemoteViews$MemoryUsageCounter;->this$0:Landroid/widget/RemoteViews;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1277
+    .line 1287
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews$MemoryUsageCounter;-><init>(Landroid/widget/RemoteViews;)V
 
     return-void
@@ -53,20 +53,20 @@
     .parameter "b"
 
     .prologue
-    .line 1291
+    .line 1301
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v1
 
-    .line 1293
+    .line 1303
     .local v1, c:Landroid/graphics/Bitmap$Config;
     const/4 v0, 0x4
 
-    .line 1294
+    .line 1304
     .local v0, bpp:I
     if-eqz v1, :cond_0
 
-    .line 1295
+    .line 1305
     sget-object v2, Landroid/widget/RemoteViews$2;->$SwitchMap$android$graphics$Bitmap$Config:[I
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I
@@ -77,7 +77,7 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1308
+    .line 1318
     :cond_0
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -94,30 +94,30 @@
 
     invoke-virtual {p0, v2}, Landroid/widget/RemoteViews$MemoryUsageCounter;->increment(I)V
 
-    .line 1309
+    .line 1319
     return-void
 
-    .line 1297
+    .line 1307
     :pswitch_0
     const/4 v0, 0x1
 
-    .line 1298
+    .line 1308
     goto :goto_0
 
-    .line 1301
+    .line 1311
     :pswitch_1
     const/4 v0, 0x2
 
-    .line 1302
+    .line 1312
     goto :goto_0
 
-    .line 1304
+    .line 1314
     :pswitch_2
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 1295
+    .line 1305
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -131,12 +131,12 @@
     .locals 1
 
     .prologue
-    .line 1279
+    .line 1289
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/widget/RemoteViews$MemoryUsageCounter;->mMemoryUsage:I
 
-    .line 1280
+    .line 1290
     return-void
 .end method
 
@@ -144,7 +144,7 @@
     .locals 1
 
     .prologue
-    .line 1287
+    .line 1297
     iget v0, p0, Landroid/widget/RemoteViews$MemoryUsageCounter;->mMemoryUsage:I
 
     return v0
@@ -155,13 +155,13 @@
     .parameter "numBytes"
 
     .prologue
-    .line 1283
+    .line 1293
     iget v0, p0, Landroid/widget/RemoteViews$MemoryUsageCounter;->mMemoryUsage:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Landroid/widget/RemoteViews$MemoryUsageCounter;->mMemoryUsage:I
 
-    .line 1284
+    .line 1294
     return-void
 .end method

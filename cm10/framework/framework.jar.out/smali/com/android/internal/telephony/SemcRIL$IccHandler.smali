@@ -43,21 +43,21 @@
     .parameter "looper"
 
     .prologue
-    .line 347
+    .line 371
     iput-object p1, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->this$0:Lcom/android/internal/telephony/SemcRIL;
 
-    .line 348
+    .line 372
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 345
+    .line 369
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRadioOn:Z
 
-    .line 349
+    .line 373
     iput-object p2, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
-    .line 350
+    .line 374
     return-void
 .end method
 
@@ -70,12 +70,12 @@
     .prologue
     const/4 v8, 0x2
 
-    .line 353
+    .line 377
     iget v6, p1, Landroid/os/Message;->what:I
 
     packed-switch v6, :pswitch_data_0
 
-    .line 428
+    .line 452
     :goto_0
     const-string v6, "RILJ"
 
@@ -101,25 +101,25 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 431
+    .line 455
     :cond_0
     :goto_1
     return-void
 
-    .line 355
+    .line 379
     :pswitch_0
     const/4 v6, 0x1
 
     iput-boolean v6, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRadioOn:Z
 
-    .line 356
+    .line 380
     const-string v6, "RILJ"
 
     const-string v7, "Radio on -> Forcing sim status update"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 357
+    .line 381
     invoke-virtual {p0, v8}, Lcom/android/internal/telephony/SemcRIL$IccHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v6
@@ -128,19 +128,19 @@
 
     goto :goto_1
 
-    .line 360
+    .line 384
     :pswitch_1
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v4, Landroid/os/AsyncResult;
 
-    .line 361
+    .line 385
     .local v4, asyncResult:Landroid/os/AsyncResult;
     iget-object v6, v4, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v6, :cond_1
 
-    .line 362
+    .line 386
     const-string v6, "RILJ"
 
     const-string v7, "IccCardStatusDone shouldn\'t return exceptions!"
@@ -151,13 +151,13 @@
 
     goto :goto_1
 
-    .line 365
+    .line 389
     :cond_1
     iget-object v5, v4, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
     check-cast v5, Lcom/android/internal/telephony/IccCardStatus;
 
-    .line 366
+    .line 390
     .local v5, status:Lcom/android/internal/telephony/IccCardStatus;
     invoke-virtual {v5}, Lcom/android/internal/telephony/IccCardStatus;->getNumApplications()I
 
@@ -165,7 +165,7 @@
 
     if-nez v6, :cond_2
 
-    .line 367
+    .line 391
     iget-object v6, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/RIL;->getRadioState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -178,7 +178,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 371
+    .line 395
     iget-object v6, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
     sget-object v7, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_ON:Lcom/android/internal/telephony/CommandsInterface$RadioState;
@@ -187,11 +187,11 @@
 
     goto :goto_1
 
-    .line 373
+    .line 397
     :cond_2
     const/4 v0, -0x1
 
-    .line 374
+    .line 398
     .local v0, appIndex:I
     iget-object v6, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->this$0:Lcom/android/internal/telephony/SemcRIL;
 
@@ -199,12 +199,12 @@
 
     if-ne v6, v8, :cond_3
 
-    .line 375
+    .line 399
     invoke-virtual {v5}, Lcom/android/internal/telephony/IccCardStatus;->getCdmaSubscriptionAppIndex()I
 
     move-result v0
 
-    .line 376
+    .line 400
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -227,21 +227,21 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 382
+    .line 406
     :goto_2
     invoke-virtual {v5, v0}, Lcom/android/internal/telephony/IccCardStatus;->getApplication(I)Lcom/android/internal/telephony/IccCardApplication;
 
     move-result-object v3
 
-    .line 383
+    .line 407
     .local v3, application:Lcom/android/internal/telephony/IccCardApplication;
     iget-object v1, v3, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 384
+    .line 408
     .local v1, app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
     iget-object v2, v3, Lcom/android/internal/telephony/IccCardApplication;->app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
-    .line 385
+    .line 409
     .local v2, app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
     sget-object v6, Lcom/android/internal/telephony/SemcRIL$1;->$SwitchMap$com$android$internal$telephony$IccCardApplication$AppState:[I
 
@@ -255,7 +255,7 @@
 
     goto :goto_1
 
-    .line 388
+    .line 412
     :pswitch_2
     sget-object v6, Lcom/android/internal/telephony/SemcRIL$1;->$SwitchMap$com$android$internal$telephony$IccCardApplication$AppType:[I
 
@@ -267,7 +267,7 @@
 
     packed-switch v6, :pswitch_data_2
 
-    .line 395
+    .line 419
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -292,7 +292,7 @@
 
     goto/16 :goto_1
 
-    .line 378
+    .line 402
     .end local v1           #app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
     .end local v2           #app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
     .end local v3           #application:Lcom/android/internal/telephony/IccCardApplication;
@@ -301,7 +301,7 @@
 
     move-result v0
 
-    .line 379
+    .line 403
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -326,7 +326,7 @@
 
     goto :goto_2
 
-    .line 392
+    .line 416
     .restart local v1       #app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
     .restart local v2       #app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
     .restart local v3       #application:Lcom/android/internal/telephony/IccCardApplication;
@@ -339,7 +339,7 @@
 
     goto/16 :goto_1
 
-    .line 400
+    .line 424
     :pswitch_4
     sget-object v6, Lcom/android/internal/telephony/SemcRIL$1;->$SwitchMap$com$android$internal$telephony$IccCardApplication$AppType:[I
 
@@ -351,7 +351,7 @@
 
     packed-switch v6, :pswitch_data_3
 
-    .line 407
+    .line 431
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -376,7 +376,7 @@
 
     goto/16 :goto_1
 
-    .line 404
+    .line 428
     :pswitch_5
     iget-object v6, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
@@ -386,7 +386,7 @@
 
     goto/16 :goto_1
 
-    .line 417
+    .line 441
     .end local v0           #appIndex:I
     .end local v1           #app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
     .end local v2           #app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
@@ -398,14 +398,14 @@
 
     if-eqz v6, :cond_4
 
-    .line 418
+    .line 442
     const-string v6, "RILJ"
 
     const-string v7, "Received EVENT_ICC_STATUS_CHANGED, calling getIccCardStatus"
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 419
+    .line 443
     iget-object v6, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
     const/4 v7, 0x3
@@ -420,7 +420,7 @@
 
     goto/16 :goto_1
 
-    .line 421
+    .line 445
     :cond_4
     const-string v6, "RILJ"
 
@@ -430,7 +430,7 @@
 
     goto/16 :goto_1
 
-    .line 425
+    .line 449
     :pswitch_7
     const/4 v6, 0x0
 
@@ -438,7 +438,7 @@
 
     goto/16 :goto_0
 
-    .line 353
+    .line 377
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -447,7 +447,7 @@
         :pswitch_7
     .end packed-switch
 
-    .line 385
+    .line 409
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_2
@@ -455,7 +455,7 @@
         :pswitch_4
     .end packed-switch
 
-    .line 388
+    .line 412
     :pswitch_data_2
     .packed-switch 0x1
         :pswitch_3
@@ -463,7 +463,7 @@
         :pswitch_3
     .end packed-switch
 
-    .line 400
+    .line 424
     :pswitch_data_3
     .packed-switch 0x1
         :pswitch_5
@@ -476,7 +476,7 @@
     .locals 4
 
     .prologue
-    .line 434
+    .line 458
     iget-object v1, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
     const/4 v2, 0x2
@@ -485,19 +485,19 @@
 
     invoke-virtual {v1, p0, v2, v3}, Lcom/android/internal/telephony/RIL;->registerForIccStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 435
+    .line 459
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/SemcRIL$IccHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 436
+    .line 460
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/internal/telephony/SemcRIL$IccHandler;->mRil:Lcom/android/internal/telephony/RIL;
 
     invoke-virtual {v1, v0}, Lcom/android/internal/telephony/RIL;->getIccCardStatus(Landroid/os/Message;)V
 
-    .line 437
+    .line 461
     return-void
 .end method

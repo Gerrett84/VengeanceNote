@@ -17,8 +17,6 @@
 # static fields
 .field public static final config_MaxConcurrentDownloadsAllowed:I = 0x10e002d
 
-.field public static final config_backKillTimeout:I = 0x10e0034
-
 .field public static final config_carDockKeepsScreenOn:I = 0x10e0013
 
 .field public static final config_carDockRotation:I = 0x10e0010
@@ -44,8 +42,6 @@
 .field public static final config_deskDockKeepsScreenOn:I = 0x10e0012
 
 .field public static final config_deskDockRotation:I = 0x10e000f
-
-.field public static final config_deviceHardwareKeys:I = 0x10e0035
 
 .field public static final config_downloadDataDirLowSpaceThreshold:I = 0x10e002e
 
@@ -97,15 +93,11 @@
 
 .field public static final config_screenBrightnessDim:I = 0x10e0022
 
-.field public static final config_screenOnAnimation:I = 0x10e0033
-
 .field public static final config_shortAnimTime:I = 0x10e0000
 
 .field public static final config_soundEffectVolumeDb:I = 0x10e0004
 
 .field public static final config_virtualKeyQuietTimeMillis:I = 0x10e0024
-
-.field public static final config_wallpaperMaxWidth:I = 0x10e0036
 
 .field public static final config_wifi_driver_stop_delay:I = 0x10e000d
 
@@ -119,7 +111,7 @@
 
 .field public static final db_wal_autocheckpoint:I = 0x10e002b
 
-.field public static final max_action_buttons:I = 0x10e0037
+.field public static final max_action_buttons:I = 0x10e0033
 
 .field public static final status_bar_notification_info_maxnum:I = 0x10e0003
 
@@ -129,8 +121,8 @@
     .locals 0
 
     .prologue
-    .line 11959
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 11793
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

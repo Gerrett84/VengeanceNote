@@ -49,10 +49,6 @@
 
 .field public static final fastscroll_thumb_width:I = 0x1050014
 
-.field public static final keyguard_lockscreen_status_line_font_right_margin:I = 0x1050040
-
-.field public static final lockscreen_target_inset:I = 0x1050055
-
 .field public static final navigation_bar_height:I = 0x105000b
 
 .field public static final navigation_bar_height_landscape:I = 0x105000c
@@ -99,8 +95,8 @@
     .locals 0
 
     .prologue
-    .line 11013
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 10915
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -76,7 +76,7 @@
     .prologue
     .line 64
     .local p5, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 50
     const/4 v0, 0x0
@@ -1488,7 +1488,7 @@
 
     const/16 v5, -0x9
 
-    const v6, 0x1040132
+    const v6, 0x104011a
 
     invoke-virtual {v4, v5, v6}, Landroid/net/http/Request;->error(II)V
 

@@ -64,7 +64,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 74
     new-instance v0, Lcom/android/internal/telephony/AdnRecord$1;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/AdnRecord$1;-><init>()V
@@ -84,36 +84,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 123
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 125
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 42
     iput-object v1, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 41
+    .line 43
     iput-object v1, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 43
+    .line 45
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
-    .line 124
+    .line 126
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
-    .line 125
+    .line 127
     iput p2, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
-    .line 126
+    .line 128
     iput-object p3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 127
+    .line 129
     iput-object p4, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 128
+    .line 130
     iput-object v1, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
-    .line 129
+    .line 131
     return-void
 .end method
 
@@ -128,36 +128,36 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 115
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 117
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 42
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 41
+    .line 43
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 43
+    .line 45
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
-    .line 116
+    .line 118
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
-    .line 117
+    .line 119
     iput p2, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
-    .line 118
+    .line 120
     iput-object p3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 119
+    .line 121
     iput-object p4, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 120
+    .line 122
     iput-object p5, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
-    .line 121
+    .line 123
     return-void
 .end method
 
@@ -170,30 +170,30 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 101
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 103
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 42
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 41
+    .line 43
     iput-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 43
+    .line 45
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
-    .line 102
+    .line 104
     iput p1, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
-    .line 103
+    .line 105
     iput p2, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
-    .line 104
+    .line 106
     invoke-direct {p0, p3}, Lcom/android/internal/telephony/AdnRecord;->parseRecord([B)V
 
-    .line 105
+    .line 107
     return-void
 .end method
 
@@ -205,10 +205,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 108
+    .line 110
     invoke-direct {p0, v0, v0, p1, p2}, Lcom/android/internal/telephony/AdnRecord;-><init>(IILjava/lang/String;Ljava/lang/String;)V
 
-    .line 109
+    .line 111
     return-void
 .end method
 
@@ -221,7 +221,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 112
+    .line 114
     move-object v0, p0
 
     move v2, v1
@@ -234,7 +234,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/AdnRecord;-><init>(IILjava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 113
+    .line 115
     return-void
 .end method
 
@@ -245,21 +245,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 98
+    .line 100
     invoke-direct {p0, v0, v0, p1}, Lcom/android/internal/telephony/AdnRecord;-><init>(II[B)V
 
-    .line 99
+    .line 101
     return-void
 .end method
 
 .method private parseRecord([B)V
-    .locals 6
+    .locals 7
     .parameter "record"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    .line 286
+    .line 289
     const/4 v3, 0x0
 
     :try_start_0
@@ -267,44 +270,25 @@
 
     add-int/lit8 v4, v4, -0xe
 
-    invoke-static {p1, v3, v4}, Lcom/android/internal/telephony/IccUtils;->adnStringFieldToStringKsc5601Support([BII)Ljava/lang/String;
+    invoke-static {p1, v3, v4}, Lcom/android/internal/telephony/IccUtils;->adnStringFieldToString([BII)Ljava/lang/String;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 289
+    .line 292
     array-length v3, p1
 
     add-int/lit8 v1, v3, -0xe
 
-    .line 291
+    .line 294
     .local v1, footerOffset:I
     aget-byte v3, p1, v1
 
     and-int/lit16 v2, v3, 0xff
 
-    .line 293
+    .line 303
     .local v2, numberLength:I
-    const/16 v3, 0xb
-
-    if-le v2, v3, :cond_0
-
-    .line 295
-    const-string v3, ""
-
-    iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
-
-    .line 320
-    .end local v1           #footerOffset:I
-    .end local v2           #numberLength:I
-    :goto_0
-    return-void
-
-    .line 306
-    .restart local v1       #footerOffset:I
-    .restart local v2       #numberLength:I
-    :cond_0
     add-int/lit8 v3, v1, 0x1
 
     invoke-static {p1, v3, v2}, Landroid/telephony/PhoneNumberUtils;->calledPartyBCDToString([BII)Ljava/lang/String;
@@ -313,7 +297,7 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 310
+    .line 307
     array-length v3, p1
 
     add-int/lit8 v3, v3, -0x1
@@ -324,41 +308,91 @@
 
     iput v3, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
-    .line 312
+    .line 309
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
-
-    .line 314
+    .line 317
     .end local v1           #footerOffset:I
     .end local v2           #numberLength:I
+    :goto_0
+    return-void
+
+    .line 311
     :catch_0
     move-exception v0
 
-    .line 315
+    .line 312
     .local v0, ex:Ljava/lang/RuntimeException;
     const-string v3, "GSM"
 
-    const-string v4, "Error parsing AdnRecord"
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Error parsing AdnRecord - ["
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ","
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ","
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "]"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 316
+    .line 313
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
-    .line 317
+    .line 314
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 318
-    iput-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
+    .line 315
+    iput-object v6, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -369,31 +403,31 @@
     .parameter "s2"
 
     .prologue
-    .line 163
+    .line 165
     if-ne p0, p1, :cond_0
 
-    .line 164
+    .line 166
     const/4 v0, 0x1
 
-    .line 172
+    .line 174
     :goto_0
     return v0
 
-    .line 166
+    .line 168
     :cond_0
     if-nez p0, :cond_1
 
-    .line 167
+    .line 169
     const-string p0, ""
 
-    .line 169
+    .line 171
     :cond_1
     if-nez p1, :cond_2
 
-    .line 170
+    .line 172
     const-string p1, ""
 
-    .line 172
+    .line 174
     :cond_2
     invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -411,7 +445,7 @@
     .prologue
     const/4 v3, 0x2
 
-    .line 254
+    .line 256
     :try_start_0
     array-length v1, p1
 
@@ -419,12 +453,12 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 276
+    .line 278
     :cond_0
     :goto_0
     return-void
 
-    .line 258
+    .line 260
     :cond_1
     const/4 v1, 0x0
 
@@ -434,7 +468,7 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 263
+    .line 265
     const/4 v1, 0x1
 
     aget-byte v1, p1, v1
@@ -445,7 +479,7 @@
 
     if-gt v1, v2, :cond_0
 
-    .line 268
+    .line 270
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -482,11 +516,11 @@
 
     goto :goto_0
 
-    .line 273
+    .line 275
     :catch_0
     move-exception v0
 
-    .line 274
+    .line 276
     .local v0, ex:Ljava/lang/RuntimeException;
     const-string v1, "GSM"
 
@@ -498,185 +532,180 @@
 .end method
 
 .method public buildAdnString(I)[B
-    .locals 10
+    .locals 8
     .parameter "recordSize"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    const/4 v5, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v8, -0x1
-
-    .line 206
-    add-int/lit8 v3, p1, -0xe
-
-    .line 209
-    .local v3, footerOffset:I
-    new-array v0, p1, [B
-
-    .line 210
-    .local v0, adnString:[B
     const/4 v4, 0x0
 
-    .local v4, i:I
+    const/4 v7, -0x1
+
+    .line 209
+    add-int/lit8 v2, p1, -0xe
+
+    .line 212
+    .local v2, footerOffset:I
+    new-array v0, p1, [B
+
+    .line 213
+    .local v0, adnString:[B
+    const/4 v3, 0x0
+
+    .local v3, i:I
     :goto_0
-    if-ge v4, p1, :cond_0
+    if-ge v3, p1, :cond_0
 
-    .line 211
-    aput-byte v8, v0, v4
+    .line 214
+    aput-byte v7, v0, v3
 
-    .line 210
-    add-int/lit8 v4, v4, 0x1
+    .line 213
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 214
-    :cond_0
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
-
-    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    .line 215
-    const-string v5, "GSM"
-
-    const-string v6, "[buildAdnString] Empty dialing number"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 244
-    .end local v0           #adnString:[B
-    :cond_1
-    :goto_1
-    return-object v0
-
     .line 217
-    .restart local v0       #adnString:[B
-    :cond_2
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    const/16 v7, 0x14
-
-    if-le v6, v7, :cond_3
-
-    .line 219
-    const-string v6, "GSM"
-
-    const-string v7, "[buildAdnString] Max length of dialing number is 20"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object v0, v5
-
-    .line 221
-    goto :goto_1
-
-    .line 222
-    :cond_3
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
-
-    if-eqz v6, :cond_4
-
-    iget-object v6, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-le v6, v3, :cond_4
-
-    .line 223
-    const-string v6, "GSM"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "[buildAdnString] Max length of tag is "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object v0, v5
-
-    .line 225
-    goto :goto_1
-
-    .line 227
-    :cond_4
+    :cond_0
     iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
-
-    invoke-static {v5}, Landroid/telephony/PhoneNumberUtils;->numberToCalledPartyBCD(Ljava/lang/String;)[B
-
-    move-result-object v1
-
-    .line 229
-    .local v1, bcdNumber:[B
-    add-int/lit8 v5, v3, 0x1
-
-    array-length v6, v1
-
-    invoke-static {v1, v9, v0, v5, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 232
-    add-int/lit8 v5, v3, 0x0
-
-    array-length v6, v1
-
-    int-to-byte v6, v6
-
-    aput-byte v6, v0, v5
-
-    .line 234
-    add-int/lit8 v5, v3, 0xc
-
-    aput-byte v8, v0, v5
-
-    .line 236
-    add-int/lit8 v5, v3, 0xd
-
-    aput-byte v8, v0, v5
-
-    .line 239
-    iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    if-nez v5, :cond_1
+    if-eqz v5, :cond_2
 
-    .line 240
+    .line 218
+    const-string v4, "GSM"
+
+    const-string v5, "[buildAdnString] Empty dialing number"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 246
+    .end local v0           #adnString:[B
+    :cond_1
+    :goto_1
+    return-object v0
+
+    .line 220
+    .restart local v0       #adnString:[B
+    :cond_2
+    iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    const/16 v6, 0x14
+
+    if-le v5, v6, :cond_3
+
+    .line 222
+    const-string v5, "GSM"
+
+    const-string v6, "[buildAdnString] Max length of dialing number is 20"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object v0, v4
+
+    .line 224
+    goto :goto_1
+
+    .line 225
+    :cond_3
     iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    invoke-static {v5}, Lcom/android/internal/telephony/GsmAlphabet;->stringToGsm8BitPacked(Ljava/lang/String;)[B
+    if-eqz v5, :cond_4
 
-    move-result-object v2
+    iget-object v5, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
-    .line 241
-    .local v2, byteTag:[B
-    array-length v5, v2
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    invoke-static {v2, v9, v0, v9, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    move-result v5
+
+    if-le v5, v2, :cond_4
+
+    .line 226
+    const-string v5, "GSM"
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[buildAdnString] Max length of tag is "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-object v0, v4
+
+    .line 228
+    goto :goto_1
+
+    .line 230
+    :cond_4
+    iget-object v4, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
+
+    invoke-static {v4}, Landroid/telephony/PhoneNumberUtils;->numberToCalledPartyBCD(Ljava/lang/String;)[B
+
+    move-result-object v1
+
+    .line 232
+    .local v1, bcdNumber:[B
+    const/4 v4, 0x0
+
+    add-int/lit8 v5, v2, 0x1
+
+    array-length v6, v1
+
+    invoke-static {v1, v4, v0, v5, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 235
+    add-int/lit8 v4, v2, 0x0
+
+    array-length v5, v1
+
+    int-to-byte v5, v5
+
+    aput-byte v5, v0, v4
+
+    .line 237
+    add-int/lit8 v4, v2, 0xc
+
+    aput-byte v7, v0, v4
+
+    .line 239
+    add-int/lit8 v4, v2, 0xd
+
+    aput-byte v7, v0, v4
+
+    .line 242
+    iget-object v4, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
+
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    .line 243
+    iget-object v4, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
+
+    invoke-static {v0, v4, v2}, Lcom/android/internal/telephony/MiuiAdnUtils;->encodeAlphaTag([BLjava/lang/String;I)Z
 
     goto :goto_1
 .end method
@@ -685,7 +714,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 185
     const/4 v0, 0x0
 
     return v0
@@ -695,7 +724,7 @@
     .locals 1
 
     .prologue
-    .line 134
+    .line 136
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     return-object v0
@@ -705,7 +734,7 @@
     .locals 1
 
     .prologue
-    .line 142
+    .line 144
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
     return-object v0
@@ -715,7 +744,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 140
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
     return-object v0
@@ -725,7 +754,7 @@
     .locals 2
 
     .prologue
-    .line 158
+    .line 160
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->extRecord:I
 
     if-eqz v0, :cond_0
@@ -751,7 +780,7 @@
     .locals 1
 
     .prologue
-    .line 154
+    .line 156
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -788,7 +817,7 @@
     .parameter "adn"
 
     .prologue
-    .line 176
+    .line 178
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
@@ -835,10 +864,10 @@
     .parameter "emails"
 
     .prologue
-    .line 146
+    .line 148
     iput-object p1, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
-    .line 147
+    .line 149
     return-void
 .end method
 
@@ -846,7 +875,7 @@
     .locals 2
 
     .prologue
-    .line 150
+    .line 152
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -906,31 +935,31 @@
     .parameter "flags"
 
     .prologue
-    .line 187
+    .line 189
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->efid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 188
+    .line 190
     iget v0, p0, Lcom/android/internal/telephony/AdnRecord;->recordNumber:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 189
+    .line 191
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 190
+    .line 192
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 191
+    .line 193
     iget-object v0, p0, Lcom/android/internal/telephony/AdnRecord;->emails:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 192
+    .line 194
     return-void
 .end method

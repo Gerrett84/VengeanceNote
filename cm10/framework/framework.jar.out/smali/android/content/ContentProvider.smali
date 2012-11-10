@@ -41,7 +41,7 @@
 
     .prologue
     .line 121
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     const/4 v0, 0x0
@@ -68,7 +68,7 @@
 
     .prologue
     .line 141
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     const/4 v0, 0x0
@@ -256,7 +256,7 @@
     invoke-virtual {p0, v0}, Landroid/content/ContentProvider;->setPathPermissions([Landroid/content/pm/PathPermission;)V
 
     .line 1056
-    iget-boolean v0, p2, Landroid/content/pm/ProviderInfo;->exported:Z
+    iget-boolean v0, p2, Landroid/content/pm/ComponentInfo;->exported:Z
 
     iput-boolean v0, p0, Landroid/content/ContentProvider;->mExported:Z
 

@@ -381,7 +381,7 @@
 
     const/16 v2, 0xf6
 
-    const-string v3, "lt"
+    const-string/jumbo v3, "lt"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -394,7 +394,7 @@
 
     const/16 v2, 0xf7
 
-    const-string v3, "lv"
+    const-string/jumbo v3, "lv"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -526,7 +526,7 @@
 
     const/16 v2, 0x10e
 
-    const-string v3, "lu"
+    const-string/jumbo v3, "lu"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -736,7 +736,7 @@
 
     const/16 v2, 0x127
 
-    const-string v3, "li"
+    const-string/jumbo v3, "li"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -986,7 +986,7 @@
 
     const/16 v2, 0x15a
 
-    const-string v3, "ky"
+    const-string/jumbo v3, "ky"
 
     invoke-direct {v1, v2, v3, v6}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1051,7 +1051,7 @@
 
     const/16 v2, 0x164
 
-    const-string v3, "kn"
+    const-string/jumbo v3, "kn"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1064,7 +1064,7 @@
 
     const/16 v2, 0x166
 
-    const-string v3, "lc"
+    const-string/jumbo v3, "lc"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1233,7 +1233,7 @@
 
     const/16 v2, 0x191
 
-    const-string v3, "kz"
+    const-string/jumbo v3, "kz"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1311,7 +1311,7 @@
 
     const/16 v2, 0x19d
 
-    const-string v3, "lk"
+    const-string/jumbo v3, "lk"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1337,7 +1337,7 @@
 
     const/16 v2, 0x19f
 
-    const-string v3, "lb"
+    const-string/jumbo v3, "lb"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1389,7 +1389,7 @@
 
     const/16 v2, 0x1a3
 
-    const-string v3, "kw"
+    const-string/jumbo v3, "kw"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1597,7 +1597,7 @@
 
     const/16 v2, 0x1b5
 
-    const-string v3, "kg"
+    const-string/jumbo v3, "kg"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1653,9 +1653,9 @@
 
     const/16 v2, 0x1c2
 
-    const-string v3, "kr"
+    const-string/jumbo v3, "kr"
 
-    const-string v4, "ko"
+    const-string/jumbo v4, "ko"
 
     invoke-direct {v1, v2, v3, v5, v4}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;ILjava/lang/String;)V
 
@@ -1707,7 +1707,7 @@
 
     const/16 v2, 0x1c8
 
-    const-string v3, "kh"
+    const-string/jumbo v3, "kh"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1720,7 +1720,7 @@
 
     const/16 v2, 0x1c9
 
-    const-string v3, "la"
+    const-string/jumbo v3, "la"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1776,7 +1776,7 @@
 
     const/16 v2, 0x1d3
 
-    const-string v3, "kp"
+    const-string/jumbo v3, "kp"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2068,7 +2068,7 @@
 
     const/16 v2, 0x221
 
-    const-string v3, "ki"
+    const-string/jumbo v3, "ki"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2224,7 +2224,7 @@
 
     const/16 v2, 0x25e
 
-    const-string v3, "ly"
+    const-string/jumbo v3, "ly"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2380,7 +2380,7 @@
 
     const/16 v2, 0x26a
 
-    const-string v3, "lr"
+    const-string/jumbo v3, "lr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2796,7 +2796,7 @@
 
     const/16 v2, 0x28b
 
-    const-string v3, "ls"
+    const-string/jumbo v3, "ls"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2835,7 +2835,7 @@
 
     const/16 v2, 0x28e
 
-    const-string v3, "km"
+    const-string/jumbo v3, "km"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -3156,7 +3156,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     return-void
@@ -3371,7 +3371,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "locale set to "
+    const-string/jumbo v4, "locale set to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

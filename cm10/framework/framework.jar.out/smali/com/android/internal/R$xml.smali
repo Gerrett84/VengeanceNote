@@ -33,11 +33,9 @@
 
 .field public static final power_profile:I = 0x10f000a
 
-.field public static final profile_default:I = 0x10f000c
+.field public static final storage_list:I = 0x10f000c
 
-.field public static final storage_list:I = 0x10f000d
-
-.field public static final time_zones_by_country:I = 0x10f000e
+.field public static final time_zones_by_country:I = 0x10f000d
 
 
 # direct methods
@@ -45,8 +43,8 @@
     .locals 0
 
     .prologue
-    .line 16058
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 15447
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -79,7 +79,7 @@
     const/4 v4, 0x0
 
     .line 104
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1019,7 +1019,7 @@
 
     move-result-object v8
 
-    const v9, 0x1040020
+    const v9, 0x1040018
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

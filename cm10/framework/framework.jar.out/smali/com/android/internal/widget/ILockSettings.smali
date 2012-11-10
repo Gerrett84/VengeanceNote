@@ -39,14 +39,6 @@
     .end annotation
 .end method
 
-.method public abstract getInteger(Ljava/lang/String;II)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getLong(Ljava/lang/String;JI)J
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -88,14 +80,6 @@
 .end method
 
 .method public abstract setBoolean(Ljava/lang/String;ZI)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setInteger(Ljava/lang/String;II)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

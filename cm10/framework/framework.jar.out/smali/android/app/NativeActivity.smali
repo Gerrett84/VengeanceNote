@@ -435,12 +435,12 @@
 
     .line 168
     .local v11, ai:Landroid/content/pm/ActivityInfo;
-    iget-object v1, v11, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v1, v11, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     if-eqz v1, :cond_1
 
     .line 169
-    iget-object v1, v11, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v1, v11, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     const-string v4, "android.app.lib_name"
 
@@ -456,7 +456,7 @@
 
     .line 171
     :cond_0
-    iget-object v1, v11, Landroid/content/pm/ActivityInfo;->metaData:Landroid/os/Bundle;
+    iget-object v1, v11, Landroid/content/pm/PackageItemInfo;->metaData:Landroid/os/Bundle;
 
     const-string v4, "android.app.func_name"
 
@@ -480,7 +480,7 @@
     .local v2, path:Ljava/lang/String;
     new-instance v14, Ljava/io/File;
 
-    iget-object v1, v11, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v11, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
 
@@ -588,7 +588,7 @@
 
     move-result-object v6
 
-    iget-object v1, v11, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v11, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/os/Environment;->getExternalStorageAppFilesDirectory(Ljava/lang/String;)Ljava/io/File;
 

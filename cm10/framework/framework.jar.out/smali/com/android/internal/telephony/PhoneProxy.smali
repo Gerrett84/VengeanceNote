@@ -44,7 +44,7 @@
     .line 44
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/PhoneProxy;->lockForRadioTechnologyChange:Ljava/lang/Object;
 
@@ -931,22 +931,22 @@
     .locals 1
 
     .prologue
-    .line 971
+    .line 963
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForOn(Landroid/os/Handler;)V
 
-    .line 972
+    .line 964
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForVoiceRadioTechChanged(Landroid/os/Handler;)V
 
-    .line 973
+    .line 965
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
     invoke-interface {v0, p0}, Lcom/android/internal/telephony/CommandsInterface;->unregisterForRilConnected(Landroid/os/Handler;)V
 
-    .line 974
+    .line 966
     return-void
 .end method
 
@@ -1559,20 +1559,6 @@
     return v0
 .end method
 
-.method public getLteOnGsmMode()I
-    .locals 1
-
-    .prologue
-    .line 957
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
-
-    invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLteOnGsmMode()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getMeid()Ljava/lang/String;
     .locals 1
 
@@ -1852,7 +1838,7 @@
     .locals 1
 
     .prologue
-    .line 967
+    .line 959
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getUsimServiceTable()Lcom/android/internal/telephony/gsm/UsimServiceTable;
@@ -2767,13 +2753,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 977
+    .line 969
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
-    .line 978
+    .line 970
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mCommandsInterface:Lcom/android/internal/telephony/CommandsInterface;
 
-    .line 979
+    .line 971
     return-void
 .end method
 
@@ -3169,12 +3155,12 @@
     .parameter "countWaiting"
 
     .prologue
-    .line 962
+    .line 954
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mActivePhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0, p1, p2}, Lcom/android/internal/telephony/Phone;->setVoiceMessageWaiting(II)V
 
-    .line 963
+    .line 955
     return-void
 .end method
 

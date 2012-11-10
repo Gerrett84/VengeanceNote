@@ -67,7 +67,7 @@
     const/4 v0, 0x0
 
     .line 98
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 99
     if-nez p1, :cond_0
@@ -115,7 +115,7 @@
     const/4 v1, 0x0
 
     .line 141
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 142
     if-nez p1, :cond_0
@@ -214,7 +214,7 @@
 
     .prologue
     .line 158
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 159
     if-nez p1, :cond_0
@@ -293,7 +293,7 @@
 
     .prologue
     .line 109
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 110
     if-nez p1, :cond_0
@@ -359,7 +359,7 @@
     const/4 v1, 0x0
 
     .line 124
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 125
     if-nez p1, :cond_0
@@ -597,7 +597,7 @@
 
     if-nez v6, :cond_1
 
-    .line 203
+    .line 205
     :cond_0
     :goto_0
     return-object v5
@@ -710,7 +710,6 @@
     :goto_2
     move-object v5, v6
 
-    .line 201
     goto :goto_0
 
     .line 202
@@ -727,7 +726,12 @@
     :try_start_4
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+
+    goto :goto_0
+
+    :catch_2
+    move-exception v6
 
     goto :goto_0
 
@@ -740,16 +744,11 @@
     :try_start_5
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
 
     :cond_6
     :goto_3
     throw v5
-
-    :catch_2
-    move-exception v6
-
-    goto :goto_3
 
     .restart local v0       #buf:[B
     .restart local v3       #n:I
@@ -758,6 +757,14 @@
     move-exception v5
 
     goto :goto_2
+
+    .end local v0           #buf:[B
+    .end local v3           #n:I
+    .end local v4           #readBytes:I
+    :catch_4
+    move-exception v6
+
+    goto :goto_3
 .end method
 
 .method public getTimeMillis()J

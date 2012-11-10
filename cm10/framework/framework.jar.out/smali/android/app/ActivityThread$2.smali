@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 4857
+    .line 4690
     iput-object p1, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,26 +42,26 @@
     .parameter "newConfig"
 
     .prologue
-    .line 4859
+    .line 4692
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iget-object v1, v0, Landroid/app/ActivityThread;->mPackages:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 4863
+    .line 4696
     :try_start_0
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, p1, v2}, Landroid/app/ActivityThread;->applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)I
+    invoke-virtual {v0, p1, v2}, Landroid/app/ActivityThread;->applyConfigurationToResourcesLocked(Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 4866
+    .line 4699
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iget-object v0, v0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
@@ -78,13 +78,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 4868
+    .line 4701
     :cond_0
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     iput-object p1, v0, Landroid/app/ActivityThread;->mPendingConfiguration:Landroid/content/res/Configuration;
 
-    .line 4870
+    .line 4703
     iget-object v0, p0, Landroid/app/ActivityThread$2;->this$0:Landroid/app/ActivityThread;
 
     const/16 v2, 0x76
@@ -92,14 +92,14 @@
     #calls: Landroid/app/ActivityThread;->queueOrSendMessage(ILjava/lang/Object;)V
     invoke-static {v0, v2, p1}, Landroid/app/ActivityThread;->access$300(Landroid/app/ActivityThread;ILjava/lang/Object;)V
 
-    .line 4873
+    .line 4706
     :cond_1
     monitor-exit v1
 
-    .line 4874
+    .line 4707
     return-void
 
-    .line 4873
+    .line 4706
     :catchall_0
     move-exception v0
 
@@ -114,7 +114,7 @@
     .locals 0
 
     .prologue
-    .line 4876
+    .line 4709
     return-void
 .end method
 
@@ -123,6 +123,6 @@
     .parameter "level"
 
     .prologue
-    .line 4878
+    .line 4711
     return-void
 .end method

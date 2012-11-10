@@ -14,7 +14,7 @@
 
     .prologue
     .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;

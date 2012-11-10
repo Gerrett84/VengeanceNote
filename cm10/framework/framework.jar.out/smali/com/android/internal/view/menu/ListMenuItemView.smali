@@ -123,7 +123,7 @@
     if-nez v0, :cond_0
 
     .line 268
-    iget-object v0, p0, Lcom/android/internal/view/menu/ListMenuItemView;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -360,7 +360,7 @@
 
     .line 90
     :cond_0
-    const v0, 0x10202e6
+    const v0, 0x10202d2
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/ListMenuItemView;->findViewById(I)Landroid/view/View;
 
@@ -410,14 +410,14 @@
 
     if-lez v2, :cond_0
 
-    iget v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-gtz v2, :cond_0
 
     .line 229
     iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 232
     .end local v0           #iconLp:Landroid/widget/LinearLayout$LayoutParams;

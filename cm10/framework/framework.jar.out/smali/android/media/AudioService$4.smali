@@ -1,14 +1,11 @@
 .class Landroid/media/AudioService$4;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "AudioService.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/media/AudioService;->showVolumeChangeUi(II)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/media/AudioService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,122 +17,65 @@
 # instance fields
 .field final synthetic this$0:Landroid/media/AudioService;
 
-.field final synthetic val$flags:I
-
-.field final synthetic val$streamType:I
-
 
 # direct methods
-.method constructor <init>(Landroid/media/AudioService;II)V
+.method constructor <init>(Landroid/media/AudioService;)V
     .locals 0
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 3693
+    .line 4144
     iput-object p1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
 
-    iput p2, p0, Landroid/media/AudioService$4;->val$streamType:I
-
-    iput p3, p0, Landroid/media/AudioService$4;->val$flags:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 2
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 3696
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
+    .line 4146
+    if-nez p2, :cond_1
 
-    #getter for: Landroid/media/AudioService;->mUiContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/media/AudioService;->access$400(Landroid/media/AudioService;)Landroid/content/Context;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    .line 3697
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    iget-object v2, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    #getter for: Landroid/media/AudioService;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Landroid/media/AudioService;->access$7200(Landroid/media/AudioService;)Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/android/internal/app/ThemeUtils;->createUiContext(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object v2
-
-    #setter for: Landroid/media/AudioService;->mUiContext:Landroid/content/Context;
-    invoke-static {v1, v2}, Landroid/media/AudioService;->access$402(Landroid/media/AudioService;Landroid/content/Context;)Landroid/content/Context;
-
-    .line 3700
+    .line 4156
     :cond_0
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    #getter for: Landroid/media/AudioService;->mUiContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/media/AudioService;->access$400(Landroid/media/AudioService;)Landroid/content/Context;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    #getter for: Landroid/media/AudioService;->mUiContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/media/AudioService;->access$400(Landroid/media/AudioService;)Landroid/content/Context;
-
-    move-result-object v0
-
-    .line 3701
-    .local v0, context:Landroid/content/Context;
     :goto_0
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    new-instance v2, Landroid/view/VolumePanel;
-
-    iget-object v3, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    invoke-direct {v2, v0, v3}, Landroid/view/VolumePanel;-><init>(Landroid/content/Context;Landroid/media/AudioService;)V
-
-    #setter for: Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
-    invoke-static {v1, v2}, Landroid/media/AudioService;->access$7902(Landroid/media/AudioService;Landroid/view/VolumePanel;)Landroid/view/VolumePanel;
-
-    .line 3702
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    #getter for: Landroid/media/AudioService;->mVolumePanel:Landroid/view/VolumePanel;
-    invoke-static {v1}, Landroid/media/AudioService;->access$7900(Landroid/media/AudioService;)Landroid/view/VolumePanel;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/media/AudioService$4;->val$streamType:I
-
-    iget v3, p0, Landroid/media/AudioService$4;->val$flags:I
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/VolumePanel;->postVolumeChanged(II)V
-
-    .line 3703
     return-void
 
-    .line 3700
-    .end local v0           #context:Landroid/content/Context;
+    .line 4149
     :cond_1
-    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
-
-    #getter for: Landroid/media/AudioService;->mContext:Landroid/content/Context;
-    invoke-static {v1}, Landroid/media/AudioService;->access$7200(Landroid/media/AudioService;)Landroid/content/Context;
+    invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
+
+    .line 4150
+    .local v0, extras:Landroid/os/Bundle;
+    if-eqz v0, :cond_0
+
+    .line 4153
+    const-string v1, "android.media.AudioService.WAKELOCK_ACQUIRED"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 4154
+    iget-object v1, p0, Landroid/media/AudioService$4;->this$0:Landroid/media/AudioService;
+
+    #getter for: Landroid/media/AudioService;->mMediaEventWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-static {v1}, Landroid/media/AudioService;->access$6100(Landroid/media/AudioService;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
     goto :goto_0
 .end method

@@ -479,14 +479,6 @@
     .end annotation
 .end method
 
-.method public abstract toggleGlobalMute()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract unloadSoundEffects()V
     .annotation system Ldalvik/annotation/Throws;
         value = {

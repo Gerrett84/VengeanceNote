@@ -39,7 +39,7 @@
 
     .prologue
     .line 39
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -683,10 +683,10 @@
     .line 127
     invoke-virtual/range {v25 .. v25}, Ljava/net/DatagramSocket;->close()V
 
-    .line 126
     :cond_2
     throw v29
 
+    .line 126
     .end local v25           #socket:Ljava/net/DatagramSocket;
     .restart local v26       #socket:Ljava/net/DatagramSocket;
     :catchall_1

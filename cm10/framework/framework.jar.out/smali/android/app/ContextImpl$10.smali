@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 316
+    .line 329
     invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
 
     return-void
@@ -31,14 +31,14 @@
     .locals 3
 
     .prologue
-    .line 318
+    .line 331
     const-string v1, "country_detector"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 319
+    .line 332
     .local v0, b:Landroid/os/IBinder;
     new-instance v1, Landroid/location/CountryDetector;
 

@@ -74,7 +74,7 @@
 
     .prologue
     .line 80
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
     new-instance v1, Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -147,7 +147,7 @@
     .line 87
     new-instance v1, Landroid/media/MediaRouter$RouteCategory;
 
-    const v2, 0x104052e
+    const v2, 0x1040501
 
     const/4 v3, 0x1
 
@@ -180,7 +180,7 @@
     .line 95
     iget-object v1, p0, Landroid/media/MediaRouter$Static;->mDefaultAudio:Landroid/media/MediaRouter$RouteInfo;
 
-    const v2, 0x104052a
+    const v2, 0x10404fd
 
     iput v2, v1, Landroid/media/MediaRouter$RouteInfo;->mNameResId:I
 
@@ -281,7 +281,7 @@
 
     .line 118
     :cond_0
-    const v3, 0x104052b
+    const v3, 0x10404fe
 
     .line 126
     .local v3, name:I
@@ -420,7 +420,7 @@
     if-eqz v4, :cond_5
 
     .line 120
-    const v3, 0x104052c
+    const v3, 0x10404ff
 
     .restart local v3       #name:I
     goto :goto_0
@@ -435,7 +435,7 @@
     if-eqz v4, :cond_6
 
     .line 122
-    const v3, 0x104052d
+    const v3, 0x1040500
 
     .restart local v3       #name:I
     goto :goto_0
@@ -443,7 +443,7 @@
     .line 124
     .end local v3           #name:I
     :cond_6
-    const v3, 0x104052a
+    const v3, 0x10404fd
 
     .restart local v3       #name:I
     goto :goto_0

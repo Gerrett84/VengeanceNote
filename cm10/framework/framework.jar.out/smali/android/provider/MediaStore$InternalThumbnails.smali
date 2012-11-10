@@ -60,7 +60,7 @@
     .line 463
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/provider/MediaStore$InternalThumbnails;->sThumbBufLock:Ljava/lang/Object;
 
@@ -72,7 +72,7 @@
 
     .prologue
     .line 457
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -554,10 +554,10 @@
     invoke-virtual/range {v18 .. v18}, Landroid/media/MiniThumbFile;->deactivate()V
 
     .line 620
-    .end local v14           #ex:Landroid/database/sqlite/SQLiteException;
-    :goto_2
     const/16 v18, 0x0
 
+    .end local v14           #ex:Landroid/database/sqlite/SQLiteException;
+    :goto_2
     move-object v3, v11
 
     .line 622
@@ -653,7 +653,6 @@
 
     move-object v3, v11
 
-    .line 558
     goto :goto_1
 
     .line 553
@@ -742,7 +741,6 @@
     invoke-virtual/range {v18 .. v18}, Landroid/media/MiniThumbFile;->deactivate()V
 
     .line 620
-    :goto_4
     const/16 v18, 0x0
 
     goto/16 :goto_1
@@ -822,7 +820,7 @@
 
     .line 594
     :cond_e
-    :goto_5
+    :goto_4
     if-nez v11, :cond_17
 
     .line 595
@@ -954,7 +952,10 @@
     :cond_11
     invoke-virtual/range {v18 .. v18}, Landroid/media/MiniThumbFile;->deactivate()V
 
-    goto/16 :goto_4
+    .line 620
+    const/16 v18, 0x0
+
+    goto/16 :goto_1
 
     .line 584
     .end local v6           #uri:Landroid/net/Uri;
@@ -989,7 +990,6 @@
     .line 620
     const/16 v18, 0x0
 
-    .line 617
     throw v3
 
     .line 585
@@ -1021,7 +1021,7 @@
 
     move-result-object v11
 
-    goto/16 :goto_5
+    goto/16 :goto_4
 
     .line 590
     :cond_14
@@ -1077,7 +1077,7 @@
     .line 617
     .end local v6           #uri:Landroid/net/Uri;
     :cond_17
-    :goto_6
+    :goto_5
     if-eqz v12, :cond_18
 
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
@@ -1086,6 +1086,10 @@
     :cond_18
     invoke-virtual/range {v18 .. v18}, Landroid/media/MiniThumbFile;->deactivate()V
 
+    .line 620
+    const/16 v18, 0x0
+
+    .line 621
     goto/16 :goto_2
 
     .line 611
@@ -1101,5 +1105,5 @@
 
     move-result-object v11
 
-    goto :goto_6
+    goto :goto_5
 .end method

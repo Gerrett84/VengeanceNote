@@ -327,7 +327,7 @@
 
     .line 165
     .local v1, layout:Landroid/view/View;
-    const v3, 0x10202ef
+    const v3, 0x10202db
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +338,7 @@
     iput-object v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mVolumeIcon:Landroid/widget/ImageView;
 
     .line 166
-    const v3, 0x10202f0
+    const v3, 0x10202dc
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -366,7 +366,7 @@
     if-eqz v3, :cond_0
 
     .line 171
-    const v3, 0x10202f1
+    const v3, 0x10202dd
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -563,7 +563,7 @@
 
     if-nez v1, :cond_1
 
-    const v1, 0x10802a2
+    const v1, 0x10802a6
 
     :goto_1
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -601,7 +601,7 @@
 
     .line 128
     :cond_1
-    const v1, 0x1080345
+    const v1, 0x1080315
 
     goto :goto_1
 

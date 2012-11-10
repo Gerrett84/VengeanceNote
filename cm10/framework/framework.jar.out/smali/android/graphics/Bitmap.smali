@@ -123,7 +123,7 @@
     const/4 v0, -0x1
 
     .line 112
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     iput v0, p0, Landroid/graphics/Bitmap;->mWidth:I

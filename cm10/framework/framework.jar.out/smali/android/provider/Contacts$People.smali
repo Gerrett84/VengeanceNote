@@ -148,7 +148,7 @@
 
     .prologue
     .line 347
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -580,11 +580,10 @@
     :cond_0
     if-eqz v6, :cond_1
 
-    :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 617
     :cond_1
+    :goto_0
     return-object v3
 
     .line 613
@@ -593,6 +592,8 @@
 
     :try_start_1
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getBlob(I)[B
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v7
 
@@ -603,18 +604,23 @@
     .line 619
     if-eqz v6, :cond_1
 
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
     goto :goto_0
 
     .line 617
     :cond_3
+    :try_start_2
     new-instance v3, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v3, v7}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 619
     if-eqz v6, :cond_1
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
@@ -758,13 +764,6 @@
     return-wide v0
 
     .line 472
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    throw v0
-
     :cond_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
@@ -773,4 +772,12 @@
     const-wide/16 v0, 0x0
 
     goto :goto_0
+
+    .line 472
+    :catchall_0
+    move-exception v0
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    throw v0
 .end method

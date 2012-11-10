@@ -101,28 +101,28 @@
 
     const/4 v0, 0x0
 
-    .line 276
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 266
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 277
+    .line 267
     iput-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->parent:Landroid/app/Activity;
 
-    .line 278
+    .line 268
     iput-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->embeddedID:Ljava/lang/String;
 
-    .line 279
+    .line 269
     iput-boolean v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z
 
-    .line 280
+    .line 270
     iput-boolean v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z
 
-    .line 281
+    .line 271
     iput-boolean v0, p0, Landroid/app/ActivityThread$ActivityClientRecord;->hideForNow:Z
 
-    .line 282
+    .line 272
     iput-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->nextIdle:Landroid/app/ActivityThread$ActivityClientRecord;
 
-    .line 283
+    .line 273
     return-void
 .end method
 
@@ -134,12 +134,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 286
+    .line 276
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     if-eqz v1, :cond_0
 
-    .line 287
+    .line 277
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -154,7 +154,7 @@
 
     const/4 v0, 0x1
 
-    .line 290
+    .line 280
     :cond_0
     return v0
 .end method
@@ -163,7 +163,7 @@
     .locals 3
 
     .prologue
-    .line 294
+    .line 284
     iget-object v1, p0, Landroid/app/ActivityThread$ActivityClientRecord;->intent:Landroid/content/Intent;
 
     if-eqz v1, :cond_0
@@ -174,7 +174,7 @@
 
     move-result-object v0
 
-    .line 295
+    .line 285
     .local v0, componentName:Landroid/content/ComponentName;
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -238,14 +238,14 @@
 
     return-object v1
 
-    .line 294
+    .line 284
     .end local v0           #componentName:Landroid/content/ComponentName;
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 295
+    .line 285
     .restart local v0       #componentName:Landroid/content/ComponentName;
     :cond_1
     invoke-virtual {v0}, Landroid/content/ComponentName;->toShortString()Ljava/lang/String;

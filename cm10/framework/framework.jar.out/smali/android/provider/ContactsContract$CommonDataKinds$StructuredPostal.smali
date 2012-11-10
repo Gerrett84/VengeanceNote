@@ -72,7 +72,7 @@
 
     .prologue
     .line 5775
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 5776
     return-void
@@ -124,26 +124,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 5873
-    const v0, 0x10402ef
+    const v0, 0x10402c4
 
     :goto_0
     return v0
 
     .line 5870
     :pswitch_0
-    const v0, 0x10402f0
+    const v0, 0x10402c5
 
     goto :goto_0
 
     .line 5871
     :pswitch_1
-    const v0, 0x10402f1
+    const v0, 0x10402c6
 
     goto :goto_0
 
     .line 5872
     :pswitch_2
-    const v0, 0x10402f2
+    const v0, 0x10402c7
 
     goto :goto_0
 

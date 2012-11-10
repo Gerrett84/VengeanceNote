@@ -473,7 +473,7 @@
     .local v4, cdmaSubscription:I
     const-string v16, "PHONE"
 
-    const-string v18, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION"
+    const-string/jumbo v18, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION"
 
     move-object/from16 v0, v16
 
@@ -805,7 +805,7 @@
     :try_start_6
     const-string v16, "PHONE"
 
-    const-string v18, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV"
+    const-string/jumbo v18, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV"
 
     move-object/from16 v0, v16
 
@@ -824,7 +824,7 @@
     .restart local v4       #cdmaSubscription:I
     const-string v16, "PHONE"
 
-    const-string v18, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM"
+    const-string/jumbo v18, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM"
 
     move-object/from16 v0, v16
 
@@ -963,6 +963,8 @@
     goto/16 :goto_3
 
     .line 122
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

@@ -577,17 +577,6 @@
     return-void
 .end method
 
-.method public needsOldRilFeature(Ljava/lang/String;)Z
-    .locals 1
-    .parameter "feature"
-
-    .prologue
-    .line 425
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public queryAvailableBandMode(Landroid/os/Message;)V
     .locals 0
     .parameter "response"
@@ -992,17 +981,6 @@
     return-void
 .end method
 
-.method public setOnCatSendSmsResult(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 0
-    .parameter "h"
-    .parameter "what"
-    .parameter "obj"
-
-    .prologue
-    .line 433
-    return-void
-.end method
-
 .method public setOnNITZTime(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 0
     .parameter "h"
@@ -1222,15 +1200,6 @@
 
     .prologue
     .line 107
-    return-void
-.end method
-
-.method public unSetOnCatSendSmsResult(Landroid/os/Handler;)V
-    .locals 0
-    .parameter "h"
-
-    .prologue
-    .line 436
     return-void
 .end method
 

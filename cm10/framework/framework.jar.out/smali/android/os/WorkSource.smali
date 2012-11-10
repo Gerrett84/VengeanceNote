@@ -60,7 +60,7 @@
 
     .prologue
     .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
     const/4 v0, 0x0
@@ -81,7 +81,7 @@
     const/4 v1, 0x0
 
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     iput v2, p0, Landroid/os/WorkSource;->mNum:I
@@ -107,7 +107,7 @@
 
     .prologue
     .line 57
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -133,7 +133,7 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     if-nez p1, :cond_0

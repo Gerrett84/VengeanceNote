@@ -392,8 +392,6 @@
 
 .field public static final RIL_UNSOL_STK_PROACTIVE_COMMAND:I = 0x3f5
 
-.field public static final RIL_UNSOL_STK_SEND_SMS_RESULT:I = 0x2afa
-
 .field public static final RIL_UNSOL_STK_SESSION_END:I = 0x3f4
 
 .field public static final RIL_UNSOL_SUPP_SVC_NOTIFICATION:I = 0x3f3

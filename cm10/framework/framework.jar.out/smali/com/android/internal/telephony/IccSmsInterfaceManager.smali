@@ -498,38 +498,6 @@
     return-void
 .end method
 
-.method public sendRawPduSat([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;)V
-    .locals 6
-    .parameter "smsc"
-    .parameter "pdu"
-    .parameter "sentIntent"
-    .parameter "deliveryIntent"
-
-    .prologue
-    .line 224
-    iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mPhone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
-
-    .line 225
-    iget-object v0, p0, Lcom/android/internal/telephony/IccSmsInterfaceManager;->mDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
-
-    const-string v5, ""
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Lcom/android/internal/telephony/SMSDispatcher;->sendRawPdu([B[BLandroid/app/PendingIntent;Landroid/app/PendingIntent;Ljava/lang/String;)V
-
-    .line 226
-    return-void
-.end method
-
 .method public sendText(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     .locals 6
     .parameter "destAddr"
@@ -550,7 +518,7 @@
 
     const-string v2, "Sending SMS message"
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 118
     const-string v0, "SMS"

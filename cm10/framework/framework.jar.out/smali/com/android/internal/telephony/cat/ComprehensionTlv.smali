@@ -30,7 +30,7 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     iput p1, p0, Lcom/android/internal/telephony/cat/ComprehensionTlv;->mTag:I
@@ -300,7 +300,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "length < 0x80 length="
+    const-string/jumbo v11, "length < 0x80 length="
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -691,8 +691,6 @@
     goto/16 :goto_2
 
     .line 124
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

@@ -46,7 +46,7 @@
     .line 926
     iput-object p1, p0, Landroid/widget/ActivityChooserModel$DefaultSorter;->this$0:Landroid/widget/ActivityChooserModel;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 929
     new-instance v0, Ljava/util/HashMap;
@@ -133,7 +133,7 @@
 
     iget-object v8, v8, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v6, v8, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v6, v8, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 943
     .local v6, packageName:Ljava/lang/String;

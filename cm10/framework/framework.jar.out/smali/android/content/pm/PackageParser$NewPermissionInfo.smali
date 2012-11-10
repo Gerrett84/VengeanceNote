@@ -30,18 +30,18 @@
     .parameter "fileVersion"
 
     .prologue
-    .line 87
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 112
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
+    .line 113
     iput-object p1, p0, Landroid/content/pm/PackageParser$NewPermissionInfo;->name:Ljava/lang/String;
 
-    .line 89
+    .line 114
     iput p2, p0, Landroid/content/pm/PackageParser$NewPermissionInfo;->sdkVersion:I
 
-    .line 90
+    .line 115
     iput p3, p0, Landroid/content/pm/PackageParser$NewPermissionInfo;->fileVersion:I
 
-    .line 91
+    .line 116
     return-void
 .end method

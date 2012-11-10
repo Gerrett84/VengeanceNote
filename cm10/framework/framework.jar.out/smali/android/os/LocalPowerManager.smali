@@ -20,9 +20,6 @@
 
 
 # virtual methods
-.method public abstract cpuBoost(I)V
-.end method
-
 .method public abstract enableUserActivity(Z)V
 .end method
 

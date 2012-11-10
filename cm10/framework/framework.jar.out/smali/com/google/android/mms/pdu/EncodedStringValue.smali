@@ -30,7 +30,7 @@
     const/4 v2, 0x0
 
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     if-nez p2, :cond_0
@@ -72,7 +72,7 @@
 
     .prologue
     .line 73
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 75
     :try_start_0

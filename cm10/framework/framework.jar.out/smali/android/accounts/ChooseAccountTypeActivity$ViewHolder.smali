@@ -25,8 +25,8 @@
     .locals 0
 
     .prologue
-    .line 165
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 166
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -36,7 +36,7 @@
     .parameter "x0"
 
     .prologue
-    .line 165
+    .line 166
     invoke-direct {p0}, Landroid/accounts/ChooseAccountTypeActivity$ViewHolder;-><init>()V
 
     return-void

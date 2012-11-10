@@ -28,7 +28,7 @@
 
     .prologue
     .line 200
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 201
     iput-object p1, p0, Landroid/net/INetworkPolicyManager$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -119,7 +119,6 @@
     .line 242
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 241
     throw v3
 .end method
 
@@ -193,7 +192,6 @@
     .line 260
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 259
     throw v3
 .end method
 
@@ -277,7 +275,6 @@
     .line 341
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 340
     throw v3
 .end method
 
@@ -385,7 +382,6 @@
     .line 425
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 424
     throw v3
 
     .line 420
@@ -469,7 +465,6 @@
     .line 396
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 395
     throw v3
 .end method
 
@@ -572,7 +567,6 @@
     .line 449
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 448
     throw v3
 
     :cond_1
@@ -659,7 +653,6 @@
     .line 278
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 277
     throw v3
 .end method
 
@@ -739,7 +732,6 @@
     .line 294
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 293
     throw v2
 .end method
 
@@ -810,7 +802,6 @@
     .line 225
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 224
     throw v2
 .end method
 
@@ -879,7 +870,6 @@
     .line 325
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 324
     throw v2
 .end method
 
@@ -953,7 +943,6 @@
     .line 380
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 379
     throw v2
 .end method
 
@@ -1042,7 +1031,6 @@
     .line 364
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 363
     throw v2
 .end method
 
@@ -1122,6 +1110,5 @@
     .line 309
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 308
     throw v2
 .end method

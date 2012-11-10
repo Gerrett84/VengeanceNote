@@ -94,7 +94,7 @@
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/DialogTitle;->setMaxLines(I)V
 
     .line 58
-    iget-object v5, p0, Lcom/android/internal/widget/DialogTitle;->mContext:Landroid/content/Context;
+    iget-object v5, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     const/4 v6, 0x0
 

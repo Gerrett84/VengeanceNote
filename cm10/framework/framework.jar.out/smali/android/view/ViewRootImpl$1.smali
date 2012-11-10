@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1955
+    .line 1983
     iput-object p1, p0, Landroid/view/ViewRootImpl$1;->this$0:Landroid/view/ViewRootImpl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,14 +41,14 @@
     .locals 3
 
     .prologue
-    .line 1958
+    .line 1986
     const-string v1, "ViewRootImpl"
 
     const-string v2, "Starting profiling thread"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1959
+    .line 1987
     :goto_0
     iget-object v1, p0, Landroid/view/ViewRootImpl$1;->this$0:Landroid/view/ViewRootImpl;
 
@@ -59,7 +59,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1960
+    .line 1988
     iget-object v1, p0, Landroid/view/ViewRootImpl$1;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v1, v1, Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1969
+    .line 1997
     const-wide/16 v1, 0xf
 
     :try_start_0
@@ -82,11 +82,11 @@
 
     goto :goto_0
 
-    .line 1970
+    .line 1998
     :catch_0
     move-exception v0
 
-    .line 1971
+    .line 1999
     .local v0, e:Ljava/lang/InterruptedException;
     const-string v1, "ViewRootImpl"
 
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 1974
+    .line 2002
     .end local v0           #e:Ljava/lang/InterruptedException;
     :cond_0
     return-void

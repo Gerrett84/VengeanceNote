@@ -177,7 +177,7 @@
     invoke-virtual {p0, v1}, Landroid/app/SearchDialog;->setContentView(I)V
 
     .line 168
-    const v1, 0x1020333
+    const v1, 0x1020324
 
     invoke-virtual {p0, v1}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -190,7 +190,7 @@
     invoke-virtual {v0, p0}, Landroid/app/SearchDialog$SearchBar;->setSearchDialog(Landroid/app/SearchDialog;)V
 
     .line 170
-    const v1, 0x1020335
+    const v1, 0x1020326
 
     invoke-virtual {p0, v1}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -252,7 +252,7 @@
     .line 186
     iget-object v1, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v2, 0x1020337
+    const v2, 0x1020328
 
     invoke-virtual {v1, v2}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
     .line 187
     iget-object v1, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v2, 0x102033c
+    const v2, 0x102032d
 
     invoke-virtual {v1, v2}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -276,7 +276,7 @@
     iput-object v1, p0, Landroid/app/SearchDialog;->mSearchAutoComplete:Landroid/widget/AutoCompleteTextView;
 
     .line 189
-    const v1, 0x1020334
+    const v1, 0x1020325
 
     invoke-virtual {p0, v1}, Landroid/app/SearchDialog;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
     .line 190
     iget-object v1, p0, Landroid/app/SearchDialog;->mSearchView:Landroid/widget/SearchView;
 
-    const v2, 0x102033b
+    const v2, 0x102032c
 
     invoke-virtual {v1, v2}, Landroid/widget/SearchView;->findViewById(I)Landroid/view/View;
 
@@ -306,7 +306,7 @@
 
     move-result-object v1
 
-    const v2, 0x1080508
+    const v2, 0x10804de
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -552,7 +552,7 @@
 
     .line 499
     .local v2, y:I
-    iget-object v3, p0, Landroid/app/SearchDialog;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -779,7 +779,7 @@
 
     .prologue
     .line 255
-    iget-object v1, p0, Landroid/app/SearchDialog;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "search"
 
@@ -894,7 +894,7 @@
 
     .line 438
     .local v2, info:Landroid/content/pm/ActivityInfo;
-    iget-object v4, v2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v4, v2, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v3, v4}, Landroid/content/pm/PackageManager;->getApplicationIcon(Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
     :try_end_0
@@ -1117,7 +1117,7 @@
     if-eqz v1, :cond_1
 
     .line 389
-    iget-object v1, p0, Landroid/app/SearchDialog;->mDecor:Landroid/view/View;
+    iget-object v1, p0, Landroid/app/Dialog;->mDecor:Landroid/view/View;
 
     const/4 v2, 0x0
 
@@ -1466,10 +1466,10 @@
 
     .line 147
     .local v0, lp:Landroid/view/WindowManager$LayoutParams;
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 151
-    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 152
     const/16 v2, 0x37

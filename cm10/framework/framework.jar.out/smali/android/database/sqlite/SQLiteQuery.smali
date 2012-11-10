@@ -96,7 +96,6 @@
     .line 76
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->releaseReference()V
 
-    .line 65
     return v10
 
     .line 66

@@ -100,7 +100,7 @@
 
     .prologue
     .line 423
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 424
     iput-object p1, p0, Landroid/text/HtmlToSpannedConverter;->mSource:Ljava/lang/String;
@@ -1935,7 +1935,7 @@
 
     move-result-object v3
 
-    const v4, 0x108061f
+    const v4, 0x10805f5
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

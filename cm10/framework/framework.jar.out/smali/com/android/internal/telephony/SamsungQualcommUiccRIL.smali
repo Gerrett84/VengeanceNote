@@ -9,17 +9,11 @@
 # static fields
 .field public static final INVALID_SNR:I = 0x7fffffff
 
-.field public static final SEND_SMS_TIMEOUT_IN_MS:J = 0x7530L
-
 
 # instance fields
 .field RILJ_LOGD:Z
 
 .field RILJ_LOGV:Z
-
-.field private mIsSendingSMS:Z
-
-.field private mSMSLock:Ljava/lang/Object;
 
 .field private mSignalbarCount:Z
 
@@ -34,19 +28,19 @@
     .prologue
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
-
-    .line 49
+    .line 45
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/QualcommSharedRIL;-><init>(Landroid/content/Context;II)V
 
-    .line 39
+    .line 38
     iput-boolean v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->RILJ_LOGV:Z
 
-    .line 40
+    .line 39
     iput-boolean v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->RILJ_LOGD:Z
 
-    .line 43
+    .line 42
     const-string/jumbo v0, "ro.telephony.sends_barcount"
+
+    const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -54,22 +48,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSignalbarCount:Z
 
-    .line 44
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSMSLock:Ljava/lang/Object;
-
-    .line 45
-    iput-boolean v1, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mIsSendingSMS:Z
-
-    .line 50
-    const/4 v0, 0x4
-
-    iput v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mQANElements:I
-
-    .line 51
+    .line 46
     return-void
 .end method
 
@@ -88,14 +67,14 @@
 
     const/4 v8, 0x0
 
-    .line 89
+    .line 84
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->responseString(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 90
+    .line 85
     .local v1, nitz:Ljava/lang/String;
     iget-boolean v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->RILJ_LOGD:Z
 
@@ -105,21 +84,21 @@
 
     invoke-virtual {p0, v6, v1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->unsljLogRet(ILjava/lang/Object;)V
 
-    .line 94
+    .line 89
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v3
 
-    .line 96
+    .line 91
     .local v3, nitzReceiveTime:J
     new-array v5, v10, [Ljava/lang/Object;
 
-    .line 98
+    .line 93
     .local v5, result:[Ljava/lang/Object;
     move-object v0, v1
 
-    .line 99
+    .line 94
     .local v0, fixedNitz:Ljava/lang/String;
     const-string v6, ","
 
@@ -127,7 +106,7 @@
 
     move-result-object v2
 
-    .line 100
+    .line 95
     .local v2, nitzParts:[Ljava/lang/String;
     array-length v6, v2
 
@@ -135,7 +114,7 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 102
+    .line 97
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -180,23 +159,23 @@
 
     move-result-object v0
 
-    .line 105
+    .line 100
     :cond_1
     aput-object v0, v5, v8
 
-    .line 106
+    .line 101
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v6
 
     aput-object v6, v5, v9
 
-    .line 108
+    .line 103
     iget-object v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mNITZTimeRegistrant:Landroid/os/Registrant;
 
     if-eqz v6, :cond_2
 
-    .line 110
+    .line 105
     iget-object v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mNITZTimeRegistrant:Landroid/os/Registrant;
 
     new-instance v7, Landroid/os/AsyncResult;
@@ -205,11 +184,11 @@
 
     invoke-virtual {v6, v7}, Landroid/os/Registrant;->notifyRegistrant(Landroid/os/AsyncResult;)V
 
-    .line 116
+    .line 111
     :goto_0
     return-void
 
-    .line 114
+    .line 109
     :cond_2
     iput-object v5, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mLastNITZTimeInfo:Ljava/lang/Object;
 
@@ -223,50 +202,50 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 57
+    .line 52
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
-    .line 58
+    .line 53
     .local v0, dataPosition:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 60
+    .line 55
     .local v1, response:I
     sparse-switch v1, :sswitch_data_0
 
-    .line 68
+    .line 63
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 71
+    .line 66
     invoke-super {p0, p1}, Lcom/android/internal/telephony/QualcommSharedRIL;->processUnsolicited(Landroid/os/Parcel;)V
 
-    .line 85
+    .line 80
     :goto_0
     return-void
 
-    .line 62
+    .line 57
     :sswitch_0
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->handleNitzTimeReceived(Landroid/os/Parcel;)V
 
     goto :goto_0
 
-    .line 64
+    .line 59
     :sswitch_1
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->responseVoid(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 75
+    .line 70
     .local v2, ret:Ljava/lang/Object;
     packed-switch v1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 77
+    .line 72
     :pswitch_0
     iget-boolean v3, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->RILJ_LOGD:Z
 
@@ -274,7 +253,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->unsljLog(I)V
 
-    .line 81
+    .line 76
     :cond_0
     iget-object v3, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mVoiceNetworkStateRegistrants:Landroid/os/RegistrantList;
 
@@ -286,7 +265,7 @@
 
     goto :goto_0
 
-    .line 60
+    .line 55
     nop
 
     :sswitch_data_0
@@ -295,7 +274,7 @@
         0x40e -> :sswitch_1
     .end sparse-switch
 
-    .line 75
+    .line 70
     :pswitch_data_0
     .packed-switch 0x40e
         :pswitch_0
@@ -307,12 +286,12 @@
     .parameter "p"
 
     .prologue
-    .line 165
+    .line 159
     new-instance v5, Lcom/android/internal/telephony/IccCardStatus;
 
     invoke-direct {v5}, Lcom/android/internal/telephony/IccCardStatus;-><init>()V
 
-    .line 166
+    .line 160
     .local v5, status:Lcom/android/internal/telephony/IccCardStatus;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -320,65 +299,65 @@
 
     invoke-virtual {v5, v6}, Lcom/android/internal/telephony/IccCardStatus;->setCardState(I)V
 
-    .line 167
+    .line 161
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/android/internal/telephony/IccCardStatus;->setUniversalPinState(I)V
 
-    .line 168
+    .line 162
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/android/internal/telephony/IccCardStatus;->setGsmUmtsSubscriptionAppIndex(I)V
 
-    .line 169
+    .line 163
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/android/internal/telephony/IccCardStatus;->setCdmaSubscriptionAppIndex(I)V
 
-    .line 171
+    .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/android/internal/telephony/IccCardStatus;->setImsSubscriptionAppIndex(I)V
 
-    .line 173
+    .line 167
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 176
+    .line 170
     .local v4, numApplications:I
     const/16 v6, 0x8
 
     if-le v4, v6, :cond_0
 
-    .line 177
+    .line 171
     const/16 v4, 0x8
 
-    .line 179
+    .line 173
     :cond_0
     invoke-virtual {v5, v4}, Lcom/android/internal/telephony/IccCardStatus;->setNumApplications(I)V
 
-    .line 181
+    .line 175
     const/4 v3, 0x0
 
     .local v3, i:I
     :goto_0
-    if-ge v3, v4, :cond_3
+    if-ge v3, v4, :cond_1
 
-    .line 182
+    .line 176
     new-instance v2, Lcom/android/internal/telephony/IccCardApplication;
 
     invoke-direct {v2}, Lcom/android/internal/telephony/IccCardApplication;-><init>()V
 
-    .line 183
+    .line 177
     .local v2, ca:Lcom/android/internal/telephony/IccCardApplication;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -390,7 +369,7 @@
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
-    .line 184
+    .line 178
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
@@ -401,7 +380,7 @@
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
 
-    .line 185
+    .line 179
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
@@ -412,68 +391,28 @@
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->perso_substate:Lcom/android/internal/telephony/IccCardApplication$PersoSubState;
 
-    .line 186
-    iget-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
-
-    sget-object v7, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_SUBSCRIPTION_PERSO:Lcom/android/internal/telephony/IccCardApplication$AppState;
-
-    if-ne v6, v7, :cond_2
-
-    iget-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->perso_substate:Lcom/android/internal/telephony/IccCardApplication$PersoSubState;
-
-    sget-object v7, Lcom/android/internal/telephony/IccCardApplication$PersoSubState;->PERSOSUBSTATE_READY:Lcom/android/internal/telephony/IccCardApplication$PersoSubState;
-
-    if-eq v6, v7, :cond_1
-
-    iget-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->perso_substate:Lcom/android/internal/telephony/IccCardApplication$PersoSubState;
-
-    sget-object v7, Lcom/android/internal/telephony/IccCardApplication$PersoSubState;->PERSOSUBSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplication$PersoSubState;
-
-    if-ne v6, v7, :cond_2
-
-    .line 190
-    :cond_1
-    sget-object v6, Lcom/android/internal/telephony/IccCardApplication$AppState;->APPSTATE_UNKNOWN:Lcom/android/internal/telephony/IccCardApplication$AppState;
-
-    iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->app_state:Lcom/android/internal/telephony/IccCardApplication$AppState;
-
-    .line 191
-    const-string v6, "RILJ"
-
-    const-string v7, "ca.app_state == AppState.APPSTATE_SUBSCRIPTION_PERSO"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 192
-    const-string v6, "RILJ"
-
-    const-string v7, "ca.perso_substate == PersoSubState.PERSOSUBSTATE_READY"
-
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 194
-    :cond_2
+    .line 180
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->aid:Ljava/lang/String;
 
-    .line 195
+    .line 181
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v6
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->app_label:Ljava/lang/String;
 
-    .line 196
+    .line 182
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
     iput v6, v2, Lcom/android/internal/telephony/IccCardApplication;->pin1_replaced:I
 
-    .line 197
+    .line 183
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
@@ -484,7 +423,7 @@
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->pin1:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
-    .line 198
+    .line 184
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
@@ -495,48 +434,48 @@
 
     iput-object v6, v2, Lcom/android/internal/telephony/IccCardApplication;->pin2:Lcom/android/internal/telephony/IccCardStatus$PinState;
 
-    .line 200
+    .line 186
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 201
+    .line 187
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 202
+    .line 188
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 203
+    .line 189
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 204
+    .line 190
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    .line 205
+    .line 191
     invoke-virtual {v5, v2}, Lcom/android/internal/telephony/IccCardStatus;->addApplication(Lcom/android/internal/telephony/IccCardApplication;)V
 
-    .line 181
+    .line 175
     add-int/lit8 v3, v3, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 207
+    .line 193
     .end local v2           #ca:Lcom/android/internal/telephony/IccCardApplication;
-    :cond_3
+    :cond_1
     const/4 v0, -0x1
 
-    .line 208
+    .line 194
     .local v0, appIndex:I
     iget v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mPhoneType:I
 
     const/4 v7, 0x2
 
-    if-ne v6, v7, :cond_6
+    if-ne v6, v7, :cond_4
 
-    .line 209
+    .line 195
     invoke-virtual {v5}, Lcom/android/internal/telephony/IccCardStatus;->getCdmaSubscriptionAppIndex()I
 
     move-result v0
 
-    .line 210
+    .line 196
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -559,61 +498,61 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 216
+    .line 202
     :goto_1
-    if-lez v4, :cond_5
+    if-lez v4, :cond_3
 
-    .line 217
+    .line 203
     invoke-virtual {v5, v0}, Lcom/android/internal/telephony/IccCardStatus;->getApplication(I)Lcom/android/internal/telephony/IccCardApplication;
 
     move-result-object v1
 
-    .line 218
+    .line 204
     .local v1, application:Lcom/android/internal/telephony/IccCardApplication;
     iget-object v6, v1, Lcom/android/internal/telephony/IccCardApplication;->aid:Ljava/lang/String;
 
     iput-object v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mAid:Ljava/lang/String;
 
-    .line 219
+    .line 205
     iget-object v6, v1, Lcom/android/internal/telephony/IccCardApplication;->app_type:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
     sget-object v7, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_USIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 
-    if-ne v6, v7, :cond_7
+    if-ne v6, v7, :cond_5
 
     const/4 v6, 0x1
 
     :goto_2
     iput-boolean v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mUSIM:Z
 
-    .line 221
+    .line 207
     iget v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mPreferredNetworkType:I
 
     iput v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSetPreferredNetworkType:I
 
-    .line 223
+    .line 209
     iget-object v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mAid:Ljava/lang/String;
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_2
 
-    .line 224
+    .line 210
     const-string v6, ""
 
     iput-object v6, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mAid:Ljava/lang/String;
 
-    .line 225
-    :cond_4
+    .line 211
+    :cond_2
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "mAid "
+    const-string/jumbo v8, "mAid "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -655,18 +594,18 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 214
     .end local v1           #application:Lcom/android/internal/telephony/IccCardApplication;
-    :cond_5
+    :cond_3
     return-object v5
 
-    .line 212
-    :cond_6
+    .line 198
+    :cond_4
     invoke-virtual {v5}, Lcom/android/internal/telephony/IccCardStatus;->getGsmUmtsSubscriptionAppIndex()I
 
     move-result v0
 
-    .line 213
+    .line 199
     const-string v6, "RILJ"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -691,57 +630,122 @@
 
     goto :goto_1
 
-    .line 219
+    .line 205
     .restart local v1       #application:Lcom/android/internal/telephony/IccCardApplication;
-    :cond_7
+    :cond_5
     const/4 v6, 0x0
 
     goto :goto_2
 .end method
 
-.method protected responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 2
+.method protected responseOperatorInfos(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 8
     .parameter "p"
 
     .prologue
-    .line 320
-    iget-object v1, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSMSLock:Ljava/lang/Object;
+    .line 131
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->responseStrings(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    monitor-enter v1
+    move-result-object v3
 
-    .line 321
+    check-cast v3, [Ljava/lang/String;
+
+    move-object v2, v3
+
+    check-cast v2, [Ljava/lang/String;
+
+    .line 134
+    .local v2, strings:[Ljava/lang/String;
+    array-length v3, v2
+
+    rem-int/lit8 v3, v3, 0x4
+
+    if-eqz v3, :cond_0
+
+    .line 135
+    new-instance v3, Ljava/lang/RuntimeException;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "RIL_REQUEST_QUERY_AVAILABLE_NETWORKS: invalid response. Got "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    array-length v5, v2
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " strings, expected multible of 4"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v3
+
+    .line 140
+    :cond_0
+    new-instance v1, Ljava/util/ArrayList;
+
+    array-length v3, v2
+
+    div-int/lit8 v3, v3, 0x4
+
+    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 142
+    .local v1, ret:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/telephony/OperatorInfo;>;"
     const/4 v0, 0x0
 
-    :try_start_0
-    iput-boolean v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mIsSendingSMS:Z
+    .local v0, i:I
+    :goto_0
+    array-length v3, v2
 
-    .line 322
-    iget-object v0, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSMSLock:Ljava/lang/Object;
+    if-ge v0, v3, :cond_1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
+    .line 143
+    new-instance v3, Lcom/android/internal/telephony/OperatorInfo;
 
-    .line 323
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    add-int/lit8 v4, v0, 0x0
 
-    .line 325
-    invoke-super {p0, p1}, Lcom/android/internal/telephony/QualcommSharedRIL;->responseSMS(Landroid/os/Parcel;)Ljava/lang/Object;
+    aget-object v4, v2, v4
 
-    move-result-object v0
+    add-int/lit8 v5, v0, 0x1
 
-    return-object v0
+    aget-object v5, v2, v5
 
-    .line 323
-    :catchall_0
-    move-exception v0
+    add-int/lit8 v6, v0, 0x2
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    aget-object v6, v2, v6
 
-    throw v0
+    add-int/lit8 v7, v0, 0x3
+
+    aget-object v7, v2, v7
+
+    invoke-direct {v3, v4, v5, v6, v7}, Lcom/android/internal/telephony/OperatorInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 142
+    add-int/lit8 v0, v0, 0x4
+
+    goto :goto_0
+
+    .line 151
+    :cond_1
+    return-object v1
 .end method
 
 .method protected responseSignalStrength(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -759,14 +763,14 @@
 
     const/4 v7, -0x1
 
-    .line 234
+    .line 220
     const/16 v1, 0xc
 
-    .line 241
+    .line 227
     .local v1, numInts:I
     new-array v3, v1, [I
 
-    .line 242
+    .line 228
     .local v3, response:[I
     const/4 v0, 0x0
 
@@ -774,19 +778,19 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 243
+    .line 229
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
     aput v4, v3, v0
 
-    .line 242
+    .line 228
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 245
+    .line 231
     :cond_0
     const-string v5, "RILJ"
 
@@ -907,12 +911,12 @@
 
     invoke-static {v5, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
+    .line 237
     iget-boolean v4, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSignalbarCount:Z
 
     if-eqz v4, :cond_2
 
-    .line 254
+    .line 240
     aget v4, v3, v9
 
     const v5, 0xff00
@@ -921,76 +925,76 @@
 
     shr-int/lit8 v2, v4, 0x8
 
-    .line 257
+    .line 243
     .local v2, num_bars:I
     packed-switch v2, :pswitch_data_0
 
-    .line 264
+    .line 250
     aget v4, v3, v9
 
     and-int/lit16 v4, v4, 0xff
 
     aput v4, v3, v9
 
-    .line 269
+    .line 255
     .end local v2           #num_bars:I
     :goto_2
     aput v7, v3, v11
 
-    .line 272
+    .line 258
     const/4 v4, 0x2
 
     aput v7, v3, v4
 
-    .line 273
+    .line 259
     const/4 v4, 0x3
 
     aput v7, v3, v4
 
-    .line 276
+    .line 262
     const/4 v4, 0x4
 
     aput v7, v3, v4
 
-    .line 277
+    .line 263
     const/4 v4, 0x5
 
     aput v7, v3, v4
 
-    .line 278
+    .line 264
     const/4 v4, 0x6
 
     aput v7, v3, v4
 
-    .line 281
+    .line 267
     aget v4, v3, v10
 
     const/16 v5, 0x63
 
     if-ne v4, v5, :cond_3
 
-    .line 284
+    .line 270
     aput v7, v3, v10
 
-    .line 285
+    .line 271
     aput v7, v3, v8
 
-    .line 286
+    .line 272
     const/16 v4, 0x9
 
     aput v7, v3, v4
 
-    .line 287
+    .line 273
     const/16 v4, 0xa
 
     aput v7, v3, v4
 
-    .line 288
+    .line 274
     const/16 v4, 0xb
 
     aput v7, v3, v4
 
-    .line 309
+    .line 295
     :goto_3
     const-string v5, "RILJ"
 
@@ -1111,23 +1115,23 @@
 
     invoke-static {v5, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 313
+    .line 299
     return-object v3
 
-    .line 245
+    .line 231
     :cond_1
     const-string/jumbo v4, "raw"
 
     goto/16 :goto_1
 
-    .line 258
+    .line 244
     .restart local v2       #num_bars:I
     :pswitch_0
     aput v11, v3, v9
 
     goto/16 :goto_2
 
-    .line 259
+    .line 245
     :pswitch_1
     const/4 v4, 0x3
 
@@ -1135,7 +1139,7 @@
 
     goto/16 :goto_2
 
-    .line 260
+    .line 246
     :pswitch_2
     const/4 v4, 0x5
 
@@ -1143,13 +1147,13 @@
 
     goto/16 :goto_2
 
-    .line 261
+    .line 247
     :pswitch_3
     aput v8, v3, v9
 
     goto/16 :goto_2
 
-    .line 262
+    .line 248
     :pswitch_4
     const/16 v4, 0xc
 
@@ -1157,7 +1161,7 @@
 
     goto/16 :goto_2
 
-    .line 263
+    .line 249
     :pswitch_5
     const/16 v4, 0xf
 
@@ -1165,7 +1169,7 @@
 
     goto/16 :goto_2
 
-    .line 267
+    .line 253
     .end local v2           #num_bars:I
     :cond_2
     aget v4, v3, v9
@@ -1176,13 +1180,13 @@
 
     goto/16 :goto_2
 
-    .line 289
+    .line 275
     :cond_3
     iget-boolean v4, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSignalbarCount:Z
 
     if-eqz v4, :cond_4
 
-    .line 290
+    .line 276
     aget v4, v3, v10
 
     const v5, 0xff00
@@ -1191,7 +1195,7 @@
 
     shr-int/lit8 v2, v4, 0x8
 
-    .line 291
+    .line 277
     .restart local v2       #num_bars:I
     aget v4, v3, v10
 
@@ -1199,17 +1203,17 @@
 
     aput v4, v3, v10
 
-    .line 292
+    .line 278
     const/16 v4, 0xa
 
     const v5, 0x7fffffff
 
     aput v5, v3, v4
 
-    .line 295
+    .line 281
     packed-switch v2, :pswitch_data_1
 
-    .line 302
+    .line 288
     aget v4, v3, v8
 
     mul-int/lit8 v4, v4, -0x1
@@ -1218,13 +1222,13 @@
 
     goto/16 :goto_3
 
-    .line 296
+    .line 282
     :pswitch_6
     aput v7, v3, v8
 
     goto/16 :goto_3
 
-    .line 297
+    .line 283
     :pswitch_7
     const/16 v4, -0x74
 
@@ -1232,7 +1236,7 @@
 
     goto/16 :goto_3
 
-    .line 298
+    .line 284
     :pswitch_8
     const/16 v4, -0x73
 
@@ -1240,7 +1244,7 @@
 
     goto/16 :goto_3
 
-    .line 299
+    .line 285
     :pswitch_9
     const/16 v4, -0x69
 
@@ -1248,7 +1252,7 @@
 
     goto/16 :goto_3
 
-    .line 300
+    .line 286
     :pswitch_a
     const/16 v4, -0x5f
 
@@ -1256,7 +1260,7 @@
 
     goto/16 :goto_3
 
-    .line 301
+    .line 287
     :pswitch_b
     const/16 v4, -0x55
 
@@ -1264,7 +1268,7 @@
 
     goto/16 :goto_3
 
-    .line 305
+    .line 291
     .end local v2           #num_bars:I
     :cond_4
     aget v4, v3, v10
@@ -1273,7 +1277,7 @@
 
     aput v4, v3, v10
 
-    .line 306
+    .line 292
     aget v4, v3, v8
 
     mul-int/lit8 v4, v4, -0x1
@@ -1282,13 +1286,13 @@
 
     goto/16 :goto_3
 
-    .line 309
+    .line 295
     :cond_5
     const-string/jumbo v4, "raw"
 
     goto/16 :goto_4
 
-    .line 257
+    .line 243
     nop
 
     :pswitch_data_0
@@ -1301,7 +1305,7 @@
         :pswitch_5
     .end packed-switch
 
-    .line 295
+    .line 281
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_6
@@ -1313,140 +1317,20 @@
     .end packed-switch
 .end method
 
-.method public sendSMS(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-    .locals 12
-    .parameter "smscPDU"
-    .parameter "pdu"
-    .parameter "result"
-
-    .prologue
-    const-wide/16 v10, 0x0
-
-    .line 124
-    iget-object v5, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSMSLock:Ljava/lang/Object;
-
-    monitor-enter v5
-
-    .line 125
-    :try_start_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    const-wide/16 v8, 0x7530
-
-    add-long v0, v6, v8
-
-    .line 126
-    .local v0, timeoutTime:J
-    const-wide/16 v2, 0x7530
-
-    .line 127
-    .local v2, waitTimeLeft:J
-    :goto_0
-    iget-boolean v4, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mIsSendingSMS:Z
-
-    if-eqz v4, :cond_0
-
-    cmp-long v4, v2, v10
-
-    if-lez v4, :cond_0
-
-    .line 128
-    const-string v4, "RILJ"
-
-    const-string/jumbo v6, "sendSMS() waiting for response of previous SEND_SMS"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 130
-    :try_start_1
-    iget-object v4, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mSMSLock:Ljava/lang/Object;
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/Object;->wait(J)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-
-    .line 134
-    :goto_1
-    :try_start_2
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    sub-long v2, v0, v6
-
-    goto :goto_0
-
-    .line 136
-    :cond_0
-    cmp-long v4, v2, v10
-
-    if-gtz v4, :cond_1
-
-    .line 137
-    const-string v4, "RILJ"
-
-    const-string/jumbo v6, "sendSms() timed out waiting for response of previous CDMA_SEND_SMS"
-
-    invoke-static {v4, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 139
-    :cond_1
-    const/4 v4, 0x1
-
-    iput-boolean v4, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->mIsSendingSMS:Z
-
-    .line 140
-    monitor-exit v5
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 142
-    invoke-super {p0, p1, p2, p3}, Lcom/android/internal/telephony/QualcommSharedRIL;->sendSMS(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-
-    .line 143
-    return-void
-
-    .line 140
-    .end local v0           #timeoutTime:J
-    .end local v2           #waitTimeLeft:J
-    :catchall_0
-    move-exception v4
-
-    :try_start_3
-    monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    throw v4
-
-    .line 131
-    .restart local v0       #timeoutTime:J
-    .restart local v2       #waitTimeLeft:J
-    :catch_0
-    move-exception v4
-
-    goto :goto_1
-.end method
-
 .method public setNetworkSelectionModeManual(Ljava/lang/String;Landroid/os/Message;)V
     .locals 3
     .parameter "operatorNumeric"
     .parameter "response"
 
     .prologue
-    .line 148
+    .line 116
     const/16 v1, 0x2f
 
     invoke-static {v1, p2}, Lcom/android/internal/telephony/RILRequest;->obtain(ILandroid/os/Message;)Lcom/android/internal/telephony/RILRequest;
 
     move-result-object v0
 
-    .line 152
+    .line 120
     .local v0, rr:Lcom/android/internal/telephony/RILRequest;
     iget-boolean v1, p0, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->RILJ_LOGD:Z
 
@@ -1496,15 +1380,15 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->riljLog(Ljava/lang/String;)V
 
-    .line 155
+    .line 123
     :cond_0
     iget-object v1, v0, Lcom/android/internal/telephony/RILRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 157
+    .line 125
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/SamsungQualcommUiccRIL;->send(Lcom/android/internal/telephony/RILRequest;)V
 
-    .line 158
+    .line 126
     return-void
 .end method
