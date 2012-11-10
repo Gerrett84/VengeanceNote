@@ -14,6 +14,12 @@
 # static fields
 .field public static final ACTION_CLEAN_EXTERNAL_STORAGE:Ljava/lang/String; = "android.content.pm.CLEAN_EXTERNAL_STORAGE"
 
+.field public static final COMPONENT_ENABLED_STATE_ACCESS_CONTROL:I = -0x80000000
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+.end field
+
 .field public static final COMPONENT_ENABLED_STATE_DEFAULT:I = 0x0
 
 .field public static final COMPONENT_ENABLED_STATE_DISABLED:I = 0x2
@@ -145,6 +151,18 @@
 .field public static final GET_UNINSTALLED_PACKAGES:I = 0x2000
 
 .field public static final GET_URI_PERMISSION_PATTERNS:I = 0x800
+
+.field public static final HAS_ACTIVITY:I = 0x20000
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+.end field
+
+.field public static final HAS_ACTIVITY_OR_SERVICES:I = 0x40000
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_FIELD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+.end field
 
 .field public static final INSTALL_ALLOW_TEST:I = 0x4
 
@@ -280,10 +298,10 @@
     .locals 0
 
     .prologue
-    .line 44
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 45
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
+    .line 51
     return-void
 .end method
 
@@ -293,7 +311,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 2698
+    .line 2711
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -512,18 +530,6 @@
     .end annotation
 .end method
 
-.method public abstract getInstalledThemePackages()Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List",
-            "<",
-            "Landroid/content/pm/PackageInfo;",
-            ">;"
-        }
-    .end annotation
-.end method
-
 .method public abstract getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
 .end method
 
@@ -553,47 +559,47 @@
 
     const/4 v8, 0x0
 
-    .line 2169
+    .line 2182
     new-instance v11, Landroid/content/pm/PackageParser;
 
     invoke-direct {v11, p1}, Landroid/content/pm/PackageParser;-><init>(Ljava/lang/String;)V
 
-    .line 2170
+    .line 2183
     .local v11, packageParser:Landroid/content/pm/PackageParser;
     new-instance v10, Landroid/util/DisplayMetrics;
 
     invoke-direct {v10}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 2171
+    .line 2184
     .local v10, metrics:Landroid/util/DisplayMetrics;
     invoke-virtual {v10}, Landroid/util/DisplayMetrics;->setToDefaults()V
 
-    .line 2172
+    .line 2185
     new-instance v12, Ljava/io/File;
 
     invoke-direct {v12, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2173
+    .line 2186
     .local v12, sourceFile:Ljava/io/File;
     invoke-virtual {v11, v12, p1, v10, v8}, Landroid/content/pm/PackageParser;->parsePackage(Ljava/io/File;Ljava/lang/String;Landroid/util/DisplayMetrics;I)Landroid/content/pm/PackageParser$Package;
 
     move-result-object v0
 
-    .line 2175
+    .line 2188
     .local v0, pkg:Landroid/content/pm/PackageParser$Package;
     if-nez v0, :cond_0
 
-    .line 2181
+    .line 2194
     :goto_0
     return-object v1
 
-    .line 2178
+    .line 2191
     :cond_0
     and-int/lit8 v2, p2, 0x40
 
     if-eqz v2, :cond_1
 
-    .line 2179
+    .line 2192
     invoke-virtual {v11, v0, v8}, Landroid/content/pm/PackageParser;->collectCertificates(Landroid/content/pm/PackageParser$Package;I)Z
 
     :cond_1
@@ -605,7 +611,7 @@
 
     move v9, v8
 
-    .line 2181
+    .line 2194
     invoke-static/range {v0 .. v9}, Landroid/content/pm/PackageParser;->generatePackageInfo(Landroid/content/pm/PackageParser$Package;[IIJJLjava/util/HashSet;ZI)Landroid/content/pm/PackageInfo;
 
     move-result-object v1

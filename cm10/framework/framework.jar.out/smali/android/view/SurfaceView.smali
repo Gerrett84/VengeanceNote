@@ -1074,7 +1074,7 @@
 
     move-result v4
 
-    iput v4, v3, Landroid/view/WindowManager$LayoutParams;->width:I
+    iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 441
     move-object/from16 v0, p0
@@ -1085,7 +1085,7 @@
 
     move-result v4
 
-    iput v4, v3, Landroid/view/WindowManager$LayoutParams;->height:I
+    iput v4, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 442
     move-object/from16 v0, p0
@@ -1212,7 +1212,7 @@
 
     iget-object v5, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
 
-    iget v5, v5, Landroid/view/SurfaceView$MyWindow;->mSeq:I
+    iget v5, v5, Lcom/android/internal/view/BaseIWindow;->mSeq:I
 
     move-object/from16 v0, p0
 
@@ -1289,7 +1289,7 @@
 
     iget-object v5, v0, Landroid/view/SurfaceView;->mWindow:Landroid/view/SurfaceView$MyWindow;
 
-    iget v5, v5, Landroid/view/SurfaceView$MyWindow;->mSeq:I
+    iget v5, v5, Lcom/android/internal/view/BaseIWindow;->mSeq:I
 
     move-object/from16 v0, p0
 
@@ -1760,16 +1760,6 @@
     .line 534
     if-eqz v34, :cond_22
 
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/view/SurfaceView;->mSurface:Landroid/view/Surface;
-
-    invoke-virtual {v3}, Landroid/view/Surface;->isValid()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_22
-
     .line 535
     move-object/from16 v0, p0
 
@@ -2079,7 +2069,7 @@
     if-eq v0, v1, :cond_0
 
     .line 335
-    iget v0, p0, Landroid/view/SurfaceView;->mPrivateFlags:I
+    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     and-int/lit16 v0, v0, 0x80
 
@@ -2115,7 +2105,7 @@
     if-eq v0, v1, :cond_0
 
     .line 323
-    iget v0, p0, Landroid/view/SurfaceView;->mPrivateFlags:I
+    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     and-int/lit16 v0, v0, 0x80
 
@@ -2164,7 +2154,7 @@
 
     .line 299
     .local v7, opaque:Z
-    iget v0, p0, Landroid/view/SurfaceView;->mPrivateFlags:I
+    iget v0, p0, Landroid/view/View;->mPrivateFlags:I
 
     and-int/lit16 v0, v0, 0x80
 
@@ -2307,7 +2297,7 @@
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
     .line 207
-    iget-object v1, p0, Landroid/view/SurfaceView;->mParent:Landroid/view/ViewParent;
+    iget-object v1, p0, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
     invoke-interface {v1, p0}, Landroid/view/ViewParent;->requestTransparentRegion(Landroid/view/View;)V
 

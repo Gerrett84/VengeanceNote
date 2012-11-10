@@ -33,14 +33,14 @@
     .parameter
 
     .prologue
-    .line 2336
+    .line 2367
     iput-object p1, p0, Landroid/webkit/WebViewClassic$7;->this$0:Landroid/webkit/WebViewClassic;
 
     iput-object p2, p0, Landroid/webkit/WebViewClassic$7;->val$in:Ljava/io/FileInputStream;
 
     iput-object p3, p0, Landroid/webkit/WebViewClassic$7;->val$copy:Landroid/os/Bundle;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 2340
+    .line 2371
     :try_start_0
     iget-object v1, p0, Landroid/webkit/WebViewClassic$7;->val$in:Ljava/io/FileInputStream;
 
@@ -59,11 +59,11 @@
 
     move-result-object v0
 
-    .line 2341
+    .line 2372
     .local v0, p:Landroid/graphics/Picture;
     if-eqz v0, :cond_0
 
-    .line 2344
+    .line 2375
     iget-object v1, p0, Landroid/webkit/WebViewClassic$7;->this$0:Landroid/webkit/WebViewClassic;
 
     iget-object v1, v1, Landroid/webkit/WebViewClassic;->mPrivateHandler:Landroid/os/Handler;
@@ -76,7 +76,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2353
+    .line 2384
     :cond_0
     :try_start_1
     iget-object v1, p0, Landroid/webkit/WebViewClassic$7;->val$in:Ljava/io/FileInputStream;
@@ -85,16 +85,16 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 2358
+    .line 2389
     :goto_0
     return-void
 
-    .line 2352
+    .line 2383
     .end local v0           #p:Landroid/graphics/Picture;
     :catchall_0
     move-exception v1
 
-    .line 2353
+    .line 2384
     :try_start_2
     iget-object v2, p0, Landroid/webkit/WebViewClassic$7;->val$in:Ljava/io/FileInputStream;
 
@@ -102,11 +102,11 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 2352
+    .line 2383
     :goto_1
     throw v1
 
-    .line 2354
+    .line 2385
     .restart local v0       #p:Landroid/graphics/Picture;
     :catch_0
     move-exception v1

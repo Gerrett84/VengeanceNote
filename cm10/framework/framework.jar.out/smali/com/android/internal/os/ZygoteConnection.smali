@@ -74,7 +74,7 @@
 
     .prologue
     .line 95
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 96
     iput-object p1, p0, Lcom/android/internal/os/ZygoteConnection;->mSocket:Landroid/net/LocalSocket;
@@ -1002,7 +1002,7 @@
     :try_start_1
     invoke-virtual {v6}, Ljava/io/DataInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 920
     :goto_1
@@ -1050,13 +1050,13 @@
     goto :goto_1
 
     .line 914
-    .end local v2           #ex:Ljava/io/IOException;
     :catch_1
     move-exception v10
 
     goto :goto_1
 
     .line 912
+    .end local v2           #ex:Ljava/io/IOException;
     :catchall_0
     move-exception v10
 
@@ -1064,9 +1064,9 @@
     :try_start_4
     invoke-virtual {v6}, Ljava/io/DataInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_5
 
-    .line 912
+    .line 915
     :goto_3
     throw v10
 
@@ -1230,6 +1230,11 @@
     .restart local v5       #innerPid:I
     .restart local v6       #is:Ljava/io/DataInputStream;
     :catch_4
+    move-exception v10
+
+    goto/16 :goto_1
+
+    :catch_5
     move-exception v11
 
     goto :goto_3
@@ -1566,7 +1571,7 @@
     .line 192
     const/4 v11, 0x1
 
-    .line 258
+    .line 262
     .end local v0           #args:[Ljava/lang/String;
     .end local v2           #descriptors:[Ljava/io/FileDescriptor;
     :goto_0
@@ -1802,7 +1807,6 @@
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
     .line 262
-    :goto_2
     invoke-static {v10}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
     goto/16 :goto_0
@@ -1813,7 +1817,7 @@
 
     .line 234
     .restart local v3       #ex:Ljava/io/IOException;
-    :goto_3
+    :goto_2
     const-string v11, "Exception creating pipe"
 
     invoke-static {v4, v11, v3}, Lcom/android/internal/os/ZygoteConnection;->logAndPrintError(Ljava/io/PrintStream;Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -1827,7 +1831,7 @@
 
     .line 236
     .local v3, ex:Llibcore/io/ErrnoException;
-    :goto_4
+    :goto_3
     const-string v11, "Exception creating pipe"
 
     invoke-static {v4, v11, v3}, Lcom/android/internal/os/ZygoteConnection;->logAndPrintError(Ljava/io/PrintStream;Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -1841,7 +1845,7 @@
 
     .line 238
     .local v3, ex:Ljava/lang/IllegalArgumentException;
-    :goto_5
+    :goto_4
     const-string v11, "Invalid zygote arguments"
 
     invoke-static {v4, v11, v3}, Lcom/android/internal/os/ZygoteConnection;->logAndPrintError(Ljava/io/PrintStream;Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -1855,7 +1859,7 @@
 
     .line 240
     .local v3, ex:Lcom/android/internal/os/ZygoteSecurityException;
-    :goto_6
+    :goto_5
     const-string v11, "Zygote security policy prevents request: "
 
     invoke-static {v4, v11, v3}, Lcom/android/internal/os/ZygoteConnection;->logAndPrintError(Ljava/io/PrintStream;Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -1881,8 +1885,12 @@
     .line 261
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    goto :goto_2
+    .line 262
+    invoke-static {v10}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
+    goto/16 :goto_0
+
+    .line 261
     :catchall_0
     move-exception v11
 
@@ -1891,7 +1899,6 @@
     .line 262
     invoke-static {v10}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 261
     throw v11
 
     .line 239
@@ -1904,7 +1911,7 @@
 
     .end local v6           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
     .restart local v5       #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
-    goto :goto_6
+    goto :goto_5
 
     .line 237
     .end local v5           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
@@ -1916,7 +1923,7 @@
 
     .end local v6           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
     .restart local v5       #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
-    goto :goto_5
+    goto :goto_4
 
     .line 235
     .end local v5           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
@@ -1928,7 +1935,7 @@
 
     .end local v6           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
     .restart local v5       #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
-    goto :goto_4
+    goto :goto_3
 
     .line 233
     .end local v5           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
@@ -1940,5 +1947,5 @@
 
     .end local v6           #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
     .restart local v5       #parsedArgs:Lcom/android/internal/os/ZygoteConnection$Arguments;
-    goto :goto_3
+    goto :goto_2
 .end method

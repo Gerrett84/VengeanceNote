@@ -92,7 +92,7 @@
     if-ne p1, v0, :cond_0
 
     .line 61
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteUiccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v0, p0, Lcom/android/internal/telephony/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
     const/16 v1, 0xb0
 
@@ -102,7 +102,7 @@
 
     const/4 v6, 0x4
 
-    iget-object v9, p0, Lcom/android/internal/telephony/cdma/CdmaLteUiccFileHandler;->mAid:Ljava/lang/String;
+    iget-object v9, p0, Lcom/android/internal/telephony/IccFileHandler;->mAid:Ljava/lang/String;
 
     const/4 v2, 0x5
 

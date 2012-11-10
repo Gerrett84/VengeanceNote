@@ -14,7 +14,7 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     iput-object p1, p0, Lcom/android/internal/view/ActionBarPolicy;->mContext:Landroid/content/Context;
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    const v1, 0x10e0037
+    const v1, 0x10e0033
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 

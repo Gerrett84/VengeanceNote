@@ -30,12 +30,12 @@
     .parameter
 
     .prologue
-    .line 1842
+    .line 1882
     iput-object p1, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
 
     iput-object p2, p0, Landroid/webkit/WebViewClassic$4;->val$remember:Landroid/os/Message;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -48,9 +48,7 @@
     .parameter "which"
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 1845
+    .line 1885
     iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
@@ -60,24 +58,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 1846
+    .line 1886
     iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->val$remember:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1847
+    .line 1887
     iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
+
+    const/4 v1, 0x0
 
     #setter for: Landroid/webkit/WebViewClassic;->mResumeMsg:Landroid/os/Message;
     invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1702(Landroid/webkit/WebViewClassic;Landroid/os/Message;)Landroid/os/Message;
 
-    .line 1849
+    .line 1889
     :cond_0
-    iget-object v0, p0, Landroid/webkit/WebViewClassic$4;->this$0:Landroid/webkit/WebViewClassic;
-
-    #setter for: Landroid/webkit/WebViewClassic;->mSavePasswordDialog:Landroid/app/AlertDialog;
-    invoke-static {v0, v1}, Landroid/webkit/WebViewClassic;->access$1802(Landroid/webkit/WebViewClassic;Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
-
-    .line 1850
     return-void
 .end method

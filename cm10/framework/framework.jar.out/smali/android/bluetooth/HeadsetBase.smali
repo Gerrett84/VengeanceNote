@@ -3,14 +3,6 @@
 .source "HeadsetBase.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;
-    }
-.end annotation
-
-
 # static fields
 .field private static final DBG:Z = false
 
@@ -52,8 +44,6 @@
 
 .field private mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-.field public specialPDUInputHandler:Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -81,12 +71,7 @@
 
     .prologue
     .line 78
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 116
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/bluetooth/HeadsetBase;->specialPDUInputHandler:Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     const/4 v0, 0x2
@@ -159,12 +144,7 @@
     const/4 v2, 0x1
 
     .line 95
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 116
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/bluetooth/HeadsetBase;->specialPDUInputHandler:Landroid/bluetooth/HeadsetBase$SpecialPDUInputHandler;
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 96
     iput v2, p0, Landroid/bluetooth/HeadsetBase;->mDirection:I
@@ -246,21 +226,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Landroid/bluetooth/HeadsetBase;I)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 34
-    invoke-direct {p0, p1}, Landroid/bluetooth/HeadsetBase;->readNativePDUStream(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Landroid/bluetooth/HeadsetBase;)I
+.method static synthetic access$200(Landroid/bluetooth/HeadsetBase;)I
     .locals 1
     .parameter "x0"
 
@@ -273,7 +239,7 @@
     return v0
 .end method
 
-.method static synthetic access$400(Landroid/bluetooth/HeadsetBase;)Landroid/os/Handler;
+.method static synthetic access$300(Landroid/bluetooth/HeadsetBase;)Landroid/os/Handler;
     .locals 1
     .parameter "x0"
 
@@ -284,7 +250,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$500(Landroid/bluetooth/HeadsetBase;)V
+.method static synthetic access$400(Landroid/bluetooth/HeadsetBase;)V
     .locals 0
     .parameter "x0"
 
@@ -299,7 +265,7 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 280
     monitor-enter p0
 
     :try_start_0
@@ -311,20 +277,20 @@
 
     if-nez v0, :cond_0
 
-    .line 307
+    .line 281
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 309
+    .line 283
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 306
+    .line 280
     :catchall_0
     move-exception v0
 
@@ -352,7 +318,7 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 292
     sget v0, Landroid/bluetooth/HeadsetBase;->sAtInputCount:I
 
     return v0
@@ -369,26 +335,23 @@
     .parameter "msg"
 
     .prologue
-    .line 322
+    .line 296
     const-string v0, "Bluetooth HeadsetBase"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 323
+    .line 297
     return-void
 .end method
 
 .method private native readNative(I)Ljava/lang/String;
 .end method
 
-.method private native readNativePDUStream(I)Ljava/lang/String;
-.end method
-
 .method private declared-synchronized releaseWakeLock()V
     .locals 1
 
     .prologue
-    .line 312
+    .line 286
     monitor-enter p0
 
     :try_start_0
@@ -400,20 +363,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 313
+    .line 287
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 315
+    .line 289
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 312
+    .line 286
     :catchall_0
     move-exception v0
 
@@ -425,24 +388,21 @@
 .method private native sendURCNative(Ljava/lang/String;)Z
 .end method
 
-.method private native sendURCNativeChars(Ljava/lang/String;)Z
-.end method
-
 .method private stopEventThread()V
     .locals 1
 
     .prologue
-    .line 204
+    .line 187
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThreadInterrupted:Z
 
-    .line 205
+    .line 188
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
-    .line 207
+    .line 190
     :try_start_0
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
@@ -450,16 +410,16 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 211
+    .line 194
     :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
-    .line 212
+    .line 195
     return-void
 
-    .line 208
+    .line 191
     :catch_0
     move-exception v0
 
@@ -476,12 +436,12 @@
     .parameter "handler"
 
     .prologue
-    .line 215
+    .line 198
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
     if-nez v0, :cond_1
 
-    .line 216
+    .line 199
     invoke-direct {p0}, Landroid/bluetooth/HeadsetBase;->connectNative()Z
 
     move-result v0
@@ -490,15 +450,15 @@
 
     const/4 v0, 0x0
 
-    .line 219
+    .line 202
     :goto_0
     return v0
 
-    .line 217
+    .line 200
     :cond_0
     iput-object p1, p0, Landroid/bluetooth/HeadsetBase;->mEventThreadHandler:Landroid/os/Handler;
 
-    .line 219
+    .line 202
     :cond_1
     const/4 v0, 0x1
 
@@ -509,12 +469,12 @@
     .locals 2
 
     .prologue
-    .line 230
+    .line 213
     invoke-direct {p0}, Landroid/bluetooth/HeadsetBase;->connectAsyncNative()I
 
     move-result v0
 
-    .line 231
+    .line 214
     .local v0, ret:I
     if-nez v0, :cond_0
 
@@ -533,19 +493,19 @@
     .locals 1
 
     .prologue
-    .line 254
+    .line 237
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_0
 
-    .line 255
+    .line 238
     invoke-direct {p0}, Landroid/bluetooth/HeadsetBase;->stopEventThread()V
 
-    .line 257
+    .line 240
     :cond_0
     invoke-direct {p0}, Landroid/bluetooth/HeadsetBase;->disconnectNative()V
 
-    .line 258
+    .line 241
     return-void
 .end method
 
@@ -586,7 +546,7 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 152
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mAtParser:Landroid/bluetooth/AtParser;
 
     return-object v0
@@ -596,7 +556,7 @@
     .locals 2
 
     .prologue
-    .line 284
+    .line 267
     iget-wide v0, p0, Landroid/bluetooth/HeadsetBase;->mConnectTimestamp:J
 
     return-wide v0
@@ -606,7 +566,7 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 263
     iget v0, p0, Landroid/bluetooth/HeadsetBase;->mDirection:I
 
     return v0
@@ -616,7 +576,7 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 219
     iget v0, p0, Landroid/bluetooth/HeadsetBase;->mTimeoutRemainingMs:I
 
     return v0
@@ -626,7 +586,7 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 259
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mRemoteDevice:Landroid/bluetooth/BluetoothDevice;
 
     return-object v0
@@ -637,15 +597,15 @@
     .parameter "input"
 
     .prologue
-    .line 121
+    .line 115
     invoke-direct {p0}, Landroid/bluetooth/HeadsetBase;->acquireWakeLock()V
 
-    .line 124
+    .line 118
     const-class v2, Landroid/bluetooth/HeadsetBase;
 
     monitor-enter v2
 
-    .line 125
+    .line 119
     :try_start_0
     sget v1, Landroid/bluetooth/HeadsetBase;->sAtInputCount:I
 
@@ -653,25 +613,25 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 126
+    .line 120
     const/4 v1, 0x0
 
     sput v1, Landroid/bluetooth/HeadsetBase;->sAtInputCount:I
 
-    .line 130
+    .line 124
     :goto_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 133
+    .line 127
     iget-object v1, p0, Landroid/bluetooth/HeadsetBase;->mAtParser:Landroid/bluetooth/AtParser;
 
     invoke-virtual {v1, p1}, Landroid/bluetooth/AtParser;->process(Ljava/lang/String;)Landroid/bluetooth/AtCommandResult;
 
     move-result-object v0
 
-    .line 137
+    .line 131
     .local v0, result:Landroid/bluetooth/AtCommandResult;
     invoke-virtual {v0}, Landroid/bluetooth/AtCommandResult;->getResultCode()I
 
@@ -681,7 +641,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 138
+    .line 132
     const-string v1, "Bluetooth HeadsetBase"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -710,7 +670,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 141
+    .line 135
     :cond_0
     invoke-virtual {v0}, Landroid/bluetooth/AtCommandResult;->toString()Ljava/lang/String;
 
@@ -718,13 +678,13 @@
 
     invoke-virtual {p0, v1}, Landroid/bluetooth/HeadsetBase;->sendURC(Ljava/lang/String;)Z
 
-    .line 143
+    .line 137
     invoke-direct {p0}, Landroid/bluetooth/HeadsetBase;->releaseWakeLock()V
 
-    .line 144
+    .line 138
     return-void
 
-    .line 128
+    .line 122
     .end local v0           #result:Landroid/bluetooth/AtCommandResult;
     :cond_1
     :try_start_1
@@ -736,7 +696,7 @@
 
     goto :goto_0
 
-    .line 130
+    .line 124
     :catchall_0
     move-exception v1
 
@@ -751,14 +711,14 @@
     .locals 1
 
     .prologue
-    .line 151
+    .line 145
     new-instance v0, Landroid/bluetooth/AtParser;
 
     invoke-direct {v0}, Landroid/bluetooth/AtParser;-><init>()V
 
     iput-object v0, p0, Landroid/bluetooth/HeadsetBase;->mAtParser:Landroid/bluetooth/AtParser;
 
-    .line 155
+    .line 149
     return-void
 .end method
 
@@ -766,7 +726,7 @@
     .locals 1
 
     .prologue
-    .line 272
+    .line 255
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_0
@@ -787,7 +747,7 @@
     .parameter "urc"
 
     .prologue
-    .line 288
+    .line 271
     monitor-enter p0
 
     :try_start_0
@@ -797,14 +757,14 @@
 
     if-lez v1, :cond_0
 
-    .line 289
+    .line 272
     invoke-direct {p0, p1}, Landroid/bluetooth/HeadsetBase;->sendURCNative(Ljava/lang/String;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v0
 
-    .line 292
+    .line 275
     :goto_0
     monitor-exit p0
 
@@ -815,49 +775,7 @@
 
     goto :goto_0
 
-    .line 288
-    :catchall_0
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-.end method
-
-.method public declared-synchronized sendURCChars(Ljava/lang/String;)Z
-    .locals 2
-    .parameter "urc"
-
-    .prologue
-    .line 298
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    .line 299
-    invoke-direct {p0, p1}, Landroid/bluetooth/HeadsetBase;->sendURCNativeChars(Ljava/lang/String;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v0
-
-    .line 302
-    :goto_0
-    monitor-exit p0
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 298
+    .line 271
     :catchall_0
     move-exception v1
 
@@ -870,7 +788,7 @@
     .locals 2
 
     .prologue
-    .line 162
+    .line 156
     new-instance v0, Landroid/bluetooth/HeadsetBase$1;
 
     const-string v1, "HeadsetBase Event Thread"
@@ -879,17 +797,17 @@
 
     iput-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
-    .line 195
+    .line 179
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThreadInterrupted:Z
 
-    .line 196
+    .line 180
     iget-object v0, p0, Landroid/bluetooth/HeadsetBase;->mEventThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 197
+    .line 181
     return-void
 .end method
 
@@ -899,19 +817,19 @@
     .parameter "handler"
 
     .prologue
-    .line 245
+    .line 228
     invoke-direct {p0, p1}, Landroid/bluetooth/HeadsetBase;->waitForAsyncConnectNative(I)I
 
     move-result v0
 
-    .line 246
+    .line 229
     .local v0, res:I
     if-lez v0, :cond_0
 
-    .line 247
+    .line 230
     iput-object p2, p0, Landroid/bluetooth/HeadsetBase;->mEventThreadHandler:Landroid/os/Handler;
 
-    .line 249
+    .line 232
     :cond_0
     return v0
 .end method

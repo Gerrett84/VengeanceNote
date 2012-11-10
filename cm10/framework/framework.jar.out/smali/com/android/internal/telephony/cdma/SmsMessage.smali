@@ -255,7 +255,7 @@
 
     .line 234
     .local v1, msg:Lcom/android/internal/telephony/cdma/SmsMessage;
-    iput p0, v1, Lcom/android/internal/telephony/cdma/SmsMessage;->indexOnIcc:I
+    iput p0, v1, Lcom/android/internal/telephony/SmsMessageBase;->indexOnIcc:I
 
     .line 239
     const/4 v5, 0x0
@@ -289,7 +289,7 @@
 
     and-int/lit8 v5, v5, 0x7
 
-    iput v5, v1, Lcom/android/internal/telephony/cdma/SmsMessage;->statusOnIcc:I
+    iput v5, v1, Lcom/android/internal/telephony/SmsMessageBase;->statusOnIcc:I
 
     .line 248
     const/4 v5, 0x1
@@ -434,7 +434,7 @@
     invoke-virtual {v2, v5}, Ljava/io/DataOutputStream;->writeByte(I)V
 
     .line 911
-    iget v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iget v5, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     invoke-virtual {v2, v5}, Ljava/io/DataOutputStream;->writeByte(I)V
 
@@ -449,11 +449,11 @@
     invoke-virtual {v2, v5}, Ljava/io/DataOutputStream;->writeByte(I)V
 
     .line 914
-    iget-object v5, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v5, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     const/4 v6, 0x0
 
-    iget-object v7, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v7, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     array-length v7, v7
 
@@ -505,7 +505,7 @@
 
     move-result-object v5
 
-    iput-object v5, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mPdu:[B
+    iput-object v5, p0, Lcom/android/internal/telephony/SmsMessageBase;->mPdu:[B
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -885,7 +885,7 @@
 
     move-result v9
 
-    iput v9, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iput v9, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     .line 154
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
@@ -974,7 +974,7 @@
     .restart local v4       #data:[B
     .restart local v6       #index:I
     :cond_3
-    iput-object v4, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v4, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     .line 170
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
@@ -1072,7 +1072,7 @@
     iput-object v8, v5, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->origSubaddress:Lcom/android/internal/telephony/cdma/sms/CdmaSmsSubaddress;
 
     .line 211
-    iput-object v0, v7, Lcom/android/internal/telephony/cdma/SmsMessage;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
+    iput-object v0, v7, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     .line 212
     iput-object v5, v7, Lcom/android/internal/telephony/cdma/SmsMessage;->mEnvelope:Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;
@@ -1154,7 +1154,7 @@
 
     move-result v7
 
-    iput v7, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iput v7, v0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     .line 503
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readByte()B
@@ -1175,10 +1175,10 @@
     .line 507
     new-array v7, v6, [B
 
-    iput-object v7, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v7, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     .line 508
-    iget-object v7, v0, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v7, v0, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     const/4 v8, 0x0
 
@@ -1239,7 +1239,7 @@
     .end local v2           #bearerDataLength:I
     .end local v6           #length:B
     :goto_0
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
+    iput-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     .line 527
     iput-object v0, v4, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->origAddress:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
@@ -1248,7 +1248,7 @@
     iput-object v4, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mEnvelope:Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;
 
     .line 529
-    iput-object p1, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mPdu:[B
+    iput-object p1, p0, Lcom/android/internal/telephony/SmsMessageBase;->mPdu:[B
 
     .line 531
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/SmsMessage;->parseSms()V
@@ -1435,7 +1435,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Lcom/android/internal/telephony/cdma/SmsMessage;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
+    iput-object v2, v0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     .line 663
     iput-object v2, v9, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->origAddress:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
@@ -1455,7 +1455,7 @@
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/android/internal/telephony/cdma/SmsMessage;->mPdu:[B
+    iput-object v0, v1, Lcom/android/internal/telephony/SmsMessageBase;->mPdu:[B
 
     .line 668
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/cdma/SmsMessage;->parseSms()V
@@ -1585,7 +1585,7 @@
     move-result v12
 
     .line 578
-    iput v12, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iput v12, v2, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     .line 580
     iget v0, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberMode:I
@@ -1778,7 +1778,7 @@
     .line 616
     :cond_4
     :goto_4
-    iput-object v7, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iput-object v7, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     .line 617
     const-string v21, "CDMA"
@@ -2351,7 +2351,7 @@
     invoke-virtual {v3, v9}, Ljava/io/DataOutputStream;->write(I)V
 
     .line 872
-    iget v9, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->ton:I
+    iget v9, v2, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     invoke-virtual {v3, v9}, Ljava/io/DataOutputStream;->write(I)V
 
@@ -2366,11 +2366,11 @@
     invoke-virtual {v3, v9}, Ljava/io/DataOutputStream;->write(I)V
 
     .line 875
-    iget-object v9, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v9, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     const/4 v10, 0x0
 
-    iget-object v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v11, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     array-length v11, v11
 
@@ -2417,12 +2417,12 @@
 
     move-result-object v9
 
-    iput-object v9, v7, Lcom/android/internal/telephony/cdma/SmsMessage$SubmitPdu;->encodedMessage:[B
+    iput-object v9, v7, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedMessage:[B
 
     .line 886
     const/4 v9, 0x0
 
-    iput-object v9, v7, Lcom/android/internal/telephony/cdma/SmsMessage$SubmitPdu;->encodedScAddress:[B
+    iput-object v9, v7, Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;->encodedScAddress:[B
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2500,13 +2500,13 @@
 
     iget-object v1, v1, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->origAddress:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
 
-    iget-object v1, v1, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v1, v1, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mEnvelope:Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;
 
     iget-object v2, v2, Lcom/android/internal/telephony/cdma/sms/SmsEnvelope;->origAddress:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
 
-    iget-object v2, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->origBytes:[B
+    iget-object v2, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     array-length v2, v2
 
@@ -3093,7 +3093,7 @@
 
     iget v0, v0, Lcom/android/internal/telephony/cdma/sms/BearerData;->messageId:I
 
-    iput v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->messageRef:I
+    iput v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->messageRef:I
 
     .line 695
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mBearerData:Lcom/android/internal/telephony/cdma/sms/BearerData;
@@ -3109,7 +3109,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/sms/UserData;->payload:[B
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->userData:[B
+    iput-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->userData:[B
 
     .line 697
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mBearerData:Lcom/android/internal/telephony/cdma/sms/BearerData;
@@ -3118,7 +3118,7 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/sms/UserData;->userDataHeader:Lcom/android/internal/telephony/SmsHeader;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->userDataHeader:Lcom/android/internal/telephony/SmsHeader;
+    iput-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->userDataHeader:Lcom/android/internal/telephony/SmsHeader;
 
     .line 698
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->mBearerData:Lcom/android/internal/telephony/cdma/sms/BearerData;
@@ -3127,20 +3127,20 @@
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/sms/UserData;->payloadStr:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->messageBody:Ljava/lang/String;
+    iput-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->messageBody:Ljava/lang/String;
 
     .line 701
     :cond_3
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
+    iget-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     if-eqz v0, :cond_4
 
     .line 702
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
+    iget-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     new-instance v1, Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
+    iget-object v2, p0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     iget-object v2, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
@@ -3165,7 +3165,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->scTimeMillis:J
+    iput-wide v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->scTimeMillis:J
 
     .line 714
     :cond_5
@@ -3197,7 +3197,7 @@
 
     move-result-object v2
 
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->userData:[B
+    iget-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->userData:[B
 
     if-nez v0, :cond_7
 
@@ -3226,7 +3226,7 @@
     .line 735
     :cond_6
     :goto_2
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->messageBody:Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->messageBody:Ljava/lang/String;
 
     if-eqz v0, :cond_a
 
@@ -3303,7 +3303,7 @@
 
     .line 738
     :cond_a
-    iget-object v0, p0, Lcom/android/internal/telephony/cdma/SmsMessage;->userData:[B
+    iget-object v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->userData:[B
 
     if-eqz v0, :cond_0
 

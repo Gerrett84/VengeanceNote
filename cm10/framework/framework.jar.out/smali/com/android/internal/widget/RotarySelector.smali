@@ -219,7 +219,7 @@
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
 
     .line 181
-    const v3, 0x10803b2
+    const v3, 0x1080382
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -228,7 +228,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackground:Landroid/graphics/Bitmap;
 
     .line 182
-    const v3, 0x10803b3
+    const v3, 0x1080383
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -237,7 +237,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimple:Landroid/graphics/Bitmap;
 
     .line 183
-    const v3, 0x10803b4
+    const v3, 0x1080384
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -246,7 +246,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleDim:Landroid/graphics/Bitmap;
 
     .line 185
-    const v3, 0x10803aa
+    const v3, 0x108037a
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -255,7 +255,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowLongLeft:Landroid/graphics/Bitmap;
 
     .line 186
-    const v3, 0x10803ad
+    const v3, 0x108037d
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -264,7 +264,7 @@
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowLongRight:Landroid/graphics/Bitmap;
 
     .line 187
-    const v3, 0x10803b0
+    const v3, 0x1080380
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -342,7 +342,7 @@
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mInnerRadius:I
 
     .line 200
-    iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -1807,7 +1807,7 @@
     .local v8, dimpleRight:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Lcom/android/internal/widget/RotarySelector;->mRight:I
+    iget v0, v0, Landroid/view/View;->mRight:I
 
     move/from16 v17, v0
 

@@ -124,9 +124,9 @@
 
     const-string/jumbo v5, "wipe-data"
 
-    const v6, 0x10402c7
+    const v6, 0x104029c
 
-    const v7, 0x10402c8
+    const v7, 0x104029d
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -141,9 +141,9 @@
 
     const-string/jumbo v5, "reset-password"
 
-    const v6, 0x10402c3
+    const v6, 0x1040298
 
-    const v7, 0x10402c4
+    const v7, 0x1040299
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -158,9 +158,9 @@
 
     const-string v5, "limit-password"
 
-    const v6, 0x10402bf
+    const v6, 0x1040294
 
-    const v7, 0x10402c0
+    const v7, 0x1040295
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -175,9 +175,9 @@
 
     const-string/jumbo v5, "watch-login"
 
-    const v6, 0x10402c1
+    const v6, 0x1040296
 
-    const v7, 0x10402c2
+    const v7, 0x1040297
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -192,9 +192,9 @@
 
     const-string v5, "force-lock"
 
-    const v6, 0x10402c5
+    const v6, 0x104029a
 
-    const v7, 0x10402c6
+    const v7, 0x104029b
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -209,9 +209,9 @@
 
     const-string/jumbo v5, "set-global-proxy"
 
-    const v6, 0x10402c9
+    const v6, 0x104029e
 
-    const v7, 0x10402ca
+    const v7, 0x104029f
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -226,9 +226,9 @@
 
     const-string v5, "expire-password"
 
-    const v6, 0x10402cb
+    const v6, 0x10402a0
 
-    const v7, 0x10402cc
+    const v7, 0x10402a1
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -243,9 +243,9 @@
 
     const-string v5, "encrypted-storage"
 
-    const v6, 0x10402cd
+    const v6, 0x10402a2
 
-    const v7, 0x10402ce
+    const v7, 0x10402a3
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -260,9 +260,9 @@
 
     const-string v5, "disable-camera"
 
-    const v6, 0x10402cf
+    const v6, 0x10402a4
 
-    const v7, 0x10402d0
+    const v7, 0x10402a5
 
     invoke-direct {v3, v4, v5, v6, v7}, Landroid/app/admin/DeviceAdminInfo$PolicyInfo;-><init>(ILjava/lang/String;II)V
 
@@ -410,7 +410,7 @@
 
     move-result-object v17
 
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
@@ -443,7 +443,7 @@
     .line 233
     :cond_1
     :try_start_2
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v2, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     move-object/from16 v16, v0
 
@@ -761,7 +761,7 @@
 
     .prologue
     .line 289
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 290
     sget-object v0, Landroid/content/pm/ResolveInfo;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -874,13 +874,13 @@
 
     iget-object v1, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v1, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v2, p0, Landroid/app/admin/DeviceAdminInfo;->mReceiver:Landroid/content/pm/ResolveInfo;
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v2, v2, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v2, v2, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -896,7 +896,7 @@
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -910,7 +910,7 @@
 
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -1025,7 +1025,7 @@
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget v2, v2, Landroid/content/pm/ActivityInfo;->descriptionRes:I
+    iget v2, v2, Landroid/content/pm/ComponentInfo;->descriptionRes:I
 
     if-eqz v2, :cond_1
 
@@ -1047,14 +1047,14 @@
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v1, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v2, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
     .line 347
     iget-object v2, p0, Landroid/app/admin/DeviceAdminInfo;->mReceiver:Landroid/content/pm/ResolveInfo;
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v2, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 349
     :cond_0
@@ -1062,7 +1062,7 @@
 
     iget-object v2, v2, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget v2, v2, Landroid/content/pm/ActivityInfo;->descriptionRes:I
+    iget v2, v2, Landroid/content/pm/ComponentInfo;->descriptionRes:I
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/content/pm/PackageManager;->getText(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
 
@@ -1160,7 +1160,7 @@
 
     iget-object v1, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v1, v1, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

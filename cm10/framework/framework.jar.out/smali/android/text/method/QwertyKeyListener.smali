@@ -12,12 +12,12 @@
 
 
 # static fields
-.field private static SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+.field private static PICKER_SETS:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray",
             "<",
-            "Ljava/lang/Integer;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -59,698 +59,486 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    sput-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sput-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    .line 434
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    .line 433
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
     const/16 v1, 0x41
 
-    const v2, 0x104056e
+    const-string/jumbo v2, "\u00c0\u00c1\u00c2\u00c4\u00c6\u00c3\u00c5\u0104\u0100"
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    move-result-object v2
+    .line 434
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
+
+    const/16 v1, 0x43
+
+    const-string/jumbo v2, "\u00c7\u0106\u010c"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 435
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x43
+    const/16 v1, 0x44
 
-    const v2, 0x104056f
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u010e"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 436
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x44
+    const/16 v1, 0x45
 
-    const v2, 0x1040570
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00c8\u00c9\u00ca\u00cb\u0118\u011a\u0112"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 437
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x45
+    const/16 v1, 0x47
 
-    const v2, 0x1040571
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u011e"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 438
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x47
+    const/16 v1, 0x4c
 
-    const v2, 0x1040572
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0141"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 439
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x4c
+    const/16 v1, 0x49
 
-    const v2, 0x1040573
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00cc\u00cd\u00ce\u00cf\u012a\u0130"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 440
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x49
+    const/16 v1, 0x4e
 
-    const v2, 0x1040574
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00d1\u0143\u0147"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 441
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x4e
+    const/16 v1, 0x4f
 
-    const v2, 0x1040575
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00d8\u0152\u00d5\u00d2\u00d3\u00d4\u00d6\u014c"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 442
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x4f
+    const/16 v1, 0x52
 
-    const v2, 0x1040576
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0158"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 443
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x52
+    const/16 v1, 0x53
 
-    const v2, 0x1040577
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u015a\u0160\u015e"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 444
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x53
+    const/16 v1, 0x54
 
-    const v2, 0x1040578
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0164"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 445
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x54
+    const/16 v1, 0x55
 
-    const v2, 0x1040579
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00d9\u00da\u00db\u00dc\u016e\u016a"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 446
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x55
+    const/16 v1, 0x59
 
-    const v2, 0x104057a
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00dd\u0178"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 447
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x59
+    const/16 v1, 0x5a
 
-    const v2, 0x104057b
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0179\u017b\u017d"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 448
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x5a
+    const/16 v1, 0x61
 
-    const v2, 0x104057c
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00e0\u00e1\u00e2\u00e4\u00e6\u00e3\u00e5\u0105\u0101"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 449
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x61
+    const/16 v1, 0x63
 
-    const v2, 0x104057d
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00e7\u0107\u010d"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 450
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x63
+    const/16 v1, 0x64
 
-    const v2, 0x104057e
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u010f"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 451
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x64
+    const/16 v1, 0x65
 
-    const v2, 0x104057f
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00e8\u00e9\u00ea\u00eb\u0119\u011b\u0113"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 452
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x65
+    const/16 v1, 0x67
 
-    const v2, 0x1040580
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u011f"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 453
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x67
+    const/16 v1, 0x69
 
-    const v2, 0x1040581
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00ec\u00ed\u00ee\u00ef\u012b\u0131"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 454
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x69
+    const/16 v1, 0x6c
 
-    const v2, 0x1040582
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0142"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 455
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x6c
+    const/16 v1, 0x6e
 
-    const v2, 0x1040583
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00f1\u0144\u0148"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 456
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x6e
+    const/16 v1, 0x6f
 
-    const v2, 0x1040584
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00f8\u0153\u00f5\u00f2\u00f3\u00f4\u00f6\u014d"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 457
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x6f
+    const/16 v1, 0x72
 
-    const v2, 0x1040585
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0159"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 458
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x72
+    const/16 v1, 0x73
 
-    const v2, 0x1040586
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00a7\u00df\u015b\u0161\u015f"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 459
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x73
+    const/16 v1, 0x74
 
-    const v2, 0x1040587
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u0165"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 460
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x74
+    const/16 v1, 0x75
 
-    const v2, 0x1040588
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00f9\u00fa\u00fb\u00fc\u016f\u016b"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 461
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x75
+    const/16 v1, 0x79
 
-    const v2, 0x1040589
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00fd\u00ff"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 462
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x79
+    const/16 v1, 0x7a
 
-    const v2, 0x104058a
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u017a\u017c\u017e"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 463
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x7a
+    const v1, 0xef01
 
-    const v2, 0x104058b
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 464
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
-
-    const/16 v1, 0x31
-
-    const v2, 0x104058e
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u2026\u00a5\u2022\u00ae\u00a9\u00b1[]{}\\|"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 465
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x32
+    const/16 v1, 0x2f
 
-    const v2, 0x104058f
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 466
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
-
-    const/16 v1, 0x33
-
-    const v2, 0x1040590
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 467
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
-
-    const/16 v1, 0x34
-
-    const v2, 0x1040591
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    .line 468
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
-
-    const/16 v1, 0x35
-
-    const v2, 0x1040592
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string v2, "\\"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 469
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x37
+    const/16 v1, 0x31
 
-    const v2, 0x1040593
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00b9\u00bd\u2153\u00bc\u215b"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 470
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x30
+    const/16 v1, 0x32
 
-    const v2, 0x1040594
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00b2\u2154"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 471
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const v1, 0xef01
+    const/16 v1, 0x33
 
-    const v2, 0x104058c
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00b3\u00be\u215c"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 472
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x2f
+    const/16 v1, 0x34
 
-    const v2, 0x104058d
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u2074"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 473
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x24
+    const/16 v1, 0x35
 
-    const v2, 0x1040595
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u215d"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 474
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x25
+    const/16 v1, 0x37
 
-    const v2, 0x1040596
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u215e"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 475
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x2a
+    const/16 v1, 0x30
 
-    const v2, 0x1040597
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u207f\u2205"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 476
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x2d
+    const/16 v1, 0x24
 
-    const v2, 0x1040598
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00a2\u00a3\u20ac\u00a5\u20a3\u20a4\u20b1"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 477
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x2b
+    const/16 v1, 0x25
 
-    const v2, 0x1040599
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u2030"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 478
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x28
+    const/16 v1, 0x2a
 
-    const v2, 0x104059a
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u2020\u2021"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 479
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x29
+    const/16 v1, 0x2d
 
-    const v2, 0x104059b
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u2013\u2014"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 480
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x21
+    const/16 v1, 0x2b
 
-    const v2, 0x104059c
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00b1"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 481
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x22
+    const/16 v1, 0x28
 
-    const v2, 0x104059d
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string v2, "[{<"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 482
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x3f
+    const/16 v1, 0x29
 
-    const v2, 0x104059e
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string v2, "]}>"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 483
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x2c
+    const/16 v1, 0x21
 
-    const v2, 0x104059f
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00a1"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 484
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x3d
+    const/16 v1, 0x22
 
-    const v2, 0x10405a0
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u201c\u201d\u00ab\u00bb\u02dd"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 485
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x3c
+    const/16 v1, 0x3f
 
-    const v2, 0x10405a1
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u00bf"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 486
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
-    const/16 v1, 0x3e
+    const/16 v1, 0x2c
 
-    const v2, 0x10405a2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
+    const-string/jumbo v2, "\u201a\u201e"
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 487
+    .line 490
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
+
+    const/16 v1, 0x3d
+
+    const-string/jumbo v2, "\u2260\u2248\u221e"
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 491
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
+
+    const/16 v1, 0x3c
+
+    const-string/jumbo v2, "\u2264\u00ab\u2039"
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 492
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
+
+    const/16 v1, 0x3e
+
+    const-string/jumbo v2, "\u2265\u00bb\u203a"
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 493
     return-void
 .end method
 
@@ -1107,7 +895,7 @@
 .end method
 
 .method private showCharacterPicker(Landroid/view/View;Landroid/text/Editable;CZI)Z
-    .locals 8
+    .locals 7
     .parameter "view"
     .parameter "content"
     .parameter "c"
@@ -1115,47 +903,33 @@
     .parameter "count"
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    .line 491
-    sget-object v0, Landroid/text/method/QwertyKeyListener;->SYM_PICKER_RES_ID:Landroid/util/SparseArray;
+    .line 497
+    sget-object v0, Landroid/text/method/QwertyKeyListener;->PICKER_SETS:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v4
 
-    check-cast v6, Ljava/lang/Integer;
+    check-cast v4, Ljava/lang/String;
 
-    .line 493
-    .local v6, resId:Ljava/lang/Integer;
-    if-nez v6, :cond_0
+    .line 498
+    .local v4, set:Ljava/lang/String;
+    if-nez v4, :cond_0
 
-    .line 494
+    .line 499
     const/4 v0, 0x0
 
-    .line 504
+    .line 507
     :goto_0
     return v0
 
-    .line 497
+    .line 502
     :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    if-ne p5, v6, :cond_1
 
-    move-result-object v0
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 499
-    .local v4, set:Ljava/lang/String;
-    if-ne p5, v7, :cond_1
-
-    .line 500
+    .line 503
     new-instance v0, Landroid/text/method/CharacterPickerDialog;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -1173,9 +947,9 @@
     invoke-virtual {v0}, Landroid/text/method/CharacterPickerDialog;->show()V
 
     :cond_1
-    move v0, v7
+    move v0, v6
 
-    .line 504
+    .line 507
     goto :goto_0
 .end method
 
@@ -1184,7 +958,7 @@
     .parameter "src"
 
     .prologue
-    .line 508
+    .line 511
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

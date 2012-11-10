@@ -39,7 +39,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -147,7 +147,7 @@
 
     move-result v11
 
-    if-eqz v11, :cond_1
+    if-eqz v11, :cond_2
 
     .line 116
     const/16 v11, 0x3f
@@ -210,7 +210,7 @@
     move-result v4
 
     .local v4, n:I
-    if-eq v4, v13, :cond_2
+    if-eq v4, v13, :cond_1
 
     .line 127
     int-to-long v11, v4
@@ -220,17 +220,41 @@
     goto :goto_0
 
     .line 130
-    .end local v4           #n:I
-    :catchall_0
-    move-exception v11
-
+    :cond_1
     :try_start_3
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-
-    throw v11
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+
+    .line 138
+    .end local v0           #buffer:[B
+    .end local v2           #is:Ljava/io/InputStream;
+    .end local v3           #mimeIndex:I
+    .end local v4           #n:I
+    .end local v5           #size:J
+    .end local v7           #uri:Landroid/net/Uri;
+    :goto_1
+    monitor-exit v10
+
+    return-wide v5
+
+    .line 130
+    .restart local v0       #buffer:[B
+    .restart local v2       #is:Ljava/io/InputStream;
+    .restart local v3       #mimeIndex:I
+    .restart local v5       #size:J
+    .restart local v7       #uri:Landroid/net/Uri;
+    :catchall_0
+    move-exception v11
+
+    :try_start_4
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+
+    throw v11
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 133
     .end local v0           #buffer:[B
@@ -243,7 +267,7 @@
 
     .line 134
     .local v1, e:Ljava/lang/Exception;
-    :try_start_4
+    :try_start_5
     const-string/jumbo v11, "webkit"
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -265,21 +289,19 @@
     move-result-object v12
 
     invoke-static {v11, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
+    move-wide v5, v8
+
+    .line 135
+    goto :goto_1
+
+    .end local v1           #e:Ljava/lang/Exception;
+    :cond_2
     move-wide v5, v8
 
     .line 138
-    .end local v1           #e:Ljava/lang/Exception;
-    :goto_1
-    monitor-exit v10
-
-    return-wide v5
-
-    :cond_1
-    move-wide v5, v8
-
     goto :goto_1
 
     .line 111
@@ -289,22 +311,6 @@
     monitor-exit v10
 
     throw v8
-
-    .line 130
-    .restart local v0       #buffer:[B
-    .restart local v2       #is:Ljava/io/InputStream;
-    .restart local v3       #mimeIndex:I
-    .restart local v4       #n:I
-    .restart local v5       #size:J
-    .restart local v7       #uri:Landroid/net/Uri;
-    :cond_2
-    :try_start_5
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
-
-    goto :goto_1
 .end method
 
 .method private static declared-synchronized contentUrlStream(Ljava/lang/String;)Ljava/io/InputStream;

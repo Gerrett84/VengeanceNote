@@ -17,13 +17,13 @@
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;-><init>(Lcom/android/internal/telephony/PhoneBase;)V
 
     .line 37
-    iget-object v0, p1, Lcom/android/internal/telephony/cdma/CDMAPhone;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+    iget-object v0, p1, Lcom/android/internal/telephony/PhoneBase;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/IccRecords;->getAdnCache()Lcom/android/internal/telephony/AdnRecordCache;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
+    iput-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
 
     .line 39
     return-void
@@ -105,7 +105,7 @@
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->logd(Ljava/lang/String;)V
 
     .line 56
-    iget-object v3, p0, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
@@ -118,7 +118,7 @@
 
     new-array v2, v2, [I
 
-    iput-object v2, p0, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->recordSize:[I
+    iput-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->recordSize:[I
 
     .line 61
     new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -129,7 +129,7 @@
 
     .line 62
     .local v1, status:Ljava/util/concurrent/atomic/AtomicBoolean;
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mBaseHandler:Landroid/os/Handler;
 
     const/4 v4, 0x1
 
@@ -139,7 +139,7 @@
 
     .line 64
     .local v0, response:Landroid/os/Message;
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
+    iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getIccFileHandler()Lcom/android/internal/telephony/IccFileHandler;
 
@@ -156,7 +156,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 68
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/RuimPhoneBookInterfaceManager;->recordSize:[I
+    iget-object v2, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->recordSize:[I
 
     return-object v2
 

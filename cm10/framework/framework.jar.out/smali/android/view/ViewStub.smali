@@ -153,7 +153,7 @@
 
     move-result v1
 
-    iput v1, p0, Landroid/view/ViewStub;->mID:I
+    iput v1, p0, Landroid/view/View;->mID:I
 
     .line 111
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -171,7 +171,7 @@
 
     .prologue
     .line 117
-    iput-object p1, p0, Landroid/view/ViewStub;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     .line 118
     const/16 v0, 0x8
@@ -347,7 +347,7 @@
     .end local v2           #layoutParams:Landroid/view/ViewGroup$LayoutParams;
     .end local v4           #view:Landroid/view/View;
     :cond_2
-    iget-object v6, p0, Landroid/view/ViewStub;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v6}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 

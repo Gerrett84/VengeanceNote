@@ -26,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 715
+    .line 714
     const/4 v0, 0x0
 
     sput-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
@@ -39,13 +39,13 @@
     .parameter "c"
 
     .prologue
-    .line 723
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 722
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 724
+    .line 723
     invoke-virtual {p1, p0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 725
+    .line 724
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .parameter "c"
 
     .prologue
-    .line 718
+    .line 717
     sget-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
     if-nez v0, :cond_0
 
-    .line 719
+    .line 718
     new-instance v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -70,7 +70,7 @@
 
     sput-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
-    .line 721
+    .line 720
     :cond_0
     return-void
 .end method
@@ -82,7 +82,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 730
+    .line 729
     return-void
 .end method
 
@@ -90,19 +90,28 @@
     .locals 0
 
     .prologue
-    .line 735
+    .line 734
     return-void
 .end method
 
 .method public onTrimMemory(I)V
-    .locals 0
+    .locals 1
     .parameter "level"
 
     .prologue
-    .line 742
+    .line 745
+    const/16 v0, 0x14
+
+    if-lt p1, v0, :cond_0
+
+    .line 746
+    invoke-static {}, Landroid/webkit/HTML5VideoInline;->cleanupSurfaceTexture()V
+
+    .line 748
+    :cond_0
     #calls: Landroid/webkit/WebViewClassic;->nativeOnTrimMemory(I)V
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$900(I)V
 
-    .line 743
+    .line 749
     return-void
 .end method

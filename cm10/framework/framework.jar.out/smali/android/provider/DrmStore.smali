@@ -27,7 +27,7 @@
 
     .prologue
     .line 41
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 89
     return-void
@@ -55,7 +55,7 @@
     invoke-direct {v2, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     .line 108
     .end local v1           #fis:Ljava/io/FileInputStream;
@@ -103,26 +103,47 @@
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     :cond_1
-    :goto_0
     move-object v1, v2
 
     .line 127
     .end local v2           #fis:Ljava/io/FileInputStream;
     .restart local v1       #fis:Ljava/io/FileInputStream;
     :cond_2
-    :goto_1
+    :goto_0
     return-object v4
 
-    .line 116
+    .line 122
+    .end local v1           #fis:Ljava/io/FileInputStream;
+    .restart local v2       #fis:Ljava/io/FileInputStream;
     :catch_0
+    move-exception v0
+
+    .line 123
+    .local v0, e:Ljava/io/IOException;
+    const-string v5, "DrmStore"
+
+    const-string v6, "IOException in DrmStore.addDrmFile()"
+
+    invoke-static {v5, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move-object v1, v2
+
+    .line 125
+    .end local v2           #fis:Ljava/io/FileInputStream;
+    .restart local v1       #fis:Ljava/io/FileInputStream;
+    goto :goto_0
+
+    .line 116
+    .end local v0           #e:Ljava/io/IOException;
+    :catch_1
     move-exception v0
 
     .line 117
     .local v0, e:Ljava/lang/Exception;
-    :goto_2
+    :goto_1
     :try_start_3
     const-string v5, "DrmStore"
 
@@ -139,12 +160,12 @@
     :try_start_4
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    goto :goto_1
+    goto :goto_0
 
     .line 122
-    :catch_1
+    :catch_2
     move-exception v0
 
     .line 123
@@ -155,7 +176,7 @@
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_0
 
     .line 119
     .end local v0           #e:Ljava/io/IOException;
@@ -163,22 +184,22 @@
     move-exception v5
 
     .line 120
-    :goto_3
+    :goto_2
     if-eqz v1, :cond_3
 
     .line 121
     :try_start_5
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 119
+    .line 124
     :cond_3
-    :goto_4
+    :goto_3
     throw v5
 
     .line 122
-    :catch_2
+    :catch_3
     move-exception v0
 
     .line 123
@@ -189,27 +210,12 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_4
-
-    .line 122
-    .end local v0           #e:Ljava/io/IOException;
-    .end local v1           #fis:Ljava/io/FileInputStream;
-    .restart local v2       #fis:Ljava/io/FileInputStream;
-    :catch_3
-    move-exception v0
-
-    .line 123
-    .restart local v0       #e:Ljava/io/IOException;
-    const-string v5, "DrmStore"
-
-    const-string v6, "IOException in DrmStore.addDrmFile()"
-
-    invoke-static {v5, v6, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
+    goto :goto_3
 
     .line 119
     .end local v0           #e:Ljava/io/IOException;
+    .end local v1           #fis:Ljava/io/FileInputStream;
+    .restart local v2       #fis:Ljava/io/FileInputStream;
     :catchall_1
     move-exception v5
 
@@ -217,7 +223,7 @@
 
     .end local v2           #fis:Ljava/io/FileInputStream;
     .restart local v1       #fis:Ljava/io/FileInputStream;
-    goto :goto_3
+    goto :goto_2
 
     .line 116
     .end local v1           #fis:Ljava/io/FileInputStream;
@@ -229,7 +235,7 @@
 
     .end local v2           #fis:Ljava/io/FileInputStream;
     .restart local v1       #fis:Ljava/io/FileInputStream;
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method public static final addDrmFile(Landroid/content/ContentResolver;Ljava/io/FileInputStream;Ljava/lang/String;)Landroid/content/Intent;
@@ -461,7 +467,7 @@
     .line 189
     invoke-virtual {v10}, Ljava/io/OutputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 195
     .end local v7           #e:Ljava/lang/Exception;
@@ -551,9 +557,9 @@
     .line 189
     invoke-virtual {v10}, Ljava/io/OutputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 185
+    .line 192
     :cond_5
     :goto_5
     throw v19
@@ -627,6 +633,15 @@
 
     const-string v20, "IOException in DrmStore.addDrmFile()"
 
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v20
+
+    invoke-static {v0, v1, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_3
+
+    .line 190
     .end local v4           #content:Landroid/drm/mobile1/DrmRawContent;
     .end local v5           #contentUri:Landroid/net/Uri;
     .end local v8           #manager:Landroid/drm/mobile1/DrmRightsManager;
@@ -634,7 +649,16 @@
     .end local v13           #rights:Landroid/drm/mobile1/DrmRights;
     .end local v14           #size:J
     .end local v16           #stream:Ljava/io/InputStream;
-    :goto_6
+    .local v7, e:Ljava/lang/Exception;
+    :catch_2
+    move-exception v7
+
+    .line 191
+    .local v7, e:Ljava/io/IOException;
+    const-string v19, "DrmStore"
+
+    const-string v20, "IOException in DrmStore.addDrmFile()"
+
     move-object/from16 v0, v19
 
     move-object/from16 v1, v20
@@ -645,7 +669,7 @@
 
     .line 190
     .end local v7           #e:Ljava/io/IOException;
-    :catch_2
+    :catch_3
     move-exception v7
 
     .line 191
@@ -661,19 +685,6 @@
     invoke-static {v0, v1, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_5
-
-    .line 190
-    .local v7, e:Ljava/lang/Exception;
-    :catch_3
-    move-exception v7
-
-    .line 191
-    .local v7, e:Ljava/io/IOException;
-    const-string v19, "DrmStore"
-
-    const-string v20, "IOException in DrmStore.addDrmFile()"
-
-    goto :goto_6
 
     .line 185
     .end local v7           #e:Ljava/io/IOException;

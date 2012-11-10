@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 357
+    .line 371
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .parameter "ctx"
 
     .prologue
-    .line 363
+    .line 377
     new-instance v0, Landroid/app/KeyguardManager;
 
     invoke-direct {v0}, Landroid/app/KeyguardManager;-><init>()V

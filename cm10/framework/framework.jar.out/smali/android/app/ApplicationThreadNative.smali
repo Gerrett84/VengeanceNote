@@ -2507,7 +2507,7 @@
     :try_start_4
     invoke-virtual/range {v76 .. v76}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
     .line 534
     :cond_20
@@ -2556,9 +2556,9 @@
     :try_start_5
     invoke-virtual/range {v76 .. v76}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_4
 
-    .line 527
+    .line 531
     :goto_23
     throw v5
 
@@ -2608,7 +2608,7 @@
     :try_start_7
     invoke-virtual/range {v76 .. v76}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_6
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 
     .line 555
     :cond_23
@@ -2628,9 +2628,9 @@
     :try_start_8
     invoke-virtual/range {v76 .. v76}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_5
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
 
-    .line 548
+    .line 552
     :goto_25
     throw v5
 
@@ -2677,7 +2677,7 @@
     :try_start_a
     invoke-virtual/range {v76 .. v76}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_8
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_7
 
     .line 575
     :cond_24
@@ -2697,9 +2697,9 @@
     :try_start_b
     invoke-virtual/range {v76 .. v76}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_7
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_8
 
-    .line 568
+    .line 572
     :goto_27
     throw v5
 
@@ -2766,39 +2766,39 @@
     .restart local v72       #checkin:Z
     .restart local v82       #mi:Landroid/os/Debug$MemoryInfo;
     :catch_3
-    move-exception v20
-
-    goto :goto_23
-
-    :catch_4
     move-exception v5
 
     goto/16 :goto_22
+
+    :catch_4
+    move-exception v20
+
+    goto :goto_23
 
     .line 550
     .end local v68           #all:Z
     .end local v72           #checkin:Z
     .end local v82           #mi:Landroid/os/Debug$MemoryInfo;
     :catch_5
-    move-exception v20
-
-    goto :goto_25
-
-    :catch_6
     move-exception v5
 
     goto :goto_24
 
-    .line 570
-    :catch_7
+    :catch_6
     move-exception v20
 
-    goto :goto_27
+    goto :goto_25
 
-    :catch_8
+    .line 570
+    :catch_7
     move-exception v5
 
     goto :goto_26
+
+    :catch_8
+    move-exception v20
+
+    goto :goto_27
 
     .line 70
     :pswitch_data_0

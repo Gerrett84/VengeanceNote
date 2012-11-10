@@ -155,41 +155,41 @@
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setContentView(I)V
 
     .line 76
-    const v1, 0x102028b
+    const v1, 0x1020284
 
-    const v2, 0x102028c
+    const v2, 0x1020285
 
-    const v3, 0x102028d
+    const v3, 0x1020286
 
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mCurApp:Ljava/lang/String;
 
-    const v5, 0x1040415
+    const v5, 0x10403eb
 
-    const v6, 0x1040416
+    const v6, 0x10403ec
 
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setIconAndText(IIILjava/lang/String;II)V
 
     .line 78
-    const v1, 0x102028f
+    const v1, 0x1020288
 
-    const v2, 0x1020290
+    const v2, 0x1020289
 
-    const v3, 0x1020291
+    const v3, 0x102028a
 
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mNewApp:Ljava/lang/String;
 
-    const v5, 0x1040417
+    const v5, 0x10403ed
 
-    const v6, 0x1040418
+    const v6, 0x10403ee
 
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setIconAndText(IIILjava/lang/String;II)V
 
     .line 81
-    const v0, 0x102028a
+    const v0, 0x1020283
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -202,7 +202,7 @@
     invoke-virtual {v7, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 83
-    const v0, 0x102028e
+    const v0, 0x1020287
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
     invoke-virtual {v7, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 85
-    const v0, 0x1020270
+    const v0, 0x1020269
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 

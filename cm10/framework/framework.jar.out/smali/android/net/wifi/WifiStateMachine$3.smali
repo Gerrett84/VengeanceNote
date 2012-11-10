@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 636
+    .line 628
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,12 +44,12 @@
 
     const/4 v2, 0x0
 
-    .line 639
+    .line 631
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 641
+    .line 633
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.SCREEN_ON"
 
@@ -59,12 +59,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 642
+    .line 634
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v1, v3}, Landroid/net/wifi/WifiStateMachine;->enableRssiPolling(Z)V
 
-    .line 643
+    .line 635
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #getter for: Landroid/net/wifi/WifiStateMachine;->mBackgroundScanSupported:Z
@@ -74,30 +74,30 @@
 
     if-eqz v1, :cond_0
 
-    .line 644
+    .line 636
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateMachine;->enableBackgroundScanCommand(Z)V
 
-    .line 646
+    .line 638
     :cond_0
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiStateMachine;->enableAllNetworks()V
 
-    .line 647
+    .line 639
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     const v2, 0x20057
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateMachine;->sendMessage(I)V
 
-    .line 657
+    .line 649
     :cond_1
     :goto_0
     return-void
 
-    .line 648
+    .line 640
     :cond_2
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -107,12 +107,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 649
+    .line 641
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiStateMachine;->enableRssiPolling(Z)V
 
-    .line 650
+    .line 642
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #getter for: Landroid/net/wifi/WifiStateMachine;->mBackgroundScanSupported:Z
@@ -122,12 +122,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 651
+    .line 643
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-virtual {v1, v3}, Landroid/net/wifi/WifiStateMachine;->enableBackgroundScanCommand(Z)V
 
-    .line 654
+    .line 646
     :cond_3
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 655
+    .line 647
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$3;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     const v2, 0x20056

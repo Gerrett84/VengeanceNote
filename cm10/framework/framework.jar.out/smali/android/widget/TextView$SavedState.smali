@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 8457
+    .line 8474
     new-instance v0, Landroid/widget/TextView$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/TextView$SavedState$1;-><init>()V
@@ -59,24 +59,24 @@
     .parameter "in"
 
     .prologue
-    .line 8469
+    .line 8486
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 8470
+    .line 8487
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/TextView$SavedState;->selStart:I
 
-    .line 8471
+    .line 8488
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/TextView$SavedState;->selEnd:I
 
-    .line 8472
+    .line 8489
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -88,7 +88,7 @@
     :goto_0
     iput-boolean v0, p0, Landroid/widget/TextView$SavedState;->frozenWithFocus:Z
 
-    .line 8473
+    .line 8490
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -99,14 +99,14 @@
 
     iput-object v0, p0, Landroid/widget/TextView$SavedState;->text:Ljava/lang/CharSequence;
 
-    .line 8475
+    .line 8492
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 8476
+    .line 8493
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -117,11 +117,11 @@
 
     iput-object v0, p0, Landroid/widget/TextView$SavedState;->error:Ljava/lang/CharSequence;
 
-    .line 8478
+    .line 8495
     :cond_0
     return-void
 
-    .line 8472
+    .line 8489
     :cond_1
     const/4 v0, 0x0
 
@@ -134,7 +134,7 @@
     .parameter "x1"
 
     .prologue
-    .line 8418
+    .line 8435
     invoke-direct {p0, p1}, Landroid/widget/TextView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -145,10 +145,10 @@
     .parameter "superState"
 
     .prologue
-    .line 8426
+    .line 8443
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 8427
+    .line 8444
     return-void
 .end method
 
@@ -158,7 +158,7 @@
     .locals 3
 
     .prologue
-    .line 8447
+    .line 8464
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -209,13 +209,13 @@
 
     move-result-object v0
 
-    .line 8450
+    .line 8467
     .local v0, str:Ljava/lang/String;
     iget-object v1, p0, Landroid/widget/TextView$SavedState;->text:Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_0
 
-    .line 8451
+    .line 8468
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -240,7 +240,7 @@
 
     move-result-object v0
 
-    .line 8453
+    .line 8470
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -273,20 +273,20 @@
 
     const/4 v2, 0x0
 
-    .line 8431
+    .line 8448
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 8432
+    .line 8449
     iget v0, p0, Landroid/widget/TextView$SavedState;->selStart:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 8433
+    .line 8450
     iget v0, p0, Landroid/widget/TextView$SavedState;->selEnd:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 8434
+    .line 8451
     iget-boolean v0, p0, Landroid/widget/TextView$SavedState;->frozenWithFocus:Z
 
     if-eqz v0, :cond_0
@@ -296,34 +296,34 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 8435
+    .line 8452
     iget-object v0, p0, Landroid/widget/TextView$SavedState;->text:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 8437
+    .line 8454
     iget-object v0, p0, Landroid/widget/TextView$SavedState;->error:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_1
 
-    .line 8438
+    .line 8455
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 8443
+    .line 8460
     :goto_1
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 8434
+    .line 8451
     goto :goto_0
 
-    .line 8440
+    .line 8457
     :cond_1
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 8441
+    .line 8458
     iget-object v0, p0, Landroid/widget/TextView$SavedState;->error:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V

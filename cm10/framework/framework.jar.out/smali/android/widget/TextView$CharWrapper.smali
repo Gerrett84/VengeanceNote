@@ -35,19 +35,19 @@
     .parameter "len"
 
     .prologue
-    .line 8485
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 8502
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8486
+    .line 8503
     iput-object p1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
-    .line 8487
+    .line 8504
     iput p2, p0, Landroid/widget/TextView$CharWrapper;->mStart:I
 
-    .line 8488
+    .line 8505
     iput p3, p0, Landroid/widget/TextView$CharWrapper;->mLength:I
 
-    .line 8489
+    .line 8506
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .parameter "x1"
 
     .prologue
-    .line 8481
+    .line 8498
     iput-object p1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
     return-object p1
@@ -70,7 +70,7 @@
     .parameter "off"
 
     .prologue
-    .line 8502
+    .line 8519
     iget-object v0, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
     iget v1, p0, Landroid/widget/TextView$CharWrapper;->mStart:I
@@ -92,7 +92,7 @@
     .parameter "p"
 
     .prologue
-    .line 8528
+    .line 8545
     iget-object v1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
     iget v0, p0, Landroid/widget/TextView$CharWrapper;->mStart:I
@@ -111,7 +111,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Canvas;->drawText([CIIFFLandroid/graphics/Paint;)V
 
-    .line 8529
+    .line 8546
     return-void
 .end method
 
@@ -128,14 +128,14 @@
     .parameter "p"
 
     .prologue
-    .line 8533
+    .line 8550
     sub-int v3, p3, p2
 
-    .line 8534
+    .line 8551
     .local v3, count:I
     sub-int v5, p5, p4
 
-    .line 8535
+    .line 8552
     .local v5, contextCount:I
     iget-object v1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
@@ -159,7 +159,7 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/graphics/Canvas;->drawTextRun([CIIIIFFILandroid/graphics/Paint;)V
 
-    .line 8537
+    .line 8554
     return-void
 .end method
 
@@ -171,7 +171,7 @@
     .parameter "off"
 
     .prologue
-    .line 8519
+    .line 8536
     if-ltz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -184,7 +184,7 @@
 
     if-le p2, v0, :cond_1
 
-    .line 8520
+    .line 8537
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -214,7 +214,7 @@
 
     throw v0
 
-    .line 8523
+    .line 8540
     :cond_1
     iget-object v0, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
@@ -226,7 +226,7 @@
 
     invoke-static {v0, v1, p3, p4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 8524
+    .line 8541
     return-void
 .end method
 
@@ -242,14 +242,14 @@
     .parameter "p"
 
     .prologue
-    .line 8550
+    .line 8567
     sub-int v3, p2, p1
 
-    .line 8551
+    .line 8568
     .local v3, count:I
     sub-int v5, p4, p3
 
-    .line 8552
+    .line 8569
     .local v5, contextCount:I
     iget-object v1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
@@ -289,14 +289,14 @@
     .parameter "reserved"
 
     .prologue
-    .line 8560
+    .line 8577
     sub-int v3, p2, p1
 
-    .line 8561
+    .line 8578
     .local v3, count:I
     sub-int v5, p4, p3
 
-    .line 8562
+    .line 8579
     .local v5, contextCount:I
     iget-object v1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
@@ -335,10 +335,10 @@
     .parameter "p"
 
     .prologue
-    .line 8569
+    .line 8586
     sub-int v3, p2, p1
 
-    .line 8570
+    .line 8587
     .local v3, contextCount:I
     iget-object v1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
@@ -371,7 +371,7 @@
     .parameter "p"
 
     .prologue
-    .line 8544
+    .line 8561
     iget-object v0, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
     iget v1, p0, Landroid/widget/TextView$CharWrapper;->mStart:I
@@ -391,7 +391,7 @@
     .locals 1
 
     .prologue
-    .line 8498
+    .line 8515
     iget v0, p0, Landroid/widget/TextView$CharWrapper;->mLength:I
 
     return v0
@@ -404,7 +404,7 @@
     .parameter "p"
 
     .prologue
-    .line 8540
+    .line 8557
     iget-object v0, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
     iget v1, p0, Landroid/widget/TextView$CharWrapper;->mStart:I
@@ -427,16 +427,16 @@
     .parameter "len"
 
     .prologue
-    .line 8492
+    .line 8509
     iput-object p1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C
 
-    .line 8493
+    .line 8510
     iput p2, p0, Landroid/widget/TextView$CharWrapper;->mStart:I
 
-    .line 8494
+    .line 8511
     iput p3, p0, Landroid/widget/TextView$CharWrapper;->mLength:I
 
-    .line 8495
+    .line 8512
     return-void
 .end method
 
@@ -446,7 +446,7 @@
     .parameter "end"
 
     .prologue
-    .line 8511
+    .line 8528
     if-ltz p1, :cond_0
 
     if-ltz p2, :cond_0
@@ -459,7 +459,7 @@
 
     if-le p2, v0, :cond_1
 
-    .line 8512
+    .line 8529
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -489,7 +489,7 @@
 
     throw v0
 
-    .line 8515
+    .line 8532
     :cond_1
     new-instance v0, Ljava/lang/String;
 
@@ -510,7 +510,7 @@
     .locals 4
 
     .prologue
-    .line 8507
+    .line 8524
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, p0, Landroid/widget/TextView$CharWrapper;->mChars:[C

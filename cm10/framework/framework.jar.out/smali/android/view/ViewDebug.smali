@@ -132,7 +132,7 @@
 
     .prologue
     .line 52
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 558
     return-void
@@ -242,9 +242,9 @@
     :cond_2
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 689
     throw v4
 
+    .line 689
     .end local v2           #out:Ljava/io/BufferedOutputStream;
     .restart local v3       #out:Ljava/io/BufferedOutputStream;
     :catchall_1
@@ -1431,19 +1431,18 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 740
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_3
 
     .line 741
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->close()V
 
-    :cond_1
     move-object v3, v4
 
     .line 744
     .end local v4           #out:Ljava/io/BufferedWriter;
     .end local v5           #view:Landroid/view/View;
     .restart local v3       #out:Ljava/io/BufferedWriter;
-    :cond_2
+    :cond_1
     :goto_0
     return-void
 
@@ -1464,7 +1463,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 740
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     .line 741
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
@@ -1477,15 +1476,15 @@
     move-exception v6
 
     :goto_2
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     .line 741
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
 
-    .line 740
-    :cond_3
+    :cond_2
     throw v6
 
+    .line 740
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
     :catchall_1
@@ -1508,6 +1507,16 @@
     .end local v4           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
     goto :goto_1
+
+    .end local v3           #out:Ljava/io/BufferedWriter;
+    .restart local v4       #out:Ljava/io/BufferedWriter;
+    .restart local v5       #view:Landroid/view/View;
+    :cond_3
+    move-object v3, v4
+
+    .end local v4           #out:Ljava/io/BufferedWriter;
+    .restart local v3       #out:Ljava/io/BufferedWriter;
+    goto :goto_0
 .end method
 
 .method public static dumpCapturedView(Ljava/lang/String;Ljava/lang/Object;)V
@@ -3973,7 +3982,7 @@
     .line 445
     .end local v1           #out:Ljava/io/BufferedWriter;
     .local v2, out:Ljava/io/BufferedWriter;
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     .line 446
     :try_start_1
@@ -3992,25 +4001,24 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 456
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_3
 
     .line 457
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->close()V
 
-    :cond_0
     move-object v1, v2
 
     .line 460
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v1       #out:Ljava/io/BufferedWriter;
-    :cond_1
+    :cond_0
     :goto_1
     return-void
 
     .line 448
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
-    :cond_2
+    :cond_1
     :try_start_2
     const-string v4, "-1 -1 -1"
 
@@ -4045,7 +4053,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 456
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     .line 457
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
@@ -4058,15 +4066,15 @@
     move-exception v4
 
     :goto_3
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     .line 457
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
 
-    .line 456
-    :cond_3
+    :cond_2
     throw v4
 
+    .line 456
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     :catchall_1
@@ -4083,6 +4091,15 @@
     move-exception v0
 
     goto :goto_2
+
+    .end local v1           #out:Ljava/io/BufferedWriter;
+    .restart local v2       #out:Ljava/io/BufferedWriter;
+    :cond_3
+    move-object v1, v2
+
+    .end local v2           #out:Ljava/io/BufferedWriter;
+    .restart local v1       #out:Ljava/io/BufferedWriter;
+    goto :goto_1
 .end method
 
 .method private static profileViewAndChildren(Landroid/view/View;Ljava/io/BufferedWriter;)V

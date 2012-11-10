@@ -22,8 +22,8 @@
     .locals 0
 
     .prologue
-    .line 113
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 114
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -37,10 +37,10 @@
     .parameter "end"
 
     .prologue
-    .line 115
+    .line 116
     const/4 v0, 0x0
 
-    .line 117
+    .line 118
     .local v0, digitCount:I
     move v1, p2
 
@@ -48,7 +48,7 @@
     :goto_0
     if-ge v1, p3, :cond_1
 
-    .line 118
+    .line 119
     invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
@@ -59,28 +59,28 @@
 
     if-eqz v2, :cond_0
 
-    .line 119
+    .line 120
     add-int/lit8 v0, v0, 0x1
 
-    .line 120
+    .line 121
     const/4 v2, 0x5
 
     if-lt v0, v2, :cond_0
 
-    .line 121
+    .line 122
     const/4 v2, 0x1
 
-    .line 125
+    .line 126
     :goto_1
     return v2
 
-    .line 117
+    .line 118
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 125
+    .line 126
     :cond_1
     const/4 v2, 0x0
 

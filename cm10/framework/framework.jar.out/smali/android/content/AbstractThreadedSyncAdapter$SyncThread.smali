@@ -158,7 +158,7 @@
     if-eqz v4, :cond_0
 
     .line 263
-    invoke-virtual {v4}, Landroid/content/ContentProviderClient;->release()Z
+    throw v4
 
     .line 265
     :cond_0

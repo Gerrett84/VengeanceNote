@@ -17,7 +17,7 @@
 
     .prologue
     .line 1724
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 1725
     iput-object p1, p0, Landroid/app/ActivityManagerProxy;->mRemote:Landroid/os/IBinder;
@@ -2346,7 +2346,7 @@
     .line 3695
     iget-object v3, p0, Landroid/app/ActivityManagerProxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0x91
+    const/16 v4, 0x82
 
     const/4 v5, 0x0
 

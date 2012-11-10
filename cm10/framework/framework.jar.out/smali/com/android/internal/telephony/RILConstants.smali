@@ -332,8 +332,6 @@
 
 .field public static final RIL_UNSOL_CDMA_OTA_PROVISION_STATUS:I = 0x402
 
-.field public static final RIL_UNSOL_CDMA_PRL_CHANGED:I = 0x408
-
 .field public static final RIL_UNSOL_CDMA_RUIM_SMS_STORAGE_FULL:I = 0x3fe
 
 .field public static final RIL_UNSOL_CDMA_SUBSCRIPTION_SOURCE_CHANGED:I = 0x407
@@ -392,13 +390,13 @@
 
 .field public static final RIL_UNSOL_STK_PROACTIVE_COMMAND:I = 0x3f5
 
-.field public static final RIL_UNSOL_STK_SEND_SMS_RESULT:I = 0x2afa
-
 .field public static final RIL_UNSOL_STK_SESSION_END:I = 0x3f4
 
 .field public static final RIL_UNSOL_SUPP_SVC_NOTIFICATION:I = 0x3f3
 
 .field public static final RIL_UNSOL_VOICE_RADIO_TECH_CHANGED:I = 0x40b
+
+.field public static final RIL_UNSOl_CDMA_PRL_CHANGED:I = 0x408
 
 .field public static final SETUP_DATA_AUTH_CHAP:I = 0x2
 

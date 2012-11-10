@@ -94,12 +94,12 @@
     const/4 v1, 0x0
 
     .line 121
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 306
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/os/CommonClock;->mListenerLock:Ljava/lang/Object;
 
@@ -332,10 +332,10 @@
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
     .line 366
-    :goto_2
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     .line 372
+    :goto_2
     if-nez v3, :cond_0
 
     .line 373
@@ -366,8 +366,12 @@
     .line 365
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
+    .line 366
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
     goto :goto_2
 
+    .line 365
     .end local v1           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v4
@@ -377,7 +381,6 @@
     .line 366
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 365
     throw v4
 .end method
 
@@ -470,7 +473,21 @@
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     .line 395
-    :goto_1
+    iput-object v5, p0, Landroid/os/CommonClock;->mCallbackTgt:Landroid/os/CommonClock$TimelineChangedListener;
+
+    goto :goto_0
+
+    .line 391
+    :catch_0
+    move-exception v2
+
+    .line 393
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 394
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 395
     iput-object v5, p0, Landroid/os/CommonClock;->mCallbackTgt:Landroid/os/CommonClock$TimelineChangedListener;
 
     goto :goto_0
@@ -487,20 +504,7 @@
     .line 395
     iput-object v5, p0, Landroid/os/CommonClock;->mCallbackTgt:Landroid/os/CommonClock$TimelineChangedListener;
 
-    .line 393
     throw v2
-
-    .line 391
-    :catch_0
-    move-exception v2
-
-    .line 393
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 394
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    goto :goto_1
 .end method
 
 

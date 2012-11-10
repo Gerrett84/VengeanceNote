@@ -206,7 +206,7 @@
     .local v2, contentWidth:I
     iget-object v7, p0, Landroid/widget/Spinner$DropdownPopup;->this$0:Landroid/widget/Spinner;
 
-    #getter for: Landroid/widget/Spinner;->mContext:Landroid/content/Context;
+    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
     invoke-static {v7}, Landroid/widget/Spinner;->access$300(Landroid/widget/Spinner;)Landroid/content/Context;
 
     move-result-object v7

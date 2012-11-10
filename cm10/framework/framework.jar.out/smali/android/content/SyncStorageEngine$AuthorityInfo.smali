@@ -60,7 +60,7 @@
     const-wide/16 v1, -0x1
 
     .line 223
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 224
     iput-object p1, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->account:Landroid/accounts/Account;
@@ -126,7 +126,7 @@
 
     .prologue
     .line 206
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 207
     iget-object v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->account:Landroid/accounts/Account;

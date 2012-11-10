@@ -438,11 +438,11 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/widget/AdapterViewAnimator;->mPaddingLeft:I
+    iget v6, p0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Landroid/widget/AdapterViewAnimator;->mPaddingRight:I
+    iget v6, p0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v2, v5, v6
 
@@ -452,11 +452,11 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/widget/AdapterViewAnimator;->mPaddingTop:I
+    iget v6, p0, Landroid/view/View;->mPaddingTop:I
 
     sub-int/2addr v5, v6
 
-    iget v6, p0, Landroid/widget/AdapterViewAnimator;->mPaddingBottom:I
+    iget v6, p0, Landroid/view/View;->mPaddingBottom:I
 
     sub-int v1, v5, v6
 
@@ -656,7 +656,7 @@
 
     .prologue
     .line 734
-    iget-boolean v0, p0, Landroid/widget/AdapterViewAnimator;->mDataChanged:Z
+    iget-boolean v0, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 735
     .local v0, dataChanged:Z
@@ -673,7 +673,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Landroid/widget/AdapterViewAnimator;->mDataChanged:Z
+    iput-boolean v1, p0, Landroid/widget/AdapterView;->mDataChanged:Z
 
     .line 754
     return-void
@@ -925,7 +925,7 @@
     .line 441
     new-instance v0, Landroid/widget/FrameLayout;
 
-    iget-object v1, p0, Landroid/widget/AdapterViewAnimator;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
@@ -1228,7 +1228,7 @@
 
     .line 764
     .local v0, child:Landroid/view/View;
-    iget v5, p0, Landroid/widget/AdapterViewAnimator;->mPaddingLeft:I
+    iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1238,7 +1238,7 @@
 
     .line 765
     .local v3, childRight:I
-    iget v5, p0, Landroid/widget/AdapterViewAnimator;->mPaddingTop:I
+    iget v5, p0, Landroid/view/View;->mPaddingTop:I
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -1248,9 +1248,9 @@
 
     .line 767
     .local v1, childBottom:I
-    iget v5, p0, Landroid/widget/AdapterViewAnimator;->mPaddingLeft:I
+    iget v5, p0, Landroid/view/View;->mPaddingLeft:I
 
-    iget v6, p0, Landroid/widget/AdapterViewAnimator;->mPaddingTop:I
+    iget v6, p0, Landroid/view/View;->mPaddingTop:I
 
     invoke-virtual {v0, v5, v6, v3, v1}, Landroid/view/View;->layout(IIII)V
 
@@ -1326,11 +1326,11 @@
 
     iget v8, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mPaddingTop:I
+    iget v9, p0, Landroid/view/View;->mPaddingTop:I
 
     add-int/2addr v8, v9
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mPaddingBottom:I
+    iget v9, p0, Landroid/view/View;->mPaddingBottom:I
 
     add-int v3, v8, v9
 
@@ -1344,11 +1344,11 @@
 
     iget v7, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
-    iget v8, p0, Landroid/widget/AdapterViewAnimator;->mPaddingLeft:I
+    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/AdapterViewAnimator;->mPaddingRight:I
+    iget v8, p0, Landroid/view/View;->mPaddingRight:I
 
     add-int v6, v7, v8
 
@@ -1387,11 +1387,11 @@
     .line 706
     iget v8, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildHeight:I
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mPaddingTop:I
+    iget v9, p0, Landroid/view/View;->mPaddingTop:I
 
     add-int/2addr v8, v9
 
-    iget v9, p0, Landroid/widget/AdapterViewAnimator;->mPaddingBottom:I
+    iget v9, p0, Landroid/view/View;->mPaddingBottom:I
 
     add-int v1, v8, v9
 
@@ -1427,11 +1427,11 @@
     .line 720
     iget v7, p0, Landroid/widget/AdapterViewAnimator;->mReferenceChildWidth:I
 
-    iget v8, p0, Landroid/widget/AdapterViewAnimator;->mPaddingLeft:I
+    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
 
     add-int/2addr v7, v8
 
-    iget v8, p0, Landroid/widget/AdapterViewAnimator;->mPaddingRight:I
+    iget v8, p0, Landroid/view/View;->mPaddingRight:I
 
     add-int v4, v7, v8
 
@@ -1979,7 +1979,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/widget/AdapterViewAnimator;->mItemCount:I
+    iput v0, p0, Landroid/widget/AdapterView;->mItemCount:I
 
     .line 963
     :cond_1

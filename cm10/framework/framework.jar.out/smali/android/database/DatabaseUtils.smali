@@ -74,7 +74,7 @@
 
     .prologue
     .line 49
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 970
     return-void
@@ -410,10 +410,8 @@
     .line 853
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
-    .line 851
     return-object v1
 
-    .line 853
     :catchall_0
     move-exception v1
 
@@ -2400,10 +2398,8 @@
     .line 806
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
-    .line 804
     return-wide v1
 
-    .line 806
     :catchall_0
     move-exception v1
 
@@ -2816,10 +2812,8 @@
     .line 828
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteStatement;->close()V
 
-    .line 826
     return-object v1
 
-    .line 828
     :catchall_0
     move-exception v1
 

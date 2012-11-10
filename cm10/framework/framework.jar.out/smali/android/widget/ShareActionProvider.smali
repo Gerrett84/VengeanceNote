@@ -226,12 +226,12 @@
     invoke-virtual {v0, p0}, Landroid/widget/ActivityChooserView;->setProvider(Landroid/view/ActionProvider;)V
 
     .line 181
-    const v4, 0x10404ed
+    const v4, 0x10404c2
 
     invoke-virtual {v0, v4}, Landroid/widget/ActivityChooserView;->setDefaultActionButtonContentDescription(I)V
 
     .line 183
-    const v4, 0x10404ec
+    const v4, 0x10404c1
 
     invoke-virtual {v0, v4}, Landroid/widget/ActivityChooserView;->setExpandActivityOverflowButtonContentDescription(I)V
 
@@ -328,7 +328,7 @@
     .line 221
     iget-object v7, p0, Landroid/widget/ShareActionProvider;->mContext:Landroid/content/Context;
 
-    const v8, 0x104051f
+    const v8, 0x10404f3
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

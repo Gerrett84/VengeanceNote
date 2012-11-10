@@ -108,7 +108,7 @@
 
     .prologue
     .line 148
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 79
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
@@ -120,7 +120,7 @@
     .line 81
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteConnectionPool;->mLock:Ljava/lang/Object;
 
@@ -1932,7 +1932,7 @@
     .line 616
     monitor-exit v23
 
-    .line 684
+    .line 702
     :cond_3
     :goto_1
     return-object v13
@@ -2249,7 +2249,6 @@
 
     invoke-virtual {v0, v4}, Landroid/os/CancellationSignal;->setOnCancelListener(Landroid/os/CancellationSignal$OnCancelListener;)V
 
-    .line 701
     :cond_c
     throw v3
 

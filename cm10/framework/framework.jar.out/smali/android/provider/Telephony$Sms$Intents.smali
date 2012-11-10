@@ -17,8 +17,6 @@
 # static fields
 .field public static final DATA_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.intent.action.DATA_SMS_RECEIVED"
 
-.field public static final MOCK_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.MOCK_SMS_RECEIVED"
-
 .field public static final RESULT_SMS_GENERIC_ERROR:I = 0x2
 
 .field public static final RESULT_SMS_HANDLED:I = 0x1
@@ -48,7 +46,7 @@
 
     .prologue
     .line 498
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -58,7 +56,7 @@
     .parameter "intent"
 
     .prologue
-    .line 710
+    .line 688
     const-string/jumbo v7, "pdus"
 
     invoke-virtual {p0, v7}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -71,7 +69,7 @@
 
     check-cast v2, [Ljava/lang/Object;
 
-    .line 711
+    .line 689
     .local v2, messages:[Ljava/lang/Object;
     const-string v7, "format"
 
@@ -79,13 +77,13 @@
 
     move-result-object v0
 
-    .line 712
+    .line 690
     .local v0, format:Ljava/lang/String;
     array-length v7, v2
 
     new-array v5, v7, [[B
 
-    .line 714
+    .line 692
     .local v5, pduObjs:[[B
     const/4 v1, 0x0
 
@@ -95,7 +93,7 @@
 
     if-ge v1, v7, :cond_0
 
-    .line 715
+    .line 693
     aget-object v7, v2, v1
 
     check-cast v7, [B
@@ -104,38 +102,38 @@
 
     aput-object v7, v5, v1
 
-    .line 714
+    .line 692
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 717
+    .line 695
     :cond_0
     array-length v7, v5
 
     new-array v6, v7, [[B
 
-    .line 718
+    .line 696
     .local v6, pdus:[[B
     array-length v4, v6
 
-    .line 719
+    .line 697
     .local v4, pduCount:I
     new-array v3, v4, [Landroid/telephony/SmsMessage;
 
-    .line 720
+    .line 698
     .local v3, msgs:[Landroid/telephony/SmsMessage;
     const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v4, :cond_1
 
-    .line 721
+    .line 699
     aget-object v7, v5, v1
 
     aput-object v7, v6, v1
 
-    .line 722
+    .line 700
     aget-object v7, v6, v1
 
     invoke-static {v7, v0}, Landroid/telephony/SmsMessage;->createFromPdu([BLjava/lang/String;)Landroid/telephony/SmsMessage;
@@ -144,12 +142,12 @@
 
     aput-object v7, v3, v1
 
-    .line 720
+    .line 698
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 724
+    .line 702
     :cond_1
     return-object v3
 .end method

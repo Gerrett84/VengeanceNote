@@ -28,16 +28,16 @@
     .parameter "looper"
 
     .prologue
-    .line 759
+    .line 744
     iput-object p1, p0, Landroid/media/AudioRecord$NativeEventHandler;->this$0:Landroid/media/AudioRecord;
 
-    .line 760
+    .line 745
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 761
+    .line 746
     iput-object p2, p0, Landroid/media/AudioRecord$NativeEventHandler;->mAudioRecord:Landroid/media/AudioRecord;
 
-    .line 762
+    .line 747
     return-void
 .end method
 
@@ -48,10 +48,10 @@
     .parameter "msg"
 
     .prologue
-    .line 766
+    .line 751
     const/4 v0, 0x0
 
-    .line 767
+    .line 752
     .local v0, listener:Landroid/media/AudioRecord$OnRecordPositionUpdateListener;
     iget-object v1, p0, Landroid/media/AudioRecord$NativeEventHandler;->this$0:Landroid/media/AudioRecord;
 
@@ -62,7 +62,7 @@
 
     monitor-enter v2
 
-    .line 768
+    .line 753
     :try_start_0
     iget-object v1, p0, Landroid/media/AudioRecord$NativeEventHandler;->mAudioRecord:Landroid/media/AudioRecord;
 
@@ -71,17 +71,17 @@
 
     move-result-object v0
 
-    .line 769
+    .line 754
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 771
+    .line 756
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 783
+    .line 768
     const-string v1, "AudioRecord-Java"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -106,12 +106,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 787
+    .line 772
     :cond_0
     :goto_0
     return-void
 
-    .line 769
+    .line 754
     :catchall_0
     move-exception v1
 
@@ -122,29 +122,29 @@
 
     throw v1
 
-    .line 773
+    .line 758
     :pswitch_0
     if-eqz v0, :cond_0
 
-    .line 774
+    .line 759
     iget-object v1, p0, Landroid/media/AudioRecord$NativeEventHandler;->mAudioRecord:Landroid/media/AudioRecord;
 
     invoke-interface {v0, v1}, Landroid/media/AudioRecord$OnRecordPositionUpdateListener;->onMarkerReached(Landroid/media/AudioRecord;)V
 
     goto :goto_0
 
-    .line 778
+    .line 763
     :pswitch_1
     if-eqz v0, :cond_0
 
-    .line 779
+    .line 764
     iget-object v1, p0, Landroid/media/AudioRecord$NativeEventHandler;->mAudioRecord:Landroid/media/AudioRecord;
 
     invoke-interface {v0, v1}, Landroid/media/AudioRecord$OnRecordPositionUpdateListener;->onPeriodicNotification(Landroid/media/AudioRecord;)V
 
     goto :goto_0
 
-    .line 771
+    .line 756
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0

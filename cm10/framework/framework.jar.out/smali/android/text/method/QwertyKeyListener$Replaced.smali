@@ -27,13 +27,13 @@
     .parameter "text"
 
     .prologue
-    .line 513
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 516
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 514
+    .line 517
     iput-object p1, p0, Landroid/text/method/QwertyKeyListener$Replaced;->mText:[C
 
-    .line 515
+    .line 518
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "x0"
 
     .prologue
-    .line 511
+    .line 514
     iget-object v0, p0, Landroid/text/method/QwertyKeyListener$Replaced;->mText:[C
 
     return-object v0

@@ -131,7 +131,7 @@
 
     .prologue
     .line 287
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 288
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
@@ -155,7 +155,7 @@
 
     .prologue
     .line 58
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
@@ -187,7 +187,7 @@
 
     .prologue
     .line 296
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 297
     invoke-direct {p0, p1}, Landroid/view/Surface;->init(Landroid/os/Parcel;)V
@@ -230,7 +230,7 @@
 
     .prologue
     .line 258
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 259
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
@@ -287,7 +287,7 @@
 
     .prologue
     .line 271
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 272
     invoke-static {}, Landroid/view/Surface;->checkHeadless()V
@@ -568,7 +568,6 @@
     :cond_3
     invoke-virtual {p0}, Landroid/view/Surface;->release()V
 
-    .line 540
     throw v0
 .end method
 

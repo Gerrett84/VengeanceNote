@@ -86,12 +86,12 @@
     const/4 v1, 0x0
 
     .line 65
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 415
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/os/CommonTimeConfig;->mListenerLock:Ljava/lang/Object;
 
@@ -333,10 +333,9 @@
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
     .line 374
-    :goto_0
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 370
+    :goto_0
     return v3
 
     .line 369
@@ -350,8 +349,12 @@
     .line 373
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
+    .line 374
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
     goto :goto_0
 
+    .line 373
     .end local v1           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v3
@@ -361,7 +364,6 @@
     .line 374
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 373
     throw v3
 .end method
 

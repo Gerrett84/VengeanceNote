@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 616
+    .line 614
     iput-object p1, p0, Landroid/net/wifi/WifiWatchdogStateMachine$NotConnectedState;->this$0:Landroid/net/wifi/WifiWatchdogStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 619
+    .line 617
     invoke-static {}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$000()Z
 
     move-result v0
@@ -70,7 +70,7 @@
     #calls: Landroid/net/wifi/WifiWatchdogStateMachine;->log(Ljava/lang/String;)V
     invoke-static {v0}, Landroid/net/wifi/WifiWatchdogStateMachine;->access$100(Ljava/lang/String;)V
 
-    .line 620
+    .line 618
     :cond_0
     return-void
 .end method

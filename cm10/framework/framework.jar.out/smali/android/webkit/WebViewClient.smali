@@ -40,8 +40,8 @@
     .locals 0
 
     .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 28
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -55,7 +55,7 @@
     .parameter "isReload"
 
     .prologue
-    .line 187
+    .line 197
     return-void
 .end method
 
@@ -66,10 +66,10 @@
     .parameter "resend"
 
     .prologue
-    .line 175
+    .line 185
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 176
+    .line 186
     return-void
 .end method
 
@@ -79,7 +79,19 @@
     .parameter "url"
 
     .prologue
-    .line 79
+    .line 82
+    return-void
+.end method
+
+.method public onMainFrameFinishParsing(Landroid/webkit/WebView;)V
+    .locals 0
+    .parameter "view"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    .line 172
     return-void
 .end method
 
@@ -89,7 +101,7 @@
     .parameter "url"
 
     .prologue
-    .line 69
+    .line 72
     return-void
 .end method
 
@@ -100,7 +112,7 @@
     .parameter "favicon"
 
     .prologue
-    .line 57
+    .line 60
     return-void
 .end method
 
@@ -110,7 +122,22 @@
     .parameter "error"
 
     .prologue
-    .line 213
+    .line 223
+    return-void
+.end method
+
+.method public onReadModeDataReady(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/WebView;)V
+    .locals 0
+    .parameter "title"
+    .parameter "content"
+    .parameter "nextUrl"
+    .parameter "wv"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    .line 281
     return-void
 .end method
 
@@ -121,10 +148,10 @@
     .parameter "host_and_port"
 
     .prologue
-    .line 232
+    .line 242
     invoke-virtual {p2}, Landroid/webkit/ClientCertRequestHandler;->cancel()V
 
-    .line 233
+    .line 243
     return-void
 .end method
 
@@ -136,7 +163,7 @@
     .parameter "failingUrl"
 
     .prologue
-    .line 162
+    .line 165
     return-void
 .end method
 
@@ -148,10 +175,10 @@
     .parameter "realm"
 
     .prologue
-    .line 247
+    .line 257
     invoke-virtual {p2}, Landroid/webkit/HttpAuthHandler;->cancel()V
 
-    .line 248
+    .line 258
     return-void
 .end method
 
@@ -163,7 +190,7 @@
     .parameter "args"
 
     .prologue
-    .line 306
+    .line 323
     return-void
 .end method
 
@@ -174,10 +201,10 @@
     .parameter "error"
 
     .prologue
-    .line 203
+    .line 213
     invoke-virtual {p2}, Landroid/webkit/SslErrorHandler;->cancel()V
 
-    .line 204
+    .line 214
     return-void
 .end method
 
@@ -188,7 +215,7 @@
     .parameter "newScale"
 
     .prologue
-    .line 292
+    .line 309
     return-void
 .end method
 
@@ -201,10 +228,10 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 119
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 117
+    .line 120
     return-void
 .end method
 
@@ -214,19 +241,19 @@
     .parameter "event"
 
     .prologue
-    .line 277
+    .line 294
     invoke-virtual {p1}, Landroid/webkit/WebView;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v0
 
-    .line 278
+    .line 295
     .local v0, root:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_0
 
-    .line 279
+    .line 296
     invoke-virtual {v0, p2}, Landroid/view/ViewRootImpl;->dispatchUnhandledKey(Landroid/view/KeyEvent;)V
 
-    .line 281
+    .line 298
     :cond_0
     return-void
 .end method
@@ -237,7 +264,7 @@
     .parameter "url"
 
     .prologue
-    .line 98
+    .line 101
     const/4 v0, 0x0
 
     return-object v0
@@ -249,7 +276,7 @@
     .parameter "event"
 
     .prologue
-    .line 263
+    .line 273
     const/4 v0, 0x0
 
     return v0
@@ -261,7 +288,7 @@
     .parameter "url"
 
     .prologue
-    .line 41
+    .line 44
     const/4 v0, 0x0
 
     return v0

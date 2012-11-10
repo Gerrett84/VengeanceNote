@@ -58,7 +58,7 @@
 
     .prologue
     .line 696
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -533,9 +533,9 @@
     :try_start_1
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 747
+    .line 752
     :goto_0
     return-object v1
 
@@ -549,24 +549,26 @@
     :try_start_2
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 749
+    .line 752
     :goto_1
     throw v3
 
     .line 751
-    :catch_0
-    move-exception v4
-
-    goto :goto_1
-
     .restart local v0       #bm:Landroid/graphics/Bitmap;
     .restart local v1       #ret:Ljava/lang/String;
-    :catch_1
+    :catch_0
     move-exception v3
 
     goto :goto_0
+
+    .end local v0           #bm:Landroid/graphics/Bitmap;
+    .end local v1           #ret:Ljava/lang/String;
+    :catch_1
+    move-exception v4
+
+    goto :goto_1
 .end method
 
 .method public static final query(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;

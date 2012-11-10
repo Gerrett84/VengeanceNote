@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 214
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 209
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 216
+    .line 211
     new-instance v0, Landroid/preference/VolumePreference$SavedState;
 
     invoke-direct {v0, p1}, Landroid/preference/VolumePreference$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 214
+    .line 209
     invoke-virtual {p0, p1}, Landroid/preference/VolumePreference$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/preference/VolumePreference$SavedState;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 220
+    .line 215
     new-array v0, p1, [Landroid/preference/VolumePreference$SavedState;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 214
+    .line 209
     invoke-virtual {p0, p1}, Landroid/preference/VolumePreference$SavedState$1;->newArray(I)[Landroid/preference/VolumePreference$SavedState;
 
     move-result-object v0

@@ -69,7 +69,7 @@
 
     .prologue
     .line 2194
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -171,7 +171,6 @@
     .line 2391
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2390
     :cond_2
     throw v0
 .end method
@@ -279,7 +278,6 @@
     .line 2269
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 2268
     :cond_2
     throw v0
 .end method
@@ -523,17 +521,17 @@
 
     .line 2324
     .end local v13           #newAlarmTime:J
+    :cond_2
+    invoke-interface {v12}, Landroid/database/Cursor;->close()V
+
+    goto :goto_0
+
     :catchall_0
     move-exception v2
 
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
     throw v2
-
-    :cond_2
-    invoke-interface {v12}, Landroid/database/Cursor;->close()V
-
-    goto :goto_0
 .end method
 
 .method public static scheduleAlarm(Landroid/content/Context;Landroid/app/AlarmManager;J)V

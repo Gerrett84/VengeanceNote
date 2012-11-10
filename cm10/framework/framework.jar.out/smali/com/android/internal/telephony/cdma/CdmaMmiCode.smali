@@ -131,7 +131,7 @@
     .line 250
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->context:Landroid/content/Context;
 
-    const v1, 0x10400f6
+    const v1, 0x10400de
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -361,7 +361,7 @@
     .parameter "ar"
 
     .prologue
-    const v3, 0x10400d3
+    const v3, 0x10400c6
 
     .line 259
     new-instance v1, Ljava/lang/StringBuilder;
@@ -422,7 +422,7 @@
     .line 268
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->context:Landroid/content/Context;
 
-    const v3, 0x10400e8
+    const v3, 0x10400d0
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -448,7 +448,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->context:Landroid/content/Context;
 
-    const v3, 0x10400e5
+    const v3, 0x10400cd
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -499,7 +499,7 @@
     .line 284
     iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->context:Landroid/content/Context;
 
-    const v3, 0x10400e3
+    const v3, 0x10400cb
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -756,7 +756,7 @@
     if-nez v4, :cond_0
 
     .line 204
-    const v4, 0x10400e9
+    const v4, 0x10400d1
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
 
@@ -782,7 +782,7 @@
 
     .line 207
     :cond_1
-    const v4, 0x10400ea
+    const v4, 0x10400d2
 
     invoke-direct {p0, v4}, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->handlePasswordError(I)V
     :try_end_0
@@ -806,7 +806,7 @@
     .line 220
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->context:Landroid/content/Context;
 
-    const v5, 0x10400d3
+    const v5, 0x10400c6
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -830,7 +830,7 @@
     :try_start_1
     iget-object v4, p0, Lcom/android/internal/telephony/cdma/CdmaMmiCode;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    iget-object v4, v4, Lcom/android/internal/telephony/cdma/CDMAPhone;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v4, v4, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
 
     const/4 v5, 0x1
 

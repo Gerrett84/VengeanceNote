@@ -31,7 +31,7 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     iput-object p1, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
@@ -130,10 +130,10 @@
     .line 128
     iget-object v1, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
-    :goto_0
     invoke-virtual {v1}, Landroid/nfc/Tag;->setTechnologyDisconnected()V
 
     .line 130
+    :goto_0
     return-void
 
     .line 124
@@ -157,6 +157,8 @@
     .line 128
     iget-object v1, p0, Landroid/nfc/tech/BasicTagTechnology;->mTag:Landroid/nfc/Tag;
 
+    invoke-virtual {v1}, Landroid/nfc/Tag;->setTechnologyDisconnected()V
+
     goto :goto_0
 
     .line 127
@@ -171,7 +173,6 @@
 
     invoke-virtual {v2}, Landroid/nfc/Tag;->setTechnologyDisconnected()V
 
-    .line 127
     throw v1
 .end method
 

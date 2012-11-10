@@ -8,14 +8,17 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method protected constructor <init>()V
     .locals 0
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 33
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
+    .line 34
     return-void
 .end method
 
@@ -24,7 +27,7 @@
     .parameter "phone"
 
     .prologue
-    .line 102
+    .line 105
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
@@ -33,14 +36,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 103
-    const v0, 0x10400ee
+    .line 106
+    const v0, 0x10400d6
 
-    .line 109
+    .line 112
     :goto_0
     return v0
 
-    .line 104
+    .line 107
     :cond_0
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
@@ -50,12 +53,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 105
-    const v0, 0x10400ef
+    .line 108
+    const v0, 0x10400d7
 
     goto :goto_0
 
-    .line 107
+    .line 110
     :cond_1
     const-string v0, "TelephonyCapabilities"
 
@@ -83,7 +86,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
+    .line 112
     const/4 v0, 0x0
 
     goto :goto_0
@@ -96,7 +99,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 178
+    .line 181
     if-ne p0, v0, :cond_0
 
     :goto_0
@@ -115,7 +118,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 157
+    .line 160
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
@@ -147,7 +150,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 124
+    .line 127
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
@@ -177,7 +180,7 @@
     .parameter "phone"
 
     .prologue
-    .line 48
+    .line 51
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
@@ -204,7 +207,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 138
+    .line 141
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
@@ -236,7 +239,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 90
+    .line 93
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v1
@@ -257,7 +260,7 @@
     .parameter "phone"
 
     .prologue
-    .line 69
+    .line 72
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0
@@ -282,7 +285,7 @@
     .parameter "phone"
 
     .prologue
-    .line 78
+    .line 81
     invoke-interface {p0}, Lcom/android/internal/telephony/Phone;->getPhoneType()I
 
     move-result v0

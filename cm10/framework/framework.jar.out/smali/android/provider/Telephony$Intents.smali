@@ -33,9 +33,9 @@
     .locals 0
 
     .prologue
-    .line 2017
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1995
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2019
+    .line 1997
     return-void
 .end method

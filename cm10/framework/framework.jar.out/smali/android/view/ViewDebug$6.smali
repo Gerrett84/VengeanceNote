@@ -45,7 +45,7 @@
 
     iput-object p4, p0, Landroid/view/ViewDebug$6;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -82,10 +82,10 @@
     .line 709
     iget-object v1, p0, Landroid/view/ViewDebug$6;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
-    :goto_0
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     .line 711
+    :goto_0
     return-void
 
     .line 706
@@ -105,6 +105,8 @@
 
     .line 709
     iget-object v1, p0, Landroid/view/ViewDebug$6;->val$latch:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     goto :goto_0
 

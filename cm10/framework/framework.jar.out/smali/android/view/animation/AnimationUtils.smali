@@ -15,7 +15,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -718,7 +718,6 @@
 
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 72
     :cond_0
     return-object v3
 
@@ -859,7 +858,6 @@
 
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 271
     :cond_0
     return-object v3
 
@@ -1000,7 +998,6 @@
 
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 150
     :cond_0
     return-object v3
 

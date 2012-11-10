@@ -646,7 +646,7 @@
     if-nez v14, :cond_6
 
     .line 628
-    const v14, 0x102030a
+    const v14, 0x10202fb
 
     move-object/from16 v0, p0
 
@@ -683,7 +683,7 @@
     if-nez v14, :cond_7
 
     .line 637
-    const v14, 0x102030c
+    const v14, 0x10202fd
 
     move-object/from16 v0, p0
 
@@ -713,7 +713,7 @@
 
     .line 645
     :goto_4
-    const v14, 0x102030b
+    const v14, 0x10202fc
 
     move-object/from16 v0, p0
 
@@ -1109,7 +1109,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1120,7 +1120,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1172,7 +1172,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1206,7 +1206,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1217,7 +1217,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1228,7 +1228,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1239,7 +1239,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1250,7 +1250,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1261,7 +1261,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1306,7 +1306,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     return v0
 .end method
@@ -1330,7 +1330,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollY:I
+    iget v0, p0, Landroid/view/View;->mScrollY:I
 
     return v0
 .end method
@@ -1341,7 +1341,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     return v0
 .end method
@@ -1352,7 +1352,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1363,7 +1363,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mLeft:I
+    iget v0, p0, Landroid/view/View;->mLeft:I
 
     return v0
 .end method
@@ -1374,7 +1374,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollY:I
+    iget v0, p0, Landroid/view/View;->mScrollY:I
 
     return v0
 .end method
@@ -1385,7 +1385,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1396,7 +1396,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mTop:I
+    iget v0, p0, Landroid/view/View;->mTop:I
 
     return v0
 .end method
@@ -1407,7 +1407,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     return v0
 .end method
@@ -1418,7 +1418,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollY:I
+    iget v0, p0, Landroid/view/View;->mScrollY:I
 
     return v0
 .end method
@@ -1429,7 +1429,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     return v0
 .end method
@@ -1452,7 +1452,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1463,7 +1463,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mLeft:I
+    iget v0, p0, Landroid/view/View;->mLeft:I
 
     return v0
 .end method
@@ -1485,7 +1485,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     return v0
 .end method
@@ -1496,7 +1496,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollX:I
+    iget v0, p0, Landroid/view/View;->mScrollX:I
 
     return v0
 .end method
@@ -1507,7 +1507,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1518,7 +1518,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mLeft:I
+    iget v0, p0, Landroid/view/View;->mLeft:I
 
     return v0
 .end method
@@ -1529,7 +1529,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mScrollY:I
+    iget v0, p0, Landroid/view/View;->mScrollY:I
 
     return v0
 .end method
@@ -1540,7 +1540,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1551,7 +1551,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mTop:I
+    iget v0, p0, Landroid/view/View;->mTop:I
 
     return v0
 .end method
@@ -1562,7 +1562,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1573,7 +1573,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1584,7 +1584,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1595,7 +1595,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
     return v0
 .end method
@@ -1606,7 +1606,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1617,7 +1617,7 @@
 
     .prologue
     .line 88
-    iget v0, p0, Landroid/widget/NumberPicker;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     return v0
 .end method
@@ -1628,7 +1628,7 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Landroid/widget/NumberPicker;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -1639,7 +1639,7 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Landroid/widget/NumberPicker;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -1664,7 +1664,7 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Landroid/widget/NumberPicker;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -2442,9 +2442,9 @@
     invoke-virtual {p0, v0}, Landroid/widget/NumberPicker;->setVerticalFadingEdgeEnabled(Z)V
 
     .line 1590
-    iget v0, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v0, p0, Landroid/view/View;->mBottom:I
 
-    iget v1, p0, Landroid/widget/NumberPicker;->mTop:I
+    iget v1, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v0, v1
 
@@ -2480,9 +2480,9 @@
 
     .line 1575
     .local v4, totalTextHeight:I
-    iget v5, p0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v5, p0, Landroid/view/View;->mBottom:I
 
-    iget v6, p0, Landroid/widget/NumberPicker;->mTop:I
+    iget v6, p0, Landroid/view/View;->mTop:I
 
     sub-int/2addr v5, v6
 
@@ -3731,7 +3731,7 @@
 
     .line 935
     :cond_0
-    iget-object v4, p0, Landroid/widget/NumberPicker;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 
@@ -4137,11 +4137,11 @@
     :cond_1
     move-object/from16 v0, p0
 
-    iget v11, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v11, v0, Landroid/view/View;->mRight:I
 
     move-object/from16 v0, p0
 
-    iget v12, v0, Landroid/widget/NumberPicker;->mLeft:I
+    iget v12, v0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v11, v12
 
@@ -4198,7 +4198,7 @@
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v14, v0, Landroid/view/View;->mRight:I
 
     move-object/from16 v0, p0
 
@@ -4245,11 +4245,11 @@
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v14, v0, Landroid/view/View;->mRight:I
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mBottom:I
+    iget v15, v0, Landroid/view/View;->mBottom:I
 
     invoke-virtual {v11, v12, v13, v14, v15}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
@@ -4367,7 +4367,7 @@
 
     move-object/from16 v0, p0
 
-    iget v13, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v13, v0, Landroid/view/View;->mRight:I
 
     invoke-virtual {v11, v12, v8, v13, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
@@ -4403,7 +4403,7 @@
 
     move-object/from16 v0, p0
 
-    iget v13, v0, Landroid/widget/NumberPicker;->mRight:I
+    iget v13, v0, Landroid/view/View;->mRight:I
 
     invoke-virtual {v11, v12, v7, v13, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
