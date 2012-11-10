@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.2-eng..20121109.022347" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:pluto="http://www.w3.org/2001/pluto.html">
+<manifest android:sharedUserId="android.uid.system" android:versionCode="16" android:versionName="4.1.2-2.11.9" android:sharedUserLabel="@string/android_system_label" package="android" coreApp="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16" />
     <eat-comment />
     <protected-broadcast android:name="android.intent.action.SCREEN_OFF" />
@@ -93,11 +93,9 @@
     <protected-broadcast android:name="android.intent.action.CLEAR_DNS_CACHE" />
     <protected-broadcast android:name="android.intent.action.PROXY_CHANGE" />
     <protected-broadcast android:name="android.os.UpdateLock.UPDATE_LOCK_CHANGED" />
-    <protected-broadcast android:name="android.intent.action.NAVBAR_EDIT" />
     <eat-comment />
     <permission-group android:label="@string/permgrouplab_costMoney" android:name="android.permission-group.COST_MONEY" android:description="@string/permgroupdesc_costMoney" />
     <permission android:label="@string/permlab_sendSms" android:name="android.permission.SEND_SMS" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.COST_MONEY" android:description="@string/permdesc_sendSms" />
-    <permission android:label="@string/permlab_sendMockSms" android:name="android.permission.SEND_MOCK_SMS" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.MESSAGES" android:description="@string/permdesc_sendMockSms" />
     <permission android:label="@string/permlab_sendSmsNoConfirmation" android:name="android.permission.SEND_SMS_NO_CONFIRMATION" android:protectionLevel="system|signature" android:permissionGroup="android.permission-group.COST_MONEY" android:description="@string/permdesc_sendSmsNoConfirmation" />
     <permission android:label="@string/permlab_callPhone" android:name="android.permission.CALL_PHONE" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.COST_MONEY" android:description="@string/permdesc_callPhone" />
     <eat-comment />
@@ -156,7 +154,6 @@
     <permission android:label="@string/permlab_modifyAudioSettings" android:name="android.permission.MODIFY_AUDIO_SETTINGS" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_modifyAudioSettings" />
     <permission android:label="@string/permlab_recordAudio" android:name="android.permission.RECORD_AUDIO" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_recordAudio" />
     <permission android:label="@string/permlab_camera" android:name="android.permission.CAMERA" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_camera" />
-    <permission android:label="@string/permlab_preventpower" android:name="android.permission.PREVENT_POWER_KEY" android:protectionLevel="dangerous" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_preventpower" />
     <permission android:label="@string/permlab_vibrate" android:name="android.permission.VIBRATE" android:protectionLevel="normal" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_vibrate" />
     <permission android:label="@string/permlab_flashlight" android:name="android.permission.FLASHLIGHT" android:protectionLevel="normal" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_flashlight" />
     <permission android:label="@string/permlab_manageUsb" android:name="android.permission.MANAGE_USB" android:protectionLevel="system|signature" android:permissionGroup="android.permission-group.HARDWARE_CONTROLS" android:description="@string/permdesc_manageUsb" />
@@ -337,17 +334,6 @@
                 <action android:name="android.intent.action.MASTER_CLEAR" />
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <category android:name="android.intent.category.MASTER_CLEAR" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.android.server.AppsLaunchFailureReceiver">
-            <intent-filter>
-                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE" />
-                <action android:name="com.tmobile.intent.action.APP_LAUNCH_FAILURE_RESET" />
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-                <action android:name="com.tmobile.intent.action.THEME_PACKAGE_UPDATED" />
-                <category android:name="com.tmobile.intent.category.THEME_PACKAGE_INSTALL_STATE_CHANGE" />
-                <data android:scheme="package" />
             </intent-filter>
         </receiver>
         <service android:name="com.android.internal.os.storage.ExternalStorageFormatter" android:permission="android.permission.MASTER_CLEAR" android:exported="true" />

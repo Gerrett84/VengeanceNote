@@ -178,7 +178,6 @@
     <item type="id" name="spotlightMask">false</item>
     <item type="id" name="cancel_button">false</item>
     <item type="id" name="transport_bg_protect">false</item>
-    <item type="id" name="date_line">false</item>
     <item type="id" name="headerText">false</item>
     <item type="id" name="pinDisplayGroup">false</item>
     <item type="id" name="pinDisplay">false</item>
@@ -190,19 +189,7 @@
     <item type="id" name="enter_pin">false</item>
     <item type="id" name="pukDisplay">false</item>
     <item type="id" name="pukDel">false</item>
-    <item type="id" name="weather_panel">false</item>
-    <item type="id" name="weather_image">false</item>
-    <item type="id" name="weather_city">false</item>
-    <item type="id" name="weather_condition">false</item>
-    <item type="id" name="update_time">false</item>
-    <item type="id" name="weather_temps_panel">false</item>
-    <item type="id" name="weather_temp">false</item>
-    <item type="id" name="weather_divider">false</item>
-    <item type="id" name="weather_low_high">false</item>
     <item type="id" name="propertyOf">false</item>
-    <item type="id" name="calendar_panel">false</item>
-    <item type="id" name="calendar_event_title">false</item>
-    <item type="id" name="calendar_event_details">false</item>
     <item type="id" name="unlock_widget">false</item>
     <item type="id" name="screenLocked">false</item>
     <item type="id" name="forgotPatternButton">false</item>
@@ -243,10 +230,15 @@
     <item type="id" name="chronometer">false</item>
     <item type="id" name="line3">false</item>
     <item type="id" name="info">false</item>
+    <item type="id" name="big_base_content">false</item>
     <item type="id" name="big_text">false</item>
     <item type="id" name="action_divider">false</item>
     <item type="id" name="big_picture">false</item>
+    <item type="id" name="big_picture_shadow">false</item>
+    <item type="id" name="big_picture_content">false</item>
+    <item type="id" name="big_text_content">false</item>
     <item type="id" name="overflow_divider">false</item>
+    <item type="id" name="inbox">false</item>
     <item type="id" name="inbox_text0">false</item>
     <item type="id" name="inbox_text1">false</item>
     <item type="id" name="inbox_text2">false</item>
@@ -378,7 +370,6 @@
     <item type="id" name="share">false</item>
     <item type="id" name="find">false</item>
     <item type="id" name="websearch">false</item>
-    <item type="id" name="openurl">false</item>
     <item type="id" name="find_prev">false</item>
     <item type="id" name="find_next">false</item>
 </resources>

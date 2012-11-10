@@ -706,7 +706,7 @@
         <item name="textSize">18.0sp</item>
     </style>
     <style name="TextAppearance.Large" parent="@style/TextAppearance">
-        <item name="textSize">22.0sp</item>
+        <item name="textSize">18.0sp</item>
     </style>
     <style name="TextAppearance.Large.Inverse" parent="@style/TextAppearance.Large">
         <item name="textColor">?textColorPrimaryInverse</item>
@@ -715,7 +715,7 @@
         <item name="textColorLink">?textColorLinkInverse</item>
     </style>
     <style name="TextAppearance.Medium" parent="@style/TextAppearance">
-        <item name="textSize">18.0sp</item>
+        <item name="textSize">16.0sp</item>
     </style>
     <style name="TextAppearance.Medium.Inverse" parent="@style/TextAppearance.Medium">
         <item name="textColor">?textColorPrimaryInverse</item>
@@ -724,7 +724,7 @@
         <item name="textColorLink">?textColorLinkInverse</item>
     </style>
     <style name="TextAppearance.Small" parent="@style/TextAppearance">
-        <item name="textSize">14.0sp</item>
+        <item name="textSize">12.0sp</item>
         <item name="textColor">?textColorSecondary</item>
     </style>
     <style name="TextAppearance.Small.Inverse" parent="@style/TextAppearance.Small">
@@ -881,13 +881,13 @@
     </style>
     <style name="TextAppearance.StatusBar.Icon" parent="@style/TextAppearance.StatusBar" />
     <style name="TextAppearance.StatusBar.EventContent" parent="@style/TextAppearance.StatusBar">
-        <item name="textSize">@dimen/notification_text_size</item>
-        <item name="textColor">#ff999999</item>
+        <item name="textSize">13.0sp</item>
+        <item name="textColor">#ff645750</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Title" parent="@style/TextAppearance.StatusBar.EventContent">
-        <item name="textSize">@dimen/notification_title_text_size</item>
+        <item name="textSize">17.0sp</item>
         <item name="textStyle">bold</item>
-        <item name="textColor">#ffffffff</item>
+        <item name="textColor">@color/primary_text_holo_light</item>
         <item name="fontFamily">sans-serif-light</item>
     </style>
     <style name="Theme.WithActionBar" parent="@style/Theme">
@@ -1936,16 +1936,17 @@
     <style name="Widget.Holo.ActionBar.TabText" parent="@style/Widget.ActionBar.TabText">
         <item name="textAppearance">@style/TextAppearance.Holo.Medium</item>
         <item name="textSize">12.0sp</item>
-        <item name="textStyle">bold</item>
+        <item name="textStyle">normal</item>
         <item name="textColor">?textColorPrimary</item>
         <item name="ellipsize">marquee</item>
         <item name="maxLines">2</item>
         <item name="textAllCaps">true</item>
     </style>
     <style name="Widget.Holo.ActionBar.TabBar" parent="@style/Widget.ActionBar.TabBar">
-        <item name="divider">?actionBarDivider</item>
+        <item name="background">@drawable/ab_tab_bg</item>
+        <item name="divider">@drawable/ab_tab_divider</item>
         <item name="showDividers">middle</item>
-        <item name="dividerPadding">12.0dip</item>
+        <item name="dividerPadding">0.0dip</item>
     </style>
     <style name="Widget.Holo.Light.ActionBar.TabView" parent="@style/Widget.Holo.ActionBar.TabView" />
     <style name="Widget.Holo.Light.ActionBar.TabText" parent="@style/Widget.Holo.ActionBar.TabText" />
@@ -2048,7 +2049,7 @@
     </style>
     <style name="TextAppearance.Holo.DialogWindowTitle" parent="@style/TextAppearance.Holo">
         <item name="textSize">22.0sp</item>
-        <item name="textColor">@color/holo_blue_light</item>
+        <item name="textColor">@color/holo_orange_light</item>
     </style>
     <style name="TextAppearance.SuggestionHighlight" parent="@style/TextAppearance">
         <item name="textSize">18.0sp</item>
@@ -2682,7 +2683,7 @@
         <item name="textSize">@dimen/notification_subtext_size</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Info" parent="@style/TextAppearance.StatusBar.EventContent">
-        <item name="textSize">@dimen/notification_subtext_size</item>
+        <item name="textSize">13.0sp</item>
         <item name="textColor">#ff999999</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent.Time" parent="@style/TextAppearance.StatusBar.EventContent">
@@ -2793,7 +2794,8 @@
         <item name="background">@null</item>
         <item name="clickable">true</item>
         <item name="src">@drawable/ic_contact_picture</item>
-        <item name="scaleType">fitCenter</item>
+        <item name="scaleType">centerCrop</item>
+        <item name="cropToPadding">true</item>
     </style>
     <style name="Widget.QuickContactBadge" parent="@style/Widget.GenericQuickContactBadge">
         <item name="layout_width">64.0dip</item>
@@ -3057,14 +3059,14 @@
     </style>
     <style name="TextAppearance.Holo.Light.DialogWindowTitle" parent="@style/TextAppearance.Holo.Light">
         <item name="textSize">22.0sp</item>
-        <item name="textColor">@color/holo_blue_light</item>
+        <item name="textColor">@color/holo_orange_light</item>
     </style>
     <style name="TextAppearance.Holo.Light.CalendarViewWeekDayView" parent="@style/TextAppearance.Small.CalendarViewWeekDayView" />
     <style name="Holo" />
     <style name="Holo.Light" parent="@style/Holo" />
     <style name="Widget.Holo.StackView" parent="@style/Widget.Holo">
-        <item name="resOutColor">@color/holo_blue_light</item>
-        <item name="clickColor">@color/holo_blue_light</item>
+        <item name="resOutColor">@color/holo_orange_light</item>
+        <item name="clickColor">@color/holo_orange_light</item>
     </style>
     <style name="Widget.Holo.TextView.ListSeparator" parent="@style/Widget.TextView.ListSeparator">
         <item name="background">@drawable/list_section_divider_holo_dark</item>
@@ -3134,6 +3136,7 @@
         <item name="paddingRight">4.0dip</item>
     </style>
     <style name="Widget.Holo.Light.TextView.ListSeparator" parent="@style/Widget.TextView.ListSeparator">
+        <item name="textColor">@color/listseparator_text_holo_light</item>
         <item name="background">@drawable/list_section_divider_holo_light</item>
         <item name="textAllCaps">true</item>
     </style>
@@ -3188,7 +3191,7 @@
         <item name="topBright">@drawable/dialog_top_holo_dark</item>
         <item name="centerBright">@drawable/dialog_middle_holo_dark</item>
         <item name="bottomBright">@drawable/dialog_bottom_holo_dark</item>
-        <item name="bottomMedium">@drawable/dialog_bottom_holo_dark</item>
+        <item name="bottomMedium">@drawable/dialog_button_bottom_holo_dark</item>
         <item name="centerMedium">@drawable/dialog_middle_holo_dark</item>
         <item name="layout">@layout/alert_dialog_holo</item>
         <item name="listLayout">@layout/select_dialog_holo</item>
@@ -3207,7 +3210,7 @@
         <item name="topBright">@drawable/dialog_top_holo_light</item>
         <item name="centerBright">@drawable/dialog_middle_holo_light</item>
         <item name="bottomBright">@drawable/dialog_bottom_holo_light</item>
-        <item name="bottomMedium">@drawable/dialog_bottom_holo_light</item>
+        <item name="bottomMedium">@drawable/dialog_button_bottom_holo_light</item>
         <item name="centerMedium">@drawable/dialog_middle_holo_light</item>
     </style>
     <style name="WindowTitleBackground.Holo" parent="@style/WindowTitleBackground">
@@ -3387,7 +3390,7 @@
     </style>
     <style name="Theme.ExpandedMenu" parent="@style/Theme.Holo">
         <item name="listViewStyle">@style/Widget.ListView.Menu</item>
-        <item name="windowAnimationStyle">@style/Animation.OptionsPanel</item>
+        <item name="windowAnimationStyle">@style/Animation.DropDownUp</item>
         <item name="background">@null</item>
         <item name="itemTextAppearance">?textAppearanceLarge</item>
     </style>

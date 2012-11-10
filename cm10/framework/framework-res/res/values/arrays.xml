@@ -355,8 +355,8 @@
         <item>zh_TW</item>
     </string-array>
     <string-array name="special_locale_names">
-        <item>中文 (简体)</item>
-        <item>中文 (繁體)</item>
+        <item>简体中文</item>
+        <item>繁體中文</item>
     </string-array>
     <array name="lockscreen_targets_when_silent">
         <item>@drawable/ic_lockscreen_unlock</item>
@@ -406,79 +406,23 @@
         <item>@null</item>
         <item>@null</item>
     </array>
-    <array name="shutdown_reboot_options">
-        <item>@string/reboot_reboot</item>
-        <item>@string/reboot_recovery</item>
-        <item>@string/reboot_download</item>
-    </array>
-    <string-array name="shutdown_reboot_actions">
-        <item></item>
-        <item>recovery</item>
-        <item>bootloader</item>
-    </string-array>
-    <string-array name="notification_light_package_mapping">
-        <item>com.google.android.gsf|com.google.android.talk</item>
-    </string-array>
-    <string-array name="imAddressTypes">
-        <item>Home</item>
-        <item>Work</item>
-        <item>Other</item>
-        <item>Custom</item>
-    </string-array>
-    <string-array name="avrcp_meta_changed_intents">
-        <item>com.android.music.metachanged</item>
-        <item>com.htc.music.metachanged</item>
-        <item>com.nullsoft.winamp.metachanged</item>
-        <item>com.miui.player.metachanged</item>
-        <item>com.sonyericsson.music.metachanged</item>
-        <item>com.rdio.android.metachanged</item>
-        <item>com.maxmpz.audioplayer.metachanged</item>
-        <item>com.samsung.sec.android.MusicPlayer.metachanged</item>
-        <item>com.sec.android.app.music.metachanged</item>
-        <item>com.amazon.mp3.metachanged</item>
-        <item>com.rhapsody.metachanged</item>
-        <item>com.tbig.playerpro.metachanged</item>
-        <item>fm.last.android.metachanged</item>
-    </string-array>
-    <string-array name="avrcp_playstate_changed_intents">
-        <item>com.android.music.playstatechanged</item>
-        <item>com.htc.music.playstatechanged</item>
-        <item>com.nullsoft.winamp.playstatechanged</item>
-        <item>com.miui.player.playstatechanged</item>
-        <item>com.sonyericsson.music.playstatechanged</item>
-        <item>com.rdio.android.playstatechanged</item>
-        <item>com.maxmpz.audioplayer.playstatechanged</item>
-        <item>com.samsung.sec.android.MusicPlayer.playstatechanged</item>
-        <item>com.sec.android.app.music.playstatechanged</item>
-        <item>com.amazon.mp3.playstatechanged</item>
-        <item>com.rhapsody.playstatechanged</item>
-        <item>com.tbig.playerpro.playstatechanged</item>
-        <item>fm.last.android.playstatechanged</item>
-        <item>com.adam.aslfms.notify.playstatechanged</item>
-        <item>net.jjc1138.android.scrobbler.action.MUSIC_STATUS</item>
-    </string-array>
-    <string-array name="avrcp_special_extra_keys">
-        <item>com.amazon.mp3.metachanged</item>
-        <item>com.amazon.mp3.playstatechanged</item>
-    </string-array>
-    <string-array name="avrcp_overridable_extra_keys">
-        <item>track</item>
-        <item>artist</item>
-        <item>album</item>
-        <item>id</item>
-    </string-array>
     <string-array name="config_statusBarIcons">
+        <item>headset</item>
+        <item>call_record</item>
+        <item>privacy_mode</item>
         <item>ime</item>
         <item>sync_failing</item>
         <item>sync_active</item>
         <item>gps</item>
         <item>bluetooth</item>
+        <item>bluetooth_handsfree_battery</item>
         <item>nfc</item>
         <item>tty</item>
         <item>speakerphone</item>
         <item>mute</item>
         <item>volume</item>
         <item>wifi</item>
+        <item>wimax</item>
         <item>cdma_eri</item>
         <item>data_connection</item>
         <item>phone_evdo_signal</item>
@@ -497,10 +441,9 @@
         <item>mobile,0,0,0,-1,true</item>
         <item>mobile_mms,2,0,2,60000,true</item>
         <item>mobile_supl,3,0,2,60000,true</item>
-        <item>mobile_dun,4,0,3,60000,true</item>
+        <item>mobile_dun,4,0,4,60000,true</item>
         <item>mobile_hipri,5,0,3,60000,true</item>
-        <item>mobile_bluetooth,7,7,1,-1,true</item>
-        <item>wifi_p2p,13,1,0,-1,true</item>
+        <item>bluetooth,7,7,0,-1,true</item>
     </string-array>
     <integer-array name="config_protectedNetworks">
         <item>10</item>
@@ -551,18 +494,15 @@
     </integer-array>
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>1</item>
+        <item>10</item>
         <item>20</item>
-        <item>21</item>
+        <item>30</item>
     </integer-array>
     <integer-array name="config_keyboardTapVibePattern">
-        <item>20</item>
+        <item>30</item>
     </integer-array>
     <integer-array name="config_safeModeDisabledVibePattern">
-        <item>0</item>
         <item>1</item>
-        <item>20</item>
-        <item>21</item>
     </integer-array>
     <integer-array name="config_safeModeEnabledVibePattern">
         <item>0</item>
@@ -579,66 +519,24 @@
         <item>10</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLevels">
-        <item>6</item>
-        <item>9</item>
-        <item>14</item>
-        <item>20</item>
-        <item>30</item>
-        <item>46</item>
-        <item>68</item>
-        <item>103</item>
-        <item>154</item>
-        <item>231</item>
-        <item>346</item>
-        <item>519</item>
-        <item>778</item>
-        <item>1168</item>
-        <item>1752</item>
-        <item>2627</item>
-        <item>3941</item>
-        <item>5912</item>
-        <item>8867</item>
+        <item>7</item>
+        <item>94</item>
+        <item>208</item>
+        <item>458</item>
+        <item>2223</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>19</item>
-        <item>23</item>
-        <item>26</item>
-        <item>30</item>
-        <item>34</item>
-        <item>39</item>
-        <item>45</item>
-        <item>51</item>
-        <item>59</item>
-        <item>67</item>
-        <item>77</item>
-        <item>88</item>
-        <item>101</item>
-        <item>116</item>
-        <item>133</item>
-        <item>152</item>
-        <item>174</item>
-        <item>199</item>
-        <item>228</item>
+        <item>10</item>
+        <item>35</item>
+        <item>55</item>
+        <item>70</item>
+        <item>70</item>
         <item>250</item>
     </integer-array>
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -650,29 +548,11 @@
         <item>0</item>
         <item>0</item>
         <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
     </integer-array>
     <array name="config_twoDigitNumberPattern" />
-    <array name="config_telephony_set_audioparameters" />
     <array name="config_sms_enabled_single_shift_tables" />
     <array name="config_sms_enabled_locking_shift_tables" />
     <array name="config_oemUsbModeOverride" />
-    <string-array name="config_accessoryDockNames">
-        <item>dock</item>
-    </string-array>
     <integer-array name="maps_starting_lat_lng">
         <item>36149777</item>
         <item>-95993398</item>
@@ -681,5 +561,11 @@
         <item>3</item>
     </integer-array>
     <array name="common_nicknames" />
+    <string-array name="imAddressTypes">
+        <item>Home</item>
+        <item>Work</item>
+        <item>Other</item>
+        <item>Custom</item>
+    </string-array>
     <array name="carrier_properties" />
 </resources>

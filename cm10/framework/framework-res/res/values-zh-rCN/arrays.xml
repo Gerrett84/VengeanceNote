@@ -37,12 +37,6 @@
         <item>其他</item>
         <item>自定义</item>
     </string-array>
-    <string-array name="imAddressTypes">
-        <item>住宅</item>
-        <item>单位</item>
-        <item>其他</item>
-        <item>自定义</item>
-    </string-array>
     <integer-array name="maps_starting_lat_lng">
         <item>39937795</item>
         <item>116387224</item>
@@ -50,4 +44,10 @@
     <integer-array name="maps_starting_zoom">
         <item>2</item>
     </integer-array>
+    <string-array name="imAddressTypes">
+        <item>住宅</item>
+        <item>单位</item>
+        <item>其他</item>
+        <item>自定义</item>
+    </string-array>
 </resources>
