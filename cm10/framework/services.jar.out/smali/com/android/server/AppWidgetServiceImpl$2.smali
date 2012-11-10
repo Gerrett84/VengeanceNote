@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 1012
+    .line 988
     iput-object p1, p0, Lcom/android/server/AppWidgetServiceImpl$2;->this$0:Lcom/android/server/AppWidgetServiceImpl;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,12 +43,12 @@
     .parameter "service"
 
     .prologue
-    .line 1015
+    .line 991
     invoke-static {p2}, Lcom/android/internal/widget/IRemoteViewsFactory$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/widget/IRemoteViewsFactory;
 
     move-result-object v0
 
-    .line 1018
+    .line 994
     .local v0, cb:Lcom/android/internal/widget/IRemoteViewsFactory;
     :try_start_0
     invoke-interface {v0}, Lcom/android/internal/widget/IRemoteViewsFactory;->onDataSetChangedAsync()V
@@ -56,7 +56,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1024
+    .line 1000
     :goto_0
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl$2;->this$0:Lcom/android/server/AppWidgetServiceImpl;
 
@@ -64,25 +64,25 @@
 
     invoke-virtual {v2, p0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 1025
+    .line 1001
     return-void
 
-    .line 1019
+    .line 995
     :catch_0
     move-exception v1
 
-    .line 1020
+    .line 996
     .local v1, e:Landroid/os/RemoteException;
     invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 1021
+    .line 997
     .end local v1           #e:Landroid/os/RemoteException;
     :catch_1
     move-exception v1
 
-    .line 1022
+    .line 998
     .local v1, e:Ljava/lang/RuntimeException;
     invoke-virtual {v1}, Ljava/lang/RuntimeException;->printStackTrace()V
 
@@ -94,6 +94,6 @@
     .parameter "name"
 
     .prologue
-    .line 1030
+    .line 1006
     return-void
 .end method

@@ -15,31 +15,31 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 4
     .parameter "context"
 
     .prologue
-    .line 46
+    .line 47
     invoke-direct {p0}, Landroid/hardware/usb/IUsbManager$Stub;-><init>()V
 
-    .line 47
+    .line 48
     iput-object p1, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
-    .line 48
+    .line 49
     new-instance v1, Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-direct {v1, p1}, Lcom/android/server/usb/UsbSettingsManager;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
-    .line 49
+    .line 50
     iget-object v1, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 50
+    .line 51
     .local v0, pm:Landroid/content/pm/PackageManager;
     const-string v1, "android.hardware.usb.host"
 
@@ -49,7 +49,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 51
+    .line 52
     new-instance v1, Lcom/android/server/usb/UsbHostManager;
 
     iget-object v2, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
@@ -58,7 +58,7 @@
 
     iput-object v1, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
-    .line 53
+    .line 54
     :cond_0
     new-instance v1, Ljava/io/File;
 
@@ -70,9 +70,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 54
+    .line 55
     new-instance v1, Lcom/android/server/usb/UsbDeviceManager;
 
     iget-object v2, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
@@ -81,9 +81,43 @@
 
     iput-object v1, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
-    .line 56
+    .line 59
     :cond_1
+    :goto_0
     return-void
+
+    .line 57
+    :cond_2
+    new-instance v1, Ljava/io/File;
+
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x1040035
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 58
+    new-instance v1, Lcom/android/server/usb/LegacyUsbDeviceManager;
+
+    iget-object v2, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
+
+    invoke-direct {v1, p1, v2}, Lcom/android/server/usb/LegacyUsbDeviceManager;-><init>(Landroid/content/Context;Lcom/android/server/usb/UsbSettingsManager;)V
+
+    iput-object v1, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
+
+    goto :goto_0
 .end method
 
 
@@ -93,7 +127,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 145
+    .line 148
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -102,12 +136,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 146
+    .line 149
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->clearDefaults(Ljava/lang/String;)V
 
-    .line 147
+    .line 150
     return-void
 .end method
 
@@ -118,7 +152,7 @@
     .parameter "args"
 
     .prologue
-    .line 169
+    .line 172
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.DUMP"
@@ -129,7 +163,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 171
+    .line 174
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -168,38 +202,38 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 186
+    .line 189
     :goto_0
     return-void
 
-    .line 177
+    .line 180
     :cond_0
     const-string v0, "USB Manager State:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 179
+    .line 182
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     if-eqz v0, :cond_1
 
-    .line 180
+    .line 183
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbDeviceManager;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;)V
 
-    .line 182
+    .line 185
     :cond_1
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     if-eqz v0, :cond_2
 
-    .line 183
+    .line 186
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbHostManager;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;)V
 
-    .line 185
+    .line 188
     :cond_2
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
@@ -212,19 +246,19 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 88
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     if-eqz v0, :cond_0
 
-    .line 86
+    .line 89
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0}, Lcom/android/server/usb/UsbDeviceManager;->getCurrentAccessory()Landroid/hardware/usb/UsbAccessory;
 
     move-result-object v0
 
-    .line 88
+    .line 91
     :goto_0
     return-object v0
 
@@ -239,17 +273,17 @@
     .parameter "devices"
 
     .prologue
-    .line 69
+    .line 72
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     if-eqz v0, :cond_0
 
-    .line 70
+    .line 73
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbHostManager;->getDeviceList(Landroid/os/Bundle;)V
 
-    .line 72
+    .line 75
     :cond_0
     return-void
 .end method
@@ -260,7 +294,7 @@
     .parameter "uid"
 
     .prologue
-    .line 135
+    .line 138
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -269,12 +303,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 136
+    .line 139
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbSettingsManager;->grantAccessoryPermission(Landroid/hardware/usb/UsbAccessory;I)V
 
-    .line 137
+    .line 140
     return-void
 .end method
 
@@ -284,7 +318,7 @@
     .parameter "uid"
 
     .prologue
-    .line 130
+    .line 133
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -293,12 +327,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 131
+    .line 134
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbSettingsManager;->grantDevicePermission(Landroid/hardware/usb/UsbDevice;I)V
 
-    .line 132
+    .line 135
     return-void
 .end method
 
@@ -307,7 +341,7 @@
     .parameter "accessory"
 
     .prologue
-    .line 116
+    .line 119
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->hasPermission(Landroid/hardware/usb/UsbAccessory;)Z
@@ -322,7 +356,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 140
+    .line 143
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -331,7 +365,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 141
+    .line 144
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->hasDefaults(Ljava/lang/String;)Z
@@ -346,7 +380,7 @@
     .parameter "device"
 
     .prologue
-    .line 112
+    .line 115
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbSettingsManager;->hasPermission(Landroid/hardware/usb/UsbDevice;)Z
@@ -361,19 +395,19 @@
     .parameter "accessory"
 
     .prologue
-    .line 94
+    .line 97
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     if-eqz v0, :cond_0
 
-    .line 95
+    .line 98
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbDeviceManager;->openAccessory(Landroid/hardware/usb/UsbAccessory;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
-    .line 97
+    .line 100
     :goto_0
     return-object v0
 
@@ -388,19 +422,19 @@
     .parameter "deviceName"
 
     .prologue
-    .line 76
+    .line 79
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     if-eqz v0, :cond_0
 
-    .line 77
+    .line 80
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbHostManager;->openDevice(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
-    .line 79
+    .line 82
     :goto_0
     return-object v0
 
@@ -417,12 +451,12 @@
     .parameter "pi"
 
     .prologue
-    .line 126
+    .line 129
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/usb/UsbSettingsManager;->requestPermission(Landroid/hardware/usb/UsbAccessory;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    .line 127
+    .line 130
     return-void
 .end method
 
@@ -433,12 +467,12 @@
     .parameter "pi"
 
     .prologue
-    .line 121
+    .line 124
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/usb/UsbSettingsManager;->requestPermission(Landroid/hardware/usb/UsbDevice;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    .line 122
+    .line 125
     return-void
 .end method
 
@@ -448,7 +482,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 107
+    .line 110
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -457,12 +491,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 108
+    .line 111
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbSettingsManager;->setAccessoryPackage(Landroid/hardware/usb/UsbAccessory;Ljava/lang/String;)V
 
-    .line 109
+    .line 112
     return-void
 .end method
 
@@ -472,7 +506,7 @@
     .parameter "makeDefault"
 
     .prologue
-    .line 150
+    .line 153
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -481,20 +515,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 151
+    .line 154
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 155
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbDeviceManager;->setCurrentFunctions(Ljava/lang/String;Z)V
 
-    .line 156
+    .line 159
     return-void
 
-    .line 154
+    .line 157
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -511,7 +545,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 102
+    .line 105
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -520,12 +554,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 103
+    .line 106
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mSettingsManager:Lcom/android/server/usb/UsbSettingsManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbSettingsManager;->setDevicePackage(Landroid/hardware/usb/UsbDevice;Ljava/lang/String;)V
 
-    .line 104
+    .line 107
     return-void
 .end method
 
@@ -534,7 +568,7 @@
     .parameter "path"
 
     .prologue
-    .line 159
+    .line 162
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USB"
@@ -543,20 +577,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 160
+    .line 163
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     if-eqz v0, :cond_0
 
-    .line 161
+    .line 164
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/usb/UsbDeviceManager;->setMassStorageBackingFile(Ljava/lang/String;)V
 
-    .line 165
+    .line 168
     return-void
 
-    .line 163
+    .line 166
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -571,28 +605,28 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     if-eqz v0, :cond_0
 
-    .line 60
+    .line 63
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0}, Lcom/android/server/usb/UsbDeviceManager;->systemReady()V
 
-    .line 62
+    .line 65
     :cond_0
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     if-eqz v0, :cond_1
 
-    .line 63
+    .line 66
     iget-object v0, p0, Lcom/android/server/usb/UsbService;->mHostManager:Lcom/android/server/usb/UsbHostManager;
 
     invoke-virtual {v0}, Lcom/android/server/usb/UsbHostManager;->systemReady()V
 
-    .line 65
+    .line 68
     :cond_1
     return-void
 .end method

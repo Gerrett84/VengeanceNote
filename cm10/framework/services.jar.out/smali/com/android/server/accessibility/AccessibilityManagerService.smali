@@ -203,7 +203,7 @@
     .line 124
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService;->mLock:Ljava/lang/Object;
 
@@ -1279,9 +1279,9 @@
 
     new-instance v10, Landroid/content/ComponentName;
 
-    iget-object v11, v6, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v11, v6, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v12, v6, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v12, v6, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     invoke-direct {v10, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2418,49 +2418,40 @@
 
     .line 567
     .local v3, root:Landroid/view/accessibility/AccessibilityNodeInfo;
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1
 
     .line 578
+    :cond_0
+    :goto_0
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityInteractionClient;->removeConnection(I)V
 
-    :goto_0
+    .line 576
     return v5
 
     .line 570
-    :cond_0
+    :cond_1
     const/4 v6, 0x2
 
     :try_start_1
     invoke-virtual {v3, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->findFocus(I)Landroid/view/accessibility/AccessibilityNodeInfo;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-result-object v2
 
     .line 572
     .local v2, focus:Landroid/view/accessibility/AccessibilityNodeInfo;
-    if-nez v2, :cond_1
-
-    .line 578
-    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityInteractionClient;->removeConnection(I)V
-
-    goto :goto_0
+    if-eqz v2, :cond_0
 
     .line 575
-    :cond_1
-    :try_start_2
     invoke-virtual {v2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInScreen(Landroid/graphics/Rect;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 576
     const/4 v5, 0x1
 
-    .line 578
-    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityInteractionClient;->removeConnection(I)V
-
     goto :goto_0
 
+    .line 578
     .end local v2           #focus:Landroid/view/accessibility/AccessibilityNodeInfo;
     .end local v3           #root:Landroid/view/accessibility/AccessibilityNodeInfo;
     :catchall_0

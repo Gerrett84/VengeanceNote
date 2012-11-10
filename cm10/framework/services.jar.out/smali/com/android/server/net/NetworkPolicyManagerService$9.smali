@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 626
+    .line 573
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$9;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Lcom/android/server/net/NetworkAlertObserver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "iface"
 
     .prologue
-    .line 630
+    .line 577
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$9;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mContext:Landroid/content/Context;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 632
+    .line 579
     const-string v0, "globalAlert"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_0
 
-    .line 633
+    .line 580
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$9;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 635
+    .line 582
     :cond_0
     return-void
 .end method

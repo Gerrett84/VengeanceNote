@@ -49,21 +49,21 @@
     .parameter "parent"
 
     .prologue
-    .line 804
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 819
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 800
+    .line 815
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mImsi:Ljava/lang/String;
 
-    .line 805
+    .line 820
     iput-object p1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mContext:Landroid/content/Context;
 
-    .line 806
+    .line 821
     iput-object p2, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
-    .line 808
+    .line 823
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mContext:Landroid/content/Context;
 
     const-string v1, "phone"
@@ -76,55 +76,55 @@
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 811
+    .line 826
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 812
+    .line 827
     const/4 v0, 0x6
 
     :try_start_0
     iput v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
-    .line 813
+    .line 828
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
     new-array v0, v0, [J
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
-    .line 814
+    .line 829
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
     new-array v0, v0, [J
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
-    .line 816
+    .line 831
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodStart:Ljava/util/Calendar;
 
-    .line 817
+    .line 832
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodEnd:Ljava/util/Calendar;
 
-    .line 819
+    .line 834
     invoke-direct {p0}, Lcom/android/server/ThrottleService$DataRecorder;->retrieve()V
 
-    .line 820
+    .line 835
     monitor-exit v1
 
-    .line 821
+    .line 836
     return-void
 
-    .line 820
+    .line 835
     :catchall_0
     move-exception v0
 
@@ -142,12 +142,12 @@
     .prologue
     const/4 v10, 0x3
 
-    .line 947
+    .line 962
     invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    .line 949
+    .line 964
     .local v2, files:[Ljava/io/File;
     if-eqz v2, :cond_0
 
@@ -155,12 +155,12 @@
 
     if-gt v6, v10, :cond_1
 
-    .line 963
+    .line 978
     :cond_0
     :goto_0
     return-void
 
-    .line 950
+    .line 965
     :cond_1
     const-string v6, "ThrottleService"
 
@@ -168,11 +168,11 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 952
+    .line 967
     :cond_2
     const/4 v5, 0x0
 
-    .line 953
+    .line 968
     .local v5, oldest:Ljava/io/File;
     move-object v0, v2
 
@@ -188,7 +188,7 @@
 
     aget-object v1, v0, v3
 
-    .line 954
+    .line 969
     .local v1, f:Ljava/io/File;
     if-eqz v5, :cond_3
 
@@ -204,22 +204,22 @@
 
     if-lez v6, :cond_4
 
-    .line 955
+    .line 970
     :cond_3
     move-object v5, v1
 
-    .line 953
+    .line 968
     :cond_4
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 958
+    .line 973
     .end local v1           #f:Ljava/io/File;
     :cond_5
     if-eqz v5, :cond_0
 
-    .line 959
+    .line 974
     const-string v6, "ThrottleService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -242,15 +242,15 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 960
+    .line 975
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 961
+    .line 976
     invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    .line 962
+    .line 977
     array-length v6, v2
 
     if-gt v6, v10, :cond_2
@@ -262,17 +262,17 @@
     .locals 1
 
     .prologue
-    .line 935
+    .line 950
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mImsi:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 942
+    .line 957
     :cond_0
     :goto_0
     return-void
 
-    .line 937
+    .line 952
     :cond_1
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -282,12 +282,12 @@
 
     iput-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mImsi:Ljava/lang/String;
 
-    .line 938
+    .line 953
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mImsi:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 941
+    .line 956
     invoke-direct {p0}, Lcom/android/server/ThrottleService$DataRecorder;->retrieve()V
 
     goto :goto_0
@@ -297,12 +297,12 @@
     .locals 7
 
     .prologue
-    .line 915
+    .line 930
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 916
+    .line 931
     .local v0, dataDir:Ljava/io/File;
     new-instance v4, Ljava/io/File;
 
@@ -310,27 +310,27 @@
 
     invoke-direct {v4, v0, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 917
+    .line 932
     .local v4, throttleDir:Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->mkdirs()Z
 
-    .line 918
+    .line 933
     iget-object v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v5}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 920
+    .line 935
     .local v3, mImsi:Ljava/lang/String;
     if-nez v3, :cond_0
 
-    .line 921
+    .line 936
     invoke-direct {p0, v4}, Lcom/android/server/ThrottleService$DataRecorder;->useMRUFile(Ljava/io/File;)Ljava/io/File;
 
     move-result-object v1
 
-    .line 928
+    .line 943
     .local v1, dataFile:Ljava/io/File;
     :goto_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -339,13 +339,13 @@
 
     invoke-virtual {v1, v5, v6}, Ljava/io/File;->setLastModified(J)Z
 
-    .line 929
+    .line 944
     invoke-direct {p0, v4}, Lcom/android/server/ThrottleService$DataRecorder;->checkAndDeleteLRUDataFile(Ljava/io/File;)V
 
-    .line 930
+    .line 945
     return-object v1
 
-    .line 924
+    .line 939
     .end local v1           #dataFile:Ljava/io/File;
     :cond_0
     invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
@@ -356,7 +356,7 @@
 
     move-result-object v2
 
-    .line 925
+    .line 940
     .local v2, imsiHash:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
@@ -370,33 +370,33 @@
     .locals 7
 
     .prologue
-    .line 994
+    .line 1009
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 995
+    .line 1010
     .local v0, builder:Ljava/lang/StringBuilder;
     const/4 v5, 0x1
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 996
+    .line 1011
     const-string v5, ":"
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 997
+    .line 1012
     iget v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 998
+    .line 1013
     const-string v5, ":"
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 999
+    .line 1014
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -405,24 +405,24 @@
 
     if-ge v2, v5, :cond_0
 
-    .line 1000
+    .line 1015
     iget-object v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
     aget-wide v5, v5, v2
 
     invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 1001
+    .line 1016
     const-string v5, ":"
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 999
+    .line 1014
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1003
+    .line 1018
     :cond_0
     const/4 v2, 0x0
 
@@ -431,35 +431,35 @@
 
     if-ge v2, v5, :cond_1
 
-    .line 1004
+    .line 1019
     iget-object v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
     aget-wide v5, v5, v2
 
     invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 1005
+    .line 1020
     const-string v5, ":"
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1003
+    .line 1018
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1007
+    .line 1022
     :cond_1
     iget v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1008
+    .line 1023
     const-string v5, ":"
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1009
+    .line 1024
     iget-object v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodStart:Ljava/util/Calendar;
 
     invoke-virtual {v5}, Ljava/util/Calendar;->getTimeInMillis()J
@@ -468,12 +468,12 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 1010
+    .line 1025
     const-string v5, ":"
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1011
+    .line 1026
     iget-object v5, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodEnd:Ljava/util/Calendar;
 
     invoke-virtual {v5}, Ljava/util/Calendar;->getTimeInMillis()J
@@ -482,10 +482,10 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 1013
+    .line 1028
     const/4 v3, 0x0
 
-    .line 1015
+    .line 1030
     .local v3, out:Ljava/io/BufferedWriter;
     :try_start_0
     new-instance v4, Ljava/io/BufferedWriter;
@@ -505,7 +505,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1016
+    .line 1031
     .end local v3           #out:Ljava/io/BufferedWriter;
     .local v4, out:Ljava/io/BufferedWriter;
     :try_start_1
@@ -518,10 +518,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
-    .line 1021
+    .line 1036
     if-eqz v4, :cond_2
 
-    .line 1023
+    .line 1038
     :try_start_2
     invoke-virtual {v4}, Ljava/io/BufferedWriter;->close()V
     :try_end_2
@@ -531,18 +531,18 @@
     :goto_2
     move-object v3, v4
 
-    .line 1027
+    .line 1042
     .end local v4           #out:Ljava/io/BufferedWriter;
     .restart local v3       #out:Ljava/io/BufferedWriter;
     :cond_3
     :goto_3
     return-void
 
-    .line 1017
+    .line 1032
     :catch_0
     move-exception v1
 
-    .line 1018
+    .line 1033
     .local v1, e:Ljava/io/IOException;
     :goto_4
     :try_start_3
@@ -554,10 +554,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1021
+    .line 1036
     if-eqz v3, :cond_3
 
-    .line 1023
+    .line 1038
     :try_start_4
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
     :try_end_4
@@ -565,13 +565,13 @@
 
     goto :goto_3
 
-    .line 1024
+    .line 1039
     :catch_1
     move-exception v5
 
     goto :goto_3
 
-    .line 1021
+    .line 1036
     .end local v1           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v5
@@ -579,18 +579,18 @@
     :goto_5
     if-eqz v3, :cond_4
 
-    .line 1023
+    .line 1038
     :try_start_5
     invoke-virtual {v3}, Ljava/io/BufferedWriter;->close()V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 1021
+    .line 1036
     :cond_4
     :goto_6
     throw v5
 
-    .line 1024
+    .line 1039
     :catch_2
     move-exception v6
 
@@ -603,7 +603,7 @@
 
     goto :goto_2
 
-    .line 1021
+    .line 1036
     :catchall_1
     move-exception v5
 
@@ -613,7 +613,7 @@
     .restart local v3       #out:Ljava/io/BufferedWriter;
     goto :goto_5
 
-    .line 1017
+    .line 1032
     .end local v3           #out:Ljava/io/BufferedWriter;
     .restart local v4       #out:Ljava/io/BufferedWriter;
     :catch_4
@@ -630,7 +630,7 @@
     .locals 21
 
     .prologue
-    .line 1031
+    .line 1046
     const/16 v18, 0x0
 
     move-object/from16 v0, p0
@@ -639,16 +639,16 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/ThrottleService$DataRecorder;->zeroData(I)V
 
-    .line 1033
+    .line 1048
     invoke-direct/range {p0 .. p0}, Lcom/android/server/ThrottleService$DataRecorder;->getDataFile()Ljava/io/File;
 
     move-result-object v6
 
-    .line 1035
+    .line 1050
     .local v6, f:Ljava/io/File;
     const/16 v16, 0x0
 
-    .line 1037
+    .line 1052
     .local v16, s:Ljava/io/FileInputStream;
     :try_start_0
     invoke-virtual {v6}, Ljava/io/File;->length()J
@@ -665,7 +665,7 @@
 
     new-array v2, v0, [B
 
-    .line 1038
+    .line 1053
     .local v2, buffer:[B
     new-instance v17, Ljava/io/FileInputStream;
 
@@ -676,7 +676,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1039
+    .line 1054
     .end local v16           #s:Ljava/io/FileInputStream;
     .local v17, s:Ljava/io/FileInputStream;
     :try_start_1
@@ -687,23 +687,23 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_6
 
-    .line 1044
+    .line 1059
     if-eqz v17, :cond_0
 
-    .line 1046
+    .line 1061
     :try_start_2
     invoke-virtual/range {v17 .. v17}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
 
-    .line 1050
+    .line 1065
     :cond_0
     :goto_0
     new-instance v4, Ljava/lang/String;
 
     invoke-direct {v4, v2}, Ljava/lang/String;-><init>([B)V
 
-    .line 1051
+    .line 1066
     .local v4, data:Ljava/lang/String;
     if-eqz v4, :cond_1
 
@@ -713,7 +713,7 @@
 
     if-nez v18, :cond_4
 
-    .line 1052
+    .line 1067
     :cond_1
     const-string v18, "ThrottleService"
 
@@ -723,7 +723,7 @@
 
     move-object/from16 v16, v17
 
-    .line 1107
+    .line 1122
     .end local v2           #buffer:[B
     .end local v4           #data:Ljava/lang/String;
     .end local v17           #s:Ljava/io/FileInputStream;
@@ -732,11 +732,11 @@
     :goto_1
     return-void
 
-    .line 1040
+    .line 1055
     :catch_0
     move-exception v5
 
-    .line 1041
+    .line 1056
     .local v5, e:Ljava/io/IOException;
     :goto_2
     :try_start_3
@@ -748,10 +748,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1044
+    .line 1059
     if-eqz v16, :cond_2
 
-    .line 1046
+    .line 1061
     :try_start_4
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
     :try_end_4
@@ -759,13 +759,13 @@
 
     goto :goto_1
 
-    .line 1047
+    .line 1062
     :catch_1
     move-exception v18
 
     goto :goto_1
 
-    .line 1044
+    .line 1059
     .end local v5           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v18
@@ -773,18 +773,18 @@
     :goto_3
     if-eqz v16, :cond_3
 
-    .line 1046
+    .line 1061
     :try_start_5
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 1044
+    .line 1059
     :cond_3
     :goto_4
     throw v18
 
-    .line 1055
+    .line 1070
     .end local v16           #s:Ljava/io/FileInputStream;
     .restart local v2       #buffer:[B
     .restart local v4       #data:Ljava/lang/String;
@@ -798,11 +798,11 @@
 
     move-result-object v8
 
-    .line 1056
+    .line 1071
     .local v8, parsed:[Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 1057
+    .line 1072
     .local v9, parsedUsed:I
     array-length v0, v8
 
@@ -816,7 +816,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 1058
+    .line 1073
     const-string v18, "ThrottleService"
 
     const-string v19, "reading data file with insufficient length - ignoring"
@@ -825,12 +825,12 @@
 
     move-object/from16 v16, v17
 
-    .line 1059
+    .line 1074
     .end local v17           #s:Ljava/io/FileInputStream;
     .restart local v16       #s:Ljava/io/FileInputStream;
     goto :goto_1
 
-    .line 1069
+    .line 1084
     .end local v16           #s:Ljava/io/FileInputStream;
     .restart local v17       #s:Ljava/io/FileInputStream;
     :cond_5
@@ -853,7 +853,7 @@
 
     if-eq v0, v1, :cond_6
 
-    .line 1070
+    .line 1085
     const-string v18, "ThrottleService"
 
     const-string v19, "reading data file with bad version - ignoring"
@@ -864,12 +864,12 @@
 
     move-object/from16 v16, v17
 
-    .line 1071
+    .line 1086
     .end local v17           #s:Ljava/io/FileInputStream;
     .restart local v16       #s:Ljava/io/FileInputStream;
     goto :goto_1
 
-    .line 1074
+    .line 1089
     .end local v16           #s:Ljava/io/FileInputStream;
     .restart local v17       #s:Ljava/io/FileInputStream;
     :cond_6
@@ -884,7 +884,7 @@
 
     move-result v11
 
-    .line 1075
+    .line 1090
     .local v11, periodCount:I
     array-length v0, v8
 
@@ -900,7 +900,7 @@
 
     if-eq v0, v1, :cond_7
 
-    .line 1076
+    .line 1091
     const-string v18, "ThrottleService"
 
     new-instance v19, Ljava/lang/StringBuilder;
@@ -949,18 +949,18 @@
 
     move-object/from16 v16, v17
 
-    .line 1078
+    .line 1093
     .end local v17           #s:Ljava/io/FileInputStream;
     .restart local v16       #s:Ljava/io/FileInputStream;
     goto/16 :goto_1
 
-    .line 1080
+    .line 1095
     .end local v16           #s:Ljava/io/FileInputStream;
     .restart local v17       #s:Ljava/io/FileInputStream;
     :cond_7
     new-array v13, v11, [J
 
-    .line 1081
+    .line 1096
     .local v13, periodRxData:[J
     const/4 v7, 0x0
 
@@ -972,7 +972,7 @@
     :goto_5
     if-ge v7, v11, :cond_8
 
-    .line 1082
+    .line 1097
     add-int/lit8 v9, v10, 0x1
 
     .end local v10           #parsedUsed:I
@@ -987,7 +987,7 @@
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
 
-    .line 1081
+    .line 1096
     add-int/lit8 v7, v7, 0x1
 
     move v10, v9
@@ -996,21 +996,21 @@
     .restart local v10       #parsedUsed:I
     goto :goto_5
 
-    .line 1084
+    .line 1099
     :cond_8
     :try_start_8
     new-array v15, v11, [J
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_2
 
-    .line 1085
+    .line 1100
     .local v15, periodTxData:[J
     const/4 v7, 0x0
 
     :goto_6
     if-ge v7, v11, :cond_9
 
-    .line 1086
+    .line 1101
     add-int/lit8 v9, v10, 0x1
 
     .end local v10           #parsedUsed:I
@@ -1024,7 +1024,7 @@
 
     aput-wide v18, v15, v7
 
-    .line 1085
+    .line 1100
     add-int/lit8 v7, v7, 0x1
 
     move v10, v9
@@ -1033,7 +1033,7 @@
     .restart local v10       #parsedUsed:I
     goto :goto_6
 
-    .line 1089
+    .line 1104
     :cond_9
     add-int/lit8 v9, v10, 0x1
 
@@ -1045,7 +1045,7 @@
 
     move-result v3
 
-    .line 1091
+    .line 1106
     .local v3, currentPeriod:I
     new-instance v14, Ljava/util/GregorianCalendar;
 
@@ -1053,7 +1053,7 @@
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_5
 
-    .line 1092
+    .line 1107
     .local v14, periodStart:Ljava/util/Calendar;
     add-int/lit8 v10, v9, 0x1
 
@@ -1070,14 +1070,14 @@
 
     invoke-virtual {v14, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 1093
+    .line 1108
     new-instance v12, Ljava/util/GregorianCalendar;
 
     invoke-direct {v12}, Ljava/util/GregorianCalendar;-><init>()V
     :try_end_a
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_2
 
-    .line 1094
+    .line 1109
     .local v12, periodEnd:Ljava/util/Calendar;
     add-int/lit8 v9, v10, 0x1
 
@@ -1096,7 +1096,7 @@
     :try_end_b
     .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_5
 
-    .line 1099
+    .line 1114
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
@@ -1105,50 +1105,50 @@
 
     monitor-enter v19
 
-    .line 1100
+    .line 1115
     :try_start_c
     move-object/from16 v0, p0
 
     iput v11, v0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
-    .line 1101
+    .line 1116
     move-object/from16 v0, p0
 
     iput-object v13, v0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
-    .line 1102
+    .line 1117
     move-object/from16 v0, p0
 
     iput-object v15, v0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
-    .line 1103
+    .line 1118
     move-object/from16 v0, p0
 
     iput v3, v0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
-    .line 1104
+    .line 1119
     move-object/from16 v0, p0
 
     iput-object v14, v0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodStart:Ljava/util/Calendar;
 
-    .line 1105
+    .line 1120
     move-object/from16 v0, p0
 
     iput-object v12, v0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodEnd:Ljava/util/Calendar;
 
-    .line 1106
+    .line 1121
     monitor-exit v19
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_1
 
     move-object/from16 v16, v17
 
-    .line 1107
+    .line 1122
     .end local v17           #s:Ljava/io/FileInputStream;
     .restart local v16       #s:Ljava/io/FileInputStream;
     goto/16 :goto_1
 
-    .line 1095
+    .line 1110
     .end local v3           #currentPeriod:I
     .end local v7           #i:I
     .end local v9           #parsedUsed:I
@@ -1165,7 +1165,7 @@
 
     move v9, v10
 
-    .line 1096
+    .line 1111
     .end local v10           #parsedUsed:I
     .local v5, e:Ljava/lang/Exception;
     .restart local v9       #parsedUsed:I
@@ -1178,12 +1178,12 @@
 
     move-object/from16 v16, v17
 
-    .line 1097
+    .line 1112
     .end local v17           #s:Ljava/io/FileInputStream;
     .restart local v16       #s:Ljava/io/FileInputStream;
     goto/16 :goto_1
 
-    .line 1106
+    .line 1121
     .end local v5           #e:Ljava/lang/Exception;
     .end local v16           #s:Ljava/io/FileInputStream;
     .restart local v3       #currentPeriod:I
@@ -1204,7 +1204,7 @@
 
     throw v18
 
-    .line 1047
+    .line 1062
     .end local v2           #buffer:[B
     .end local v3           #currentPeriod:I
     .end local v4           #data:Ljava/lang/String;
@@ -1231,7 +1231,7 @@
 
     goto/16 :goto_0
 
-    .line 1095
+    .line 1110
     .restart local v4       #data:Ljava/lang/String;
     .restart local v8       #parsed:[Ljava/lang/String;
     .restart local v9       #parsedUsed:I
@@ -1240,7 +1240,7 @@
 
     goto :goto_7
 
-    .line 1044
+    .line 1059
     .end local v4           #data:Ljava/lang/String;
     .end local v8           #parsed:[Ljava/lang/String;
     .end local v9           #parsedUsed:I
@@ -1253,7 +1253,7 @@
     .restart local v16       #s:Ljava/io/FileInputStream;
     goto/16 :goto_3
 
-    .line 1040
+    .line 1055
     .end local v16           #s:Ljava/io/FileInputStream;
     .restart local v17       #s:Ljava/io/FileInputStream;
     :catch_6
@@ -1271,22 +1271,22 @@
     .parameter "end"
 
     .prologue
-    .line 868
+    .line 883
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 869
+    .line 884
     :try_start_0
     iput-object p1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodEnd:Ljava/util/Calendar;
 
-    .line 870
+    .line 885
     monitor-exit v1
 
-    .line 871
+    .line 886
     return-void
 
-    .line 870
+    .line 885
     :catchall_0
     move-exception v0
 
@@ -1302,22 +1302,22 @@
     .parameter "start"
 
     .prologue
-    .line 880
+    .line 895
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 881
+    .line 896
     :try_start_0
     iput-object p1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodStart:Ljava/util/Calendar;
 
-    .line 882
+    .line 897
     monitor-exit v1
 
-    .line 883
+    .line 898
     return-void
 
-    .line 882
+    .line 897
     :catchall_0
     move-exception v0
 
@@ -1333,20 +1333,20 @@
     .parameter "dir"
 
     .prologue
-    .line 966
+    .line 981
     const/4 v5, 0x0
 
-    .line 967
+    .line 982
     .local v5, newest:Ljava/io/File;
     invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    .line 969
+    .line 984
     .local v2, files:[Ljava/io/File;
     if-eqz v2, :cond_2
 
-    .line 970
+    .line 985
     move-object v0, v2
 
     .local v0, arr$:[Ljava/io/File;
@@ -1361,7 +1361,7 @@
 
     aget-object v1, v0, v3
 
-    .line 971
+    .line 986
     .local v1, f:Ljava/io/File;
     if-eqz v5, :cond_0
 
@@ -1377,17 +1377,17 @@
 
     if-gez v6, :cond_1
 
-    .line 972
+    .line 987
     :cond_0
     move-object v5, v1
 
-    .line 970
+    .line 985
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 976
+    .line 991
     .end local v0           #arr$:[Ljava/io/File;
     .end local v1           #f:Ljava/io/File;
     .end local v3           #i$:I
@@ -1395,7 +1395,7 @@
     :cond_2
     if-nez v5, :cond_3
 
-    .line 977
+    .line 992
     new-instance v5, Ljava/io/File;
 
     .end local v5           #newest:Ljava/io/File;
@@ -1403,7 +1403,7 @@
 
     invoke-direct {v5, p1, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 979
+    .line 994
     .restart local v5       #newest:Ljava/io/File;
     :cond_3
     return-object v5
@@ -1414,12 +1414,12 @@
     .parameter "field"
 
     .prologue
-    .line 892
+    .line 907
     iget-object v2, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v2
 
-    .line 893
+    .line 908
     const/4 v0, 0x0
 
     .local v0, period:I
@@ -1429,38 +1429,38 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 894
+    .line 909
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
     const-wide/16 v3, 0x0
 
     aput-wide v3, v1, v0
 
-    .line 895
+    .line 910
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
     const-wide/16 v3, 0x0
 
     aput-wide v3, v1, v0
 
-    .line 893
+    .line 908
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 897
+    .line 912
     :cond_0
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
-    .line 898
+    .line 913
     monitor-exit v2
 
-    .line 900
+    .line 915
     return-void
 
-    .line 898
+    .line 913
     :catchall_0
     move-exception v1
 
@@ -1479,15 +1479,15 @@
     .parameter "bytesWritten"
 
     .prologue
-    .line 905
+    .line 920
     invoke-direct {p0}, Lcom/android/server/ThrottleService$DataRecorder;->checkForSubscriberId()V
 
-    .line 907
+    .line 922
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 908
+    .line 923
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
@@ -1499,7 +1499,7 @@
 
     aput-wide v3, v0, v2
 
-    .line 909
+    .line 924
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
     iget v2, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
@@ -1510,18 +1510,18 @@
 
     aput-wide v3, v0, v2
 
-    .line 910
+    .line 925
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 911
+    .line 926
     invoke-direct {p0}, Lcom/android/server/ThrottleService$DataRecorder;->record()V
 
-    .line 912
+    .line 927
     return-void
 
-    .line 910
+    .line 925
     :catchall_0
     move-exception v0
 
@@ -1537,12 +1537,12 @@
     .locals 2
 
     .prologue
-    .line 886
+    .line 901
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 887
+    .line 902
     :try_start_0
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
@@ -1550,7 +1550,7 @@
 
     return v0
 
-    .line 888
+    .line 903
     :catchall_0
     move-exception v0
 
@@ -1565,12 +1565,12 @@
     .locals 4
 
     .prologue
-    .line 862
+    .line 877
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 863
+    .line 878
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodEnd:Ljava/util/Calendar;
 
@@ -1582,7 +1582,7 @@
 
     return-wide v2
 
-    .line 864
+    .line 879
     :catchall_0
     move-exception v0
 
@@ -1598,12 +1598,12 @@
     .parameter "which"
 
     .prologue
-    .line 1110
+    .line 1125
     iget-object v2, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v2
 
-    .line 1111
+    .line 1126
     :try_start_0
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
@@ -1613,24 +1613,24 @@
 
     monitor-exit v2
 
-    .line 1114
+    .line 1129
     :goto_0
     return-wide v0
 
-    .line 1112
+    .line 1127
     :cond_0
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
     sub-int p1, v0, p1
 
-    .line 1113
+    .line 1128
     if-gez p1, :cond_1
 
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
     add-int/2addr p1, v0
 
-    .line 1114
+    .line 1129
     :cond_1
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
@@ -1640,7 +1640,7 @@
 
     goto :goto_0
 
-    .line 1115
+    .line 1130
     :catchall_0
     move-exception v0
 
@@ -1655,12 +1655,12 @@
     .locals 4
 
     .prologue
-    .line 874
+    .line 889
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v1
 
-    .line 875
+    .line 890
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodStart:Ljava/util/Calendar;
 
@@ -1672,7 +1672,7 @@
 
     return-wide v2
 
-    .line 876
+    .line 891
     :catchall_0
     move-exception v0
 
@@ -1688,12 +1688,12 @@
     .parameter "which"
 
     .prologue
-    .line 1118
+    .line 1133
     iget-object v2, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v2
 
-    .line 1119
+    .line 1134
     :try_start_0
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
@@ -1703,24 +1703,24 @@
 
     monitor-exit v2
 
-    .line 1122
+    .line 1137
     :goto_0
     return-wide v0
 
-    .line 1120
+    .line 1135
     :cond_0
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
     sub-int p1, v0, p1
 
-    .line 1121
+    .line 1136
     if-gez p1, :cond_1
 
     iget v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
 
     add-int/2addr p1, v0
 
-    .line 1122
+    .line 1137
     :cond_1
     iget-object v0, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
@@ -1730,7 +1730,7 @@
 
     goto :goto_0
 
-    .line 1123
+    .line 1138
     :catchall_0
     move-exception v0
 
@@ -1747,13 +1747,13 @@
     .parameter "end"
 
     .prologue
-    .line 825
+    .line 840
     invoke-direct {p0}, Lcom/android/server/ThrottleService$DataRecorder;->checkForSubscriberId()V
 
-    .line 826
+    .line 841
     const/4 v0, 0x1
 
-    .line 828
+    .line 843
     .local v0, startNewPeriod:Z
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodStart:Ljava/util/Calendar;
 
@@ -1771,29 +1771,29 @@
 
     if-eqz v1, :cond_0
 
-    .line 834
+    .line 849
     const/4 v0, 0x0
 
-    .line 855
+    .line 870
     :goto_0
     invoke-direct {p0, p1}, Lcom/android/server/ThrottleService$DataRecorder;->setPeriodStart(Ljava/util/Calendar;)V
 
-    .line 856
+    .line 871
     invoke-direct {p0, p2}, Lcom/android/server/ThrottleService$DataRecorder;->setPeriodEnd(Ljava/util/Calendar;)V
 
-    .line 857
+    .line 872
     invoke-direct {p0}, Lcom/android/server/ThrottleService$DataRecorder;->record()V
 
-    .line 858
+    .line 873
     return v0
 
-    .line 848
+    .line 863
     :cond_0
     iget-object v2, p0, Lcom/android/server/ThrottleService$DataRecorder;->mParent:Lcom/android/server/ThrottleService;
 
     monitor-enter v2
 
-    .line 849
+    .line 864
     :try_start_0
     iget v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
@@ -1801,7 +1801,7 @@
 
     iput v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
-    .line 850
+    .line 865
     iget v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
     iget v3, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodCount:I
@@ -1812,7 +1812,7 @@
 
     iput v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
 
-    .line 851
+    .line 866
     :cond_1
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodRxData:[J
 
@@ -1822,7 +1822,7 @@
 
     aput-wide v4, v1, v3
 
-    .line 852
+    .line 867
     iget-object v1, p0, Lcom/android/server/ThrottleService$DataRecorder;->mPeriodTxData:[J
 
     iget v3, p0, Lcom/android/server/ThrottleService$DataRecorder;->mCurrentPeriod:I
@@ -1831,7 +1831,7 @@
 
     aput-wide v4, v1, v3
 
-    .line 853
+    .line 868
     monitor-exit v2
 
     goto :goto_0

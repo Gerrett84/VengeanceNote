@@ -37,10 +37,10 @@
     .parameter
 
     .prologue
-    .line 3063
+    .line 3092
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->this$0:Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -53,16 +53,16 @@
     .parameter "imi2"
 
     .prologue
-    .line 3066
+    .line 3095
     if-nez p2, :cond_0
 
     const/4 v2, 0x0
 
-    .line 3073
+    .line 3102
     :goto_0
     return v2
 
-    .line 3067
+    .line 3096
     :cond_0
     if-nez p1, :cond_1
 
@@ -70,18 +70,18 @@
 
     goto :goto_0
 
-    .line 3068
+    .line 3097
     :cond_1
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->this$0:Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;
 
     #getter for: Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->mPm:Landroid/content/pm/PackageManager;
-    invoke-static {v2}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->access$1500(Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;)Landroid/content/pm/PackageManager;
+    invoke-static {v2}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->access$1600(Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;)Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
     if-nez v2, :cond_2
 
-    .line 3069
+    .line 3098
     invoke-virtual {p1}, Landroid/view/inputmethod/InputMethodInfo;->getId()Ljava/lang/String;
 
     move-result-object v2
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 3071
+    .line 3100
     :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -105,7 +105,7 @@
     iget-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->this$0:Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;
 
     #getter for: Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->mPm:Landroid/content/pm/PackageManager;
-    invoke-static {v3}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->access$1500(Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;)Landroid/content/pm/PackageManager;
+    invoke-static {v3}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->access$1600(Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;)Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    .line 3072
+    .line 3101
     .local v0, imiId1:Ljava/lang/CharSequence;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -144,7 +144,7 @@
     iget-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager$1;->this$0:Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;
 
     #getter for: Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->mPm:Landroid/content/pm/PackageManager;
-    invoke-static {v3}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->access$1500(Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;)Landroid/content/pm/PackageManager;
+    invoke-static {v3}, Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;->access$1600(Lcom/android/server/InputMethodManagerService$InputMethodAndSubtypeListManager;)Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
@@ -174,13 +174,13 @@
 
     move-result-object v1
 
-    .line 3073
+    .line 3102
     .local v1, imiId2:Ljava/lang/CharSequence;
-    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/String;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -197,7 +197,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3063
+    .line 3092
     check-cast p1, Landroid/view/inputmethod/InputMethodInfo;
 
     .end local p1

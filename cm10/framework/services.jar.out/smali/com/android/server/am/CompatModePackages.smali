@@ -45,7 +45,7 @@
     const/4 v11, 0x2
 
     .line 59
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
     const-string v8, "ActivityManager"
@@ -212,7 +212,7 @@
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
@@ -256,7 +256,7 @@
     :try_start_3
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_5
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
     .line 110
     .end local v1           #eventType:I
@@ -293,13 +293,13 @@
     goto :goto_2
 
     .line 106
+    .end local v0           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_1
     move-exception v8
 
     goto :goto_2
 
     .line 100
-    .end local v0           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_2
     move-exception v0
 
@@ -324,13 +324,7 @@
     :try_start_7
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
-
-    goto :goto_2
-
-    .line 106
-    :catch_3
-    move-exception v8
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
 
     goto :goto_2
 
@@ -345,9 +339,9 @@
     :try_start_8
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
 
-    .line 107
+    .line 103
     :cond_7
     :goto_3
     throw v8
@@ -359,24 +353,19 @@
     .restart local v5       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v6       #pkg:Ljava/lang/String;
     .restart local v7       #tagName:Ljava/lang/String;
-    :catch_4
+    :catch_3
     move-exception v8
 
     goto :goto_1
 
     .line 106
+    .end local v1           #eventType:I
     .end local v3           #mode:Ljava/lang/String;
     .end local v4           #modeInt:I
-    .end local v6           #pkg:Ljava/lang/String;
-    :catch_5
-    move-exception v8
-
-    goto :goto_2
-
-    .end local v1           #eventType:I
     .end local v5           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    .end local v6           #pkg:Ljava/lang/String;
     .end local v7           #tagName:Ljava/lang/String;
-    :catch_6
+    :catch_4
     move-exception v9
 
     goto :goto_3
@@ -660,7 +649,7 @@
     .local v0, a:Lcom/android/server/am/ActivityRecord;
     iget-object v10, v0, Lcom/android/server/am/ActivityRecord;->info:Landroid/content/pm/ActivityInfo;
 
-    iget-object v10, v10, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+    iget-object v10, v10, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v10, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

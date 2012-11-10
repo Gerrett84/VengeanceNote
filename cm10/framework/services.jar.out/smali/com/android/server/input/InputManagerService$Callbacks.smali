@@ -39,5 +39,8 @@
 .method public abstract notifyInputChannelBroken(Lcom/android/server/input/InputWindowHandle;)V
 .end method
 
+.method public abstract notifyJackSwitchChanged(JIZ)V
+.end method
+
 .method public abstract notifyLidSwitchChanged(JZ)V
 .end method

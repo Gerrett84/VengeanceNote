@@ -40,7 +40,7 @@
 
     iput p3, p0, Lcom/android/server/StatusBarManagerService$4;->val$mask:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -13,31 +13,28 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
     .parameter "context"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     const/high16 v2, 0x2
 
-    .line 34
-    const v0, 0x60d0020
+    .line 31
+    const v0, 0x10302f2
 
     invoke-direct {p0, p1, v0}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 73
+    .line 70
     new-instance v0, Lcom/android/server/am/BaseErrorDialog$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/BaseErrorDialog$1;-><init>(Lcom/android/server/am/BaseErrorDialog;)V
 
     iput-object v0, p0, Lcom/android/server/am/BaseErrorDialog;->mHandler:Landroid/os/Handler;
 
-    .line 82
+    .line 79
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/am/BaseErrorDialog;->mConsuming:Z
 
-    .line 36
+    .line 33
     invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -46,14 +43,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    .line 37
+    .line 34
     invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
     invoke-virtual {v0, v2, v2}, Landroid/view/Window;->setFlags(II)V
 
-    .line 39
+    .line 36
     invoke-virtual {p0}, Lcom/android/server/am/BaseErrorDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -62,12 +59,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 40
+    .line 37
     const v0, 0x1010355
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/BaseErrorDialog;->setIconAttribute(I)V
 
-    .line 41
+    .line 38
     return-void
 .end method
 
@@ -77,7 +74,7 @@
     .parameter "x1"
 
     .prologue
-    .line 31
+    .line 29
     iput-boolean p1, p0, Lcom/android/server/am/BaseErrorDialog;->mConsuming:Z
 
     return p1
@@ -89,7 +86,7 @@
     .parameter "x1"
 
     .prologue
-    .line 31
+    .line 29
     invoke-direct {p0, p1}, Lcom/android/server/am/BaseErrorDialog;->setEnabled(Z)V
 
     return-void
@@ -100,7 +97,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 59
+    .line 56
     const v1, 0x1020019
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/BaseErrorDialog;->findViewById(I)Landroid/view/View;
@@ -109,14 +106,14 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 60
+    .line 57
     .local v0, b:Landroid/widget/Button;
     if-eqz v0, :cond_0
 
-    .line 61
+    .line 58
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 63
+    .line 60
     :cond_0
     const v1, 0x102001a
 
@@ -127,14 +124,14 @@
     .end local v0           #b:Landroid/widget/Button;
     check-cast v0, Landroid/widget/Button;
 
-    .line 64
+    .line 61
     .restart local v0       #b:Landroid/widget/Button;
     if-eqz v0, :cond_1
 
-    .line 65
+    .line 62
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 67
+    .line 64
     :cond_1
     const v1, 0x102001b
 
@@ -145,14 +142,14 @@
     .end local v0           #b:Landroid/widget/Button;
     check-cast v0, Landroid/widget/Button;
 
-    .line 68
+    .line 65
     .restart local v0       #b:Landroid/widget/Button;
     if-eqz v0, :cond_2
 
-    .line 69
+    .line 66
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 71
+    .line 68
     :cond_2
     return-void
 .end method
@@ -164,15 +161,15 @@
     .parameter "event"
 
     .prologue
-    .line 50
+    .line 47
     iget-boolean v0, p0, Lcom/android/server/am/BaseErrorDialog;->mConsuming:Z
 
     if-eqz v0, :cond_0
 
-    .line 52
+    .line 49
     const/4 v0, 0x1
 
-    .line 55
+    .line 52
     :goto_0
     return v0
 
@@ -190,13 +187,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 44
+    .line 41
     invoke-super {p0}, Landroid/app/AlertDialog;->onStart()V
 
-    .line 45
+    .line 42
     invoke-direct {p0, v2}, Lcom/android/server/am/BaseErrorDialog;->setEnabled(Z)V
 
-    .line 46
+    .line 43
     iget-object v0, p0, Lcom/android/server/am/BaseErrorDialog;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/am/BaseErrorDialog;->mHandler:Landroid/os/Handler;
@@ -209,6 +206,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 47
+    .line 44
     return-void
 .end method
