@@ -43,13 +43,15 @@
 
 .field public static final mobile_operator_numeric_values:I = 0x6060000
 
+.field public static final number_progress_numbers:I = 0x606000e
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 33
+    .line 47
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -1327,23 +1327,29 @@
 
     iput-object v2, p0, Lcom/android/internal/telephony/SmsMessageBase;->scAddress:Ljava/lang/String;
 
-    .line 907
+    .line 903
+    iget-object v2, p0, Lcom/android/internal/telephony/SmsMessageBase;->scAddress:Ljava/lang/String;
+
+    if-eqz v2, :cond_0
+
+    .line 911
+    :cond_0
     invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v0
 
-    .line 909
+    .line 913
     .local v0, firstByte:I
     and-int/lit8 v2, v0, 0x3
 
     iput v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mti:I
 
-    .line 910
+    .line 914
     iget v2, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->mti:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 929
+    .line 933
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Unsupported message type"
@@ -1352,27 +1358,27 @@
 
     throw v2
 
-    .line 916
+    .line 920
     :pswitch_0
     invoke-direct {p0, v1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseSmsDeliver(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;I)V
 
-    .line 931
+    .line 935
     :goto_0
     return-void
 
-    .line 921
+    .line 925
     :pswitch_1
     invoke-direct {p0, v1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseSmsSubmit(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;I)V
 
     goto :goto_0
 
-    .line 925
+    .line 929
     :pswitch_2
     invoke-direct {p0, v1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseSmsStatusReport(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;I)V
 
     goto :goto_0
 
-    .line 910
+    .line 914
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1392,7 +1398,7 @@
 
     const/4 v3, 0x0
 
-    .line 1017
+    .line 1021
     and-int/lit16 v1, p2, 0x80
 
     const/16 v4, 0x80
@@ -1404,19 +1410,19 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->replyPathPresent:Z
 
-    .line 1019
+    .line 1023
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getAddress()Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
-    .line 1021
+    .line 1025
     iget-object v1, p0, Lcom/android/internal/telephony/SmsMessageBase;->originatingAddress:Lcom/android/internal/telephony/SmsAddress;
 
     if-eqz v1, :cond_0
 
-    .line 1028
+    .line 1032
     :cond_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
@@ -1424,21 +1430,21 @@
 
     iput v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->protocolIdentifier:I
 
-    .line 1032
+    .line 1036
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
-    .line 1039
+    .line 1043
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getSCTimestampMillis()J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/internal/telephony/SmsMessageBase;->scTimeMillis:J
 
-    .line 1043
+    .line 1047
     and-int/lit8 v1, p2, 0x40
 
     const/16 v4, 0x40
@@ -1447,25 +1453,25 @@
 
     move v0, v2
 
-    .line 1045
+    .line 1049
     .local v0, hasUserDataHeader:Z
     :goto_1
     invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseUserData(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;Z)V
 
-    .line 1046
+    .line 1050
     return-void
 
     .end local v0           #hasUserDataHeader:Z
     :cond_1
     move v1, v3
 
-    .line 1017
+    .line 1021
     goto :goto_0
 
     :cond_2
     move v0, v3
 
-    .line 1043
+    .line 1047
     goto :goto_1
 .end method
 
@@ -1479,10 +1485,10 @@
 
     const/4 v4, 0x1
 
-    .line 974
+    .line 978
     iput-boolean v4, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->isStatusReportMessage:Z
 
-    .line 977
+    .line 981
     and-int/lit8 v3, p2, 0x20
 
     if-nez v3, :cond_0
@@ -1492,65 +1498,65 @@
     :goto_0
     iput-boolean v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->forSubmit:Z
 
-    .line 979
+    .line 983
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/telephony/SmsMessageBase;->messageRef:I
 
-    .line 981
+    .line 985
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getAddress()Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->recipientAddress:Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
-    .line 983
+    .line 987
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getSCTimestampMillis()J
 
     move-result-wide v6
 
     iput-wide v6, p0, Lcom/android/internal/telephony/SmsMessageBase;->scTimeMillis:J
 
-    .line 985
+    .line 989
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getSCTimestampMillis()J
 
     move-result-wide v6
 
     iput-wide v6, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dischargeTimeMillis:J
 
-    .line 987
+    .line 991
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->status:I
 
-    .line 990
+    .line 994
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->moreDataPresent()Z
 
     move-result v3
 
     if-eqz v3, :cond_4
 
-    .line 992
+    .line 996
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v0
 
-    .line 993
+    .line 997
     .local v0, extraParams:I
     move v2, v0
 
-    .line 994
+    .line 998
     .local v2, moreExtraParams:I
     :goto_1
     and-int/lit16 v3, v2, 0x80
 
     if-eqz v3, :cond_1
 
-    .line 998
+    .line 1002
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v2
@@ -1562,10 +1568,10 @@
     :cond_0
     move v3, v5
 
-    .line 977
+    .line 981
     goto :goto_0
 
-    .line 1001
+    .line 1005
     .restart local v0       #extraParams:I
     .restart local v2       #moreExtraParams:I
     :cond_1
@@ -1573,33 +1579,33 @@
 
     if-eqz v3, :cond_2
 
-    .line 1002
+    .line 1006
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->protocolIdentifier:I
 
-    .line 1005
+    .line 1009
     :cond_2
     and-int/lit8 v3, v0, 0x2
 
     if-eqz v3, :cond_3
 
-    .line 1006
+    .line 1010
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
-    .line 1009
+    .line 1013
     :cond_3
     and-int/lit8 v3, v0, 0x4
 
     if-eqz v3, :cond_4
 
-    .line 1010
+    .line 1014
     and-int/lit8 v3, p2, 0x40
 
     const/16 v6, 0x40
@@ -1608,12 +1614,12 @@
 
     move v1, v4
 
-    .line 1011
+    .line 1015
     .local v1, hasUserDataHeader:Z
     :goto_2
     invoke-direct {p0, p1, v1}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseUserData(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;Z)V
 
-    .line 1014
+    .line 1018
     .end local v0           #extraParams:I
     .end local v1           #hasUserDataHeader:Z
     .end local v2           #moreExtraParams:I
@@ -1625,7 +1631,7 @@
     :cond_5
     move v1, v5
 
-    .line 1010
+    .line 1014
     goto :goto_2
 .end method
 
@@ -1642,7 +1648,7 @@
 
     const/4 v3, 0x0
 
-    .line 943
+    .line 947
     and-int/lit16 v1, p2, 0x80
 
     const/16 v4, 0x80
@@ -1654,26 +1660,26 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->replyPathPresent:Z
 
-    .line 945
+    .line 949
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/telephony/SmsMessageBase;->messageRef:I
 
-    .line 947
+    .line 951
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getAddress()Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->recipientAddress:Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
-    .line 949
+    .line 953
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->recipientAddress:Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
     if-eqz v1, :cond_0
 
-    .line 950
+    .line 954
     const-string v1, "GSM"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1700,7 +1706,7 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 956
+    .line 960
     :cond_0
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
@@ -1708,14 +1714,14 @@
 
     iput v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->protocolIdentifier:I
 
-    .line 960
+    .line 964
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getByte()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
-    .line 962
+    .line 966
     and-int/lit8 v1, p2, 0x40
 
     const/16 v4, 0x40
@@ -1724,25 +1730,25 @@
 
     move v0, v2
 
-    .line 964
+    .line 968
     .local v0, hasUserDataHeader:Z
     :goto_1
     invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseUserData(Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;Z)V
 
-    .line 965
+    .line 969
     return-void
 
     .end local v0           #hasUserDataHeader:Z
     :cond_1
     move v1, v3
 
-    .line 943
+    .line 947
     goto :goto_0
 
     :cond_2
     move v0, v3
 
-    .line 962
+    .line 966
     goto :goto_1
 .end method
 
@@ -1760,18 +1766,18 @@
 
     const/4 v7, 0x0
 
-    .line 1056
+    .line 1060
     const/4 v3, 0x0
 
-    .line 1057
+    .line 1061
     .local v3, hasMessageClass:Z
     const/4 v4, 0x0
 
-    .line 1059
+    .line 1063
     .local v4, userDataCompressed:Z
     const/4 v2, 0x0
 
-    .line 1062
+    .line 1066
     .local v2, encodingType:I
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -1779,7 +1785,7 @@
 
     if-nez v5, :cond_5
 
-    .line 1064
+    .line 1068
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
     and-int/lit8 v5, v5, 0x40
@@ -1791,7 +1797,7 @@
     :goto_0
     iput-boolean v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->automaticDeletion:Z
 
-    .line 1065
+    .line 1069
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
     and-int/lit8 v5, v5, 0x20
@@ -1800,7 +1806,7 @@
 
     move v4, v6
 
-    .line 1066
+    .line 1070
     :goto_1
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -1810,11 +1816,11 @@
 
     move v3, v6
 
-    .line 1068
+    .line 1072
     :goto_2
     if-eqz v4, :cond_4
 
-    .line 1069
+    .line 1073
     const-string v5, "GSM"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1841,7 +1847,7 @@
 
     invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1147
+    .line 1151
     :goto_3
     if-ne v2, v6, :cond_10
 
@@ -1850,7 +1856,7 @@
 
     move-result v1
 
-    .line 1149
+    .line 1153
     .local v1, count:I
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getUserData()[B
 
@@ -1858,35 +1864,35 @@
 
     iput-object v5, p0, Lcom/android/internal/telephony/SmsMessageBase;->userData:[B
 
-    .line 1150
+    .line 1154
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getUserDataHeader()Lcom/android/internal/telephony/SmsHeader;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/internal/telephony/SmsMessageBase;->userDataHeader:Lcom/android/internal/telephony/SmsHeader;
 
-    .line 1152
+    .line 1156
     packed-switch v2, :pswitch_data_0
 
-    .line 1175
+    .line 1179
     :goto_5
     iget-object v5, p0, Lcom/android/internal/telephony/SmsMessageBase;->messageBody:Ljava/lang/String;
 
     if-eqz v5, :cond_0
 
-    .line 1176
+    .line 1180
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SmsMessage;->parseMessageBody()V
 
-    .line 1179
+    .line 1183
     :cond_0
     if-nez v3, :cond_13
 
-    .line 1180
+    .line 1184
     sget-object v5, Landroid/telephony/SmsMessage$MessageClass;->UNKNOWN:Landroid/telephony/SmsMessage$MessageClass;
 
     iput-object v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->messageClass:Landroid/telephony/SmsMessage$MessageClass;
 
-    .line 1197
+    .line 1201
     :goto_6
     return-void
 
@@ -1894,22 +1900,22 @@
     :cond_1
     move v5, v7
 
-    .line 1064
+    .line 1068
     goto :goto_0
 
     :cond_2
     move v4, v7
 
-    .line 1065
+    .line 1069
     goto :goto_1
 
     :cond_3
     move v3, v7
 
-    .line 1066
+    .line 1070
     goto :goto_2
 
-    .line 1072
+    .line 1076
     :cond_4
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -1921,21 +1927,21 @@
 
     goto :goto_3
 
-    .line 1074
+    .line 1078
     :pswitch_0
     const/4 v2, 0x1
-
-    .line 1075
-    goto :goto_3
-
-    .line 1078
-    :pswitch_1
-    const/4 v2, 0x3
 
     .line 1079
     goto :goto_3
 
+    .line 1082
+    :pswitch_1
+    const/4 v2, 0x3
+
     .line 1083
+    goto :goto_3
+
+    .line 1087
     :pswitch_2
     const-string v5, "GSM"
 
@@ -1963,12 +1969,12 @@
 
     invoke-static {v5, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1085
+    .line 1089
     const/4 v2, 0x2
 
     goto :goto_3
 
-    .line 1089
+    .line 1093
     :cond_5
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -1978,34 +1984,34 @@
 
     if-ne v5, v8, :cond_7
 
-    .line 1090
+    .line 1094
     iput-boolean v7, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->automaticDeletion:Z
 
-    .line 1091
+    .line 1095
     const/4 v3, 0x1
 
-    .line 1092
+    .line 1096
     const/4 v4, 0x0
 
-    .line 1094
+    .line 1098
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
     and-int/lit8 v5, v5, 0x4
 
     if-nez v5, :cond_6
 
-    .line 1096
+    .line 1100
     const/4 v2, 0x1
 
     goto :goto_3
 
-    .line 1099
+    .line 1103
     :cond_6
     const/4 v2, 0x2
 
     goto :goto_3
 
-    .line 1101
+    .line 1105
     :cond_7
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -2027,7 +2033,7 @@
 
     if-ne v5, v10, :cond_d
 
-    .line 1110
+    .line 1114
     :cond_8
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -2035,14 +2041,14 @@
 
     if-ne v5, v10, :cond_9
 
-    .line 1111
+    .line 1115
     const/4 v2, 0x3
 
-    .line 1116
+    .line 1120
     :goto_7
     const/4 v4, 0x0
 
-    .line 1117
+    .line 1121
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
     and-int/lit8 v5, v5, 0x8
@@ -2053,7 +2059,7 @@
 
     move v0, v6
 
-    .line 1121
+    .line 1125
     .local v0, active:Z
     :goto_8
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
@@ -2062,13 +2068,13 @@
 
     if-nez v5, :cond_c
 
-    .line 1122
+    .line 1126
     iput-boolean v6, p0, Lcom/android/internal/telephony/SmsMessageBase;->isMwi:Z
 
-    .line 1123
+    .line 1127
     iput-boolean v0, p0, Lcom/android/internal/telephony/SmsMessageBase;->mwiSense:Z
 
-    .line 1124
+    .line 1128
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
     and-int/lit16 v5, v5, 0xf0
@@ -2082,7 +2088,7 @@
 
     goto/16 :goto_3
 
-    .line 1113
+    .line 1117
     .end local v0           #active:Z
     :cond_9
     const/4 v2, 0x1
@@ -2092,21 +2098,21 @@
     :cond_a
     move v0, v7
 
-    .line 1117
+    .line 1121
     goto :goto_8
 
     .restart local v0       #active:Z
     :cond_b
     move v5, v7
 
-    .line 1124
+    .line 1128
     goto :goto_9
 
-    .line 1126
+    .line 1130
     :cond_c
     iput-boolean v7, p0, Lcom/android/internal/telephony/SmsMessageBase;->isMwi:Z
 
-    .line 1128
+    .line 1132
     const-string v5, "GSM"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2135,7 +2141,7 @@
 
     goto/16 :goto_3
 
-    .line 1131
+    .line 1135
     .end local v0           #active:Z
     :cond_d
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
@@ -2146,19 +2152,19 @@
 
     if-ne v5, v8, :cond_f
 
-    .line 1134
+    .line 1138
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
     const/16 v8, 0x84
 
     if-ne v5, v8, :cond_e
 
-    .line 1136
+    .line 1140
     const/4 v2, 0x4
 
     goto/16 :goto_3
 
-    .line 1138
+    .line 1142
     :cond_e
     const-string v5, "GSM"
 
@@ -2188,7 +2194,7 @@
 
     goto/16 :goto_3
 
-    .line 1142
+    .line 1146
     :cond_f
     const-string v5, "GSM"
 
@@ -2221,10 +2227,10 @@
     :cond_10
     move v6, v7
 
-    .line 1147
+    .line 1151
     goto/16 :goto_4
 
-    .line 1155
+    .line 1159
     .restart local v1       #count:I
     :pswitch_3
     const/4 v5, 0x0
@@ -2233,7 +2239,7 @@
 
     goto/16 :goto_5
 
-    .line 1159
+    .line 1163
     :pswitch_4
     if-eqz p2, :cond_12
 
@@ -2262,7 +2268,7 @@
 
     goto :goto_a
 
-    .line 1165
+    .line 1169
     :pswitch_5
     invoke-virtual {p1, v1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getUserDataUCS2(I)Ljava/lang/String;
 
@@ -2272,7 +2278,7 @@
 
     goto/16 :goto_5
 
-    .line 1169
+    .line 1173
     :pswitch_6
     invoke-virtual {p1, v1}, Lcom/android/internal/telephony/gsm/SmsMessage$PduParser;->getUserDataKSC5601(I)Ljava/lang/String;
 
@@ -2282,7 +2288,7 @@
 
     goto/16 :goto_5
 
-    .line 1182
+    .line 1186
     :cond_13
     iget v5, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->dataCodingScheme:I
 
@@ -2292,7 +2298,7 @@
 
     goto/16 :goto_6
 
-    .line 1184
+    .line 1188
     :pswitch_7
     sget-object v5, Landroid/telephony/SmsMessage$MessageClass;->CLASS_0:Landroid/telephony/SmsMessage$MessageClass;
 
@@ -2300,7 +2306,7 @@
 
     goto/16 :goto_6
 
-    .line 1187
+    .line 1191
     :pswitch_8
     sget-object v5, Landroid/telephony/SmsMessage$MessageClass;->CLASS_1:Landroid/telephony/SmsMessage$MessageClass;
 
@@ -2308,7 +2314,7 @@
 
     goto/16 :goto_6
 
-    .line 1190
+    .line 1194
     :pswitch_9
     sget-object v5, Landroid/telephony/SmsMessage$MessageClass;->CLASS_2:Landroid/telephony/SmsMessage$MessageClass;
 
@@ -2316,7 +2322,7 @@
 
     goto/16 :goto_6
 
-    .line 1193
+    .line 1197
     :pswitch_a
     sget-object v5, Landroid/telephony/SmsMessage$MessageClass;->CLASS_3:Landroid/telephony/SmsMessage$MessageClass;
 
@@ -2324,7 +2330,7 @@
 
     goto/16 :goto_6
 
-    .line 1152
+    .line 1156
     nop
 
     :pswitch_data_0
@@ -2336,7 +2342,7 @@
         :pswitch_6
     .end packed-switch
 
-    .line 1072
+    .line 1076
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_0
@@ -2345,7 +2351,7 @@
         :pswitch_2
     .end packed-switch
 
-    .line 1182
+    .line 1186
     :pswitch_data_2
     .packed-switch 0x0
         :pswitch_7
@@ -2371,7 +2377,7 @@
     .locals 1
 
     .prologue
-    .line 1204
+    .line 1208
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->messageClass:Landroid/telephony/SmsMessage$MessageClass;
 
     return-object v0
@@ -2394,23 +2400,23 @@
     .end annotation
 
     .prologue
-    .line 1224
+    .line 1228
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->recipientAddress:Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
     if-eqz v0, :cond_0
 
-    .line 1225
+    .line 1229
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->recipientAddress:Lcom/android/internal/telephony/gsm/GsmSmsAddress;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GsmSmsAddress;->getAddressString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1228
+    .line 1232
     :goto_0
     return-object v0
 
-    .line 1227
+    .line 1231
     :cond_0
     const-string v0, "GSM"
 
@@ -2418,7 +2424,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1228
+    .line 1232
     const/4 v0, 0x0
 
     goto :goto_0
@@ -2699,7 +2705,7 @@
     .locals 2
 
     .prologue
-    .line 1214
+    .line 1218
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SmsMessage;->messageClass:Landroid/telephony/SmsMessage$MessageClass;
 
     sget-object v1, Landroid/telephony/SmsMessage$MessageClass;->CLASS_2:Landroid/telephony/SmsMessage$MessageClass;

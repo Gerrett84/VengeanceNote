@@ -39,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 5779
+    .line 5879
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -53,10 +53,10 @@
     .locals 0
 
     .prologue
-    .line 5794
+    .line 5894
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5795
+    .line 5895
     return-void
 .end method
 
@@ -66,65 +66,65 @@
     .parameter "pointerIdBits"
 
     .prologue
-    .line 5799
+    .line 5899
     sget-object v2, Landroid/view/ViewGroup$TouchTarget;->sRecycleLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 5800
+    .line 5900
     :try_start_0
     sget-object v1, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
     if-nez v1, :cond_0
 
-    .line 5801
+    .line 5901
     new-instance v0, Landroid/view/ViewGroup$TouchTarget;
 
     invoke-direct {v0}, Landroid/view/ViewGroup$TouchTarget;-><init>()V
 
-    .line 5808
+    .line 5908
     .local v0, target:Landroid/view/ViewGroup$TouchTarget;
     :goto_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5809
+    .line 5909
     iput-object p0, v0, Landroid/view/ViewGroup$TouchTarget;->child:Landroid/view/View;
 
-    .line 5810
+    .line 5910
     iput p1, v0, Landroid/view/ViewGroup$TouchTarget;->pointerIdBits:I
 
-    .line 5811
+    .line 5911
     return-object v0
 
-    .line 5803
+    .line 5903
     .end local v0           #target:Landroid/view/ViewGroup$TouchTarget;
     :cond_0
     :try_start_1
     sget-object v0, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 5804
+    .line 5904
     .restart local v0       #target:Landroid/view/ViewGroup$TouchTarget;
     iget-object v1, v0, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
     sput-object v1, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 5805
+    .line 5905
     sget v1, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
     add-int/lit8 v1, v1, -0x1
 
     sput v1, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
-    .line 5806
+    .line 5906
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
     goto :goto_0
 
-    .line 5808
+    .line 5908
     .end local v0           #target:Landroid/view/ViewGroup$TouchTarget;
     :catchall_0
     move-exception v1
@@ -142,12 +142,12 @@
     .locals 3
 
     .prologue
-    .line 5815
+    .line 5915
     sget-object v1, Landroid/view/ViewGroup$TouchTarget;->sRecycleLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 5816
+    .line 5916
     :try_start_0
     sget v0, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
@@ -155,34 +155,34 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 5817
+    .line 5917
     sget-object v0, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
     iput-object v0, p0, Landroid/view/ViewGroup$TouchTarget;->next:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 5818
+    .line 5918
     sput-object p0, Landroid/view/ViewGroup$TouchTarget;->sRecycleBin:Landroid/view/ViewGroup$TouchTarget;
 
-    .line 5819
+    .line 5919
     sget v0, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Landroid/view/ViewGroup$TouchTarget;->sRecycledCount:I
 
-    .line 5823
+    .line 5923
     :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/ViewGroup$TouchTarget;->child:Landroid/view/View;
 
-    .line 5824
+    .line 5924
     monitor-exit v1
 
-    .line 5825
+    .line 5925
     return-void
 
-    .line 5821
+    .line 5921
     :cond_0
     const/4 v0, 0x0
 
@@ -190,7 +190,7 @@
 
     goto :goto_0
 
-    .line 5824
+    .line 5924
     :catchall_0
     move-exception v0
 

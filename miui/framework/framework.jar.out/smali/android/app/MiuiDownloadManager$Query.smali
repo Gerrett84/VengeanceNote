@@ -203,10 +203,10 @@
     .line 261
     const-string v0, "_id"
 
-    iput-object v0, p0, Landroid/app/DownloadManager$Query;->mOrderByColumn:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/app/MiuiDownloadManager$Query;->setOrderByColumn(Ljava/lang/String;)V
 
     .line 262
-    iput p2, p0, Landroid/app/DownloadManager$Query;->mOrderDirection:I
+    invoke-virtual {p0, p2}, Landroid/app/MiuiDownloadManager$Query;->setOrderDirection(I)V
 
     .line 266
     :goto_0
