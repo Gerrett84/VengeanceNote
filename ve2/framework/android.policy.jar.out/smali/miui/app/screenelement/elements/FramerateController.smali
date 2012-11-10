@@ -160,6 +160,15 @@
 
 
 # virtual methods
+.method public doRender(Landroid/graphics/Canvas;)V
+    .locals 0
+    .parameter "c"
+
+    .prologue
+    .line 52
+    return-void
+.end method
+
 .method protected onVisibilityChange(Z)V
     .locals 1
     .parameter "visible"
@@ -194,15 +203,6 @@
     invoke-virtual {p0, v0}, Lmiui/app/screenelement/elements/FramerateController;->requestFramerate(F)V
 
     goto :goto_0
-.end method
-
-.method public render(Landroid/graphics/Canvas;)V
-    .locals 0
-    .parameter "c"
-
-    .prologue
-    .line 52
-    return-void
 .end method
 
 .method public reset(J)V

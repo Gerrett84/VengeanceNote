@@ -291,7 +291,7 @@
 
     if-ltz v2, :cond_0
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x4080
 
     cmpg-float v2, v0, v2
 

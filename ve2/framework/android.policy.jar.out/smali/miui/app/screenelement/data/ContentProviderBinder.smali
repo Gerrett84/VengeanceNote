@@ -670,10 +670,12 @@
 .end method
 
 .method private onQueryComplete(Landroid/database/Cursor;)V
-    .locals 3
+    .locals 4
     .parameter "cursor"
 
     .prologue
+    const/4 v3, -0x1
+
     .line 379
     invoke-direct {p0}, Lmiui/app/screenelement/data/ContentProviderBinder;->closeCursor()V
 
@@ -682,7 +684,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 398
+    .line 402
     :cond_0
     :goto_0
     return-void
@@ -700,14 +702,12 @@
     :try_start_0
     iget-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     .line 386
     iget v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mUpdateInterval:I
 
-    const/4 v2, -0x1
-
-    if-ne v0, v2, :cond_2
+    if-ne v0, v3, :cond_2
 
     .line 387
     iget-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
@@ -727,23 +727,39 @@
     :cond_2
     invoke-direct {p0}, Lmiui/app/screenelement/data/ContentProviderBinder;->updateVariables()V
 
+    .line 391
+    iget v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mUpdateInterval:I
+
+    if-eq v0, v3, :cond_3
+
     .line 392
+    iget-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
+
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+
+    .line 393
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
+
+    .line 396
+    :cond_3
     iget-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mContext:Lmiui/app/screenelement/ScreenContext;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ScreenContext;->requestUpdate()V
 
-    .line 394
-    :cond_3
+    .line 398
+    :cond_4
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 395
+    .line 399
     iget-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mQueryCompletedListener:Lmiui/app/screenelement/data/ContentProviderBinder$QueryCompleteListener;
 
     if-eqz v0, :cond_0
 
-    .line 396
+    .line 400
     iget-object v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mQueryCompletedListener:Lmiui/app/screenelement/data/ContentProviderBinder$QueryCompleteListener;
 
     iget-object v1, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mName:Ljava/lang/String;
@@ -752,7 +768,7 @@
 
     goto :goto_0
 
-    .line 394
+    .line 398
     :catchall_0
     move-exception v0
 
@@ -771,7 +787,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 468
+    .line 472
     const-string v0, "string"
 
     iget-object v1, p1, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mType:Ljava/lang/String;
@@ -782,16 +798,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 469
+    .line 473
     iget-object v0, p1, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mStringVar:Lmiui/app/screenelement/util/IndexedStringVariable;
 
     invoke-virtual {v0, v2}, Lmiui/app/screenelement/util/IndexedStringVariable;->set(Ljava/lang/String;)V
 
-    .line 473
+    .line 477
     :goto_0
     return-void
 
-    .line 471
+    .line 475
     :cond_0
     iget-object v0, p1, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mNumberVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -806,32 +822,32 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 401
+    .line 405
     iget-object v11, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursorLock:Ljava/lang/Object;
 
     monitor-enter v11
 
-    .line 402
+    .line 406
     :try_start_0
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     if-nez v10, :cond_2
 
-    .line 403
+    .line 407
     .local v2, count:I
     :goto_0
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCountVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     if-eqz v10, :cond_0
 
-    .line 404
+    .line 408
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCountVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     int-to-double v12, v2
 
     invoke-virtual {v10, v12, v13}, Lmiui/app/screenelement/util/IndexedNumberVariable;->set(D)V
 
-    .line 406
+    .line 410
     :cond_0
     const-string v10, "ContentProviderBinder"
 
@@ -867,14 +883,14 @@
 
     invoke-static {v10, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 407
+    .line 411
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     if-eqz v10, :cond_1
 
     if-nez v2, :cond_4
 
-    .line 408
+    .line 412
     :cond_1
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mVariables:Ljava/util/ArrayList;
 
@@ -896,13 +912,13 @@
 
     check-cast v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;
 
-    .line 409
+    .line 413
     .local v6, v:Lmiui/app/screenelement/data/ContentProviderBinder$Variable;
     invoke-direct {p0, v6}, Lmiui/app/screenelement/data/ContentProviderBinder;->setNull(Lmiui/app/screenelement/data/ContentProviderBinder$Variable;)V
 
     goto :goto_1
 
-    .line 464
+    .line 468
     .end local v2           #count:I
     .end local v4           #i$:Ljava/util/Iterator;
     .end local v6           #v:Lmiui/app/screenelement/data/ContentProviderBinder$Variable;
@@ -915,7 +931,7 @@
 
     throw v10
 
-    .line 402
+    .line 406
     :cond_2
     :try_start_1
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
@@ -926,17 +942,17 @@
 
     goto :goto_0
 
-    .line 411
+    .line 415
     .restart local v2       #count:I
     .restart local v4       #i$:Ljava/util/Iterator;
     :cond_3
     monitor-exit v11
 
-    .line 465
+    .line 469
     :goto_2
     return-void
 
-    .line 413
+    .line 417
     .end local v4           #i$:Ljava/util/Iterator;
     :cond_4
     const-string v10, "ContentProviderBinder"
@@ -963,7 +979,7 @@
 
     invoke-static {v10, v12}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
+    .line 418
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mVariables:Ljava/util/ArrayList;
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -985,15 +1001,15 @@
 
     check-cast v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;
 
-    .line 415
+    .line 419
     .restart local v6       #v:Lmiui/app/screenelement/data/ContentProviderBinder$Variable;
     const/4 v5, 0x1
 
-    .line 416
+    .line 420
     .local v5, isNull:Z
     const-string v9, "null"
 
-    .line 417
+    .line 421
     .local v9, valueStr:Ljava/lang/String;
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
@@ -1007,11 +1023,11 @@
 
     if-eqz v10, :cond_7
 
-    .line 419
+    .line 423
     :try_start_2
     iget-object v1, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mColumn:Ljava/lang/String;
 
-    .line 420
+    .line 424
     .local v1, column:Ljava/lang/String;
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
@@ -1019,7 +1035,7 @@
 
     move-result v0
 
-    .line 421
+    .line 425
     .local v0, col:I
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
@@ -1029,7 +1045,7 @@
 
     if-nez v10, :cond_7
 
-    .line 422
+    .line 426
     const-string v10, "string"
 
     iget-object v12, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mType:Ljava/lang/String;
@@ -1040,14 +1056,14 @@
 
     if-eqz v10, :cond_8
 
-    .line 423
+    .line 427
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 424
+    .line 428
     iget-object v10, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mStringVar:Lmiui/app/screenelement/util/IndexedStringVariable;
 
     invoke-virtual {v10, v9}, Lmiui/app/screenelement/util/IndexedStringVariable;->set(Ljava/lang/String;)V
@@ -1056,19 +1072,19 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 446
+    .line 450
     :cond_6
     :goto_4
     const/4 v5, 0x0
 
-    .line 454
+    .line 458
     .end local v0           #col:I
     .end local v1           #column:Ljava/lang/String;
     :cond_7
     :goto_5
     if-eqz v5, :cond_5
 
-    .line 455
+    .line 459
     :try_start_3
     invoke-direct {p0, v6}, Lmiui/app/screenelement/data/ContentProviderBinder;->setNull(Lmiui/app/screenelement/data/ContentProviderBinder$Variable;)V
     :try_end_3
@@ -1076,7 +1092,7 @@
 
     goto :goto_3
 
-    .line 425
+    .line 429
     .restart local v0       #col:I
     .restart local v1       #column:Ljava/lang/String;
     :cond_8
@@ -1091,14 +1107,14 @@
 
     if-eqz v10, :cond_9
 
-    .line 426
+    .line 430
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getDouble(I)D
 
     move-result-wide v7
 
-    .line 427
+    .line 431
     .local v7, value:D
     iget-object v10, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mNumberVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -1110,14 +1126,14 @@
 
     goto :goto_4
 
-    .line 448
+    .line 452
     .end local v0           #col:I
     .end local v1           #column:Ljava/lang/String;
     .end local v7           #value:D
     :catch_0
     move-exception v3
 
-    .line 449
+    .line 453
     .local v3, e:Ljava/lang/NumberFormatException;
     :try_start_5
     const-string v10, "ContentProviderBinder"
@@ -1138,7 +1154,7 @@
 
     goto :goto_5
 
-    .line 430
+    .line 434
     .end local v3           #e:Ljava/lang/NumberFormatException;
     .restart local v0       #col:I
     .restart local v1       #column:Ljava/lang/String;
@@ -1154,14 +1170,14 @@
 
     if-eqz v10, :cond_a
 
-    .line 431
+    .line 435
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getFloat(I)F
 
     move-result v7
 
-    .line 432
+    .line 436
     .local v7, value:F
     iget-object v10, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mNumberVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -1175,14 +1191,14 @@
 
     goto :goto_4
 
-    .line 450
+    .line 454
     .end local v0           #col:I
     .end local v1           #column:Ljava/lang/String;
     .end local v7           #value:F
     :catch_1
     move-exception v3
 
-    .line 451
+    .line 455
     .local v3, e:Ljava/lang/IllegalArgumentException;
     :try_start_7
     const-string v10, "ContentProviderBinder"
@@ -1213,7 +1229,7 @@
 
     goto :goto_5
 
-    .line 435
+    .line 439
     .end local v3           #e:Ljava/lang/IllegalArgumentException;
     .restart local v0       #col:I
     .restart local v1       #column:Ljava/lang/String;
@@ -1229,14 +1245,14 @@
 
     if-eqz v10, :cond_b
 
-    .line 436
+    .line 440
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    .line 437
+    .line 441
     .local v7, value:I
     iget-object v10, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mNumberVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -1246,7 +1262,7 @@
 
     goto :goto_4
 
-    .line 440
+    .line 444
     .end local v7           #value:I
     :cond_b
     const-string v10, "long"
@@ -1259,14 +1275,14 @@
 
     if-eqz v10, :cond_6
 
-    .line 441
+    .line 445
     iget-object v10, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v10, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v7
 
-    .line 442
+    .line 446
     .local v7, value:J
     iget-object v10, v6, Lmiui/app/screenelement/data/ContentProviderBinder$Variable;->mNumberVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -1280,7 +1296,7 @@
 
     goto/16 :goto_4
 
-    .line 464
+    .line 468
     .end local v0           #col:I
     .end local v1           #column:Ljava/lang/String;
     .end local v5           #isNull:Z
@@ -1422,23 +1438,23 @@
     .locals 2
 
     .prologue
-    .line 492
+    .line 496
     const-string v0, "ContentProviderBinder"
 
     const-string v1, "ChangeObserver: content changed."
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 493
+    .line 497
     iget-boolean v0, p0, Lmiui/app/screenelement/data/ContentProviderBinder;->mFinished:Z
 
     if-eqz v0, :cond_0
 
-    .line 497
+    .line 501
     :goto_0
     return-void
 
-    .line 496
+    .line 500
     :cond_0
     invoke-virtual {p0}, Lmiui/app/screenelement/data/ContentProviderBinder;->startQuery()V
 

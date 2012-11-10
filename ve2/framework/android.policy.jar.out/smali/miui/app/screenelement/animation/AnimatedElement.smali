@@ -16,8 +16,6 @@
 
 .field private mAlphas:Lmiui/app/screenelement/animation/AlphaAnimation;
 
-.field protected mAngleExpression:Lmiui/app/screenelement/data/Expression;
-
 .field private mAnimations:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -42,6 +40,8 @@
 .field protected mHeightExpression:Lmiui/app/screenelement/data/Expression;
 
 .field private mPositions:Lmiui/app/screenelement/animation/PositionAnimation;
+
+.field protected mRotationExpression:Lmiui/app/screenelement/data/Expression;
 
 .field private mRotations:Lmiui/app/screenelement/animation/RotationAnimation;
 
@@ -416,74 +416,6 @@
     goto :goto_1
 .end method
 
-.method public getCenterX()F
-    .locals 4
-
-    .prologue
-    .line 264
-    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterXExpression:Lmiui/app/screenelement/data/Expression;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterXExpression:Lmiui/app/screenelement/data/Expression;
-
-    iget-object v3, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mContext:Lmiui/app/screenelement/ScreenContext;
-
-    iget-object v3, v3, Lmiui/app/screenelement/ScreenContext;->mVariables:Lmiui/app/screenelement/data/Variables;
-
-    invoke-virtual {v2, v3}, Lmiui/app/screenelement/data/Expression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
-
-    move-result-wide v0
-
-    .line 265
-    .local v0, x:D
-    :goto_0
-    double-to-float v2, v0
-
-    return v2
-
-    .line 264
-    .end local v0           #x:D
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public getCenterY()F
-    .locals 4
-
-    .prologue
-    .line 269
-    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterYExpression:Lmiui/app/screenelement/data/Expression;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterYExpression:Lmiui/app/screenelement/data/Expression;
-
-    iget-object v3, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mContext:Lmiui/app/screenelement/ScreenContext;
-
-    iget-object v3, v3, Lmiui/app/screenelement/ScreenContext;->mVariables:Lmiui/app/screenelement/data/Variables;
-
-    invoke-virtual {v2, v3}, Lmiui/app/screenelement/data/Expression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
-
-    move-result-wide v0
-
-    .line 270
-    .local v0, y:D
-    :goto_0
-    double-to-float v2, v0
-
-    return v2
-
-    .line 269
-    .end local v0           #y:D
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public getHeight()F
     .locals 2
 
@@ -628,16 +560,84 @@
     goto :goto_1
 .end method
 
+.method public getPivotX()F
+    .locals 4
+
+    .prologue
+    .line 264
+    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterXExpression:Lmiui/app/screenelement/data/Expression;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterXExpression:Lmiui/app/screenelement/data/Expression;
+
+    iget-object v3, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mContext:Lmiui/app/screenelement/ScreenContext;
+
+    iget-object v3, v3, Lmiui/app/screenelement/ScreenContext;->mVariables:Lmiui/app/screenelement/data/Variables;
+
+    invoke-virtual {v2, v3}, Lmiui/app/screenelement/data/Expression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
+
+    move-result-wide v0
+
+    .line 265
+    .local v0, x:D
+    :goto_0
+    double-to-float v2, v0
+
+    return v2
+
+    .line 264
+    .end local v0           #x:D
+    :cond_0
+    const-wide/16 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public getPivotY()F
+    .locals 4
+
+    .prologue
+    .line 269
+    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterYExpression:Lmiui/app/screenelement/data/Expression;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mCenterYExpression:Lmiui/app/screenelement/data/Expression;
+
+    iget-object v3, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mContext:Lmiui/app/screenelement/ScreenContext;
+
+    iget-object v3, v3, Lmiui/app/screenelement/ScreenContext;->mVariables:Lmiui/app/screenelement/data/Variables;
+
+    invoke-virtual {v2, v3}, Lmiui/app/screenelement/data/Expression;->evaluate(Lmiui/app/screenelement/data/Variables;)D
+
+    move-result-wide v0
+
+    .line 270
+    .local v0, y:D
+    :goto_0
+    double-to-float v2, v0
+
+    return v2
+
+    .line 269
+    .end local v0           #y:D
+    :cond_0
+    const-wide/16 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public getRotationAngle()F
     .locals 4
 
     .prologue
     .line 252
-    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mAngleExpression:Lmiui/app/screenelement/data/Expression;
+    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mRotationExpression:Lmiui/app/screenelement/data/Expression;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mAngleExpression:Lmiui/app/screenelement/data/Expression;
+    iget-object v2, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mRotationExpression:Lmiui/app/screenelement/data/Expression;
 
     iget-object v3, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mContext:Lmiui/app/screenelement/ScreenContext;
 
@@ -1051,16 +1051,20 @@
     .line 83
     const-string v0, "angle"
 
-    invoke-direct {p0, p1, v0, v2}, Lmiui/app/screenelement/animation/AnimatedElement;->createExp(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lmiui/app/screenelement/data/Expression;
+    const-string v1, "rotation"
+
+    invoke-direct {p0, p1, v0, v1}, Lmiui/app/screenelement/animation/AnimatedElement;->createExp(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lmiui/app/screenelement/data/Expression;
 
     move-result-object v0
 
-    iput-object v0, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mAngleExpression:Lmiui/app/screenelement/data/Expression;
+    iput-object v0, p0, Lmiui/app/screenelement/animation/AnimatedElement;->mRotationExpression:Lmiui/app/screenelement/data/Expression;
 
     .line 84
     const-string v0, "centerX"
 
-    invoke-direct {p0, p1, v0, v2}, Lmiui/app/screenelement/animation/AnimatedElement;->createExp(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lmiui/app/screenelement/data/Expression;
+    const-string v1, "pivotX"
+
+    invoke-direct {p0, p1, v0, v1}, Lmiui/app/screenelement/animation/AnimatedElement;->createExp(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lmiui/app/screenelement/data/Expression;
 
     move-result-object v0
 
@@ -1069,7 +1073,9 @@
     .line 85
     const-string v0, "centerY"
 
-    invoke-direct {p0, p1, v0, v2}, Lmiui/app/screenelement/animation/AnimatedElement;->createExp(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lmiui/app/screenelement/data/Expression;
+    const-string v1, "pivotY"
+
+    invoke-direct {p0, p1, v0, v1}, Lmiui/app/screenelement/animation/AnimatedElement;->createExp(Lorg/w3c/dom/Element;Ljava/lang/String;Ljava/lang/String;)Lmiui/app/screenelement/data/Expression;
 
     move-result-object v0
 

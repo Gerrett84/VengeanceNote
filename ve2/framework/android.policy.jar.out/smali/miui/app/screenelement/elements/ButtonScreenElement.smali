@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 291
+    .line 289
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mPressed:Z
 
     if-eqz v0, :cond_0
@@ -109,10 +109,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 292
+    .line 290
     iget-object v0, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mPressedElements:Lmiui/app/screenelement/elements/ElementGroup;
 
-    .line 294
+    .line 292
     :goto_0
     return-object v0
 
@@ -188,32 +188,54 @@
 
 
 # virtual methods
+.method public doRender(Landroid/graphics/Canvas;)V
+    .locals 1
+    .parameter "c"
+
+    .prologue
+    .line 254
+    invoke-direct {p0}, Lmiui/app/screenelement/elements/ButtonScreenElement;->getCur()Lmiui/app/screenelement/elements/ElementGroup;
+
+    move-result-object v0
+
+    .line 255
+    .local v0, cur:Lmiui/app/screenelement/elements/ElementGroup;
+    if-eqz v0, :cond_0
+
+    .line 256
+    invoke-virtual {v0, p1}, Lmiui/app/screenelement/elements/ElementGroup;->render(Landroid/graphics/Canvas;)V
+
+    .line 257
+    :cond_0
+    return-void
+.end method
+
 .method public finish()V
     .locals 3
 
     .prologue
-    .line 273
+    .line 271
     iget-object v2, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mNormalElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     if-eqz v2, :cond_0
 
-    .line 274
+    .line 272
     iget-object v2, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mNormalElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     invoke-virtual {v2}, Lmiui/app/screenelement/elements/ElementGroup;->finish()V
 
-    .line 275
+    .line 273
     :cond_0
     iget-object v2, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mPressedElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     if-eqz v2, :cond_1
 
-    .line 276
+    .line 274
     iget-object v2, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mPressedElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     invoke-virtual {v2}, Lmiui/app/screenelement/elements/ElementGroup;->finish()V
 
-    .line 277
+    .line 275
     :cond_1
     iget-object v2, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mTriggers:Ljava/util/ArrayList;
 
@@ -235,13 +257,13 @@
 
     check-cast v1, Lmiui/app/screenelement/CommandTrigger;
 
-    .line 278
+    .line 276
     .local v1, tri:Lmiui/app/screenelement/CommandTrigger;
     invoke-virtual {v1}, Lmiui/app/screenelement/CommandTrigger;->finish()V
 
     goto :goto_0
 
-    .line 280
+    .line 278
     .end local v1           #tri:Lmiui/app/screenelement/CommandTrigger;
     :cond_2
     return-void
@@ -915,39 +937,6 @@
     return-void
 .end method
 
-.method public render(Landroid/graphics/Canvas;)V
-    .locals 2
-    .parameter "c"
-
-    .prologue
-    .line 254
-    invoke-virtual {p0}, Lmiui/app/screenelement/elements/ButtonScreenElement;->isVisible()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 259
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 256
-    :cond_1
-    invoke-direct {p0}, Lmiui/app/screenelement/elements/ButtonScreenElement;->getCur()Lmiui/app/screenelement/elements/ElementGroup;
-
-    move-result-object v0
-
-    .line 257
-    .local v0, cur:Lmiui/app/screenelement/elements/ElementGroup;
-    if-eqz v0, :cond_0
-
-    .line 258
-    invoke-virtual {v0, p1}, Lmiui/app/screenelement/elements/ElementGroup;->render(Landroid/graphics/Canvas;)V
-
-    goto :goto_0
-.end method
-
 .method public reset(J)V
     .locals 1
     .parameter "time"
@@ -1059,28 +1048,28 @@
     .parameter "show"
 
     .prologue
-    .line 284
+    .line 282
     iget-object v0, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mNormalElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     if-eqz v0, :cond_0
 
-    .line 285
+    .line 283
     iget-object v0, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mNormalElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     invoke-virtual {v0, p1, p2}, Lmiui/app/screenelement/elements/ElementGroup;->showCategory(Ljava/lang/String;Z)V
 
-    .line 286
+    .line 284
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mPressedElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     if-eqz v0, :cond_1
 
-    .line 287
+    .line 285
     iget-object v0, p0, Lmiui/app/screenelement/elements/ButtonScreenElement;->mPressedElements:Lmiui/app/screenelement/elements/ElementGroup;
 
     invoke-virtual {v0, p1, p2}, Lmiui/app/screenelement/elements/ElementGroup;->showCategory(Ljava/lang/String;Z)V
 
-    .line 288
+    .line 286
     :cond_1
     return-void
 .end method
@@ -1090,32 +1079,32 @@
     .parameter "currentTime"
 
     .prologue
-    .line 263
+    .line 261
     invoke-super {p0, p1, p2}, Lmiui/app/screenelement/elements/AnimatedScreenElement;->tick(J)V
 
-    .line 264
+    .line 262
     invoke-virtual {p0}, Lmiui/app/screenelement/elements/ButtonScreenElement;->isVisible()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 269
+    .line 267
     :cond_0
     :goto_0
     return-void
 
-    .line 266
+    .line 264
     :cond_1
     invoke-direct {p0}, Lmiui/app/screenelement/elements/ButtonScreenElement;->getCur()Lmiui/app/screenelement/elements/ElementGroup;
 
     move-result-object v0
 
-    .line 267
+    .line 265
     .local v0, cur:Lmiui/app/screenelement/elements/ElementGroup;
     if-eqz v0, :cond_0
 
-    .line 268
+    .line 266
     invoke-virtual {v0, p1, p2}, Lmiui/app/screenelement/elements/ElementGroup;->tick(J)V
 
     goto :goto_0

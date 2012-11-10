@@ -44,21 +44,21 @@
     .end annotation
 
     .prologue
-    .line 585
+    .line 584
     iput-object p1, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 586
+    .line 585
     iput-object p3, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->mBaseX:Lmiui/app/screenelement/data/Expression;
 
-    .line 587
+    .line 586
     iput-object p4, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->mBaseY:Lmiui/app/screenelement/data/Expression;
 
-    .line 588
+    .line 587
     invoke-virtual {p0, p2}, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->load(Lorg/w3c/dom/Element;)V
 
-    .line 589
+    .line 588
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .locals 5
 
     .prologue
-    .line 592
+    .line 591
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->mBaseX:Lmiui/app/screenelement/data/Expression;
@@ -112,7 +112,7 @@
     .locals 5
 
     .prologue
-    .line 596
+    .line 595
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->mBaseY:Lmiui/app/screenelement/data/Expression;
@@ -164,17 +164,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 600
+    .line 599
     if-nez p1, :cond_0
 
-    .line 601
+    .line 600
     const-string v0, "LockScreen_AdvancedSlider"
 
     const-string v1, "node is null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 602
+    .line 601
     new-instance v0, Lmiui/app/screenelement/ScreenElementLoadException;
 
     const-string v1, "node is null"
@@ -183,7 +183,7 @@
 
     throw v0
 
-    .line 605
+    .line 604
     :cond_0
     invoke-interface {p1}, Lorg/w3c/dom/Element;->getNodeName()Ljava/lang/String;
 
@@ -199,7 +199,7 @@
 
     invoke-static {v0, v1}, Lmiui/app/screenelement/util/Utils;->asserts(ZLjava/lang/String;)V
 
-    .line 606
+    .line 605
     const-string v0, "x"
 
     invoke-static {p1, v0, v2}, Lmiui/app/screenelement/util/Utils;->getAttrAsInt(Lorg/w3c/dom/Element;Ljava/lang/String;I)I
@@ -208,7 +208,7 @@
 
     iput v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->x:I
 
-    .line 607
+    .line 606
     const-string v0, "y"
 
     invoke-static {p1, v0, v2}, Lmiui/app/screenelement/util/Utils;->getAttrAsInt(Lorg/w3c/dom/Element;Ljava/lang/String;I)I
@@ -217,6 +217,6 @@
 
     iput v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$Position;->y:I
 
-    .line 608
+    .line 607
     return-void
 .end method

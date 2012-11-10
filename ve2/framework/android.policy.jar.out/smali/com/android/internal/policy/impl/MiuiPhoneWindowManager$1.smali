@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 107
     iput-object p1, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 106
+    .line 109
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/KeyguardViewMediator;
@@ -70,7 +70,7 @@
 
     if-nez v0, :cond_1
 
-    .line 110
+    .line 113
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
@@ -78,17 +78,17 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 115
+    .line 118
     :goto_0
     return-void
 
-    .line 113
+    .line 116
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager$1;->this$0:Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPowerKeyHandled:Z
+    iput-boolean v1, v0, Lcom/android/internal/policy/impl/MiuiPhoneWindowManager;->mPowerKeyHandled:Z
 
     goto :goto_0
 .end method

@@ -323,7 +323,7 @@
     .parameter "v"
 
     .prologue
-    .line 260
+    .line 265
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ScreenElementRoot;->getScale()F
@@ -333,6 +333,9 @@
     div-float v0, p1, v0
 
     return v0
+.end method
+
+.method public abstract doRender(Landroid/graphics/Canvas;)V
 .end method
 
 .method public findElement(Ljava/lang/String;)Lmiui/app/screenelement/elements/ScreenElement;
@@ -364,7 +367,7 @@
     .locals 0
 
     .prologue
-    .line 174
+    .line 173
     return-void
 .end method
 
@@ -372,7 +375,7 @@
     .locals 1
 
     .prologue
-    .line 264
+    .line 269
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mFramerateToken:Lmiui/app/screenelement/FramerateTokenList$FramerateToken;
 
     if-nez v0, :cond_0
@@ -398,24 +401,24 @@
     .parameter "width"
 
     .prologue
-    .line 236
+    .line 241
     const/4 v1, 0x0
 
     cmpg-float v1, p2, v1
 
     if-gtz v1, :cond_0
 
-    .line 247
+    .line 252
     .end local p1
     :goto_0
     return p1
 
-    .line 238
+    .line 243
     .restart local p1
     :cond_0
     move v0, p1
 
-    .line 239
+    .line 244
     .local v0, x:F
     sget-object v1, Lmiui/app/screenelement/elements/ScreenElement$1;->$SwitchMap$miui$app$screenelement$elements$ScreenElement$Align:[I
 
@@ -432,10 +435,10 @@
     :goto_1
     move p1, v0
 
-    .line 247
+    .line 252
     goto :goto_0
 
-    .line 241
+    .line 246
     :pswitch_0
     const/high16 v1, 0x4000
 
@@ -443,16 +446,16 @@
 
     sub-float/2addr v0, v1
 
-    .line 242
+    .line 247
     goto :goto_1
 
-    .line 244
+    .line 249
     :pswitch_1
     sub-float/2addr v0, p2
 
     goto :goto_1
 
-    .line 239
+    .line 244
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -476,24 +479,24 @@
     .parameter "height"
 
     .prologue
-    .line 221
+    .line 226
     const/4 v1, 0x0
 
     cmpg-float v1, p2, v1
 
     if-gtz v1, :cond_0
 
-    .line 232
+    .line 237
     .end local p1
     :goto_0
     return p1
 
-    .line 223
+    .line 228
     .restart local p1
     :cond_0
     move v0, p1
 
-    .line 224
+    .line 229
     .local v0, y:F
     sget-object v1, Lmiui/app/screenelement/elements/ScreenElement$1;->$SwitchMap$miui$app$screenelement$elements$ScreenElement$AlignV:[I
 
@@ -510,10 +513,10 @@
     :goto_1
     move p1, v0
 
-    .line 232
+    .line 237
     goto :goto_0
 
-    .line 226
+    .line 231
     :pswitch_0
     const/high16 v1, 0x4000
 
@@ -521,16 +524,16 @@
 
     sub-float/2addr v0, v1
 
-    .line 227
+    .line 232
     goto :goto_1
 
-    .line 229
+    .line 234
     :pswitch_1
     sub-float/2addr v0, p2
 
     goto :goto_1
 
-    .line 224
+    .line 229
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -543,24 +546,21 @@
 
     .prologue
     .line 140
-    invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->reset()V
-
-    .line 141
     invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->updateVisibility()V
 
-    .line 142
+    .line 141
     invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->isVisible()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 144
+    .line 143
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lmiui/app/screenelement/elements/ScreenElement;->onVisibilityChange(Z)V
 
-    .line 146
+    .line 145
     :cond_0
     return-void
 .end method
@@ -579,7 +579,7 @@
     .locals 4
 
     .prologue
-    .line 189
+    .line 187
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mShow:Z
 
     if-eqz v0, :cond_2
@@ -622,7 +622,7 @@
     .parameter "event"
 
     .prologue
-    .line 196
+    .line 201
     const/4 v0, 0x0
 
     return v0
@@ -633,17 +633,17 @@
     .parameter "visible"
 
     .prologue
-    .line 158
+    .line 157
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mHasName:Z
 
     if-eqz v0, :cond_1
 
-    .line 159
+    .line 158
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mVisibilityVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     if-nez v0, :cond_0
 
-    .line 160
+    .line 159
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mName:Ljava/lang/String;
@@ -658,7 +658,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mVisibilityVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
-    .line 162
+    .line 161
     :cond_0
     iget-object v2, p0, Lmiui/app/screenelement/elements/ScreenElement;->mVisibilityVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -669,11 +669,11 @@
     :goto_0
     invoke-virtual {v2, v0, v1}, Lmiui/app/screenelement/util/IndexedNumberVariable;->set(D)V
 
-    .line 164
+    .line 163
     :cond_1
     return-void
 
-    .line 162
+    .line 161
     :cond_2
     const-wide/16 v0, 0x0
 
@@ -684,11 +684,32 @@
     .locals 0
 
     .prologue
-    .line 167
+    .line 166
     return-void
 .end method
 
-.method public abstract render(Landroid/graphics/Canvas;)V
+.method public render(Landroid/graphics/Canvas;)V
+    .locals 1
+    .parameter "c"
+
+    .prologue
+    .line 192
+    invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->updateVisibility()V
+
+    .line 193
+    iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mIsVisible:Z
+
+    if-nez v0, :cond_0
+
+    .line 196
+    :goto_0
+    return-void
+
+    .line 195
+    :cond_0
+    invoke-virtual {p0, p1}, Lmiui/app/screenelement/elements/ScreenElement;->doRender(Landroid/graphics/Canvas;)V
+
+    goto :goto_0
 .end method
 
 .method protected requestFramerate(F)V
@@ -698,28 +719,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 268
+    .line 273
     cmpg-float v0, p1, v1
 
     if-gez v0, :cond_1
 
-    .line 279
+    .line 284
     :cond_0
     :goto_0
     return-void
 
-    .line 271
+    .line 276
     :cond_1
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mFramerateToken:Lmiui/app/screenelement/FramerateTokenList$FramerateToken;
 
     if-nez v0, :cond_2
 
-    .line 273
+    .line 278
     cmpl-float v0, p1, v1
 
     if-eqz v0, :cond_0
 
-    .line 275
+    .line 280
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -732,13 +753,13 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mFramerateToken:Lmiui/app/screenelement/FramerateTokenList$FramerateToken;
 
-    .line 277
+    .line 282
     :cond_2
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mFramerateToken:Lmiui/app/screenelement/FramerateTokenList$FramerateToken;
 
     if-eqz v0, :cond_0
 
-    .line 278
+    .line 283
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mFramerateToken:Lmiui/app/screenelement/FramerateTokenList$FramerateToken;
 
     invoke-virtual {v0, p1}, Lmiui/app/screenelement/FramerateTokenList$FramerateToken;->requestFramerate(F)V
@@ -750,12 +771,12 @@
     .locals 1
 
     .prologue
-    .line 251
+    .line 256
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mContext:Lmiui/app/screenelement/ScreenContext;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ScreenContext;->requestUpdate()V
 
-    .line 252
+    .line 257
     return-void
 .end method
 
@@ -763,14 +784,14 @@
     .locals 2
 
     .prologue
-    .line 178
+    .line 177
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lmiui/app/screenelement/elements/ScreenElement;->reset(J)V
 
-    .line 179
+    .line 178
     return-void
 .end method
 
@@ -779,7 +800,7 @@
     .parameter "time"
 
     .prologue
-    .line 182
+    .line 181
     return-void
 .end method
 
@@ -787,10 +808,10 @@
     .locals 0
 
     .prologue
-    .line 170
+    .line 169
     invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->updateVisibility()V
 
-    .line 171
+    .line 170
     return-void
 .end method
 
@@ -799,7 +820,7 @@
     .parameter "v"
 
     .prologue
-    .line 256
+    .line 261
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ScreenElementRoot;->getScale()F
@@ -820,22 +841,22 @@
     .parameter "value"
 
     .prologue
-    .line 210
+    .line 215
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mHasName:Z
 
     if-nez v0, :cond_0
 
-    .line 218
+    .line 223
     :goto_0
     return-void
 
-    .line 213
+    .line 218
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mActualHeightVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     if-nez v0, :cond_1
 
-    .line 214
+    .line 219
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mName:Ljava/lang/String;
@@ -850,7 +871,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mActualHeightVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
-    .line 216
+    .line 221
     :cond_1
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mActualHeightVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -864,22 +885,22 @@
     .parameter "value"
 
     .prologue
-    .line 200
+    .line 205
     iget-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mHasName:Z
 
     if-nez v0, :cond_0
 
-    .line 207
+    .line 212
     :goto_0
     return-void
 
-    .line 203
+    .line 208
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mActualWidthVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     if-nez v0, :cond_1
 
-    .line 204
+    .line 209
     new-instance v0, Lmiui/app/screenelement/util/IndexedNumberVariable;
 
     iget-object v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mName:Ljava/lang/String;
@@ -894,7 +915,7 @@
 
     iput-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mActualWidthVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
-    .line 206
+    .line 211
     :cond_1
     iget-object v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mActualWidthVar:Lmiui/app/screenelement/util/IndexedNumberVariable;
 
@@ -958,10 +979,7 @@
     .parameter "currentTime"
 
     .prologue
-    .line 185
-    invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->updateVisibility()V
-
-    .line 186
+    .line 184
     return-void
 .end method
 
@@ -969,26 +987,26 @@
     .locals 2
 
     .prologue
-    .line 149
+    .line 148
     invoke-virtual {p0}, Lmiui/app/screenelement/elements/ScreenElement;->isVisibleInner()Z
 
     move-result v0
 
-    .line 151
+    .line 150
     .local v0, v:Z
     iget-boolean v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mIsVisible:Z
 
     if-eq v1, v0, :cond_0
 
-    .line 152
+    .line 151
     iput-boolean v0, p0, Lmiui/app/screenelement/elements/ScreenElement;->mIsVisible:Z
 
-    .line 153
+    .line 152
     iget-boolean v1, p0, Lmiui/app/screenelement/elements/ScreenElement;->mIsVisible:Z
 
     invoke-virtual {p0, v1}, Lmiui/app/screenelement/elements/ScreenElement;->onVisibilityChange(Z)V
 
-    .line 155
+    .line 154
     :cond_0
     return-void
 .end method

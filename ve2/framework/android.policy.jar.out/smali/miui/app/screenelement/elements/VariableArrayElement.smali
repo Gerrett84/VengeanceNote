@@ -155,6 +155,15 @@
 
 
 # virtual methods
+.method public doRender(Landroid/graphics/Canvas;)V
+    .locals 0
+    .parameter "c"
+
+    .prologue
+    .line 177
+    return-void
+.end method
+
 .method public init()V
     .locals 3
 
@@ -189,15 +198,6 @@
     .line 190
     .end local v1           #v:Lmiui/app/screenelement/elements/VariableArrayElement$Var;
     :cond_0
-    return-void
-.end method
-
-.method public render(Landroid/graphics/Canvas;)V
-    .locals 0
-    .parameter "c"
-
-    .prologue
-    .line 177
     return-void
 .end method
 

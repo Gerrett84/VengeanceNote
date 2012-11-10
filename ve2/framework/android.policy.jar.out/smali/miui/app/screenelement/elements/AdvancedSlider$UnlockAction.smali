@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 611
+    .line 610
     iput-object p1, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
     .parameter "x1"
 
     .prologue
-    .line 611
+    .line 610
     invoke-direct {p0, p1}, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;-><init>(Lmiui/app/screenelement/elements/AdvancedSlider;)V
 
     return-void
@@ -56,30 +56,30 @@
     .locals 5
 
     .prologue
-    .line 632
+    .line 631
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
     if-nez v2, :cond_1
 
-    .line 633
+    .line 632
     const/4 v1, 0x0
 
-    .line 660
+    .line 659
     :cond_0
     :goto_0
     return-object v1
 
-    .line 635
+    .line 634
     :cond_1
     const/4 v1, 0x0
 
-    .line 636
+    .line 635
     .local v1, intent:Landroid/content/Intent;
     iget-boolean v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mConfigTaskLoaded:Z
 
     if-nez v2, :cond_3
 
-    .line 637
+    .line 636
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->this$0:Lmiui/app/screenelement/elements/AdvancedSlider;
 
     iget-object v2, v2, Lmiui/app/screenelement/elements/ScreenElement;->mRoot:Lmiui/app/screenelement/ScreenElementRoot;
@@ -92,7 +92,7 @@
 
     move-result-object v0
 
-    .line 641
+    .line 640
     .local v0, configTask:Lmiui/app/screenelement/util/Task;
     if-eqz v0, :cond_2
 
@@ -104,16 +104,16 @@
 
     if-nez v2, :cond_2
 
-    .line 642
+    .line 641
     iput-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
-    .line 644
+    .line 643
     :cond_2
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mConfigTaskLoaded:Z
 
-    .line 647
+    .line 646
     .end local v0           #configTask:Lmiui/app/screenelement/util/Task;
     :cond_3
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
@@ -126,7 +126,7 @@
 
     if-nez v2, :cond_0
 
-    .line 648
+    .line 647
     new-instance v1, Landroid/content/Intent;
 
     .end local v1           #intent:Landroid/content/Intent;
@@ -136,7 +136,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 649
+    .line 648
     .restart local v1       #intent:Landroid/content/Intent;
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
@@ -148,14 +148,14 @@
 
     if-nez v2, :cond_4
 
-    .line 650
+    .line 649
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
     iget-object v2, v2, Lmiui/app/screenelement/util/Task;->type:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 651
+    .line 650
     :cond_4
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
@@ -167,14 +167,14 @@
 
     if-nez v2, :cond_5
 
-    .line 652
+    .line 651
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
     iget-object v2, v2, Lmiui/app/screenelement/util/Task;->category:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 653
+    .line 652
     :cond_5
     iget-object v2, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
@@ -196,7 +196,7 @@
 
     if-nez v2, :cond_6
 
-    .line 654
+    .line 653
     new-instance v2, Landroid/content/ComponentName;
 
     iget-object v3, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
@@ -211,7 +211,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 656
+    .line 655
     :cond_6
     const/high16 v2, 0x3400
 
@@ -226,28 +226,28 @@
     .locals 1
 
     .prologue
-    .line 664
+    .line 663
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     if-eqz v0, :cond_0
 
-    .line 665
+    .line 664
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ActionCommand;->finish()V
 
-    .line 666
+    .line 665
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     if-eqz v0, :cond_1
 
-    .line 667
+    .line 666
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/CommandTrigger;->finish()V
 
-    .line 668
+    .line 667
     :cond_1
     return-void
 .end method
@@ -256,28 +256,28 @@
     .locals 1
 
     .prologue
-    .line 671
+    .line 670
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     if-eqz v0, :cond_0
 
-    .line 672
+    .line 671
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ActionCommand;->init()V
 
-    .line 673
+    .line 672
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     if-eqz v0, :cond_1
 
-    .line 674
+    .line 673
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/CommandTrigger;->init()V
 
-    .line 675
+    .line 674
     :cond_1
     return-void
 .end method
@@ -286,28 +286,28 @@
     .locals 1
 
     .prologue
-    .line 678
+    .line 677
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     if-eqz v0, :cond_0
 
-    .line 679
+    .line 678
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ActionCommand;->pause()V
 
-    .line 680
+    .line 679
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     if-eqz v0, :cond_1
 
-    .line 681
+    .line 680
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/CommandTrigger;->pause()V
 
-    .line 682
+    .line 681
     :cond_1
     return-void
 .end method
@@ -316,45 +316,45 @@
     .locals 1
 
     .prologue
-    .line 621
+    .line 620
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTask:Lmiui/app/screenelement/util/Task;
 
     if-eqz v0, :cond_0
 
-    .line 622
+    .line 621
     invoke-direct {p0}, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->performTask()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 628
+    .line 627
     :goto_0
     return-object v0
 
-    .line 623
+    .line 622
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     if-eqz v0, :cond_2
 
-    .line 624
+    .line 623
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ActionCommand;->perform()V
 
-    .line 628
+    .line 627
     :cond_1
     :goto_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 625
+    .line 624
     :cond_2
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     if-eqz v0, :cond_1
 
-    .line 626
+    .line 625
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/CommandTrigger;->perform()V
@@ -366,28 +366,28 @@
     .locals 1
 
     .prologue
-    .line 685
+    .line 684
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     if-eqz v0, :cond_0
 
-    .line 686
+    .line 685
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mCommand:Lmiui/app/screenelement/ActionCommand;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/ActionCommand;->resume()V
 
-    .line 687
+    .line 686
     :cond_0
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     if-eqz v0, :cond_1
 
-    .line 688
+    .line 687
     iget-object v0, p0, Lmiui/app/screenelement/elements/AdvancedSlider$UnlockAction;->mTrigger:Lmiui/app/screenelement/CommandTrigger;
 
     invoke-virtual {v0}, Lmiui/app/screenelement/CommandTrigger;->resume()V
 
-    .line 689
+    .line 688
     :cond_1
     return-void
 .end method
