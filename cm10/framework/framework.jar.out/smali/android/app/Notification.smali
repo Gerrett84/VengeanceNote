@@ -934,7 +934,7 @@
     .line 818
     const-string/jumbo v2, "setBackgroundResource"
 
-    const v3, 0x1080665
+    const v3, 0x1080666
 
     invoke-virtual {v0, v4, v2, v3}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
@@ -943,7 +943,7 @@
 
     const-string/jumbo v3, "setBackgroundResource"
 
-    const v4, 0x108043a
+    const v4, 0x108043b
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 

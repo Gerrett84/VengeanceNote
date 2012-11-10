@@ -789,7 +789,7 @@
 
     .line 366
     .local v1, imageResId:I
-    const v0, 0x1040337
+    const v0, 0x104033a
 
     .line 367
     .local v0, imageDescId:I
@@ -848,7 +848,7 @@
 
     .line 348
     .restart local v1       #imageResId:I
-    const v0, 0x1040337
+    const v0, 0x104033a
 
     .line 349
     .restart local v0       #imageDescId:I
@@ -862,7 +862,7 @@
 
     .line 353
     .restart local v1       #imageResId:I
-    const v0, 0x1040336
+    const v0, 0x1040339
 
     .line 354
     .restart local v0       #imageDescId:I
@@ -875,11 +875,11 @@
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_2
-    const v1, 0x1080346
+    const v1, 0x1080347
 
     .line 359
     .restart local v1       #imageResId:I
-    const v0, 0x1040338
+    const v0, 0x104033b
 
     .line 360
     .restart local v0       #imageDescId:I

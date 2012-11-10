@@ -726,7 +726,32 @@
 
     iput-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mImsi:Ljava/lang/String;
 
-    .line 236
+    .line 238
+    :goto_3
+    invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->getRUIMOperatorNumeric()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 239
+    .local v6, operatorNumeric:Ljava/lang/String;
+    if-eqz v6, :cond_2
+
+    .line 240
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    if-gt v7, v11, :cond_2
+
+    .line 241
+    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mContext:Landroid/content/Context;
+
+    invoke-static {v7, v6}, Lcom/android/internal/telephony/MccTable;->updateMccMncConfiguration(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto/16 :goto_1
+
+    .line 235
+    .end local v6           #operatorNumeric:Ljava/lang/String;
     :cond_6
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -764,32 +789,10 @@
 
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/cdma/RuimRecords;->log(Ljava/lang/String;)V
 
-    .line 238
-    invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/RuimRecords;->getRUIMOperatorNumeric()Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 239
-    .local v6, operatorNumeric:Ljava/lang/String;
-    if-eqz v6, :cond_2
-
-    .line 240
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    if-gt v7, v11, :cond_2
-
-    .line 241
-    iget-object v7, p0, Lcom/android/internal/telephony/cdma/RuimRecords;->mContext:Landroid/content/Context;
-
-    invoke-static {v7, v6}, Lcom/android/internal/telephony/MccTable;->updateMccMncConfiguration(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto/16 :goto_1
+    goto :goto_3
 
     .line 247
     .end local v1           #ar:Landroid/os/AsyncResult;
-    .end local v6           #operatorNumeric:Ljava/lang/String;
     :sswitch_3
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -1026,8 +1029,6 @@
     goto/16 :goto_1
 
     .line 208
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x2 -> :sswitch_0

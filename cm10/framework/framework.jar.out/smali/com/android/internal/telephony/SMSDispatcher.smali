@@ -1489,7 +1489,7 @@
 
     .line 1001
     .local v4, r:Landroid/content/res/Resources;
-    const v5, 0x104043e
+    const v5, 0x1040441
 
     const/4 v6, 0x1
 
@@ -1521,7 +1521,7 @@
 
     invoke-direct {v5, v6}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v6, 0x104043d
+    const v6, 0x1040440
 
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1537,7 +1537,7 @@
 
     move-result-object v5
 
-    const v6, 0x104043f
+    const v6, 0x1040442
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1547,7 +1547,7 @@
 
     move-result-object v5
 
-    const v6, 0x1040440
+    const v6, 0x1040443
 
     invoke-virtual {v4, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

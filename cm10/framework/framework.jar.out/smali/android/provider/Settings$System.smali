@@ -122,6 +122,8 @@
 
 .field public static final ENABLE_MWI_NOTIFICATION:Ljava/lang/String; = "enable_mwi_notification"
 
+.field public static final ENABLE_STYLUS_GESTURES:Ljava/lang/String; = "enable_stylus_gestures"
+
 .field public static final END_BUTTON_BEHAVIOR:Ljava/lang/String; = "end_button_behavior"
 
 .field public static final END_BUTTON_BEHAVIOR_DEFAULT:I = 0x2
@@ -131,6 +133,8 @@
 .field public static final END_BUTTON_BEHAVIOR_SLEEP:I = 0x2
 
 .field public static final EXPANDED_BRIGHTNESS_MODE:Ljava/lang/String; = "expanded_brightness_mode"
+
+.field public static final EXPANDED_DESKTOP_STATE:Ljava/lang/String; = "expanded_desktop_state"
 
 .field public static final EXPANDED_FLASH_MODE:Ljava/lang/String; = "expanded_flash_mode"
 
@@ -151,6 +155,18 @@
 .field public static final FANCY_IME_ANIMATIONS:Ljava/lang/String; = "fancy_ime_animations"
 
 .field public static final FONT_SCALE:Ljava/lang/String; = "font_scale"
+
+.field public static final GESTURES_DOUBLE_TAP:Ljava/lang/String; = "gestures_double_tap"
+
+.field public static final GESTURES_DOWN_SWIPE:Ljava/lang/String; = "gestures_down_swipe"
+
+.field public static final GESTURES_LEFT_SWIPE:Ljava/lang/String; = "gestures_left_swipe"
+
+.field public static final GESTURES_LONG_PRESS:Ljava/lang/String; = "gestures_long_press"
+
+.field public static final GESTURES_RIGHT_SWIPE:Ljava/lang/String; = "gestures_right_swipe"
+
+.field public static final GESTURES_UP_SWIPE:Ljava/lang/String; = "gestures_up_swipe"
 
 .field public static final HAPTIC_FEEDBACK_ENABLED:Ljava/lang/String; = "haptic_feedback_enabled"
 
@@ -244,6 +260,12 @@
 .field public static final LOCKSCREEN_DISABLED:Ljava/lang/String; = "lockscreen.disabled"
 
 .field public static final LOCKSCREEN_IF_CALL_ENDS_WITH_SCREENOFF:Ljava/lang/String; = "lockscreen_if_call_ends_with_screenoff"
+
+.field public static final LOCKSCREEN_LONG_BACK_ACTION:Ljava/lang/String; = "lockscreen_long_back_action"
+
+.field public static final LOCKSCREEN_LONG_HOME_ACTION:Ljava/lang/String; = "lockscreen_long_home_action"
+
+.field public static final LOCKSCREEN_LONG_MENU_ACTION:Ljava/lang/String; = "lockscreen_long_menu_action"
 
 .field public static final LOCKSCREEN_QUICK_UNLOCK_CONTROL:Ljava/lang/String; = "lockscreen_quick_unlock_control"
 
@@ -375,6 +397,8 @@
 .field public static final POINTER_SPEED:Ljava/lang/String; = "pointer_speed"
 
 .field public static final POWER_MENU_AIRPLANE_ENABLED:Ljava/lang/String; = "power_menu_airplane_enabled"
+
+.field public static final POWER_MENU_EXPANDED_DESKTOP_ENABLED:Ljava/lang/String; = "power_menu_expanded_desktop_enabled"
 
 .field public static final POWER_MENU_PROFILES_ENABLED:Ljava/lang/String; = "power_menu_profiles_enabled"
 
@@ -1051,7 +1075,7 @@
 
     sput-object v0, Landroid/provider/Settings$System;->DEFAULT_ALARM_ALERT_URI:Landroid/net/Uri;
 
-    .line 2835
+    .line 2913
     const/16 v0, 0x4d
 
     new-array v0, v0, [Ljava/lang/String;

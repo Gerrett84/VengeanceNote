@@ -554,6 +554,10 @@
 
     if-ne v8, v9, :cond_8
 
+    iget-boolean v8, p0, Lcom/android/internal/telephony/HTCQualcommRIL;->skipCdmaSubcription:Z
+
+    if-nez v8, :cond_8
+
     .line 103
     invoke-virtual {v6}, Lcom/android/internal/telephony/IccCardStatus;->getCdmaSubscriptionAppIndex()I
 

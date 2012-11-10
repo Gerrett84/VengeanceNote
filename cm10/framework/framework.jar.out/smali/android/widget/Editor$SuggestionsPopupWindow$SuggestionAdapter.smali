@@ -183,7 +183,7 @@
     if-ne v2, v3, :cond_1
 
     .line 2286
-    const v2, 0x1080388
+    const v2, 0x1080389
 
     invoke-virtual {v1, v2, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
@@ -200,7 +200,7 @@
     if-ne v2, v3, :cond_2
 
     .line 2289
-    const v2, 0x1080389
+    const v2, 0x108038a
 
     invoke-virtual {v1, v2, v4, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 

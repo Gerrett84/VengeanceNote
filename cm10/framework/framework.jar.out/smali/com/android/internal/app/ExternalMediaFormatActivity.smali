@@ -95,7 +95,7 @@
     iput v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mIconId:I
 
     .line 62
-    const v1, 0x1040468
+    const v1, 0x104046b
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->getString(I)Ljava/lang/String;
 
@@ -104,7 +104,7 @@
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
     .line 63
-    const v1, 0x1040469
+    const v1, 0x104046c
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->getString(I)Ljava/lang/String;
 
@@ -113,7 +113,7 @@
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
     .line 64
-    const v1, 0x104046a
+    const v1, 0x104046d
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ExternalMediaFormatActivity;->getString(I)Ljava/lang/String;
 

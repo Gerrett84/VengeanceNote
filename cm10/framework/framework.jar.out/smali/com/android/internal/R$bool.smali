@@ -115,7 +115,11 @@
 
 .field public static final config_sms_utf8_support:I = 0x1110035
 
+.field public static final config_stylusGestures:I = 0x111004a
+
 .field public static final config_swipeDisambiguation:I = 0x1110028
+
+.field public static final config_symKeyShowsImePicker:I = 0x1110049
 
 .field public static final config_telephony_use_own_number_for_voicemail:I = 0x1110034
 

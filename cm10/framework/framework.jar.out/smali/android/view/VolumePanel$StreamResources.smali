@@ -77,7 +77,7 @@
 
     const/4 v3, 0x6
 
-    const v4, 0x1040420
+    const v4, 0x1040423
 
     const v5, 0x108029a
 
@@ -94,7 +94,7 @@
 
     const-string v4, "RingerStream"
 
-    const v7, 0x1040421
+    const v7, 0x1040424
 
     const v8, 0x108029f
 
@@ -115,7 +115,7 @@
 
     const-string v4, "VoiceStream"
 
-    const v7, 0x1040422
+    const v7, 0x1040425
 
     const v8, 0x108029e
 
@@ -136,7 +136,7 @@
 
     const-string v4, "AlarmStream"
 
-    const v7, 0x104041d
+    const v7, 0x1040420
 
     const v8, 0x1080298
 
@@ -157,7 +157,7 @@
 
     const-string v4, "MediaStream"
 
-    const v7, 0x1040423
+    const v7, 0x1040426
 
     const v8, 0x10802a2
 
@@ -182,7 +182,7 @@
 
     const/4 v6, 0x5
 
-    const v7, 0x1040424
+    const v7, 0x1040427
 
     const v8, 0x108029c
 
@@ -203,7 +203,7 @@
 
     const/16 v6, -0x64
 
-    const v7, 0x1040423
+    const v7, 0x1040426
 
     const v8, 0x10802a2
 
@@ -224,11 +224,11 @@
 
     const/16 v6, -0xc8
 
-    const v7, 0x1040423
+    const v7, 0x1040426
 
-    const v8, 0x1080344
+    const v8, 0x1080345
 
-    const v9, 0x108033e
+    const v9, 0x108033f
 
     move v10, v2
 

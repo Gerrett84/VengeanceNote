@@ -211,9 +211,11 @@
 
 .field public static final ic_lock_airplane_mode_off:I = 0x10802d9
 
+.field public static final ic_lock_expanded_desktop:I = 0x10802da
+
 .field public static final ic_lock_idle_alarm:I = 0x108002e
 
-.field public static final ic_lock_idle_calendar:I = 0x10802da
+.field public static final ic_lock_idle_calendar:I = 0x10802db
 
 .field public static final ic_lock_idle_charging:I = 0x108001e
 
@@ -225,33 +227,33 @@
 
 .field public static final ic_lock_power_off:I = 0x1080030
 
-.field public static final ic_lock_profile:I = 0x10802db
+.field public static final ic_lock_profile:I = 0x10802dc
 
-.field public static final ic_lock_reboot:I = 0x10802dc
+.field public static final ic_lock_reboot:I = 0x10802dd
 
-.field public static final ic_lock_screenshot:I = 0x10802df
+.field public static final ic_lock_screenshot:I = 0x10802e0
 
 .field public static final ic_lock_silent_mode:I = 0x1080031
 
 .field public static final ic_lock_silent_mode_off:I = 0x1080032
 
-.field public static final ic_lockscreen_camera:I = 0x10802ea
+.field public static final ic_lockscreen_camera:I = 0x10802eb
 
-.field public static final ic_lockscreen_lock_pressed:I = 0x1080311
+.field public static final ic_lockscreen_lock_pressed:I = 0x1080312
 
-.field public static final ic_lockscreen_silent:I = 0x1080324
+.field public static final ic_lockscreen_silent:I = 0x1080325
 
-.field public static final ic_lockscreen_target_activated:I = 0x108032e
+.field public static final ic_lockscreen_target_activated:I = 0x108032f
 
-.field public static final ic_lockscreen_unlock:I = 0x1080331
+.field public static final ic_lockscreen_unlock:I = 0x1080332
 
-.field public static final ic_lockscreen_unlock_activated:I = 0x1080332
+.field public static final ic_lockscreen_unlock_activated:I = 0x1080333
 
-.field public static final ic_lockscreen_unlock_normal:I = 0x1080333
+.field public static final ic_lockscreen_unlock_normal:I = 0x1080334
 
-.field public static final ic_lockscreen_unlock_phantom:I = 0x1080334
+.field public static final ic_lockscreen_unlock_phantom:I = 0x1080335
 
-.field public static final ic_maps_indicator_current_position_anim:I = 0x1080336
+.field public static final ic_maps_indicator_current_position_anim:I = 0x1080337
 
 .field public static final ic_media_ff:I = 0x1080021
 
@@ -265,11 +267,11 @@
 
 .field public static final ic_media_rew:I = 0x1080026
 
-.field public static final ic_media_route_disabled_holo_dark:I = 0x108033e
+.field public static final ic_media_route_disabled_holo_dark:I = 0x108033f
 
-.field public static final ic_media_route_on_holo_dark:I = 0x1080344
+.field public static final ic_media_route_on_holo_dark:I = 0x1080345
 
-.field public static final ic_media_stop:I = 0x1080346
+.field public static final ic_media_stop:I = 0x1080347
 
 .field public static final ic_menu_add:I = 0x1080033
 
@@ -277,13 +279,13 @@
 
 .field public static final ic_menu_always_landscape_portrait:I = 0x1080035
 
-.field public static final ic_menu_archive:I = 0x108034a
+.field public static final ic_menu_archive:I = 0x108034b
 
 .field public static final ic_menu_call:I = 0x1080036
 
 .field public static final ic_menu_camera:I = 0x1080037
 
-.field public static final ic_menu_cc:I = 0x1080350
+.field public static final ic_menu_cc:I = 0x1080351
 
 .field public static final ic_menu_close_clear_cancel:I = 0x1080038
 
@@ -301,7 +303,7 @@
 
 .field public static final ic_menu_gallery:I = 0x108003f
 
-.field public static final ic_menu_goto:I = 0x1080361
+.field public static final ic_menu_goto:I = 0x1080362
 
 .field public static final ic_menu_help:I = 0x1080040
 
@@ -315,7 +317,7 @@
 
 .field public static final ic_menu_more:I = 0x1080045
 
-.field public static final ic_menu_moreoverflow_normal_holo_dark:I = 0x108036c
+.field public static final ic_menu_moreoverflow_normal_holo_dark:I = 0x108036d
 
 .field public static final ic_menu_my_calendar:I = 0x1080046
 
@@ -323,7 +325,7 @@
 
 .field public static final ic_menu_myplaces:I = 0x1080048
 
-.field public static final ic_menu_play_clip:I = 0x1080372
+.field public static final ic_menu_play_clip:I = 0x1080373
 
 .field public static final ic_menu_preferences:I = 0x1080049
 
@@ -365,7 +367,7 @@
 
 .field public static final ic_notification_clear_all:I = 0x108005a
 
-.field public static final ic_notification_ime_default:I = 0x108037e
+.field public static final ic_notification_ime_default:I = 0x108037f
 
 .field public static final ic_notification_overlay:I = 0x108005b
 
@@ -381,75 +383,75 @@
 
 .field public static final ic_secure:I = 0x1080061
 
-.field public static final ic_settings_language:I = 0x1080387
+.field public static final ic_settings_language:I = 0x1080388
 
-.field public static final ic_suggestions_add:I = 0x1080388
+.field public static final ic_suggestions_add:I = 0x1080389
 
-.field public static final ic_suggestions_delete:I = 0x1080389
+.field public static final ic_suggestions_delete:I = 0x108038a
 
-.field public static final ic_text_dot:I = 0x108038b
+.field public static final ic_text_dot:I = 0x108038c
 
-.field public static final ic_volume:I = 0x1080390
+.field public static final ic_volume:I = 0x1080391
 
-.field public static final indicator_code_lock_drag_direction_green_up:I = 0x108039b
+.field public static final indicator_code_lock_drag_direction_green_up:I = 0x108039c
 
-.field public static final indicator_code_lock_drag_direction_red_up:I = 0x108039c
+.field public static final indicator_code_lock_drag_direction_red_up:I = 0x108039d
 
-.field public static final indicator_code_lock_point_area_default_holo:I = 0x108039e
+.field public static final indicator_code_lock_point_area_default_holo:I = 0x108039f
 
-.field public static final indicator_code_lock_point_area_green_holo:I = 0x10803a0
+.field public static final indicator_code_lock_point_area_green_holo:I = 0x10803a1
 
-.field public static final indicator_code_lock_point_area_red_holo:I = 0x10803a2
+.field public static final indicator_code_lock_point_area_red_holo:I = 0x10803a3
 
-.field public static final indicator_input_error:I = 0x10803a3
+.field public static final indicator_input_error:I = 0x10803a4
 
-.field public static final jog_dial_arrow_long_left_green:I = 0x10803a9
+.field public static final jog_dial_arrow_long_left_green:I = 0x10803aa
 
-.field public static final jog_dial_arrow_long_right_red:I = 0x10803ac
+.field public static final jog_dial_arrow_long_right_red:I = 0x10803ad
 
-.field public static final jog_dial_arrow_short_left_and_right:I = 0x10803af
+.field public static final jog_dial_arrow_short_left_and_right:I = 0x10803b0
 
-.field public static final jog_dial_bg:I = 0x10803b1
+.field public static final jog_dial_bg:I = 0x10803b2
 
-.field public static final jog_dial_dimple:I = 0x10803b2
+.field public static final jog_dial_dimple:I = 0x10803b3
 
-.field public static final jog_dial_dimple_dim:I = 0x10803b3
+.field public static final jog_dial_dimple_dim:I = 0x10803b4
 
-.field public static final jog_tab_bar_left_generic:I = 0x10803bb
+.field public static final jog_tab_bar_left_generic:I = 0x10803bc
 
-.field public static final jog_tab_bar_left_unlock:I = 0x10803bc
+.field public static final jog_tab_bar_left_unlock:I = 0x10803bd
 
-.field public static final jog_tab_bar_right_generic:I = 0x10803c4
+.field public static final jog_tab_bar_right_generic:I = 0x10803c5
 
-.field public static final jog_tab_bar_right_sound_off:I = 0x10803c5
+.field public static final jog_tab_bar_right_sound_off:I = 0x10803c6
 
-.field public static final jog_tab_bar_right_sound_on:I = 0x10803c6
+.field public static final jog_tab_bar_right_sound_on:I = 0x10803c7
 
-.field public static final jog_tab_left_generic:I = 0x10803cc
+.field public static final jog_tab_left_generic:I = 0x10803cd
 
-.field public static final jog_tab_left_unlock:I = 0x10803cf
+.field public static final jog_tab_left_unlock:I = 0x10803d0
 
-.field public static final jog_tab_right_generic:I = 0x10803d5
+.field public static final jog_tab_right_generic:I = 0x10803d6
 
-.field public static final jog_tab_right_sound_off:I = 0x10803d8
+.field public static final jog_tab_right_sound_off:I = 0x10803d9
 
-.field public static final jog_tab_right_sound_on:I = 0x10803d9
+.field public static final jog_tab_right_sound_on:I = 0x10803da
 
-.field public static final jog_tab_target_gray:I = 0x10803da
+.field public static final jog_tab_target_gray:I = 0x10803db
 
-.field public static final jog_tab_target_green:I = 0x10803db
+.field public static final jog_tab_target_green:I = 0x10803dc
 
-.field public static final jog_tab_target_yellow:I = 0x10803dd
+.field public static final jog_tab_target_yellow:I = 0x10803de
 
 .field public static final list_selector_background:I = 0x1080062
 
-.field public static final list_selector_pressed_holo_dark:I = 0x1080417
+.field public static final list_selector_pressed_holo_dark:I = 0x1080418
 
-.field public static final loading_tile_android:I = 0x108041b
+.field public static final loading_tile_android:I = 0x108041c
 
-.field public static final maps_google_logo:I = 0x108041f
+.field public static final maps_google_logo:I = 0x1080420
 
-.field public static final menu_background:I = 0x1080421
+.field public static final menu_background:I = 0x1080422
 
 .field public static final menu_frame:I = 0x1080063
 
@@ -457,45 +459,45 @@
 
 .field public static final menuitem_background:I = 0x1080065
 
-.field public static final no_tile_256:I = 0x1080438
+.field public static final no_tile_256:I = 0x1080439
 
-.field public static final notification_bg:I = 0x1080439
+.field public static final notification_bg:I = 0x108043a
 
-.field public static final notification_bg_low:I = 0x108043a
+.field public static final notification_bg_low:I = 0x108043b
 
-.field public static final notification_template_icon_bg:I = 0x1080664
+.field public static final notification_template_icon_bg:I = 0x1080665
 
-.field public static final notification_template_icon_low_bg:I = 0x1080665
+.field public static final notification_template_icon_low_bg:I = 0x1080666
 
-.field public static final overscroll_edge:I = 0x1080453
+.field public static final overscroll_edge:I = 0x1080454
 
-.field public static final overscroll_glow:I = 0x1080454
+.field public static final overscroll_glow:I = 0x1080455
 
-.field public static final picture_emergency:I = 0x108047a
+.field public static final picture_emergency:I = 0x108047b
 
 .field public static final picture_frame:I = 0x1080066
 
-.field public static final platlogo:I = 0x108047b
+.field public static final platlogo:I = 0x108047c
 
-.field public static final platlogo_alt:I = 0x108047c
+.field public static final platlogo_alt:I = 0x108047d
 
-.field public static final popup_bottom_bright:I = 0x1080485
+.field public static final popup_bottom_bright:I = 0x1080486
 
-.field public static final popup_bottom_dark:I = 0x1080486
+.field public static final popup_bottom_dark:I = 0x1080487
 
-.field public static final popup_bottom_medium:I = 0x1080487
+.field public static final popup_bottom_medium:I = 0x1080488
 
-.field public static final popup_center_bright:I = 0x1080488
+.field public static final popup_center_bright:I = 0x1080489
 
-.field public static final popup_center_dark:I = 0x1080489
+.field public static final popup_center_dark:I = 0x108048a
 
-.field public static final popup_full_bright:I = 0x108048b
+.field public static final popup_full_bright:I = 0x108048c
 
-.field public static final popup_full_dark:I = 0x108048c
+.field public static final popup_full_dark:I = 0x108048d
 
-.field public static final popup_top_bright:I = 0x1080493
+.field public static final popup_top_bright:I = 0x1080494
 
-.field public static final popup_top_dark:I = 0x1080494
+.field public static final popup_top_dark:I = 0x1080495
 
 .field public static final presence_audio_away:I = 0x10800af
 
@@ -523,13 +525,13 @@
 
 .field public static final progress_indeterminate_horizontal:I = 0x108006d
 
-.field public static final quickcontact_badge_overlay_dark:I = 0x10804bc
+.field public static final quickcontact_badge_overlay_dark:I = 0x10804bd
 
 .field public static final radiobutton_off_background:I = 0x108006e
 
 .field public static final radiobutton_on_background:I = 0x108006f
 
-.field public static final reticle:I = 0x10804ef
+.field public static final reticle:I = 0x10804f0
 
 .field public static final screen_background_dark:I = 0x1080098
 
@@ -539,13 +541,13 @@
 
 .field public static final screen_background_light_transparent:I = 0x10800aa
 
-.field public static final scrubber_control_disabled_holo:I = 0x10804f7
+.field public static final scrubber_control_disabled_holo:I = 0x10804f8
 
-.field public static final scrubber_control_selector_holo:I = 0x10804fb
+.field public static final scrubber_control_selector_holo:I = 0x10804fc
 
-.field public static final scrubber_progress_horizontal_holo_dark:I = 0x10804fd
+.field public static final scrubber_progress_horizontal_holo_dark:I = 0x10804fe
 
-.field public static final search_spinner:I = 0x1080507
+.field public static final search_spinner:I = 0x1080508
 
 .field public static final spinner_background:I = 0x1080070
 
@@ -561,13 +563,13 @@
 
 .field public static final stat_notify_call_mute:I = 0x1080076
 
-.field public static final stat_notify_car_mode:I = 0x1080538
+.field public static final stat_notify_car_mode:I = 0x1080539
 
 .field public static final stat_notify_chat:I = 0x1080077
 
-.field public static final stat_notify_disabled:I = 0x1080539
+.field public static final stat_notify_disabled:I = 0x108053a
 
-.field public static final stat_notify_disk_full:I = 0x108053a
+.field public static final stat_notify_disk_full:I = 0x108053b
 
 .field public static final stat_notify_error:I = 0x1080078
 
@@ -581,35 +583,35 @@
 
 .field public static final stat_notify_sdcard_usb:I = 0x108007b
 
-.field public static final stat_notify_sim_toolkit:I = 0x108053d
+.field public static final stat_notify_sim_toolkit:I = 0x108053e
 
 .field public static final stat_notify_sync:I = 0x108007c
 
-.field public static final stat_notify_sync_error:I = 0x108053f
+.field public static final stat_notify_sync_error:I = 0x1080540
 
 .field public static final stat_notify_sync_noanim:I = 0x108007d
 
 .field public static final stat_notify_voicemail:I = 0x108007e
 
-.field public static final stat_notify_wifi_in_range:I = 0x1080540
+.field public static final stat_notify_wifi_in_range:I = 0x1080541
 
-.field public static final stat_sys_adb:I = 0x1080541
+.field public static final stat_sys_adb:I = 0x1080542
 
-.field public static final stat_sys_battery:I = 0x1080542
+.field public static final stat_sys_battery:I = 0x1080543
 
-.field public static final stat_sys_battery_charge:I = 0x1080550
+.field public static final stat_sys_battery_charge:I = 0x1080551
 
-.field public static final stat_sys_battery_unknown:I = 0x108055e
+.field public static final stat_sys_battery_unknown:I = 0x108055f
 
 .field public static final stat_sys_data_bluetooth:I = 0x1080080
 
-.field public static final stat_sys_data_usb:I = 0x108055f
+.field public static final stat_sys_data_usb:I = 0x1080560
 
 .field public static final stat_sys_download:I = 0x1080081
 
 .field public static final stat_sys_download_done:I = 0x1080082
 
-.field public static final stat_sys_gps_on:I = 0x1080569
+.field public static final stat_sys_gps_on:I = 0x108056a
 
 .field public static final stat_sys_headset:I = 0x1080083
 
@@ -628,19 +630,19 @@
     .end annotation
 .end field
 
-.field public static final stat_sys_secure:I = 0x1080574
+.field public static final stat_sys_secure:I = 0x1080575
 
 .field public static final stat_sys_speakerphone:I = 0x1080087
 
-.field public static final stat_sys_tether_bluetooth:I = 0x108057f
+.field public static final stat_sys_tether_bluetooth:I = 0x1080580
 
-.field public static final stat_sys_tether_general:I = 0x1080580
+.field public static final stat_sys_tether_general:I = 0x1080581
 
-.field public static final stat_sys_tether_usb:I = 0x1080581
+.field public static final stat_sys_tether_usb:I = 0x1080582
 
-.field public static final stat_sys_tether_wifi:I = 0x1080582
+.field public static final stat_sys_tether_wifi:I = 0x1080583
 
-.field public static final stat_sys_throttled:I = 0x1080583
+.field public static final stat_sys_throttled:I = 0x1080584
 
 .field public static final stat_sys_upload:I = 0x1080088
 
@@ -658,7 +660,7 @@
 
 .field public static final stat_sys_warning:I = 0x108008a
 
-.field public static final status_bar_background:I = 0x108058a
+.field public static final status_bar_background:I = 0x108058b
 
 .field public static final status_bar_item_app_background:I = 0x108008b
 
@@ -670,7 +672,7 @@
 
 .field public static final sym_action_email:I = 0x108008f
 
-.field public static final sym_app_on_sd_unavailable_icon:I = 0x10805a6
+.field public static final sym_app_on_sd_unavailable_icon:I = 0x10805a7
 
 .field public static final sym_call_incoming:I = 0x1080090
 
@@ -682,151 +684,151 @@
 
 .field public static final sym_def_app_icon:I = 0x1080093
 
-.field public static final sym_keyboard_shift:I = 0x10805bd
+.field public static final sym_keyboard_shift:I = 0x10805be
 
-.field public static final sym_keyboard_shift_locked:I = 0x10805be
+.field public static final sym_keyboard_shift_locked:I = 0x10805bf
 
-.field public static final tab_bottom_left:I = 0x10805c1
+.field public static final tab_bottom_left:I = 0x10805c2
 
-.field public static final tab_bottom_left_v4:I = 0x10805c2
+.field public static final tab_bottom_left_v4:I = 0x10805c3
 
-.field public static final tab_bottom_right:I = 0x10805c3
+.field public static final tab_bottom_right:I = 0x10805c4
 
-.field public static final tab_bottom_right_v4:I = 0x10805c4
+.field public static final tab_bottom_right_v4:I = 0x10805c5
 
-.field public static final tab_indicator_v4:I = 0x10805cb
+.field public static final tab_indicator_v4:I = 0x10805cc
 
-.field public static final text_edit_paste_window:I = 0x10805e0
+.field public static final text_edit_paste_window:I = 0x10805e1
 
-.field public static final text_edit_side_paste_window:I = 0x10805e1
+.field public static final text_edit_side_paste_window:I = 0x10805e2
 
-.field public static final text_select_handle_left:I = 0x10805e3
+.field public static final text_select_handle_left:I = 0x10805e4
 
-.field public static final text_select_handle_middle:I = 0x10805e4
+.field public static final text_select_handle_middle:I = 0x10805e5
 
-.field public static final text_select_handle_right:I = 0x10805e5
+.field public static final text_select_handle_right:I = 0x10805e6
 
 .field public static final title_bar:I = 0x1080095
 
-.field public static final title_bar_medium:I = 0x1080619
+.field public static final title_bar_medium:I = 0x108061a
 
 .field public static final title_bar_tall:I = 0x10800a6
 
 .field public static final toast_frame:I = 0x1080096
 
-.field public static final unknown_image:I = 0x108061e
+.field public static final unknown_image:I = 0x108061f
 
-.field public static final unlock_default:I = 0x108061f
+.field public static final unlock_default:I = 0x1080620
 
-.field public static final unlock_halo:I = 0x1080620
+.field public static final unlock_halo:I = 0x1080621
 
-.field public static final unlock_ring:I = 0x1080621
+.field public static final unlock_ring:I = 0x1080622
 
-.field public static final unlock_wave:I = 0x1080622
+.field public static final unlock_wave:I = 0x1080623
 
-.field public static final usb_android:I = 0x1080623
+.field public static final usb_android:I = 0x1080624
 
-.field public static final usb_android_connected:I = 0x1080624
+.field public static final usb_android_connected:I = 0x1080625
 
-.field public static final vpn_connected:I = 0x1080626
+.field public static final vpn_connected:I = 0x1080627
 
-.field public static final weather_0:I = 0x1080628
+.field public static final weather_0:I = 0x1080629
 
-.field public static final weather_1:I = 0x1080629
+.field public static final weather_1:I = 0x108062a
 
-.field public static final weather_10:I = 0x108062a
+.field public static final weather_10:I = 0x108062b
 
-.field public static final weather_11:I = 0x108062b
+.field public static final weather_11:I = 0x108062c
 
-.field public static final weather_12:I = 0x108062c
+.field public static final weather_12:I = 0x108062d
 
-.field public static final weather_13:I = 0x108062d
+.field public static final weather_13:I = 0x108062e
 
-.field public static final weather_14:I = 0x108062e
+.field public static final weather_14:I = 0x108062f
 
-.field public static final weather_15:I = 0x108062f
+.field public static final weather_15:I = 0x1080630
 
-.field public static final weather_16:I = 0x1080630
+.field public static final weather_16:I = 0x1080631
 
-.field public static final weather_17:I = 0x1080631
+.field public static final weather_17:I = 0x1080632
 
-.field public static final weather_18:I = 0x1080632
+.field public static final weather_18:I = 0x1080633
 
-.field public static final weather_19:I = 0x1080633
+.field public static final weather_19:I = 0x1080634
 
-.field public static final weather_2:I = 0x1080634
+.field public static final weather_2:I = 0x1080635
 
-.field public static final weather_20:I = 0x1080635
+.field public static final weather_20:I = 0x1080636
 
-.field public static final weather_21:I = 0x1080636
+.field public static final weather_21:I = 0x1080637
 
-.field public static final weather_22:I = 0x1080637
+.field public static final weather_22:I = 0x1080638
 
-.field public static final weather_23:I = 0x1080638
+.field public static final weather_23:I = 0x1080639
 
-.field public static final weather_24:I = 0x1080639
+.field public static final weather_24:I = 0x108063a
 
-.field public static final weather_25:I = 0x108063a
+.field public static final weather_25:I = 0x108063b
 
-.field public static final weather_26:I = 0x108063b
+.field public static final weather_26:I = 0x108063c
 
-.field public static final weather_27:I = 0x108063c
+.field public static final weather_27:I = 0x108063d
 
-.field public static final weather_28:I = 0x108063d
+.field public static final weather_28:I = 0x108063e
 
-.field public static final weather_29:I = 0x108063e
+.field public static final weather_29:I = 0x108063f
 
-.field public static final weather_3:I = 0x108063f
+.field public static final weather_3:I = 0x1080640
 
-.field public static final weather_30:I = 0x1080640
+.field public static final weather_30:I = 0x1080641
 
-.field public static final weather_31:I = 0x1080641
+.field public static final weather_31:I = 0x1080642
 
-.field public static final weather_32:I = 0x1080642
+.field public static final weather_32:I = 0x1080643
 
-.field public static final weather_33:I = 0x1080643
+.field public static final weather_33:I = 0x1080644
 
-.field public static final weather_34:I = 0x1080644
+.field public static final weather_34:I = 0x1080645
 
-.field public static final weather_35:I = 0x1080645
+.field public static final weather_35:I = 0x1080646
 
-.field public static final weather_36:I = 0x1080646
+.field public static final weather_36:I = 0x1080647
 
-.field public static final weather_37:I = 0x1080647
+.field public static final weather_37:I = 0x1080648
 
-.field public static final weather_38:I = 0x1080648
+.field public static final weather_38:I = 0x1080649
 
-.field public static final weather_39:I = 0x1080649
+.field public static final weather_39:I = 0x108064a
 
-.field public static final weather_4:I = 0x108064a
+.field public static final weather_4:I = 0x108064b
 
-.field public static final weather_40:I = 0x108064b
+.field public static final weather_40:I = 0x108064c
 
-.field public static final weather_41:I = 0x108064c
+.field public static final weather_41:I = 0x108064d
 
-.field public static final weather_42:I = 0x108064d
+.field public static final weather_42:I = 0x108064e
 
-.field public static final weather_43:I = 0x108064e
+.field public static final weather_43:I = 0x108064f
 
-.field public static final weather_44:I = 0x108064f
+.field public static final weather_44:I = 0x1080650
 
-.field public static final weather_45:I = 0x1080650
+.field public static final weather_45:I = 0x1080651
 
-.field public static final weather_46:I = 0x1080651
+.field public static final weather_46:I = 0x1080652
 
-.field public static final weather_47:I = 0x1080652
+.field public static final weather_47:I = 0x1080653
 
-.field public static final weather_5:I = 0x1080653
+.field public static final weather_5:I = 0x1080654
 
-.field public static final weather_6:I = 0x1080654
+.field public static final weather_6:I = 0x1080655
 
-.field public static final weather_7:I = 0x1080655
+.field public static final weather_7:I = 0x1080656
 
-.field public static final weather_8:I = 0x1080656
+.field public static final weather_8:I = 0x1080657
 
-.field public static final weather_9:I = 0x1080657
+.field public static final weather_9:I = 0x1080658
 
-.field public static final weather_na:I = 0x1080658
+.field public static final weather_na:I = 0x1080659
 
 .field public static final zoom_plate:I = 0x1080097
 
@@ -836,7 +838,7 @@
     .locals 0
 
     .prologue
-    .line 11142
+    .line 11149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -4842,7 +4842,7 @@
     if-ne p2, v3, :cond_1
 
     .line 1306
-    const v2, 0x1040324
+    const v2, 0x1040327
 
     .line 1307
     .local v2, textId:I
@@ -4872,7 +4872,7 @@
 
     .line 1310
     :cond_1
-    const v2, 0x1040323
+    const v2, 0x1040326
 
     .line 1311
     .restart local v2       #textId:I

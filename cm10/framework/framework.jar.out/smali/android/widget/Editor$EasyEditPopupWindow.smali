@@ -208,7 +208,7 @@
     .line 1929
     iget-object v3, p0, Landroid/widget/Editor$EasyEditPopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    const v4, 0x10805e1
+    const v4, 0x10805e2
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
@@ -260,7 +260,7 @@
     .line 1940
     iget-object v3, p0, Landroid/widget/Editor$EasyEditPopupWindow;->mDeleteTextView:Landroid/widget/TextView;
 
-    const v4, 0x10403e5
+    const v4, 0x10403e8
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

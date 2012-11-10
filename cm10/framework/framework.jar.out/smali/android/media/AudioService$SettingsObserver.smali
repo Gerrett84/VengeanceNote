@@ -26,17 +26,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3188
+    .line 3190
     iput-object p1, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
-    .line 3189
+    .line 3191
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 3190
+    .line 3192
     #getter for: Landroid/media/AudioService;->mContentResolver:Landroid/content/ContentResolver;
     invoke-static {p1}, Landroid/media/AudioService;->access$3600(Landroid/media/AudioService;)Landroid/content/ContentResolver;
 
@@ -50,7 +50,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 3192
+    .line 3194
     #getter for: Landroid/media/AudioService;->mContentResolver:Landroid/content/ContentResolver;
     invoke-static {p1}, Landroid/media/AudioService;->access$3600(Landroid/media/AudioService;)Landroid/content/ContentResolver;
 
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 3194
+    .line 3196
     return-void
 .end method
 
@@ -79,10 +79,10 @@
 
     const/4 v1, 0x1
 
-    .line 3198
+    .line 3200
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 3203
+    .line 3205
     iget-object v3, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mSettingsLock:Ljava/lang/Object;
@@ -92,7 +92,7 @@
 
     monitor-enter v3
 
-    .line 3204
+    .line 3206
     :try_start_0
     iget-object v4, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
@@ -109,7 +109,7 @@
 
     move-result v0
 
-    .line 3208
+    .line 3210
     .local v0, ringerModeAffectedStreams:I
     iget-object v4, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
@@ -120,10 +120,10 @@
 
     if-eqz v4, :cond_1
 
-    .line 3209
+    .line 3211
     and-int/lit8 v0, v0, -0x9
 
-    .line 3213
+    .line 3215
     :goto_0
     iget-object v4, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
@@ -134,13 +134,13 @@
 
     if-eq v0, v4, :cond_0
 
-    .line 3218
+    .line 3220
     iget-object v4, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
     #setter for: Landroid/media/AudioService;->mRingerModeAffectedStreams:I
     invoke-static {v4, v0}, Landroid/media/AudioService;->access$6902(Landroid/media/AudioService;I)I
 
-    .line 3219
+    .line 3221
     iget-object v4, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
     iget-object v5, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
@@ -154,7 +154,7 @@
     #calls: Landroid/media/AudioService;->setRingerModeInt(IZ)V
     invoke-static {v4, v5, v6}, Landroid/media/AudioService;->access$5500(Landroid/media/AudioService;IZ)V
 
-    .line 3222
+    .line 3224
     :cond_0
     iget-object v4, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
@@ -179,7 +179,7 @@
     #setter for: Landroid/media/AudioService;->mLinkNotificationWithVolume:Z
     invoke-static {v4, v1}, Landroid/media/AudioService;->access$7002(Landroid/media/AudioService;Z)Z
 
-    .line 3224
+    .line 3226
     iget-object v1, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mLinkNotificationWithVolume:Z
@@ -189,7 +189,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 3225
+    .line 3227
     iget-object v1, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mStreamVolumeAlias:[I
@@ -203,14 +203,14 @@
 
     aput v4, v1, v2
 
-    .line 3229
+    .line 3231
     :goto_2
     monitor-exit v3
 
-    .line 3230
+    .line 3232
     return-void
 
-    .line 3211
+    .line 3213
     :cond_1
     or-int/lit8 v0, v0, 0x8
 
@@ -219,10 +219,10 @@
     :cond_2
     move v1, v2
 
-    .line 3222
+    .line 3224
     goto :goto_1
 
-    .line 3227
+    .line 3229
     :cond_3
     iget-object v1, p0, Landroid/media/AudioService$SettingsObserver;->this$0:Landroid/media/AudioService;
 
@@ -239,7 +239,7 @@
 
     goto :goto_2
 
-    .line 3229
+    .line 3231
     .end local v0           #ringerModeAffectedStreams:I
     :catchall_0
     move-exception v1

@@ -1074,7 +1074,7 @@
     .parameter "isProactiveCmd"
 
     .prologue
-    const v2, 0x1040521
+    const v2, 0x1040524
 
     const/4 v5, 0x0
 
@@ -1341,7 +1341,7 @@
     .line 278
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040522
+    const v1, 0x1040525
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1545,7 +1545,7 @@
     .line 314
     iget-object v0, p0, Lcom/android/internal/telephony/cat/CatService;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040523
+    const v1, 0x1040526
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

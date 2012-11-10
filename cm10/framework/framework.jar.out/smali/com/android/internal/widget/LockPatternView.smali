@@ -432,7 +432,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapBtnTouched:Landroid/graphics/Bitmap;
 
     .line 291
-    const v7, 0x108039e
+    const v7, 0x108039f
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -441,7 +441,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleDefault:Landroid/graphics/Bitmap;
 
     .line 292
-    const v7, 0x10803a0
+    const v7, 0x10803a1
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -450,7 +450,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleGreen:Landroid/graphics/Bitmap;
 
     .line 293
-    const v7, 0x10803a2
+    const v7, 0x10803a3
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -459,7 +459,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapCircleRed:Landroid/graphics/Bitmap;
 
     .line 295
-    const v7, 0x108039b
+    const v7, 0x108039c
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -468,7 +468,7 @@
     iput-object v7, p0, Lcom/android/internal/widget/LockPatternView;->mBitmapArrowGreenUp:Landroid/graphics/Bitmap;
 
     .line 296
-    const v7, 0x108039c
+    const v7, 0x108039d
 
     invoke-direct {p0, v7}, Lcom/android/internal/widget/LockPatternView;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
@@ -616,7 +616,7 @@
 
     move-result-object v7
 
-    const v8, 0x1040326
+    const v8, 0x1040329
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -2883,7 +2883,7 @@
 
     .line 436
     :cond_0
-    const v0, 0x1040355
+    const v0, 0x1040358
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2907,7 +2907,7 @@
 
     .line 457
     :cond_0
-    const v0, 0x1040354
+    const v0, 0x1040357
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2933,7 +2933,7 @@
 
     .line 450
     :cond_0
-    const v0, 0x1040356
+    const v0, 0x1040359
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
@@ -2957,7 +2957,7 @@
 
     .line 443
     :cond_0
-    const v0, 0x1040353
+    const v0, 0x1040356
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/LockPatternView;->sendAccessEvent(I)V
 
