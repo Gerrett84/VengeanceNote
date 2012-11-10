@@ -696,7 +696,7 @@
 
     .line 649
     .local v1, n:Landroid/app/Notification;
-    const v2, 0x1080538
+    const v2, 0x1080539
 
     iput v2, v1, Landroid/app/Notification;->icon:I
 
@@ -722,7 +722,7 @@
 
     iget-object v4, p0, Lcom/android/server/UiModeManagerService;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404aa
+    const v5, 0x10404ad
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -730,7 +730,7 @@
 
     iget-object v5, p0, Lcom/android/server/UiModeManagerService;->mContext:Landroid/content/Context;
 
-    const v6, 0x10404ab
+    const v6, 0x10404ae
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -415,7 +415,7 @@
     .line 591
     iget-object v6, p0, Lcom/android/server/InputMethodManagerService;->mImeSwitcherNotification:Landroid/app/Notification;
 
-    const v7, 0x108037e
+    const v7, 0x108037f
 
     iput v7, v6, Landroid/app/Notification;->icon:I
 
@@ -4329,7 +4329,7 @@
 
     move-object/from16 v23, v0
 
-    const v25, 0x104046f
+    const v25, 0x1040472
 
     new-instance v26, Lcom/android/server/InputMethodManagerService$8;
 
@@ -8761,7 +8761,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mRes:Landroid/content/res/Resources;
 
-    const v14, 0x104046e
+    const v14, 0x1040471
 
     invoke-virtual {v12, v14}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -8863,7 +8863,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v14, 0x104046e
+    const v14, 0x1040471
 
     move-object/from16 v0, p0
 
@@ -8974,7 +8974,7 @@
 
     iget-object v12, v0, Lcom/android/server/InputMethodManagerService;->mNotificationManager:Landroid/app/NotificationManager;
 
-    const v14, 0x104046e
+    const v14, 0x1040471
 
     invoke-virtual {v12, v14}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -10383,7 +10383,7 @@
 
     const-string v3, "android.intent.extra.client_label"
 
-    const v4, 0x104049c
+    const v4, 0x104049f
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 

@@ -233,7 +233,7 @@
     if-eqz v0, :cond_0
 
     .line 357
-    const v1, 0x1080626
+    const v1, 0x1080627
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
 
@@ -270,7 +270,7 @@
     .parameter "icon"
 
     .prologue
-    const v10, 0x1080626
+    const v10, 0x1080627
 
     const/4 v9, 0x1
 
@@ -296,7 +296,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a2
+    const v5, 0x10404a5
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -311,7 +311,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a4
+    const v5, 0x10404a7
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -386,7 +386,7 @@
     :cond_1
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a3
+    const v5, 0x10404a6
 
     new-array v6, v9, [Ljava/lang/Object;
 
@@ -403,7 +403,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x10404a5
+    const v5, 0x10404a8
 
     new-array v6, v9, [Ljava/lang/Object;
 

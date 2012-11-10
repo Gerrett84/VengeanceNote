@@ -945,7 +945,7 @@
 
     const/4 v12, 0x1
 
-    const v11, 0x104046b
+    const v11, 0x104046e
 
     const/4 v10, 0x0
 
@@ -966,7 +966,7 @@
 
     .line 606
     :cond_1
-    const v0, 0x104046b
+    const v0, 0x104046e
 
     .line 607
     .local v0, id:I
@@ -1042,7 +1042,7 @@
 
     .line 616
     .local v6, title:Ljava/lang/CharSequence;
-    const v7, 0x104046c
+    const v7, 0x104046f
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1056,7 +1056,7 @@
 
     .line 620
     .local v3, notification:Landroid/app/Notification;
-    const v7, 0x1080541
+    const v7, 0x1080542
 
     iput v7, v3, Landroid/app/Notification;->icon:I
 
@@ -1230,7 +1230,7 @@
     if-eqz v7, :cond_4
 
     .line 557
-    const v0, 0x1040463
+    const v0, 0x1040466
 
     .line 572
     :cond_2
@@ -1264,7 +1264,7 @@
     if-eqz v0, :cond_0
 
     .line 579
-    const v7, 0x1040467
+    const v7, 0x104046a
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -1284,7 +1284,7 @@
 
     .line 584
     .local v3, notification:Landroid/app/Notification;
-    const v7, 0x108055f
+    const v7, 0x1080560
 
     iput v7, v3, Landroid/app/Notification;->icon:I
 
@@ -1381,7 +1381,7 @@
     if-eqz v7, :cond_5
 
     .line 559
-    const v0, 0x1040464
+    const v0, 0x1040467
 
     goto :goto_1
 
@@ -1399,7 +1399,7 @@
     if-eqz v7, :cond_6
 
     .line 564
-    const v0, 0x1040466
+    const v0, 0x1040469
 
     goto/16 :goto_1
 

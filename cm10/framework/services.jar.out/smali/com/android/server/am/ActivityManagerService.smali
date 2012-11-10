@@ -59100,21 +59100,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Permission Denial: Accessing service "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, v1, Lcom/android/server/am/ActivityManagerService$ServiceLookupResult;->record:Lcom/android/server/am/ServiceRecord;
-
-    iget-object v5, v5, Lcom/android/server/am/ServiceRecord;->name:Landroid/content/ComponentName;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " from pid="
+    const-string v5, "Permission Denial: Accessing service from pid="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -69914,7 +69900,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040361
+    const v4, 0x1040364
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -69934,7 +69920,7 @@
 
     move-result-object v3
 
-    const v4, 0x1040362
+    const v4, 0x1040365
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

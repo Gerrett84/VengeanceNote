@@ -729,9 +729,7 @@
     if-ne v3, v4, :cond_1
 
     .line 182
-    aget-object v3, v2, v5
-
-    invoke-virtual {v3}, Landroid/os/storage/StorageVolume;->allowMassStorage()Z
+    invoke-virtual {v1}, Landroid/os/storage/StorageManager;->isUsbMassStorageSupported()Z
 
     move-result v0
 
