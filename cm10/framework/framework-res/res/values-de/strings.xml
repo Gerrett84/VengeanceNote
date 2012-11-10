@@ -286,6 +286,9 @@
     <string name="power_off">Ausschalten</string>
     <string name="reboot_system">Telefon neu starten</string>
     <string name="global_action_screenshot">Bildschirmfoto</string>
+    <string name="global_actions_toggle_expanded_desktop_mode">Erweiterter Desktop</string>
+    <string name="global_actions_expanded_desktop_mode_on_status">Aktiviert</string>
+    <string name="global_actions_expanded_desktop_mode_off_status">Deaktiviert</string>
     <string name="reboot_reboot">Neu starten</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>

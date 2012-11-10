@@ -286,6 +286,9 @@
     <string name="power_off">Kikapcsolás</string>
     <string name="reboot_system">Telefon újraindítása</string>
     <string name="global_action_screenshot">Képernyőmentés</string>
+    <string name="global_actions_toggle_expanded_desktop_mode">Kiterjesztett képernyő</string>
+    <string name="global_actions_expanded_desktop_mode_on_status">Engedélyezve</string>
+    <string name="global_actions_expanded_desktop_mode_off_status">Letiltva</string>
     <string name="reboot_reboot">Újraindítás</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>

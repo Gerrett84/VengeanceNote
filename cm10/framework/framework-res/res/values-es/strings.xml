@@ -286,6 +286,9 @@
     <string name="power_off">Apagar</string>
     <string name="reboot_system">Reiniciar teléfono</string>
     <string name="global_action_screenshot">Captura de pantalla</string>
+    <string name="global_actions_toggle_expanded_desktop_mode">Escritorio extendido</string>
+    <string name="global_actions_expanded_desktop_mode_on_status">Activado</string>
+    <string name="global_actions_expanded_desktop_mode_off_status">Desactivado</string>
     <string name="reboot_reboot">Reiniciar</string>
     <string name="reboot_recovery">Modo Recovery</string>
     <string name="reboot_bootloader">Modo Bootloader</string>
@@ -357,6 +360,8 @@
     <string name="permdesc_readCellBroadcasts">Permite que la aplicación lea mensajes de difusión móvil que haya recibido el dispositivo. Las alertas de difusión móvil se envían en algunas ubicaciones para avisar de situaciones de emergencia. Es posible que las aplicaciones malintencionadas interfieran en el rendimiento o en el funcionamiento del dispositivo si se recibe una alerta de difusión móvil de emergencia.</string>
     <string name="permlab_sendSms">enviar mensajes SMS</string>
     <string name="permdesc_sendSms">Permite que la aplicación envíe mensajes SMS, lo que puede generar cargos inesperados. Las aplicaciones malintencionadas pueden causarte gastos imprevistos al enviar mensajes sin tu confirmación.</string>
+    <string name="permlab_sendMockSms">enviar mensajes SMS simulados</string>
+    <string name="permdesc_sendMockSms">Permite que la aplicación envíe mensajes SMS simulados. La aplicación podrá enviar SMS simulados a otras aplicaciones de confianza. Las aplicaciones malintencionadas pueden enviar mensajes continuamente, interrumpiendo al usuario e incluso bloquear el sistema de notificación del dispositivo.</string>
     <string name="permlab_sendSmsNoConfirmation">enviar mensajes SMS sin confirmación</string>
     <string name="permdesc_sendSmsNoConfirmation">Permite que la aplicación envíe mensajes SMS, lo que puede generar cargos inesperados. Las aplicaciones malintencionadas pueden causarte gastos imprevistos al enviar mensajes sin tu confirmación.</string>
     <string name="permlab_readSms">leer tus mensajes de texto (SMS o MMS)</string>

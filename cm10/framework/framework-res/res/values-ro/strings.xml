@@ -284,7 +284,11 @@
     <string name="screen_lock">Blocaţi ecranul</string>
     <string name="power_off">Opriţi alimentarea</string>
     <string name="reboot_system">Reporniţi telefonul</string>
+    <string name="global_actions_toggle_expanded_desktop_mode">Desktop extins</string>
+    <string name="global_actions_expanded_desktop_mode_on_status">Activat</string>
+    <string name="global_actions_expanded_desktop_mode_off_status">Dezactivat</string>
     <string name="reboot_reboot">Repornire</string>
+    <string name="reboot_recovery">Recuperare</string>
     <string name="reboot_progress">Repornire...</string>
     <string name="reboot_confirm">Telefonul dvs. va reporni.</string>
     <string name="silent_mode_silent">Sonerie dezactivată</string>

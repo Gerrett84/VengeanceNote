@@ -73,5 +73,7 @@
     <bool name="config_noDelayInATwoDP">true</bool>
     <bool name="config_hasRemovableLid">false</bool>
     <bool name="config_samsung_stk">true</bool>
+    <bool name="config_symKeyShowsImePicker">true</bool>
+    <bool name="config_stylusGestures">true</bool>
     <bool name="lockscreen_isPortrait">true</bool>
 </resources>

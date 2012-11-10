@@ -286,6 +286,9 @@
     <string name="power_off">Éteindre</string>
     <string name="reboot_system">Redémarrage</string>
     <string name="global_action_screenshot">"Capture d'écran"</string>
+    <string name="global_actions_toggle_expanded_desktop_mode">Bureau étendu</string>
+    <string name="global_actions_expanded_desktop_mode_on_status">Activé</string>
+    <string name="global_actions_expanded_desktop_mode_off_status">Désactivé</string>
     <string name="reboot_reboot">Redémarrer</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>

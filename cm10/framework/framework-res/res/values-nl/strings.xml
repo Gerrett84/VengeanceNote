@@ -286,6 +286,9 @@
     <string name="power_off">Uitschakelen</string>
     <string name="reboot_system">Telefoon herstarten</string>
     <string name="global_action_screenshot">Schermafdruk</string>
+    <string name="global_actions_toggle_expanded_desktop_mode">Uitgebreid bureaublad</string>
+    <string name="global_actions_expanded_desktop_mode_on_status">Ingeschakeld</string>
+    <string name="global_actions_expanded_desktop_mode_off_status">Uitgeschakeld</string>
     <string name="reboot_reboot">Herstarten</string>
     <string name="reboot_recovery">Recovery</string>
     <string name="reboot_bootloader">Bootloader</string>
@@ -357,6 +360,8 @@
     <string name="permdesc_readCellBroadcasts">Hiermee kan de app infodienstberichten lezen die worden ontvangen op uw apparaat. Infodienstberichten worden verzonden naar bepaalde locaties om u te waarschuwen voor noodsituaties. Schadelijke apps kunnen de prestaties of verwerking van uw apparaat verstoren wanneer een infodienstbericht wordt ontvangen.</string>
     <string name="permlab_sendSms">SMS-berichten verzenden</string>
     <string name="permdesc_sendSms">Hiermee kan de app sms-berichten verzenden. Dit kan tot onverwachte kosten leiden. Schadelijke apps kunnen u geld kosten doordat ze zonder uw bevestiging berichten kunnen verzenden.</string>
+    <string name="permlab_sendMockSms">nep-sms-berichten versturen</string>
+    <string name="permdesc_sendMockSms">Hiermee kan de app nep-sms-berichten versturen, waardoor de app sms-berichten kan versturen naar vertrouwde apps.Allows the app to send mock SMS messages. Schadelijke apps kunnen voortdurend sms-berichten versturen, waardoor het notificatiesysteem geblokkeerd kan worden en u verstoord wordt.</string>
     <string name="permlab_sendSmsNoConfirmation">"zonder toestemming sms'jes verzenden"</string>
     <string name="permdesc_sendSmsNoConfirmation">Hiermee kan de app sms-berichten verzenden. Dit kan tot onverwachte kosten leiden. Schadelijke apps kunnen u geld kosten doordat ze zonder uw bevestiging berichten kunnen verzenden.</string>
     <string name="permlab_readSms">uw tekstberichten (SMS of MMS) lezen</string>
