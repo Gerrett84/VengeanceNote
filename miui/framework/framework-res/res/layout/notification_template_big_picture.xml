@@ -15,7 +15,7 @@
             <TextView android:textAppearance="@style/TextAppearance.StatusBar.EventContent" android:ellipsize="marquee" android:visibility="invisible" android:fadingEdge="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-2.0dip" android:layout_marginRight="8.0dip" android:singleLine="true" />
         </LinearLayout>
     </FrameLayout>
-    <FrameLayout android:layout_gravity="bottom" android:background="#cc111111" android:paddingLeft="64.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="208.0dip">
+    <FrameLayout android:layout_gravity="bottom" android:background="#ccdddddd" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="208.0dip">
         <include android:layout_gravity="bottom" android:id="@id/actions" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/notification_action_list" />
     </FrameLayout>
 </FrameLayout>
