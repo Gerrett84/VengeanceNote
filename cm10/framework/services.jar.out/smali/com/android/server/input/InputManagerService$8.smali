@@ -1,11 +1,14 @@
 .class Lcom/android/server/input/InputManagerService$8;
-.super Landroid/database/ContentObserver;
+.super Ljava/lang/Object;
 .source "InputManagerService.java"
+
+# interfaces
+.implements Lcom/android/server/input/InputManagerService$KeyboardLayoutVisitor;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/input/InputManagerService;->registerShowTouchesSettingObserver()V
+    value = Lcom/android/server/input/InputManagerService;->getKeyboardLayoutOverlay(Ljava/lang/String;)[Ljava/lang/String;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,34 +20,80 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/input/InputManagerService;
 
+.field final synthetic val$result:[Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/input/InputManagerService;Landroid/os/Handler;)V
+.method constructor <init>(Lcom/android/server/input/InputManagerService;[Ljava/lang/String;)V
     .locals 0
     .parameter
-    .parameter "x0"
+    .parameter
 
     .prologue
-    .line 1106
+    .line 1364
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$8;->this$0:Lcom/android/server/input/InputManagerService;
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    iput-object p2, p0, Lcom/android/server/input/InputManagerService$8;->val$result:[Ljava/lang/String;
+
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onChange(Z)V
-    .locals 1
-    .parameter "selfChange"
+.method public visitKeyboardLayout(Landroid/content/res/Resources;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 4
+    .parameter "resources"
+    .parameter "descriptor"
+    .parameter "label"
+    .parameter "collection"
+    .parameter "keyboardLayoutResId"
 
     .prologue
-    .line 1109
-    iget-object v0, p0, Lcom/android/server/input/InputManagerService$8;->this$0:Lcom/android/server/input/InputManagerService;
+    .line 1369
+    :try_start_0
+    iget-object v0, p0, Lcom/android/server/input/InputManagerService$8;->val$result:[Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/android/server/input/InputManagerService;->updateShowTouchesFromSettings()V
+    const/4 v1, 0x0
 
-    .line 1110
+    aput-object p2, v0, v1
+
+    .line 1370
+    iget-object v0, p0, Lcom/android/server/input/InputManagerService$8;->val$result:[Ljava/lang/String;
+
+    const/4 v1, 0x1
+
+    new-instance v2, Ljava/io/InputStreamReader;
+
+    invoke-virtual {p1, p5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+
+    invoke-static {v2}, Llibcore/io/Streams;->readFully(Ljava/io/Reader;)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1375
+    :goto_0
     return-void
+
+    .line 1373
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+
+    .line 1372
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
 .end method

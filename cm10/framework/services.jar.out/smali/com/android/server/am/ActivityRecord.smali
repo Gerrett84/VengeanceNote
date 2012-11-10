@@ -193,7 +193,7 @@
 
     .prologue
     .line 318
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 319
     iput-object p1, p0, Lcom/android/server/am/ActivityRecord;->service:Lcom/android/server/am/ActivityManagerService;
@@ -748,7 +748,7 @@
     :cond_7
     new-instance v3, Landroid/content/ComponentName;
 
-    iget-object v4, p7, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v4, p7, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
 
     iget-object v5, p7, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 

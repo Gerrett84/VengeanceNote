@@ -31,7 +31,7 @@
 
     .prologue
     .line 298
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 299
     new-instance v0, Lcom/android/server/net/NetworkStatsCollection;
