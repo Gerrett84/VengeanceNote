@@ -160,7 +160,7 @@
     invoke-super {p0, p1}, Landroid/preference/TwoStatePreference;->onBindView(Landroid/view/View;)V
 
     .line 104
-    const v2, 0x102030d
+    const v2, 0x102031c
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +179,7 @@
     .line 106
     check-cast v2, Landroid/widget/Checkable;
 
-    iget-boolean v3, p0, Landroid/preference/TwoStatePreference;->mChecked:Z
+    iget-boolean v3, p0, Landroid/preference/SwitchPreference;->mChecked:Z
 
     invoke-interface {v2, v3}, Landroid/widget/Checkable;->setChecked(Z)V
 

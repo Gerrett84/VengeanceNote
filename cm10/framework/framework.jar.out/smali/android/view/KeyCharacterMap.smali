@@ -485,7 +485,7 @@
 
     .prologue
     .line 309
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 310
     iput p1, p0, Landroid/view/KeyCharacterMap;->mPtr:I
@@ -500,7 +500,7 @@
 
     .prologue
     .line 298
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 299
     if-nez p1, :cond_0

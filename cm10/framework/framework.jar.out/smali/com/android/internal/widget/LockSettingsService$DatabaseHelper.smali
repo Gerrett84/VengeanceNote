@@ -35,20 +35,20 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 382
+    .line 360
     iput-object p1, p0, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->this$0:Lcom/android/internal/widget/LockSettingsService;
 
-    .line 383
+    .line 361
     const-string v0, "locksettings.db"
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p2, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 384
+    .line 362
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->setWriteAheadLoggingEnabled(Z)V
 
-    .line 385
+    .line 363
     return-void
 .end method
 
@@ -57,12 +57,12 @@
     .parameter "db"
 
     .prologue
-    .line 388
+    .line 366
     const-string v0, "CREATE TABLE locksettings (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,user INTEGER,value TEXT);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 394
+    .line 372
     return-void
 .end method
 
@@ -73,10 +73,10 @@
     .parameter "db"
 
     .prologue
-    .line 398
+    .line 376
     invoke-direct {p0, p1}, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->createTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 399
+    .line 377
     return-void
 .end method
 
@@ -87,6 +87,6 @@
     .parameter "currentVersion"
 
     .prologue
-    .line 404
+    .line 382
     return-void
 .end method

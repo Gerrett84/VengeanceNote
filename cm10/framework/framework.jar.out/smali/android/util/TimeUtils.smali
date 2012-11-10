@@ -61,7 +61,7 @@
     .line 45
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/TimeUtils;->sLastLockObj:Ljava/lang/Object;
 
@@ -74,7 +74,7 @@
     .line 50
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/TimeUtils;->sLastUniqueLockObj:Ljava/lang/Object;
 
@@ -87,7 +87,7 @@
     .line 245
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
@@ -106,7 +106,7 @@
 
     .prologue
     .line 40
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -865,7 +865,7 @@
 
     .line 64
     .local v8, r:Landroid/content/res/Resources;
-    const v10, 0x10f000d
+    const v10, 0x10f000e
 
     invoke-virtual {v8, v10}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
@@ -1058,7 +1058,7 @@
 
     .line 171
     .local v4, r:Landroid/content/res/Resources;
-    const v8, 0x10f000d
+    const v8, 0x10f000e
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
@@ -1098,12 +1098,12 @@
     if-nez v8, :cond_4
 
     .line 206
+    .end local v2           #element:Ljava/lang/String;
     :cond_3
+    :goto_2
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 209
-    .end local v2           #element:Ljava/lang/String;
-    :goto_2
     sget-object v9, Landroid/util/TimeUtils;->sLastLockObj:Ljava/lang/Object;
 
     monitor-enter v9
@@ -1253,13 +1253,18 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    .line 206
-    invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
-
     goto :goto_2
 
-    .line 203
+    .line 206
     .end local v1           #e:Lorg/xmlpull/v1/XmlPullParserException;
+    :catchall_2
+    move-exception v8
+
+    invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
+
+    throw v8
+
+    .line 203
     :catch_1
     move-exception v1
 
@@ -1296,18 +1301,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 206
-    invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
-
     goto/16 :goto_2
-
-    .end local v1           #e:Ljava/io/IOException;
-    :catchall_2
-    move-exception v8
-
-    invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
-
-    throw v8
 .end method
 
 .method public static getTimeZonesWithUniqueOffsets(Ljava/lang/String;)Ljava/util/ArrayList;

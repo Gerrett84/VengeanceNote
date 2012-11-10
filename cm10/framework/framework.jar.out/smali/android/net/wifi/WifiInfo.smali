@@ -205,7 +205,7 @@
     const/4 v1, -0x1
 
     .line 79
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     iput-object v0, p0, Landroid/net/wifi/WifiInfo;->mSSID:Ljava/lang/String;
@@ -244,7 +244,7 @@
 
     .prologue
     .line 93
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     if-eqz p1, :cond_0

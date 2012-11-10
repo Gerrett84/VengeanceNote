@@ -89,7 +89,7 @@
     const/4 v1, 0x0
 
     .line 114
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     iput-boolean v1, p0, Landroid/net/http/Request;->mCancelled:Z
@@ -103,7 +103,7 @@
     .line 88
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/net/http/Request;->mClientResource:Ljava/lang/Object;
 
@@ -968,7 +968,7 @@
 
     move/from16 v0, v21
 
-    if-eq v13, v0, :cond_a
+    if-eq v13, v0, :cond_e
 
     .line 298
     monitor-enter p0
@@ -1077,17 +1077,17 @@
     if-eqz v15, :cond_5
 
     .line 348
+    .end local v8           #e:Ljava/io/EOFException;
+    :goto_4
     invoke-virtual {v15}, Ljava/io/InputStream;->close()V
 
     .line 352
     .end local v5           #buf:[B
     .end local v6           #contentEncoding:Lorg/apache/http/Header;
     .end local v7           #count:I
-    .end local v8           #e:Ljava/io/EOFException;
     .end local v12           #is:Ljava/io/InputStream;
     .end local v15           #nis:Ljava/io/InputStream;
     :cond_5
-    :goto_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/net/http/Request;->mConnection:Landroid/net/http/Connection;
@@ -1216,15 +1216,6 @@
 
     goto/16 :goto_2
 
-    .line 347
-    :cond_a
-    if-eqz v15, :cond_5
-
-    .line 348
-    invoke-virtual {v15}, Ljava/io/InputStream;->close()V
-
-    goto :goto_4
-
     .line 335
     .end local v13           #len:I
     .end local v14           #lowWater:I
@@ -1239,7 +1230,7 @@
 
     move/from16 v1, v21
 
-    if-eq v0, v1, :cond_b
+    if-eq v0, v1, :cond_a
 
     const/16 v21, 0xce
 
@@ -1247,13 +1238,13 @@
 
     move/from16 v1, v21
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_d
 
     .line 339
-    :cond_b
-    if-eqz v19, :cond_c
+    :cond_a
+    if-eqz v19, :cond_b
 
-    if-lez v7, :cond_c
+    if-lez v7, :cond_b
 
     .line 342
     :try_start_8
@@ -1268,7 +1259,7 @@
     invoke-interface {v0, v5, v7}, Landroid/net/http/EventHandler;->data([BI)V
 
     .line 344
-    :cond_c
+    :cond_b
     throw v8
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
@@ -1278,21 +1269,26 @@
     :catchall_1
     move-exception v21
 
-    if-eqz v15, :cond_d
+    if-eqz v15, :cond_c
 
     .line 348
     invoke-virtual {v15}, Ljava/io/InputStream;->close()V
-
-    :cond_d
-    throw v21
 
     .line 347
+    :cond_c
+    throw v21
+
     .restart local v8       #e:Ljava/io/IOException;
-    :cond_e
+    :cond_d
     if-eqz v15, :cond_5
 
-    .line 348
-    invoke-virtual {v15}, Ljava/io/InputStream;->close()V
+    goto/16 :goto_4
+
+    .end local v8           #e:Ljava/io/IOException;
+    .restart local v13       #len:I
+    .restart local v14       #lowWater:I
+    :cond_e
+    if-eqz v15, :cond_5
 
     goto/16 :goto_4
 .end method

@@ -44,14 +44,14 @@
     .locals 1
 
     .prologue
-    .line 450
+    .line 460
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/view/Display;->sStaticInit:Ljava/lang/Object;
 
-    .line 451
+    .line 461
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/view/Display;->sInitialized:Z
@@ -66,16 +66,16 @@
 
     .prologue
     .line 46
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 446
+    .line 456
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Landroid/view/Display;->mTmpPoint:Landroid/graphics/Point;
 
-    .line 447
+    .line 457
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
@@ -151,7 +151,7 @@
     .parameter "compat"
 
     .prologue
-    .line 459
+    .line 469
     new-instance v0, Landroid/view/Display;
 
     invoke-direct {v0, p0, p1}, Landroid/view/Display;-><init>(ILandroid/view/CompatibilityInfoHolder;)V
@@ -315,18 +315,18 @@
     .locals 2
 
     .prologue
-    .line 420
+    .line 430
     sget-object v1, Landroid/view/Display;->sStaticInit:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 421
+    .line 431
     :try_start_0
     sget-object v0, Landroid/view/Display;->sWindowManager:Landroid/view/IWindowManager;
 
     if-nez v0, :cond_0
 
-    .line 422
+    .line 432
     const-string/jumbo v0, "window"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -339,7 +339,7 @@
 
     sput-object v0, Landroid/view/Display;->sWindowManager:Landroid/view/IWindowManager;
 
-    .line 425
+    .line 435
     :cond_0
     sget-object v0, Landroid/view/Display;->sWindowManager:Landroid/view/IWindowManager;
 
@@ -347,7 +347,7 @@
 
     return-object v0
 
-    .line 426
+    .line 436
     :catchall_0
     move-exception v0
 
@@ -432,7 +432,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 409
     const/4 v0, 0x0
 
     return v0
@@ -616,7 +616,7 @@
     .parameter "height"
 
     .prologue
-    .line 408
+    .line 418
     iget v0, p0, Landroid/view/Display;->mDensity:F
 
     const/high16 v1, 0x4320
@@ -631,45 +631,45 @@
 
     iput v0, p1, Landroid/util/DisplayMetrics;->densityDpi:I
 
-    .line 410
+    .line 420
     iput p2, p1, Landroid/util/DisplayMetrics;->widthPixels:I
 
     iput p2, p1, Landroid/util/DisplayMetrics;->noncompatWidthPixels:I
 
-    .line 411
+    .line 421
     iput p3, p1, Landroid/util/DisplayMetrics;->heightPixels:I
 
     iput p3, p1, Landroid/util/DisplayMetrics;->noncompatHeightPixels:I
 
-    .line 413
+    .line 423
     iget v0, p0, Landroid/view/Display;->mDensity:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->noncompatDensity:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->density:F
 
-    .line 414
+    .line 424
     iget v0, p1, Landroid/util/DisplayMetrics;->density:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->noncompatScaledDensity:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->scaledDensity:F
 
-    .line 415
+    .line 425
     iget v0, p0, Landroid/view/Display;->mDpiX:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->noncompatXdpi:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->xdpi:F
 
-    .line 416
+    .line 426
     iget v0, p0, Landroid/view/Display;->mDpiY:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->noncompatYdpi:F
 
     iput v0, p1, Landroid/util/DisplayMetrics;->ydpi:F
 
-    .line 417
+    .line 427
     return-void
 .end method
 
@@ -689,23 +689,66 @@
 .end method
 
 .method public getRawExternalHeight()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 390
+    const/16 v1, 0x780
+
+    .line 396
+    invoke-virtual {p0}, Landroid/view/Display;->getRawWidth()I
+
+    move-result v0
+
+    if-ge v0, v1, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/Display;->getRawHeight()I
+
+    move-result v0
+
+    if-lt v0, v1, :cond_1
+
+    .line 397
+    :cond_0
+    const/16 v0, 0x438
+
+    .line 399
+    :goto_0
+    return v0
+
+    :cond_1
     const/16 v0, 0x2d0
 
-    return v0
+    goto :goto_0
 .end method
 
 .method public getRawExternalWidth()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 381
+    const/16 v0, 0x780
+
+    .line 383
+    invoke-virtual {p0}, Landroid/view/Display;->getRawWidth()I
+
+    move-result v1
+
+    if-ge v1, v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/Display;->getRawHeight()I
+
+    move-result v1
+
+    if-lt v1, v0, :cond_1
+
+    .line 386
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
     const/16 v0, 0x500
 
-    return v0
+    goto :goto_0
 .end method
 
 .method public getRawHeight()I

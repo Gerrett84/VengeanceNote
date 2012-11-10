@@ -40,23 +40,23 @@
     .parameter "selectTextPtr"
 
     .prologue
-    .line 901
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 878
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 909
+    .line 886
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mSelectionReason:I
 
-    .line 902
+    .line 879
     iput p1, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mStart:I
 
-    .line 903
+    .line 880
     iput p2, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mEnd:I
 
-    .line 904
+    .line 881
     iput p3, p0, Landroid/webkit/WebViewCore$TextSelectionData;->mSelectTextPtr:I
 
-    .line 905
+    .line 882
     return-void
 .end method

@@ -1544,7 +1544,7 @@
 
     .line 248
     .local v11, descriptionOverride:Ljava/lang/String;
-    const v31, 0x102026c
+    const v31, 0x1020273
 
     move-object/from16 v0, p0
 
@@ -1665,7 +1665,7 @@
 
     move-result-object v32
 
-    const v33, 0x10404a8
+    const v33, 0x10404d3
 
     invoke-virtual/range {v32 .. v33}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

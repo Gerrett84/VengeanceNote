@@ -89,7 +89,7 @@
 
     .prologue
     .line 71
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 72
     if-nez p2, :cond_0
@@ -137,7 +137,7 @@
     const/4 v0, 0x1
 
     .line 84
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 85
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I

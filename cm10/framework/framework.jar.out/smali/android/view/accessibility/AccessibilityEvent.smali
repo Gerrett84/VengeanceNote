@@ -109,7 +109,7 @@
     .line 635
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/view/accessibility/AccessibilityEvent;->sPoolLock:Ljava/lang/Object;
 
@@ -946,7 +946,7 @@
     if-ne v4, v3, :cond_0
 
     :goto_0
-    iput-boolean v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mSealed:Z
+    iput-boolean v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mSealed:Z
 
     .line 928
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -992,7 +992,7 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
+    iput v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mConnectionId:I
 
     .line 934
     invoke-direct {p0, p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->readAccessibilityRecordFromParcel(Landroid/view/accessibility/AccessibilityRecord;Landroid/os/Parcel;)V
@@ -1020,7 +1020,7 @@
     invoke-direct {p0, v1, p1}, Landroid/view/accessibility/AccessibilityEvent;->readAccessibilityRecordFromParcel(Landroid/view/accessibility/AccessibilityRecord;Landroid/os/Parcel;)V
 
     .line 941
-    iget v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
+    iget v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mConnectionId:I
 
     iput v3, v1, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
 
@@ -1388,7 +1388,7 @@
     invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 985
-    iget v3, p0, Landroid/view/accessibility/AccessibilityRecord;->mConnectionId:I
+    iget v3, p0, Landroid/view/accessibility/AccessibilityEvent;->mConnectionId:I
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 

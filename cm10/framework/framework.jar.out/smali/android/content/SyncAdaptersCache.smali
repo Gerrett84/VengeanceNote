@@ -117,9 +117,10 @@
     const/4 v0, 0x0
 
     .line 75
+    :goto_0
     invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
 
-    :goto_0
+    .line 72
     return-object v0
 
     .line 58
@@ -179,11 +180,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 75
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
-
     goto :goto_0
 
+    .line 75
     .end local v1           #authority:Ljava/lang/String;
     .end local v2           #accountType:Ljava/lang/String;
     .end local v3           #userVisible:Z

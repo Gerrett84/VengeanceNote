@@ -31,13 +31,13 @@
     .end annotation
 
     .prologue
-    .line 401
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 380
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 402
+    .line 381
     invoke-direct {p0, p1}, Lcom/android/internal/os/RuntimeInit$Arguments;->parseArgs([Ljava/lang/String;)V
 
-    .line 403
+    .line 382
     return-void
 .end method
 
@@ -51,20 +51,20 @@
     .end annotation
 
     .prologue
-    .line 410
+    .line 389
     const/4 v1, 0x0
 
-    .line 411
+    .line 390
     .local v1, curArg:I
     :goto_0
     array-length v3, p1
 
     if-ge v1, v3, :cond_0
 
-    .line 412
+    .line 391
     aget-object v0, p1, v1
 
-    .line 414
+    .line 393
     .local v0, arg:Ljava/lang/String;
     const-string v3, "--"
 
@@ -74,17 +74,17 @@
 
     if-eqz v3, :cond_1
 
-    .line 415
+    .line 394
     add-int/lit8 v1, v1, 0x1
 
-    .line 422
+    .line 401
     .end local v0           #arg:Ljava/lang/String;
     :cond_0
     array-length v3, p1
 
     if-ne v1, v3, :cond_2
 
-    .line 423
+    .line 402
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "Missing classname argument to RuntimeInit!"
@@ -93,7 +93,7 @@
 
     throw v3
 
-    .line 417
+    .line 396
     .restart local v0       #arg:Ljava/lang/String;
     :cond_1
     const-string v3, "--"
@@ -104,12 +104,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 411
+    .line 390
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 426
+    .line 405
     .end local v0           #arg:Ljava/lang/String;
     :cond_2
     add-int/lit8 v2, v1, 0x1
@@ -120,7 +120,7 @@
 
     iput-object v3, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startClass:Ljava/lang/String;
 
-    .line 427
+    .line 406
     array-length v3, p1
 
     sub-int/2addr v3, v2
@@ -129,7 +129,7 @@
 
     iput-object v3, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startArgs:[Ljava/lang/String;
 
-    .line 428
+    .line 407
     iget-object v3, p0, Lcom/android/internal/os/RuntimeInit$Arguments;->startArgs:[Ljava/lang/String;
 
     const/4 v4, 0x0
@@ -140,6 +140,6 @@
 
     invoke-static {p1, v2, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 429
+    .line 408
     return-void
 .end method

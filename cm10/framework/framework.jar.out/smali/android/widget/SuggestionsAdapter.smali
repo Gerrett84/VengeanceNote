@@ -9,8 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/SuggestionsAdapter$ChildViewCache;,
-        Landroid/widget/SuggestionsAdapter$Injector;
+        Landroid/widget/SuggestionsAdapter$ChildViewCache;
     }
 .end annotation
 
@@ -100,41 +99,41 @@
 
     const/4 v3, -0x1
 
-    .line 108
+    .line 100
     const v1, 0x10900a1
 
     const/4 v2, 0x0
 
     invoke-direct {p0, p1, v1, v2, v4}, Landroid/widget/ResourceCursorAdapter;-><init>(Landroid/content/Context;ILandroid/database/Cursor;Z)V
 
-    .line 80
+    .line 72
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/widget/SuggestionsAdapter;->mClosed:Z
 
-    .line 81
+    .line 73
     iput v4, p0, Landroid/widget/SuggestionsAdapter;->mQueryRefinement:I
 
-    .line 89
+    .line 81
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mText1Col:I
 
-    .line 90
+    .line 82
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mText2Col:I
 
-    .line 91
+    .line 83
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mText2UrlCol:I
 
-    .line 92
+    .line 84
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mIconName1Col:I
 
-    .line 93
+    .line 85
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mIconName2Col:I
 
-    .line 94
+    .line 86
     iput v3, p0, Landroid/widget/SuggestionsAdapter;->mFlagsCol:I
 
-    .line 112
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    .line 104
+    iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "search"
 
@@ -146,26 +145,26 @@
 
     iput-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchManager:Landroid/app/SearchManager;
 
-    .line 113
+    .line 105
     iput-object p2, p0, Landroid/widget/SuggestionsAdapter;->mSearchView:Landroid/widget/SearchView;
 
-    .line 114
+    .line 106
     iput-object p3, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
-    .line 116
+    .line 108
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
-    iget-object v2, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Landroid/app/SearchableInfo;->getActivityContext(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 117
+    .line 109
     .local v0, activityContext:Landroid/content/Context;
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
-    iget-object v2, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v2, v0}, Landroid/app/SearchableInfo;->getProviderContext(Landroid/content/Context;Landroid/content/Context;)Landroid/content/Context;
 
@@ -173,10 +172,10 @@
 
     iput-object v1, p0, Landroid/widget/SuggestionsAdapter;->mProviderContext:Landroid/content/Context;
 
-    .line 119
+    .line 111
     iput-object p4, p0, Landroid/widget/SuggestionsAdapter;->mOutsideDrawablesCache:Ljava/util/WeakHashMap;
 
-    .line 134
+    .line 126
     invoke-virtual {p0}, Landroid/widget/SuggestionsAdapter;->getFilter()Landroid/widget/Filter;
 
     move-result-object v1
@@ -187,7 +186,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Filter;->setDelayer(Landroid/widget/Filter$Delayer;)V
 
-    .line 146
+    .line 138
     return-void
 .end method
 
@@ -196,7 +195,7 @@
     .parameter "resourceUri"
 
     .prologue
-    .line 601
+    .line 593
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mOutsideDrawablesCache:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -205,14 +204,14 @@
 
     check-cast v0, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 602
+    .line 594
     .local v0, cached:Landroid/graphics/drawable/Drawable$ConstantState;
     if-nez v0, :cond_0
 
-    .line 603
+    .line 595
     const/4 v1, 0x0
 
-    .line 606
+    .line 598
     :goto_0
     return-object v1
 
@@ -233,19 +232,19 @@
 
     const/4 v2, 0x0
 
-    .line 377
+    .line 369
     iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mUrlColor:Landroid/content/res/ColorStateList;
 
     if-nez v0, :cond_0
 
-    .line 379
+    .line 371
     new-instance v6, Landroid/util/TypedValue;
 
     invoke-direct {v6}, Landroid/util/TypedValue;-><init>()V
 
-    .line 380
+    .line 372
     .local v6, colorValue:Landroid/util/TypedValue;
-    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -257,8 +256,8 @@
 
     invoke-virtual {v0, v3, v6, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 381
-    iget-object v0, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    .line 373
+    iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -272,14 +271,14 @@
 
     iput-object v0, p0, Landroid/widget/SuggestionsAdapter;->mUrlColor:Landroid/content/res/ColorStateList;
 
-    .line 384
+    .line 376
     .end local v6           #colorValue:Landroid/util/TypedValue;
     :cond_0
     new-instance v7, Landroid/text/SpannableString;
 
     invoke-direct {v7, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 385
+    .line 377
     .local v7, text:Landroid/text/SpannableString;
     new-instance v0, Landroid/text/style/TextAppearanceSpan;
 
@@ -299,28 +298,25 @@
 
     invoke-virtual {v7, v0, v2, v1, v3}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 388
+    .line 380
     return-object v7
 .end method
 
 .method private getActivityIcon(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
     .locals 10
     .parameter "component"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
     const/4 v6, 0x0
 
-    .line 666
-    iget-object v7, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    .line 657
+    iget-object v7, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
 
-    .line 669
+    .line 660
     .local v5, pm:Landroid/content/pm/PackageManager;
     const/16 v7, 0x80
 
@@ -331,30 +327,30 @@
 
     move-result-object v0
 
-    .line 674
+    .line 665
     .local v0, activityInfo:Landroid/content/pm/ActivityInfo;
     invoke-virtual {v0}, Landroid/content/pm/ActivityInfo;->getIconResource()I
 
     move-result v3
 
-    .line 675
+    .line 666
     .local v3, iconId:I
     if-nez v3, :cond_1
 
     move-object v1, v6
 
-    .line 683
+    .line 674
     .end local v0           #activityInfo:Landroid/content/pm/ActivityInfo;
     .end local v3           #iconId:I
     :cond_0
     :goto_0
     return-object v1
 
-    .line 670
+    .line 661
     :catch_0
     move-exception v2
 
-    .line 671
+    .line 662
     .local v2, ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v7, "SuggestionsAdapter"
 
@@ -366,10 +362,10 @@
 
     move-object v1, v6
 
-    .line 672
+    .line 663
     goto :goto_0
 
-    .line 676
+    .line 667
     .end local v2           #ex:Landroid/content/pm/PackageManager$NameNotFoundException;
     .restart local v0       #activityInfo:Landroid/content/pm/ActivityInfo;
     .restart local v3       #iconId:I
@@ -378,17 +374,19 @@
 
     move-result-object v4
 
-    .line 677
+    .line 668
     .local v4, pkg:Ljava/lang/String;
-    invoke-static {v5, v4, v3, v0}, Landroid/widget/SuggestionsAdapter$Injector;->getDrawable(Landroid/content/pm/PackageManager;Ljava/lang/String;ILandroid/content/pm/ActivityInfo;)Landroid/graphics/drawable/Drawable;
+    iget-object v7, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    invoke-virtual {v5, v4, v3, v7}, Landroid/content/pm/PackageManager;->getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 678
+    .line 669
     .local v1, drawable:Landroid/graphics/drawable/Drawable;
     if-nez v1, :cond_0
 
-    .line 679
+    .line 670
     const-string v7, "SuggestionsAdapter"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -427,7 +425,7 @@
 
     move-object v1, v6
 
-    .line 681
+    .line 672
     goto :goto_0
 .end method
 
@@ -438,12 +436,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 643
+    .line 635
     invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 645
+    .line 637
     .local v1, componentIconKey:Ljava/lang/String;
     iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mOutsideDrawablesCache:Ljava/util/WeakHashMap;
 
@@ -453,7 +451,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 646
+    .line 638
     iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mOutsideDrawablesCache:Ljava/util/WeakHashMap;
 
     invoke-virtual {v5, v1}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -462,16 +460,16 @@
 
     check-cast v0, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 647
+    .line 639
     .local v0, cached:Landroid/graphics/drawable/Drawable$ConstantState;
     if-nez v0, :cond_0
 
-    .line 654
+    .line 646
     .end local v0           #cached:Landroid/graphics/drawable/Drawable$ConstantState;
     :goto_0
     return-object v4
 
-    .line 647
+    .line 639
     .restart local v0       #cached:Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_0
     iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mProviderContext:Landroid/content/Context;
@@ -486,20 +484,20 @@
 
     goto :goto_0
 
-    .line 650
+    .line 642
     .end local v0           #cached:Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_1
     invoke-direct {p0, p1}, Landroid/widget/SuggestionsAdapter;->getActivityIcon(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 652
+    .line 644
     .local v2, drawable:Landroid/graphics/drawable/Drawable;
     if-nez v2, :cond_2
 
     move-object v3, v4
 
-    .line 653
+    .line 645
     .local v3, toCache:Landroid/graphics/drawable/Drawable$ConstantState;
     :goto_1
     iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mOutsideDrawablesCache:Ljava/util/WeakHashMap;
@@ -508,10 +506,10 @@
 
     move-object v4, v2
 
-    .line 654
+    .line 646
     goto :goto_0
 
-    .line 652
+    .line 644
     .end local v3           #toCache:Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_2
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
@@ -527,12 +525,12 @@
     .parameter "columnName"
 
     .prologue
-    .line 695
+    .line 686
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 696
+    .line 687
     .local v0, col:I
     invoke-static {p0, v0}, Landroid/widget/SuggestionsAdapter;->getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
 
@@ -546,7 +544,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 624
+    .line 616
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
     invoke-virtual {v1}, Landroid/app/SearchableInfo;->getSearchActivity()Landroid/content/ComponentName;
@@ -557,18 +555,18 @@
 
     move-result-object v0
 
-    .line 625
+    .line 617
     .local v0, drawable:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 630
+    .line 622
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     :goto_0
     return-object v0
 
     .restart local v0       #drawable:Landroid/graphics/drawable/Drawable;
     :cond_0
-    iget-object v1, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -588,13 +586,13 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 568
+    .line 560
     :try_start_0
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 569
+    .line 561
     .local v3, scheme:Ljava/lang/String;
     const-string v5, "android.resource"
 
@@ -604,7 +602,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 571
+    .line 563
     iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mProviderContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -617,7 +615,7 @@
 
     move-result-object v2
 
-    .line 574
+    .line 566
     .local v2, r:Landroid/content/ContentResolver$OpenResourceIdResult;
     :try_start_1
     iget-object v5, v2, Landroid/content/ContentResolver$OpenResourceIdResult;->r:Landroid/content/res/Resources;
@@ -631,19 +629,19 @@
 
     move-result-object v5
 
-    .line 596
+    .line 588
     .end local v2           #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     .end local v3           #scheme:Ljava/lang/String;
     :goto_0
     return-object v5
 
-    .line 575
+    .line 567
     .restart local v2       #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     .restart local v3       #scheme:Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 576
+    .line 568
     .local v0, ex:Landroid/content/res/Resources$NotFoundException;
     :try_start_2
     new-instance v5, Ljava/io/FileNotFoundException;
@@ -672,14 +670,14 @@
     :try_end_2
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 594
+    .line 586
     .end local v0           #ex:Landroid/content/res/Resources$NotFoundException;
     .end local v2           #r:Landroid/content/ContentResolver$OpenResourceIdResult;
     .end local v3           #scheme:Ljava/lang/String;
     :catch_1
     move-exception v1
 
-    .line 595
+    .line 587
     .local v1, fnfe:Ljava/io/FileNotFoundException;
     const-string v5, "SuggestionsAdapter"
 
@@ -719,10 +717,10 @@
 
     move-object v5, v6
 
-    .line 596
+    .line 588
     goto :goto_0
 
-    .line 580
+    .line 572
     .end local v1           #fnfe:Ljava/io/FileNotFoundException;
     .restart local v3       #scheme:Ljava/lang/String;
     :cond_0
@@ -737,11 +735,11 @@
 
     move-result-object v4
 
-    .line 581
+    .line 573
     .local v4, stream:Ljava/io/InputStream;
     if-nez v4, :cond_1
 
-    .line 582
+    .line 574
     new-instance v5, Ljava/io/FileNotFoundException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -768,7 +766,7 @@
     :try_end_3
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 585
+    .line 577
     :cond_1
     const/4 v5, 0x0
 
@@ -779,7 +777,7 @@
 
     move-result-object v5
 
-    .line 588
+    .line 580
     :try_start_5
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_5
@@ -788,11 +786,11 @@
 
     goto :goto_0
 
-    .line 589
+    .line 581
     :catch_2
     move-exception v0
 
-    .line 590
+    .line 582
     .local v0, ex:Ljava/io/IOException;
     :try_start_6
     const-string v7, "SuggestionsAdapter"
@@ -821,28 +819,28 @@
 
     goto/16 :goto_0
 
-    .line 587
+    .line 579
     .end local v0           #ex:Ljava/io/IOException;
     :catchall_0
     move-exception v5
 
-    .line 588
+    .line 580
     :try_start_7
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
     .catch Ljava/io/FileNotFoundException; {:try_start_7 .. :try_end_7} :catch_1
 
-    .line 587
+    .line 579
     :goto_1
     :try_start_8
     throw v5
 
-    .line 589
+    .line 581
     :catch_3
     move-exception v0
 
-    .line 590
+    .line 582
     .restart local v0       #ex:Ljava/io/IOException;
     const-string v7, "SuggestionsAdapter"
 
@@ -878,7 +876,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 525
+    .line 517
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -898,19 +896,19 @@
     :cond_0
     move-object v0, v5
 
-    .line 557
+    .line 549
     :cond_1
     :goto_0
     return-object v0
 
-    .line 530
+    .line 522
     :cond_2
     :try_start_0
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 532
+    .line 524
     .local v3, resourceId:I
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -946,17 +944,17 @@
 
     move-result-object v1
 
-    .line 535
+    .line 527
     .local v1, drawableUri:Ljava/lang/String;
     invoke-direct {p0, v1}, Landroid/widget/SuggestionsAdapter;->checkIconCache(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 536
+    .line 528
     .local v0, drawable:Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_1
 
-    .line 540
+    .line 532
     iget-object v6, p0, Landroid/widget/SuggestionsAdapter;->mProviderContext:Landroid/content/Context;
 
     invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -967,7 +965,7 @@
 
     move-result-object v0
 
-    .line 542
+    .line 534
     invoke-direct {p0, v1, v0}, Landroid/widget/SuggestionsAdapter;->storeInIconCache(Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
@@ -975,47 +973,47 @@
 
     goto :goto_0
 
-    .line 544
+    .line 536
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     .end local v1           #drawableUri:Ljava/lang/String;
     .end local v3           #resourceId:I
     :catch_0
     move-exception v2
 
-    .line 546
+    .line 538
     .local v2, nfe:Ljava/lang/NumberFormatException;
     invoke-direct {p0, p1}, Landroid/widget/SuggestionsAdapter;->checkIconCache(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 547
+    .line 539
     .restart local v0       #drawable:Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_1
 
-    .line 550
+    .line 542
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v4
 
-    .line 551
+    .line 543
     .local v4, uri:Landroid/net/Uri;
     invoke-direct {p0, v4}, Landroid/widget/SuggestionsAdapter;->getDrawable(Landroid/net/Uri;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 552
+    .line 544
     invoke-direct {p0, p1, v0}, Landroid/widget/SuggestionsAdapter;->storeInIconCache(Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 554
+    .line 546
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     .end local v2           #nfe:Ljava/lang/NumberFormatException;
     .end local v4           #uri:Landroid/net/Uri;
     :catch_1
     move-exception v2
 
-    .line 556
+    .line 548
     .local v2, nfe:Landroid/content/res/Resources$NotFoundException;
     const-string v6, "SuggestionsAdapter"
 
@@ -1041,7 +1039,7 @@
 
     move-object v0, v5
 
-    .line 557
+    .line 549
     goto :goto_0
 .end method
 
@@ -1050,22 +1048,22 @@
     .parameter "cursor"
 
     .prologue
-    .line 403
+    .line 395
     iget v2, p0, Landroid/widget/SuggestionsAdapter;->mIconName1Col:I
 
     const/4 v3, -0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 404
+    .line 396
     const/4 v0, 0x0
 
-    .line 411
+    .line 403
     :cond_0
     :goto_0
     return-object v0
 
-    .line 406
+    .line 398
     :cond_1
     iget v2, p0, Landroid/widget/SuggestionsAdapter;->mIconName1Col:I
 
@@ -1073,17 +1071,17 @@
 
     move-result-object v1
 
-    .line 407
+    .line 399
     .local v1, value:Ljava/lang/String;
     invoke-direct {p0, v1}, Landroid/widget/SuggestionsAdapter;->getDrawableFromResourceValue(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 408
+    .line 400
     .local v0, drawable:Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_0
 
-    .line 411
+    .line 403
     invoke-direct {p0, p1}, Landroid/widget/SuggestionsAdapter;->getDefaultIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -1096,21 +1094,21 @@
     .parameter "cursor"
 
     .prologue
-    .line 415
+    .line 407
     iget v1, p0, Landroid/widget/SuggestionsAdapter;->mIconName2Col:I
 
     const/4 v2, -0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 416
+    .line 408
     const/4 v1, 0x0
 
-    .line 419
+    .line 411
     :goto_0
     return-object v1
 
-    .line 418
+    .line 410
     :cond_0
     iget v1, p0, Landroid/widget/SuggestionsAdapter;->mIconName2Col:I
 
@@ -1118,7 +1116,7 @@
 
     move-result-object v0
 
-    .line 419
+    .line 411
     .local v0, value:Ljava/lang/String;
     invoke-direct {p0, v0}, Landroid/widget/SuggestionsAdapter;->getDrawableFromResourceValue(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -1135,16 +1133,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 700
+    .line 691
     const/4 v2, -0x1
 
     if-ne p1, v2, :cond_0
 
-    .line 709
+    .line 700
     :goto_0
     return-object v1
 
-    .line 704
+    .line 695
     :cond_0
     :try_start_0
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1155,11 +1153,11 @@
 
     goto :goto_0
 
-    .line 705
+    .line 696
     :catch_0
     move-exception v0
 
-    .line 706
+    .line 697
     .local v0, e:Ljava/lang/Exception;
     const-string v2, "SuggestionsAdapter"
 
@@ -1179,27 +1177,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 429
+    .line 421
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 431
+    .line 423
     if-nez p2, :cond_0
 
-    .line 432
+    .line 424
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 444
+    .line 436
     :goto_0
     return-void
 
-    .line 434
+    .line 426
     :cond_0
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 441
+    .line 433
     invoke-virtual {p2, v1, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
-    .line 442
+    .line 434
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
@@ -1213,26 +1211,26 @@
     .parameter "text"
 
     .prologue
-    .line 393
+    .line 385
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 395
+    .line 387
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 396
+    .line 388
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 400
+    .line 392
     :goto_0
     return-void
 
-    .line 398
+    .line 390
     :cond_0
     const/4 v0, 0x0
 
@@ -1247,10 +1245,10 @@
     .parameter "drawable"
 
     .prologue
-    .line 610
+    .line 602
     if-eqz p2, :cond_0
 
-    .line 611
+    .line 603
     iget-object v0, p0, Landroid/widget/SuggestionsAdapter;->mOutsideDrawablesCache:Ljava/util/WeakHashMap;
 
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
@@ -1259,7 +1257,7 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 613
+    .line 605
     :cond_0
     return-void
 .end method
@@ -1269,14 +1267,14 @@
     .parameter "cursor"
 
     .prologue
-    .line 239
+    .line 231
     if-eqz p1, :cond_1
 
     invoke-interface {p1}, Landroid/database/Cursor;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 247
+    .line 239
     .local v0, extras:Landroid/os/Bundle;
     :goto_0
     if-eqz v0, :cond_0
@@ -1289,11 +1287,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 254
+    .line 246
     :cond_0
     return-void
 
-    .line 239
+    .line 231
     .end local v0           #extras:Landroid/os/Bundle;
     :cond_1
     const/4 v0, 0x0
@@ -1318,18 +1316,18 @@
 
     const/4 v7, 0x1
 
-    .line 317
+    .line 309
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;
 
-    .line 319
+    .line 311
     .local v3, views:Landroid/widget/SuggestionsAdapter$ChildViewCache;
     const/4 v0, 0x0
 
-    .line 320
+    .line 312
     .local v0, flags:I
     iget v4, p0, Landroid/widget/SuggestionsAdapter;->mFlagsCol:I
 
@@ -1337,56 +1335,56 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 321
+    .line 313
     iget v4, p0, Landroid/widget/SuggestionsAdapter;->mFlagsCol:I
 
     invoke-interface {p3, v4}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
-    .line 323
+    .line 315
     :cond_0
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     if-eqz v4, :cond_1
 
-    .line 324
+    .line 316
     iget v4, p0, Landroid/widget/SuggestionsAdapter;->mText1Col:I
 
     invoke-static {p3, v4}, Landroid/widget/SuggestionsAdapter;->getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 325
+    .line 317
     .local v1, text1:Ljava/lang/String;
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     invoke-direct {p0, v4, v1}, Landroid/widget/SuggestionsAdapter;->setViewText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    .line 327
+    .line 319
     .end local v1           #text1:Ljava/lang/String;
     :cond_1
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText2:Landroid/widget/TextView;
 
     if-eqz v4, :cond_3
 
-    .line 329
+    .line 321
     iget v4, p0, Landroid/widget/SuggestionsAdapter;->mText2UrlCol:I
 
     invoke-static {p3, v4}, Landroid/widget/SuggestionsAdapter;->getStringOrNull(Landroid/database/Cursor;I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 330
+    .line 322
     .local v2, text2:Ljava/lang/CharSequence;
     if-eqz v2, :cond_7
 
-    .line 331
+    .line 323
     invoke-direct {p0, v2}, Landroid/widget/SuggestionsAdapter;->formatUrl(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 338
+    .line 330
     :goto_0
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1394,36 +1392,36 @@
 
     if-eqz v4, :cond_8
 
-    .line 339
+    .line 331
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     if-eqz v4, :cond_2
 
-    .line 340
+    .line 332
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 341
+    .line 333
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     invoke-virtual {v4, v9}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 349
+    .line 341
     :cond_2
     :goto_1
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText2:Landroid/widget/TextView;
 
     invoke-direct {p0, v4, v2}, Landroid/widget/SuggestionsAdapter;->setViewText(Landroid/widget/TextView;Ljava/lang/CharSequence;)V
 
-    .line 352
+    .line 344
     .end local v2           #text2:Ljava/lang/CharSequence;
     :cond_3
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIcon1:Landroid/widget/ImageView;
 
     if-eqz v4, :cond_4
 
-    .line 353
+    .line 345
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIcon1:Landroid/widget/ImageView;
 
     invoke-direct {p0, p3}, Landroid/widget/SuggestionsAdapter;->getIcon1(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
@@ -1434,13 +1432,13 @@
 
     invoke-direct {p0, v4, v5, v6}, Landroid/widget/SuggestionsAdapter;->setViewDrawable(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;I)V
 
-    .line 355
+    .line 347
     :cond_4
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIcon2:Landroid/widget/ImageView;
 
     if-eqz v4, :cond_5
 
-    .line 356
+    .line 348
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIcon2:Landroid/widget/ImageView;
 
     invoke-direct {p0, p3}, Landroid/widget/SuggestionsAdapter;->getIcon2(Landroid/database/Cursor;)Landroid/graphics/drawable/Drawable;
@@ -1449,7 +1447,7 @@
 
     invoke-direct {p0, v4, v5, v10}, Landroid/widget/SuggestionsAdapter;->setViewDrawable(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;I)V
 
-    .line 358
+    .line 350
     :cond_5
     iget v4, p0, Landroid/widget/SuggestionsAdapter;->mQueryRefinement:I
 
@@ -1463,13 +1461,13 @@
 
     if-eqz v4, :cond_9
 
-    .line 361
+    .line 353
     :cond_6
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIconRefine:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 362
+    .line 354
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIconRefine:Landroid/widget/ImageView;
 
     iget-object v5, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
@@ -1480,16 +1478,16 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 363
+    .line 355
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIconRefine:Landroid/widget/ImageView;
 
     invoke-virtual {v4, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 367
+    .line 359
     :goto_2
     return-void
 
-    .line 333
+    .line 325
     .restart local v2       #text2:Ljava/lang/CharSequence;
     :cond_7
     iget v4, p0, Landroid/widget/SuggestionsAdapter;->mText2Col:I
@@ -1500,25 +1498,25 @@
 
     goto :goto_0
 
-    .line 344
+    .line 336
     :cond_8
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     if-eqz v4, :cond_2
 
-    .line 345
+    .line 337
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 346
+    .line 338
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setMaxLines(I)V
 
     goto :goto_1
 
-    .line 365
+    .line 357
     .end local v2           #text2:Ljava/lang/CharSequence;
     :cond_9
     iget-object v4, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mIconRefine:Landroid/widget/ImageView;
@@ -1533,37 +1531,37 @@
     .parameter "c"
 
     .prologue
-    .line 263
+    .line 255
     iget-boolean v1, p0, Landroid/widget/SuggestionsAdapter;->mClosed:Z
 
     if-eqz v1, :cond_1
 
-    .line 264
+    .line 256
     const-string v1, "SuggestionsAdapter"
 
     const-string v2, "Tried to change cursor after adapter was closed."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 265
+    .line 257
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    .line 283
+    .line 275
     :cond_0
     :goto_0
     return-void
 
-    .line 270
+    .line 262
     :cond_1
     :try_start_0
     invoke-super {p0, p1}, Landroid/widget/ResourceCursorAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 272
+    .line 264
     if-eqz p1, :cond_0
 
-    .line 273
+    .line 265
     const-string/jumbo v1, "suggest_text_1"
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -1572,7 +1570,7 @@
 
     iput v1, p0, Landroid/widget/SuggestionsAdapter;->mText1Col:I
 
-    .line 274
+    .line 266
     const-string/jumbo v1, "suggest_text_2"
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -1581,7 +1579,7 @@
 
     iput v1, p0, Landroid/widget/SuggestionsAdapter;->mText2Col:I
 
-    .line 275
+    .line 267
     const-string/jumbo v1, "suggest_text_2_url"
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -1590,7 +1588,7 @@
 
     iput v1, p0, Landroid/widget/SuggestionsAdapter;->mText2UrlCol:I
 
-    .line 276
+    .line 268
     const-string/jumbo v1, "suggest_icon_1"
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -1599,7 +1597,7 @@
 
     iput v1, p0, Landroid/widget/SuggestionsAdapter;->mIconName1Col:I
 
-    .line 277
+    .line 269
     const-string/jumbo v1, "suggest_icon_2"
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -1608,7 +1606,7 @@
 
     iput v1, p0, Landroid/widget/SuggestionsAdapter;->mIconName2Col:I
 
-    .line 278
+    .line 270
     const-string/jumbo v1, "suggest_flags"
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -1621,11 +1619,11 @@
 
     goto :goto_0
 
-    .line 280
+    .line 272
     :catch_0
     move-exception v0
 
-    .line 281
+    .line 273
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "SuggestionsAdapter"
 
@@ -1640,17 +1638,17 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 208
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/SuggestionsAdapter;->changeCursor(Landroid/database/Cursor;)V
 
-    .line 217
+    .line 209
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/SuggestionsAdapter;->mClosed:Z
 
-    .line 218
+    .line 210
     return-void
 .end method
 
@@ -1661,17 +1659,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 456
+    .line 448
     if-nez p1, :cond_1
 
     move-object v1, v3
 
-    .line 479
+    .line 471
     :cond_0
     :goto_0
     return-object v1
 
-    .line 460
+    .line 452
     :cond_1
     const-string/jumbo v4, "suggest_intent_query"
 
@@ -1679,11 +1677,11 @@
 
     move-result-object v1
 
-    .line 461
+    .line 453
     .local v1, query:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 465
+    .line 457
     iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
 
     invoke-virtual {v4}, Landroid/app/SearchableInfo;->shouldRewriteQueryFromData()Z
@@ -1692,23 +1690,23 @@
 
     if-eqz v4, :cond_2
 
-    .line 466
+    .line 458
     const-string/jumbo v4, "suggest_intent_data"
 
     invoke-static {p1, v4}, Landroid/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 467
+    .line 459
     .local v0, data:Ljava/lang/String;
     if-eqz v0, :cond_2
 
     move-object v1, v0
 
-    .line 468
+    .line 460
     goto :goto_0
 
-    .line 472
+    .line 464
     .end local v0           #data:Ljava/lang/String;
     :cond_2
     iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mSearchable:Landroid/app/SearchableInfo;
@@ -1719,27 +1717,27 @@
 
     if-eqz v4, :cond_3
 
-    .line 473
+    .line 465
     const-string/jumbo v4, "suggest_text_1"
 
     invoke-static {p1, v4}, Landroid/widget/SuggestionsAdapter;->getColumnString(Landroid/database/Cursor;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 474
+    .line 466
     .local v2, text1:Ljava/lang/String;
     if-eqz v2, :cond_3
 
     move-object v1, v2
 
-    .line 475
+    .line 467
     goto :goto_0
 
     .end local v2           #text1:Ljava/lang/String;
     :cond_3
     move-object v1, v3
 
-    .line 479
+    .line 471
     goto :goto_0
 .end method
 
@@ -1747,7 +1745,7 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 158
     iget v0, p0, Landroid/widget/SuggestionsAdapter;->mQueryRefinement:I
 
     return v0
@@ -1760,7 +1758,7 @@
     .parameter "parent"
 
     .prologue
-    .line 491
+    .line 483
     :try_start_0
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ResourceCursorAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     :try_end_0
@@ -1768,16 +1766,16 @@
 
     move-result-object v2
 
-    .line 501
+    .line 493
     :cond_0
     :goto_0
     return-object v2
 
-    .line 492
+    .line 484
     :catch_0
     move-exception v0
 
-    .line 493
+    .line 485
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v4, "SuggestionsAdapter"
 
@@ -1785,31 +1783,31 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 495
-    iget-object v4, p0, Landroid/widget/CursorAdapter;->mContext:Landroid/content/Context;
+    .line 487
+    iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mContext:Landroid/content/Context;
 
-    iget-object v5, p0, Landroid/widget/CursorAdapter;->mCursor:Landroid/database/Cursor;
+    iget-object v5, p0, Landroid/widget/SuggestionsAdapter;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0, v4, v5, p3}, Landroid/widget/SuggestionsAdapter;->newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v2
 
-    .line 496
+    .line 488
     .local v2, v:Landroid/view/View;
     if-eqz v2, :cond_0
 
-    .line 497
+    .line 489
     invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;
 
-    .line 498
+    .line 490
     .local v3, views:Landroid/widget/SuggestionsAdapter$ChildViewCache;
     iget-object v1, v3, Landroid/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
 
-    .line 499
+    .line 491
     .local v1, tv:Landroid/widget/TextView;
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
 
@@ -1824,7 +1822,7 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 167
     const/4 v0, 0x0
 
     return v0
@@ -1837,12 +1835,12 @@
     .parameter "parent"
 
     .prologue
-    .line 290
+    .line 282
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ResourceCursorAdapter;->newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 291
+    .line 283
     .local v0, v:Landroid/view/View;
     new-instance v1, Landroid/widget/SuggestionsAdapter$ChildViewCache;
 
@@ -1850,7 +1848,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 292
+    .line 284
     return-object v0
 .end method
 
@@ -1858,8 +1856,26 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 215
     invoke-super {p0}, Landroid/widget/ResourceCursorAdapter;->notifyDataSetChanged()V
+
+    .line 219
+    invoke-virtual {p0}, Landroid/widget/SuggestionsAdapter;->getCursor()Landroid/database/Cursor;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/widget/SuggestionsAdapter;->updateSpinnerState(Landroid/database/Cursor;)V
+
+    .line 220
+    return-void
+.end method
+
+.method public notifyDataSetInvalidated()V
+    .locals 1
+
+    .prologue
+    .line 225
+    invoke-super {p0}, Landroid/widget/ResourceCursorAdapter;->notifyDataSetInvalidated()V
 
     .line 227
     invoke-virtual {p0}, Landroid/widget/SuggestionsAdapter;->getCursor()Landroid/database/Cursor;
@@ -1872,41 +1888,23 @@
     return-void
 .end method
 
-.method public notifyDataSetInvalidated()V
-    .locals 1
-
-    .prologue
-    .line 233
-    invoke-super {p0}, Landroid/widget/ResourceCursorAdapter;->notifyDataSetInvalidated()V
-
-    .line 235
-    invoke-virtual {p0}, Landroid/widget/SuggestionsAdapter;->getCursor()Landroid/database/Cursor;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Landroid/widget/SuggestionsAdapter;->updateSpinnerState(Landroid/database/Cursor;)V
-
-    .line 236
-    return-void
-.end method
-
 .method public onClick(Landroid/view/View;)V
     .locals 2
     .parameter "v"
 
     .prologue
-    .line 370
+    .line 362
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 371
+    .line 363
     .local v0, tag:Ljava/lang/Object;
     instance-of v1, v0, Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_0
 
-    .line 372
+    .line 364
     iget-object v1, p0, Landroid/widget/SuggestionsAdapter;->mSearchView:Landroid/widget/SearchView;
 
     check-cast v0, Ljava/lang/CharSequence;
@@ -1914,7 +1912,7 @@
     .end local v0           #tag:Ljava/lang/Object;
     invoke-virtual {v1, v0}, Landroid/widget/SearchView;->onQueryRefine(Ljava/lang/CharSequence;)V
 
-    .line 374
+    .line 366
     :cond_0
     return-void
 .end method
@@ -1926,17 +1924,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 186
+    .line 178
     if-nez p1, :cond_1
 
     const-string v2, ""
 
-    .line 191
+    .line 183
     .local v2, query:Ljava/lang/String;
     :goto_0
     const/4 v0, 0x0
 
-    .line 192
+    .line 184
     .local v0, cursor:Landroid/database/Cursor;
     iget-object v4, p0, Landroid/widget/SuggestionsAdapter;->mSearchView:Landroid/widget/SearchView;
 
@@ -1954,12 +1952,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 211
+    .line 203
     :cond_0
     :goto_1
     return-object v3
 
-    .line 186
+    .line 178
     .end local v0           #cursor:Landroid/database/Cursor;
     .end local v2           #query:Ljava/lang/String;
     :cond_1
@@ -1969,7 +1967,7 @@
 
     goto :goto_0
 
-    .line 198
+    .line 190
     .restart local v0       #cursor:Landroid/database/Cursor;
     .restart local v2       #query:Ljava/lang/String;
     :cond_2
@@ -1984,24 +1982,24 @@
 
     move-result-object v0
 
-    .line 201
+    .line 193
     if-eqz v0, :cond_0
 
-    .line 202
+    .line 194
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-object v3, v0
 
-    .line 203
+    .line 195
     goto :goto_1
 
-    .line 205
+    .line 197
     :catch_0
     move-exception v1
 
-    .line 206
+    .line 198
     .local v1, e:Ljava/lang/RuntimeException;
     const-string v4, "SuggestionsAdapter"
 
@@ -2017,9 +2015,9 @@
     .parameter "refineWhat"
 
     .prologue
-    .line 158
+    .line 150
     iput p1, p0, Landroid/widget/SuggestionsAdapter;->mQueryRefinement:I
 
-    .line 159
+    .line 151
     return-void
 .end method

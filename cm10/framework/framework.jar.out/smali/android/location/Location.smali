@@ -94,7 +94,7 @@
     const-wide/16 v2, 0x0
 
     .line 111
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     const-wide/16 v0, 0x0
@@ -180,7 +180,7 @@
     const-wide/16 v2, 0x0
 
     .line 103
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     const-wide/16 v0, 0x0
@@ -2079,7 +2079,7 @@
 
     move-result-object v0
 
-    const-string v1, "mHasAltitude="
+    const-string/jumbo v1, "mHasAltitude="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2118,7 +2118,7 @@
 
     move-result-object v0
 
-    const-string v1, "mHasSpeed="
+    const-string/jumbo v1, "mHasSpeed="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2157,7 +2157,7 @@
 
     move-result-object v0
 
-    const-string v1, "mHasBearing="
+    const-string/jumbo v1, "mHasBearing="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2196,7 +2196,7 @@
 
     move-result-object v0
 
-    const-string v1, "mHasAccuracy="
+    const-string/jumbo v1, "mHasAccuracy="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

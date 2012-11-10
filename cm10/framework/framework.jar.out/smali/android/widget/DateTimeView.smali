@@ -206,7 +206,7 @@
     if-eqz v3, :cond_0
 
     .line 195
-    const v2, 0x1040082
+    const v2, 0x104008d
 
     .line 199
     .local v2, res:I
@@ -227,7 +227,7 @@
     .end local v1           #format:Ljava/lang/String;
     .end local v2           #res:I
     :cond_0
-    const v2, 0x1040081
+    const v2, 0x104008c
 
     .restart local v2       #res:I
     goto :goto_0

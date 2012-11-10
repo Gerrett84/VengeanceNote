@@ -194,7 +194,7 @@
 
     .prologue
     .line 35
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 641
     return-void
@@ -318,11 +318,11 @@
     :goto_0
     if-eqz v6, :cond_0
 
+    :goto_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 442
     :cond_0
-    :goto_1
     return v8
 
     :cond_1
@@ -348,8 +348,6 @@
 
     .line 440
     if-eqz v6, :cond_0
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_1
 
@@ -680,11 +678,11 @@
     :cond_1
     if-eqz v6, :cond_2
 
+    :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 487
     :cond_2
-    :goto_0
     return-void
 
     .line 481
@@ -704,8 +702,6 @@
 
     .line 485
     if-eqz v6, :cond_2
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
@@ -879,7 +875,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     .line 373
     const/4 v0, 0x0
@@ -898,22 +894,9 @@
 
     goto :goto_1
 
-    .line 380
-    :cond_2
-    if-eqz v6, :cond_3
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
+    .line 376
     .end local v2           #projection:[Ljava/lang/String;
     .end local v8           #i:I
-    :cond_3
-    :goto_2
-    move-object v0, v9
-
-    .line 382
-    goto :goto_0
-
-    .line 376
     :catch_0
     move-exception v7
 
@@ -934,22 +917,35 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 380
+    if-eqz v6, :cond_2
+
+    .end local v7           #e:Ljava/lang/IllegalStateException;
+    :goto_2
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+
+    :cond_2
+    move-object v0, v9
+
+    .line 382
+    goto :goto_0
+
+    .line 380
+    :catchall_0
+    move-exception v0
+
     if-eqz v6, :cond_3
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    goto :goto_2
-
-    .end local v7           #e:Ljava/lang/IllegalStateException;
-    :catchall_0
-    move-exception v0
-
-    if-eqz v6, :cond_4
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    :cond_4
+    :cond_3
     throw v0
+
+    .restart local v2       #projection:[Ljava/lang/String;
+    .restart local v8       #i:I
+    :cond_4
+    if-eqz v6, :cond_2
+
+    goto :goto_2
 .end method
 
 .method private static final getVisitedLike(Landroid/content/ContentResolver;Ljava/lang/String;)Landroid/database/Cursor;
@@ -1271,7 +1267,7 @@
 
     .prologue
     .line 198
-    const v0, 0x10403ef
+    const v0, 0x1040419
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1458,11 +1454,11 @@
     :cond_0
     if-eqz v6, :cond_1
 
+    :goto_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 421
     :cond_1
-    :goto_1
     return-void
 
     .line 409
@@ -1492,8 +1488,6 @@
 
     .line 419
     if-eqz v6, :cond_1
-
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_1
 
@@ -1601,12 +1595,12 @@
     :goto_1
     if-eqz v0, :cond_0
 
+    .end local v5           #values:Landroid/content/ContentValues;
+    :goto_2
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     .line 353
-    .end local v5           #values:Landroid/content/ContentValues;
     :cond_0
-    :goto_2
     return-void
 
     .line 323
@@ -1646,8 +1640,6 @@
 
     .line 351
     if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     goto :goto_2
 

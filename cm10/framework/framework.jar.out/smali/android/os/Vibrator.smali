@@ -8,10 +8,10 @@
     .locals 0
 
     .prologue
-    .line 36
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 34
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
+    .line 35
     return-void
 .end method
 
@@ -27,16 +27,4 @@
 .end method
 
 .method public abstract vibrate([JI)V
-.end method
-
-.method public vibrateEx([B)V
-    .locals 0
-    .parameter "params"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    .line 84
-    return-void
 .end method

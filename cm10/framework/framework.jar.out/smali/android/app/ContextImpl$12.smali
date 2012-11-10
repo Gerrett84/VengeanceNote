@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 340
+    .line 327
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -30,13 +30,10 @@
 .method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
     .locals 3
     .parameter "ctx"
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
-    .line 343
-    new-instance v0, Landroid/app/MiuiDownloadManager;
+    .line 329
+    new-instance v0, Landroid/app/DownloadManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -46,7 +43,7 @@
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Landroid/app/MiuiDownloadManager;-><init>(Landroid/content/ContentResolver;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Landroid/app/DownloadManager;-><init>(Landroid/content/ContentResolver;Ljava/lang/String;)V
 
     return-object v0
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 229
+    .line 204
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$1;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "animator"
 
     .prologue
-    .line 231
+    .line 206
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$1;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     const/4 v1, 0x0
@@ -47,25 +47,26 @@
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$1;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterX:F
-    invoke-static {v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$000(Lcom/android/internal/widget/multiwaveview/GlowPadView;)F
+    invoke-static {v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$100(Lcom/android/internal/widget/multiwaveview/GlowPadView;)F
 
     move-result v2
 
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$1;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterY:F
-    invoke-static {v3}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$100(Lcom/android/internal/widget/multiwaveview/GlowPadView;)F
+    invoke-static {v3}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$200(Lcom/android/internal/widget/multiwaveview/GlowPadView;)F
 
     move-result v3
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->switchToState(IFF)V
+    #calls: Lcom/android/internal/widget/multiwaveview/GlowPadView;->switchToState(IFF)V
+    invoke-static {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$300(Lcom/android/internal/widget/multiwaveview/GlowPadView;IFF)V
 
-    .line 232
+    .line 207
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$1;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     #calls: Lcom/android/internal/widget/multiwaveview/GlowPadView;->dispatchOnFinishFinalAnimation()V
-    invoke-static {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$200(Lcom/android/internal/widget/multiwaveview/GlowPadView;)V
+    invoke-static {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->access$400(Lcom/android/internal/widget/multiwaveview/GlowPadView;)V
 
-    .line 233
+    .line 208
     return-void
 .end method

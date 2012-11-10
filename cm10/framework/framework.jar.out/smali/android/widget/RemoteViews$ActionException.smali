@@ -20,10 +20,10 @@
     .parameter "ex"
 
     .prologue
-    .line 157
+    .line 147
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    .line 158
+    .line 148
     return-void
 .end method
 
@@ -32,9 +32,9 @@
     .parameter "message"
 
     .prologue
-    .line 160
+    .line 150
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 161
+    .line 151
     return-void
 .end method

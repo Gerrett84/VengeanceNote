@@ -24,7 +24,7 @@
     .parameter "drawGLFunction"
 
     .prologue
-    .line 99
+    .line 101
     const/4 v0, 0x0
 
     return v0
@@ -39,12 +39,15 @@
 .method abstract drawHardwareLayer(Landroid/view/HardwareLayer;FFLandroid/graphics/Paint;)V
 .end method
 
+.method abstract endTileRendering()V
+.end method
+
 .method public invokeFunctors(Landroid/graphics/Rect;)I
     .locals 1
     .parameter "dirty"
 
     .prologue
-    .line 111
+    .line 113
     const/4 v0, 0x0
 
     return v0
@@ -80,4 +83,7 @@
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
+.end method
+
+.method abstract startTileRendering(Landroid/graphics/Rect;)V
 .end method

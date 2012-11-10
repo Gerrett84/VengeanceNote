@@ -33,7 +33,7 @@
     const/4 v0, 0x0
 
     .line 216
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 217
     iput-object v0, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -59,7 +59,7 @@
     const/4 v0, 0x0
 
     .line 226
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 227
     iput-object v0, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -85,7 +85,7 @@
     const/4 v0, 0x0
 
     .line 193
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 194
     iput-object p1, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -111,7 +111,7 @@
 
     .prologue
     .line 237
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 238
     iput-object p1, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -140,7 +140,7 @@
     const/4 v0, 0x0
 
     .line 206
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 207
     iput-object p1, p0, Landroid/content/ClipData$Item;->mText:Ljava/lang/CharSequence;
@@ -167,7 +167,7 @@
 
     .prologue
     .line 250
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 251
     if-eqz p2, :cond_0
@@ -402,7 +402,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_6
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
 
     goto :goto_3
 
@@ -422,7 +422,7 @@
     :try_start_1
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_9
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
 
     .line 542
     .end local v16           #stream:Ljava/io/FileInputStream;
@@ -479,7 +479,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_6
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
     move-result-object v17
 
@@ -497,7 +497,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_6
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
 
     move-result-object v14
 
@@ -514,20 +514,19 @@
     :try_start_4
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_8
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_6
 
     :cond_8
     :goto_7
     move-object/from16 v17, v14
 
-    .line 534
+    .line 500
     goto :goto_5
 
     .restart local v14       #newText:Ljava/lang/CharSequence;
     :cond_9
     move-object/from16 v14, v17
 
-    .line 500
     goto :goto_6
 
     .line 501
@@ -548,20 +547,32 @@
     goto :goto_5
 
     .line 533
+    .end local v5           #buffer:[C
+    .end local v6           #builder:Ljava/lang/StringBuilder;
+    .end local v7           #descr:Landroid/content/res/AssetFileDescriptor;
+    .end local v8           #e:Ljava/lang/RuntimeException;
+    .end local v12           #len:I
+    .end local v15           #reader:Ljava/io/InputStreamReader;
+    .end local v17           #text:Ljava/lang/String;
     :catch_2
     move-exception v20
 
     goto :goto_5
 
     .line 507
-    .end local v8           #e:Ljava/lang/RuntimeException;
+    .restart local v5       #buffer:[C
+    .restart local v6       #builder:Ljava/lang/StringBuilder;
+    .restart local v7       #descr:Landroid/content/res/AssetFileDescriptor;
+    .restart local v12       #len:I
+    .restart local v15       #reader:Ljava/io/InputStreamReader;
+    .restart local v17       #text:Ljava/lang/String;
     :cond_a
     :try_start_6
     invoke-virtual/range {v17 .. v17}, Ljava/lang/String;->toString()Ljava/lang/String;
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/io/FileNotFoundException; {:try_start_6 .. :try_end_6} :catch_0
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
 
     move-result-object v17
 
@@ -572,14 +583,6 @@
     .line 532
     :try_start_7
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
-
-    goto :goto_5
-
-    .line 533
-    :catch_3
-    move-exception v20
 
     goto :goto_5
 
@@ -592,27 +595,20 @@
     if-eqz v16, :cond_5
 
     .line 532
-    :try_start_8
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
-
-    goto :goto_5
-
-    .line 533
-    :catch_4
-    move-exception v20
+    :try_end_7
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
 
     goto :goto_5
 
     .line 517
     :cond_c
-    :try_start_9
+    :try_start_8
     invoke-static/range {v17 .. v17}, Landroid/text/Html;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_9 .. :try_end_9} :catch_0
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_6
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_8 .. :try_end_8} :catch_0
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_3
 
     move-result-object v17
 
@@ -621,16 +617,10 @@
     if-eqz v16, :cond_5
 
     .line 532
-    :try_start_a
+    :try_start_9
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
-    :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_5
-
-    goto :goto_5
-
-    .line 533
-    :catch_5
-    move-exception v20
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_2
 
     goto :goto_5
 
@@ -640,12 +630,12 @@
     .end local v7           #descr:Landroid/content/res/AssetFileDescriptor;
     .end local v12           #len:I
     .end local v15           #reader:Ljava/io/InputStreamReader;
-    :catch_6
+    :catch_3
     move-exception v8
 
     .line 526
     .local v8, e:Ljava/io/IOException;
-    :try_start_b
+    :try_start_a
     const-string v20, "ClippedData"
 
     const-string v21, "Failure loading text"
@@ -662,8 +652,8 @@
     move-result-object v20
 
     invoke-static/range {v20 .. v20}, Landroid/text/Html;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
-    :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_0
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     move-result-object v17
 
@@ -671,16 +661,10 @@
     if-eqz v16, :cond_5
 
     .line 532
-    :try_start_c
+    :try_start_b
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
-    :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_7
-
-    goto :goto_5
-
-    .line 533
-    :catch_7
-    move-exception v20
+    :try_end_b
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_2
 
     goto :goto_5
 
@@ -692,12 +676,12 @@
     if-eqz v16, :cond_d
 
     .line 532
-    :try_start_d
+    :try_start_c
     invoke-virtual/range {v16 .. v16}, Ljava/io/FileInputStream;->close()V
-    :try_end_d
-    .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_a
+    :try_end_c
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_5
 
-    .line 534
+    .line 530
     :cond_d
     :goto_8
     throw v20
@@ -795,36 +779,30 @@
     goto/16 :goto_5
 
     .line 533
-    .restart local v5       #buffer:[C
-    .restart local v6       #builder:Ljava/lang/StringBuilder;
-    .restart local v7       #descr:Landroid/content/res/AssetFileDescriptor;
     .restart local v9       #hasHtml:Z
     .restart local v10       #hasText:Z
-    .restart local v12       #len:I
-    .restart local v15       #reader:Ljava/io/InputStreamReader;
     .restart local v16       #stream:Ljava/io/FileInputStream;
-    .restart local v17       #text:Ljava/lang/String;
     .restart local v19       #types:[Ljava/lang/String;
-    :catch_8
-    move-exception v20
-
-    goto/16 :goto_7
-
-    .end local v5           #buffer:[C
-    .end local v6           #builder:Ljava/lang/StringBuilder;
-    .end local v7           #descr:Landroid/content/res/AssetFileDescriptor;
-    .end local v12           #len:I
-    .end local v15           #reader:Ljava/io/InputStreamReader;
-    .end local v17           #text:Ljava/lang/String;
-    :catch_9
+    :catch_4
     move-exception v20
 
     goto/16 :goto_4
 
-    :catch_a
+    :catch_5
     move-exception v21
 
     goto :goto_8
+
+    .restart local v5       #buffer:[C
+    .restart local v6       #builder:Ljava/lang/StringBuilder;
+    .restart local v7       #descr:Landroid/content/res/AssetFileDescriptor;
+    .restart local v12       #len:I
+    .restart local v15       #reader:Ljava/io/InputStreamReader;
+    .restart local v17       #text:Ljava/lang/String;
+    :catch_6
+    move-exception v20
+
+    goto/16 :goto_7
 .end method
 
 .method private uriToHtml(Ljava/lang/String;)Ljava/lang/String;
@@ -1170,7 +1148,7 @@
     :try_start_1
     invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
 
     .line 362
     :cond_2
@@ -1210,17 +1188,17 @@
     goto :goto_0
 
     .line 355
+    .end local v0           #buffer:[C
+    .end local v1           #builder:Ljava/lang/StringBuilder;
+    .end local v2           #descr:Landroid/content/res/AssetFileDescriptor;
+    .end local v5           #len:I
+    .end local v6           #reader:Ljava/io/InputStreamReader;
     :catch_1
     move-exception v10
 
     goto :goto_0
 
     .line 346
-    .end local v0           #buffer:[C
-    .end local v1           #builder:Ljava/lang/StringBuilder;
-    .end local v2           #descr:Landroid/content/res/AssetFileDescriptor;
-    .end local v5           #len:I
-    .end local v6           #reader:Ljava/io/InputStreamReader;
     .restart local v8       #text:Ljava/lang/CharSequence;
     :catch_2
     move-exception v3
@@ -1249,13 +1227,7 @@
     :try_start_5
     invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
-
-    goto :goto_0
-
-    .line 355
-    :catch_3
-    move-exception v10
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
     goto :goto_0
 
@@ -1271,9 +1243,9 @@
     :try_start_6
     invoke-virtual {v7}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_5
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
-    .line 356
+    .line 352
     :cond_4
     :goto_3
     throw v10
@@ -1307,12 +1279,12 @@
     .line 355
     .end local v4           #intent:Landroid/content/Intent;
     .restart local v7       #stream:Ljava/io/FileInputStream;
-    :catch_4
+    :catch_3
     move-exception v10
 
     goto :goto_2
 
-    :catch_5
+    :catch_4
     move-exception v11
 
     goto :goto_3

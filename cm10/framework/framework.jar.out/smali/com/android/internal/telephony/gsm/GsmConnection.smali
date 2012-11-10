@@ -35,6 +35,10 @@
 
 .field cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
+.field cnapName:Ljava/lang/String;
+
+.field cnapNamePresentation:I
+
 .field connectTime:J
 
 .field connectTimeReal:J
@@ -83,34 +87,39 @@
     .parameter "index"
 
     .prologue
-    .line 117
+    .line 120
     invoke-direct {p0}, Lcom/android/internal/telephony/Connection;-><init>()V
 
-    .line 72
+    .line 74
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NOT_DISCONNECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .line 73
+    .line 75
     sget-object v0, Lcom/android/internal/telephony/Connection$PostDialState;->NOT_STARTED:Lcom/android/internal/telephony/Connection$PostDialState;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
-    .line 74
+    .line 76
     sget v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->numberPresentation:I
 
-    .line 118
-    invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/GsmConnection;->createWakeLock(Landroid/content/Context;)V
+    .line 77
+    sget v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
 
-    .line 119
-    invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->acquireWakeLock()V
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
 
     .line 121
-    iput-object p3, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
+    invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/GsmConnection;->createWakeLock(Landroid/content/Context;)V
 
     .line 122
+    invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->acquireWakeLock()V
+
+    .line 124
+    iput-object p3, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
+
+    .line 125
     new-instance v0, Lcom/android/internal/telephony/gsm/GsmConnection$MyHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
@@ -123,37 +132,47 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
-    .line 124
+    .line 127
     iget-object v0, p2, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->address:Ljava/lang/String;
 
-    .line 126
+    .line 129
     iget-boolean v0, p2, Lcom/android/internal/telephony/DriverCall;->isMT:Z
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming:Z
 
-    .line 127
+    .line 130
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->createTime:J
 
-    .line 128
+    .line 131
+    iget-object v0, p2, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    .line 132
+    iget v0, p2, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
+
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
+
+    .line 133
     iget v0, p2, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->numberPresentation:I
 
-    .line 129
+    .line 134
     iget-object v0, p2, Lcom/android/internal/telephony/DriverCall;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
-    .line 131
+    .line 136
     iput p4, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->index:I
 
-    .line 133
+    .line 138
     iget-object v0, p2, Lcom/android/internal/telephony/DriverCall;->state:Lcom/android/internal/telephony/DriverCall$State;
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->parentFromDCState(Lcom/android/internal/telephony/DriverCall$State;)Lcom/android/internal/telephony/gsm/GsmCall;
@@ -162,12 +181,12 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    .line 134
+    .line 139
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0, p0, p2}, Lcom/android/internal/telephony/gsm/GsmCall;->attach(Lcom/android/internal/telephony/Connection;Lcom/android/internal/telephony/DriverCall;)V
 
-    .line 135
+    .line 140
     return-void
 .end method
 
@@ -179,34 +198,39 @@
     .parameter "parent"
 
     .prologue
-    .line 139
+    .line 144
     invoke-direct {p0}, Lcom/android/internal/telephony/Connection;-><init>()V
 
-    .line 72
+    .line 74
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NOT_DISCONNECTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .line 73
+    .line 75
     sget-object v0, Lcom/android/internal/telephony/Connection$PostDialState;->NOT_STARTED:Lcom/android/internal/telephony/Connection$PostDialState;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
-    .line 74
+    .line 76
     sget v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->numberPresentation:I
 
-    .line 140
+    .line 77
+    sget v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
+
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
+
+    .line 145
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/GsmConnection;->createWakeLock(Landroid/content/Context;)V
 
-    .line 141
+    .line 146
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->acquireWakeLock()V
 
-    .line 143
+    .line 148
     iput-object p3, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
-    .line 144
+    .line 149
     new-instance v0, Lcom/android/internal/telephony/gsm/GsmConnection$MyHandler;
 
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
@@ -219,49 +243,64 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
-    .line 146
+    .line 151
     iput-object p2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->dialString:Ljava/lang/String;
 
-    .line 148
+    .line 153
     invoke-static {p2}, Landroid/telephony/PhoneNumberUtils;->extractNetworkPortionAlt(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->address:Ljava/lang/String;
 
-    .line 149
+    .line 154
     invoke-static {p2}, Landroid/telephony/PhoneNumberUtils;->extractPostDialPortion(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialString:Ljava/lang/String;
 
-    .line 151
+    .line 156
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->index:I
 
-    .line 153
+    .line 158
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming:Z
 
-    .line 154
+    .line 159
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    .line 160
+    sget v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
+
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
+
+    .line 161
+    sget v0, Lcom/android/internal/telephony/Connection;->PRESENTATION_ALLOWED:I
+
+    iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->numberPresentation:I
+
+    .line 162
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->createTime:J
 
-    .line 156
+    .line 164
     iput-object p4, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    .line 157
+    .line 165
     sget-object v0, Lcom/android/internal/telephony/Call$State;->DIALING:Lcom/android/internal/telephony/Call$State;
 
     invoke-virtual {p4, p0, v0}, Lcom/android/internal/telephony/gsm/GsmCall;->attachFake(Lcom/android/internal/telephony/Connection;Lcom/android/internal/telephony/Call$State;)V
 
-    .line 158
+    .line 166
     return-void
 .end method
 
@@ -270,7 +309,7 @@
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 36
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->processNextPostDialChar()V
 
     return-void
@@ -281,7 +320,7 @@
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 36
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->releaseWakeLock()V
 
     return-void
@@ -291,17 +330,17 @@
     .locals 1
 
     .prologue
-    .line 713
+    .line 744
     const-string v0, "acquireWakeLock"
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
 
-    .line 714
+    .line 745
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->mPartialWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 715
+    .line 746
     return-void
 .end method
 
@@ -310,7 +349,7 @@
     .parameter "context"
 
     .prologue
-    .line 707
+    .line 738
     const-string/jumbo v1, "power"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -319,7 +358,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 708
+    .line 739
     .local v0, pm:Landroid/os/PowerManager;
     const/4 v1, 0x1
 
@@ -331,7 +370,7 @@
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->mPartialWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 709
+    .line 740
     return-void
 .end method
 
@@ -341,7 +380,7 @@
     .parameter "b"
 
     .prologue
-    .line 165
+    .line 173
     if-nez p0, :cond_1
 
     if-nez p1, :cond_0
@@ -368,7 +407,7 @@
     .locals 2
 
     .prologue
-    .line 657
+    .line 688
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     if-eqz v0, :cond_0
@@ -383,7 +422,7 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/Call;->state:Lcom/android/internal/telephony/Call$State;
+    iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCall;->state:Lcom/android/internal/telephony/Call$State;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->DIALING:Lcom/android/internal/telephony/Call$State;
 
@@ -391,7 +430,7 @@
 
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    iget-object v0, v0, Lcom/android/internal/telephony/Call;->state:Lcom/android/internal/telephony/Call$State;
+    iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCall;->state:Lcom/android/internal/telephony/Call$State;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->ALERTING:Lcom/android/internal/telephony/Call$State;
 
@@ -414,7 +453,7 @@
     .parameter "msg"
 
     .prologue
-    .line 728
+    .line 759
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -437,7 +476,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 729
+    .line 760
     return-void
 .end method
 
@@ -445,14 +484,14 @@
     .locals 2
 
     .prologue
-    .line 527
+    .line 558
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->holdingStartTime:J
 
-    .line 528
+    .line 559
     return-void
 .end method
 
@@ -461,7 +500,7 @@
     .parameter "state"
 
     .prologue
-    .line 664
+    .line 695
     sget-object v0, Lcom/android/internal/telephony/gsm/GsmConnection$1;->$SwitchMap$com$android$internal$telephony$DriverCall$State:[I
 
     invoke-virtual {p1}, Lcom/android/internal/telephony/DriverCall$State;->ordinal()I
@@ -472,7 +511,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 681
+    .line 712
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -497,17 +536,17 @@
 
     throw v0
 
-    .line 668
+    .line 699
     :pswitch_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->foregroundCall:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    .line 677
+    .line 708
     :goto_0
     return-object v0
 
-    .line 672
+    .line 703
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
@@ -515,7 +554,7 @@
 
     goto :goto_0
 
-    .line 677
+    .line 708
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
@@ -523,7 +562,7 @@
 
     goto :goto_0
 
-    .line 664
+    .line 695
     nop
 
     :pswitch_data_0
@@ -541,10 +580,10 @@
     .locals 9
 
     .prologue
-    .line 599
+    .line 630
     const/4 v1, 0x0
 
-    .line 602
+    .line 633
     .local v1, c:C
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
@@ -552,12 +591,12 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 649
+    .line 680
     :cond_0
     :goto_0
     return-void
 
-    .line 607
+    .line 638
     :cond_1
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialString:Ljava/lang/String;
 
@@ -573,16 +612,16 @@
 
     if-gt v6, v7, :cond_4
 
-    .line 609
+    .line 640
     :cond_2
     sget-object v6, Lcom/android/internal/telephony/Connection$PostDialState;->COMPLETE:Lcom/android/internal/telephony/Connection$PostDialState;
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
-    .line 612
+    .line 643
     const/4 v1, 0x0
 
-    .line 631
+    .line 662
     :cond_3
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
@@ -590,7 +629,7 @@
 
     iget-object v4, v6, Lcom/android/internal/telephony/gsm/GSMPhone;->mPostDialHandler:Landroid/os/Registrant;
 
-    .line 635
+    .line 666
     .local v4, postDialHandler:Landroid/os/Registrant;
     if-eqz v4, :cond_0
 
@@ -601,31 +640,31 @@
     .local v3, notifyMessage:Landroid/os/Message;
     if-eqz v3, :cond_0
 
-    .line 638
+    .line 669
     iget-object v5, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
-    .line 639
+    .line 670
     .local v5, state:Lcom/android/internal/telephony/Connection$PostDialState;
     invoke-static {v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
 
     move-result-object v0
 
-    .line 640
+    .line 671
     .local v0, ar:Landroid/os/AsyncResult;
     iput-object p0, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    .line 641
+    .line 672
     iput-object v5, v0, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
-    .line 644
+    .line 675
     iput v1, v3, Landroid/os/Message;->arg1:I
 
-    .line 647
+    .line 678
     invoke-virtual {v3}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 616
+    .line 647
     .end local v0           #ar:Landroid/os/AsyncResult;
     .end local v3           #notifyMessage:Landroid/os/Message;
     .end local v4           #postDialHandler:Landroid/os/Registrant;
@@ -635,7 +674,7 @@
 
     invoke-direct {p0, v6}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
-    .line 618
+    .line 649
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialString:Ljava/lang/String;
 
     iget v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->nextPostDialChar:I
@@ -648,16 +687,16 @@
 
     move-result v1
 
-    .line 620
+    .line 651
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/GsmConnection;->processPostDialChar(C)Z
 
     move-result v2
 
-    .line 622
+    .line 653
     .local v2, isValid:Z
     if-nez v2, :cond_3
 
-    .line 624
+    .line 655
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
     const/4 v7, 0x3
@@ -668,7 +707,7 @@
 
     invoke-virtual {v6}, Landroid/os/Message;->sendToTarget()V
 
-    .line 626
+    .line 657
     const-string v6, "GSM"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -709,17 +748,17 @@
 
     const/4 v0, 0x1
 
-    .line 536
+    .line 567
     invoke-static {p1}, Landroid/telephony/PhoneNumberUtils;->is12Key(C)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 537
+    .line 568
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
-    iget-object v1, v1, Lcom/android/internal/telephony/CallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
+    iget-object v1, v1, Lcom/android/internal/telephony/gsm/GsmCallTracker;->cm:Lcom/android/internal/telephony/CommandsInterface;
 
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
@@ -729,22 +768,22 @@
 
     invoke-interface {v1, p1, v2}, Lcom/android/internal/telephony/CommandsInterface;->sendDtmf(CLandroid/os/Message;)V
 
-    .line 566
+    .line 597
     :goto_0
     return v0
 
-    .line 538
+    .line 569
     :cond_0
     const/16 v1, 0x2c
 
     if-ne p1, v1, :cond_2
 
-    .line 545
+    .line 576
     iget v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->nextPostDialChar:I
 
     if-ne v1, v0, :cond_1
 
-    .line 548
+    .line 579
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
@@ -759,7 +798,7 @@
 
     goto :goto_0
 
-    .line 555
+    .line 586
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
@@ -775,33 +814,33 @@
 
     goto :goto_0
 
-    .line 558
+    .line 589
     :cond_2
     const/16 v1, 0x3b
 
     if-ne p1, v1, :cond_3
 
-    .line 559
+    .line 590
     sget-object v1, Lcom/android/internal/telephony/Connection$PostDialState;->WAIT:Lcom/android/internal/telephony/Connection$PostDialState;
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
     goto :goto_0
 
-    .line 560
+    .line 591
     :cond_3
     const/16 v1, 0x4e
 
     if-ne p1, v1, :cond_4
 
-    .line 561
+    .line 592
     sget-object v1, Lcom/android/internal/telephony/Connection$PostDialState;->WILD:Lcom/android/internal/telephony/Connection$PostDialState;
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
     goto :goto_0
 
-    .line 563
+    .line 594
     :cond_4
     const/4 v0, 0x0
 
@@ -812,12 +851,12 @@
     .locals 2
 
     .prologue
-    .line 719
+    .line 750
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->mPartialWakeLock:Landroid/os/PowerManager$WakeLock;
 
     monitor-enter v1
 
-    .line 720
+    .line 751
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->mPartialWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -827,24 +866,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 721
+    .line 752
     const-string/jumbo v0, "releaseWakeLock"
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
 
-    .line 722
+    .line 753
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->mPartialWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 724
+    .line 755
     :cond_0
     monitor-exit v1
 
-    .line 725
+    .line 756
     return-void
 
-    .line 724
+    .line 755
     :catchall_0
     move-exception v0
 
@@ -862,7 +901,7 @@
     .prologue
     const/4 v3, 0x4
 
-    .line 692
+    .line 723
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
     sget-object v2, Lcom/android/internal/telephony/Connection$PostDialState;->STARTED:Lcom/android/internal/telephony/Connection$PostDialState;
@@ -873,17 +912,17 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 694
+    .line 725
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->acquireWakeLock()V
 
-    .line 695
+    .line 726
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 696
+    .line 727
     .local v0, msg:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
@@ -891,16 +930,16 @@
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 702
+    .line 733
     .end local v0           #msg:Landroid/os/Message;
     :cond_0
     :goto_0
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
-    .line 703
+    .line 734
     return-void
 
-    .line 697
+    .line 728
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
@@ -912,12 +951,12 @@
 
     if-eq p1, v1, :cond_0
 
-    .line 699
+    .line 730
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->h:Landroid/os/Handler;
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 700
+    .line 731
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->releaseWakeLock()V
 
     goto :goto_0
@@ -929,12 +968,12 @@
     .locals 1
 
     .prologue
-    .line 319
+    .line 335
     sget-object v0, Lcom/android/internal/telephony/Connection$PostDialState;->CANCELLED:Lcom/android/internal/telephony/Connection$PostDialState;
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
-    .line 320
+    .line 336
     return-void
 .end method
 
@@ -945,7 +984,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 175
+    .line 183
     iget-boolean v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming:Z
 
     if-nez v2, :cond_1
@@ -954,12 +993,12 @@
 
     if-nez v2, :cond_1
 
-    .line 181
+    .line 189
     :cond_0
     :goto_0
     return v1
 
-    .line 180
+    .line 188
     :cond_1
     iget-object v2, p1, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
@@ -969,7 +1008,7 @@
 
     move-result-object v0
 
-    .line 181
+    .line 189
     .local v0, cAddress:Ljava/lang/String;
     iget-boolean v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming:Z
 
@@ -996,15 +1035,15 @@
     .parameter "causeCode"
 
     .prologue
-    .line 339
+    .line 355
     sparse-switch p1, :sswitch_data_0
 
-    .line 366
+    .line 382
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     iget-object v0, v2, Lcom/android/internal/telephony/gsm/GsmCallTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
-    .line 367
+    .line 383
     .local v0, phone:Lcom/android/internal/telephony/gsm/GSMPhone;
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->getServiceState()Landroid/telephony/ServiceState;
 
@@ -1014,58 +1053,58 @@
 
     move-result v1
 
-    .line 368
+    .line 384
     .local v1, serviceState:I
     const/4 v2, 0x3
 
     if-ne v1, v2, :cond_0
 
-    .line 369
+    .line 385
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->POWER_OFF:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .line 390
+    .line 406
     .end local v0           #phone:Lcom/android/internal/telephony/gsm/GSMPhone;
     .end local v1           #serviceState:I
     :goto_0
     return-object v2
 
-    .line 341
+    .line 357
     :sswitch_0
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->BUSY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 349
+    .line 365
     :sswitch_1
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->CONGESTION:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 352
+    .line 368
     :sswitch_2
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->LIMIT_EXCEEDED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 355
+    .line 371
     :sswitch_3
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->CALL_BARRED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 358
+    .line 374
     :sswitch_4
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->FDN_BLOCKED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 361
+    .line 377
     :sswitch_5
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->UNOBTAINABLE_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 370
+    .line 386
     .restart local v0       #phone:Lcom/android/internal/telephony/gsm/GSMPhone;
     .restart local v1       #serviceState:I
     :cond_0
@@ -1077,13 +1116,13 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 372
+    .line 388
     :cond_1
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->OUT_OF_SERVICE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 373
+    .line 389
     :cond_2
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/GSMPhone;->getIccCard()Lcom/android/internal/telephony/IccCard;
 
@@ -1097,21 +1136,21 @@
 
     if-eq v2, v3, :cond_3
 
-    .line 374
+    .line 390
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->ICC_ERROR:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 375
+    .line 391
     :cond_3
     const v2, 0xffff
 
     if-ne p1, v2, :cond_7
 
-    .line 376
+    .line 392
     iget-object v2, v0, Lcom/android/internal/telephony/gsm/GSMPhone;->mSST:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
-    iget-object v2, v2, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
+    iget-object v2, v2, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/RestrictedState;->isCsRestricted()Z
 
@@ -1119,16 +1158,16 @@
 
     if-eqz v2, :cond_4
 
-    .line 377
+    .line 393
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->CS_RESTRICTED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 378
+    .line 394
     :cond_4
     iget-object v2, v0, Lcom/android/internal/telephony/gsm/GSMPhone;->mSST:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
-    iget-object v2, v2, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
+    iget-object v2, v2, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/RestrictedState;->isCsEmergencyRestricted()Z
 
@@ -1136,16 +1175,16 @@
 
     if-eqz v2, :cond_5
 
-    .line 379
+    .line 395
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->CS_RESTRICTED_EMERGENCY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 380
+    .line 396
     :cond_5
     iget-object v2, v0, Lcom/android/internal/telephony/gsm/GSMPhone;->mSST:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
 
-    iget-object v2, v2, Lcom/android/internal/telephony/ServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
+    iget-object v2, v2, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mRestrictedState:Lcom/android/internal/telephony/RestrictedState;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/RestrictedState;->isCsNormalRestricted()Z
 
@@ -1153,35 +1192,35 @@
 
     if-eqz v2, :cond_6
 
-    .line 381
+    .line 397
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->CS_RESTRICTED_NORMAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 383
+    .line 399
     :cond_6
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->ERROR_UNSPECIFIED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 385
+    .line 401
     :cond_7
     const/16 v2, 0x10
 
     if-ne p1, v2, :cond_8
 
-    .line 386
+    .line 402
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->NORMAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 390
+    .line 406
     :cond_8
     sget-object v2, Lcom/android/internal/telephony/Connection$DisconnectCause;->ERROR_UNSPECIFIED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     goto :goto_0
 
-    .line 339
+    .line 355
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_5
@@ -1202,7 +1241,7 @@
     .locals 0
 
     .prologue
-    .line 161
+    .line 169
     return-void
 .end method
 
@@ -1210,17 +1249,17 @@
     .locals 2
 
     .prologue
-    .line 484
+    .line 515
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     if-eqz v0, :cond_0
 
-    .line 485
+    .line 516
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCall;->detach(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
-    .line 488
+    .line 519
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
@@ -1228,17 +1267,17 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    .line 489
+    .line 520
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     sget-object v1, Lcom/android/internal/telephony/Call$State;->HOLDING:Lcom/android/internal/telephony/Call$State;
 
     invoke-virtual {v0, p0, v1}, Lcom/android/internal/telephony/gsm/GsmCall;->attachFake(Lcom/android/internal/telephony/Connection;Lcom/android/internal/telephony/Call$State;)V
 
-    .line 491
+    .line 522
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->onStartedHolding()V
 
-    .line 492
+    .line 523
     return-void
 .end method
 
@@ -1246,7 +1285,7 @@
     .locals 2
 
     .prologue
-    .line 591
+    .line 622
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->mPartialWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
@@ -1255,18 +1294,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 592
+    .line 623
     const-string v0, "GSM"
 
     const-string v1, "[GSMConn] UNEXPECTED; mPartialWakeLock is held when finalizing."
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 594
+    .line 625
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->releaseWakeLock()V
 
-    .line 595
+    .line 626
     return-void
 .end method
 
@@ -1274,7 +1313,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 193
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->address:Ljava/lang/String;
 
     return-object v0
@@ -1284,7 +1323,7 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 36
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->getCall()Lcom/android/internal/telephony/gsm/GsmCall;
 
     move-result-object v0
@@ -1296,17 +1335,37 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 197
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     return-object v0
+.end method
+
+.method public getCnapName()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 201
+    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getCnapNamePresentation()I
+    .locals 1
+
+    .prologue
+    .line 205
+    iget v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
+
+    return v0
 .end method
 
 .method public getConnectTime()J
     .locals 2
 
     .prologue
-    .line 197
+    .line 213
     iget-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->connectTime:J
 
     return-wide v0
@@ -1316,7 +1375,7 @@
     .locals 2
 
     .prologue
-    .line 193
+    .line 209
     iget-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->createTime:J
 
     return-wide v0
@@ -1326,7 +1385,7 @@
     .locals 1
 
     .prologue
-    .line 224
+    .line 240
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     return-object v0
@@ -1336,7 +1395,7 @@
     .locals 2
 
     .prologue
-    .line 201
+    .line 217
     iget-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnectTime:J
 
     return-wide v0
@@ -1348,18 +1407,18 @@
     .prologue
     const-wide/16 v0, 0x0
 
-    .line 205
+    .line 221
     iget-wide v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->connectTimeReal:J
 
     cmp-long v2, v2, v0
 
     if-nez v2, :cond_0
 
-    .line 210
+    .line 226
     :goto_0
     return-wide v0
 
-    .line 207
+    .line 223
     :cond_0
     iget-wide v2, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->duration:J
 
@@ -1367,7 +1426,7 @@
 
     if-nez v0, :cond_1
 
-    .line 208
+    .line 224
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -1378,7 +1437,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 226
     :cond_1
     iget-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->duration:J
 
@@ -1394,19 +1453,19 @@
     .end annotation
 
     .prologue
-    .line 496
+    .line 527
     iget v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->index:I
 
     if-ltz v0, :cond_0
 
-    .line 497
+    .line 528
     iget v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->index:I
 
     add-int/lit8 v0, v0, 0x1
 
     return v0
 
-    .line 499
+    .line 530
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -1421,7 +1480,7 @@
     .locals 4
 
     .prologue
-    .line 215
+    .line 231
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->getState()Lcom/android/internal/telephony/Call$State;
 
     move-result-object v0
@@ -1430,10 +1489,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 217
+    .line 233
     const-wide/16 v0, 0x0
 
-    .line 219
+    .line 235
     :goto_0
     return-wide v0
 
@@ -1453,7 +1512,7 @@
     .locals 1
 
     .prologue
-    .line 733
+    .line 764
     iget v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->numberPresentation:I
 
     return v0
@@ -1463,7 +1522,7 @@
     .locals 1
 
     .prologue
-    .line 256
+    .line 272
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
     return-object v0
@@ -1473,7 +1532,7 @@
     .locals 2
 
     .prologue
-    .line 571
+    .line 602
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
     sget-object v1, Lcom/android/internal/telephony/Connection$PostDialState;->CANCELLED:Lcom/android/internal/telephony/Connection$PostDialState;
@@ -1500,11 +1559,11 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 576
+    .line 607
     :cond_0
     const-string v0, ""
 
-    .line 579
+    .line 610
     :goto_0
     return-object v0
 
@@ -1524,15 +1583,15 @@
     .locals 1
 
     .prologue
-    .line 232
+    .line 248
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnected:Z
 
     if-eqz v0, :cond_0
 
-    .line 233
+    .line 249
     sget-object v0, Lcom/android/internal/telephony/Call$State;->DISCONNECTED:Lcom/android/internal/telephony/Call$State;
 
-    .line 235
+    .line 251
     :goto_0
     return-object v0
 
@@ -1548,7 +1607,7 @@
     .locals 1
 
     .prologue
-    .line 738
+    .line 769
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->uusInfo:Lcom/android/internal/telephony/UUSInfo;
 
     return-object v0
@@ -1563,20 +1622,20 @@
     .end annotation
 
     .prologue
-    .line 240
+    .line 256
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnected:Z
 
     if-nez v0, :cond_0
 
-    .line 241
+    .line 257
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->hangup(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
-    .line 245
+    .line 261
     return-void
 
-    .line 243
+    .line 259
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -1591,7 +1650,7 @@
     .locals 1
 
     .prologue
-    .line 228
+    .line 244
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming:Z
 
     return v0
@@ -1601,26 +1660,26 @@
     .locals 3
 
     .prologue
-    .line 508
+    .line 539
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->connectTime:J
 
-    .line 509
+    .line 540
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->connectTimeReal:J
 
-    .line 510
+    .line 541
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->duration:J
 
-    .line 515
+    .line 546
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1643,19 +1702,19 @@
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
 
-    .line 518
+    .line 549
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->isIncoming:Z
 
     if-nez v0, :cond_0
 
-    .line 520
+    .line 551
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->processNextPostDialChar()V
 
-    .line 522
+    .line 553
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->releaseWakeLock()V
 
-    .line 523
+    .line 554
     return-void
 .end method
 
@@ -1664,27 +1723,27 @@
     .parameter "cause"
 
     .prologue
-    .line 403
+    .line 419
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .line 405
+    .line 421
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnected:Z
 
     if-nez v0, :cond_0
 
-    .line 406
+    .line 422
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->index:I
 
-    .line 408
+    .line 424
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnectTime:J
 
-    .line 409
+    .line 425
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -1695,33 +1754,33 @@
 
     iput-wide v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->duration:J
 
-    .line 410
+    .line 426
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnected:Z
 
-    .line 415
+    .line 431
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmCallTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/gsm/GSMPhone;->notifyDisconnect(Lcom/android/internal/telephony/Connection;)V
 
-    .line 417
+    .line 433
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     if-eqz v0, :cond_0
 
-    .line 418
+    .line 434
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCall;->connectionDisconnected(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
-    .line 421
+    .line 437
     :cond_0
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->releaseWakeLock()V
 
-    .line 422
+    .line 438
     return-void
 .end method
 
@@ -1729,12 +1788,12 @@
     .locals 1
 
     .prologue
-    .line 329
+    .line 345
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOCAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cause:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
-    .line 330
+    .line 346
     return-void
 .end method
 
@@ -1743,14 +1802,14 @@
     .parameter "causeCode"
 
     .prologue
-    .line 397
+    .line 413
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnectCauseFromCode(I)Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->onDisconnect(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
-    .line 398
+    .line 414
     return-void
 .end method
 
@@ -1758,14 +1817,14 @@
     .locals 3
 
     .prologue
-    .line 260
+    .line 276
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
     sget-object v1, Lcom/android/internal/telephony/Connection$PostDialState;->WAIT:Lcom/android/internal/telephony/Connection$PostDialState;
 
     if-eq v0, v1, :cond_0
 
-    .line 261
+    .line 277
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1790,17 +1849,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 269
+    .line 285
     :goto_0
     return-void
 
-    .line 266
+    .line 282
     :cond_0
     sget-object v0, Lcom/android/internal/telephony/Connection$PostDialState;->STARTED:Lcom/android/internal/telephony/Connection$PostDialState;
 
     invoke-direct {p0, v0}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
-    .line 268
+    .line 284
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->processNextPostDialChar()V
 
     goto :goto_0
@@ -1811,14 +1870,14 @@
     .parameter "str"
 
     .prologue
-    .line 272
+    .line 288
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialState:Lcom/android/internal/telephony/Connection$PostDialState;
 
     sget-object v2, Lcom/android/internal/telephony/Connection$PostDialState;->WILD:Lcom/android/internal/telephony/Connection$PostDialState;
 
     if-eq v1, v2, :cond_0
 
-    .line 273
+    .line 289
     const-string v1, "GSM"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1843,22 +1902,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 316
+    .line 332
     :goto_0
     return-void
 
-    .line 278
+    .line 294
     :cond_0
     sget-object v1, Lcom/android/internal/telephony/Connection$PostDialState;->STARTED:Lcom/android/internal/telephony/Connection$PostDialState;
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/GsmConnection;->setPostDialState(Lcom/android/internal/telephony/Connection$PostDialState;)V
 
-    .line 305
+    .line 321
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 306
+    .line 322
     .local v0, buf:Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialString:Ljava/lang/String;
 
@@ -1870,19 +1929,19 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 307
+    .line 323
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->postDialString:Ljava/lang/String;
 
-    .line 308
+    .line 324
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->nextPostDialChar:I
 
-    .line 310
+    .line 326
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1905,7 +1964,7 @@
 
     invoke-direct {p0, v1}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
 
-    .line 314
+    .line 330
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->processNextPostDialChar()V
 
     goto :goto_0
@@ -1920,20 +1979,20 @@
     .end annotation
 
     .prologue
-    .line 248
+    .line 264
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->disconnected:Z
 
     if-nez v0, :cond_0
 
-    .line 249
+    .line 265
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->owner:Lcom/android/internal/telephony/gsm/GsmCallTracker;
 
     invoke-virtual {v0, p0}, Lcom/android/internal/telephony/gsm/GsmCallTracker;->separate(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
-    .line 253
+    .line 269
     return-void
 
-    .line 251
+    .line 267
     :cond_0
     new-instance v0, Lcom/android/internal/telephony/CallStateException;
 
@@ -1953,16 +2012,16 @@
 
     const/4 v6, 0x0
 
-    .line 428
+    .line 444
     const/4 v0, 0x0
 
-    .line 429
+    .line 445
     .local v0, changed:Z
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->isConnectingInOrOut()Z
 
     move-result v3
 
-    .line 430
+    .line 446
     .local v3, wasConnectingInOrOut:Z
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->getState()Lcom/android/internal/telephony/Call$State;
 
@@ -1970,11 +2029,11 @@
 
     sget-object v8, Lcom/android/internal/telephony/Call$State;->HOLDING:Lcom/android/internal/telephony/Call$State;
 
-    if-ne v7, v8, :cond_4
+    if-ne v7, v8, :cond_5
 
     move v4, v5
 
-    .line 432
+    .line 448
     .local v4, wasHolding:Z
     :goto_0
     iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->state:Lcom/android/internal/telephony/DriverCall$State;
@@ -1983,7 +2042,7 @@
 
     move-result-object v1
 
-    .line 434
+    .line 450
     .local v1, newParent:Lcom/android/internal/telephony/gsm/GsmCall;
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->address:Ljava/lang/String;
 
@@ -1995,47 +2054,108 @@
 
     if-nez v7, :cond_0
 
-    .line 435
+    .line 451
     const-string/jumbo v7, "update: phone # changed!"
 
     invoke-direct {p0, v7}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
 
-    .line 436
+    .line 452
     iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
     iput-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->address:Ljava/lang/String;
 
-    .line 437
+    .line 453
     const/4 v0, 0x1
 
-    .line 440
+    .line 457
     :cond_0
+    iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
+
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    .line 458
+    iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_1
+
+    .line 459
+    const/4 v0, 0x1
+
+    .line 460
+    const-string v7, ""
+
+    iput-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    .line 467
+    :cond_1
+    :goto_1
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "--dssds----"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {p0, v7}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
+
+    .line 468
+    iget v7, p1, Lcom/android/internal/telephony/DriverCall;->namePresentation:I
+
+    iput v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapNamePresentation:I
+
+    .line 469
+    iget v7, p1, Lcom/android/internal/telephony/DriverCall;->numberPresentation:I
+
+    iput v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->numberPresentation:I
+
+    .line 471
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    if-eq v1, v7, :cond_5
+    if-eq v1, v7, :cond_7
 
-    .line 441
+    .line 472
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_2
 
-    .line 442
+    .line 473
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v7, p0}, Lcom/android/internal/telephony/gsm/GsmCall;->detach(Lcom/android/internal/telephony/gsm/GsmConnection;)V
 
-    .line 444
-    :cond_1
+    .line 475
+    :cond_2
     invoke-virtual {v1, p0, p1}, Lcom/android/internal/telephony/gsm/GsmCall;->attach(Lcom/android/internal/telephony/Connection;Lcom/android/internal/telephony/DriverCall;)V
 
-    .line 445
+    .line 476
     iput-object v1, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    .line 446
+    .line 477
     const/4 v0, 0x1
 
-    .line 455
-    :goto_1
+    .line 486
+    :goto_2
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -2060,9 +2180,9 @@
 
     iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
-    if-eq v1, v8, :cond_8
+    if-eq v1, v8, :cond_a
 
-    :goto_2
+    :goto_3
     invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v5
@@ -2117,23 +2237,23 @@
 
     invoke-direct {p0, v5}, Lcom/android/internal/telephony/gsm/GsmConnection;->log(Ljava/lang/String;)V
 
-    .line 464
-    if-eqz v3, :cond_2
+    .line 495
+    if-eqz v3, :cond_3
 
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->isConnectingInOrOut()Z
 
     move-result v5
 
-    if-nez v5, :cond_2
+    if-nez v5, :cond_3
 
-    .line 465
+    .line 496
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->onConnectedInOrOut()V
 
-    .line 468
-    :cond_2
-    if-eqz v0, :cond_3
+    .line 499
+    :cond_3
+    if-eqz v0, :cond_4
 
-    if-nez v4, :cond_3
+    if-nez v4, :cond_4
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->getState()Lcom/android/internal/telephony/Call$State;
 
@@ -2141,54 +2261,76 @@
 
     sget-object v6, Lcom/android/internal/telephony/Call$State;->HOLDING:Lcom/android/internal/telephony/Call$State;
 
-    if-ne v5, v6, :cond_3
+    if-ne v5, v6, :cond_4
 
-    .line 470
+    .line 501
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmConnection;->onStartedHolding()V
 
-    .line 473
-    :cond_3
+    .line 504
+    :cond_4
     return v0
 
     .end local v1           #newParent:Lcom/android/internal/telephony/gsm/GsmCall;
     .end local v4           #wasHolding:Z
-    :cond_4
+    :cond_5
     move v4, v6
 
-    .line 430
+    .line 446
     goto/16 :goto_0
 
-    .line 449
+    .line 462
     .restart local v1       #newParent:Lcom/android/internal/telephony/gsm/GsmCall;
     .restart local v4       #wasHolding:Z
-    :cond_5
+    :cond_6
+    iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
+
+    iget-object v8, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_1
+
+    .line 463
+    const/4 v0, 0x1
+
+    .line 464
+    iget-object v7, p1, Lcom/android/internal/telephony/DriverCall;->name:Ljava/lang/String;
+
+    iput-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->cnapName:Ljava/lang/String;
+
+    goto/16 :goto_1
+
+    .line 480
+    :cond_7
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmConnection;->parent:Lcom/android/internal/telephony/gsm/GsmCall;
 
     invoke-virtual {v7, p0, p1}, Lcom/android/internal/telephony/gsm/GsmCall;->update(Lcom/android/internal/telephony/gsm/GsmConnection;Lcom/android/internal/telephony/DriverCall;)Z
 
     move-result v2
 
-    .line 450
+    .line 481
     .local v2, parentStateChange:Z
-    if-nez v0, :cond_6
+    if-nez v0, :cond_8
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_9
 
-    :cond_6
+    :cond_8
     move v0, v5
 
-    :goto_3
-    goto :goto_1
+    :goto_4
+    goto/16 :goto_2
 
-    :cond_7
+    :cond_9
     move v0, v6
 
-    goto :goto_3
+    goto :goto_4
 
     .end local v2           #parentStateChange:Z
-    :cond_8
+    :cond_a
     move v5, v6
 
-    .line 455
-    goto :goto_2
+    .line 486
+    goto :goto_3
 .end method

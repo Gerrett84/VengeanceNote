@@ -62,6 +62,8 @@
 
 .field private mMode:I
 
+.field private final mPm:Landroid/os/PowerManager;
+
 .field private final mPpi:F
 
 .field private mStartTime:J
@@ -82,7 +84,7 @@
 
     const/high16 v12, 0x3f80
 
-    .line 65
+    .line 66
     const-wide/high16 v8, 0x3fe8
 
     invoke-static {v8, v9}, Ljava/lang/Math;->log(D)D
@@ -101,34 +103,34 @@
 
     sput v8, Landroid/widget/Scroller;->DECELERATION_RATE:F
 
-    .line 66
+    .line 67
     const/high16 v8, 0x4448
 
     sput v8, Landroid/widget/Scroller;->ALPHA:F
 
-    .line 67
+    .line 68
     const v8, 0x3ecccccd
 
     sput v8, Landroid/widget/Scroller;->START_TENSION:F
 
-    .line 68
+    .line 69
     sget v8, Landroid/widget/Scroller;->START_TENSION:F
 
     sub-float v8, v12, v8
 
     sput v8, Landroid/widget/Scroller;->END_TENSION:F
 
-    .line 70
+    .line 71
     const/16 v8, 0x65
 
     new-array v8, v8, [F
 
     sput-object v8, Landroid/widget/Scroller;->SPLINE:[F
 
-    .line 76
+    .line 79
     const/4 v7, 0x0
 
-    .line 77
+    .line 80
     .local v7, x_min:F
     const/4 v2, 0x0
 
@@ -136,18 +138,18 @@
     :goto_0
     if-gt v2, v13, :cond_2
 
-    .line 78
+    .line 81
     int-to-float v8, v2
 
     const/high16 v9, 0x42c8
 
     div-float v3, v8, v9
 
-    .line 79
+    .line 82
     .local v3, t:F
     const/high16 v6, 0x3f80
 
-    .line 82
+    .line 85
     .local v6, x_max:F
     :goto_1
     sub-float v8, v6, v7
@@ -158,7 +160,7 @@
 
     add-float v5, v7, v8
 
-    .line 83
+    .line 86
     .local v5, x:F
     const/high16 v8, 0x4040
 
@@ -168,7 +170,7 @@
 
     mul-float v0, v8, v9
 
-    .line 84
+    .line 87
     .local v0, coef:F
     sub-float v8, v12, v5
 
@@ -190,7 +192,7 @@
 
     add-float v4, v8, v9
 
-    .line 85
+    .line 88
     .local v4, tx:F
     sub-float v8, v4, v3
 
@@ -206,25 +208,25 @@
 
     if-gez v8, :cond_0
 
-    .line 89
+    .line 92
     mul-float v8, v5, v5
 
     mul-float/2addr v8, v5
 
     add-float v1, v0, v8
 
-    .line 90
+    .line 93
     .local v1, d:F
     sget-object v8, Landroid/widget/Scroller;->SPLINE:[F
 
     aput v1, v8, v2
 
-    .line 77
+    .line 80
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 86
+    .line 89
     .end local v1           #d:F
     :cond_0
     cmpl-float v8, v4, v3
@@ -235,13 +237,13 @@
 
     goto :goto_1
 
-    .line 87
+    .line 90
     :cond_1
     move v7, v5
 
     goto :goto_1
 
-    .line 92
+    .line 95
     .end local v0           #coef:F
     .end local v3           #t:F
     .end local v4           #tx:F
@@ -252,15 +254,15 @@
 
     aput v12, v8, v13
 
-    .line 95
+    .line 98
     const/high16 v8, 0x4100
 
     sput v8, Landroid/widget/Scroller;->sViscousFluidScale:F
 
-    .line 97
+    .line 100
     sput v12, Landroid/widget/Scroller;->sViscousFluidNormalize:F
 
-    .line 98
+    .line 101
     invoke-static {v12}, Landroid/widget/Scroller;->viscousFluid(F)F
 
     move-result v8
@@ -269,7 +271,7 @@
 
     sput v8, Landroid/widget/Scroller;->sViscousFluidNormalize:F
 
-    .line 99
+    .line 102
     return-void
 .end method
 
@@ -278,12 +280,12 @@
     .parameter "context"
 
     .prologue
-    .line 108
+    .line 111
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
 
-    .line 109
+    .line 112
     return-void
 .end method
 
@@ -293,7 +295,7 @@
     .parameter "interpolator"
 
     .prologue
-    .line 117
+    .line 120
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
@@ -309,10 +311,10 @@
     :goto_0
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;Z)V
 
-    .line 119
+    .line 122
     return-void
 
-    .line 117
+    .line 120
     :cond_0
     const/4 v0, 0x0
 
@@ -326,18 +328,18 @@
     .parameter "flywheel"
 
     .prologue
-    .line 126
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 129
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 127
+    .line 130
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 128
+    .line 131
     iput-object p2, p0, Landroid/widget/Scroller;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 129
+    .line 132
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -354,7 +356,7 @@
 
     iput v0, p0, Landroid/widget/Scroller;->mPpi:F
 
-    .line 130
+    .line 133
     invoke-static {}, Landroid/view/ViewConfiguration;->getScrollFriction()F
 
     move-result v0
@@ -365,10 +367,21 @@
 
     iput v0, p0, Landroid/widget/Scroller;->mDeceleration:F
 
-    .line 131
+    .line 134
     iput-boolean p3, p0, Landroid/widget/Scroller;->mFlywheel:Z
 
-    .line 132
+    .line 135
+    const-string/jumbo v0, "power"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    iput-object v0, p0, Landroid/widget/Scroller;->mPm:Landroid/os/PowerManager;
+
+    .line 136
     return-void
 .end method
 
@@ -377,7 +390,7 @@
     .parameter "friction"
 
     .prologue
-    .line 146
+    .line 150
     const v0, 0x43c10b3d
 
     iget v1, p0, Landroid/widget/Scroller;->mPpi:F
@@ -396,17 +409,17 @@
     .prologue
     const/high16 v3, 0x3f80
 
-    .line 425
+    .line 430
     sget v1, Landroid/widget/Scroller;->sViscousFluidScale:F
 
     mul-float/2addr p0, v1
 
-    .line 426
+    .line 431
     cmpg-float v1, p0, v3
 
     if-gez v1, :cond_0
 
-    .line 427
+    .line 432
     neg-float v1, p0
 
     float-to-double v1, v1
@@ -421,20 +434,20 @@
 
     sub-float/2addr p0, v1
 
-    .line 433
+    .line 438
     :goto_0
     sget v1, Landroid/widget/Scroller;->sViscousFluidNormalize:F
 
     mul-float/2addr p0, v1
 
-    .line 434
+    .line 439
     return p0
 
-    .line 429
+    .line 434
     :cond_0
     const v0, 0x3ebc5ab2
 
-    .line 430
+    .line 435
     .local v0, start:F
     sub-float v1, v3, p0
 
@@ -448,7 +461,7 @@
 
     sub-float p0, v3, v1
 
-    .line 431
+    .line 436
     sub-float v1, v3, v0
 
     mul-float/2addr v1, p0
@@ -464,22 +477,22 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 450
     iget v0, p0, Landroid/widget/Scroller;->mFinalX:I
 
     iput v0, p0, Landroid/widget/Scroller;->mCurrX:I
 
-    .line 446
+    .line 451
     iget v0, p0, Landroid/widget/Scroller;->mFinalY:I
 
     iput v0, p0, Landroid/widget/Scroller;->mCurrY:I
 
-    .line 447
+    .line 452
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 448
+    .line 453
     return-void
 .end method
 
@@ -491,20 +504,20 @@
 
     const/high16 v14, 0x42c8
 
-    .line 250
+    .line 254
     iget-boolean v10, p0, Landroid/widget/Scroller;->mFinished:Z
 
     if-eqz v10, :cond_1
 
-    .line 251
+    .line 255
     const/4 v9, 0x0
 
-    .line 300
+    .line 304
     :cond_0
     :goto_0
     return v9
 
-    .line 254
+    .line 258
     :cond_1
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
@@ -516,20 +529,20 @@
 
     long-to-int v7, v10
 
-    .line 256
+    .line 260
     .local v7, timePassed:I
     iget v10, p0, Landroid/widget/Scroller;->mDuration:I
 
     if-ge v7, v10, :cond_3
 
-    .line 257
+    .line 261
     iget v10, p0, Landroid/widget/Scroller;->mMode:I
 
     packed-switch v10, :pswitch_data_0
 
     goto :goto_0
 
-    .line 259
+    .line 263
     :pswitch_0
     int-to-float v10, v7
 
@@ -537,18 +550,18 @@
 
     mul-float v8, v10, v11
 
-    .line 261
+    .line 265
     .local v8, x:F
     iget-object v10, p0, Landroid/widget/Scroller;->mInterpolator:Landroid/view/animation/Interpolator;
 
     if-nez v10, :cond_2
 
-    .line 262
+    .line 266
     invoke-static {v8}, Landroid/widget/Scroller;->viscousFluid(F)F
 
     move-result v8
 
-    .line 266
+    .line 270
     :goto_1
     iget v10, p0, Landroid/widget/Scroller;->mStartX:I
 
@@ -564,7 +577,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
-    .line 267
+    .line 271
     iget v10, p0, Landroid/widget/Scroller;->mStartY:I
 
     iget v11, p0, Landroid/widget/Scroller;->mDeltaY:F
@@ -581,7 +594,7 @@
 
     goto :goto_0
 
-    .line 264
+    .line 268
     :cond_2
     iget-object v10, p0, Landroid/widget/Scroller;->mInterpolator:Landroid/view/animation/Interpolator;
 
@@ -591,7 +604,7 @@
 
     goto :goto_1
 
-    .line 270
+    .line 274
     .end local v8           #x:F
     :pswitch_1
     int-to-float v10, v7
@@ -602,19 +615,19 @@
 
     div-float v4, v10, v11
 
-    .line 271
+    .line 275
     .local v4, t:F
     mul-float v10, v14, v4
 
     float-to-int v3, v10
 
-    .line 272
+    .line 276
     .local v3, index:I
     int-to-float v10, v3
 
     div-float v5, v10, v14
 
-    .line 273
+    .line 277
     .local v5, t_inf:F
     add-int/lit8 v10, v3, 0x1
 
@@ -622,13 +635,13 @@
 
     div-float v6, v10, v14
 
-    .line 274
+    .line 278
     .local v6, t_sup:F
     sget-object v10, Landroid/widget/Scroller;->SPLINE:[F
 
     aget v0, v10, v3
 
-    .line 275
+    .line 279
     .local v0, d_inf:F
     sget-object v10, Landroid/widget/Scroller;->SPLINE:[F
 
@@ -636,7 +649,7 @@
 
     aget v1, v10, v11
 
-    .line 276
+    .line 280
     .local v1, d_sup:F
     sub-float v10, v4, v5
 
@@ -650,7 +663,7 @@
 
     add-float v2, v0, v10
 
-    .line 278
+    .line 282
     .local v2, distanceCoef:F
     iget v10, p0, Landroid/widget/Scroller;->mStartX:I
 
@@ -672,7 +685,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
-    .line 280
+    .line 284
     iget v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
     iget v11, p0, Landroid/widget/Scroller;->mMaxX:I
@@ -683,7 +696,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
-    .line 281
+    .line 285
     iget v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
     iget v11, p0, Landroid/widget/Scroller;->mMinX:I
@@ -694,7 +707,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
-    .line 283
+    .line 287
     iget v10, p0, Landroid/widget/Scroller;->mStartY:I
 
     iget v11, p0, Landroid/widget/Scroller;->mFinalY:I
@@ -715,7 +728,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrY:I
 
-    .line 285
+    .line 289
     iget v10, p0, Landroid/widget/Scroller;->mCurrY:I
 
     iget v11, p0, Landroid/widget/Scroller;->mMaxY:I
@@ -726,7 +739,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrY:I
 
-    .line 286
+    .line 290
     iget v10, p0, Landroid/widget/Scroller;->mCurrY:I
 
     iget v11, p0, Landroid/widget/Scroller;->mMinY:I
@@ -737,7 +750,7 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrY:I
 
-    .line 288
+    .line 292
     iget v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
     iget v11, p0, Landroid/widget/Scroller;->mFinalX:I
@@ -750,12 +763,12 @@
 
     if-ne v10, v11, :cond_0
 
-    .line 289
+    .line 293
     iput-boolean v9, p0, Landroid/widget/Scroller;->mFinished:Z
 
     goto/16 :goto_0
 
-    .line 296
+    .line 300
     .end local v0           #d_inf:F
     .end local v1           #d_sup:F
     .end local v2           #distanceCoef:F
@@ -768,17 +781,17 @@
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrX:I
 
-    .line 297
+    .line 301
     iget v10, p0, Landroid/widget/Scroller;->mFinalY:I
 
     iput v10, p0, Landroid/widget/Scroller;->mCurrY:I
 
-    .line 298
+    .line 302
     iput-boolean v9, p0, Landroid/widget/Scroller;->mFinished:Z
 
     goto/16 :goto_0
 
-    .line 257
+    .line 261
     nop
 
     :pswitch_data_0
@@ -793,18 +806,18 @@
     .parameter "extend"
 
     .prologue
-    .line 459
+    .line 464
     invoke-virtual {p0}, Landroid/widget/Scroller;->timePassed()I
 
     move-result v0
 
-    .line 460
+    .line 465
     .local v0, passed:I
     add-int v1, v0, p1
 
     iput v1, p0, Landroid/widget/Scroller;->mDuration:I
 
-    .line 461
+    .line 466
     const/high16 v1, 0x3f80
 
     iget v2, p0, Landroid/widget/Scroller;->mDuration:I
@@ -815,12 +828,12 @@
 
     iput v1, p0, Landroid/widget/Scroller;->mDurationReciprocal:F
 
-    .line 462
+    .line 467
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 463
+    .line 468
     return-void
 .end method
 
@@ -836,7 +849,7 @@
     .parameter "maxY"
 
     .prologue
-    .line 370
+    .line 375
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Landroid/widget/Scroller;->mFlywheel:Z
@@ -853,12 +866,12 @@
 
     if-nez v17, :cond_0
 
-    .line 371
+    .line 376
     invoke-virtual/range {p0 .. p0}, Landroid/widget/Scroller;->getCurrVelocity()F
 
     move-result v12
 
-    .line 373
+    .line 378
     .local v12, oldVel:F
     move-object/from16 v0, p0
 
@@ -878,7 +891,7 @@
 
     int-to-float v5, v0
 
-    .line 374
+    .line 379
     .local v5, dx:F
     move-object/from16 v0, p0
 
@@ -898,7 +911,7 @@
 
     int-to-float v6, v0
 
-    .line 375
+    .line 380
     .local v6, dy:F
     mul-float v17, v5, v5
 
@@ -910,23 +923,23 @@
 
     move-result v7
 
-    .line 377
+    .line 382
     .local v7, hyp:F
     div-float v10, v5, v7
 
-    .line 378
+    .line 383
     .local v10, ndx:F
     div-float v11, v6, v7
 
-    .line 380
+    .line 385
     .local v11, ndy:F
     mul-float v13, v10, v12
 
-    .line 381
+    .line 386
     .local v13, oldVelocityX:F
     mul-float v14, v11, v12
 
-    .line 382
+    .line 387
     .local v14, oldVelocityY:F
     move/from16 v0, p3
 
@@ -964,7 +977,7 @@
 
     if-nez v17, :cond_0
 
-    .line 384
+    .line 389
     move/from16 v0, p3
 
     int-to-float v0, v0
@@ -979,7 +992,7 @@
 
     move/from16 p3, v0
 
-    .line 385
+    .line 390
     move/from16 v0, p4
 
     int-to-float v0, v0
@@ -994,7 +1007,7 @@
 
     move/from16 p4, v0
 
-    .line 389
+    .line 394
     .end local v5           #dx:F
     .end local v6           #dy:F
     .end local v7           #hyp:F
@@ -1012,7 +1025,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mMode:I
 
-    .line 390
+    .line 395
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -1021,7 +1034,7 @@
 
     iput-boolean v0, v1, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 392
+    .line 397
     mul-int v17, p3, p3
 
     mul-int v18, p4, p4
@@ -1038,7 +1051,7 @@
 
     move-result v16
 
-    .line 394
+    .line 399
     .local v16, velocity:F
     move/from16 v0, v16
 
@@ -1046,7 +1059,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mVelocity:F
 
-    .line 395
+    .line 400
     sget v17, Landroid/widget/Scroller;->START_TENSION:F
 
     mul-float v17, v17, v16
@@ -1065,7 +1078,7 @@
 
     move-result-wide v8
 
-    .line 396
+    .line 401
     .local v8, l:D
     const-wide v17, 0x408f400000000000L
 
@@ -1101,7 +1114,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mDuration:I
 
-    .line 397
+    .line 402
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v17
@@ -1112,21 +1125,21 @@
 
     iput-wide v0, v2, Landroid/widget/Scroller;->mStartTime:J
 
-    .line 398
+    .line 403
     move/from16 v0, p1
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/Scroller;->mStartX:I
 
-    .line 399
+    .line 404
     move/from16 v0, p2
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/Scroller;->mStartY:I
 
-    .line 401
+    .line 406
     const/16 v17, 0x0
 
     cmpl-float v17, v16, v17
@@ -1135,7 +1148,7 @@
 
     const/high16 v3, 0x3f80
 
-    .line 402
+    .line 407
     .local v3, coeffX:F
     :goto_0
     const/16 v17, 0x0
@@ -1146,7 +1159,7 @@
 
     const/high16 v4, 0x3f80
 
-    .line 404
+    .line 409
     .local v4, coeffY:F
     :goto_1
     sget v17, Landroid/widget/Scroller;->ALPHA:F
@@ -1191,7 +1204,7 @@
 
     double-to-int v15, v0
 
-    .line 407
+    .line 412
     .local v15, totalDistance:I
     move/from16 v0, p5
 
@@ -1199,28 +1212,28 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mMinX:I
 
-    .line 408
+    .line 413
     move/from16 v0, p6
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/Scroller;->mMaxX:I
 
-    .line 409
+    .line 414
     move/from16 v0, p7
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/Scroller;->mMinY:I
 
-    .line 410
+    .line 415
     move/from16 v0, p8
 
     move-object/from16 v1, p0
 
     iput v0, v1, Landroid/widget/Scroller;->mMaxY:I
 
-    .line 412
+    .line 417
     int-to-float v0, v15
 
     move/from16 v17, v0
@@ -1239,7 +1252,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mFinalX:I
 
-    .line 414
+    .line 419
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/Scroller;->mFinalX:I
@@ -1262,7 +1275,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mFinalX:I
 
-    .line 415
+    .line 420
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/Scroller;->mFinalX:I
@@ -1285,7 +1298,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mFinalX:I
 
-    .line 417
+    .line 422
     int-to-float v0, v15
 
     move/from16 v17, v0
@@ -1304,7 +1317,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mFinalY:I
 
-    .line 419
+    .line 424
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/Scroller;->mFinalY:I
@@ -1327,7 +1340,7 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mFinalY:I
 
-    .line 420
+    .line 425
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/Scroller;->mFinalY:I
@@ -1350,10 +1363,10 @@
 
     iput v0, v1, Landroid/widget/Scroller;->mFinalY:I
 
-    .line 421
+    .line 426
     return-void
 
-    .line 401
+    .line 406
     .end local v3           #coeffX:F
     .end local v4           #coeffY:F
     .end local v15           #totalDistance:I
@@ -1368,7 +1381,7 @@
 
     goto/16 :goto_0
 
-    .line 402
+    .line 407
     .restart local v3       #coeffX:F
     :cond_2
     move/from16 v0, p4
@@ -1387,10 +1400,10 @@
     .parameter "finished"
 
     .prologue
-    .line 168
+    .line 172
     iput-boolean p1, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 169
+    .line 173
     return-void
 .end method
 
@@ -1398,7 +1411,7 @@
     .locals 3
 
     .prologue
-    .line 205
+    .line 209
     iget v0, p0, Landroid/widget/Scroller;->mVelocity:F
 
     iget v1, p0, Landroid/widget/Scroller;->mDeceleration:F
@@ -1424,7 +1437,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 190
     iget v0, p0, Landroid/widget/Scroller;->mCurrX:I
 
     return v0
@@ -1434,7 +1447,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 199
     iget v0, p0, Landroid/widget/Scroller;->mCurrY:I
 
     return v0
@@ -1444,7 +1457,7 @@
     .locals 1
 
     .prologue
-    .line 177
+    .line 181
     iget v0, p0, Landroid/widget/Scroller;->mDuration:I
 
     return v0
@@ -1454,7 +1467,7 @@
     .locals 1
 
     .prologue
-    .line 232
+    .line 236
     iget v0, p0, Landroid/widget/Scroller;->mFinalX:I
 
     return v0
@@ -1464,7 +1477,7 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 245
     iget v0, p0, Landroid/widget/Scroller;->mFinalY:I
 
     return v0
@@ -1474,7 +1487,7 @@
     .locals 1
 
     .prologue
-    .line 214
+    .line 218
     iget v0, p0, Landroid/widget/Scroller;->mStartX:I
 
     return v0
@@ -1484,7 +1497,7 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 227
     iget v0, p0, Landroid/widget/Scroller;->mStartY:I
 
     return v0
@@ -1494,7 +1507,7 @@
     .locals 1
 
     .prologue
-    .line 159
+    .line 163
     iget-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
     return v0
@@ -1506,7 +1519,7 @@
     .parameter "yvel"
 
     .prologue
-    .line 504
+    .line 509
     iget-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
     if-nez v0, :cond_0
@@ -1567,10 +1580,10 @@
     .parameter "newX"
 
     .prologue
-    .line 482
+    .line 487
     iput p1, p0, Landroid/widget/Scroller;->mFinalX:I
 
-    .line 483
+    .line 488
     iget v0, p0, Landroid/widget/Scroller;->mFinalX:I
 
     iget v1, p0, Landroid/widget/Scroller;->mStartX:I
@@ -1581,12 +1594,12 @@
 
     iput v0, p0, Landroid/widget/Scroller;->mDeltaX:F
 
-    .line 484
+    .line 489
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 485
+    .line 490
     return-void
 .end method
 
@@ -1595,10 +1608,10 @@
     .parameter "newY"
 
     .prologue
-    .line 495
+    .line 500
     iput p1, p0, Landroid/widget/Scroller;->mFinalY:I
 
-    .line 496
+    .line 501
     iget v0, p0, Landroid/widget/Scroller;->mFinalY:I
 
     iget v1, p0, Landroid/widget/Scroller;->mStartY:I
@@ -1609,12 +1622,12 @@
 
     iput v0, p0, Landroid/widget/Scroller;->mDeltaY:F
 
-    .line 497
+    .line 502
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 498
+    .line 503
     return-void
 .end method
 
@@ -1623,14 +1636,14 @@
     .parameter "friction"
 
     .prologue
-    .line 142
+    .line 146
     invoke-direct {p0, p1}, Landroid/widget/Scroller;->computeDeceleration(F)F
 
     move-result v0
 
     iput v0, p0, Landroid/widget/Scroller;->mDeceleration:F
 
-    .line 143
+    .line 147
     return-void
 .end method
 
@@ -1642,7 +1655,7 @@
     .parameter "dy"
 
     .prologue
-    .line 318
+    .line 322
     const/16 v5, 0xfa
 
     move-object v0, p0
@@ -1657,7 +1670,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
-    .line 319
+    .line 323
     return-void
 .end method
 
@@ -1672,49 +1685,49 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 335
+    .line 339
     iput v0, p0, Landroid/widget/Scroller;->mMode:I
 
-    .line 336
+    .line 340
     iput-boolean v0, p0, Landroid/widget/Scroller;->mFinished:Z
 
-    .line 337
+    .line 341
     iput p5, p0, Landroid/widget/Scroller;->mDuration:I
 
-    .line 338
+    .line 342
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/widget/Scroller;->mStartTime:J
 
-    .line 339
+    .line 343
     iput p1, p0, Landroid/widget/Scroller;->mStartX:I
 
-    .line 340
+    .line 344
     iput p2, p0, Landroid/widget/Scroller;->mStartY:I
 
-    .line 341
+    .line 345
     add-int v0, p1, p3
 
     iput v0, p0, Landroid/widget/Scroller;->mFinalX:I
 
-    .line 342
+    .line 346
     add-int v0, p2, p4
 
     iput v0, p0, Landroid/widget/Scroller;->mFinalY:I
 
-    .line 343
+    .line 347
     int-to-float v0, p3
 
     iput v0, p0, Landroid/widget/Scroller;->mDeltaX:F
 
-    .line 344
+    .line 348
     int-to-float v0, p4
 
     iput v0, p0, Landroid/widget/Scroller;->mDeltaY:F
 
-    .line 345
+    .line 349
     const/high16 v0, 0x3f80
 
     iget v1, p0, Landroid/widget/Scroller;->mDuration:I
@@ -1725,7 +1738,14 @@
 
     iput v0, p0, Landroid/widget/Scroller;->mDurationReciprocal:F
 
-    .line 346
+    .line 350
+    iget-object v0, p0, Landroid/widget/Scroller;->mPm:Landroid/os/PowerManager;
+
+    const v1, 0x16e360
+
+    invoke-virtual {v0, v1}, Landroid/os/PowerManager;->cpuBoost(I)V
+
+    .line 351
     return-void
 .end method
 
@@ -1733,7 +1753,7 @@
     .locals 4
 
     .prologue
-    .line 471
+    .line 476
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0

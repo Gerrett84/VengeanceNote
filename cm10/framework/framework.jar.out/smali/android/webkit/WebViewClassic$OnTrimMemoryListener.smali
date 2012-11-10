@@ -26,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 714
+    .line 715
     const/4 v0, 0x0
 
     sput-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
@@ -39,13 +39,13 @@
     .parameter "c"
 
     .prologue
-    .line 722
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 723
-    invoke-virtual {p1, p0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 724
+    invoke-virtual {p1, p0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
+
+    .line 725
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .parameter "c"
 
     .prologue
-    .line 717
+    .line 718
     sget-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
     if-nez v0, :cond_0
 
-    .line 718
+    .line 719
     new-instance v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -70,7 +70,7 @@
 
     sput-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
-    .line 720
+    .line 721
     :cond_0
     return-void
 .end method
@@ -82,7 +82,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 729
+    .line 730
     return-void
 .end method
 
@@ -90,28 +90,19 @@
     .locals 0
 
     .prologue
-    .line 734
+    .line 735
     return-void
 .end method
 
 .method public onTrimMemory(I)V
-    .locals 1
+    .locals 0
     .parameter "level"
 
     .prologue
-    .line 745
-    const/16 v0, 0x14
-
-    if-lt p1, v0, :cond_0
-
-    .line 746
-    invoke-static {}, Landroid/webkit/HTML5VideoInline;->cleanupSurfaceTexture()V
-
-    .line 748
-    :cond_0
+    .line 742
     #calls: Landroid/webkit/WebViewClassic;->nativeOnTrimMemory(I)V
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$900(I)V
 
-    .line 749
+    .line 743
     return-void
 .end method

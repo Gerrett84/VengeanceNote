@@ -4,16 +4,12 @@
 
 
 # annotations
-.annotation build Landroid/annotation/MiuiHook;
-    value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/widget/Editor;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x608
+    accessFlags = 0x60a
     name = "TextViewPositionListener"
 .end annotation
 

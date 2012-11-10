@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 291
     new-instance v0, Landroid/telephony/NeighboringCellInfo$1;
 
     invoke-direct {v0}, Landroid/telephony/NeighboringCellInfo$1;-><init>()V
@@ -58,29 +58,29 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 80
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 79
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 80
     const/16 v0, 0x63
 
     iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
-    .line 82
+    .line 81
     iput v1, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
-    .line 83
+    .line 82
     iput v1, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
-    .line 84
+    .line 83
     iput v1, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
-    .line 85
+    .line 84
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
 
-    .line 86
+    .line 85
     return-void
 .end method
 
@@ -92,16 +92,16 @@
     .end annotation
 
     .prologue
-    .line 98
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 97
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
+    .line 98
     iput p1, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
-    .line 100
+    .line 99
     iput p2, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
-    .line 101
+    .line 100
     return-void
 .end method
 
@@ -119,7 +119,7 @@
     const/4 v5, -0x1
 
     .line 113
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 115
     iput p1, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
@@ -145,7 +145,7 @@
     .local v2, l:I
     if-le v2, v3, :cond_1
 
-    .line 157
+    .line 158
     :cond_0
     :goto_0
     return-void
@@ -253,32 +253,32 @@
 
     goto :goto_0
 
-    .line 150
+    .line 151
     :catch_0
     move-exception v0
 
-    .line 152
+    .line 153
     .local v0, e:Ljava/lang/NumberFormatException;
     iput v5, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
-    .line 153
+    .line 154
     iput v5, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
-    .line 154
+    .line 155
     iput v5, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
-    .line 155
+    .line 156
     iput v6, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
 
     goto :goto_0
 
-    .line 146
+    .line 147
     .end local v0           #e:Ljava/lang/NumberFormatException;
     :pswitch_2
     :try_start_1
     iput p3, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
 
-    .line 147
+    .line 148
     const/16 v3, 0x10
 
     invoke-static {p2, v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;I)Ljava/lang/Integer;
@@ -308,6 +308,11 @@
         :pswitch_2
         :pswitch_2
         :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
     .end packed-switch
 .end method
 
@@ -316,45 +321,45 @@
     .parameter "in"
 
     .prologue
-    .line 162
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 163
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 164
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
+    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
     .line 165
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
+    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
     .line 166
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
+    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
     .line 167
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
+    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
     .line 168
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
+
+    .line 169
     return-void
 .end method
 
@@ -364,7 +369,7 @@
     .locals 1
 
     .prologue
-    .line 278
+    .line 280
     const/4 v0, 0x0
 
     return v0
@@ -374,7 +379,7 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 195
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
     return v0
@@ -384,7 +389,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 187
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
     return v0
@@ -394,7 +399,7 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 229
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
 
     return v0
@@ -404,7 +409,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 203
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
     return v0
@@ -414,7 +419,7 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 179
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
     return v0
@@ -427,10 +432,10 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 243
     iput p1, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
-    .line 242
+    .line 244
     return-void
 .end method
 
@@ -441,10 +446,10 @@
     .end annotation
 
     .prologue
-    .line 256
+    .line 258
     iput p1, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
-    .line 257
+    .line 259
     return-void
 .end method
 
@@ -456,23 +461,23 @@
 
     const/4 v2, -0x1
 
-    .line 261
+    .line 263
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 263
+    .line 265
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 264
+    .line 266
     iget v1, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
     if-eq v1, v2, :cond_2
 
-    .line 265
+    .line 267
     iget v1, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -498,21 +503,21 @@
     :goto_0
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 272
+    .line 274
     :cond_0
     :goto_1
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 274
+    .line 276
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 265
+    .line 267
     :cond_1
     iget v1, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
@@ -522,7 +527,7 @@
 
     goto :goto_0
 
-    .line 267
+    .line 269
     :cond_2
     iget v1, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
@@ -532,7 +537,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 268
+    .line 270
     iget v1, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
@@ -586,31 +591,31 @@
     .parameter "flags"
 
     .prologue
-    .line 282
+    .line 284
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mRssi:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 283
+    .line 285
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mLac:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 284
+    .line 286
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mCid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 285
+    .line 287
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mPsc:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 286
+    .line 288
     iget v0, p0, Landroid/telephony/NeighboringCellInfo;->mNetworkType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 287
+    .line 289
     return-void
 .end method

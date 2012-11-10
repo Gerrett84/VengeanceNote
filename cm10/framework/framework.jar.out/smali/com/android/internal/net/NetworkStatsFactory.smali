@@ -39,7 +39,7 @@
 
     .prologue
     .line 57
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     new-instance v0, Ljava/io/File;
@@ -264,6 +264,7 @@
     .line 224
     invoke-static {v6}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 223
     throw v8
 
     .line 199
@@ -392,32 +393,15 @@
     invoke-direct {v8, v9, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v8
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    .line 223
-    .end local v0           #e:Ljava/lang/NumberFormatException;
-    .end local v4           #reader:Lcom/android/internal/util/ProcFileReader;
-    .restart local v5       #reader:Lcom/android/internal/util/ProcFileReader;
-    :cond_3
-    invoke-static {v5}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-
-    .line 224
-    invoke-static {v6}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    .line 227
-    return-object v7
 
     .line 220
-    .end local v5           #reader:Lcom/android/internal/util/ProcFileReader;
-    .restart local v4       #reader:Lcom/android/internal/util/ProcFileReader;
+    .end local v0           #e:Ljava/lang/NumberFormatException;
     :catch_2
     move-exception v0
 
     .line 221
     .local v0, e:Ljava/io/IOException;
     :goto_4
-    :try_start_5
     new-instance v8, Ljava/lang/IllegalStateException;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -441,13 +425,23 @@
     invoke-direct {v8, v9, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v8
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 223
     .end local v0           #e:Ljava/io/IOException;
     .end local v4           #reader:Lcom/android/internal/util/ProcFileReader;
     .restart local v5       #reader:Lcom/android/internal/util/ProcFileReader;
+    :cond_3
+    invoke-static {v5}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    .line 224
+    invoke-static {v6}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+
+    .line 227
+    return-object v7
+
+    .line 223
     :catchall_1
     move-exception v8
 
@@ -721,6 +715,7 @@
     .line 114
     invoke-static {v5}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 113
     throw v7
 
     .end local v3           #reader:Lcom/android/internal/util/ProcFileReader;
@@ -730,16 +725,6 @@
 
     .line 87
     goto :goto_1
-
-    .line 113
-    :cond_2
-    invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-
-    .line 114
-    invoke-static {v5}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    .line 116
-    return-object v6
 
     .line 108
     .end local v4           #reader:Lcom/android/internal/util/ProcFileReader;
@@ -813,6 +798,16 @@
     .end local v1           #e:Ljava/io/IOException;
     .end local v3           #reader:Lcom/android/internal/util/ProcFileReader;
     .restart local v4       #reader:Lcom/android/internal/util/ProcFileReader;
+    :cond_2
+    invoke-static {v4}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    .line 114
+    invoke-static {v5}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+
+    .line 116
+    return-object v6
+
+    .line 113
     :catchall_1
     move-exception v7
 
@@ -1049,22 +1044,10 @@
     .line 163
     invoke-static {v4}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
+    .line 162
     throw v6
 
-    .line 162
-    .end local v2           #reader:Lcom/android/internal/util/ProcFileReader;
-    .restart local v3       #reader:Lcom/android/internal/util/ProcFileReader;
-    :cond_1
-    invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
-
-    .line 163
-    invoke-static {v4}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    goto :goto_0
-
     .line 157
-    .end local v3           #reader:Lcom/android/internal/util/ProcFileReader;
-    .restart local v2       #reader:Lcom/android/internal/util/ProcFileReader;
     :catch_1
     move-exception v0
 
@@ -1134,6 +1117,15 @@
     .end local v0           #e:Ljava/io/IOException;
     .end local v2           #reader:Lcom/android/internal/util/ProcFileReader;
     .restart local v3       #reader:Lcom/android/internal/util/ProcFileReader;
+    :cond_1
+    invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    .line 163
+    invoke-static {v4}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
+
+    goto/16 :goto_0
+
+    .line 162
     :catchall_1
     move-exception v6
 

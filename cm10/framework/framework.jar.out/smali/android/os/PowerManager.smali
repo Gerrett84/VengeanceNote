@@ -67,10 +67,10 @@
     .locals 0
 
     .prologue
-    .line 563
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 581
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 564
+    .line 582
     return-void
 .end method
 
@@ -80,21 +80,51 @@
     .parameter "handler"
 
     .prologue
-    .line 570
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 588
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 571
+    .line 589
     iput-object p1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
-    .line 572
+    .line 590
     iput-object p2, p0, Landroid/os/PowerManager;->mHandler:Landroid/os/Handler;
 
-    .line 573
+    .line 591
     return-void
 .end method
 
 
 # virtual methods
+.method public cpuBoost(I)V
+    .locals 1
+    .parameter "duration"
+
+    .prologue
+    .line 573
+    :try_start_0
+    iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
+
+    if-eqz v0, :cond_0
+
+    .line 574
+    iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
+
+    invoke-interface {v0, p1}, Landroid/os/IPowerManager;->cpuBoost(I)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 578
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 576
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
 .method public getSupportedWakeLockFlags()I
     .locals 2
 

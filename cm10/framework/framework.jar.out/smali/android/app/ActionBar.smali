@@ -38,10 +38,10 @@
     .locals 0
 
     .prologue
-    .line 61
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 59
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 919
+    .line 908
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 691
+    .line 680
     const/4 v0, 0x0
 
     return-object v0
@@ -167,14 +167,8 @@
     .parameter "enabled"
 
     .prologue
-    .line 671
+    .line 669
     return-void
-.end method
-
-.method public abstract setHomeViewBackground(I)V
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 .end method
 
 .method public abstract setIcon(I)V
@@ -203,7 +197,7 @@
     .parameter "d"
 
     .prologue
-    .line 448
+    .line 446
     return-void
 .end method
 
@@ -212,7 +206,7 @@
     .parameter "d"
 
     .prologue
-    .line 438
+    .line 436
     return-void
 .end method
 

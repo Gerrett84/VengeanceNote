@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 323
+    .line 324
     iput-object p1, p0, Landroid/content/SyncManager$6;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +35,27 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+    .locals 2
     .parameter "context"
     .parameter "intent"
 
     .prologue
     .line 326
-    iget-object v0, p0, Landroid/content/SyncManager$6;->this$0:Landroid/content/SyncManager;
+    const-string v0, "SyncManager"
 
-    #calls: Landroid/content/SyncManager;->onUserRemoved(Landroid/content/Intent;)V
-    invoke-static {v0, p2}, Landroid/content/SyncManager;->access$700(Landroid/content/SyncManager;Landroid/content/Intent;)V
+    const-string v1, "Writing sync state before shutdown..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 327
+    iget-object v0, p0, Landroid/content/SyncManager$6;->this$0:Landroid/content/SyncManager;
+
+    invoke-virtual {v0}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/SyncStorageEngine;->writeAllState()V
+
+    .line 328
     return-void
 .end method

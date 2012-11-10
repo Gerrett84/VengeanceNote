@@ -20,7 +20,7 @@
 
     .prologue
     .line 79
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 80
     iput-object p1, p0, Landroid/app/backup/BackupManager;->mContext:Landroid/content/Context;
@@ -290,13 +290,13 @@
     if-eqz v3, :cond_1
 
     .line 156
+    .end local v0           #binder:Landroid/app/backup/IRestoreSession;
+    :goto_0
     invoke-virtual {v3}, Landroid/app/backup/RestoreSession;->endRestoreSession()V
 
     .line 160
-    .end local v0           #binder:Landroid/app/backup/IRestoreSession;
     .end local v3           #session:Landroid/app/backup/RestoreSession;
     :cond_1
-    :goto_0
     return v2
 
     .line 152
@@ -319,12 +319,8 @@
     .line 155
     if-eqz v3, :cond_1
 
-    .line 156
-    invoke-virtual {v3}, Landroid/app/backup/RestoreSession;->endRestoreSession()V
-
     goto :goto_0
 
-    .line 155
     .end local v1           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v5
@@ -335,10 +331,10 @@
     .line 156
     invoke-virtual {v3}, Landroid/app/backup/RestoreSession;->endRestoreSession()V
 
+    .line 155
     :cond_2
     throw v5
 
-    .line 155
     .end local v3           #session:Landroid/app/backup/RestoreSession;
     .restart local v0       #binder:Landroid/app/backup/IRestoreSession;
     .restart local v4       #session:Landroid/app/backup/RestoreSession;

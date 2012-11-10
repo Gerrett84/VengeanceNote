@@ -77,7 +77,7 @@
     const/high16 v0, -0x4080
 
     .line 336
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
     iput v0, p0, Landroid/app/WallpaperManager;->mWallpaperXStep:F
@@ -450,7 +450,7 @@
 
     .prologue
     .line 768
-    const v0, 0x1080220
+    const v0, 0x108021e
 
     invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
 
@@ -673,7 +673,7 @@
     .local v1, dr:Landroid/graphics/drawable/Drawable;
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/BitmapDrawable;->setDither(Z)V
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
 
     .line 370
     .end local v1           #dr:Landroid/graphics/drawable/Drawable;
@@ -823,7 +823,7 @@
 
     .line 386
     .local v1, dr:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v1, v4}, Landroid/graphics/drawable/BitmapDrawable;->setDither(Z)V
+    invoke-virtual {v1, v4}, Landroid/graphics/drawable/Drawable;->setDither(Z)V
 
     .line 389
     .end local v1           #dr:Landroid/graphics/drawable/Drawable;
@@ -1006,7 +1006,7 @@
 
     .line 534
     :try_start_3
-    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
 
     goto :goto_0
 
@@ -1028,7 +1028,7 @@
     if-eqz v1, :cond_2
 
     .line 534
-    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
     .line 533
     :cond_2
@@ -1159,7 +1159,7 @@
 
     .line 496
     :try_start_3
-    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
 
     goto :goto_0
 
@@ -1183,7 +1183,7 @@
     if-eqz v1, :cond_2
 
     .line 496
-    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
     .line 495
     :cond_2
@@ -1282,7 +1282,7 @@
 
     .line 573
     :try_start_3
-    invoke-virtual {v2}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
 
     goto :goto_0
 
@@ -1304,7 +1304,7 @@
     if-eqz v1, :cond_2
 
     .line 573
-    invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
     .line 572
     :cond_2

@@ -116,7 +116,7 @@
 
     .prologue
     .line 113
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 7816
     return-void
@@ -351,15 +351,9 @@
 
     .line 8365
     .local v23, tokenOffsets:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Integer;>;"
-    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+    move-object/from16 v0, v23
 
-    move-result-object v24
-
-    move-object/from16 v0, v24
-
-    move-object/from16 v1, v23
-
-    invoke-static {v0, v11, v1}, Landroid/provider/ContactsContract;->split(Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
+    invoke-static {v4, v11, v0}, Landroid/provider/ContactsContract;->split(Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V
 
     .line 8369
     new-instance v16, Ljava/util/ArrayList;

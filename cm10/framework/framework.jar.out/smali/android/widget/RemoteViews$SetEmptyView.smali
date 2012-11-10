@@ -34,20 +34,20 @@
     .parameter "emptyViewId"
 
     .prologue
-    .line 224
+    .line 214
     iput-object p1, p0, Landroid/widget/RemoteViews$SetEmptyView;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    .line 225
+    .line 215
     iput p2, p0, Landroid/widget/RemoteViews$SetEmptyView;->viewId:I
 
-    .line 226
+    .line 216
     iput p3, p0, Landroid/widget/RemoteViews$SetEmptyView;->emptyViewId:I
 
-    .line 227
+    .line 217
     return-void
 .end method
 
@@ -57,28 +57,28 @@
     .parameter "in"
 
     .prologue
-    .line 229
+    .line 219
     iput-object p1, p0, Landroid/widget/RemoteViews$SetEmptyView;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    .line 230
+    .line 220
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$SetEmptyView;->viewId:I
 
-    .line 231
+    .line 221
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$SetEmptyView;->emptyViewId:I
 
-    .line 232
+    .line 222
     return-void
 .end method
 
@@ -91,20 +91,20 @@
     .parameter "handler"
 
     .prologue
-    .line 242
+    .line 232
     iget v3, p0, Landroid/widget/RemoteViews$SetEmptyView;->viewId:I
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 243
+    .line 233
     .local v2, view:Landroid/view/View;
     instance-of v3, v2, Landroid/widget/AdapterView;
 
     if-nez v3, :cond_1
 
-    .line 251
+    .line 241
     :cond_0
     :goto_0
     return-void
@@ -112,10 +112,10 @@
     :cond_1
     move-object v0, v2
 
-    .line 245
+    .line 235
     check-cast v0, Landroid/widget/AdapterView;
 
-    .line 247
+    .line 237
     .local v0, adapterView:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget v3, p0, Landroid/widget/RemoteViews$SetEmptyView;->emptyViewId:I
 
@@ -123,11 +123,11 @@
 
     move-result-object v1
 
-    .line 248
+    .line 238
     .local v1, emptyView:Landroid/view/View;
     if-eqz v1, :cond_0
 
-    .line 250
+    .line 240
     invoke-virtual {v0, v1}, Landroid/widget/AdapterView;->setEmptyView(Landroid/view/View;)V
 
     goto :goto_0
@@ -139,21 +139,21 @@
     .parameter "flags"
 
     .prologue
-    .line 235
+    .line 225
     const/4 v0, 0x6
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 236
+    .line 226
     iget v0, p0, Landroid/widget/RemoteViews$SetEmptyView;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 237
+    .line 227
     iget v0, p0, Landroid/widget/RemoteViews$SetEmptyView;->emptyViewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 238
+    .line 228
     return-void
 .end method

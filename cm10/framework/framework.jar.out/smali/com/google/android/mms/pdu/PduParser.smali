@@ -98,7 +98,7 @@
     const/4 v0, 0x0
 
     .line 95
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     iput-object v0, p0, Lcom/google/android/mms/pdu/PduParser;->mPduDataStream:Ljava/io/ByteArrayInputStream;
@@ -2631,7 +2631,7 @@
 
     move-result-object v17
 
-    const v18, 0x1110031
+    const v18, 0x1110036
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getBoolean(I)Z
 

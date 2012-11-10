@@ -215,9 +215,10 @@
     .line 233
     iget-object v2, p0, Landroid/speech/tts/SynthesisPlaybackQueueItem;->mListLock:Ljava/util/concurrent/locks/Lock;
 
+    :goto_1
     invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    :goto_1
+    .line 231
     return-object v1
 
     .line 217
@@ -239,8 +240,6 @@
 
     .line 233
     iget-object v2, p0, Landroid/speech/tts/SynthesisPlaybackQueueItem;->mListLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     goto :goto_1
 
@@ -269,8 +268,6 @@
 
     .line 233
     iget-object v2, p0, Landroid/speech/tts/SynthesisPlaybackQueueItem;->mListLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     goto :goto_1
 .end method
@@ -396,10 +393,10 @@
     .line 196
     iget-object v2, p0, Landroid/speech/tts/SynthesisPlaybackQueueItem;->mListLock:Ljava/util/concurrent/locks/Lock;
 
+    :goto_1
     invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     .line 198
-    :goto_1
     return-void
 
     .line 192
@@ -431,8 +428,6 @@
 
     .line 196
     iget-object v2, p0, Landroid/speech/tts/SynthesisPlaybackQueueItem;->mListLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     goto :goto_1
 .end method

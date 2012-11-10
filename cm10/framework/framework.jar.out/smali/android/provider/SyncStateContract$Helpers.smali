@@ -52,7 +52,7 @@
 
     .prologue
     .line 58
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -134,18 +134,13 @@
     move-result-object v5
 
     .line 88
-    invoke-interface {v6}, Landroid/database/Cursor;->close()V
-
-    .line 90
-    :goto_0
-    return-object v5
-
-    .line 88
     :cond_1
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    goto :goto_0
+    .line 90
+    return-object v5
 
+    .line 88
     :catchall_0
     move-exception v0
 
@@ -263,20 +258,15 @@
     move-result-object v5
 
     .line 144
-    invoke-interface {v7}, Landroid/database/Cursor;->close()V
-
-    .line 146
     .end local v6           #blob:[B
     .end local v8           #rowId:J
-    :goto_0
-    return-object v5
-
-    .line 144
     :cond_1
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    goto :goto_0
+    .line 146
+    return-object v5
 
+    .line 144
     :catchall_0
     move-exception v0
 

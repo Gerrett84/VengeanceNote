@@ -60,11 +60,11 @@
     if-nez v0, :cond_0
 
     .line 91
-    iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->mParentCard:Lcom/android/internal/telephony/IccCard;
+    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMFileHandler;->mParentCard:Lcom/android/internal/telephony/IccCard;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->mParentCard:Lcom/android/internal/telephony/IccCard;
+    iget-object v1, p0, Lcom/android/internal/telephony/gsm/SIMFileHandler;->mParentCard:Lcom/android/internal/telephony/IccCard;
 
     sget-object v2, Lcom/android/internal/telephony/IccCardApplication$AppType;->APPTYPE_USIM:Lcom/android/internal/telephony/IccCardApplication$AppType;
 

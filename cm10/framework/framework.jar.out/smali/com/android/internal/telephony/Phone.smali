@@ -143,6 +143,12 @@
 
 .field public static final NT_MODE_GSM_UMTS:I = 0x3
 
+.field public static final NT_MODE_LTE_CDMA_EVDO:I = 0x8
+
+.field public static final NT_MODE_LTE_CMDA_EVDO_GSM_WCDMA:I = 0xa
+
+.field public static final NT_MODE_LTE_GSM_WCDMA:I = 0x9
+
 .field public static final NT_MODE_LTE_ONLY:I = 0xb
 
 .field public static final NT_MODE_WCDMA_ONLY:I = 0x2
@@ -410,6 +416,9 @@
 .end method
 
 .method public abstract getLteOnCdmaMode()I
+.end method
+
+.method public abstract getLteOnGsmMode()I
 .end method
 
 .method public abstract getMeid()Ljava/lang/String;

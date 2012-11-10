@@ -32,6 +32,18 @@
 
 .field public static final BATTERY_STATUS_UNKNOWN:I = 0x1
 
+.field public static final DOCK_BATTERY_STATUS_CHARGING:I = 0x2
+
+.field public static final DOCK_BATTERY_STATUS_NOT_CHARGING:I = 0x4
+
+.field public static final DOCK_BATTERY_STATUS_UNKNOWN:I = 0x1
+
+.field public static final EXTRA_DOCK_LEVEL:Ljava/lang/String; = "dock_level"
+
+.field public static final EXTRA_DOCK_PRESENT:Ljava/lang/String; = "dock_present"
+
+.field public static final EXTRA_DOCK_STATUS:Ljava/lang/String; = "dock_status"
+
 .field public static final EXTRA_HEALTH:Ljava/lang/String; = "health"
 
 .field public static final EXTRA_ICON_SMALL:Ljava/lang/String; = "icon-small"
@@ -61,7 +73,7 @@
 
     .prologue
     .line 23
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

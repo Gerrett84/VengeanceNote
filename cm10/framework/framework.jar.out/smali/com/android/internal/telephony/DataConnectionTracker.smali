@@ -10,8 +10,7 @@
         Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;,
         Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;,
         Lcom/android/internal/telephony/DataConnectionTracker$Activity;,
-        Lcom/android/internal/telephony/DataConnectionTracker$State;,
-        Lcom/android/internal/telephony/DataConnectionTracker$Injector;
+        Lcom/android/internal/telephony/DataConnectionTracker$State;
     }
 .end annotation
 
@@ -53,6 +52,12 @@
 .field public static final CMD_SET_POLICY_DATA_ENABLE:I = 0x42020
 
 .field public static final CMD_SET_USER_DATA_ENABLE:I = 0x4201d
+
+.field protected static final DATA_CONNECTION_ACTIVE_PH_LINK_DOWN:I = 0x1
+
+.field protected static final DATA_CONNECTION_ACTIVE_PH_LINK_INACTIVE:I = 0x0
+
+.field protected static final DATA_CONNECTION_ACTIVE_PH_LINK_UP:I = 0x2
 
 .field protected static final DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS_DEFAULT:I = 0xea60
 
@@ -299,17 +304,17 @@
     .locals 2
 
     .prologue
-    .line 113
+    .line 102
     const-string v0, "com.android.internal.telephony"
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker;->ACTION_DATA_CONNECTION_TRACKER_MESSENGER:Ljava/lang/String;
 
-    .line 115
+    .line 104
     const-string v0, "EXTRA_MESSENGER"
 
     sput-object v0, Lcom/android/internal/telephony/DataConnectionTracker;->EXTRA_MESSENGER:Ljava/lang/String;
 
-    .line 173
+    .line 170
     const-string/jumbo v0, "persist.radio.apn_delay"
 
     const/16 v1, 0x1388
@@ -320,7 +325,7 @@
 
     sput v0, Lcom/android/internal/telephony/DataConnectionTracker;->APN_DELAY_MILLIS:I
 
-    .line 188
+    .line 185
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/internal/telephony/DataConnectionTracker;->sPolicyDataEnabled:Z
@@ -341,62 +346,62 @@
 
     const/4 v9, 0x0
 
-    .line 513
+    .line 510
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 176
+    .line 173
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataEnabledLock:Ljava/lang/Object;
 
-    .line 180
+    .line 177
     iput-boolean v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mInternalDataEnabled:Z
 
-    .line 185
+    .line 182
     iput-boolean v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mUserDataEnabled:Z
 
-    .line 190
+    .line 187
     const/16 v0, 0x8
 
     new-array v0, v0, [Z
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
-    .line 192
+    .line 189
     iput v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
-    .line 195
+    .line 192
     const-string v0, "default"
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mRequestedApnType:Ljava/lang/String;
 
-    .line 256
+    .line 253
     iput v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mFailDataSetupCounter:I
 
-    .line 258
+    .line 255
     sget-object v0, Lcom/android/internal/telephony/DataConnection$FailCause;->ERROR_UNSPECIFIED:Lcom/android/internal/telephony/DataConnection$FailCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mFailDataSetupFailCause:Lcom/android/internal/telephony/DataConnection$FailCause;
 
-    .line 264
+    .line 261
     sget-object v0, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->NONE:Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActivity:Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
-    .line 265
+    .line 262
     sget-object v0, Lcom/android/internal/telephony/DataConnectionTracker$State;->IDLE:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mState:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
-    .line 266
+    .line 263
     iput-object v10, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionTracker:Landroid/os/Handler;
 
-    .line 272
+    .line 269
     iput-boolean v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mNetStatPollEnabled:Z
 
-    .line 274
+    .line 271
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;
 
     move-object v1, p0
@@ -407,7 +412,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataStallTxRxSum:Lcom/android/internal/telephony/DataConnectionTracker$TxRxSum;
 
-    .line 276
+    .line 273
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -416,92 +421,92 @@
 
     iput v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataStallAlarmTag:I
 
-    .line 278
+    .line 275
     iput-object v10, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataStallAlarmIntent:Landroid/app/PendingIntent;
 
-    .line 282
+    .line 279
     iput v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mNoRecvPollCount:I
 
-    .line 285
+    .line 282
     iput-boolean v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mIsWifiConnected:Z
 
-    .line 288
+    .line 285
     iput-object v10, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mReconnectIntent:Landroid/app/PendingIntent;
 
-    .line 294
+    .line 291
     iput-boolean v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mAutoAttachOnCreation:Z
 
-    .line 299
+    .line 296
     iput-boolean v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mIsScreenOn:Z
 
-    .line 302
+    .line 299
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v9}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mUniqueIdGenerator:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 305
+    .line 302
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnections:Ljava/util/HashMap;
 
-    .line 309
+    .line 306
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionAsyncChannels:Ljava/util/HashMap;
 
-    .line 313
+    .line 310
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mApnToDataConnectionId:Ljava/util/HashMap;
 
-    .line 317
+    .line 314
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mApnContexts:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 324
+    .line 321
     iput-object v10, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mAllApns:Ljava/util/ArrayList;
 
-    .line 327
+    .line 324
     iput-object v10, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPreferredApn:Lcom/android/internal/telephony/ApnSetting;
 
-    .line 330
+    .line 327
     iput-boolean v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mIsPsRestricted:Z
 
-    .line 333
+    .line 330
     iput-boolean v9, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mIsDisposed:Z
 
-    .line 335
+    .line 332
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/telephony/DataConnectionTracker$1;-><init>(Lcom/android/internal/telephony/DataConnectionTracker;)V
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 514
+    .line 511
     const-string v0, "DCT.constructor"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 515
+    .line 512
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
-    .line 517
+    .line 514
     new-instance v6, Landroid/content/IntentFilter;
 
     invoke-direct {v6}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 518
+    .line 515
     .local v6, filter:Landroid/content/IntentFilter;
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getActionIntentReconnectAlarm()Ljava/lang/String;
 
@@ -509,32 +514,32 @@
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 519
+    .line 516
     const-string v0, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 520
+    .line 517
     const-string v0, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 521
+    .line 518
     const-string v0, "android.net.wifi.STATE_CHANGE"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 522
+    .line 519
     const-string v0, "android.net.wifi.WIFI_STATE_CHANGED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 523
+    .line 520
     const-string v0, "com.android.internal.telephony.dataconnectiontracker.intent_set_fail_data_setup_counter"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 525
+    .line 522
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -558,7 +563,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mUserDataEnabled:Z
 
-    .line 530
+    .line 527
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -571,7 +576,7 @@
 
     invoke-virtual {v0, v1, v6, v10, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 535
+    .line 532
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     const-string/jumbo v1, "net.def_data_on_boot"
@@ -582,21 +587,21 @@
 
     aput-boolean v1, v0, v9
 
-    .line 537
+    .line 534
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     aget-boolean v0, v0, v9
 
     if-eqz v0, :cond_0
 
-    .line 538
+    .line 535
     iget v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
-    .line 541
+    .line 538
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -608,7 +613,7 @@
 
     move-result-object v7
 
-    .line 542
+    .line 539
     .local v7, sp:Landroid/content/SharedPreferences;
     const-string v0, "disabled_on_boot_key"
 
@@ -618,7 +623,7 @@
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mAutoAttachOnCreation:Z
 
-    .line 545
+    .line 542
     new-instance v0, Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;
 
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -627,7 +632,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataRoamingSettingObserver:Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;
 
-    .line 546
+    .line 543
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataRoamingSettingObserver:Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;
 
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -638,14 +643,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;->register(Landroid/content/Context;)V
 
-    .line 547
+    .line 544
     return-void
 
     .end local v7           #sp:Landroid/content/SharedPreferences;
     :cond_1
     move v0, v9
 
-    .line 525
+    .line 522
     goto :goto_0
 .end method
 
@@ -654,7 +659,7 @@
     .parameter "x0"
 
     .prologue
-    .line 68
+    .line 64
     invoke-direct {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->handleDataOnRoamingChange()V
 
     return-void
@@ -664,7 +669,7 @@
     .locals 1
 
     .prologue
-    .line 645
+    .line 642
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getServiceState()Landroid/telephony/ServiceState;
@@ -677,17 +682,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 646
+    .line 643
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getDataOnRoamingEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 647
+    .line 644
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->resetAllRetryCounts()V
 
-    .line 649
+    .line 646
     :cond_0
     const v0, 0x4200b
 
@@ -697,7 +702,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 651
+    .line 648
     :cond_1
     return-void
 .end method
@@ -708,7 +713,7 @@
     .parameter "apnId"
 
     .prologue
-    .line 929
+    .line 918
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {p0, p2}, Lcom/android/internal/telephony/DataConnectionTracker;->apnIdToType(I)Ljava/lang/String;
@@ -719,7 +724,7 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->notifyDataConnection(Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/telephony/Phone$DataState;)V
 
-    .line 930
+    .line 919
     return-void
 .end method
 
@@ -729,7 +734,7 @@
     .parameter "apnId"
 
     .prologue
-    .line 911
+    .line 900
     sget-object v0, Lcom/android/internal/telephony/DataConnectionTracker$2;->$SwitchMap$com$android$internal$telephony$DataConnectionTracker$State:[I
 
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mState:Lcom/android/internal/telephony/DataConnectionTracker$State;
@@ -742,12 +747,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 925
+    .line 914
     :goto_0
     :pswitch_0
     return-void
 
-    .line 917
+    .line 906
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -761,7 +766,7 @@
 
     goto :goto_0
 
-    .line 921
+    .line 910
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -773,7 +778,7 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/internal/telephony/PhoneBase;->notifyDataConnection(Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/telephony/Phone$DataState;)V
 
-    .line 922
+    .line 911
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {p0, p2}, Lcom/android/internal/telephony/DataConnectionTracker;->apnIdToType(I)Ljava/lang/String;
@@ -786,7 +791,7 @@
 
     goto :goto_0
 
-    .line 911
+    .line 900
     nop
 
     :pswitch_data_0
@@ -807,10 +812,10 @@
     .parameter "id"
 
     .prologue
-    .line 852
+    .line 841
     packed-switch p1, :pswitch_data_0
 
-    .line 870
+    .line 859
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -837,61 +842,61 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 871
+    .line 860
     const-string v0, "default"
 
     :goto_0
     return-object v0
 
-    .line 854
+    .line 843
     :pswitch_0
     const-string v0, "default"
 
     goto :goto_0
 
-    .line 856
+    .line 845
     :pswitch_1
     const-string/jumbo v0, "mms"
 
     goto :goto_0
 
-    .line 858
+    .line 847
     :pswitch_2
     const-string/jumbo v0, "supl"
 
     goto :goto_0
 
-    .line 860
+    .line 849
     :pswitch_3
     const-string v0, "dun"
 
     goto :goto_0
 
-    .line 862
+    .line 851
     :pswitch_4
     const-string v0, "hipri"
 
     goto :goto_0
 
-    .line 864
+    .line 853
     :pswitch_5
     const-string v0, "ims"
 
     goto :goto_0
 
-    .line 866
+    .line 855
     :pswitch_6
     const-string v0, "fota"
 
     goto :goto_0
 
-    .line 868
+    .line 857
     :pswitch_7
     const-string v0, "cbs"
 
     goto :goto_0
 
-    .line 852
+    .line 841
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -910,7 +915,7 @@
     .parameter "type"
 
     .prologue
-    .line 830
+    .line 819
     const-string v0, "default"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -919,14 +924,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 831
+    .line 820
     const/4 v0, 0x0
 
-    .line 847
+    .line 836
     :goto_0
     return v0
 
-    .line 832
+    .line 821
     :cond_0
     const-string/jumbo v0, "mms"
 
@@ -936,12 +941,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 833
+    .line 822
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 834
+    .line 823
     :cond_1
     const-string/jumbo v0, "supl"
 
@@ -951,12 +956,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 835
+    .line 824
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 836
+    .line 825
     :cond_2
     const-string v0, "dun"
 
@@ -966,12 +971,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 837
+    .line 826
     const/4 v0, 0x3
 
     goto :goto_0
 
-    .line 838
+    .line 827
     :cond_3
     const-string v0, "hipri"
 
@@ -981,12 +986,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 839
+    .line 828
     const/4 v0, 0x4
 
     goto :goto_0
 
-    .line 840
+    .line 829
     :cond_4
     const-string v0, "ims"
 
@@ -996,12 +1001,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 841
+    .line 830
     const/4 v0, 0x5
 
     goto :goto_0
 
-    .line 842
+    .line 831
     :cond_5
     const-string v0, "fota"
 
@@ -1011,12 +1016,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 843
+    .line 832
     const/4 v0, 0x6
 
     goto :goto_0
 
-    .line 844
+    .line 833
     :cond_6
     const-string v0, "cbs"
 
@@ -1026,12 +1031,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 845
+    .line 834
     const/4 v0, 0x7
 
     goto :goto_0
 
-    .line 847
+    .line 836
     :cond_7
     const/4 v0, -0x1
 
@@ -1042,14 +1047,14 @@
     .locals 3
 
     .prologue
-    .line 561
+    .line 558
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker;->ACTION_DATA_CONNECTION_TRACKER_MESSENGER:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 562
+    .line 559
     .local v0, intent:Landroid/content/Intent;
     sget-object v1, Lcom/android/internal/telephony/DataConnectionTracker;->EXTRA_MESSENGER:Ljava/lang/String;
 
@@ -1059,7 +1064,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 563
+    .line 560
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -1068,7 +1073,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 564
+    .line 561
     return-void
 .end method
 
@@ -1077,21 +1082,21 @@
     .parameter "cause"
 
     .prologue
-    .line 1150
+    .line 1139
     const v1, 0x4201e
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1151
+    .line 1140
     .local v0, msg:Landroid/os/Message;
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 1152
+    .line 1141
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1153
+    .line 1142
     return-void
 .end method
 
@@ -1106,7 +1111,7 @@
 
     const/4 v2, 0x0
 
-    .line 1006
+    .line 995
     monitor-enter p0
 
     :try_start_0
@@ -1136,27 +1141,27 @@
 
     invoke-virtual {p0, v4}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1007
+    .line 996
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->apnTypeToId(Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v0
 
-    .line 1008
+    .line 997
     .local v0, id:I
     const/4 v4, -0x1
 
     if-ne v0, v4, :cond_1
 
-    .line 1023
+    .line 1012
     :cond_0
     :goto_0
     monitor-exit p0
 
     return v1
 
-    .line 1011
+    .line 1000
     :cond_1
     :try_start_1
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnIdEnabled(I)Z
@@ -1165,12 +1170,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 1012
+    .line 1001
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->setEnabled(IZ)V
 
-    .line 1013
+    .line 1002
     const-string v1, "default"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnTypeActive(Ljava/lang/String;)Z
@@ -1179,7 +1184,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1014
+    .line 1003
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     const/4 v4, 0x0
@@ -1192,22 +1197,22 @@
 
     move v1, v2
 
-    .line 1015
+    .line 1004
     goto :goto_0
 
     :cond_2
     move v1, v3
 
-    .line 1017
+    .line 1006
     goto :goto_0
 
     :cond_3
     move v1, v3
 
-    .line 1020
+    .line 1009
     goto :goto_0
 
-    .line 1006
+    .line 995
     .end local v0           #id:I
     :catchall_0
     move-exception v1
@@ -1221,12 +1226,12 @@
     .locals 4
 
     .prologue
-    .line 550
+    .line 547
     const-string v2, "DCT.dispose"
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 551
+    .line 548
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionAsyncChannels:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -1251,25 +1256,25 @@
 
     check-cast v0, Lcom/android/internal/telephony/DataConnectionAc;
 
-    .line 552
+    .line 549
     .local v0, dcac:Lcom/android/internal/telephony/DataConnectionAc;
     invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionAc;->disconnect()V
 
     goto :goto_0
 
-    .line 554
+    .line 551
     .end local v0           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
     :cond_0
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionAsyncChannels:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->clear()V
 
-    .line 555
+    .line 552
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mIsDisposed:Z
 
-    .line 556
+    .line 553
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -1280,7 +1285,7 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 557
+    .line 554
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataRoamingSettingObserver:Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;
 
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
@@ -1291,7 +1296,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/telephony/DataConnectionTracker$DataRoamingSettingObserver;->unregister(Landroid/content/Context;)V
 
-    .line 558
+    .line 555
     return-void
 .end method
 
@@ -1302,12 +1307,12 @@
     .parameter "args"
 
     .prologue
-    .line 1235
+    .line 1224
     const-string v8, "DataConnectionTracker:"
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1236
+    .line 1225
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1330,7 +1335,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1237
+    .line 1226
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1353,7 +1358,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1238
+    .line 1227
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1376,12 +1381,12 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1239
+    .line 1228
     const-string v8, " dataEnabled:"
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1240
+    .line 1229
     const/4 v3, 0x0
 
     .local v3, i:I
@@ -1392,7 +1397,7 @@
 
     if-ge v3, v8, :cond_0
 
-    .line 1241
+    .line 1230
     const-string v8, "  dataEnabled[%d]=%b\n"
 
     const/4 v9, 0x2
@@ -1421,16 +1426,16 @@
 
     invoke-virtual {p2, v8, v9}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 1240
+    .line 1229
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1243
+    .line 1232
     :cond_0
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1244
+    .line 1233
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1453,7 +1458,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1245
+    .line 1234
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1476,7 +1481,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1246
+    .line 1235
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1503,7 +1508,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1247
+    .line 1236
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1526,7 +1531,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1248
+    .line 1237
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1549,7 +1554,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1249
+    .line 1238
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1572,7 +1577,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1250
+    .line 1239
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1595,7 +1600,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1251
+    .line 1240
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1618,7 +1623,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1252
+    .line 1241
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1641,7 +1646,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1253
+    .line 1242
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1664,7 +1669,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1254
+    .line 1243
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1687,7 +1692,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1255
+    .line 1244
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1710,7 +1715,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1256
+    .line 1245
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1733,7 +1738,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1257
+    .line 1246
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1756,7 +1761,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1258
+    .line 1247
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1779,7 +1784,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1259
+    .line 1248
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1802,7 +1807,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1260
+    .line 1249
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1825,7 +1830,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1261
+    .line 1250
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1848,7 +1853,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1262
+    .line 1251
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -1871,22 +1876,22 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1263
+    .line 1252
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1264
+    .line 1253
     const-string v8, " ***************************************"
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1265
+    .line 1254
     iget-object v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnections:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v7
 
-    .line 1266
+    .line 1255
     .local v7, mDcSet:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/Integer;Lcom/android/internal/telephony/DataConnection;>;>;"
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -1912,7 +1917,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1267
+    .line 1256
     invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -1931,7 +1936,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 1268
+    .line 1257
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Lcom/android/internal/telephony/DataConnection;>;"
     const-string v8, " *** mDataConnection[%d] \n"
 
@@ -1949,7 +1954,7 @@
 
     invoke-virtual {p2, v8, v9}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 1269
+    .line 1258
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v8
@@ -1960,24 +1965,24 @@
 
     goto :goto_1
 
-    .line 1271
+    .line 1260
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Lcom/android/internal/telephony/DataConnection;>;"
     :cond_1
     const-string v8, " ***************************************"
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1272
+    .line 1261
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1273
+    .line 1262
     iget-object v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mApnToDataConnectionId:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v6
 
-    .line 1274
+    .line 1263
     .local v6, mApnToDcIdSet:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;>;"
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -2003,7 +2008,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1275
+    .line 1264
     invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -2021,7 +2026,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 1276
+    .line 1265
     .local v2, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;"
     const-string v8, " mApnToDataConnectonId[%s]=%d\n"
 
@@ -2049,29 +2054,29 @@
 
     goto :goto_2
 
-    .line 1278
+    .line 1267
     .end local v2           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;"
     :cond_2
     const-string v8, " ***************************************"
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1279
+    .line 1268
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1280
+    .line 1269
     iget-object v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mApnContexts:Ljava/util/concurrent/ConcurrentHashMap;
 
     if-eqz v8, :cond_4
 
-    .line 1281
+    .line 1270
     iget-object v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mApnContexts:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v8}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v5
 
-    .line 1282
+    .line 1271
     .local v5, mApnContextsSet:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/internal/telephony/ApnContext;>;>;"
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -2097,7 +2102,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1283
+    .line 1272
     invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -2115,7 +2120,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 1284
+    .line 1273
     .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/internal/telephony/ApnContext;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -2127,19 +2132,19 @@
 
     goto :goto_3
 
-    .line 1286
+    .line 1275
     .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/internal/telephony/ApnContext;>;"
     :cond_3
     const-string v8, " ***************************************"
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1290
+    .line 1279
     .end local v5           #mApnContextsSet:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/internal/telephony/ApnContext;>;>;"
     :goto_4
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1291
+    .line 1280
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2162,12 +2167,12 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1292
+    .line 1281
     iget-object v8, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mAllApns:Ljava/util/ArrayList;
 
     if-eqz v8, :cond_6
 
-    .line 1293
+    .line 1282
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2194,7 +2199,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1294
+    .line 1283
     const/4 v3, 0x0
 
     :goto_5
@@ -2206,7 +2211,7 @@
 
     if-ge v3, v8, :cond_5
 
-    .line 1295
+    .line 1284
     const-string v8, " mAllApns[%d]: %s\n"
 
     const/4 v9, 0x2
@@ -2233,12 +2238,12 @@
 
     invoke-virtual {p2, v8, v9}, Ljava/io/PrintWriter;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintWriter;
 
-    .line 1294
+    .line 1283
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_5
 
-    .line 1288
+    .line 1277
     :cond_4
     const-string v8, " mApnContexts=null"
 
@@ -2246,11 +2251,11 @@
 
     goto :goto_4
 
-    .line 1297
+    .line 1286
     :cond_5
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1301
+    .line 1290
     :goto_6
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -2274,7 +2279,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1302
+    .line 1291
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2297,7 +2302,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1303
+    .line 1292
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2320,7 +2325,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1304
+    .line 1293
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2343,7 +2348,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1305
+    .line 1294
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2366,13 +2371,13 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1306
+    .line 1295
     invoke-virtual {p2}, Ljava/io/PrintWriter;->flush()V
 
-    .line 1307
+    .line 1296
     return-void
 
-    .line 1299
+    .line 1288
     :cond_6
     const-string v8, " mAllApns=null"
 
@@ -2388,7 +2393,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 968
+    .line 957
     monitor-enter p0
 
     :try_start_0
@@ -2398,22 +2403,22 @@
 
     move-result v0
 
-    .line 969
+    .line 958
     .local v0, id:I
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_0
 
-    .line 970
+    .line 959
     const/4 v1, 0x3
 
-    .line 988
+    .line 977
     :goto_0
     monitor-exit p0
 
     return v1
 
-    .line 974
+    .line 963
     :cond_0
     :try_start_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2476,24 +2481,24 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 978
+    .line 967
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnTypeAvailable(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 979
+    .line 968
     const-string/jumbo v1, "type not available"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 980
+    .line 969
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 983
+    .line 972
     :cond_1
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnIdEnabled(I)Z
 
@@ -2501,12 +2506,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 984
+    .line 973
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 986
+    .line 975
     :cond_2
     const/4 v2, 0x1
 
@@ -2516,7 +2521,7 @@
 
     goto :goto_0
 
-    .line 968
+    .line 957
     .end local v0           #id:I
     :catchall_0
     move-exception v1
@@ -2530,7 +2535,7 @@
     .locals 5
 
     .prologue
-    .line 582
+    .line 579
     const-string/jumbo v3, "net.tethering.noprovisioning"
 
     const/4 v4, 0x0
@@ -2541,20 +2546,20 @@
 
     if-eqz v3, :cond_1
 
-    .line 583
+    .line 580
     const-string v3, "fetchDunApn: net.tethering.noprovisioning=true ret: null"
 
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 584
+    .line 581
     const/4 v2, 0x0
 
-    .line 598
+    .line 595
     :cond_0
     :goto_0
     return-object v2
 
-    .line 586
+    .line 583
     :cond_1
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -2562,7 +2567,7 @@
 
     move-result-object v1
 
-    .line 587
+    .line 584
     .local v1, c:Landroid/content/Context;
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -2574,33 +2579,33 @@
 
     move-result-object v0
 
-    .line 589
+    .line 586
     .local v0, apnData:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/internal/telephony/ApnSetting;->fromString(Ljava/lang/String;)Lcom/android/internal/telephony/ApnSetting;
 
     move-result-object v2
 
-    .line 590
+    .line 587
     .local v2, dunSetting:Lcom/android/internal/telephony/ApnSetting;
     if-nez v2, :cond_0
 
-    .line 595
+    .line 592
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    const v4, 0x1040019
+    const v4, 0x1040021
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 596
+    .line 593
     invoke-static {v0}, Lcom/android/internal/telephony/ApnSetting;->fromString(Ljava/lang/String;)Lcom/android/internal/telephony/ApnSetting;
 
     move-result-object v2
 
-    .line 598
+    .line 595
     goto :goto_0
 .end method
 
@@ -2615,21 +2620,21 @@
     .parameter "apnType"
 
     .prologue
-    .line 614
+    .line 611
     const/4 v0, 0x0
 
-    .line 615
+    .line 612
     .local v0, result:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActiveApn:Lcom/android/internal/telephony/ApnSetting;
 
     if-eqz v1, :cond_0
 
-    .line 616
+    .line 613
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActiveApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v0, v1, Lcom/android/internal/telephony/ApnSetting;->apn:Ljava/lang/String;
 
-    .line 618
+    .line 615
     :cond_0
     return-object v0
 .end method
@@ -2638,29 +2643,29 @@
     .locals 3
 
     .prologue
-    .line 603
+    .line 600
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActiveApn:Lcom/android/internal/telephony/ApnSetting;
 
     if-eqz v1, :cond_0
 
-    .line 604
+    .line 601
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActiveApn:Lcom/android/internal/telephony/ApnSetting;
 
     iget-object v0, v1, Lcom/android/internal/telephony/ApnSetting;->types:[Ljava/lang/String;
 
-    .line 609
+    .line 606
     .local v0, result:[Ljava/lang/String;
     :goto_0
     return-object v0
 
-    .line 606
+    .line 603
     .end local v0           #result:[Ljava/lang/String;
     :cond_0
     const/4 v1, 0x1
 
     new-array v0, v1, [Ljava/lang/String;
 
-    .line 607
+    .line 604
     .restart local v0       #result:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -2675,7 +2680,7 @@
     .locals 1
 
     .prologue
-    .line 567
+    .line 564
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActivity:Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
     return-object v0
@@ -2683,17 +2688,14 @@
 
 .method public getAnyDataEnabled()Z
     .locals 3
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
 
     .prologue
-    .line 811
+    .line 801
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataEnabledLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 812
+    .line 802
     :try_start_0
     iget-boolean v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mInternalDataEnabled:Z
 
@@ -2713,19 +2715,14 @@
 
     const/4 v0, 0x1
 
-    .line 814
+    .line 804
     .local v0, result:Z
     :goto_0
-    invoke-static {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker$Injector;->getAnyDataEnabled(Lcom/android/internal/telephony/DataConnectionTracker;Z)Z
-
-    move-result v0
-
-    .line 815
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 816
+    .line 805
     if-nez v0, :cond_0
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2748,18 +2745,18 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 817
+    .line 806
     :cond_0
     return v0
 
-    .line 812
+    .line 802
     .end local v0           #result:Z
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 815
+    .line 804
     :catchall_0
     move-exception v1
 
@@ -2777,7 +2774,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 637
+    .line 634
     :try_start_0
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -2789,7 +2786,7 @@
 
     move-result-object v0
 
-    .line 638
+    .line 635
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v3, "data_roaming"
 
@@ -2803,17 +2800,17 @@
 
     const/4 v2, 0x1
 
-    .line 640
+    .line 637
     .end local v0           #resolver:Landroid/content/ContentResolver;
     :cond_0
     :goto_0
     return v2
 
-    .line 639
+    .line 636
     :catch_0
     move-exception v1
 
-    .line 640
+    .line 637
     .local v1, snfe:Landroid/provider/Settings$SettingNotFoundException;
     goto :goto_0
 .end method
@@ -2823,59 +2820,7 @@
     .parameter "apnType"
 
     .prologue
-    .line 888
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->apnTypeToId(Ljava/lang/String;)I
-
-    move-result v1
-
-    .line 889
-    .local v1, id:I
-    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnIdEnabled(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 891
-    iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionAsyncChannels:Ljava/util/HashMap;
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/internal/telephony/DataConnectionAc;
-
-    .line 892
-    .local v0, dcac:Lcom/android/internal/telephony/DataConnectionAc;
-    invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionAc;->getLinkCapabilitiesSync()Landroid/net/LinkCapabilities;
-
-    move-result-object v2
-
-    .line 894
-    .end local v0           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
-    :goto_0
-    return-object v2
-
-    :cond_0
-    new-instance v2, Landroid/net/LinkCapabilities;
-
-    invoke-direct {v2}, Landroid/net/LinkCapabilities;-><init>()V
-
-    goto :goto_0
-.end method
-
-.method protected getLinkProperties(Ljava/lang/String;)Landroid/net/LinkProperties;
-    .locals 4
-    .parameter "apnType"
-
-    .prologue
-    .line 876
+    .line 877
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->apnTypeToId(Ljava/lang/String;)I
 
     move-result v1
@@ -2905,11 +2850,63 @@
 
     .line 881
     .local v0, dcac:Lcom/android/internal/telephony/DataConnectionAc;
-    invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionAc;->getLinkPropertiesSync()Landroid/net/LinkProperties;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionAc;->getLinkCapabilitiesSync()Landroid/net/LinkCapabilities;
 
     move-result-object v2
 
     .line 883
+    .end local v0           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
+    :goto_0
+    return-object v2
+
+    :cond_0
+    new-instance v2, Landroid/net/LinkCapabilities;
+
+    invoke-direct {v2}, Landroid/net/LinkCapabilities;-><init>()V
+
+    goto :goto_0
+.end method
+
+.method protected getLinkProperties(Ljava/lang/String;)Landroid/net/LinkProperties;
+    .locals 4
+    .parameter "apnType"
+
+    .prologue
+    .line 865
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->apnTypeToId(Ljava/lang/String;)I
+
+    move-result v1
+
+    .line 867
+    .local v1, id:I
+    invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnIdEnabled(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 869
+    iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionAsyncChannels:Ljava/util/HashMap;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/internal/telephony/DataConnectionAc;
+
+    .line 870
+    .local v0, dcac:Lcom/android/internal/telephony/DataConnectionAc;
+    invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionAc;->getLinkPropertiesSync()Landroid/net/LinkProperties;
+
+    move-result-object v2
+
+    .line 872
     .end local v0           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
     :goto_0
     return-object v2
@@ -2927,7 +2924,7 @@
     .parameter "forDefault"
 
     .prologue
-    .line 1205
+    .line 1194
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getServiceState()Landroid/telephony/ServiceState;
@@ -2938,7 +2935,7 @@
 
     move-result v0
 
-    .line 1207
+    .line 1196
     .local v0, nt:I
     const/4 v1, 0x4
 
@@ -2964,7 +2961,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1214
+    .line 1203
     :cond_0
     const-string/jumbo v1, "ro.cdma.data_retry_config"
 
@@ -2972,15 +2969,15 @@
 
     move-result-object v1
 
-    .line 1220
+    .line 1209
     :goto_0
     return-object v1
 
-    .line 1217
+    .line 1206
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 1218
+    .line 1207
     const-string/jumbo v1, "ro.gsm.data_retry_config"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -2989,7 +2986,7 @@
 
     goto :goto_0
 
-    .line 1220
+    .line 1209
     :cond_2
     const-string/jumbo v1, "ro.gsm.2nd_data_retry_config"
 
@@ -3015,12 +3012,12 @@
 
     const/4 v7, 0x1
 
-    .line 687
+    .line 684
     iget v8, p1, Landroid/os/Message;->what:I
 
     sparse-switch v8, :sswitch_data_0
 
-    .line 791
+    .line 788
     const-string v7, "DATA"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -3043,12 +3040,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 794
+    .line 791
     :cond_0
     :goto_0
     return-void
 
-    .line 689
+    .line 686
     :sswitch_0
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -3070,12 +3067,12 @@
 
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 690
+    .line 687
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Lcom/android/internal/telephony/DataConnectionAc;
 
-    .line 691
+    .line 688
     .local v2, dcac:Lcom/android/internal/telephony/DataConnectionAc;
     iget-object v7, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionAsyncChannels:Ljava/util/HashMap;
 
@@ -3091,12 +3088,12 @@
 
     invoke-virtual {v7, v8}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 692
+    .line 689
     invoke-virtual {v2}, Lcom/android/internal/telephony/DataConnectionAc;->disconnected()V
 
     goto :goto_0
 
-    .line 696
+    .line 693
     .end local v2           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
     :sswitch_1
     iget v7, p1, Landroid/os/Message;->arg1:I
@@ -3107,11 +3104,11 @@
 
     goto :goto_0
 
-    .line 700
+    .line 697
     :sswitch_2
     const/4 v5, 0x0
 
-    .line 701
+    .line 698
     .local v5, reason:Ljava/lang/String;
     iget-object v7, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -3119,20 +3116,20 @@
 
     if-eqz v7, :cond_1
 
-    .line 702
+    .line 699
     iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     .end local v5           #reason:Ljava/lang/String;
     check-cast v5, Ljava/lang/String;
 
-    .line 704
+    .line 701
     .restart local v5       #reason:Ljava/lang/String;
     :cond_1
     invoke-virtual {p0, v5}, Lcom/android/internal/telephony/DataConnectionTracker;->onTrySetupData(Ljava/lang/String;)Z
 
     goto :goto_0
 
-    .line 708
+    .line 705
     .end local v5           #reason:Ljava/lang/String;
     :sswitch_3
     iget v7, p1, Landroid/os/Message;->arg1:I
@@ -3141,7 +3138,7 @@
 
     goto :goto_0
 
-    .line 712
+    .line 709
     :sswitch_4
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getDataOnRoamingEnabled()Z
 
@@ -3149,40 +3146,40 @@
 
     if-nez v7, :cond_2
 
-    .line 713
+    .line 710
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->resetAllRetryCounts()V
 
-    .line 715
+    .line 712
     :cond_2
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onRoamingOff()V
 
     goto :goto_0
 
-    .line 719
+    .line 716
     :sswitch_5
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onRoamingOn()V
 
     goto :goto_0
 
-    .line 723
+    .line 720
     :sswitch_6
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onRadioAvailable()V
 
     goto :goto_0
 
-    .line 727
+    .line 724
     :sswitch_7
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onRadioOffOrNotAvailable()V
 
     goto :goto_0
 
-    .line 731
+    .line 728
     :sswitch_8
     iget v7, p1, Landroid/os/Message;->arg1:I
 
     iput v7, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mCidActive:I
 
-    .line 732
+    .line 729
     iget-object v7, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v7, Landroid/os/AsyncResult;
@@ -3191,7 +3188,7 @@
 
     goto :goto_0
 
-    .line 736
+    .line 733
     :sswitch_9
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -3213,7 +3210,7 @@
 
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 737
+    .line 734
     iget v8, p1, Landroid/os/Message;->arg1:I
 
     iget-object v7, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -3224,19 +3221,19 @@
 
     goto/16 :goto_0
 
-    .line 741
+    .line 738
     :sswitch_a
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onVoiceCallStarted()V
 
     goto/16 :goto_0
 
-    .line 745
+    .line 742
     :sswitch_b
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onVoiceCallEnded()V
 
     goto/16 :goto_0
 
-    .line 749
+    .line 746
     :sswitch_c
     iget-object v7, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -3246,13 +3243,13 @@
 
     goto/16 :goto_0
 
-    .line 753
+    .line 750
     :sswitch_d
     iget v8, p1, Landroid/os/Message;->arg1:I
 
     if-nez v8, :cond_3
 
-    .line 754
+    .line 751
     .local v6, tearDown:Z
     :goto_1
     iget v8, p1, Landroid/os/Message;->arg2:I
@@ -3269,10 +3266,10 @@
     :cond_3
     move v6, v7
 
-    .line 753
+    .line 750
     goto :goto_1
 
-    .line 758
+    .line 755
     :sswitch_e
     iget v8, p1, Landroid/os/Message;->arg1:I
 
@@ -3280,7 +3277,7 @@
 
     move v3, v7
 
-    .line 759
+    .line 756
     .local v3, enabled:Z
     :goto_2
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/DataConnectionTracker;->onSetInternalDataEnabled(Z)V
@@ -3291,16 +3288,16 @@
     :cond_4
     move v3, v6
 
-    .line 758
+    .line 755
     goto :goto_2
 
-    .line 763
+    .line 760
     :sswitch_f
     const-string v7, "EVENT_RESET_DONE"
 
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 764
+    .line 761
     iget-object v7, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v7, Landroid/os/AsyncResult;
@@ -3309,7 +3306,7 @@
 
     goto/16 :goto_0
 
-    .line 768
+    .line 765
     :sswitch_10
     iget v8, p1, Landroid/os/Message;->arg1:I
 
@@ -3317,7 +3314,7 @@
 
     move v3, v7
 
-    .line 769
+    .line 766
     .restart local v3       #enabled:Z
     :goto_3
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3340,7 +3337,7 @@
 
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 770
+    .line 767
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/DataConnectionTracker;->onSetUserDataEnabled(Z)V
 
     goto/16 :goto_0
@@ -3349,10 +3346,10 @@
     :cond_5
     move v3, v6
 
-    .line 768
+    .line 765
     goto :goto_3
 
-    .line 774
+    .line 771
     :sswitch_11
     iget v8, p1, Landroid/os/Message;->arg1:I
 
@@ -3360,7 +3357,7 @@
 
     move v4, v7
 
-    .line 775
+    .line 772
     .local v4, met:Z
     :goto_4
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3383,16 +3380,16 @@
 
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 776
+    .line 773
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 777
+    .line 774
     .local v1, bundle:Landroid/os/Bundle;
     if-eqz v1, :cond_0
 
-    .line 778
+    .line 775
     const-string v7, "apnType"
 
     invoke-virtual {v1, v7}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
@@ -3401,11 +3398,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 779
+    .line 776
     .local v0, apnType:Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 780
+    .line 777
     invoke-virtual {p0, v0, v4}, Lcom/android/internal/telephony/DataConnectionTracker;->onSetDependencyMet(Ljava/lang/String;Z)V
 
     goto/16 :goto_0
@@ -3416,10 +3413,10 @@
     :cond_6
     move v4, v6
 
-    .line 774
+    .line 771
     goto :goto_4
 
-    .line 786
+    .line 783
     :sswitch_12
     iget v8, p1, Landroid/os/Message;->arg1:I
 
@@ -3427,7 +3424,7 @@
 
     move v3, v7
 
-    .line 787
+    .line 784
     .restart local v3       #enabled:Z
     :goto_5
     invoke-virtual {p0, v3}, Lcom/android/internal/telephony/DataConnectionTracker;->onSetPolicyDataEnabled(Z)V
@@ -3438,10 +3435,10 @@
     :cond_7
     move v3, v6
 
-    .line 786
+    .line 783
     goto :goto_5
 
-    .line 687
+    .line 684
     :sswitch_data_0
     .sparse-switch
         0x11004 -> :sswitch_0
@@ -3471,14 +3468,14 @@
     .parameter "id"
 
     .prologue
-    .line 951
+    .line 940
     monitor-enter p0
 
     const/4 v0, -0x1
 
     if-eq p1, v0, :cond_0
 
-    .line 952
+    .line 941
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
@@ -3486,7 +3483,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 954
+    .line 943
     :goto_0
     monitor-exit p0
 
@@ -3497,7 +3494,7 @@
 
     goto :goto_0
 
-    .line 951
+    .line 940
     :catchall_0
     move-exception v0
 
@@ -3515,7 +3512,7 @@
 
     const/4 v2, 0x0
 
-    .line 572
+    .line 569
     const-string v3, "dun"
 
     invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -3524,16 +3521,16 @@
 
     if-eqz v3, :cond_2
 
-    .line 573
+    .line 570
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->fetchDunApn()Lcom/android/internal/telephony/ApnSetting;
 
     move-result-object v0
 
-    .line 574
+    .line 571
     .local v0, dunApn:Lcom/android/internal/telephony/ApnSetting;
     if-eqz v0, :cond_2
 
-    .line 575
+    .line 572
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActiveApn:Lcom/android/internal/telephony/ApnSetting;
 
     if-eqz v3, :cond_1
@@ -3554,7 +3551,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 578
+    .line 575
     .end local v0           #dunApn:Lcom/android/internal/telephony/ApnSetting;
     :cond_0
     :goto_0
@@ -3564,10 +3561,10 @@
     :cond_1
     move v1, v2
 
-    .line 575
+    .line 572
     goto :goto_0
 
-    .line 578
+    .line 575
     .end local v0           #dunApn:Lcom/android/internal/telephony/ApnSetting;
     :cond_2
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mActiveApn:Lcom/android/internal/telephony/ApnSetting;
@@ -3596,13 +3593,13 @@
     .parameter "apnType"
 
     .prologue
-    .line 943
+    .line 932
     if-nez p1, :cond_0
 
-    .line 944
+    .line 933
     const/4 v0, 0x0
 
-    .line 946
+    .line 935
     :goto_0
     return v0
 
@@ -3631,12 +3628,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 472
+    .line 469
     iget-object v1, p1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v1, :cond_0
 
-    .line 473
+    .line 470
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3659,33 +3656,33 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 487
+    .line 484
     :goto_0
     return v0
 
-    .line 476
+    .line 473
     :cond_0
     iget v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mFailDataSetupCounter:I
 
     if-gtz v1, :cond_1
 
-    .line 477
+    .line 474
     const-string v0, "isDataSetupCompleteOk return true"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 478
+    .line 475
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 480
+    .line 477
     :cond_1
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mFailDataSetupFailCause:Lcom/android/internal/telephony/DataConnection$FailCause;
 
     iput-object v1, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
-    .line 482
+    .line 479
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3720,7 +3717,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 486
+    .line 483
     iget v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mFailDataSetupCounter:I
 
     add-int/lit8 v1, v1, -0x1
@@ -3737,12 +3734,12 @@
     .locals 3
 
     .prologue
-    .line 822
+    .line 811
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataEnabledLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 823
+    .line 812
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
@@ -3763,14 +3760,14 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 824
+    .line 813
     .local v0, result:Z
     :goto_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 825
+    .line 814
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3791,17 +3788,17 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 826
+    .line 815
     return v0
 
-    .line 823
+    .line 812
     .end local v0           #result:Z
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 824
+    .line 813
     :catchall_0
     move-exception v1
 
@@ -3811,53 +3808,6 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v1
-.end method
-
-.method protected isMmsDataEnabled()Z
-    .locals 3
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 798
-    iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mRequestedApnType:Ljava/lang/String;
-
-    const-string/jumbo v2, "mms"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v1
-
-    const-string v2, "always_enable_mms"
-
-    invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method protected abstract log(Ljava/lang/String;)V
@@ -3871,7 +3821,7 @@
     .parameter "reason"
 
     .prologue
-    .line 900
+    .line 889
     const/4 v0, 0x0
 
     .local v0, id:I
@@ -3880,14 +3830,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 901
+    .line 890
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     aget-boolean v1, v1, v0
 
     if-eqz v1, :cond_0
 
-    .line 902
+    .line 891
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->apnIdToType(I)Ljava/lang/String;
@@ -3896,17 +3846,17 @@
 
     invoke-virtual {v1, p1, v2}, Lcom/android/internal/telephony/PhoneBase;->notifyDataConnection(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 900
+    .line 889
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 905
+    .line 894
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->notifyOffApnsOfAvailability(Ljava/lang/String;)V
 
-    .line 906
+    .line 895
     return-void
 .end method
 
@@ -3915,7 +3865,7 @@
     .parameter "reason"
 
     .prologue
-    .line 934
+    .line 923
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3936,7 +3886,7 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 935
+    .line 924
     const/4 v0, 0x0
 
     .local v0, id:I
@@ -3945,23 +3895,23 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 936
+    .line 925
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnIdEnabled(I)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 937
+    .line 926
     invoke-direct {p0, p1, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->notifyApnIdDisconnected(Ljava/lang/String;I)V
 
-    .line 935
+    .line 924
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 940
+    .line 929
     :cond_1
     return-void
 .end method
@@ -3971,7 +3921,7 @@
     .parameter "intent"
 
     .prologue
-    .line 504
+    .line 501
     const v1, 0x42011
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -3982,7 +3932,7 @@
 
     move-result-object v0
 
-    .line 505
+    .line 502
     .local v0, msg:Landroid/os/Message;
     const-string v1, "data.stall.alram.tag"
 
@@ -3994,10 +3944,10 @@
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 506
+    .line 503
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 507
+    .line 504
     return-void
 .end method
 
@@ -4008,14 +3958,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 491
+    .line 488
     const-string/jumbo v2, "reconnect_alarm_extra_reason"
 
     invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 492
+    .line 489
     .local v1, reason:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mState:Lcom/android/internal/telephony/DataConnectionTracker$State;
 
@@ -4023,27 +3973,27 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 493
+    .line 490
     const v2, 0x42018
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 494
+    .line 491
     .local v0, msg:Landroid/os/Message;
     iput v4, v0, Landroid/os/Message;->arg1:I
 
-    .line 495
+    .line 492
     iput v4, v0, Landroid/os/Message;->arg2:I
 
-    .line 496
+    .line 493
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 497
+    .line 494
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 499
+    .line 496
     .end local v0           #msg:Landroid/os/Message;
     :cond_0
     const v2, 0x42003
@@ -4054,7 +4004,7 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 500
+    .line 497
     return-void
 .end method
 
@@ -4072,7 +4022,7 @@
     .parameter "tag"
 
     .prologue
-    .line 682
+    .line 679
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4093,7 +4043,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->loge(Ljava/lang/String;)V
 
-    .line 683
+    .line 680
     return-void
 .end method
 
@@ -4110,7 +4060,7 @@
 
     const/4 v4, 0x1
 
-    .line 1040
+    .line 1029
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4199,13 +4149,13 @@
 
     invoke-virtual {p0, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1045
+    .line 1034
     if-ne p2, v4, :cond_3
 
-    .line 1046
+    .line 1035
     monitor-enter p0
 
-    .line 1047
+    .line 1036
     :try_start_0
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
@@ -4213,32 +4163,32 @@
 
     if-nez v2, :cond_0
 
-    .line 1048
+    .line 1037
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     const/4 v3, 0x1
 
     aput-boolean v3, v2, p1
 
-    .line 1049
+    .line 1038
     iget v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
-    .line 1051
+    .line 1040
     :cond_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1052
+    .line 1041
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->apnIdToType(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1053
+    .line 1042
     .local v1, type:Ljava/lang/String;
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->isApnTypeActive(Ljava/lang/String;)Z
 
@@ -4246,19 +4196,19 @@
 
     if-nez v2, :cond_2
 
-    .line 1054
+    .line 1043
     iput-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mRequestedApnType:Ljava/lang/String;
 
-    .line 1055
+    .line 1044
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onEnableNewApn()V
 
-    .line 1089
+    .line 1078
     .end local v1           #type:Ljava/lang/String;
     :cond_1
     :goto_0
     return-void
 
-    .line 1051
+    .line 1040
     :catchall_0
     move-exception v2
 
@@ -4269,7 +4219,7 @@
 
     throw v2
 
-    .line 1057
+    .line 1046
     .restart local v1       #type:Ljava/lang/String;
     :cond_2
     const-string v2, "apnSwitched"
@@ -4278,16 +4228,16 @@
 
     goto :goto_0
 
-    .line 1061
+    .line 1050
     .end local v1           #type:Ljava/lang/String;
     :cond_3
     const/4 v0, 0x0
 
-    .line 1062
+    .line 1051
     .local v0, didDisable:Z
     monitor-enter p0
 
-    .line 1063
+    .line 1052
     :try_start_2
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
@@ -4295,33 +4245,33 @@
 
     if-eqz v2, :cond_4
 
-    .line 1064
+    .line 1053
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     const/4 v3, 0x0
 
     aput-boolean v3, v2, p1
 
-    .line 1065
+    .line 1054
     iget v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
     add-int/lit8 v2, v2, -0x1
 
     iput v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
-    .line 1066
+    .line 1055
     const/4 v0, 0x1
 
-    .line 1068
+    .line 1057
     :cond_4
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1069
+    .line 1058
     if-eqz v0, :cond_1
 
-    .line 1070
+    .line 1059
     iget v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->enabledCount:I
 
     if-eqz v2, :cond_5
@@ -4330,24 +4280,24 @@
 
     if-ne p1, v2, :cond_6
 
-    .line 1071
+    .line 1060
     :cond_5
     const-string v2, "default"
 
     iput-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mRequestedApnType:Ljava/lang/String;
 
-    .line 1072
+    .line 1061
     const-string v2, "dataDisabled"
 
     invoke-virtual {p0, v4, p1, v2}, Lcom/android/internal/telephony/DataConnectionTracker;->onCleanUpConnection(ZILjava/lang/String;)V
 
-    .line 1077
+    .line 1066
     :cond_6
     const-string v2, "dataDisabled"
 
     invoke-direct {p0, v2, p1}, Lcom/android/internal/telephony/DataConnectionTracker;->notifyApnIdDisconnected(Ljava/lang/String;I)V
 
-    .line 1078
+    .line 1067
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->dataEnabled:[Z
 
     aget-boolean v2, v2, v5
@@ -4362,17 +4312,17 @@
 
     if-nez v2, :cond_1
 
-    .line 1084
+    .line 1073
     const-string v2, "default"
 
     iput-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mRequestedApnType:Ljava/lang/String;
 
-    .line 1085
+    .line 1074
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->onEnableNewApn()V
 
     goto :goto_0
 
-    .line 1068
+    .line 1057
     :catchall_1
     move-exception v2
 
@@ -4388,7 +4338,7 @@
     .locals 0
 
     .prologue
-    .line 1098
+    .line 1087
     return-void
 .end method
 
@@ -4403,15 +4353,15 @@
     .parameter "ar"
 
     .prologue
-    .line 1108
+    .line 1097
     const-string v1, "EVENT_RESET_DONE"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1109
+    .line 1098
     const/4 v0, 0x0
 
-    .line 1110
+    .line 1099
     .local v0, reason:Ljava/lang/String;
     iget-object v1, p1, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
@@ -4419,18 +4369,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 1111
+    .line 1100
     iget-object v0, p1, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     .end local v0           #reason:Ljava/lang/String;
     check-cast v0, Ljava/lang/String;
 
-    .line 1113
+    .line 1102
     .restart local v0       #reason:Ljava/lang/String;
     :cond_0
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->gotoIdleAndNotifyDataConnection(Ljava/lang/String;)V
 
-    .line 1114
+    .line 1103
     return-void
 .end method
 
@@ -4446,7 +4396,7 @@
     .parameter "met"
 
     .prologue
-    .line 1185
+    .line 1174
     return-void
 .end method
 
@@ -4455,52 +4405,52 @@
     .parameter "enabled"
 
     .prologue
-    .line 1136
+    .line 1125
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataEnabledLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1137
+    .line 1126
     :try_start_0
     iput-boolean p1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mInternalDataEnabled:Z
 
-    .line 1138
+    .line 1127
     if-eqz p1, :cond_0
 
-    .line 1139
+    .line 1128
     const-string/jumbo v0, "onSetInternalDataEnabled: changed to enabled, try to setup data call"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1140
+    .line 1129
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->resetAllRetryCounts()V
 
-    .line 1141
+    .line 1130
     const-string v0, "dataEnabled"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->onTrySetupData(Ljava/lang/String;)Z
 
-    .line 1146
+    .line 1135
     :goto_0
     monitor-exit v1
 
-    .line 1147
+    .line 1136
     return-void
 
-    .line 1143
+    .line 1132
     :cond_0
     const-string/jumbo v0, "onSetInternalDataEnabled: changed to disabled, cleanUpAllConnections"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1144
+    .line 1133
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->cleanUpAllConnections(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 1146
+    .line 1135
     :catchall_0
     move-exception v0
 
@@ -4516,53 +4466,53 @@
     .parameter "enabled"
 
     .prologue
-    .line 1188
+    .line 1177
     iget-object v2, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataEnabledLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1189
+    .line 1178
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getAnyDataEnabled()Z
 
     move-result v0
 
-    .line 1190
+    .line 1179
     .local v0, prevEnabled:Z
     sget-boolean v1, Lcom/android/internal/telephony/DataConnectionTracker;->sPolicyDataEnabled:Z
 
     if-eq v1, p1, :cond_0
 
-    .line 1191
+    .line 1180
     sput-boolean p1, Lcom/android/internal/telephony/DataConnectionTracker;->sPolicyDataEnabled:Z
 
-    .line 1192
+    .line 1181
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getAnyDataEnabled()Z
 
     move-result v1
 
     if-eq v0, v1, :cond_0
 
-    .line 1193
+    .line 1182
     if-nez v0, :cond_1
 
-    .line 1194
+    .line 1183
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->resetAllRetryCounts()V
 
-    .line 1195
+    .line 1184
     const-string v1, "dataEnabled"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->onTrySetupData(Ljava/lang/String;)Z
 
-    .line 1201
+    .line 1190
     :cond_0
     :goto_0
     monitor-exit v2
 
-    .line 1202
+    .line 1191
     return-void
 
-    .line 1197
+    .line 1186
     :cond_1
     const-string v1, "dataDisabled"
 
@@ -4570,7 +4520,7 @@
 
     goto :goto_0
 
-    .line 1201
+    .line 1190
     .end local v0           #prevEnabled:Z
     :catchall_0
     move-exception v1
@@ -4589,27 +4539,27 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1158
+    .line 1147
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataEnabledLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 1159
+    .line 1148
     :try_start_0
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getAnyDataEnabled()Z
 
     move-result v0
 
-    .line 1160
+    .line 1149
     .local v0, prevEnabled:Z
     iget-boolean v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mUserDataEnabled:Z
 
     if-eq v1, p1, :cond_1
 
-    .line 1161
+    .line 1150
     iput-boolean p1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mUserDataEnabled:Z
 
-    .line 1162
+    .line 1151
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -4629,7 +4579,7 @@
     :goto_0
     invoke-static {v4, v5, v1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1164
+    .line 1153
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getDataOnRoamingEnabled()Z
 
     move-result v1
@@ -4648,15 +4598,15 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1166
+    .line 1155
     if-eqz p1, :cond_3
 
-    .line 1167
+    .line 1156
     const-string/jumbo v1, "roamingOn"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->notifyOffApnsOfAvailability(Ljava/lang/String;)V
 
-    .line 1172
+    .line 1161
     :cond_0
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getAnyDataEnabled()Z
@@ -4665,32 +4615,32 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1173
+    .line 1162
     if-nez v0, :cond_4
 
-    .line 1174
+    .line 1163
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->resetAllRetryCounts()V
 
-    .line 1175
+    .line 1164
     const-string v1, "dataEnabled"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->onTrySetupData(Ljava/lang/String;)Z
 
-    .line 1181
+    .line 1170
     :cond_1
     :goto_2
     monitor-exit v3
 
-    .line 1182
+    .line 1171
     return-void
 
-    .line 1162
+    .line 1151
     :cond_2
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1169
+    .line 1158
     :cond_3
     const-string v1, "dataDisabled"
 
@@ -4698,7 +4648,7 @@
 
     goto :goto_1
 
-    .line 1181
+    .line 1170
     .end local v0           #prevEnabled:Z
     :catchall_0
     move-exception v1
@@ -4709,7 +4659,7 @@
 
     throw v1
 
-    .line 1177
+    .line 1166
     .restart local v0       #prevEnabled:Z
     :cond_4
     :try_start_1
@@ -4735,7 +4685,7 @@
     .locals 4
 
     .prologue
-    .line 1226
+    .line 1215
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mApnContexts:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3}, Ljava/util/concurrent/ConcurrentHashMap;->values()Ljava/util/Collection;
@@ -4760,7 +4710,7 @@
 
     check-cast v0, Lcom/android/internal/telephony/ApnContext;
 
-    .line 1227
+    .line 1216
     .local v0, ac:Lcom/android/internal/telephony/ApnContext;
     const/4 v3, 0x0
 
@@ -4768,7 +4718,7 @@
 
     goto :goto_0
 
-    .line 1229
+    .line 1218
     .end local v0           #ac:Lcom/android/internal/telephony/ApnContext;
     :cond_0
     iget-object v3, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnections:Ljava/util/HashMap;
@@ -4794,13 +4744,13 @@
 
     check-cast v1, Lcom/android/internal/telephony/DataConnection;
 
-    .line 1230
+    .line 1219
     .local v1, dc:Lcom/android/internal/telephony/DataConnection;
     invoke-virtual {v1}, Lcom/android/internal/telephony/DataConnection;->resetRetryCount()V
 
     goto :goto_1
 
-    .line 1232
+    .line 1221
     .end local v1           #dc:Lcom/android/internal/telephony/DataConnection;
     :cond_1
     return-void
@@ -4817,14 +4767,14 @@
     .parameter "enabled"
 
     .prologue
-    .line 625
+    .line 622
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->getDataOnRoamingEnabled()Z
 
     move-result v1
 
     if-eq v1, p1, :cond_0
 
-    .line 626
+    .line 623
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneBase;->getContext()Landroid/content/Context;
@@ -4835,7 +4785,7 @@
 
     move-result-object v0
 
-    .line 627
+    .line 624
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v2, "data_roaming"
 
@@ -4846,12 +4796,12 @@
     :goto_0
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 630
+    .line 627
     .end local v0           #resolver:Landroid/content/ContentResolver;
     :cond_0
     return-void
 
-    .line 627
+    .line 624
     .restart local v0       #resolver:Landroid/content/ContentResolver;
     :cond_1
     const/4 v1, 0x0
@@ -4865,7 +4815,7 @@
     .parameter "enable"
 
     .prologue
-    .line 1029
+    .line 1018
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4922,18 +4872,18 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1032
+    .line 1021
     const v1, 0x4200d
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1033
+    .line 1022
     .local v0, msg:Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 1034
+    .line 1023
     if-eqz p2, :cond_0
 
     const/4 v1, 0x1
@@ -4941,13 +4891,13 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg2:I
 
-    .line 1035
+    .line 1024
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1036
+    .line 1025
     return-void
 
-    .line 1034
+    .line 1023
     :cond_0
     const/4 v1, 0x0
 
@@ -4961,7 +4911,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 1127
+    .line 1116
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4988,14 +4938,14 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->log(Ljava/lang/String;)V
 
-    .line 1129
+    .line 1118
     const v1, 0x4201b
 
     invoke-virtual {p0, v1}, Lcom/android/internal/telephony/DataConnectionTracker;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1130
+    .line 1119
     .local v0, msg:Landroid/os/Message;
     if-eqz p1, :cond_0
 
@@ -5004,13 +4954,13 @@
     :goto_0
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 1131
+    .line 1120
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/DataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1132
+    .line 1121
     return v2
 
-    .line 1130
+    .line 1119
     :cond_0
     const/4 v1, 0x0
 

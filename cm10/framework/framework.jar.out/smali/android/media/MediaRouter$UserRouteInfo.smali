@@ -30,17 +30,17 @@
     .line 922
     const/high16 v0, 0x80
 
-    iput v0, p0, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
+    iput v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mSupportedTypes:I
 
     .line 923
     const/4 v0, 0x1
 
-    iput v0, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackType:I
+    iput v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackType:I
 
     .line 924
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeHandling:I
+    iput v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeHandling:I
 
     .line 925
     return-void
@@ -91,7 +91,7 @@
 
     const/4 v2, 0x3
 
-    iget v3, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeMax:I
+    iget v3, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeMax:I
 
     invoke-virtual {v1, v2, v3}, Landroid/media/RemoteControlClient;->setPlaybackInformation(II)V
 
@@ -100,7 +100,7 @@
 
     const/4 v2, 0x2
 
-    iget v3, p0, Landroid/media/MediaRouter$RouteInfo;->mVolume:I
+    iget v3, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolume:I
 
     invoke-virtual {v1, v2, v3}, Landroid/media/RemoteControlClient;->setPlaybackInformation(II)V
 
@@ -109,7 +109,7 @@
 
     const/4 v2, 0x4
 
-    iget v3, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeHandling:I
+    iget v3, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeHandling:I
 
     invoke-virtual {v1, v2, v3}, Landroid/media/RemoteControlClient;->setPlaybackInformation(II)V
 
@@ -118,7 +118,7 @@
 
     const/4 v2, 0x5
 
-    iget v3, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackStream:I
+    iget v3, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackStream:I
 
     invoke-virtual {v1, v2, v3}, Landroid/media/RemoteControlClient;->setPlaybackInformation(II)V
 
@@ -127,7 +127,7 @@
 
     const/4 v2, 0x1
 
-    iget v3, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackType:I
+    iget v3, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackType:I
 
     invoke-virtual {v1, v2, v3}, Landroid/media/RemoteControlClient;->setPlaybackInformation(II)V
 
@@ -143,7 +143,7 @@
 
     move-result v2
 
-    iget-object v3, p0, Landroid/media/MediaRouter$RouteInfo;->mRemoteVolObserver:Landroid/media/IRemoteVolumeObserver$Stub;
+    iget-object v3, p0, Landroid/media/MediaRouter$UserRouteInfo;->mRemoteVolObserver:Landroid/media/IRemoteVolumeObserver$Stub;
 
     invoke-interface {v1, v2, v3}, Landroid/media/IAudioService;->registerRemoteVolumeObserverForRcc(ILandroid/media/IRemoteVolumeObserver;)V
     :try_end_0
@@ -187,14 +187,14 @@
 
     .prologue
     .line 1057
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeHandling:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeHandling:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
     .line 1058
-    iget-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
+    iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
 
     if-nez v0, :cond_1
 
@@ -212,7 +212,7 @@
 
     .line 1062
     :cond_1
-    iget-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
+    iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
 
     iget-object v0, v0, Landroid/media/MediaRouter$VolumeCallbackInfo;->vcb:Landroid/media/MediaRouter$VolumeCallback;
 
@@ -227,14 +227,14 @@
 
     .prologue
     .line 1068
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeHandling:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeHandling:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
     .line 1069
-    iget-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
+    iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
 
     if-nez v0, :cond_1
 
@@ -252,7 +252,7 @@
 
     .line 1073
     :cond_1
-    iget-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
+    iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
 
     iget-object v0, v0, Landroid/media/MediaRouter$VolumeCallbackInfo;->vcb:Landroid/media/MediaRouter$VolumeCallback;
 
@@ -267,7 +267,7 @@
 
     .prologue
     .line 990
-    iput-object p1, p0, Landroid/media/MediaRouter$RouteInfo;->mIcon:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mIcon:Landroid/graphics/drawable/Drawable;
 
     .line 991
     return-void
@@ -299,12 +299,12 @@
 
     .prologue
     .line 941
-    iput p1, p0, Landroid/media/MediaRouter$RouteInfo;->mNameResId:I
+    iput p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mNameResId:I
 
     .line 942
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mName:Ljava/lang/CharSequence;
+    iput-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mName:Ljava/lang/CharSequence;
 
     .line 943
     invoke-virtual {p0}, Landroid/media/MediaRouter$UserRouteInfo;->routeUpdated()V
@@ -319,7 +319,7 @@
 
     .prologue
     .line 932
-    iput-object p1, p0, Landroid/media/MediaRouter$RouteInfo;->mName:Ljava/lang/CharSequence;
+    iput-object p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mName:Ljava/lang/CharSequence;
 
     .line 933
     invoke-virtual {p0}, Landroid/media/MediaRouter$UserRouteInfo;->routeUpdated()V
@@ -334,12 +334,12 @@
 
     .prologue
     .line 1095
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackStream:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackStream:I
 
     if-eq v0, p1, :cond_0
 
     .line 1096
-    iput p1, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackStream:I
+    iput p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackStream:I
 
     .line 1097
     const/4 v0, 0x5
@@ -357,12 +357,12 @@
 
     .prologue
     .line 1018
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackType:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackType:I
 
     if-eq v0, p1, :cond_0
 
     .line 1019
-    iput p1, p0, Landroid/media/MediaRouter$RouteInfo;->mPlaybackType:I
+    iput p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mPlaybackType:I
 
     .line 1020
     const/4 v0, 0x1
@@ -422,12 +422,12 @@
     move-result p1
 
     .line 1045
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVolume:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolume:I
 
     if-eq v0, p1, :cond_0
 
     .line 1046
-    iput p1, p0, Landroid/media/MediaRouter$RouteInfo;->mVolume:I
+    iput p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolume:I
 
     .line 1047
     const/4 v0, 0x2
@@ -438,12 +438,12 @@
     invoke-static {p0}, Landroid/media/MediaRouter;->dispatchRouteVolumeChanged(Landroid/media/MediaRouter$RouteInfo;)V
 
     .line 1049
-    iget-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
+    iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
     if-eqz v0, :cond_0
 
     .line 1050
-    iget-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
+    iget-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mGroup:Landroid/media/MediaRouter$RouteGroup;
 
     invoke-virtual {v0, p0}, Landroid/media/MediaRouter$RouteGroup;->memberVolumeChanged(Landroid/media/MediaRouter$RouteInfo;)V
 
@@ -462,7 +462,7 @@
 
     invoke-direct {v0, p1, p0}, Landroid/media/MediaRouter$VolumeCallbackInfo;-><init>(Landroid/media/MediaRouter$VolumeCallback;Landroid/media/MediaRouter$RouteInfo;)V
 
-    iput-object v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
+    iput-object v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVcb:Landroid/media/MediaRouter$VolumeCallbackInfo;
 
     .line 1009
     return-void
@@ -474,12 +474,12 @@
 
     .prologue
     .line 1031
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeHandling:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeHandling:I
 
     if-eq v0, p1, :cond_0
 
     .line 1032
-    iput p1, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeHandling:I
+    iput p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeHandling:I
 
     .line 1033
     const/4 v0, 0x4
@@ -497,12 +497,12 @@
 
     .prologue
     .line 1084
-    iget v0, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeMax:I
+    iget v0, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeMax:I
 
     if-eq v0, p1, :cond_0
 
     .line 1085
-    iput p1, p0, Landroid/media/MediaRouter$RouteInfo;->mVolumeMax:I
+    iput p1, p0, Landroid/media/MediaRouter$UserRouteInfo;->mVolumeMax:I
 
     .line 1086
     const/4 v0, 0x3

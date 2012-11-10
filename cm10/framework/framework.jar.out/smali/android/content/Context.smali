@@ -92,6 +92,8 @@
 
 .field public static final POWER_SERVICE:Ljava/lang/String; = "power"
 
+.field public static final PROFILE_SERVICE:Ljava/lang/String; = "profile"
+
 .field public static final SCHEDULING_POLICY_SERVICE:Ljava/lang/String; = "scheduling_policy"
 
 .field public static final SEARCH_SERVICE:Ljava/lang/String; = "search"
@@ -135,7 +137,7 @@
 
     .prologue
     .line 51
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -389,7 +391,7 @@
     .locals 1
 
     .prologue
-    .line 2367
+    .line 2379
     const/4 v0, 0x0
 
     return v0

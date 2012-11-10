@@ -28,7 +28,7 @@
 
     .prologue
     .line 160
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 161
     iput-object p1, p0, Lcom/android/internal/telephony/IPhoneSubInfo$Stub$Proxy;->mRemote:Landroid/os/IBinder;
@@ -115,6 +115,7 @@
     .line 348
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 347
     throw v3
 .end method
 
@@ -184,6 +185,7 @@
     .line 187
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 186
     throw v3
 .end method
 
@@ -253,6 +255,7 @@
     .line 208
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 207
     throw v3
 .end method
 
@@ -322,6 +325,7 @@
     .line 248
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 247
     throw v3
 .end method
 
@@ -401,6 +405,7 @@
     .line 410
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 409
     throw v3
 .end method
 
@@ -470,6 +475,7 @@
     .line 389
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 388
     throw v3
 .end method
 
@@ -539,6 +545,7 @@
     .line 432
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 431
     throw v3
 .end method
 
@@ -608,6 +615,7 @@
     .line 288
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 287
     throw v3
 .end method
 
@@ -677,6 +685,7 @@
     .line 268
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 267
     throw v3
 .end method
 
@@ -746,6 +755,7 @@
     .line 308
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 307
     throw v3
 .end method
 
@@ -815,6 +825,7 @@
     .line 228
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 227
     throw v3
 .end method
 
@@ -884,6 +895,7 @@
     .line 368
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 367
     throw v3
 .end method
 
@@ -953,5 +965,6 @@
     .line 328
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
+    .line 327
     throw v3
 .end method

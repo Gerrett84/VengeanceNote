@@ -267,7 +267,7 @@
     const/4 v1, 0x0
 
     .line 135
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1861
     sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
@@ -2175,6 +2175,7 @@
     .line 1556
     invoke-static {v15}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
+    .line 1553
     return v3
 
     .line 1528
@@ -2239,6 +2240,7 @@
     .line 1556
     invoke-static {v15}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
+    .line 1555
     throw v3
 .end method
 

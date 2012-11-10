@@ -193,6 +193,14 @@
     .end annotation
 .end method
 
+.method public abstract getLteOnGsmMode()I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract getNeighboringCellInfo()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -340,6 +348,14 @@
 .end method
 
 .method public abstract supplyPuk(Ljava/lang/String;Ljava/lang/String;)Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract toggleLTE(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

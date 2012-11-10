@@ -30,7 +30,7 @@
     .line 613
     iput-object p1, p0, Landroid/widget/NumberPicker$3;->this$0:Landroid/widget/NumberPicker;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -67,7 +67,7 @@
 
     move-result v0
 
-    const v1, 0x10202fb
+    const v1, 0x102030a
 
     if-ne v0, v1, :cond_0
 

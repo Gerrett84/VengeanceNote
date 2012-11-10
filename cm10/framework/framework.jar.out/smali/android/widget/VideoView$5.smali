@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 417
+    .line 431
     iput-object p1, p0, Landroid/widget/VideoView$5;->this$0:Landroid/widget/VideoView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,12 +43,12 @@
     .parameter "percent"
 
     .prologue
-    .line 419
+    .line 433
     iget-object v0, p0, Landroid/widget/VideoView$5;->this$0:Landroid/widget/VideoView;
 
     #setter for: Landroid/widget/VideoView;->mCurrentBufferPercentage:I
     invoke-static {v0, p2}, Landroid/widget/VideoView;->access$1802(Landroid/widget/VideoView;I)I
 
-    .line 420
+    .line 434
     return-void
 .end method

@@ -1355,7 +1355,7 @@
 
     .prologue
     .line 283
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 284
     iput-object p1, p0, Lcom/google/android/mms/pdu/PduPersister;->mContext:Landroid/content/Context;
@@ -2062,7 +2062,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
     .line 371
     new-instance v23, Lcom/google/android/mms/pdu/PduPart;
@@ -2416,6 +2416,7 @@
     .line 470
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
+    .line 469
     :cond_d
     throw v2
 
@@ -2474,7 +2475,7 @@
     .line 446
     .local v21, len:I
     :goto_4
-    if-ltz v21, :cond_10
+    if-ltz v21, :cond_13
 
     .line 447
     const/4 v2, 0x0
@@ -2489,54 +2490,21 @@
     invoke-virtual {v0, v11}, Ljava/io/InputStream;->read([B)I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     move-result v21
 
     goto :goto_4
 
-    .line 455
-    :cond_10
-    if-eqz v20, :cond_a
-
-    .line 457
-    :try_start_4
-    invoke-virtual/range {v20 .. v20}, Ljava/io/InputStream;->close()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
-
-    goto :goto_3
-
-    .line 458
+    .line 450
+    .end local v11           #buffer:[B
+    .end local v21           #len:I
     :catch_0
     move-exception v18
 
-    .line 459
-    .local v18, e:Ljava/io/IOException;
-    :try_start_5
-    const-string v2, "PduPersister"
-
-    const-string v3, "Failed to close stream"
-
-    move-object/from16 v0, v18
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    goto :goto_3
-
-    .line 450
-    .end local v11           #buffer:[B
-    .end local v18           #e:Ljava/io/IOException;
-    .end local v21           #len:I
-    :catch_1
-    move-exception v18
-
     .line 451
-    .restart local v18       #e:Ljava/io/IOException;
-    :try_start_6
+    .local v18, e:Ljava/io/IOException;
+    :try_start_4
     const-string v2, "PduPersister"
 
     const-string v3, "Failed to load part data"
@@ -2556,46 +2524,30 @@
     invoke-direct {v2, v0}, Lcom/google/android/mms/MmsException;-><init>(Ljava/lang/Throwable;)V
 
     throw v2
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 455
     .end local v18           #e:Ljava/io/IOException;
     :catchall_1
     move-exception v2
 
-    if-eqz v20, :cond_11
+    if-eqz v20, :cond_10
 
     .line 457
-    :try_start_7
+    :try_start_5
     invoke-virtual/range {v20 .. v20}, Ljava/io/InputStream;->close()V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
-    .line 460
-    :cond_11
+    .line 455
+    :cond_10
     :goto_5
-    :try_start_8
+    :try_start_6
     throw v2
-
-    .line 458
-    :catch_2
-    move-exception v18
-
-    .line 459
-    .restart local v18       #e:Ljava/io/IOException;
-    const-string v3, "PduPersister"
-
-    const-string v4, "Failed to close stream"
-
-    move-object/from16 v0, v18
-
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
-
-    goto :goto_5
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 469
     .end local v9           #baos:Ljava/io/ByteArrayOutputStream;
@@ -2604,7 +2556,6 @@
     .end local v15           #contentId:[B
     .end local v16           #contentLocation:[B
     .end local v17           #contentType:[B
-    .end local v18           #e:Ljava/io/IOException;
     .end local v19           #fileName:[B
     .end local v20           #is:Ljava/io/InputStream;
     .end local v22           #name:[B
@@ -2612,17 +2563,84 @@
     .end local v25           #partId:J
     .end local v29           #partURI:Landroid/net/Uri;
     .end local v32           #type:Ljava/lang/String;
-    :cond_12
-    if-eqz v12, :cond_13
+    :cond_11
+    if-eqz v12, :cond_12
 
     .line 470
     invoke-interface {v12}, Landroid/database/Cursor;->close()V
 
-    :cond_13
+    :cond_12
     move-object/from16 v2, v30
 
     .line 474
     goto/16 :goto_0
+
+    .line 458
+    .restart local v9       #baos:Ljava/io/ByteArrayOutputStream;
+    .restart local v13       #charset:Ljava/lang/Integer;
+    .restart local v14       #contentDisposition:[B
+    .restart local v15       #contentId:[B
+    .restart local v16       #contentLocation:[B
+    .restart local v17       #contentType:[B
+    .restart local v19       #fileName:[B
+    .restart local v20       #is:Ljava/io/InputStream;
+    .restart local v22       #name:[B
+    .restart local v23       #part:Lcom/google/android/mms/pdu/PduPart;
+    .restart local v25       #partId:J
+    .restart local v29       #partURI:Landroid/net/Uri;
+    .restart local v32       #type:Ljava/lang/String;
+    :catch_1
+    move-exception v18
+
+    .line 459
+    .restart local v18       #e:Ljava/io/IOException;
+    :try_start_7
+    const-string v3, "PduPersister"
+
+    const-string v4, "Failed to close stream"
+
+    move-object/from16 v0, v18
+
+    invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+
+    goto :goto_5
+
+    .line 455
+    .end local v18           #e:Ljava/io/IOException;
+    .restart local v11       #buffer:[B
+    .restart local v21       #len:I
+    :cond_13
+    if-eqz v20, :cond_a
+
+    .line 457
+    :try_start_8
+    invoke-virtual/range {v20 .. v20}, Ljava/io/InputStream;->close()V
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
+
+    goto :goto_3
+
+    .line 458
+    :catch_2
+    move-exception v18
+
+    .line 459
+    .restart local v18       #e:Ljava/io/IOException;
+    :try_start_9
+    const-string v2, "PduPersister"
+
+    const-string v3, "Failed to close stream"
+
+    move-object/from16 v0, v18
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_0
+
+    goto/16 :goto_3
 .end method
 
 .method private persistAddress(JI[Lcom/google/android/mms/pdu/EncodedStringValue;)V
@@ -3070,7 +3088,7 @@
 
     .line 874
     :try_start_6
-    throw v20
+    invoke-virtual/range {v20 .. v20}, Ljava/io/OutputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_9
 
@@ -3081,7 +3099,7 @@
 
     .line 881
     :try_start_7
-    throw v16
+    invoke-virtual/range {v16 .. v16}, Ljava/io/InputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_a
 
@@ -3093,7 +3111,7 @@
     .line 887
     move-object/from16 v0, v21
 
-    throw v13
+    invoke-virtual {v13, v0}, Lcom/google/android/mms/util/DrmConvertSession;->close(Ljava/lang/String;)I
 
     .line 891
     new-instance v15, Ljava/io/File;
@@ -3115,11 +3133,11 @@
     .restart local v5       #values:Landroid/content/ContentValues;
     move-object/from16 v0, p0
 
-    throw v0
+    iget-object v2, v0, Lcom/google/android/mms/pdu/PduPersister;->mContext:Landroid/content/Context;
 
     move-object/from16 v0, p0
 
-    throw v0
+    iget-object v3, v0, Lcom/google/android/mms/pdu/PduPersister;->mContentResolver:Landroid/content/ContentResolver;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -3127,19 +3145,19 @@
 
     const-string v6, "content://mms/resetFilePerm/"
 
-    throw v4
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    throw v15
+    invoke-virtual {v15}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v6
 
-    throw v4
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    throw v4
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -3332,7 +3350,7 @@
 
     .line 881
     :try_start_c
-    throw v16
+    invoke-virtual/range {v16 .. v16}, Ljava/io/InputStream;->close()V
     :try_end_c
     .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_8
 

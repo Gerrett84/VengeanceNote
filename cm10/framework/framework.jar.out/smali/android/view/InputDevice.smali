@@ -174,7 +174,7 @@
 
     .prologue
     .line 328
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     new-instance v0, Ljava/util/ArrayList;
@@ -224,7 +224,7 @@
     const/4 v3, 0x0
 
     .line 340
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     new-instance v0, Ljava/util/ArrayList;

@@ -218,6 +218,8 @@
     .end annotation
 .end field
 
+.field public static final PREVENT_POWER_KEY:Ljava/lang/String; = "android.permission.PREVENT_POWER_KEY"
+
 .field public static final PROCESS_OUTGOING_CALLS:Ljava/lang/String; = "android.permission.PROCESS_OUTGOING_CALLS"
 
 .field public static final READ_CALENDAR:Ljava/lang/String; = "android.permission.READ_CALENDAR"
@@ -285,6 +287,8 @@
 .end field
 
 .field public static final RETRIEVE_WINDOW_CONTENT:Ljava/lang/String; = "android.permission.RETRIEVE_WINDOW_CONTENT"
+
+.field public static final SEND_MOCK_SMS:Ljava/lang/String; = "android.permission.SEND_MOCK_SMS"
 
 .field public static final SEND_SMS:Ljava/lang/String; = "android.permission.SEND_SMS"
 
@@ -394,7 +398,7 @@
 
     .prologue
     .line 11
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

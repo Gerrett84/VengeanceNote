@@ -52,7 +52,7 @@
     .line 38
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->mLock:Ljava/lang/Object;
 
@@ -75,12 +75,12 @@
     .parameter "efid"
 
     .prologue
-    .line 289
+    .line 281
     const/16 v0, 0x6f3a
 
     if-ne p1, v0, :cond_0
 
-    .line 290
+    .line 282
     iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/PhoneBase;->getIccCard()Lcom/android/internal/telephony/IccCard;
@@ -95,10 +95,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 291
+    .line 283
     const/16 p1, 0x4f30
 
-    .line 294
+    .line 286
     .end local p1
     :cond_0
     return p1
@@ -152,20 +152,6 @@
     .prologue
     .line 109
     return-void
-.end method
-
-.method public getAdnCapacity()I
-    .locals 1
-
-    .prologue
-    .line 284
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->getAdnCapacity()I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public getAdnRecordsInEf(I)Ljava/util/List;
@@ -299,20 +285,6 @@
 .end method
 
 .method public abstract getAdnRecordsSize(I)[I
-.end method
-
-.method public getFreeAdn()I
-    .locals 1
-
-    .prologue
-    .line 280
-    iget-object v0, p0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;->adnCache:Lcom/android/internal/telephony/AdnRecordCache;
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/AdnRecordCache;->getFreeAdn()I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method protected abstract logd(Ljava/lang/String;)V

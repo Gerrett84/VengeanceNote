@@ -1100,21 +1100,21 @@
     const/4 v12, 0x0
 
     .line 994
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Landroid/widget/ProgressBar;->mPaddingRight:I
 
     sub-int v10, p1, v10
 
-    iget v11, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v11, p0, Landroid/widget/ProgressBar;->mPaddingLeft:I
 
     sub-int v7, v10, v11
 
     .line 995
     .local v7, right:I
-    iget v10, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v10, p0, Landroid/widget/ProgressBar;->mPaddingBottom:I
 
     sub-int v10, p2, v10
 
-    iget v11, p0, Landroid/view/View;->mPaddingTop:I
+    iget v11, p0, Landroid/widget/ProgressBar;->mPaddingTop:I
 
     sub-int v0, v10, v11
 
@@ -1622,17 +1622,17 @@
 
     .line 967
     .local v0, dirty:Landroid/graphics/Rect;
-    iget v3, p0, Landroid/view/View;->mScrollX:I
+    iget v3, p0, Landroid/widget/ProgressBar;->mScrollX:I
 
-    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v4, p0, Landroid/widget/ProgressBar;->mPaddingLeft:I
 
     add-int v1, v3, v4
 
     .line 968
     .local v1, scrollX:I
-    iget v3, p0, Landroid/view/View;->mScrollY:I
+    iget v3, p0, Landroid/widget/ProgressBar;->mScrollY:I
 
-    iget v4, p0, Landroid/view/View;->mPaddingTop:I
+    iget v4, p0, Landroid/widget/ProgressBar;->mPaddingTop:I
 
     add-int v2, v3, v4
 
@@ -1917,11 +1917,11 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 1039
-    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v4, p0, Landroid/widget/ProgressBar;->mPaddingLeft:I
 
     int-to-float v4, v4
 
-    iget v5, p0, Landroid/view/View;->mPaddingTop:I
+    iget v5, p0, Landroid/widget/ProgressBar;->mPaddingTop:I
 
     int-to-float v5, v5
 
@@ -2161,18 +2161,18 @@
     invoke-direct {p0}, Landroid/widget/ProgressBar;->updateDrawableState()V
 
     .line 1072
-    iget v3, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v3, p0, Landroid/widget/ProgressBar;->mPaddingLeft:I
 
-    iget v4, p0, Landroid/view/View;->mPaddingRight:I
+    iget v4, p0, Landroid/widget/ProgressBar;->mPaddingRight:I
 
     add-int/2addr v3, v4
 
     add-int/2addr v2, v3
 
     .line 1073
-    iget v3, p0, Landroid/view/View;->mPaddingTop:I
+    iget v3, p0, Landroid/widget/ProgressBar;->mPaddingTop:I
 
-    iget v4, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v4, p0, Landroid/widget/ProgressBar;->mPaddingBottom:I
 
     add-int/2addr v3, v4
 
@@ -2219,7 +2219,7 @@
 
     .prologue
     .line 665
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/ProgressBar;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
 

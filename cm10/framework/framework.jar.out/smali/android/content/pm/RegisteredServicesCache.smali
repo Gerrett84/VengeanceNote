@@ -117,12 +117,12 @@
     .line 93
     .local p0, this:Landroid/content/pm/RegisteredServicesCache;,"Landroid/content/pm/RegisteredServicesCache<TV;>;"
     .local p5, serializerAndParser:Landroid/content/pm/XmlSerializerAndParser;,"Landroid/content/pm/XmlSerializerAndParser<TV;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
     new-instance v6, Ljava/lang/Object;
 
-    invoke-direct/range {v6 .. v6}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v6}, Ljava/lang/Object;-><init>()V
 
     iput-object v6, p0, Landroid/content/pm/RegisteredServicesCache;->mServicesLock:Ljava/lang/Object;
 
@@ -648,9 +648,9 @@
     .local v9, si:Landroid/content/pm/ServiceInfo;
     new-instance v3, Landroid/content/ComponentName;
 
-    iget-object v13, v9, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v13, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    iget-object v14, v9, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
+    iget-object v14, v9, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
     invoke-direct {v3, v13, v14}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -739,7 +739,7 @@
 
     move-result-object v14
 
-    iget-object v15, v9, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v15, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -845,13 +845,13 @@
 
     .line 393
     :cond_4
-    iget-object v13, v9, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v13, v9, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {v7, v13}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
 
     move-result-object v13
 
-    iget-object v14, v9, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v14, v9, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
     move-object/from16 v0, p0
 
@@ -872,10 +872,11 @@
     .line 406
     if-eqz v6, :cond_5
 
+    :goto_0
     invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->close()V
 
+    .line 401
     :cond_5
-    :goto_0
     return-object v13
 
     .line 398
@@ -887,7 +888,7 @@
 
     .line 399
     .local v8, serviceInfo:Landroid/content/pm/ServiceInfo;
-    iget-object v1, v8, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v1, v8, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     .line 400
     .local v1, applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -904,8 +905,6 @@
 
     .line 406
     if-eqz v6, :cond_5
-
-    invoke-interface {v6}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_0
 .end method
@@ -964,7 +963,7 @@
     iget-boolean v8, p0, Landroid/content/pm/RegisteredServicesCache;->mPersistentServicesFileDidNotExist:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
     if-eqz v8, :cond_3
 
@@ -973,7 +972,7 @@
 
     .line 455
     :try_start_1
-    throw v2
+    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -1079,7 +1078,7 @@
     invoke-interface {v8, v3}, Landroid/content/pm/XmlSerializerAndParser;->createFromXml(Lorg/xmlpull/v1/XmlPullParser;)Ljava/lang/Object;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     move-result-object v4
 
@@ -1097,13 +1096,7 @@
     :try_start_3
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_0
-
-    .line 456
-    :catch_1
-    move-exception v8
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     goto :goto_0
 
@@ -1143,7 +1136,7 @@
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlPullParser;->next()I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
     move-result v1
 
@@ -1156,7 +1149,7 @@
     .end local v1           #eventType:I
     .end local v3           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v5           #tagName:Ljava/lang/String;
-    :catch_2
+    :catch_1
     move-exception v0
 
     .line 451
@@ -1177,13 +1170,7 @@
     :try_start_6
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
-
-    goto/16 :goto_0
-
-    .line 456
-    :catch_3
-    move-exception v8
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_0
 
     goto/16 :goto_0
 
@@ -1198,15 +1185,15 @@
     :try_start_7
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_2
 
-    .line 457
+    .line 453
     :cond_9
     :goto_4
     throw v8
 
     .line 456
-    :catch_4
+    :catch_2
     move-exception v9
 
     goto :goto_4

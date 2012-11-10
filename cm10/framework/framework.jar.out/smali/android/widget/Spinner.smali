@@ -302,7 +302,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/Spinner;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -313,12 +313,12 @@
 
     .prologue
     .line 530
-    iget-boolean v2, p0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v2, p0, Landroid/widget/Spinner;->mDataChanged:Z
 
     if-nez v2, :cond_0
 
     .line 531
-    iget-object v2, p0, Landroid/widget/AbsSpinner;->mRecycler:Landroid/widget/AbsSpinner$RecycleBin;
+    iget-object v2, p0, Landroid/widget/Spinner;->mRecycler:Landroid/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v2, p1}, Landroid/widget/AbsSpinner$RecycleBin;->get(I)Landroid/view/View;
 
@@ -342,7 +342,7 @@
     .line 541
     .end local v1           #child:Landroid/view/View;
     :cond_0
-    iget-object v2, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v2, p0, Landroid/widget/Spinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     const/4 v3, 0x0
 
@@ -408,13 +408,13 @@
 
     .line 572
     :cond_1
-    iget v8, p0, Landroid/widget/AbsSpinner;->mHeightMeasureSpec:I
+    iget v8, p0, Landroid/widget/Spinner;->mHeightMeasureSpec:I
 
-    iget-object v9, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->top:I
 
-    iget-object v10, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
@@ -428,13 +428,13 @@
 
     .line 574
     .local v1, childHeightSpec:I
-    iget v8, p0, Landroid/widget/AbsSpinner;->mWidthMeasureSpec:I
+    iget v8, p0, Landroid/widget/Spinner;->mWidthMeasureSpec:I
 
-    iget-object v9, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v9, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v9, v9, Landroid/graphics/Rect;->left:I
 
-    iget-object v10, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->right:I
 
@@ -451,7 +451,7 @@
     invoke-virtual {p1, v5, v1}, Landroid/view/View;->measure(II)V
 
     .line 584
-    iget-object v8, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v8, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v8, v8, Landroid/graphics/Rect;->top:I
 
@@ -459,13 +459,13 @@
 
     move-result v9
 
-    iget-object v10, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->bottom:I
 
     sub-int/2addr v9, v10
 
-    iget-object v10, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v10, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v10, v10, Landroid/graphics/Rect;->top:I
 
@@ -564,11 +564,11 @@
 
     .line 392
     :cond_2
-    iget-object v3, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Landroid/widget/Spinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     if-eqz v3, :cond_0
 
-    iget-object v3, p0, Landroid/widget/AbsSpinner;->mAdapter:Landroid/widget/SpinnerAdapter;
+    iget-object v3, p0, Landroid/widget/Spinner;->mAdapter:Landroid/widget/SpinnerAdapter;
 
     invoke-interface {v3}, Landroid/widget/SpinnerAdapter;->getCount()I
 
@@ -582,7 +582,7 @@
     move-result-object v0
 
     .line 394
-    iget-object v3, p0, Landroid/widget/AbsSpinner;->mRecycler:Landroid/widget/AbsSpinner$RecycleBin;
+    iget-object v3, p0, Landroid/widget/Spinner;->mRecycler:Landroid/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v3, v4, v0}, Landroid/widget/AbsSpinner$RecycleBin;->put(ILandroid/view/View;)V
 
@@ -677,25 +677,25 @@
     const/4 v7, 0x0
 
     .line 468
-    iget-object v5, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v5, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v0, v5, Landroid/graphics/Rect;->left:I
 
     .line 469
     .local v0, childrenLeft:I
-    iget v5, p0, Landroid/view/View;->mRight:I
+    iget v5, p0, Landroid/widget/Spinner;->mRight:I
 
-    iget v6, p0, Landroid/view/View;->mLeft:I
+    iget v6, p0, Landroid/widget/Spinner;->mLeft:I
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v5, v6
 
-    iget-object v6, p0, Landroid/widget/AbsSpinner;->mSpinnerPadding:Landroid/graphics/Rect;
+    iget-object v6, p0, Landroid/widget/Spinner;->mSpinnerPadding:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->right:I
 
@@ -703,7 +703,7 @@
 
     .line 471
     .local v1, childrenWidth:I
-    iget-boolean v5, p0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v5, p0, Landroid/widget/Spinner;->mDataChanged:Z
 
     if-eqz v5, :cond_0
 
@@ -712,7 +712,7 @@
 
     .line 476
     :cond_0
-    iget v5, p0, Landroid/widget/AdapterView;->mItemCount:I
+    iget v5, p0, Landroid/widget/Spinner;->mItemCount:I
 
     if-nez v5, :cond_1
 
@@ -725,12 +725,12 @@
 
     .line 481
     :cond_1
-    iget v5, p0, Landroid/widget/AdapterView;->mNextSelectedPosition:I
+    iget v5, p0, Landroid/widget/Spinner;->mNextSelectedPosition:I
 
     if-ltz v5, :cond_2
 
     .line 482
-    iget v5, p0, Landroid/widget/AdapterView;->mNextSelectedPosition:I
+    iget v5, p0, Landroid/widget/Spinner;->mNextSelectedPosition:I
 
     invoke-virtual {p0, v5}, Landroid/widget/Spinner;->setSelectedPositionInt(I)V
 
@@ -742,12 +742,12 @@
     invoke-virtual {p0}, Landroid/widget/Spinner;->removeAllViewsInLayout()V
 
     .line 491
-    iget v5, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
+    iget v5, p0, Landroid/widget/Spinner;->mSelectedPosition:I
 
-    iput v5, p0, Landroid/widget/AdapterView;->mFirstPosition:I
+    iput v5, p0, Landroid/widget/Spinner;->mFirstPosition:I
 
     .line 492
-    iget v5, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
+    iget v5, p0, Landroid/widget/Spinner;->mSelectedPosition:I
 
     invoke-direct {p0, v5}, Landroid/widget/Spinner;->makeAndAddView(I)Landroid/view/View;
 
@@ -776,7 +776,7 @@
     invoke-virtual {v2, v3}, Landroid/view/View;->offsetLeftAndRight(I)V
 
     .line 506
-    iget-object v5, p0, Landroid/widget/AbsSpinner;->mRecycler:Landroid/widget/AbsSpinner$RecycleBin;
+    iget-object v5, p0, Landroid/widget/Spinner;->mRecycler:Landroid/widget/AbsSpinner$RecycleBin;
 
     invoke-virtual {v5}, Landroid/widget/AbsSpinner$RecycleBin;->clear()V
 
@@ -787,13 +787,13 @@
     invoke-virtual {p0}, Landroid/widget/Spinner;->checkSelectionChanged()V
 
     .line 512
-    iput-boolean v7, p0, Landroid/widget/AdapterView;->mDataChanged:Z
+    iput-boolean v7, p0, Landroid/widget/Spinner;->mDataChanged:Z
 
     .line 513
-    iput-boolean v7, p0, Landroid/widget/AdapterView;->mNeedSync:Z
+    iput-boolean v7, p0, Landroid/widget/Spinner;->mNeedSync:Z
 
     .line 514
-    iget v5, p0, Landroid/widget/AdapterView;->mSelectedPosition:I
+    iget v5, p0, Landroid/widget/Spinner;->mSelectedPosition:I
 
     invoke-virtual {p0, v5}, Landroid/widget/Spinner;->setNextSelectedPositionInt(I)V
 
@@ -1112,13 +1112,13 @@
     .line 455
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/widget/AdapterView;->mInLayout:Z
+    iput-boolean v0, p0, Landroid/widget/Spinner;->mInLayout:Z
 
     .line 456
     invoke-virtual {p0, v1, v1}, Landroid/widget/Spinner;->layout(IZ)V
 
     .line 457
-    iput-boolean v1, p0, Landroid/widget/AdapterView;->mInLayout:Z
+    iput-boolean v1, p0, Landroid/widget/Spinner;->mInLayout:Z
 
     .line 458
     return-void

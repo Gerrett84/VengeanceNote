@@ -107,7 +107,7 @@
     .line 1697
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/text/TextUtils;->sLock:Ljava/lang/Object;
 
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    const v1, 0x10400c4
+    const v1, 0x10400d1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -141,7 +141,7 @@
 
     move-result-object v0
 
-    const v1, 0x10400c5
+    const v1, 0x10400d2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -157,7 +157,7 @@
 
     .prologue
     .line 57
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -251,6 +251,7 @@
     .line 1232
     invoke-static {v2}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
+    .line 1230
     .end local p0
     :goto_0
     return-object p0
@@ -509,8 +510,10 @@
 
     move-object/from16 p0, v16
 
+    .line 1230
     goto/16 :goto_0
 
+    .line 1232
     .end local v6           #len:I
     .end local v8           #buf:[C
     .end local v9           #commaCount:I
@@ -1301,11 +1304,13 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1145
+    .end local p0
     :cond_0
+    :goto_0
     invoke-static {v3}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
-    .end local p0
-    :goto_0
+    .line 1143
+    :goto_1
     return-object p0
 
     .line 1086
@@ -1344,7 +1349,7 @@
     .line 1103
     .end local v13           #left:I
     .local v14, left:I
-    :goto_1
+    :goto_2
     if-eqz p5, :cond_2
 
     .line 1104
@@ -1376,7 +1381,7 @@
 
     .line 1110
     .local v4, sp:Landroid/text/Spanned;
-    :goto_2
+    :goto_3
     sub-int v5, v17, v14
 
     sub-int v16, v15, v5
@@ -1404,11 +1409,11 @@
     aput-char v5, v10, v14
 
     .line 1115
-    :goto_3
+    :goto_4
     move v12, v13
 
     .local v12, i:I
-    :goto_4
+    :goto_5
     move/from16 v0, v17
 
     if-ge v12, v0, :cond_8
@@ -1421,7 +1426,7 @@
     .line 1115
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_4
+    goto :goto_5
 
     .line 1093
     .end local v4           #sp:Landroid/text/Spanned;
@@ -1450,7 +1455,7 @@
 
     .end local v13           #left:I
     .restart local v14       #left:I
-    goto :goto_1
+    goto :goto_2
 
     .line 1095
     .end local v14           #left:I
@@ -1482,7 +1487,7 @@
 
     .end local v13           #left:I
     .restart local v14       #left:I
-    goto :goto_1
+    goto :goto_2
 
     .line 1098
     .end local v14           #left:I
@@ -1524,14 +1529,14 @@
 
     .end local v13           #left:I
     .restart local v14       #left:I
-    goto :goto_1
+    goto :goto_2
 
     .line 1108
     .restart local v10       #buf:[C
     :cond_7
     const/4 v4, 0x0
 
-    goto :goto_2
+    goto :goto_3
 
     .line 1118
     .end local v14           #left:I
@@ -1559,7 +1564,8 @@
 
     move-object/from16 p0, v18
 
-    goto/16 :goto_0
+    .line 1120
+    goto/16 :goto_1
 
     .line 1122
     :cond_9
@@ -1589,7 +1595,8 @@
 
     move-object/from16 p0, v8
 
-    goto/16 :goto_0
+    .line 1124
+    goto/16 :goto_1
 
     .line 1127
     .end local v8           #ss:Landroid/text/SpannableString;
@@ -1603,22 +1610,14 @@
     .line 1128
     :try_start_3
     const-string p0, ""
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 1145
-    .end local p0
-    invoke-static {v3}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
     goto/16 :goto_0
 
     .line 1131
-    .restart local p0
     :cond_b
     if-nez v4, :cond_c
 
     .line 1132
-    :try_start_4
     new-instance v19, Ljava/lang/StringBuilder;
 
     invoke-virtual/range {p7 .. p7}, Ljava/lang/String;->length()I
@@ -1657,22 +1656,14 @@
 
     .line 1136
     invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     move-result-object p0
-
-    .line 1145
-    .end local p0
-    invoke-static {v3}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
     goto/16 :goto_0
 
     .line 1139
     .end local v19           #sb:Ljava/lang/StringBuilder;
-    .restart local p0
     :cond_c
-    :try_start_5
     new-instance v20, Landroid/text/SpannableStringBuilder;
 
     invoke-direct/range {v20 .. v20}, Landroid/text/SpannableStringBuilder;-><init>()V
@@ -1702,16 +1693,18 @@
     move/from16 v2, v17
 
     invoke-virtual {v0, v1, v2, v15}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;II)Landroid/text/SpannableStringBuilder;
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 1145
     invoke-static {v3}, Landroid/text/MeasuredText;->recycle(Landroid/text/MeasuredText;)Landroid/text/MeasuredText;
 
     move-object/from16 p0, v20
 
-    goto/16 :goto_0
+    .line 1143
+    goto/16 :goto_1
 
+    .line 1145
     .end local v4           #sp:Landroid/text/Spanned;
     .end local v10           #buf:[C
     .end local v11           #ellipsiswid:F
@@ -1739,7 +1732,7 @@
 
     .end local v14           #left:I
     .restart local v13       #left:I
-    goto/16 :goto_3
+    goto/16 :goto_4
 .end method
 
 .method public static equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -3530,7 +3523,7 @@
 
     move-result-object v1
 
-    const v2, 0x10404f7
+    const v2, 0x1040523
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

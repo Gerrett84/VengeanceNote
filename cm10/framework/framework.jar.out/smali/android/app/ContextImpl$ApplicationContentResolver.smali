@@ -25,13 +25,13 @@
     .parameter "mainThread"
 
     .prologue
-    .line 1706
+    .line 1714
     invoke-direct {p0, p1}, Landroid/content/ContentResolver;-><init>(Landroid/content/Context;)V
 
-    .line 1707
+    .line 1715
     iput-object p2, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 1708
+    .line 1716
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "name"
 
     .prologue
-    .line 1717
+    .line 1725
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -61,7 +61,7 @@
     .parameter "name"
 
     .prologue
-    .line 1712
+    .line 1720
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -79,7 +79,7 @@
     .parameter "name"
 
     .prologue
-    .line 1727
+    .line 1735
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0
@@ -96,7 +96,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1722
+    .line 1730
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x1
@@ -113,7 +113,7 @@
     .parameter "icp"
 
     .prologue
-    .line 1732
+    .line 1740
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     const/4 v1, 0x0
@@ -130,7 +130,7 @@
     .parameter "icp"
 
     .prologue
-    .line 1737
+    .line 1745
     iget-object v0, p0, Landroid/app/ContextImpl$ApplicationContentResolver;->mMainThread:Landroid/app/ActivityThread;
 
     invoke-interface {p1}, Landroid/content/IContentProvider;->asBinder()Landroid/os/IBinder;
@@ -141,6 +141,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/ActivityThread;->handleUnstableProviderDied(Landroid/os/IBinder;Z)V
 
-    .line 1738
+    .line 1746
     return-void
 .end method

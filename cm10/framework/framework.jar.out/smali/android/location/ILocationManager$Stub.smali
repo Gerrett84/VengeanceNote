@@ -80,6 +80,8 @@
 
 .field static final TRANSACTION_sendNiResponse:I = 0x1e
 
+.field static final TRANSACTION_setGPSSource:I = 0x1f
+
 .field static final TRANSACTION_setTestProviderEnabled:I = 0x1a
 
 .field static final TRANSACTION_setTestProviderLocation:I = 0x18
@@ -176,7 +178,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 530
+    .line 539
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -2232,6 +2234,36 @@
 
     goto :goto_25
 
+    .line 531
+    .end local v3           #_arg0:I
+    .end local v4           #_arg1:I
+    .end local v51           #_result:Z
+    :sswitch_1f
+    const-string v2, "android.location.ILocationManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 533
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 534
+    .local v3, _arg0:Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3}, Landroid/location/ILocationManager$Stub;->setGPSSource(Ljava/lang/String;)V
+
+    .line 535
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 536
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
     .line 43
     nop
 
@@ -2267,6 +2299,7 @@
         0x1c -> :sswitch_1c
         0x1d -> :sswitch_1d
         0x1e -> :sswitch_1e
+        0x1f -> :sswitch_1f
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

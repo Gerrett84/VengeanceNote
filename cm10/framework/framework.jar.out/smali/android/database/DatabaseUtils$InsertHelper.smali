@@ -56,7 +56,7 @@
     const/4 v0, 0x0
 
     .line 992
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 974
     iput-object v0, p0, Landroid/database/DatabaseUtils$InsertHelper;->mInsertSQL:Ljava/lang/String;
@@ -825,9 +825,10 @@
     move-result-wide v1
 
     .line 1233
+    :goto_0
     iput-object v4, p0, Landroid/database/DatabaseUtils$InsertHelper;->mPreparedStatement:Landroid/database/sqlite/SQLiteStatement;
 
-    :goto_0
+    .line 1230
     return-wide v1
 
     .line 1228
@@ -866,11 +867,9 @@
     .line 1230
     const-wide/16 v1, -0x1
 
-    .line 1233
-    iput-object v4, p0, Landroid/database/DatabaseUtils$InsertHelper;->mPreparedStatement:Landroid/database/sqlite/SQLiteStatement;
-
     goto :goto_0
 
+    .line 1233
     .end local v0           #e:Landroid/database/SQLException;
     :catchall_0
     move-exception v1

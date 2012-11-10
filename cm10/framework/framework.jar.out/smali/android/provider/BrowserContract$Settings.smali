@@ -48,7 +48,7 @@
 
     .prologue
     .line 694
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -122,11 +122,11 @@
     :cond_1
     move v0, v8
 
+    .line 727
     :cond_2
     :goto_0
     return v0
 
-    .line 727
     :cond_3
     const/4 v0, 0x0
 

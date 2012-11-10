@@ -6,6 +6,8 @@
 # static fields
 .field public static final EVENT_CONFIGURATION_CHANGED:I = 0x3
 
+.field public static final EVENT_NETWORK_SUBTYPE_CHANGED:I = 0x7
+
 .field public static final EVENT_RESTORE_DEFAULT_NETWORK:I = 0x6
 
 .field public static final EVENT_STATE_CHANGED:I = 0x1

@@ -71,7 +71,7 @@
 
     .prologue
     .line 61
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
     if-ltz p1, :cond_0
@@ -131,7 +131,7 @@
     const/4 v0, 0x1
 
     .line 96
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 97
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -241,7 +241,7 @@
 
     .prologue
     .line 80
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
     iget v0, p1, Landroid/telephony/CellInfo;->mTimeStampType:I

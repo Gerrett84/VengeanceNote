@@ -408,7 +408,7 @@
 
     .line 413
     :cond_1
-    iget-object v0, p0, Landroid/app/Fragment;->mActivity:Landroid/app/Activity;
+    iget-object v0, p0, Landroid/app/DialogFragment;->mActivity:Landroid/app/Activity;
 
     const-string v1, "layout_inflater"
 
@@ -614,7 +614,7 @@
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
     .line 379
-    iget v0, p0, Landroid/app/Fragment;->mContainerId:I
+    iget v0, p0, Landroid/app/DialogFragment;->mContainerId:I
 
     if-nez v0, :cond_1
 

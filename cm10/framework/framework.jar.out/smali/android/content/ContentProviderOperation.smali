@@ -88,7 +88,7 @@
 
     .prologue
     .line 56
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     #getter for: Landroid/content/ContentProviderOperation$Builder;->mType:I
@@ -186,7 +186,7 @@
     const/4 v3, 0x0
 
     .line 68
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 69
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -702,7 +702,7 @@
 
     iget-object v3, v0, Landroid/content/ContentProviderOperation;->mExpectedCount:Ljava/lang/Integer;
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_9
 
     move-object/from16 v0, p0
 
@@ -714,7 +714,7 @@
 
     move/from16 v0, v16
 
-    if-eq v3, v0, :cond_a
+    if-eq v3, v0, :cond_9
 
     .line 264
     const-string v3, "ContentProviderOperation"
@@ -792,7 +792,7 @@
 
     const/4 v4, 0x4
 
-    if-ne v3, v4, :cond_9
+    if-ne v3, v4, :cond_8
 
     .line 228
     const/4 v5, 0x0
@@ -890,7 +890,7 @@
 
     .line 240
     .restart local v16       #numRows:I
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_a
 
     .line 241
     :cond_6
@@ -898,7 +898,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_a
 
     .line 242
     const/4 v13, 0x0
@@ -1012,20 +1012,14 @@
 
     goto :goto_3
 
-    .line 256
-    .end local v10           #cursorValue:Ljava/lang/String;
-    .end local v12           #expectedValue:Ljava/lang/String;
-    .end local v13           #i:I
-    :cond_8
-    invoke-interface {v9}, Landroid/database/Cursor;->close()V
-
-    goto/16 :goto_1
-
     .line 259
     .end local v5           #projection:[Ljava/lang/String;
     .end local v9           #cursor:Landroid/database/Cursor;
+    .end local v10           #cursorValue:Ljava/lang/String;
+    .end local v12           #expectedValue:Ljava/lang/String;
+    .end local v13           #i:I
     .end local v16           #numRows:I
-    :cond_9
+    :cond_8
     const-string v3, "ContentProviderOperation"
 
     invoke-virtual/range {p0 .. p0}, Landroid/content/ContentProviderOperation;->toString()Ljava/lang/String;
@@ -1065,7 +1059,7 @@
 
     .line 268
     .restart local v16       #numRows:I
-    :cond_a
+    :cond_9
     new-instance v3, Landroid/content/ContentProviderResult;
 
     move/from16 v0, v16
@@ -1073,6 +1067,14 @@
     invoke-direct {v3, v0}, Landroid/content/ContentProviderResult;-><init>(I)V
 
     goto/16 :goto_0
+
+    .line 256
+    .restart local v5       #projection:[Ljava/lang/String;
+    .restart local v9       #cursor:Landroid/database/Cursor;
+    :cond_a
+    invoke-interface {v9}, Landroid/database/Cursor;->close()V
+
+    goto/16 :goto_1
 .end method
 
 .method public describeContents()I

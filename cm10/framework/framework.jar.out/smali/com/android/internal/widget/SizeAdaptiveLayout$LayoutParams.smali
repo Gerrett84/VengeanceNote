@@ -39,10 +39,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 392
+    .line 389
     invoke-direct {p0, v0, v0}, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;-><init>(II)V
 
-    .line 393
+    .line 390
     return-void
 .end method
 
@@ -54,10 +54,10 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 385
+    .line 382
     invoke-direct {p0, p1, p2, v0, v0}, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;-><init>(IIII)V
 
-    .line 386
+    .line 383
     return-void
 .end method
 
@@ -69,16 +69,16 @@
     .parameter "maxHeight"
 
     .prologue
-    .line 376
+    .line 373
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 377
+    .line 374
     iput p3, p0, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;->minHeight:I
 
-    .line 378
+    .line 375
     iput p4, p0, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;->maxHeight:I
 
-    .line 379
+    .line 376
     return-void
 .end method
 
@@ -90,17 +90,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 338
+    .line 335
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 346
+    .line 343
     sget-object v1, Lcom/android/internal/R$styleable;->SizeAdaptiveLayout_Layout:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 350
+    .line 347
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v1, 0x1
 
@@ -110,7 +110,7 @@
 
     iput v1, p0, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;->minHeight:I
 
-    .line 354
+    .line 351
     const/4 v1, 0x0
 
     const/4 v2, -0x1
@@ -124,14 +124,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 360
+    .line 357
     :goto_0
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 361
+    .line 358
     return-void
 
-    .line 356
+    .line 353
     :catch_0
     move-exception v1
 
@@ -145,16 +145,16 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 399
+    .line 396
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 400
+    .line 397
     iput v0, p0, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;->minHeight:I
 
-    .line 401
+    .line 398
     iput v0, p0, Lcom/android/internal/widget/SizeAdaptiveLayout$LayoutParams;->maxHeight:I
 
-    .line 402
+    .line 399
     return-void
 .end method
 
@@ -165,7 +165,7 @@
     .parameter "output"
 
     .prologue
-    .line 405
+    .line 402
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

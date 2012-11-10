@@ -188,7 +188,13 @@
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pService;->mContext:Landroid/content/Context;
 
     .line 198
-    const-string/jumbo v0, "p2p0"
+    const-string/jumbo v0, "wifi.p2pinterface"
+
+    const-string/jumbo v1, "p2p0"
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pService;->mInterface:Ljava/lang/String;
 
@@ -240,7 +246,7 @@
 
     move-result-object v1
 
-    const v2, 0x104001a
+    const v2, 0x1040022
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

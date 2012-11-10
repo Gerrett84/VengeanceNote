@@ -16,7 +16,7 @@
 
     .prologue
     .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -198,7 +198,7 @@
 
     .line 84
     :goto_2
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     .line 85
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -239,6 +239,30 @@
 
     invoke-direct {p0, v3}, Landroid/database/DefaultDatabaseErrorHandler;->deleteDatabaseFile(Ljava/lang/String;)V
 
+    .line 84
+    :cond_3
+    throw v4
+
+    .line 74
+    :catch_0
+    move-exception v3
+
+    goto :goto_1
+
+    .line 79
+    :catch_1
+    move-exception v3
+
+    goto :goto_2
+
+    .line 91
+    :cond_4
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {p0, v3}, Landroid/database/DefaultDatabaseErrorHandler;->deleteDatabaseFile(Ljava/lang/String;)V
+
     goto :goto_0
 
     .line 84
@@ -247,7 +271,7 @@
 
     move-object v4, v3
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     .line 85
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -260,7 +284,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_3
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -277,29 +301,4 @@
     invoke-direct {p0, v3}, Landroid/database/DefaultDatabaseErrorHandler;->deleteDatabaseFile(Ljava/lang/String;)V
 
     goto :goto_4
-
-    .line 91
-    .end local v1           #i$:Ljava/util/Iterator;
-    .end local v2           #p:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
-    :cond_3
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3}, Landroid/database/DefaultDatabaseErrorHandler;->deleteDatabaseFile(Ljava/lang/String;)V
-
-    :cond_4
-    throw v4
-
-    .line 74
-    :catch_0
-    move-exception v3
-
-    goto :goto_1
-
-    .line 79
-    :catch_1
-    move-exception v3
-
-    goto :goto_2
 .end method

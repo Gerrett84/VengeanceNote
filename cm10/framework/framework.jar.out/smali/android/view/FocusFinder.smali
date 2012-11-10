@@ -65,7 +65,7 @@
 
     .prologue
     .line 54
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     new-instance v0, Landroid/graphics/Rect;
@@ -161,8 +161,10 @@
     .local v6, next:Landroid/view/View;
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
+    .line 187
     return-object v6
 
+    .line 189
     .end local v6           #next:Landroid/view/View;
     :catchall_0
     move-exception v0
@@ -1525,7 +1527,7 @@
     .local v9, numTouchables:I
     move-object/from16 v0, p1
 
-    iget-object v13, v0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v13, v0, Landroid/view/ViewGroup;->mContext:Landroid/content/Context;
 
     invoke-static {v13}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 

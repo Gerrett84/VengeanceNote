@@ -30,7 +30,7 @@
     .line 334
     iput-object p1, p0, Landroid/app/MediaRouteButton$1;->this$0:Landroid/app/MediaRouteButton;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

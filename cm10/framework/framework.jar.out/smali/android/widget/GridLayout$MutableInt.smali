@@ -24,7 +24,7 @@
 
     .prologue
     .line 2059
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2060
     invoke-virtual {p0}, Landroid/widget/GridLayout$MutableInt;->reset()V
@@ -39,7 +39,7 @@
 
     .prologue
     .line 2063
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2064
     iput p1, p0, Landroid/widget/GridLayout$MutableInt;->value:I

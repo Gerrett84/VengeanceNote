@@ -59,7 +59,7 @@
     .line 74
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/view/accessibility/AccessibilityManager;->sInstanceSync:Ljava/lang/Object;
 
@@ -73,7 +73,7 @@
 
     .prologue
     .line 155
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 88
     new-instance v2, Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -791,12 +791,12 @@
     if-eqz v0, :cond_1
 
     .line 234
-    .end local v1           #identityToken:J
-    :goto_0
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
 
     .line 237
+    .end local v1           #identityToken:J
     :cond_1
+    :goto_0
     return-void
 
     .line 230
@@ -839,8 +839,12 @@
     .line 233
     if-eqz v0, :cond_1
 
+    .line 234
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
+
     goto :goto_0
 
+    .line 233
     .end local v3           #re:Landroid/os/RemoteException;
     :catchall_0
     move-exception v4
@@ -850,7 +854,6 @@
     .line 234
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
 
-    .line 233
     :cond_2
     throw v4
 .end method

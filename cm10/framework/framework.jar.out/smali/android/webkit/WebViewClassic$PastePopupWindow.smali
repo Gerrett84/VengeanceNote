@@ -35,10 +35,10 @@
 
     const/4 v5, -0x2
 
-    .line 603
+    .line 600
     iput-object p1, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
 
-    .line 604
+    .line 601
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$600(Landroid/webkit/WebViewClassic;)Landroid/content/Context;
 
@@ -48,12 +48,12 @@
 
     invoke-direct {p0, v3, v6, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 606
+    .line 603
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Landroid/webkit/WebViewClassic$PastePopupWindow;->setClippingEnabled(Z)V
 
-    .line 607
+    .line 604
     new-instance v1, Landroid/widget/LinearLayout;
 
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
@@ -63,23 +63,23 @@
 
     invoke-direct {v1, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 608
+    .line 605
     .local v1, linearLayout:Landroid/widget/LinearLayout;
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 609
+    .line 606
     iput-object v1, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    .line 610
+    .line 607
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    const v4, 0x10805b7
+    const v4, 0x10805e1
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
-    .line 613
+    .line 610
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$600(Landroid/webkit/WebViewClassic;)Landroid/content/Context;
 
@@ -93,13 +93,13 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 616
+    .line 613
     .local v0, inflater:Landroid/view/LayoutInflater;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v2, v5, v5}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 619
+    .line 616
     .local v2, wrapContent:Landroid/view/ViewGroup$LayoutParams;
     const v3, 0x10900b4
 
@@ -111,36 +111,36 @@
 
     iput-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mPasteTextView:Landroid/widget/TextView;
 
-    .line 621
+    .line 618
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mPasteTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 622
+    .line 619
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
     iget-object v4, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mPasteTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 623
+    .line 620
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mPasteTextView:Landroid/widget/TextView;
 
     const v4, 0x104000b
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
-    .line 624
+    .line 621
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mPasteTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 625
+    .line 622
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
     invoke-virtual {p0, v3}, Landroid/webkit/WebViewClassic$PastePopupWindow;->setContentView(Landroid/view/View;)V
 
-    .line 626
+    .line 623
     return-void
 .end method
 
@@ -150,10 +150,10 @@
     .locals 0
 
     .prologue
-    .line 653
+    .line 650
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$PastePopupWindow;->dismiss()V
 
-    .line 654
+    .line 651
     return-void
 .end method
 
@@ -163,7 +163,7 @@
     .prologue
     const/high16 v4, -0x8000
 
-    .line 663
+    .line 660
     iget-object v1, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mContext:Landroid/content/Context;
@@ -179,7 +179,7 @@
 
     move-result-object v0
 
-    .line 664
+    .line 661
     .local v0, displayMetrics:Landroid/util/DisplayMetrics;
     iget-object v1, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
@@ -197,7 +197,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 669
+    .line 666
     return-void
 .end method
 
@@ -206,17 +206,17 @@
     .parameter "view"
 
     .prologue
-    .line 658
+    .line 655
     iget-object v0, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->pasteFromClipboard()V
 
-    .line 659
+    .line 656
     iget-object v0, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->selectionDone()V
 
-    .line 660
+    .line 657
     return-void
 .end method
 
@@ -228,17 +228,17 @@
     .parameter "windowTop"
 
     .prologue
-    .line 630
+    .line 627
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$PastePopupWindow;->measureContent()V
 
-    .line 632
+    .line 629
     iget-object v4, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 633
+    .line 630
     .local v1, width:I
     iget-object v4, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
@@ -246,13 +246,13 @@
 
     move-result v0
 
-    .line 634
+    .line 631
     .local v0, height:I
     iget v4, p2, Landroid/graphics/Point;->y:I
 
     sub-int v3, v4, v0
 
-    .line 635
+    .line 632
     .local v3, y:I
     iget v4, p2, Landroid/graphics/Point;->x:I
 
@@ -260,17 +260,17 @@
 
     sub-int v2, v4, v5
 
-    .line 636
+    .line 633
     .local v2, x:I
     if-ge v3, p4, :cond_0
 
-    .line 639
+    .line 636
     iget-object v4, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     #calls: Landroid/webkit/WebViewClassic;->ensureSelectionHandles()V
     invoke-static {v4}, Landroid/webkit/WebViewClassic;->access$700(Landroid/webkit/WebViewClassic;)V
 
-    .line 640
+    .line 637
     iget v4, p1, Landroid/graphics/Point;->y:I
 
     iget-object v5, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
@@ -286,21 +286,21 @@
 
     add-int v3, v4, v5
 
-    .line 641
+    .line 638
     iget v4, p1, Landroid/graphics/Point;->x:I
 
     div-int/lit8 v5, v1, 0x2
 
     sub-int v2, v4, v5
 
-    .line 643
+    .line 640
     :cond_0
     if-ge v2, p3, :cond_1
 
-    .line 644
+    .line 641
     move v2, p3
 
-    .line 646
+    .line 643
     :cond_1
     invoke-virtual {p0}, Landroid/webkit/WebViewClassic$PastePopupWindow;->isShowing()Z
 
@@ -308,7 +308,7 @@
 
     if-nez v4, :cond_2
 
-    .line 647
+    .line 644
     iget-object v4, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mWebView:Landroid/webkit/WebView;
@@ -320,10 +320,10 @@
 
     invoke-virtual {p0, v4, v5, v2, v3}, Landroid/webkit/WebViewClassic$PastePopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 649
+    .line 646
     :cond_2
     invoke-virtual {p0, v2, v3, v1, v0}, Landroid/webkit/WebViewClassic$PastePopupWindow;->update(IIII)V
 
-    .line 650
+    .line 647
     return-void
 .end method

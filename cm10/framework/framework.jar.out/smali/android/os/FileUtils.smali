@@ -61,7 +61,7 @@
 
     .prologue
     .line 38
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
     return-void
@@ -131,9 +131,9 @@
     :try_start_2
     invoke-virtual {v3}, Ljava/util/zip/CheckedInputStream;->close()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 281
+    .line 275
     :cond_1
     :goto_0
     return-wide v4
@@ -152,33 +152,29 @@
     :try_start_3
     invoke-virtual {v2}, Ljava/util/zip/CheckedInputStream;->close()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 281
+    .line 277
     :cond_2
     :goto_2
     throw v4
 
     .line 280
-    .end local v2           #cis:Ljava/util/zip/CheckedInputStream;
-    .restart local v0       #buf:[B
-    .restart local v3       #cis:Ljava/util/zip/CheckedInputStream;
     :catch_0
-    move-exception v6
-
-    goto :goto_0
-
-    .end local v0           #buf:[B
-    .end local v3           #cis:Ljava/util/zip/CheckedInputStream;
-    .restart local v2       #cis:Ljava/util/zip/CheckedInputStream;
-    :catch_1
     move-exception v5
 
     goto :goto_2
 
-    .line 277
     .end local v2           #cis:Ljava/util/zip/CheckedInputStream;
+    .restart local v0       #buf:[B
     .restart local v3       #cis:Ljava/util/zip/CheckedInputStream;
+    :catch_1
+    move-exception v6
+
+    goto :goto_0
+
+    .line 277
+    .end local v0           #buf:[B
     :catchall_1
     move-exception v4
 
@@ -218,7 +214,7 @@
 
     .line 138
     :try_start_2
-    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
     .line 143
     .end local v1           #in:Ljava/io/InputStream;
@@ -230,7 +226,7 @@
     :catchall_0
     move-exception v3
 
-    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
     throw v3
     :try_end_2
@@ -320,13 +316,14 @@
 
     invoke-virtual {v6}, Ljava/io/FileDescriptor;->sync()V
     :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
     .line 168
     :goto_1
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
 
+    .line 163
     throw v5
 
     .line 171
@@ -355,7 +352,7 @@
 
     invoke-virtual {v5}, Ljava/io/FileDescriptor;->sync()V
     :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
 
     .line 168
     :goto_3
@@ -370,19 +367,17 @@
     goto :goto_2
 
     .line 166
-    .end local v0           #buffer:[B
-    .end local v1           #bytesRead:I
     :catch_1
-    move-exception v6
-
-    goto :goto_1
-
-    .restart local v0       #buffer:[B
-    .restart local v1       #bytesRead:I
-    :catch_2
     move-exception v5
 
     goto :goto_3
+
+    .end local v0           #buffer:[B
+    .end local v1           #bytesRead:I
+    :catch_2
+    move-exception v6
+
+    goto :goto_1
 .end method
 
 .method public static native getFatVolumeId(Ljava/lang/String;)I
@@ -499,7 +494,7 @@
 
     .line 202
     .local v1, data:[B
-    invoke-virtual {v2, v1}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v2, v1}, Ljava/io/InputStream;->read([B)I
 
     move-result v5
 
@@ -512,10 +507,11 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-
     .end local v5           #length:I
     :goto_0
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+
+    .line 235
     return-object v10
 
     .line 204
@@ -532,12 +528,23 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-
     goto :goto_0
 
+    .line 238
+    .end local v1           #data:[B
+    .end local v5           #length:I
+    .end local v7           #size:J
+    :catchall_0
+    move-exception v10
+
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+
+    throw v10
+
     .line 205
+    .restart local v1       #data:[B
+    .restart local v5       #length:I
+    .restart local v7       #size:J
     :cond_4
     if-nez p2, :cond_5
 
@@ -547,17 +554,11 @@
     const/4 v11, 0x0
 
     invoke-direct {v10, v1, v11, p1}, Ljava/lang/String;-><init>([BII)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     goto :goto_0
 
     .line 206
     :cond_5
-    :try_start_3
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -577,13 +578,8 @@
     move-result-object v10
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     move-result-object v10
-
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     goto :goto_0
 
@@ -624,12 +620,11 @@
 
     neg-int v10, p1
 
-    :try_start_4
     new-array v1, v10, [B
 
     .line 215
     :cond_9
-    invoke-virtual {v2, v1}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v2, v1}, Ljava/io/InputStream;->read([B)I
 
     move-result v4
 
@@ -645,11 +640,6 @@
     if-gtz v4, :cond_a
 
     const-string v10, ""
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     goto :goto_0
 
@@ -657,17 +647,11 @@
     :cond_a
     if-nez v3, :cond_b
 
-    :try_start_5
     new-instance v10, Ljava/lang/String;
 
     const/4 v11, 0x0
 
     invoke-direct {v10, v1, v11, v4}, Ljava/lang/String;-><init>([BII)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     goto :goto_0
 
@@ -681,7 +665,6 @@
     .line 222
     const/4 v10, 0x0
 
-    :try_start_6
     array-length v11, v3
 
     sub-int/2addr v11, v4
@@ -707,17 +690,11 @@
     new-instance v10, Ljava/lang/String;
 
     invoke-direct {v10, v3}, Ljava/lang/String;-><init>([B)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     goto :goto_0
 
     .line 226
     :cond_e
-    :try_start_7
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -735,13 +712,8 @@
     move-result-object v10
 
     invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     move-result-object v10
-
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     goto/16 :goto_0
 
@@ -752,7 +724,6 @@
     .end local v6           #rolled:Z
     .end local v9           #tmp:[B
     :cond_f
-    :try_start_8
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -766,7 +737,7 @@
     .line 232
     .restart local v1       #data:[B
     :cond_10
-    invoke-virtual {v2, v1}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v2, v1}, Ljava/io/InputStream;->read([B)I
 
     move-result v4
 
@@ -786,26 +757,12 @@
 
     .line 235
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toString()Ljava/lang/String;
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     move-result-object v10
 
-    .line 238
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-
     goto/16 :goto_0
-
-    .end local v0           #contents:Ljava/io/ByteArrayOutputStream;
-    .end local v1           #data:[B
-    .end local v4           #len:I
-    .end local v7           #size:J
-    :catchall_0
-    move-exception v10
-
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-
-    throw v10
 .end method
 
 .method public static native setPermissions(Ljava/lang/String;III)I

@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 326
+    .line 313
     iput-object p1, p0, Landroid/widget/Toast$TN$2;->this$0:Landroid/widget/Toast$TN;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,18 +41,18 @@
     .locals 2
 
     .prologue
-    .line 328
+    .line 315
     iget-object v0, p0, Landroid/widget/Toast$TN$2;->this$0:Landroid/widget/Toast$TN;
 
     invoke-virtual {v0}, Landroid/widget/Toast$TN;->handleHide()V
 
-    .line 330
+    .line 317
     iget-object v0, p0, Landroid/widget/Toast$TN$2;->this$0:Landroid/widget/Toast$TN;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/widget/Toast$TN;->mNextView:Landroid/view/View;
 
-    .line 331
+    .line 318
     return-void
 .end method

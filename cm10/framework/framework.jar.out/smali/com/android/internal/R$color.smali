@@ -63,7 +63,7 @@
 
 .field public static final tab_indicator_text:I = 0x1060009
 
-.field public static final tab_indicator_text_v4:I = 0x106007c
+.field public static final tab_indicator_text_v4:I = 0x1060075
 
 .field public static final tertiary_text_dark:I = 0x1060010
 
@@ -81,8 +81,8 @@
     .locals 0
 
     .prologue
-    .line 10857
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 10959
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

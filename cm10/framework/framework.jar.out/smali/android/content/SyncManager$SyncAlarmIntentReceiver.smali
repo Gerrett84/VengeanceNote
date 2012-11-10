@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 706
+    .line 716
     iput-object p1, p0, Landroid/content/SyncManager$SyncAlarmIntentReceiver;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,22 +40,22 @@
     .parameter "intent"
 
     .prologue
-    .line 708
+    .line 718
     iget-object v0, p0, Landroid/content/SyncManager$SyncAlarmIntentReceiver;->this$0:Landroid/content/SyncManager;
 
     #getter for: Landroid/content/SyncManager;->mHandleAlarmWakeLock:Landroid/os/PowerManager$WakeLock;
-    invoke-static {v0}, Landroid/content/SyncManager;->access$800(Landroid/content/SyncManager;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v0}, Landroid/content/SyncManager;->access$900(Landroid/content/SyncManager;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 709
+    .line 719
     iget-object v0, p0, Landroid/content/SyncManager$SyncAlarmIntentReceiver;->this$0:Landroid/content/SyncManager;
 
     #calls: Landroid/content/SyncManager;->sendSyncAlarmMessage()V
-    invoke-static {v0}, Landroid/content/SyncManager;->access$900(Landroid/content/SyncManager;)V
+    invoke-static {v0}, Landroid/content/SyncManager;->access$1000(Landroid/content/SyncManager;)V
 
-    .line 710
+    .line 720
     return-void
 .end method

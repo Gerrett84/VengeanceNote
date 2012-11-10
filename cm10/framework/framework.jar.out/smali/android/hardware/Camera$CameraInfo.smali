@@ -19,6 +19,10 @@
 
 .field public static final CAMERA_FACING_FRONT:I = 0x1
 
+.field public static final CAMERA_SUPPORT_MODE_NONZSL:I = 0x3
+
+.field public static final CAMERA_SUPPORT_MODE_ZSL:I = 0x2
+
 
 # instance fields
 .field public facing:I
@@ -31,8 +35,8 @@
     .locals 0
 
     .prologue
-    .line 200
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 203
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

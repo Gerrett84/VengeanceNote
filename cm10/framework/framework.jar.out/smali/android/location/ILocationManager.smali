@@ -279,6 +279,14 @@
     .end annotation
 .end method
 
+.method public abstract setGPSSource(Ljava/lang/String;)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract setTestProviderEnabled(Ljava/lang/String;Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

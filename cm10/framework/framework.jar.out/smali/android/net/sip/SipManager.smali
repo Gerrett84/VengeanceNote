@@ -44,7 +44,7 @@
 
     .prologue
     .line 158
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 159
     iput-object p1, p0, Landroid/net/sip/SipManager;->mContext:Landroid/content/Context;
@@ -224,7 +224,7 @@
 
     move-result-object v0
 
-    const v1, 0x111002b
+    const v1, 0x1110030
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 

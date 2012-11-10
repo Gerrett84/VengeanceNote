@@ -33,7 +33,7 @@
 
     .prologue
     .line 152
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 153
     return-void
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 805
+    .line 816
     monitor-enter p0
 
     :try_start_0
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 837
+    .line 848
     monitor-enter p0
 
     :try_start_0
@@ -147,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1201
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -183,7 +183,7 @@
     .locals 1
 
     .prologue
-    .line 1020
+    .line 1031
     monitor-enter p0
 
     :try_start_0
@@ -207,7 +207,7 @@
     .locals 1
 
     .prologue
-    .line 1011
+    .line 1022
     monitor-enter p0
 
     :try_start_0
@@ -279,7 +279,7 @@
     .locals 1
 
     .prologue
-    .line 1134
+    .line 1145
     monitor-enter p0
 
     :try_start_0
@@ -327,7 +327,7 @@
     .locals 1
 
     .prologue
-    .line 1002
+    .line 1013
     monitor-enter p0
 
     :try_start_0
@@ -399,7 +399,7 @@
     .locals 1
 
     .prologue
-    .line 1115
+    .line 1126
     monitor-enter p0
 
     :try_start_0
@@ -423,7 +423,7 @@
     .locals 1
 
     .prologue
-    .line 1039
+    .line 1050
     monitor-enter p0
 
     :try_start_0
@@ -495,7 +495,7 @@
     .locals 1
 
     .prologue
-    .line 776
+    .line 787
     monitor-enter p0
 
     :try_start_0
@@ -581,7 +581,7 @@
     .locals 1
 
     .prologue
-    .line 1080
+    .line 1091
     monitor-enter p0
 
     :try_start_0
@@ -607,7 +607,7 @@
     .end annotation
 
     .prologue
-    .line 1071
+    .line 1082
     monitor-enter p0
 
     :try_start_0
@@ -633,7 +633,7 @@
     .end annotation
 
     .prologue
-    .line 1094
+    .line 1105
     monitor-enter p0
 
     :try_start_0
@@ -881,7 +881,7 @@
     .locals 1
 
     .prologue
-    .line 1149
+    .line 1160
     monitor-enter p0
 
     :try_start_0
@@ -938,7 +938,7 @@
     .parameter "flag"
 
     .prologue
-    .line 953
+    .line 964
     monitor-enter p0
 
     :try_start_0
@@ -963,7 +963,7 @@
     .parameter "appCacheMaxSize"
 
     .prologue
-    .line 975
+    .line 986
     monitor-enter p0
 
     :try_start_0
@@ -988,7 +988,7 @@
     .parameter "appCachePath"
 
     .prologue
-    .line 966
+    .line 977
     monitor-enter p0
 
     :try_start_0
@@ -1013,7 +1013,7 @@
     .parameter "flag"
 
     .prologue
-    .line 795
+    .line 806
     monitor-enter p0
 
     :try_start_0
@@ -1038,7 +1038,7 @@
     .parameter "flag"
 
     .prologue
-    .line 827
+    .line 838
     monitor-enter p0
 
     :try_start_0
@@ -1076,7 +1076,7 @@
     .parameter "mode"
 
     .prologue
-    .line 1182
+    .line 1193
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -1114,7 +1114,7 @@
     .parameter "flag"
 
     .prologue
-    .line 984
+    .line 995
     monitor-enter p0
 
     :try_start_0
@@ -1139,7 +1139,7 @@
     .parameter "databasePath"
 
     .prologue
-    .line 932
+    .line 943
     monitor-enter p0
 
     :try_start_0
@@ -1214,7 +1214,7 @@
     .parameter "encoding"
 
     .prologue
-    .line 1124
+    .line 1135
     monitor-enter p0
 
     :try_start_0
@@ -1265,7 +1265,7 @@
     .parameter "flag"
 
     .prologue
-    .line 993
+    .line 1004
     monitor-enter p0
 
     :try_start_0
@@ -1353,7 +1353,7 @@
     .parameter "databasePath"
 
     .prologue
-    .line 944
+    .line 955
     monitor-enter p0
 
     :try_start_0
@@ -1378,7 +1378,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1029
+    .line 1040
     monitor-enter p0
 
     :try_start_0
@@ -1403,7 +1403,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1104
+    .line 1115
     monitor-enter p0
 
     :try_start_0
@@ -1428,7 +1428,7 @@
     .parameter "flag"
 
     .prologue
-    .line 847
+    .line 858
     monitor-enter p0
 
     :try_start_0
@@ -1504,7 +1504,32 @@
     .parameter "flag"
 
     .prologue
-    .line 765
+    .line 776
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v0, Landroid/webkit/MustOverrideException;
+
+    invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
+
+    throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized setMediaPreloadEnabled(Z)V
+    .locals 1
+    .parameter "flag"
+
+    .prologue
+    .line 761
     monitor-enter p0
 
     :try_start_0
@@ -1594,7 +1619,7 @@
     .parameter "flag"
 
     .prologue
-    .line 1159
+    .line 1170
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -1607,7 +1632,7 @@
     .parameter "state"
 
     .prologue
-    .line 906
+    .line 917
     monitor-enter p0
 
     :try_start_0
@@ -1634,7 +1659,7 @@
     .end annotation
 
     .prologue
-    .line 894
+    .line 905
     monitor-enter p0
 
     :try_start_0
@@ -1661,7 +1686,7 @@
     .end annotation
 
     .prologue
-    .line 920
+    .line 931
     monitor-enter p0
 
     monitor-exit p0
@@ -1674,7 +1699,7 @@
     .parameter "priority"
 
     .prologue
-    .line 1169
+    .line 1180
     monitor-enter p0
 
     :try_start_0
@@ -1970,7 +1995,7 @@
     .parameter "ua"
 
     .prologue
-    .line 1142
+    .line 1153
     monitor-enter p0
 
     :try_start_0

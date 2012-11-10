@@ -20,10 +20,6 @@
 
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator; = null
-    .annotation build Landroid/annotation/MiuiHook;
-        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/os/Parcelable$Creator",
@@ -50,7 +46,7 @@
     .locals 1
 
     .prologue
-    .line 145
+    .line 142
     new-instance v0, Landroid/content/pm/ParceledListSlice$1;
 
     invoke-direct {v0}, Landroid/content/pm/ParceledListSlice$1;-><init>()V
@@ -64,18 +60,18 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 44
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
+    .line 45
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
-    .line 48
+    .line 46
     return-void
 .end method
 
@@ -86,20 +82,20 @@
     .parameter "lastSlice"
 
     .prologue
-    .line 50
+    .line 48
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 49
     iput-object p1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
-    .line 52
+    .line 50
     iput p2, p0, Landroid/content/pm/ParceledListSlice;->mNumItems:I
 
-    .line 53
+    .line 51
     iput-boolean p3, p0, Landroid/content/pm/ParceledListSlice;->mIsLastSlice:Z
 
-    .line 54
+    .line 52
     return-void
 .end method
 
@@ -111,7 +107,7 @@
     .parameter "x3"
 
     .prologue
-    .line 33
+    .line 31
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
     invoke-direct {p0, p1, p2, p3}, Landroid/content/pm/ParceledListSlice;-><init>(Landroid/os/Parcel;IZ)V
 
@@ -134,12 +130,12 @@
     .local p1, item:Landroid/os/Parcelable;,"TT;"
     const/4 v0, 0x1
 
-    .line 90
+    .line 88
     iget-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     if-nez v1, :cond_0
 
-    .line 91
+    .line 89
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "ParceledListSlice has already been recycled"
@@ -148,20 +144,20 @@
 
     throw v0
 
-    .line 94
+    .line 92
     :cond_0
     iget-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-interface {p1, v1, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 95
+    .line 93
     iget v1, p0, Landroid/content/pm/ParceledListSlice;->mNumItems:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Landroid/content/pm/ParceledListSlice;->mNumItems:I
 
-    .line 97
+    .line 95
     iget-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v1}, Landroid/os/Parcel;->dataSize()I
@@ -185,7 +181,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 56
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
     const/4 v0, 0x0
 
@@ -196,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 140
+    .line 138
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
     iget-boolean v0, p0, Landroid/content/pm/ParceledListSlice;->mIsLastSlice:Z
 
@@ -218,7 +214,7 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 109
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
     .local p1, list:Ljava/util/List;,"Ljava/util/List<TT;>;"
     .local p2, creator:Landroid/os/Parcelable$Creator;,"Landroid/os/Parcelable$Creator<TT;>;"
@@ -228,10 +224,10 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 113
+    .line 111
     const/4 v1, 0x0
 
-    .line 114
+    .line 112
     .local v1, item:Landroid/os/Parcelable;,"TT;"
     const/4 v0, 0x0
 
@@ -241,7 +237,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 115
+    .line 113
     iget-object v2, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-interface {p2, v2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -251,27 +247,27 @@
     .end local v1           #item:Landroid/os/Parcelable;,"TT;"
     check-cast v1, Landroid/os/Parcelable;
 
-    .line 116
+    .line 114
     .restart local v1       #item:Landroid/os/Parcelable;,"TT;"
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 114
+    .line 112
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 119
+    .line 117
     :cond_0
     iget-object v2, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    .line 120
+    .line 118
     const/4 v2, 0x0
 
     iput-object v2, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
-    .line 122
+    .line 120
     return-object v1
 .end method
 
@@ -280,11 +276,11 @@
     .parameter "lastSlice"
 
     .prologue
-    .line 131
+    .line 129
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
     iput-boolean p1, p0, Landroid/content/pm/ParceledListSlice;->mIsLastSlice:Z
 
-    .line 132
+    .line 130
     return-void
 .end method
 
@@ -297,12 +293,12 @@
     .local p0, this:Landroid/content/pm/ParceledListSlice;,"Landroid/content/pm/ParceledListSlice<TT;>;"
     const/4 v2, 0x0
 
-    .line 68
+    .line 66
     iget v1, p0, Landroid/content/pm/ParceledListSlice;->mNumItems:I
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 69
+    .line 67
     iget-boolean v1, p0, Landroid/content/pm/ParceledListSlice;->mIsLastSlice:Z
 
     if-eqz v1, :cond_1
@@ -312,48 +308,48 @@
     :goto_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 71
+    .line 69
     iget v1, p0, Landroid/content/pm/ParceledListSlice;->mNumItems:I
 
     if-lez v1, :cond_0
 
-    .line 72
+    .line 70
     iget-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v1}, Landroid/os/Parcel;->dataSize()I
 
     move-result v0
 
-    .line 73
+    .line 71
     .local v0, parcelSize:I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 74
+    .line 72
     iget-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
 
-    .line 77
+    .line 75
     .end local v0           #parcelSize:I
     :cond_0
     iput v2, p0, Landroid/content/pm/ParceledListSlice;->mNumItems:I
 
-    .line 78
+    .line 76
     iget-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 79
+    .line 77
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/content/pm/ParceledListSlice;->mParcel:Landroid/os/Parcel;
 
-    .line 80
+    .line 78
     return-void
 
     :cond_1
     move v1, v2
 
-    .line 69
+    .line 67
     goto :goto_0
 .end method

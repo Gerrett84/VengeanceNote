@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 804
+    .line 802
     new-instance v0, Landroid/app/ActivityManager$TaskThumbnails$1;
 
     invoke-direct {v0}, Landroid/app/ActivityManager$TaskThumbnails$1;-><init>()V
@@ -57,10 +57,10 @@
     .locals 0
 
     .prologue
-    .line 768
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 766
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 769
+    .line 767
     return-void
 .end method
 
@@ -69,13 +69,13 @@
     .parameter "source"
 
     .prologue
-    .line 813
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 811
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 814
+    .line 812
     invoke-virtual {p0, p1}, Landroid/app/ActivityManager$TaskThumbnails;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 815
+    .line 813
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .parameter "x1"
 
     .prologue
-    .line 760
+    .line 758
     invoke-direct {p0, p1}, Landroid/app/ActivityManager$TaskThumbnails;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -97,7 +97,7 @@
     .locals 1
 
     .prologue
-    .line 780
+    .line 778
     const/4 v0, 0x0
 
     return v0
@@ -108,7 +108,7 @@
     .parameter "index"
 
     .prologue
-    .line 773
+    .line 771
     :try_start_0
     iget-object v1, p0, Landroid/app/ActivityManager$TaskThumbnails;->retriever:Landroid/app/IThumbnailRetriever;
 
@@ -118,15 +118,15 @@
 
     move-result-object v1
 
-    .line 775
+    .line 773
     :goto_0
     return-object v1
 
-    .line 774
+    .line 772
     :catch_0
     move-exception v0
 
-    .line 775
+    .line 773
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -138,14 +138,14 @@
     .parameter "source"
 
     .prologue
-    .line 795
+    .line 793
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 796
+    .line 794
     sget-object v0, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -156,7 +156,7 @@
 
     iput-object v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
-    .line 800
+    .line 798
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -164,7 +164,7 @@
 
     iput v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
-    .line 801
+    .line 799
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -175,10 +175,10 @@
 
     iput-object v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->retriever:Landroid/app/IThumbnailRetriever;
 
-    .line 802
+    .line 800
     return-void
 
-    .line 798
+    .line 796
     :cond_0
     const/4 v0, 0x0
 
@@ -195,36 +195,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 784
+    .line 782
     iget-object v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 785
+    .line 783
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 786
+    .line 784
     iget-object v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->mainThumbnail:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, p1, v1}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 790
+    .line 788
     :goto_0
     iget v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->numSubThumbbails:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 791
+    .line 789
     iget-object v0, p0, Landroid/app/ActivityManager$TaskThumbnails;->retriever:Landroid/app/IThumbnailRetriever;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongInterface(Landroid/os/IInterface;)V
 
-    .line 792
+    .line 790
     return-void
 
-    .line 788
+    .line 786
     :cond_0
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 

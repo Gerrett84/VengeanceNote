@@ -4,16 +4,12 @@
 
 
 # annotations
-.annotation build Landroid/annotation/MiuiHook;
-    value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/app/ApplicationPackageManager;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
+    accessFlags = 0x1a
     name = "ResourceName"
 .end annotation
 
@@ -31,12 +27,12 @@
     .parameter "_iconId"
 
     .prologue
-    .line 848
-    iget-object v0, p1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    .line 851
+    iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v0, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
 
-    .line 849
+    .line 852
     return-void
 .end method
 
@@ -46,14 +42,14 @@
     .parameter "_iconId"
 
     .prologue
-    .line 852
+    .line 855
     iget-object v0, p1, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v0, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
 
-    .line 853
+    .line 856
     return-void
 .end method
 
@@ -63,16 +59,16 @@
     .parameter "_iconId"
 
     .prologue
-    .line 856
+    .line 859
     iget-object v0, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v0, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v0, v0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-direct {p0, v0, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
 
-    .line 857
+    .line 860
     return-void
 .end method
 
@@ -82,16 +78,16 @@
     .parameter "_iconId"
 
     .prologue
-    .line 842
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 845
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 843
+    .line 846
     iput-object p1, p0, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
-    .line 844
+    .line 847
     iput p2, p0, Landroid/app/ApplicationPackageManager$ResourceName;->iconId:I
 
-    .line 845
+    .line 848
     return-void
 .end method
 
@@ -106,15 +102,15 @@
 
     const/4 v2, 0x0
 
-    .line 861
+    .line 864
     if-ne p0, p1, :cond_1
 
-    .line 867
+    .line 870
     :cond_0
     :goto_0
     return v1
 
-    .line 862
+    .line 865
     :cond_1
     if-eqz p1, :cond_2
 
@@ -136,10 +132,10 @@
     :cond_3
     move-object v0, p1
 
-    .line 864
+    .line 867
     check-cast v0, Landroid/app/ApplicationPackageManager$ResourceName;
 
-    .line 866
+    .line 869
     .local v0, that:Landroid/app/ApplicationPackageManager$ResourceName;
     iget v3, p0, Landroid/app/ApplicationPackageManager$ResourceName;->iconId:I
 
@@ -151,7 +147,7 @@
 
     goto :goto_0
 
-    .line 867
+    .line 870
     :cond_4
     iget-object v3, p0, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
@@ -184,14 +180,14 @@
     .locals 3
 
     .prologue
-    .line 875
+    .line 878
     iget-object v1, p0, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    .line 876
+    .line 879
     .local v0, result:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -199,7 +195,7 @@
 
     add-int v0, v1, v2
 
-    .line 877
+    .line 880
     return v0
 .end method
 
@@ -207,7 +203,7 @@
     .locals 2
 
     .prologue
-    .line 882
+    .line 885
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

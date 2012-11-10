@@ -103,7 +103,7 @@
 
     move-result-object v2
 
-    const v3, 0x102030c
+    const v3, 0x102031b
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -167,7 +167,7 @@
     invoke-super {p0, p1}, Landroid/preference/SeekBarDialogPreference;->onBindDialogView(Landroid/view/View;)V
 
     .line 68
-    const v1, 0x102030c
+    const v1, 0x102031b
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -337,7 +337,7 @@
     .parameter "state"
 
     .prologue
-    .line 166
+    .line 171
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -352,11 +352,11 @@
 
     if-nez v1, :cond_2
 
-    .line 168
+    .line 173
     :cond_0
     invoke-super {p0, p1}, Landroid/preference/SeekBarDialogPreference;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 177
+    .line 182
     :cond_1
     :goto_0
     return-void
@@ -364,10 +364,10 @@
     :cond_2
     move-object v0, p1
 
-    .line 172
+    .line 177
     check-cast v0, Landroid/preference/VolumePreference$SavedState;
 
-    .line 173
+    .line 178
     .local v0, myState:Landroid/preference/VolumePreference$SavedState;
     invoke-virtual {v0}, Landroid/preference/VolumePreference$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -375,12 +375,12 @@
 
     invoke-super {p0, v1}, Landroid/preference/SeekBarDialogPreference;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 174
+    .line 179
     iget-object v1, p0, Landroid/preference/VolumePreference;->mSeekBarVolumizer:Landroid/preference/VolumePreference$SeekBarVolumizer;
 
     if-eqz v1, :cond_1
 
-    .line 175
+    .line 180
     iget-object v1, p0, Landroid/preference/VolumePreference;->mSeekBarVolumizer:Landroid/preference/VolumePreference$SeekBarVolumizer;
 
     invoke-virtual {v0}, Landroid/preference/VolumePreference$SavedState;->getVolumeStore()Landroid/preference/VolumePreference$VolumeStore;
@@ -420,12 +420,12 @@
     .locals 4
 
     .prologue
-    .line 151
+    .line 156
     invoke-super {p0}, Landroid/preference/SeekBarDialogPreference;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 152
+    .line 157
     .local v1, superState:Landroid/os/Parcelable;
     invoke-virtual {p0}, Landroid/preference/VolumePreference;->isPersistent()Z
 
@@ -433,25 +433,25 @@
 
     if-eqz v2, :cond_0
 
-    .line 161
+    .line 166
     .end local v1           #superState:Landroid/os/Parcelable;
     :goto_0
     return-object v1
 
-    .line 157
+    .line 162
     .restart local v1       #superState:Landroid/os/Parcelable;
     :cond_0
     new-instance v0, Landroid/preference/VolumePreference$SavedState;
 
     invoke-direct {v0, v1}, Landroid/preference/VolumePreference$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 158
+    .line 163
     .local v0, myState:Landroid/preference/VolumePreference$SavedState;
     iget-object v2, p0, Landroid/preference/VolumePreference;->mSeekBarVolumizer:Landroid/preference/VolumePreference$SeekBarVolumizer;
 
     if-eqz v2, :cond_1
 
-    .line 159
+    .line 164
     iget-object v2, p0, Landroid/preference/VolumePreference;->mSeekBarVolumizer:Landroid/preference/VolumePreference$SeekBarVolumizer;
 
     invoke-virtual {v0}, Landroid/preference/VolumePreference$SavedState;->getVolumeStore()Landroid/preference/VolumePreference$VolumeStore;
@@ -463,8 +463,20 @@
     :cond_1
     move-object v1, v0
 
-    .line 161
+    .line 166
     goto :goto_0
+.end method
+
+.method protected onVolumeChange(Landroid/preference/VolumePreference$SeekBarVolumizer;I)Z
+    .locals 1
+    .parameter "volumizer"
+    .parameter "value"
+
+    .prologue
+    .line 151
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public setStreamType(I)V

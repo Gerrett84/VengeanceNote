@@ -56,7 +56,7 @@
 
     .prologue
     .line 131
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 132
     iput-object p1, p0, Landroid/media/MiniThumbFile;->mUri:Landroid/net/Uri;
@@ -1233,7 +1233,7 @@
     if-eqz v7, :cond_0
 
     :try_start_2
-    throw v7
+    invoke-virtual {v7}, Ljava/nio/channels/FileLock;->release()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0

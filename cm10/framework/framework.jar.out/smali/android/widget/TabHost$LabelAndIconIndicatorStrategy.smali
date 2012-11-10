@@ -36,7 +36,7 @@
     .line 568
     iput-object p1, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->this$0:Landroid/widget/TabHost;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 569
     iput-object p2, p0, Landroid/widget/TabHost$LabelAndIconIndicatorStrategy;->mLabel:Ljava/lang/CharSequence;
@@ -190,7 +190,7 @@
     if-gt v7, v8, :cond_2
 
     .line 597
-    const v7, 0x10805a2
+    const v7, 0x10805cc
 
     invoke-virtual {v5, v7}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -199,7 +199,7 @@
 
     move-result-object v7
 
-    const v8, 0x106007c
+    const v8, 0x1060075
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getColorStateList(I)Landroid/content/res/ColorStateList;
 

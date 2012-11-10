@@ -54,46 +54,46 @@
     .parameter "l"
 
     .prologue
-    .line 1215
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 1227
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1221
+    .line 1233
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMap:Landroid/util/SparseArray;
 
-    .line 1222
+    .line 1234
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
-    .line 1223
+    .line 1235
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerKey:I
 
-    .line 1216
+    .line 1228
     new-instance v0, Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct {v0}, Lcom/android/internal/util/AsyncChannel;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
-    .line 1217
+    .line 1229
     new-instance v0, Landroid/net/wifi/WifiManager$Channel$WifiHandler;
 
     invoke-direct {v0, p0, p1}, Landroid/net/wifi/WifiManager$Channel$WifiHandler;-><init>(Landroid/net/wifi/WifiManager$Channel;Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mHandler:Landroid/net/wifi/WifiManager$Channel$WifiHandler;
 
-    .line 1218
+    .line 1230
     iput-object p2, p0, Landroid/net/wifi/WifiManager$Channel;->mChannelListener:Landroid/net/wifi/WifiManager$ChannelListener;
 
-    .line 1219
+    .line 1231
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1214
+    .line 1226
     iget-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mChannelListener:Landroid/net/wifi/WifiManager$ChannelListener;
 
     return-object v0
@@ -114,7 +114,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1214
+    .line 1226
     iput-object p1, p0, Landroid/net/wifi/WifiManager$Channel;->mChannelListener:Landroid/net/wifi/WifiManager$ChannelListener;
 
     return-object p1
@@ -125,7 +125,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1214
+    .line 1226
     iget-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
     return-object v0
@@ -136,7 +136,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1214
+    .line 1226
     iget-object v0, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMap:Landroid/util/SparseArray;
 
     return-object v0
@@ -151,22 +151,22 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 1291
+    .line 1303
     if-nez p1, :cond_0
 
     move v0, v1
 
-    .line 1299
+    .line 1311
     :goto_0
     return v0
 
-    .line 1293
+    .line 1305
     :cond_0
     iget-object v2, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1295
+    .line 1307
     :cond_1
     :try_start_0
     iget v0, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerKey:I
@@ -175,16 +175,16 @@
 
     iput v3, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerKey:I
 
-    .line 1296
+    .line 1308
     .local v0, key:I
     if-eq v0, v1, :cond_1
 
-    .line 1297
+    .line 1309
     iget-object v1, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1298
+    .line 1310
     monitor-exit v2
 
     goto :goto_0
@@ -205,24 +205,24 @@
     .parameter "key"
 
     .prologue
-    .line 1303
+    .line 1315
     const/4 v1, -0x1
 
     if-ne p1, v1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1307
+    .line 1319
     :goto_0
     return-object v0
 
-    .line 1304
+    .line 1316
     :cond_0
     iget-object v2, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1305
+    .line 1317
     :try_start_0
     iget-object v1, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMap:Landroid/util/SparseArray;
 
@@ -230,18 +230,18 @@
 
     move-result-object v0
 
-    .line 1306
+    .line 1318
     .local v0, listener:Ljava/lang/Object;
     iget-object v1, p0, Landroid/net/wifi/WifiManager$Channel;->mListenerMap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1307
+    .line 1319
     monitor-exit v2
 
     goto :goto_0
 
-    .line 1308
+    .line 1320
     .end local v0           #listener:Ljava/lang/Object;
     :catchall_0
     move-exception v1

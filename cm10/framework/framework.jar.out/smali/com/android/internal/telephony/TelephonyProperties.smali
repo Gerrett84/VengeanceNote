@@ -34,6 +34,8 @@
 
 .field public static final PROPERTY_LTE_ON_CDMA_PRODUCT_TYPE:Ljava/lang/String; = "telephony.lteOnCdmaProductType"
 
+.field public static final PROPERTY_LTE_ON_GSM_DEVICE:Ljava/lang/String; = "telephony.lteOnGsmDevice"
+
 .field public static final PROPERTY_OPERATOR_ALPHA:Ljava/lang/String; = "gsm.operator.alpha"
 
 .field public static final PROPERTY_OPERATOR_ISMANUAL:Ljava/lang/String; = "operator.ismanual"
@@ -57,6 +59,8 @@
 .field public static final PROPERTY_SMS_RECEIVE:Ljava/lang/String; = "telephony.sms.receive"
 
 .field public static final PROPERTY_SMS_SEND:Ljava/lang/String; = "telephony.sms.send"
+
+.field public static final PROPERTY_SVDATA:Ljava/lang/String; = "ro.config.svlte1x"
 
 .field public static final PROPERTY_TEST_CSIM:Ljava/lang/String; = "persist.radio.test-csim"
 

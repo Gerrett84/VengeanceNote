@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 1315
+    .line 1341
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -50,12 +50,12 @@
     .parameter "translucent"
 
     .prologue
-    .line 1365
+    .line 1391
     const/4 v0, 0x2
 
     invoke-direct {p0, v0, p1}, Landroid/view/HardwareRenderer$GlRenderer;-><init>(IZ)V
 
-    .line 1366
+    .line 1392
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1311
+    .line 1337
     invoke-static {p0}, Landroid/view/HardwareRenderer$Gl20Renderer;->usePbufferSurface(Ljavax/microedition/khronos/egl/EGLContext;)V
 
     return-void
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 1311
+    .line 1337
     sget-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sPbuffer:Ljavax/microedition/khronos/egl/EGLSurface;
 
     return-object v0
@@ -85,7 +85,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1311
+    .line 1337
     sput-object p0, Landroid/view/HardwareRenderer$Gl20Renderer;->sPbuffer:Ljavax/microedition/khronos/egl/EGLSurface;
 
     return-object p0
@@ -96,7 +96,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1311
+    .line 1337
     invoke-static {p0}, Landroid/view/HardwareRenderer$Gl20Renderer;->destroyResources(Landroid/view/View;)V
 
     return-void
@@ -107,19 +107,19 @@
     .parameter "translucent"
 
     .prologue
-    .line 1530
+    .line 1566
     invoke-static {}, Landroid/view/GLES20Canvas;->isAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1531
+    .line 1567
     new-instance v0, Landroid/view/HardwareRenderer$Gl20Renderer;
 
     invoke-direct {v0, p0}, Landroid/view/HardwareRenderer$Gl20Renderer;-><init>(Z)V
 
-    .line 1533
+    .line 1569
     :goto_0
     return-object v0
 
@@ -134,28 +134,28 @@
     .parameter "view"
 
     .prologue
-    .line 1467
+    .line 1503
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Landroid/view/View;->destroyLayer(Z)Z
 
-    .line 1469
+    .line 1505
     instance-of v3, p0, Landroid/view/ViewGroup;
 
     if-eqz v3, :cond_0
 
     move-object v1, p0
 
-    .line 1470
+    .line 1506
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 1472
+    .line 1508
     .local v1, group:Landroid/view/ViewGroup;
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    .line 1473
+    .line 1509
     .local v0, count:I
     const/4 v2, 0x0
 
@@ -163,19 +163,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1474
+    .line 1510
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-static {v3}, Landroid/view/HardwareRenderer$Gl20Renderer;->destroyHardwareLayer(Landroid/view/View;)V
 
-    .line 1473
+    .line 1509
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1477
+    .line 1513
     .end local v0           #count:I
     .end local v1           #group:Landroid/view/ViewGroup;
     .end local v2           #i:I
@@ -188,26 +188,26 @@
     .parameter "view"
 
     .prologue
-    .line 1517
+    .line 1553
     invoke-virtual {p0}, Landroid/view/View;->destroyHardwareResources()V
 
-    .line 1519
+    .line 1555
     instance-of v3, p0, Landroid/view/ViewGroup;
 
     if-eqz v3, :cond_0
 
     move-object v1, p0
 
-    .line 1520
+    .line 1556
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 1522
+    .line 1558
     .local v1, group:Landroid/view/ViewGroup;
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    .line 1523
+    .line 1559
     .local v0, count:I
     const/4 v2, 0x0
 
@@ -215,19 +215,19 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 1524
+    .line 1560
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-static {v3}, Landroid/view/HardwareRenderer$Gl20Renderer;->destroyResources(Landroid/view/View;)V
 
-    .line 1523
+    .line 1559
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1527
+    .line 1563
     .end local v0           #count:I
     .end local v1           #group:Landroid/view/ViewGroup;
     .end local v2           #i:I
@@ -239,7 +239,7 @@
     .locals 5
 
     .prologue
-    .line 1556
+    .line 1592
     sget-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     if-eqz v0, :cond_0
@@ -248,7 +248,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1557
+    .line 1593
     sget-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     sget-object v1, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -261,7 +261,7 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 1559
+    .line 1595
     :cond_0
     return-void
 .end method
@@ -271,7 +271,7 @@
     .parameter "level"
 
     .prologue
-    .line 1537
+    .line 1573
     sget-object v1, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     if-eqz v1, :cond_0
@@ -280,12 +280,12 @@
 
     if-nez v1, :cond_1
 
-    .line 1553
+    .line 1589
     :cond_0
     :goto_0
     return-void
 
-    .line 1539
+    .line 1575
     :cond_1
     sget-object v1, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglContextStorage:Ljava/lang/ThreadLocal;
 
@@ -295,36 +295,36 @@
 
     check-cast v0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
 
-    .line 1542
+    .line 1578
     .local v0, managedContext:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
     if-eqz v0, :cond_0
 
-    .line 1545
+    .line 1581
     invoke-virtual {v0}, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;->getContext()Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v1
 
     invoke-static {v1}, Landroid/view/HardwareRenderer$Gl20Renderer;->usePbufferSurface(Ljavax/microedition/khronos/egl/EGLContext;)V
 
-    .line 1548
+    .line 1584
     const/16 v1, 0x50
 
     if-lt p0, v1, :cond_2
 
-    .line 1549
+    .line 1585
     const/4 v1, 0x2
 
     invoke-static {v1}, Landroid/view/GLES20Canvas;->flushCaches(I)V
 
     goto :goto_0
 
-    .line 1550
+    .line 1586
     :cond_2
     const/16 v1, 0x14
 
     if-lt p0, v1, :cond_0
 
-    .line 1551
+    .line 1587
     const/4 v1, 0x1
 
     invoke-static {v1}, Landroid/view/GLES20Canvas;->flushCaches(I)V
@@ -337,18 +337,18 @@
     .parameter "eglContext"
 
     .prologue
-    .line 1562
+    .line 1598
     sget-object v1, Landroid/view/HardwareRenderer$Gl20Renderer;->sPbufferLock:[Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1565
+    .line 1601
     :try_start_0
     sget-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sPbuffer:Ljavax/microedition/khronos/egl/EGLSurface;
 
     if-nez v0, :cond_0
 
-    .line 1566
+    .line 1602
     sget-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     sget-object v2, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -367,13 +367,13 @@
 
     sput-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sPbuffer:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    .line 1570
+    .line 1606
     :cond_0
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1571
+    .line 1607
     sget-object v0, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     sget-object v1, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -384,10 +384,10 @@
 
     invoke-interface {v0, v1, v2, v3, p0}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 1572
+    .line 1608
     return-void
 
-    .line 1570
+    .line 1606
     :catchall_0
     move-exception v0
 
@@ -398,7 +398,7 @@
 
     throw v0
 
-    .line 1566
+    .line 1602
     nop
 
     :array_0
@@ -417,7 +417,7 @@
     .locals 1
 
     .prologue
-    .line 1401
+    .line 1427
     invoke-super {p0}, Landroid/view/HardwareRenderer$GlRenderer;->canDraw()Z
 
     move-result v0
@@ -443,10 +443,10 @@
     .locals 2
 
     .prologue
-    .line 1370
+    .line 1396
     new-instance v0, Landroid/view/GLES20Canvas;
 
-    iget-boolean v1, p0, Landroid/view/HardwareRenderer$GlRenderer;->mTranslucent:Z
+    iget-boolean v1, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mTranslucent:Z
 
     invoke-direct {v0, v1}, Landroid/view/GLES20Canvas;-><init>(Z)V
 
@@ -460,7 +460,7 @@
     .parameter "name"
 
     .prologue
-    .line 1435
+    .line 1471
     new-instance v0, Landroid/view/GLES20DisplayList;
 
     invoke-direct {v0, p1}, Landroid/view/GLES20DisplayList;-><init>(Ljava/lang/String;)V
@@ -475,7 +475,7 @@
     .parameter "isOpaque"
 
     .prologue
-    .line 1445
+    .line 1481
     new-instance v0, Landroid/view/GLES20RenderLayer;
 
     invoke-direct {v0, p1, p2, p3}, Landroid/view/GLES20RenderLayer;-><init>(IIZ)V
@@ -488,7 +488,7 @@
     .parameter "isOpaque"
 
     .prologue
-    .line 1440
+    .line 1476
     new-instance v0, Landroid/view/GLES20TextureLayer;
 
     invoke-direct {v0, p1}, Landroid/view/GLES20TextureLayer;-><init>(Z)V
@@ -501,10 +501,10 @@
     .parameter "eglContext"
 
     .prologue
-    .line 1375
+    .line 1401
     new-instance v0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
 
-    iget-object v1, p0, Landroid/view/HardwareRenderer$GlRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    iget-object v1, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     invoke-direct {v0, v1}, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;-><init>(Ljavax/microedition/khronos/egl/EGLContext;)V
 
@@ -516,7 +516,7 @@
     .parameter "layer"
 
     .prologue
-    .line 1450
+    .line 1486
     check-cast p1, Landroid/view/GLES20TextureLayer;
 
     .end local p1
@@ -534,27 +534,27 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1417
+    .line 1453
     :try_start_0
     invoke-super {p0, p1}, Landroid/view/HardwareRenderer$GlRenderer;->destroy(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1419
+    .line 1455
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
 
     if-eqz v0, :cond_0
 
-    .line 1420
+    .line 1456
     iput-object v2, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
 
-    .line 1423
+    .line 1459
     :cond_0
     return-void
 
-    .line 1419
+    .line 1455
     :catchall_0
     move-exception v0
 
@@ -564,10 +564,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 1420
+    .line 1456
     iput-object v2, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
 
-    .line 1419
+    .line 1455
     :cond_1
     throw v0
 .end method
@@ -577,17 +577,17 @@
     .parameter "view"
 
     .prologue
-    .line 1505
+    .line 1541
     if-eqz p1, :cond_0
 
-    .line 1506
+    .line 1542
     new-instance v0, Landroid/view/HardwareRenderer$Gl20Renderer$1;
 
     invoke-direct {v0, p0, p1}, Landroid/view/HardwareRenderer$Gl20Renderer$1;-><init>(Landroid/view/HardwareRenderer$Gl20Renderer;Landroid/view/View;)V
 
     invoke-virtual {p0, v0}, Landroid/view/HardwareRenderer$Gl20Renderer;->safelyRun(Ljava/lang/Runnable;)Z
 
-    .line 1514
+    .line 1550
     :cond_0
     return-void
 .end method
@@ -597,7 +597,7 @@
     .parameter "view"
 
     .prologue
-    .line 1460
+    .line 1496
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Landroid/view/HardwareRenderer$Gl20Renderer;->isEnabled()Z
@@ -612,16 +612,29 @@
 
     if-eqz v0, :cond_0
 
-    .line 1461
+    .line 1497
     invoke-static {p1}, Landroid/view/HardwareRenderer$Gl20Renderer;->destroyHardwareLayer(Landroid/view/View;)V
 
-    .line 1462
+    .line 1498
     const/4 v0, 0x0
 
     invoke-static {v0}, Landroid/view/GLES20Canvas;->flushCaches(I)V
 
-    .line 1464
+    .line 1500
     :cond_0
+    return-void
+.end method
+
+.method endTileRendering()V
+    .locals 1
+
+    .prologue
+    .line 1447
+    iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
+
+    invoke-virtual {v0}, Landroid/view/GLES20Canvas;->endTileRendering()V
+
+    .line 1448
     return-void
 .end method
 
@@ -636,7 +649,7 @@
 
     const/16 v4, 0x8
 
-    .line 1380
+    .line 1406
     const/16 v1, 0x11
 
     new-array v1, v1, [I
@@ -739,10 +752,10 @@
     .locals 0
 
     .prologue
-    .line 1396
+    .line 1422
     invoke-static {}, Landroid/view/GLES20Canvas;->initCaches()V
 
-    .line 1397
+    .line 1423
     return-void
 .end method
 
@@ -750,12 +763,12 @@
     .locals 1
 
     .prologue
-    .line 1411
+    .line 1437
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
 
     invoke-virtual {v0}, Landroid/view/GLES20Canvas;->onPostDraw()V
 
-    .line 1412
+    .line 1438
     return-void
 .end method
 
@@ -764,7 +777,7 @@
     .parameter "dirty"
 
     .prologue
-    .line 1406
+    .line 1432
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
 
     invoke-virtual {v0, p1}, Landroid/view/GLES20Canvas;->onPreDraw(Landroid/graphics/Rect;)I
@@ -779,10 +792,10 @@
     .parameter "action"
 
     .prologue
-    .line 1481
+    .line 1517
     const/4 v1, 0x1
 
-    .line 1482
+    .line 1518
     .local v1, needsContext:Z
     invoke-virtual {p0}, Landroid/view/HardwareRenderer$Gl20Renderer;->isEnabled()Z
 
@@ -798,11 +811,11 @@
 
     const/4 v1, 0x0
 
-    .line 1484
+    .line 1520
     :cond_0
     if-eqz v1, :cond_2
 
-    .line 1485
+    .line 1521
     sget-object v2, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglContextStorage:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -811,18 +824,18 @@
 
     check-cast v0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
 
-    .line 1487
+    .line 1523
     .local v0, managedContext:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
     if-nez v0, :cond_1
 
     const/4 v2, 0x0
 
-    .line 1500
+    .line 1536
     .end local v0           #managedContext:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
     :goto_0
     return v2
 
-    .line 1488
+    .line 1524
     .restart local v0       #managedContext:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
     :cond_1
     invoke-virtual {v0}, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;->getContext()Ljavax/microedition/khronos/egl/EGLContext;
@@ -831,7 +844,7 @@
 
     invoke-static {v2}, Landroid/view/HardwareRenderer$Gl20Renderer;->usePbufferSurface(Ljavax/microedition/khronos/egl/EGLContext;)V
 
-    .line 1492
+    .line 1528
     .end local v0           #managedContext:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
     :cond_2
     :try_start_0
@@ -839,10 +852,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1494
+    .line 1530
     if-eqz v1, :cond_3
 
-    .line 1495
+    .line 1531
     sget-object v2, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     sget-object v3, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -855,19 +868,19 @@
 
     invoke-interface {v2, v3, v4, v5, v6}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 1500
+    .line 1536
     :cond_3
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 1494
+    .line 1530
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_4
 
-    .line 1495
+    .line 1531
     sget-object v3, Landroid/view/HardwareRenderer$Gl20Renderer;->sEgl:Ljavax/microedition/khronos/egl/EGL10;
 
     sget-object v4, Landroid/view/HardwareRenderer$Gl20Renderer;->sEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -880,7 +893,7 @@
 
     invoke-interface {v3, v4, v5, v6, v7}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 1494
+    .line 1530
     :cond_4
     throw v2
 .end method
@@ -891,13 +904,13 @@
     .parameter "surfaceTexture"
 
     .prologue
-    .line 1455
+    .line 1491
     check-cast p1, Landroid/view/GLES20TextureLayer;
 
     .end local p1
     invoke-virtual {p1, p2}, Landroid/view/GLES20TextureLayer;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 1456
+    .line 1492
     return-void
 .end method
 
@@ -907,18 +920,32 @@
     .parameter "height"
 
     .prologue
-    .line 1427
+    .line 1463
     invoke-super {p0, p1, p2}, Landroid/view/HardwareRenderer$GlRenderer;->setup(II)V
 
-    .line 1428
-    iget-boolean v0, p0, Landroid/view/HardwareRenderer$GlRenderer;->mVsyncDisabled:Z
+    .line 1464
+    iget-boolean v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mVsyncDisabled:Z
 
     if-eqz v0, :cond_0
 
-    .line 1429
+    .line 1465
     invoke-static {}, Landroid/view/HardwareRenderer$Gl20Renderer;->disableVsync()V
 
-    .line 1431
+    .line 1467
     :cond_0
+    return-void
+.end method
+
+.method startTileRendering(Landroid/graphics/Rect;)V
+    .locals 1
+    .parameter "dirty"
+
+    .prologue
+    .line 1442
+    iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer;->mGlCanvas:Landroid/view/GLES20Canvas;
+
+    invoke-virtual {v0, p1}, Landroid/view/GLES20Canvas;->startTileRendering(Landroid/graphics/Rect;)V
+
+    .line 1443
     return-void
 .end method

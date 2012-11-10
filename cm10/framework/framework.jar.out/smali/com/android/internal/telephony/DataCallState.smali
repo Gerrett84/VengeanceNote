@@ -45,7 +45,7 @@
     const/4 v1, 0x0
 
     .line 37
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     const/4 v0, 0x1
@@ -1146,7 +1146,7 @@
 
     move-result-object v5
 
-    const-string v6, " type="
+    const-string v6, " type=\'"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

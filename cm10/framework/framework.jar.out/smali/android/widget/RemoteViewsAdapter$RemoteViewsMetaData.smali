@@ -46,7 +46,7 @@
 
     .prologue
     .line 370
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 368
     new-instance v0, Ljava/util/HashMap;
@@ -130,7 +130,7 @@
 
     .line 437
     .local v8, loadingView:Landroid/view/View;
-    const v9, 0x102023a
+    const v9, 0x1020241
 
     new-instance v10, Ljava/lang/Integer;
 

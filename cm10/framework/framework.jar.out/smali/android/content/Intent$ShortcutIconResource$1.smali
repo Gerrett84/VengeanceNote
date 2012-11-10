@@ -32,8 +32,8 @@
     .locals 0
 
     .prologue
-    .line 751
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 752
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,12 +45,12 @@
     .parameter "source"
 
     .prologue
-    .line 754
+    .line 755
     new-instance v0, Landroid/content/Intent$ShortcutIconResource;
 
     invoke-direct {v0}, Landroid/content/Intent$ShortcutIconResource;-><init>()V
 
-    .line 755
+    .line 756
     .local v0, icon:Landroid/content/Intent$ShortcutIconResource;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -58,14 +58,14 @@
 
     iput-object v1, v0, Landroid/content/Intent$ShortcutIconResource;->packageName:Ljava/lang/String;
 
-    .line 756
+    .line 757
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/content/Intent$ShortcutIconResource;->resourceName:Ljava/lang/String;
 
-    .line 757
+    .line 758
     return-object v0
 .end method
 
@@ -74,7 +74,7 @@
     .parameter "x0"
 
     .prologue
-    .line 751
+    .line 752
     invoke-virtual {p0, p1}, Landroid/content/Intent$ShortcutIconResource$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/Intent$ShortcutIconResource;
 
     move-result-object v0
@@ -87,7 +87,7 @@
     .parameter "size"
 
     .prologue
-    .line 761
+    .line 762
     new-array v0, p1, [Landroid/content/Intent$ShortcutIconResource;
 
     return-object v0
@@ -98,7 +98,7 @@
     .parameter "x0"
 
     .prologue
-    .line 751
+    .line 752
     invoke-virtual {p0, p1}, Landroid/content/Intent$ShortcutIconResource$1;->newArray(I)[Landroid/content/Intent$ShortcutIconResource;
 
     move-result-object v0

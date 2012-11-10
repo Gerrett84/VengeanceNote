@@ -64,7 +64,7 @@
 
     .prologue
     .line 208
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 209
     const-class v2, Landroid/media/MediaRouter$Static;
@@ -178,7 +178,7 @@
     .local v1, group:Landroid/media/MediaRouter$RouteGroup;
     iget v3, p0, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
 
-    iput v3, v1, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
+    iput v3, v1, Landroid/media/MediaRouter$RouteGroup;->mSupportedTypes:I
 
     .line 358
     sget-object v3, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
@@ -369,7 +369,7 @@
     .local v0, cbi:Landroid/media/MediaRouter$CallbackInfo;
     iget v2, v0, Landroid/media/MediaRouter$CallbackInfo;->type:I
 
-    iget v3, p1, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
+    iget v3, p1, Landroid/media/MediaRouter$RouteGroup;->mSupportedTypes:I
 
     and-int/2addr v2, v3
 
@@ -531,7 +531,7 @@
     .local v0, cbi:Landroid/media/MediaRouter$CallbackInfo;
     iget v2, v0, Landroid/media/MediaRouter$CallbackInfo;->type:I
 
-    iget v3, p1, Landroid/media/MediaRouter$RouteInfo;->mSupportedTypes:I
+    iget v3, p1, Landroid/media/MediaRouter$RouteGroup;->mSupportedTypes:I
 
     and-int/2addr v2, v3
 

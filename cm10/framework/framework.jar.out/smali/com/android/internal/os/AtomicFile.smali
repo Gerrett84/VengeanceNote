@@ -16,7 +16,7 @@
 
     .prologue
     .line 47
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object p1, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
@@ -304,6 +304,7 @@
     .line 165
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
 
+    .line 154
     return-object v2
 
     .line 156

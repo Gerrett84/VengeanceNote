@@ -36,7 +36,7 @@
 
     .prologue
     .line 322
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 323
     return-void
@@ -48,7 +48,7 @@
 
     .prologue
     .line 365
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 366
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
@@ -111,7 +111,7 @@
     const/4 v5, 0x0
 
     .line 328
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 329
     new-instance v2, Ljava/io/StringWriter;

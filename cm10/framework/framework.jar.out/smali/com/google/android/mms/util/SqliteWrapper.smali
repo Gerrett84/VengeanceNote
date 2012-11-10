@@ -15,7 +15,7 @@
 
     .prologue
     .line 35
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     return-void
@@ -35,7 +35,7 @@
     if-eqz v0, :cond_0
 
     .line 61
-    const v0, 0x1040123
+    const v0, 0x104013b
 
     const/4 v1, 0x0
 

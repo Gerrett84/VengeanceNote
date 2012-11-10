@@ -36,7 +36,7 @@
 
     .prologue
     .line 46
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
     iput-object p1, p0, Landroid/util/NtpTrustedTime;->mServer:Ljava/lang/String;
@@ -76,7 +76,7 @@
 
     .line 57
     .local v4, resolver:Landroid/content/ContentResolver;
-    const v9, 0x1040026
+    const v9, 0x104002e
 
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Landroid/accounts/ChooseAccountTypeActivity;->mTypeToAuthenticatorInfo:Ljava/util/HashMap;
 
-    .line 171
+    .line 170
     return-void
 .end method
 
@@ -107,7 +107,7 @@
 
     .local v5, i$:I
     :goto_0
-    if-ge v5, v7, :cond_2
+    if-ge v5, v7, :cond_1
 
     aget-object v3, v0, v5
 
@@ -159,28 +159,22 @@
 
     .line 135
     invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 137
-    :cond_0
-    invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v8
 
-    .line 149
+    .line 148
     .end local v1           #authContext:Landroid/content/Context;
     .end local v9           #sequence:Ljava/lang/CharSequence;
-    :cond_1
+    :cond_0
     :goto_1
     new-instance v2, Landroid/accounts/ChooseAccountTypeActivity$AuthInfo;
 
     invoke-direct {v2, v3, v8, v6}, Landroid/accounts/ChooseAccountTypeActivity$AuthInfo;-><init>(Landroid/accounts/AuthenticatorDescription;Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
 
-    .line 150
+    .line 149
     .local v2, authInfo:Landroid/accounts/ChooseAccountTypeActivity$AuthInfo;
     iget-object v10, p0, Landroid/accounts/ChooseAccountTypeActivity;->mTypeToAuthenticatorInfo:Ljava/util/HashMap;
 
@@ -193,12 +187,12 @@
 
     goto :goto_0
 
-    .line 138
+    .line 137
     .end local v2           #authInfo:Landroid/accounts/ChooseAccountTypeActivity$AuthInfo;
     :catch_0
     move-exception v4
 
-    .line 140
+    .line 139
     .local v4, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v10, "AccountChooser"
 
@@ -206,9 +200,9 @@
 
     move-result v10
 
-    if-eqz v10, :cond_1
+    if-eqz v10, :cond_0
 
-    .line 141
+    .line 140
     const-string v10, "AccountChooser"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -235,12 +229,12 @@
 
     goto :goto_1
 
-    .line 143
+    .line 142
     .end local v4           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v4
 
-    .line 145
+    .line 144
     .local v4, e:Landroid/content/res/Resources$NotFoundException;
     const-string v10, "AccountChooser"
 
@@ -248,9 +242,9 @@
 
     move-result v10
 
-    if-eqz v10, :cond_1
+    if-eqz v10, :cond_0
 
-    .line 146
+    .line 145
     const-string v10, "AccountChooser"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -277,12 +271,12 @@
 
     goto :goto_1
 
-    .line 152
+    .line 151
     .end local v3           #desc:Landroid/accounts/AuthenticatorDescription;
     .end local v4           #e:Landroid/content/res/Resources$NotFoundException;
     .end local v6           #icon:Landroid/graphics/drawable/Drawable;
     .end local v8           #name:Ljava/lang/String;
-    :cond_2
+    :cond_1
     return-void
 .end method
 
