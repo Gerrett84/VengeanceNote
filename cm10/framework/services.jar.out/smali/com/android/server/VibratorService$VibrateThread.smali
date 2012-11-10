@@ -29,15 +29,15 @@
     .parameter "vib"
 
     .prologue
-    .line 462
+    .line 435
     iput-object p1, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 463
+    .line 436
     iput-object p2, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
 
-    .line 464
+    .line 437
     #getter for: Lcom/android/server/VibratorService;->mTmpWorkSource:Landroid/os/WorkSource;
     invoke-static {p1}, Lcom/android/server/VibratorService;->access$900(Lcom/android/server/VibratorService;)Landroid/os/WorkSource;
 
@@ -50,7 +50,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/WorkSource;->set(I)V
 
-    .line 465
+    .line 438
     #getter for: Lcom/android/server/VibratorService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
     invoke-static {p1}, Lcom/android/server/VibratorService;->access$1000(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
 
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
 
-    .line 466
+    .line 439
     #getter for: Lcom/android/server/VibratorService;->mWakeLock:Landroid/os/PowerManager$WakeLock;
     invoke-static {p1}, Lcom/android/server/VibratorService;->access$1000(Lcom/android/server/VibratorService;)Landroid/os/PowerManager$WakeLock;
 
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 467
+    .line 440
     return-void
 .end method
 
@@ -82,19 +82,17 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 470
+    .line 443
     cmp-long v2, p1, v4
 
     if-lez v2, :cond_1
 
-    .line 471
+    .line 444
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    add-long v0, p1, v2
-
-    .line 474
+    .line 447
     .local v0, bedtime:J
     :cond_0
     :try_start_0
@@ -102,35 +100,37 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 478
+    .line 451
     :goto_0
     iget-boolean v2, p0, Lcom/android/server/VibratorService$VibrateThread;->mDone:Z
 
     if-eqz v2, :cond_2
 
-    .line 484
+    .line 458
     .end local v0           #bedtime:J
     :cond_1
     :goto_1
     return-void
 
-    .line 481
+    .line 454
     .restart local v0       #bedtime:J
     :cond_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    sub-long p1, v0, v2
+    sub-long v2, p1, v2
 
-    .line 482
+    sub-long p1, v2, v0
+
+    .line 456
     cmp-long v2, p1, v4
 
     if-gtz v2, :cond_0
 
     goto :goto_1
 
-    .line 476
+    .line 449
     :catch_0
     move-exception v2
 
@@ -143,18 +143,18 @@
     .locals 10
 
     .prologue
-    .line 487
+    .line 461
     const/4 v7, -0x8
 
     invoke-static {v7}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 488
+    .line 462
     monitor-enter p0
 
-    .line 489
+    .line 463
     const/4 v2, 0x0
 
-    .line 490
+    .line 464
     .local v2, index:I
     :try_start_0
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
@@ -164,11 +164,11 @@
 
     move-result-object v5
 
-    .line 491
+    .line 465
     .local v5, pattern:[J
     array-length v4, v5
 
-    .line 492
+    .line 466
     .local v4, len:I
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
 
@@ -179,14 +179,14 @@
 
     move-result v6
 
-    .line 493
+    .line 467
     .local v6, repeat:I
     const-wide/16 v0, 0x0
 
     .local v0, duration:J
     move v3, v2
 
-    .line 495
+    .line 469
     .end local v2           #index:I
     .local v3, index:I
     :goto_0
@@ -197,10 +197,10 @@
 
     if-nez v7, :cond_7
 
-    .line 497
+    .line 471
     if-ge v3, v4, :cond_0
 
-    .line 498
+    .line 472
     add-int/lit8 v2, v3, 0x1
 
     .end local v3           #index:I
@@ -214,14 +214,14 @@
 
     move v3, v2
 
-    .line 502
+    .line 476
     .end local v2           #index:I
     .restart local v3       #index:I
     :cond_0
     :try_start_3
     invoke-direct {p0, v0, v1}, Lcom/android/server/VibratorService$VibrateThread;->delay(J)V
 
-    .line 503
+    .line 477
     iget-boolean v7, p0, Lcom/android/server/VibratorService$VibrateThread;->mDone:Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -230,7 +230,7 @@
 
     move v2, v3
 
-    .line 523
+    .line 497
     .end local v3           #index:I
     .restart local v2       #index:I
     :goto_1
@@ -244,12 +244,12 @@
 
     invoke-virtual {v7}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 524
+    .line 498
     monitor-exit p0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 525
+    .line 499
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     #getter for: Lcom/android/server/VibratorService;->mVibrations:Ljava/util/LinkedList;
@@ -259,7 +259,7 @@
 
     monitor-enter v8
 
-    .line 526
+    .line 500
     :try_start_5
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
@@ -267,20 +267,20 @@
 
     if-ne v7, p0, :cond_1
 
-    .line 527
+    .line 501
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     const/4 v9, 0x0
 
     iput-object v9, v7, Lcom/android/server/VibratorService;->mThread:Lcom/android/server/VibratorService$VibrateThread;
 
-    .line 529
+    .line 503
     :cond_1
     iget-boolean v7, p0, Lcom/android/server/VibratorService$VibrateThread;->mDone:Z
 
     if-nez v7, :cond_2
 
-    .line 532
+    .line 506
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     #getter for: Lcom/android/server/VibratorService;->mVibrations:Ljava/util/LinkedList;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v7, v9}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 533
+    .line 507
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     iget-object v9, p0, Lcom/android/server/VibratorService$VibrateThread;->mVibration:Lcom/android/server/VibratorService$Vibration;
@@ -300,28 +300,28 @@
     #calls: Lcom/android/server/VibratorService;->unlinkVibration(Lcom/android/server/VibratorService$Vibration;)V
     invoke-static {v7, v9}, Lcom/android/server/VibratorService;->access$1300(Lcom/android/server/VibratorService;Lcom/android/server/VibratorService$Vibration;)V
 
-    .line 534
+    .line 508
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     #calls: Lcom/android/server/VibratorService;->startNextVibrationLocked()V
     invoke-static {v7}, Lcom/android/server/VibratorService;->access$300(Lcom/android/server/VibratorService;)V
 
-    .line 536
+    .line 510
     :cond_2
     monitor-exit v8
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 537
+    .line 511
     return-void
 
-    .line 507
+    .line 481
     .end local v2           #index:I
     .restart local v3       #index:I
     :cond_3
     if-ge v3, v4, :cond_4
 
-    .line 510
+    .line 484
     add-int/lit8 v2, v3, 0x1
 
     .end local v3           #index:I
@@ -329,14 +329,14 @@
     :try_start_6
     aget-wide v0, v5, v3
 
-    .line 511
+    .line 485
     const-wide/16 v7, 0x0
 
     cmp-long v7, v0, v7
 
     if-lez v7, :cond_6
 
-    .line 512
+    .line 486
     iget-object v7, p0, Lcom/android/server/VibratorService$VibrateThread;->this$0:Lcom/android/server/VibratorService;
 
     #calls: Lcom/android/server/VibratorService;->doVibratorOn(J)V
@@ -348,24 +348,24 @@
     .restart local v3       #index:I
     goto :goto_0
 
-    .line 515
+    .line 489
     :cond_4
     if-gez v6, :cond_5
 
     move v2, v3
 
-    .line 516
+    .line 490
     .end local v3           #index:I
     .restart local v2       #index:I
     goto :goto_1
 
-    .line 518
+    .line 492
     .end local v2           #index:I
     .restart local v3       #index:I
     :cond_5
     move v2, v6
 
-    .line 519
+    .line 493
     .end local v3           #index:I
     .restart local v2       #index:I
     const-wide/16 v0, 0x0
@@ -376,7 +376,7 @@
     .restart local v3       #index:I
     goto :goto_0
 
-    .line 524
+    .line 498
     .end local v0           #duration:J
     .end local v3           #index:I
     .end local v4           #len:I
@@ -393,7 +393,7 @@
 
     throw v7
 
-    .line 536
+    .line 510
     .restart local v0       #duration:J
     .restart local v4       #len:I
     .restart local v5       #pattern:[J
@@ -408,7 +408,7 @@
 
     throw v7
 
-    .line 524
+    .line 498
     .end local v2           #index:I
     .restart local v3       #index:I
     :catchall_2

@@ -110,7 +110,7 @@
     const/4 v3, -0x1
 
     .line 74
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 62
     new-instance v1, Landroid/util/SparseArray;

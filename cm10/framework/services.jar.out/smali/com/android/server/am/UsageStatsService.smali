@@ -181,14 +181,14 @@
     .line 247
     new-instance v4, Ljava/lang/Object;
 
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v4 .. v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mStatsLock:Ljava/lang/Object;
 
     .line 248
     new-instance v4, Ljava/lang/Object;
 
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {v4 .. v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lcom/android/server/am/UsageStatsService;->mFileLock:Ljava/lang/Object;
 
@@ -1906,7 +1906,7 @@
     :try_start_1
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
 
     .line 419
     .end local v3           #eventType:I
@@ -2125,13 +2125,13 @@
     goto :goto_2
 
     .line 415
-    .end local v2           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_2
     move-exception v12
 
     goto :goto_2
 
     .line 409
+    .end local v2           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_3
     move-exception v2
 
@@ -2169,7 +2169,13 @@
     :try_start_a
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_a
-    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_2
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_4
+
+    goto/16 :goto_2
+
+    .line 415
+    :catch_4
+    move-exception v12
 
     goto/16 :goto_2
 
@@ -2184,15 +2190,26 @@
     :try_start_b
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
     :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_4
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_6
 
-    .line 412
+    .line 416
     :cond_8
     :goto_3
     throw v12
 
     .line 415
-    :catch_4
+    .restart local v3       #eventType:I
+    .restart local v9       #parser:Lorg/xmlpull/v1/XmlPullParser;
+    .restart local v11       #tagName:Ljava/lang/String;
+    :catch_5
+    move-exception v12
+
+    goto/16 :goto_2
+
+    .end local v3           #eventType:I
+    .end local v9           #parser:Lorg/xmlpull/v1/XmlPullParser;
+    .end local v11           #tagName:Ljava/lang/String;
+    :catch_6
     move-exception v13
 
     goto :goto_3
@@ -2896,7 +2913,6 @@
     .line 574
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
-    .line 573
     throw v2
 .end method
 

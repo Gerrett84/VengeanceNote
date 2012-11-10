@@ -77,7 +77,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     new-instance v0, Landroid/view/animation/Transformation;
@@ -967,7 +967,7 @@
     .line 258
     iget-object v2, p0, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v2, v2, Lcom/android/server/wm/AppWindowToken;->windows:Ljava/util/ArrayList;
+    iget-object v2, v2, Lcom/android/server/wm/WindowToken;->windows:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -984,7 +984,7 @@
     .line 260
     iget-object v2, p0, Lcom/android/server/wm/AppWindowAnimator;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
-    iget-object v2, v2, Lcom/android/server/wm/AppWindowToken;->windows:Ljava/util/ArrayList;
+    iget-object v2, v2, Lcom/android/server/wm/WindowToken;->windows:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

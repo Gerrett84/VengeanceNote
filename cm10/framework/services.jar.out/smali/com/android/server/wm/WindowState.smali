@@ -230,7 +230,7 @@
 
     .prologue
     .line 256
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 73
     new-instance v5, Landroid/view/WindowManager$LayoutParams;
@@ -3668,7 +3668,7 @@
 
     if-nez v1, :cond_2
 
-    iget-boolean v1, v0, Lcom/android/server/wm/AppWindowToken;->hidden:Z
+    iget-boolean v1, v0, Lcom/android/server/wm/WindowToken;->hidden:Z
 
     if-nez v1, :cond_2
 

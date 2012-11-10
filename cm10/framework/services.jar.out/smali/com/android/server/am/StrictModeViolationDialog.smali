@@ -78,7 +78,7 @@
     if-eqz v0, :cond_1
 
     .line 52
-    const v2, 0x104040b
+    const v2, 0x10403e1
 
     const/4 v3, 0x2
 
@@ -109,7 +109,7 @@
     .line 64
     const/4 v2, -0x1
 
-    const v3, 0x1040465
+    const v3, 0x104043b
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -131,7 +131,7 @@
     .line 69
     const/4 v2, -0x2
 
-    const v3, 0x1040402
+    const v3, 0x10403d8
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -147,7 +147,7 @@
 
     .line 74
     :cond_0
-    const v2, 0x10403f9
+    const v2, 0x10403cf
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -216,11 +216,11 @@
 
     .line 57
     .restart local v0       #name:Ljava/lang/CharSequence;
-    const v2, 0x104040c
+    const v2, 0x10403e2
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
 
     move-result-object v4
 

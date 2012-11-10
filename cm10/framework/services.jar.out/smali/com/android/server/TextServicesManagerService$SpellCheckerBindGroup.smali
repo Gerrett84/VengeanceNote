@@ -54,7 +54,7 @@
     .line 592
     iput-object p1, p0, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->this$0:Lcom/android/server/TextServicesManagerService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     .line 582
     const-class v0, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;

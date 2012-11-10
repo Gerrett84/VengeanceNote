@@ -26,20 +26,20 @@
     .parameter "pkgFlags"
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 28
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/GrantedPermissions;->grantedPermissions:Ljava/util/HashSet;
 
-    .line 31
+    .line 33
     invoke-virtual {p0, p1}, Lcom/android/server/pm/GrantedPermissions;->setFlags(I)V
 
-    .line 32
+    .line 34
     return-void
 .end method
 
@@ -48,22 +48,22 @@
     .parameter "base"
 
     .prologue
-    .line 35
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 37
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
+    .line 28
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/GrantedPermissions;->grantedPermissions:Ljava/util/HashSet;
 
-    .line 36
+    .line 38
     iget v0, p1, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
     iput v0, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
-    .line 37
+    .line 39
     iget-object v0, p1, Lcom/android/server/pm/GrantedPermissions;->grantedPermissions:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clone()Ljava/lang/Object;
@@ -74,12 +74,12 @@
 
     iput-object v0, p0, Lcom/android/server/pm/GrantedPermissions;->grantedPermissions:Ljava/util/HashSet;
 
-    .line 39
+    .line 41
     iget-object v0, p1, Lcom/android/server/pm/GrantedPermissions;->gids:[I
 
     if-eqz v0, :cond_0
 
-    .line 40
+    .line 42
     iget-object v0, p1, Lcom/android/server/pm/GrantedPermissions;->gids:[I
 
     invoke-virtual {v0}, [I->clone()Ljava/lang/Object;
@@ -90,7 +90,7 @@
 
     iput-object v0, p0, Lcom/android/server/pm/GrantedPermissions;->gids:[I
 
-    .line 42
+    .line 44
     :cond_0
     return-void
 .end method
@@ -100,15 +100,18 @@
 .method setFlags(I)V
     .locals 1
     .parameter "pkgFlags"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 45
-    const v0, 0x20040001
+    .line 48
+    const v0, -0x5ffbffff
 
     and-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/GrantedPermissions;->pkgFlags:I
 
-    .line 49
+    .line 53
     return-void
 .end method

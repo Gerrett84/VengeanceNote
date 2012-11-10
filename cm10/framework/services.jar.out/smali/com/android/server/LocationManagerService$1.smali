@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2058
+    .line 2024
     iput-object p1, p0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,164 +35,164 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 27
+    .locals 26
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 2061
+    .line 2027
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2062
+    .line 2028
     .local v3, action:Ljava/lang/String;
-    const-string v23, "android.intent.action.QUERY_PACKAGE_RESTART"
+    const-string v22, "android.intent.action.QUERY_PACKAGE_RESTART"
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v15
 
-    .line 2063
+    .line 2029
     .local v15, queryRestart:Z
     if-nez v15, :cond_0
 
-    const-string v23, "android.intent.action.PACKAGE_REMOVED"
+    const-string v22, "android.intent.action.PACKAGE_REMOVED"
 
-    move-object/from16 v0, v23
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v23
-
-    if-nez v23, :cond_0
-
-    const-string v23, "android.intent.action.PACKAGE_RESTARTED"
-
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v23
+    move-result v22
 
-    if-nez v23, :cond_0
+    if-nez v22, :cond_0
 
-    const-string v23, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
+    const-string v22, "android.intent.action.PACKAGE_RESTARTED"
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_11
+    if-nez v22, :cond_0
 
-    .line 2067
+    const-string v22, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v22
+
+    if-eqz v22, :cond_11
+
+    .line 2033
     :cond_0
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$300(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$300(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
 
-    move-result-object v24
+    move-result-object v23
 
-    monitor-enter v24
+    monitor-enter v23
 
-    .line 2068
-    const/16 v20, 0x0
+    .line 2034
+    const/16 v19, 0x0
 
-    .line 2069
-    .local v20, uidList:[I
+    .line 2035
+    .local v19, uidList:[I
     :try_start_0
-    const-string v23, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
+    const-string v22, "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_3
+    if-eqz v22, :cond_3
 
-    .line 2070
-    const-string v23, "android.intent.extra.changed_uid_list"
+    .line 2036
+    const-string v22, "android.intent.extra.changed_uid_list"
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getIntArrayExtra(Ljava/lang/String;)[I
 
-    move-result-object v20
+    move-result-object v19
 
-    .line 2074
+    .line 2040
     :goto_0
-    if-eqz v20, :cond_1
+    if-eqz v19, :cond_1
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
     array-length v0, v0
 
-    move/from16 v23, v0
+    move/from16 v22, v0
 
-    if-nez v23, :cond_4
+    if-nez v22, :cond_4
 
-    .line 2075
+    .line 2041
     :cond_1
-    monitor-exit v24
+    monitor-exit v23
 
-    .line 2154
-    .end local v20           #uidList:[I
+    .line 2114
+    .end local v19           #uidList:[I
     :cond_2
     :goto_1
     return-void
 
-    .line 2072
-    .restart local v20       #uidList:[I
+    .line 2038
+    .restart local v19       #uidList:[I
     :cond_3
-    const/16 v23, 0x1
+    const/16 v22, 0x1
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
     new-array v0, v0, [I
 
-    move-object/from16 v21, v0
+    move-object/from16 v20, v0
 
-    const/16 v23, 0x0
+    const/16 v22, 0x0
 
-    const-string v25, "android.intent.extra.UID"
+    const-string v24, "android.intent.extra.UID"
 
-    const/16 v26, -0x1
+    const/16 v25, -0x1
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v25
+    move-object/from16 v1, v24
 
-    move/from16 v2, v26
+    move/from16 v2, v25
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v25
+    move-result v24
 
-    aput v25, v21, v23
+    aput v24, v20, v22
+
+    .end local v19           #uidList:[I
+    .local v20, uidList:[I
+    move-object/from16 v19, v20
 
     .end local v20           #uidList:[I
-    .local v21, uidList:[I
-    move-object/from16 v20, v21
-
-    .end local v21           #uidList:[I
-    .restart local v20       #uidList:[I
+    .restart local v19       #uidList:[I
     goto :goto_0
 
-    .line 2077
+    .line 2043
     :cond_4
-    move-object/from16 v4, v20
+    move-object/from16 v4, v19
 
     .local v4, arr$:[I
     array-length v12, v4
@@ -208,33 +208,33 @@
     :goto_2
     if-ge v9, v12, :cond_10
 
-    aget v19, v4, v9
+    aget v18, v4, v9
 
-    .line 2078
-    .local v19, uid:I
-    if-ltz v19, :cond_f
+    .line 2044
+    .local v18, uid:I
+    if-ltz v18, :cond_f
 
-    .line 2079
+    .line 2045
     const/16 v17, 0x0
 
-    .line 2080
+    .line 2046
     .local v17, removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mRecordsByProvider:Ljava/util/HashMap;
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$1400(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$1400(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
 
-    move-result-object v23
+    move-result-object v22
 
-    invoke-virtual/range {v23 .. v23}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual/range {v22 .. v22}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v23
+    move-result-object v22
 
-    invoke-interface/range {v23 .. v23}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface/range {v22 .. v22}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
@@ -243,9 +243,9 @@
     :cond_5
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_9
+    if-eqz v22, :cond_9
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -253,168 +253,168 @@
 
     check-cast v7, Ljava/util/ArrayList;
 
-    .line 2081
+    .line 2047
     .local v7, i:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
-    move-result v23
+    move-result v22
 
-    add-int/lit8 v11, v23, -0x1
+    add-int/lit8 v11, v22, -0x1
 
     .local v11, j:I
     :goto_3
     if-ltz v11, :cond_5
 
-    .line 2082
+    .line 2048
     invoke-virtual {v7, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v22
+    move-result-object v21
 
-    check-cast v22, Lcom/android/server/LocationManagerService$UpdateRecord;
+    check-cast v21, Lcom/android/server/LocationManagerService$UpdateRecord;
 
-    .line 2083
-    .local v22, ur:Lcom/android/server/LocationManagerService$UpdateRecord;
-    move-object/from16 v0, v22
+    .line 2049
+    .local v21, ur:Lcom/android/server/LocationManagerService$UpdateRecord;
+    move-object/from16 v0, v21
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$UpdateRecord;->mReceiver:Lcom/android/server/LocationManagerService$Receiver;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
-    invoke-virtual/range {v23 .. v23}, Lcom/android/server/LocationManagerService$Receiver;->isPendingIntent()Z
+    invoke-virtual/range {v22 .. v22}, Lcom/android/server/LocationManagerService$Receiver;->isPendingIntent()Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_8
+    if-eqz v22, :cond_8
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v21
 
     iget v0, v0, Lcom/android/server/LocationManagerService$UpdateRecord;->mUid:I
 
-    move/from16 v23, v0
+    move/from16 v22, v0
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v19
+    move/from16 v1, v18
 
     if-ne v0, v1, :cond_8
 
-    .line 2084
+    .line 2050
     if-eqz v15, :cond_6
 
-    .line 2085
-    const/16 v23, -0x1
+    .line 2051
+    const/16 v22, -0x1
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Lcom/android/server/LocationManagerService$1;->setResultCode(I)V
 
-    .line 2086
-    monitor-exit v24
+    .line 2052
+    monitor-exit v23
 
     goto :goto_1
 
-    .line 2124
+    .line 2090
     .end local v4           #arr$:[I
     .end local v7           #i:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
     .end local v8           #i$:Ljava/util/Iterator;
     .end local v11           #j:I
     .end local v12           #len$:I
     .end local v17           #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
-    .end local v19           #uid:I
-    .end local v22           #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
+    .end local v18           #uid:I
+    .end local v21           #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
     :catchall_0
-    move-exception v23
+    move-exception v22
 
-    monitor-exit v24
+    monitor-exit v23
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v23
+    throw v22
 
-    .line 2088
+    .line 2054
     .restart local v4       #arr$:[I
     .restart local v7       #i:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
     .restart local v8       #i$:Ljava/util/Iterator;
     .restart local v11       #j:I
     .restart local v12       #len$:I
     .restart local v17       #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
-    .restart local v19       #uid:I
-    .restart local v22       #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
+    .restart local v18       #uid:I
+    .restart local v21       #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
     :cond_6
     if-nez v17, :cond_7
 
-    .line 2089
+    .line 2055
     :try_start_1
     new-instance v17, Ljava/util/ArrayList;
 
     .end local v17           #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     invoke-direct/range {v17 .. v17}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2091
+    .line 2057
     .restart local v17       #removedRecs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     :cond_7
-    move-object/from16 v0, v22
+    move-object/from16 v0, v21
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$UpdateRecord;->mReceiver:Lcom/android/server/LocationManagerService$Receiver;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     move-object/from16 v0, v17
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v23
+    move-result v22
 
-    if-nez v23, :cond_8
+    if-nez v22, :cond_8
 
-    .line 2092
-    move-object/from16 v0, v22
+    .line 2058
+    move-object/from16 v0, v21
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$UpdateRecord;->mReceiver:Lcom/android/server/LocationManagerService$Receiver;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     move-object/from16 v0, v17
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2081
+    .line 2047
     :cond_8
     add-int/lit8 v11, v11, -0x1
 
     goto :goto_3
 
-    .line 2097
+    .line 2063
     .end local v7           #i:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$UpdateRecord;>;"
     .end local v11           #j:I
-    .end local v22           #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
+    .end local v21           #ur:Lcom/android/server/LocationManagerService$UpdateRecord;
     :cond_9
     const/16 v16, 0x0
 
-    .line 2098
+    .line 2064
     .local v16, removedAlerts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$ProximityAlert;>;"
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mProximityAlerts:Ljava/util/HashMap;
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$1500(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$1500(Lcom/android/server/LocationManagerService;)Ljava/util/HashMap;
 
-    move-result-object v23
+    move-result-object v22
 
-    invoke-virtual/range {v23 .. v23}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual/range {v22 .. v22}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v23
+    move-result-object v22
 
-    invoke-interface/range {v23 .. v23}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface/range {v22 .. v22}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
@@ -422,9 +422,9 @@
     :goto_4
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_d
+    if-eqz v22, :cond_d
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -432,156 +432,156 @@
 
     check-cast v6, Lcom/android/server/LocationManagerService$ProximityAlert;
 
-    .line 2099
+    .line 2065
     .local v6, i:Lcom/android/server/LocationManagerService$ProximityAlert;
     iget v0, v6, Lcom/android/server/LocationManagerService$ProximityAlert;->mUid:I
 
-    move/from16 v23, v0
+    move/from16 v22, v0
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v19
+    move/from16 v1, v18
 
     if-ne v0, v1, :cond_a
 
-    .line 2100
+    .line 2066
     if-eqz v15, :cond_b
 
-    .line 2101
-    const/16 v23, -0x1
+    .line 2067
+    const/16 v22, -0x1
 
     move-object/from16 v0, p0
 
-    move/from16 v1, v23
+    move/from16 v1, v22
 
     invoke-virtual {v0, v1}, Lcom/android/server/LocationManagerService$1;->setResultCode(I)V
 
-    .line 2102
-    monitor-exit v24
+    .line 2068
+    monitor-exit v23
 
     goto/16 :goto_1
 
-    .line 2104
+    .line 2070
     :cond_b
     if-nez v16, :cond_c
 
-    .line 2105
+    .line 2071
     new-instance v16, Ljava/util/ArrayList;
 
     .end local v16           #removedAlerts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$ProximityAlert;>;"
     invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2107
+    .line 2073
     .restart local v16       #removedAlerts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$ProximityAlert;>;"
     :cond_c
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v23
+    move-result v22
 
-    if-nez v23, :cond_a
+    if-nez v22, :cond_a
 
-    .line 2108
+    .line 2074
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_4
 
-    .line 2112
+    .line 2078
     .end local v6           #i:Lcom/android/server/LocationManagerService$ProximityAlert;
     :cond_d
     if-eqz v17, :cond_e
 
-    .line 2113
+    .line 2079
     invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->size()I
 
-    move-result v23
+    move-result v22
 
-    add-int/lit8 v6, v23, -0x1
+    add-int/lit8 v6, v22, -0x1
 
     .local v6, i:I
     :goto_5
     if-ltz v6, :cond_e
 
-    .line 2114
+    .line 2080
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v25, v0
+    move-object/from16 v24, v0
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v23
+    move-result-object v22
 
-    check-cast v23, Lcom/android/server/LocationManagerService$Receiver;
+    check-cast v22, Lcom/android/server/LocationManagerService$Receiver;
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     #calls: Lcom/android/server/LocationManagerService;->removeUpdatesLocked(Lcom/android/server/LocationManagerService$Receiver;)V
     invoke-static {v0, v1}, Lcom/android/server/LocationManagerService;->access$400(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$Receiver;)V
 
-    .line 2113
+    .line 2079
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_5
 
-    .line 2117
+    .line 2083
     .end local v6           #i:I
     :cond_e
     if-eqz v16, :cond_f
 
-    .line 2118
+    .line 2084
     invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->size()I
 
-    move-result v23
+    move-result v22
 
-    add-int/lit8 v6, v23, -0x1
+    add-int/lit8 v6, v22, -0x1
 
     .restart local v6       #i:I
     :goto_6
     if-ltz v6, :cond_f
 
-    .line 2119
+    .line 2085
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v25, v0
+    move-object/from16 v24, v0
 
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v23
+    move-result-object v22
 
-    check-cast v23, Lcom/android/server/LocationManagerService$ProximityAlert;
+    check-cast v22, Lcom/android/server/LocationManagerService$ProximityAlert;
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$ProximityAlert;->mIntent:Landroid/app/PendingIntent;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
-    move-object/from16 v0, v25
+    move-object/from16 v0, v24
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     #calls: Lcom/android/server/LocationManagerService;->removeProximityAlertLocked(Landroid/app/PendingIntent;)V
     invoke-static {v0, v1}, Lcom/android/server/LocationManagerService;->access$1800(Lcom/android/server/LocationManagerService;Landroid/app/PendingIntent;)V
 
-    .line 2118
+    .line 2084
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_6
 
-    .line 2077
+    .line 2043
     .end local v6           #i:I
     .end local v8           #i$:Ljava/util/Iterator;
     .end local v16           #removedAlerts:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$ProximityAlert;>;"
@@ -596,69 +596,69 @@
     .restart local v9       #i$:I
     goto/16 :goto_2
 
-    .line 2124
-    .end local v19           #uid:I
+    .line 2090
+    .end local v18           #uid:I
     :cond_10
-    monitor-exit v24
+    monitor-exit v23
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto/16 :goto_1
 
-    .line 2125
+    .line 2091
     .end local v4           #arr$:[I
     .end local v9           #i$:I
     .end local v12           #len$:I
-    .end local v20           #uidList:[I
+    .end local v19           #uidList:[I
     :cond_11
-    const-string v23, "android.net.conn.CONNECTIVITY_CHANGE"
+    const-string v22, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_2
+    if-eqz v22, :cond_2
 
-    .line 2126
-    const-string v23, "noConnectivity"
+    .line 2092
+    const-string v22, "noConnectivity"
 
-    const/16 v24, 0x0
+    const/16 v23, 0x0
 
     move-object/from16 v0, p2
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
-    move/from16 v2, v24
+    move/from16 v2, v23
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v13
 
-    .line 2128
+    .line 2094
     .local v13, noConnectivity:Z
     if-nez v13, :cond_13
 
-    .line 2129
+    .line 2095
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
-    const/16 v24, 0x2
+    const/16 v23, 0x2
 
     #setter for: Lcom/android/server/LocationManagerService;->mNetworkState:I
-    invoke-static/range {v23 .. v24}, Lcom/android/server/LocationManagerService;->access$2602(Lcom/android/server/LocationManagerService;I)I
+    invoke-static/range {v22 .. v23}, Lcom/android/server/LocationManagerService;->access$2602(Lcom/android/server/LocationManagerService;I)I
 
-    .line 2134
+    .line 2100
     :goto_7
-    const-string v23, "connectivity"
+    const-string v22, "connectivity"
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v23
+    move-object/from16 v1, v22
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -666,83 +666,63 @@
 
     check-cast v5, Landroid/net/ConnectivityManager;
 
-    .line 2136
+    .line 2102
     .local v5, connManager:Landroid/net/ConnectivityManager;
-    const-string v23, "networkInfo"
-
-    move-object/from16 v0, p2
-
-    move-object/from16 v1, v23
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v18
-
-    check-cast v18, Landroid/net/NetworkInfo;
-
-    .line 2142
-    .local v18, retInfo:Landroid/net/NetworkInfo;
-    invoke-virtual/range {v18 .. v18}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v23
-
-    move/from16 v0, v23
-
-    invoke-virtual {v5, v0}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
+    invoke-virtual {v5}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v10
 
-    .line 2145
+    .line 2105
     .local v10, info:Landroid/net/NetworkInfo;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$300(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$300(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
 
-    move-result-object v24
+    move-result-object v23
 
-    monitor-enter v24
+    monitor-enter v23
 
-    .line 2146
+    .line 2106
     :try_start_2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mProviders:Ljava/util/ArrayList;
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$1900(Lcom/android/server/LocationManagerService;)Ljava/util/ArrayList;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$1900(Lcom/android/server/LocationManagerService;)Ljava/util/ArrayList;
 
-    move-result-object v23
+    move-result-object v22
 
-    invoke-virtual/range {v23 .. v23}, Ljava/util/ArrayList;->size()I
+    invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
 
-    move-result v23
+    move-result v22
 
-    add-int/lit8 v6, v23, -0x1
+    add-int/lit8 v6, v22, -0x1
 
     .restart local v6       #i:I
     :goto_8
     if-ltz v6, :cond_14
 
-    .line 2147
+    .line 2107
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mProviders:Ljava/util/ArrayList;
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$1900(Lcom/android/server/LocationManagerService;)Ljava/util/ArrayList;
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$1900(Lcom/android/server/LocationManagerService;)Ljava/util/ArrayList;
 
-    move-result-object v23
+    move-result-object v22
 
-    move-object/from16 v0, v23
+    move-object/from16 v0, v22
 
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -750,76 +730,74 @@
 
     check-cast v14, Lcom/android/server/location/LocationProviderInterface;
 
-    .line 2148
+    .line 2108
     .local v14, provider:Lcom/android/server/location/LocationProviderInterface;
     invoke-interface {v14}, Lcom/android/server/location/LocationProviderInterface;->requiresNetwork()Z
 
-    move-result v23
+    move-result v22
 
-    if-eqz v23, :cond_12
+    if-eqz v22, :cond_12
 
-    .line 2149
+    .line 2109
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
     #getter for: Lcom/android/server/LocationManagerService;->mNetworkState:I
-    invoke-static/range {v23 .. v23}, Lcom/android/server/LocationManagerService;->access$2600(Lcom/android/server/LocationManagerService;)I
+    invoke-static/range {v22 .. v22}, Lcom/android/server/LocationManagerService;->access$2600(Lcom/android/server/LocationManagerService;)I
 
-    move-result v23
+    move-result v22
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
     invoke-interface {v14, v0, v10}, Lcom/android/server/location/LocationProviderInterface;->updateNetworkState(ILandroid/net/NetworkInfo;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 2146
+    .line 2106
     :cond_12
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_8
 
-    .line 2131
+    .line 2097
     .end local v5           #connManager:Landroid/net/ConnectivityManager;
     .end local v6           #i:I
     .end local v10           #info:Landroid/net/NetworkInfo;
     .end local v14           #provider:Lcom/android/server/location/LocationProviderInterface;
-    .end local v18           #retInfo:Landroid/net/NetworkInfo;
     :cond_13
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/LocationManagerService$1;->this$0:Lcom/android/server/LocationManagerService;
 
-    move-object/from16 v23, v0
+    move-object/from16 v22, v0
 
-    const/16 v24, 0x1
+    const/16 v23, 0x1
 
     #setter for: Lcom/android/server/LocationManagerService;->mNetworkState:I
-    invoke-static/range {v23 .. v24}, Lcom/android/server/LocationManagerService;->access$2602(Lcom/android/server/LocationManagerService;I)I
+    invoke-static/range {v22 .. v23}, Lcom/android/server/LocationManagerService;->access$2602(Lcom/android/server/LocationManagerService;I)I
 
     goto :goto_7
 
-    .line 2152
+    .line 2112
     .restart local v5       #connManager:Landroid/net/ConnectivityManager;
     .restart local v6       #i:I
     .restart local v10       #info:Landroid/net/NetworkInfo;
-    .restart local v18       #retInfo:Landroid/net/NetworkInfo;
     :cond_14
     :try_start_3
-    monitor-exit v24
+    monitor-exit v23
 
     goto/16 :goto_1
 
     .end local v6           #i:I
     :catchall_1
-    move-exception v23
+    move-exception v22
 
-    monitor-exit v24
+    monitor-exit v23
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    throw v23
+    throw v22
 .end method

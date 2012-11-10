@@ -27,10 +27,10 @@
     .parameter
 
     .prologue
-    .line 664
+    .line 653
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 664
+    .line 653
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
     return-void
@@ -53,14 +53,14 @@
     .locals 9
 
     .prologue
-    .line 667
+    .line 656
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v5, v4, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
 
     monitor-enter v5
 
-    .line 668
+    .line 657
     :try_start_0
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
@@ -68,7 +68,7 @@
 
     iput-boolean v6, v4, Lcom/android/server/wm/WindowManagerService;->mAnimationScheduled:Z
 
-    .line 671
+    .line 660
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v6, v4, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
@@ -77,7 +77,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 672
+    .line 661
     const-wide/16 v7, 0x20
 
     :try_start_1
@@ -85,18 +85,18 @@
 
     invoke-static {v7, v8, v4}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 673
+    .line 662
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v4, v4, Lcom/android/server/wm/WindowManagerService;->mAnimator:Lcom/android/server/wm/WindowAnimator;
 
     iget-object v3, v4, Lcom/android/server/wm/WindowAnimator;->mWinAnimators:Ljava/util/ArrayList;
 
-    .line 674
+    .line 663
     .local v3, winAnimators:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/wm/WindowStateAnimator;>;"
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 675
+    .line 664
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v4, v4, Lcom/android/server/wm/WindowManagerService;->mWindows:Ljava/util/ArrayList;
@@ -105,7 +105,7 @@
 
     move-result v0
 
-    .line 676
+    .line 665
     .local v0, N:I
     const/4 v1, 0x0
 
@@ -113,7 +113,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 677
+    .line 666
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v4, v4, Lcom/android/server/wm/WindowManagerService;->mWindows:Ljava/util/ArrayList;
@@ -126,22 +126,22 @@
 
     iget-object v2, v4, Lcom/android/server/wm/WindowState;->mWinAnimator:Lcom/android/server/wm/WindowStateAnimator;
 
-    .line 678
+    .line 667
     .local v2, winAnimator:Lcom/android/server/wm/WindowStateAnimator;
     iget-object v4, v2, Lcom/android/server/wm/WindowStateAnimator;->mSurface:Landroid/view/Surface;
 
     if-eqz v4, :cond_0
 
-    .line 679
+    .line 668
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 676
+    .line 665
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 682
+    .line 671
     .end local v2           #winAnimator:Lcom/android/server/wm/WindowStateAnimator;
     :cond_1
     iget-object v4, p0, Lcom/android/server/wm/WindowManagerService$AnimationRunnable;->this$0:Lcom/android/server/wm/WindowManagerService;
@@ -150,26 +150,26 @@
 
     invoke-virtual {v4}, Lcom/android/server/wm/WindowAnimator;->animate()V
 
-    .line 683
+    .line 672
     const-wide/16 v7, 0x20
 
     invoke-static {v7, v8}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 684
+    .line 673
     monitor-exit v6
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 685
+    .line 674
     :try_start_2
     monitor-exit v5
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 686
+    .line 675
     return-void
 
-    .line 684
+    .line 673
     .end local v0           #N:I
     .end local v1           #i:I
     .end local v3           #winAnimators:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/server/wm/WindowStateAnimator;>;"
@@ -184,7 +184,7 @@
     :try_start_4
     throw v4
 
-    .line 685
+    .line 674
     :catchall_1
     move-exception v4
 

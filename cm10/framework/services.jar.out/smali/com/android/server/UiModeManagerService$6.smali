@@ -1,6 +1,9 @@
 .class Lcom/android/server/UiModeManagerService$6;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "UiModeManagerService.java"
+
+# interfaces
+.implements Landroid/location/LocationListener;
 
 
 # annotations
@@ -24,30 +27,50 @@
     .parameter
 
     .prologue
-    .line 256
+    .line 286
     iput-object p1, p0, Lcom/android/server/UiModeManagerService$6;->this$0:Lcom/android/server/UiModeManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+.method public onLocationChanged(Landroid/location/Location;)V
+    .locals 0
+    .parameter "location"
 
     .prologue
-    .line 259
-    iget-object v0, p0, Lcom/android/server/UiModeManagerService$6;->this$0:Lcom/android/server/UiModeManagerService;
+    .line 288
+    return-void
+.end method
 
-    const/4 v1, 0x0
+.method public onProviderDisabled(Ljava/lang/String;)V
+    .locals 0
+    .parameter "provider"
 
-    #setter for: Lcom/android/server/UiModeManagerService;->mUiContext:Landroid/content/Context;
-    invoke-static {v0, v1}, Lcom/android/server/UiModeManagerService;->access$702(Lcom/android/server/UiModeManagerService;Landroid/content/Context;)Landroid/content/Context;
+    .prologue
+    .line 291
+    return-void
+.end method
 
-    .line 260
+.method public onProviderEnabled(Ljava/lang/String;)V
+    .locals 0
+    .parameter "provider"
+
+    .prologue
+    .line 294
+    return-void
+.end method
+
+.method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .locals 0
+    .parameter "provider"
+    .parameter "status"
+    .parameter "extras"
+
+    .prologue
+    .line 297
     return-void
 .end method
